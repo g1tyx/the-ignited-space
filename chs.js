@@ -316,7 +316,7 @@ var cnItems = {
     "Crafting Slots:": "制作插槽：",
     "Crafts various goods": "制作各种商品",
     "Free slots:": "空闲插槽：",
-    "": "",
+    "Plants and cuts wood": "种植和砍伐木材",
     "": "",
     "": "",
     "": "",
