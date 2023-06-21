@@ -393,7 +393,7 @@ var cnItems = {
     "Religion": "宗教",
     "Research grants": "研究资助",
     "Rocket science": "火箭科学",
-    "Rubber": "橡皮",
+    "Rubber": "橡胶",
     "Rules of behavior in the forest": "森林行为准则",
     "Science buildings consume 150% more electricity but provide 10% more science capacity": "科学建筑多消耗 150% 的电力，但提供多 10% 的科学容量",
     "Science buildings consume 50% more electricity but provide 5% more science capacity": "科学建筑多消耗 50% 的电力，但提供多 5% 的科学容量",
