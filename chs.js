@@ -190,7 +190,7 @@ var cnItems = {
     "Electrolytes": "电解质",
     "Final preparation": "最后准备",
     "Income Bonuses": "收入奖励",
-    "Nutrition": "营养学",
+    "Nutrition": "营养",
     "Repair supply module": "修理供电模块",
     "Battery": "电池",
     "Provides power storage": "提供电力储存",
