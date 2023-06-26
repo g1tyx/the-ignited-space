@@ -958,7 +958,7 @@ var cnItems = {
     "Use your advances in quantum physics and material knowledge to boost production of tiny things. Unlocks new upgrades": "利用您在量子物理学和材料知识方面的进步来促进微小物体的生产。 解锁新升级",
     "Using radiation can improve dissociation process, improving your electrolytes efficiency.  Improves your power storage facilities by 20%.": "使用辐射可以改善解离过程，提高电解质效率。 将您的电力存储设施改善 20%。",
     "You are not easily bored and know how to distract people from boredom. Every point decreases entertainment requirements by 4": "你不容易感到无聊，并且知道如何分散人们的无聊感。 每一点都会减少 4 点娱乐要求",
-    "": "",
+    "Unlocks nanobots factory building on your satellite that provides bonus to all crafting": "解锁卫星上的纳米机器人工厂建筑，为所有手工艺提供奖励",
     "": "",
     "": "",
     "": "",
