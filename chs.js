@@ -1047,7 +1047,6 @@ var cnItems = {
     "Knowledge: Gas & Liquid Mastery": "知识：气体和液体精通",
     "Updated formula to calculate XP bonus": "更新了计算 XP 奖励的公式",
     "v0.1.0a Small Fixes": "v0.1.0a 小修复",
-    "Added warning on buildings running on lower efficiency": "",
     "Missing": "丢失",
     "Efficiency:": "效率：",
     "The length of blood vessels in our body is approximately 100,000 kilometers.": "我们体内血管的长度约为10万公里。",
