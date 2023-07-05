@@ -1050,7 +1050,7 @@ var cnItems = {
     "Missing": "丢失",
     "Efficiency:": "效率：",
     "The length of blood vessels in our body is approximately 100,000 kilometers.": "我们体内血管的长度约为10万公里。",
-    "": "",
+    "Mars experiences powerful and massive dust storms that can engulf the entire planet. These storms can last for weeks or even months and cover vast regions, obscuring the Martian surface from view.": "火星经历了强大而巨大的沙尘暴，可以吞没整个星球。 这些风暴可能会持续数周甚至数月，覆盖广大地区，遮蔽火星表面。",
     "": "",
     "": "",
     "": "",
