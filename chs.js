@@ -1133,7 +1133,7 @@ var cnItems = {
     "Fixed issue when false warning on building efficiency dropped appeared": "修复了建筑效率下降时出现错误警告的问题",
     "Fixed layout issue on smaller screens": "修复了较小屏幕上的布局问题",
     "v0.1.0b Small Fixes": "v0.1.0b 小修复",
-    "": "",
+    "Distances between stars used to be incredibly huge. For example, the distance to Proxima Centauri from Earth is approximately 39.7 trillion kilometers or 4.24 light-years. That's why human very unlikely visit other star systems in near future. But its not the case once you are playing \"The Ignited Space\"": "恒星之间的距离曾经非常大。 例如，地球到比邻星的距离约为 39.7 万亿公里或 4.24 光年。 这就是为什么人类在不久的将来不太可能访问其他恒星系统。 但当你玩“点燃的空间”时，情况就不是这样了",
     "": "",
     "": "",
     "": "",
