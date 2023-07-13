@@ -785,7 +785,7 @@ var cnItems = {
     "Year": "年",
     "Day": "天",
     "Season:": "季节：",
-    ", Weather: ": "天气：",
+    ", Weather:": "天气：",
     "Planet": "行星",
     "Science": "科学",
     "Space": "太空",
