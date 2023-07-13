@@ -514,6 +514,7 @@ var cnItems = {
     "Learn how to produce electronics and incorporate it": "了解如何生产电子产品并将其整合",
     "Civil Service": "公共服务",
     "Unlock new civil service jobs and buildings": "解锁新的公共服务职位和建筑",
+    "3D Printing": "3D 打印",
     "Unlock new powerful tools that will help you boost your colony development": "解锁新的强大工具，帮助您促进殖民地发展",
     "Advanced Physics": "高等物理学",
     "Learn more about surviving and creating in high gravity conditions": "进一步研究如何在高重力条件下生存和制造",
