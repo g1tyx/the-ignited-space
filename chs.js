@@ -997,7 +997,7 @@ var cnItems = {
     "Transmit knowledge": "传输知识",
     "You will lose all your resources, upgrades, buildings and science. But you will transmit your knowledge to next colonizers, making their progress much faster.": "你将失去所有的资源、升级、建筑和科学。但你会将你的知识传递给下一个殖民者，使他们的进步更快。",
     "You will earn ": "您将获得",
-    "knowledge points (based on your current population) that can be used to purchase various upgrades": ""知识点，可用于购买各种升级（获取量根据您当前的人口计算）"",
+    "knowledge points (based on your current population) that can be used to purchase various upgrades": "知识点数，可用于购买各种升级（获取量根据您当前的人口计算）"",
     "Are you sure?": "您确定吗",
     "Transmit Knowledge and leave the planet": "传播知识并离开这颗星球",
     "Great Radio Transmitter": "大型无线电发射机",
