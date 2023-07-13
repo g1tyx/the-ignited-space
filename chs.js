@@ -739,7 +739,7 @@ var cnItems = {
     "Law": "法令",
     "Knowledge: ": "知识：",
 
-    //知识相关手动显示
+    //知识加成手动显示
     "Knowledge: Drone Mastery": "知识：无人机精通",
     "Knowledge: Drone Solar Panel": "知识：无人机太阳能电池板",
     "Knowledge: Power Mastery": "知识：电力精通",
@@ -782,6 +782,17 @@ var cnItems = {
     "C": "C",
     "D": "D",
     "Planet modifier:": "行星加成：",
+
+    //行星加成手动显示
+    "Planet modifier: Cold": "行星加成：寒冷",
+    "Planet modifier: Hot": "行星加成：炎热",
+    "Planet modifier: Ore Poor": "行星加成：矿物贫瘠",
+    "Planet modifier: Ore Rich": "行星加成：矿物丰富",
+    "Planet modifier: Small": "行星加成：小型",
+    "Planet modifier: Big": "行星加成：大型",
+    "Planet modifier: Wet": "行星加成：潮湿",
+    "Planet modifier: Dry": "行星加成：干燥",
+
     "Breakdown:": "  明细：",
     "Stable": "稳定",
     "Small Season Changes": "小幅度季节变化",
@@ -802,7 +813,7 @@ var cnItems = {
     "Autumn": "秋天",
     "Winter": "冬天",
 
-    //温度相关手动显示
+    //温度加成手动显示
     "Temperature modifier:": "温度加成：",
     "Temperature modifier: Very Hot": "温度加成：酷热",
     "Temperature modifier: Hot": "温度加成：炎热",
