@@ -1102,6 +1102,8 @@ var cnItems = {
     'The Earth\'s climate has undergone natural fluctuations throughout its history, including periods of extreme cold called"Snowball Earth" episodes, when whole planet was covered by ice.': "地球的气候在其整个历史中经历了自然波动，包括被称为“雪球地球”时期的极端寒冷时期，当时整个地球都被冰覆盖。",
     "The human body is composed of trillions of cells, but only about 10% of those cells are actually human. Other 90% belongs to viruses, fungi, and other microscopic organisms, collectively known as the human microbiota.": "人体由数万亿个细胞组成，但其中只有约 10% 真正是人类的。其余90%属于病毒、真菌和其他微生物，统称为人类微生物群。",
     "The human brain is one of the most energy-demanding organs in the body, consuming about 20% of the body's total energy.": "人脑是人体最需要能量的器官之一，消耗的能量约占人体总能量的20%。",
+    'The first exoplanet discovered around a Sun-like star in the "habitable zone" with Earth-like conditions is called Kepler-452b.': "在类似太阳的恒星周围发现的第一颗宜居行星，称为开普勒-452b，具有类似地球的环境。",
+    'The most common type of exoplanets discovered so far are known as "super-Earths" - exoplanets that have a mass and size larger than Earth but smaller than that of gas giants like Neptune or Jupiter. They typically range in size from about 1 to 10 times the mass of Earth.': "迄今为止发现的最常见的系外行星类型被称为“超级地球”——质量和尺寸大于地球但小于海王星或木星等气态巨行星的系外行星。它们的尺寸通常约为地球的 1 至 10 倍 地球的质量。",
     "Loading...": "加载中……",
     "Did you knew?": "你知道吗？",
     "Show Resources": "显示资源",
@@ -1130,7 +1132,6 @@ var cnItems = {
     'Increased "Expeditions" rewards': "提升了探险战利品的数量",
     'Added "Expeditions" - active way to speed up getting resources': "增加了“探险”机制——一种主动获取资源的手段",
     'Transmit knowledge only available once you have more than 50 colonizers and did "Great Radio Transmitter" under landing zone upgrades section': "传输知识只在你拥有超过50位殖民者，并完成了大型无线电发射机的升级之后，才可用",
-    'The most common type of exoplanets discovered so far are known as "super-Earths" - exoplanets that have a mass and size larger than Earth but smaller than that of gas giants like Neptune or Jupiter. They typically range in size from about 1 to 10 times the mass of Earth.': "迄今为止发现的最常见的系外行星类型被称为“超级地球”——质量和尺寸大于地球但小于海王星或木星等气态巨行星的系外行星。它们的尺寸通常约为地球的 1 至 10 倍 地球的质量。",
     
     
     // 图标代码，不能汉化
