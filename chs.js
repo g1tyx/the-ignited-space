@@ -91,7 +91,7 @@ var cnItems = {
     "Fuel": "燃料",
     "Rubber": "橡胶",
     "Plastic": "塑料",
-    "Wire": "金属丝",
+    "Wire": "电线",
     "Semiconductor": "半导体",
     "Computer": "电脑",
     "Rocket": "火箭",
