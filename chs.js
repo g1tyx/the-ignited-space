@@ -783,7 +783,7 @@ var cnItems = {
     "Collapse": "折叠",
     "Goal:": "目标：",
     "Year": "年",
-    "Day": "天",
+    ", Day": "天",
     "Season:": "季节：",
     ", Weather:": "天气：",
     "Planet": "行星",
