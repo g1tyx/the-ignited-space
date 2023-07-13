@@ -924,6 +924,8 @@ var cnItems = {
     "By Strange Matter Gaming": "作者：Strange Matter Gaming",
     "Support on Patreon": "在 Patreon 上支持作者",
     "Join our Discord": "加入我们的 Discord 频道",
+
+    //更新日志正文
     "Fixed issue when materials with 0 capacity could be produced": "修复可以生产上限为 0 的材料的问题",
     "Fixed issue when false warning on building efficiency dropped appeared": "修复了建筑效率下降时出现错误警告的问题",
     "Fixed layout issue on smaller screens": "修复了较小屏幕上的布局问题",
@@ -938,7 +940,7 @@ var cnItems = {
     "Weather": "天气",
     "Expeditions": "探险",
     "Small UI and QoL fixes": "一些小的 UI 和 QoL 修复",
-    "Continued goals": "持续目标",
+    "Continued goals": "增加了后续目标",
     "Fixed some bugs in buildings bonuses": "修复了建筑物奖励中的一些错误",
     "Fixed some bugs in prestige mechanics": "修复了声望机制中的一些错误",
     "Increased some buildings efficiency": "提高了一些建筑物的效率",
@@ -993,6 +995,8 @@ var cnItems = {
     "Added manual save and hard reset buttons": "增加手动保存和硬重置按钮",
     "Approximately 48 hours of playable content": "大约 48 小时的可游玩内容",
     "Basic game mechanics: buildings, researches, upgrades, colony management": "基本游戏机制：建筑、研究、升级、殖民地管理",
+
+    //重置页
     "Efficiency:": "效率：",
     "Missing": "缺少",
     "Cost": "成本",
@@ -1065,6 +1069,8 @@ var cnItems = {
     "Maximum Happiness": "最大的幸福",
     "General": "一般的",
     "Empty and cold here": "这里空旷寒冷",
+
+    //启动等待文本
     "As a general rule of thumb, a person can survive without water for about 3 days. So, keep your water supply stable otherwise your colony will die": "根据一般经验，一个人可以在没有水的情况下生存大约 3 天。所以，保持供水稳定，否则你的殖民者们就会死亡。",
     "You have to setup basic food and water supply before you can meet first colonists": "在见到第一批殖民者之前，你必须准备好基本的食物和水供应。",
     "The International Space Station completes one full orbit around the Earth every 90 minutes. As a result, its crew observes the sunrise every 90 minutes. Each day, the people on board the ISS witness 16 sunrises and 16 sunsets.": "国际空间站每 90 分钟绕地球一周。因此，其船员每 90 分钟就会观察一次日出。每天，国际空间站上的人们都会见证 16 次日出和 16 次日落。",
@@ -1108,6 +1114,8 @@ var cnItems = {
     "Did you knew?": "你知道吗？",
     "Show Resources": "显示资源",
     "Hide resources": "隐藏资源",
+
+    //更新日志标题
     "v0.1.0c Tiny Fix": "v0.1.0c 微量 bug 修复",
     "v0.1.0b Small Fixes": "v0.1.0b 小型 bug 修复",
     "v0.1.0a Small Fixes": "v0.1.0a 小型 bug 修复",
