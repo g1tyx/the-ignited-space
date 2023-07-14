@@ -985,7 +985,7 @@ var cnItems = {
     "Research": "研究",
     "Game Data": "游戏数据",
     "Export to file": "导出到文件",
-    "Export": "导出字符串",
+    "Export": "导出到文件",
     "Import from file": "从文件导入",
     "UTF-8": "UTF-8",
     "Error importing file": "导入文件错误",
