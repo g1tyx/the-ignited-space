@@ -336,7 +336,7 @@ var cnItems = {
     "Orbital Bio-research": "轨道生物研究",
     "Biolabs can perform some research in space now (togglable in laws and order)": "生物实验室可以在太空中进行新的研究（在法律与秩序页面开启或关闭）",
     "Orbital Clinic": "轨道诊所",
-    "Orbital Supply Module will now also provide healthcare boost": "轨道供应模块现在也将提供医疗保健服务",
+    "Orbital Supply Module will now also provide healthcare boost": "轨道生命维持模块现在也将提供医疗保健服务",
     "Nano Biobots": "纳米生物机器人",
     "Using biobots can help curing a lot of diseases. Gain +10% to clinic efficiency": "运用生物机器人可以治愈非常多的疾病。诊所的产量提升 10%",
     "High Energy Plasma Knife": "高能等离子刀",
@@ -924,7 +924,7 @@ var cnItems = {
     "Research": "研究",
     "Game Data": "游戏数据",
     "Export to file": "导出到文件",
-    "Export": "导出到文件",
+    "Export": "导出字符串",
     "Import from file": "从文件导入",
     "UTF-8": "UTF-8",
     "Error importing file": "导入文件错误",
@@ -1048,16 +1048,6 @@ var cnItems = {
     "Great Radio Transmitter": "大型无线电发射机",
     "Colonize Planets": "殖民星球",
     "You have": "你拥有",
-<<<<<<< HEAD
-<<<<<<< HEAD
-    "XP points, providing X": " 经验，为你的知识获取提供 x",
-    "multiplier to your KP gain": " 的加成",
-    "You will lose all your resources, upgrades, buildings and science. Knowledge points and upgrades you already have will persist. You won't receive any transmit knowledge but you will receive": "您将失去所有的资源、升级、建筑和科学。知识和已购买的传输知识升级会保留。你不会获得任何新的知识，但你会获得",
-    "XP points. Your KP gain multiplier will be x": "经验点数。你的知识获取倍率将会是 x",
-=======
->>>>>>> parent of 6b7b988 (Update chs.js)
-=======
->>>>>>> parent of 6b7b988 (Update chs.js)
     "You will lose all your resources, upgrades, buildings and science. Knowledge points and upgrades you already have will persist. You won't receive any transmit knowledge but you will receive": "您将失去所有的资源、升级、建筑和科学。知识点和已购买的传输知识升级会保留。你不会获得任何新的知识点，但你会获得",
     "XP points. Your KP gain multiplier will be x": "经验点数。你的知识点获取乘数将会是 x",
     "Are you sure?": "你确定吗？",
