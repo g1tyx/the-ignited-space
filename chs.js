@@ -1280,6 +1280,11 @@ var cnPrefix = {
     "   ": "",
     "  ": " ",
     " ": " ",
+    
+    //
+    "Upgrade:": '升级：',
+    "Job: ": '工作：',
+    "Crafting: ": '制造：',
 }
 
 //需处理的后缀
@@ -1363,6 +1368,7 @@ var cnExcludeWhole = [
     /^([\d\.]+)e([\d\.,]+)x$/,
     /^[\u4E00-\u9FA5]+$/
 ];
+
 var cnExcludePostfix = [
 ]
 
@@ -1398,6 +1404,9 @@ var cnRegReplace = new Map([
     [/^Usages: (\d+)\/$/, '用途：$1\/'],
     [/^workers: (\d+)\/$/, '工人：$1\/'],
     [/^Building: (.+)$/, '建筑：$1'],
+    /*
     [/^Upgrade: (.+)$/, '升级：$1'],
     [/^Job: (.+)$/, '工作：$1'],
+    [/^Crafting: (.+)$/, '制造：$1'],
+    */
 ]);
