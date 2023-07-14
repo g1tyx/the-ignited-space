@@ -1112,7 +1112,7 @@ var cnItems = {
     "XP points, providing X": " 经验，为你的知识获取提供 x",
     "multiplier to your KP gain": " 的加成",
     "You will lose all your resources, upgrades, buildings and science. Knowledge points and upgrades you already have will persist. You won't receive any transmit knowledge but you will receive": "您将失去所有的资源、升级、建筑和科学。知识和已购买的传输知识升级会保留。你不会获得任何新的知识，但你会获得",
-    "XP points. Your KP gain multiplier will be X": "经验点数。你的知识获取倍率将会是 x",
+    "XP points. Your KP gain multiplier will be X": "经验点数。你的知识获取倍率会变为 x",
     "Are you sure?": "你确定吗？",
     "Days per year:": "每年天数：",
     "Seasons:": "季节：",
