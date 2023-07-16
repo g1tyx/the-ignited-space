@@ -693,7 +693,7 @@ var cnItems = {
     "Quick": "快速过滤",
     "Water pumps are working in regular way": "水泵以正常的方式工作",
     "Multi-Stage": "多级过滤",
-    "Water pumps consume twice as much power, but increase healthcare by 3 each": "在水处理过程中加入更多的过滤工序，这会让水泵消耗两倍的功率，但每座水泵能使医疗增加 3",
+    "Water pumps consume twice as much power, but increase healthcare by 3 each": "在水处理过程中加入更多的过滤工序，从而为殖民者们提供更纯净的水资源。这会让水泵消耗两倍的功率，但每座水泵能使医疗增加 3",
     "Research Focus": "科研支持法案",
     "Setting research as priority through providing better equipment to your scientists can boost the development of your colony, but it won't be cheap": "将科研置于发展的首位，这可以促进你的殖民地的发展，但也需要付出代价",
     "No Extra Support": "无额外支持",
