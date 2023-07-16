@@ -1046,7 +1046,7 @@ var cnItems = {
     "Hard reset": "硬重置",
     "This action will remove all your game data. Are you sure?": "这个操作会删除您所有的游戏数据，且不可挽回。确定要这么做吗？",
     "Wipe game data": "彻底删除游戏数据",
-    "Science": "科学研究",
+    "Science": "科学",
     "Economy": "经济发展",
     "Social": "社会管理",
     "Consume": "消耗",
