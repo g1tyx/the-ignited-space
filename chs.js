@@ -726,6 +726,7 @@ var cnItems = {
     "Minor Regulations": "略微限制",
     //下面这句应该马上要改
     '"Foresters produce a normal amount of wood': "林务员产出正常数量的木材",
+    "Foresters produce a normal amount of wood": "林务员产出正常数量的木材",
     "Aggressive Cutting": "皆伐",
     "Encourage production at the cost of pretty landscape. Foresters produce 20% more wood, but each forester reduces aesthetics by 1.5": "放开伐木限制，但会付出殖民地的美观度作为代价。林务员的木材产量提升 20%，但每个林务员减少 1.5 美观度",
     "Forest Preservation": "森林保护",
