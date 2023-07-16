@@ -1199,7 +1199,7 @@ var cnItems = {
     "The first exoplanet discovered in the habitable zone of its star is called Gliese 581d. It was discovered in 2007 and is located approximately 20.3 light-years away from Earth in the constellation Libra. It orbits the red dwarf star Gliese 581, which is smaller and cooler than our Sun.": "在其恒星的宜居带中发现的第一颗系外行星被称为 Gliese 581d。它于 2007 年被发现，位于距离地球约 20.3 光年的天秤座。它围绕红矮星 Gliese 581 运行，它比太阳更小、温度更低。",
     "When we think of radiation, we often associate it with electromagnetic waves like X-rays, gamma rays, or visible light. However, radiation can also refer to particles emitted during certain radioactive processes.": "当我们想到辐射时，我们经常将其与 X 射线、伽马射线或可见光等电磁波联系起来。然而，辐射也可以指在某些放射性过程中发射的粒子。",
     "During the Big Bang, high-energy radiation was generated as the universe rapidly expanded and cooled. This radiation, known as the cosmic microwave background (CMB), can still be detected today and is considered one of the strongest pieces of evidence supporting the Big Bang theory.": "大爆炸期间，随着宇宙迅速膨胀和冷却，产生高能辐射。这种辐射被称为宇宙微波背景辐射（CMB），至今仍然可以被检测到，并被认为是支持大爆炸理论的最有力的证据之一。",
-    'The Earth\'s climate has undergone natural fluctuations throughout its history, including periods of extreme cold called"Snowball Earth" episodes, when whole planet was covered by ice.': "地球的气候在其整个历史中经历了自然波动，包括被称为“雪球地球”时期的极端寒冷时期，当时整个地球都被冰覆盖。",
+    'The Earth\'s climate has undergone natural fluctuations throughout its history, including periods of extreme cold called "Snowball Earth" episodes, when whole planet was covered by ice.': "地球的气候在其整个历史中经历了自然波动，包括被称为“雪球地球”时期的极端寒冷时期，当时整个地球都被冰覆盖。",
     "The human body is composed of trillions of cells, but only about 10% of those cells are actually human. Other 90% belongs to viruses, fungi, and other microscopic organisms, collectively known as the human microbiota.": "人体由数万亿个细胞组成，但其中只有约 10% 真正是人类的。其余90%属于病毒、真菌和其他微生物，统称为人类微生物群。",
     "The human brain is one of the most energy-demanding organs in the body, consuming about 20% of the body's total energy.": "人脑是人体最需要能量的器官之一，消耗的能量约占人体总能量的20%。",
     'The first exoplanet discovered around a Sun-like star in the "habitable zone" with Earth-like conditions is called Kepler-452b.': "在类似太阳的恒星周围发现的第一颗宜居行星，称为开普勒-452b，具有类似地球的环境。",
@@ -1407,7 +1407,7 @@ var cnRegReplace = new Map([
     [/^Usages: (\d+)\/$/, '用途：$1\/'],
     [/^workers: (\d+)\/$/, '工人：$1\/'],
     [/^Happiness: (.+)$/, '幸福度：$1'],
-    
+
     /*
     [/^Building: (.+)$/, '建筑：$1'],
     [/^Upgrade: (.+)$/, '升级：$1'],
