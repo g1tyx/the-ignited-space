@@ -1186,7 +1186,7 @@ var cnItems = {
     "Description:": "描述：",
     "Days per year:": "每年天数：",
     "Seasons:": "季节：",
-    "KP Gain multiplier:": "经验获取倍率（译注：该倍率影响该星球上的经验和知识获取量）：",
+    "KP Gain multiplier:": "经验获取倍率（同时影响经验和知识获取量）：x",
     "Consume": "消耗",
     "Produce": "生产",
     "Storage": "存储",
