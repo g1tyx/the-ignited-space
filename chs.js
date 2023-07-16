@@ -816,7 +816,27 @@ var cnItems = {
 
     //行星词缀手动显示
     "Small": "小型",
-    
+
+    "Small Wet": "小型 潮湿",
+    "Small Wet Ore Poor": "小型 潮湿 矿物贫瘠",
+    "Small Wet Ore Poor Cold": "小型 潮湿 矿物贫瘠 寒冷",
+    "Small Wet Ore Poor Hot": "小型 潮湿 矿物贫瘠 炎热",
+    "Small Wet Ore Rich": "小型 潮湿 矿物丰富",
+    "Small Wet Ore Rich Cold": "小型 潮湿 矿物丰富 寒冷",
+    "Small Wet Ore Rich Hot": "小型 潮湿 矿物丰富 炎热",
+    "Small Wet Cold": "小型 潮湿 寒冷",
+    "Small Wet Hot": "小型 潮湿 炎热",
+
+    "Small Dry": "小型 干燥",
+    "Small Dry Ore Poor": "小型 干燥 矿物贫瘠",
+    "Small Dry Ore Poor Cold": "小型 干燥 矿物贫瘠 寒冷",
+    "Small Dry Ore Poor Hot": "小型 干燥 矿物贫瘠 炎热",
+    "Small Dry Ore Rich": "小型 干燥 矿物丰富",
+    "Small Dry Ore Rich Cold": "小型 干燥 矿物丰富 寒冷",
+    "Small Dry Ore Rich Hot": "小型 干燥 矿物丰富 炎热",
+    "Small Dry Cold": "小型 干燥 寒冷",
+    "Small Dry Hot": "小型 干燥 炎热",
+
     "Wet Small": "小型 潮湿",
     "Wet Small Ore Poor": "小型 潮湿 矿物贫瘠",
     "Wet Small Ore Poor Cold": "小型 潮湿 矿物贫瘠 寒冷",
@@ -849,6 +869,26 @@ var cnItems = {
 
     "Big": "大型",
 
+    "Big Wet": "大型 潮湿",
+    "Big Wet Ore Poor": "大型 潮湿 矿物贫瘠",
+    "Big Wet Ore Poor Cold": "大型 潮湿 矿物贫瘠 寒冷",
+    "Big Wet Ore Poor Hot": "大型 潮湿 矿物贫瘠 炎热",
+    "Big Wet Ore Rich": "大型 潮湿 矿物丰富",
+    "Big Wet Ore Rich Cold": "大型 潮湿 矿物丰富 寒冷",
+    "Big Wet Ore Rich Hot": "大型 潮湿 矿物丰富 炎热",
+    "Big Wet Cold": "大型 潮湿 寒冷",
+    "Big Wet Hot": "大型 潮湿 炎热",
+
+    "Big Dry": "大型 干燥",
+    "Big Dry Ore Poor": "大型 干燥 矿物贫瘠",
+    "Big Dry Ore Poor Cold": "大型 干燥 矿物贫瘠 寒冷",
+    "Big Dry Ore Poor Hot": "大型 干燥 矿物贫瘠 炎热",
+    "Big Dry Ore Rich": "大型 干燥 矿物丰富",
+    "Big Dry Ore Rich Cold": "大型 干燥 矿物丰富 寒冷",
+    "Big Dry Ore Rich Hot": "大型 干燥 矿物丰富 炎热",
+    "Big Dry Cold": "大型 干燥 寒冷",
+    "Big Dry Hot": "大型 干燥 炎热",
+
     "Wet Big": "大型 潮湿",
     "Wet Big Ore Poor": "大型 潮湿 矿物贫瘠",
     "Wet Big Ore Poor Cold": "大型 潮湿 矿物贫瘠 寒冷",
@@ -875,6 +915,9 @@ var cnItems = {
     "Big Ore Rich": "大型 矿物丰富",
     "Big Ore Rich Cold": "大型 矿物丰富 寒冷",
     "Big Ore Rich Hot": "大型 矿物丰富 炎热",
+
+    "Big Cold": "大型 寒冷",
+    "Big Hot": "小型 炎热",
 
     //季节相关
     "Breakdown:": "  明细：",
