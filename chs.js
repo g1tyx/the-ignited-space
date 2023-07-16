@@ -366,7 +366,7 @@ var cnItems = {
     "Oxygen Compressor": "氧气压缩机",
     "Compresses oxygen for easier storage": "压缩氧气以便于储存",
     "Water Pump": "水泵",
-    "Pumps water from underground to provide a steady supply": "从地下抽水以提供稳定的供应",
+    "Pumps water from underground to provide a steady supply": "从地下抽水以提供稳定的水供应",
     "Water Storage": "水存储设施",
     "Provides water storage": "提供水资源的存储功能",
     "Battery": "电池",
@@ -382,7 +382,7 @@ var cnItems = {
     "Park Zone": "公园",
     "A zone with rich greenery provides a way to relax for your people": "一片绿意盎然的区域，为您的人民提供放松的方式",
     "Bio Laboratory": "生物实验室",
-    "Provides even more research storage and boost research output by 5% multiplicatively": "提供更多的研究存储空间，并使研究产量提升 5%",
+    "Provides even more research storage and boost research output by 5% multiplicatively": "提供更多的研究上限，并使研究产量提升 5%",
     "Forest Plant": "森林",
     "Rich forest area that generates oxygen": "一片美丽的森林，能够产出氧气",
     "Smelter": "冶炼厂",
@@ -614,7 +614,7 @@ var cnItems = {
     "Organics utilization": "有机物优化",
     "Economy Boost": "经济提升",
     "More Storage": "更多存储空间",
-    "Breath In": "吸气",
+    "Breath In": "呼吸",
     "Basic habitability requirements": "基本宜居性要求",
     "Final preparation": "最后的准备",
     "First colonists": "第一批殖民者",
@@ -637,6 +637,8 @@ var cnItems = {
     "Spaceship Building": "宇宙飞船建造",
     "New Horizons": "新的地平线",
     "When you colonize new planet you get XP for finishing current one. XP provides some multiplicative bonus to your KP gain when transmit knowledge. Your KP and Transmit Knowledge upgrades persist": "当你殖民新的星球时，你会根据当前的星球获得经验点。经验点会在你获得知识时提供乘算的加成。你的知识和传输知识升级在殖民星球时会保留",
+    
+    //传输知识
     "Drone Mastery": "无人机精通",
     "Learn how to use your drone with more efficiency. Every point increases the output from drone actions by 20%": "了解如何更高效地使用无人机。每级使无人机操作的产量增加 20%",
     "Drone Solar Panel": "无人机太阳能电池板",
@@ -675,6 +677,8 @@ var cnItems = {
     "Know when to de-escalate, know when to intervene. Every point decreases security requirements by 4": "您了解如何缓和剑拔弩张的气氛。每级使安保消耗降低 4",
     "Healthcare Consumption": "医疗消耗",
     "You know how to review a candidate for a future colony, and how to act when things go wrong. Every point decreases healthcare requirements by 4": "你知道如何审查未来殖民地的候选人，以及当出现问题时如何采取行动。每级使医疗消耗降低 4",
+    
+    //左侧鼠标提示
     "Complete": "完成",
     "Resource:": "资源：",
     "Upgrade:": "升级：",
@@ -682,6 +686,8 @@ var cnItems = {
     "Building:": "建筑：",
     "Population": "人口",
     "Knowledge Upgrade:": "知识升级：",
+
+    //法律
     "Experimental medicine": "实验性医学",
     "Regulates the use of experimental drugs": "规范实验性药物的使用",
     "Forbid All": "禁止",
@@ -1153,7 +1159,7 @@ var cnItems = {
     "You will lose all your resources, upgrades, buildings and science. But you will transmit your knowledge to next colonizers, making their progress much faster.": "您将失去所有的资源、升级、建筑和科学。但你会将你的知识传递给下一个殖民者，使他们的进步更快。",
     "You will earn": "您将获得",
     "knowledge points (based on your current population) that can be used to purchase various upgrades": "知识点，可用于购买各种升级（获取量根据您当前的人口计算）",
-    "Are you sure?": "您确定吗",
+    "Are you sure?": "您确定吗？",
     "Transmit Knowledge and leave the planet": "传播知识并离开这颗星球",
     "Great Radio Transmitter": "大型无线电发射机",
     "Colonize Planets": "殖民星球",
@@ -1162,7 +1168,7 @@ var cnItems = {
     "multiplier to your KP gain": " 的加成",
     "You will lose all your resources, upgrades, buildings and science. Knowledge points and upgrades you already have will persist. You won't receive any transmit knowledge but you will receive": "您将失去所有的资源、升级、建筑和科学。知识和已购买的传输知识升级会保留。你不会获得任何新的知识，但你会获得",
     "XP points. Your KP gain multiplier will be X": "经验点数。你的知识获取倍率会变为 x",
-    "Are you sure?": "你确定吗？",
+    "Are you sure?": "您确定吗？",
     "Days per year:": "每年天数：",
     "Seasons:": "季节：",
     "Cost": "成本",
@@ -1208,7 +1214,7 @@ var cnItems = {
     "Max XP Gain (per prestige)": "历史最高经验点获取（单次重置）",
     "Maximum Colonists": "历史最高殖民者人数",
     "Maximum Happiness": "历史最高幸福度",
-    "General": "一般的",
+    "General": "总体",
     "Empty and cold here": "这里空旷且寒冷",
 
     //启动等待文本
