@@ -686,7 +686,7 @@ var cnItems = {
     "Regulates the use of experimental drugs": "规范实验性药物的使用",
     "Forbid All": "禁止",
     "Clinics are working in a regular way, providing service using only reliable and tested methods": "诊所以正常的方式运作，只使用可靠的传统的方法提供医疗服务",
-    "Allow All": "全部允许",
+    "Allow All": "允许",
     "Using experimental medicine reduces healthcare from clinics, but they also provide a boost to max research": "使用实验性的医疗方案，这会降低诊所的医疗加成，但也会让诊所提供研究上限",
     "Water Filtering Control": "水过滤控制",
     "Changes the water filtration method": "改变水过滤方法",
