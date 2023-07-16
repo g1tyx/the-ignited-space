@@ -584,7 +584,7 @@ var cnItems = {
     "Low temperatures can significantly reduce molecule decay rates. Learn how to use it to generate more sophisticated organics": "低温可以显著降低分子衰变率。了解如何使用它来生成更复杂的有机物",
     "Neutrino Physics": "中微子物理学",
     "Neutrinos are particles that interacts with other matter very weakly. Learn how to use it for your civilization development": "中微子是与其他物质相互作用非常弱的粒子。了解如何将其用于您的文明发展",
-    "Quark Physics": "夸克物理",
+    "Quark Physics": "夸克物理学",
     "Learn more about what matter is made of": "了解更多关于物质基本结构的知识",
     "Cryogenics": "低温学",
     //下面这句应该是要改
