@@ -1341,6 +1341,7 @@ var cnPrefix = {
     "Upgrade: ": '升级：',
     "Job: ": '工作：',
     "Crafting: ": '制造：',
+    "Goal:": "目标：",
 }
 
 //需处理的后缀
