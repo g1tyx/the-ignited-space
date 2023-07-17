@@ -597,8 +597,8 @@ var cnItems = {
     "Using your knowledge about what protons and neutrons consists of you can learn more about nuclear manipulations": "利用您对质子和中子组成的知识，您可以深入把控核反应的细节",
     
     //目标
+    "Complete": "完成",
     "Crafting": "制造",
-    "Crafting:": "制造：",
     "Power up": "通电",
     "Drill some stone": "开采一些石头",
     "Repair facilities": "维修设备",
@@ -677,15 +677,6 @@ var cnItems = {
     "Know when to de-escalate, know when to intervene. Every point decreases security requirements by 4": "您了解如何缓和剑拔弩张的气氛。每级使安保消耗降低 4",
     "Healthcare Consumption": "医疗消耗",
     "You know how to review a candidate for a future colony, and how to act when things go wrong. Every point decreases healthcare requirements by 4": "你知道如何审查未来殖民地的候选人，以及当出现问题时如何采取行动。每级使医疗消耗降低 4",
-    
-    //左侧鼠标提示
-    "Complete": "完成",
-    "Resource:": "资源：",
-    "Upgrade:": "升级：",
-    "Research:": "研究：",
-    "Building:": "建筑：",
-    "Population": "人口",
-    "Knowledge Upgrade:": "知识升级：",
 
     //法律
     "Experimental medicine": "实验性医学",
@@ -1341,7 +1332,14 @@ var cnPrefix = {
     "Upgrade: ": '升级：',
     "Job: ": '工作：',
     "Crafting: ": '制造：',
-    "Goal:": "目标：",
+    "Goal: ": "目标：",
+
+    //
+    "Resource: ": "资源：",
+    "Upgrade: ": "升级：",
+    "Research: ": "研究：",
+    "Building: ": "建筑：",
+    "Knowledge Upgrade:": "知识升级：",
 }
 
 //需处理的后缀
