@@ -502,7 +502,7 @@ var cnItems = {
     "Learn about engineering specific to high gravity conditions": "学习如何在高重力条件下开展工程",
     "Exo Biology": "外星生物学",
     "Learn more about local organisms": "更深入地了解这里的生物",
-    "Exo Forestry": "外来林业",
+    "Exo Forestry": "外星林业",
     "Learn how to grow something bigger in this empty terrain": "了解如何在这片空旷的土地上种植更大的东西",
     "Metallurgy": "冶金",
     "Learn how to work with exotic ores. Unlocks crafting and artisan job": "了解如何处理外来矿石。解锁手工艺和工匠工作",
