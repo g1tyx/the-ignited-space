@@ -284,7 +284,7 @@ var cnItems = {
     "Impulse Engine": "脉冲发动机",
     "Replace traditional fuel burning with modern approach, based on ionized plasma stream accelerated by powerful magnetic field. Further reduces rocket consumption by 20% for all space structures and ships": "将传统燃料替换为用强大磁场加速的等离子流。所有空间建筑和飞船的火箭消耗降低 20%",
     "Transistor Photo-Printing": "晶体管光刻技术",
-    "Use photolithography to boost your computers production by 20%": "使用超精细的光刻技术，将电脑产量提升 20%",
+    "Use photolithography to boost your computers production by 20%": "使用光刻技术，将电脑产量提升 20%",
     "UV-Polymerisation": "紫外聚合",
     "Use ionizing radiation for more efficient polymers generation. Improves plastic and rubber output by 10%": "使用电离辐射更有效地生成聚合物。塑料和橡胶产量提升 10%",
     "Bulletproof polymers": "防弹聚合物",
