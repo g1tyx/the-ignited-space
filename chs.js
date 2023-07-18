@@ -276,7 +276,7 @@ var cnItems = {
     "Gravitational Lensing Study": "引力透镜研究",
     "Learn more about the powerful physical effect from massive celestial bodies that causes the curvature of spacetime. Provides more knowledge about the universe and surrounding stars and boosts space telescope effect by 40%": "进一步研究大质量天体导致时空弯曲的物理效应，以获得更多关于宇宙及周围恒星的知识。太空望远镜的研究上限提升40%",
     "Radiative Dissociation": "辐射解离",
-    "Using radiation can improve dissociation process, improving your electrolytes efficiency.  Improves your power storage facilities by 20%.": "使用辐射可以改良电解流程，提高电解质效率。电力上限提升 20%。",
+    "Using radiation can improve dissociation process, improving your electrolytes efficiency.  Improves your power storage facilities by 20%.": "使用辐射可以改良电解流程，提高电解质效率。电力上限提升 20%",
     "Radiative Catalyzation": "辐射催化",
     "Use radiation in chemical reactions to boost your fuel output by 20%": "在化学反应中使用辐射进行催化。燃料产量提升 20%",
     "Plasma Knife": "等离子刀",
