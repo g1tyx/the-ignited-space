@@ -1144,7 +1144,7 @@ var cnItems = {
     "Negative Effect": "负面影响",
     "Positive Effect": "正面作用",
     "None": "无",
-    "Space Constructions": "空间构造",
+    "Space Constructions": "太空建筑",
     "Transmit Knowledge Upgrades:": "传输知识升级：",
     "Cost": "成本",
     "Transmit knowledge": "传输知识",
