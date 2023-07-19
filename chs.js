@@ -594,7 +594,7 @@ var cnItems = {
     "Learn more about specific of your colonists and other organisms living in space.": "详细了解您的殖民者和生活在太空中的其他生命的具体情况",
     "Nano-Biology": "纳米生物学",
     "Use your previous researches in biology, nanophysics and photochemistry to investigate organisms and viruses creation": "利用您在生物学、纳米物理学和光化学方面的研究积累，研究生物体和病毒的制造",
-    "Advanced Nuclear Research": "先进核研究",
+    "Advanced Nuclear Research": "高级核反应研究",
     "Using your knowledge about what protons and neutrons consists of you can learn more about nuclear manipulations": "利用您对质子和中子组成的知识，您可以深入把控核反应的细节",
     
     //目标
