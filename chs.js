@@ -574,7 +574,7 @@ var cnItems = {
     "Particle Physics": "粒子物理学",
     "Learn more about elementary particles": "了解有关基本粒子的更多信息",
     "Advanced Space Construction": "高级太空建筑学",
-    "Learn more about building in space": "研究如何在太空中建造更稳定、可靠的建筑",
+    "Learn more about building in space": "研究如何在太空中建造稳定、可靠，能让人长时间居住的建筑。这可能需要用到一种全新的材料",
     "Advanced Thermodynamics": "高级热力学",
     "Advance your knowledge about high temperature environments": "增进您对高温环境的了解",
     "Exoplanet Science": "系外行星科学",
