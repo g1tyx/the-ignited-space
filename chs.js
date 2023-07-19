@@ -112,7 +112,6 @@ var cnItems = {
     "Aesthetics": "美观度",
     "Security": "安保",
     "Religion": "宗教",
-    "Never": "永不",
     
     //升级
     "Repair Drill": "修理钻头",
@@ -950,6 +949,7 @@ var cnItems = {
     "Temperature modifier: Very Cold": "温度加成：很冷",
     "Temperature modifier: Extremely Cold": "温度加成：极冷",
 
+    //资源提示
     "Expand": "展开",
     "Collapse": "折叠",
     "Goal:": "目标：",
@@ -973,7 +973,7 @@ var cnItems = {
     "Hold Ctrl to decrease to 0": "按住 Ctrl 键减少到 0",
     "Hold Shift to increase by 5": "按住 Shift 键增加 5",
     "Hold Ctrl to increase to": "按住 Ctrl 键增加到 ",
-    "Never": "从不",
+    "Never": "永不",
     "K": "K",
     "M": "M",
     "B": "B",
