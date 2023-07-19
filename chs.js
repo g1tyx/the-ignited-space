@@ -50,11 +50,13 @@ var cnItems = {
     "Religion Consumption": "宗教消耗",
     "Security Consumption": "安保消耗",
     
-    //未来可能用到的词条
-    "Start": "开始",
-    "Production": "生产",
+    //传输知识升级的模块名
+    "Start": "开局",
+    "Production": "资源产量",
     "Capacity": "资源上限",
     "Colony": "殖民地",
+
+    //
     "Crust": "地壳",
     "Gravity": "重力",
     "Size": "大小",
