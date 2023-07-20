@@ -668,7 +668,7 @@ var cnItems = {
     "Gas & Liquid Capacity": "气体和液体容量",
     "You know how important full oxygen tank and filled water storage is. Every point boosts oxygen and water capacity by 4%": "您知道时刻保持氧气和水储量充足是多么重要。每级使水和氧气上限增加 4%",
     "Research Capacity": "研究容量",
-    "Pursuit of knowledge never stops for someone as cursious as you. Every point increases research capacity by 4%": "对于像您这样充满好奇心的人来说，对知识的追求永远不会停止。每级使研究上限增加 4%",
+    "Pursuit of knowledge never stops for someone as cursious as you. Every point increases research capacity by 4%": "对于像您这样充满好奇心的人来说，求知之路是永无止境的。每级使研究上限增加 4%",
     "Aesthetics Consumption": "美观度消耗",
     "Pretty environment is surprisingly effective at boosting productivity. Every point decreases aesthetics requirements by 4": "美丽的环境对于提高生产力有着惊人的效果。每级使美观度消耗降低 4",
     "Entertainment Consumption": "娱乐消耗",
