@@ -341,7 +341,7 @@ var cnItems = {
     "Nano Biobots": "纳米生物机器人",
     "Using biobots can help curing a lot of diseases. Gain +10% to clinic efficiency": "运用生物机器人可以治愈非常多的疾病。诊所的产量提升 10%",
     "High Energy Plasma Knife": "高能等离子刀",
-    "Better control over nuclei decay allows you create more high-energy plasma knifes, further boosting plate and wire production": "更好地控制原子核衰变，您可以制造更多高能等离子刀，进一步提高金属板和电线的产量",
+    "Better control over nuclei decay allows you create more high-energy plasma knifes, further boosting plate and wire production": "通过更好地控制原子核衰变，您可以制造含有更强大能量的等离子刀，进一步提高金属板和电线的产量",
     "Nuclear Synthesis Control": "核合成控制",
     "Good knowledge about thermonuclear reactions allows you better localize your reactions centers, reducing load on the reactor walls. Allows you cheapen thermonuclear reactors by 50%": "对热核反应的深入了解可以让您更好地定位反应中心，减少反应堆壁上的负载。热核发电站的建造和升级成本降低 50%",
     "Upgrade:": "升级：",
