@@ -1718,7 +1718,7 @@ var cnRegReplace = new Map([
 
     //
     [/^Happiness: (.+)$/, '幸福度：$1'],
-    [/^, x(.+)from max level beaten in fights$/, '，x(.+)来自最高通过的战斗关卡数'],
+    [/^, x(.+)from max level beaten in fights$/, '，x$1 来自最高通过的战斗关卡数'],
 
     /*
     [/^Building: (.+)$/, '建筑：$1'],
