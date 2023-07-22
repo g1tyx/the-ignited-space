@@ -1353,18 +1353,19 @@ var cnItems = {
     "Durability: ": "耐久度：",
     "Damage: ": "伤害：",
     "Weapon cooldown: ": "武器冷却时间：",
-    "Selected fleet: ": "选中的舰队：",
+    //"Selected fleet: ": "选中的舰队：",
     "Autofight": "自动战斗",
     "Auto-advance": "自动前进",
     "Durability and Dmg. bonus: ": "耐久度和伤害加成：",
     "Level: ": "等级：",
     "Your pilot XP is transferred along with other knowledge, so it won't reset on prestige": "你的飞行员经验会和其他知识和经验一同传输，因此重置时飞行员经验不会重置",
-    "Pilot level: ": "飞行员等级：",
+    //"Pilot level: ": "飞行员等级：",
     "Stop": "停止",
-    "Time to reach opponent: ": "距离接触敌人：",
-    "Fuel consumption: ": "燃料消耗：",
+    //"Time to reach opponent: ": "距离接触敌人：",
+    //"Fuel consumption: ": "燃料消耗：",
     "Start Fight": "开始战斗",
     "Select fleet to fight": "选择舰队进行战斗",
+    "to XP and KP gain this run based on max level": " 本轮的知识或经验获取量",
 
     //太空页子标签
     "Space Constructions": "太空建筑",
@@ -1580,6 +1581,12 @@ var cnPrefix = {
     "Research: ": "研究：",
     "Building: ": "建筑：",
     "Knowledge Upgrade:": "知识升级：",
+
+    //
+    "Selected fleet: ": "选中的舰队：",
+    "Pilot level: ": "飞行员等级：",
+    "Time to reach opponent: ": "距离接触敌人：",
+    "Fuel consumption: ": "燃料消耗：",
 }
 
 //需处理的后缀
