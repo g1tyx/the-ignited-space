@@ -648,7 +648,7 @@ var cnItems = {
     "Power Mastery": "电力精通",
     "Your experience with electrical grids helps with power optimization. Every point boosts power production by 4%": "您在电网方面的经验有助于优化发电过程。每级使电力产量增加 4%",
     "Mining Mastery": "采矿精通",
-    "Striking the earth can be done in a wide variety of ways. Every point boosts stone, ore, iron and platinum production by 4%": "对矿物的进一步开发可以用多种方式完成。每级使石头、矿石和铂金产量增加 4%",
+    "Striking the earth can be done in a wide variety of ways. Every point boosts stone, ore, iron and platinum production by 4%": "对矿物的进一步开发可以用多种方式完成。每级使石头、矿石、金属和铂金产量增加 4%",
     "Nature Mastery": "自然精通",
     "Extensive knowledge of biology and farming helps with spreading greenery on inhospitable worlds. Every point boosts biomass, wood and nutrition production by 4%": "额外的生物学和农业知识有助于在荒凉的世界上种植绿色植物。每级使生物质、木材和营养物质产量增加 4%",
     "Gas & Liquid Mastery": "液体和气体精通",
