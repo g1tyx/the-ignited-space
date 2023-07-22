@@ -1367,11 +1367,11 @@ var cnItems = {
     "Select fleet to fight": "选择舰队进行战斗",
 
     //太空页子标签
-    "Space Constructions": "",
-    "Space Ships": "",
-    "Space Hangar": "",
-    "Fleets": "",
-    "Battles": "",
+    "Space Constructions": "太空建筑",
+    "Space Ships": "飞船",
+    "Space Hangar": "船坞",
+    "Fleets": "舰队",
+    "Battles": "战斗",
 
     //重置页
     "Transmit Knowledge Upgrades:": "传输知识升级：",
