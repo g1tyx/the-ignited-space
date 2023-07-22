@@ -1314,6 +1314,7 @@ var cnItems = {
     "Positive Effect": "正面作用",
 
     //太空页
+    "+ Create New": "创建新型号",
     "You can\'t delete model since you have spaceships purchased": "无法删除该型号，因为还有该型号的飞船",
     "Delete model": "删除型号",
     "X": "X",
