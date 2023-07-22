@@ -1394,8 +1394,9 @@ var cnItems = {
     "multiplier to your KP gain": " 的加成",
     "You will lose all your resources, upgrades, buildings and science. Knowledge points and upgrades you already have will persist. You won't receive any transmit knowledge but you will receive": "您将失去所有的资源、升级、建筑和科学。知识和已购买的传输知识升级会保留。您不会获得任何新的知识，但您会获得",
     "XP points. (x": "经验点数（x",
-    "from planet difficulty , x": "来自星球难度，x",
-    "from max level beaten in fights": "来自最高通过的战斗关卡数",
+    "from planet difficulty": "来自星球难度",
+    //", x": "，x",
+    //"from max level beaten in fights": "来自最高通过的战斗关卡数",
     ") Your KP gain multiplier will be X": "）。您的知识获取倍率会变为 x",
     "Are you sure?": "您确定吗？",
     "Days per year:": "每年天数：",
@@ -1717,6 +1718,7 @@ var cnRegReplace = new Map([
 
     //
     [/^Happiness: (.+)$/, '幸福度：$1'],
+    [/^, x(.+)from max level beaten in fights$/, '，x(.+)来自最高通过的战斗关卡数'],
 
     /*
     [/^Building: (.+)$/, '建筑：$1'],
