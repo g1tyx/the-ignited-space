@@ -1221,7 +1221,7 @@ var cnItems = {
     "You start with broken ship on hostile planet. Your main goal is to prepare for first colonists to arrive, and build prosperous civilisation": "您身处一颗环境恶劣的星球，开始时身边只有一艘破损的飞船。您的主要目标是为第一批殖民者的到来做好准备，并逐步建设起繁荣的文明。",
     "By Strange Matter Gaming": "作者：Strange Matter Gaming",
     "Support on Patreon": "在 Patreon 上支持作者",
-    "Join our Discord": "加入我们的 Discord 频道",
+    "Join our Discord": "加入 Discord 频道",
 
     //更新日志正文
 
