@@ -692,7 +692,7 @@ var cnItems = {
     "Improve your mastery in synthetic organisms creation": "提高您在合成生物体制造方面的技术",
     "Degenerate Matter": "简并物质",
     "Learn more about degenerate matter state, and ways to use it in your production cycles": "了解有关简并物质态的更多信息，以及在生产流程中使用它的方法",
-    "Expanded Particle Theory": "膨胀粒子理论",
+    "Expanded Particle Theory": "扩展粒子理论",
     "Invest your research efforts into understanding more particle physics": "将您的研究精力投入到进一步研究粒子物理学上",
     "Bose Einstein Condensate": "玻色-爱因斯坦凝聚",
     "Learn more about specific matter state under extremely low temperatures": "了解有关极低温度下特定物质状态的更多信息",
