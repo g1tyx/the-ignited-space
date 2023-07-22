@@ -1225,6 +1225,10 @@ var cnItems = {
 
     //更新日志正文
 
+    //v0.2.0a更新日志
+    "Fixed bug related to building/scrapping ships": "修复了关于建造/摧毁飞船的bug",
+    "Fixed bug prevented XP bonus from fights to work in some cases": "修复了部分情况下战斗的经验加成不生效的bug",
+
     //v0.2.0更新日志
     "Almost 20 new late game researches and tones of upgrades": "增加了大约 20 种后期科技，以及大量的升级",
     "New game mechanics - space fights": "增加了新的游戏机制——太空战斗",
@@ -1495,6 +1499,7 @@ var cnItems = {
     "Hide resources": "隐藏资源",
 
     //更新日志标题
+    "v0.2.0a Hotfix Update": "v0.2.0a 热更新",
     "v0.2.0 Big Update": "v0.2.0 大型更新",
     "v0.1.0c Tiny Fix": "v0.1.0c 微量 bug 修复",
     "v0.1.0b Small Fixes": "v0.1.0b 小型 bug 修复",
