@@ -1356,7 +1356,7 @@ var cnItems = {
     //"Selected fleet: ": "选中的舰队：",
     "Autofight": "自动战斗",
     "Auto-advance": "自动前进",
-    "Durability and Dmg. bonus: ": "耐久度和伤害加成：",
+    //"Durability and Dmg. bonus: ": "耐久度和伤害加成：",
     "Level: ": "等级：",
     "Your pilot XP is transferred along with other knowledge, so it won't reset on prestige": "你的飞行员经验会和其他知识和经验一同传输，因此重置时飞行员经验不会重置",
     //"Pilot level: ": "飞行员等级：",
@@ -1585,6 +1585,7 @@ var cnPrefix = {
     //
     "Selected fleet: ": "选中的舰队：",
     "Pilot level: ": "飞行员等级：",
+    "Durability and Dmg. bonus: ": "耐久度和伤害加成：",
     "Time to reach opponent: ": "距离接触敌人：",
     "Fuel consumption: ": "燃料消耗：",
 }
