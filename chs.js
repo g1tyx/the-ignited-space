@@ -942,7 +942,7 @@ var cnItems = {
     "Pilot XP": "飞行员经验",
     "Investigate ancient ships driving instructions and pass this knowledge to your pilots. Receive 30% multiplicative bonus to pilot XP": "研究古老的飞船驾驶技术，并将其传授给你的飞行员。飞行员经验获取量提升 30%",
     "Ships Damage": "飞船伤害",
-    "Learn more about destructive weapons that terrified whole galaxies once upon the time . Receive 20% multiplicative bonus to ships damage": "研究曾经一度威震宇宙的毁灭性太空武器。飞船伤害提升 20%",
+    "Learn more about destructive weapons that terrified whole galaxies once upon the time . Receive 20% multiplicative bonus to ships damage": "研究曾一度威震宇宙的毁灭性武器技术。飞船伤害提升 20%",
     "Ships Durability": "飞船耐久度",
     "Learn more about trading civilizations technologies that had to protect their ships from aggressive barbarian in order to survive. Receive 20% multiplicative bonus to ships durability": "研究商业文明用于保护飞船免受野蛮的太空海盗侵袭的技术。飞船耐久度提升 20%",
     
