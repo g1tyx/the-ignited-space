@@ -497,7 +497,7 @@ var cnItems = {
     "Orbital Tourism Center": "轨道旅游中心",
     "Small space station that provides some entertainment and aesthetics to your people": "一座专门的小型空间站，为您的殖民地提供娱乐和美观度加成",
     "Space Telescope": "太空望远镜",
-    "Provides research capacity bonus": "提供研究能力加成",
+    "Provides research capacity bonus": "提供研究上限加成",
     "Ice Melting Station": "融冰站",
     "Melts ice on your cold satellite to obtain water": "融化冰冷卫星上的冰，以获得水",
     "Fuel Factory": "燃料工厂",
