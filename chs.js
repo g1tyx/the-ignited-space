@@ -260,7 +260,7 @@ var cnItems = {
     "Laser Cutting": "激光切割",
     "Using lasers to cut out metal parts significantly simplifies plates and wires production. Increased plate and wire production by 10%": "使用激光切割金属零件，显著简化金属板和电线的生产。金属板和电线产量提升 10%",
     "Better Photo-Elements": "改良光电元件",
-    "Improved photo-element technology allows you to boost solar satellites and solar panels output by 20%": "改进光电元件技术。太阳能卫星和太阳能电池板的产量提升 20%",
+    "Improved photo-element technology allows you to boost solar satellites and solar panels output by 20%": "改进光电元件技术。太阳能卫星和太阳能电池板的产量提升 10%",
     "Improved Lithography": "改良平版印刷",
     "New methods of lithography improve assembling processes. Boosts computers production by 10%": "新的印刷方法改进了组装工艺。电脑产量提升 10%",
     "Great Radio Transmitter": "大型无线电发射机",
