@@ -948,7 +948,7 @@ var cnItems = {
     
     //
     "Default": "默认",
-    "XP Upgrade: ": "经验升级：",
+    //"XP Upgrade: ": "经验升级：",
     "None": "无",
     "AD": "AD",
     "TOI": "TOI",
@@ -1585,6 +1585,7 @@ var cnPrefix = {
     "Research: ": "研究：",
     "Building: ": "建筑：",
     "Knowledge Upgrade:": "知识升级：",
+    "XP Upgrade: ": "经验升级：",
 
     //
     "Shield: ": "护盾：",
