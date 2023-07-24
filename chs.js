@@ -192,7 +192,7 @@ var cnItems = {
     "Broad-Leaved Forests": "阔叶林种植",
     "Start planting trees with broad leaves. Forests plants generate oxygen": "学习在这颗星球上种植阔叶林。这种森林将会产生氧气",
     "Wooden Furniture": "木制家具",
-    "Using wooden furniture allows housing an extra colonist in every cabin": "使用木制家具。每个小屋可以容纳一名额外的殖民者",
+    "Using wooden furniture allows housing an extra colonist in every cabin": "使用木制家具。每个住宅模块可以容纳一名额外的殖民者",
     "Metal Tools": "金属制工具",
     "Create metal tools to improve wood output of foresters by 50%": "制造金属工具，使林务员的木材产量提升 50%",
     "Metal Machine Parts": "金属制机械零件",
