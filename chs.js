@@ -1414,7 +1414,7 @@ var cnItems = {
     "from planet difficulty": "来自星球难度和升级",
     //", x": "，x",
     //"from max level beaten in fights": "来自最高通过的战斗关卡数",
-    ") Your KP gain multiplier will be X": "）。您的知识获取倍率会变为 x",
+    //") Your KP gain multiplier will be X": "）。您的知识获取倍率会变为 x",
     "Are you sure?": "您确定吗？",
     "Days per year:": "每年天数：",
     "Seasons:": "季节：",
