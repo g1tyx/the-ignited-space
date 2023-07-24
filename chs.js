@@ -1224,51 +1224,57 @@ var cnItems = {
     "Join our Discord": "加入 Discord 频道",
 
     //更新日志正文
-
-    //v0.2.0a更新日志
+    //v0.2.0a
     "Fixed bug related to building/scrapping ships": "修复了关于建造/摧毁飞船的bug",
     "Fixed bug prevented XP bonus from fights to work in some cases": "修复了部分情况下战斗的经验加成不生效的bug",
-
-    //v0.2.0更新日志
+    //v0.2.0
     "Almost 20 new late game researches and tones of upgrades": "增加了大约 20 种后期科技，以及大量的升级",
     "New game mechanics - space fights": "增加了新的游戏机制——太空战斗",
     "Added 2nd layer prestige upgrades": "增加了需消耗经验点数购买的升级",
     "Some calculations fixes and optimizations": "部分建筑物性能调整和bug修复",
-
-    //v0.1.0更新日志
+    //v0.1.0c
     "Fixed issue when materials with 0 capacity could be produced": "修复可以生产上限为 0 的材料的问题",
+    //v0.1.0b
     "Fixed issue when false warning on building efficiency dropped appeared": "修复了建筑效率下降时出现错误警告的问题",
     "Fixed layout issue on smaller screens": "修复了较小屏幕上的布局问题",
+    //v0.1.0a
     "Added warning on buildings running on lower efficiency": "添加了对低效率运行的建筑物的警告",
     "Updated formula to calculate XP bonus": "更新了计算 XP 奖励的公式",
+    //v0.1.0
     "Added new late game content": "添加了新的游戏后期内容",
     "Fixed/changed some goals": "修正/改变了一些目标",
     "Changed game loading mechanism to prevent data loss": "更改游戏加载机制以防止数据丢失",
     "Implemented statistics page": "实现统计页面",
     "Fixed some buildings prices": "修复了一些建筑物的价格",
     "Updated second prestige layer - fixed some formulas": "更新了第二个重置级别 - 修复了一些公式",
-    "Weather": "天气",
-    "Expeditions": "探险",
+    'Added "Weather" mechanics, available on some planets': "加入了“天气”机制，在某些行星上可用",
+    'Increased "Expeditions" rewards': "提升了探险战利品的数量",
     "Small UI and QoL fixes": "一些小的 UI 和 QoL 修复",
+    //v0.0.5c
     "Continued goals": "增加了后续目标",
     "Fixed some bugs in buildings bonuses": "修复了建筑物奖励中的一些错误",
     "Fixed some bugs in prestige mechanics": "修复了重置机制中的一些错误",
+    //v0.0.5b
     "Increased some buildings efficiency": "提高了一些建筑物的效率",
     "You can now press Shift or Ctrl to batch enable/disable buildings": "您现在可以按 Shift 或 Ctrl 批量启用/禁用建筑物",
     "Fixed UI bug on mobile on pages with small amount of content": "修复了移动设备上内容较少的页面上的 UI 错误",
     "Fixed some other small bugs": "修复了其他一些小错误",
+    //v0.0.5a
     "Fixed descriptions for some prestige upgrades": "修复了一些重置升级的描述",
     "Fixed bug when Organics mastery was missing": "修复了有机物精通缺失时的错误",
     "Fixed layout issues on some devices": "修复了某些设备上的布局问题",
     "Fixed bug in formula for second layer prestige bonus calculation": "修复了第二层重置奖励计算公式中的错误",
+    //v0.0.5
     "Added new late game content": "添加了新的游戏后期内容",
     "Added second prestige level": "增加了第二个重置级别",
     "Increased factories bonuses": "增加工厂奖励",
     "Decreased some upgrades bonuses": "减少了一些升级奖励",
     "Fixed weird scroll behaviour on mobile": "修复了移动设备上奇怪的滚动行为",
     "Fixed some prestige upgrades descriptions": "修复了一些重置升级描述",
+    //v0.0.4a
     "Fixed display on album-oriented screens": "修复了在面向专辑的屏幕上的显示",
     "Fix bug with building efficiency calculation": "修复建筑效率计算的错误",
+    //v0.0.4
     "Add few new researches and buildings": "增加了一些新的研究和建筑物",
     "Added highlight for buildings that use howered resource": "鼠标移动到资源上时，需要使用它的项目将会高亮",
     "Expedition button now on the top": "探险按钮现在位于顶部",
@@ -1276,33 +1282,43 @@ var cnItems = {
     "Colonists now assigned automatically to artisans once you run out of free crafters but have free colonists": "一旦您用完免费工匠但有免费殖民者，殖民者现在会自动分配给工匠",
     "Warehouses now provide nutrition capacity": "仓库现在提供营养能力",
     "Fixed descriptions": "修复描述",
+    //v0.0.3b
     "Items that require more capacity are now highlighted differently": "需要更多资源上限的项目现在以不同的方式突出显示",
     "Added mobile support (Experimental and might be buggy)": "添加了移动端支持（实验性，可能存在问题）",
+    //v0.0.3a
     "Fixed bugs with expeditions": "修复了探险的错误",
+    //v0.0.3
     "Added notifications for new buildings/upgrades/laws": "增加了新建筑/升级/法律的通知",
     "Re-balanced some buildings: Smelters and Monuments prices reduces, increased Smelter ore upkeep, removed Warehouse power upkeep": "重新平衡一些建筑物：冶炼厂和纪念碑价格降低，提升冶炼厂矿石消耗，删除仓库电力消耗",
     "Added new laws": "增加了新的法律",
     "Added expedition length settings": "增加了探险时长设置",
     "Added 2 new science researches, 3 upgrades and 1 building": "增加了 2 个新的科学研究、3 个升级和 1 个建筑",
     "Fixed some mistakes in descriptions": "修正了描述中的一些错误",
+    //v0.0.2d
     "Edited upgrade descriptions": "优化部分升级的说明",
     "Fixed bug when not active expedition centers provided boost to expedition multiplier": "修复了未开启的探险中心依然提供探险倍率提升的错误",
     "Fixed bug when locked resources still were displaying in bonuses or requirements list": "修复了未解锁的资源仍然显示在奖励或需求列表中的错误",
-    "Expedition center now also requires Geography research": "探险中心需要前置地理学研究",
+    //v0.0.2c 
+    "Expedition center now also requires Geography research": "探险中心现在也需要完成地理学研究作为前置",
     "Fixed descriptions of some upgrades": "修复了一些升级的描述",
-    "Expeditions": "探险",
+    //v0.0.2b
+    'Added "Expeditions" - active way to speed up getting resources': "增加了“探险”机制——一种主动获取资源的手段",
+    //v0.0.2a
     "Inverted colors for in-progress items": "正在进行中的项目会反色显示",
     "Available actions are now highlighted on hover": "可用的操作现在在悬停时突出显示",
     "Items that will never be available now highlighted in different color": "以目前状态无论等待多久都不可用的项目现在以不同颜色突出显示",
     "Controls are shown disabled now when they not available": "控件在不可用时显示为已禁用",
+    //v0.0.2
     "Added prestige mechanics": "增加重置机制",
     "Added new early space content (researches, buildings)": "增加新的早期太空内容（研究、建筑）",
     "Negative and capped resources are now highlighted": "净产量为负的资源和达到上限的资源现在突出显示",
     "Fixed bug when max colonists amount could be not integer value": "修复了最大殖民者数量可能不是整数的错误",
+    //v0.0.1a
     "Added highlight on missing resource when hower over building/upgrade/research": "在建造/升级/研究处添加了对所缺少资源的突出显示",
     "Popups will now appear always to right": "弹出窗口将会出现在画面右侧",
     "Changed size and background for buildable/upgradeable items to make them easier to see/click": "更改了可建造/可升级物品的大小和背景，使其更易于查看/点击",
     "Added manual save and hard reset buttons": "增加手动保存和硬重置按钮",
+    //v0.0.1 
     "Approximately 48 hours of playable content": "大约 48 小时的可游玩内容",
     "Basic game mechanics: buildings, researches, upgrades, colony management": "基本游戏机制：建筑、研究、升级、殖民地管理",
 
@@ -1380,6 +1396,7 @@ var cnItems = {
 
     //重置页
     "Transmit Knowledge Upgrades:": "传输知识升级：",
+    'Transmit knowledge only available once you have more than 50 colonizers and did "Great Radio Transmitter" under landing zone upgrades section': "传输知识只在您拥有超过50位殖民者，并完成了大型无线电发射机的升级之后，才可用",
     "Cost": "成本",
     "Transmit knowledge": "传输知识",
     "You will lose all your resources, upgrades, buildings and science. But you will transmit your knowledge to next colonizers, making their progress much faster.": "您将失去所有的资源、升级、建筑和科学。但您会将您的知识传递给下一个殖民者，使他们的进步更快。",
@@ -1519,12 +1536,7 @@ var cnItems = {
     "v0.0.2a Small UI updates": "v0.0.2a 小型 UI 更新",
     "v0.0.2 Prestige mechanics & New content": "v0.0.2 重置机制和新内容",
     "v0.0.1a UI and small features update": "v0.0.1a UI 和小型功能更新",
-    "v0.0.1 First Playable Prototype": "v0.0.1 首个可玩的原型版本",
-    'Added "Weather" mechanics, available on some planets': "加入了“天气”机制，在某些行星上可用",
-    'Increased "Expeditions" rewards': "提升了探险战利品的数量",
-    'Added "Expeditions" - active way to speed up getting resources': "增加了“探险”机制——一种主动获取资源的手段",
-    'Transmit knowledge only available once you have more than 50 colonizers and did "Great Radio Transmitter" under landing zone upgrades section': "传输知识只在您拥有超过50位殖民者，并完成了大型无线电发射机的升级之后，才可用",
-    
+    "v0.0.1 First Playable Prototype": "v0.0.1 首个可玩的原型版本",    
     
     // 图标代码，不能汉化
     "Jacorb's Games": "Jacorb's Games",
