@@ -88,7 +88,7 @@ var cnItems = {
     "Water": "水",
     "Nutrition": "营养物质",
     "Oxygen": "氧气",
-    "Wood": "木头",
+    "Wood": "木材",
     "Stone": "石头",
     "Ore": "矿石",
     "Metal": "金属",
