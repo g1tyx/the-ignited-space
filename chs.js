@@ -370,7 +370,7 @@ var cnItems = {
     "Magnetic Defect Detection": "磁性缺陷检测",
     "Use magnetic field - sensitive nanobots to control quality of your constructions. Reduces prices scaling for all buildings by another 5%": "利用对磁场极度敏感的纳米机器人来保障建筑物的质量。进一步将建筑升级时的成本提升率降低 5%",
     "High Density Pressing": "高密度压缩",
-    "Use your knowledge to implement new pressing technology for some of your building materials. Reduces bricks and plates prices by 30% per level": "对建筑材料使用全新新的压制技术。每级使建筑物建造和升级时的砖块和金属板成本降低 30%",
+    "Use your knowledge to implement new pressing technology for some of your building materials. Reduces bricks and plates prices by 30% per level": "对建筑材料使用全新的压制技术。每级使建筑物建造和升级时的砖块和金属板成本降低 30%",
     "Pressed Armor": "压缩装甲",
     "Use your knowledge about pressing materials without provoking cracks to increase your ships corpus durability. Each level increase ships durability by 25%": "利用压缩材料而不形成裂纹的技术增强您飞船的耐久度。每级使飞船耐久度提升 25%",
     "High Energy Press": "高能压缩",
