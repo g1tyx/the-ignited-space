@@ -320,7 +320,7 @@ var cnItems = {
     "Magnetic Field Generators": "磁场发生器",
     "Unlocks crafting Magnetos - portable magnetic field generators that can be used to generate magnetic field to protect your colonists from radiation": "解锁磁电机的制造。磁电机是小型的磁场发生器，可以用于保护您的殖民者免受宇宙辐射的伤害。",
     "Neutrino Detectors": "中微子探测器",
-    "Construct compact neutrino detectors and use them to investigate universe. Increase Space telescope efficiency by 25%": "建造建造紧凑型中微子探测器并用它们来研究宇宙。太空望远镜的研究上限提升 25%",
+    "Construct compact neutrino detectors and use them to investigate universe. Increase Space telescope efficiency by 25%": "制造紧凑型中微子探测器并用它们来研究宇宙。太空望远镜的研究上限提升 25%",
     "Neutrino Coolers": "中微子冷凝器",
     "Using neutrino as efficient mechanism of getting rid of excess heat allows you maintaining higher temperatures in thermonuclear power plants. Each level increase thermonuclear power plants efficiency by 5%": "使用中微子作为消除多余热量的有效手段，让热核发电站可以保持较高的温度。每级使热核发电站的电力产量提升 5%",
     "Quark Canon": "夸克炮",
