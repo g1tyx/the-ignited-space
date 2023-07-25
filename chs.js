@@ -879,7 +879,7 @@ var cnItems = {
     "Actual Durability": "实际耐久度",
     "Actual Shield": "实际护盾",
     "Actual Recharge": "实际充能",
-    "Regular": "常规船首",
+    "Regular": "常规",
     "Transport Spaceship Head": "运输船船首",
     "Plated Corpus": "装甲船体",
     "Graphene Corpus": "石墨烯船体",
