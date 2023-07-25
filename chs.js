@@ -1226,9 +1226,9 @@ var cnItems = {
     //更新日志正文
     //v0.2.0b
     "Fixed bug related to KP bonus from fights": "修复了战斗提供的知识加成有误的bug",
-    "Fixed scroll behavior for craftables list": "调整了工艺制造材料页面的滚动逻辑，现在对于大屏幕更加友好",
+    "Fixed scroll behavior for craftables list": "调整了工艺制造材料页面的显示逻辑，现在对于大屏幕更加友好",
     "Fixed display bug for XP bonus in next run": "修复了预计下轮知识加成显示错误的bug",
-    "Fixed bug when research grant law didn't impact on meteo-station when it start consuming power": "修复了购买了使其消耗电力的升级后，气象站不受法律加成的bug",
+    "Fixed bug when research grant law didn't impact on meteo-station when it start consuming power": "修复了气象站消耗电力后不受法律加成的bug",
     //v0.2.0a
     "Fixed bug related to building/scrapping ships": "修复了关于建造/摧毁飞船的bug",
     "Fixed bug prevented XP bonus from fights to work in some cases": "修复了部分情况下战斗的经验加成不生效的bug",
