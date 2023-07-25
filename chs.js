@@ -1224,6 +1224,11 @@ var cnItems = {
     "Join our Discord": "加入 Discord 频道",
 
     //更新日志正文
+    //v0.2.0b
+    "Fixed bug related to KP bonus from fights": "修复了战斗提供的知识加成有误的bug",
+    "Fixed scroll behavior for craftables list": "调整了工艺制造材料页面的显示逻辑，现在对于大屏幕更加友好",
+    "Fixed display bug for XP bonus in next run": "修复了预计下轮知识加成显示错误的bug",
+    "Fixed bug when research grant law didn't impact on meteo-station when it start consuming power": "修复了气象站消耗电力后不受法律加成的bug",
     //v0.2.0a
     "Fixed bug related to building/scrapping ships": "修复了关于建造/摧毁飞船的bug",
     "Fixed bug prevented XP bonus from fights to work in some cases": "修复了部分情况下战斗的经验加成不生效的bug",
@@ -1414,7 +1419,7 @@ var cnItems = {
     "from planet difficulty": "来自星球难度和升级",
     //", x": "，x",
     //"from max level beaten in fights": "来自最高通过的战斗关卡数",
-    //") Your KP gain multiplier will be X": "）。您的知识获取倍率会变为 x",
+    ") Your KP gain multiplier will be X": "）。您的知识获取倍率会变为 x",
     "Are you sure?": "您确定吗？",
     "Days per year:": "每年天数：",
     "Seasons:": "季节：",
@@ -1479,7 +1484,7 @@ var cnItems = {
     "One fascinating fact about the universe is that it is constantly expanding. The observations made by astronomers and physicists over the past century have shown that galaxies are moving away from each other in all directions. This discovery led to the development of the Big Bang theory, which suggests that the universe originated from a hot and dense state around 13.8 billion years ago.": "关于宇宙的一个有趣的事实是它在不断膨胀。天文学家和物理学家在过去一个世纪的观察表明，星系正在向各个方向相互远离。这一发现导致了大爆炸理论的发展，该理论表明宇宙起源于大约 138 亿年前的炎热而致密的状态。",
     "Black holes are incredibly dense regions of spacetime with gravity so strong that nothing, not even light, can escape their gravitational pull. They form when massive stars collapse under their own gravity at the end of their life cycles.": "黑洞是极其密集的时空区域，其引力如此之强，以至于任何东西，甚至光，都无法逃脱它们的引力。当大质量恒星在其生命周期结束时在自身引力作用下崩溃时，它们就形成了。",
     "Universe is composed mostly of dark matter and dark energy, which together make up about 95% of the total energy content of the cosmos.": "宇宙主要由暗物质和暗能量组成，它们合计约占宇宙总能量的95%。",
-    "Dark matter is a hypothetical form of matter that does not interact with light or other forms of electromagnetic radiation, making it invisible to our telescopes. Its presence is inferred from its gravitational effects on visible matter and the large-scale structure of the universe.": "暗物质是一种假设的物质形式，它不与光或其他形式的电磁辐射相互作用，因此我们的望远镜看不到它。它的存在是从它对可见物质和宇宙大尺度结构的引力效应推断出来的。",
+    "Dark matter is a hypothetical form of matter that does not interact with light or other forms of electromagnetic radiation, making it invisible to our telescopes. Its presence is inferred from its gravitational effects on visible matter and the large-scale structure of the universe.": "暗物质是一种假想的物质形式，它不与光或其他形式的电磁辐射相互作用，因此我们的望远镜看不到它。它的存在是从它对可见物质和宇宙大尺度结构的引力效应推断出来的。",
     "The Milky Way is estimated to be home to over 100 billion stars. This vast number of stars makes the Milky Way a typical spiral galaxy, with a relatively average size compared to other galaxies in the universe.": "据估计，银河系拥有超过 1000 亿颗恒星。如此大量的恒星使银河系成为一个典型的螺旋星系。在宇宙的星系之中，银河系的大小大约位于平均值。",
     "The closest star to the Sun is Proxima Centauri. It is a small, low-mass star located in the constellation of Centaurus, approximately 4.24 light-years away from us.": "距离太阳最近的恒星是比邻星。它是一颗位于半人马座的小型低质量恒星，距我们约 4.24 光年。",
     "The Ignited Space": "激燃太空",
@@ -1515,6 +1520,7 @@ var cnItems = {
     "Hide resources": "隐藏资源",
 
     //更新日志标题
+    "v0.2.0b Hotfix Update": "v0.2.0b 热更新",
     "v0.2.0a Hotfix Update": "v0.2.0a 热更新",
     "v0.2.0 Big Update": "v0.2.0 大型更新",
     "v0.1.0c Tiny Fix": "v0.1.0c 微量 bug 修复",
