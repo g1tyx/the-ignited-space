@@ -356,7 +356,7 @@ var cnItems = {
     "Fuel Processing Nanobots": "石油处理纳米机器人",
     "Construct nanobots catalyzing chemical reactions required for fuel generation. Each level increase fuel production 20%": "学习制造能催化生成燃料的化学反应的纳米机器人。每级使燃料产量提升 20%",
     "Quark-Gluon Knife": "夸克-胶子刀",
-    "Use quark-gluon stream to cut metal. Improves plates, wires and rockets output by 20%": "用夸克-胶子形成的粒子流切割金属。使金属板、电线和火箭产量提升 10%",
+    "Use quark-gluon stream to cut metal. Improves plates, wires and rockets output by 20%": "用夸克-胶子形成的粒子流切割金属。使金属板、电线和火箭产量提升 20%",
     "Quark-Gluon Canon": "夸克-胶子炮",
     "Learn how to create well-focused quark-gluon stream to destroy your enemies. Unlocks new weapons": "学习如何制造精准的夸克-胶子流，用于摧毁你的敌人。解锁新武器",
     "Quantum Halls Effect": "量子霍尔效应",
