@@ -353,7 +353,7 @@ var cnItems = {
     "Learn to construct new kind of nano-bots that can safely be embedded to your human body and deliver dopamine hormones. Decrease services usage by 10%": "学习制造新型纳米机器人，这种机器人可以安全地嵌入人体，并直接注入多巴胺激素。所有服务消耗降低 10%",
     "Ferment Delivery Nanobots": "酵母输送纳米机器人",
     "Learn to construct nano-bots that can delivery ferments necessary for living organisms. Each level increase biomass and wood production 20%": "学习制造可以提高有机物发酵效率的纳米机器人。每级使生物质和木材产量提升 20%",
-    "Fuel Processing Nanobots": "石油处理纳米机器人",
+    "Fuel Processing Nanobots": "燃料处理纳米机器人",
     "Construct nanobots catalyzing chemical reactions required for fuel generation. Each level increase fuel production 20%": "学习制造能催化生成燃料的化学反应的纳米机器人。每级使燃料产量提升 20%",
     "Quark-Gluon Knife": "夸克-胶子刀",
     "Use quark-gluon stream to cut metal. Improves plates, wires and rockets output by 20%": "用夸克-胶子形成的粒子流切割金属。使金属板、电线和火箭产量提升 20%",
@@ -370,7 +370,7 @@ var cnItems = {
     "Magnetic Defect Detection": "磁性缺陷检测",
     "Use magnetic field - sensitive nanobots to control quality of your constructions. Reduces prices scaling for all buildings by another 5%": "利用对磁场极度敏感的纳米机器人来保障建筑物的质量。进一步将建筑升级时的成本提升率降低 5%",
     "High Density Pressing": "高密度压缩",
-    "Use your knowledge to implement new pressing technology for some of your building materials. Reduces bricks and plates prices by 30% per level": "对建筑材料使用全新新的压制技术。每级使建筑物建造和升级时的砖块和金属板成本降低 30%",
+    "Use your knowledge to implement new pressing technology for some of your building materials. Reduces bricks and plates prices by 30% per level": "对建筑材料使用全新的压制技术。每级使建筑物建造和升级时的砖块和金属板成本降低 30%",
     "Pressed Armor": "压缩装甲",
     "Use your knowledge about pressing materials without provoking cracks to increase your ships corpus durability. Each level increase ships durability by 25%": "利用压缩材料而不形成裂纹的技术增强您飞船的耐久度。每级使飞船耐久度提升 25%",
     "High Energy Press": "高能压缩",
@@ -879,7 +879,7 @@ var cnItems = {
     "Actual Durability": "实际耐久度",
     "Actual Shield": "实际护盾",
     "Actual Recharge": "实际充能",
-    "Regular": "常规船首",
+    "Regular": "常规",
     "Transport Spaceship Head": "运输船船首",
     "Plated Corpus": "装甲船体",
     "Graphene Corpus": "石墨烯船体",
@@ -1206,6 +1206,12 @@ var cnItems = {
     "Hard reset": "硬重置",
     "This action will remove all your game data. Are you sure?": "这个操作会删除您所有的游戏数据，且不可挽回。确定要这么做吗？",
     "Wipe game data": "彻底删除游戏数据",
+    "Toggle animations": "动画开关",
+    "On": "开启",
+    "Off": "关闭",
+    "This will save game and reload page": "更改此选项会立即保存游戏并刷新网页",
+    
+    //
     "Science": "科学",
     "Economy": "经济发展",
     "Social": "社会管理",
@@ -1224,6 +1230,10 @@ var cnItems = {
     "Join our Discord": "加入 Discord 频道",
 
     //更新日志正文
+    //v0.2.0c
+    'Added "On/Off" animations option': "增加了开启/关闭飞船战斗动画的选项",
+    "Fixed white space issue": "修复了屏幕下方偶尔出现白边的bug",
+    "Fixed bug with resources display on mobile": "修复了移动端资源列表重叠的bug",
     //v0.2.0b
     "Fixed bug related to KP bonus from fights": "修复了战斗提供的知识加成有误的bug",
     "Fixed scroll behavior for craftables list": "调整了工艺制造材料页面的显示逻辑，现在对于大屏幕更加友好",
@@ -1520,6 +1530,7 @@ var cnItems = {
     "Hide resources": "隐藏资源",
 
     //更新日志标题
+    "v0.2.0c UI Hotfix Update": "v0.2.0c UI热更新",
     "v0.2.0b Hotfix Update": "v0.2.0b 热更新",
     "v0.2.0a Hotfix Update": "v0.2.0a 热更新",
     "v0.2.0 Big Update": "v0.2.0 大型更新",
