@@ -1364,7 +1364,7 @@ var cnItems = {
     //"Line ": "行",
     "Stats": "数据",
     "Slot": "槽位 ",
-    "Empty": " 空",
+    "empty": " 空",
     "None": "无",
     "Head": "船首",
     "Corpus": "船体",
