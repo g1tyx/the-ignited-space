@@ -1230,7 +1230,7 @@ var cnItems = {
 
     //更新日志正文
     //v0.2.1
-    "Added offline time progression": "增加了离线进度功能",
+    "Added offline time progression": "增加了离线时间累积功能",
     "Fixed some bugs related to spaceships crafting": "修复了一些关于飞船建造功能的bug",
     //v0.2.0c
     'Added "On/Off" animations option': "增加了开启/关闭飞船战斗动画的选项",
