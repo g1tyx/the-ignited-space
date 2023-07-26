@@ -390,7 +390,7 @@ var cnItems = {
     "Dark Matter Corpus": "暗物质船体",
     "Use dark-matter features to open new generation of stealth-technologies. Each level provides 30% bonus to corpus durability": "利用暗物质的特性，研究下一代的隐形技术。每级使飞船耐久度提升 30%",
     "Dark Matter Tools": "暗物质工具",
-    "Use non-interacting with the electromagnetic field tools to significantly increase electronics crafting. Increase semiconductor, wires, computers and magneto production by 20% per level": "运用不会和磁场发生相互作用的工具，大幅度提升电子产品的工艺产量。每级提升电线、半导体、计算机和磁电机产量 20%",
+    "Use non-interacting with the electromagnetic field tools to significantly increase electronics crafting. Increase semiconductor, wires, computers and magneto production by 20% per level": "运用不会和磁场发生相互作用的工具，大幅度提升电子产品的工艺产量。每级提升电线、半导体、计算机和磁电机产量 10%",
     "Advanced Organics Processing": "高级有机物处理",
     "Use new technologies to improve your organics processing bacteria. Increase rubber, plastic and graphene production by 20% per level": "运用全新的技术，进一步改良您用于处理有机物的菌种。每级使橡胶、塑料和石墨烯产量提升 20%",
     "Pests-killing bacteria": "灭虫细菌",
@@ -1401,6 +1401,8 @@ var cnItems = {
     "Start Fight": "开始战斗",
     "Select fleet to fight": "选择舰队进行战斗",
     "to XP and KP gain this run based on max level": " 本轮的知识或经验获取量",
+    "to XP and x": " 本轮经验，x",
+    "KP gain this run based on max level": " 本轮知识获取量（根据已通过关卡数计算）",
 
     //太空页子标签
     "Space Constructions": "太空建筑",
