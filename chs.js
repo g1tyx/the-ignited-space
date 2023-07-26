@@ -1229,6 +1229,9 @@ var cnItems = {
     "Join our Discord": "加入 Discord 频道",
 
     //更新日志正文
+    //v0.2.1
+    "Added offline time progression": "增加了离线进度功能",
+    "Fixed some bugs related to spaceships crafting": "修复了一些关于飞船建造功能的bug",
     //v0.2.0c
     'Added "On/Off" animations option': "增加了开启/关闭飞船战斗动画的选项",
     "Fixed white space issue": "修复了屏幕下方偶尔出现白边的bug",
@@ -1532,6 +1535,7 @@ var cnItems = {
     "Hide resources": "隐藏资源",
 
     //更新日志标题
+    "v0.2.1 Small Update": "v0.2.1 小型更新",
     "v0.2.0c UI Hotfix Update": "v0.2.0c UI热更新",
     "v0.2.0b Hotfix Update": "v0.2.0b 热更新",
     "v0.2.0a Hotfix Update": "v0.2.0a 热更新",
@@ -1609,6 +1613,9 @@ var cnPrefix = {
     "Job: ": '工作：',
     "Crafting: ": '制造：',
     "Goal: ": "目标：",
+
+    //
+    "Banked time: ": "已存储的时间：",
 
     //
     "Resource: ": "资源：",
