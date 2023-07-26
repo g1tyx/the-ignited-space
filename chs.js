@@ -1206,6 +1206,12 @@ var cnItems = {
     "Hard reset": "硬重置",
     "This action will remove all your game data. Are you sure?": "这个操作会删除您所有的游戏数据，且不可挽回。确定要这么做吗？",
     "Wipe game data": "彻底删除游戏数据",
+    "Toggle animations": "动画开关",
+    "On": "开启",
+    "Off": "关闭",
+    "This will save game and reload page": "更改此选项会立即保存游戏并刷新网页",
+    
+    //
     "Science": "科学",
     "Economy": "经济发展",
     "Social": "社会管理",
@@ -1224,6 +1230,10 @@ var cnItems = {
     "Join our Discord": "加入 Discord 频道",
 
     //更新日志正文
+    //v0.2.0c
+    'Added "On/Off" animations option': "增加了开启/关闭飞船战斗动画的选项",
+    "Fixed white space issue": "修复了屏幕下方偶尔出现白边的bug",
+    "Fixed bug with resources display on mobile": "修复了移动端资源列表重叠的bug",
     //v0.2.0b
     "Fixed bug related to KP bonus from fights": "修复了战斗提供的知识加成有误的bug",
     "Fixed scroll behavior for craftables list": "调整了工艺制造材料页面的显示逻辑，现在对于大屏幕更加友好",
@@ -1520,6 +1530,7 @@ var cnItems = {
     "Hide resources": "隐藏资源",
 
     //更新日志标题
+    "v0.2.0c UI Hotfix Update": "v0.2.0c UI热更新",
     "v0.2.0b Hotfix Update": "v0.2.0b 热更新",
     "v0.2.0a Hotfix Update": "v0.2.0a 热更新",
     "v0.2.0 Big Update": "v0.2.0 大型更新",
