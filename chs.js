@@ -890,15 +890,14 @@ var cnItems = {
     "Solar Panels": "太阳能电池板",
     "Thermonuclear Power Plant": "热核反应堆",
     "Reactive Engine": "反应引擎",
-    "Unknown": "未知",
     "Corpus should be selected": "必须选择船体",
     "Head should be selected": "必须选择船首",
     "Engine should be selected": "必须选择引擎",
     "Power source should be selected": "必须选择电力来源",
     "Power supply is not enough": "电力供应不足",
     "Name can\'t be empty": "名字不能为空",
-    "Unknown": "未知",
-    "Nomad": "游牧民",
+    //"Unknown": "未知",
+    "Nomad": "漫游者",
     "None": "无",
     
     //
