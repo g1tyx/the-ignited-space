@@ -1100,7 +1100,7 @@ var cnItems = {
 
     //温度加成手动显示
     "Temperature modifier:": "温度加成：",
-    "Temperature modifier: Very Hot": "温度加成：酷热",
+    "Temperature modifier: Very Hot": "温度加成：酷暑",
     "Temperature modifier: Hot": "温度加成：炎热",
     "Temperature modifier: Warm": "温度加成：温暖",
     "Temperature modifier: Slightly Warm": "温度加成：微暖",
