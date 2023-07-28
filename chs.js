@@ -1106,8 +1106,8 @@ var cnItems = {
     "Temperature modifier: Slightly Warm": "温度加成：微暖",
     "Temperature modifier: Slightly Cold": "温度加成：微冷",
     "Temperature modifier: Cold": "温度加成：寒冷",
-    "Temperature modifier: Very Cold": "温度加成：很冷",
-    "Temperature modifier: Extremely Cold": "温度加成：极冷",
+    "Temperature modifier: Very Cold": "温度加成：严寒",
+    "Temperature modifier: Extremely Cold": "温度加成：极寒",
 
     //资源提示
     "Expand": "展开",
