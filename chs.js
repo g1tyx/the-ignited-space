@@ -1229,26 +1229,38 @@ var cnItems = {
     "Join our Discord": "加入 Discord 频道",
 
     //更新日志正文
+    //v0.2.2a
+    "Selected sub-tabs are now remembered when you switch between pages": "选中的子页面现在会在切换页面时记忆",
+    "Tiny performance related fixes": "略微降低了资源消耗",
+    //v0.2.2
+    "Fixed UI for mobile devices on spaceships and fights tabs": "修复了移动端飞船和战斗的界面",
+    "Implemented shortened view of resource breakdown (Can press Ctrl to view detailed)": "简化了资源明细显示（可以按 Ctrl 键查看原本的详细版）",
+    "Transmit knowledge upgrades now can be purchased in bulk pressing Shift/Ctrl": "传输知识升级可以通过 Shift/Ctrl 键批量购买",
+    "Fixed bug when timers might not show on spaceship construction page": "修复了飞船建造界面偶尔不显示资源所需时间的 bug",
+    "Fixed bug when progress on hangar tab might be shown incorrectly": "修复了船坞界面计时偶尔会出错的 bug",
+    "Fixed memory-leak when have space fights on while speed up time turned on": "修复了使用离线时间加速时飞船战斗内存占用过高的问题",
+    "Added highlight and amount over cap for capped colony happiness aspects": "为溢出的幸福度子项增加了高亮和溢出量显示",
+    "Fixed bug when on mobile tooltip popups didn't shown content on overflow": "修复了移动端资源提示偶尔不显示溢出项的 bug",
     //v0.2.1
     "Added offline time progression": "增加了离线时间累积功能",
-    "Fixed some bugs related to spaceships crafting": "修复了一些关于飞船建造功能的bug",
+    "Fixed some bugs related to spaceships crafting": "修复了一些关于飞船建造功能的 bug",
     //v0.2.0c
     'Added "On/Off" animations option': "增加了开启/关闭飞船战斗动画的选项",
-    "Fixed white space issue": "修复了屏幕下方偶尔出现白边的bug",
-    "Fixed bug with resources display on mobile": "修复了移动端资源列表重叠的bug",
+    "Fixed white space issue": "修复了屏幕下方偶尔出现白边的 bug",
+    "Fixed bug with resources display on mobile": "修复了移动端资源列表重叠的 bug",
     //v0.2.0b
     "Fixed bug related to KP bonus from fights": "修复了战斗提供的知识加成有误的bug",
     "Fixed scroll behavior for craftables list": "调整了工艺制造材料页面的显示逻辑，现在对于大屏幕更加友好",
-    "Fixed display bug for XP bonus in next run": "修复了预计下轮知识加成显示错误的bug",
-    "Fixed bug when research grant law didn't impact on meteo-station when it start consuming power": "修复了气象站消耗电力后不受法律加成的bug",
+    "Fixed display bug for XP bonus in next run": "修复了预计下轮知识加成显示错误的 bug",
+    "Fixed bug when research grant law didn't impact on meteo-station when it start consuming power": "修复了气象站消耗电力后不受法律加成的 bug",
     //v0.2.0a
-    "Fixed bug related to building/scrapping ships": "修复了关于建造/摧毁飞船的bug",
-    "Fixed bug prevented XP bonus from fights to work in some cases": "修复了部分情况下战斗的经验加成不生效的bug",
+    "Fixed bug related to building/scrapping ships": "修复了关于建造/摧毁飞船的 bug",
+    "Fixed bug prevented XP bonus from fights to work in some cases": "修复了部分情况下战斗的经验加成不生效的 bug",
     //v0.2.0
     "Almost 20 new late game researches and tones of upgrades": "增加了大约 20 种后期科技，以及大量的升级",
     "New game mechanics - space fights": "增加了新的游戏机制——太空战斗",
     "Added 2nd layer prestige upgrades": "增加了需消耗经验点数购买的升级",
-    "Some calculations fixes and optimizations": "部分建筑物性能调整和bug修复",
+    "Some calculations fixes and optimizations": "部分建筑物性能调整和 bug 修复",
     //v0.1.0c
     "Fixed issue when materials with 0 capacity could be produced": "修复可以生产上限为 0 的材料的问题",
     //v0.1.0b
@@ -1266,7 +1278,7 @@ var cnItems = {
     "Updated second prestige layer - fixed some formulas": "更新了第二个重置级别 - 修复了一些公式",
     'Added "Weather" mechanics, available on some planets': "加入了“天气”机制，在某些行星上可用",
     'Increased "Expeditions" rewards': "提升了探险战利品的数量",
-    "Small UI and QoL fixes": "一些小的 UI 和 QoL 修复",
+    "Small UI and QoL fixes": "一些小的界面和用户体验修复",
     //v0.0.5c
     "Continued goals": "增加了后续目标",
     "Fixed some bugs in buildings bonuses": "修复了建筑物奖励中的一些错误",
@@ -1274,7 +1286,7 @@ var cnItems = {
     //v0.0.5b
     "Increased some buildings efficiency": "提高了一些建筑物的效率",
     "You can now press Shift or Ctrl to batch enable/disable buildings": "您现在可以按 Shift 或 Ctrl 批量启用/禁用建筑物",
-    "Fixed UI bug on mobile on pages with small amount of content": "修复了移动设备上内容较少的页面上的 UI 错误",
+    "Fixed UI bug on mobile on pages with small amount of content": "修复了移动设备上内容较少的页面上的界面错误",
     "Fixed some other small bugs": "修复了其他一些小错误",
     //v0.0.5a
     "Fixed descriptions for some prestige upgrades": "修复了一些重置升级的描述",
@@ -1535,6 +1547,8 @@ var cnItems = {
     "Hide resources": "隐藏资源",
 
     //更新日志标题
+    "v0.2.2a Tiny UI update": "v0.2.2a 小型界面更新",
+    "v0.2.2 Regular UI and QoL Update": "v0.2.2 常规界面与用户体验更新",
     "v0.2.1 Small Update": "v0.2.1 小型更新",
     "v0.2.0c UI Hotfix Update": "v0.2.0c UI热更新",
     "v0.2.0b Hotfix Update": "v0.2.0b 热更新",
@@ -1556,9 +1570,9 @@ var cnItems = {
     "v0.0.2d Small update": "v0.0.2d 小型更新",
     "v0.0.2c Small hotfix update": "v0.0.2c 小型热更新",
     "v0.0.2b Expeditions added": "v0.0.2b 增加探险",
-    "v0.0.2a Small UI updates": "v0.0.2a 小型 UI 更新",
+    "v0.0.2a Small UI updates": "v0.0.2a 小型界面更新",
     "v0.0.2 Prestige mechanics & New content": "v0.0.2 重置机制和新内容",
-    "v0.0.1a UI and small features update": "v0.0.1a UI 和小型功能更新",
+    "v0.0.1a UI and small features update": "v0.0.1a 界面和小型功能更新",
     "v0.0.1 First Playable Prototype": "v0.0.1 首个可玩的原型版本",    
     
     // 图标代码，不能汉化
