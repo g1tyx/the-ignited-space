@@ -1405,6 +1405,7 @@ var cnItems = {
     "Actual Durability": "实际耐久度",
     "Actual Shield": "实际护盾",
     "Actual Recharge": "实际充能",
+    "Select or create fleet": "选择或创建舰队",
     //"Shield: ": "护盾：",
     //"Durability: ": "耐久度：",
     //"Damage: ": "伤害：",
@@ -1469,7 +1470,7 @@ var cnItems = {
     "KP Upgrades": "知识升级",
     "XP Upgrades": "经验升级",
     "Environment": "经验升级",
-    "Hold Ctrl to see more details": "按住 Ctrl 键查看详细",
+    "Hold Ctrl to see more details": "按住 Ctrl 键查看详细情况",
 
 
     "XP Gain: x": "经验获取倍率：x",
