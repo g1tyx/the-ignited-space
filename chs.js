@@ -1237,7 +1237,7 @@ var cnItems = {
     //更新日志正文
     //v0.2.2a
     "Selected sub-tabs are now remembered when you switch between pages": "选中的子页面现在会在切换页面时记忆",
-    "Tiny performance related fixes": "略微降低了资源消耗",
+    "Tiny performance related fixes": "略微提高了游戏的性能表现",
     //v0.2.2
     "Fixed UI for mobile devices on spaceships and fights tabs": "修复了移动端飞船和战斗的界面",
     "Implemented shortened view of resource breakdown (Can press Ctrl to view detailed)": "简化了资源明细显示（可以按 Ctrl 键查看原本的详细版）",
