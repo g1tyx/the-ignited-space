@@ -743,6 +743,8 @@ var cnItems = {
     "When you colonize new planet you get XP for finishing current one. XP provides some multiplicative bonus to your KP gain when transmit knowledge. Your KP and Transmit Knowledge upgrades persist": "当您殖民新的星球时，您会根据当前的星球获得经验点。经验点会在您获得知识时提供乘算的加成。您的知识和传输知识升级在殖民星球时会保留",
     
     //传输知识
+    "Hold Shift to purchase 5": "按住 Shift 键购买 5",
+    "Hold Ctrl to purchase max": "按住 Ctrl 键购买最大值",
     "Drone Mastery": "无人机精通",
     "Learn how to use your drone with more efficiency. Every point increases the output from drone actions by 20%": "了解如何更高效地使用无人机。每级使无人机操作的产量增加 20%",
     "Drone Solar Panel": "无人机太阳能电池板",
@@ -1077,8 +1079,11 @@ var cnItems = {
     "Big Cold": "大型 寒冷",
     "Big Hot": "小型 炎热",
 
-    //季节相关
+    
     "Breakdown:": "  明细：",
+
+
+    //季节相关
     "Stable": "稳定",
     "Small Season Changes": "小幅季节变化",
     "Moderate Season Changes": "中度季节变化",
@@ -1205,6 +1210,7 @@ var cnItems = {
     "Hard reset": "硬重置",
     "This action will remove all your game data. Are you sure?": "这个操作会删除您所有的游戏数据，且不可挽回。确定要这么做吗？",
     "Wipe game data": "彻底删除游戏数据",
+    "UI Preferences": "界面偏好",
     "Toggle animations": "动画开关",
     "On": "开启",
     "Off": "关闭",
@@ -1458,7 +1464,13 @@ var cnItems = {
     "Storage Multipliers": "上限倍率：",
 
     //v0.2.0新增
+    "Buildings": "建筑",
+    "Upgrades": "升级",
+    "KP Upgrades": "知识升级",
     "XP Upgrades": "经验升级",
+    "Environment": "经验升级",
+    "Hold Ctrl to see more details": "按住 Ctrl 键查看详细",
+
 
     "XP Gain: x": "经验获取倍率：x",
     "Weather: x": "天气倍率：x",
