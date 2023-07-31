@@ -870,7 +870,7 @@ var cnItems = {
     "Engine": "引擎",
     "Durability": "耐久度",
     "Shield Capacity": "护盾量",
-    "Shield Mitigation": "护盾抑制",
+    "Shield Mitigation": "护盾减伤",
     "Damage": "伤害",
     "Weapon Cooldown": "武器冷却时间",
     "Hull Repair": "船体修理",
