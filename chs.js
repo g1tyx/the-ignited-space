@@ -44,7 +44,7 @@ var cnItems = {
     "Materials Capacity": "固体材料上限",
     "Liquids Capacity": "液体上限",
     "Research Capacity": "研究上限",
-    "Aesthetics Consumption": "美观度消耗",
+    "Aesthetics Consumption": "美观消耗",
     "Health Consumption": "医疗消耗",
     "Entertainment Consumption": "娱乐消耗",
     "Religion Consumption": "宗教消耗",
@@ -112,7 +112,7 @@ var cnItems = {
     "XP": "经验点数",
     "Entertainment": "娱乐",
     "Healthcare": "医疗",
-    "Aesthetics": "美观度",
+    "Aesthetics": "美观",
     "Security": "安保",
     "Religion": "宗教",
     
@@ -268,7 +268,7 @@ var cnItems = {
     "Fuel Conservation": "节省燃料",
     "Improved fuel combustion cycle allows to install less rockets to achieve the same thrust. Reduces rocket consumption by 20% for all space structures and ships": "改进的燃烧循环令更少的火箭也能输出相同的推力。所有太空建筑和飞船的火箭成本降低 20%",
     "Faster Rockets": "高速火箭",
-    "Using improved flight path calculation reduces total flight time. Space tourism is now 50% more efficient": "使用改进的飞行路径计算方式，减少飞行时间。太空旅游的娱乐和美观度加成提升 50%",
+    "Using improved flight path calculation reduces total flight time. Space tourism is now 50% more efficient": "使用改进的飞行路径计算方式，减少飞行时间。太空旅游的娱乐和美观加成提升 50%",
     "Conductive Nano-Particles": "导电纳米粒子",
     "Using new conductive particles improves the capacity of your batteries and accumulators by 20%": "使用新的导电颗粒。电池和蓄电池的电力上限提升 20%",
     "Nanobots": "纳米机器人",
@@ -446,7 +446,7 @@ var cnItems = {
     "Meteorology Station": "气象站",
     "Provides research storage and boosts science output by 2% multiplicatively": "提供研究上限，并使研究产量提升 2%",
     "Monument": "纪念碑",
-    "Provides some aesthetics": "提供一些美观度加成",
+    "Provides some aesthetics": "提供一些美观加成",
     "Clinic": "诊所",
     "Provides basic healthcare service": "提供基本的医疗服务",
     "Park Zone": "公园",
@@ -495,7 +495,7 @@ var cnItems = {
     "Satellite Solar Panel": "太阳能卫星",
     "Provides power from solar radiation. More efficient comparing to planet surface analog": "将太阳辐射转化成电力。和它的地面版本相比效率更高",
     "Orbital Tourism Center": "轨道旅游中心",
-    "Small space station that provides some entertainment and aesthetics to your people": "一座专门的小型空间站，为您的殖民地提供娱乐和美观度加成",
+    "Small space station that provides some entertainment and aesthetics to your people": "一座专门的小型空间站，为您的殖民地提供娱乐和美观加成",
     "Space Telescope": "太空望远镜",
     "Provides research capacity bonus": "提供研究上限加成",
     "Ice Melting Station": "融冰站",
@@ -541,7 +541,7 @@ var cnItems = {
     "Base": "基础",
     "Population": "人口",
     "Building:": "建筑：",
-    "Quarrymen": "采石工人",
+    "Quarrymen": "采石工",
     "Works at the quarry to mine stone": "在采石场工作以开采石头",
     "Miner": "矿工",
     "Works at the mine to gather ore": "在矿山工作以收集矿石",
@@ -743,6 +743,8 @@ var cnItems = {
     "When you colonize new planet you get XP for finishing current one. XP provides some multiplicative bonus to your KP gain when transmit knowledge. Your KP and Transmit Knowledge upgrades persist": "当您殖民新的星球时，您会根据当前的星球获得经验点。经验点会在您获得知识时提供乘算的加成。您的知识和传输知识升级在殖民星球时会保留",
     
     //传输知识
+    "Hold Shift to purchase 5": "按住 Shift 键购买 5",
+    "Hold Ctrl to purchase max": "按住 Ctrl 键购买最大值",
     "Drone Mastery": "无人机精通",
     "Learn how to use your drone with more efficiency. Every point increases the output from drone actions by 20%": "了解如何更高效地使用无人机。每级使无人机操作的产量增加 20%",
     "Drone Solar Panel": "无人机太阳能电池板",
@@ -771,8 +773,8 @@ var cnItems = {
     "You know how important full oxygen tank and filled water storage is. Every point boosts oxygen and water capacity by 4%": "您知道时刻保持氧气和水储量充足是多么重要。每级使水和氧气上限增加 4%",
     "Research Capacity": "研究容量",
     "Pursuit of knowledge never stops for someone as cursious as you. Every point increases research capacity by 4%": "对于像您这样充满好奇心的人来说，求知之路是永无止境的。每级使研究上限增加 4%",
-    "Aesthetics Consumption": "美观度消耗",
-    "Pretty environment is surprisingly effective at boosting productivity. Every point decreases aesthetics requirements by 4": "美丽的环境对于提高生产力有着惊人的效果。每级使美观度消耗降低 4",
+    "Aesthetics Consumption": "美观消耗",
+    "Pretty environment is surprisingly effective at boosting productivity. Every point decreases aesthetics requirements by 4": "美丽的环境对于提高生产力有着惊人的效果。每级使美观消耗降低 4",
     "Entertainment Consumption": "娱乐消耗",
     "You are not easily bored and know how to distract people from boredom. Every point decreases entertainment requirements by 4": "您不容易感到无聊，并且知道如何消解人们的无聊感。每级使娱乐消耗降低 4",
     "Religion Consumption": "宗教消耗",
@@ -808,7 +810,7 @@ var cnItems = {
     "Lungs of the Colony": "殖民地之肺",
     "Forest plants operate normally": "森林以正常的方式运转",
     "Nature Reserves": "自然保护区",
-    "Forest plants produce 50% less oxygen, but provide a small bonus to aesthetics": "森林产生的氧气降低 50%，但提供少许美观度加成",
+    "Forest plants produce 50% less oxygen, but provide a small bonus to aesthetics": "森林产生的氧气降低 50%，但提供少许美观加成",
     "Picnic zones": "野餐区域",
     "Forest plants produce 50% less oxygen, but provide a small bonus to entertainment": "森林产生的氧气降低 50%，但提供少许娱乐加成",
     "Guards Rations": "警务支持",
@@ -830,9 +832,9 @@ var cnItems = {
     '"Foresters produce a normal amount of wood': "林务员产出正常数量的木材",
     "Foresters produce a normal amount of wood": "林务员产出正常数量的木材",
     "Aggressive Cutting": "皆伐",
-    "Encourage production at the cost of pretty landscape. Foresters produce 20% more wood, but each forester reduces aesthetics by 1.5": "放开伐木限制，但会付出殖民地的美观度作为代价。林务员的木材产量提升 20%，但每个林务员减少 1.5 美观度",
+    "Encourage production at the cost of pretty landscape. Foresters produce 20% more wood, but each forester reduces aesthetics by 1.5": "放开伐木限制，但会付出殖民地的美观作为代价。林务员的木材产量提升 20%，但每个林务员减少 1.5 美观",
     "Forest Preservation": "森林保护",
-    "Encourage limited cutting and frequent replanting. Foresters produce 20% less wood, but each forester increases aesthetics by 1": "命令林务员侧重于森林保护和植树造林。林务员的木材产量降低 20%，但每个林务员增加 1 美观度",
+    "Encourage limited cutting and frequent replanting. Foresters produce 20% less wood, but each forester increases aesthetics by 1": "命令林务员侧重于森林保护和植树造林。林务员的木材产量降低 20%，但每个林务员增加 1 美观",
     "Coal Burning Regulations": "燃煤法案",
     "Allow or forbid wood usage as coal": "允许或禁止将木材用于热力发电",
     "Forbid All": "禁止",
@@ -868,7 +870,7 @@ var cnItems = {
     "Engine": "引擎",
     "Durability": "耐久度",
     "Shield Capacity": "护盾量",
-    "Shield Mitigation": "护盾抑制",
+    "Shield Mitigation": "护盾减伤",
     "Damage": "伤害",
     "Weapon Cooldown": "武器冷却时间",
     "Hull Repair": "船体修理",
@@ -918,7 +920,7 @@ var cnItems = {
     "Knowledge: Materials Capacity": "知识：固体材料上限",
     "Knowledge: Gas & Liquid Capacity": "知识：气体和液体容量",
     "Knowledge: Research Capacity": "知识：研究上限",
-    "Knowledge: Aesthetics Consumption": "知识：美观度消耗",
+    "Knowledge: Aesthetics Consumption": "知识：美观消耗",
     "Knowledge: Entertainment Consumption": "知识：娱乐消耗",
     "Knowledge: Religion Consumption": "知识：宗教消耗",
     "Knowledge: Security Consumption": "知识：安保消耗",
@@ -1077,8 +1079,11 @@ var cnItems = {
     "Big Cold": "大型 寒冷",
     "Big Hot": "小型 炎热",
 
-    //季节相关
+    
     "Breakdown:": "  明细：",
+
+
+    //季节相关
     "Stable": "稳定",
     "Small Season Changes": "小幅季节变化",
     "Moderate Season Changes": "中度季节变化",
@@ -1205,6 +1210,7 @@ var cnItems = {
     "Hard reset": "硬重置",
     "This action will remove all your game data. Are you sure?": "这个操作会删除您所有的游戏数据，且不可挽回。确定要这么做吗？",
     "Wipe game data": "彻底删除游戏数据",
+    "UI Preferences": "界面偏好",
     "Toggle animations": "动画开关",
     "On": "开启",
     "Off": "关闭",
@@ -1229,26 +1235,38 @@ var cnItems = {
     "Join our Discord": "加入 Discord 频道",
 
     //更新日志正文
+    //v0.2.2a
+    "Selected sub-tabs are now remembered when you switch between pages": "选中的子页面现在会在切换页面时记忆",
+    "Tiny performance related fixes": "略微提高了游戏的性能表现",
+    //v0.2.2
+    "Fixed UI for mobile devices on spaceships and fights tabs": "修复了移动端飞船和战斗的界面",
+    "Implemented shortened view of resource breakdown (Can press Ctrl to view detailed)": "简化了资源明细显示（可以按 Ctrl 键查看原本的详细版）",
+    "Transmit knowledge upgrades now can be purchased in bulk pressing Shift/Ctrl": "传输知识升级可以通过 Shift/Ctrl 键批量购买",
+    "Fixed bug when timers might not show on spaceship construction page": "修复了飞船建造界面偶尔不显示资源所需时间的 bug",
+    "Fixed bug when progress on hangar tab might be shown incorrectly": "修复了船坞界面计时偶尔会出错的 bug",
+    "Fixed memory-leak when have space fights on while speed up time turned on": "修复了使用离线时间加速时飞船战斗内存占用过高的问题",
+    "Added highlight and amount over cap for capped colony happiness aspects": "为溢出的幸福度子项增加了高亮和溢出量显示",
+    "Fixed bug when on mobile tooltip popups didn't shown content on overflow": "修复了移动端资源提示偶尔不显示溢出项的 bug",
     //v0.2.1
     "Added offline time progression": "增加了离线时间累积功能",
-    "Fixed some bugs related to spaceships crafting": "修复了一些关于飞船建造功能的bug",
+    "Fixed some bugs related to spaceships crafting": "修复了一些关于飞船建造功能的 bug",
     //v0.2.0c
     'Added "On/Off" animations option': "增加了开启/关闭飞船战斗动画的选项",
-    "Fixed white space issue": "修复了屏幕下方偶尔出现白边的bug",
-    "Fixed bug with resources display on mobile": "修复了移动端资源列表重叠的bug",
+    "Fixed white space issue": "修复了屏幕下方偶尔出现白边的 bug",
+    "Fixed bug with resources display on mobile": "修复了移动端资源列表重叠的 bug",
     //v0.2.0b
     "Fixed bug related to KP bonus from fights": "修复了战斗提供的知识加成有误的bug",
     "Fixed scroll behavior for craftables list": "调整了工艺制造材料页面的显示逻辑，现在对于大屏幕更加友好",
-    "Fixed display bug for XP bonus in next run": "修复了预计下轮知识加成显示错误的bug",
-    "Fixed bug when research grant law didn't impact on meteo-station when it start consuming power": "修复了气象站消耗电力后不受法律加成的bug",
+    "Fixed display bug for XP bonus in next run": "修复了预计下轮知识加成显示错误的 bug",
+    "Fixed bug when research grant law didn't impact on meteo-station when it start consuming power": "修复了气象站消耗电力后不受法律加成的 bug",
     //v0.2.0a
-    "Fixed bug related to building/scrapping ships": "修复了关于建造/摧毁飞船的bug",
-    "Fixed bug prevented XP bonus from fights to work in some cases": "修复了部分情况下战斗的经验加成不生效的bug",
+    "Fixed bug related to building/scrapping ships": "修复了关于建造/摧毁飞船的 bug",
+    "Fixed bug prevented XP bonus from fights to work in some cases": "修复了部分情况下战斗的经验加成不生效的 bug",
     //v0.2.0
     "Almost 20 new late game researches and tones of upgrades": "增加了大约 20 种后期科技，以及大量的升级",
     "New game mechanics - space fights": "增加了新的游戏机制——太空战斗",
     "Added 2nd layer prestige upgrades": "增加了需消耗经验点数购买的升级",
-    "Some calculations fixes and optimizations": "部分建筑物性能调整和bug修复",
+    "Some calculations fixes and optimizations": "部分建筑物性能调整和 bug 修复",
     //v0.1.0c
     "Fixed issue when materials with 0 capacity could be produced": "修复可以生产上限为 0 的材料的问题",
     //v0.1.0b
@@ -1266,7 +1284,7 @@ var cnItems = {
     "Updated second prestige layer - fixed some formulas": "更新了第二个重置级别 - 修复了一些公式",
     'Added "Weather" mechanics, available on some planets': "加入了“天气”机制，在某些行星上可用",
     'Increased "Expeditions" rewards': "提升了探险战利品的数量",
-    "Small UI and QoL fixes": "一些小的 UI 和 QoL 修复",
+    "Small UI and QoL fixes": "一些小的界面和用户体验修复",
     //v0.0.5c
     "Continued goals": "增加了后续目标",
     "Fixed some bugs in buildings bonuses": "修复了建筑物奖励中的一些错误",
@@ -1274,7 +1292,7 @@ var cnItems = {
     //v0.0.5b
     "Increased some buildings efficiency": "提高了一些建筑物的效率",
     "You can now press Shift or Ctrl to batch enable/disable buildings": "您现在可以按 Shift 或 Ctrl 批量启用/禁用建筑物",
-    "Fixed UI bug on mobile on pages with small amount of content": "修复了移动设备上内容较少的页面上的 UI 错误",
+    "Fixed UI bug on mobile on pages with small amount of content": "修复了移动设备上内容较少的页面上的界面错误",
     "Fixed some other small bugs": "修复了其他一些小错误",
     //v0.0.5a
     "Fixed descriptions for some prestige upgrades": "修复了一些重置升级的描述",
@@ -1387,6 +1405,7 @@ var cnItems = {
     "Actual Durability": "实际耐久度",
     "Actual Shield": "实际护盾",
     "Actual Recharge": "实际充能",
+    "Select or create fleet": "选择或创建舰队",
     //"Shield: ": "护盾：",
     //"Durability: ": "耐久度：",
     //"Damage: ": "伤害：",
@@ -1446,7 +1465,13 @@ var cnItems = {
     "Storage Multipliers": "上限倍率：",
 
     //v0.2.0新增
+    "Buildings": "建筑",
+    "Upgrades": "升级",
+    "KP Upgrades": "知识升级",
     "XP Upgrades": "经验升级",
+    "Environment": "经验升级",
+    "Hold Ctrl to see more details": "按住 Ctrl 键查看详细情况",
+
 
     "XP Gain: x": "经验获取倍率：x",
     "Weather: x": "天气倍率：x",
@@ -1535,6 +1560,8 @@ var cnItems = {
     "Hide resources": "隐藏资源",
 
     //更新日志标题
+    "v0.2.2a Tiny UI update": "v0.2.2a 小型界面更新",
+    "v0.2.2 Regular UI and QoL Update": "v0.2.2 常规界面与用户体验更新",
     "v0.2.1 Small Update": "v0.2.1 小型更新",
     "v0.2.0c UI Hotfix Update": "v0.2.0c UI热更新",
     "v0.2.0b Hotfix Update": "v0.2.0b 热更新",
@@ -1556,9 +1583,9 @@ var cnItems = {
     "v0.0.2d Small update": "v0.0.2d 小型更新",
     "v0.0.2c Small hotfix update": "v0.0.2c 小型热更新",
     "v0.0.2b Expeditions added": "v0.0.2b 增加探险",
-    "v0.0.2a Small UI updates": "v0.0.2a 小型 UI 更新",
+    "v0.0.2a Small UI updates": "v0.0.2a 小型界面更新",
     "v0.0.2 Prestige mechanics & New content": "v0.0.2 重置机制和新内容",
-    "v0.0.1a UI and small features update": "v0.0.1a UI 和小型功能更新",
+    "v0.0.1a UI and small features update": "v0.0.1a 界面和小型功能更新",
     "v0.0.1 First Playable Prototype": "v0.0.1 首个可玩的原型版本",    
     
     // 图标代码，不能汉化
