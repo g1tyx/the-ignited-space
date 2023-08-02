@@ -1469,7 +1469,7 @@ var cnItems = {
     "Upgrades": "升级",
     "KP Upgrades": "知识升级",
     "XP Upgrades": "经验升级",
-    "Environment": "经验升级",
+    "Environment": "环境",
     "Hold Ctrl to see more details": "按住 Ctrl 键查看详细情况",
 
 
