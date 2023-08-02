@@ -630,7 +630,7 @@ var cnItems = {
     "Use your advances in quantum physics and material knowledge to boost production of tiny things. Unlocks new upgrades": "利用您在量子物理学和材料学上的知识来生产极其微小的物件。解锁新升级",
     "Thermonuclear synthesis": "热核聚变",
     "Learn more about high temperature physics to unlock new source of power": "了解有关高温物理学的更多信息，以解锁新的电力来源",
-    "Advanced Polymers": "先进聚合物",
+    "Advanced Polymers": "高级聚合物技术",
     "Utilize a highly ionized environment to generate sophisticated, radiation- and temperature-hardened polymers. Unlocking new upgrades": "利用高度电离的环境来生成复杂的、具备辐射硬化和热硬化性能的聚合物。解锁新升级",
     "Advanced Molecular Physics": "高级分子物理学",
     "Learn how to generate more sophisticated compounds to boost your development": "了解如何制造更复杂的化合物，以使您文明的发展更进一步",
