@@ -541,7 +541,7 @@ var cnItems = {
     "Base": "基础",
     "Population": "人口",
     "Building:": "建筑：",
-    "Quarrymen": "采石工",
+    "Quarryman": "采石工",
     "Works at the quarry to mine stone": "在采石场工作以开采石头",
     "Miner": "矿工",
     "Works at the mine to gather ore": "在矿山工作以收集矿石",
@@ -862,6 +862,7 @@ var cnItems = {
     "Allow": "允许",
     "Bio-labs start consuming fuel (0.03 each) but provides 10 times more research capacity": "生物实验室需要消耗燃料（每座每秒 0.03），但能够提供 10 倍的研究上限",
     "Law": "法律",
+    "Laws": "法律",
     
     "Head": "船首",
     "Corpus": "船体",
@@ -1235,6 +1236,9 @@ var cnItems = {
     "Join our Discord": "加入 Discord 频道",
 
     //更新日志正文
+    //v0.2.2b
+    "Selected sub-tabs are now refreshed on prestige": "记忆的子页面选择现在会在重置时清除",
+    "Some grammar fixes": "修复少量语法错误（译注：汉化版无变化）",
     //v0.2.2a
     "Selected sub-tabs are now remembered when you switch between pages": "选中的子页面现在会在切换页面时记忆",
     "Tiny performance related fixes": "略微提高了游戏的性能表现",
@@ -1471,7 +1475,6 @@ var cnItems = {
     "XP Upgrades": "经验升级",
     "Environment": "环境",
     "Hold Ctrl to see more details": "按住 Ctrl 键查看详细情况",
-
 
     "XP Gain: x": "经验获取倍率：x",
     "Weather: x": "天气倍率：x",
