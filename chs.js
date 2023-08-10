@@ -541,7 +541,7 @@ var cnItems = {
     "Base": "基础",
     "Population": "人口",
     "Building:": "建筑：",
-    "Quarrymen": "采石工",
+    "Quarryman": "采石工",
     "Works at the quarry to mine stone": "在采石场工作以开采石头",
     "Miner": "矿工",
     "Works at the mine to gather ore": "在矿山工作以收集矿石",
@@ -862,6 +862,7 @@ var cnItems = {
     "Allow": "允许",
     "Bio-labs start consuming fuel (0.03 each) but provides 10 times more research capacity": "生物实验室需要消耗燃料（每座每秒 0.03），但能够提供 10 倍的研究上限",
     "Law": "法律",
+    "Laws": "法律",
     
     "Head": "船首",
     "Corpus": "船体",
@@ -1235,6 +1236,9 @@ var cnItems = {
     "Join our Discord": "加入 Discord 频道",
 
     //更新日志正文
+    //v0.2.2b
+    "Selected sub-tabs are now refreshed on prestige": "记忆的子页面选择现在会在重置时清除",
+    "Some grammar fixes": "修复少量语法错误（译注：汉化版无变化）",
     //v0.2.2a
     "Selected sub-tabs are now remembered when you switch between pages": "选中的子页面现在会在切换页面时记忆",
     "Tiny performance related fixes": "略微提高了游戏的性能表现",
@@ -1469,9 +1473,8 @@ var cnItems = {
     "Upgrades": "升级",
     "KP Upgrades": "知识升级",
     "XP Upgrades": "经验升级",
-    "Environment": "经验升级",
+    "Environment": "环境",
     "Hold Ctrl to see more details": "按住 Ctrl 键查看详细情况",
-
 
     "XP Gain: x": "经验获取倍率：x",
     "Weather: x": "天气倍率：x",
@@ -1539,7 +1542,7 @@ var cnItems = {
     "With a diameter of approximately 3,474 kilometers (2,159 miles), the Moon is the fifth-largest natural satellite orbiting a planet in our solar system. It is surpassed in size by Ganymede (a moon of Jupiter), Titan (a moon of Saturn), Callisto (another moon of Jupiter), and Io (yet another moon of Jupiter).": "月球的直径约为 3,474 公里（2,159 英里），是太阳系中绕行星运行的第五大天然卫星。它的大小被木卫三（木星的卫星）、泰坦（土星的卫星）、木卫四（木星的另一颗卫星）和木卫一（木星的另一颗卫星）超越。",
     "Mars has the largest volcano in the solar system, called Olympus Mons. It measures approximately 22 kilometers (13.6 miles) in height and has a diameter of about 550 kilometers (342 miles).": "火星拥有太阳系中最大的火山，称为奥林匹斯山。它高约 22 公里（13.6 英里），直径约 550 公里（342 英里）。",
     "Mars experiences powerful and massive dust storms that can engulf the entire planet. These storms can last for weeks or even months and cover vast regions, obscuring the Martian surface from view.": "火星上有强大而巨大的沙尘暴，可以吞没整个星球。这些风暴可能会持续数周甚至数月，并覆盖广大地区，使火星表面变得模糊不清。",
-    "Mars has the largest canyon in the solar system, known as Valles Marineris, that stretches approximately 4,000 kilometers (2,500 miles) in length, making it the largest known canyon in the solar system. To put it into perspective, Valles Marineris is more than 10 times longer and five times deeper than the Grand Canyon in the United States.": "火星拥有太阳系中最大的峡谷，称为水手谷，长约 4,000 公里（2,500 英里），是太阳系中已知最大的峡谷。客观来看，水手谷比美国大峡谷长10倍以上，深5倍以上。",
+    "Mars has the largest canyon in the solar system, known as Valles Marineris, that stretches approximately 4,000 kilometers (2,500 miles) in length, making it the largest known canyon in the solar system. To put it into perspective, Valles Marineris is more than 10 times longer and five times deeper than the Grand Canyon in the United States.": "火星拥有太阳系中最大的峡谷，称为水手谷，长约 4,000 公里（2,500 英里），是太阳系中已知最大的峡谷。作为对比，水手谷比美国的大峡谷长 10 倍以上，深 5 倍以上。",
     "The Sun is so large that it accounts for more than 99% of the mass in our entire solar system.": "太阳非常大，占整个太阳系质量的 99% 以上。",
     "The Sun is not a solid object, but rather a giant, churning ball of hot plasma.": "太阳不是一个固体，而是一个巨大的、翻腾的热等离子体球。",
     "Light travels at a speed of approximately 299,792 kilometers per second (186,282 miles per second) in a vacuum. Despite this incredible speed, it still takes over 8 minutes for light from the Sun to reach us on Earth due to the vast distance between the two.": "光在真空中的传播速度约为每秒 299,792 公里（每秒 186,282 英里）。尽管速度如此惊人，但由于太阳与地球之间的距离遥远，太阳光仍然需要 8 分钟以上才能到达地球上的我们。",
@@ -1560,6 +1563,7 @@ var cnItems = {
     "Hide resources": "隐藏资源",
 
     //更新日志标题
+    "v0.2.2b Tiny UI update": "v0.2.2b 小型界面更新",
     "v0.2.2a Tiny UI update": "v0.2.2a 小型界面更新",
     "v0.2.2 Regular UI and QoL Update": "v0.2.2 常规界面与用户体验更新",
     "v0.2.1 Small Update": "v0.2.1 小型更新",
