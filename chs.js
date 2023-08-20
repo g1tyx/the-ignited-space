@@ -1765,7 +1765,8 @@ var cnItems = {
     "Loading...": "加载中...",
     "Did you knew?": "您知道吗？",
 
-    "Items: ": "项目：",
+    "Items:": "项目：",
+    "of": "/",
     "Select scope first": "请先选择分类",
     "Add to queue": "加入队列",
     "Queue is full": "队列已满",
@@ -1779,7 +1780,7 @@ var cnItems = {
     //更新日志标题及日期
     "v0.2.4 Minor Update": "v0.2.4 小型更新",
     "20/08/2023": "2023年8月20日",
-    "v0.2.4 Minor Update": "v0.2.3 常规更新",
+    "v0.2.3 Regular update": "v0.2.3 常规更新",
     "19/08/2023": "2023年8月19日",
     "v0.2.2b Tiny UI update": "v0.2.2b 小型界面更新",
     "09/08/2023": "2023年8月9日",
