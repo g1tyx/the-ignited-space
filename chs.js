@@ -989,7 +989,7 @@ var cnItems = {
     "Night Lights": "夜间照明",
     "Consumes a small amount of power but enhances security. +10% to law enforcement effectiveness, -5% power production": "只要能为居民提供安全感，消耗这么点电力是值得的。警察效率提升 10%，电力产量降低 5%",
     "Colorful Lights": "五彩缤纷",
-    "Consumes a significant amount of electricity but enhances aesthetics. +20 aesthetics and its maximum value, -10% power production": "需要消耗大量的电力，让您的殖民地流光溢彩。美观和美观上限增加 20，电力产量降低 10%",
+    "Consumes a significant amount of electricity but enhances aesthetics. +20 aesthetics and its maximum value, -10% power production": "消耗大量的电力，让您的殖民地流光溢彩。美观和美观上限增加 20，电力产量降低 10%",
     "Orbital Bio-experiments": "轨道生物实验",
     "Allow your Biolabs to run orbital research expeditions.": "生物实验室可以在外层轨道上进行深度的研究，但需要消耗额外的资源",
     "Forbid": "禁止",
@@ -1065,27 +1065,6 @@ var cnItems = {
     
     //
     "Knowledge: ": "知识：",
-
-    //知识加成手动显示
-    "Knowledge: Drone Mastery": "知识：无人机精通",
-    "Knowledge: Drone Solar Panel": "知识：无人机太阳能电池板",
-    "Knowledge: Power Mastery": "知识：电力精通",
-    "Knowledge: Mining Mastery": "知识：采矿精通",
-    "Knowledge: Nature Mastery": "知识：自然精通",
-    "Knowledge: Gas & Liquid Mastery": "知识：液体和气体精通",
-    "Knowledge: Refining Mastery": "知识：精炼精通",
-    "Knowledge: Electronics Mastery": "知识：电子精通",
-    "Knowledge: Rocket Mastery": "知识：火箭精通",
-    "Knowledge: Organics Mastery": "知识：有机物精通",
-    "Knowledge: Power Capacity": "知识：电力容量",
-    "Knowledge: Materials Capacity": "知识：固体材料上限",
-    "Knowledge: Gas & Liquid Capacity": "知识：气体和液体容量",
-    "Knowledge: Research Capacity": "知识：研究上限",
-    "Knowledge: Aesthetics Consumption": "知识：美观消耗",
-    "Knowledge: Entertainment Consumption": "知识：娱乐消耗",
-    "Knowledge: Religion Consumption": "知识：宗教消耗",
-    "Knowledge: Security Consumption": "知识：安保消耗",
-    "Knowledge: Healthcare Consumption": "知识：医疗消耗",
     
     "Cold": "寒冷",
     "Hot": "炎热",
@@ -1902,8 +1881,10 @@ var cnPrefix = {
     "Upgrade: ": "升级：",
     "Research: ": "研究：",
     "Building: ": "建筑：",
+    "Knowledge: ": "知识：",
     "Knowledge Upgrade:": "知识升级：",
     "XP Upgrade: ": "经验升级：",
+    "Law Lightning Mode: "
 
     //
     "Shield: ": "护盾：",
