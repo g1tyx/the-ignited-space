@@ -1653,6 +1653,7 @@ var cnItems = {
     "Income Multipliers": "产量倍率：",
     "Storage Multipliers": "上限倍率：",
     "Effects": "效果",
+    "Effects Multipliers": "效果倍率：",
 
     //v0.2.0新增
     "Buildings": "建筑",
