@@ -778,7 +778,7 @@ var cnItems = {
     "Annihilation Study": "湮灭反应研究",
     "Learn more about matter & antimatter interaction to unleash immense amounts of power.": "研究物质和反物质的湮灭反应，以释放无穷无尽的能量",
     "Advanced Synthetic Biology": "高级合成生物学",
-    "Further improve your understanding of biochemistry to be capable of multicellular organisms engineering": "增进关于生物化学的知识，使您可以对多细胞微生物进行生物工程",
+    "Further improve your understanding of biochemistry to be capable of multicellular organisms engineering": "增进关于生物化学的知识，使您可以对多细胞生物进行生物工程",
     "Atom Biology": "原子生物学",
     'Improve your knowledge of biochemistry to "teach" your synthetic bacteria to process even chemically-steady atoms': "进一步提升您在生物化学方面的知识，使您甚至可以“教会”细菌对原子进行处理",
     "Quantum Biology": "量子生物学",
