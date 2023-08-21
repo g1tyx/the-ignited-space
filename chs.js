@@ -1003,7 +1003,7 @@ var cnItems = {
     "Isolated Sections": "独立区域",
     "Build isolated sections for breeding organic processing bacteria. Increase power consumption 10 times, but each incubator provides 1% boost to organic crafting": "为合成有机物的异种细菌规划单独的区域。细菌培养箱的电力消耗变为 10 倍，但每座令有机物工艺（塑料、橡胶、石墨烯）产量提升 1%",
     "Unsafe Exotic Bacteria": "完全使用",
-    "Use all of your incubators to breed exotic bacteria. Increase power consumption 40 times, but each incubator provides 2% boost to organic crafting. In advance, every bacteria incubator providing 2 points penalty to healthcare": "用所有的细菌培养箱来培养异种细菌。细菌培养箱的电力消耗变为 40 倍，且每座消耗 2 医疗，但每座令有机物工艺（塑料、橡胶、石墨烯）产量提升 2%",
+    "Use all of your incubators to breed exotic bacteria. Increase power consumption 40 times, but each incubator provides 2% boost to organic crafting. In advance, every bacteria incubator providing 2 points penalty to healthcare": "用所有的细菌培养箱来培养危险而强大的异种细菌。细菌培养箱的电力消耗变为 20 倍，且每座消耗 4 医疗，但每座令有机物工艺（塑料、橡胶、石墨烯）产量提升 2%",
     "Hadron Collider Mode": "强子对撞机模式",
     "Select mode of your hadron colliders usage.": "选择运用强子对撞机的方式",
     "Safe": "安全模式",
