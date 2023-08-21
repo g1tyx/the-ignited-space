@@ -953,8 +953,8 @@ var cnItems = {
     "Allow using a minor amount of wood for thermal plants. Thermal plants are 10% more efficient, but consume 0.01 wood each": "允许热力发电厂使用少量木材。热力发电厂的电力产量提升 10%，但每座热力发电厂每秒需消耗 0.01 木材",
     "Unregulated Use": "任意使用",
     "Time to inflict another industrial revoluion. Thermal plants are 25% more efficient, but consume 0.03 wood each": "是时候发动另一场工业革命了。热力发电厂的效率提升 25%，但每座热力发电厂每秒需消耗 0.03 木材",
-    "Furnace Metal Processing": "金属处理",
-    "Regulate metalworking process and its environmental impact": "规范金属处理的流程和对环境的影响",
+    "Furnace Metal Processing": "金属加工",
+    "Regulate metalworking process and its environmental impact": "规范金属加工的流程和对环境的影响",
     "Environment-Friendly Metal Processing": "环境友好",
     "Avoid using materials generating smoke during metal processing.": "在金属处理的过程中避免对环境产生任何负面影响",
     "Limited Coal-burning": "适量燃煤",
@@ -1888,6 +1888,7 @@ var cnPrefix = {
     "Law Lightning Mode: ": "照明模式政策：",
     "Law Fuel Processing Mode: ": "燃料生产政策：",
     "Law Food Chemical Processing: ": "食品加工政策：",
+    "Law Furnace Metal Processing": "金属加工政策：",
 
     //
     "Shield: ": "护盾：",
