@@ -460,7 +460,7 @@ var cnItems = {
     "Fuel Purification Bacteria": "燃料纯化细菌",
     "Unlocks new building that allows you boost your power generation": "解锁新的建筑物，它将进一步提升电力产量",
     "Microflora Helpers": "微生物群助手",
-    "Better understanding and control over your microflora allows you now to use it more widely without risk of pandemic. Use it in production lines to improve efficiency of building and electronics factory by 1% per level": "更好地了解和控制微生物群，使您可以将其直接运用在生产线上，而无需担心其致病性。每级提高建筑产量和电子工厂效率 1%",
+    "Better understanding and control over your microflora allows you now to use it more widely without risk of pandemic. Use it in production lines to improve efficiency of building and electronics factory by 1% per level": "更好地了解和控制微生物群，使您可以将其直接运用在生产线上，而无需担心其致病性。使每级建筑材料工厂和电子元件工厂的产量加成增加 1%",
     "Annihilation Beam": "湮灭光束",
     "Use controlled annihilation to further boost your industries. Increase stone, ore and platinum output by 20% per level": "利用可控的湮灭反应来进一步提升矿物产量。每级使石头、矿石和铂金产量提升 20%",
     "Huge Gamma-Transmitter": "大型伽马射线发射机",
@@ -603,7 +603,7 @@ var cnItems = {
     "Magnetic Press": "磁力压机",
     "Uses synthetic neutron-based source of high gravity and magnetic field to optimize production lines. Increase all crafting output by additional 5% per level multiplicative": "合成全新的基于中子的重力和磁场源，来优化所有生产线。每级使所有工艺产量提升 5%",
     "Fuel Purification Station": "燃料纯化站",
-    "Uses specific bacteria to improve fuel formula for thermonuclear reactions. Consumes wood and biomass but increase thermonuclear power plant output by 5% additively": "用特殊的细菌来提升热核反应的燃料配方。需消耗木材和生物质来运行，使热核发电站的电力产量增加 5%",
+    "Uses specific bacteria to improve fuel formula for thermonuclear reactions. Consumes wood and biomass but increase thermonuclear power plant output by 5% additively": "用特殊的细菌来优化热核反应的燃料配方。需消耗木材和生物质来运行，使热核发电站的电力产量增加 5%",
     "Dark Matter Purifier": "暗物质纯化器",
     "Uses focused radiation beam to improve dark matter generation. Each level boost dark matter production by 5%": "用聚焦辐射来提高暗物质产量。每级使暗物质产量提升 5%",
 
