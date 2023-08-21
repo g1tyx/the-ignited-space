@@ -30,7 +30,7 @@ var cnItems = {
     "Building": "建筑",
     "Upgrade": "升级",
     "Research": "研究",
-    "Law": "法律",
+    "Law": "政策",
     "Action": "动作",
     "Prestige": "重置",
     "Colonist Arrived": "殖民者到来",
@@ -271,7 +271,7 @@ var cnItems = {
     "3D Printers Construction": "3D 打印建造",
     "Create prefabricated sections on your 3D printers. Further decreases building cost scaling by 10%": "用 3D 打印机制造建筑的预制部分。进一步将建筑升级时的成本提升率降低 10%",
     "Organs Printing": "器官打印",
-    "New synthetic organs allow for a better treatment of your colonists. Unlocks a new social law": "运用新的人造器官可以为您的殖民者提供更好的医疗。解锁一个新的法律",
+    "New synthetic organs allow for a better treatment of your colonists. Unlocks a new social law": "运用新的人造器官可以为您的殖民者提供更好的医疗。解锁一个新的政策",
     "Improve Health Diagnostics": "改良健康诊断",
     "Using computers for diagnostics can significantly improve healthcare services. Each level increases healthcare from clinics by 5%": "使用电脑进行诊断，显著改善医疗服务。每级使诊所的医疗加成提升 5%",
     "Multistore Warehouses": "多层式仓库",
@@ -357,7 +357,7 @@ var cnItems = {
     "Biomass Freezing": "生物质冷却",
     "Use frozen biomass in your investigations. Reduce Biolabs Biomass consumption by 75%": "允许在科研过程中使用冷藏生物质来替代新鲜的。生物实验室的生物质消耗降低 75%",
     "Orbital Bio-research": "轨道生物研究",
-    "Biolabs can perform some research in space now (togglable in laws and order)": "生物实验室可以在太空中进行新的研究（在法律与秩序页面开启或关闭）",
+    "Biolabs can perform some research in space now (togglable in laws and order)": "生物实验室可以在太空中进行新的研究（在政策与秩序页面开启或关闭）",
     "Orbital Clinic": "轨道诊所",
     "Orbital Supply Module will now also provide healthcare boost": "轨道生命维持模块现在也将提供医疗服务",
     "Nano Biobots": "纳米生物机器人",
@@ -439,7 +439,7 @@ var cnItems = {
     "Fuel Delivery Bacteria": "燃料输送细菌",
     "Use specific bacteria capable of organic fuel transferring. Decrease spaceship fuel consumption by 20% per level": "将能传输有机燃料的特殊细菌投入使用。每级使飞船的燃料消耗降低 20%",
     "Organic Processing Incubator": "有机物处理培养箱",
-    "Use specific infrastructure in your bacteria incubators to breed organic processing bacteria. Unlocks new Bacteria Incubator modes in Orders & Laws": "在细菌培养箱中使用特殊的结构，以培养能处理有机物的细菌。解锁一条关于培养箱模式的法律",
+    "Use specific infrastructure in your bacteria incubators to breed organic processing bacteria. Unlocks new Bacteria Incubator modes in Orders & Laws": "在细菌培养箱中使用特殊的结构，以培养能处理有机物的细菌。解锁一条关于培养箱模式的政策",
     "Antimatter collection": "反物质收集",
     "Use your knowledge about antimatter to improve its capturing. Each level boost anti-matter production by 20%": "运用您对反物质的了解，来促进收集反物质的过程。每级使反物质产量提升 20%",
     "Antimatter knife": "反物质刀",
@@ -659,7 +659,7 @@ var cnItems = {
     "Unlocks new ways to make your little society happier and more efficient": "解锁让您的小社会更快乐、更高效的新方法",
     "Material Knowledge": "材料知识",
     "Further advances crafting and metal processing": "进一步推进手工艺和金属加工",
-    "Law": "法律",
+    "Law": "政策",
     "Unlocks new aspects of your colony development": "解锁您的殖民地发展的新方面",
     "Electricity Study": "电力研究",
     "Improves knowledge about conductivity of various materials": "增进对各种材料导电性的了解",
@@ -879,7 +879,7 @@ var cnItems = {
     "Healthcare Consumption": "医疗消耗",
     "You know how to review a candidate for a future colony, and how to act when things go wrong. Every point decreases healthcare requirements by 4": "您知道如何审查未来殖民地的候选人，以及当出现问题时如何采取行动。每级使医疗消耗降低 4",
 
-    //法律
+    //政策
     "Experimental medicine": "实验性医学",
     "Regulates the use of experimental drugs": "规范实验性药物的使用",
     "Forbid All": "禁止",
@@ -1021,8 +1021,8 @@ var cnItems = {
     "Freedom of Speech": "言论自由",
     "Mass media freely cover everything happening in society. Raises demands for all services by 20%, but increases the maximum positive effect of each service by 10 units.": "允许大众媒体讨论社会上发生的一切事情。所有服务消耗提升 20%，但使所有服务的可生效上限增加 10",
     
-    "Law": "法律",
-    "Laws": "法律",
+    "Law": "政策",
+    "Laws": "政策",
     
     "Head": "船首",
     "Corpus": "船体",
@@ -1276,7 +1276,7 @@ var cnItems = {
     "You received ": "你获得了 ",
     "Colonist arrived. Colony grew up to ": "殖民者到来了。目前人口为",
     "Colonist died. You now have ": "殖民者到来了。目前人口为",
-    "Law&Order: ": "法律：",
+    "Law&Order: ": "政策：",
     //"MMM D, Y HH:mm:ss"
     "Year ": "年：",
     "Resource: Anomaly": "资源：畸体",
@@ -1293,7 +1293,7 @@ var cnItems = {
     "Planet": "行星",
     "Science": "科学",
     "Space": "太空",
-    "Laws & Order": "法律与秩序",
+    "Laws & Order": "政策与秩序",
     "Prestige": "重置",
     "Settings": "设置",
     "About & Change Log": "关于 & 更新日志",
@@ -1409,7 +1409,7 @@ var cnItems = {
 
     //更新日志正文
     //v0.2.4
-    "Added 7 new early- & mid-game laws": "增加了7个前中期的法律",
+    "Added 7 new early- & mid-game laws": "增加了7个前中期的政策",
     "New planet modifiers": "增加了新的星球词条",
     "Added possibility to swap items in queue": "允许调换队列内项目的顺序",
     "Added possibility to filter events": "允许过滤日志类型",
@@ -1446,7 +1446,7 @@ var cnItems = {
     "Fixed bug related to KP bonus from fights": "修复了战斗提供的知识加成有误的bug",
     "Fixed scroll behavior for craftables list": "调整了工艺制造材料页面的显示逻辑，现在对于大屏幕更加友好",
     "Fixed display bug for XP bonus in next run": "修复了预计下轮知识加成显示错误的 bug",
-    "Fixed bug when research grant law didn't impact on meteo-station when it start consuming power": "修复了气象站消耗电力后不受法律加成的 bug",
+    "Fixed bug when research grant law didn't impact on meteo-station when it start consuming power": "修复了气象站消耗电力后不受政策加成的 bug",
     //v0.2.0a
     "Fixed bug related to building/scrapping ships": "修复了关于建造/摧毁飞船的 bug",
     "Fixed bug prevented XP bonus from fights to work in some cases": "修复了部分情况下战斗的经验加成不生效的 bug",
@@ -1511,9 +1511,9 @@ var cnItems = {
     //v0.0.3a
     "Fixed bugs with expeditions": "修复了探险的错误",
     //v0.0.3
-    "Added notifications for new buildings/upgrades/laws": "增加了新建筑/升级/法律的通知",
+    "Added notifications for new buildings/upgrades/laws": "增加了新建筑/升级/政策的通知",
     "Re-balanced some buildings: Smelters and Monuments prices reduces, increased Smelter ore upkeep, removed Warehouse power upkeep": "重新平衡一些建筑物：冶炼厂和纪念碑价格降低，提升冶炼厂矿石消耗，删除仓库电力消耗",
-    "Added new laws": "增加了新的法律",
+    "Added new laws": "增加了新的政策",
     "Added expedition length settings": "增加了探险时长设置",
     "Added 2 new science researches, 3 upgrades and 1 building": "增加了 2 个新的科学研究、3 个升级和 1 个建筑",
     "Fixed some mistakes in descriptions": "修正了描述中的一些错误",
@@ -1884,7 +1884,7 @@ var cnPrefix = {
     "Knowledge: ": "知识：",
     "Knowledge Upgrade:": "知识升级：",
     "XP Upgrade: ": "经验升级：",
-    "Law Lightning Mode: "
+    "Law Lightning Mode: ": "照明模式政策：",
 
     //
     "Shield: ": "护盾：",
