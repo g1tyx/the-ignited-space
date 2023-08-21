@@ -112,7 +112,7 @@ var cnItems = {
     "Platinum": "铂金",
     "Biomass": "生物质",
     "Research": "研究",
-    "Anomalies": "畸体",
+    "Anomaly": "畸体",
     "Dark Matter": "暗物质",
     "Antimatter": "反物质",
     "Beam": "木梁",
