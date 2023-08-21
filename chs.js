@@ -959,7 +959,7 @@ var cnItems = {
     "Limited Coal-burning": "适量燃煤",
     "Allow using a minor amount of wood for metal processing. Plates and wires craftsmen are 10% more efficient, but consume 0.2 wood each": "允许在金属处理过程中燃烧适量的煤。金属板和电线工匠的效率提升 10%，但每人每秒消耗 0.2 木材",
     "Unregulated Metal Processing": "放开限制",
-    "Why would the one take care of environment if need so much materials? Plates and wires craftsmen are 20% more efficient, but consume 0.4 wood each and provide 1 penalty to healthcare": "既然真的急缺这些材料，污染环境又有什么关系？金属板和电线工匠的效率提升 20%，但每人消耗 1 美观且每秒消耗 0.4 木材",
+    "Why would the one take care of environment if need so much materials? Plates and wires craftsmen are 20% more efficient, but consume 0.4 wood each and provide 1 penalty to healthcare": "既然真的急缺这些材料，污染环境又有什么关系？金属板和电线工匠的效率提升 20%，但每人消耗 1 医疗且每秒消耗 0.4 木材",
     "Food Chemical Processing": "食品化工",
     "Regulate the chemical processing of food": "规范食品的额外化学加工",
     "Forbid All": "禁止",
