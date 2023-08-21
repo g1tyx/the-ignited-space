@@ -1885,6 +1885,7 @@ var cnPrefix = {
     "Knowledge Upgrade:": "知识升级：",
     "XP Upgrade: ": "经验升级：",
     "Law Lightning Mode: ": "照明模式政策：",
+    "Law Fuel Processing Mode: ": "燃料生产政策：",
 
     //
     "Shield: ": "护盾：",
