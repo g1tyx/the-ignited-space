@@ -451,7 +451,7 @@ var cnItems = {
     "Positron Canon": "阳电子炮",
     "Use focused positron beams to advance your materials processing. Increase semiconductor, computers and magnetos crafting efficiency by 20% per level": "用聚焦的阳电子束来进一步优化材料处理。每级提升半导体、计算机和磁电机产量 20%",
     "Positron Weapons": "阳电子武器",
-    "Focus all the power of antimatter to evaporate your enemies! Unlocks new highly destructive weapons. Each level increase its damage by 25%": "展现反物质的威力，让你的敌人瞬间爆炸！解锁全新的毁灭性飞船武器。每级使其伤害提升 25%",
+    "Focus all the power of antimatter to evaporate your enemies! Unlocks new highly destructive weapons. Each level increase its damage by 25%": "你说得对，但这就是反物质，中间忘了，后面就啊啊啊啊啊……解锁全新的毁灭性飞船武器。每级使其伤害提升 25%",
     "Portable Batteries": "轻型电池",
     "Use your advances in extremely dense and low-temperature physics into your power-distributing devices. Each level increase ships power generation by 20%": "将您在高密度和低温环境下的全新技术运用在电力设备上。每级使飞船的电力产量提升 20%",
     "High Pressed Blocks": "压缩砖块",
