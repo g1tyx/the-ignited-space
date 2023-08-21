@@ -960,8 +960,8 @@ var cnItems = {
     "Allow using a minor amount of wood for metal processing. Plates and wires craftsmen are 10% more efficient, but consume 0.2 wood each": "允许在金属处理过程中燃烧适量的煤。金属板和电线工匠的效率提升 10%，但每人每秒消耗 0.2 木材",
     "Unregulated Metal Processing": "放开限制",
     "Why would the one take care of environment if need so much materials? Plates and wires craftsmen are 20% more efficient, but consume 0.4 wood each and provide 1 penalty to healthcare": "既然真的急缺这些材料，污染环境又有什么关系？金属板和电线工匠的效率提升 20%，但每人消耗 1 医疗且每秒消耗 0.4 木材",
-    "Food Chemical Processing": "食品化工",
-    "Regulate the chemical processing of food": "规范食品的额外化学加工",
+    "Food Chemical Processing": "食品加工",
+    "Regulate the chemical processing of food": "规范对食品的额外化学加工",
     "Forbid All": "禁止",
     "All food is grown organically and served unprocessed": "只提供纯天然有机种植的食物，不进行任何化学加工",
     "Efficient Processing": "工业处理",
@@ -1886,6 +1886,7 @@ var cnPrefix = {
     "XP Upgrade: ": "经验升级：",
     "Law Lightning Mode: ": "照明模式政策：",
     "Law Fuel Processing Mode: ": "燃料生产政策：",
+    "Law Food Chemical Processing: ": "食品加工政策：",
 
     //
     "Shield: ": "护盾：",
