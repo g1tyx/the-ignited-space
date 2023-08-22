@@ -23,7 +23,7 @@ var cnItems = {
     "Residental Buildings": "住宅建筑",
     "Orbit Buildings": "行星轨道建筑",
     "Moon Buildings": "月球建筑",
-    "Aid Buildings": "冥王星建筑",
+    "Aid Buildings": "火星建筑",
     "Venus Buildings": "金星建筑",
     "Outer Orbit Buildings": "外层轨道建筑",
     "Interstellar Buildings": "星际建筑",
@@ -1097,111 +1097,120 @@ var cnItems = {
     "D": "D",
 
     //行星词条手动显示
-    "Small": "小型",
+    "Wet Small": "潮湿 小型",
 
-    "Small Wet": "小型 潮湿",
-    "Small Wet Ore Poor": "小型 潮湿 矿物贫瘠",
-    "Small Wet Ore Poor Cold": "小型 潮湿 矿物贫瘠 寒冷",
-    "Small Wet Ore Poor Hot": "小型 潮湿 矿物贫瘠 炎热",
-    "Small Wet Ore Rich": "小型 潮湿 矿物丰富",
-    "Small Wet Ore Rich Cold": "小型 潮湿 矿物丰富 寒冷",
-    "Small Wet Ore Rich Hot": "小型 潮湿 矿物丰富 炎热",
-    "Small Wet Cold": "小型 潮湿 寒冷",
-    "Small Wet Hot": "小型 潮湿 炎热",
+    "Wet Small Ore Poor": "潮湿 小型 矿物贫瘠",
+    "Wet Small Ore Poor Cold": "潮湿 小型 矿物贫瘠 寒冷",
+    "Wet Small Ore Poor Hot": "潮湿 小型 矿物贫瘠 炎热",
 
-    "Small Dry": "小型 干燥",
-    "Small Dry Ore Poor": "小型 干燥 矿物贫瘠",
-    "Small Dry Ore Poor Cold": "小型 干燥 矿物贫瘠 寒冷",
-    "Small Dry Ore Poor Hot": "小型 干燥 矿物贫瘠 炎热",
-    "Small Dry Ore Rich": "小型 干燥 矿物丰富",
-    "Small Dry Ore Rich Cold": "小型 干燥 矿物丰富 寒冷",
-    "Small Dry Ore Rich Hot": "小型 干燥 矿物丰富 炎热",
-    "Small Dry Cold": "小型 干燥 寒冷",
-    "Small Dry Hot": "小型 干燥 炎热",
+    "Wet Small Ore Rich": "潮湿 小型 矿物丰富",
+    "Wet Small Ore Rich Cold": "潮湿 小型 矿物丰富 寒冷",
+    "Wet Small Ore Rich Hot": "潮湿 小型 矿物丰富 炎热",
 
-    "Wet Small": "小型 潮湿",
-    "Wet Small Ore Poor": "小型 潮湿 矿物贫瘠",
-    "Wet Small Ore Poor Cold": "小型 潮湿 矿物贫瘠 寒冷",
-    "Wet Small Ore Poor Hot": "小型 潮湿 矿物贫瘠 炎热",
-    "Wet Small Ore Rich": "小型 潮湿 矿物丰富",
-    "Wet Small Ore Rich Cold": "小型 潮湿 矿物丰富 寒冷",
-    "Wet Small Ore Rich Hot": "小型 潮湿 矿物丰富 炎热",
-    "Wet Small Cold": "小型 潮湿 寒冷",
-    "Wet Small Hot": "小型 潮湿 炎热",
+    "Wet Small Peaty": "潮湿 小型 泥质",
+    "Wet Small Peaty Cold": "潮湿 小型 泥质 寒冷",
+    "Wet Small Peaty Hot": "潮湿 小型 泥质 炎热",
 
-    "Dry Small": "小型 干燥",
-    "Dry Small Ore Poor": "小型 干燥 矿物贫瘠",
-    "Dry Small Ore Poor Cold": "小型 干燥 矿物贫瘠 寒冷",
-    "Dry Small Ore Poor Hot": "小型 干燥 矿物贫瘠 炎热",
-    "Dry Small Ore Rich": "小型 干燥 矿物丰富",
-    "Dry Small Ore Rich Cold": "小型 干燥 矿物丰富 寒冷",
-    "Dry Small Ore Rich Hot": "小型 干燥 矿物丰富 炎热",
-    "Dry Small Cold": "小型 干燥 寒冷",
-    "Dry Small Hot": "小型 干燥 炎热",
+    "Wet Small Cold": "潮湿 小型 寒冷",
+    "Wet Small Hot": "潮湿 小型 炎热",
+
+    "Wet Big": "潮湿 大型",
+
+    "Wet Big Ore Poor": "潮湿 大型 矿物贫瘠",
+    "Wet Big Ore Poor Cold": "潮湿 大型 矿物贫瘠 寒冷",
+    "Wet Big Ore Poor Hot": "潮湿 大型 矿物贫瘠 炎热",
+
+    "Wet Big Ore Rich": "潮湿 大型 矿物丰富",
+    "Wet Big Ore Rich Cold": "潮湿 大型 矿物丰富 寒冷",
+    "Wet Big Ore Rich Hot": "潮湿 大型 矿物丰富 炎热",
+
+    "Wet Big Peaty": "潮湿 大型 泥质",
+    "Wet Big Peaty Cold": "潮湿 大型 泥质 寒冷",
+    "Wet Big Peaty Hot": "潮湿 大型 泥质 炎热",
+
+    "Wet Big Cold": "潮湿 大型 寒冷",
+    "Wet Big Hot": "潮湿 大型 炎热",
+
+    "Wet Cold": "潮湿 寒冷",
+    "Wet Hot": "潮湿 炎热",
+    
+    "Dry Small": "干燥 小型",
+
+    "Dry Small Ore Poor": "干燥 小型 矿物贫瘠",
+    "Dry Small Ore Poor Cold": "干燥 小型 矿物贫瘠 寒冷",
+    "Dry Small Ore Poor Hot": "干燥 小型 矿物贫瘠 炎热",
+
+    "Dry Small Ore Rich": "干燥 小型 矿物丰富",
+    "Dry Small Ore Rich Cold": "干燥 小型 矿物丰富 寒冷",
+    "Dry Small Ore Rich Hot": "干燥 小型 矿物丰富 炎热",
+
+    "Dry Small Peaty": "干燥 小型 泥质",
+    "Dry Small Peaty Cold": "干燥 小型 泥质 寒冷",
+    "Dry Small Peaty Hot": "干燥 小型 泥质 炎热",
+
+    "Dry Small Cold": "干燥 小型 寒冷",
+    "Dry Small Hot": "干燥 小型 炎热",
+
+    "Dry Big": "干燥 大型",
+    "Dry Big Ore Poor": "干燥 大型 矿物贫瘠",
+    "Dry Big Ore Poor Cold": "干燥 大型 矿物贫瘠 寒冷",
+    "Dry Big Ore Poor Hot": "干燥 大型 矿物贫瘠 炎热",
+
+    "Dry Big Ore Rich": "干燥 大型 矿物丰富",
+    "Dry Big Ore Rich Cold": "干燥 大型 矿物丰富 寒冷",
+    "Dry Big Ore Rich Hot": "干燥 大型 矿物丰富 炎热",
+
+    "Dry Big Peaty": "干燥 大型 泥质",
+    "Dry Big Peaty Cold": "干燥 大型 泥质 寒冷",
+    "Dry Big Peaty Hot": "干燥 大型 泥质 炎热",
+
+    "Dry Big Cold": "干燥 大型 寒冷",
+    "Dry Big Hot": "干燥 大型 炎热",
+
+    "Dry Cold": "干燥 寒冷",
+    "Dry Hot": "干燥 炎热",
 
     "Small Ore Poor": "小型 矿物贫瘠",
     "Small Ore Poor Cold": "小型 矿物贫瘠 寒冷",
     "Small Ore Poor Hot": "小型 矿物贫瘠 炎热",
+
     "Small Ore Rich": "小型 矿物丰富",
     "Small Ore Rich Cold": "小型 矿物丰富 寒冷",
     "Small Ore Rich Hot": "小型 矿物丰富 炎热",
 
+    "Small Peaty": "小型 泥质",
+    "Small Peaty Cold": "小型 泥质 寒冷",
+    "Small Peaty Hot": "小型 泥质 炎热",
+
     "Small Cold": "小型 寒冷",
     "Small Hot": "小型 炎热",
-
-    "Big": "大型",
-
-    "Big Wet": "大型 潮湿",
-    "Big Wet Ore Poor": "大型 潮湿 矿物贫瘠",
-    "Big Wet Ore Poor Cold": "大型 潮湿 矿物贫瘠 寒冷",
-    "Big Wet Ore Poor Hot": "大型 潮湿 矿物贫瘠 炎热",
-    "Big Wet Ore Rich": "大型 潮湿 矿物丰富",
-    "Big Wet Ore Rich Cold": "大型 潮湿 矿物丰富 寒冷",
-    "Big Wet Ore Rich Hot": "大型 潮湿 矿物丰富 炎热",
-    "Big Wet Cold": "大型 潮湿 寒冷",
-    "Big Wet Hot": "大型 潮湿 炎热",
-
-    "Big Dry": "大型 干燥",
-    "Big Dry Ore Poor": "大型 干燥 矿物贫瘠",
-    "Big Dry Ore Poor Cold": "大型 干燥 矿物贫瘠 寒冷",
-    "Big Dry Ore Poor Hot": "大型 干燥 矿物贫瘠 炎热",
-    "Big Dry Ore Rich": "大型 干燥 矿物丰富",
-    "Big Dry Ore Rich Cold": "大型 干燥 矿物丰富 寒冷",
-    "Big Dry Ore Rich Hot": "大型 干燥 矿物丰富 炎热",
-    "Big Dry Cold": "大型 干燥 寒冷",
-    "Big Dry Hot": "大型 干燥 炎热",
-
-    "Wet Big": "大型 潮湿",
-    "Wet Big Ore Poor": "大型 潮湿 矿物贫瘠",
-    "Wet Big Ore Poor Cold": "大型 潮湿 矿物贫瘠 寒冷",
-    "Wet Big Ore Poor Hot": "大型 潮湿 矿物贫瘠 炎热",
-    "Wet Big Ore Rich": "大型 潮湿 矿物丰富",
-    "Wet Big Ore Rich Cold": "大型 潮湿 矿物丰富 寒冷",
-    "Wet Big Ore Rich Hot": "大型 潮湿 矿物丰富 炎热",
-    "Wet Big Cold": "大型 潮湿 寒冷",
-    "Wet Big Hot": "大型 潮湿 炎热",
-
-    "Dry Big": "大型 干燥",
-    "Dry Big Ore Poor": "大型 干燥 矿物贫瘠",
-    "Dry Big Ore Poor Cold": "大型 干燥 矿物贫瘠 寒冷",
-    "Dry Big Ore Poor Hot": "大型 干燥 矿物贫瘠 炎热",
-    "Dry Big Ore Rich": "大型 干燥 矿物丰富",
-    "Dry Big Ore Rich Cold": "大型 干燥 矿物丰富 寒冷",
-    "Dry Big Ore Rich Hot": "大型 干燥 矿物丰富 炎热",
-    "Dry Big Cold": "大型 干燥 寒冷",
-    "Dry Big Hot": "大型 干燥 炎热",
 
     "Big Ore Poor": "大型 矿物贫瘠",
     "Big Ore Poor Cold": "大型 矿物贫瘠 寒冷",
     "Big Ore Poor Hot": "大型 矿物贫瘠 炎热",
+
     "Big Ore Rich": "大型 矿物丰富",
     "Big Ore Rich Cold": "大型 矿物丰富 寒冷",
     "Big Ore Rich Hot": "大型 矿物丰富 炎热",
 
+    "Big Peaty": "大型 泥质",
+    "Big Peaty Cold": "大型 泥质 寒冷",
+    "Big Peaty Hot": "大型 泥质 炎热",
+
     "Big Cold": "大型 寒冷",
     "Big Hot": "小型 炎热",
 
-    
+    "Ore Poor Cold": "矿物贫瘠 寒冷",
+    "Ore Poor Hot": "矿物贫瘠 炎热",
+
+    "Ore Rich Cold": "矿物丰富 寒冷",
+    "Ore Rich Hot": "矿物丰富 炎热",
+
+    "Peaty Cold": "泥质 寒冷",
+    "Peaty Hot": "泥质 炎热",
+
+
+    //
     "Breakdown:": "  明细：",
 
 
@@ -1849,6 +1858,11 @@ var cnPrefix = {
     "Level: ": "等级：",
     "Time to reach opponent: ": "距离接触敌人：",
     "Fuel consumption: ": "燃料消耗：",
+
+    //
+    "Volcanic ": "火山 ",
+    "Inactive ": "低磁性 ",
+    "Calm ": "平静 ",
 }
 
 //需处理的后缀
