@@ -572,7 +572,7 @@ var cnItems = {
     "Provides stable platinum source, but requires a lot power to operate": "提供稳定的铂金产出，但需要消耗大量电力才能运行",
     "Space Warehouse": "太空仓库",
     "What could be better than warehouse? Yes, only warehouse in space! Also affected by storage containers.": "有什么比仓库还要酷的吗？当然是太空中的仓库啦！该建筑和仓库类似，能享受存储容器的加成。",
-    "Pluto Monument": "冥王星纪念碑",
+    "Pluto Monument": "冥王纪念碑",
     "This hostile and hot planet, literally made of iron will remind your people of the god of the Underground. Requires a lot resources, but provides significant motivation to religious people": "这颗环境恶劣的炎热星球完全是由铁组成的，看到它会让您的人民想起以前的地底之神。在这里建造纪念碑需要大量资源，但它将成为宗教人士的精神支柱",
     "Flora Plant": "植物群系",
     "Hot and wet climate allows you to produce more biomass here. Requires power however to operate": "炎热潮湿的气候使您可以在这里生产更多的生物质。但需要电源才能运行",
@@ -1840,8 +1840,8 @@ var cnPrefix = {
     "Knowledge: ": "知识：",
     "Knowledge Upgrade:": "知识升级：",
     "XP Upgrade: ": "经验升级：",
-    "Planet modifier:": "行星修正：",
-    "Temperature modifier:": "温度修正：",
+    "Planet modifier: ": "行星修正：",
+    "Temperature modifier: ": "温度修正：",
 
     //
     "Law Lightning Mode: ": "照明模式政策：",
