@@ -23,7 +23,7 @@ var cnItems = {
     "Residental Buildings": "住宅建筑",
     "Orbit Buildings": "行星轨道建筑",
     "Moon Buildings": "月球建筑",
-    "Aid Buildings": "冥王星建筑",
+    "Aid Buildings": "火星建筑",
     "Venus Buildings": "金星建筑",
     "Outer Orbit Buildings": "外层轨道建筑",
     "Interstellar Buildings": "星际建筑",
@@ -69,13 +69,14 @@ var cnItems = {
     "Capacity": "资源上限",
     "Colony": "殖民地",
 
-    //星球词缀和类型
+    //星球词条和类型
     "Crust": "地壳",
     "Gravity": "重力",
     "Size": "大小",
     "Humidity": "湿度",
     "Temperature": "温度",
     "Tectonics": "构造",
+
     "Small": "小型",
     "Large": "大型",
     "Ore Rich": "矿物丰富",
@@ -88,7 +89,7 @@ var cnItems = {
     "Hot": "炎热",
     "Peaty": "泥质",
     "Volcanic": "火山",
-    "Inactive": "不活跃",
+    "Inactive": "低磁性",
     "Calm": "平静",
     
     //无人机操作
@@ -572,7 +573,7 @@ var cnItems = {
     "Provides stable platinum source, but requires a lot power to operate": "提供稳定的铂金产出，但需要消耗大量电力才能运行",
     "Space Warehouse": "太空仓库",
     "What could be better than warehouse? Yes, only warehouse in space! Also affected by storage containers.": "有什么比仓库还要酷的吗？当然是太空中的仓库啦！该建筑和仓库类似，能享受存储容器的加成。",
-    "Pluto Monument": "冥王星纪念碑",
+    "Pluto Monument": "冥王纪念碑",
     "This hostile and hot planet, literally made of iron will remind your people of the god of the Underground. Requires a lot resources, but provides significant motivation to religious people": "这颗环境恶劣的炎热星球完全是由铁组成的，看到它会让您的人民想起以前的地底之神。在这里建造纪念碑需要大量资源，但它将成为宗教人士的精神支柱",
     "Flora Plant": "植物群系",
     "Hot and wet climate allows you to produce more biomass here. Requires power however to operate": "炎热潮湿的气候使您可以在这里生产更多的生物质。但需要电源才能运行",
@@ -1020,7 +1021,7 @@ var cnItems = {
     "Limited Propaganda": "半官方口径",
     "Mass media provide society with access to information about the political life of civilization while shifting the focus towards propagating economic development. Increases the risk of uprising, thus raising security demands by 20%. However, it enhances the efficiency of workers by 10% (including law enforcement)": "大众媒体为群众提供具体的政治信息，并重点宣传经济发展。这将提高起义的风险，因此安保消耗提升 20%。然而，该法令也将使所有工人的产量提升 10% （包括警察）",
     "Freedom of Speech": "言论自由",
-    "Mass media freely cover everything happening in society. Raises demands for all services by 20%, but increases the maximum positive effect of each service by 10 units.": "允许大众媒体讨论社会上发生的一切事情。所有服务消耗提升 20%，但使所有服务的可生效上限增加 10",
+    "Mass media freely cover everything happening in society. Raises demands for all services by 20%, but increases the maximum positive effect of each service by 10 units.": "允许大众媒体讨论社会上发生的一切事情。所有服务消耗提升 20%，但使所有服务的可生效上限增加 20",
     
     "Law": "政策",
     "Laws": "政策",
@@ -1066,19 +1067,6 @@ var cnItems = {
     
     //
     "Knowledge: ": "知识：",
-    
-    "Cold": "寒冷",
-    "Hot": "炎热",
-    "Ore Poor": "矿物贫瘠",
-    "Ore Rich": "矿物丰富",
-    "Small": "小型",
-    "Big": "大型",
-    "Wet": "潮湿",
-    "Dry": "干燥",
-    "Peaty": "泥质",
-    "Volcanic": "火山",
-    "Inactive": "不活跃",
-    "Calm": "平静",
 
     //
     "Productivity": "全局产量",
@@ -1107,124 +1095,122 @@ var cnItems = {
     "B": "B",
     "C": "C",
     "D": "D",
-    "Planet modifier:": "行星加成：",
 
-    //行星加成手动显示
-    "Planet modifier: Cold": "行星加成：寒冷",
-    "Planet modifier: Hot": "行星加成：炎热",
-    "Planet modifier: Ore Poor": "行星加成：矿物贫瘠",
-    "Planet modifier: Ore Rich": "行星加成：矿物丰富",
-    "Planet modifier: Small": "行星加成：小型",
-    "Planet modifier: Big": "行星加成：大型",
-    "Planet modifier: Wet": "行星加成：潮湿",
-    "Planet modifier: Dry": "行星加成：干燥",
+    //行星词条手动显示
+    "Wet Small": "潮湿 小型",
 
-    //行星词缀手动显示
-    "Small": "小型",
+    "Wet Small Ore Poor": "潮湿 小型 矿物贫瘠",
+    "Wet Small Ore Poor Cold": "潮湿 小型 矿物贫瘠 寒冷",
+    "Wet Small Ore Poor Hot": "潮湿 小型 矿物贫瘠 炎热",
 
-    "Small Wet": "小型 潮湿",
-    "Small Wet Ore Poor": "小型 潮湿 矿物贫瘠",
-    "Small Wet Ore Poor Cold": "小型 潮湿 矿物贫瘠 寒冷",
-    "Small Wet Ore Poor Hot": "小型 潮湿 矿物贫瘠 炎热",
-    "Small Wet Ore Rich": "小型 潮湿 矿物丰富",
-    "Small Wet Ore Rich Cold": "小型 潮湿 矿物丰富 寒冷",
-    "Small Wet Ore Rich Hot": "小型 潮湿 矿物丰富 炎热",
-    "Small Wet Cold": "小型 潮湿 寒冷",
-    "Small Wet Hot": "小型 潮湿 炎热",
+    "Wet Small Ore Rich": "潮湿 小型 矿物丰富",
+    "Wet Small Ore Rich Cold": "潮湿 小型 矿物丰富 寒冷",
+    "Wet Small Ore Rich Hot": "潮湿 小型 矿物丰富 炎热",
 
-    "Small Dry": "小型 干燥",
-    "Small Dry Ore Poor": "小型 干燥 矿物贫瘠",
-    "Small Dry Ore Poor Cold": "小型 干燥 矿物贫瘠 寒冷",
-    "Small Dry Ore Poor Hot": "小型 干燥 矿物贫瘠 炎热",
-    "Small Dry Ore Rich": "小型 干燥 矿物丰富",
-    "Small Dry Ore Rich Cold": "小型 干燥 矿物丰富 寒冷",
-    "Small Dry Ore Rich Hot": "小型 干燥 矿物丰富 炎热",
-    "Small Dry Cold": "小型 干燥 寒冷",
-    "Small Dry Hot": "小型 干燥 炎热",
+    "Wet Small Peaty": "潮湿 小型 泥质",
+    "Wet Small Peaty Cold": "潮湿 小型 泥质 寒冷",
+    "Wet Small Peaty Hot": "潮湿 小型 泥质 炎热",
 
-    "Wet Small": "小型 潮湿",
-    "Wet Small Ore Poor": "小型 潮湿 矿物贫瘠",
-    "Wet Small Ore Poor Cold": "小型 潮湿 矿物贫瘠 寒冷",
-    "Wet Small Ore Poor Hot": "小型 潮湿 矿物贫瘠 炎热",
-    "Wet Small Ore Rich": "小型 潮湿 矿物丰富",
-    "Wet Small Ore Rich Cold": "小型 潮湿 矿物丰富 寒冷",
-    "Wet Small Ore Rich Hot": "小型 潮湿 矿物丰富 炎热",
-    "Wet Small Cold": "小型 潮湿 寒冷",
-    "Wet Small Hot": "小型 潮湿 炎热",
+    "Wet Small Cold": "潮湿 小型 寒冷",
+    "Wet Small Hot": "潮湿 小型 炎热",
 
-    "Dry Small": "小型 干燥",
-    "Dry Small Ore Poor": "小型 干燥 矿物贫瘠",
-    "Dry Small Ore Poor Cold": "小型 干燥 矿物贫瘠 寒冷",
-    "Dry Small Ore Poor Hot": "小型 干燥 矿物贫瘠 炎热",
-    "Dry Small Ore Rich": "小型 干燥 矿物丰富",
-    "Dry Small Ore Rich Cold": "小型 干燥 矿物丰富 寒冷",
-    "Dry Small Ore Rich Hot": "小型 干燥 矿物丰富 炎热",
-    "Dry Small Cold": "小型 干燥 寒冷",
-    "Dry Small Hot": "小型 干燥 炎热",
+    "Wet Big": "潮湿 大型",
+
+    "Wet Big Ore Poor": "潮湿 大型 矿物贫瘠",
+    "Wet Big Ore Poor Cold": "潮湿 大型 矿物贫瘠 寒冷",
+    "Wet Big Ore Poor Hot": "潮湿 大型 矿物贫瘠 炎热",
+
+    "Wet Big Ore Rich": "潮湿 大型 矿物丰富",
+    "Wet Big Ore Rich Cold": "潮湿 大型 矿物丰富 寒冷",
+    "Wet Big Ore Rich Hot": "潮湿 大型 矿物丰富 炎热",
+
+    "Wet Big Peaty": "潮湿 大型 泥质",
+    "Wet Big Peaty Cold": "潮湿 大型 泥质 寒冷",
+    "Wet Big Peaty Hot": "潮湿 大型 泥质 炎热",
+
+    "Wet Big Cold": "潮湿 大型 寒冷",
+    "Wet Big Hot": "潮湿 大型 炎热",
+
+    "Wet Cold": "潮湿 寒冷",
+    "Wet Hot": "潮湿 炎热",
+    
+    "Dry Small": "干燥 小型",
+
+    "Dry Small Ore Poor": "干燥 小型 矿物贫瘠",
+    "Dry Small Ore Poor Cold": "干燥 小型 矿物贫瘠 寒冷",
+    "Dry Small Ore Poor Hot": "干燥 小型 矿物贫瘠 炎热",
+
+    "Dry Small Ore Rich": "干燥 小型 矿物丰富",
+    "Dry Small Ore Rich Cold": "干燥 小型 矿物丰富 寒冷",
+    "Dry Small Ore Rich Hot": "干燥 小型 矿物丰富 炎热",
+
+    "Dry Small Peaty": "干燥 小型 泥质",
+    "Dry Small Peaty Cold": "干燥 小型 泥质 寒冷",
+    "Dry Small Peaty Hot": "干燥 小型 泥质 炎热",
+
+    "Dry Small Cold": "干燥 小型 寒冷",
+    "Dry Small Hot": "干燥 小型 炎热",
+
+    "Dry Big": "干燥 大型",
+    "Dry Big Ore Poor": "干燥 大型 矿物贫瘠",
+    "Dry Big Ore Poor Cold": "干燥 大型 矿物贫瘠 寒冷",
+    "Dry Big Ore Poor Hot": "干燥 大型 矿物贫瘠 炎热",
+
+    "Dry Big Ore Rich": "干燥 大型 矿物丰富",
+    "Dry Big Ore Rich Cold": "干燥 大型 矿物丰富 寒冷",
+    "Dry Big Ore Rich Hot": "干燥 大型 矿物丰富 炎热",
+
+    "Dry Big Peaty": "干燥 大型 泥质",
+    "Dry Big Peaty Cold": "干燥 大型 泥质 寒冷",
+    "Dry Big Peaty Hot": "干燥 大型 泥质 炎热",
+
+    "Dry Big Cold": "干燥 大型 寒冷",
+    "Dry Big Hot": "干燥 大型 炎热",
+
+    "Dry Cold": "干燥 寒冷",
+    "Dry Hot": "干燥 炎热",
 
     "Small Ore Poor": "小型 矿物贫瘠",
     "Small Ore Poor Cold": "小型 矿物贫瘠 寒冷",
     "Small Ore Poor Hot": "小型 矿物贫瘠 炎热",
+
     "Small Ore Rich": "小型 矿物丰富",
     "Small Ore Rich Cold": "小型 矿物丰富 寒冷",
     "Small Ore Rich Hot": "小型 矿物丰富 炎热",
 
+    "Small Peaty": "小型 泥质",
+    "Small Peaty Cold": "小型 泥质 寒冷",
+    "Small Peaty Hot": "小型 泥质 炎热",
+
     "Small Cold": "小型 寒冷",
     "Small Hot": "小型 炎热",
-
-    "Big": "大型",
-
-    "Big Wet": "大型 潮湿",
-    "Big Wet Ore Poor": "大型 潮湿 矿物贫瘠",
-    "Big Wet Ore Poor Cold": "大型 潮湿 矿物贫瘠 寒冷",
-    "Big Wet Ore Poor Hot": "大型 潮湿 矿物贫瘠 炎热",
-    "Big Wet Ore Rich": "大型 潮湿 矿物丰富",
-    "Big Wet Ore Rich Cold": "大型 潮湿 矿物丰富 寒冷",
-    "Big Wet Ore Rich Hot": "大型 潮湿 矿物丰富 炎热",
-    "Big Wet Cold": "大型 潮湿 寒冷",
-    "Big Wet Hot": "大型 潮湿 炎热",
-
-    "Big Dry": "大型 干燥",
-    "Big Dry Ore Poor": "大型 干燥 矿物贫瘠",
-    "Big Dry Ore Poor Cold": "大型 干燥 矿物贫瘠 寒冷",
-    "Big Dry Ore Poor Hot": "大型 干燥 矿物贫瘠 炎热",
-    "Big Dry Ore Rich": "大型 干燥 矿物丰富",
-    "Big Dry Ore Rich Cold": "大型 干燥 矿物丰富 寒冷",
-    "Big Dry Ore Rich Hot": "大型 干燥 矿物丰富 炎热",
-    "Big Dry Cold": "大型 干燥 寒冷",
-    "Big Dry Hot": "大型 干燥 炎热",
-
-    "Wet Big": "大型 潮湿",
-    "Wet Big Ore Poor": "大型 潮湿 矿物贫瘠",
-    "Wet Big Ore Poor Cold": "大型 潮湿 矿物贫瘠 寒冷",
-    "Wet Big Ore Poor Hot": "大型 潮湿 矿物贫瘠 炎热",
-    "Wet Big Ore Rich": "大型 潮湿 矿物丰富",
-    "Wet Big Ore Rich Cold": "大型 潮湿 矿物丰富 寒冷",
-    "Wet Big Ore Rich Hot": "大型 潮湿 矿物丰富 炎热",
-    "Wet Big Cold": "大型 潮湿 寒冷",
-    "Wet Big Hot": "大型 潮湿 炎热",
-
-    "Dry Big": "大型 干燥",
-    "Dry Big Ore Poor": "大型 干燥 矿物贫瘠",
-    "Dry Big Ore Poor Cold": "大型 干燥 矿物贫瘠 寒冷",
-    "Dry Big Ore Poor Hot": "大型 干燥 矿物贫瘠 炎热",
-    "Dry Big Ore Rich": "大型 干燥 矿物丰富",
-    "Dry Big Ore Rich Cold": "大型 干燥 矿物丰富 寒冷",
-    "Dry Big Ore Rich Hot": "大型 干燥 矿物丰富 炎热",
-    "Dry Big Cold": "大型 干燥 寒冷",
-    "Dry Big Hot": "大型 干燥 炎热",
 
     "Big Ore Poor": "大型 矿物贫瘠",
     "Big Ore Poor Cold": "大型 矿物贫瘠 寒冷",
     "Big Ore Poor Hot": "大型 矿物贫瘠 炎热",
+
     "Big Ore Rich": "大型 矿物丰富",
     "Big Ore Rich Cold": "大型 矿物丰富 寒冷",
     "Big Ore Rich Hot": "大型 矿物丰富 炎热",
 
+    "Big Peaty": "大型 泥质",
+    "Big Peaty Cold": "大型 泥质 寒冷",
+    "Big Peaty Hot": "大型 泥质 炎热",
+
     "Big Cold": "大型 寒冷",
     "Big Hot": "小型 炎热",
 
-    
+    "Ore Poor Cold": "矿物贫瘠 寒冷",
+    "Ore Poor Hot": "矿物贫瘠 炎热",
+
+    "Ore Rich Cold": "矿物丰富 寒冷",
+    "Ore Rich Hot": "矿物丰富 炎热",
+
+    "Peaty Cold": "泥质 寒冷",
+    "Peaty Hot": "泥质 炎热",
+
+
+    //
     "Breakdown:": "  明细：",
 
 
@@ -1250,17 +1236,6 @@ var cnItems = {
     "Summer": "夏天",
     "Autumn": "秋天",
     "Winter": "冬天",
-
-    //温度加成手动显示
-    "Temperature modifier:": "温度加成：",
-    "Temperature modifier: Very Hot": "温度加成：酷暑",
-    "Temperature modifier: Hot": "温度加成：炎热",
-    "Temperature modifier: Warm": "温度加成：温暖",
-    "Temperature modifier: Slightly Warm": "温度加成：微暖",
-    "Temperature modifier: Slightly Cold": "温度加成：微冷",
-    "Temperature modifier: Cold": "温度加成：寒冷",
-    "Temperature modifier: Very Cold": "温度加成：严寒",
-    "Temperature modifier: Extremely Cold": "温度加成：极寒",
 
     //日志文本
     "Weather changed: ": "天气变化：",
@@ -1670,7 +1645,7 @@ var cnItems = {
 
     "XP Gain: x": "经验获取倍率：x",
     "Weather: x": "天气倍率：x",
-    "Select search for specific modifier. This will increase search cost": "您可以搜索特定的行星词缀，但这会增加搜索行星时的燃料消耗",
+    "Select search for specific modifier. This will increase search cost": "您可以搜索特定的行星词条，但这会增加搜索行星时的燃料消耗",
     "None": "无",
     "None": "无",
     "Search New Planets": "搜索新的行星",
@@ -1751,7 +1726,7 @@ var cnItems = {
     'The most common type of exoplanets discovered so far are known as "super-Earths - exoplanets that have a mass and size larger than Earth but smaller than that of gas giants like Neptune or Jupiter. They typically range in size from about 1 to 10 times the mass of Earth.': "迄今为止发现的最常见的系外行星类型被称为“超级地球”——质量和尺寸大于地球但小于海王星或木星等气态巨行星的系外行星。它们的尺寸通常约为地球的 1 至 10 倍 地球的质量。",
     'Distances between stars used to be incredibly huge. For example, the distance to Proxima Centauri from Earth is approximately 39.7 trillion kilometers or 4.24 light-years. That\'s why human very unlikely visit other star systems in near future. But its not the case once you are playing "The Ignited Space"': "恒星之间的距离是非常远的。例如，地球到比邻星的距离约为 39.7 万亿公里，或者说 4.24 光年。这就是为什么人类在短时间内不太可能访问其他恒星系统。但当您玩“激燃太空”时，事情就不是这样了！",
     "Loading...": "加载中...",
-    "Did you knew?": "您知道吗？",
+    "Did you know?": "您知道吗？",
 
     "Items:": "项目：",
     "of": "/",
@@ -1768,65 +1743,35 @@ var cnItems = {
     //更新日志标题及日期
     "v0.2.4a Small Update": "v0.2.4a 小型更新",
     "v0.2.4 Minor Update": "v0.2.4 次级更新",
-    "20/08/2023": "2023年8月20日",
     "v0.2.3 Regular update": "v0.2.3 常规更新",
-    "19/08/2023": "2023年8月19日",
     "v0.2.2b Tiny UI update": "v0.2.2b 小型界面更新",
-    "09/08/2023": "2023年8月9日",
     "v0.2.2a Tiny UI update": "v0.2.2a 小型界面更新",
-    "29/07/2023": "2023年7月29日",
     "v0.2.2 Regular UI and QoL Update": "v0.2.2 常规界面与用户体验更新",
-    "28/07/2023": "2023年7月28日",
     "v0.2.1 Small Update": "v0.2.1 小型更新",
-    "26/07/2023": "2023年7月26日",
     "v0.2.0c UI Hotfix Update": "v0.2.0c UI热更新",
-    "25/07/2023": "2023年7月25日",
     "v0.2.0b Hotfix Update": "v0.2.0b 热更新",
-    "24/07/2023": "2023年7月24日",
     "v0.2.0a Hotfix Update": "v0.2.0a 热更新",
-    "22/07/2023": "2023年7月22日",
     "v0.2.0 Big Update": "v0.2.0 大型更新",
-    "22/07/2023": "2023年7月22日",
     "v0.1.0c Tiny Fix": "v0.1.0c 微量 bug 修复",
-    "05/07/2023": "2023年7月5日",
     "v0.1.0b Small Fixes": "v0.1.0b 小型 bug 修复",
-    "05/07/2023": "2023年7月5日",
     "v0.1.0a Small Fixes": "v0.1.0a 小型 bug 修复",
-    "04/07/2023": "2023年7月4日",
     "v0.1.0 Big Update": "v0.1.0 大型更新",
-    "02/07/2023": "2023年7月2日",
     "v0.0.5c Small Hotfix Update": "v0.0.5c 小型热更新",
-    "29/06/2023": "2023年6月29日",
     "v0.0.5b Small Hotfix Update": "v0.0.5b 小型热更新",
-    "28/06/2023": "2023年6月28日",
     "v0.0.5a Small Hotfix Update": "v0.0.5a 小型热更新",
-    "26/06/2023": "2023年6月26日",
     "v0.0.5 Content Update": "v0.0.5 内容更新",
-    "25/06/2023": "2023年6月25日",
     "v0.0.4a Hotfix": "v0.0.4a 热更新",
-    "18/06/2023": "2023年6月18日",
     "v0.0.4 Minor update": "v0.0.4 次级更新",
-    "18/06/2023": "2023年6月18日",
     "v0.0.3b Mobile friendly UI version": "v0.0.3b 移动端友好界面更新",
-    "16/06/2023": "2023年6月16日",
     "v0.0.3a Hotfix update": "v0.0.3a 热更新",
-    "16/06/2023": "2023年6月16日",
     "v0.0.3 Minor update": "v0.0.3 次级更新",
-    "15/06/2023": "2023年6月15日",
     "v0.0.2d Small update": "v0.0.2d 小型更新",
-    "12/06/2023": "2023年6月12日",
     "v0.0.2c Small hotfix update": "v0.0.2c 小型热更新",
-    "10/06/2023": "2023年6月10日",
     "v0.0.2b Expeditions added": "v0.0.2b 增加探险",
-    "09/06/2023": "2023年6月9日",
     "v0.0.2a Small UI updates": "v0.0.2a 小型界面更新",
-    "09/06/2023": "2023年6月9日",
     "v0.0.2 Prestige mechanics & New content": "v0.0.2 重置机制和新内容",
-    "08/06/2023": "2023年6月8日",
     "v0.0.1a UI and small features update": "v0.0.1a 界面和小型功能更新",
-    "03/06/2023": "2023年6月3日",
     "v0.0.1 First Playable Prototype": "v0.0.1 首个可玩的原型版本",
-    "02/06/2023": "2023年6月2日",
     
     // 图标代码，不能汉化
     "Jacorb's Games": "Jacorb's Games",
@@ -1892,6 +1837,10 @@ var cnPrefix = {
     "Knowledge: ": "知识：",
     "Knowledge Upgrade:": "知识升级：",
     "XP Upgrade: ": "经验升级：",
+    "Planet modifier: ": "行星修正：",
+    "Temperature modifier: ": "温度修正：",
+
+    //
     "Law Lightning Mode: ": "照明模式政策：",
     "Law Fuel Processing Mode: ": "燃料生产政策：",
     "Law Food Chemical Processing: ": "食品加工政策：",
@@ -1909,6 +1858,11 @@ var cnPrefix = {
     "Level: ": "等级：",
     "Time to reach opponent: ": "距离接触敌人：",
     "Fuel consumption: ": "燃料消耗：",
+
+    //
+    "Volcanic ": "火山 ",
+    "Inactive ": "低磁性 ",
+    "Calm ": "平静 ",
 }
 
 //需处理的后缀
@@ -2029,6 +1983,7 @@ var cnRegReplace = new Map([
     [/^Colonist arrived. Colony grew up to (\d+) citizens$/, '新的殖民者到来了。当前人口：$1'],
     [/^Colonist died. You now have (\d+) survivors left$/, '有殖民者死亡了。剩余人口：$1'],
     [/^Law&Order: (.+)$/, '政策变更：$1'],
+    [/^(\d)(\d)\/(\d)(\d)\/(\d)(\d)(\d)(\d)$/, '$5$6$7$8\/$3$4\/$1$2'],
 
     //
     [/^Happiness: (.+)$/, '幸福度：$1'],
