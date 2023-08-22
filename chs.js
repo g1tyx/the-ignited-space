@@ -1021,7 +1021,7 @@ var cnItems = {
     "Limited Propaganda": "半官方口径",
     "Mass media provide society with access to information about the political life of civilization while shifting the focus towards propagating economic development. Increases the risk of uprising, thus raising security demands by 20%. However, it enhances the efficiency of workers by 10% (including law enforcement)": "大众媒体为群众提供具体的政治信息，并重点宣传经济发展。这将提高起义的风险，因此安保消耗提升 20%。然而，该法令也将使所有工人的产量提升 10% （包括警察）",
     "Freedom of Speech": "言论自由",
-    "Mass media freely cover everything happening in society. Raises demands for all services by 20%, but increases the maximum positive effect of each service by 10 units.": "允许大众媒体讨论社会上发生的一切事情。所有服务消耗提升 20%，但使所有服务的可生效上限增加 10",
+    "Mass media freely cover everything happening in society. Raises demands for all services by 20%, but increases the maximum positive effect of each service by 10 units.": "允许大众媒体讨论社会上发生的一切事情。所有服务消耗提升 20%，但使所有服务的可生效上限增加 20",
     
     "Law": "政策",
     "Laws": "政策",
