@@ -1841,7 +1841,7 @@ var cnPrefix = {
     "Temperature modifier: ": "温度修正：",
 
     //
-    "Law Lightning Mode: ": "照明模式政策：",
+    "Law Lighting Mode: ": "照明模式政策：",
     "Law Fuel Processing Mode: ": "燃料生产政策：",
     "Law Food Chemical Processing: ": "食品加工政策：",
     "Law Furnace Metal Processing": "金属加工政策：",
