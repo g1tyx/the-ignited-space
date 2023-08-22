@@ -1999,7 +1999,7 @@ var cnRegReplace = new Map([
     [/^Colonist arrived. Colony grew up to (\d+) citizens$/, '新的殖民者到来了。当前人口：$1'],
     [/^Colonist died. You now have (\d+) survivors left$/, '有殖民者死亡了。剩余人口：$1'],
     [/^Law&Order: (.+)$/, '政策变更：$1'],
-    [/^(\d)(\d)\/(\d)(\d)\/(\d)(\d)(\d)(\d)$/, '$5$6$$7$8\/$3$4\/$1$2']
+    [/^(\d)(\d)\/(\d)(\d)\/(\d)(\d)(\d)(\d)$/, '$5$6$$7$8\/$3$4\/$1$2'],
 
     //
     [/^Happiness: (.+)$/, '幸福度：$1'],
