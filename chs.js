@@ -1751,7 +1751,7 @@ var cnItems = {
     'The most common type of exoplanets discovered so far are known as "super-Earths - exoplanets that have a mass and size larger than Earth but smaller than that of gas giants like Neptune or Jupiter. They typically range in size from about 1 to 10 times the mass of Earth.': "迄今为止发现的最常见的系外行星类型被称为“超级地球”——质量和尺寸大于地球但小于海王星或木星等气态巨行星的系外行星。它们的尺寸通常约为地球的 1 至 10 倍 地球的质量。",
     'Distances between stars used to be incredibly huge. For example, the distance to Proxima Centauri from Earth is approximately 39.7 trillion kilometers or 4.24 light-years. That\'s why human very unlikely visit other star systems in near future. But its not the case once you are playing "The Ignited Space"': "恒星之间的距离是非常远的。例如，地球到比邻星的距离约为 39.7 万亿公里，或者说 4.24 光年。这就是为什么人类在短时间内不太可能访问其他恒星系统。但当您玩“激燃太空”时，事情就不是这样了！",
     "Loading...": "加载中...",
-    "Did you knew?": "您知道吗？",
+    "Did you know?": "您知道吗？",
 
     "Items:": "项目：",
     "of": "/",
@@ -1999,7 +1999,7 @@ var cnRegReplace = new Map([
     [/^Colonist arrived. Colony grew up to (\d+) citizens$/, '新的殖民者到来了。当前人口：$1'],
     [/^Colonist died. You now have (\d+) survivors left$/, '有殖民者死亡了。剩余人口：$1'],
     [/^Law&Order: (.+)$/, '政策变更：$1'],
-    [/^(\d)(\d)\/(\d)(\d)\/(\d)(\d)(\d)(\d)$/, '$5$6$$7$8\/$3$4\/$1$2'],
+    [/^(\d)(\d)\/(\d)(\d)\/(\d)(\d)(\d)(\d)$/, '$5$6$7$8\/$3$4\/$1$2'],
 
     //
     [/^Happiness: (.+)$/, '幸福度：$1'],
