@@ -76,6 +76,7 @@ var cnItems = {
     "Humidity": "湿度",
     "Temperature": "温度",
     "Tectonics": "构造",
+
     "Small": "小型",
     "Large": "大型",
     "Ore Rich": "矿物丰富",
@@ -88,7 +89,7 @@ var cnItems = {
     "Hot": "炎热",
     "Peaty": "泥质",
     "Volcanic": "火山",
-    "Inactive": "不活跃",
+    "Inactive": "低磁性",
     "Calm": "平静",
     
     //无人机操作
@@ -1066,19 +1067,6 @@ var cnItems = {
     
     //
     "Knowledge: ": "知识：",
-    
-    "Cold": "寒冷",
-    "Hot": "炎热",
-    "Ore Poor": "矿物贫瘠",
-    "Ore Rich": "矿物丰富",
-    "Small": "小型",
-    "Big": "大型",
-    "Wet": "潮湿",
-    "Dry": "干燥",
-    "Peaty": "泥质",
-    "Volcanic": "火山",
-    "Inactive": "不活跃",
-    "Calm": "平静",
 
     //
     "Productivity": "全局产量",
