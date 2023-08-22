@@ -69,7 +69,7 @@ var cnItems = {
     "Capacity": "资源上限",
     "Colony": "殖民地",
 
-    //星球词缀和类型
+    //星球词条和类型
     "Crust": "地壳",
     "Gravity": "重力",
     "Size": "大小",
@@ -1107,19 +1107,8 @@ var cnItems = {
     "B": "B",
     "C": "C",
     "D": "D",
-    "Planet modifier:": "行星加成：",
 
-    //行星加成手动显示
-    "Planet modifier: Cold": "行星加成：寒冷",
-    "Planet modifier: Hot": "行星加成：炎热",
-    "Planet modifier: Ore Poor": "行星加成：矿物贫瘠",
-    "Planet modifier: Ore Rich": "行星加成：矿物丰富",
-    "Planet modifier: Small": "行星加成：小型",
-    "Planet modifier: Big": "行星加成：大型",
-    "Planet modifier: Wet": "行星加成：潮湿",
-    "Planet modifier: Dry": "行星加成：干燥",
-
-    //行星词缀手动显示
+    //行星词条手动显示
     "Small": "小型",
 
     "Small Wet": "小型 潮湿",
@@ -1250,17 +1239,6 @@ var cnItems = {
     "Summer": "夏天",
     "Autumn": "秋天",
     "Winter": "冬天",
-
-    //温度加成手动显示
-    "Temperature modifier:": "温度加成：",
-    "Temperature modifier: Very Hot": "温度加成：酷暑",
-    "Temperature modifier: Hot": "温度加成：炎热",
-    "Temperature modifier: Warm": "温度加成：温暖",
-    "Temperature modifier: Slightly Warm": "温度加成：微暖",
-    "Temperature modifier: Slightly Cold": "温度加成：微冷",
-    "Temperature modifier: Cold": "温度加成：寒冷",
-    "Temperature modifier: Very Cold": "温度加成：严寒",
-    "Temperature modifier: Extremely Cold": "温度加成：极寒",
 
     //日志文本
     "Weather changed: ": "天气变化：",
@@ -1670,7 +1648,7 @@ var cnItems = {
 
     "XP Gain: x": "经验获取倍率：x",
     "Weather: x": "天气倍率：x",
-    "Select search for specific modifier. This will increase search cost": "您可以搜索特定的行星词缀，但这会增加搜索行星时的燃料消耗",
+    "Select search for specific modifier. This will increase search cost": "您可以搜索特定的行星词条，但这会增加搜索行星时的燃料消耗",
     "None": "无",
     "None": "无",
     "Search New Planets": "搜索新的行星",
@@ -1862,6 +1840,10 @@ var cnPrefix = {
     "Knowledge: ": "知识：",
     "Knowledge Upgrade:": "知识升级：",
     "XP Upgrade: ": "经验升级：",
+    "Planet modifier:": "行星修正：",
+    "Temperature modifier:": "温度修正：",
+
+    //
     "Law Lightning Mode: ": "照明模式政策：",
     "Law Fuel Processing Mode: ": "燃料生产政策：",
     "Law Food Chemical Processing: ": "食品加工政策：",
