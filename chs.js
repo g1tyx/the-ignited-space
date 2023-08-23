@@ -1365,9 +1365,9 @@ var cnItems = {
     "Off": "关闭",
     "This will save game and reload page": "更改此选项会立即保存游戏并刷新网页",
     "Toggle theme": "切换主题",
-    "dark": "深色",
-    "black": "黑色",
-    "light": "明亮",
+    //"dark": "深色",
+    //"black": "黑色",
+    //"light": "明亮",
     "Changing this will save game and reload page": "更改此选项会立即保存游戏并刷新网页",
     
     //
