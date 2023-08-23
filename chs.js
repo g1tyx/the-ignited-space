@@ -78,7 +78,7 @@ var cnItems = {
     "Tectonics": "构造",
 
     "Small": "小型",
-    "Large": "大型",
+    "Big": "大型",
     "Ore Rich": "矿物丰富",
     "Platinum Rich": "铂金丰富",
     "Ore Poor": "矿物贫瘠",
@@ -1365,7 +1365,7 @@ var cnItems = {
     "Off": "关闭",
     "This will save game and reload page": "更改此选项会立即保存游戏并刷新网页",
     "Toggle theme": "切换主题",
-    "dark": "暗色",
+    "dark": "深色",
     "black": "黑色",
     "light": "明亮",
     "Changing this will save game and reload page": "更改此选项会立即保存游戏并刷新网页",
@@ -1390,7 +1390,7 @@ var cnItems = {
 
     //更新日志正文
     //v0.2.5
-    "Added color themes settings": "加入了主题的选择，目前可以在暗色/黑色/明亮三种主题中切换；更新了暗色模式的配色，现在对低色差的显示器更友好",
+    "Added color themes settings": "加入了主题的选择，目前可以在深色/黑色/明亮三种主题中切换；更新了深色模式的配色，现在对低色差的显示器更友好",
     "Added option to sort queue by ETA": "加入了一个按钮，可以根据预计完成时间为队列一键排序",
     "Clicking on unavailable item will now add it to queue": "点击目前无法购买的项目会直接将其加入队列",
     "XP bonus now shown on planet options": "星球的经验倍率现在会直接显示在星球按钮上",
@@ -1754,6 +1754,7 @@ var cnItems = {
     "Hide resources": "隐藏资源",
 
     //更新日志标题
+    "v0.2.5 Small Update": "v0.2.5 小型更新",
     "v0.2.4a Small Update": "v0.2.4a 小型更新",
     "v0.2.4 Minor Update": "v0.2.4 次级更新",
     "v0.2.3 Regular update": "v0.2.3 常规更新",
@@ -1854,10 +1855,11 @@ var cnPrefix = {
     "Temperature modifier: ": "温度修正：",
 
     //
+    "Law Artificial Organs: ": "人造器官政策：",
     "Law Lighting Mode: ": "照明模式政策：",
     "Law Fuel Processing Mode: ": "燃料生产政策：",
     "Law Food Chemical Processing: ": "食品加工政策：",
-    "Law Furnace Metal Processing": "金属加工政策：",
+    "Law Furnace Metal Processing: ": "金属加工政策：",
 
     //
     "Shield: ": "护盾：",
