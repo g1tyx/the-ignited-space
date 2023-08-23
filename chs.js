@@ -1384,6 +1384,13 @@ var cnItems = {
     "Join our Discord": "加入 Discord 频道",
 
     //更新日志正文
+    //v0.2.5
+    "Added color themes settings": "加入了主题的选择，目前可以在暗色/黑色/明亮三种主题中切换；更新了暗色模式的配色，现在对低色差的显示器更友好",
+    "Added option to sort queue by ETA": "加入了一个按钮，可以根据预计完成时间为队列一键排序",
+    "Clicking on unavailable item will now add it to queue": "点击目前无法购买的项目会直接将其加入队列",
+    "XP bonus now shown on planet options": "星球的经验倍率现在会直接显示在星球按钮上",
+    "Produced/Consumed/Boosted resources are now highlighted when you hover over building/job": "鼠标放在建筑物/工作上时，其所生产/消耗/加成的资源会高亮显示",
+    "Plenty of other less significant fixes": "许多其他相对次要的修复",
     //v0.2.4a
     "Decreased power requirements for some early-game buildings": "降低了一些前期建筑物的电力需求",
     "Fixed bug when queue didnt cleared on reset": "修复了重置时不会清除队列的bug",
@@ -1740,7 +1747,7 @@ var cnItems = {
     "Show Resources": "显示资源",
     "Hide resources": "隐藏资源",
 
-    //更新日志标题及日期
+    //更新日志标题
     "v0.2.4a Small Update": "v0.2.4a 小型更新",
     "v0.2.4 Minor Update": "v0.2.4 次级更新",
     "v0.2.3 Regular update": "v0.2.3 常规更新",
@@ -1980,8 +1987,8 @@ var cnRegReplace = new Map([
     [/^Expedition arrived. Obtained: (.+).$/, '探险完成，获得：$2'],
     [/^Prestige: (.+). Received: (.+)$/, '重置：$1，获得：$2'],
     [/^You received (.+)$/, '您获得了：$1'],
-    [/^Colonist arrived. Colony grew up to (\d+) citizens$/, '新的殖民者到来了。当前人口：$1'],
-    [/^Colonist died. You now have (\d+) survivors left$/, '有殖民者死亡了。剩余人口：$1'],
+    [/^Colonist arrived. Colony grew up to ([\d\.]+) citizens$/, '新的殖民者到来了。当前人口：$1'],
+    [/^Colonist died. You now have ([\d\.]+) survivors left$/, '有殖民者死亡了。剩余人口：$1'],
     [/^Law&Order: (.+)$/, '政策变更：$1'],
     [/^(\d)(\d)\/(\d)(\d)\/(\d)(\d)(\d)(\d)$/, '$5$6$7$8\/$3$4\/$1$2'],
 

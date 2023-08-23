@@ -316,8 +316,9 @@
           O,
           y,
           m,
+          h,
           L,
-          h = (function () {
+          C = (function () {
             function e() {
               (this.events = []), (this.events = []);
             }
@@ -340,9 +341,9 @@
               e
             );
           })().getInstance(),
-          C = (function () {
+          v = (function () {
             function e() {
-              this.workDispatcher = h;
+              this.workDispatcher = C;
             }
             return (
               (e.prototype.importData = function (e) {}),
@@ -691,6 +692,9 @@
               (e.RARE_GAIN = "Rare Gain");
           })(E || (E = {})),
           (function (e) {
+            (e.DARK = "dark"), (e.BLACK = "black"), (e.LIGHT = "light");
+          })(d || (d = {})),
+          (function (e) {
             (e.DRONE_MASTERITY = "Drone Masterity"),
               (e.REPAIRED_SOLAR_PANEL = "Drone Solar Panel"),
               (e.POWER_MASTERITY = "Power Masterity"),
@@ -713,13 +717,13 @@
               (e.ENTERTAINMENT_CONSUMPTION = "Entertainment Consumption"),
               (e.RELIGION_CONSUMPTION = "Religion Consumption"),
               (e.SECURITY_CONSUMPTION = "Security Consumption");
-          })(d || (d = {})),
+          })(g || (g = {})),
           (function (e) {
             (e.START = "Start"),
               (e.MASTERITIES = "Production"),
               (e.CAPACITY = "Capacity"),
               (e.COLONY = "Colony");
-          })(g || (g = {})),
+          })(A || (A = {})),
           (function (e) {
             (e.CRUST = "Crust"),
               (e.GRAVITY = "Gravity"),
@@ -727,7 +731,7 @@
               (e.HUMIDITY = "Humidity"),
               (e.TEMPERATURE = "Temperature"),
               (e.TECTONICS = "Tectonics");
-          })(A || (A = {})),
+          })(f || (f = {})),
           (function (e) {
             (e.SMALL = "Small"),
               (e.LARGE = "Large"),
@@ -743,16 +747,16 @@
               (e.VOLCANIC = "Volcanic"),
               (e.INACTIVE = "Inactive"),
               (e.CALM = "Calm");
-          })(f || (f = {})),
+          })(R || (R = {})),
           (function (e) {
             (e.PRODUCTIVITY = "productivity"),
               (e.BUILDING_PRICES = "building_prices"),
               (e.PILOT_XP = "pilot_xp"),
               (e.SHIPS_DAMAGE = "ships_damage"),
               (e.SHIPS_DURABILITY = "ships_durability");
-          })(R || (R = {}));
-        var v,
-          S = [
+          })(I || (I = {}));
+        var S,
+          P = [
             {
               id: o.CHARGE,
               name: "Charge",
@@ -765,8 +769,8 @@
               },
               getCost: {},
               getGain:
-                ((I = {}),
-                (I[l.POWER] = function (e) {
+                ((N = {}),
+                (N[l.POWER] = function (e) {
                   return {
                     A:
                       (1 +
@@ -777,13 +781,13 @@
                       (1 +
                         0.2 *
                           e.prestige.transmitKnowledge.getUpgradeLevel(
-                            d.DRONE_MASTERITY
+                            g.DRONE_MASTERITY
                           )),
                     B: 1,
                     type: i.EXPONENTIAL,
                   };
                 }),
-                I),
+                N),
             },
             {
               id: o.DRILL_ROCK,
@@ -796,14 +800,14 @@
                 return !0;
               },
               getCost:
-                ((N = {}),
-                (N[l.POWER] = function (e) {
+                ((T = {}),
+                (T[l.POWER] = function (e) {
                   return { A: 1, B: 1, type: i.EXPONENTIAL };
                 }),
-                N),
+                T),
               getGain:
-                ((T = {}),
-                (T[l.STONE] = function (e) {
+                ((O = {}),
+                (O[l.STONE] = function (e) {
                   return {
                     A:
                       (0.25 +
@@ -814,13 +818,13 @@
                       (1 +
                         0.2 *
                           e.prestige.transmitKnowledge.getUpgradeLevel(
-                            d.DRONE_MASTERITY
+                            g.DRONE_MASTERITY
                           )),
                     B: 1,
                     type: i.EXPONENTIAL,
                   };
                 }),
-                T),
+                O),
             },
             {
               id: o.DRILL_ORE,
@@ -837,14 +841,14 @@
                 return !0;
               },
               getCost:
-                ((O = {}),
-                (O[l.POWER] = function (e) {
+                ((y = {}),
+                (y[l.POWER] = function (e) {
                   return { A: 2, B: 1, type: i.EXPONENTIAL };
                 }),
-                O),
+                y),
               getGain:
-                ((y = {}),
-                (y[l.ORE] = function (e) {
+                ((m = {}),
+                (m[l.ORE] = function (e) {
                   return {
                     A:
                       (0.2 +
@@ -855,13 +859,13 @@
                       (1 +
                         0.2 *
                           e.prestige.transmitKnowledge.getUpgradeLevel(
-                            d.DRONE_MASTERITY
+                            g.DRONE_MASTERITY
                           )),
                     B: 1,
                     type: i.EXPONENTIAL,
                   };
                 }),
-                y),
+                m),
             },
             {
               id: o.COLLECT_BIOMASS,
@@ -879,11 +883,11 @@
                 return !0;
               },
               getCost:
-                ((m = {}),
-                (m[l.POWER] = function (e) {
+                ((h = {}),
+                (h[l.POWER] = function (e) {
                   return { A: 4, B: 1, type: i.EXPONENTIAL };
                 }),
-                m),
+                h),
               getGain:
                 ((L = {}),
                 (L[l.BIOMASS] = function (e) {
@@ -897,7 +901,7 @@
                       (1 +
                         0.2 *
                           e.prestige.transmitKnowledge.getUpgradeLevel(
-                            d.DRONE_MASTERITY
+                            g.DRONE_MASTERITY
                           )),
                     B: 1,
                     type: i.EXPONENTIAL,
@@ -988,12 +992,12 @@
             (e.ADVANCED_BOSE_EINSTEIN = "advanced-bose-einstein"),
             (e.DEGENERATE_ATOMS = "degenerate-atoms"),
             (e.HYPERSPACE_TECH = "hyperspace-tech");
-        })(v || (v = {}));
-        var P,
-          B,
+        })(S || (S = {}));
+        var B,
           _,
           M,
-          U = [
+          U,
+          G = [
             {
               id: l.POWER,
               name: "Power",
@@ -1047,7 +1051,7 @@
               name: "Wood",
               unlockCondition: function (e) {
                 return (
-                  e.science.scienceResearches.getResearchLevel(v.EXOFORESTRY) >
+                  e.science.scienceResearches.getResearchLevel(S.EXOFORESTRY) >
                   0
                 );
               },
@@ -1081,7 +1085,7 @@
               name: "Metal",
               unlockCondition: function (e) {
                 return (
-                  e.science.scienceResearches.getResearchLevel(v.METALLURGY) > 0
+                  e.science.scienceResearches.getResearchLevel(S.METALLURGY) > 0
                 );
               },
               hasCapacityLimit: !0,
@@ -1092,7 +1096,7 @@
               name: "Platinum",
               unlockCondition: function (e) {
                 return (
-                  e.science.scienceResearches.getResearchLevel(v.GEOLOGY) > 0
+                  e.science.scienceResearches.getResearchLevel(S.GEOLOGY) > 0
                 );
               },
               hasCapacityLimit: !0,
@@ -1130,7 +1134,7 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.EXOTIC_MATTER_STUDY
+                    S.EXOTIC_MATTER_STUDY
                   ) > 0
                 );
               },
@@ -1143,7 +1147,7 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.DARK_MATTER_STUDY
+                    S.DARK_MATTER_STUDY
                   ) > 0
                 );
               },
@@ -1156,7 +1160,7 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.ANTIMATTER_STUDY
+                    S.ANTIMATTER_STUDY
                   ) > 0
                 );
               },
@@ -1168,7 +1172,7 @@
               name: "Beam",
               unlockCondition: function (e) {
                 return (
-                  e.science.scienceResearches.getResearchLevel(v.METALLURGY) > 0
+                  e.science.scienceResearches.getResearchLevel(S.METALLURGY) > 0
                 );
               },
               hasCapacityLimit: !1,
@@ -1180,7 +1184,7 @@
               name: "Brick",
               unlockCondition: function (e) {
                 return (
-                  e.science.scienceResearches.getResearchLevel(v.METALLURGY) > 0
+                  e.science.scienceResearches.getResearchLevel(S.METALLURGY) > 0
                 );
               },
               hasCapacityLimit: !1,
@@ -1192,7 +1196,7 @@
               name: "Plate",
               unlockCondition: function (e) {
                 return (
-                  e.science.scienceResearches.getResearchLevel(v.METALLURGY) > 0
+                  e.science.scienceResearches.getResearchLevel(S.METALLURGY) > 0
                 );
               },
               hasCapacityLimit: !1,
@@ -1205,7 +1209,7 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.ROCKET_SCIENCE
+                    S.ROCKET_SCIENCE
                   ) > 0
                 );
               },
@@ -1219,7 +1223,7 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.ORGANIC_CHEMISTRY
+                    S.ORGANIC_CHEMISTRY
                   ) > 0
                 );
               },
@@ -1233,7 +1237,7 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.ORGANIC_CHEMISTRY
+                    S.ORGANIC_CHEMISTRY
                   ) > 0
                 );
               },
@@ -1247,7 +1251,7 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.MATERIAL_KNOWLEDGE
+                    S.MATERIAL_KNOWLEDGE
                   ) > 0
                 );
               },
@@ -1261,7 +1265,7 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.ELECTRICITY_STUDY
+                    S.ELECTRICITY_STUDY
                   ) > 0
                 );
               },
@@ -1289,7 +1293,7 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.ROCKET_SCIENCE
+                    S.ROCKET_SCIENCE
                   ) > 0
                 );
               },
@@ -1382,7 +1386,7 @@
             (e.FORESTER = "forester"),
             (e.ARTISAN = "artisan"),
             (e.POLICEMAN = "policeman");
-        })(P || (P = {})),
+        })(B || (B = {})),
           (function (e) {
             (e.AESTHETICS = "AESTHETICS"),
               (e.ENTERTAINMENT = "ENTERTAINMENT"),
@@ -1390,12 +1394,12 @@
               (e.HEALTHCARE = "HEALTHCARE"),
               (e.RELIGION = "RELIGION"),
               (e.WORK_CONDITIONS = "WORK_CONDITIONS");
-          })(B || (B = {})),
+          })(_ || (_ = {})),
           (function (e) {
             (e.SCIENCE = "Science"),
               (e.ECONOMY = "Economy"),
               (e.SOCIAL = "Social");
-          })(_ || (_ = {})),
+          })(M || (M = {})),
           (function (e) {
             (e.EXPERIMENTAL_MEDICINE = "experimental_medicine"),
               (e.WATER_FILTERING = "water_filtering"),
@@ -1417,15 +1421,15 @@
               (e.FUEL_PROCESSING = "fuel-processing"),
               (e.TEMPLE_RIGHTS = "temple-rights"),
               (e.FURNACE_SMELTING = "furnace-smelting");
-          })(M || (M = {}));
-        var G = [
+          })(U || (U = {}));
+        var b = [
             {
-              id: B.ENTERTAINMENT,
+              id: _.ENTERTAINMENT,
               name: "Entertainment",
               minimum: 20,
               getMaximum: function (e) {
                 return (
-                  150 + (2 === e.laws.getLawSelected(M.MASSMEDIA) ? 20 : 0)
+                  150 + (2 === e.laws.getLawSelected(U.MASSMEDIA) ? 20 : 0)
                 );
               },
               unlockCondition: function (e) {
@@ -1435,22 +1439,22 @@
                 return Math.max(
                   2 *
                     (e.colony.colonists - 10) *
-                    (2 === e.laws.getLawSelected(M.MASSMEDIA) ? 1.2 : 1) -
+                    (2 === e.laws.getLawSelected(U.MASSMEDIA) ? 1.2 : 1) -
                     4 *
                       e.prestige.transmitKnowledge.getUpgradeLevel(
-                        d.ENTERTAINMENT_CONSUMPTION
+                        g.ENTERTAINMENT_CONSUMPTION
                       ),
                   0
                 );
               },
             },
             {
-              id: B.HEALTHCARE,
+              id: _.HEALTHCARE,
               name: "Healthcare",
               minimum: 20,
               getMaximum: function (e) {
                 return (
-                  150 + (2 === e.laws.getLawSelected(M.MASSMEDIA) ? 20 : 0)
+                  150 + (2 === e.laws.getLawSelected(U.MASSMEDIA) ? 20 : 0)
                 );
               },
               unlockCondition: function (e) {
@@ -1460,10 +1464,10 @@
                 return Math.max(
                   (2 *
                     (e.colony.colonists - 10) *
-                    (2 === e.laws.getLawSelected(M.MASSMEDIA) ? 1.2 : 1) -
+                    (2 === e.laws.getLawSelected(U.MASSMEDIA) ? 1.2 : 1) -
                     4 *
                       e.prestige.transmitKnowledge.getUpgradeLevel(
-                        d.HEALTH_CONSUMPTION
+                        g.HEALTH_CONSUMPTION
                       )) *
                     Math.pow(
                       0.95,
@@ -1476,14 +1480,14 @@
               },
             },
             {
-              id: B.AESTHETICS,
+              id: _.AESTHETICS,
               name: "Aesthetics",
               minimum: 20,
               getMaximum: function (e) {
                 return (
                   150 +
-                  (2 === e.laws.getLawSelected(M.MASSMEDIA) ? 20 : 0) +
-                  (2 === e.laws.getLawSelected(M.LIGHTNING_MODE) ? 20 : 0)
+                  (2 === e.laws.getLawSelected(U.MASSMEDIA) ? 20 : 0) +
+                  (2 === e.laws.getLawSelected(U.LIGHTNING_MODE) ? 20 : 0)
                 );
               },
               unlockCondition: function (e) {
@@ -1493,29 +1497,29 @@
                 return Math.max(
                   2 *
                     e.colony.colonists *
-                    (2 === e.laws.getLawSelected(M.MASSMEDIA) ? 1.2 : 1) -
+                    (2 === e.laws.getLawSelected(U.MASSMEDIA) ? 1.2 : 1) -
                     4 *
                       e.prestige.transmitKnowledge.getUpgradeLevel(
-                        d.AESTHETICS_CONSUMPTION
+                        g.AESTHETICS_CONSUMPTION
                       ),
                   0
                 );
               },
             },
             {
-              id: B.SECURITY,
+              id: _.SECURITY,
               name: "Security",
               minimum: 20,
               getMaximum: function (e) {
                 return (
-                  150 + (2 === e.laws.getLawSelected(M.MASSMEDIA) ? 20 : 0)
+                  150 + (2 === e.laws.getLawSelected(U.MASSMEDIA) ? 20 : 0)
                 );
               },
               unlockCondition: function (e) {
                 return (
                   e.colony.maxColonists >= 40 ||
                   e.science.scienceResearches.getResearchLevel(
-                    v.PUBLIC_SERVICE
+                    S.PUBLIC_SERVICE
                   ) > 0
                 );
               },
@@ -1523,23 +1527,23 @@
                 return Math.max(
                   2 *
                     (e.colony.colonists - 40) *
-                    (2 === e.laws.getLawSelected(M.MASSMEDIA) ? 1.2 : 1) *
-                    (1 === e.laws.getLawSelected(M.MASSMEDIA) ? 1.2 : 1) -
+                    (2 === e.laws.getLawSelected(U.MASSMEDIA) ? 1.2 : 1) *
+                    (1 === e.laws.getLawSelected(U.MASSMEDIA) ? 1.2 : 1) -
                     4 *
                       e.prestige.transmitKnowledge.getUpgradeLevel(
-                        d.SECURITY_CONSUMPTION
+                        g.SECURITY_CONSUMPTION
                       ),
                   0
                 );
               },
             },
             {
-              id: B.RELIGION,
+              id: _.RELIGION,
               name: "Religion",
               minimum: 20,
               getMaximum: function (e) {
                 return (
-                  150 + (2 === e.laws.getLawSelected(M.MASSMEDIA) ? 20 : 0)
+                  150 + (2 === e.laws.getLawSelected(U.MASSMEDIA) ? 20 : 0)
                 );
               },
               unlockCondition: function (e) {
@@ -1549,29 +1553,29 @@
                 return Math.max(
                   2 *
                     (e.colony.colonists - 40) *
-                    (2 === e.laws.getLawSelected(M.MASSMEDIA) ? 1.2 : 1) -
+                    (2 === e.laws.getLawSelected(U.MASSMEDIA) ? 1.2 : 1) -
                     4 *
                       e.prestige.transmitKnowledge.getUpgradeLevel(
-                        d.RELIGION_CONSUMPTION
+                        g.RELIGION_CONSUMPTION
                       ),
                   0
                 );
               },
             },
           ],
-          b = function (e) {
+          D = function (e) {
             var t =
-              U.find(function (t) {
-                return t.id === e;
-              }) ||
               G.find(function (t) {
                 return t.id === e;
+              }) ||
+              b.find(function (t) {
+                return t.id === e;
               });
-            return t ? (t.unlockCondition(xg) ? t.name : "???") : e;
+            return t ? (t.unlockCondition(Yg) ? t.name : "???") : e;
           },
-          D = function () {
+          w = function () {
             return (
-              (D =
+              (w =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -1580,10 +1584,10 @@
                         (e[o] = t[o]);
                   return e;
                 }),
-              D.apply(this, arguments)
+              w.apply(this, arguments)
             );
           },
-          w = (function () {
+          X = (function () {
             function e() {}
             return (
               (e.calculate = function (t, n, i, o) {
@@ -1677,7 +1681,7 @@
                       c = t[1];
                     r.push({
                       id: a,
-                      name: b(a),
+                      name: D(a),
                       amount: e.calculate(n, c, i, o),
                     });
                   }),
@@ -1719,7 +1723,7 @@
                     }
                     a.push({
                       id: c,
-                      name: b(c),
+                      name: D(c),
                       amount: l,
                       max: u,
                       eta: p,
@@ -1743,7 +1747,7 @@
                   var t = i.findIndex(function (t) {
                     return t.id === e.id;
                   });
-                  t > -1 ? (i[t].amount += e.amount) : i.push(D({}, e));
+                  t > -1 ? (i[t].amount += e.amount) : i.push(w({}, e));
                 });
                 var o = e.resources.getBatchObject();
                 return (
@@ -1772,7 +1776,7 @@
                   Object.entries(e).forEach(function (e) {
                     var i = e[0],
                       o = e[1];
-                    n.push({ id: i, name: b(i), amount: o(t) });
+                    n.push({ id: i, name: D(i), amount: o(t) });
                   }),
                   n
                 );
@@ -1780,7 +1784,7 @@
               e
             );
           })();
-        function X(e) {
+        function k(e) {
           if (e > 1e12) return "Never";
           if (!e || e < 0) return "00:00:00";
           e = Number(e);
@@ -1825,13 +1829,12 @@
           }
           return "".concat((Math.sign(e) * a).toPrecision(t)).concat(c);
         }
-        var k,
-          x,
+        var x,
           Y,
           W,
           Z,
-          F,
           j,
+          F,
           K,
           V,
           q,
@@ -1863,8 +1866,8 @@
           Oe,
           ye,
           me,
-          Le,
           he,
+          Le,
           Ce,
           ve,
           Se,
@@ -1878,14 +1881,14 @@
           De,
           we,
           Xe,
-          He,
           ke,
+          He,
           xe,
           Ye,
           We,
           Ze,
-          Fe,
           je,
+          Fe,
           Ke,
           Ve,
           qe,
@@ -1917,8 +1920,8 @@
           Ot,
           yt,
           mt,
-          Lt,
           ht,
+          Lt,
           Ct,
           vt,
           St,
@@ -1932,14 +1935,14 @@
           Dt,
           wt,
           Xt,
-          Ht,
           kt,
+          Ht,
           xt,
           Yt,
           Wt,
           Zt,
-          Ft,
           jt,
+          Ft,
           Kt,
           Vt,
           qt,
@@ -1970,8 +1973,8 @@
           On,
           yn,
           mn,
-          Ln,
           hn,
+          Ln,
           Cn,
           vn,
           Sn,
@@ -1985,14 +1988,14 @@
           Dn,
           wn,
           Xn,
-          Hn,
           kn,
+          Hn,
           xn,
           Yn,
           Wn,
           Zn,
-          Fn,
           jn,
+          Fn,
           Kn,
           Vn,
           qn,
@@ -2024,8 +2027,8 @@
           Oi,
           yi,
           mi,
-          Li,
           hi,
+          Li,
           Ci,
           vi,
           Si,
@@ -2039,14 +2042,14 @@
           Di,
           wi,
           Xi,
-          Hi,
           ki,
+          Hi,
           xi,
           Yi,
           Wi,
           Zi,
-          Fi,
           ji,
+          Fi,
           Ki,
           Vi,
           qi,
@@ -2077,8 +2080,8 @@
           Oo,
           yo,
           mo,
-          Lo,
           ho,
+          Lo,
           Co,
           vo,
           So,
@@ -2092,14 +2095,14 @@
           Do,
           wo,
           Xo,
-          Ho,
           ko,
+          Ho,
           xo,
           Yo,
           Wo,
           Zo,
-          Fo,
           jo,
+          Fo,
           Ko,
           Vo,
           qo,
@@ -2131,8 +2134,8 @@
           Or,
           yr,
           mr,
-          Lr,
           hr,
+          Lr,
           Cr,
           vr,
           Sr,
@@ -2146,14 +2149,14 @@
           Dr,
           wr,
           Xr,
-          Hr,
           kr,
+          Hr,
           xr,
           Yr,
           Wr,
           Zr,
-          Fr,
           jr,
+          Fr,
           Kr,
           Vr,
           qr,
@@ -2185,8 +2188,8 @@
           Oa,
           ya,
           ma,
-          La,
           ha,
+          La,
           Ca,
           va,
           Sa,
@@ -2200,14 +2203,14 @@
           Da,
           wa,
           Xa,
-          Ha,
           ka,
+          Ha,
           xa,
           Ya,
           Wa,
           Za,
-          Fa,
           ja,
+          Fa,
           Ka,
           Va,
           qa,
@@ -2239,8 +2242,8 @@
           Oc,
           yc,
           mc,
-          Lc,
           hc,
+          Lc,
           Cc,
           vc,
           Sc,
@@ -2254,14 +2257,14 @@
           Dc,
           wc,
           Xc,
-          Hc,
           kc,
+          Hc,
           xc,
           Yc,
           Wc,
           Zc,
-          Fc,
           jc,
+          Fc,
           Kc,
           Vc,
           qc,
@@ -2293,8 +2296,8 @@
           Os,
           ys,
           ms,
-          Ls,
           hs,
+          Ls,
           Cs,
           vs,
           Ss,
@@ -2308,14 +2311,14 @@
           Ds,
           ws,
           Xs,
-          Hs,
           ks,
+          Hs,
           xs,
           Ys,
           Ws,
           Zs,
-          Fs,
           js,
+          Fs,
           Ks,
           Vs,
           qs,
@@ -2347,8 +2350,8 @@
           Ou,
           yu,
           mu,
-          Lu,
           hu,
+          Lu,
           Cu,
           vu,
           Su,
@@ -2362,11 +2365,12 @@
           Du,
           wu,
           Xu,
+          ku,
           Hu,
-          ku =
-            ((k = function (e, t) {
+          xu =
+            ((x = function (e, t) {
               return (
-                (k =
+                (x =
                   Object.setPrototypeOf ||
                   ({ __proto__: [] } instanceof Array &&
                     function (e, t) {
@@ -2377,7 +2381,7 @@
                       Object.prototype.hasOwnProperty.call(t, n) &&
                         (e[n] = t[n]);
                   }),
-                k(e, t)
+                x(e, t)
               );
             }),
             function (e, t) {
@@ -2390,15 +2394,15 @@
               function n() {
                 this.constructor = e;
               }
-              k(e, t),
+              x(e, t),
                 (e.prototype =
                   null === t
                     ? Object.create(t)
                     : ((n.prototype = t.prototype), new n()));
             }),
-          xu = function () {
+          Yu = function () {
             return (
-              (xu =
+              (Yu =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -2407,10 +2411,10 @@
                         (e[o] = t[o]);
                   return e;
                 }),
-              xu.apply(this, arguments)
+              Yu.apply(this, arguments)
             );
           },
-          Yu = (function (e) {
+          Wu = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -2422,7 +2426,7 @@
               );
             }
             return (
-              ku(t, e),
+              xu(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -2435,7 +2439,7 @@
               (t.prototype.dataToUI = function () {
                 var e = this;
                 return {
-                  list: S.map(function (t) {
+                  list: P.map(function (t) {
                     return e.processToUI(t);
                   }),
                 };
@@ -2447,13 +2451,13 @@
                 t ||
                   ((t = { id: e.id, cooldown: 0, progress: 0, performed: 0 }),
                   this.actions.push(t));
-                var n = w.calcBatchAll(
+                var n = X.calcBatchAll(
                     e.getCost,
-                    kg.getInstance(),
+                    xg.getInstance(),
                     0,
-                    kg.getInstance().resources.getBatchObject()
+                    xg.getInstance().resources.getBatchObject()
                   ),
-                  i = w.calcBatch(e.getGain, kg.getInstance(), 0),
+                  i = X.calcBatch(e.getGain, xg.getInstance(), 0),
                   o = n.reduce(function (e, t) {
                     return Math.min(e, Math.floor(t.max));
                   }, 1e300),
@@ -2463,10 +2467,10 @@
                   a = n.reduce(function (e, t) {
                     return Math.max(e, t.eta);
                   }, 0),
-                  c = e.unlockCondition(xg);
+                  c = e.unlockCondition(Yg);
                 return (
                   c &&
-                    xg.newNotifications.registerNotification(
+                    Yg.newNotifications.registerNotification(
                       "planet:landing-zone:actions:".concat(e.id)
                     ),
                   {
@@ -2474,16 +2478,16 @@
                     name: e.name,
                     description: e.description,
                     isUnlocked: c,
-                    isAvailable: e.availableCondition(xg) && o >= 1,
-                    cost: kg
+                    isAvailable: e.availableCondition(Yg) && o >= 1,
+                    cost: xg
                       .getInstance()
                       .resources.assertEnought(
                         n,
-                        kg.getInstance().resources.getBatchObject(),
-                        kg.getInstance().resources.getBatchBalanceObject()
+                        xg.getInstance().resources.getBatchObject(),
+                        xg.getInstance().resources.getBatchBalanceObject()
                       ),
                     gain: i.map(function (e) {
-                      return xu(xu({}, e), {
+                      return Yu(Yu({}, e), {
                         amountValue: e.amount,
                         amount: H(e.amount),
                       });
@@ -2498,7 +2502,7 @@
                 );
               }),
               (t.prototype.doAction = function (e) {
-                var t = S.find(function (t) {
+                var t = P.find(function (t) {
                   return t.id === e;
                 });
                 if (t) {
@@ -2514,11 +2518,11 @@
                         performed: 0,
                       });
                   else if (this.actions[n].cooldown > 0) return;
-                  var i = w.calcBatchAll(
+                  var i = X.calcBatchAll(
                     t.getCost,
-                    kg.getInstance(),
+                    xg.getInstance(),
                     0,
-                    kg.getInstance().resources.getBatchObject()
+                    xg.getInstance().resources.getBatchObject()
                   );
                   i.reduce(function (e, t) {
                     return Math.min(e, Math.floor(t.max));
@@ -2526,8 +2530,8 @@
                     ((this.actions[n].cooldown = 1.5),
                     this.actions[n].performed++,
                     console.log("costs: ", i),
-                    kg.getInstance().resources.subtractResourceBatch(i),
-                    xg.resources.reassertBalances());
+                    xg.getInstance().resources.subtractResourceBatch(i),
+                    Yg.resources.reassertBalances());
                 }
               }),
               (t.prototype.getActionPerformed = function (e) {
@@ -2548,22 +2552,22 @@
                     ((t.progress += e), t.progress >= t.cooldown)
                   ) {
                     (t.cooldown = 0), (t.progress = 0);
-                    var i = S.find(function (e) {
+                    var i = P.find(function (e) {
                       return t.id === e.id;
                     });
                     if (!i) return;
-                    var o = w.calcBatch(i.getGain, kg.getInstance(), 0),
-                      r = w.calcBatchAll(
+                    var o = X.calcBatch(i.getGain, xg.getInstance(), 0),
+                      r = X.calcBatchAll(
                         i.getCost,
-                        kg.getInstance(),
+                        xg.getInstance(),
                         0,
-                        kg.getInstance().resources.getBatchObject()
+                        xg.getInstance().resources.getBatchObject()
                       );
-                    kg.getInstance().eventLog.registerAction(i.name, r, o),
+                    xg.getInstance().eventLog.registerAction(i.name, r, o),
                       o.forEach(function (e) {
-                        xg.resources.addResource(e.id, e.amount);
+                        Yg.resources.addResource(e.id, e.amount);
                       }),
-                      xg.resources.reassertBalances();
+                      Yg.resources.reassertBalances();
                   }
                 });
               }),
@@ -2572,9 +2576,9 @@
               }),
               t
             );
-          })(C),
-          Wu = Yu.getInstance(),
-          Zu = [
+          })(v),
+          Zu = Wu.getInstance(),
+          ju = [
             {
               id: r.GRAVITONE_DETECTORS,
               name: "Gravitone Detectors",
@@ -2583,22 +2587,22 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.GRAVITONE_STUDY
+                    S.GRAVITONE_STUDY
                   ) > 0
                 );
               },
               getCost:
-                ((x = {}),
-                (x[l.RESEARCH] = function (e) {
+                ((Y = {}),
+                (Y[l.RESEARCH] = function (e) {
                   return { A: 195e3, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (x[l.COMPUTER] = function (e) {
+                (Y[l.COMPUTER] = function (e) {
                   return { A: 45e3, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (x[l.MAGNETO] = function (e) {
+                (Y[l.MAGNETO] = function (e) {
                   return { A: 1200, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                x),
+                Y),
               getGainMultiplier: {},
               getCapacityMultiplier: {},
               maxLevel: 1,
@@ -2611,22 +2615,22 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.QUANTUM_STATE_STUDY
+                    S.QUANTUM_STATE_STUDY
                   ) > 0
                 );
               },
               getCost:
-                ((Y = {}),
-                (Y[l.RESEARCH] = function (e) {
+                ((W = {}),
+                (W[l.RESEARCH] = function (e) {
                   return { A: 195e3, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (Y[l.COMPUTER] = function (e) {
+                (W[l.COMPUTER] = function (e) {
                   return { A: 45e3, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (Y[l.GRAPHENE] = function (e) {
+                (W[l.GRAPHENE] = function (e) {
                   return { A: 2500, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                Y),
+                W),
               getGainMultiplier: {},
               getCapacityMultiplier: {},
               maxLevel: 1,
@@ -2639,22 +2643,22 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.QUANTUM_STATE_STUDY
+                    S.QUANTUM_STATE_STUDY
                   ) > 0
                 );
               },
               getCost:
-                ((W = {}),
-                (W[l.RESEARCH] = function (e) {
+                ((Z = {}),
+                (Z[l.RESEARCH] = function (e) {
                   return { A: 225e3, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (W[l.COMPUTER] = function (e) {
+                (Z[l.COMPUTER] = function (e) {
                   return { A: 75e3, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (W[l.MAGNETO] = function (e) {
+                (Z[l.MAGNETO] = function (e) {
                   return { A: 1500, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                W),
+                Z),
               getGainMultiplier: {},
               getCapacityMultiplier: {},
               maxLevel: 1,
@@ -2667,22 +2671,22 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.ANDROID_CONSTRUCTION
+                    S.ANDROID_CONSTRUCTION
                   ) > 0
                 );
               },
               getCost:
-                ((Z = {}),
-                (Z[l.RESEARCH] = function (e) {
+                ((j = {}),
+                (j[l.RESEARCH] = function (e) {
                   return { A: 215e3, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (Z[l.COMPUTER] = function (e) {
+                (j[l.COMPUTER] = function (e) {
                   return { A: 4e4, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (Z[l.GRAPHENE] = function (e) {
+                (j[l.GRAPHENE] = function (e) {
                   return { A: 12500, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                Z),
+                j),
               getGainMultiplier: {},
               getCapacityMultiplier: {},
               maxLevel: 3,
@@ -2695,7 +2699,7 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.DARK_MATTER_STUDY
+                    S.DARK_MATTER_STUDY
                   ) > 0
                 );
               },
@@ -2723,37 +2727,37 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.DARK_MATTER_STUDY
+                    S.DARK_MATTER_STUDY
                   ) > 0
                 );
               },
               getCost:
-                ((j = {}),
-                (j[l.RESEARCH] = function (e) {
+                ((K = {}),
+                (K[l.RESEARCH] = function (e) {
                   return { A: 215e3, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (j[l.DARK_MATTER] = function (e) {
+                (K[l.DARK_MATTER] = function (e) {
                   return { A: 100, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (j[l.GRAPHENE] = function (e) {
+                (K[l.GRAPHENE] = function (e) {
                   return { A: 5500, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                j),
-              getGainMultiplier:
-                ((K = {}),
-                (K[l.SEMICONDUCTOR] = function (e) {
-                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
-                }),
-                (K[l.WIRE] = function (e) {
-                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
-                }),
-                (K[l.COMPUTER] = function (e) {
-                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
-                }),
-                (K[l.MAGNETO] = function (e) {
-                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
-                }),
                 K),
+              getGainMultiplier:
+                ((V = {}),
+                (V[l.SEMICONDUCTOR] = function (e) {
+                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
+                }),
+                (V[l.WIRE] = function (e) {
+                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
+                }),
+                (V[l.COMPUTER] = function (e) {
+                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
+                }),
+                (V[l.MAGNETO] = function (e) {
+                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
+                }),
+                V),
               getCapacityMultiplier: {},
               maxLevel: 3,
             },
@@ -2765,34 +2769,34 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.ADVANCED_ORGANISMS_GENERATION
+                    S.ADVANCED_ORGANISMS_GENERATION
                   ) > 0
                 );
               },
               getCost:
-                ((V = {}),
-                (V[l.RESEARCH] = function (e) {
+                ((q = {}),
+                (q[l.RESEARCH] = function (e) {
                   return { A: 275e3, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (V[l.BIOMASS] = function (e) {
+                (q[l.BIOMASS] = function (e) {
                   return { A: 2e5, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (V[l.GRAPHENE] = function (e) {
+                (q[l.GRAPHENE] = function (e) {
                   return { A: 7500, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                V),
-              getGainMultiplier:
-                ((q = {}),
-                (q[l.RUBBER] = function (e) {
-                  return { A: 1, B: 1.2, type: i.EXPONENTIAL };
-                }),
-                (q[l.PLASTICS] = function (e) {
-                  return { A: 1, B: 1.2, type: i.EXPONENTIAL };
-                }),
-                (q[l.GRAPHENE] = function (e) {
-                  return { A: 1, B: 1.2, type: i.EXPONENTIAL };
-                }),
                 q),
+              getGainMultiplier:
+                ((z = {}),
+                (z[l.RUBBER] = function (e) {
+                  return { A: 1, B: 1.2, type: i.EXPONENTIAL };
+                }),
+                (z[l.PLASTICS] = function (e) {
+                  return { A: 1, B: 1.2, type: i.EXPONENTIAL };
+                }),
+                (z[l.GRAPHENE] = function (e) {
+                  return { A: 1, B: 1.2, type: i.EXPONENTIAL };
+                }),
+                z),
               getCapacityMultiplier: {},
               maxLevel: 3,
             },
@@ -2804,29 +2808,29 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.ADVANCED_ORGANISMS_GENERATION
+                    S.ADVANCED_ORGANISMS_GENERATION
                   ) > 0
                 );
               },
               getCost:
-                ((z = {}),
-                (z[l.RESEARCH] = function (e) {
+                ((Q = {}),
+                (Q[l.RESEARCH] = function (e) {
                   return { A: 275e3, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (z[l.BIOMASS] = function (e) {
+                (Q[l.BIOMASS] = function (e) {
                   return { A: 18e4, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (z[l.WATER] = function (e) {
+                (Q[l.WATER] = function (e) {
                   return { A: 7500, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                z),
+                Q),
               getGainMultiplier: {},
               getCapacityMultiplier:
-                ((Q = {}),
-                (Q[l.NUTRITION] = function (e) {
+                ((J = {}),
+                (J[l.NUTRITION] = function (e) {
                   return { A: 1, B: 1.2, type: i.EXPONENTIAL };
                 }),
-                Q),
+                J),
               maxLevel: 3,
             },
             {
@@ -2837,34 +2841,34 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.DEGENERATE_MATTER
+                    S.DEGENERATE_MATTER
                   ) > 0
                 );
               },
               getCost:
-                ((J = {}),
-                (J[l.RESEARCH] = function (e) {
+                (($ = {}),
+                ($[l.RESEARCH] = function (e) {
                   return { A: 26e4, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (J[l.FUEL] = function (e) {
+                ($[l.FUEL] = function (e) {
                   return { A: 32e3, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (J[l.MAGNETO] = function (e) {
+                ($[l.MAGNETO] = function (e) {
                   return { A: 600, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                J),
-              getGainMultiplier:
-                (($ = {}),
-                ($[l.PLATE] = function (e) {
-                  return { A: 1, B: 1.2, type: i.EXPONENTIAL };
-                }),
-                ($[l.WIRE] = function (e) {
-                  return { A: 1, B: 1.2, type: i.EXPONENTIAL };
-                }),
-                ($[l.ROCKET_ENGINE] = function (e) {
-                  return { A: 1, B: 1.2, type: i.EXPONENTIAL };
-                }),
                 $),
+              getGainMultiplier:
+                ((ee = {}),
+                (ee[l.PLATE] = function (e) {
+                  return { A: 1, B: 1.2, type: i.EXPONENTIAL };
+                }),
+                (ee[l.WIRE] = function (e) {
+                  return { A: 1, B: 1.2, type: i.EXPONENTIAL };
+                }),
+                (ee[l.ROCKET_ENGINE] = function (e) {
+                  return { A: 1, B: 1.2, type: i.EXPONENTIAL };
+                }),
+                ee),
               getCapacityMultiplier: {},
               maxLevel: 5,
             },
@@ -2876,22 +2880,22 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.EXPANDED_PARTICLE_THEORY
+                    S.EXPANDED_PARTICLE_THEORY
                   ) > 0
                 );
               },
               getCost:
-                ((ee = {}),
-                (ee[l.RESEARCH] = function (e) {
+                ((te = {}),
+                (te[l.RESEARCH] = function (e) {
                   return { A: 275e3, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (ee[l.DARK_MATTER] = function (e) {
+                (te[l.DARK_MATTER] = function (e) {
                   return { A: 300, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (ee[l.MAGNETO] = function (e) {
+                (te[l.MAGNETO] = function (e) {
                   return { A: 1500, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                ee),
+                te),
               getGainMultiplier: {},
               getCapacityMultiplier: {},
               maxLevel: 10,
@@ -2904,22 +2908,22 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.EXPANDED_PARTICLE_THEORY
+                    S.EXPANDED_PARTICLE_THEORY
                   ) > 0
                 );
               },
               getCost:
-                ((te = {}),
-                (te[l.RESEARCH] = function (e) {
+                ((ne = {}),
+                (ne[l.RESEARCH] = function (e) {
                   return { A: 275e3, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (te[l.DARK_MATTER] = function (e) {
+                (ne[l.DARK_MATTER] = function (e) {
                   return { A: 250, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (te[l.MAGNETO] = function (e) {
+                (ne[l.MAGNETO] = function (e) {
                   return { A: 1200, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                te),
+                ne),
               getGainMultiplier: {},
               getCapacityMultiplier: {},
               maxLevel: 10,
@@ -2932,22 +2936,22 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.EXPANDED_PARTICLE_THEORY
+                    S.EXPANDED_PARTICLE_THEORY
                   ) > 0
                 );
               },
               getCost:
-                ((ne = {}),
-                (ne[l.RESEARCH] = function (e) {
+                ((ie = {}),
+                (ie[l.RESEARCH] = function (e) {
                   return { A: 475e3, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (ne[l.COMPUTER] = function (e) {
+                (ie[l.COMPUTER] = function (e) {
                   return { A: 75e3, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (ne[l.MAGNETO] = function (e) {
+                (ie[l.MAGNETO] = function (e) {
                   return { A: 1200, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                ne),
+                ie),
               getGainMultiplier: {},
               getCapacityMultiplier: {},
               maxLevel: 1,
@@ -2960,37 +2964,37 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.BOSE_EINSTEIN_CONDENSATE
+                    S.BOSE_EINSTEIN_CONDENSATE
                   ) > 0
                 );
               },
               getCost:
-                ((ie = {}),
-                (ie[l.RESEARCH] = function (e) {
+                ((oe = {}),
+                (oe[l.RESEARCH] = function (e) {
                   return { A: 3e5, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (ie[l.FUEL] = function (e) {
+                (oe[l.FUEL] = function (e) {
                   return { A: 64e3, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (ie[l.MAGNETO] = function (e) {
+                (oe[l.MAGNETO] = function (e) {
                   return { A: 1600, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                ie),
-              getGainMultiplier:
-                ((oe = {}),
-                (oe[l.WIRE] = function (e) {
-                  return { A: 1, B: 1.2, type: i.EXPONENTIAL };
-                }),
-                (oe[l.SEMICONDUCTOR] = function (e) {
-                  return { A: 1, B: 1.2, type: i.EXPONENTIAL };
-                }),
-                (oe[l.COMPUTER] = function (e) {
-                  return { A: 1, B: 1.2, type: i.EXPONENTIAL };
-                }),
-                (oe[l.MAGNETO] = function (e) {
-                  return { A: 1, B: 1.2, type: i.EXPONENTIAL };
-                }),
                 oe),
+              getGainMultiplier:
+                ((re = {}),
+                (re[l.WIRE] = function (e) {
+                  return { A: 1, B: 1.2, type: i.EXPONENTIAL };
+                }),
+                (re[l.SEMICONDUCTOR] = function (e) {
+                  return { A: 1, B: 1.2, type: i.EXPONENTIAL };
+                }),
+                (re[l.COMPUTER] = function (e) {
+                  return { A: 1, B: 1.2, type: i.EXPONENTIAL };
+                }),
+                (re[l.MAGNETO] = function (e) {
+                  return { A: 1, B: 1.2, type: i.EXPONENTIAL };
+                }),
+                re),
               getCapacityMultiplier: {},
               maxLevel: 5,
             },
@@ -3002,22 +3006,22 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.BOSE_EINSTEIN_CONDENSATE
+                    S.BOSE_EINSTEIN_CONDENSATE
                   ) > 0
                 );
               },
               getCost:
-                ((re = {}),
-                (re[l.RESEARCH] = function (e) {
+                ((ae = {}),
+                (ae[l.RESEARCH] = function (e) {
                   return { A: 28e4, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (re[l.FUEL] = function (e) {
+                (ae[l.FUEL] = function (e) {
                   return { A: 48e3, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (re[l.COMPUTER] = function (e) {
+                (ae[l.COMPUTER] = function (e) {
                   return { A: 16e3, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                re),
+                ae),
               getGainMultiplier: {},
               getCapacityMultiplier: {},
               maxLevel: 5,
@@ -3030,22 +3034,22 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.EXOTIC_BIOCHEMISTRY
+                    S.EXOTIC_BIOCHEMISTRY
                   ) > 0
                 );
               },
               getCost:
-                ((ae = {}),
-                (ae[l.RESEARCH] = function (e) {
+                ((ce = {}),
+                (ce[l.RESEARCH] = function (e) {
                   return { A: 58e4, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (ae[l.BIOMASS] = function (e) {
+                (ce[l.BIOMASS] = function (e) {
                   return { A: 42e4, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (ae[l.GRAPHENE] = function (e) {
+                (ce[l.GRAPHENE] = function (e) {
                   return { A: 2600, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                ae),
+                ce),
               getGainMultiplier: {},
               getCapacityMultiplier: {},
               maxLevel: 1,
@@ -3058,22 +3062,22 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.EXOTIC_BIOCHEMISTRY
+                    S.EXOTIC_BIOCHEMISTRY
                   ) > 0
                 );
               },
               getCost:
-                ((ce = {}),
-                (ce[l.RESEARCH] = function (e) {
+                ((se = {}),
+                (se[l.RESEARCH] = function (e) {
                   return { A: 36e4, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (ce[l.BIOMASS] = function (e) {
+                (se[l.BIOMASS] = function (e) {
                   return { A: 32e4, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (ce[l.GRAPHENE] = function (e) {
+                (se[l.GRAPHENE] = function (e) {
                   return { A: 3200, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                ce),
+                se),
               getGainMultiplier: {},
               getCapacityMultiplier: {},
               maxLevel: 5,
@@ -3086,22 +3090,22 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.EXOTIC_MATTER_STUDY
+                    S.EXOTIC_MATTER_STUDY
                   ) > 0
                 );
               },
               getCost:
-                ((se = {}),
-                (se[l.RESEARCH] = function (e) {
+                ((ue = {}),
+                (ue[l.RESEARCH] = function (e) {
                   return { A: 7e5, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (se[l.DARK_MATTER] = function (e) {
+                (ue[l.DARK_MATTER] = function (e) {
                   return { A: 1200, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (se[l.MAGNETO] = function (e) {
+                (ue[l.MAGNETO] = function (e) {
                   return { A: 1200, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                se),
+                ue),
               getGainMultiplier: {},
               getCapacityMultiplier: {},
               maxLevel: 1,
@@ -3115,28 +3119,28 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.EXOTIC_MATTER_STUDY
+                    S.EXOTIC_MATTER_STUDY
                   ) > 0
                 );
               },
               getCost:
-                ((ue = {}),
-                (ue[l.RESEARCH] = function (e) {
+                ((le = {}),
+                (le[l.RESEARCH] = function (e) {
                   return { A: 4e5, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (ue[l.COMPUTER] = function (e) {
+                (le[l.COMPUTER] = function (e) {
                   return { A: 64e3, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (ue[l.MAGNETO] = function (e) {
+                (le[l.MAGNETO] = function (e) {
                   return { A: 5200, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                ue),
+                le),
               getGainMultiplier:
-                ((le = {}),
-                (le[l.DARK_MATTER] = function (e) {
+                ((pe = {}),
+                (pe[l.DARK_MATTER] = function (e) {
                   return { A: 1, B: 1.2, type: i.EXPONENTIAL };
                 }),
-                le),
+                pe),
               getCapacityMultiplier: {},
               maxLevel: 5,
             },
@@ -3148,22 +3152,22 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.ADVANCED_SYNTHETIC_BIOLOGY
+                    S.ADVANCED_SYNTHETIC_BIOLOGY
                   ) > 0
                 );
               },
               getCost:
-                ((pe = {}),
-                (pe[l.RESEARCH] = function (e) {
+                ((Ee = {}),
+                (Ee[l.RESEARCH] = function (e) {
                   return { A: 525e3, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (pe[l.FUEL] = function (e) {
+                (Ee[l.FUEL] = function (e) {
                   return { A: 1e4, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (pe[l.GRAPHENE] = function (e) {
+                (Ee[l.GRAPHENE] = function (e) {
                   return { A: 3200, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                pe),
+                Ee),
               getGainMultiplier: {},
               getCapacityMultiplier: {},
               maxLevel: 5,
@@ -3176,22 +3180,22 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.ADVANCED_SYNTHETIC_BIOLOGY
+                    S.ADVANCED_SYNTHETIC_BIOLOGY
                   ) > 0
                 );
               },
               getCost:
-                ((Ee = {}),
-                (Ee[l.RESEARCH] = function (e) {
+                ((de = {}),
+                (de[l.RESEARCH] = function (e) {
                   return { A: 8e5, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (Ee[l.WATER] = function (e) {
+                (de[l.WATER] = function (e) {
                   return { A: 1e4, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (Ee[l.GRAPHENE] = function (e) {
+                (de[l.GRAPHENE] = function (e) {
                   return { A: 5e3, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                Ee),
+                de),
               getGainMultiplier: {},
               getCapacityMultiplier: {},
               maxLevel: 1,
@@ -3204,28 +3208,28 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.ANTIMATTER_STUDY
+                    S.ANTIMATTER_STUDY
                   ) > 0
                 );
               },
               getCost:
-                ((de = {}),
-                (de[l.RESEARCH] = function (e) {
+                ((ge = {}),
+                (ge[l.RESEARCH] = function (e) {
                   return { A: 9e5, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (de[l.DM_BLOCK] = function (e) {
+                (ge[l.DM_BLOCK] = function (e) {
                   return { A: 5, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (de[l.MAGNETO] = function (e) {
+                (ge[l.MAGNETO] = function (e) {
                   return { A: 5200, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                de),
+                ge),
               getGainMultiplier:
-                ((ge = {}),
-                (ge[l.ANTIMATTER] = function (e) {
+                ((Ae = {}),
+                (Ae[l.ANTIMATTER] = function (e) {
                   return { A: 1, B: 1.2, type: i.EXPONENTIAL };
                 }),
-                ge),
+                Ae),
               getCapacityMultiplier: {},
               maxLevel: 5,
             },
@@ -3237,34 +3241,34 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.ANTIMATTER_STUDY
+                    S.ANTIMATTER_STUDY
                   ) > 0
                 );
               },
               getCost:
-                ((Ae = {}),
-                (Ae[l.RESEARCH] = function (e) {
+                ((fe = {}),
+                (fe[l.RESEARCH] = function (e) {
                   return { A: 725e3, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (Ae[l.DM_BLOCK] = function (e) {
+                (fe[l.DM_BLOCK] = function (e) {
                   return { A: 5, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (Ae[l.ANTIMATTER] = function (e) {
+                (fe[l.ANTIMATTER] = function (e) {
                   return { A: 8, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                Ae),
-              getGainMultiplier:
-                ((fe = {}),
-                (fe[l.PLATE] = function (e) {
-                  return { A: 1, B: 1.2, type: i.EXPONENTIAL };
-                }),
-                (fe[l.WIRE] = function (e) {
-                  return { A: 1, B: 1.2, type: i.EXPONENTIAL };
-                }),
-                (fe[l.ROCKET_ENGINE] = function (e) {
-                  return { A: 1, B: 1.2, type: i.EXPONENTIAL };
-                }),
                 fe),
+              getGainMultiplier:
+                ((Re = {}),
+                (Re[l.PLATE] = function (e) {
+                  return { A: 1, B: 1.2, type: i.EXPONENTIAL };
+                }),
+                (Re[l.WIRE] = function (e) {
+                  return { A: 1, B: 1.2, type: i.EXPONENTIAL };
+                }),
+                (Re[l.ROCKET_ENGINE] = function (e) {
+                  return { A: 1, B: 1.2, type: i.EXPONENTIAL };
+                }),
+                Re),
               getCapacityMultiplier: {},
               maxLevel: 5,
             },
@@ -3276,22 +3280,22 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.ADVANCED_BOSE_EINSTEIN
+                    S.ADVANCED_BOSE_EINSTEIN
                   ) > 0
                 );
               },
               getCost:
-                ((Re = {}),
-                (Re[l.RESEARCH] = function (e) {
+                ((Ie = {}),
+                (Ie[l.RESEARCH] = function (e) {
                   return { A: 6e5, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (Re[l.FUEL] = function (e) {
+                (Ie[l.FUEL] = function (e) {
                   return { A: 196e3, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (Re[l.MAGNETO] = function (e) {
+                (Ie[l.MAGNETO] = function (e) {
                   return { A: 3200, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                Re),
+                Ie),
               getGainMultiplier: {},
               getCapacityMultiplier: {},
               maxLevel: 5,
@@ -3304,29 +3308,29 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.ADVANCED_BOSE_EINSTEIN
+                    S.ADVANCED_BOSE_EINSTEIN
                   ) > 0
                 );
               },
               getCost:
-                ((Ie = {}),
-                (Ie[l.RESEARCH] = function (e) {
+                ((Ne = {}),
+                (Ne[l.RESEARCH] = function (e) {
                   return { A: 6e5, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (Ie[l.FUEL] = function (e) {
+                (Ne[l.FUEL] = function (e) {
                   return { A: 128e3, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (Ie[l.WIRE] = function (e) {
+                (Ne[l.WIRE] = function (e) {
                   return { A: 4e5, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                Ie),
+                Ne),
               getGainMultiplier: {},
               getCapacityMultiplier:
-                ((Ne = {}),
-                (Ne[l.POWER] = function (e) {
+                ((Te = {}),
+                (Te[l.POWER] = function (e) {
                   return { A: 1, B: 1.2, type: i.EXPONENTIAL };
                 }),
-                Ne),
+                Te),
               maxLevel: 5,
             },
             {
@@ -3337,34 +3341,34 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.ANTIMATTER_USAGE
+                    S.ANTIMATTER_USAGE
                   ) > 0
                 );
               },
               getCost:
-                ((Te = {}),
-                (Te[l.RESEARCH] = function (e) {
+                ((Oe = {}),
+                (Oe[l.RESEARCH] = function (e) {
                   return { A: 9e5, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (Te[l.ANTIMATTER] = function (e) {
+                (Oe[l.ANTIMATTER] = function (e) {
                   return { A: 50, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (Te[l.WIRE] = function (e) {
+                (Oe[l.WIRE] = function (e) {
                   return { A: 8e5, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                Te),
-              getGainMultiplier:
-                ((Oe = {}),
-                (Oe[l.SEMICONDUCTOR] = function (e) {
-                  return { A: 1, B: 1.2, type: i.EXPONENTIAL };
-                }),
-                (Oe[l.COMPUTER] = function (e) {
-                  return { A: 1, B: 1.2, type: i.EXPONENTIAL };
-                }),
-                (Oe[l.MAGNETO] = function (e) {
-                  return { A: 1, B: 1.2, type: i.EXPONENTIAL };
-                }),
                 Oe),
+              getGainMultiplier:
+                ((ye = {}),
+                (ye[l.SEMICONDUCTOR] = function (e) {
+                  return { A: 1, B: 1.2, type: i.EXPONENTIAL };
+                }),
+                (ye[l.COMPUTER] = function (e) {
+                  return { A: 1, B: 1.2, type: i.EXPONENTIAL };
+                }),
+                (ye[l.MAGNETO] = function (e) {
+                  return { A: 1, B: 1.2, type: i.EXPONENTIAL };
+                }),
+                ye),
               getCapacityMultiplier: {},
               maxLevel: 5,
             },
@@ -3376,22 +3380,22 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.ADVANCED_BOSE_EINSTEIN
+                    S.ADVANCED_BOSE_EINSTEIN
                   ) > 0
                 );
               },
               getCost:
-                ((ye = {}),
-                (ye[l.RESEARCH] = function (e) {
+                ((me = {}),
+                (me[l.RESEARCH] = function (e) {
                   return { A: 8e5, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (ye[l.ANTIMATTER] = function (e) {
+                (me[l.ANTIMATTER] = function (e) {
                   return { A: 75, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (ye[l.MAGNETO] = function (e) {
+                (me[l.MAGNETO] = function (e) {
                   return { A: 32e3, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                ye),
+                me),
               getGainMultiplier: {},
               getCapacityMultiplier: {},
               maxLevel: 5,
@@ -3404,22 +3408,22 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.DEGENERATE_ATOMS
+                    S.DEGENERATE_ATOMS
                   ) > 0
                 );
               },
               getCost:
-                ((me = {}),
-                (me[l.RESEARCH] = function (e) {
+                ((he = {}),
+                (he[l.RESEARCH] = function (e) {
                   return { A: 5e5, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (me[l.MAGNETO] = function (e) {
+                (he[l.MAGNETO] = function (e) {
                   return { A: 1e4, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (me[l.WIRE] = function (e) {
+                (he[l.WIRE] = function (e) {
                   return { A: 2e8, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                me),
+                he),
               getGainMultiplier: {},
               getCapacityMultiplier: {},
               maxLevel: 5,
@@ -3432,7 +3436,7 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.DEGENERATE_ATOMS
+                    S.DEGENERATE_ATOMS
                   ) > 0
                 );
               },
@@ -3460,22 +3464,22 @@
                 "Unlocks new building that allows you boost your power generation",
               unlockCondition: function (e) {
                 return (
-                  e.science.scienceResearches.getResearchLevel(v.ATOM_BIOLOGY) >
+                  e.science.scienceResearches.getResearchLevel(S.ATOM_BIOLOGY) >
                   0
                 );
               },
               getCost:
-                ((he = {}),
-                (he[l.RESEARCH] = function (e) {
+                ((Ce = {}),
+                (Ce[l.RESEARCH] = function (e) {
                   return { A: 12e5, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (he[l.BIOMASS] = function (e) {
+                (Ce[l.BIOMASS] = function (e) {
                   return { A: 5e5, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (he[l.MAGNETO] = function (e) {
+                (Ce[l.MAGNETO] = function (e) {
                   return { A: 1e3, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                he),
+                Ce),
               getGainMultiplier: {},
               getCapacityMultiplier: {},
               maxLevel: 1,
@@ -3488,22 +3492,22 @@
                 "Better understanding and control over your microflora allows you now to use it more widely without risk of pandemic. Use it in production lines to improve efficiency of building and electronics factory by 1% per level",
               unlockCondition: function (e) {
                 return (
-                  e.science.scienceResearches.getResearchLevel(v.ATOM_BIOLOGY) >
+                  e.science.scienceResearches.getResearchLevel(S.ATOM_BIOLOGY) >
                   0
                 );
               },
               getCost:
-                ((Ce = {}),
-                (Ce[l.RESEARCH] = function (e) {
+                ((ve = {}),
+                (ve[l.RESEARCH] = function (e) {
                   return { A: 14e5, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (Ce[l.BIOMASS] = function (e) {
+                (ve[l.BIOMASS] = function (e) {
                   return { A: 4e5, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (Ce[l.FUEL] = function (e) {
+                (ve[l.FUEL] = function (e) {
                   return { A: 2e4, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                Ce),
+                ve),
               getGainMultiplier: {},
               getCapacityMultiplier: {},
               maxLevel: 1,
@@ -3516,37 +3520,37 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.ANNIHILATION_STUDY
+                    S.ANNIHILATION_STUDY
                   ) > 0
                 );
               },
               getCost:
-                ((ve = {}),
-                (ve[l.RESEARCH] = function (e) {
+                ((Se = {}),
+                (Se[l.RESEARCH] = function (e) {
                   return { A: 9e5, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (ve[l.ANTIMATTER] = function (e) {
+                (Se[l.ANTIMATTER] = function (e) {
                   return { A: 30, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (ve[l.SEMICONDUCTOR] = function (e) {
+                (Se[l.SEMICONDUCTOR] = function (e) {
                   return { A: 2e5, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                ve),
-              getGainMultiplier:
-                ((Se = {}),
-                (Se[l.STONE] = function (e) {
-                  return { A: 1, B: 1.3, type: i.EXPONENTIAL };
-                }),
-                (Se[l.BRICK] = function (e) {
-                  return { A: 1, B: 1.3, type: i.EXPONENTIAL };
-                }),
-                (Se[l.ORE] = function (e) {
-                  return { A: 1, B: 1.3, type: i.EXPONENTIAL };
-                }),
-                (Se[l.PLATINUM] = function (e) {
-                  return { A: 1, B: 1.3, type: i.EXPONENTIAL };
-                }),
                 Se),
+              getGainMultiplier:
+                ((Pe = {}),
+                (Pe[l.STONE] = function (e) {
+                  return { A: 1, B: 1.3, type: i.EXPONENTIAL };
+                }),
+                (Pe[l.BRICK] = function (e) {
+                  return { A: 1, B: 1.3, type: i.EXPONENTIAL };
+                }),
+                (Pe[l.ORE] = function (e) {
+                  return { A: 1, B: 1.3, type: i.EXPONENTIAL };
+                }),
+                (Pe[l.PLATINUM] = function (e) {
+                  return { A: 1, B: 1.3, type: i.EXPONENTIAL };
+                }),
+                Pe),
               getCapacityMultiplier: {},
               maxLevel: 5,
             },
@@ -3558,22 +3562,22 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.ANNIHILATION_STUDY
+                    S.ANNIHILATION_STUDY
                   ) > 0
                 );
               },
               getCost:
-                ((Pe = {}),
-                (Pe[l.RESEARCH] = function (e) {
+                ((Be = {}),
+                (Be[l.RESEARCH] = function (e) {
                   return { A: 19e5, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (Pe[l.ANTIMATTER] = function (e) {
+                (Be[l.ANTIMATTER] = function (e) {
                   return { A: 250, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (Pe[l.SEMICONDUCTOR] = function (e) {
+                (Be[l.SEMICONDUCTOR] = function (e) {
                   return { A: 2e5, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                Pe),
+                Be),
               getGainMultiplier: {},
               getCapacityMultiplier: {},
               maxLevel: 1,
@@ -3586,22 +3590,22 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.ANNIHILATION_STUDY
+                    S.ANNIHILATION_STUDY
                   ) > 0
                 );
               },
               getCost:
-                ((Be = {}),
-                (Be[l.RESEARCH] = function (e) {
+                ((_e = {}),
+                (_e[l.RESEARCH] = function (e) {
                   return { A: 2e6, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (Be[l.ANTIMATTER] = function (e) {
+                (_e[l.ANTIMATTER] = function (e) {
                   return { A: 50, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (Be[l.MAGNETO] = function (e) {
+                (_e[l.MAGNETO] = function (e) {
                   return { A: 2e4, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                Be),
+                _e),
               getGainMultiplier: {},
               getCapacityMultiplier: {},
               maxLevel: 1,
@@ -3615,22 +3619,22 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.HYPERSPACE_TECH
+                    S.HYPERSPACE_TECH
                   ) > 0
                 );
               },
               getCost:
-                ((_e = {}),
-                (_e[l.RESEARCH] = function (e) {
+                ((Me = {}),
+                (Me[l.RESEARCH] = function (e) {
                   return { A: 19e5, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (_e[l.PRESSED_BLOCK] = function (e) {
+                (Me[l.PRESSED_BLOCK] = function (e) {
                   return { A: 250, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (_e[l.RUBBER] = function (e) {
+                (Me[l.RUBBER] = function (e) {
                   return { A: 2e4, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                _e),
+                Me),
               getGainMultiplier: {},
               getCapacityMultiplier: {},
               maxLevel: 1,
@@ -3643,22 +3647,22 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.HYPERSPACE_TECH
+                    S.HYPERSPACE_TECH
                   ) > 0
                 );
               },
               getCost:
-                ((Me = {}),
-                (Me[l.RESEARCH] = function (e) {
+                ((Ue = {}),
+                (Ue[l.RESEARCH] = function (e) {
                   return { A: 12e5, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (Me[l.PRESSED_BLOCK] = function (e) {
+                (Ue[l.PRESSED_BLOCK] = function (e) {
                   return { A: 75, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (Me[l.COMPUTER] = function (e) {
+                (Ue[l.COMPUTER] = function (e) {
                   return { A: 2e4, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                Me),
+                Ue),
               getGainMultiplier: {},
               getCapacityMultiplier: {},
               maxLevel: 5,
@@ -3682,14 +3686,14 @@
                   return !0;
                 },
                 getCost:
-                  ((Ue = {}),
-                  (Ue[l.POWER] = function (e) {
+                  ((Ge = {}),
+                  (Ge[l.POWER] = function (e) {
                     return { A: 2, B: 1.3, type: i.EXPONENTIAL };
                   }),
-                  (Ue[l.STONE] = function (e) {
+                  (Ge[l.STONE] = function (e) {
                     return { A: 0.5, B: 1.3, type: i.EXPONENTIAL };
                   }),
-                  Ue),
+                  Ge),
                 maxLevel: 8,
               },
               {
@@ -3704,14 +3708,14 @@
                   );
                 },
                 getCost:
-                  ((Ge = {}),
-                  (Ge[l.POWER] = function (e) {
+                  ((be = {}),
+                  (be[l.POWER] = function (e) {
                     return { A: 3, B: 1.3, type: i.EXPONENTIAL };
                   }),
-                  (Ge[l.ORE] = function (e) {
+                  (be[l.ORE] = function (e) {
                     return { A: 1, B: 1.3, type: i.EXPONENTIAL };
                   }),
-                  Ge),
+                  be),
                 maxLevel: 5,
               },
               {
@@ -3726,14 +3730,14 @@
                   );
                 },
                 getCost:
-                  ((be = {}),
-                  (be[l.POWER] = function (e) {
+                  ((De = {}),
+                  (De[l.POWER] = function (e) {
                     return { A: 5, B: 1.3, type: i.EXPONENTIAL };
                   }),
-                  (be[l.ORE] = function (e) {
+                  (De[l.ORE] = function (e) {
                     return { A: 2, B: 1.3, type: i.EXPONENTIAL };
                   }),
-                  be),
+                  De),
                 maxLevel: 5,
               },
               {
@@ -3749,14 +3753,14 @@
                   );
                 },
                 getCost:
-                  ((De = {}),
-                  (De[l.POWER] = function (e) {
+                  ((we = {}),
+                  (we[l.POWER] = function (e) {
                     return { A: 8, B: 1.3, type: i.EXPONENTIAL };
                   }),
-                  (De[l.ORE] = function (e) {
+                  (we[l.ORE] = function (e) {
                     return { A: 4, B: 1.3, type: i.EXPONENTIAL };
                   }),
-                  De),
+                  we),
                 maxLevel: 1,
                 unlockType: u.BUILDING,
               },
@@ -3773,14 +3777,14 @@
                   );
                 },
                 getCost:
-                  ((we = {}),
-                  (we[l.POWER] = function (e) {
+                  ((Xe = {}),
+                  (Xe[l.POWER] = function (e) {
                     return { A: 8, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (we[l.ORE] = function (e) {
+                  (Xe[l.ORE] = function (e) {
                     return { A: 5, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  we),
+                  Xe),
                 maxLevel: 4,
               },
               {
@@ -3796,14 +3800,14 @@
                   );
                 },
                 getCost:
-                  ((Xe = {}),
-                  (Xe[l.POWER] = function (e) {
+                  ((ke = {}),
+                  (ke[l.POWER] = function (e) {
                     return { A: 8, B: 1.3, type: i.EXPONENTIAL };
                   }),
-                  (Xe[l.ORE] = function (e) {
+                  (ke[l.ORE] = function (e) {
                     return { A: 4, B: 1.3, type: i.EXPONENTIAL };
                   }),
-                  Xe),
+                  ke),
                 maxLevel: 1,
                 unlockType: u.BUILDING,
               },
@@ -3844,14 +3848,14 @@
                   );
                 },
                 getCost:
-                  ((ke = {}),
-                  (ke[l.POWER] = function (e) {
+                  ((xe = {}),
+                  (xe[l.POWER] = function (e) {
                     return { A: 8, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (ke[l.ORE] = function (e) {
+                  (xe[l.ORE] = function (e) {
                     return { A: 5, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  ke),
+                  xe),
                 maxLevel: 1,
                 unlockType: u.BUILDING,
               },
@@ -3870,20 +3874,20 @@
                   );
                 },
                 getCost:
-                  ((xe = {}),
-                  (xe[l.POWER] = function (e) {
-                    return { A: 15, B: 1.5, type: i.EXPONENTIAL };
-                  }),
-                  (xe[l.ORE] = function (e) {
-                    return { A: 15, B: 1.5, type: i.EXPONENTIAL };
-                  }),
-                  xe),
-                getCapacityEffect:
                   ((Ye = {}),
                   (Ye[l.POWER] = function (e) {
-                    return { A: 20, B: 0, type: i.LINEAR };
+                    return { A: 15, B: 1.5, type: i.EXPONENTIAL };
+                  }),
+                  (Ye[l.ORE] = function (e) {
+                    return { A: 15, B: 1.5, type: i.EXPONENTIAL };
                   }),
                   Ye),
+                getCapacityEffect:
+                  ((We = {}),
+                  (We[l.POWER] = function (e) {
+                    return { A: 20, B: 0, type: i.LINEAR };
+                  }),
+                  We),
                 maxLevel: 3,
               },
               {
@@ -3902,14 +3906,14 @@
                   );
                 },
                 getCost:
-                  ((We = {}),
-                  (We[l.POWER] = function (e) {
+                  ((Ze = {}),
+                  (Ze[l.POWER] = function (e) {
                     return { A: 12, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (We[l.STONE] = function (e) {
+                  (Ze[l.STONE] = function (e) {
                     return { A: 18, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  We),
+                  Ze),
                 maxLevel: 1,
               },
               {
@@ -3925,14 +3929,14 @@
                   );
                 },
                 getCost:
-                  ((Ze = {}),
-                  (Ze[l.STONE] = function (e) {
+                  ((je = {}),
+                  (je[l.STONE] = function (e) {
                     return { A: 50, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Ze[l.ORE] = function (e) {
+                  (je[l.ORE] = function (e) {
                     return { A: 12, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  Ze),
+                  je),
                 maxLevel: 1,
               },
               {
@@ -3971,14 +3975,14 @@
                   );
                 },
                 getCost:
-                  ((je = {}),
-                  (je[l.POWER] = function (e) {
+                  ((Ke = {}),
+                  (Ke[l.POWER] = function (e) {
                     return { A: 50, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (je[l.BIOMASS] = function (e) {
+                  (Ke[l.BIOMASS] = function (e) {
                     return { A: 12, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  je),
+                  Ke),
                 maxLevel: 1,
               },
               {
@@ -3994,14 +3998,14 @@
                   );
                 },
                 getCost:
-                  ((Ke = {}),
-                  (Ke[l.BIOMASS] = function (e) {
+                  ((Ve = {}),
+                  (Ve[l.BIOMASS] = function (e) {
                     return { A: 50, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Ke[l.STONE] = function (e) {
+                  (Ve[l.STONE] = function (e) {
                     return { A: 12, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  Ke),
+                  Ve),
                 maxLevel: 1,
               },
               {
@@ -4017,26 +4021,26 @@
                   );
                 },
                 getCost:
-                  ((Ve = {}),
-                  (Ve[l.STONE] = function (e) {
-                    return { A: 120, B: 1.5, type: i.EXPONENTIAL };
-                  }),
-                  (Ve[l.ORE] = function (e) {
-                    return { A: 120, B: 1.5, type: i.EXPONENTIAL };
-                  }),
-                  Ve),
-                getCapacityMultiplier:
                   ((qe = {}),
                   (qe[l.STONE] = function (e) {
-                    return { A: 1, B: 1.25, type: i.EXPONENTIAL };
+                    return { A: 120, B: 1.5, type: i.EXPONENTIAL };
                   }),
                   (qe[l.ORE] = function (e) {
-                    return { A: 1, B: 1.25, type: i.EXPONENTIAL };
-                  }),
-                  (qe[l.BIOMASS] = function (e) {
-                    return { A: 1, B: 1.25, type: i.EXPONENTIAL };
+                    return { A: 120, B: 1.5, type: i.EXPONENTIAL };
                   }),
                   qe),
+                getCapacityMultiplier:
+                  ((ze = {}),
+                  (ze[l.STONE] = function (e) {
+                    return { A: 1, B: 1.25, type: i.EXPONENTIAL };
+                  }),
+                  (ze[l.ORE] = function (e) {
+                    return { A: 1, B: 1.25, type: i.EXPONENTIAL };
+                  }),
+                  (ze[l.BIOMASS] = function (e) {
+                    return { A: 1, B: 1.25, type: i.EXPONENTIAL };
+                  }),
+                  ze),
                 maxLevel: 1,
               },
               {
@@ -4052,14 +4056,14 @@
                   );
                 },
                 getCost:
-                  ((ze = {}),
-                  (ze[l.POWER] = function (e) {
+                  ((Qe = {}),
+                  (Qe[l.POWER] = function (e) {
                     return { A: 80, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (ze[l.BIOMASS] = function (e) {
+                  (Qe[l.BIOMASS] = function (e) {
                     return { A: 90, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  ze),
+                  Qe),
                 maxLevel: 1,
                 unlockType: u.RESOURCE,
               },
@@ -4076,14 +4080,14 @@
                   );
                 },
                 getCost:
-                  ((Qe = {}),
-                  (Qe[l.POWER] = function (e) {
+                  ((Je = {}),
+                  (Je[l.POWER] = function (e) {
                     return { A: 50, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Qe[l.BIOMASS] = function (e) {
+                  (Je[l.BIOMASS] = function (e) {
                     return { A: 12, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  Qe),
+                  Je),
                 maxLevel: 1,
               },
               {
@@ -4099,14 +4103,14 @@
                   );
                 },
                 getCost:
-                  ((Je = {}),
-                  (Je[l.POWER] = function (e) {
+                  (($e = {}),
+                  ($e[l.POWER] = function (e) {
                     return { A: 50, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Je[l.OXYGEN] = function (e) {
+                  ($e[l.OXYGEN] = function (e) {
                     return { A: 8, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  Je),
+                  $e),
                 maxLevel: 1,
               },
               {
@@ -4122,17 +4126,17 @@
                   );
                 },
                 getCost:
-                  (($e = {}),
-                  ($e[l.POWER] = function (e) {
+                  ((et = {}),
+                  (et[l.POWER] = function (e) {
                     return { A: 65, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  ($e[l.ORE] = function (e) {
+                  (et[l.ORE] = function (e) {
                     return { A: 165, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  ($e[l.OXYGEN] = function (e) {
+                  (et[l.OXYGEN] = function (e) {
                     return { A: 10, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  $e),
+                  et),
                 maxLevel: 1,
               },
               {
@@ -4148,17 +4152,17 @@
                   );
                 },
                 getCost:
-                  ((et = {}),
-                  (et[l.POWER] = function (e) {
+                  ((tt = {}),
+                  (tt[l.POWER] = function (e) {
                     return { A: 75, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (et[l.OXYGEN] = function (e) {
+                  (tt[l.OXYGEN] = function (e) {
                     return { A: 10, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (et[l.ORE] = function (e) {
+                  (tt[l.ORE] = function (e) {
                     return { A: 125, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  et),
+                  tt),
                 maxLevel: 1,
               },
               {
@@ -4174,17 +4178,17 @@
                   );
                 },
                 getCost:
-                  ((tt = {}),
-                  (tt[l.POWER] = function (e) {
+                  ((nt = {}),
+                  (nt[l.POWER] = function (e) {
                     return { A: 75, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (tt[l.STONE] = function (e) {
+                  (nt[l.STONE] = function (e) {
                     return { A: 165, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (tt[l.ORE] = function (e) {
+                  (nt[l.ORE] = function (e) {
                     return { A: 175, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  tt),
+                  nt),
                 maxLevel: 1,
                 unlockType: u.BUILDING,
               },
@@ -4201,30 +4205,30 @@
                   );
                 },
                 getCost:
-                  ((nt = {}),
-                  (nt[l.POWER] = function (e) {
-                    return { A: 125, B: 1.5, type: i.EXPONENTIAL };
-                  }),
-                  (nt[l.WATER] = function (e) {
-                    return { A: 25, B: 1.5, type: i.EXPONENTIAL };
-                  }),
-                  (nt[l.ORE] = function (e) {
-                    return { A: 225, B: 1.5, type: i.EXPONENTIAL };
-                  }),
-                  nt),
-                getGain: {},
-                getGainMultiplier:
                   ((it = {}),
                   (it[l.POWER] = function (e) {
-                    return { A: 1, B: 1.2, type: i.EXPONENTIAL };
+                    return { A: 125, B: 1.5, type: i.EXPONENTIAL };
+                  }),
+                  (it[l.WATER] = function (e) {
+                    return { A: 25, B: 1.5, type: i.EXPONENTIAL };
+                  }),
+                  (it[l.ORE] = function (e) {
+                    return { A: 225, B: 1.5, type: i.EXPONENTIAL };
                   }),
                   it),
-                getCapacityEffect:
+                getGain: {},
+                getGainMultiplier:
                   ((ot = {}),
                   (ot[l.POWER] = function (e) {
-                    return { A: 40, B: 0, type: i.LINEAR };
+                    return { A: 1, B: 1.2, type: i.EXPONENTIAL };
                   }),
                   ot),
+                getCapacityEffect:
+                  ((rt = {}),
+                  (rt[l.POWER] = function (e) {
+                    return { A: 40, B: 0, type: i.LINEAR };
+                  }),
+                  rt),
                 maxLevel: 1,
                 unlockType: u.BUILDING,
               },
@@ -4244,29 +4248,29 @@
                   );
                 },
                 getCost:
-                  ((rt = {}),
-                  (rt[l.POWER] = function (e) {
+                  ((at = {}),
+                  (at[l.POWER] = function (e) {
                     return { A: 275, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (rt[l.WATER] = function (e) {
+                  (at[l.WATER] = function (e) {
                     return { A: 40, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (rt[l.ORE] = function (e) {
+                  (at[l.ORE] = function (e) {
                     return { A: 275, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  rt),
-                getGain:
-                  ((at = {}),
-                  (at[l.NUTRITION] = function (e) {
-                    return { A: 0.2, B: 0, type: i.LINEAR };
-                  }),
                   at),
-                getCapacityEffect:
+                getGain:
                   ((ct = {}),
                   (ct[l.NUTRITION] = function (e) {
-                    return { A: 40, B: 0, type: i.LINEAR };
+                    return { A: 0.2, B: 0, type: i.LINEAR };
                   }),
                   ct),
+                getCapacityEffect:
+                  ((st = {}),
+                  (st[l.NUTRITION] = function (e) {
+                    return { A: 40, B: 0, type: i.LINEAR };
+                  }),
+                  st),
                 maxLevel: 1,
                 unlockType: u.RESOURCE,
               },
@@ -4282,17 +4286,17 @@
                   );
                 },
                 getCost:
-                  ((st = {}),
-                  (st[l.POWER] = function (e) {
+                  ((ut = {}),
+                  (ut[l.POWER] = function (e) {
                     return { A: 275, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (st[l.WATER] = function (e) {
+                  (ut[l.WATER] = function (e) {
                     return { A: 40, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (st[l.ORE] = function (e) {
+                  (ut[l.ORE] = function (e) {
                     return { A: 360, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  st),
+                  ut),
                 getGain: {},
                 getCapacityEffect: {},
                 maxLevel: 1,
@@ -4311,24 +4315,24 @@
                   );
                 },
                 getCost:
-                  ((ut = {}),
-                  (ut[l.POWER] = function (e) {
+                  ((lt = {}),
+                  (lt[l.POWER] = function (e) {
                     return { A: 275, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (ut[l.WATER] = function (e) {
+                  (lt[l.WATER] = function (e) {
                     return { A: 40, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (ut[l.OXYGEN] = function (e) {
+                  (lt[l.OXYGEN] = function (e) {
                     return { A: 40, B: 1.5, type: i.EXPONENTIAL };
-                  }),
-                  ut),
-                getGain: {},
-                getCapacityEffect:
-                  ((lt = {}),
-                  (lt[l.RESEARCH] = function (e) {
-                    return { A: 100, B: 0, type: i.LINEAR };
                   }),
                   lt),
+                getGain: {},
+                getCapacityEffect:
+                  ((pt = {}),
+                  (pt[l.RESEARCH] = function (e) {
+                    return { A: 100, B: 0, type: i.LINEAR };
+                  }),
+                  pt),
                 maxLevel: 1,
                 unlockType: u.SPECIAL,
               },
@@ -4345,30 +4349,30 @@
                   );
                 },
                 getCost:
-                  ((pt = {}),
-                  (pt[l.POWER] = function (e) {
+                  ((Et = {}),
+                  (Et[l.POWER] = function (e) {
                     return { A: 275, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (pt[l.STONE] = function (e) {
-                    return { A: 340, B: 1.5, type: i.EXPONENTIAL };
-                  }),
-                  (pt[l.ORE] = function (e) {
-                    return { A: 340, B: 1.5, type: i.EXPONENTIAL };
-                  }),
-                  pt),
-                getGain: {},
-                getCapacityMultiplier:
-                  ((Et = {}),
                   (Et[l.STONE] = function (e) {
-                    return { A: 1, B: 1.75, type: i.EXPONENTIAL };
+                    return { A: 340, B: 1.5, type: i.EXPONENTIAL };
                   }),
                   (Et[l.ORE] = function (e) {
-                    return { A: 1, B: 1.75, type: i.EXPONENTIAL };
-                  }),
-                  (Et[l.BIOMASS] = function (e) {
-                    return { A: 1, B: 1.75, type: i.EXPONENTIAL };
+                    return { A: 340, B: 1.5, type: i.EXPONENTIAL };
                   }),
                   Et),
+                getGain: {},
+                getCapacityMultiplier:
+                  ((dt = {}),
+                  (dt[l.STONE] = function (e) {
+                    return { A: 1, B: 1.75, type: i.EXPONENTIAL };
+                  }),
+                  (dt[l.ORE] = function (e) {
+                    return { A: 1, B: 1.75, type: i.EXPONENTIAL };
+                  }),
+                  (dt[l.BIOMASS] = function (e) {
+                    return { A: 1, B: 1.75, type: i.EXPONENTIAL };
+                  }),
+                  dt),
                 maxLevel: 1,
               },
               {
@@ -4378,29 +4382,29 @@
                   "Provide some basic tools to your farmers. Improves farming output by 10%",
                 unlockCondition: function (e) {
                   return (
-                    e.science.scienceResearches.getResearchLevel(v.EXOFARMING) >
+                    e.science.scienceResearches.getResearchLevel(S.EXOFARMING) >
                     0
                   );
                 },
                 getCost:
-                  ((dt = {}),
-                  (dt[l.POWER] = function (e) {
+                  ((gt = {}),
+                  (gt[l.POWER] = function (e) {
                     return { A: 300, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (dt[l.RESEARCH] = function (e) {
+                  (gt[l.RESEARCH] = function (e) {
                     return { A: 35, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (dt[l.ORE] = function (e) {
+                  (gt[l.ORE] = function (e) {
                     return { A: 400, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  dt),
+                  gt),
                 getGain: {},
                 getGainMultiplier:
-                  ((gt = {}),
-                  (gt[l.NUTRITION] = function (e) {
+                  ((At = {}),
+                  (At[l.NUTRITION] = function (e) {
                     return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                   }),
-                  gt),
+                  At),
                 maxLevel: 3,
               },
               {
@@ -4410,32 +4414,32 @@
                   "Expand your mining shaft network. Improves stone and ore output by 20%",
                 unlockCondition: function (e) {
                   return (
-                    e.science.scienceResearches.getResearchLevel(v.MINERALOGY) >
+                    e.science.scienceResearches.getResearchLevel(S.MINERALOGY) >
                     0
                   );
                 },
                 getCost:
-                  ((At = {}),
-                  (At[l.POWER] = function (e) {
+                  ((ft = {}),
+                  (ft[l.POWER] = function (e) {
                     return { A: 300, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (At[l.RESEARCH] = function (e) {
+                  (ft[l.RESEARCH] = function (e) {
                     return { A: 45, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (At[l.ORE] = function (e) {
+                  (ft[l.ORE] = function (e) {
                     return { A: 450, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  At),
+                  ft),
                 getGain: {},
                 getGainMultiplier:
-                  ((ft = {}),
-                  (ft[l.ORE] = function (e) {
+                  ((Rt = {}),
+                  (Rt[l.ORE] = function (e) {
                     return { A: 1, B: 1.2, type: i.EXPONENTIAL };
                   }),
-                  (ft[l.STONE] = function (e) {
+                  (Rt[l.STONE] = function (e) {
                     return { A: 1, B: 1.2, type: i.EXPONENTIAL };
                   }),
-                  ft),
+                  Rt),
                 maxLevel: 3,
               },
               {
@@ -4445,44 +4449,44 @@
                   "Dig an underground storage for your basic materials, which increases storage facilities by 50%",
                 unlockCondition: function (e) {
                   return (
-                    e.science.scienceResearches.getResearchLevel(v.MINERALOGY) >
+                    e.science.scienceResearches.getResearchLevel(S.MINERALOGY) >
                     0
                   );
                 },
                 getCost:
-                  ((Rt = {}),
-                  (Rt[l.POWER] = function (e) {
+                  ((It = {}),
+                  (It[l.POWER] = function (e) {
                     return { A: 250, B: 1.75, type: i.EXPONENTIAL };
                   }),
-                  (Rt[l.RESEARCH] = function (e) {
+                  (It[l.RESEARCH] = function (e) {
                     return { A: 25, B: 1.75, type: i.EXPONENTIAL };
                   }),
-                  (Rt[l.ORE] = function (e) {
+                  (It[l.ORE] = function (e) {
                     return { A: 550, B: 1.75, type: i.EXPONENTIAL };
                   }),
-                  Rt),
+                  It),
                 getGain: {},
                 getCapacityMultiplier:
-                  ((It = {}),
-                  (It[l.STONE] = function (e) {
+                  ((Nt = {}),
+                  (Nt[l.STONE] = function (e) {
                     return { A: 1, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (It[l.ORE] = function (e) {
+                  (Nt[l.ORE] = function (e) {
                     return { A: 1, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (It[l.BIOMASS] = function (e) {
+                  (Nt[l.BIOMASS] = function (e) {
                     return { A: 1, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (It[l.WOOD] = function (e) {
+                  (Nt[l.WOOD] = function (e) {
                     return { A: 1, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (It[l.IRON] = function (e) {
+                  (Nt[l.IRON] = function (e) {
                     return { A: 1, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (It[l.PLATINUM] = function (e) {
+                  (Nt[l.PLATINUM] = function (e) {
                     return { A: 1, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  It),
+                  Nt),
                 maxLevel: 3,
               },
               {
@@ -4493,32 +4497,32 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.ENGINEERING
+                      S.ENGINEERING
                     ) > 0
                   );
                 },
                 getCost:
-                  ((Nt = {}),
-                  (Nt[l.POWER] = function (e) {
+                  ((Tt = {}),
+                  (Tt[l.POWER] = function (e) {
                     return { A: 250, B: 1.75, type: i.EXPONENTIAL };
                   }),
-                  (Nt[l.RESEARCH] = function (e) {
+                  (Tt[l.RESEARCH] = function (e) {
                     return { A: 35, B: 1.75, type: i.EXPONENTIAL };
                   }),
-                  (Nt[l.ORE] = function (e) {
+                  (Tt[l.ORE] = function (e) {
                     return { A: 550, B: 1.75, type: i.EXPONENTIAL };
                   }),
-                  Nt),
+                  Tt),
                 getGain: {},
                 getCapacityMultiplier:
-                  ((Tt = {}),
-                  (Tt[l.STONE] = function (e) {
+                  ((Ot = {}),
+                  (Ot[l.STONE] = function (e) {
                     return { A: 1, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Tt[l.ORE] = function (e) {
+                  (Ot[l.ORE] = function (e) {
                     return { A: 1, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  Tt),
+                  Ot),
                 maxLevel: 1,
               },
               {
@@ -4529,22 +4533,22 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.ENGINEERING
+                      S.ENGINEERING
                     ) > 0
                   );
                 },
                 getCost:
-                  ((Ot = {}),
-                  (Ot[l.POWER] = function (e) {
+                  ((yt = {}),
+                  (yt[l.POWER] = function (e) {
                     return { A: 350, B: 1.75, type: i.EXPONENTIAL };
                   }),
-                  (Ot[l.RESEARCH] = function (e) {
+                  (yt[l.RESEARCH] = function (e) {
                     return { A: 35, B: 1.75, type: i.EXPONENTIAL };
                   }),
-                  (Ot[l.ORE] = function (e) {
+                  (yt[l.ORE] = function (e) {
                     return { A: 550, B: 1.75, type: i.EXPONENTIAL };
                   }),
-                  Ot),
+                  yt),
                 getGain: {},
                 getCapacityMultiplier: {},
                 maxLevel: 1,
@@ -4556,29 +4560,29 @@
                   "Survey deeper layers to find underground water deposits. Improves water production by 20%",
                 unlockCondition: function (e) {
                   return (
-                    e.science.scienceResearches.getResearchLevel(v.MINERALOGY) >
+                    e.science.scienceResearches.getResearchLevel(S.MINERALOGY) >
                     0
                   );
                 },
                 getCost:
-                  ((yt = {}),
-                  (yt[l.POWER] = function (e) {
+                  ((mt = {}),
+                  (mt[l.POWER] = function (e) {
                     return { A: 300, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (yt[l.RESEARCH] = function (e) {
+                  (mt[l.RESEARCH] = function (e) {
                     return { A: 45, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (yt[l.ORE] = function (e) {
+                  (mt[l.ORE] = function (e) {
                     return { A: 450, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  yt),
+                  mt),
                 getGain: {},
                 getGainMultiplier:
-                  ((mt = {}),
-                  (mt[l.WATER] = function (e) {
+                  ((ht = {}),
+                  (ht[l.WATER] = function (e) {
                     return { A: 1, B: 1.2, type: i.EXPONENTIAL };
                   }),
-                  mt),
+                  ht),
                 maxLevel: 3,
               },
               {
@@ -4588,7 +4592,7 @@
                   "Cultivate a special flammable biomass that produces more heat when burnt, increasing power generation from your thermal plants by 50%",
                 unlockCondition: function (e) {
                   return (
-                    e.science.scienceResearches.getResearchLevel(v.EXOBIOLOGY) >
+                    e.science.scienceResearches.getResearchLevel(S.EXOBIOLOGY) >
                     0
                   );
                 },
@@ -4615,22 +4619,22 @@
                   "Plant some special flora in your incubators that increases bacterial growth when decomposing. Makes incubators 50% more productive",
                 unlockCondition: function (e) {
                   return (
-                    e.science.scienceResearches.getResearchLevel(v.EXOBIOLOGY) >
+                    e.science.scienceResearches.getResearchLevel(S.EXOBIOLOGY) >
                     0
                   );
                 },
                 getCost:
-                  ((ht = {}),
-                  (ht[l.POWER] = function (e) {
+                  ((Ct = {}),
+                  (Ct[l.POWER] = function (e) {
                     return { A: 600, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (ht[l.RESEARCH] = function (e) {
+                  (Ct[l.RESEARCH] = function (e) {
                     return { A: 195, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (ht[l.BIOMASS] = function (e) {
+                  (Ct[l.BIOMASS] = function (e) {
                     return { A: 525, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  ht),
+                  Ct),
                 getGain: {},
                 getGainMultiplier: {},
                 maxLevel: 1,
@@ -4642,22 +4646,22 @@
                   "Start adding fertilizers to the soil. Your farmers will start using 0.1 biomass each, but it will increase their nutrition output by 30%",
                 unlockCondition: function (e) {
                   return (
-                    e.science.scienceResearches.getResearchLevel(v.EXOBIOLOGY) >
+                    e.science.scienceResearches.getResearchLevel(S.EXOBIOLOGY) >
                     0
                   );
                 },
                 getCost:
-                  ((Ct = {}),
-                  (Ct[l.POWER] = function (e) {
+                  ((vt = {}),
+                  (vt[l.POWER] = function (e) {
                     return { A: 800, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Ct[l.RESEARCH] = function (e) {
+                  (vt[l.RESEARCH] = function (e) {
                     return { A: 245, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Ct[l.BIOMASS] = function (e) {
+                  (vt[l.BIOMASS] = function (e) {
                     return { A: 1225, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  Ct),
+                  vt),
                 getGain: {},
                 getGainMultiplier: {},
                 maxLevel: 1,
@@ -4670,29 +4674,29 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.EXOFORESTRY
+                      S.EXOFORESTRY
                     ) > 0
                   );
                 },
                 getCost:
-                  ((vt = {}),
-                  (vt[l.POWER] = function (e) {
+                  ((St = {}),
+                  (St[l.POWER] = function (e) {
                     return { A: 800, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (vt[l.RESEARCH] = function (e) {
+                  (St[l.RESEARCH] = function (e) {
                     return { A: 200, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (vt[l.WOOD] = function (e) {
+                  (St[l.WOOD] = function (e) {
                     return { A: 30, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  vt),
+                  St),
                 getGain: {},
                 getGainMultiplier:
-                  ((St = {}),
-                  (St[l.WOOD] = function (e) {
+                  ((Pt = {}),
+                  (Pt[l.WOOD] = function (e) {
                     return { A: 1, B: 1.25, type: i.EXPONENTIAL };
                   }),
-                  St),
+                  Pt),
                 maxLevel: 1,
               },
               {
@@ -4703,22 +4707,22 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.EXOFORESTRY
+                      S.EXOFORESTRY
                     ) > 0
                   );
                 },
                 getCost:
-                  ((Pt = {}),
-                  (Pt[l.POWER] = function (e) {
+                  ((Bt = {}),
+                  (Bt[l.POWER] = function (e) {
                     return { A: 880, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Pt[l.RESEARCH] = function (e) {
+                  (Bt[l.RESEARCH] = function (e) {
                     return { A: 250, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Pt[l.WOOD] = function (e) {
+                  (Bt[l.WOOD] = function (e) {
                     return { A: 50, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  Pt),
+                  Bt),
                 getGain: {},
                 getGainMultiplier: {},
                 maxLevel: 1,
@@ -4731,22 +4735,22 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.EXOFORESTRY
+                      S.EXOFORESTRY
                     ) > 0
                   );
                 },
                 getCost:
-                  ((Bt = {}),
-                  (Bt[l.POWER] = function (e) {
+                  ((_t = {}),
+                  (_t[l.POWER] = function (e) {
                     return { A: 500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Bt[l.RESEARCH] = function (e) {
+                  (_t[l.RESEARCH] = function (e) {
                     return { A: 250, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Bt[l.WOOD] = function (e) {
+                  (_t[l.WOOD] = function (e) {
                     return { A: 250, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  Bt),
+                  _t),
                 getGain: {},
                 getGainMultiplier: {},
                 maxLevel: 1,
@@ -4759,31 +4763,31 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.EXOFORESTRY
+                      S.EXOFORESTRY
                     ) > 0 &&
-                    e.science.scienceResearches.getResearchLevel(v.METALLURGY) >
+                    e.science.scienceResearches.getResearchLevel(S.METALLURGY) >
                       0
                   );
                 },
                 getCost:
-                  ((_t = {}),
-                  (_t[l.IRON] = function (e) {
+                  ((Mt = {}),
+                  (Mt[l.IRON] = function (e) {
                     return { A: 25, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (_t[l.RESEARCH] = function (e) {
+                  (Mt[l.RESEARCH] = function (e) {
                     return { A: 250, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (_t[l.WOOD] = function (e) {
-                    return { A: 250, B: 1.5, type: i.EXPONENTIAL };
-                  }),
-                  _t),
-                getGain: {},
-                getGainMultiplier:
-                  ((Mt = {}),
                   (Mt[l.WOOD] = function (e) {
-                    return { A: 1, B: 1.5, type: i.EXPONENTIAL };
+                    return { A: 250, B: 1.5, type: i.EXPONENTIAL };
                   }),
                   Mt),
+                getGain: {},
+                getGainMultiplier:
+                  ((Ut = {}),
+                  (Ut[l.WOOD] = function (e) {
+                    return { A: 1, B: 1.5, type: i.EXPONENTIAL };
+                  }),
+                  Ut),
                 maxLevel: 1,
               },
               {
@@ -4793,32 +4797,32 @@
                   "Replace old parts with metal, which improves stone and ore output by 50%",
                 unlockCondition: function (e) {
                   return (
-                    e.science.scienceResearches.getResearchLevel(v.METALLURGY) >
+                    e.science.scienceResearches.getResearchLevel(S.METALLURGY) >
                     0
                   );
                 },
                 getCost:
-                  ((Ut = {}),
-                  (Ut[l.IRON] = function (e) {
+                  ((Gt = {}),
+                  (Gt[l.IRON] = function (e) {
                     return { A: 75, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Ut[l.RESEARCH] = function (e) {
+                  (Gt[l.RESEARCH] = function (e) {
                     return { A: 275, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Ut[l.WOOD] = function (e) {
+                  (Gt[l.WOOD] = function (e) {
                     return { A: 50, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  Ut),
+                  Gt),
                 getGain: {},
                 getGainMultiplier:
-                  ((Gt = {}),
-                  (Gt[l.STONE] = function (e) {
+                  ((bt = {}),
+                  (bt[l.STONE] = function (e) {
                     return { A: 1, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Gt[l.ORE] = function (e) {
+                  (bt[l.ORE] = function (e) {
                     return { A: 1, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  Gt),
+                  bt),
                 maxLevel: 1,
               },
               {
@@ -4828,50 +4832,50 @@
                   "Use local-sourced metal to improve storage containers. Improves all resources storages by 50%",
                 unlockCondition: function (e) {
                   return (
-                    e.science.scienceResearches.getResearchLevel(v.METALLURGY) >
+                    e.science.scienceResearches.getResearchLevel(S.METALLURGY) >
                     0
                   );
                 },
                 getCost:
-                  ((bt = {}),
-                  (bt[l.IRON] = function (e) {
+                  ((Dt = {}),
+                  (Dt[l.IRON] = function (e) {
                     return { A: 75, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (bt[l.RESEARCH] = function (e) {
+                  (Dt[l.RESEARCH] = function (e) {
                     return { A: 175, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (bt[l.WOOD] = function (e) {
+                  (Dt[l.WOOD] = function (e) {
                     return { A: 50, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  bt),
+                  Dt),
                 getGain: {},
                 getCapacityMultiplier:
-                  ((Dt = {}),
-                  (Dt[l.STONE] = function (e) {
+                  ((wt = {}),
+                  (wt[l.STONE] = function (e) {
                     return { A: 1, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Dt[l.ORE] = function (e) {
+                  (wt[l.ORE] = function (e) {
                     return { A: 1, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Dt[l.BIOMASS] = function (e) {
+                  (wt[l.BIOMASS] = function (e) {
                     return { A: 1, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Dt[l.WOOD] = function (e) {
+                  (wt[l.WOOD] = function (e) {
                     return { A: 1, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Dt[l.IRON] = function (e) {
+                  (wt[l.IRON] = function (e) {
                     return { A: 1, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Dt[l.WATER] = function (e) {
+                  (wt[l.WATER] = function (e) {
                     return { A: 1, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Dt[l.OXYGEN] = function (e) {
+                  (wt[l.OXYGEN] = function (e) {
                     return { A: 1, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Dt[l.PLATINUM] = function (e) {
+                  (wt[l.PLATINUM] = function (e) {
                     return { A: 1, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  Dt),
+                  wt),
                 maxLevel: 1,
               },
               {
@@ -4881,29 +4885,29 @@
                   "Use more conductive materials in your wiring. Improves power capacity by 75% and output by 25%",
                 unlockCondition: function (e) {
                   return (
-                    e.science.scienceResearches.getResearchLevel(v.METALLURGY) >
+                    e.science.scienceResearches.getResearchLevel(S.METALLURGY) >
                     0
                   );
                 },
                 getCost:
-                  ((wt = {}),
-                  (wt[l.IRON] = function (e) {
+                  ((Xt = {}),
+                  (Xt[l.IRON] = function (e) {
                     return { A: 50, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (wt[l.RESEARCH] = function (e) {
+                  (Xt[l.RESEARCH] = function (e) {
                     return { A: 375, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (wt[l.POWER] = function (e) {
+                  (Xt[l.POWER] = function (e) {
                     return { A: 500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  wt),
+                  Xt),
                 getGain: {},
                 getGainMultiplier:
-                  ((Xt = {}),
-                  (Xt[l.POWER] = function (e) {
+                  ((kt = {}),
+                  (kt[l.POWER] = function (e) {
                     return { A: 1, B: 1.25, type: i.EXPONENTIAL };
                   }),
-                  Xt),
+                  kt),
                 getCapacityMultiplier:
                   ((Ht = {}),
                   (Ht[l.POWER] = function (e) {
@@ -4920,29 +4924,29 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.FLORA_RESEARCH
+                      S.FLORA_RESEARCH
                     ) > 0
                   );
                 },
                 getCost:
-                  ((kt = {}),
-                  (kt[l.WATER] = function (e) {
+                  ((xt = {}),
+                  (xt[l.WATER] = function (e) {
                     return { A: 150, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (kt[l.RESEARCH] = function (e) {
+                  (xt[l.RESEARCH] = function (e) {
                     return { A: 375, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (kt[l.POWER] = function (e) {
+                  (xt[l.POWER] = function (e) {
                     return { A: 500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  kt),
+                  xt),
                 getGain: {},
                 getGainMultiplier:
-                  ((xt = {}),
-                  (xt[l.WOOD] = function (e) {
+                  ((Yt = {}),
+                  (Yt[l.WOOD] = function (e) {
                     return { A: 1, B: 1.25, type: i.EXPONENTIAL };
                   }),
-                  xt),
+                  Yt),
                 getCapacityMultiplier: {},
                 maxLevel: 3,
               },
@@ -4954,7 +4958,7 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.FLORA_RESEARCH
+                      S.FLORA_RESEARCH
                     ) > 0 &&
                     e.landingZone.landingZoneUpgrades.getUpgradeLevel(
                       r.BROADLEAVED
@@ -4962,17 +4966,17 @@
                   );
                 },
                 getCost:
-                  ((Yt = {}),
-                  (Yt[l.WATER] = function (e) {
+                  ((Wt = {}),
+                  (Wt[l.WATER] = function (e) {
                     return { A: 150, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Yt[l.RESEARCH] = function (e) {
+                  (Wt[l.RESEARCH] = function (e) {
                     return { A: 325, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Yt[l.POWER] = function (e) {
+                  (Wt[l.POWER] = function (e) {
                     return { A: 600, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  Yt),
+                  Wt),
                 getGain: {},
                 getGainMultiplier: {},
                 getCapacityMultiplier: {},
@@ -4986,22 +4990,22 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.FLORA_RESEARCH
+                      S.FLORA_RESEARCH
                     ) > 0
                   );
                 },
                 getCost:
-                  ((Wt = {}),
-                  (Wt[l.WATER] = function (e) {
+                  ((Zt = {}),
+                  (Zt[l.WATER] = function (e) {
                     return { A: 250, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Wt[l.RESEARCH] = function (e) {
+                  (Zt[l.RESEARCH] = function (e) {
                     return { A: 475, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Wt[l.BIOMASS] = function (e) {
+                  (Zt[l.BIOMASS] = function (e) {
                     return { A: 2500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  Wt),
+                  Zt),
                 getGain: {},
                 getGainMultiplier: {},
                 getCapacityMultiplier: {},
@@ -5014,22 +5018,22 @@
                   "Better filtration methods allow reusing more water. Improves water output by 25%",
                 unlockCondition: function (e) {
                   return (
-                    e.science.scienceResearches.getResearchLevel(v.CHEMISTRY) >
+                    e.science.scienceResearches.getResearchLevel(S.CHEMISTRY) >
                     0
                   );
                 },
                 getCost:
-                  ((Zt = {}),
-                  (Zt[l.OXYGEN] = function (e) {
+                  ((jt = {}),
+                  (jt[l.OXYGEN] = function (e) {
                     return { A: 125, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Zt[l.RESEARCH] = function (e) {
+                  (jt[l.RESEARCH] = function (e) {
                     return { A: 225, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Zt[l.POWER] = function (e) {
+                  (jt[l.POWER] = function (e) {
                     return { A: 900, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  Zt),
+                  jt),
                 getGain: {},
                 getGainMultiplier:
                   ((Ft = {}),
@@ -5047,29 +5051,29 @@
                   "Study chemical reactions. Improves science output by 25%",
                 unlockCondition: function (e) {
                   return (
-                    e.science.scienceResearches.getResearchLevel(v.CHEMISTRY) >
+                    e.science.scienceResearches.getResearchLevel(S.CHEMISTRY) >
                     0
                   );
                 },
                 getCost:
-                  ((jt = {}),
-                  (jt[l.WATER] = function (e) {
+                  ((Kt = {}),
+                  (Kt[l.WATER] = function (e) {
                     return { A: 125, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (jt[l.RESEARCH] = function (e) {
+                  (Kt[l.RESEARCH] = function (e) {
                     return { A: 300, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (jt[l.POWER] = function (e) {
+                  (Kt[l.POWER] = function (e) {
                     return { A: 600, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  jt),
+                  Kt),
                 getGain: {},
                 getGainMultiplier:
-                  ((Kt = {}),
-                  (Kt[l.RESEARCH] = function (e) {
+                  ((Vt = {}),
+                  (Vt[l.RESEARCH] = function (e) {
                     return { A: 1, B: 1.25, type: i.EXPONENTIAL };
                   }),
-                  Kt),
+                  Vt),
                 getCapacityMultiplier: {},
                 maxLevel: 3,
               },
@@ -5080,30 +5084,30 @@
                   "Create new electrolyte solution to improve power capacity by 25%",
                 unlockCondition: function (e) {
                   return (
-                    e.science.scienceResearches.getResearchLevel(v.CHEMISTRY) >
+                    e.science.scienceResearches.getResearchLevel(S.CHEMISTRY) >
                     0
                   );
                 },
                 getCost:
-                  ((Vt = {}),
-                  (Vt[l.WATER] = function (e) {
+                  ((qt = {}),
+                  (qt[l.WATER] = function (e) {
                     return { A: 125, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Vt[l.RESEARCH] = function (e) {
+                  (qt[l.RESEARCH] = function (e) {
                     return { A: 300, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Vt[l.OXYGEN] = function (e) {
+                  (qt[l.OXYGEN] = function (e) {
                     return { A: 100, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  Vt),
+                  qt),
                 getGain: {},
                 getGainMultiplier: {},
                 getCapacityMultiplier:
-                  ((qt = {}),
-                  (qt[l.POWER] = function (e) {
+                  ((zt = {}),
+                  (zt[l.POWER] = function (e) {
                     return { A: 1, B: 1.25, type: i.EXPONENTIAL };
                   }),
-                  qt),
+                  zt),
                 maxLevel: 5,
               },
               {
@@ -5112,21 +5116,21 @@
                 description: "Allows colonist miners to extract platinum",
                 unlockCondition: function (e) {
                   return (
-                    e.science.scienceResearches.getResearchLevel(v.GEOLOGY) > 0
+                    e.science.scienceResearches.getResearchLevel(S.GEOLOGY) > 0
                   );
                 },
                 getCost:
-                  ((zt = {}),
-                  (zt[l.IRON] = function (e) {
+                  ((Qt = {}),
+                  (Qt[l.IRON] = function (e) {
                     return { A: 300, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (zt[l.RESEARCH] = function (e) {
+                  (Qt[l.RESEARCH] = function (e) {
                     return { A: 450, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (zt[l.POWER] = function (e) {
+                  (Qt[l.POWER] = function (e) {
                     return { A: 300, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  zt),
+                  Qt),
                 getGain: {},
                 getGainMultiplier: {},
                 getCapacityMultiplier: {},
@@ -5146,27 +5150,27 @@
                   );
                 },
                 getCost:
-                  ((Qt = {}),
-                  (Qt[l.PLATINUM] = function (e) {
+                  ((Jt = {}),
+                  (Jt[l.PLATINUM] = function (e) {
                     return { A: 10, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Qt[l.RESEARCH] = function (e) {
+                  (Jt[l.RESEARCH] = function (e) {
                     return { A: 420, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Qt[l.POWER] = function (e) {
+                  (Jt[l.POWER] = function (e) {
                     return { A: 775, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  Qt),
+                  Jt),
                 getGain: {},
                 getGainMultiplier:
-                  ((Jt = {}),
-                  (Jt[l.STONE] = function (e) {
+                  (($t = {}),
+                  ($t[l.STONE] = function (e) {
                     return { A: 1, B: 1.4, type: i.EXPONENTIAL };
                   }),
-                  (Jt[l.ORE] = function (e) {
+                  ($t[l.ORE] = function (e) {
                     return { A: 1, B: 1.4, type: i.EXPONENTIAL };
                   }),
-                  Jt),
+                  $t),
                 getCapacityMultiplier: {},
                 maxLevel: 1,
               },
@@ -5183,33 +5187,33 @@
                   );
                 },
                 getCost:
-                  (($t = {}),
-                  ($t[l.PLATINUM] = function (e) {
+                  ((en = {}),
+                  (en[l.PLATINUM] = function (e) {
                     return { A: 15, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  ($t[l.RESEARCH] = function (e) {
+                  (en[l.RESEARCH] = function (e) {
                     return { A: 450, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  ($t[l.POWER] = function (e) {
+                  (en[l.POWER] = function (e) {
                     return { A: 845, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  $t),
+                  en),
                 getGain: {},
                 getGainMultiplier:
-                  ((en = {}),
-                  (en[l.WOOD] = function (e) {
+                  ((tn = {}),
+                  (tn[l.WOOD] = function (e) {
                     return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                   }),
-                  (en[l.BEAM] = function (e) {
+                  (tn[l.BEAM] = function (e) {
                     return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                   }),
-                  (en[l.BRICK] = function (e) {
+                  (tn[l.BRICK] = function (e) {
                     return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                   }),
-                  (en[l.PLATE] = function (e) {
+                  (tn[l.PLATE] = function (e) {
                     return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                   }),
-                  en),
+                  tn),
                 getCapacityMultiplier: {},
                 maxLevel: 5,
               },
@@ -5219,22 +5223,22 @@
                 description: "Create plans for a new housing unit",
                 unlockCondition: function (e) {
                   return (
-                    e.science.scienceResearches.getResearchLevel(v.SOCIOLOGY) >
+                    e.science.scienceResearches.getResearchLevel(S.SOCIOLOGY) >
                     0
                   );
                 },
                 getCost:
-                  ((tn = {}),
-                  (tn[l.BRICK] = function (e) {
+                  ((nn = {}),
+                  (nn[l.BRICK] = function (e) {
                     return { A: 45, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (tn[l.RESEARCH] = function (e) {
+                  (nn[l.RESEARCH] = function (e) {
                     return { A: 450, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (tn[l.POWER] = function (e) {
+                  (nn[l.POWER] = function (e) {
                     return { A: 300, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  tn),
+                  nn),
                 getGain: {},
                 getGainMultiplier: {},
                 getCapacityMultiplier: {},
@@ -5248,19 +5252,19 @@
                   "Society research allows better understanding of human needs. Unlocks new ways to boost population happiness",
                 unlockCondition: function (e) {
                   return (
-                    e.science.scienceResearches.getResearchLevel(v.SOCIOLOGY) >
+                    e.science.scienceResearches.getResearchLevel(S.SOCIOLOGY) >
                     0
                   );
                 },
                 getCost:
-                  ((nn = {}),
-                  (nn[l.RESEARCH] = function (e) {
+                  ((on = {}),
+                  (on[l.RESEARCH] = function (e) {
                     return { A: 420, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (nn[l.POWER] = function (e) {
+                  (on[l.POWER] = function (e) {
                     return { A: 775, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  nn),
+                  on),
                 getGain: {},
                 getGainMultiplier: {},
                 getCapacityMultiplier: {},
@@ -5274,22 +5278,22 @@
                   "Unlocks new scientific building for studying sociology",
                 unlockCondition: function (e) {
                   return (
-                    e.science.scienceResearches.getResearchLevel(v.SOCIOLOGY) >
+                    e.science.scienceResearches.getResearchLevel(S.SOCIOLOGY) >
                     0
                   );
                 },
                 getCost:
-                  ((on = {}),
-                  (on[l.PLATE] = function (e) {
+                  ((rn = {}),
+                  (rn[l.PLATE] = function (e) {
                     return { A: 5, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (on[l.RESEARCH] = function (e) {
+                  (rn[l.RESEARCH] = function (e) {
                     return { A: 450, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (on[l.POWER] = function (e) {
+                  (rn[l.POWER] = function (e) {
                     return { A: 845, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  on),
+                  rn),
                 getGain: {},
                 getGainMultiplier: {},
                 getCapacityMultiplier: {},
@@ -5304,29 +5308,29 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.MATERIAL_KNOWLEDGE
+                      S.MATERIAL_KNOWLEDGE
                     ) > 0
                   );
                 },
                 getCost:
-                  ((rn = {}),
-                  (rn[l.IRON] = function (e) {
-                    return { A: 500, B: 1.5, type: i.EXPONENTIAL };
-                  }),
-                  (rn[l.RESEARCH] = function (e) {
-                    return { A: 500, B: 1.5, type: i.EXPONENTIAL };
-                  }),
-                  (rn[l.POWER] = function (e) {
-                    return { A: 845, B: 1.5, type: i.EXPONENTIAL };
-                  }),
-                  rn),
-                getGain: {},
-                getGainMultiplier:
                   ((an = {}),
                   (an[l.IRON] = function (e) {
-                    return { A: 1, B: 1.15, type: i.EXPONENTIAL };
+                    return { A: 500, B: 1.5, type: i.EXPONENTIAL };
+                  }),
+                  (an[l.RESEARCH] = function (e) {
+                    return { A: 500, B: 1.5, type: i.EXPONENTIAL };
+                  }),
+                  (an[l.POWER] = function (e) {
+                    return { A: 845, B: 1.5, type: i.EXPONENTIAL };
                   }),
                   an),
+                getGain: {},
+                getGainMultiplier:
+                  ((cn = {}),
+                  (cn[l.IRON] = function (e) {
+                    return { A: 1, B: 1.15, type: i.EXPONENTIAL };
+                  }),
+                  cn),
                 getCapacityMultiplier: {},
                 maxLevel: 10,
               },
@@ -5338,22 +5342,22 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.MATERIAL_KNOWLEDGE
+                      S.MATERIAL_KNOWLEDGE
                     ) > 0
                   );
                 },
                 getCost:
-                  ((cn = {}),
-                  (cn[l.ORE] = function (e) {
+                  ((sn = {}),
+                  (sn[l.ORE] = function (e) {
                     return { A: 7500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (cn[l.STONE] = function (e) {
+                  (sn[l.STONE] = function (e) {
                     return { A: 7500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (cn[l.RESEARCH] = function (e) {
+                  (sn[l.RESEARCH] = function (e) {
                     return { A: 750, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  cn),
+                  sn),
                 getGain: {},
                 getGainMultiplier: {},
                 getCapacityMultiplier: {},
@@ -5367,32 +5371,32 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.MATERIAL_KNOWLEDGE
+                      S.MATERIAL_KNOWLEDGE
                     ) > 0
                   );
                 },
                 getCost:
-                  ((sn = {}),
-                  (sn[l.IRON] = function (e) {
+                  ((un = {}),
+                  (un[l.IRON] = function (e) {
                     return { A: 600, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (sn[l.RESEARCH] = function (e) {
+                  (un[l.RESEARCH] = function (e) {
                     return { A: 750, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (sn[l.POWER] = function (e) {
+                  (un[l.POWER] = function (e) {
                     return { A: 845, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  sn),
+                  un),
                 getGain: {},
                 getGainMultiplier:
-                  ((un = {}),
-                  (un[l.PLATE] = function (e) {
+                  ((ln = {}),
+                  (ln[l.PLATE] = function (e) {
                     return { A: 1, B: 1.2, type: i.EXPONENTIAL };
                   }),
-                  (un[l.WIRE] = function (e) {
+                  (ln[l.WIRE] = function (e) {
                     return { A: 1, B: 1.2, type: i.EXPONENTIAL };
                   }),
-                  un),
+                  ln),
                 getCapacityMultiplier: {},
                 maxLevel: 3,
               },
@@ -5404,29 +5408,29 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.ELECTRICITY_STUDY
+                      S.ELECTRICITY_STUDY
                     ) > 0
                   );
                 },
                 getCost:
-                  ((ln = {}),
-                  (ln[l.PLATINUM] = function (e) {
+                  ((pn = {}),
+                  (pn[l.PLATINUM] = function (e) {
                     return { A: 10, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (ln[l.RESEARCH] = function (e) {
+                  (pn[l.RESEARCH] = function (e) {
                     return { A: 750, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (ln[l.WIRE] = function (e) {
+                  (pn[l.WIRE] = function (e) {
                     return { A: 10, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  ln),
+                  pn),
                 getGain: {},
                 getGainMultiplier:
-                  ((pn = {}),
-                  (pn[l.POWER] = function (e) {
+                  ((En = {}),
+                  (En[l.POWER] = function (e) {
                     return { A: 1, B: 1.05, type: i.EXPONENTIAL };
                   }),
-                  pn),
+                  En),
                 getCapacityMultiplier: {},
                 maxLevel: 10,
               },
@@ -5438,22 +5442,22 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.ELECTRICITY_STUDY
+                      S.ELECTRICITY_STUDY
                     ) > 0
                   );
                 },
                 getCost:
-                  ((En = {}),
-                  (En[l.PLATINUM] = function (e) {
+                  ((dn = {}),
+                  (dn[l.PLATINUM] = function (e) {
                     return { A: 100, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (En[l.RESEARCH] = function (e) {
+                  (dn[l.RESEARCH] = function (e) {
                     return { A: 1250, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (En[l.WIRE] = function (e) {
+                  (dn[l.WIRE] = function (e) {
                     return { A: 10, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  En),
+                  dn),
                 getGain: {},
                 getGainMultiplier: {},
                 getCapacityMultiplier: {},
@@ -5467,24 +5471,24 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.ELECTRICITY_STUDY
+                      S.ELECTRICITY_STUDY
                     ) > 0 &&
-                    e.science.scienceResearches.getResearchLevel(v.GEOGRAPHY) >
+                    e.science.scienceResearches.getResearchLevel(S.GEOGRAPHY) >
                       0
                   );
                 },
                 getCost:
-                  ((dn = {}),
-                  (dn[l.PLATINUM] = function (e) {
+                  ((gn = {}),
+                  (gn[l.PLATINUM] = function (e) {
                     return { A: 85, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (dn[l.RESEARCH] = function (e) {
+                  (gn[l.RESEARCH] = function (e) {
                     return { A: 1250, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (dn[l.WIRE] = function (e) {
+                  (gn[l.WIRE] = function (e) {
                     return { A: 15, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  dn),
+                  gn),
                 getGain: {},
                 getGainMultiplier: {},
                 getCapacityMultiplier: {},
@@ -5498,37 +5502,7 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.ORGANIC_CHEMISTRY
-                    ) > 0
-                  );
-                },
-                getCost:
-                  ((gn = {}),
-                  (gn[l.RUBBER] = function (e) {
-                    return { A: 10, B: 1.5, type: i.EXPONENTIAL };
-                  }),
-                  (gn[l.RESEARCH] = function (e) {
-                    return { A: 800, B: 1.5, type: i.EXPONENTIAL };
-                  }),
-                  (gn[l.POWER] = function (e) {
-                    return { A: 1e3, B: 1.5, type: i.EXPONENTIAL };
-                  }),
-                  gn),
-                getGain: {},
-                getGainMultiplier: {},
-                getCapacityMultiplier: {},
-                maxLevel: 1,
-                unlockType: u.BUILDING,
-              },
-              {
-                id: r.RUBBER_DETAILS,
-                name: "Rubber Padding",
-                description:
-                  "Add rubber padding to your buildings to further descrease building cost scaling by 10%",
-                unlockCondition: function (e) {
-                  return (
-                    e.science.scienceResearches.getResearchLevel(
-                      v.ORGANIC_CHEMISTRY
+                      S.ORGANIC_CHEMISTRY
                     ) > 0
                   );
                 },
@@ -5548,6 +5522,36 @@
                 getGainMultiplier: {},
                 getCapacityMultiplier: {},
                 maxLevel: 1,
+                unlockType: u.BUILDING,
+              },
+              {
+                id: r.RUBBER_DETAILS,
+                name: "Rubber Padding",
+                description:
+                  "Add rubber padding to your buildings to further descrease building cost scaling by 10%",
+                unlockCondition: function (e) {
+                  return (
+                    e.science.scienceResearches.getResearchLevel(
+                      S.ORGANIC_CHEMISTRY
+                    ) > 0
+                  );
+                },
+                getCost:
+                  ((fn = {}),
+                  (fn[l.RUBBER] = function (e) {
+                    return { A: 10, B: 1.5, type: i.EXPONENTIAL };
+                  }),
+                  (fn[l.RESEARCH] = function (e) {
+                    return { A: 800, B: 1.5, type: i.EXPONENTIAL };
+                  }),
+                  (fn[l.POWER] = function (e) {
+                    return { A: 1e3, B: 1.5, type: i.EXPONENTIAL };
+                  }),
+                  fn),
+                getGain: {},
+                getGainMultiplier: {},
+                getCapacityMultiplier: {},
+                maxLevel: 1,
               },
               {
                 id: r.SURVEILLANCE_CAMERAS,
@@ -5557,25 +5561,25 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.ORGANIC_CHEMISTRY
+                      S.ORGANIC_CHEMISTRY
                     ) > 0 &&
                     e.science.scienceResearches.getResearchLevel(
-                      v.PUBLIC_SERVICE
+                      S.PUBLIC_SERVICE
                     ) > 0
                   );
                 },
                 getCost:
-                  ((fn = {}),
-                  (fn[l.PLASTICS] = function (e) {
+                  ((Rn = {}),
+                  (Rn[l.PLASTICS] = function (e) {
                     return { A: 15, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (fn[l.RESEARCH] = function (e) {
+                  (Rn[l.RESEARCH] = function (e) {
                     return { A: 800, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (fn[l.SEMICONDUCTOR] = function (e) {
+                  (Rn[l.SEMICONDUCTOR] = function (e) {
                     return { A: 20, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  fn),
+                  Rn),
                 getGain: {},
                 getGainMultiplier: {},
                 getCapacityMultiplier: {},
@@ -5589,22 +5593,22 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.ELECTRONICS
+                      S.ELECTRONICS
                     ) > 0
                   );
                 },
                 getCost:
-                  ((Rn = {}),
-                  (Rn[l.PLASTICS] = function (e) {
+                  ((In = {}),
+                  (In[l.PLASTICS] = function (e) {
                     return { A: 45, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Rn[l.RESEARCH] = function (e) {
+                  (In[l.RESEARCH] = function (e) {
                     return { A: 1500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Rn[l.SEMICONDUCTOR] = function (e) {
+                  (In[l.SEMICONDUCTOR] = function (e) {
                     return { A: 80, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  Rn),
+                  In),
                 getGain: {},
                 getGainMultiplier: {},
                 getCapacityMultiplier: {},
@@ -5619,22 +5623,22 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.ELECTRONICS
+                      S.ELECTRONICS
                     ) > 0
                   );
                 },
                 getCost:
-                  ((In = {}),
-                  (In[l.WIRE] = function (e) {
+                  ((Nn = {}),
+                  (Nn[l.WIRE] = function (e) {
                     return { A: 145, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (In[l.RESEARCH] = function (e) {
+                  (Nn[l.RESEARCH] = function (e) {
                     return { A: 1600, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (In[l.SEMICONDUCTOR] = function (e) {
+                  (Nn[l.SEMICONDUCTOR] = function (e) {
                     return { A: 80, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  In),
+                  Nn),
                 getGain: {},
                 getGainMultiplier: {},
                 getCapacityMultiplier: {},
@@ -5648,22 +5652,22 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.PRINTING_3D
+                      S.PRINTING_3D
                     ) > 0
                   );
                 },
                 getCost:
-                  ((Nn = {}),
-                  (Nn[l.COMPUTER] = function (e) {
+                  ((Tn = {}),
+                  (Tn[l.COMPUTER] = function (e) {
                     return { A: 65, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Nn[l.RESEARCH] = function (e) {
+                  (Tn[l.RESEARCH] = function (e) {
                     return { A: 4600, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Nn[l.RUBBER] = function (e) {
+                  (Tn[l.RUBBER] = function (e) {
                     return { A: 280, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  Nn),
+                  Tn),
                 getGain: {},
                 getGainMultiplier: {},
                 getCapacityMultiplier: {},
@@ -5677,22 +5681,22 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.PRINTING_3D
+                      S.PRINTING_3D
                     ) > 0
                   );
                 },
                 getCost:
-                  ((Tn = {}),
-                  (Tn[l.COMPUTER] = function (e) {
+                  ((On = {}),
+                  (On[l.COMPUTER] = function (e) {
                     return { A: 75, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Tn[l.RESEARCH] = function (e) {
+                  (On[l.RESEARCH] = function (e) {
                     return { A: 4600, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Tn[l.WIRE] = function (e) {
+                  (On[l.WIRE] = function (e) {
                     return { A: 280, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  Tn),
+                  On),
                 getGain: {},
                 getGainMultiplier: {},
                 getCapacityMultiplier: {},
@@ -5706,22 +5710,22 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.ADVANCED_ANATOMY
+                      S.ADVANCED_ANATOMY
                     ) > 0 &&
                     e.science.scienceResearches.getResearchLevel(
-                      v.ELECTRONICS
+                      S.ELECTRONICS
                     ) > 0
                   );
                 },
                 getCost:
-                  ((On = {}),
-                  (On[l.RESEARCH] = function (e) {
+                  ((yn = {}),
+                  (yn[l.RESEARCH] = function (e) {
                     return { A: 1300, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (On[l.COMPUTER] = function (e) {
+                  (yn[l.COMPUTER] = function (e) {
                     return { A: 5, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  On),
+                  yn),
                 getGainMultiplier: {},
                 maxLevel: 5,
               },
@@ -5733,22 +5737,22 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.HIGH_GRAVITY_PHYSICS
+                      S.HIGH_GRAVITY_PHYSICS
                     ) > 0
                   );
                 },
                 getCost:
-                  ((yn = {}),
-                  (yn[l.PLATE] = function (e) {
+                  ((mn = {}),
+                  (mn[l.PLATE] = function (e) {
                     return { A: 400, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (yn[l.RESEARCH] = function (e) {
+                  (mn[l.RESEARCH] = function (e) {
                     return { A: 7025, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (yn[l.WIRE] = function (e) {
+                  (mn[l.WIRE] = function (e) {
                     return { A: 450, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  yn),
+                  mn),
                 getGain: {},
                 getGainMultiplier: {},
                 getCapacityMultiplier: {},
@@ -5762,19 +5766,19 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.ADVANCED_BIOLOGY
+                      S.ADVANCED_BIOLOGY
                     ) > 0
                   );
                 },
                 getCost:
-                  ((mn = {}),
-                  (mn[l.RESEARCH] = function (e) {
+                  ((hn = {}),
+                  (hn[l.RESEARCH] = function (e) {
                     return { A: 2500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (mn[l.BIOMASS] = function (e) {
+                  (hn[l.BIOMASS] = function (e) {
                     return { A: 4e3, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  mn),
+                  hn),
                 getGainMultiplier:
                   ((Ln = {}),
                   (Ln[l.BIOMASS] = function (e) {
@@ -5794,28 +5798,28 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.QUANTUM_PHYSICS
+                      S.QUANTUM_PHYSICS
                     ) > 0
                   );
                 },
                 getCost:
-                  ((hn = {}),
-                  (hn[l.RESEARCH] = function (e) {
+                  ((Cn = {}),
+                  (Cn[l.RESEARCH] = function (e) {
                     return { A: 4500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (hn[l.POWER] = function (e) {
+                  (Cn[l.POWER] = function (e) {
                     return { A: 4e3, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  hn),
-                getGainMultiplier:
-                  ((Cn = {}),
-                  (Cn[l.PLATE] = function (e) {
-                    return { A: 1, B: 1.1, type: i.EXPONENTIAL };
-                  }),
-                  (Cn[l.WIRE] = function (e) {
-                    return { A: 1, B: 1.1, type: i.EXPONENTIAL };
-                  }),
                   Cn),
+                getGainMultiplier:
+                  ((vn = {}),
+                  (vn[l.PLATE] = function (e) {
+                    return { A: 1, B: 1.1, type: i.EXPONENTIAL };
+                  }),
+                  (vn[l.WIRE] = function (e) {
+                    return { A: 1, B: 1.1, type: i.EXPONENTIAL };
+                  }),
+                  vn),
                 maxLevel: 3,
               },
               {
@@ -5826,19 +5830,19 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.QUANTUM_PHYSICS
+                      S.QUANTUM_PHYSICS
                     ) > 0
                   );
                 },
                 getCost:
-                  ((vn = {}),
-                  (vn[l.RESEARCH] = function (e) {
+                  ((Sn = {}),
+                  (Sn[l.RESEARCH] = function (e) {
                     return { A: 7500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (vn[l.POWER] = function (e) {
+                  (Sn[l.POWER] = function (e) {
                     return { A: 4e3, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  vn),
+                  Sn),
                 getGainMultiplier: {},
                 maxLevel: 1,
               },
@@ -5850,25 +5854,25 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.QUANTUM_PHYSICS
+                      S.QUANTUM_PHYSICS
                     ) > 0
                   );
                 },
                 getCost:
-                  ((Sn = {}),
-                  (Sn[l.RESEARCH] = function (e) {
+                  ((Pn = {}),
+                  (Pn[l.RESEARCH] = function (e) {
                     return { A: 4500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Sn[l.SEMICONDUCTOR] = function (e) {
+                  (Pn[l.SEMICONDUCTOR] = function (e) {
                     return { A: 25, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  Sn),
+                  Pn),
                 getGainMultiplier:
-                  ((Pn = {}),
-                  (Pn[l.COMPUTER] = function (e) {
+                  ((Bn = {}),
+                  (Bn[l.COMPUTER] = function (e) {
                     return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                   }),
-                  Pn),
+                  Bn),
                 maxLevel: 3,
               },
               {
@@ -5879,22 +5883,22 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.QUANTUM_PHYSICS
+                      S.QUANTUM_PHYSICS
                     ) > 0
                   );
                 },
                 getCost:
-                  ((Bn = {}),
-                  (Bn[l.RESEARCH] = function (e) {
+                  ((_n = {}),
+                  (_n[l.RESEARCH] = function (e) {
                     return { A: 7500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Bn[l.COMPUTER] = function (e) {
+                  (_n[l.COMPUTER] = function (e) {
                     return { A: 50, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Bn[l.PLATINUM] = function (e) {
+                  (_n[l.PLATINUM] = function (e) {
                     return { A: 500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  Bn),
+                  _n),
                 getGainMultiplier: {},
                 maxLevel: 1,
                 unlockType: u.SPECIAL,
@@ -5907,22 +5911,22 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.GRAVITY_THEORY
+                      S.GRAVITY_THEORY
                     ) > 0
                   );
                 },
                 getCost:
-                  ((_n = {}),
-                  (_n[l.RESEARCH] = function (e) {
+                  ((Mn = {}),
+                  (Mn[l.RESEARCH] = function (e) {
                     return { A: 7500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (_n[l.ROCKET_ENGINE] = function (e) {
+                  (Mn[l.ROCKET_ENGINE] = function (e) {
                     return { A: 20, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (_n[l.FUEL] = function (e) {
+                  (Mn[l.FUEL] = function (e) {
                     return { A: 500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  _n),
+                  Mn),
                 getGainMultiplier: {},
                 maxLevel: 1,
               },
@@ -5934,22 +5938,22 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.GRAVITY_THEORY
+                      S.GRAVITY_THEORY
                     ) > 0
                   );
                 },
                 getCost:
-                  ((Mn = {}),
-                  (Mn[l.RESEARCH] = function (e) {
+                  ((Un = {}),
+                  (Un[l.RESEARCH] = function (e) {
                     return { A: 7500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Mn[l.ROCKET_ENGINE] = function (e) {
+                  (Un[l.ROCKET_ENGINE] = function (e) {
                     return { A: 15, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Mn[l.COMPUTER] = function (e) {
+                  (Un[l.COMPUTER] = function (e) {
                     return { A: 25, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  Mn),
+                  Un),
                 getGainMultiplier: {},
                 maxLevel: 1,
               },
@@ -5961,29 +5965,29 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.NANO_PHYSICS
+                      S.NANO_PHYSICS
                     ) > 0
                   );
                 },
                 getCost:
-                  ((Un = {}),
-                  (Un[l.RESEARCH] = function (e) {
+                  ((Gn = {}),
+                  (Gn[l.RESEARCH] = function (e) {
                     return { A: 6e3, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Un[l.WATER] = function (e) {
+                  (Gn[l.WATER] = function (e) {
                     return { A: 600, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Un[l.WIRE] = function (e) {
+                  (Gn[l.WIRE] = function (e) {
                     return { A: 500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  Un),
+                  Gn),
                 getGainMultiplier: {},
                 getCapacityMultiplier:
-                  ((Gn = {}),
-                  (Gn[l.POWER] = function (e) {
+                  ((bn = {}),
+                  (bn[l.POWER] = function (e) {
                     return { A: 1, B: 1.2, type: i.EXPONENTIAL };
                   }),
-                  Gn),
+                  bn),
                 maxLevel: 3,
               },
               {
@@ -5994,25 +5998,25 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.NANO_PHYSICS
+                      S.NANO_PHYSICS
                     ) > 0 &&
                     e.science.scienceResearches.getResearchLevel(
-                      v.GRAVITY_THEORY
+                      S.GRAVITY_THEORY
                     ) > 0
                   );
                 },
                 getCost:
-                  ((bn = {}),
-                  (bn[l.RESEARCH] = function (e) {
+                  ((Dn = {}),
+                  (Dn[l.RESEARCH] = function (e) {
                     return { A: 6e3, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (bn[l.COMPUTER] = function (e) {
+                  (Dn[l.COMPUTER] = function (e) {
                     return { A: 60, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (bn[l.WIRE] = function (e) {
+                  (Dn[l.WIRE] = function (e) {
                     return { A: 500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  bn),
+                  Dn),
                 getGainMultiplier: {},
                 getCapacityMultiplier: {},
                 maxLevel: 1,
@@ -6026,22 +6030,22 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.ADVANCED_GENETICS
+                      S.ADVANCED_GENETICS
                     ) > 0
                   );
                 },
                 getCost:
-                  ((Dn = {}),
-                  (Dn[l.RESEARCH] = function (e) {
+                  ((wn = {}),
+                  (wn[l.RESEARCH] = function (e) {
                     return { A: 6e3, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Dn[l.PLASTICS] = function (e) {
+                  (wn[l.PLASTICS] = function (e) {
                     return { A: 60, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Dn[l.BIOMASS] = function (e) {
+                  (wn[l.BIOMASS] = function (e) {
                     return { A: 15e3, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  Dn),
+                  wn),
                 getGainMultiplier: {},
                 getCapacityMultiplier: {},
                 maxLevel: 1,
@@ -6055,25 +6059,25 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.RELATIVITY_PHYSICS
+                      S.RELATIVITY_PHYSICS
                     ) > 0 &&
                     e.science.scienceResearches.getResearchLevel(
-                      v.ASTROPHYSICS
+                      S.ASTROPHYSICS
                     ) > 0
                   );
                 },
                 getCost:
-                  ((wn = {}),
-                  (wn[l.RESEARCH] = function (e) {
+                  ((Xn = {}),
+                  (Xn[l.RESEARCH] = function (e) {
                     return { A: 1e4, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (wn[l.COMPUTER] = function (e) {
+                  (Xn[l.COMPUTER] = function (e) {
                     return { A: 60, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (wn[l.FUEL] = function (e) {
+                  (Xn[l.FUEL] = function (e) {
                     return { A: 100, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  wn),
+                  Xn),
                 getGainMultiplier: {},
                 getCapacityMultiplier: {},
                 maxLevel: 1,
@@ -6086,22 +6090,22 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.PHOTOCHEMISTRY
+                      S.PHOTOCHEMISTRY
                     ) > 0
                   );
                 },
                 getCost:
-                  ((Xn = {}),
-                  (Xn[l.RESEARCH] = function (e) {
+                  ((kn = {}),
+                  (kn[l.RESEARCH] = function (e) {
                     return { A: 8e3, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Xn[l.WATER] = function (e) {
+                  (kn[l.WATER] = function (e) {
                     return { A: 600, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Xn[l.SEMICONDUCTOR] = function (e) {
+                  (kn[l.SEMICONDUCTOR] = function (e) {
                     return { A: 50, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  Xn),
+                  kn),
                 getGainMultiplier: {},
                 getCapacityMultiplier:
                   ((Hn = {}),
@@ -6119,28 +6123,28 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.PHOTOCHEMISTRY
+                      S.PHOTOCHEMISTRY
                     ) > 0
                   );
                 },
                 getCost:
-                  ((kn = {}),
-                  (kn[l.RESEARCH] = function (e) {
+                  ((xn = {}),
+                  (xn[l.RESEARCH] = function (e) {
                     return { A: 8e3, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (kn[l.WATER] = function (e) {
+                  (xn[l.WATER] = function (e) {
                     return { A: 800, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (kn[l.SEMICONDUCTOR] = function (e) {
+                  (xn[l.SEMICONDUCTOR] = function (e) {
                     return { A: 50, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  kn),
+                  xn),
                 getGainMultiplier:
-                  ((xn = {}),
-                  (xn[l.FUEL] = function (e) {
+                  ((Yn = {}),
+                  (Yn[l.FUEL] = function (e) {
                     return { A: 1, B: 1.2, type: i.EXPONENTIAL };
                   }),
-                  xn),
+                  Yn),
                 getCapacityMultiplier: {},
                 maxLevel: 5,
               },
@@ -6152,34 +6156,34 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.HIGH_ENERGY_PHYSICS
+                      S.HIGH_ENERGY_PHYSICS
                     ) > 0
                   );
                 },
                 getCost:
-                  ((Yn = {}),
-                  (Yn[l.RESEARCH] = function (e) {
+                  ((Wn = {}),
+                  (Wn[l.RESEARCH] = function (e) {
                     return { A: 12e3, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Yn[l.FUEL] = function (e) {
+                  (Wn[l.FUEL] = function (e) {
                     return { A: 1200, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Yn[l.POWER] = function (e) {
+                  (Wn[l.POWER] = function (e) {
                     return { A: 1e4, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  Yn),
-                getGainMultiplier:
-                  ((Wn = {}),
-                  (Wn[l.PLATE] = function (e) {
-                    return { A: 1, B: 1.1, type: i.EXPONENTIAL };
-                  }),
-                  (Wn[l.WIRE] = function (e) {
-                    return { A: 1, B: 1.1, type: i.EXPONENTIAL };
-                  }),
-                  (Wn[l.ROCKET_ENGINE] = function (e) {
-                    return { A: 1, B: 1.1, type: i.EXPONENTIAL };
-                  }),
                   Wn),
+                getGainMultiplier:
+                  ((Zn = {}),
+                  (Zn[l.PLATE] = function (e) {
+                    return { A: 1, B: 1.1, type: i.EXPONENTIAL };
+                  }),
+                  (Zn[l.WIRE] = function (e) {
+                    return { A: 1, B: 1.1, type: i.EXPONENTIAL };
+                  }),
+                  (Zn[l.ROCKET_ENGINE] = function (e) {
+                    return { A: 1, B: 1.1, type: i.EXPONENTIAL };
+                  }),
+                  Zn),
                 getCapacityMultiplier: {},
                 maxLevel: 5,
               },
@@ -6191,19 +6195,19 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.HIGH_ENERGY_PHYSICS
+                      S.HIGH_ENERGY_PHYSICS
                     ) > 0
                   );
                 },
                 getCost:
-                  ((Zn = {}),
-                  (Zn[l.RESEARCH] = function (e) {
+                  ((jn = {}),
+                  (jn[l.RESEARCH] = function (e) {
                     return { A: 18500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Zn[l.ROCKET_ENGINE] = function (e) {
+                  (jn[l.ROCKET_ENGINE] = function (e) {
                     return { A: 120, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  Zn),
+                  jn),
                 getGainMultiplier: {},
                 maxLevel: 1,
               },
@@ -6215,7 +6219,7 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.PHOTO_LITHOGRAPHY
+                      S.PHOTO_LITHOGRAPHY
                     ) > 0
                   );
                 },
@@ -6229,11 +6233,11 @@
                   }),
                   Fn),
                 getGainMultiplier:
-                  ((jn = {}),
-                  (jn[l.COMPUTER] = function (e) {
+                  ((Kn = {}),
+                  (Kn[l.COMPUTER] = function (e) {
                     return { A: 1, B: 1.2, type: i.EXPONENTIAL };
                   }),
-                  jn),
+                  Kn),
                 maxLevel: 1,
               },
               {
@@ -6244,31 +6248,31 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.ADVANCED_POLYMERIZATION
+                      S.ADVANCED_POLYMERIZATION
                     ) > 0
                   );
                 },
                 getCost:
-                  ((Kn = {}),
-                  (Kn[l.RESEARCH] = function (e) {
+                  ((Vn = {}),
+                  (Vn[l.RESEARCH] = function (e) {
                     return { A: 22e3, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Kn[l.FUEL] = function (e) {
+                  (Vn[l.FUEL] = function (e) {
                     return { A: 1200, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Kn[l.WIRE] = function (e) {
+                  (Vn[l.WIRE] = function (e) {
                     return { A: 1e3, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  Kn),
-                getGainMultiplier:
-                  ((Vn = {}),
-                  (Vn[l.PLASTICS] = function (e) {
-                    return { A: 1, B: 1.1, type: i.EXPONENTIAL };
-                  }),
-                  (Vn[l.RUBBER] = function (e) {
-                    return { A: 1, B: 1.1, type: i.EXPONENTIAL };
-                  }),
                   Vn),
+                getGainMultiplier:
+                  ((qn = {}),
+                  (qn[l.PLASTICS] = function (e) {
+                    return { A: 1, B: 1.1, type: i.EXPONENTIAL };
+                  }),
+                  (qn[l.RUBBER] = function (e) {
+                    return { A: 1, B: 1.1, type: i.EXPONENTIAL };
+                  }),
+                  qn),
                 getCapacityMultiplier: {},
                 maxLevel: 5,
               },
@@ -6280,19 +6284,19 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.ADVANCED_POLYMERIZATION
+                      S.ADVANCED_POLYMERIZATION
                     ) > 0
                   );
                 },
                 getCost:
-                  ((qn = {}),
-                  (qn[l.RESEARCH] = function (e) {
+                  ((zn = {}),
+                  (zn[l.RESEARCH] = function (e) {
                     return { A: 23500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (qn[l.BIOMASS] = function (e) {
+                  (zn[l.BIOMASS] = function (e) {
                     return { A: 1e5, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  qn),
+                  zn),
                 getGainMultiplier: {},
                 maxLevel: 1,
               },
@@ -6304,22 +6308,22 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.THERMONUCLEAR_SYNTHESIS
+                      S.THERMONUCLEAR_SYNTHESIS
                     ) > 0 &&
                     e.science.scienceResearches.getResearchLevel(
-                      v.SUPER_CONDUCTIVITY
+                      S.SUPER_CONDUCTIVITY
                     ) > 0
                   );
                 },
                 getCost:
-                  ((zn = {}),
-                  (zn[l.RESEARCH] = function (e) {
+                  ((Qn = {}),
+                  (Qn[l.RESEARCH] = function (e) {
                     return { A: 25500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (zn[l.BIOMASS] = function (e) {
+                  (Qn[l.BIOMASS] = function (e) {
                     return { A: 1e5, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  zn),
+                  Qn),
                 getGainMultiplier: {},
                 maxLevel: 1,
               },
@@ -6331,22 +6335,22 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.SUPER_CONDUCTIVITY
+                      S.SUPER_CONDUCTIVITY
                     ) > 0
                   );
                 },
                 getCost:
-                  ((Qn = {}),
-                  (Qn[l.RESEARCH] = function (e) {
+                  ((Jn = {}),
+                  (Jn[l.RESEARCH] = function (e) {
                     return { A: 29500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Qn[l.PLATE] = function (e) {
+                  (Jn[l.PLATE] = function (e) {
                     return { A: 500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Qn[l.RUBBER] = function (e) {
+                  (Jn[l.RUBBER] = function (e) {
                     return { A: 2500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  Qn),
+                  Jn),
                 getGainMultiplier: {},
                 maxLevel: 3,
               },
@@ -6357,19 +6361,19 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.MOLECULAR_PHYSICS
+                      S.MOLECULAR_PHYSICS
                     ) > 0
                   );
                 },
                 getCost:
-                  ((Jn = {}),
-                  (Jn[l.RESEARCH] = function (e) {
+                  (($n = {}),
+                  ($n[l.RESEARCH] = function (e) {
                     return { A: 20750, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Jn[l.BIOMASS] = function (e) {
+                  ($n[l.BIOMASS] = function (e) {
                     return { A: 6e4, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  Jn),
+                  $n),
                 getGainMultiplier: {},
                 maxLevel: 1,
                 unlockType: u.BUILDING,
@@ -6387,14 +6391,14 @@
                   );
                 },
                 getCost:
-                  (($n = {}),
-                  ($n[l.RESEARCH] = function (e) {
+                  ((ei = {}),
+                  (ei[l.RESEARCH] = function (e) {
                     return { A: 25500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  ($n[l.GRAPHENE] = function (e) {
+                  (ei[l.GRAPHENE] = function (e) {
                     return { A: 80, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  $n),
+                  ei),
                 getGainMultiplier: {},
                 maxLevel: 1,
               },
@@ -6411,21 +6415,21 @@
                   );
                 },
                 getCost:
-                  ((ei = {}),
-                  (ei[l.RESEARCH] = function (e) {
+                  ((ti = {}),
+                  (ti[l.RESEARCH] = function (e) {
                     return { A: 19500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (ei[l.GRAPHENE] = function (e) {
+                  (ti[l.GRAPHENE] = function (e) {
                     return { A: 100, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  ei),
+                  ti),
                 getGainMultiplier: {},
                 getCapacityMultiplier:
-                  ((ti = {}),
-                  (ti[l.POWER] = function (e) {
+                  ((ni = {}),
+                  (ni[l.POWER] = function (e) {
                     return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                   }),
-                  ti),
+                  ni),
                 maxLevel: 5,
               },
               {
@@ -6441,24 +6445,24 @@
                   );
                 },
                 getCost:
-                  ((ni = {}),
-                  (ni[l.RESEARCH] = function (e) {
+                  ((ii = {}),
+                  (ii[l.RESEARCH] = function (e) {
                     return { A: 19500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (ni[l.GRAPHENE] = function (e) {
+                  (ii[l.GRAPHENE] = function (e) {
                     return { A: 125, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  ni),
+                  ii),
                 getGain: {},
                 getGainMultiplier:
-                  ((ii = {}),
-                  (ii[l.STONE] = function (e) {
+                  ((oi = {}),
+                  (oi[l.STONE] = function (e) {
                     return { A: 1, B: 1.3, type: i.EXPONENTIAL };
                   }),
-                  (ii[l.ORE] = function (e) {
+                  (oi[l.ORE] = function (e) {
                     return { A: 1, B: 1.3, type: i.EXPONENTIAL };
                   }),
-                  ii),
+                  oi),
                 getCapacityMultiplier: {},
                 maxLevel: 1,
               },
@@ -6470,31 +6474,7 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.ADVANCED_COMPOSITES
-                    ) > 0
-                  );
-                },
-                getCost:
-                  ((oi = {}),
-                  (oi[l.RESEARCH] = function (e) {
-                    return { A: 33500, B: 1.5, type: i.EXPONENTIAL };
-                  }),
-                  (oi[l.PLATINUM] = function (e) {
-                    return { A: 1e3, B: 1.5, type: i.EXPONENTIAL };
-                  }),
-                  oi),
-                getGainMultiplier: {},
-                maxLevel: 3,
-              },
-              {
-                id: r.COMPOSITE_BUILDING_MATERIALS,
-                name: "Composite Building Materials",
-                description:
-                  "Replace regular building materials with new composites. Decreasing bricks cost for all your buildings by 30%",
-                unlockCondition: function (e) {
-                  return (
-                    e.science.scienceResearches.getResearchLevel(
-                      v.ADVANCED_COMPOSITES
+                      S.ADVANCED_COMPOSITES
                     ) > 0
                   );
                 },
@@ -6511,6 +6491,30 @@
                 maxLevel: 3,
               },
               {
+                id: r.COMPOSITE_BUILDING_MATERIALS,
+                name: "Composite Building Materials",
+                description:
+                  "Replace regular building materials with new composites. Decreasing bricks cost for all your buildings by 30%",
+                unlockCondition: function (e) {
+                  return (
+                    e.science.scienceResearches.getResearchLevel(
+                      S.ADVANCED_COMPOSITES
+                    ) > 0
+                  );
+                },
+                getCost:
+                  ((ai = {}),
+                  (ai[l.RESEARCH] = function (e) {
+                    return { A: 33500, B: 1.5, type: i.EXPONENTIAL };
+                  }),
+                  (ai[l.PLATINUM] = function (e) {
+                    return { A: 1e3, B: 1.5, type: i.EXPONENTIAL };
+                  }),
+                  ai),
+                getGainMultiplier: {},
+                maxLevel: 3,
+              },
+              {
                 id: r.STRONG_CISTERN,
                 name: "Composite Cistern Membrane",
                 description:
@@ -6518,32 +6522,32 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.ADVANCED_COMPOSITES
+                      S.ADVANCED_COMPOSITES
                     ) > 0
                   );
                 },
                 getCost:
-                  ((ai = {}),
-                  (ai[l.RESEARCH] = function (e) {
+                  ((ci = {}),
+                  (ci[l.RESEARCH] = function (e) {
                     return { A: 20500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (ai[l.PLATINUM] = function (e) {
+                  (ci[l.PLATINUM] = function (e) {
                     return { A: 1500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (ai[l.PLASTICS] = function (e) {
+                  (ci[l.PLASTICS] = function (e) {
                     return { A: 500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  ai),
+                  ci),
                 getGainMultiplier: {},
                 getCapacityMultiplier:
-                  ((ci = {}),
-                  (ci[l.WATER] = function (e) {
+                  ((si = {}),
+                  (si[l.WATER] = function (e) {
                     return { A: 1, B: 1.25, type: i.EXPONENTIAL };
                   }),
-                  (ci[l.OXYGEN] = function (e) {
+                  (si[l.OXYGEN] = function (e) {
                     return { A: 1, B: 1.25, type: i.EXPONENTIAL };
                   }),
-                  ci),
+                  si),
                 maxLevel: 3,
               },
               {
@@ -6554,22 +6558,22 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.PARTICLE_PHYSICS
+                      S.PARTICLE_PHYSICS
                     ) > 0
                   );
                 },
                 getCost:
-                  ((si = {}),
-                  (si[l.RESEARCH] = function (e) {
+                  ((ui = {}),
+                  (ui[l.RESEARCH] = function (e) {
                     return { A: 49500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (si[l.GRAPHENE] = function (e) {
+                  (ui[l.GRAPHENE] = function (e) {
                     return { A: 400, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (si[l.FUEL] = function (e) {
+                  (ui[l.FUEL] = function (e) {
                     return { A: 1200, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  si),
+                  ui),
                 getGain: {},
                 getGainMultiplier: {},
                 getCapacityMultiplier: {},
@@ -6583,38 +6587,38 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.PARTICLE_PHYSICS
+                      S.PARTICLE_PHYSICS
                     ) > 0
                   );
                 },
                 getCost:
-                  ((ui = {}),
-                  (ui[l.RESEARCH] = function (e) {
+                  ((li = {}),
+                  (li[l.RESEARCH] = function (e) {
                     return { A: 29500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (ui[l.GRAPHENE] = function (e) {
+                  (li[l.GRAPHENE] = function (e) {
                     return { A: 600, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (ui[l.PLATINUM] = function (e) {
+                  (li[l.PLATINUM] = function (e) {
                     return { A: 1200, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  ui),
+                  li),
                 getGain: {},
                 getGainMultiplier:
-                  ((li = {}),
-                  (li[l.STONE] = function (e) {
+                  ((pi = {}),
+                  (pi[l.STONE] = function (e) {
                     return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                   }),
-                  (li[l.BEAM] = function (e) {
+                  (pi[l.BEAM] = function (e) {
                     return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                   }),
-                  (li[l.BRICK] = function (e) {
+                  (pi[l.BRICK] = function (e) {
                     return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                   }),
-                  (li[l.SEMICONDUCTOR] = function (e) {
+                  (pi[l.SEMICONDUCTOR] = function (e) {
                     return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                   }),
-                  li),
+                  pi),
                 getCapacityMultiplier: {},
                 maxLevel: 5,
               },
@@ -6625,22 +6629,22 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.ADVANCED_THERMODYNAMICS
+                      S.ADVANCED_THERMODYNAMICS
                     ) > 0
                   );
                 },
                 getCost:
-                  ((pi = {}),
-                  (pi[l.RESEARCH] = function (e) {
+                  ((Ei = {}),
+                  (Ei[l.RESEARCH] = function (e) {
                     return { A: 52500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (pi[l.SEMICONDUCTOR] = function (e) {
+                  (Ei[l.SEMICONDUCTOR] = function (e) {
                     return { A: 1200, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (pi[l.WIRE] = function (e) {
+                  (Ei[l.WIRE] = function (e) {
                     return { A: 1200, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  pi),
+                  Ei),
                 getGain: {},
                 getGainMultiplier: {},
                 getCapacityMultiplier: {},
@@ -6653,29 +6657,29 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.ADVANCED_THERMODYNAMICS
+                      S.ADVANCED_THERMODYNAMICS
                     ) > 0
                   );
                 },
                 getCost:
-                  ((Ei = {}),
-                  (Ei[l.RESEARCH] = function (e) {
+                  ((di = {}),
+                  (di[l.RESEARCH] = function (e) {
                     return { A: 31500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Ei[l.GRAPHENE] = function (e) {
+                  (di[l.GRAPHENE] = function (e) {
                     return { A: 400, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Ei[l.FUEL] = function (e) {
+                  (di[l.FUEL] = function (e) {
                     return { A: 1200, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  Ei),
+                  di),
                 getGain: {},
                 getGainMultiplier:
-                  ((di = {}),
-                  (di[l.WATER] = function (e) {
+                  ((gi = {}),
+                  (gi[l.WATER] = function (e) {
                     return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                   }),
-                  di),
+                  gi),
                 getCapacityMultiplier: {},
                 maxLevel: 5,
               },
@@ -6687,22 +6691,22 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.ADVANCED_SPACE_CONSTRUCTION
+                      S.ADVANCED_SPACE_CONSTRUCTION
                     ) > 0
                   );
                 },
                 getCost:
-                  ((gi = {}),
-                  (gi[l.RESEARCH] = function (e) {
+                  ((Ai = {}),
+                  (Ai[l.RESEARCH] = function (e) {
                     return { A: 54500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (gi[l.SEMICONDUCTOR] = function (e) {
+                  (Ai[l.SEMICONDUCTOR] = function (e) {
                     return { A: 1800, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (gi[l.WIRE] = function (e) {
+                  (Ai[l.WIRE] = function (e) {
                     return { A: 1800, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  gi),
+                  Ai),
                 getGain: {},
                 getGainMultiplier: {},
                 getCapacityMultiplier: {},
@@ -6717,22 +6721,22 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.NEUTRINO_PHYSICS
+                      S.NEUTRINO_PHYSICS
                     ) > 0
                   );
                 },
                 getCost:
-                  ((Ai = {}),
-                  (Ai[l.RESEARCH] = function (e) {
+                  ((fi = {}),
+                  (fi[l.RESEARCH] = function (e) {
                     return { A: 68500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Ai[l.SEMICONDUCTOR] = function (e) {
+                  (fi[l.SEMICONDUCTOR] = function (e) {
                     return { A: 2500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Ai[l.GRAPHENE] = function (e) {
+                  (fi[l.GRAPHENE] = function (e) {
                     return { A: 525, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  Ai),
+                  fi),
                 getGain: {},
                 getGainMultiplier: {},
                 getCapacityMultiplier: {},
@@ -6746,22 +6750,22 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.NEUTRINO_PHYSICS
+                      S.NEUTRINO_PHYSICS
                     ) > 0
                   );
                 },
                 getCost:
-                  ((fi = {}),
-                  (fi[l.RESEARCH] = function (e) {
+                  ((Ri = {}),
+                  (Ri[l.RESEARCH] = function (e) {
                     return { A: 58500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (fi[l.WIRE] = function (e) {
+                  (Ri[l.WIRE] = function (e) {
                     return { A: 2500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (fi[l.GRAPHENE] = function (e) {
+                  (Ri[l.GRAPHENE] = function (e) {
                     return { A: 525, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  fi),
+                  Ri),
                 getGain: {},
                 getGainMultiplier: {},
                 getCapacityMultiplier: {},
@@ -6775,35 +6779,35 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.QUARK_PHYSICS
+                      S.QUARK_PHYSICS
                     ) > 0
                   );
                 },
                 getCost:
-                  ((Ri = {}),
-                  (Ri[l.RESEARCH] = function (e) {
+                  ((Ii = {}),
+                  (Ii[l.RESEARCH] = function (e) {
                     return { A: 48500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Ri[l.WIRE] = function (e) {
+                  (Ii[l.WIRE] = function (e) {
                     return { A: 1e3, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Ri[l.POWER] = function (e) {
+                  (Ii[l.POWER] = function (e) {
                     return { A: 5e4, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  Ri),
+                  Ii),
                 getGain: {},
                 getGainMultiplier:
-                  ((Ii = {}),
-                  (Ii[l.PLATE] = function (e) {
+                  ((Ni = {}),
+                  (Ni[l.PLATE] = function (e) {
                     return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                   }),
-                  (Ii[l.WIRE] = function (e) {
+                  (Ni[l.WIRE] = function (e) {
                     return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                   }),
-                  (Ii[l.ROCKET_ENGINE] = function (e) {
+                  (Ni[l.ROCKET_ENGINE] = function (e) {
                     return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                   }),
-                  Ii),
+                  Ni),
                 getCapacityMultiplier: {},
                 maxLevel: 5,
               },
@@ -6814,26 +6818,26 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.LOW_TEMP_PHYSICS
+                      S.LOW_TEMP_PHYSICS
                     ) > 0
                   );
                 },
                 getCost:
-                  ((Ni = {}),
-                  (Ni[l.RESEARCH] = function (e) {
+                  ((Ti = {}),
+                  (Ti[l.RESEARCH] = function (e) {
                     return { A: 51500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Ni[l.PLASTICS] = function (e) {
+                  (Ti[l.PLASTICS] = function (e) {
                     return { A: 2500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  Ni),
+                  Ti),
                 getGain: {},
                 getGainMultiplier:
-                  ((Ti = {}),
-                  (Ti[l.FUEL] = function (e) {
+                  ((Oi = {}),
+                  (Oi[l.FUEL] = function (e) {
                     return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                   }),
-                  Ti),
+                  Oi),
                 getCapacityMultiplier: {},
                 maxLevel: 5,
               },
@@ -6844,7 +6848,7 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.LOW_TEMP_PHYSICS
+                      S.LOW_TEMP_PHYSICS
                     ) > 0 &&
                     e.landingZone.landingZoneUpgrades.getUpgradeLevel(
                       r.MAGNETIC_FIELD_GENERATOR
@@ -6852,21 +6856,21 @@
                   );
                 },
                 getCost:
-                  ((Oi = {}),
-                  (Oi[l.RESEARCH] = function (e) {
+                  ((yi = {}),
+                  (yi[l.RESEARCH] = function (e) {
                     return { A: 51500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Oi[l.SEMICONDUCTOR] = function (e) {
+                  (yi[l.SEMICONDUCTOR] = function (e) {
                     return { A: 4e3, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  Oi),
+                  yi),
                 getGain: {},
                 getGainMultiplier:
-                  ((yi = {}),
-                  (yi[l.MAGNETO] = function (e) {
+                  ((mi = {}),
+                  (mi[l.MAGNETO] = function (e) {
                     return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                   }),
-                  yi),
+                  mi),
                 getCapacityMultiplier: {},
                 maxLevel: 5,
               },
@@ -6877,19 +6881,19 @@
                   "Improved refrigeration technology allows you now storing 10% more nutrition and biomass",
                 unlockCondition: function (e) {
                   return (
-                    e.science.scienceResearches.getResearchLevel(v.CRYOGENICS) >
+                    e.science.scienceResearches.getResearchLevel(S.CRYOGENICS) >
                     0
                   );
                 },
                 getCost:
-                  ((mi = {}),
-                  (mi[l.RESEARCH] = function (e) {
+                  ((hi = {}),
+                  (hi[l.RESEARCH] = function (e) {
                     return { A: 64800, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (mi[l.SEMICONDUCTOR] = function (e) {
+                  (hi[l.SEMICONDUCTOR] = function (e) {
                     return { A: 8e3, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  mi),
+                  hi),
                 getGain: {},
                 getCapacityMultiplier:
                   ((Li = {}),
@@ -6909,26 +6913,26 @@
                   "Improved batteries cooling allows you increase their capacity by 10%",
                 unlockCondition: function (e) {
                   return (
-                    e.science.scienceResearches.getResearchLevel(v.CRYOGENICS) >
+                    e.science.scienceResearches.getResearchLevel(S.CRYOGENICS) >
                     0
                   );
                 },
                 getCost:
-                  ((hi = {}),
-                  (hi[l.RESEARCH] = function (e) {
+                  ((Ci = {}),
+                  (Ci[l.RESEARCH] = function (e) {
                     return { A: 74200, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (hi[l.WIRE] = function (e) {
+                  (Ci[l.WIRE] = function (e) {
                     return { A: 8e3, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  hi),
+                  Ci),
                 getGain: {},
                 getCapacityMultiplier:
-                  ((Ci = {}),
-                  (Ci[l.POWER] = function (e) {
+                  ((vi = {}),
+                  (vi[l.POWER] = function (e) {
                     return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                   }),
-                  Ci),
+                  vi),
                 maxLevel: 3,
               },
               {
@@ -6938,22 +6942,22 @@
                   "Use frozen biomass in your investigations. Reduce Biolabs Biomass consumption by 75%",
                 unlockCondition: function (e) {
                   return (
-                    e.science.scienceResearches.getResearchLevel(v.CRYOGENICS) >
+                    e.science.scienceResearches.getResearchLevel(S.CRYOGENICS) >
                     0
                   );
                 },
                 getCost:
-                  ((vi = {}),
-                  (vi[l.RESEARCH] = function (e) {
+                  ((Si = {}),
+                  (Si[l.RESEARCH] = function (e) {
                     return { A: 88500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (vi[l.SEMICONDUCTOR] = function (e) {
+                  (Si[l.SEMICONDUCTOR] = function (e) {
                     return { A: 2500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (vi[l.BIOMASS] = function (e) {
+                  (Si[l.BIOMASS] = function (e) {
                     return { A: 12e4, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  vi),
+                  Si),
                 getGain: {},
                 getGainMultiplier: {},
                 getCapacityMultiplier: {},
@@ -6967,19 +6971,19 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.SPACE_ORGANICS
+                      S.SPACE_ORGANICS
                     ) > 0
                   );
                 },
                 getCost:
-                  ((Si = {}),
-                  (Si[l.RESEARCH] = function (e) {
+                  ((Pi = {}),
+                  (Pi[l.RESEARCH] = function (e) {
                     return { A: 88500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Si[l.BIOMASS] = function (e) {
+                  (Pi[l.BIOMASS] = function (e) {
                     return { A: 15e4, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  Si),
+                  Pi),
                 getGain: {},
                 getGainMultiplier: {},
                 getCapacityMultiplier: {},
@@ -6993,22 +6997,22 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.SPACE_ORGANICS
+                      S.SPACE_ORGANICS
                     ) > 0
                   );
                 },
                 getCost:
-                  ((Pi = {}),
-                  (Pi[l.RESEARCH] = function (e) {
+                  ((Bi = {}),
+                  (Bi[l.RESEARCH] = function (e) {
                     return { A: 98500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Pi[l.SEMICONDUCTOR] = function (e) {
+                  (Bi[l.SEMICONDUCTOR] = function (e) {
                     return { A: 2500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Pi[l.BIOMASS] = function (e) {
+                  (Bi[l.BIOMASS] = function (e) {
                     return { A: 12e4, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  Pi),
+                  Bi),
                 getGain: {},
                 getGainMultiplier: {},
                 getCapacityMultiplier: {},
@@ -7022,22 +7026,22 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.NANO_BIOLOGY
+                      S.NANO_BIOLOGY
                     ) > 0
                   );
                 },
                 getCost:
-                  ((Bi = {}),
-                  (Bi[l.RESEARCH] = function (e) {
+                  ((_i = {}),
+                  (_i[l.RESEARCH] = function (e) {
                     return { A: 118500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Bi[l.GRAPHENE] = function (e) {
+                  (_i[l.GRAPHENE] = function (e) {
                     return { A: 2500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Bi[l.COMPUTER] = function (e) {
+                  (_i[l.COMPUTER] = function (e) {
                     return { A: 2500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  Bi),
+                  _i),
                 getGain: {},
                 getGainMultiplier: {},
                 getCapacityMultiplier: {},
@@ -7051,31 +7055,31 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.ADVANCED_NUCLEAR_RESEARCH
+                      S.ADVANCED_NUCLEAR_RESEARCH
                     ) > 0
                   );
                 },
                 getCost:
-                  ((_i = {}),
-                  (_i[l.RESEARCH] = function (e) {
+                  ((Mi = {}),
+                  (Mi[l.RESEARCH] = function (e) {
                     return { A: 72e3, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (_i[l.FUEL] = function (e) {
+                  (Mi[l.FUEL] = function (e) {
                     return { A: 4e3, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (_i[l.GRAPHENE] = function (e) {
+                  (Mi[l.GRAPHENE] = function (e) {
                     return { A: 600, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  _i),
-                getGainMultiplier:
-                  ((Mi = {}),
-                  (Mi[l.PLATE] = function (e) {
-                    return { A: 1, B: 1.1, type: i.EXPONENTIAL };
-                  }),
-                  (Mi[l.WIRE] = function (e) {
-                    return { A: 1, B: 1.1, type: i.EXPONENTIAL };
-                  }),
                   Mi),
+                getGainMultiplier:
+                  ((Ui = {}),
+                  (Ui[l.PLATE] = function (e) {
+                    return { A: 1, B: 1.1, type: i.EXPONENTIAL };
+                  }),
+                  (Ui[l.WIRE] = function (e) {
+                    return { A: 1, B: 1.1, type: i.EXPONENTIAL };
+                  }),
+                  Ui),
                 getCapacityMultiplier: {},
                 maxLevel: 5,
               },
@@ -7087,22 +7091,22 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.ADVANCED_NUCLEAR_RESEARCH
+                      S.ADVANCED_NUCLEAR_RESEARCH
                     ) > 0
                   );
                 },
                 getCost:
-                  ((Ui = {}),
-                  (Ui[l.RESEARCH] = function (e) {
+                  ((Gi = {}),
+                  (Gi[l.RESEARCH] = function (e) {
                     return { A: 124500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Ui[l.GRAPHENE] = function (e) {
+                  (Gi[l.GRAPHENE] = function (e) {
                     return { A: 2500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Ui[l.POWER] = function (e) {
+                  (Gi[l.POWER] = function (e) {
                     return { A: 15e4, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  Ui),
+                  Gi),
                 getGain: {},
                 getGainMultiplier: {},
                 getCapacityMultiplier: {},
@@ -7116,22 +7120,22 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.ADVANCED_SUPERCONDUCTIVITY
+                      S.ADVANCED_SUPERCONDUCTIVITY
                     ) > 0
                   );
                 },
                 getCost:
-                  ((Gi = {}),
-                  (Gi[l.RESEARCH] = function (e) {
+                  ((bi = {}),
+                  (bi[l.RESEARCH] = function (e) {
                     return { A: 13e4, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Gi[l.WIRE] = function (e) {
+                  (bi[l.WIRE] = function (e) {
                     return { A: 12500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Gi[l.COMPUTER] = function (e) {
+                  (bi[l.COMPUTER] = function (e) {
                     return { A: 2e3, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  Gi),
+                  bi),
                 getGain: {},
                 getGainMultiplier: {},
                 getCapacityMultiplier: {},
@@ -7145,29 +7149,29 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.ADVANCED_SUPERCONDUCTIVITY
+                      S.ADVANCED_SUPERCONDUCTIVITY
                     ) > 0
                   );
                 },
                 getCost:
-                  ((bi = {}),
-                  (bi[l.RESEARCH] = function (e) {
+                  ((Di = {}),
+                  (Di[l.RESEARCH] = function (e) {
                     return { A: 8e4, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (bi[l.WIRE] = function (e) {
+                  (Di[l.WIRE] = function (e) {
                     return { A: 7500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (bi[l.COMPUTER] = function (e) {
+                  (Di[l.COMPUTER] = function (e) {
                     return { A: 750, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  bi),
+                  Di),
                 getGain: {},
                 getGainMultiplier:
-                  ((Di = {}),
-                  (Di[l.MAGNETO] = function (e) {
+                  ((wi = {}),
+                  (wi[l.MAGNETO] = function (e) {
                     return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                   }),
-                  Di),
+                  wi),
                 getCapacityMultiplier: {},
                 maxLevel: 5,
               },
@@ -7179,22 +7183,22 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.ORGANIC_NANOCONSTRUCTION
+                      S.ORGANIC_NANOCONSTRUCTION
                     ) > 0
                   );
                 },
                 getCost:
-                  ((wi = {}),
-                  (wi[l.RESEARCH] = function (e) {
+                  ((Xi = {}),
+                  (Xi[l.RESEARCH] = function (e) {
                     return { A: 14e4, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (wi[l.BIOMASS] = function (e) {
+                  (Xi[l.BIOMASS] = function (e) {
                     return { A: 175e3, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (wi[l.COMPUTER] = function (e) {
+                  (Xi[l.COMPUTER] = function (e) {
                     return { A: 2e3, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  wi),
+                  Xi),
                 getGain: {},
                 getGainMultiplier: {},
                 getCapacityMultiplier: {},
@@ -7208,22 +7212,22 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.ORGANIC_NANOCONSTRUCTION
+                      S.ORGANIC_NANOCONSTRUCTION
                     ) > 0
                   );
                 },
                 getCost:
-                  ((Xi = {}),
-                  (Xi[l.RESEARCH] = function (e) {
+                  ((ki = {}),
+                  (ki[l.RESEARCH] = function (e) {
                     return { A: 8e4, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Xi[l.RUBBER] = function (e) {
+                  (ki[l.RUBBER] = function (e) {
                     return { A: 1e3, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Xi[l.COMPUTER] = function (e) {
+                  (ki[l.COMPUTER] = function (e) {
                     return { A: 2e3, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  Xi),
+                  ki),
                 getGain: {},
                 getGainMultiplier:
                   ((Hi = {}),
@@ -7245,29 +7249,29 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.ORGANIC_NANOCONSTRUCTION
+                      S.ORGANIC_NANOCONSTRUCTION
                     ) > 0
                   );
                 },
                 getCost:
-                  ((ki = {}),
-                  (ki[l.RESEARCH] = function (e) {
+                  ((xi = {}),
+                  (xi[l.RESEARCH] = function (e) {
                     return { A: 8e4, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (ki[l.RUBBER] = function (e) {
+                  (xi[l.RUBBER] = function (e) {
                     return { A: 1e3, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (ki[l.GRAPHENE] = function (e) {
+                  (xi[l.GRAPHENE] = function (e) {
                     return { A: 300, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  ki),
+                  xi),
                 getGain: {},
                 getGainMultiplier:
-                  ((xi = {}),
-                  (xi[l.FUEL] = function (e) {
+                  ((Yi = {}),
+                  (Yi[l.FUEL] = function (e) {
                     return { A: 1, B: 1.2, type: i.EXPONENTIAL };
                   }),
-                  xi),
+                  Yi),
                 getCapacityMultiplier: {},
                 maxLevel: 5,
               },
@@ -7279,34 +7283,34 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.QUARK_GLUON_PLASMA_STUDY
+                      S.QUARK_GLUON_PLASMA_STUDY
                     ) > 0
                   );
                 },
                 getCost:
-                  ((Yi = {}),
-                  (Yi[l.RESEARCH] = function (e) {
+                  ((Wi = {}),
+                  (Wi[l.RESEARCH] = function (e) {
                     return { A: 6e4, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Yi[l.FUEL] = function (e) {
+                  (Wi[l.FUEL] = function (e) {
                     return { A: 3200, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Yi[l.GRAPHENE] = function (e) {
+                  (Wi[l.GRAPHENE] = function (e) {
                     return { A: 600, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  Yi),
-                getGainMultiplier:
-                  ((Wi = {}),
-                  (Wi[l.PLATE] = function (e) {
-                    return { A: 1, B: 1.2, type: i.EXPONENTIAL };
-                  }),
-                  (Wi[l.WIRE] = function (e) {
-                    return { A: 1, B: 1.2, type: i.EXPONENTIAL };
-                  }),
-                  (Wi[l.ROCKET_ENGINE] = function (e) {
-                    return { A: 1, B: 1.2, type: i.EXPONENTIAL };
-                  }),
                   Wi),
+                getGainMultiplier:
+                  ((Zi = {}),
+                  (Zi[l.PLATE] = function (e) {
+                    return { A: 1, B: 1.2, type: i.EXPONENTIAL };
+                  }),
+                  (Zi[l.WIRE] = function (e) {
+                    return { A: 1, B: 1.2, type: i.EXPONENTIAL };
+                  }),
+                  (Zi[l.ROCKET_ENGINE] = function (e) {
+                    return { A: 1, B: 1.2, type: i.EXPONENTIAL };
+                  }),
+                  Zi),
                 getCapacityMultiplier: {},
                 maxLevel: 5,
               },
@@ -7318,22 +7322,22 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.QUARK_GLUON_PLASMA_STUDY
+                      S.QUARK_GLUON_PLASMA_STUDY
                     ) > 0
                   );
                 },
                 getCost:
-                  ((Zi = {}),
-                  (Zi[l.RESEARCH] = function (e) {
+                  ((ji = {}),
+                  (ji[l.RESEARCH] = function (e) {
                     return { A: 15e4, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Zi[l.FUEL] = function (e) {
+                  (ji[l.FUEL] = function (e) {
                     return { A: 600, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Zi[l.PLATE] = function (e) {
+                  (ji[l.PLATE] = function (e) {
                     return { A: 1500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  Zi),
+                  ji),
                 getGainMultiplier: {},
                 getCapacityMultiplier: {},
                 maxLevel: 1,
@@ -7346,7 +7350,7 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.QUANTUM_MAGNETICS
+                      S.QUANTUM_MAGNETICS
                     ) > 0
                   );
                 },
@@ -7363,11 +7367,11 @@
                   }),
                   Fi),
                 getGainMultiplier:
-                  ((ji = {}),
-                  (ji[l.POWER] = function (e) {
+                  ((Ki = {}),
+                  (Ki[l.POWER] = function (e) {
                     return { A: 1, B: 1.05, type: i.EXPONENTIAL };
                   }),
-                  ji),
+                  Ki),
                 getCapacityMultiplier: {},
                 maxLevel: 3,
               },
@@ -7379,29 +7383,29 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.QUANTUM_MAGNETICS
+                      S.QUANTUM_MAGNETICS
                     ) > 0
                   );
                 },
                 getCost:
-                  ((Ki = {}),
-                  (Ki[l.RESEARCH] = function (e) {
-                    return { A: 1e5, B: 1.5, type: i.EXPONENTIAL };
-                  }),
-                  (Ki[l.COMPUTER] = function (e) {
-                    return { A: 6400, B: 1.5, type: i.EXPONENTIAL };
-                  }),
-                  (Ki[l.GRAPHENE] = function (e) {
-                    return { A: 1600, B: 1.5, type: i.EXPONENTIAL };
-                  }),
-                  Ki),
-                getGainMultiplier: {},
-                getCapacityMultiplier:
                   ((Vi = {}),
                   (Vi[l.RESEARCH] = function (e) {
-                    return { A: 1, B: 1.1, type: i.EXPONENTIAL };
+                    return { A: 1e5, B: 1.5, type: i.EXPONENTIAL };
+                  }),
+                  (Vi[l.COMPUTER] = function (e) {
+                    return { A: 6400, B: 1.5, type: i.EXPONENTIAL };
+                  }),
+                  (Vi[l.GRAPHENE] = function (e) {
+                    return { A: 1600, B: 1.5, type: i.EXPONENTIAL };
                   }),
                   Vi),
+                getGainMultiplier: {},
+                getCapacityMultiplier:
+                  ((qi = {}),
+                  (qi[l.RESEARCH] = function (e) {
+                    return { A: 1, B: 1.1, type: i.EXPONENTIAL };
+                  }),
+                  qi),
                 maxLevel: 3,
               },
               {
@@ -7412,28 +7416,28 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.ORGANIC_BASED_COMPUTATION
+                      S.ORGANIC_BASED_COMPUTATION
                     ) > 0
                   );
                 },
                 getCost:
-                  ((qi = {}),
-                  (qi[l.RESEARCH] = function (e) {
+                  ((zi = {}),
+                  (zi[l.RESEARCH] = function (e) {
                     return { A: 1e5, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (qi[l.COMPUTER] = function (e) {
+                  (zi[l.COMPUTER] = function (e) {
                     return { A: 6400, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (qi[l.BIOMASS] = function (e) {
+                  (zi[l.BIOMASS] = function (e) {
                     return { A: 2e5, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  qi),
+                  zi),
                 getGainMultiplier:
-                  ((zi = {}),
-                  (zi[l.GRAPHENE] = function (e) {
+                  ((Qi = {}),
+                  (Qi[l.GRAPHENE] = function (e) {
                     return { A: 1, B: 1.3, type: i.EXPONENTIAL };
                   }),
-                  zi),
+                  Qi),
                 getCapacityMultiplier: {},
                 maxLevel: 3,
               },
@@ -7445,28 +7449,28 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.QUANTUM_MAGNETICS_DETECTION
+                      S.QUANTUM_MAGNETICS_DETECTION
                     ) > 0
                   );
                 },
                 getCost:
-                  ((Qi = {}),
-                  (Qi[l.RESEARCH] = function (e) {
+                  ((Ji = {}),
+                  (Ji[l.RESEARCH] = function (e) {
                     return { A: 12e4, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Qi[l.COMPUTER] = function (e) {
+                  (Ji[l.COMPUTER] = function (e) {
                     return { A: 12800, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (Qi[l.WIRE] = function (e) {
+                  (Ji[l.WIRE] = function (e) {
                     return { A: 2e4, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  Qi),
+                  Ji),
                 getGainMultiplier:
-                  ((Ji = {}),
-                  (Ji[l.MAGNETO] = function (e) {
+                  (($i = {}),
+                  ($i[l.MAGNETO] = function (e) {
                     return { A: 1, B: 1.2, type: i.EXPONENTIAL };
                   }),
-                  Ji),
+                  $i),
                 getCapacityMultiplier: {},
                 maxLevel: 3,
               },
@@ -7478,22 +7482,22 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.QUANTUM_MAGNETICS_DETECTION
+                      S.QUANTUM_MAGNETICS_DETECTION
                     ) > 0
                   );
                 },
                 getCost:
-                  (($i = {}),
-                  ($i[l.RESEARCH] = function (e) {
+                  ((eo = {}),
+                  (eo[l.RESEARCH] = function (e) {
                     return { A: 14e4, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  ($i[l.COMPUTER] = function (e) {
+                  (eo[l.COMPUTER] = function (e) {
                     return { A: 25e3, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  ($i[l.MAGNETO] = function (e) {
+                  (eo[l.MAGNETO] = function (e) {
                     return { A: 100, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  $i),
+                  eo),
                 getGainMultiplier: {},
                 getCapacityMultiplier: {},
                 maxLevel: 1,
@@ -7506,22 +7510,22 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.HIGH_DENSITY_STUDY
+                      S.HIGH_DENSITY_STUDY
                     ) > 0
                   );
                 },
                 getCost:
-                  ((eo = {}),
-                  (eo[l.RESEARCH] = function (e) {
+                  ((to = {}),
+                  (to[l.RESEARCH] = function (e) {
                     return { A: 14e4, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (eo[l.PLATE] = function (e) {
+                  (to[l.PLATE] = function (e) {
                     return { A: 4e4, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (eo[l.GRAPHENE] = function (e) {
+                  (to[l.GRAPHENE] = function (e) {
                     return { A: 800, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  eo),
+                  to),
                 getGainMultiplier: {},
                 getCapacityMultiplier: {},
                 maxLevel: 3,
@@ -7534,22 +7538,22 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.HIGH_DENSITY_STUDY
+                      S.HIGH_DENSITY_STUDY
                     ) > 0
                   );
                 },
                 getCost:
-                  ((to = {}),
-                  (to[l.RESEARCH] = function (e) {
+                  ((no = {}),
+                  (no[l.RESEARCH] = function (e) {
                     return { A: 1e5, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (to[l.PLATE] = function (e) {
+                  (no[l.PLATE] = function (e) {
                     return { A: 2e4, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (to[l.GRAPHENE] = function (e) {
+                  (no[l.GRAPHENE] = function (e) {
                     return { A: 500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  to),
+                  no),
                 getGainMultiplier: {},
                 getCapacityMultiplier: {},
                 maxLevel: 5,
@@ -7562,22 +7566,22 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.HIGH_DENSITY_STUDY
+                      S.HIGH_DENSITY_STUDY
                     ) > 0
                   );
                 },
                 getCost:
-                  ((no = {}),
-                  (no[l.RESEARCH] = function (e) {
+                  ((io = {}),
+                  (io[l.RESEARCH] = function (e) {
                     return { A: 135e3, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (no[l.COMPUTER] = function (e) {
+                  (io[l.COMPUTER] = function (e) {
                     return { A: 15e3, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (no[l.GRAPHENE] = function (e) {
+                  (io[l.GRAPHENE] = function (e) {
                     return { A: 4800, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  no),
+                  io),
                 getGainMultiplier: {},
                 getCapacityMultiplier: {},
                 maxLevel: 3,
@@ -7590,34 +7594,34 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.SYNTHETIC_ORGANISMS
+                      S.SYNTHETIC_ORGANISMS
                     ) > 0
                   );
                 },
                 getCost:
-                  ((io = {}),
-                  (io[l.RESEARCH] = function (e) {
+                  ((oo = {}),
+                  (oo[l.RESEARCH] = function (e) {
                     return { A: 1e5, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (io[l.BIOMASS] = function (e) {
+                  (oo[l.BIOMASS] = function (e) {
                     return { A: 1e5, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (io[l.MAGNETO] = function (e) {
+                  (oo[l.MAGNETO] = function (e) {
                     return { A: 100, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  io),
-                getGainMultiplier:
-                  ((oo = {}),
-                  (oo[l.POWER] = function (e) {
-                    return { A: 1, B: 1.1, type: i.EXPONENTIAL };
-                  }),
                   oo),
-                getCapacityMultiplier:
+                getGainMultiplier:
                   ((ro = {}),
                   (ro[l.POWER] = function (e) {
                     return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                   }),
                   ro),
+                getCapacityMultiplier:
+                  ((ao = {}),
+                  (ao[l.POWER] = function (e) {
+                    return { A: 1, B: 1.1, type: i.EXPONENTIAL };
+                  }),
+                  ao),
                 maxLevel: 5,
               },
               {
@@ -7628,42 +7632,42 @@
                 unlockCondition: function (e) {
                   return (
                     e.science.scienceResearches.getResearchLevel(
-                      v.SYNTHETIC_ORGANISMS
+                      S.SYNTHETIC_ORGANISMS
                     ) > 0
                   );
                 },
                 getCost:
-                  ((ao = {}),
-                  (ao[l.RESEARCH] = function (e) {
+                  ((co = {}),
+                  (co[l.RESEARCH] = function (e) {
                     return { A: 1e5, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (ao[l.BIOMASS] = function (e) {
+                  (co[l.BIOMASS] = function (e) {
                     return { A: 1e5, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (ao[l.MAGNETO] = function (e) {
+                  (co[l.MAGNETO] = function (e) {
                     return { A: 100, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  ao),
-                getGainMultiplier:
-                  ((co = {}),
-                  (co[l.RUBBER] = function (e) {
-                    return { A: 1, B: 1.1, type: i.EXPONENTIAL };
-                  }),
-                  (co[l.PLASTICS] = function (e) {
-                    return { A: 1, B: 1.1, type: i.EXPONENTIAL };
-                  }),
-                  (co[l.GRAPHENE] = function (e) {
-                    return { A: 1, B: 1.1, type: i.EXPONENTIAL };
-                  }),
                   co),
+                getGainMultiplier:
+                  ((so = {}),
+                  (so[l.RUBBER] = function (e) {
+                    return { A: 1, B: 1.1, type: i.EXPONENTIAL };
+                  }),
+                  (so[l.PLASTICS] = function (e) {
+                    return { A: 1, B: 1.1, type: i.EXPONENTIAL };
+                  }),
+                  (so[l.GRAPHENE] = function (e) {
+                    return { A: 1, B: 1.1, type: i.EXPONENTIAL };
+                  }),
+                  so),
                 getCapacityMultiplier: {},
                 maxLevel: 5,
               },
             ],
-            Zu,
+            ju,
             !0
           ),
-          ju = (function () {
+          Ku = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -7697,9 +7701,9 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          Ku = function () {
+          Vu = function () {
             return (
-              (Ku =
+              (Vu =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -7708,10 +7712,10 @@
                         (e[o] = t[o]);
                   return e;
                 }),
-              Ku.apply(this, arguments)
+              Vu.apply(this, arguments)
             );
           },
-          Vu = (function (e) {
+          qu = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -7723,7 +7727,7 @@
               );
             }
             return (
-              ju(t, e),
+              Ku(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -7759,11 +7763,11 @@
                   return t.id === e.id;
                 });
                 i || ((i = { id: e.id, level: 0 }), this.upgrades.push(i));
-                var o = w.calcBatchAll(
+                var o = X.calcBatchAll(
                     e.getCost,
-                    kg.getInstance(),
+                    xg.getInstance(),
                     i.level + t,
-                    kg.getInstance().resources.getBatchObject()
+                    xg.getInstance().resources.getBatchObject()
                   ),
                   r = o.reduce(function (e, t) {
                     return e && !t.isBlocked;
@@ -7772,33 +7776,33 @@
                     return Math.max(e, t.eta);
                   }, 0),
                   c = e.getCapacityEffect
-                    ? w.calcBatch(e.getCapacityEffect, kg.getInstance(), 0)
+                    ? X.calcBatch(e.getCapacityEffect, xg.getInstance(), 0)
                     : [],
                   s = e.getCapacityMultiplier
-                    ? w.calcBatch(
+                    ? X.calcBatch(
                         e.getCapacityMultiplier,
-                        kg.getInstance(),
+                        xg.getInstance(),
                         i.level + 1
                       )
                     : [],
                   l = e.getGain
-                    ? w.calcBatch(e.getGain, kg.getInstance(), 0)
+                    ? X.calcBatch(e.getGain, xg.getInstance(), 0)
                     : [],
                   p = e.getGainMultiplier
-                    ? w.calcBatch(
+                    ? X.calcBatch(
                         e.getGainMultiplier,
-                        kg.getInstance(),
+                        xg.getInstance(),
                         i.level + 1
                       )
                     : [],
                   E = o.reduce(function (e, t) {
                     return Math.min(e, t.max);
                   }, 1e300),
-                  d = e.unlockCondition(xg);
+                  d = e.unlockCondition(Yg);
                 return (
                   d &&
                     i.level <= 0 &&
-                    xg.newNotifications.registerNotification(
+                    Yg.newNotifications.registerNotification(
                       "planet:landing-zone:upgrades:".concat(e.id)
                     ),
                   {
@@ -7807,34 +7811,34 @@
                     description: e.description,
                     isUnlocked: d,
                     isAvailable: E >= 1,
-                    cost: kg
+                    cost: xg
                       .getInstance()
                       .resources.assertEnought(
                         o,
-                        kg.getInstance().resources.getBatchObject(),
-                        kg.getInstance().resources.getBatchBalanceObject()
+                        xg.getInstance().resources.getBatchObject(),
+                        xg.getInstance().resources.getBatchBalanceObject()
                       ),
                     max: c.map(function (e) {
-                      return Ku(Ku({}, e), {
+                      return Vu(Vu({}, e), {
                         amountValue: e.amount,
                         amount: H(e.amount),
                       });
                     }),
                     maxMult: s.map(function (e) {
-                      return Ku(Ku({}, e), {
+                      return Vu(Vu({}, e), {
                         amountValue: e.amount,
                         amount: "x".concat(H(e.amount)),
                       });
                     }),
                     consume: [],
                     gain: l.map(function (e) {
-                      return Ku(Ku({}, e), {
+                      return Vu(Vu({}, e), {
                         amountValue: e.amount,
                         amount: H(e.amount),
                       });
                     }),
                     gainMult: p.map(function (e) {
-                      return Ku(Ku({}, e), {
+                      return Vu(Vu({}, e), {
                         amountValue: e.amount,
                         amount: "x".concat(H(e.amount)),
                       });
@@ -7865,11 +7869,11 @@
                       this.upgrades.push({ id: e, level: 0 });
                   else if (t.maxLevel && this.upgrades[n].level >= t.maxLevel)
                     return;
-                  var i = w.calcBatchAll(
+                  var i = X.calcBatchAll(
                     t.getCost,
-                    kg.getInstance(),
+                    xg.getInstance(),
                     this.upgrades[n].level,
-                    kg.getInstance().resources.getBatchObject()
+                    xg.getInstance().resources.getBatchObject()
                   );
                   if (
                     !(
@@ -7881,16 +7885,16 @@
                     return (
                       this.upgrades[n].level++,
                       console.log("costs: ", i),
-                      kg.getInstance().resources.subtractResourceBatch(i),
-                      xg.resources.reassertBalances(),
-                      kg
+                      xg.getInstance().resources.subtractResourceBatch(i),
+                      Yg.resources.reassertBalances(),
+                      xg
                         .getInstance()
                         .eventLog.registerUpgrade(
                           t.name,
                           i,
                           this.upgrades[n].level
                         ),
-                      kg
+                      xg
                         .getInstance()
                         .queuedItems.checkUnregisterUpgrade(
                           e,
@@ -7915,7 +7919,7 @@
                       return e.id === i.id;
                     });
                     if (o && o.getGain) {
-                      var r = w.calculate(xg, o.getGain[e], 0, i.level);
+                      var r = X.calculate(Yg, o.getGain[e], 0, i.level);
                       n.push({
                         label: "Upgrade: ".concat(o.name),
                         value: r,
@@ -7941,8 +7945,8 @@
                       return e.id === i.id;
                     });
                     if (o && o.getGainMultiplier) {
-                      var r = w.calculate(
-                        xg,
+                      var r = X.calculate(
+                        Yg,
                         o.getGainMultiplier[e],
                         i.level,
                         1
@@ -7973,8 +7977,8 @@
                       return e.id === i.id;
                     });
                     if (o && o.getCapacityEffect) {
-                      var r = w.calculate(
-                        xg,
+                      var r = X.calculate(
+                        Yg,
                         o.getCapacityEffect[e],
                         0,
                         i.level
@@ -8005,8 +8009,8 @@
                       return e.id === i.id;
                     });
                     if (o && o.getCapacityMultiplier) {
-                      var r = w.calculate(
-                        xg,
+                      var r = X.calculate(
+                        Yg,
                         o.getCapacityMultiplier[e],
                         i.level,
                         1
@@ -8029,9 +8033,9 @@
               }),
               t
             );
-          })(C),
-          qu = Vu.getInstance(),
-          zu = function (e) {
+          })(v),
+          zu = qu.getInstance(),
+          Qu = function (e) {
             return (
               Math.pow(
                 0.9,
@@ -8057,11 +8061,11 @@
               )
             );
           },
-          Qu = function (e) {
+          Ju = function (e) {
             return (
               Math.pow(
                 0.95,
-                e.prestige.colonizePlanet.getUpgradeLevel(R.BUILDING_PRICES)
+                e.prestige.colonizePlanet.getUpgradeLevel(I.BUILDING_PRICES)
               ) *
               Math.pow(
                 0.8,
@@ -8071,13 +8075,13 @@
               )
             );
           },
-          Ju = function (e) {
+          $u = function (e) {
             return Math.pow(
               0.8,
               e.landingZone.landingZoneUpgrades.getUpgradeLevel(r.ENERGY_SAVING)
             );
           },
-          $u = function (e) {
+          el = function (e) {
             return (
               Math.pow(
                 0.8,
@@ -8099,7 +8103,7 @@
               )
             );
           },
-          el = function (e) {
+          tl = function (e) {
             return Math.pow(
               0.5,
               e.landingZone.landingZoneUpgrades.getUpgradeLevel(
@@ -8107,7 +8111,7 @@
               )
             );
           },
-          tl = function (e) {
+          nl = function (e) {
             return Math.pow(
               0.8,
               e.landingZone.landingZoneUpgrades.getUpgradeLevel(
@@ -8115,7 +8119,7 @@
               )
             );
           },
-          nl = function (e) {
+          il = function (e) {
             return (
               Math.pow(
                 0.7,
@@ -8131,7 +8135,7 @@
               )
             );
           },
-          il = function (e) {
+          ol = function (e) {
             return Math.pow(
               0.7,
               e.landingZone.landingZoneUpgrades.getUpgradeLevel(
@@ -8139,7 +8143,7 @@
               )
             );
           },
-          ol = function (e) {
+          rl = function (e) {
             return Math.pow(
               0.7,
               e.landingZone.landingZoneUpgrades.getUpgradeLevel(
@@ -8147,8 +8151,8 @@
               )
             );
           },
-          rl = function (e) {
-            switch (e.laws.getLawSelected(M.RESEARCH_GRANTS)) {
+          al = function (e) {
+            switch (e.laws.getLawSelected(U.RESEARCH_GRANTS)) {
               case 0:
                 return 1;
               case 1:
@@ -8158,8 +8162,8 @@
             }
             return 1;
           },
-          al = function (e) {
-            switch (e.laws.getLawSelected(M.RESEARCH_GRANTS)) {
+          cl = function (e) {
+            switch (e.laws.getLawSelected(U.RESEARCH_GRANTS)) {
               case 0:
                 return 1;
               case 1:
@@ -8169,8 +8173,8 @@
             }
             return 1;
           },
-          cl = function (e) {
-            switch (e.laws.getLawSelected(M.AGRESSIVE_BACTERIA_USAGE)) {
+          sl = function (e) {
+            switch (e.laws.getLawSelected(U.AGRESSIVE_BACTERIA_USAGE)) {
               case 0:
                 return 1;
               case 1:
@@ -8180,8 +8184,8 @@
             }
             return 1;
           },
-          sl = function (e) {
-            switch (e.laws.getLawSelected(M.AGRESSIVE_BACTERIA_USAGE)) {
+          ul = function (e) {
+            switch (e.laws.getLawSelected(U.AGRESSIVE_BACTERIA_USAGE)) {
               case 0:
               case 1:
                 return 0;
@@ -8190,8 +8194,8 @@
             }
             return 1;
           },
-          ul = function (e) {
-            switch (e.laws.getLawSelected(M.AGRESSIVE_BACTERIA_USAGE)) {
+          ll = function (e) {
+            switch (e.laws.getLawSelected(U.AGRESSIVE_BACTERIA_USAGE)) {
               case 0:
                 return 1;
               case 1:
@@ -8201,8 +8205,8 @@
             }
             return 1;
           },
-          ll = function (e) {
-            switch (e.laws.getLawSelected(M.COAL_BURNING)) {
+          pl = function (e) {
+            switch (e.laws.getLawSelected(U.COAL_BURNING)) {
               case 0:
                 return 1;
               case 1:
@@ -8212,8 +8216,8 @@
             }
             return 1;
           },
-          pl = function (e) {
-            switch (e.laws.getLawSelected(M.COAL_BURNING)) {
+          El = function (e) {
+            switch (e.laws.getLawSelected(U.COAL_BURNING)) {
               case 0:
                 return 0;
               case 1:
@@ -8223,7 +8227,7 @@
             }
             return 0;
           },
-          El = [
+          dl = [
             {
               id: a.QUARRY,
               name: "Quarry",
@@ -8237,31 +8241,31 @@
                 );
               },
               getCost:
-                ((so = {}),
-                (so[l.ORE] = function (e) {
-                  return {
-                    A: 1 * Qu(e),
-                    B: 1 + 0.3 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (so[l.STONE] = function (e) {
-                  return {
-                    A: 2.5 * Qu(e),
-                    B: 1 + 0.3 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                so),
-              getConsumption:
                 ((uo = {}),
-                (uo[l.POWER] = function (e) {
-                  return { A: 0.05, B: 0, type: i.LINEAR };
+                (uo[l.ORE] = function (e) {
+                  return {
+                    A: 1 * Ju(e),
+                    B: 1 + 0.3 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (uo[l.STONE] = function (e) {
+                  return {
+                    A: 2.5 * Ju(e),
+                    B: 1 + 0.3 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 uo),
-              getGain:
+              getConsumption:
                 ((lo = {}),
-                (lo[l.STONE] = function (e) {
+                (lo[l.POWER] = function (e) {
+                  return { A: 0.05, B: 0, type: i.LINEAR };
+                }),
+                lo),
+              getGain:
+                ((po = {}),
+                (po[l.STONE] = function (e) {
                   return {
                     A:
                       (0.06 +
@@ -8278,7 +8282,7 @@
                     type: i.LINEAR,
                   };
                 }),
-                lo),
+                po),
               getStorage: {},
             },
             {
@@ -8294,31 +8298,31 @@
                 );
               },
               getCost:
-                ((po = {}),
-                (po[l.ORE] = function (e) {
-                  return {
-                    A: 5 * Qu(e),
-                    B: 1 + 0.3 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (po[l.STONE] = function (e) {
-                  return {
-                    A: 4.5 * Qu(e),
-                    B: 1 + 0.3 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                po),
-              getConsumption:
                 ((Eo = {}),
-                (Eo[l.POWER] = function (e) {
-                  return { A: 0.05, B: 0, type: i.LINEAR };
+                (Eo[l.ORE] = function (e) {
+                  return {
+                    A: 5 * Ju(e),
+                    B: 1 + 0.3 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Eo[l.STONE] = function (e) {
+                  return {
+                    A: 4.5 * Ju(e),
+                    B: 1 + 0.3 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 Eo),
-              getGain:
+              getConsumption:
                 ((go = {}),
-                (go[l.ORE] = function (e) {
+                (go[l.POWER] = function (e) {
+                  return { A: 0.05, B: 0, type: i.LINEAR };
+                }),
+                go),
+              getGain:
+                ((Ao = {}),
+                (Ao[l.ORE] = function (e) {
                   return {
                     A:
                       (0.06 +
@@ -8335,7 +8339,7 @@
                     type: i.LINEAR,
                   };
                 }),
-                go),
+                Ao),
               getStorage: {},
             },
             {
@@ -8351,25 +8355,25 @@
                 );
               },
               getCost:
-                ((Ao = {}),
-                (Ao[l.BIOMASS] = function (e) {
-                  return {
-                    A: 3 * Qu(e),
-                    B: 1 + 0.3 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Ao[l.STONE] = function (e) {
-                  return {
-                    A: 4.5 * Qu(e),
-                    B: 1 + 0.3 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                Ao),
-              getConsumption:
                 ((fo = {}),
-                (fo[l.POWER] = function (e) {
+                (fo[l.BIOMASS] = function (e) {
+                  return {
+                    A: 3 * Ju(e),
+                    B: 1 + 0.3 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (fo[l.STONE] = function (e) {
+                  return {
+                    A: 4.5 * Ju(e),
+                    B: 1 + 0.3 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                fo),
+              getConsumption:
+                ((Ro = {}),
+                (Ro[l.POWER] = function (e) {
                   return {
                     A:
                       0.05 *
@@ -8378,15 +8382,15 @@
                           e.landingZone.landingZoneUpgrades.getUpgradeLevel(
                             r.BACTERIA_SELECTION
                           )) *
-                      cl(e),
+                      sl(e),
                     B: 0,
                     type: i.LINEAR,
                   };
                 }),
-                fo),
+                Ro),
               getGain:
-                ((Ro = {}),
-                (Ro[l.BIOMASS] = function (e) {
+                ((Io = {}),
+                (Io[l.BIOMASS] = function (e) {
                   return {
                     A:
                       (0.04 +
@@ -8408,7 +8412,7 @@
                     type: i.LINEAR,
                   };
                 }),
-                (Ro[l.OXYGEN] = function (e) {
+                (Io[l.OXYGEN] = function (e) {
                   return {
                     A:
                       0.015 *
@@ -8424,25 +8428,25 @@
                     type: i.LINEAR,
                   };
                 }),
-                Ro),
-              getEffectConsumption:
-                ((Io = {}),
-                (Io[B.HEALTHCARE] = function (e) {
-                  return { A: 2 * sl(e), B: 0, type: i.LINEAR };
-                }),
                 Io),
-              getGainMultiplier:
+              getEffectConsumption:
                 ((No = {}),
-                (No[l.RUBBER] = function (e) {
-                  return { A: 1, B: ul(e), type: i.EXPONENTIAL };
-                }),
-                (No[l.PLASTICS] = function (e) {
-                  return { A: 1, B: ul(e), type: i.EXPONENTIAL };
-                }),
-                (No[l.GRAPHENE] = function (e) {
-                  return { A: 1, B: ul(e), type: i.EXPONENTIAL };
+                (No[_.HEALTHCARE] = function (e) {
+                  return { A: 2 * ul(e), B: 0, type: i.LINEAR };
                 }),
                 No),
+              getGainMultiplier:
+                ((To = {}),
+                (To[l.RUBBER] = function (e) {
+                  return { A: 1, B: ll(e), type: i.EXPONENTIAL };
+                }),
+                (To[l.PLASTICS] = function (e) {
+                  return { A: 1, B: ll(e), type: i.EXPONENTIAL };
+                }),
+                (To[l.GRAPHENE] = function (e) {
+                  return { A: 1, B: ll(e), type: i.EXPONENTIAL };
+                }),
+                To),
               getStorage: {},
             },
             {
@@ -8458,25 +8462,25 @@
                 );
               },
               getCost:
-                ((To = {}),
-                (To[l.ORE] = function (e) {
-                  return {
-                    A: 6 * Qu(e),
-                    B: 1 + 0.3 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (To[l.STONE] = function (e) {
-                  return {
-                    A: 7 * Qu(e),
-                    B: 1 + 0.3 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                To),
-              getConsumption:
                 ((Oo = {}),
-                (Oo[l.BIOMASS] = function (e) {
+                (Oo[l.ORE] = function (e) {
+                  return {
+                    A: 6 * Ju(e),
+                    B: 1 + 0.3 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Oo[l.STONE] = function (e) {
+                  return {
+                    A: 7 * Ju(e),
+                    B: 1 + 0.3 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                Oo),
+              getConsumption:
+                ((yo = {}),
+                (yo[l.BIOMASS] = function (e) {
                   return {
                     A:
                       0.03 *
@@ -8490,7 +8494,7 @@
                     type: i.LINEAR,
                   };
                 }),
-                (Oo[l.OXYGEN] = function (e) {
+                (yo[l.OXYGEN] = function (e) {
                   return {
                     A:
                       0.006 *
@@ -8501,13 +8505,13 @@
                     type: i.LINEAR,
                   };
                 }),
-                (Oo[l.WOOD] = function (e) {
-                  return { A: pl(e), B: 0, type: i.LINEAR };
+                (yo[l.WOOD] = function (e) {
+                  return { A: El(e), B: 0, type: i.LINEAR };
                 }),
-                Oo),
+                yo),
               getGain:
-                ((yo = {}),
-                (yo[l.POWER] = function (e) {
+                ((mo = {}),
+                (mo[l.POWER] = function (e) {
                   return {
                     A:
                       0.09 *
@@ -8536,15 +8540,15 @@
                           e.landingZone.landingZoneUpgrades.getUpgradeLevel(
                             r.HEAT_INSULATING_CAMERAS
                           )) *
-                      ll(e),
+                      pl(e),
                     B: 0,
                     type: i.LINEAR,
                   };
                 }),
-                yo),
+                mo),
               getStorage:
-                ((mo = {}),
-                (mo[l.POWER] = function (e) {
+                ((ho = {}),
+                (ho[l.POWER] = function (e) {
                   return {
                     A:
                       4 *
@@ -8555,7 +8559,7 @@
                     type: i.LINEAR,
                   };
                 }),
-                mo),
+                ho),
             },
             {
               id: a.THERMONUCLEAR_PLANT,
@@ -8565,7 +8569,7 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.THERMONUCLEAR_SYNTHESIS
+                    S.THERMONUCLEAR_SYNTHESIS
                   ) > 0
                 );
               },
@@ -8581,9 +8585,9 @@
                           r.NUCLEAR_SYNTHESIS_CONTROL
                         )
                       ) *
-                      ol(e) *
-                      Qu(e),
-                    B: 1 + 0.3 * zu(e),
+                      rl(e) *
+                      Ju(e),
+                    B: 1 + 0.3 * Qu(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
@@ -8591,25 +8595,25 @@
                   return {
                     A:
                       15e3 *
-                      nl(e) *
+                      il(e) *
                       Math.pow(
                         0.5,
                         e.landingZone.landingZoneUpgrades.getUpgradeLevel(
                           r.NUCLEAR_SYNTHESIS_CONTROL
                         )
                       ) *
-                      Qu(e),
-                    B: 1 + 0.3 * zu(e),
+                      Ju(e),
+                    B: 1 + 0.3 * Qu(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 Lo),
               getConsumption:
-                ((ho = {}),
-                (ho[l.WATER] = function (e) {
+                ((Co = {}),
+                (Co[l.WATER] = function (e) {
                   return { A: 0.5, B: 0, type: i.LINEAR };
                 }),
-                (ho[l.FUEL] = function (e) {
+                (Co[l.FUEL] = function (e) {
                   return {
                     A:
                       0.3 *
@@ -8623,22 +8627,22 @@
                     type: i.LINEAR,
                   };
                 }),
-                ho),
+                Co),
               getGain:
-                ((Co = {}),
-                (Co[l.POWER] = function (e) {
+                ((vo = {}),
+                (vo[l.POWER] = function (e) {
                   return {
                     A:
                       15 *
                       Math.pow(
                         1.1,
-                        xg.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                        Yg.landingZone.landingZoneUpgrades.getUpgradeLevel(
                           r.CONTROLLABLE_THERMONUCLEAR_REACTIONS
                         )
                       ) *
                       Math.pow(
                         1.05,
-                        xg.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                        Yg.landingZone.landingZoneUpgrades.getUpgradeLevel(
                           r.NEUTRINO_COOLERS
                         )
                       ) *
@@ -8651,7 +8655,7 @@
                     type: i.LINEAR,
                   };
                 }),
-                Co),
+                vo),
               getStorage: {},
             },
             {
@@ -8667,42 +8671,42 @@
                 );
               },
               getCost:
-                ((vo = {}),
-                (vo[l.ORE] = function (e) {
+                ((So = {}),
+                (So[l.ORE] = function (e) {
                   return {
-                    A: 10 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
+                    A: 10 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                (vo[l.STONE] = function (e) {
+                (So[l.STONE] = function (e) {
                   return {
-                    A: 10 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
+                    A: 10 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                vo),
+                So),
               getConsumption: {},
               getGain: {},
               getStorage:
-                ((So = {}),
-                (So[l.STONE] = function (e) {
+                ((Po = {}),
+                (Po[l.STONE] = function (e) {
                   return { A: 10, B: 0, type: i.LINEAR };
                 }),
-                (So[l.ORE] = function (e) {
+                (Po[l.ORE] = function (e) {
                   return { A: 10, B: 0, type: i.LINEAR };
                 }),
-                (So[l.BIOMASS] = function (e) {
+                (Po[l.BIOMASS] = function (e) {
                   return { A: 10, B: 0, type: i.LINEAR };
                 }),
-                (So[l.IRON] = function (e) {
+                (Po[l.IRON] = function (e) {
                   return { A: 3, B: 0, type: i.LINEAR };
                 }),
-                (So[l.WOOD] = function (e) {
+                (Po[l.WOOD] = function (e) {
                   return { A: 10, B: 0, type: i.LINEAR };
                 }),
-                So),
+                Po),
             },
             {
               id: a.STORAGE_HUB,
@@ -8717,54 +8721,54 @@
                 );
               },
               getCost:
-                ((Po = {}),
-                (Po[l.POWER] = function (e) {
-                  return {
-                    A: 30 * Qu(e),
-                    B: 1 + 0.75 * zu(e) * Ju(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Po[l.ORE] = function (e) {
-                  return {
-                    A: 50 * Qu(e),
-                    B: 1 + 0.75 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Po[l.STONE] = function (e) {
-                  return {
-                    A: 50 * Qu(e),
-                    B: 1 + 0.75 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                Po),
-              getConsumption:
                 ((Bo = {}),
                 (Bo[l.POWER] = function (e) {
-                  return { A: 0.15, B: 0, type: i.LINEAR };
+                  return {
+                    A: 30 * Ju(e),
+                    B: 1 + 0.75 * Qu(e) * $u(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Bo[l.ORE] = function (e) {
+                  return {
+                    A: 50 * Ju(e),
+                    B: 1 + 0.75 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Bo[l.STONE] = function (e) {
+                  return {
+                    A: 50 * Ju(e),
+                    B: 1 + 0.75 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 Bo),
-              getGain: {},
-              getStorage:
+              getConsumption:
                 ((_o = {}),
-                (_o[l.STONE] = function (e) {
-                  return { A: 50, B: 0, type: i.LINEAR };
-                }),
-                (_o[l.ORE] = function (e) {
-                  return { A: 50, B: 0, type: i.LINEAR };
-                }),
-                (_o[l.BIOMASS] = function (e) {
-                  return { A: 50, B: 0, type: i.LINEAR };
-                }),
-                (_o[l.IRON] = function (e) {
-                  return { A: 15, B: 0, type: i.LINEAR };
-                }),
-                (_o[l.WOOD] = function (e) {
-                  return { A: 50, B: 0, type: i.LINEAR };
+                (_o[l.POWER] = function (e) {
+                  return { A: 0.15, B: 0, type: i.LINEAR };
                 }),
                 _o),
+              getGain: {},
+              getStorage:
+                ((Mo = {}),
+                (Mo[l.STONE] = function (e) {
+                  return { A: 50, B: 0, type: i.LINEAR };
+                }),
+                (Mo[l.ORE] = function (e) {
+                  return { A: 50, B: 0, type: i.LINEAR };
+                }),
+                (Mo[l.BIOMASS] = function (e) {
+                  return { A: 50, B: 0, type: i.LINEAR };
+                }),
+                (Mo[l.IRON] = function (e) {
+                  return { A: 15, B: 0, type: i.LINEAR };
+                }),
+                (Mo[l.WOOD] = function (e) {
+                  return { A: 50, B: 0, type: i.LINEAR };
+                }),
+                Mo),
             },
             {
               id: a.OXYGEN_COLLECTOR,
@@ -8779,42 +8783,42 @@
                 );
               },
               getCost:
-                ((Mo = {}),
-                (Mo[l.POWER] = function (e) {
-                  return {
-                    A: 50 * Qu(e),
-                    B: 1 + 0.5 * zu(e) * Ju(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Mo[l.ORE] = function (e) {
-                  return {
-                    A: 150 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Mo[l.STONE] = function (e) {
-                  return {
-                    A: 150 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                Mo),
-              getConsumption:
                 ((Uo = {}),
                 (Uo[l.POWER] = function (e) {
-                  return { A: 0.4, B: 0, type: i.LINEAR };
+                  return {
+                    A: 50 * Ju(e),
+                    B: 1 + 0.5 * Qu(e) * $u(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Uo[l.ORE] = function (e) {
+                  return {
+                    A: 150 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Uo[l.STONE] = function (e) {
+                  return {
+                    A: 150 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 Uo),
-              getGain: {},
-              getStorage:
+              getConsumption:
                 ((Go = {}),
-                (Go[l.OXYGEN] = function (e) {
-                  return { A: 20, B: 0, type: i.LINEAR };
+                (Go[l.POWER] = function (e) {
+                  return { A: 0.4, B: 0, type: i.LINEAR };
                 }),
                 Go),
+              getGain: {},
+              getStorage:
+                ((bo = {}),
+                (bo[l.OXYGEN] = function (e) {
+                  return { A: 20, B: 0, type: i.LINEAR };
+                }),
+                bo),
             },
             {
               id: a.WATER_PUMP,
@@ -8830,67 +8834,67 @@
                 );
               },
               getCost:
-                ((bo = {}),
-                (bo[l.POWER] = function (e) {
-                  return {
-                    A: 75 * Qu(e),
-                    B: 1 + 0.5 * zu(e) * Ju(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (bo[l.OXYGEN] = function (e) {
-                  return {
-                    A: 12 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (bo[l.STONE] = function (e) {
-                  return {
-                    A: 120 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (bo[l.ORE] = function (e) {
-                  return {
-                    A: 85 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                bo),
-              getConsumption:
                 ((Do = {}),
                 (Do[l.POWER] = function (e) {
                   return {
+                    A: 75 * Ju(e),
+                    B: 1 + 0.5 * Qu(e) * $u(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Do[l.OXYGEN] = function (e) {
+                  return {
+                    A: 12 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Do[l.STONE] = function (e) {
+                  return {
+                    A: 120 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Do[l.ORE] = function (e) {
+                  return {
+                    A: 85 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                Do),
+              getConsumption:
+                ((wo = {}),
+                (wo[l.POWER] = function (e) {
+                  return {
                     A:
                       0.3 +
-                      (1 === e.laws.getLawSelected(M.WATER_FILTERING)
+                      (1 === e.laws.getLawSelected(U.WATER_FILTERING)
                         ? 0.3
                         : 0),
                     B: 0,
                     type: i.LINEAR,
                   };
                 }),
-                Do),
-              getGain:
-                ((wo = {}),
-                (wo[l.WATER] = function (e) {
-                  return { A: 0.03, B: 0, type: i.LINEAR };
-                }),
                 wo),
-              getStorage:
+              getGain:
                 ((Xo = {}),
                 (Xo[l.WATER] = function (e) {
-                  return { A: 1, B: 0, type: i.LINEAR };
+                  return { A: 0.03, B: 0, type: i.LINEAR };
                 }),
                 Xo),
+              getStorage:
+                ((ko = {}),
+                (ko[l.WATER] = function (e) {
+                  return { A: 1, B: 0, type: i.LINEAR };
+                }),
+                ko),
               getEffectGain:
                 ((Ho = {}),
-                (Ho[B.HEALTHCARE] = function (e) {
+                (Ho[_.HEALTHCARE] = function (e) {
                   return {
-                    A: 1 === e.laws.getLawSelected(M.WATER_FILTERING) ? 3 : 0,
+                    A: 1 === e.laws.getLawSelected(U.WATER_FILTERING) ? 3 : 0,
                     B: 0,
                     type: i.LINEAR,
                   };
@@ -8910,42 +8914,42 @@
                 );
               },
               getCost:
-                ((ko = {}),
-                (ko[l.POWER] = function (e) {
-                  return {
-                    A: 70 * Qu(e),
-                    B: 1 + 0.5 * zu(e) * Ju(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (ko[l.ORE] = function (e) {
-                  return {
-                    A: 180 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (ko[l.STONE] = function (e) {
-                  return {
-                    A: 180 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                ko),
-              getConsumption:
                 ((xo = {}),
                 (xo[l.POWER] = function (e) {
-                  return { A: 0.1, B: 0, type: i.LINEAR };
+                  return {
+                    A: 70 * Ju(e),
+                    B: 1 + 0.5 * Qu(e) * $u(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (xo[l.ORE] = function (e) {
+                  return {
+                    A: 180 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (xo[l.STONE] = function (e) {
+                  return {
+                    A: 180 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 xo),
-              getGain: {},
-              getStorage:
+              getConsumption:
                 ((Yo = {}),
-                (Yo[l.WATER] = function (e) {
-                  return { A: 15, B: 0, type: i.LINEAR };
+                (Yo[l.POWER] = function (e) {
+                  return { A: 0.1, B: 0, type: i.LINEAR };
                 }),
                 Yo),
+              getGain: {},
+              getStorage:
+                ((Wo = {}),
+                (Wo[l.WATER] = function (e) {
+                  return { A: 15, B: 0, type: i.LINEAR };
+                }),
+                Wo),
             },
             {
               id: a.BATTERY,
@@ -8960,37 +8964,37 @@
                 );
               },
               getCost:
-                ((Wo = {}),
-                (Wo[l.POWER] = function (e) {
+                ((Zo = {}),
+                (Zo[l.POWER] = function (e) {
                   return {
-                    A: 20 * Qu(e),
-                    B: 1 + 0.5 * zu(e) * Ju(e),
+                    A: 20 * Ju(e),
+                    B: 1 + 0.5 * Qu(e) * $u(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                (Wo[l.ORE] = function (e) {
+                (Zo[l.ORE] = function (e) {
                   return {
-                    A: 180 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
+                    A: 180 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                (Wo[l.WATER] = function (e) {
+                (Zo[l.WATER] = function (e) {
                   return {
-                    A: 5 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
+                    A: 5 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                Wo),
+                Zo),
               getConsumption: {},
               getGain: {},
               getStorage:
-                ((Zo = {}),
-                (Zo[l.POWER] = function (e) {
+                ((jo = {}),
+                (jo[l.POWER] = function (e) {
                   return { A: 80, B: 0, type: i.LINEAR };
                 }),
-                Zo),
+                jo),
             },
             {
               id: a.LIVING_CABIN,
@@ -9008,22 +9012,22 @@
                 ((Fo = {}),
                 (Fo[l.POWER] = function (e) {
                   return {
-                    A: 120 * Qu(e),
-                    B: 1 + 0.5 * zu(e) * Ju(e),
+                    A: 120 * Ju(e),
+                    B: 1 + 0.5 * Qu(e) * $u(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (Fo[l.STONE] = function (e) {
                   return {
-                    A: 180 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
+                    A: 180 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (Fo[l.ORE] = function (e) {
                   return {
-                    A: 80 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
+                    A: 80 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
@@ -9051,53 +9055,53 @@
                 "Provides research storage and boosts science output by 2% multiplicatively",
               unlockCondition: function (e) {
                 return (
-                  e.science.scienceResearches.getResearchLevel(v.METEOROLOGY) >
+                  e.science.scienceResearches.getResearchLevel(S.METEOROLOGY) >
                   0
                 );
               },
               getCost:
-                ((jo = {}),
-                (jo[l.POWER] = function (e) {
-                  return {
-                    A: 80 * Qu(e),
-                    B: 1 + 0.5 * zu(e) * Ju(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (jo[l.STONE] = function (e) {
-                  return {
-                    A: 180 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (jo[l.ORE] = function (e) {
-                  return {
-                    A: 125 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                jo),
-              getConsumption:
                 ((Ko = {}),
                 (Ko[l.POWER] = function (e) {
+                  return {
+                    A: 80 * Ju(e),
+                    B: 1 + 0.5 * Qu(e) * $u(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Ko[l.STONE] = function (e) {
+                  return {
+                    A: 180 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Ko[l.ORE] = function (e) {
+                  return {
+                    A: 125 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                Ko),
+              getConsumption:
+                ((Vo = {}),
+                (Vo[l.POWER] = function (e) {
                   return {
                     A:
                       10 *
                       e.landingZone.landingZoneUpgrades.getUpgradeLevel(
                         r.PARTICLE_SCATTERERS
                       ) *
-                      al(e),
+                      cl(e),
                     B: 0,
                     type: i.LINEAR,
                   };
                 }),
-                Ko),
+                Vo),
               getGain: {},
               getStorage:
-                ((Vo = {}),
-                (Vo[l.RESEARCH] = function (e) {
+                ((qo = {}),
+                (qo[l.RESEARCH] = function (e) {
                   return {
                     A:
                       25 *
@@ -9106,18 +9110,18 @@
                           e.landingZone.landingZoneUpgrades.getUpgradeLevel(
                             r.PARTICLE_SCATTERERS
                           ) *
-                          rl(e)),
+                          al(e)),
                     B: 0,
                     type: i.LINEAR,
                   };
                 }),
-                Vo),
+                qo),
               getGainMultiplier:
-                ((qo = {}),
-                (qo[l.RESEARCH] = function (e) {
+                ((zo = {}),
+                (zo[l.RESEARCH] = function (e) {
                   return { A: 1, B: 1.02, type: i.EXPONENTIAL };
                 }),
-                qo),
+                zo),
             },
             {
               id: a.MONUMENT,
@@ -9127,36 +9131,36 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.CIVIL_SERVICE
+                    S.CIVIL_SERVICE
                   ) > 0
                 );
               },
               getCost:
-                ((zo = {}),
-                (zo[l.STONE] = function (e) {
+                ((Qo = {}),
+                (Qo[l.STONE] = function (e) {
                   return {
-                    A: 820 * Qu(e),
-                    B: 1 + 0.4 * zu(e),
+                    A: 820 * Ju(e),
+                    B: 1 + 0.4 * Qu(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                (zo[l.ORE] = function (e) {
+                (Qo[l.ORE] = function (e) {
                   return {
-                    A: 480 * Qu(e),
-                    B: 1 + 0.4 * zu(e),
+                    A: 480 * Ju(e),
+                    B: 1 + 0.4 * Qu(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                zo),
+                Qo),
               getConsumption: {},
               getGain: {},
               getStorage: {},
               getEffectGain:
-                ((Qo = {}),
-                (Qo[B.AESTHETICS] = function (e) {
+                ((Jo = {}),
+                (Jo[_.AESTHETICS] = function (e) {
                   return { A: 2, B: 0, type: i.LINEAR };
                 }),
-                Qo),
+                Jo),
             },
             {
               id: a.CLINIC,
@@ -9166,62 +9170,62 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.CIVIL_SERVICE
+                    S.CIVIL_SERVICE
                   ) > 0 &&
-                  e.science.scienceResearches.getResearchLevel(v.EXOBIOLOGY) > 0
+                  e.science.scienceResearches.getResearchLevel(S.EXOBIOLOGY) > 0
                 );
               },
               getCost:
-                ((Jo = {}),
-                (Jo[l.POWER] = function (e) {
-                  return {
-                    A: 250 * Qu(e),
-                    B: 1 + 0.5 * zu(e) * Ju(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Jo[l.STONE] = function (e) {
-                  return {
-                    A: 820 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Jo[l.ORE] = function (e) {
-                  return {
-                    A: 680 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                Jo),
-              getConsumption:
                 (($o = {}),
                 ($o[l.POWER] = function (e) {
-                  return { A: 0.3, B: 0, type: i.LINEAR };
+                  return {
+                    A: 250 * Ju(e),
+                    B: 1 + 0.5 * Qu(e) * $u(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                ($o[l.STONE] = function (e) {
+                  return {
+                    A: 820 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                ($o[l.ORE] = function (e) {
+                  return {
+                    A: 680 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 $o),
+              getConsumption:
+                ((er = {}),
+                (er[l.POWER] = function (e) {
+                  return { A: 0.3, B: 0, type: i.LINEAR };
+                }),
+                er),
               getGain: {},
               getStorage:
-                ((er = {}),
-                (er[l.RESEARCH] = function (e) {
+                ((tr = {}),
+                (tr[l.RESEARCH] = function (e) {
                   return {
                     A:
-                      1 === e.laws.getLawSelected(M.EXPERIMENTAL_MEDICINE)
+                      1 === e.laws.getLawSelected(U.EXPERIMENTAL_MEDICINE)
                         ? 50
                         : 0,
                     B: 0,
                     type: i.LINEAR,
                   };
                 }),
-                er),
+                tr),
               getEffectGain:
-                ((tr = {}),
-                (tr[B.HEALTHCARE] = function (e) {
+                ((nr = {}),
+                (nr[_.HEALTHCARE] = function (e) {
                   return {
                     A:
                       10 *
-                      (1 === e.laws.getLawSelected(M.EXPERIMENTAL_MEDICINE)
+                      (1 === e.laws.getLawSelected(U.EXPERIMENTAL_MEDICINE)
                         ? 0.5
                         : 1) *
                       Math.pow(
@@ -9240,7 +9244,7 @@
                     type: i.LINEAR,
                   };
                 }),
-                tr),
+                nr),
             },
             {
               id: a.PARK,
@@ -9251,78 +9255,78 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.CIVIL_SERVICE
+                    S.CIVIL_SERVICE
                   ) > 0 &&
-                  e.science.scienceResearches.getResearchLevel(v.EXOFORESTRY) >
+                  e.science.scienceResearches.getResearchLevel(S.EXOFORESTRY) >
                     0
                 );
               },
               getCost:
-                ((nr = {}),
-                (nr[l.POWER] = function (e) {
-                  return {
-                    A: 150 * Qu(e),
-                    B: 1 + 0.5 * zu(e) * Ju(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (nr[l.STONE] = function (e) {
-                  return {
-                    A: 120 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (nr[l.WOOD] = function (e) {
-                  return {
-                    A: 80 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                nr),
-              getConsumption:
                 ((ir = {}),
-                (ir[l.WATER] = function (e) {
+                (ir[l.POWER] = function (e) {
+                  return {
+                    A: 150 * Ju(e),
+                    B: 1 + 0.5 * Qu(e) * $u(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (ir[l.STONE] = function (e) {
+                  return {
+                    A: 120 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (ir[l.WOOD] = function (e) {
+                  return {
+                    A: 80 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                ir),
+              getConsumption:
+                ((or = {}),
+                (or[l.WATER] = function (e) {
                   return {
                     A:
-                      1 === e.laws.getLawSelected(M.PARK_ZONES_UPKEEP)
+                      1 === e.laws.getLawSelected(U.PARK_ZONES_UPKEEP)
                         ? 0.02
                         : 0,
                     B: 0,
                     type: i.LINEAR,
                   };
                 }),
-                (ir[l.WOOD] = function (e) {
+                (or[l.WOOD] = function (e) {
                   return {
                     A:
-                      1 === e.laws.getLawSelected(M.PARK_ZONES_UPKEEP)
+                      1 === e.laws.getLawSelected(U.PARK_ZONES_UPKEEP)
                         ? 0.05
                         : 0,
                     B: 0,
                     type: i.LINEAR,
                   };
                 }),
-                ir),
+                or),
               getGain: {},
               getStorage: {},
               getEffectGain:
-                ((or = {}),
-                (or[B.AESTHETICS] = function (e) {
+                ((rr = {}),
+                (rr[_.AESTHETICS] = function (e) {
                   return {
                     A:
                       5 +
-                      (1 === e.laws.getLawSelected(M.PARK_ZONES_UPKEEP)
+                      (1 === e.laws.getLawSelected(U.PARK_ZONES_UPKEEP)
                         ? 1.25
                         : 0),
                     B: 0,
                     type: i.LINEAR,
                   };
                 }),
-                (or[B.ENTERTAINMENT] = function (e) {
+                (rr[_.ENTERTAINMENT] = function (e) {
                   return { A: 2, B: 0, type: i.LINEAR };
                 }),
-                or),
+                rr),
             },
             {
               id: a.BIO_LAB,
@@ -9332,39 +9336,39 @@
                 "Provides even more research storage and boost research output by 5% multiplicatively",
               unlockCondition: function (e) {
                 return (
-                  e.science.scienceResearches.getResearchLevel(v.EXOBIOLOGY) > 0
+                  e.science.scienceResearches.getResearchLevel(S.EXOBIOLOGY) > 0
                 );
               },
               getCost:
-                ((rr = {}),
-                (rr[l.POWER] = function (e) {
-                  return {
-                    A: 120 * Qu(e),
-                    B: 1 + 0.5 * zu(e) * Ju(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (rr[l.STONE] = function (e) {
-                  return {
-                    A: 1275 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (rr[l.ORE] = function (e) {
-                  return {
-                    A: 725 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                rr),
-              getConsumption:
                 ((ar = {}),
                 (ar[l.POWER] = function (e) {
-                  return { A: 0.75 * al(e), B: 0, type: i.LINEAR };
+                  return {
+                    A: 120 * Ju(e),
+                    B: 1 + 0.5 * Qu(e) * $u(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
-                (ar[l.BIOMASS] = function (e) {
+                (ar[l.STONE] = function (e) {
+                  return {
+                    A: 1275 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (ar[l.ORE] = function (e) {
+                  return {
+                    A: 725 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                ar),
+              getConsumption:
+                ((cr = {}),
+                (cr[l.POWER] = function (e) {
+                  return { A: 0.75 * cl(e), B: 0, type: i.LINEAR };
+                }),
+                (cr[l.BIOMASS] = function (e) {
                   return {
                     A:
                       0.4 *
@@ -9378,39 +9382,39 @@
                     type: i.LINEAR,
                   };
                 }),
-                (ar[l.FUEL] = function (e) {
+                (cr[l.FUEL] = function (e) {
                   return {
                     A:
-                      1 === e.laws.getLawSelected(M.ORBITAL_BIOEXPERIMENT)
+                      1 === e.laws.getLawSelected(U.ORBITAL_BIOEXPERIMENT)
                         ? 0.03
                         : 0,
                     B: 0,
                     type: i.LINEAR,
                   };
                 }),
-                ar),
+                cr),
               getGain: {},
               getStorage:
-                ((cr = {}),
-                (cr[l.RESEARCH] = function (e) {
+                ((sr = {}),
+                (sr[l.RESEARCH] = function (e) {
                   return {
                     A:
                       (50 +
-                        (1 === e.laws.getLawSelected(M.ORBITAL_BIOEXPERIMENT)
+                        (1 === e.laws.getLawSelected(U.ORBITAL_BIOEXPERIMENT)
                           ? 450
                           : 0)) *
-                      rl(e),
+                      al(e),
                     B: 0,
                     type: i.LINEAR,
                   };
                 }),
-                cr),
+                sr),
               getGainMultiplier:
-                ((sr = {}),
-                (sr[l.RESEARCH] = function (e) {
+                ((ur = {}),
+                (ur[l.RESEARCH] = function (e) {
                   return { A: 1, B: 1.05, type: i.EXPONENTIAL };
                 }),
-                sr),
+                ur),
             },
             {
               id: a.FOREST_PLANT,
@@ -9425,42 +9429,42 @@
                 );
               },
               getCost:
-                ((ur = {}),
-                (ur[l.WOOD] = function (e) {
-                  return {
-                    A: 20 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (ur[l.STONE] = function (e) {
-                  return {
-                    A: 2.5 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                ur),
-              getConsumption:
                 ((lr = {}),
-                (lr[l.WATER] = function (e) {
-                  return { A: 0.01, B: 0, type: i.LINEAR };
+                (lr[l.WOOD] = function (e) {
+                  return {
+                    A: 20 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (lr[l.STONE] = function (e) {
+                  return {
+                    A: 2.5 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 lr),
-              getGain:
+              getConsumption:
                 ((pr = {}),
-                (pr[l.OXYGEN] = function (e) {
+                (pr[l.WATER] = function (e) {
+                  return { A: 0.01, B: 0, type: i.LINEAR };
+                }),
+                pr),
+              getGain:
+                ((Er = {}),
+                (Er[l.OXYGEN] = function (e) {
                   return {
                     A:
                       0.06 *
-                      (0 === e.laws.getLawSelected(M.FOREST_BEHAVOUR)
+                      (0 === e.laws.getLawSelected(U.FOREST_BEHAVOUR)
                         ? 1
                         : 0.5),
                     B: 0,
                     type: i.LINEAR,
                   };
                 }),
-                (pr[l.NUTRITION] = function (e) {
+                (Er[l.NUTRITION] = function (e) {
                   return {
                     A:
                       0.1 *
@@ -9471,10 +9475,10 @@
                     type: i.LINEAR,
                   };
                 }),
-                pr),
+                Er),
               getGainMultiplier:
-                ((Er = {}),
-                (Er[l.BIOMASS] = function (e) {
+                ((dr = {}),
+                (dr[l.BIOMASS] = function (e) {
                   return {
                     A: e.landingZone.landingZoneUpgrades.getUpgradeLevel(
                       r.NATURAL_ENVIRONMENT
@@ -9483,25 +9487,25 @@
                     type: i.EXPONENTIAL,
                   };
                 }),
-                Er),
+                dr),
               getStorage: {},
               getEffectGain:
-                ((dr = {}),
-                (dr[B.AESTHETICS] = function (e) {
+                ((gr = {}),
+                (gr[_.AESTHETICS] = function (e) {
                   return {
-                    A: 1 === e.laws.getLawSelected(M.FOREST_BEHAVOUR) ? 2 : 0,
+                    A: 1 === e.laws.getLawSelected(U.FOREST_BEHAVOUR) ? 2 : 0,
                     B: 0,
                     type: i.LINEAR,
                   };
                 }),
-                (dr[B.ENTERTAINMENT] = function (e) {
+                (gr[_.ENTERTAINMENT] = function (e) {
                   return {
-                    A: 2 === e.laws.getLawSelected(M.FOREST_BEHAVOUR) ? 2 : 0,
+                    A: 2 === e.laws.getLawSelected(U.FOREST_BEHAVOUR) ? 2 : 0,
                     B: 0,
                     type: i.LINEAR,
                   };
                 }),
-                dr),
+                gr),
             },
             {
               id: a.SMELTER,
@@ -9510,59 +9514,59 @@
               description: "Burns wood to smelt ore into metal",
               unlockCondition: function (e) {
                 return (
-                  e.science.scienceResearches.getResearchLevel(v.METALLURGY) > 0
+                  e.science.scienceResearches.getResearchLevel(S.METALLURGY) > 0
                 );
               },
               getCost:
-                ((gr = {}),
-                (gr[l.ORE] = function (e) {
-                  return {
-                    A: 600 * Qu(e),
-                    B: 1 + 0.4 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (gr[l.STONE] = function (e) {
-                  return {
-                    A: 1250 * Qu(e),
-                    B: 1 + 0.4 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                gr),
-              getConsumption:
                 ((Ar = {}),
-                (Ar[l.WOOD] = function (e) {
+                (Ar[l.ORE] = function (e) {
+                  return {
+                    A: 600 * Ju(e),
+                    B: 1 + 0.4 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Ar[l.STONE] = function (e) {
+                  return {
+                    A: 1250 * Ju(e),
+                    B: 1 + 0.4 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                Ar),
+              getConsumption:
+                ((fr = {}),
+                (fr[l.WOOD] = function (e) {
                   return { A: 0.3, B: 0, type: i.LINEAR };
                 }),
-                (Ar[l.ORE] = function (e) {
+                (fr[l.ORE] = function (e) {
                   return { A: 0.8, B: 0, type: i.LINEAR };
                 }),
-                (Ar[l.POWER] = function (e) {
+                (fr[l.POWER] = function (e) {
                   return {
                     A:
-                      1 === e.laws.getLawSelected(M.ELECTROTHERMAL_SMELTING)
+                      1 === e.laws.getLawSelected(U.ELECTROTHERMAL_SMELTING)
                         ? 0.3
                         : 0,
                     B: 0,
                     type: i.LINEAR,
                   };
                 }),
-                Ar),
+                fr),
               getGain:
-                ((fr = {}),
-                (fr[l.IRON] = function (e) {
+                ((Rr = {}),
+                (Rr[l.IRON] = function (e) {
                   return {
                     A:
                       0.02 *
-                      (1 === e.laws.getLawSelected(M.ELECTROTHERMAL_SMELTING)
+                      (1 === e.laws.getLawSelected(U.ELECTROTHERMAL_SMELTING)
                         ? 1.3
                         : 1),
                     B: 0,
                     type: i.LINEAR,
                   };
                 }),
-                fr),
+                Rr),
               getStorage: {},
             },
             {
@@ -9573,44 +9577,44 @@
                 "Dedicated center of exploration provides a 5% multiplicative bonus to your expeditions outcome. Requires power and oxygen",
               unlockCondition: function (e) {
                 return (
-                  e.science.scienceResearches.getResearchLevel(v.METALLURGY) >
+                  e.science.scienceResearches.getResearchLevel(S.METALLURGY) >
                     0 &&
-                  e.science.scienceResearches.getResearchLevel(v.GEOGRAPHY) > 0
+                  e.science.scienceResearches.getResearchLevel(S.GEOGRAPHY) > 0
                 );
               },
               getCost:
-                ((Rr = {}),
-                (Rr[l.BEAM] = function (e) {
-                  return {
-                    A: 2 * Qu(e),
-                    B: 1 + 0.25 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Rr[l.BRICK] = function (e) {
-                  return {
-                    A: 4 * nl(e) * Qu(e),
-                    B: 1 + 0.25 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Rr[l.PLATE] = function (e) {
-                  return {
-                    A: 1 * ol(e) * Qu(e),
-                    B: 1 + 0.25 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                Rr),
-              getConsumption:
                 ((Ir = {}),
-                (Ir[l.POWER] = function (e) {
-                  return { A: 0.06, B: 0, type: i.LINEAR };
+                (Ir[l.BEAM] = function (e) {
+                  return {
+                    A: 2 * Ju(e),
+                    B: 1 + 0.25 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
-                (Ir[l.OXYGEN] = function (e) {
-                  return { A: 0.03, B: 0, type: i.LINEAR };
+                (Ir[l.BRICK] = function (e) {
+                  return {
+                    A: 4 * il(e) * Ju(e),
+                    B: 1 + 0.25 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Ir[l.PLATE] = function (e) {
+                  return {
+                    A: 1 * rl(e) * Ju(e),
+                    B: 1 + 0.25 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 Ir),
+              getConsumption:
+                ((Nr = {}),
+                (Nr[l.POWER] = function (e) {
+                  return { A: 0.06, B: 0, type: i.LINEAR };
+                }),
+                (Nr[l.OXYGEN] = function (e) {
+                  return { A: 0.03, B: 0, type: i.LINEAR };
+                }),
+                Nr),
               getGain: {},
               getStorage: {},
             },
@@ -9621,31 +9625,31 @@
               description: "Provides more raw materials storage",
               unlockCondition: function (e) {
                 return (
-                  e.science.scienceResearches.getResearchLevel(v.METALLURGY) > 0
+                  e.science.scienceResearches.getResearchLevel(S.METALLURGY) > 0
                 );
               },
               getCost:
-                ((Nr = {}),
-                (Nr[l.BEAM] = function (e) {
+                ((Tr = {}),
+                (Tr[l.BEAM] = function (e) {
                   return {
-                    A: 2 * Qu(e),
-                    B: 1 + 0.25 * zu(e),
+                    A: 2 * Ju(e),
+                    B: 1 + 0.25 * Qu(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                (Nr[l.BRICK] = function (e) {
+                (Tr[l.BRICK] = function (e) {
                   return {
-                    A: 4 * nl(e) * Qu(e),
-                    B: 1 + 0.25 * zu(e),
+                    A: 4 * il(e) * Ju(e),
+                    B: 1 + 0.25 * Qu(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                Nr),
+                Tr),
               getConsumption: {},
               getGain: {},
               getStorage:
-                ((Tr = {}),
-                (Tr[l.STONE] = function (e) {
+                ((Or = {}),
+                (Or[l.STONE] = function (e) {
                   return {
                     A:
                       25 *
@@ -9663,7 +9667,7 @@
                     type: i.LINEAR,
                   };
                 }),
-                (Tr[l.ORE] = function (e) {
+                (Or[l.ORE] = function (e) {
                   return {
                     A:
                       25 *
@@ -9681,7 +9685,7 @@
                     type: i.LINEAR,
                   };
                 }),
-                (Tr[l.BIOMASS] = function (e) {
+                (Or[l.BIOMASS] = function (e) {
                   return {
                     A:
                       25 *
@@ -9699,7 +9703,7 @@
                     type: i.LINEAR,
                   };
                 }),
-                (Tr[l.IRON] = function (e) {
+                (Or[l.IRON] = function (e) {
                   return {
                     A:
                       10 *
@@ -9717,7 +9721,7 @@
                     type: i.LINEAR,
                   };
                 }),
-                (Tr[l.WOOD] = function (e) {
+                (Or[l.WOOD] = function (e) {
                   return {
                     A:
                       25 *
@@ -9735,7 +9739,7 @@
                     type: i.LINEAR,
                   };
                 }),
-                (Tr[l.PLATINUM] = function (e) {
+                (Or[l.PLATINUM] = function (e) {
                   return {
                     A:
                       5 *
@@ -9753,7 +9757,7 @@
                     type: i.LINEAR,
                   };
                 }),
-                (Tr[l.NUTRITION] = function (e) {
+                (Or[l.NUTRITION] = function (e) {
                   return {
                     A:
                       3 *
@@ -9771,7 +9775,7 @@
                     type: i.LINEAR,
                   };
                 }),
-                Tr),
+                Or),
             },
             {
               id: a.TANK,
@@ -9780,44 +9784,44 @@
               description: "Provides oxygen and water storage",
               unlockCondition: function (e) {
                 return (
-                  e.science.scienceResearches.getResearchLevel(v.METALLURGY) > 0
+                  e.science.scienceResearches.getResearchLevel(S.METALLURGY) > 0
                 );
               },
               getCost:
-                ((Or = {}),
-                (Or[l.POWER] = function (e) {
+                ((yr = {}),
+                (yr[l.POWER] = function (e) {
                   return {
-                    A: 30 * Qu(e),
-                    B: 1 + 0.25 * zu(e) * Ju(e),
+                    A: 30 * Ju(e),
+                    B: 1 + 0.25 * Qu(e) * $u(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                (Or[l.PLATE] = function (e) {
+                (yr[l.PLATE] = function (e) {
                   return {
-                    A: 2 * ol(e) * Qu(e),
-                    B: 1 + 0.25 * zu(e),
+                    A: 2 * rl(e) * Ju(e),
+                    B: 1 + 0.25 * Qu(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                (Or[l.BRICK] = function (e) {
+                (yr[l.BRICK] = function (e) {
                   return {
-                    A: 5 * nl(e) * Qu(e),
-                    B: 1 + 0.25 * zu(e),
+                    A: 5 * il(e) * Ju(e),
+                    B: 1 + 0.25 * Qu(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                Or),
+                yr),
               getConsumption: {},
               getGain: {},
               getStorage:
-                ((yr = {}),
-                (yr[l.OXYGEN] = function (e) {
+                ((mr = {}),
+                (mr[l.OXYGEN] = function (e) {
                   return { A: 25, B: 0, type: i.LINEAR };
                 }),
-                (yr[l.WATER] = function (e) {
+                (mr[l.WATER] = function (e) {
                   return { A: 25, B: 0, type: i.LINEAR };
                 }),
-                yr),
+                mr),
             },
             {
               id: a.COTTAGE,
@@ -9832,29 +9836,29 @@
                 );
               },
               getCost:
-                ((mr = {}),
-                (mr[l.POWER] = function (e) {
+                ((hr = {}),
+                (hr[l.POWER] = function (e) {
                   return {
-                    A: 80 * Qu(e),
-                    B: 1 + 0.5 * zu(e) * Ju(e),
+                    A: 80 * Ju(e),
+                    B: 1 + 0.5 * Qu(e) * $u(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                (mr[l.BRICK] = function (e) {
+                (hr[l.BRICK] = function (e) {
                   return {
-                    A: 10 * nl(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
+                    A: 10 * il(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                (mr[l.BEAM] = function (e) {
+                (hr[l.BEAM] = function (e) {
                   return {
-                    A: 8 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
+                    A: 8 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                mr),
+                hr),
               getConsumption:
                 ((Lr = {}),
                 (Lr[l.POWER] = function (e) {
@@ -9880,50 +9884,50 @@
                 );
               },
               getCost:
-                ((hr = {}),
-                (hr[l.POWER] = function (e) {
-                  return {
-                    A: 380 * Qu(e),
-                    B: 1 + 0.5 * zu(e) * Ju(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (hr[l.BRICK] = function (e) {
-                  return {
-                    A: 10 * nl(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (hr[l.BEAM] = function (e) {
-                  return {
-                    A: 8 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (hr[l.PLATE] = function (e) {
-                  return {
-                    A: 5 * ol(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                hr),
-              getConsumption:
                 ((Cr = {}),
                 (Cr[l.POWER] = function (e) {
-                  return { A: 0.5, B: 0, type: i.LINEAR };
+                  return {
+                    A: 380 * Ju(e),
+                    B: 1 + 0.5 * Qu(e) * $u(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Cr[l.BRICK] = function (e) {
+                  return {
+                    A: 10 * il(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Cr[l.BEAM] = function (e) {
+                  return {
+                    A: 8 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Cr[l.PLATE] = function (e) {
+                  return {
+                    A: 5 * rl(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 Cr),
+              getConsumption:
+                ((vr = {}),
+                (vr[l.POWER] = function (e) {
+                  return { A: 0.5, B: 0, type: i.LINEAR };
+                }),
+                vr),
               getGain: {},
               getStorage: {},
               getEffectGain:
-                ((vr = {}),
-                (vr[B.ENTERTAINMENT] = function (e) {
+                ((Sr = {}),
+                (Sr[_.ENTERTAINMENT] = function (e) {
                   return { A: 10, B: 0, type: i.LINEAR };
                 }),
-                vr),
+                Sr),
             },
             {
               id: a.SOCIAL_RESEARCH_CENTER,
@@ -9939,55 +9943,55 @@
                 );
               },
               getCost:
-                ((Sr = {}),
-                (Sr[l.POWER] = function (e) {
-                  return {
-                    A: 1200 * Qu(e),
-                    B: 1 + 0.5 * zu(e) * Ju(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Sr[l.BRICK] = function (e) {
-                  return {
-                    A: 125 * nl(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Sr[l.BEAM] = function (e) {
-                  return {
-                    A: 100 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Sr[l.PLATE] = function (e) {
-                  return {
-                    A: 25 * ol(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                Sr),
-              getConsumption:
                 ((Pr = {}),
                 (Pr[l.POWER] = function (e) {
-                  return { A: 1 * al(e), B: 0, type: i.LINEAR };
+                  return {
+                    A: 1200 * Ju(e),
+                    B: 1 + 0.5 * Qu(e) * $u(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Pr[l.BRICK] = function (e) {
+                  return {
+                    A: 125 * il(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Pr[l.BEAM] = function (e) {
+                  return {
+                    A: 100 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Pr[l.PLATE] = function (e) {
+                  return {
+                    A: 25 * rl(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 Pr),
-              getGain: {},
-              getStorage:
+              getConsumption:
                 ((Br = {}),
-                (Br[l.RESEARCH] = function (e) {
-                  return { A: 225 * rl(e), B: 0, type: i.LINEAR };
+                (Br[l.POWER] = function (e) {
+                  return { A: 1 * cl(e), B: 0, type: i.LINEAR };
                 }),
                 Br),
-              getGainMultiplier:
+              getGain: {},
+              getStorage:
                 ((_r = {}),
                 (_r[l.RESEARCH] = function (e) {
-                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
+                  return { A: 225 * al(e), B: 0, type: i.LINEAR };
                 }),
                 _r),
+              getGainMultiplier:
+                ((Mr = {}),
+                (Mr[l.RESEARCH] = function (e) {
+                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
+                }),
+                Mr),
             },
             {
               id: a.METALLURGY_COMPLEX,
@@ -10002,50 +10006,50 @@
                 );
               },
               getCost:
-                ((Mr = {}),
-                (Mr[l.PLATINUM] = function (e) {
-                  return {
-                    A: 20 * il(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Mr[l.BRICK] = function (e) {
-                  return {
-                    A: 100 * nl(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Mr[l.BEAM] = function (e) {
-                  return {
-                    A: 25 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Mr[l.PLATE] = function (e) {
-                  return {
-                    A: 5 * ol(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                Mr),
-              getConsumption:
                 ((Ur = {}),
-                (Ur[l.POWER] = function (e) {
-                  return { A: 1, B: 0, type: i.LINEAR };
+                (Ur[l.PLATINUM] = function (e) {
+                  return {
+                    A: 20 * ol(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Ur[l.BRICK] = function (e) {
+                  return {
+                    A: 100 * il(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Ur[l.BEAM] = function (e) {
+                  return {
+                    A: 25 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Ur[l.PLATE] = function (e) {
+                  return {
+                    A: 5 * rl(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 Ur),
+              getConsumption:
+                ((Gr = {}),
+                (Gr[l.POWER] = function (e) {
+                  return { A: 1, B: 0, type: i.LINEAR };
+                }),
+                Gr),
               getGain: {},
               getStorage: {},
               getGainMultiplier:
-                ((Gr = {}),
-                (Gr[l.IRON] = function (e) {
+                ((br = {}),
+                (br[l.IRON] = function (e) {
                   return { A: 1, B: 1.05, type: i.EXPONENTIAL };
                 }),
-                Gr),
+                br),
             },
             {
               id: a.BUILDING_FACTORY,
@@ -10061,40 +10065,40 @@
                 );
               },
               getCost:
-                ((br = {}),
-                (br[l.BRICK] = function (e) {
-                  return {
-                    A: 30 * nl(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (br[l.BEAM] = function (e) {
-                  return {
-                    A: 75 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (br[l.PLATE] = function (e) {
-                  return {
-                    A: 5 * ol(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                br),
-              getConsumption:
                 ((Dr = {}),
-                (Dr[l.POWER] = function (e) {
-                  return { A: 1, B: 0, type: i.LINEAR };
+                (Dr[l.BRICK] = function (e) {
+                  return {
+                    A: 30 * il(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Dr[l.BEAM] = function (e) {
+                  return {
+                    A: 75 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Dr[l.PLATE] = function (e) {
+                  return {
+                    A: 5 * rl(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 Dr),
+              getConsumption:
+                ((wr = {}),
+                (wr[l.POWER] = function (e) {
+                  return { A: 1, B: 0, type: i.LINEAR };
+                }),
+                wr),
               getGain: {},
               getStorage: {},
               getGainMultiplier:
-                ((wr = {}),
-                (wr[l.BEAM] = function (e) {
+                ((Xr = {}),
+                (Xr[l.BEAM] = function (e) {
                   return {
                     A: 1,
                     B:
@@ -10106,7 +10110,7 @@
                     type: i.EXPONENTIAL,
                   };
                 }),
-                (wr[l.BRICK] = function (e) {
+                (Xr[l.BRICK] = function (e) {
                   return {
                     A: 1,
                     B:
@@ -10118,7 +10122,7 @@
                     type: i.EXPONENTIAL,
                   };
                 }),
-                (wr[l.PLATE] = function (e) {
+                (Xr[l.PLATE] = function (e) {
                   return {
                     A: 1,
                     B:
@@ -10130,7 +10134,7 @@
                     type: i.EXPONENTIAL,
                   };
                 }),
-                wr),
+                Xr),
             },
             {
               id: a.STORAGE_CONTAINER,
@@ -10146,29 +10150,29 @@
                 );
               },
               getCost:
-                ((Xr = {}),
-                (Xr[l.POWER] = function (e) {
+                ((kr = {}),
+                (kr[l.POWER] = function (e) {
                   return {
-                    A: 5 * Qu(e),
-                    B: 1 + 0.1 * zu(e) * Ju(e),
+                    A: 5 * Ju(e),
+                    B: 1 + 0.1 * Qu(e) * $u(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                (Xr[l.PLATE] = function (e) {
+                (kr[l.PLATE] = function (e) {
                   return {
-                    A: 5 * ol(e) * Qu(e),
-                    B: 1 + 0.1 * zu(e),
+                    A: 5 * rl(e) * Ju(e),
+                    B: 1 + 0.1 * Qu(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                (Xr[l.RUBBER] = function (e) {
+                (kr[l.RUBBER] = function (e) {
                   return {
-                    A: 5 * el(e) * Qu(e),
-                    B: 1 + 0.1 * zu(e),
+                    A: 5 * tl(e) * Ju(e),
+                    B: 1 + 0.1 * Qu(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                Xr),
+                kr),
               getConsumption: {},
               getGain: {},
               getStorage: {},
@@ -10181,7 +10185,7 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.ELECTRICITY_STUDY
+                    S.ELECTRICITY_STUDY
                   ) > 0
                 );
               },
@@ -10189,30 +10193,30 @@
                 ((Hr = {}),
                 (Hr[l.PLATE] = function (e) {
                   return {
-                    A: 6 * ol(e) * Qu(e),
-                    B: 1 + 0.3 * zu(e),
+                    A: 6 * rl(e) * Ju(e),
+                    B: 1 + 0.3 * Qu(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (Hr[l.WIRE] = function (e) {
                   return {
-                    A: 10 * tl(e) * Qu(e),
-                    B: 1 + 0.3 * zu(e),
+                    A: 10 * nl(e) * Ju(e),
+                    B: 1 + 0.3 * Qu(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (Hr[l.SEMICONDUCTOR] = function (e) {
                   return {
-                    A: 10 * Qu(e),
-                    B: 1 + 0.3 * zu(e),
+                    A: 10 * Ju(e),
+                    B: 1 + 0.3 * Qu(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 Hr),
               getConsumption: {},
               getGain:
-                ((kr = {}),
-                (kr[l.POWER] = function (e) {
+                ((xr = {}),
+                (xr[l.POWER] = function (e) {
                   return {
                     A:
                       0.4 *
@@ -10226,7 +10230,7 @@
                     type: i.LINEAR,
                   };
                 }),
-                kr),
+                xr),
               getStorage: {},
             },
             {
@@ -10238,11 +10242,11 @@
                 var t;
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.PUBLIC_SERVICE
+                    S.PUBLIC_SERVICE
                   ) > 0 &&
                   ((null ===
-                    (t = G.find(function (e) {
-                      return e.id === B.RELIGION;
+                    (t = b.find(function (e) {
+                      return e.id === _.RELIGION;
                     })) || void 0 === t
                     ? void 0
                     : t.unlockCondition(e)) ||
@@ -10250,31 +10254,31 @@
                 );
               },
               getCost:
-                ((xr = {}),
-                (xr[l.BEAM] = function (e) {
+                ((Yr = {}),
+                (Yr[l.BEAM] = function (e) {
                   return {
-                    A: 50 * Qu(e),
-                    B: 1 + 0.3 * zu(e),
+                    A: 50 * Ju(e),
+                    B: 1 + 0.3 * Qu(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                (xr[l.STONE] = function (e) {
+                (Yr[l.STONE] = function (e) {
                   return {
-                    A: 1e3 * Qu(e),
-                    B: 1 + 0.3 * zu(e),
+                    A: 1e3 * Ju(e),
+                    B: 1 + 0.3 * Qu(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                xr),
+                Yr),
               getConsumption: {},
               getGain: {},
               getStorage: {},
               getEffectGain:
-                ((Yr = {}),
-                (Yr[B.RELIGION] = function (e) {
+                ((Wr = {}),
+                (Wr[_.RELIGION] = function (e) {
                   return { A: 3, B: 0, type: i.LINEAR };
                 }),
-                Yr),
+                Wr),
             },
             {
               id: a.DATA_CENTER,
@@ -10290,55 +10294,55 @@
                 );
               },
               getCost:
-                ((Wr = {}),
-                (Wr[l.POWER] = function (e) {
-                  return {
-                    A: 1500 * Qu(e),
-                    B: 1 + 0.5 * zu(e) * Ju(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Wr[l.BRICK] = function (e) {
-                  return {
-                    A: 125 * nl(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Wr[l.COMPUTER] = function (e) {
-                  return {
-                    A: 20 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Wr[l.WIRE] = function (e) {
-                  return {
-                    A: 75 * tl(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                Wr),
-              getConsumption:
                 ((Zr = {}),
                 (Zr[l.POWER] = function (e) {
-                  return { A: 2 * al(e), B: 0, type: i.LINEAR };
+                  return {
+                    A: 1500 * Ju(e),
+                    B: 1 + 0.5 * Qu(e) * $u(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Zr[l.BRICK] = function (e) {
+                  return {
+                    A: 125 * il(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Zr[l.COMPUTER] = function (e) {
+                  return {
+                    A: 20 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Zr[l.WIRE] = function (e) {
+                  return {
+                    A: 75 * nl(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 Zr),
+              getConsumption:
+                ((jr = {}),
+                (jr[l.POWER] = function (e) {
+                  return { A: 2 * cl(e), B: 0, type: i.LINEAR };
+                }),
+                jr),
               getGain: {},
               getStorage:
                 ((Fr = {}),
                 (Fr[l.RESEARCH] = function (e) {
-                  return { A: 675 * rl(e), B: 0, type: i.LINEAR };
+                  return { A: 675 * al(e), B: 0, type: i.LINEAR };
                 }),
                 Fr),
               getGainMultiplier:
-                ((jr = {}),
-                (jr[l.RESEARCH] = function (e) {
+                ((Kr = {}),
+                (Kr[l.RESEARCH] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                jr),
+                Kr),
             },
             {
               id: a.APARTMENT,
@@ -10348,40 +10352,40 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.HIGH_GRAVITY_PHYSICS
+                    S.HIGH_GRAVITY_PHYSICS
                   ) > 0
                 );
               },
               getCost:
-                ((Kr = {}),
-                (Kr[l.POWER] = function (e) {
-                  return {
-                    A: 1280 * Qu(e),
-                    B: 1 + 0.5 * zu(e) * Ju(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Kr[l.BRICK] = function (e) {
-                  return {
-                    A: 180 * nl(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Kr[l.WIRE] = function (e) {
-                  return {
-                    A: 50 * tl(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                Kr),
-              getConsumption:
                 ((Vr = {}),
                 (Vr[l.POWER] = function (e) {
-                  return { A: 0.05, B: 0, type: i.LINEAR };
+                  return {
+                    A: 1280 * Ju(e),
+                    B: 1 + 0.5 * Qu(e) * $u(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Vr[l.BRICK] = function (e) {
+                  return {
+                    A: 180 * il(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Vr[l.WIRE] = function (e) {
+                  return {
+                    A: 50 * nl(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 Vr),
+              getConsumption:
+                ((qr = {}),
+                (qr[l.POWER] = function (e) {
+                  return { A: 0.05, B: 0, type: i.LINEAR };
+                }),
+                qr),
               getGain: {},
               getStorage: {},
               getMaxColonists: function (e) {
@@ -10397,43 +10401,43 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.HIGH_GRAVITY_PHYSICS
+                    S.HIGH_GRAVITY_PHYSICS
                   ) > 0
                 );
               },
               getCost:
-                ((qr = {}),
-                (qr[l.BRICK] = function (e) {
+                ((zr = {}),
+                (zr[l.BRICK] = function (e) {
                   return {
-                    A: 750 * nl(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
+                    A: 750 * il(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                (qr[l.BEAM] = function (e) {
+                (zr[l.BEAM] = function (e) {
                   return {
-                    A: 500 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
+                    A: 500 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                (qr[l.PLATINUM] = function (e) {
+                (zr[l.PLATINUM] = function (e) {
                   return {
-                    A: 500 * il(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
+                    A: 500 * ol(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                qr),
+                zr),
               getConsumption: {},
               getGain: {},
               getStorage: {},
               getEffectGain:
-                ((zr = {}),
-                (zr[B.RELIGION] = function (e) {
+                ((Qr = {}),
+                (Qr[_.RELIGION] = function (e) {
                   return { A: 10, B: 0, type: i.LINEAR };
                 }),
-                zr),
+                Qr),
             },
             {
               id: a.PANDEMIC_RESEARCH_CENTER,
@@ -10444,47 +10448,47 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.ADVANCED_ANATOMY
+                    S.ADVANCED_ANATOMY
                   ) > 0
                 );
               },
               getCost:
-                ((Qr = {}),
-                (Qr[l.POWER] = function (e) {
-                  return {
-                    A: 3280 * Qu(e),
-                    B: 1 + 0.5 * zu(e) * Ju(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Qr[l.BRICK] = function (e) {
-                  return {
-                    A: 180 * nl(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Qr[l.PLASTICS] = function (e) {
-                  return {
-                    A: 150 * el(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Qr[l.RUBBER] = function (e) {
-                  return {
-                    A: 150 * el(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                Qr),
-              getConsumption:
                 ((Jr = {}),
                 (Jr[l.POWER] = function (e) {
-                  return { A: 2, B: 0, type: i.LINEAR };
+                  return {
+                    A: 3280 * Ju(e),
+                    B: 1 + 0.5 * Qu(e) * $u(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Jr[l.BRICK] = function (e) {
+                  return {
+                    A: 180 * il(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Jr[l.PLASTICS] = function (e) {
+                  return {
+                    A: 150 * tl(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Jr[l.RUBBER] = function (e) {
+                  return {
+                    A: 150 * tl(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 Jr),
+              getConsumption:
+                (($r = {}),
+                ($r[l.POWER] = function (e) {
+                  return { A: 2, B: 0, type: i.LINEAR };
+                }),
+                $r),
               getGain: {},
               getStorage: {},
             },
@@ -10497,47 +10501,47 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.PUBLIC_SERVICE
+                    S.PUBLIC_SERVICE
                   ) > 0
                 );
               },
               getCost:
-                (($r = {}),
-                ($r[l.POWER] = function (e) {
-                  return {
-                    A: 3280 * Qu(e),
-                    B: 1 + 0.5 * zu(e) * Ju(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                ($r[l.BRICK] = function (e) {
-                  return {
-                    A: 180 * nl(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                ($r[l.BEAM] = function (e) {
-                  return {
-                    A: 150 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                ($r[l.PLASTICS] = function (e) {
-                  return {
-                    A: 150 * el(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                $r),
-              getConsumption:
                 ((ea = {}),
                 (ea[l.POWER] = function (e) {
-                  return { A: 2, B: 0, type: i.LINEAR };
+                  return {
+                    A: 3280 * Ju(e),
+                    B: 1 + 0.5 * Qu(e) * $u(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (ea[l.BRICK] = function (e) {
+                  return {
+                    A: 180 * il(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (ea[l.BEAM] = function (e) {
+                  return {
+                    A: 150 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (ea[l.PLASTICS] = function (e) {
+                  return {
+                    A: 150 * tl(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 ea),
+              getConsumption:
+                ((ta = {}),
+                (ta[l.POWER] = function (e) {
+                  return { A: 2, B: 0, type: i.LINEAR };
+                }),
+                ta),
               getGain: {},
               getStorage: {},
             },
@@ -10549,45 +10553,45 @@
                 "Provides bonus to wires, semiconductors and computers production",
               unlockCondition: function (e) {
                 return (
-                  e.science.scienceResearches.getResearchLevel(v.ELECTRONICS) >
+                  e.science.scienceResearches.getResearchLevel(S.ELECTRONICS) >
                   0
                 );
               },
               getCost:
-                ((ta = {}),
-                (ta[l.BRICK] = function (e) {
-                  return {
-                    A: 30 * nl(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (ta[l.SEMICONDUCTOR] = function (e) {
-                  return {
-                    A: 15 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (ta[l.WIRE] = function (e) {
-                  return {
-                    A: 5 * tl(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                ta),
-              getConsumption:
                 ((na = {}),
-                (na[l.POWER] = function (e) {
-                  return { A: 1, B: 0, type: i.LINEAR };
+                (na[l.BRICK] = function (e) {
+                  return {
+                    A: 30 * il(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (na[l.SEMICONDUCTOR] = function (e) {
+                  return {
+                    A: 15 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (na[l.WIRE] = function (e) {
+                  return {
+                    A: 5 * nl(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 na),
+              getConsumption:
+                ((ia = {}),
+                (ia[l.POWER] = function (e) {
+                  return { A: 1, B: 0, type: i.LINEAR };
+                }),
+                ia),
               getGain: {},
               getStorage: {},
               getGainMultiplier:
-                ((ia = {}),
-                (ia[l.WIRE] = function (e) {
+                ((oa = {}),
+                (oa[l.WIRE] = function (e) {
                   return {
                     A: 1,
                     B:
@@ -10599,7 +10603,7 @@
                     type: i.EXPONENTIAL,
                   };
                 }),
-                (ia[l.COMPUTER] = function (e) {
+                (oa[l.COMPUTER] = function (e) {
                   return {
                     A: 1,
                     B:
@@ -10611,7 +10615,7 @@
                     type: i.EXPONENTIAL,
                   };
                 }),
-                (ia[l.SEMICONDUCTOR] = function (e) {
+                (oa[l.SEMICONDUCTOR] = function (e) {
                   return {
                     A: 1,
                     B:
@@ -10623,7 +10627,7 @@
                     type: i.EXPONENTIAL,
                   };
                 }),
-                ia),
+                oa),
             },
             {
               id: a.SOLAR_SATELLITE,
@@ -10634,38 +10638,38 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.ROCKET_SCIENCE
+                    S.ROCKET_SCIENCE
                   ) > 0
                 );
               },
               getCost:
-                ((oa = {}),
-                (oa[l.ROCKET_ENGINE] = function (e) {
+                ((ra = {}),
+                (ra[l.ROCKET_ENGINE] = function (e) {
                   return {
-                    A: 1 * $u(e) * Qu(e),
-                    B: 1 + 0.3 * zu(e),
+                    A: 1 * el(e) * Ju(e),
+                    B: 1 + 0.3 * Qu(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                (oa[l.WIRE] = function (e) {
+                (ra[l.WIRE] = function (e) {
                   return {
-                    A: 5 * tl(e) * Qu(e),
-                    B: 1 + 0.3 * zu(e),
+                    A: 5 * nl(e) * Ju(e),
+                    B: 1 + 0.3 * Qu(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                (oa[l.SEMICONDUCTOR] = function (e) {
+                (ra[l.SEMICONDUCTOR] = function (e) {
                   return {
-                    A: 5 * Qu(e),
-                    B: 1 + 0.3 * zu(e),
+                    A: 5 * Ju(e),
+                    B: 1 + 0.3 * Qu(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                oa),
+                ra),
               getConsumption: {},
               getGain:
-                ((ra = {}),
-                (ra[l.POWER] = function (e) {
+                ((aa = {}),
+                (aa[l.POWER] = function (e) {
                   return {
                     A:
                       1.5 *
@@ -10679,13 +10683,13 @@
                     type: i.LINEAR,
                   };
                 }),
-                ra),
+                aa),
               getStorage:
-                ((aa = {}),
-                (aa[l.POWER] = function (e) {
+                ((ca = {}),
+                (ca[l.POWER] = function (e) {
                   return { A: 25, B: 0, type: i.LINEAR };
                 }),
-                aa),
+                ca),
             },
             {
               id: a.ORBITAL_TOURISM_CENTER,
@@ -10696,45 +10700,45 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.RADIATION_STUDY
+                    S.RADIATION_STUDY
                   ) > 0
                 );
               },
               getCost:
-                ((ca = {}),
-                (ca[l.ROCKET_ENGINE] = function (e) {
-                  return {
-                    A: 5 * $u(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (ca[l.COMPUTER] = function (e) {
-                  return {
-                    A: 25 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (ca[l.RUBBER] = function (e) {
-                  return {
-                    A: 150 * el(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                ca),
-              getConsumption:
                 ((sa = {}),
-                (sa[l.POWER] = function (e) {
-                  return { A: 5, B: 0, type: i.LINEAR };
+                (sa[l.ROCKET_ENGINE] = function (e) {
+                  return {
+                    A: 5 * el(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (sa[l.COMPUTER] = function (e) {
+                  return {
+                    A: 25 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (sa[l.RUBBER] = function (e) {
+                  return {
+                    A: 150 * tl(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 sa),
+              getConsumption:
+                ((ua = {}),
+                (ua[l.POWER] = function (e) {
+                  return { A: 5, B: 0, type: i.LINEAR };
+                }),
+                ua),
               getGain: {},
               getStorage: {},
               getEffectGain:
-                ((ua = {}),
-                (ua[B.AESTHETICS] = function (e) {
+                ((la = {}),
+                (la[_.AESTHETICS] = function (e) {
                   return {
                     A:
                       8 *
@@ -10747,7 +10751,7 @@
                     type: i.LINEAR,
                   };
                 }),
-                (ua[B.ENTERTAINMENT] = function (e) {
+                (la[_.ENTERTAINMENT] = function (e) {
                   return {
                     A:
                       8 *
@@ -10760,7 +10764,7 @@
                     type: i.LINEAR,
                   };
                 }),
-                ua),
+                la),
             },
             {
               id: a.SPACE_TELESCOPE,
@@ -10769,44 +10773,44 @@
               description: "Provides research capacity bonus",
               unlockCondition: function (e) {
                 return (
-                  e.science.scienceResearches.getResearchLevel(v.ASTROPHYSICS) >
+                  e.science.scienceResearches.getResearchLevel(S.ASTROPHYSICS) >
                   0
                 );
               },
               getCost:
-                ((la = {}),
-                (la[l.ROCKET_ENGINE] = function (e) {
-                  return {
-                    A: 1 * $u(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (la[l.PLASTICS] = function (e) {
-                  return {
-                    A: 25 * el(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (la[l.RUBBER] = function (e) {
-                  return {
-                    A: 50 * el(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                la),
-              getConsumption:
                 ((pa = {}),
-                (pa[l.POWER] = function (e) {
-                  return { A: 2, B: 0, type: i.LINEAR };
+                (pa[l.ROCKET_ENGINE] = function (e) {
+                  return {
+                    A: 1 * el(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (pa[l.PLASTICS] = function (e) {
+                  return {
+                    A: 25 * tl(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (pa[l.RUBBER] = function (e) {
+                  return {
+                    A: 50 * tl(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 pa),
+              getConsumption:
+                ((Ea = {}),
+                (Ea[l.POWER] = function (e) {
+                  return { A: 2, B: 0, type: i.LINEAR };
+                }),
+                Ea),
               getGain: {},
               getStorage:
-                ((Ea = {}),
-                (Ea[l.RESEARCH] = function (e) {
+                ((da = {}),
+                (da[l.RESEARCH] = function (e) {
                   return {
                     A:
                       200 *
@@ -10844,7 +10848,7 @@
                     type: i.LINEAR,
                   };
                 }),
-                Ea),
+                da),
               getEffectGain: {},
             },
             {
@@ -10855,53 +10859,53 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.GRAVITY_THEORY
+                    S.GRAVITY_THEORY
                   ) > 0
                 );
               },
               getCost:
-                ((da = {}),
-                (da[l.ROCKET_ENGINE] = function (e) {
-                  return {
-                    A: 15 * $u(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (da[l.COMPUTER] = function (e) {
-                  return {
-                    A: 25 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (da[l.RUBBER] = function (e) {
-                  return {
-                    A: 150 * el(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (da[l.BRICK] = function (e) {
-                  return {
-                    A: 250 * nl(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                da),
-              getConsumption:
                 ((ga = {}),
-                (ga[l.POWER] = function (e) {
-                  return { A: 5, B: 0, type: i.LINEAR };
+                (ga[l.ROCKET_ENGINE] = function (e) {
+                  return {
+                    A: 15 * el(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (ga[l.COMPUTER] = function (e) {
+                  return {
+                    A: 25 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (ga[l.RUBBER] = function (e) {
+                  return {
+                    A: 150 * tl(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (ga[l.BRICK] = function (e) {
+                  return {
+                    A: 250 * il(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 ga),
-              getGain:
+              getConsumption:
                 ((Aa = {}),
-                (Aa[l.WATER] = function (e) {
-                  return { A: 0.3, B: 0, type: i.LINEAR };
+                (Aa[l.POWER] = function (e) {
+                  return { A: 5, B: 0, type: i.LINEAR };
                 }),
                 Aa),
+              getGain:
+                ((fa = {}),
+                (fa[l.WATER] = function (e) {
+                  return { A: 0.3, B: 0, type: i.LINEAR };
+                }),
+                fa),
               getStorage: {},
               getEffectGain: {},
             },
@@ -10914,54 +10918,54 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.GRAVITY_THEORY
+                    S.GRAVITY_THEORY
                   ) > 0
                 );
               },
               getCost:
-                ((fa = {}),
-                (fa[l.ROCKET_ENGINE] = function (e) {
-                  return {
-                    A: 25 * $u(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (fa[l.SEMICONDUCTOR] = function (e) {
-                  return {
-                    A: 125 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (fa[l.PLASTICS] = function (e) {
-                  return {
-                    A: 150 * el(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (fa[l.PLATINUM] = function (e) {
-                  return {
-                    A: 250 * il(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                fa),
-              getConsumption:
                 ((Ra = {}),
-                (Ra[l.POWER] = function (e) {
-                  return { A: 2, B: 0, type: i.LINEAR };
+                (Ra[l.ROCKET_ENGINE] = function (e) {
+                  return {
+                    A: 25 * el(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Ra[l.SEMICONDUCTOR] = function (e) {
+                  return {
+                    A: 125 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Ra[l.PLASTICS] = function (e) {
+                  return {
+                    A: 150 * tl(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Ra[l.PLATINUM] = function (e) {
+                  return {
+                    A: 250 * ol(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 Ra),
-              getGain: {},
-              getGainMultiplier:
+              getConsumption:
                 ((Ia = {}),
-                (Ia[l.FUEL] = function (e) {
-                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
+                (Ia[l.POWER] = function (e) {
+                  return { A: 2, B: 0, type: i.LINEAR };
                 }),
                 Ia),
+              getGain: {},
+              getGainMultiplier:
+                ((Na = {}),
+                (Na[l.FUEL] = function (e) {
+                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
+                }),
+                Na),
               getStorage: {},
               getEffectGain: {},
             },
@@ -10977,47 +10981,47 @@
                     r.NANO_BOTS
                   ) > 0 &&
                   e.science.scienceResearches.getResearchLevel(
-                    v.GRAVITY_THEORY
+                    S.GRAVITY_THEORY
                   ) > 0
                 );
               },
               getCost:
-                ((Na = {}),
-                (Na[l.ROCKET_ENGINE] = function (e) {
-                  return {
-                    A: 20 * $u(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Na[l.COMPUTER] = function (e) {
-                  return {
-                    A: 50 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Na[l.PLATINUM] = function (e) {
-                  return {
-                    A: 225 * il(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Na[l.WIRE] = function (e) {
-                  return {
-                    A: 75 * tl(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                Na),
-              getConsumption:
                 ((Ta = {}),
-                (Ta[l.POWER] = function (e) {
-                  return { A: 3, B: 0, type: i.LINEAR };
+                (Ta[l.ROCKET_ENGINE] = function (e) {
+                  return {
+                    A: 20 * el(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Ta[l.COMPUTER] = function (e) {
+                  return {
+                    A: 50 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Ta[l.PLATINUM] = function (e) {
+                  return {
+                    A: 225 * ol(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Ta[l.WIRE] = function (e) {
+                  return {
+                    A: 75 * nl(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 Ta),
+              getConsumption:
+                ((Oa = {}),
+                (Oa[l.POWER] = function (e) {
+                  return { A: 3, B: 0, type: i.LINEAR };
+                }),
+                Oa),
               getGain: {},
               getStorage: {},
               getGainMultiplier: {},
@@ -11039,49 +11043,49 @@
                 );
               },
               getCost:
-                ((Oa = {}),
-                (Oa[l.BRICK] = function (e) {
-                  return {
-                    A: 1e3 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Oa[l.RUBBER] = function (e) {
-                  return {
-                    A: 400 * el(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Oa[l.PLATE] = function (e) {
-                  return {
-                    A: 500 * ol(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                Oa),
-              getConsumption:
                 ((ya = {}),
-                (ya[l.POWER] = function (e) {
-                  return { A: 0.5, B: 0, type: i.LINEAR };
+                (ya[l.BRICK] = function (e) {
+                  return {
+                    A: 1e3 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
-                (ya[l.WATER] = function (e) {
-                  return { A: 0.2, B: 0, type: i.LINEAR };
+                (ya[l.RUBBER] = function (e) {
+                  return {
+                    A: 400 * tl(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
-                (ya[l.NUTRITION] = function (e) {
-                  return { A: 0.2, B: 0, type: i.LINEAR };
+                (ya[l.PLATE] = function (e) {
+                  return {
+                    A: 500 * rl(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 ya),
+              getConsumption:
+                ((ma = {}),
+                (ma[l.POWER] = function (e) {
+                  return { A: 0.5, B: 0, type: i.LINEAR };
+                }),
+                (ma[l.WATER] = function (e) {
+                  return { A: 0.2, B: 0, type: i.LINEAR };
+                }),
+                (ma[l.NUTRITION] = function (e) {
+                  return { A: 0.2, B: 0, type: i.LINEAR };
+                }),
+                ma),
               getGain: {},
               getStorage: {},
               getEffectGain:
-                ((ma = {}),
-                (ma[B.ENTERTAINMENT] = function (e) {
+                ((ha = {}),
+                (ha[_.ENTERTAINMENT] = function (e) {
                   return { A: 10, B: 0, type: i.LINEAR };
                 }),
-                ma),
+                ha),
             },
             {
               id: a.SMELTING_FACTORY,
@@ -11092,7 +11096,7 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.RELATIVITY_PHYSICS
+                    S.RELATIVITY_PHYSICS
                   ) > 0
                 );
               },
@@ -11100,34 +11104,34 @@
                 ((La = {}),
                 (La[l.ROCKET_ENGINE] = function (e) {
                   return {
-                    A: 40 * $u(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
+                    A: 40 * el(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (La[l.STONE] = function (e) {
                   return {
-                    A: 1250 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
+                    A: 1250 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 La),
               getConsumption:
-                ((ha = {}),
-                (ha[l.POWER] = function (e) {
+                ((Ca = {}),
+                (Ca[l.POWER] = function (e) {
                   return { A: 5, B: 0, type: i.LINEAR };
                 }),
-                (ha[l.ORE] = function (e) {
+                (Ca[l.ORE] = function (e) {
                   return { A: 10, B: 0, type: i.LINEAR };
                 }),
-                ha),
+                Ca),
               getGain:
-                ((Ca = {}),
-                (Ca[l.IRON] = function (e) {
+                ((va = {}),
+                (va[l.IRON] = function (e) {
                   return { A: 0.05, B: 0, type: i.LINEAR };
                 }),
-                Ca),
+                va),
               getStorage: {},
             },
             {
@@ -11139,39 +11143,39 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.RELATIVITY_PHYSICS
+                    S.RELATIVITY_PHYSICS
                   ) > 0
                 );
               },
               getCost:
-                ((va = {}),
-                (va[l.ROCKET_ENGINE] = function (e) {
-                  return {
-                    A: 50 * $u(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (va[l.PLATE] = function (e) {
-                  return {
-                    A: 3250 * ol(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                va),
-              getConsumption:
                 ((Sa = {}),
-                (Sa[l.POWER] = function (e) {
-                  return { A: 8, B: 0, type: i.LINEAR };
+                (Sa[l.ROCKET_ENGINE] = function (e) {
+                  return {
+                    A: 50 * el(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Sa[l.PLATE] = function (e) {
+                  return {
+                    A: 3250 * rl(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 Sa),
-              getGain:
+              getConsumption:
                 ((Pa = {}),
-                (Pa[l.PLATINUM] = function (e) {
-                  return { A: 0.1, B: 0, type: i.LINEAR };
+                (Pa[l.POWER] = function (e) {
+                  return { A: 8, B: 0, type: i.LINEAR };
                 }),
                 Pa),
+              getGain:
+                ((Ba = {}),
+                (Ba[l.PLATINUM] = function (e) {
+                  return { A: 0.1, B: 0, type: i.LINEAR };
+                }),
+                Ba),
               getStorage: {},
             },
             {
@@ -11183,39 +11187,39 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.RELATIVITY_PHYSICS
+                    S.RELATIVITY_PHYSICS
                   ) > 0
                 );
               },
               getCost:
-                ((Ba = {}),
-                (Ba[l.ROCKET_ENGINE] = function (e) {
+                ((_a = {}),
+                (_a[l.ROCKET_ENGINE] = function (e) {
                   return {
-                    A: 30 * $u(e) * Qu(e),
-                    B: 1 + 0.25 * zu(e),
+                    A: 30 * el(e) * Ju(e),
+                    B: 1 + 0.25 * Qu(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                (Ba[l.PLATE] = function (e) {
+                (_a[l.PLATE] = function (e) {
                   return {
-                    A: 200 * ol(e) * Qu(e),
-                    B: 1 + 0.25 * zu(e),
+                    A: 200 * rl(e) * Ju(e),
+                    B: 1 + 0.25 * Qu(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                (Ba[l.WIRE] = function (e) {
+                (_a[l.WIRE] = function (e) {
                   return {
-                    A: 200 * tl(e) * Qu(e),
-                    B: 1 + 0.25 * zu(e),
+                    A: 200 * nl(e) * Ju(e),
+                    B: 1 + 0.25 * Qu(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                Ba),
+                _a),
               getConsumption: {},
               getGain: {},
               getStorage:
-                ((_a = {}),
-                (_a[l.STONE] = function (e) {
+                ((Ma = {}),
+                (Ma[l.STONE] = function (e) {
                   return {
                     A:
                       125 *
@@ -11233,7 +11237,7 @@
                     type: i.LINEAR,
                   };
                 }),
-                (_a[l.ORE] = function (e) {
+                (Ma[l.ORE] = function (e) {
                   return {
                     A:
                       125 *
@@ -11251,7 +11255,7 @@
                     type: i.LINEAR,
                   };
                 }),
-                (_a[l.BIOMASS] = function (e) {
+                (Ma[l.BIOMASS] = function (e) {
                   return {
                     A:
                       125 *
@@ -11269,7 +11273,7 @@
                     type: i.LINEAR,
                   };
                 }),
-                (_a[l.IRON] = function (e) {
+                (Ma[l.IRON] = function (e) {
                   return {
                     A:
                       50 *
@@ -11287,7 +11291,7 @@
                     type: i.LINEAR,
                   };
                 }),
-                (_a[l.WOOD] = function (e) {
+                (Ma[l.WOOD] = function (e) {
                   return {
                     A:
                       125 *
@@ -11305,7 +11309,7 @@
                     type: i.LINEAR,
                   };
                 }),
-                (_a[l.PLATINUM] = function (e) {
+                (Ma[l.PLATINUM] = function (e) {
                   return {
                     A:
                       25 *
@@ -11323,7 +11327,7 @@
                     type: i.LINEAR,
                   };
                 }),
-                _a),
+                Ma),
             },
             {
               id: a.PLUTO_MONUMENT,
@@ -11334,43 +11338,43 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.RELATIVITY_PHYSICS
+                    S.RELATIVITY_PHYSICS
                   ) > 0
                 );
               },
               getCost:
-                ((Ma = {}),
-                (Ma[l.ROCKET_ENGINE] = function (e) {
+                ((Ua = {}),
+                (Ua[l.ROCKET_ENGINE] = function (e) {
                   return {
-                    A: 40 * $u(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
+                    A: 40 * el(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                (Ma[l.PLATE] = function (e) {
+                (Ua[l.PLATE] = function (e) {
                   return {
-                    A: 800 * ol(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
+                    A: 800 * rl(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                (Ma[l.PLATINUM] = function (e) {
+                (Ua[l.PLATINUM] = function (e) {
                   return {
-                    A: 1200 * il(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
+                    A: 1200 * ol(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                Ma),
+                Ua),
               getConsumption: {},
               getGain: {},
               getStorage: {},
               getEffectGain:
-                ((Ua = {}),
-                (Ua[B.RELIGION] = function (e) {
+                ((Ga = {}),
+                (Ga[_.RELIGION] = function (e) {
                   return { A: 15, B: 0, type: i.LINEAR };
                 }),
-                Ua),
+                Ga),
             },
             {
               id: a.FLORA_PLANT,
@@ -11381,46 +11385,46 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.HIGH_ENERGY_PHYSICS
+                    S.HIGH_ENERGY_PHYSICS
                   ) > 0
                 );
               },
               getCost:
-                ((Ga = {}),
-                (Ga[l.ROCKET_ENGINE] = function (e) {
-                  return {
-                    A: 100 * $u(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Ga[l.PLATE] = function (e) {
-                  return {
-                    A: 1250 * ol(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Ga[l.BEAM] = function (e) {
-                  return {
-                    A: 1250 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                Ga),
-              getConsumption:
                 ((ba = {}),
-                (ba[l.POWER] = function (e) {
-                  return { A: 5, B: 0, type: i.LINEAR };
+                (ba[l.ROCKET_ENGINE] = function (e) {
+                  return {
+                    A: 100 * el(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (ba[l.PLATE] = function (e) {
+                  return {
+                    A: 1250 * rl(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (ba[l.BEAM] = function (e) {
+                  return {
+                    A: 1250 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 ba),
-              getGain:
+              getConsumption:
                 ((Da = {}),
-                (Da[l.BIOMASS] = function (e) {
-                  return { A: 0.6, B: 0, type: i.LINEAR };
+                (Da[l.POWER] = function (e) {
+                  return { A: 5, B: 0, type: i.LINEAR };
                 }),
                 Da),
+              getGain:
+                ((wa = {}),
+                (wa[l.BIOMASS] = function (e) {
+                  return { A: 0.6, B: 0, type: i.LINEAR };
+                }),
+                wa),
               getStorage: {},
             },
             {
@@ -11432,36 +11436,36 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.HIGH_ENERGY_PHYSICS
+                    S.HIGH_ENERGY_PHYSICS
                   ) > 0
                 );
               },
               getCost:
-                ((wa = {}),
-                (wa[l.ROCKET_ENGINE] = function (e) {
-                  return {
-                    A: 90 * $u(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (wa[l.BIOMASS] = function (e) {
-                  return {
-                    A: 5e3 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                wa),
-              getConsumption:
                 ((Xa = {}),
-                (Xa[l.BIOMASS] = function (e) {
-                  return { A: 0.5, B: 0, type: i.LINEAR };
+                (Xa[l.ROCKET_ENGINE] = function (e) {
+                  return {
+                    A: 90 * el(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
-                (Xa[l.WATER] = function (e) {
-                  return { A: 0.3, B: 0, type: i.LINEAR };
+                (Xa[l.BIOMASS] = function (e) {
+                  return {
+                    A: 5e3 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 Xa),
+              getConsumption:
+                ((ka = {}),
+                (ka[l.BIOMASS] = function (e) {
+                  return { A: 0.5, B: 0, type: i.LINEAR };
+                }),
+                (ka[l.WATER] = function (e) {
+                  return { A: 0.3, B: 0, type: i.LINEAR };
+                }),
+                ka),
               getGainMultiplier:
                 ((Ha = {}),
                 (Ha[l.WOOD] = function (e) {
@@ -11480,42 +11484,42 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.HIGH_ENERGY_PHYSICS
+                    S.HIGH_ENERGY_PHYSICS
                   ) > 0
                 );
               },
               getCost:
-                ((ka = {}),
-                (ka[l.ROCKET_ENGINE] = function (e) {
-                  return {
-                    A: 100 * $u(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (ka[l.FUEL] = function (e) {
-                  return {
-                    A: 500 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                ka),
-              getConsumption:
                 ((xa = {}),
-                (xa[l.POWER] = function (e) {
-                  return { A: 2, B: 0, type: i.LINEAR };
+                (xa[l.ROCKET_ENGINE] = function (e) {
+                  return {
+                    A: 100 * el(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (xa[l.FUEL] = function (e) {
+                  return {
+                    A: 500 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 xa),
-              getGainMultiplier:
+              getConsumption:
                 ((Ya = {}),
-                (Ya[l.PLASTICS] = function (e) {
-                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
-                }),
-                (Ya[l.RUBBER] = function (e) {
-                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
+                (Ya[l.POWER] = function (e) {
+                  return { A: 2, B: 0, type: i.LINEAR };
                 }),
                 Ya),
+              getGainMultiplier:
+                ((Wa = {}),
+                (Wa[l.PLASTICS] = function (e) {
+                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
+                }),
+                (Wa[l.RUBBER] = function (e) {
+                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
+                }),
+                Wa),
               getGain: {},
               getStorage: {},
             },
@@ -11528,43 +11532,43 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.MAGNETODYNAMICS
+                    S.MAGNETODYNAMICS
                   ) > 0
                 );
               },
               getCost:
-                ((Wa = {}),
-                (Wa[l.ROCKET_ENGINE] = function (e) {
-                  return {
-                    A: 100 * $u(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Wa[l.PLATE] = function (e) {
-                  return {
-                    A: 2500 * ol(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Wa[l.WIRE] = function (e) {
-                  return {
-                    A: 2500 * tl(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                Wa),
-              getConsumption:
                 ((Za = {}),
-                (Za[l.POWER] = function (e) {
+                (Za[l.ROCKET_ENGINE] = function (e) {
+                  return {
+                    A: 100 * el(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Za[l.PLATE] = function (e) {
+                  return {
+                    A: 2500 * rl(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Za[l.WIRE] = function (e) {
+                  return {
+                    A: 2500 * nl(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                Za),
+              getConsumption:
+                ((ja = {}),
+                (ja[l.POWER] = function (e) {
                   return {
                     A:
                       25 *
                       Math.pow(
                         0.8,
-                        xg.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                        Yg.landingZone.landingZoneUpgrades.getUpgradeLevel(
                           r.EFFICIENT_COLLIDERS
                         )
                       ),
@@ -11572,7 +11576,7 @@
                     type: i.LINEAR,
                   };
                 }),
-                Za),
+                ja),
               getGainMultiplier:
                 ((Fa = {}),
                 (Fa[l.RESEARCH] = function (e) {
@@ -11583,7 +11587,7 @@
                     A: 1,
                     B:
                       1 +
-                      0.01 * e.laws.getLawSelected(M.EXOTIC_MATTER_EXPERIMENTS),
+                      0.01 * e.laws.getLawSelected(U.EXOTIC_MATTER_EXPERIMENTS),
                     type: i.EXPONENTIAL,
                   };
                 }),
@@ -11592,44 +11596,44 @@
                     A: 1,
                     B:
                       1 +
-                      0.01 * e.laws.getLawSelected(M.EXOTIC_MATTER_EXPERIMENTS),
+                      0.01 * e.laws.getLawSelected(U.EXOTIC_MATTER_EXPERIMENTS),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 Fa),
               getGain: {},
               getStorage:
-                ((ja = {}),
-                (ja[l.RESEARCH] = function (e) {
+                ((Ka = {}),
+                (Ka[l.RESEARCH] = function (e) {
                   return { A: 2250, B: 0, type: i.LINEAR };
                 }),
-                ja),
+                Ka),
               getEffectConsumption:
-                ((Ka = {}),
-                (Ka[B.SECURITY] = function (e) {
+                ((Va = {}),
+                (Va[_.SECURITY] = function (e) {
                   return {
                     A:
-                      2 === e.laws.getLawSelected(M.EXOTIC_MATTER_EXPERIMENTS)
+                      2 === e.laws.getLawSelected(U.EXOTIC_MATTER_EXPERIMENTS)
                         ? 4
                         : 0,
                     B: 0,
                     type: i.LINEAR,
                   };
                 }),
-                (Ka[B.HEALTHCARE] = function (e) {
+                (Va[_.HEALTHCARE] = function (e) {
                   return {
-                    A: 2 * e.laws.getLawSelected(M.EXOTIC_MATTER_EXPERIMENTS),
+                    A: 2 * e.laws.getLawSelected(U.EXOTIC_MATTER_EXPERIMENTS),
                     B: 0,
                     type: i.LINEAR,
                   };
                 }),
-                Ka),
+                Va),
               getCraftingMultiplier: function (e) {
                 return {
                   A: 1,
                   B:
                     1 +
-                    0.01 * e.laws.getLawSelected(M.EXOTIC_MATTER_EXPERIMENTS),
+                    0.01 * e.laws.getLawSelected(U.EXOTIC_MATTER_EXPERIMENTS),
                   type: i.EXPONENTIAL,
                 };
               },
@@ -11643,40 +11647,40 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.SPACESHIP_BUILDINGS
+                    S.SPACESHIP_BUILDINGS
                   ) > 0
                 );
               },
               getCost:
-                ((Va = {}),
-                (Va[l.ROCKET_ENGINE] = function (e) {
-                  return {
-                    A: 120 * $u(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Va[l.PLATE] = function (e) {
-                  return {
-                    A: 2500 * ol(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Va[l.WIRE] = function (e) {
-                  return {
-                    A: 2500 * tl(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                Va),
-              getConsumption:
                 ((qa = {}),
-                (qa[l.POWER] = function (e) {
-                  return { A: 10, B: 0, type: i.LINEAR };
+                (qa[l.ROCKET_ENGINE] = function (e) {
+                  return {
+                    A: 120 * el(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (qa[l.PLATE] = function (e) {
+                  return {
+                    A: 2500 * rl(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (qa[l.WIRE] = function (e) {
+                  return {
+                    A: 2500 * nl(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 qa),
+              getConsumption:
+                ((za = {}),
+                (za[l.POWER] = function (e) {
+                  return { A: 10, B: 0, type: i.LINEAR };
+                }),
+                za),
               getGain: {},
               getStorage: {},
               getEffectGain: {},
@@ -11689,46 +11693,46 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.SPACESHIP_BUILDINGS
+                    S.SPACESHIP_BUILDINGS
                   ) > 0
                 );
               },
               getCost:
-                ((za = {}),
-                (za[l.ROCKET_ENGINE] = function (e) {
-                  return {
-                    A: 240 * $u(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (za[l.PLATE] = function (e) {
-                  return {
-                    A: 5500 * ol(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (za[l.WIRE] = function (e) {
-                  return {
-                    A: 4500 * tl(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                za),
-              getConsumption:
                 ((Qa = {}),
-                (Qa[l.POWER] = function (e) {
-                  return { A: 10, B: 0, type: i.LINEAR };
+                (Qa[l.ROCKET_ENGINE] = function (e) {
+                  return {
+                    A: 240 * el(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Qa[l.PLATE] = function (e) {
+                  return {
+                    A: 5500 * rl(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Qa[l.WIRE] = function (e) {
+                  return {
+                    A: 4500 * nl(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 Qa),
-              getGainMultiplier:
+              getConsumption:
                 ((Ja = {}),
-                (Ja[l.ROCKET_ENGINE] = function (e) {
-                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
+                (Ja[l.POWER] = function (e) {
+                  return { A: 10, B: 0, type: i.LINEAR };
                 }),
                 Ja),
+              getGainMultiplier:
+                (($a = {}),
+                ($a[l.ROCKET_ENGINE] = function (e) {
+                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
+                }),
+                $a),
               getGain: {},
               getStorage: {},
               getEffectGain: {},
@@ -11747,35 +11751,35 @@
                 );
               },
               getCost:
-                (($a = {}),
-                ($a[l.ROCKET_ENGINE] = function (e) {
-                  return {
-                    A: 240 * $u(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                ($a[l.MAGNETO] = function (e) {
-                  return {
-                    A: 1 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                ($a[l.RUBBER] = function (e) {
-                  return {
-                    A: 200 * el(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                $a),
-              getConsumption:
                 ((ec = {}),
-                (ec[l.POWER] = function (e) {
-                  return { A: 4, B: 0, type: i.LINEAR };
+                (ec[l.ROCKET_ENGINE] = function (e) {
+                  return {
+                    A: 240 * el(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (ec[l.MAGNETO] = function (e) {
+                  return {
+                    A: 1 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (ec[l.RUBBER] = function (e) {
+                  return {
+                    A: 200 * tl(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 ec),
+              getConsumption:
+                ((tc = {}),
+                (tc[l.POWER] = function (e) {
+                  return { A: 4, B: 0, type: i.LINEAR };
+                }),
+                tc),
               getMaxColonists: function (e) {
                 return { A: 4, B: 0, type: i.LINEAR };
               },
@@ -11796,40 +11800,40 @@
                 );
               },
               getCost:
-                ((tc = {}),
-                (tc[l.ROCKET_ENGINE] = function (e) {
-                  return {
-                    A: 420 * $u(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (tc[l.MAGNETO] = function (e) {
-                  return {
-                    A: 4 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (tc[l.PLASTICS] = function (e) {
-                  return {
-                    A: 2400 * el(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                tc),
-              getConsumption:
                 ((nc = {}),
-                (nc[l.POWER] = function (e) {
-                  return { A: 5, B: 0, type: i.LINEAR };
+                (nc[l.ROCKET_ENGINE] = function (e) {
+                  return {
+                    A: 420 * el(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (nc[l.MAGNETO] = function (e) {
+                  return {
+                    A: 4 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (nc[l.PLASTICS] = function (e) {
+                  return {
+                    A: 2400 * tl(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 nc),
+              getConsumption:
+                ((ic = {}),
+                (ic[l.POWER] = function (e) {
+                  return { A: 5, B: 0, type: i.LINEAR };
+                }),
+                ic),
               getGain: {},
               getStorage: {},
               getEffectGain:
-                ((ic = {}),
-                (ic[B.HEALTHCARE] = function (e) {
+                ((oc = {}),
+                (oc[_.HEALTHCARE] = function (e) {
                   return {
                     A: e.landingZone.landingZoneUpgrades.getUpgradeLevel(
                       r.ORBITAL_CLINIC
@@ -11840,19 +11844,19 @@
                     type: i.LINEAR,
                   };
                 }),
-                (ic[B.RELIGION] = function (e) {
+                (oc[_.RELIGION] = function (e) {
                   return { A: 5, B: 0, type: i.LINEAR };
                 }),
-                (ic[B.ENTERTAINMENT] = function (e) {
+                (oc[_.ENTERTAINMENT] = function (e) {
                   return { A: 5, B: 0, type: i.LINEAR };
                 }),
-                (ic[B.SECURITY] = function (e) {
+                (oc[_.SECURITY] = function (e) {
                   return { A: 5, B: 0, type: i.LINEAR };
                 }),
-                (ic[B.AESTHETICS] = function (e) {
+                (oc[_.AESTHETICS] = function (e) {
                   return { A: 5, B: 0, type: i.LINEAR };
                 }),
-                ic),
+                oc),
             },
             {
               id: a.DARK_MATTER_COLLECTOR,
@@ -11863,49 +11867,49 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.DARK_MATTER_STUDY
+                    S.DARK_MATTER_STUDY
                   ) > 0
                 );
               },
               getCost:
-                ((oc = {}),
-                (oc[l.ROCKET_ENGINE] = function (e) {
-                  return {
-                    A: 2420 * $u(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (oc[l.MAGNETO] = function (e) {
-                  return {
-                    A: 400 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (oc[l.BRICK] = function (e) {
-                  return {
-                    A: 32400 * el(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                oc),
-              getConsumption:
                 ((rc = {}),
-                (rc[l.POWER] = function (e) {
-                  return { A: 50, B: 0, type: i.LINEAR };
+                (rc[l.ROCKET_ENGINE] = function (e) {
+                  return {
+                    A: 2420 * el(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
-                (rc[l.STONE] = function (e) {
-                  return { A: 20, B: 0, type: i.LINEAR };
+                (rc[l.MAGNETO] = function (e) {
+                  return {
+                    A: 400 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (rc[l.BRICK] = function (e) {
+                  return {
+                    A: 32400 * tl(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 rc),
-              getGain:
+              getConsumption:
                 ((ac = {}),
-                (ac[l.DARK_MATTER] = function (e) {
-                  return { A: 0.01, B: 0, type: i.LINEAR };
+                (ac[l.POWER] = function (e) {
+                  return { A: 50, B: 0, type: i.LINEAR };
+                }),
+                (ac[l.STONE] = function (e) {
+                  return { A: 20, B: 0, type: i.LINEAR };
                 }),
                 ac),
+              getGain:
+                ((cc = {}),
+                (cc[l.DARK_MATTER] = function (e) {
+                  return { A: 0.01, B: 0, type: i.LINEAR };
+                }),
+                cc),
               getStorage: {},
               getEffectGain: {},
             },
@@ -11917,47 +11921,47 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.DARK_MATTER_STUDY
+                    S.DARK_MATTER_STUDY
                   ) > 0
                 );
               },
               getCost:
-                ((cc = {}),
-                (cc[l.ROCKET_ENGINE] = function (e) {
-                  return {
-                    A: 1420 * $u(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (cc[l.BRICK] = function (e) {
-                  return {
-                    A: 2e4 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (cc[l.PLATE] = function (e) {
-                  return {
-                    A: 12400 * el(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                cc),
-              getConsumption:
                 ((sc = {}),
-                (sc[l.POWER] = function (e) {
-                  return { A: 20, B: 0, type: i.LINEAR };
+                (sc[l.ROCKET_ENGINE] = function (e) {
+                  return {
+                    A: 1420 * el(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (sc[l.BRICK] = function (e) {
+                  return {
+                    A: 2e4 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (sc[l.PLATE] = function (e) {
+                  return {
+                    A: 12400 * tl(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 sc),
-              getGain: {},
-              getStorage:
+              getConsumption:
                 ((uc = {}),
-                (uc[l.DARK_MATTER] = function (e) {
-                  return { A: 100, B: 0, type: i.LINEAR };
+                (uc[l.POWER] = function (e) {
+                  return { A: 20, B: 0, type: i.LINEAR };
                 }),
                 uc),
+              getGain: {},
+              getStorage:
+                ((lc = {}),
+                (lc[l.DARK_MATTER] = function (e) {
+                  return { A: 100, B: 0, type: i.LINEAR };
+                }),
+                lc),
               getEffectGain: {},
             },
             {
@@ -11969,52 +11973,52 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.ANTIMATTER_STUDY
+                    S.ANTIMATTER_STUDY
                   ) > 0
                 );
               },
               getCost:
-                ((lc = {}),
-                (lc[l.ROCKET_ENGINE] = function (e) {
-                  return {
-                    A: 1e4 * $u(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (lc[l.MAGNETO] = function (e) {
-                  return {
-                    A: 12e3 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (lc[l.DM_BLOCK] = function (e) {
-                  return {
-                    A: 50 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                lc),
-              getConsumption:
                 ((pc = {}),
-                (pc[l.POWER] = function (e) {
-                  return { A: 250, B: 0, type: i.LINEAR };
-                }),
-                (pc[l.DARK_MATTER] = function (e) {
-                  return { A: 0.2, B: 0, type: i.LINEAR };
+                (pc[l.ROCKET_ENGINE] = function (e) {
+                  return {
+                    A: 1e4 * el(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 (pc[l.MAGNETO] = function (e) {
-                  return { A: 1, B: 0, type: i.LINEAR };
+                  return {
+                    A: 12e3 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (pc[l.DM_BLOCK] = function (e) {
+                  return {
+                    A: 50 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 pc),
-              getGain:
+              getConsumption:
                 ((Ec = {}),
-                (Ec[l.ANTIMATTER] = function (e) {
-                  return { A: 0.004, B: 0, type: i.LINEAR };
+                (Ec[l.POWER] = function (e) {
+                  return { A: 250, B: 0, type: i.LINEAR };
+                }),
+                (Ec[l.DARK_MATTER] = function (e) {
+                  return { A: 0.2, B: 0, type: i.LINEAR };
+                }),
+                (Ec[l.MAGNETO] = function (e) {
+                  return { A: 1, B: 0, type: i.LINEAR };
                 }),
                 Ec),
+              getGain:
+                ((dc = {}),
+                (dc[l.ANTIMATTER] = function (e) {
+                  return { A: 0.004, B: 0, type: i.LINEAR };
+                }),
+                dc),
               getStorage: {},
               getEffectGain: {},
             },
@@ -12027,47 +12031,47 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.ANTIMATTER_STUDY
+                    S.ANTIMATTER_STUDY
                   ) > 0
                 );
               },
               getCost:
-                ((dc = {}),
-                (dc[l.ROCKET_ENGINE] = function (e) {
-                  return {
-                    A: 4e3 * $u(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (dc[l.PLATE] = function (e) {
-                  return {
-                    A: 1e6 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (dc[l.DM_BLOCK] = function (e) {
-                  return {
-                    A: 100 * el(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                dc),
-              getConsumption:
                 ((gc = {}),
-                (gc[l.POWER] = function (e) {
-                  return { A: 400, B: 0, type: i.LINEAR };
+                (gc[l.ROCKET_ENGINE] = function (e) {
+                  return {
+                    A: 4e3 * el(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (gc[l.PLATE] = function (e) {
+                  return {
+                    A: 1e6 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (gc[l.DM_BLOCK] = function (e) {
+                  return {
+                    A: 100 * tl(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 gc),
-              getGain: {},
-              getStorage:
+              getConsumption:
                 ((Ac = {}),
-                (Ac[l.ANTIMATTER] = function (e) {
-                  return { A: 50, B: 0, type: i.LINEAR };
+                (Ac[l.POWER] = function (e) {
+                  return { A: 400, B: 0, type: i.LINEAR };
                 }),
                 Ac),
+              getGain: {},
+              getStorage:
+                ((fc = {}),
+                (fc[l.ANTIMATTER] = function (e) {
+                  return { A: 50, B: 0, type: i.LINEAR };
+                }),
+                fc),
               getEffectGain: {},
             },
             {
@@ -12079,47 +12083,47 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.ANTIMATTER_STUDY
+                    S.ANTIMATTER_STUDY
                   ) > 0
                 );
               },
               getCost:
-                ((fc = {}),
-                (fc[l.ROCKET_ENGINE] = function (e) {
-                  return {
-                    A: 4e3 * $u(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (fc[l.PLATE] = function (e) {
-                  return {
-                    A: 1e5 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (fc[l.DM_BLOCK] = function (e) {
-                  return {
-                    A: 20 * el(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                fc),
-              getConsumption:
                 ((Rc = {}),
-                (Rc[l.POWER] = function (e) {
-                  return { A: 500, B: 0, type: i.LINEAR };
+                (Rc[l.ROCKET_ENGINE] = function (e) {
+                  return {
+                    A: 4e3 * el(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Rc[l.PLATE] = function (e) {
+                  return {
+                    A: 1e5 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Rc[l.DM_BLOCK] = function (e) {
+                  return {
+                    A: 20 * tl(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 Rc),
-              getGain: {},
-              getStorage:
+              getConsumption:
                 ((Ic = {}),
-                (Ic[l.RESEARCH] = function (e) {
-                  return { A: 1e4, B: 0, type: i.LINEAR };
+                (Ic[l.POWER] = function (e) {
+                  return { A: 500, B: 0, type: i.LINEAR };
                 }),
                 Ic),
+              getGain: {},
+              getStorage:
+                ((Nc = {}),
+                (Nc[l.RESEARCH] = function (e) {
+                  return { A: 1e4, B: 0, type: i.LINEAR };
+                }),
+                Nc),
               getEffectGain: {},
             },
             {
@@ -12131,40 +12135,40 @@
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.DEGENERATE_ATOMS
+                    S.DEGENERATE_ATOMS
                   ) > 0
                 );
               },
               getCost:
-                ((Nc = {}),
-                (Nc[l.ROCKET_ENGINE] = function (e) {
-                  return {
-                    A: 1e3 * $u(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Nc[l.PRESSED_BLOCK] = function (e) {
-                  return {
-                    A: 2 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Nc[l.MAGNETO] = function (e) {
-                  return {
-                    A: 500 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                Nc),
-              getConsumption:
                 ((Tc = {}),
-                (Tc[l.POWER] = function (e) {
-                  return { A: 1500, B: 0, type: i.LINEAR };
+                (Tc[l.ROCKET_ENGINE] = function (e) {
+                  return {
+                    A: 1e3 * el(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Tc[l.PRESSED_BLOCK] = function (e) {
+                  return {
+                    A: 2 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Tc[l.MAGNETO] = function (e) {
+                  return {
+                    A: 500 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 Tc),
+              getConsumption:
+                ((Oc = {}),
+                (Oc[l.POWER] = function (e) {
+                  return { A: 1500, B: 0, type: i.LINEAR };
+                }),
+                Oc),
               getGain: {},
               getStorage: {},
               getEffectGain: {},
@@ -12186,38 +12190,38 @@
                 );
               },
               getCost:
-                ((Oc = {}),
-                (Oc[l.PRESSED_BLOCK] = function (e) {
-                  return {
-                    A: 2 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Oc[l.PLATE] = function (e) {
-                  return {
-                    A: 2 * ol(e) * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Oc[l.COMPUTER] = function (e) {
-                  return {
-                    A: 2500 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                Oc),
-              getConsumption:
                 ((yc = {}),
-                (yc[l.BIOMASS] = function (e) {
-                  return { A: 20, B: 0, type: i.LINEAR };
+                (yc[l.PRESSED_BLOCK] = function (e) {
+                  return {
+                    A: 2 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
-                (yc[l.WOOD] = function (e) {
-                  return { A: 20, B: 0, type: i.LINEAR };
+                (yc[l.PLATE] = function (e) {
+                  return {
+                    A: 2 * rl(e) * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (yc[l.COMPUTER] = function (e) {
+                  return {
+                    A: 2500 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 yc),
+              getConsumption:
+                ((mc = {}),
+                (mc[l.BIOMASS] = function (e) {
+                  return { A: 20, B: 0, type: i.LINEAR };
+                }),
+                (mc[l.WOOD] = function (e) {
+                  return { A: 20, B: 0, type: i.LINEAR };
+                }),
+                mc),
               getGain: {},
               getStorage: {},
               getEffectGain: {},
@@ -12236,29 +12240,29 @@
                 );
               },
               getCost:
-                ((mc = {}),
-                (mc[l.PRESSED_BLOCK] = function (e) {
+                ((hc = {}),
+                (hc[l.PRESSED_BLOCK] = function (e) {
                   return {
-                    A: 5 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
+                    A: 5 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                (mc[l.ANTIMATTER] = function (e) {
+                (hc[l.ANTIMATTER] = function (e) {
                   return {
-                    A: 50 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
+                    A: 50 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                (mc[l.MAGNETO] = function (e) {
+                (hc[l.MAGNETO] = function (e) {
                   return {
-                    A: 2500 * Qu(e),
-                    B: 1 + 0.5 * zu(e),
+                    A: 2500 * Ju(e),
+                    B: 1 + 0.5 * Qu(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                mc),
+                hc),
               getConsumption:
                 ((Lc = {}),
                 (Lc[l.POWER] = function (e) {
@@ -12267,16 +12271,16 @@
                 Lc),
               getGain: {},
               getGainMultiplier:
-                ((hc = {}),
-                (hc[l.DARK_MATTER] = function (e) {
+                ((Cc = {}),
+                (Cc[l.DARK_MATTER] = function (e) {
                   return { A: 1, B: 1.05, type: i.EXPONENTIAL };
                 }),
-                hc),
+                Cc),
               getStorage: {},
               getEffectGain: {},
             },
           ],
-          dl = function (e) {
+          gl = function (e) {
             var t,
               n,
               i,
@@ -12374,7 +12378,7 @@
                       {
                         id: "population",
                         label: "Population",
-                        value: 0.005 * xg.colony.colonists,
+                        value: 0.005 * Yg.colony.colonists,
                         category: "Buildings",
                       },
                     ],
@@ -12399,7 +12403,7 @@
                       {
                         id: "population",
                         label: "Population",
-                        value: 0.1 * xg.colony.colonists,
+                        value: 0.1 * Yg.colony.colonists,
                         category: "Buildings",
                       },
                     ],
@@ -12555,34 +12559,34 @@
                   O,
                   y,
                   m,
-                  L,
                   h,
+                  L,
                   C,
                   v,
                   S,
                   P,
                   B =
                     null ===
-                      (n = U.find(function (t) {
+                      (n = G.find(function (t) {
                         return t.id === e;
                       })) || void 0 === n
                       ? void 0
                       : n.isCraftable;
                 (t = T[e].income.linear).push.apply(
                   t,
-                  xg.landingZone.landingZoneBuildings.getResourceBeingProduced(
+                  Yg.landingZone.landingZoneBuildings.getResourceBeingProduced(
                     e
                   )
                 ),
                   (l = T[e].income.multiplier).push.apply(
                     l,
-                    xg.landingZone.landingZoneBuildings.getResourceMultiplier(e)
+                    Yg.landingZone.landingZoneBuildings.getResourceMultiplier(e)
                   ),
                   null === (i = T[e].income.consumption) ||
                     void 0 === i ||
                     i.push.apply(
                       i,
-                      xg.landingZone.landingZoneBuildings.getResourceBeingConsumed(
+                      Yg.landingZone.landingZoneBuildings.getResourceBeingConsumed(
                         e
                       )
                     ),
@@ -12590,132 +12594,132 @@
                     void 0 === o ||
                     o.push.apply(
                       o,
-                      xg.landingZone.landingZoneBuildings.getResourceBeingStored(
+                      Yg.landingZone.landingZoneBuildings.getResourceBeingStored(
                         e
                       )
                     ),
                   (O = T[e].income.linear).push.apply(
                     O,
-                    xg.landingZone.landingZoneUpgrades.getGain(e)
+                    Yg.landingZone.landingZoneUpgrades.getGain(e)
                   ),
                   (y = T[e].income.multiplier).push.apply(
                     y,
-                    xg.landingZone.landingZoneUpgrades.getGainMultiplier(e)
+                    Yg.landingZone.landingZoneUpgrades.getGainMultiplier(e)
                   ),
                   null === (r = T[e].max.linear) ||
                     void 0 === r ||
                     r.push.apply(
                       r,
-                      xg.landingZone.landingZoneUpgrades.getCapacity(e)
+                      Yg.landingZone.landingZoneUpgrades.getCapacity(e)
                     ),
                   null === (a = T[e].max.multiplier) ||
                     void 0 === a ||
                     a.push.apply(
                       a,
-                      xg.landingZone.landingZoneUpgrades.getCapacityMult(e)
+                      Yg.landingZone.landingZoneUpgrades.getCapacityMult(e)
                     ),
                   B &&
                     (m = T[e].income.multiplier).push.apply(
                       m,
-                      xg.landingZone.landingZoneBuildings.getCraftingMultiplier()
+                      Yg.landingZone.landingZoneBuildings.getCraftingMultiplier()
                     ),
-                  (L = T[e].income.linear).push.apply(
-                    L,
-                    xg.colony.colonyJobs.getResourceBeingProduced(e)
+                  (h = T[e].income.linear).push.apply(
+                    h,
+                    Yg.colony.colonyJobs.getResourceBeingProduced(e)
                   ),
                   null === (c = T[e].income.consumption) ||
                     void 0 === c ||
                     c.push.apply(
                       c,
-                      xg.colony.colonyJobs.getResourceBeingConsumed(e)
+                      Yg.colony.colonyJobs.getResourceBeingConsumed(e)
                     ),
                   null === (s = T[e].income.multiplier) ||
                     void 0 === s ||
                     s.push.apply(
                       s,
-                      xg.colony.colonyJobs.getResourceBeingMultiplied(e)
+                      Yg.colony.colonyJobs.getResourceBeingMultiplied(e)
                     ),
-                  (h = T[e].income.linear).push.apply(
-                    h,
-                    xg.crafting.craftingJobs.getResourceBeingProduced(e)
+                  (L = T[e].income.linear).push.apply(
+                    L,
+                    Yg.crafting.craftingJobs.getResourceBeingProduced(e)
                   ),
                   null === (u = T[e].income.consumption) ||
                     void 0 === u ||
                     u.push.apply(
                       u,
-                      xg.crafting.craftingJobs.getResourceBeingConsumed(e)
+                      Yg.crafting.craftingJobs.getResourceBeingConsumed(e)
                     ),
                   (C = T[e].income.linear).push.apply(
                     C,
-                    xg.laws.getResourceBeingProduced(e)
+                    Yg.laws.getResourceBeingProduced(e)
                   ),
                   (v = T[e].income.multiplier).push.apply(
                     v,
-                    xg.laws.getResourceMultiplier(e)
+                    Yg.laws.getResourceMultiplier(e)
                   ),
                   null === (p = T[e].income.consumption) ||
                     void 0 === p ||
-                    p.push.apply(p, xg.laws.getResourceBeingConsumed(e)),
+                    p.push.apply(p, Yg.laws.getResourceBeingConsumed(e)),
                   null === (E = T[e].max.linear) ||
                     void 0 === E ||
-                    E.push.apply(E, xg.laws.getResourceBeingStored(e)),
+                    E.push.apply(E, Yg.laws.getResourceBeingStored(e)),
                   (S = T[e].income.linear).push.apply(
                     S,
-                    xg.prestige.transmitKnowledge.getResourceBeingProduced(e)
+                    Yg.prestige.transmitKnowledge.getResourceBeingProduced(e)
                   ),
                   (P = T[e].income.multiplier).push.apply(
                     P,
-                    xg.prestige.transmitKnowledge.getResourceMultiplier(e)
+                    Yg.prestige.transmitKnowledge.getResourceMultiplier(e)
                   ),
                   null === (d = T[e].max.linear) ||
                     void 0 === d ||
                     d.push.apply(
                       d,
-                      xg.prestige.transmitKnowledge.getResourceBeingStored(e)
+                      Yg.prestige.transmitKnowledge.getResourceBeingStored(e)
                     ),
                   null === (g = T[e].max.multiplier) ||
                     void 0 === g ||
                     g.push.apply(
                       g,
-                      xg.prestige.transmitKnowledge.getCapacityMult(e)
+                      Yg.prestige.transmitKnowledge.getCapacityMult(e)
                     ),
                   null === (A = T[e].income.multiplier) ||
                     void 0 === A ||
                     A.push.apply(
                       A,
-                      xg.prestige.colonizePlanet.getResourceMultiplier(e)
+                      Yg.prestige.colonizePlanet.getResourceMultiplier(e)
                     ),
                   null === (f = T[e].max.multiplier) ||
                     void 0 === f ||
                     f.push.apply(
                       f,
-                      xg.prestige.colonizePlanet.getCapacityMultiplier(e)
+                      Yg.prestige.colonizePlanet.getCapacityMultiplier(e)
                     ),
                   null === (R = T[e].income.multiplier) ||
                     void 0 === R ||
                     R.push.apply(
                       R,
-                      xg.environment.climate.getResourceMultiplier(e)
+                      Yg.environment.climate.getResourceMultiplier(e)
                     ),
                   null === (I = T[e].income.multiplier) ||
                     void 0 === I ||
                     I.push.apply(
                       I,
-                      xg.prestige.colonizePlanet.getResourceUpgradeMultiplier(e)
+                      Yg.prestige.colonizePlanet.getResourceUpgradeMultiplier(e)
                     ),
                   null === (N = T[e].max.multiplier) ||
                     void 0 === N ||
                     N.push.apply(
                       N,
-                      xg.resourceEffect.getResourceCapMultiplier(e)
+                      Yg.resourceEffect.getResourceCapMultiplier(e)
                     );
               };
             for (var y in T) O(y);
             return T;
           },
-          gl = function () {
+          Al = function () {
             return (
-              (gl =
+              (Al =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -12724,14 +12728,14 @@
                         (e[o] = t[o]);
                   return e;
                 }),
-              gl.apply(this, arguments)
+              Al.apply(this, arguments)
             );
           },
-          Al = (function () {
+          fl = (function () {
             function e() {
               (this.cachedBreakdown = {}),
                 (this.cachedShortenedBreakdown = {}),
-                (this.resourcesStatus = U.map(function (e) {
+                (this.resourcesStatus = G.map(function (e) {
                   return {
                     id: e.id,
                     amount: 0,
@@ -12752,7 +12756,7 @@
                     return (
                       e[t.category]
                         ? (e[t.category].value += t.value)
-                        : (e[t.category] = gl({}, t)),
+                        : (e[t.category] = Al({}, t)),
                       e
                     );
                   }, {}),
@@ -12760,7 +12764,7 @@
                     return (
                       e[t.category]
                         ? (e[t.category].value *= t.value)
-                        : (e[t.category] = gl({}, t)),
+                        : (e[t.category] = Al({}, t)),
                       e
                     );
                   }, {}),
@@ -12771,20 +12775,20 @@
                           return (
                             e[t.category]
                               ? (e[t.category].value += t.value)
-                              : (e[t.category] = gl({}, t)),
+                              : (e[t.category] = Al({}, t)),
                             e
                           );
                         }, {});
                 return {
                   linear: Object.values(n).map(function (e) {
-                    return gl(gl({}, e), { label: e.category });
+                    return Al(Al({}, e), { label: e.category });
                   }),
                   multiplier: Object.values(i).map(function (e) {
-                    return gl(gl({}, e), { label: e.category });
+                    return Al(Al({}, e), { label: e.category });
                   }),
                   consumption: o
                     ? Object.values(o).map(function (e) {
-                        return gl(gl({}, e), { label: e.category });
+                        return Al(Al({}, e), { label: e.category });
                       })
                     : void 0,
                 };
@@ -12802,7 +12806,7 @@
                 });
                 if (n < 0) {
                   n = this.resourcesStatus.length;
-                  var i = U.find(function (t) {
+                  var i = G.find(function (t) {
                     return t.id === e;
                   });
                   if (!i) return;
@@ -12832,7 +12836,7 @@
                 });
                 if (n < 0) {
                   n = this.resourcesStatus.length;
-                  var i = U.find(function (t) {
+                  var i = G.find(function (t) {
                     return t.id === e;
                   });
                   if (!i) return;
@@ -12867,7 +12871,7 @@
                 });
                 if (n < 0) {
                   n = this.resourcesStatus.length;
-                  var i = U.find(function (t) {
+                  var i = G.find(function (t) {
                     return t.id === e;
                   });
                   if (!i) return;
@@ -12888,7 +12892,7 @@
                 });
                 if (n < 0) {
                   n = this.resourcesStatus.length;
-                  var i = U.find(function (t) {
+                  var i = G.find(function (t) {
                     return t.id === e;
                   });
                   if (!i) return;
@@ -12905,13 +12909,13 @@
               }),
               (e.prototype.saveBalances = function () {
                 var t = this;
-                xg.colony.colonyEffects.getBreakdowns();
-                var n = dl(),
+                Yg.colony.colonyEffects.getBreakdowns();
+                var n = gl(),
                   i = {},
                   o = {};
-                U.forEach(function (r) {
+                G.forEach(function (r) {
                   var a, c, s, u, p, E, d, g;
-                  if (r.unlockCondition(xg)) {
+                  if (r.unlockCondition(Yg)) {
                     (i[r.id] = {
                       max: { income: [], multiplier: [], consumption: [] },
                       income: { income: [], multiplier: [], consumption: [] },
@@ -12936,7 +12940,7 @@
                         return t.value - e.value;
                       })
                       .map(function (e) {
-                        return gl(gl({}, e), {
+                        return Al(Al({}, e), {
                           value: "+".concat(H(e.value, 4)),
                         });
                       })),
@@ -12945,7 +12949,7 @@
                           return e.value;
                         })
                         .map(function (e) {
-                          return gl(gl({}, e), {
+                          return Al(Al({}, e), {
                             value: "+".concat(H(e.value, 4)),
                           });
                         })),
@@ -12959,7 +12963,7 @@
                           return t.value - e.value;
                         })
                         .map(function (e) {
-                          return gl(gl({}, e), {
+                          return Al(Al({}, e), {
                             value: "x".concat(H(e.value, 4)),
                           });
                         })),
@@ -12968,7 +12972,7 @@
                           return 1 !== e.value;
                         })
                         .map(function (e) {
-                          return gl(gl({}, e), {
+                          return Al(Al({}, e), {
                             value: "x".concat(H(e.value, 4)),
                           });
                         }));
@@ -12998,7 +13002,7 @@
                             return t.value - e.value;
                           })
                           .map(function (e) {
-                            return gl(gl({}, e), {
+                            return Al(Al({}, e), {
                               value: "+".concat(H(e.value, 4)),
                             });
                           })),
@@ -13009,7 +13013,7 @@
                             return e.value;
                           })
                           .map(function (e) {
-                            return gl(gl({}, e), {
+                            return Al(Al({}, e), {
                               value: "+".concat(H(e.value, 4)),
                             });
                           })),
@@ -13023,7 +13027,7 @@
                             return t.value - e.value;
                           })
                           .map(function (e) {
-                            return gl(gl({}, e), {
+                            return Al(Al({}, e), {
                               value: "x".concat(H(e.value, 4)),
                             });
                           })),
@@ -13034,7 +13038,7 @@
                             return 1 !== e.value;
                           })
                           .map(function (e) {
-                            return gl(gl({}, e), {
+                            return Al(Al({}, e), {
                               value: "x".concat(H(e.value, 4)),
                             });
                           })),
@@ -13048,7 +13052,7 @@
                             return t.value - e.value;
                           })
                           .map(function (e) {
-                            return gl(gl({}, e), {
+                            return Al(Al({}, e), {
                               value: "-".concat(H(e.value, 4)),
                             });
                           })),
@@ -13062,7 +13066,7 @@
                                   return e.value;
                                 })
                                 .map(function (e) {
-                                  return gl(gl({}, e), {
+                                  return Al(Al({}, e), {
                                     value: "-".concat(H(e.value, 4)),
                                   });
                                 })),
@@ -13084,14 +13088,14 @@
               }),
               (e.prototype.resetEfficiency = function () {
                 (e.lackEfficiencyResources = {}),
-                  xg.landingZone.landingZoneBuildings.resetEfficiency(),
-                  xg.crafting.craftingJobs.resetEfficiency();
+                  Yg.landingZone.landingZoneBuildings.resetEfficiency(),
+                  Yg.crafting.craftingJobs.resetEfficiency();
               }),
               (e.prototype.assertBalances = function (t) {
                 var n;
                 void 0 === t && (t = !1),
-                  xg.colony.colonyEffects.getBreakdowns();
-                var i = dl(),
+                  Yg.colony.colonyEffects.getBreakdowns();
+                var i = gl(),
                   o = {};
                 for (var r in i) {
                   var a = i[r].income.linear.reduce(function (e, t) {
@@ -13139,8 +13143,8 @@
                 }
               }),
               (e.prototype.applyEfficiencies = function () {
-                xg.landingZone.landingZoneBuildings.adaptEfficiency(),
-                  xg.crafting.craftingJobs.adaptEfficiency();
+                Yg.landingZone.landingZoneBuildings.adaptEfficiency(),
+                  Yg.crafting.craftingJobs.adaptEfficiency();
               }),
               (e.prototype.assertAndApplyBalances = function () {
                 var t = this.assertBalances(),
@@ -13186,7 +13190,7 @@
                   this.resourcesStatus.forEach(function (e) {
                     n.addResource(e.id, e.balance * t),
                       [l.ANTIMATTER, l.DARK_MATTER].includes(e.id) &&
-                        (xg.statistics.stats.exoticCollected += e.balance * t);
+                        (Yg.statistics.stats.exoticCollected += e.balance * t);
                   });
               }),
               (e.prototype.getResource = function (e) {
@@ -13246,7 +13250,7 @@
                         percentage: n,
                         maxAmount: H(e.max),
                         isAvailable: e.max >= 1,
-                        eta: X(e.eta),
+                        eta: k(e.eta),
                       });
                   }),
                   i
@@ -13259,7 +13263,7 @@
               }),
               (e.prototype.importData = function (e) {
                 this.resourcesStatus = e.map(function (e) {
-                  var t = U.find(function (t) {
+                  var t = G.find(function (t) {
                     return t.id === e.id;
                   });
                   if (!t) throw new Error("Invalid resource");
@@ -13276,7 +13280,7 @@
               (e.prototype.dataToUI = function () {
                 var e = this;
                 return {
-                  resources: U.map(function (t) {
+                  resources: G.map(function (t) {
                     var n,
                       i,
                       o = e.resourcesStatus.find(function (e) {
@@ -13287,7 +13291,7 @@
                       name: t.name,
                       amount: H((null == o ? void 0 : o.amount) || 0),
                       balance: H((null == o ? void 0 : o.balance) || 0),
-                      isUnlocked: t.unlockCondition(xg),
+                      isUnlocked: t.unlockCondition(Yg),
                       max: H((null == o ? void 0 : o.max) || 0),
                       toFullPercentage: (o && o.max > 0
                         ? o.amount / o.max
@@ -13299,11 +13303,11 @@
                       toFullTime:
                         (null == o ? void 0 : o.max) &&
                         (null == o ? void 0 : o.balance) > 0
-                          ? X((o.max - o.amount) / o.balance)
+                          ? k((o.max - o.amount) / o.balance)
                           : "",
                       toEmptyTime:
                         o && (null == o ? void 0 : o.balance) < 0
-                          ? X(
+                          ? k(
                               -(null == o ? void 0 : o.amount) /
                                 (null == o ? void 0 : o.balance)
                             )
@@ -13317,7 +13321,7 @@
                       isCapped:
                         !!o &&
                         o.max > 0 &&
-                        o.max <= o.amount + 2 * xg.dT * o.balance,
+                        o.max <= o.amount + 2 * Yg.dT * o.balance,
                     };
                   }),
                 };
@@ -13329,8 +13333,8 @@
               e
             );
           })(),
-          fl = Al.getInstance(),
-          Rl = (function () {
+          Rl = fl.getInstance(),
+          Il = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -13364,9 +13368,9 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          Il = function () {
+          Nl = function () {
             return (
-              (Il =
+              (Nl =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -13375,10 +13379,10 @@
                         (e[o] = t[o]);
                   return e;
                 }),
-              Il.apply(this, arguments)
+              Nl.apply(this, arguments)
             );
           },
-          Nl = (function (e) {
+          Tl = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -13397,7 +13401,7 @@
               );
             }
             return (
-              Rl(t, e),
+              Il(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -13410,7 +13414,7 @@
               (t.prototype.dataToUI = function () {
                 var e = this;
                 return {
-                  list: El.map(function (t) {
+                  list: dl.map(function (t) {
                     return e.processToUI(t);
                   }),
                 };
@@ -13447,9 +13451,9 @@
               (t.prototype.getAllCostReduction = function () {
                 return Math.pow(
                   0.95,
-                  kg
+                  xg
                     .getInstance()
-                    .prestige.colonizePlanet.getUpgradeLevel(R.BUILDING_PRICES)
+                    .prestige.colonizePlanet.getUpgradeLevel(I.BUILDING_PRICES)
                 );
               }),
               (t.prototype.processToUI = function (e, t) {
@@ -13466,11 +13470,11 @@
                     efficiencyToUI: 1,
                   }),
                   this.buildings.push(n));
-                var i = w.calcBatchAll(
+                var i = X.calcBatchAll(
                     e.getCost,
-                    kg.getInstance(),
+                    xg.getInstance(),
                     n.level + t,
-                    kg.getInstance().resources.getBatchObject()
+                    xg.getInstance().resources.getBatchObject()
                   ),
                   o = i.reduce(function (e, t) {
                     return Math.min(e, t.max);
@@ -13481,35 +13485,35 @@
                   a = i.reduce(function (e, t) {
                     return Math.max(e, t.eta);
                   }, 0),
-                  c = w.calcBatchAll(
+                  c = X.calcBatchAll(
                     e.getConsumption,
-                    kg.getInstance(),
+                    xg.getInstance(),
                     0,
-                    kg.getInstance().resources.getBatchObject()
+                    xg.getInstance().resources.getBatchObject()
                   ),
-                  s = w.calcBatch(e.getGain, kg.getInstance(), 0),
+                  s = X.calcBatch(e.getGain, xg.getInstance(), 0),
                   u = e.getStorage
-                    ? w.calcBatch(e.getStorage, kg.getInstance(), 0)
+                    ? X.calcBatch(e.getStorage, xg.getInstance(), 0)
                     : [],
                   l = e.getGainMultiplier
-                    ? w.calcBatch(e.getGainMultiplier, kg.getInstance(), 1)
+                    ? X.calcBatch(e.getGainMultiplier, xg.getInstance(), 1)
                     : [],
                   p = e.getEffectConsumption
-                    ? w.calcBatchAll(
+                    ? X.calcBatchAll(
                         e.getEffectConsumption,
-                        kg.getInstance(),
+                        xg.getInstance(),
                         0,
-                        kg.getInstance().resources.getBatchObject()
+                        xg.getInstance().resources.getBatchObject()
                       )
                     : [],
                   E = e.getEffectGain
-                    ? w.calcBatch(e.getEffectGain, kg.getInstance(), 0)
+                    ? X.calcBatch(e.getEffectGain, xg.getInstance(), 0)
                     : [],
-                  d = e.unlockCondition(xg);
+                  d = e.unlockCondition(Yg);
                 return (
                   d &&
                     n.level <= 0 &&
-                    xg.newNotifications.registerNotification(
+                    Yg.newNotifications.registerNotification(
                       ""
                         .concat(this.getPreffix(e), ":building:")
                         .concat(e.category, ":")
@@ -13521,12 +13525,12 @@
                     description: e.description,
                     isUnlocked: d,
                     isAvailable: o >= 1,
-                    cost: kg
+                    cost: xg
                       .getInstance()
                       .resources.assertEnought(
                         i,
-                        kg.getInstance().resources.getBatchObject(),
-                        kg.getInstance().resources.getBatchBalanceObject()
+                        xg.getInstance().resources.getBatchObject(),
+                        xg.getInstance().resources.getBatchBalanceObject()
                       ),
                     progress: o < 1 ? (100 * o).toPrecision(3) : "100",
                     consume: c
@@ -13534,7 +13538,7 @@
                         return e.amount;
                       })
                       .map(function (e) {
-                        return Il(Il({}, e), {
+                        return Nl(Nl({}, e), {
                           amountValue: e.amount,
                           amount: H(e.amount),
                         });
@@ -13544,7 +13548,7 @@
                         return e.amount;
                       })
                       .map(function (e) {
-                        return Il(Il({}, e), {
+                        return Nl(Nl({}, e), {
                           amountValue: e.amount,
                           amount: H(e.amount),
                         });
@@ -13554,7 +13558,7 @@
                         return e.amount;
                       })
                       .map(function (e) {
-                        return Il(Il({}, e), {
+                        return Nl(Nl({}, e), {
                           amountValue: e.amount,
                           amount: "x".concat(H(e.amount)),
                         });
@@ -13564,7 +13568,7 @@
                         return e.amount;
                       })
                       .map(function (e) {
-                        return Il(Il({}, e), {
+                        return Nl(Nl({}, e), {
                           amountValue: e.amount,
                           amount: H(e.amount),
                         });
@@ -13572,7 +13576,7 @@
                     gainEffect: E.filter(function (e) {
                       return e.amount;
                     }).map(function (e) {
-                      return Il(Il({}, e), {
+                      return Nl(Nl({}, e), {
                         amountValue: e.amount,
                         amount: H(e.amount),
                       });
@@ -13582,7 +13586,7 @@
                         return e.amount;
                       })
                       .map(function (e) {
-                        return Il(Il({}, e), {
+                        return Nl(Nl({}, e), {
                           amountValue: e.amount,
                           amount: H(e.amount),
                         });
@@ -13598,7 +13602,7 @@
                       missingResource: n.efficiencyReason
                         ? {
                             id: n.efficiencyReason,
-                            name: b(n.efficiencyReason),
+                            name: D(n.efficiencyReason),
                           }
                         : void 0,
                     },
@@ -13614,10 +13618,10 @@
                     t,
                     this.buildings[n].level
                   )),
-                  xg.resources.reassertBalances());
+                  Yg.resources.reassertBalances());
               }),
               (t.prototype.doBuild = function (e) {
-                var t = El.find(function (t) {
+                var t = dl.find(function (t) {
                   return t.id === e;
                 });
                 if (t) {
@@ -13633,11 +13637,11 @@
                       activeAmount: 0,
                       efficiencyToUI: 1,
                     }));
-                  var i = w.calcBatchAll(
+                  var i = X.calcBatchAll(
                     t.getCost,
-                    kg.getInstance(),
+                    xg.getInstance(),
                     this.buildings[n].level,
-                    kg.getInstance().resources.getBatchObject()
+                    xg.getInstance().resources.getBatchObject()
                   );
                   if (
                     !(
@@ -13650,9 +13654,9 @@
                       this.buildings[n].level++,
                       this.buildings[n].activeAmount++,
                       console.log("costs: ", i),
-                      kg.getInstance().resources.subtractResourceBatch(i),
-                      xg.resources.reassertBalances(),
-                      kg
+                      xg.getInstance().resources.subtractResourceBatch(i),
+                      Yg.resources.reassertBalances(),
+                      xg
                         .getInstance()
                         .eventLog.registerBuilding(
                           t.name,
@@ -13664,7 +13668,7 @@
                 }
               }),
               (t.prototype.getEffectGain = function (e) {
-                var t = El.filter(function (t) {
+                var t = dl.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getEffectGain) || void 0 === n
                       ? void 0
@@ -13684,7 +13688,7 @@
                         : o[e])
                     ) {
                       var a =
-                        w.calculate(xg, r.getEffectGain[e], 0, i.activeAmount) *
+                        X.calculate(Yg, r.getEffectGain[e], 0, i.activeAmount) *
                         i.efficiency;
                       n.push({
                         label: "Building: ".concat(r.name),
@@ -13698,7 +13702,7 @@
                 );
               }),
               (t.prototype.getEffectMultiplier = function (e) {
-                var t = El.filter(function (t) {
+                var t = dl.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getEffectMultiplier) ||
                     void 0 === n
@@ -13719,8 +13723,8 @@
                         : o[e])
                     ) {
                       var a =
-                          w.calculate(
-                            xg,
+                          X.calculate(
+                            Yg,
                             r.getEffectMultiplier[e],
                             i.activeAmount,
                             1
@@ -13739,7 +13743,7 @@
                 );
               }),
               (t.prototype.getEffectBeingConsumed = function (e) {
-                var t = El.filter(function (t) {
+                var t = dl.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getEffectConsumption) ||
                     void 0 === n
@@ -13760,8 +13764,8 @@
                         : o[e])
                     ) {
                       var a =
-                        w.calculate(
-                          xg,
+                        X.calculate(
+                          Yg,
                           r.getEffectConsumption[e],
                           0,
                           i.activeAmount
@@ -13778,7 +13782,7 @@
                 );
               }),
               (t.prototype.getResourceBeingProduced = function (e) {
-                var t = El.filter(function (t) {
+                var t = dl.filter(function (t) {
                     return !!t.getGain[e];
                   }),
                   n = [];
@@ -13789,7 +13793,7 @@
                     });
                     if (o) {
                       var r =
-                        w.calculate(xg, o.getGain[e], 0, i.activeAmount) *
+                        X.calculate(Yg, o.getGain[e], 0, i.activeAmount) *
                         i.efficiency;
                       n.push({
                         label: "Building: ".concat(o.name),
@@ -13803,7 +13807,7 @@
                 );
               }),
               (t.prototype.getCraftingMultiplier = function () {
-                var e = El.filter(function (e) {
+                var e = dl.filter(function (e) {
                     return !!e.getCraftingMultiplier;
                   }),
                   t = [];
@@ -13813,8 +13817,8 @@
                       return e.id === n.id;
                     });
                     if (i && i.getCraftingMultiplier) {
-                      var o = w.calculate(
-                          xg,
+                      var o = X.calculate(
+                          Yg,
                           i.getCraftingMultiplier,
                           n.activeAmount,
                           1
@@ -13834,7 +13838,7 @@
                 );
               }),
               (t.prototype.getResourceMultiplier = function (e) {
-                var t = El.filter(function (t) {
+                var t = dl.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getGainMultiplier) || void 0 === n
                       ? void 0
@@ -13853,8 +13857,8 @@
                         ? void 0
                         : o[e])
                     ) {
-                      var a = w.calculate(
-                          xg,
+                      var a = X.calculate(
+                          Yg,
                           r.getGainMultiplier[e],
                           i.activeAmount,
                           1
@@ -13874,7 +13878,7 @@
                 );
               }),
               (t.prototype.getResourceBeingConsumed = function (e) {
-                var t = El.filter(function (t) {
+                var t = dl.filter(function (t) {
                     return !!t.getConsumption[e];
                   }),
                   n = [];
@@ -13885,8 +13889,8 @@
                     });
                     if (o) {
                       var r =
-                        w.calculate(
-                          xg,
+                        X.calculate(
+                          Yg,
                           o.getConsumption[e],
                           0,
                           i.activeAmount
@@ -13903,7 +13907,7 @@
                 );
               }),
               (t.prototype.getResourceBeingStored = function (e) {
-                var t = El.filter(function (t) {
+                var t = dl.filter(function (t) {
                     return !!t.getStorage[e];
                   }),
                   n = [];
@@ -13914,7 +13918,7 @@
                     });
                     if (o) {
                       var r =
-                        w.calculate(xg, o.getStorage[e], 0, i.activeAmount) *
+                        X.calculate(Yg, o.getStorage[e], 0, i.activeAmount) *
                         i.efficiency;
                       n.push({
                         label: "Building: ".concat(o.name),
@@ -13928,7 +13932,7 @@
                 );
               }),
               (t.prototype.getColonistsCap = function () {
-                var e = El.filter(function (e) {
+                var e = dl.filter(function (e) {
                     return !!e.getMaxColonists;
                   }),
                   t = [];
@@ -13939,7 +13943,7 @@
                     });
                     if (i && i.getMaxColonists) {
                       var o =
-                        w.calculate(xg, i.getMaxColonists, 0, n.activeAmount) *
+                        X.calculate(Yg, i.getMaxColonists, 0, n.activeAmount) *
                         n.efficiency;
                       t.push({
                         label: "Building: ".concat(i.name),
@@ -13953,7 +13957,7 @@
                 );
               }),
               (t.prototype.getHappinessBonus = function () {
-                var e = El.filter(function (e) {
+                var e = dl.filter(function (e) {
                     return !!e.getHappinessBonus;
                   }),
                   t = [];
@@ -13964,8 +13968,8 @@
                     });
                     if (i && i.getHappinessBonus) {
                       var o =
-                        w.calculate(
-                          xg,
+                        X.calculate(
+                          Yg,
                           i.getHappinessBonus,
                           0,
                           n.activeAmount
@@ -13997,10 +14001,10 @@
               }),
               (t.prototype.adaptEfficiency = function () {
                 var e = this,
-                  t = Al.lackEfficiencyResources,
+                  t = fl.lackEfficiencyResources,
                   n = Object.keys(t);
                 this.buildings.forEach(function (i, o) {
-                  var r = El.find(function (e) {
+                  var r = dl.find(function (e) {
                     return e.id === i.id;
                   });
                   if (r) {
@@ -14010,8 +14014,8 @@
                       });
                     (e.buildings[o].efficiencyToUI = 1),
                       c.forEach(function (n) {
-                        w.calculate(
-                          xg,
+                        X.calculate(
+                          Yg,
                           r.getConsumption[n],
                           0,
                           i.activeAmount
@@ -14034,9 +14038,9 @@
               }),
               t
             );
-          })(C),
-          Tl = Nl.getInstance(),
-          Ol = (function () {
+          })(v),
+          Ol = Tl.getInstance(),
+          yl = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -14070,18 +14074,18 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          yl = (function (e) {
+          ml = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
-                (t.landingZoneActions = Wu),
-                (t.landingZoneUpgrades = qu),
-                (t.landingZoneBuildings = Tl),
+                (t.landingZoneActions = Zu),
+                (t.landingZoneUpgrades = zu),
+                (t.landingZoneBuildings = Ol),
                 t
               );
             }
             return (
-              Ol(t, e),
+              yl(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -14118,8 +14122,8 @@
               }),
               t
             );
-          })(C).getInstance(),
-          ml = [],
+          })(v).getInstance(),
+          hl = [],
           Ll = (function () {
             var e = function (t, n) {
               return (
@@ -14154,7 +14158,7 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          hl = (function (e) {
+          Cl = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (t.milestonesState = []), t;
@@ -14180,72 +14184,72 @@
               }),
               (t.prototype.process = function (e) {
                 var t = this;
-                ml.filter(function (e) {
+                hl.filter(function (e) {
                   return !t.milestonesState.find(function (t) {
                     return t.id === e.id && t.isReached;
                   });
                 }).forEach(function (e) {
-                  e.unlockCondition(xg) &&
+                  e.unlockCondition(Yg) &&
                     t.milestonesState.push({ id: e.id, isReached: !0 });
                 });
               }),
               t
             );
-          })(C).getInstance(),
-          Cl = function (e) {
+          })(v).getInstance(),
+          vl = function (e) {
             return e.colony.getColonistsHappiness();
           },
-          vl = function (e) {
-            return 1 === e.laws.getLawSelected(M.MASSMEDIA) ? 1.1 : 1;
-          },
           Sl = function (e) {
-            var t = e.laws.getLawSelected(M.CLEAR_CUTTING),
+            return 1 === e.laws.getLawSelected(U.MASSMEDIA) ? 1.1 : 1;
+          },
+          Pl = function (e) {
+            var t = e.laws.getLawSelected(U.CLEAR_CUTTING),
               n = 1;
             return 1 === t && (n *= 1.2), 2 === t && (n *= 0.8), n;
           },
-          Pl = [
+          Bl = [
             {
-              id: P.QUARRYMAN,
+              id: B.QUARRYMAN,
               unlockCondition: function (e) {
                 return !0;
               },
               name: "Quarryman",
               description: "Works at the quarry to mine stone",
               getGain:
-                ((Cc = {}),
-                (Cc[l.STONE] = function (e) {
-                  return { A: 0.5 * Cl(e) * vl(e), B: 0, type: i.LINEAR };
+                ((vc = {}),
+                (vc[l.STONE] = function (e) {
+                  return { A: 0.5 * vl(e) * Sl(e), B: 0, type: i.LINEAR };
                 }),
-                Cc),
+                vc),
             },
             {
-              id: P.MINER,
+              id: B.MINER,
               unlockCondition: function (e) {
                 return !0;
               },
               name: "Miner",
               description: "Works at the mine to gather ore",
               getGain:
-                ((vc = {}),
-                (vc[l.ORE] = function (e) {
-                  return { A: 0.5 * Cl(e) * vl(e), B: 0, type: i.LINEAR };
+                ((Sc = {}),
+                (Sc[l.ORE] = function (e) {
+                  return { A: 0.5 * vl(e) * Sl(e), B: 0, type: i.LINEAR };
                 }),
-                (vc[l.PLATINUM] = function (e) {
+                (Sc[l.PLATINUM] = function (e) {
                   return {
                     A:
                       (e.landingZone.landingZoneUpgrades.getUpgradeLevel(
                         r.PLATINUM_MINING
                       )
                         ? 0.01
-                        : 0) * Cl(e),
+                        : 0) * vl(e),
                     B: 0,
                     type: i.LINEAR,
                   };
                 }),
-                vc),
+                Sc),
             },
             {
-              id: P.SCIENTIST,
+              id: B.SCIENTIST,
               unlockCondition: function (e) {
                 return (
                   e.landingZone.landingZoneUpgrades.getUpgradeLevel(
@@ -14256,25 +14260,25 @@
               name: "Researcher",
               description: "Works at the lab to generate research",
               getGain:
-                ((Sc = {}),
-                (Sc[l.RESEARCH] = function (e) {
-                  return { A: 0.04 * Cl(e) * vl(e), B: 0, type: i.LINEAR };
+                ((Pc = {}),
+                (Pc[l.RESEARCH] = function (e) {
+                  return { A: 0.04 * vl(e) * Sl(e), B: 0, type: i.LINEAR };
                 }),
-                Sc),
+                Pc),
             },
             {
-              id: P.FARMER,
+              id: B.FARMER,
               unlockCondition: function (e) {
                 return (
-                  e.science.scienceResearches.getResearchLevel(v.EXOFARMING) > 0
+                  e.science.scienceResearches.getResearchLevel(S.EXOFARMING) > 0
                 );
               },
               name: "Farmer",
               description:
                 "Tills the soil and plants crops to generate nutrition",
               getGain:
-                ((Pc = {}),
-                (Pc[l.NUTRITION] = function (e) {
+                ((Bc = {}),
+                (Bc[l.NUTRITION] = function (e) {
                   return {
                     A:
                       (0.15 +
@@ -14282,16 +14286,16 @@
                           e.landingZone.landingZoneUpgrades.getUpgradeLevel(
                             r.FERTILIZING
                           )) *
-                      Cl(e) *
-                      vl(e),
+                      vl(e) *
+                      Sl(e),
                     B: 0,
                     type: i.LINEAR,
                   };
                 }),
-                Pc),
+                Bc),
               getConsumption:
-                ((Bc = {}),
-                (Bc[l.BIOMASS] = function (e) {
+                ((_c = {}),
+                (_c[l.BIOMASS] = function (e) {
                   return {
                     A:
                       0.1 *
@@ -14302,31 +14306,31 @@
                     type: i.LINEAR,
                   };
                 }),
-                Bc),
+                _c),
             },
             {
-              id: P.FORESTER,
+              id: B.FORESTER,
               unlockCondition: function (e) {
                 return (
-                  e.science.scienceResearches.getResearchLevel(v.EXOFORESTRY) >
+                  e.science.scienceResearches.getResearchLevel(S.EXOFORESTRY) >
                   0
                 );
               },
               name: "Forester",
               description: "Maintains forests, plants and cuts wood",
               getGain:
-                ((_c = {}),
-                (_c[l.WOOD] = function (e) {
+                ((Mc = {}),
+                (Mc[l.WOOD] = function (e) {
                   return {
-                    A: 0.05 * Cl(e) * Sl(e) * vl(e),
+                    A: 0.05 * vl(e) * Pl(e) * Sl(e),
                     B: 0,
                     type: i.LINEAR,
                   };
                 }),
-                _c),
+                Mc),
               getConsumption:
-                ((Mc = {}),
-                (Mc[l.BIOMASS] = function (e) {
+                ((Uc = {}),
+                (Uc[l.BIOMASS] = function (e) {
                   return {
                     A:
                       0.1 *
@@ -14337,38 +14341,38 @@
                     type: i.LINEAR,
                   };
                 }),
-                Mc),
+                Uc),
               getEffectGain:
-                ((Uc = {}),
-                (Uc[B.AESTHETICS] = function (e) {
+                ((Gc = {}),
+                (Gc[_.AESTHETICS] = function (e) {
                   return {
                     A:
                       1 *
-                      (2 === e.laws.getLawSelected(M.CLEAR_CUTTING) ? 1 : 0),
-                    B: 0,
-                    type: i.LINEAR,
-                  };
-                }),
-                Uc),
-              getEffectConsumption:
-                ((Gc = {}),
-                (Gc[B.AESTHETICS] = function (e) {
-                  return {
-                    A:
-                      1.5 *
-                      (1 === e.laws.getLawSelected(M.CLEAR_CUTTING) ? 1 : 0),
+                      (2 === e.laws.getLawSelected(U.CLEAR_CUTTING) ? 1 : 0),
                     B: 0,
                     type: i.LINEAR,
                   };
                 }),
                 Gc),
+              getEffectConsumption:
+                ((bc = {}),
+                (bc[_.AESTHETICS] = function (e) {
+                  return {
+                    A:
+                      1.5 *
+                      (1 === e.laws.getLawSelected(U.CLEAR_CUTTING) ? 1 : 0),
+                    B: 0,
+                    type: i.LINEAR,
+                  };
+                }),
+                bc),
             },
             {
-              id: P.POLICEMAN,
+              id: B.POLICEMAN,
               unlockCondition: function (e) {
                 return (
                   e.science.scienceResearches.getResearchLevel(
-                    v.PUBLIC_SERVICE
+                    S.PUBLIC_SERVICE
                   ) > 0
                 );
               },
@@ -14376,31 +14380,31 @@
               description: "Patrols the colony and provides security",
               getGain: {},
               getConsumption:
-                ((bc = {}),
-                (bc[l.NUTRITION] = function (e) {
+                ((Dc = {}),
+                (Dc[l.NUTRITION] = function (e) {
                   return {
                     A:
-                      1 === e.laws.getLawSelected(M.SECURITY_DOTATIONS)
+                      1 === e.laws.getLawSelected(U.SECURITY_DOTATIONS)
                         ? 0.5
                         : 0,
                     B: 0,
                     type: i.LINEAR,
                   };
                 }),
-                (bc[l.WATER] = function (e) {
+                (Dc[l.WATER] = function (e) {
                   return {
                     A:
-                      1 === e.laws.getLawSelected(M.SECURITY_DOTATIONS)
+                      1 === e.laws.getLawSelected(U.SECURITY_DOTATIONS)
                         ? 0.1
                         : 0,
                     B: 0,
                     type: i.LINEAR,
                   };
                 }),
-                bc),
+                Dc),
               getEffectGain:
-                ((Dc = {}),
-                (Dc[B.SECURITY] = function (e) {
+                ((wc = {}),
+                (wc[_.SECURITY] = function (e) {
                   return {
                     A:
                       4 *
@@ -14412,22 +14416,22 @@
                       ) *
                       (1 +
                         0.75 *
-                          (1 === e.laws.getLawSelected(M.SECURITY_DOTATIONS)
+                          (1 === e.laws.getLawSelected(U.SECURITY_DOTATIONS)
                             ? 1
                             : 0)) *
-                      vl(e) *
-                      (1 === e.laws.getLawSelected(M.LIGHTNING_MODE) ? 1.1 : 1),
+                      Sl(e) *
+                      (1 === e.laws.getLawSelected(U.LIGHTNING_MODE) ? 1.1 : 1),
                     B: 0,
                     type: i.LINEAR,
                   };
                 }),
-                Dc),
+                wc),
             },
             {
-              id: P.ARTISAN,
+              id: B.ARTISAN,
               unlockCondition: function (e) {
                 return (
-                  e.science.scienceResearches.getResearchLevel(v.METALLURGY) > 0
+                  e.science.scienceResearches.getResearchLevel(S.METALLURGY) > 0
                 );
               },
               name: "Artisan",
@@ -14437,7 +14441,7 @@
               getConsumption: {},
             },
           ],
-          Bl = (function () {
+          _l = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -14471,9 +14475,9 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          _l = function () {
+          Ml = function () {
             return (
-              (_l =
+              (Ml =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -14482,10 +14486,10 @@
                         (e[o] = t[o]);
                   return e;
                 }),
-              _l.apply(this, arguments)
+              Ml.apply(this, arguments)
             );
           },
-          Ml = (function (e) {
+          Ul = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -14498,7 +14502,7 @@
               );
             }
             return (
-              Bl(t, e),
+              _l(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -14511,7 +14515,7 @@
               (t.prototype.dataToUI = function () {
                 var e = this;
                 return {
-                  list: Pl.map(function (t) {
+                  list: Bl.map(function (t) {
                     return e.processToUI(t);
                   }),
                   freeWorkers: this.freeWorkers,
@@ -14541,30 +14545,30 @@
                   ((t = { id: e.id, amount: 0, efficiency: 1 }),
                   this.jobs.push(t));
                 var n = e.getConsumption
-                    ? w.calcBatchAll(
+                    ? X.calcBatchAll(
                         e.getConsumption,
-                        kg.getInstance(),
+                        xg.getInstance(),
                         0,
-                        kg.getInstance().resources.getBatchObject()
+                        xg.getInstance().resources.getBatchObject()
                       )
                     : [],
                   i = e.getGain
-                    ? w.calcBatch(e.getGain, kg.getInstance(), 0)
+                    ? X.calcBatch(e.getGain, xg.getInstance(), 0)
                     : [],
                   o = e.getMultiplier
-                    ? w.calcBatch(e.getMultiplier, kg.getInstance(), 0)
+                    ? X.calcBatch(e.getMultiplier, xg.getInstance(), 0)
                     : [],
-                  a = e.unlockCondition(xg);
+                  a = e.unlockCondition(Yg);
                 return (
                   a &&
-                    xg.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                    Yg.landingZone.landingZoneUpgrades.getUpgradeLevel(
                       r.DOCKING_MODULE
                     ) > 0 &&
                     (t.amount > 0 &&
-                      xg.newNotifications.setViewed(
+                      Yg.newNotifications.setViewed(
                         "planet:colony:jobs:".concat(e.id)
                       ),
-                    xg.newNotifications.registerNotification(
+                    Yg.newNotifications.registerNotification(
                       "planet:colony:jobs:".concat(e.id)
                     )),
                   {
@@ -14577,7 +14581,7 @@
                         return e.amount;
                       })
                       .map(function (e) {
-                        return _l(_l({}, e), {
+                        return Ml(Ml({}, e), {
                           amountValue: e.amount,
                           amount: H(e.amount),
                         });
@@ -14587,7 +14591,7 @@
                         return e.amount;
                       })
                       .map(function (e) {
-                        return _l(_l({}, e), {
+                        return Ml(Ml({}, e), {
                           amountValue: e.amount,
                           amount: H(e.amount),
                         });
@@ -14597,7 +14601,7 @@
                         return e.amount;
                       })
                       .map(function (e) {
-                        return _l(_l({}, e), {
+                        return Ml(Ml({}, e), {
                           amountValue: e.amount,
                           amount: "x".concat(H(e.amount)),
                         });
@@ -14620,10 +14624,10 @@
                     Math.max(t, 0),
                     this.jobs[n].amount + this.freeWorkers
                   )),
-                  xg.resources.reassertBalances();
+                  Yg.resources.reassertBalances();
               }),
               (t.prototype.getEffectGain = function (e) {
-                var t = Pl.filter(function (t) {
+                var t = Bl.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getEffectGain) || void 0 === n
                       ? void 0
@@ -14643,7 +14647,7 @@
                         : o[e])
                     ) {
                       var a =
-                        w.calculate(xg, r.getEffectGain[e], 0, i.amount) *
+                        X.calculate(Yg, r.getEffectGain[e], 0, i.amount) *
                         i.efficiency;
                       n.push({
                         label: "Job: ".concat(r.name),
@@ -14657,7 +14661,7 @@
                 );
               }),
               (t.prototype.getEffectMultiplier = function (e) {
-                var t = Pl.filter(function (t) {
+                var t = Bl.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getEffectMultiplier) ||
                     void 0 === n
@@ -14678,7 +14682,7 @@
                         : o[e])
                     ) {
                       var a =
-                        w.calculate(xg, r.getEffectMultiplier[e], i.amount, 1) *
+                        X.calculate(Yg, r.getEffectMultiplier[e], i.amount, 1) *
                         i.efficiency;
                       a &&
                         n.push({
@@ -14693,7 +14697,7 @@
                 );
               }),
               (t.prototype.getEffectBeingConsumed = function (e) {
-                var t = Pl.filter(function (t) {
+                var t = Bl.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getEffectConsumption) ||
                     void 0 === n
@@ -14714,8 +14718,8 @@
                         : o[e])
                     ) {
                       var a =
-                        w.calculate(
-                          xg,
+                        X.calculate(
+                          Yg,
                           r.getEffectConsumption[e],
                           0,
                           i.amount
@@ -14732,11 +14736,11 @@
                 );
               }),
               (t.prototype.getResourceBeingProduced = function (e) {
-                var t = Pl.filter(function (t) {
+                var t = Bl.filter(function (t) {
                     return t.getGain && !!t.getGain[e];
                   }),
                   n = [],
-                  i = xg.colony.getColonistsHappiness();
+                  i = Yg.colony.getColonistsHappiness();
                 return (
                   console.log("happ: ", i),
                   this.jobs.forEach(function (o) {
@@ -14749,7 +14753,7 @@
                       (null === (r = a.getGain) || void 0 === r ? void 0 : r[e])
                     ) {
                       var c =
-                        w.calculate(xg, a.getGain[e], 0, o.amount) *
+                        X.calculate(Yg, a.getGain[e], 0, o.amount) *
                         o.efficiency *
                         i;
                       n.push({
@@ -14764,7 +14768,7 @@
                 );
               }),
               (t.prototype.getResourceBeingConsumed = function (e) {
-                var t = Pl.filter(function (t) {
+                var t = Bl.filter(function (t) {
                     return t.getConsumption && !!t.getConsumption[e];
                   }),
                   n = [];
@@ -14781,7 +14785,7 @@
                         : o[e])
                     ) {
                       var a =
-                        w.calculate(xg, r.getConsumption[e], 0, i.amount) *
+                        X.calculate(Yg, r.getConsumption[e], 0, i.amount) *
                         i.efficiency;
                       n.push({
                         label: "Job: ".concat(r.name),
@@ -14795,7 +14799,7 @@
                 );
               }),
               (t.prototype.getResourceBeingMultiplied = function (e) {
-                var t = Pl.filter(function (t) {
+                var t = Bl.filter(function (t) {
                     return t.getMultiplier && !!t.getMultiplier[e];
                   }),
                   n = [];
@@ -14812,7 +14816,7 @@
                         : o[e])
                     ) {
                       var a =
-                        w.calculate(xg, r.getMultiplier[e], 0, i.amount) *
+                        X.calculate(Yg, r.getMultiplier[e], 0, i.amount) *
                         i.efficiency;
                       n.push({
                         label: "Job: ".concat(r.name),
@@ -14833,10 +14837,10 @@
               }),
               (t.prototype.adaptEfficiency = function () {
                 var e = this,
-                  t = Al.lackEfficiencyResources,
+                  t = fl.lackEfficiencyResources,
                   n = Object.keys(t);
                 this.jobs.forEach(function (i, o) {
-                  var r = Pl.find(function (e) {
+                  var r = Bl.find(function (e) {
                     return e.id === i.id;
                   });
                   if (r && r.getConsumption) {
@@ -14853,13 +14857,13 @@
                 });
               }),
               (t.prototype.process = function (e) {
-                var t = xg.colony.colonists - this.getBusyWorkers();
+                var t = Yg.colony.colonists - this.getBusyWorkers();
                 if (t < 0) {
                   for (var n = this.jobs.length - 1; n >= 0; n--) {
                     var i = Math.min(this.jobs[n].amount, -t);
                     if (((this.jobs[n].amount -= i), (t += i) >= 0)) break;
                   }
-                  xg.resources.reassertBalances();
+                  Yg.resources.reassertBalances();
                 }
                 this.freeWorkers = t;
               }),
@@ -14868,9 +14872,9 @@
               }),
               t
             );
-          })(C),
-          Ul = Ml.getInstance(),
-          Gl = (function () {
+          })(v),
+          Gl = Ul.getInstance(),
+          bl = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -14904,9 +14908,9 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          bl = function () {
+          Dl = function () {
             return (
-              (bl =
+              (Dl =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -14915,10 +14919,10 @@
                         (e[o] = t[o]);
                   return e;
                 }),
-              bl.apply(this, arguments)
+              Dl.apply(this, arguments)
             );
           },
-          Dl = (function (e) {
+          wl = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -14929,7 +14933,7 @@
               );
             }
             return (
-              Gl(t, e),
+              bl(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -14940,7 +14944,7 @@
               (t.prototype.dataToUI = function () {
                 var e = this;
                 return {
-                  effects: G.map(function (t) {
+                  effects: b.map(function (t) {
                     return e.processToUI(t);
                   }),
                   happiness: this.assertHappiness(),
@@ -14958,13 +14962,13 @@
                 return (
                   Math.pow(
                     0.98,
-                    xg.landingZone.landingZoneBuildings.getBuildingActiveLevel(
+                    Yg.landingZone.landingZoneBuildings.getBuildingActiveLevel(
                       a.ADMINISTRATIVE_CENTER
                     )
                   ) *
                   Math.pow(
                     0.9,
-                    xg.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                    Yg.landingZone.landingZoneUpgrades.getUpgradeLevel(
                       r.GORMONE_DELIVERY_NANOBOTS
                     )
                   )
@@ -14972,12 +14976,12 @@
               }),
               (t.prototype.getEffectBeingConsumed = function (e) {
                 var t = [],
-                  n = G.find(function (t) {
+                  n = b.find(function (t) {
                     return t.id === e;
                   });
                 if (null == n ? void 0 : n.getConsumption) {
                   var i =
-                    n.getConsumption(xg) * this.assertConsumptionMitigation();
+                    n.getConsumption(Yg) * this.assertConsumptionMitigation();
                   t.push({
                     label: "Population",
                     value: i,
@@ -15004,7 +15008,7 @@
                       E,
                       d,
                       g =
-                        (((t = {})[B.SECURITY] = {
+                        (((t = {})[_.SECURITY] = {
                           linear: [
                             {
                               id: "basic",
@@ -15016,7 +15020,7 @@
                           multiplier: [],
                           consumption: [],
                         }),
-                        (t[B.AESTHETICS] = {
+                        (t[_.AESTHETICS] = {
                           linear: [
                             {
                               id: "basic",
@@ -15028,7 +15032,7 @@
                           multiplier: [],
                           consumption: [],
                         }),
-                        (t[B.ENTERTAINMENT] = {
+                        (t[_.ENTERTAINMENT] = {
                           linear: [
                             {
                               id: "basic",
@@ -15040,7 +15044,7 @@
                           multiplier: [],
                           consumption: [],
                         }),
-                        (t[B.HEALTHCARE] = {
+                        (t[_.HEALTHCARE] = {
                           linear: [
                             {
                               id: "basic",
@@ -15052,7 +15056,7 @@
                           multiplier: [],
                           consumption: [],
                         }),
-                        (t[B.RELIGION] = {
+                        (t[_.RELIGION] = {
                           linear: [
                             {
                               id: "basic",
@@ -15064,7 +15068,7 @@
                           multiplier: [],
                           consumption: [],
                         }),
-                        (t[B.WORK_CONDITIONS] = {
+                        (t[_.WORK_CONDITIONS] = {
                           linear: [
                             {
                               id: "basic",
@@ -15080,11 +15084,11 @@
                     for (var A in g)
                       (n = g[A].linear).push.apply(
                         n,
-                        xg.landingZone.landingZoneBuildings.getEffectGain(A)
+                        Yg.landingZone.landingZoneBuildings.getEffectGain(A)
                       ),
                         (i = g[A].multiplier).push.apply(
                           i,
-                          xg.landingZone.landingZoneBuildings.getEffectMultiplier(
+                          Yg.landingZone.landingZoneBuildings.getEffectMultiplier(
                             A
                           )
                         ),
@@ -15092,57 +15096,57 @@
                           void 0 === u ||
                           u.push.apply(
                             u,
-                            xg.landingZone.landingZoneBuildings.getEffectBeingConsumed(
+                            Yg.landingZone.landingZoneBuildings.getEffectBeingConsumed(
                               A
                             )
                           ),
                         (o = g[A].linear).push.apply(
                           o,
-                          xg.colony.colonyJobs.getEffectGain(A)
+                          Yg.colony.colonyJobs.getEffectGain(A)
                         ),
                         (r = g[A].multiplier).push.apply(
                           r,
-                          xg.colony.colonyJobs.getEffectMultiplier(A)
+                          Yg.colony.colonyJobs.getEffectMultiplier(A)
                         ),
                         null === (l = g[A].consumption) ||
                           void 0 === l ||
                           l.push.apply(
                             l,
-                            xg.colony.colonyJobs.getEffectBeingConsumed(A)
+                            Yg.colony.colonyJobs.getEffectBeingConsumed(A)
                           ),
                         null === (p = g[A].consumption) ||
                           void 0 === p ||
                           p.push.apply(
                             p,
-                            xg.crafting.craftingJobs.getEffectBeingConsumed(A)
+                            Yg.crafting.craftingJobs.getEffectBeingConsumed(A)
                           ),
                         null === (E = g[A].consumption) ||
                           void 0 === E ||
                           E.push.apply(
                             E,
-                            xg.colony.colonyEffects.getEffectBeingConsumed(A)
+                            Yg.colony.colonyEffects.getEffectBeingConsumed(A)
                           ),
                         (a = g[A].linear).push.apply(
                           a,
-                          xg.laws.getEffectGain(A)
+                          Yg.laws.getEffectGain(A)
                         ),
                         (c = g[A].multiplier).push.apply(
                           c,
-                          xg.laws.getEffectMultiplier(A)
+                          Yg.laws.getEffectMultiplier(A)
                         ),
                         null === (d = g[A].consumption) ||
                           void 0 === d ||
-                          d.push.apply(d, xg.laws.getEffectBeingConsumed(A)),
+                          d.push.apply(d, Yg.laws.getEffectBeingConsumed(A)),
                         (s = g[A].multiplier).push.apply(
                           s,
-                          xg.prestige.colonizePlanet.getEffectMultiplier(A)
+                          Yg.prestige.colonizePlanet.getEffectMultiplier(A)
                         );
                     return g;
                   })(),
                   n = {};
-                G.forEach(function (i) {
+                b.forEach(function (i) {
                   var o, r, a;
-                  if (i.unlockCondition(xg)) {
+                  if (i.unlockCondition(Yg)) {
                     n[i.id] = { income: [], multiplier: [], consumption: [] };
                     var c =
                         null === (o = t[i.id].linear) || void 0 === o
@@ -15163,19 +15167,19 @@
                               return e + t.value;
                             }, 0)) || 0;
                     (e.happinessEffects[i.id] = Math.min(
-                      i.getMaximum(xg),
+                      i.getMaximum(Yg),
                       Math.max(i.minimum, c * s - u)
                     )),
                       (e.happinessEffectsExcess[i.id] = Math.max(
                         0,
-                        c * s - u - i.getMaximum(xg)
+                        c * s - u - i.getMaximum(Yg)
                       )),
                       (n[i.id].income = t[i.id].linear
                         .filter(function (e) {
                           return e.value;
                         })
                         .map(function (e) {
-                          return bl(bl({}, e), {
+                          return Dl(Dl({}, e), {
                             value: "+".concat(e.value.toPrecision(4)),
                           });
                         })),
@@ -15184,7 +15188,7 @@
                           return 1 !== e.value;
                         })
                         .map(function (e) {
-                          return bl(bl({}, e), {
+                          return Dl(Dl({}, e), {
                             value: "x".concat(e.value.toPrecision(4)),
                           });
                         })),
@@ -15193,7 +15197,7 @@
                           return e.value;
                         })
                         .map(function (e) {
-                          return bl(bl({}, e), {
+                          return Dl(Dl({}, e), {
                             value: "-".concat(e.value.toPrecision(4)),
                           });
                         }));
@@ -15202,14 +15206,14 @@
                   (this.happinessBreakdowns = n);
               }),
               (t.prototype.processToUI = function (e) {
-                e.getConsumption && e.getConsumption(xg);
+                e.getConsumption && e.getConsumption(Yg);
                 var t,
                   n,
                   i,
-                  o = e.unlockCondition(xg);
+                  o = e.unlockCondition(Yg);
                 return (
                   o &&
-                    xg.newNotifications.registerNotification(
+                    Yg.newNotifications.registerNotification(
                       "planet:colony:effects:".concat(e.id)
                     ),
                   {
@@ -15242,9 +15246,9 @@
               }),
               t
             );
-          })(C),
-          wl = Dl.getInstance(),
-          Xl = (function () {
+          })(v),
+          Xl = wl.getInstance(),
+          kl = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -15284,13 +15288,13 @@
               return (
                 (t.colonists = 0),
                 (t.maxColonists = 0),
-                (t.colonyJobs = Ul),
-                (t.colonyEffects = wl),
+                (t.colonyJobs = Gl),
+                (t.colonyEffects = Xl),
                 t
               );
             }
             return (
-              Xl(t, e),
+              kl(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -15309,7 +15313,7 @@
                   colonists: this.colonists || 0,
                   maxColonists: this.maxColonists,
                   isUnlocked:
-                    xg.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                    Yg.landingZone.landingZoneUpgrades.getUpgradeLevel(
                       r.DOCKING_MODULE
                     ) > 0,
                   jobs: this.colonyJobs.dataToUI(),
@@ -15318,7 +15322,7 @@
               }),
               (t.prototype.getMaxColonists = function () {
                 return Math.round(
-                  xg.landingZone.landingZoneBuildings
+                  Yg.landingZone.landingZoneBuildings
                     .getColonistsCap()
                     .reduce(function (e, t) {
                       return e + t.value;
@@ -15331,10 +15335,10 @@
               (t.prototype.missingSupply = function () {
                 return (
                   !!this.colonists &&
-                  ((null != Al.lackEfficiencyResources[l.NUTRITION] &&
-                    (Al.lackEfficiencyResources[l.NUTRITION] || 0) < 1) ||
-                    (null != Al.lackEfficiencyResources[l.WATER] &&
-                      (Al.lackEfficiencyResources[l.WATER] || 0) < 1))
+                  ((null != fl.lackEfficiencyResources[l.NUTRITION] &&
+                    (fl.lackEfficiencyResources[l.NUTRITION] || 0) < 1) ||
+                    (null != fl.lackEfficiencyResources[l.WATER] &&
+                      (fl.lackEfficiencyResources[l.WATER] || 0) < 1))
                 );
               }),
               (t.prototype.process = function (e) {
@@ -15343,13 +15347,13 @@
                     this.colonists > this.maxColonists) &&
                     (console.log("missing supply. Colonist is leaving"),
                     this.colonists--,
-                    xg.eventLog.colonistDied(H(this.colonists)),
-                    xg.resources.reassertBalances()),
+                    Yg.eventLog.colonistDied(H(this.colonists)),
+                    Yg.resources.reassertBalances()),
                   this.colonists < this.maxColonists &&
                     Math.random() < (0.005 * e) / 0.1 &&
                     (this.colonists++,
-                    xg.eventLog.colonistArrived(H(this.colonists)),
-                    xg.resources.reassertBalances()),
+                    Yg.eventLog.colonistArrived(H(this.colonists)),
+                    Yg.resources.reassertBalances()),
                   this.colonyEffects.process(e),
                   this.colonyJobs.process(e);
               }),
@@ -15361,43 +15365,43 @@
               }),
               t
             );
-          })(C).getInstance(),
-          kl = [
+          })(v).getInstance(),
+          xl = [
             {
-              id: v.EXOFARMING,
+              id: S.EXOFARMING,
               name: "Exo Farming",
               description:
                 "Learn how to work with soil on a foreign planet. Allows employing farmers",
               getCost:
-                ((wc = {}),
-                (wc[l.RESEARCH] = function (e) {
+                ((Xc = {}),
+                (Xc[l.RESEARCH] = function (e) {
                   return { A: 25, B: 0, type: i.LINEAR };
                 }),
-                wc),
+                Xc),
               unlockCondition: function (e) {
                 return !0;
               },
             },
             {
-              id: v.METEOROLOGY,
+              id: S.METEOROLOGY,
               name: "Meteorology",
               description:
                 "Learn more about the atmosphere and its weather patterns. Unlocks new upgrades and buildings",
               getCost:
-                ((Xc = {}),
-                (Xc[l.RESEARCH] = function (e) {
+                ((kc = {}),
+                (kc[l.RESEARCH] = function (e) {
                   return { A: 75, B: 0, type: i.LINEAR };
                 }),
-                Xc),
+                kc),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(v.EXOFARMING) >
+                  Yg.science.scienceResearches.getResearchLevel(S.EXOFARMING) >
                   0
                 );
               },
             },
             {
-              id: v.MINERALOGY,
+              id: S.MINERALOGY,
               name: "Mineralogy",
               description:
                 "Learn more about minerals available at your new home",
@@ -15409,102 +15413,102 @@
                 Hc),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(v.EXOFARMING) >
+                  Yg.science.scienceResearches.getResearchLevel(S.EXOFARMING) >
                   0
                 );
               },
             },
             {
-              id: v.CIVIL_SERVICE,
+              id: S.CIVIL_SERVICE,
               name: "Service Industry",
               description:
                 "Unlock new ways of providing services to your growing colony",
               getCost:
-                ((kc = {}),
-                (kc[l.RESEARCH] = function (e) {
-                  return { A: 225, B: 0, type: i.LINEAR };
-                }),
-                kc),
-              unlockCondition: function (e) {
-                return (
-                  xg.science.scienceResearches.getResearchLevel(v.EXOFARMING) >
-                  0
-                );
-              },
-            },
-            {
-              id: v.ENGINEERING,
-              name: "High-Gravity Engineering",
-              description:
-                "Learn about engineering specific to high gravity conditions",
-              getCost:
                 ((xc = {}),
                 (xc[l.RESEARCH] = function (e) {
-                  return { A: 200, B: 0, type: i.LINEAR };
+                  return { A: 225, B: 0, type: i.LINEAR };
                 }),
                 xc),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(v.MINERALOGY) >
+                  Yg.science.scienceResearches.getResearchLevel(S.EXOFARMING) >
                   0
                 );
               },
             },
             {
-              id: v.EXOBIOLOGY,
-              name: "Exo Biology",
-              description: "Learn more about local organisms",
+              id: S.ENGINEERING,
+              name: "High-Gravity Engineering",
+              description:
+                "Learn about engineering specific to high gravity conditions",
               getCost:
                 ((Yc = {}),
                 (Yc[l.RESEARCH] = function (e) {
-                  return { A: 225, B: 0, type: i.LINEAR };
+                  return { A: 200, B: 0, type: i.LINEAR };
                 }),
                 Yc),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(v.METEOROLOGY) >
+                  Yg.science.scienceResearches.getResearchLevel(S.MINERALOGY) >
                   0
                 );
               },
             },
             {
-              id: v.EXOFORESTRY,
-              name: "Exo Forestry",
-              description:
-                "Learn how to grow something bigger in this empty terrain",
+              id: S.EXOBIOLOGY,
+              name: "Exo Biology",
+              description: "Learn more about local organisms",
               getCost:
                 ((Wc = {}),
                 (Wc[l.RESEARCH] = function (e) {
-                  return { A: 375, B: 0, type: i.LINEAR };
+                  return { A: 225, B: 0, type: i.LINEAR };
                 }),
                 Wc),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(v.EXOBIOLOGY) >
+                  Yg.science.scienceResearches.getResearchLevel(S.METEOROLOGY) >
                   0
                 );
               },
             },
             {
-              id: v.METALLURGY,
-              name: "Metallurgy",
+              id: S.EXOFORESTRY,
+              name: "Exo Forestry",
               description:
-                "Learn how to work with exotic ores. Unlocks crafting and artisan job",
+                "Learn how to grow something bigger in this empty terrain",
               getCost:
                 ((Zc = {}),
                 (Zc[l.RESEARCH] = function (e) {
-                  return { A: 420, B: 0, type: i.LINEAR };
+                  return { A: 375, B: 0, type: i.LINEAR };
                 }),
                 Zc),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(v.MINERALOGY) >
+                  Yg.science.scienceResearches.getResearchLevel(S.EXOBIOLOGY) >
                   0
                 );
               },
             },
             {
-              id: v.FLORA_RESEARCH,
+              id: S.METALLURGY,
+              name: "Metallurgy",
+              description:
+                "Learn how to work with exotic ores. Unlocks crafting and artisan job",
+              getCost:
+                ((jc = {}),
+                (jc[l.RESEARCH] = function (e) {
+                  return { A: 420, B: 0, type: i.LINEAR };
+                }),
+                jc),
+              unlockCondition: function (e) {
+                return (
+                  Yg.science.scienceResearches.getResearchLevel(S.MINERALOGY) >
+                  0
+                );
+              },
+            },
+            {
+              id: S.FLORA_RESEARCH,
               name: "Exo Flora",
               description:
                 "Advanced flora researches unlocks new tools to boost agriculture",
@@ -15516,179 +15520,161 @@
                 Fc),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(v.EXOFORESTRY) >
+                  Yg.science.scienceResearches.getResearchLevel(S.EXOFORESTRY) >
                   0
                 );
               },
             },
             {
-              id: v.CHEMISTRY,
+              id: S.CHEMISTRY,
               name: "Chemistry",
               description:
                 "Study the material interactions of elements in this foreign environment. Unlocks new materials and upgrades",
               getCost:
-                ((jc = {}),
-                (jc[l.RESEARCH] = function (e) {
-                  return { A: 575, B: 0, type: i.LINEAR };
-                }),
-                jc),
-              unlockCondition: function (e) {
-                return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.FLORA_RESEARCH
-                  ) > 0
-                );
-              },
-            },
-            {
-              id: v.GEOLOGY,
-              name: "Geology",
-              description:
-                "Further research precious minerals available at your new habitat",
-              getCost:
                 ((Kc = {}),
                 (Kc[l.RESEARCH] = function (e) {
-                  return { A: 550, B: 0, type: i.LINEAR };
+                  return { A: 575, B: 0, type: i.LINEAR };
                 }),
                 Kc),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(v.METALLURGY) >
-                  0
-                );
-              },
-            },
-            {
-              id: v.GEOGRAPHY,
-              name: "Geography",
-              description: "Geography knowledge unlocks expeditions",
-              getCost:
-                ((Vc = {}),
-                (Vc[l.RESEARCH] = function (e) {
-                  return { A: 500, B: 0, type: i.LINEAR };
-                }),
-                Vc),
-              unlockCondition: function (e) {
-                return (
-                  xg.science.scienceResearches.getResearchLevel(v.METEOROLOGY) >
-                  0
-                );
-              },
-            },
-            {
-              id: v.SOCIOLOGY,
-              name: "Sociology",
-              description:
-                "Unlocks new ways to make your little society happier and more efficient",
-              getCost:
-                ((qc = {}),
-                (qc[l.RESEARCH] = function (e) {
-                  return { A: 550, B: 0, type: i.LINEAR };
-                }),
-                qc),
-              unlockCondition: function (e) {
-                return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.CIVIL_SERVICE
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.FLORA_RESEARCH
                   ) > 0
                 );
               },
             },
             {
-              id: v.MATERIAL_KNOWLEDGE,
-              name: "Material Knowledge",
-              description: "Further advances crafting and metal processing",
+              id: S.GEOLOGY,
+              name: "Geology",
+              description:
+                "Further research precious minerals available at your new habitat",
+              getCost:
+                ((Vc = {}),
+                (Vc[l.RESEARCH] = function (e) {
+                  return { A: 550, B: 0, type: i.LINEAR };
+                }),
+                Vc),
+              unlockCondition: function (e) {
+                return (
+                  Yg.science.scienceResearches.getResearchLevel(S.METALLURGY) >
+                  0
+                );
+              },
+            },
+            {
+              id: S.GEOGRAPHY,
+              name: "Geography",
+              description: "Geography knowledge unlocks expeditions",
+              getCost:
+                ((qc = {}),
+                (qc[l.RESEARCH] = function (e) {
+                  return { A: 500, B: 0, type: i.LINEAR };
+                }),
+                qc),
+              unlockCondition: function (e) {
+                return (
+                  Yg.science.scienceResearches.getResearchLevel(S.METEOROLOGY) >
+                  0
+                );
+              },
+            },
+            {
+              id: S.SOCIOLOGY,
+              name: "Sociology",
+              description:
+                "Unlocks new ways to make your little society happier and more efficient",
               getCost:
                 ((zc = {}),
                 (zc[l.RESEARCH] = function (e) {
-                  return { A: 825, B: 0, type: i.LINEAR };
+                  return { A: 550, B: 0, type: i.LINEAR };
                 }),
                 zc),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(v.CHEMISTRY) >
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.CIVIL_SERVICE
+                  ) > 0
+                );
+              },
+            },
+            {
+              id: S.MATERIAL_KNOWLEDGE,
+              name: "Material Knowledge",
+              description: "Further advances crafting and metal processing",
+              getCost:
+                ((Qc = {}),
+                (Qc[l.RESEARCH] = function (e) {
+                  return { A: 825, B: 0, type: i.LINEAR };
+                }),
+                Qc),
+              unlockCondition: function (e) {
+                return (
+                  Yg.science.scienceResearches.getResearchLevel(S.CHEMISTRY) >
                     0 &&
-                  xg.science.scienceResearches.getResearchLevel(v.METALLURGY) >
+                  Yg.science.scienceResearches.getResearchLevel(S.METALLURGY) >
                     0
                 );
               },
             },
             {
-              id: v.CODEX_OF_LAW,
+              id: S.CODEX_OF_LAW,
               name: "Law",
               description: "Unlocks new aspects of your colony development",
               getCost:
-                ((Qc = {}),
-                (Qc[l.RESEARCH] = function (e) {
-                  return { A: 1050, B: 0, type: i.LINEAR };
-                }),
-                Qc),
-              unlockCondition: function (e) {
-                return (
-                  xg.science.scienceResearches.getResearchLevel(v.SOCIOLOGY) > 0
-                );
-              },
-            },
-            {
-              id: v.ELECTRICITY_STUDY,
-              name: "Electricity Study",
-              description:
-                "Improves knowledge about conductivity of various materials",
-              getCost:
                 ((Jc = {}),
                 (Jc[l.RESEARCH] = function (e) {
-                  return { A: 1375, B: 0, type: i.LINEAR };
+                  return { A: 1050, B: 0, type: i.LINEAR };
                 }),
                 Jc),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.MATERIAL_KNOWLEDGE
-                  ) > 0
+                  Yg.science.scienceResearches.getResearchLevel(S.SOCIOLOGY) > 0
                 );
               },
             },
             {
-              id: v.ORGANIC_CHEMISTRY,
-              name: "Organic Chemistry",
-              description: "Learn about new uses for biomass",
+              id: S.ELECTRICITY_STUDY,
+              name: "Electricity Study",
+              description:
+                "Improves knowledge about conductivity of various materials",
               getCost:
                 (($c = {}),
                 ($c[l.RESEARCH] = function (e) {
-                  return { A: 1025, B: 0, type: i.LINEAR };
+                  return { A: 1375, B: 0, type: i.LINEAR };
                 }),
                 $c),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.MATERIAL_KNOWLEDGE
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.MATERIAL_KNOWLEDGE
                   ) > 0
                 );
               },
             },
             {
-              id: v.ELECTRONICS,
-              name: "Electronics",
-              description:
-                "Learn how to produce electronics and incorporate it",
+              id: S.ORGANIC_CHEMISTRY,
+              name: "Organic Chemistry",
+              description: "Learn about new uses for biomass",
               getCost:
                 ((es = {}),
                 (es[l.RESEARCH] = function (e) {
-                  return { A: 2e3, B: 0, type: i.LINEAR };
+                  return { A: 1025, B: 0, type: i.LINEAR };
                 }),
                 es),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.ELECTRICITY_STUDY
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.MATERIAL_KNOWLEDGE
                   ) > 0
                 );
               },
             },
             {
-              id: v.PUBLIC_SERVICE,
-              name: "Civil Service",
-              description: "Unlock new civil service jobs and buildings",
+              id: S.ELECTRONICS,
+              name: "Electronics",
+              description:
+                "Learn how to produce electronics and incorporate it",
               getCost:
                 ((ts = {}),
                 (ts[l.RESEARCH] = function (e) {
@@ -15697,35 +15683,35 @@
                 ts),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.CODEX_OF_LAW
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.ELECTRICITY_STUDY
                   ) > 0
                 );
               },
             },
             {
-              id: v.PRINTING_3D,
-              name: "3D Printing",
-              description:
-                "Unlock new powerful tools that will help you boost your colony development",
+              id: S.PUBLIC_SERVICE,
+              name: "Civil Service",
+              description: "Unlock new civil service jobs and buildings",
               getCost:
                 ((ns = {}),
                 (ns[l.RESEARCH] = function (e) {
-                  return { A: 4e3, B: 0, type: i.LINEAR };
+                  return { A: 2e3, B: 0, type: i.LINEAR };
                 }),
                 ns),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(v.ELECTRONICS) >
-                  0
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.CODEX_OF_LAW
+                  ) > 0
                 );
               },
             },
             {
-              id: v.HIGH_GRAVITY_PHYSICS,
-              name: "Advanced Physics",
+              id: S.PRINTING_3D,
+              name: "3D Printing",
               description:
-                "Learn more about surviving and creating in high gravity conditions",
+                "Unlock new powerful tools that will help you boost your colony development",
               getCost:
                 ((is = {}),
                 (is[l.RESEARCH] = function (e) {
@@ -15734,134 +15720,133 @@
                 is),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.ELECTRICITY_STUDY
-                  ) > 0
+                  Yg.science.scienceResearches.getResearchLevel(S.ELECTRONICS) >
+                  0
                 );
               },
             },
             {
-              id: v.ADVANCED_ANATOMY,
-              name: "Advanced Anatomy",
+              id: S.HIGH_GRAVITY_PHYSICS,
+              name: "Advanced Physics",
               description:
-                "Further research human body can make maintaining larger colony much easier",
+                "Learn more about surviving and creating in high gravity conditions",
               getCost:
                 ((os = {}),
                 (os[l.RESEARCH] = function (e) {
-                  return { A: 2600, B: 0, type: i.LINEAR };
+                  return { A: 4e3, B: 0, type: i.LINEAR };
                 }),
                 os),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.ORGANIC_CHEMISTRY
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.ELECTRICITY_STUDY
                   ) > 0
                 );
               },
             },
             {
-              id: v.ROCKET_SCIENCE,
-              name: "Rocket Science",
+              id: S.ADVANCED_ANATOMY,
+              name: "Advanced Anatomy",
               description:
-                "Literally. There is too little space on our planet, isn't it?",
+                "Further research human body can make maintaining larger colony much easier",
               getCost:
                 ((rs = {}),
                 (rs[l.RESEARCH] = function (e) {
-                  return { A: 5600, B: 0, type: i.LINEAR };
+                  return { A: 2600, B: 0, type: i.LINEAR };
                 }),
                 rs),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.ORGANIC_CHEMISTRY
-                  ) > 0 &&
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.HIGH_GRAVITY_PHYSICS
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.ORGANIC_CHEMISTRY
                   ) > 0
                 );
               },
             },
             {
-              id: v.ADVANCED_BIOLOGY,
-              name: "Advanced Biology",
+              id: S.ROCKET_SCIENCE,
+              name: "Rocket Science",
               description:
-                "Further advance biology knowledge. Create new methods of boosting nutritional value and unlock new research",
+                "Literally. There is too little space on our planet, isn't it?",
               getCost:
                 ((as = {}),
                 (as[l.RESEARCH] = function (e) {
-                  return { A: 4250, B: 0, type: i.LINEAR };
+                  return { A: 5600, B: 0, type: i.LINEAR };
                 }),
                 as),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.ADVANCED_ANATOMY
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.ORGANIC_CHEMISTRY
+                  ) > 0 &&
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.HIGH_GRAVITY_PHYSICS
                   ) > 0
                 );
               },
             },
             {
-              id: v.RADIATION_STUDY,
-              name: "Radiation Study",
+              id: S.ADVANCED_BIOLOGY,
+              name: "Advanced Biology",
               description:
-                "Learn more about impact of radiation on living organisms. Unlocks piloted missions",
+                "Further advance biology knowledge. Create new methods of boosting nutritional value and unlock new research",
               getCost:
                 ((cs = {}),
                 (cs[l.RESEARCH] = function (e) {
-                  return { A: 5900, B: 0, type: i.LINEAR };
+                  return { A: 4250, B: 0, type: i.LINEAR };
                 }),
                 cs),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.ADVANCED_BIOLOGY
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.ADVANCED_ANATOMY
                   ) > 0
                 );
               },
             },
             {
-              id: v.QUANTUM_PHYSICS,
-              name: "Quantum Physics",
+              id: S.RADIATION_STUDY,
+              name: "Radiation Study",
               description:
-                "Better understanding of quantum physics can significantly boost the productivity of your civilization",
+                "Learn more about impact of radiation on living organisms. Unlocks piloted missions",
               getCost:
                 ((ss = {}),
                 (ss[l.RESEARCH] = function (e) {
-                  return { A: 6215, B: 0, type: i.LINEAR };
+                  return { A: 5900, B: 0, type: i.LINEAR };
                 }),
                 ss),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.HIGH_GRAVITY_PHYSICS
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.ADVANCED_BIOLOGY
                   ) > 0
                 );
               },
             },
             {
-              id: v.GRAVITY_THEORY,
-              name: "Gravity Theory",
+              id: S.QUANTUM_PHYSICS,
+              name: "Quantum Physics",
               description:
-                "Better understanding of gravitational forces on flying objects will help with rocket launches. Allows you to send missions to other planets",
+                "Better understanding of quantum physics can significantly boost the productivity of your civilization",
               getCost:
                 ((us = {}),
                 (us[l.RESEARCH] = function (e) {
-                  return { A: 8750, B: 0, type: i.LINEAR };
+                  return { A: 6215, B: 0, type: i.LINEAR };
                 }),
                 us),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.QUANTUM_PHYSICS
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.HIGH_GRAVITY_PHYSICS
                   ) > 0
                 );
               },
             },
             {
-              id: v.NANO_PHYSICS,
-              name: "Nano-Physics",
+              id: S.GRAVITY_THEORY,
+              name: "Gravity Theory",
               description:
-                "Further research into nanotechnology can increase your civilization productivity even more",
+                "Better understanding of gravitational forces on flying objects will help with rocket launches. Allows you to send missions to other planets",
               getCost:
                 ((ls = {}),
                 (ls[l.RESEARCH] = function (e) {
@@ -15870,267 +15855,286 @@
                 ls),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.QUANTUM_PHYSICS
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.QUANTUM_PHYSICS
                   ) > 0
                 );
               },
             },
             {
-              id: v.ASTROPHYSICS,
-              name: "Astrophysics",
+              id: S.NANO_PHYSICS,
+              name: "Nano-Physics",
               description:
-                "Allows to further advance your understanding of celestial bodies through new scientific telescopes",
+                "Further research into nanotechnology can increase your civilization productivity even more",
               getCost:
                 ((ps = {}),
                 (ps[l.RESEARCH] = function (e) {
-                  return { A: 9500, B: 0, type: i.LINEAR };
+                  return { A: 8750, B: 0, type: i.LINEAR };
                 }),
                 ps),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.GRAVITY_THEORY
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.QUANTUM_PHYSICS
                   ) > 0
                 );
               },
             },
             {
-              id: v.RELATIVITY_PHYSICS,
-              name: "Relativity Physics",
+              id: S.ASTROPHYSICS,
+              name: "Astrophysics",
               description:
-                "Learn more about spacetime continuum. Unlocks new tech and further traveling",
+                "Allows to further advance your understanding of celestial bodies through new scientific telescopes",
               getCost:
                 ((Es = {}),
                 (Es[l.RESEARCH] = function (e) {
-                  return { A: 11500, B: 0, type: i.LINEAR };
+                  return { A: 9500, B: 0, type: i.LINEAR };
                 }),
                 Es),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.GRAVITY_THEORY
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.GRAVITY_THEORY
                   ) > 0
                 );
               },
             },
             {
-              id: v.ADVANCED_GENETICS,
-              name: "Advanced Genetics",
+              id: S.RELATIVITY_PHYSICS,
+              name: "Relativity Physics",
               description:
-                "Push further your genetics knowledge to learn how species can be modified",
+                "Learn more about spacetime continuum. Unlocks new tech and further traveling",
               getCost:
                 ((ds = {}),
                 (ds[l.RESEARCH] = function (e) {
-                  return { A: 13500, B: 0, type: i.LINEAR };
+                  return { A: 11500, B: 0, type: i.LINEAR };
                 }),
                 ds),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.NANO_PHYSICS
-                  ) > 0 &&
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.ADVANCED_BIOLOGY
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.GRAVITY_THEORY
                   ) > 0
                 );
               },
             },
             {
-              id: v.PHOTOCHEMISTRY,
-              name: "Photochemistry",
+              id: S.ADVANCED_GENETICS,
+              name: "Advanced Genetics",
               description:
-                "Learn more about ionizing radiation impact on chemical reactions. Unlocks new upgrades",
+                "Push further your genetics knowledge to learn how species can be modified",
               getCost:
                 ((gs = {}),
                 (gs[l.RESEARCH] = function (e) {
-                  return { A: 11e3, B: 0, type: i.LINEAR };
+                  return { A: 13500, B: 0, type: i.LINEAR };
                 }),
                 gs),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.QUANTUM_PHYSICS
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.NANO_PHYSICS
+                  ) > 0 &&
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.ADVANCED_BIOLOGY
                   ) > 0
                 );
               },
             },
             {
-              id: v.HIGH_ENERGY_PHYSICS,
-              name: "High Energy Physics",
+              id: S.PHOTOCHEMISTRY,
+              name: "Photochemistry",
               description:
-                "We are so miserable comparing to bright far stars and supernova explosions. Learn how to deal with more energy to expand your capabilities even more. Unlocks further flights and more important researches",
+                "Learn more about ionizing radiation impact on chemical reactions. Unlocks new upgrades",
               getCost:
                 ((As = {}),
                 (As[l.RESEARCH] = function (e) {
-                  return { A: 17e3, B: 0, type: i.LINEAR };
+                  return { A: 11e3, B: 0, type: i.LINEAR };
                 }),
                 As),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.RELATIVITY_PHYSICS
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.QUANTUM_PHYSICS
                   ) > 0
                 );
               },
             },
             {
-              id: v.PHOTO_LITHOGRAPHY,
-              name: "Photo-Lithography",
+              id: S.HIGH_ENERGY_PHYSICS,
+              name: "High Energy Physics",
               description:
-                "Use your advances in quantum physics and material knowledge to boost production of tiny things. Unlocks new upgrades",
+                "We are so miserable comparing to bright far stars and supernova explosions. Learn how to deal with more energy to expand your capabilities even more. Unlocks further flights and more important researches",
               getCost:
                 ((fs = {}),
                 (fs[l.RESEARCH] = function (e) {
-                  return { A: 17200, B: 0, type: i.LINEAR };
+                  return { A: 17e3, B: 0, type: i.LINEAR };
                 }),
                 fs),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.PHOTOCHEMISTRY
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.RELATIVITY_PHYSICS
                   ) > 0
                 );
               },
             },
             {
-              id: v.THERMONUCLEAR_SYNTHESIS,
-              name: "Thermonuclear synthesis",
+              id: S.PHOTO_LITHOGRAPHY,
+              name: "Photo-Lithography",
               description:
-                "Learn more about high temperature physics to unlock new source of power",
+                "Use your advances in quantum physics and material knowledge to boost production of tiny things. Unlocks new upgrades",
               getCost:
                 ((Rs = {}),
                 (Rs[l.RESEARCH] = function (e) {
-                  return { A: 23500, B: 0, type: i.LINEAR };
+                  return { A: 17200, B: 0, type: i.LINEAR };
                 }),
                 Rs),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.HIGH_ENERGY_PHYSICS
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.PHOTOCHEMISTRY
                   ) > 0
                 );
               },
             },
             {
-              id: v.ADVANCED_POLYMERIZATION,
-              name: "Advanced Polymers",
+              id: S.THERMONUCLEAR_SYNTHESIS,
+              name: "Thermonuclear synthesis",
               description:
-                "Utilize a highly ionized environment to generate sophisticated, radiation- and temperature-hardened polymers. Unlocking new upgrades",
+                "Learn more about high temperature physics to unlock new source of power",
               getCost:
                 ((Is = {}),
                 (Is[l.RESEARCH] = function (e) {
-                  return { A: 24500, B: 0, type: i.LINEAR };
+                  return { A: 23500, B: 0, type: i.LINEAR };
                 }),
                 Is),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.PHOTO_LITHOGRAPHY
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.HIGH_ENERGY_PHYSICS
                   ) > 0
                 );
               },
             },
             {
-              id: v.MOLECULAR_PHYSICS,
-              name: "Advanced Molecular Physics",
+              id: S.ADVANCED_POLYMERIZATION,
+              name: "Advanced Polymers",
               description:
-                "Learn how to generate more sophisticated compounds to boost your development",
+                "Utilize a highly ionized environment to generate sophisticated, radiation- and temperature-hardened polymers. Unlocking new upgrades",
               getCost:
                 ((Ns = {}),
                 (Ns[l.RESEARCH] = function (e) {
-                  return { A: 25500, B: 0, type: i.LINEAR };
+                  return { A: 24500, B: 0, type: i.LINEAR };
                 }),
                 Ns),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.PHOTO_LITHOGRAPHY
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.PHOTO_LITHOGRAPHY
                   ) > 0
                 );
               },
             },
             {
-              id: v.SUPER_CONDUCTIVITY,
-              name: "Super-conductivity",
+              id: S.MOLECULAR_PHYSICS,
+              name: "Advanced Molecular Physics",
               description:
-                "Low temperatures causes some materials become incredibly good conductors. Learn more about this phenomena and how you can use it.",
+                "Learn how to generate more sophisticated compounds to boost your development",
               getCost:
                 ((Ts = {}),
                 (Ts[l.RESEARCH] = function (e) {
-                  return { A: 31125, B: 0, type: i.LINEAR };
+                  return { A: 25500, B: 0, type: i.LINEAR };
                 }),
                 Ts),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.THERMONUCLEAR_SYNTHESIS
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.PHOTO_LITHOGRAPHY
                   ) > 0
                 );
               },
             },
             {
-              id: v.ADVANCED_COMPOSITES,
-              name: "Advanced Composites",
+              id: S.SUPER_CONDUCTIVITY,
+              name: "Super-conductivity",
               description:
-                "Learn how to combine metal with plastic to create extremely heat- and hit-hardened materials. Unlocking new upgrades and resources",
+                "Low temperatures causes some materials become incredibly good conductors. Learn more about this phenomena and how you can use it.",
               getCost:
                 ((Os = {}),
                 (Os[l.RESEARCH] = function (e) {
-                  return { A: 33100, B: 0, type: i.LINEAR };
+                  return { A: 31125, B: 0, type: i.LINEAR };
                 }),
                 Os),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.ADVANCED_POLYMERIZATION
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.THERMONUCLEAR_SYNTHESIS
                   ) > 0
                 );
               },
             },
             {
-              id: v.MAGNETODYNAMICS,
-              name: "Magneto-Dynamics",
+              id: S.ADVANCED_COMPOSITES,
+              name: "Advanced Composites",
               description:
-                "Running extremely strong current unlocks opportunity to generate huge magnetic field. Learn more about how to maintain and use it",
+                "Learn how to combine metal with plastic to create extremely heat- and hit-hardened materials. Unlocking new upgrades and resources",
               getCost:
                 ((ys = {}),
                 (ys[l.RESEARCH] = function (e) {
-                  return { A: 36500, B: 0, type: i.LINEAR };
+                  return { A: 33100, B: 0, type: i.LINEAR };
                 }),
                 ys),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.SUPER_CONDUCTIVITY
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.ADVANCED_POLYMERIZATION
                   ) > 0
                 );
               },
             },
             {
-              id: v.SPACESHIP_BUILDINGS,
-              name: "Spaceship Construction",
+              id: S.MAGNETODYNAMICS,
+              name: "Magneto-Dynamics",
               description:
-                "Allows building spaceships for interstellar flights",
+                "Running extremely strong current unlocks opportunity to generate huge magnetic field. Learn more about how to maintain and use it",
               getCost:
                 ((ms = {}),
                 (ms[l.RESEARCH] = function (e) {
-                  return { A: 47500, B: 0, type: i.LINEAR };
+                  return { A: 36500, B: 0, type: i.LINEAR };
                 }),
                 ms),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.SUPER_CONDUCTIVITY
-                  ) > 0 &&
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.MOLECULAR_PHYSICS
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.SUPER_CONDUCTIVITY
                   ) > 0
                 );
               },
             },
             {
-              id: v.PARTICLE_PHYSICS,
+              id: S.SPACESHIP_BUILDINGS,
+              name: "Spaceship Construction",
+              description:
+                "Allows building spaceships for interstellar flights",
+              getCost:
+                ((hs = {}),
+                (hs[l.RESEARCH] = function (e) {
+                  return { A: 47500, B: 0, type: i.LINEAR };
+                }),
+                hs),
+              unlockCondition: function (e) {
+                return (
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.SUPER_CONDUCTIVITY
+                  ) > 0 &&
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.MOLECULAR_PHYSICS
+                  ) > 0
+                );
+              },
+            },
+            {
+              id: S.PARTICLE_PHYSICS,
               name: "Particle Physics",
               description: "Learn more about elementary particles",
               getCost:
@@ -16141,35 +16145,16 @@
                 Ls),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.MAGNETODYNAMICS
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.MAGNETODYNAMICS
                   ) > 0
                 );
               },
             },
             {
-              id: v.ADVANCED_SPACE_CONSTRUCTION,
+              id: S.ADVANCED_SPACE_CONSTRUCTION,
               name: "Advanced Space Construction",
               description: "Learn more about building in space",
-              getCost:
-                ((hs = {}),
-                (hs[l.RESEARCH] = function (e) {
-                  return { A: 57500, B: 0, type: i.LINEAR };
-                }),
-                hs),
-              unlockCondition: function (e) {
-                return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.SPACESHIP_BUILDINGS
-                  ) > 0
-                );
-              },
-            },
-            {
-              id: v.ADVANCED_THERMODYNAMICS,
-              name: "Advanced Thermodynamics",
-              description:
-                "Advance your knowledge about high temperature environments",
               getCost:
                 ((Cs = {}),
                 (Cs[l.RESEARCH] = function (e) {
@@ -16178,240 +16163,259 @@
                 Cs),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.ADVANCED_COMPOSITES
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.SPACESHIP_BUILDINGS
                   ) > 0
                 );
               },
             },
             {
-              id: v.EXOPLANET_SCIENCE,
-              name: "Exoplanet Science",
+              id: S.ADVANCED_THERMODYNAMICS,
+              name: "Advanced Thermodynamics",
               description:
-                "Learn more about exoplanets. Unlocks new option to search planets.",
+                "Advance your knowledge about high temperature environments",
               getCost:
                 ((vs = {}),
                 (vs[l.RESEARCH] = function (e) {
-                  return { A: 59500, B: 0, type: i.LINEAR };
+                  return { A: 57500, B: 0, type: i.LINEAR };
                 }),
                 vs),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.SPACESHIP_BUILDINGS
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.ADVANCED_COMPOSITES
                   ) > 0
                 );
               },
             },
             {
-              id: v.LOW_TEMP_PHYSICS,
-              name: "Low Temperature Physics",
+              id: S.EXOPLANET_SCIENCE,
+              name: "Exoplanet Science",
               description:
-                "Low temperatures can significantly reduce molecule decay rates. Learn how to use it to generate more sophisticated organics",
+                "Learn more about exoplanets. Unlocks new option to search planets.",
               getCost:
                 ((Ss = {}),
                 (Ss[l.RESEARCH] = function (e) {
-                  return { A: 71500, B: 0, type: i.LINEAR };
+                  return { A: 59500, B: 0, type: i.LINEAR };
                 }),
                 Ss),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.ADVANCED_THERMODYNAMICS
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.SPACESHIP_BUILDINGS
                   ) > 0
                 );
               },
             },
             {
-              id: v.NEUTRINO_PHYSICS,
-              name: "Neutrino Physics",
+              id: S.LOW_TEMP_PHYSICS,
+              name: "Low Temperature Physics",
               description:
-                "Neutrinos are particles that interacts with other matter very weakly. Learn how to use it for your civilization development",
+                "Low temperatures can significantly reduce molecule decay rates. Learn how to use it to generate more sophisticated organics",
               getCost:
                 ((Ps = {}),
                 (Ps[l.RESEARCH] = function (e) {
-                  return { A: 73500, B: 0, type: i.LINEAR };
+                  return { A: 71500, B: 0, type: i.LINEAR };
                 }),
                 Ps),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.PARTICLE_PHYSICS
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.ADVANCED_THERMODYNAMICS
                   ) > 0
                 );
               },
             },
             {
-              id: v.QUARK_PHYSICS,
-              name: "Quark Physics",
-              description: "Learn more about what matter is made of",
+              id: S.NEUTRINO_PHYSICS,
+              name: "Neutrino Physics",
+              description:
+                "Neutrinos are particles that interacts with other matter very weakly. Learn how to use it for your civilization development",
               getCost:
                 ((Bs = {}),
                 (Bs[l.RESEARCH] = function (e) {
-                  return { A: 74500, B: 0, type: i.LINEAR };
+                  return { A: 73500, B: 0, type: i.LINEAR };
                 }),
                 Bs),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.PARTICLE_PHYSICS
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.PARTICLE_PHYSICS
                   ) > 0
                 );
               },
             },
             {
-              id: v.CRYOGENICS,
-              name: "Cryogenics",
-              description:
-                "Learn more about properties of materials at extremely low temperatures",
+              id: S.QUARK_PHYSICS,
+              name: "Quark Physics",
+              description: "Learn more about what matter is made of",
               getCost:
                 ((_s = {}),
                 (_s[l.RESEARCH] = function (e) {
-                  return { A: 93500, B: 0, type: i.LINEAR };
+                  return { A: 74500, B: 0, type: i.LINEAR };
                 }),
                 _s),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.LOW_TEMP_PHYSICS
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.PARTICLE_PHYSICS
                   ) > 0
                 );
               },
             },
             {
-              id: v.SPACE_ORGANICS,
-              name: "Space Biology",
+              id: S.CRYOGENICS,
+              name: "Cryogenics",
               description:
-                "Learn more about specific of your colonists and other organisms living in space.",
+                "Learn more about properties of materials at extremely low temperatures",
               getCost:
                 ((Ms = {}),
                 (Ms[l.RESEARCH] = function (e) {
-                  return { A: 91500, B: 0, type: i.LINEAR };
+                  return { A: 93500, B: 0, type: i.LINEAR };
                 }),
                 Ms),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.ADVANCED_SPACE_CONSTRUCTION
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.LOW_TEMP_PHYSICS
                   ) > 0
                 );
               },
             },
             {
-              id: v.NANO_BIOLOGY,
-              name: "Nano-Biology",
+              id: S.SPACE_ORGANICS,
+              name: "Space Biology",
               description:
-                "Use your previous researches in biology, nanophysics and photochemistry to investigate organisms and viruses creation",
+                "Learn more about specific of your colonists and other organisms living in space.",
               getCost:
                 ((Us = {}),
                 (Us[l.RESEARCH] = function (e) {
-                  return { A: 121500, B: 0, type: i.LINEAR };
+                  return { A: 91500, B: 0, type: i.LINEAR };
                 }),
                 Us),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.SPACE_ORGANICS
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.ADVANCED_SPACE_CONSTRUCTION
                   ) > 0
                 );
               },
             },
             {
-              id: v.ADVANCED_NUCLEAR_RESEARCH,
-              name: "Advanced Nuclear Research",
+              id: S.NANO_BIOLOGY,
+              name: "Nano-Biology",
               description:
-                "Using your knowledge about what protons and neutrons consists of you can learn more about nuclear manipulations",
+                "Use your previous researches in biology, nanophysics and photochemistry to investigate organisms and viruses creation",
               getCost:
                 ((Gs = {}),
                 (Gs[l.RESEARCH] = function (e) {
-                  return { A: 124500, B: 0, type: i.LINEAR };
+                  return { A: 121500, B: 0, type: i.LINEAR };
                 }),
                 Gs),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.QUARK_PHYSICS
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.SPACE_ORGANICS
                   ) > 0
                 );
               },
             },
             {
-              id: v.ADVANCED_SUPERCONDUCTIVITY,
-              name: "Advanced Super-conductivity",
+              id: S.ADVANCED_NUCLEAR_RESEARCH,
+              name: "Advanced Nuclear Research",
               description:
-                "Use your knowledge about material properties in extremely low temperatures to understand better super-conductivity phenomena",
+                "Using your knowledge about what protons and neutrons consists of you can learn more about nuclear manipulations",
               getCost:
                 ((bs = {}),
                 (bs[l.RESEARCH] = function (e) {
-                  return { A: 132500, B: 0, type: i.LINEAR };
+                  return { A: 124500, B: 0, type: i.LINEAR };
                 }),
                 bs),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(v.CRYOGENICS) >
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.QUARK_PHYSICS
+                  ) > 0
+                );
+              },
+            },
+            {
+              id: S.ADVANCED_SUPERCONDUCTIVITY,
+              name: "Advanced Super-conductivity",
+              description:
+                "Use your knowledge about material properties in extremely low temperatures to understand better super-conductivity phenomena",
+              getCost:
+                ((Ds = {}),
+                (Ds[l.RESEARCH] = function (e) {
+                  return { A: 132500, B: 0, type: i.LINEAR };
+                }),
+                Ds),
+              unlockCondition: function (e) {
+                return (
+                  Yg.science.scienceResearches.getResearchLevel(S.CRYOGENICS) >
                   0
                 );
               },
             },
             {
-              id: v.QUANTUM_MAGNETICS,
+              id: S.QUANTUM_MAGNETICS,
               name: "Quantum Magnetics",
               description:
                 "Run more experiments about quantum effects under very powerful magnetic fields",
               getCost:
-                ((Ds = {}),
-                (Ds[l.RESEARCH] = function (e) {
-                  return { A: 169e3, B: 0, type: i.LINEAR };
-                }),
-                Ds),
-              unlockCondition: function (e) {
-                return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.ADVANCED_SUPERCONDUCTIVITY
-                  ) > 0
-                );
-              },
-            },
-            {
-              id: v.QUANTUM_MAGNETICS_DETECTION,
-              name: "Quantum Magnetic Detection",
-              description:
-                "Learn how to use quantum magnetic effects to build more sensitive detectors",
-              getCost:
                 ((ws = {}),
                 (ws[l.RESEARCH] = function (e) {
-                  return { A: 225e3, B: 0, type: i.LINEAR };
+                  return { A: 169e3, B: 0, type: i.LINEAR };
                 }),
                 ws),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.QUANTUM_MAGNETICS
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.ADVANCED_SUPERCONDUCTIVITY
                   ) > 0
                 );
               },
             },
             {
-              id: v.QUANTUM_STATE_STUDY,
-              name: "Quantum State Study",
+              id: S.QUANTUM_MAGNETICS_DETECTION,
+              name: "Quantum Magnetic Detection",
               description:
-                "Learn how to manipulate with quantum state of matter to use quantum mechanics on practise",
+                "Learn how to use quantum magnetic effects to build more sensitive detectors",
               getCost:
                 ((Xs = {}),
                 (Xs[l.RESEARCH] = function (e) {
-                  return { A: 265e3, B: 0, type: i.LINEAR };
+                  return { A: 225e3, B: 0, type: i.LINEAR };
                 }),
                 Xs),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.QUANTUM_MAGNETICS_DETECTION
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.QUANTUM_MAGNETICS
                   ) > 0
                 );
               },
             },
             {
-              id: v.QUARK_GLUON_PLASMA_STUDY,
+              id: S.QUANTUM_STATE_STUDY,
+              name: "Quantum State Study",
+              description:
+                "Learn how to manipulate with quantum state of matter to use quantum mechanics on practise",
+              getCost:
+                ((ks = {}),
+                (ks[l.RESEARCH] = function (e) {
+                  return { A: 265e3, B: 0, type: i.LINEAR };
+                }),
+                ks),
+              unlockCondition: function (e) {
+                return (
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.QUANTUM_MAGNETICS_DETECTION
+                  ) > 0
+                );
+              },
+            },
+            {
+              id: S.QUARK_GLUON_PLASMA_STUDY,
               name: "Quark-gluon plasma study",
               description:
                 "Learn more about quark-gluon plasma that appears under extreme high temperature/pressure conditions",
@@ -16423,109 +16427,109 @@
                 Hs),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.ADVANCED_NUCLEAR_RESEARCH
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.ADVANCED_NUCLEAR_RESEARCH
                   ) > 0
                 );
               },
             },
             {
-              id: v.HIGH_DENSITY_STUDY,
+              id: S.HIGH_DENSITY_STUDY,
               name: "High Density Study",
               description:
                 "Run some experiments over extremely pressed matter to learn more about high density physics",
               getCost:
-                ((ks = {}),
-                (ks[l.RESEARCH] = function (e) {
-                  return { A: 205500, B: 0, type: i.LINEAR };
-                }),
-                ks),
-              unlockCondition: function (e) {
-                return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.QUARK_GLUON_PLASMA_STUDY
-                  ) > 0
-                );
-              },
-            },
-            {
-              id: v.GRAVITONE_STUDY,
-              name: "Graviton Study",
-              description:
-                "Learn more about gravity waves and graviton particles",
-              getCost:
                 ((xs = {}),
                 (xs[l.RESEARCH] = function (e) {
-                  return { A: 275500, B: 0, type: i.LINEAR };
+                  return { A: 205500, B: 0, type: i.LINEAR };
                 }),
                 xs),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.HIGH_DENSITY_STUDY
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.QUARK_GLUON_PLASMA_STUDY
                   ) > 0
                 );
               },
             },
             {
-              id: v.ORGANIC_NANOCONSTRUCTION,
-              name: "Organic Nano-construction",
+              id: S.GRAVITONE_STUDY,
+              name: "Graviton Study",
               description:
-                "Learn how to create organic-friendly nanobots that can be embedded into any living organism",
+                "Learn more about gravity waves and graviton particles",
               getCost:
                 ((Ys = {}),
                 (Ys[l.RESEARCH] = function (e) {
-                  return { A: 147500, B: 0, type: i.LINEAR };
+                  return { A: 275500, B: 0, type: i.LINEAR };
                 }),
                 Ys),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.NANO_BIOLOGY
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.HIGH_DENSITY_STUDY
                   ) > 0
                 );
               },
             },
             {
-              id: v.ORGANIC_BASED_COMPUTATION,
-              name: "Organic-based computation",
+              id: S.ORGANIC_NANOCONSTRUCTION,
+              name: "Organic Nano-construction",
               description:
-                "Improve your knowledge about organics synthesis to create synthetic neurons that can be more efficient than standard transistors in some cases",
+                "Learn how to create organic-friendly nanobots that can be embedded into any living organism",
               getCost:
                 ((Ws = {}),
                 (Ws[l.RESEARCH] = function (e) {
-                  return { A: 177500, B: 0, type: i.LINEAR };
+                  return { A: 147500, B: 0, type: i.LINEAR };
                 }),
                 Ws),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.ORGANIC_NANOCONSTRUCTION
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.NANO_BIOLOGY
                   ) > 0
                 );
               },
             },
             {
-              id: v.SYNTHETIC_ORGANISMS,
-              name: "Synthetic Organisms",
+              id: S.ORGANIC_BASED_COMPUTATION,
+              name: "Organic-based computation",
               description:
-                "Learn how to create exotic bacteria from scratch and make them working for you",
+                "Improve your knowledge about organics synthesis to create synthetic neurons that can be more efficient than standard transistors in some cases",
               getCost:
                 ((Zs = {}),
                 (Zs[l.RESEARCH] = function (e) {
-                  return { A: 215e3, B: 0, type: i.LINEAR };
+                  return { A: 177500, B: 0, type: i.LINEAR };
                 }),
                 Zs),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.ORGANIC_BASED_COMPUTATION
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.ORGANIC_NANOCONSTRUCTION
                   ) > 0
                 );
               },
             },
             {
-              id: v.ANDROID_CONSTRUCTION,
+              id: S.SYNTHETIC_ORGANISMS,
+              name: "Synthetic Organisms",
+              description:
+                "Learn how to create exotic bacteria from scratch and make them working for you",
+              getCost:
+                ((js = {}),
+                (js[l.RESEARCH] = function (e) {
+                  return { A: 215e3, B: 0, type: i.LINEAR };
+                }),
+                js),
+              unlockCondition: function (e) {
+                return (
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.ORGANIC_BASED_COMPUTATION
+                  ) > 0
+                );
+              },
+            },
+            {
+              id: S.ANDROID_CONSTRUCTION,
               name: "Android Construction",
               description: "Allows you creating human-like androids",
               getCost:
@@ -16536,318 +16540,318 @@
                 Fs),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.SYNTHETIC_ORGANISMS
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.SYNTHETIC_ORGANISMS
                   ) > 0
                 );
               },
             },
             {
-              id: v.DARK_MATTER_STUDY,
+              id: S.DARK_MATTER_STUDY,
               name: "Dark Matter Study",
               description:
                 "Learn more about dark matter. Provides you technologies to catch trace amount of dark matter by specific structure in the space and use it in your technological processes",
               getCost:
-                ((js = {}),
-                (js[l.RESEARCH] = function (e) {
-                  return { A: 325e3, B: 0, type: i.LINEAR };
-                }),
-                js),
-              unlockCondition: function (e) {
-                return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.GRAVITONE_STUDY
-                  ) > 0
-                );
-              },
-            },
-            {
-              id: v.ADVANCED_ORGANISMS_GENERATION,
-              name: "Advanced Organisms Generation",
-              description:
-                "Improve your mastery in synthetic organisms creation",
-              getCost:
                 ((Ks = {}),
                 (Ks[l.RESEARCH] = function (e) {
-                  return { A: 385e3, B: 0, type: i.LINEAR };
+                  return { A: 325e3, B: 0, type: i.LINEAR };
                 }),
                 Ks),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.ANDROID_CONSTRUCTION
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.GRAVITONE_STUDY
                   ) > 0
                 );
               },
             },
             {
-              id: v.DEGENERATE_MATTER,
-              name: "Degenerate Matter",
+              id: S.ADVANCED_ORGANISMS_GENERATION,
+              name: "Advanced Organisms Generation",
               description:
-                "Learn more about degenerate matter state, and ways to use it in your production cycles",
+                "Improve your mastery in synthetic organisms creation",
               getCost:
                 ((Vs = {}),
                 (Vs[l.RESEARCH] = function (e) {
-                  return { A: 425e3, B: 0, type: i.LINEAR };
+                  return { A: 385e3, B: 0, type: i.LINEAR };
                 }),
                 Vs),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.QUANTUM_STATE_STUDY
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.ANDROID_CONSTRUCTION
                   ) > 0
                 );
               },
             },
             {
-              id: v.EXPANDED_PARTICLE_THEORY,
-              name: "Expanded Particle Theory",
+              id: S.DEGENERATE_MATTER,
+              name: "Degenerate Matter",
               description:
-                "Invest your research efforts into understanding more particle physics",
+                "Learn more about degenerate matter state, and ways to use it in your production cycles",
               getCost:
                 ((qs = {}),
                 (qs[l.RESEARCH] = function (e) {
-                  return { A: 485e3, B: 0, type: i.LINEAR };
+                  return { A: 425e3, B: 0, type: i.LINEAR };
                 }),
                 qs),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.DARK_MATTER_STUDY
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.QUANTUM_STATE_STUDY
                   ) > 0
                 );
               },
             },
             {
-              id: v.BOSE_EINSTEIN_CONDENSATE,
-              name: "Bose Einstein Condensate",
+              id: S.EXPANDED_PARTICLE_THEORY,
+              name: "Expanded Particle Theory",
               description:
-                "Learn more about specific matter state under extremely low temperatures",
+                "Invest your research efforts into understanding more particle physics",
               getCost:
                 ((zs = {}),
                 (zs[l.RESEARCH] = function (e) {
-                  return { A: 545e3, B: 0, type: i.LINEAR };
+                  return { A: 485e3, B: 0, type: i.LINEAR };
                 }),
                 zs),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.DEGENERATE_MATTER
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.DARK_MATTER_STUDY
                   ) > 0
                 );
               },
             },
             {
-              id: v.EXOTIC_BIOCHEMISTRY,
-              name: "Exotic Biochemistry",
+              id: S.BOSE_EINSTEIN_CONDENSATE,
+              name: "Bose Einstein Condensate",
               description:
-                "Embed artificial mitochondria into your bacteria cells to find new use for your micro-flora",
+                "Learn more about specific matter state under extremely low temperatures",
               getCost:
                 ((Qs = {}),
                 (Qs[l.RESEARCH] = function (e) {
-                  return { A: 645e3, B: 0, type: i.LINEAR };
+                  return { A: 545e3, B: 0, type: i.LINEAR };
                 }),
                 Qs),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.ADVANCED_ORGANISMS_GENERATION
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.DEGENERATE_MATTER
                   ) > 0
                 );
               },
             },
             {
-              id: v.EXOTIC_MATTER_STUDY,
-              name: "Exotic Matter Study",
+              id: S.EXOTIC_BIOCHEMISTRY,
+              name: "Exotic Biochemistry",
               description:
-                "Learn more about exotic matter and ways to control its behaviour.",
+                "Embed artificial mitochondria into your bacteria cells to find new use for your micro-flora",
               getCost:
                 ((Js = {}),
                 (Js[l.RESEARCH] = function (e) {
-                  return { A: 7e5, B: 0, type: i.LINEAR };
+                  return { A: 645e3, B: 0, type: i.LINEAR };
                 }),
                 Js),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.EXPANDED_PARTICLE_THEORY
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.ADVANCED_ORGANISMS_GENERATION
                   ) > 0
                 );
               },
             },
             {
-              id: v.ANTIMATTER_STUDY,
-              name: "Antimatter Study",
+              id: S.EXOTIC_MATTER_STUDY,
+              name: "Exotic Matter Study",
               description:
-                "Finally you found a way to control antimatter. Unlock dangerous but extremely useful power of antimatter.",
+                "Learn more about exotic matter and ways to control its behaviour.",
               getCost:
                 (($s = {}),
                 ($s[l.RESEARCH] = function (e) {
-                  return { A: 95e4, B: 0, type: i.LINEAR };
+                  return { A: 7e5, B: 0, type: i.LINEAR };
                 }),
                 $s),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.EXOTIC_MATTER_STUDY
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.EXPANDED_PARTICLE_THEORY
                   ) > 0
                 );
               },
             },
             {
-              id: v.ANTIMATTER_USAGE,
-              name: "Antimatter Usage",
+              id: S.ANTIMATTER_STUDY,
+              name: "Antimatter Study",
               description:
-                "Invent new, more secure ways to handle antimatter. Unlocks significant boosts to your civilization economy.",
+                "Finally you found a way to control antimatter. Unlock dangerous but extremely useful power of antimatter.",
               getCost:
                 ((eu = {}),
                 (eu[l.RESEARCH] = function (e) {
-                  return { A: 13e5, B: 0, type: i.LINEAR };
+                  return { A: 95e4, B: 0, type: i.LINEAR };
                 }),
                 eu),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.ANTIMATTER_STUDY
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.EXOTIC_MATTER_STUDY
                   ) > 0
                 );
               },
             },
             {
-              id: v.ANNIHILATION_STUDY,
-              name: "Annihilation Study",
+              id: S.ANTIMATTER_USAGE,
+              name: "Antimatter Usage",
               description:
-                "Learn more about matter & antimatter interaction to unleash immense amounts of power.",
+                "Invent new, more secure ways to handle antimatter. Unlocks significant boosts to your civilization economy.",
               getCost:
                 ((tu = {}),
                 (tu[l.RESEARCH] = function (e) {
-                  return { A: 2e6, B: 0, type: i.LINEAR };
+                  return { A: 13e5, B: 0, type: i.LINEAR };
                 }),
                 tu),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.ANTIMATTER_USAGE
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.ANTIMATTER_STUDY
                   ) > 0
                 );
               },
             },
             {
-              id: v.ADVANCED_SYNTHETIC_BIOLOGY,
-              name: "Advanced Synthetic Biology",
+              id: S.ANNIHILATION_STUDY,
+              name: "Annihilation Study",
               description:
-                "Further improve your understanding of biochemistry to be capable of multicellular organisms engineering",
+                "Learn more about matter & antimatter interaction to unleash immense amounts of power.",
               getCost:
                 ((nu = {}),
                 (nu[l.RESEARCH] = function (e) {
-                  return { A: 8e5, B: 0, type: i.LINEAR };
+                  return { A: 2e6, B: 0, type: i.LINEAR };
                 }),
                 nu),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.EXOTIC_BIOCHEMISTRY
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.ANTIMATTER_USAGE
                   ) > 0
                 );
               },
             },
             {
-              id: v.ATOM_BIOLOGY,
-              name: "Atom Biology",
+              id: S.ADVANCED_SYNTHETIC_BIOLOGY,
+              name: "Advanced Synthetic Biology",
               description:
-                'Improve your knowledge of biochemistry to "teach" your synthetic bacteria to process even chemically-steady atoms',
+                "Further improve your understanding of biochemistry to be capable of multicellular organisms engineering",
               getCost:
                 ((iu = {}),
                 (iu[l.RESEARCH] = function (e) {
-                  return { A: 15e5, B: 0, type: i.LINEAR };
+                  return { A: 8e5, B: 0, type: i.LINEAR };
                 }),
                 iu),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.ADVANCED_SYNTHETIC_BIOLOGY
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.EXOTIC_BIOCHEMISTRY
                   ) > 0
                 );
               },
             },
             {
-              id: v.QUANTUM_BIOLOGY,
-              name: "Quantum Biology",
+              id: S.ATOM_BIOLOGY,
+              name: "Atom Biology",
               description:
-                "Learn how to embed quantum effects into your synthetic organisms for further advances in organics processing and medicine",
+                'Improve your knowledge of biochemistry to "teach" your synthetic bacteria to process even chemically-steady atoms',
               getCost:
                 ((ou = {}),
                 (ou[l.RESEARCH] = function (e) {
-                  return { A: 25e5, B: 0, type: i.LINEAR };
+                  return { A: 15e5, B: 0, type: i.LINEAR };
                 }),
                 ou),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.ATOM_BIOLOGY
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.ADVANCED_SYNTHETIC_BIOLOGY
+                  ) > 0
+                );
+              },
+            },
+            {
+              id: S.QUANTUM_BIOLOGY,
+              name: "Quantum Biology",
+              description:
+                "Learn how to embed quantum effects into your synthetic organisms for further advances in organics processing and medicine",
+              getCost:
+                ((ru = {}),
+                (ru[l.RESEARCH] = function (e) {
+                  return { A: 25e5, B: 0, type: i.LINEAR };
+                }),
+                ru),
+              unlockCondition: function (e) {
+                return (
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.ATOM_BIOLOGY
                   ) > 0 && !1
                 );
               },
             },
             {
-              id: v.ADVANCED_BOSE_EINSTEIN,
+              id: S.ADVANCED_BOSE_EINSTEIN,
               name: "Advanced Bose-Einstein condensate study",
               description:
                 "Further advance your understanding of bose-einstein condensate and its usage",
               getCost:
-                ((ru = {}),
-                (ru[l.RESEARCH] = function (e) {
-                  return { A: 8e5, B: 0, type: i.LINEAR };
-                }),
-                ru),
-              unlockCondition: function (e) {
-                return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.DEGENERATE_MATTER
-                  ) > 0
-                );
-              },
-            },
-            {
-              id: v.DEGENERATE_ATOMS,
-              name: "Degenerate Atoms",
-              description:
-                "Learn about ways to create higher temperature condensates, and put even whole atoms in degenerate state",
-              getCost:
                 ((au = {}),
                 (au[l.RESEARCH] = function (e) {
-                  return { A: 14e5, B: 0, type: i.LINEAR };
+                  return { A: 8e5, B: 0, type: i.LINEAR };
                 }),
                 au),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.ADVANCED_BOSE_EINSTEIN
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.DEGENERATE_MATTER
                   ) > 0
                 );
               },
             },
             {
-              id: v.HYPERSPACE_TECH,
-              name: "Hyperspace Tech",
+              id: S.DEGENERATE_ATOMS,
+              name: "Degenerate Atoms",
               description:
-                "Finally all your previous efforts in understanding degenerate state of matter in low temperatures and extreme gravity allows you creation of compact high-gravity objects and modify space-time state",
+                "Learn about ways to create higher temperature condensates, and put even whole atoms in degenerate state",
               getCost:
                 ((cu = {}),
                 (cu[l.RESEARCH] = function (e) {
-                  return { A: 2e6, B: 0, type: i.LINEAR };
+                  return { A: 14e5, B: 0, type: i.LINEAR };
                 }),
                 cu),
               unlockCondition: function (e) {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(
-                    v.DEGENERATE_ATOMS
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.ADVANCED_BOSE_EINSTEIN
+                  ) > 0
+                );
+              },
+            },
+            {
+              id: S.HYPERSPACE_TECH,
+              name: "Hyperspace Tech",
+              description:
+                "Finally all your previous efforts in understanding degenerate state of matter in low temperatures and extreme gravity allows you creation of compact high-gravity objects and modify space-time state",
+              getCost:
+                ((su = {}),
+                (su[l.RESEARCH] = function (e) {
+                  return { A: 2e6, B: 0, type: i.LINEAR };
+                }),
+                su),
+              unlockCondition: function (e) {
+                return (
+                  Yg.science.scienceResearches.getResearchLevel(
+                    S.DEGENERATE_ATOMS
                   ) > 0
                 );
               },
             },
           ],
-          xl = (function () {
+          Yl = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -16881,7 +16885,7 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          Yl = (function (e) {
+          Wl = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -16894,7 +16898,7 @@
               );
             }
             return (
-              xl(t, e),
+              Yl(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -16907,7 +16911,7 @@
               (t.prototype.dataToUI = function () {
                 var e = this;
                 return {
-                  list: kl.map(function (t) {
+                  list: xl.map(function (t) {
                     return e.processToUI(t);
                   }),
                 };
@@ -16928,11 +16932,11 @@
                   return t.id === e.id;
                 });
                 t || ((t = { id: e.id, amount: 0 }), this.researches.push(t));
-                var n = w.calcBatchAll(
+                var n = X.calcBatchAll(
                     e.getCost,
-                    kg.getInstance(),
+                    xg.getInstance(),
                     t.amount,
-                    kg.getInstance().resources.getBatchObject()
+                    xg.getInstance().resources.getBatchObject()
                   ),
                   i = n.reduce(function (e, t) {
                     return Math.min(e, t.max);
@@ -16943,14 +16947,14 @@
                   a = n.reduce(function (e, t) {
                     return Math.max(e, t.eta);
                   }, 0),
-                  c = e.unlockCondition(xg);
+                  c = e.unlockCondition(Yg);
                 return (
                   c &&
                     0 === t.amount &&
-                    xg.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                    Yg.landingZone.landingZoneUpgrades.getUpgradeLevel(
                       r.RESEARCH_MODULE
                     ) > 0 &&
-                    xg.newNotifications.registerNotification(
+                    Yg.newNotifications.registerNotification(
                       "science:researches:".concat(e.id)
                     ),
                   {
@@ -16959,12 +16963,12 @@
                     description: e.description,
                     isUnlocked: c,
                     isAvailable: i >= 1,
-                    cost: kg
+                    cost: xg
                       .getInstance()
                       .resources.assertEnought(
                         n,
-                        kg.getInstance().resources.getBatchObject(),
-                        kg.getInstance().resources.getBatchBalanceObject()
+                        xg.getInstance().resources.getBatchObject(),
+                        xg.getInstance().resources.getBatchBalanceObject()
                       ),
                     progress: i < 1 ? (100 * i).toPrecision(3) : "100",
                     isResearched: t.amount > 0,
@@ -16980,15 +16984,15 @@
                 t < 0 &&
                   ((t = this.researches.length),
                   this.researches.push({ id: e, amount: 0 }));
-                var n = kl.find(function (t) {
+                var n = xl.find(function (t) {
                   return t.id === e;
                 });
                 if (n) {
-                  var i = w.calcBatchAll(
+                  var i = X.calcBatchAll(
                     n.getCost,
-                    kg.getInstance(),
+                    xg.getInstance(),
                     this.researches[t].amount,
-                    kg.getInstance().resources.getBatchObject()
+                    xg.getInstance().resources.getBatchObject()
                   );
                   if (
                     !(
@@ -16998,9 +17002,9 @@
                     )
                   )
                     return (
-                      kg.getInstance().resources.subtractResourceBatch(i),
+                      xg.getInstance().resources.subtractResourceBatch(i),
                       this.researches[t].amount++,
-                      xg.resources.reassertBalances(),
+                      Yg.resources.reassertBalances(),
                       !0
                     );
                 }
@@ -17011,9 +17015,9 @@
               }),
               t
             );
-          })(C),
-          Wl = Yl.getInstance(),
-          Zl = (function () {
+          })(v),
+          Zl = Wl.getInstance(),
+          jl = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -17050,10 +17054,10 @@
           Fl = (function (e) {
             function t() {
               var t = e.call(this) || this;
-              return (t.scienceResearches = Wl), t;
+              return (t.scienceResearches = Zl), t;
             }
             return (
-              Zl(t, e),
+              jl(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -17067,7 +17071,7 @@
                 return {
                   research: this.scienceResearches.dataToUI(),
                   isUnlocked:
-                    xg.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                    Yg.landingZone.landingZoneUpgrades.getUpgradeLevel(
                       r.RESEARCH_MODULE
                     ) > 0,
                 };
@@ -17080,170 +17084,170 @@
               }),
               t
             );
-          })(C).getInstance(),
-          jl = [
+          })(v).getInstance(),
+          Kl = [
             {
               id: l.BEAM,
               complexity: 100,
               getConsumption:
-                ((su = {}),
-                (su[l.WOOD] = function (e) {
+                ((uu = {}),
+                (uu[l.WOOD] = function (e) {
                   return { A: 0.25, B: 0, type: i.LINEAR };
                 }),
-                su),
-              getGain:
-                ((uu = {}),
-                (uu[l.BEAM] = function (e) {
-                  return { A: 0.01 * Cl(e) * vl(e), B: 0, type: i.LINEAR };
-                }),
                 uu),
+              getGain:
+                ((lu = {}),
+                (lu[l.BEAM] = function (e) {
+                  return { A: 0.01 * vl(e) * Sl(e), B: 0, type: i.LINEAR };
+                }),
+                lu),
             },
             {
               id: l.BRICK,
               complexity: 100,
               getConsumption:
-                ((lu = {}),
-                (lu[l.STONE] = function (e) {
+                ((pu = {}),
+                (pu[l.STONE] = function (e) {
                   return { A: 0.75, B: 0, type: i.LINEAR };
                 }),
-                lu),
-              getGain:
-                ((pu = {}),
-                (pu[l.BRICK] = function (e) {
-                  return { A: 0.01 * Cl(e) * vl(e), B: 0, type: i.LINEAR };
-                }),
                 pu),
+              getGain:
+                ((Eu = {}),
+                (Eu[l.BRICK] = function (e) {
+                  return { A: 0.01 * vl(e) * Sl(e), B: 0, type: i.LINEAR };
+                }),
+                Eu),
             },
             {
               id: l.PLATE,
               complexity: 100,
               getConsumption:
-                ((Eu = {}),
-                (Eu[l.IRON] = function (e) {
+                ((du = {}),
+                (du[l.IRON] = function (e) {
                   return { A: 0.1, B: 0, type: i.LINEAR };
                 }),
-                (Eu[l.WOOD] = function (e) {
+                (du[l.WOOD] = function (e) {
                   return {
-                    A: 0.2 * e.laws.getLawSelected(M.FURNACE_SMELTING),
+                    A: 0.2 * e.laws.getLawSelected(U.FURNACE_SMELTING),
                     B: 0,
                     type: i.LINEAR,
                   };
-                }),
-                Eu),
-              getGain:
-                ((du = {}),
-                (du[l.PLATE] = function (e) {
-                  return { A: 0.002 * Cl(e) * vl(e), B: 0, type: i.LINEAR };
                 }),
                 du),
-              getEffectConsumption:
+              getGain:
                 ((gu = {}),
-                (gu[B.HEALTHCARE] = function (e) {
-                  return {
-                    A: 2 === e.laws.getLawSelected(M.FURNACE_SMELTING) ? 1 : 0,
-                    B: 0,
-                    type: i.LINEAR,
-                  };
+                (gu[l.PLATE] = function (e) {
+                  return { A: 0.002 * vl(e) * Sl(e), B: 0, type: i.LINEAR };
                 }),
                 gu),
-            },
-            {
-              id: l.WIRE,
-              complexity: 100,
-              getConsumption:
+              getEffectConsumption:
                 ((Au = {}),
-                (Au[l.IRON] = function (e) {
-                  return { A: 0.1, B: 0, type: i.LINEAR };
-                }),
-                (Au[l.WOOD] = function (e) {
+                (Au[_.HEALTHCARE] = function (e) {
                   return {
-                    A: 0.2 * e.laws.getLawSelected(M.FURNACE_SMELTING),
+                    A: 2 === e.laws.getLawSelected(U.FURNACE_SMELTING) ? 1 : 0,
                     B: 0,
                     type: i.LINEAR,
                   };
                 }),
                 Au),
-              getGain:
+            },
+            {
+              id: l.WIRE,
+              complexity: 100,
+              getConsumption:
                 ((fu = {}),
-                (fu[l.WIRE] = function (e) {
-                  return { A: 0.002 * Cl(e) * vl(e), B: 0, type: i.LINEAR };
+                (fu[l.IRON] = function (e) {
+                  return { A: 0.1, B: 0, type: i.LINEAR };
                 }),
-                fu),
-              getEffectConsumption:
-                ((Ru = {}),
-                (Ru[B.HEALTHCARE] = function (e) {
+                (fu[l.WOOD] = function (e) {
                   return {
-                    A: 2 === e.laws.getLawSelected(M.FURNACE_SMELTING) ? 1 : 0,
+                    A: 0.2 * e.laws.getLawSelected(U.FURNACE_SMELTING),
                     B: 0,
                     type: i.LINEAR,
                   };
                 }),
+                fu),
+              getGain:
+                ((Ru = {}),
+                (Ru[l.WIRE] = function (e) {
+                  return { A: 0.002 * vl(e) * Sl(e), B: 0, type: i.LINEAR };
+                }),
                 Ru),
+              getEffectConsumption:
+                ((Iu = {}),
+                (Iu[_.HEALTHCARE] = function (e) {
+                  return {
+                    A: 2 === e.laws.getLawSelected(U.FURNACE_SMELTING) ? 1 : 0,
+                    B: 0,
+                    type: i.LINEAR,
+                  };
+                }),
+                Iu),
             },
             {
               id: l.FUEL,
               complexity: 250,
               getConsumption:
-                ((Iu = {}),
-                (Iu[l.BIOMASS] = function (e) {
+                ((Nu = {}),
+                (Nu[l.BIOMASS] = function (e) {
                   return { A: 0.5, B: 0, type: i.LINEAR };
                 }),
-                (Iu[l.WATER] = function (e) {
+                (Nu[l.WATER] = function (e) {
                   return { A: 0.1, B: 0, type: i.LINEAR };
                 }),
-                Iu),
-              getGain:
-                ((Nu = {}),
-                (Nu[l.FUEL] = function (e) {
-                  return { A: 0.002 * Cl(e) * vl(e), B: 0, type: i.LINEAR };
-                }),
                 Nu),
-              getEffectConsumption:
+              getGain:
                 ((Tu = {}),
-                (Tu[B.HEALTHCARE] = function (e) {
+                (Tu[l.FUEL] = function (e) {
+                  return { A: 0.002 * vl(e) * Sl(e), B: 0, type: i.LINEAR };
+                }),
+                Tu),
+              getEffectConsumption:
+                ((Ou = {}),
+                (Ou[_.HEALTHCARE] = function (e) {
                   return {
-                    A: 1 * e.laws.getLawSelected(M.FUEL_PROCESSING),
+                    A: 1 * e.laws.getLawSelected(U.FUEL_PROCESSING),
                     B: 0,
                     type: i.LINEAR,
                   };
                 }),
-                Tu),
+                Ou),
             },
             {
               id: l.RUBBER,
               complexity: 100,
               getConsumption:
-                ((Ou = {}),
-                (Ou[l.BIOMASS] = function (e) {
+                ((yu = {}),
+                (yu[l.BIOMASS] = function (e) {
                   return { A: 1, B: 0, type: i.LINEAR };
                 }),
-                (Ou[l.POWER] = function (e) {
+                (yu[l.POWER] = function (e) {
                   return { A: 0.1, B: 0, type: i.LINEAR };
                 }),
-                Ou),
-              getGain:
-                ((yu = {}),
-                (yu[l.RUBBER] = function (e) {
-                  return { A: 0.008 * Cl(e) * vl(e), B: 0, type: i.LINEAR };
-                }),
                 yu),
+              getGain:
+                ((mu = {}),
+                (mu[l.RUBBER] = function (e) {
+                  return { A: 0.008 * vl(e) * Sl(e), B: 0, type: i.LINEAR };
+                }),
+                mu),
             },
             {
               id: l.PLASTICS,
               complexity: 100,
               getConsumption:
-                ((mu = {}),
-                (mu[l.BIOMASS] = function (e) {
+                ((hu = {}),
+                (hu[l.BIOMASS] = function (e) {
                   return { A: 1, B: 0, type: i.LINEAR };
                 }),
-                (mu[l.POWER] = function (e) {
+                (hu[l.POWER] = function (e) {
                   return { A: 0.1, B: 0, type: i.LINEAR };
                 }),
-                mu),
+                hu),
               getGain:
                 ((Lu = {}),
                 (Lu[l.PLASTICS] = function (e) {
-                  return { A: 0.008 * Cl(e) * vl(e), B: 0, type: i.LINEAR };
+                  return { A: 0.008 * vl(e) * Sl(e), B: 0, type: i.LINEAR };
                 }),
                 Lu),
             },
@@ -17251,143 +17255,143 @@
               id: l.SEMICONDUCTOR,
               complexity: 100,
               getConsumption:
-                ((hu = {}),
-                (hu[l.IRON] = function (e) {
+                ((Cu = {}),
+                (Cu[l.IRON] = function (e) {
                   return { A: 0.02, B: 0, type: i.LINEAR };
                 }),
-                (hu[l.STONE] = function (e) {
+                (Cu[l.STONE] = function (e) {
                   return { A: 1, B: 0, type: i.LINEAR };
                 }),
-                hu),
-              getGain:
-                ((Cu = {}),
-                (Cu[l.SEMICONDUCTOR] = function (e) {
-                  return { A: 0.004 * Cl(e) * vl(e), B: 0, type: i.LINEAR };
-                }),
                 Cu),
+              getGain:
+                ((vu = {}),
+                (vu[l.SEMICONDUCTOR] = function (e) {
+                  return { A: 0.004 * vl(e) * Sl(e), B: 0, type: i.LINEAR };
+                }),
+                vu),
             },
             {
               id: l.COMPUTER,
               complexity: 250,
               getConsumption:
-                ((vu = {}),
-                (vu[l.SEMICONDUCTOR] = function (e) {
-                  return { A: 0.1, B: 0, type: i.LINEAR };
-                }),
-                (vu[l.PLASTICS] = function (e) {
-                  return { A: 0.1, B: 0, type: i.LINEAR };
-                }),
-                vu),
-              getGain:
                 ((Su = {}),
-                (Su[l.COMPUTER] = function (e) {
-                  return { A: 0.004 * Cl(e) * vl(e), B: 0, type: i.LINEAR };
+                (Su[l.SEMICONDUCTOR] = function (e) {
+                  return { A: 0.1, B: 0, type: i.LINEAR };
+                }),
+                (Su[l.PLASTICS] = function (e) {
+                  return { A: 0.1, B: 0, type: i.LINEAR };
                 }),
                 Su),
+              getGain:
+                ((Pu = {}),
+                (Pu[l.COMPUTER] = function (e) {
+                  return { A: 0.004 * vl(e) * Sl(e), B: 0, type: i.LINEAR };
+                }),
+                Pu),
             },
             {
               id: l.ROCKET_ENGINE,
               complexity: 750,
               getConsumption:
-                ((Pu = {}),
-                (Pu[l.PLATE] = function (e) {
-                  return { A: 0.1, B: 0, type: i.LINEAR };
-                }),
-                (Pu[l.FUEL] = function (e) {
-                  return { A: 0.1, B: 0, type: i.LINEAR };
-                }),
-                Pu),
-              getGain:
                 ((Bu = {}),
-                (Bu[l.ROCKET_ENGINE] = function (e) {
-                  return { A: 0.002 * Cl(e) * vl(e), B: 0, type: i.LINEAR };
+                (Bu[l.PLATE] = function (e) {
+                  return { A: 0.1, B: 0, type: i.LINEAR };
+                }),
+                (Bu[l.FUEL] = function (e) {
+                  return { A: 0.1, B: 0, type: i.LINEAR };
                 }),
                 Bu),
+              getGain:
+                ((_u = {}),
+                (_u[l.ROCKET_ENGINE] = function (e) {
+                  return { A: 0.002 * vl(e) * Sl(e), B: 0, type: i.LINEAR };
+                }),
+                _u),
             },
             {
               id: l.GRAPHENE,
               complexity: 750,
               getConsumption:
-                ((_u = {}),
-                (_u[l.BIOMASS] = function (e) {
+                ((Mu = {}),
+                (Mu[l.BIOMASS] = function (e) {
                   return { A: 1.5, B: 0, type: i.LINEAR };
                 }),
-                (_u[l.WATER] = function (e) {
+                (Mu[l.WATER] = function (e) {
                   return { A: 0.2, B: 0, type: i.LINEAR };
                 }),
-                _u),
-              getGain:
-                ((Mu = {}),
-                (Mu[l.GRAPHENE] = function (e) {
-                  return { A: 0.001 * Cl(e) * vl(e), B: 0, type: i.LINEAR };
-                }),
                 Mu),
+              getGain:
+                ((Uu = {}),
+                (Uu[l.GRAPHENE] = function (e) {
+                  return { A: 0.001 * vl(e) * Sl(e), B: 0, type: i.LINEAR };
+                }),
+                Uu),
             },
             {
               id: l.MAGNETO,
               complexity: 2250,
               getConsumption:
-                ((Uu = {}),
-                (Uu[l.WIRE] = function (e) {
-                  return { A: 0.5, B: 0, type: i.LINEAR };
-                }),
-                (Uu[l.SEMICONDUCTOR] = function (e) {
-                  return { A: 0.5, B: 0, type: i.LINEAR };
-                }),
-                Uu),
-              getGain:
                 ((Gu = {}),
-                (Gu[l.MAGNETO] = function (e) {
-                  return { A: 4e-4 * Cl(e) * vl(e), B: 0, type: i.LINEAR };
+                (Gu[l.WIRE] = function (e) {
+                  return { A: 0.5, B: 0, type: i.LINEAR };
+                }),
+                (Gu[l.SEMICONDUCTOR] = function (e) {
+                  return { A: 0.5, B: 0, type: i.LINEAR };
                 }),
                 Gu),
+              getGain:
+                ((bu = {}),
+                (bu[l.MAGNETO] = function (e) {
+                  return { A: 4e-4 * vl(e) * Sl(e), B: 0, type: i.LINEAR };
+                }),
+                bu),
             },
             {
               id: l.DM_BLOCK,
               complexity: 16384,
               getConsumption:
-                ((bu = {}),
-                (bu[l.DARK_MATTER] = function (e) {
+                ((Du = {}),
+                (Du[l.DARK_MATTER] = function (e) {
                   return { A: 2, B: 0, type: i.LINEAR };
                 }),
-                (bu[l.BRICK] = function (e) {
+                (Du[l.BRICK] = function (e) {
                   return { A: 100, B: 0, type: i.LINEAR };
                 }),
-                (bu[l.POWER] = function (e) {
+                (Du[l.POWER] = function (e) {
                   return { A: 100, B: 0, type: i.LINEAR };
-                }),
-                bu),
-              getGain:
-                ((Du = {}),
-                (Du[l.DM_BLOCK] = function (e) {
-                  return { A: 4e-4 * Cl(e) * vl(e), B: 0, type: i.LINEAR };
                 }),
                 Du),
+              getGain:
+                ((wu = {}),
+                (wu[l.DM_BLOCK] = function (e) {
+                  return { A: 4e-4 * vl(e) * Sl(e), B: 0, type: i.LINEAR };
+                }),
+                wu),
             },
             {
               id: l.PRESSED_BLOCK,
               complexity: 16384,
               getConsumption:
-                ((wu = {}),
-                (wu[l.POWER] = function (e) {
+                ((Xu = {}),
+                (Xu[l.POWER] = function (e) {
                   return { A: 500, B: 0, type: i.LINEAR };
                 }),
-                (wu[l.BRICK] = function (e) {
+                (Xu[l.BRICK] = function (e) {
                   return { A: 100, B: 0, type: i.LINEAR };
                 }),
-                (wu[l.BEAM] = function (e) {
+                (Xu[l.BEAM] = function (e) {
                   return { A: 100, B: 0, type: i.LINEAR };
-                }),
-                wu),
-              getGain:
-                ((Xu = {}),
-                (Xu[l.PRESSED_BLOCK] = function (e) {
-                  return { A: 4e-4 * Cl(e) * vl(e), B: 0, type: i.LINEAR };
                 }),
                 Xu),
+              getGain:
+                ((ku = {}),
+                (ku[l.PRESSED_BLOCK] = function (e) {
+                  return { A: 4e-4 * vl(e) * Sl(e), B: 0, type: i.LINEAR };
+                }),
+                ku),
             },
           ],
-          Kl = (function () {
+          Vl = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -17421,9 +17425,9 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          Vl = function () {
+          ql = function () {
             return (
-              (Vl =
+              (ql =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -17432,10 +17436,10 @@
                         (e[o] = t[o]);
                   return e;
                 }),
-              Vl.apply(this, arguments)
+              ql.apply(this, arguments)
             );
           },
-          ql = (function (e) {
+          zl = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -17448,7 +17452,7 @@
               );
             }
             return (
-              Kl(t, e),
+              Vl(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -17461,7 +17465,7 @@
               (t.prototype.dataToUI = function () {
                 var e = this;
                 return {
-                  list: jl.map(function (t) {
+                  list: Kl.map(function (t) {
                     return e.processToUI(t);
                   }),
                   craftingSlots: this.craftingSlots,
@@ -17471,25 +17475,25 @@
                 return (
                   Math.pow(
                     1.05,
-                    xg.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                    Yg.landingZone.landingZoneUpgrades.getUpgradeLevel(
                       r.INDUSTRY_AUTOMATION
                     )
                   ) *
                   Math.pow(
                     1.05,
-                    xg.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                    Yg.landingZone.landingZoneUpgrades.getUpgradeLevel(
                       r.MAGNETIC_PRESS
                     )
                   ) *
                   Math.pow(
                     1.1,
-                    xg.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                    Yg.landingZone.landingZoneUpgrades.getUpgradeLevel(
                       r.HUMAN_LIKE_HELPERS
                     )
                   ) *
                   Math.pow(
                     1.1,
-                    xg.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                    Yg.landingZone.landingZoneUpgrades.getUpgradeLevel(
                       r.MASS_PRODUCTION_TELEPORT
                     )
                   )
@@ -17518,29 +17522,29 @@
                 t ||
                   ((t = { id: e.id, amount: 0, efficiency: 1 }),
                   this.crafters.push(t));
-                var n = U.find(function (t) {
+                var n = G.find(function (t) {
                   return t.id === e.id;
                 });
                 if (!n) throw new Error("Invalid recipe: ".concat(e.id));
                 var i = e.getConsumption
-                    ? w.calcBatchAll(
+                    ? X.calcBatchAll(
                         e.getConsumption,
-                        kg.getInstance(),
+                        xg.getInstance(),
                         0,
-                        kg.getInstance().resources.getBatchObject()
+                        xg.getInstance().resources.getBatchObject()
                       )
                     : [],
                   o = e.getGain
-                    ? w.calcBatch(e.getGain, kg.getInstance(), 0)
+                    ? X.calcBatch(e.getGain, xg.getInstance(), 0)
                     : [],
-                  r = n.unlockCondition(xg);
+                  r = n.unlockCondition(Yg);
                 return (
                   r &&
                     (t.amount > 0 &&
-                      xg.newNotifications.setViewed(
+                      Yg.newNotifications.setViewed(
                         "planet:crafting:jobs:".concat(e.id)
                       ),
-                    xg.newNotifications.registerNotification(
+                    Yg.newNotifications.registerNotification(
                       "planet:crafting:jobs:".concat(e.id)
                     )),
                   {
@@ -17552,7 +17556,7 @@
                         return e.amount;
                       })
                       .map(function (e) {
-                        return Vl(Vl({}, e), {
+                        return ql(ql({}, e), {
                           amountValue: e.amount,
                           amount: H(e.amount),
                         });
@@ -17562,7 +17566,7 @@
                         return e.amount;
                       })
                       .map(function (e) {
-                        return Vl(Vl({}, e), {
+                        return ql(ql({}, e), {
                           amountValue: e.amount,
                           amount: H(e.amount),
                         });
@@ -17587,19 +17591,19 @@
                 );
                 if (i < t) {
                   var o = t - i,
-                    r = Math.min(xg.colony.colonyJobs.freeWorkers, o);
-                  xg.colony.colonyJobs.setAmount(
-                    P.ARTISAN,
-                    xg.colony.colonyJobs.getWorkersAmount(P.ARTISAN) + r
+                    r = Math.min(Yg.colony.colonyJobs.freeWorkers, o);
+                  Yg.colony.colonyJobs.setAmount(
+                    B.ARTISAN,
+                    Yg.colony.colonyJobs.getWorkersAmount(B.ARTISAN) + r
                   ),
                     (i += r);
                 }
                 (this.crafters[n].amount = Math.min(Math.max(t, 0), i)),
-                  xg.resources.reassertBalances();
+                  Yg.resources.reassertBalances();
               }),
               (t.prototype.getResourceBeingProduced = function (e) {
                 var t = this,
-                  n = jl.filter(function (t) {
+                  n = Kl.filter(function (t) {
                     return t.getGain && !!t.getGain[e];
                   }),
                   i = [];
@@ -17614,7 +17618,7 @@
                       (null === (r = a.getGain) || void 0 === r ? void 0 : r[e])
                     ) {
                       var c =
-                        w.calculate(xg, a.getGain[e], 0, o.amount) *
+                        X.calculate(Yg, a.getGain[e], 0, o.amount) *
                         o.efficiency *
                         t.getTotalCraftingBonus();
                       i.push({
@@ -17630,12 +17634,12 @@
               }),
               (t.prototype.getResourceBeingConsumed = function (e) {
                 if (
-                  !U.find(function (t) {
+                  !G.find(function (t) {
                     return t.id === e;
                   })
                 )
                   throw new Error("Invalid resource");
-                var t = jl.filter(function (t) {
+                var t = Kl.filter(function (t) {
                     return t.getConsumption && !!t.getConsumption[e];
                   }),
                   n = [];
@@ -17652,10 +17656,10 @@
                         : o[e])
                     ) {
                       var a =
-                        w.calculate(xg, r.getConsumption[e], 0, i.amount) *
+                        X.calculate(Yg, r.getConsumption[e], 0, i.amount) *
                         i.efficiency;
                       n.push({
-                        label: "Crafting: ".concat(b(r.id)),
+                        label: "Crafting: ".concat(D(r.id)),
                         value: a,
                         id: "job-".concat(r.id),
                         category: "Crafting",
@@ -17666,7 +17670,7 @@
                 );
               }),
               (t.prototype.getEffectBeingConsumed = function (e) {
-                var t = jl.filter(function (t) {
+                var t = Kl.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getEffectConsumption) ||
                     void 0 === n
@@ -17687,14 +17691,14 @@
                         : o[e])
                     ) {
                       var a =
-                        w.calculate(
-                          xg,
+                        X.calculate(
+                          Yg,
                           r.getEffectConsumption[e],
                           0,
                           i.amount
                         ) * i.efficiency;
                       n.push({
-                        label: "Crafting: ".concat(b(r.id)),
+                        label: "Crafting: ".concat(D(r.id)),
                         value: a,
                         id: "job-".concat(r.id),
                         category: "Crafting",
@@ -17712,10 +17716,10 @@
               }),
               (t.prototype.adaptEfficiency = function () {
                 var e = this,
-                  t = Al.lackEfficiencyResources,
+                  t = fl.lackEfficiencyResources,
                   n = Object.keys(t);
                 this.crafters.forEach(function (i, o) {
-                  var r = jl.find(function (e) {
+                  var r = Kl.find(function (e) {
                     return e.id === i.id;
                   });
                   if (r && r.getConsumption) {
@@ -17732,13 +17736,13 @@
                 });
               }),
               (t.prototype.process = function (e) {
-                var t = xg.crafting.slots - this.getBusyWorkers();
+                var t = Yg.crafting.slots - this.getBusyWorkers();
                 if (t < 0) {
                   for (var n = this.crafters.length - 1; n >= 0; n--) {
                     var i = Math.min(this.crafters[n].amount, -t);
                     if (((this.crafters[n].amount -= i), (t += i) >= 0)) break;
                   }
-                  xg.resources.reassertBalances();
+                  Yg.resources.reassertBalances();
                 }
                 this.craftingSlots = t;
               }),
@@ -17747,9 +17751,9 @@
               }),
               t
             );
-          })(C),
-          zl = ql.getInstance(),
-          Ql = (function () {
+          })(v),
+          Ql = zl.getInstance(),
+          Jl = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -17783,13 +17787,13 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          Jl = (function (e) {
+          $l = (function (e) {
             function t() {
               var t = e.call(this) || this;
-              return (t.slots = -1), (t.craftingJobs = zl), t;
+              return (t.slots = -1), (t.craftingJobs = Ql), t;
             }
             return (
-              Ql(t, e),
+              Jl(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -17803,8 +17807,8 @@
                 return {
                   maxSlots: this.slots || 0,
                   isUnlocked:
-                    xg.science.scienceResearches.getResearchLevel(
-                      v.METALLURGY
+                    Yg.science.scienceResearches.getResearchLevel(
+                      S.METALLURGY
                     ) > 0,
                   jobs: this.craftingJobs.dataToUI(),
                 };
@@ -17814,8 +17818,8 @@
                 return (
                   0 +
                   ((null ===
-                    (e = xg.colony.colonyJobs.jobs.find(function (e) {
-                      return e.id === P.ARTISAN;
+                    (e = Yg.colony.colonyJobs.jobs.find(function (e) {
+                      return e.id === B.ARTISAN;
                     })) || void 0 === e
                     ? void 0
                     : e.amount) || 0)
@@ -17830,8 +17834,8 @@
               }),
               t
             );
-          })(C),
-          $l = Jl.getInstance();
+          })(v),
+          ep = $l.getInstance();
         !(function (e) {
           (e.RESOURCE = "resource"),
             (e.UPGRADE = "upgrade"),
@@ -17840,8 +17844,7 @@
             (e.POPULATION = "population"),
             (e.KP_UPGRADE = "kp_upgrade");
         })(Hu || (Hu = {}));
-        var ep,
-          tp,
+        var tp,
           np,
           ip,
           op,
@@ -17864,8 +17867,8 @@
           Op,
           yp,
           mp,
-          Lp,
           hp,
+          Lp,
           Cp,
           vp,
           Sp,
@@ -17879,14 +17882,14 @@
           Dp,
           wp,
           Xp,
-          Hp,
           kp,
+          Hp,
           xp,
           Yp,
           Wp,
           Zp,
-          Fp,
           jp,
+          Fp,
           Kp,
           Vp,
           qp,
@@ -17894,7 +17897,8 @@
           Qp,
           Jp,
           $p,
-          eE = [
+          eE,
+          tE = [
             {
               id: "start",
               description: "Power up",
@@ -18067,22 +18071,22 @@
               description: "Scientific basics",
               requirements: [
                 { type: Hu.UPGRADE, target: r.RESEARCH_MODULE, amount: 1 },
-                { type: Hu.RESEARCH, target: v.EXOFARMING, amount: 1 },
+                { type: Hu.RESEARCH, target: S.EXOFARMING, amount: 1 },
               ],
             },
             {
               id: "population",
               description: "Population",
               requirements: [
-                { type: Hu.POPULATION, target: v.METEOROLOGY, amount: 10 },
+                { type: Hu.POPULATION, target: S.METEOROLOGY, amount: 10 },
               ],
             },
             {
               id: "healthcare",
               description: "Healthcare",
               requirements: [
-                { type: Hu.RESEARCH, target: v.CIVIL_SERVICE, amount: 1 },
-                { type: Hu.RESEARCH, target: v.EXOBIOLOGY, amount: 1 },
+                { type: Hu.RESEARCH, target: S.CIVIL_SERVICE, amount: 1 },
+                { type: Hu.RESEARCH, target: S.EXOBIOLOGY, amount: 1 },
                 { type: Hu.BUILDING, target: a.CLINIC, amount: 1 },
               ],
             },
@@ -18090,7 +18094,7 @@
               id: "crafting",
               description: "Crafting",
               requirements: [
-                { type: Hu.RESEARCH, target: v.METALLURGY, amount: 1 },
+                { type: Hu.RESEARCH, target: S.METALLURGY, amount: 1 },
                 { type: Hu.RESOURCE, target: l.BEAM, amount: 20 },
                 { type: Hu.RESOURCE, target: l.BRICK, amount: 20 },
               ],
@@ -18099,25 +18103,25 @@
               id: "civilized",
               description: "Civilized life",
               requirements: [
-                { type: Hu.RESEARCH, target: v.SOCIOLOGY, amount: 1 },
-                { type: Hu.RESEARCH, target: v.CODEX_OF_LAW, amount: 1 },
+                { type: Hu.RESEARCH, target: S.SOCIOLOGY, amount: 1 },
+                { type: Hu.RESEARCH, target: S.CODEX_OF_LAW, amount: 1 },
               ],
             },
             {
               id: "population",
               description: "Population",
               requirements: [
-                { type: Hu.POPULATION, target: v.METEOROLOGY, amount: 70 },
+                { type: Hu.POPULATION, target: S.METEOROLOGY, amount: 70 },
               ],
             },
             {
               id: "advanced",
               description: "Advanced Science",
               requirements: [
-                { type: Hu.RESEARCH, target: v.ELECTRICITY_STUDY, amount: 1 },
+                { type: Hu.RESEARCH, target: S.ELECTRICITY_STUDY, amount: 1 },
                 {
                   type: Hu.RESEARCH,
-                  target: v.HIGH_GRAVITY_PHYSICS,
+                  target: S.HIGH_GRAVITY_PHYSICS,
                   amount: 1,
                 },
               ],
@@ -18126,7 +18130,7 @@
               id: "infoera",
               description: "Knowledge",
               requirements: [
-                { type: Hu.RESEARCH, target: v.QUANTUM_PHYSICS, amount: 1 },
+                { type: Hu.RESEARCH, target: S.QUANTUM_PHYSICS, amount: 1 },
                 {
                   type: Hu.UPGRADE,
                   target: r.GREAT_RADIO_TRANSMITTER,
@@ -18139,15 +18143,15 @@
               description: "Knowledge of Ancestors",
               requirements: [
                 { type: Hu.RESOURCE, target: l.KNOWLEDGE_POINT, amount: 20 },
-                { type: Hu.KP_UPGRADE, target: d.RESEARCH_CAPACITY, amount: 2 },
+                { type: Hu.KP_UPGRADE, target: g.RESEARCH_CAPACITY, amount: 2 },
               ],
             },
             {
               id: "science2",
               description: "Advanced Science",
               requirements: [
-                { type: Hu.RESEARCH, target: v.HIGH_ENERGY_PHYSICS, amount: 1 },
-                { type: Hu.RESEARCH, target: v.PHOTO_LITHOGRAPHY, amount: 1 },
+                { type: Hu.RESEARCH, target: S.HIGH_ENERGY_PHYSICS, amount: 1 },
+                { type: Hu.RESEARCH, target: S.PHOTO_LITHOGRAPHY, amount: 1 },
               ],
             },
             {
@@ -18156,10 +18160,10 @@
               requirements: [
                 {
                   type: Hu.RESEARCH,
-                  target: v.THERMONUCLEAR_SYNTHESIS,
+                  target: S.THERMONUCLEAR_SYNTHESIS,
                   amount: 1,
                 },
-                { type: Hu.RESEARCH, target: v.MOLECULAR_PHYSICS, amount: 1 },
+                { type: Hu.RESEARCH, target: S.MOLECULAR_PHYSICS, amount: 1 },
               ],
               hint: 'If you feel it\'s too difficult to reach this point - you can keep performing "Transmit Knowledge"',
             },
@@ -18167,7 +18171,7 @@
               id: "superpower",
               description: "Energy Superpower",
               requirements: [
-                { type: Hu.RESEARCH, target: v.SUPER_CONDUCTIVITY, amount: 1 },
+                { type: Hu.RESEARCH, target: S.SUPER_CONDUCTIVITY, amount: 1 },
                 { type: Hu.UPGRADE, target: r.COLD_SYNTHESIS, amount: 1 },
               ],
             },
@@ -18175,7 +18179,7 @@
               id: "prepareColonize",
               description: "Prepare to leave",
               requirements: [
-                { type: Hu.RESEARCH, target: v.SPACESHIP_BUILDINGS, amount: 1 },
+                { type: Hu.RESEARCH, target: S.SPACESHIP_BUILDINGS, amount: 1 },
                 { type: Hu.BUILDING, target: a.SPACESHIP_STATION, amount: 1 },
               ],
               hint: 'Keep unlocking new researches until you unlock "Spaceship Building"',
@@ -18189,29 +18193,12 @@
               hint: "When you colonize new planet you get XP for finishing current one. XP provides some multiplicative bonus to your KP gain when transmit knowledge. Your KP and Transmit Knowledge upgrades persist",
             },
           ],
-          tE = [
+          nE = [
             {
-              id: d.DRONE_MASTERITY,
+              id: g.DRONE_MASTERITY,
               name: "Drone Mastery",
               description:
                 "Learn how to use your drone with more efficiency. Every point increases the output from drone actions by 20%",
-              unlockCondition: function (e) {
-                return !0;
-              },
-              getCost:
-                ((ep = {}),
-                (ep[l.KNOWLEDGE_POINT] = function (e) {
-                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
-                }),
-                ep),
-              category: g.START,
-              maxLevel: 10,
-            },
-            {
-              id: d.REPAIRED_SOLAR_PANEL,
-              name: "Drone Solar Panel",
-              description:
-                "Add a solar panel to your starting drone that grants it small power generation",
               unlockCondition: function (e) {
                 return !0;
               },
@@ -18221,17 +18208,34 @@
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
                 tp),
-              getGain:
-                ((np = {}),
-                (np[l.POWER] = function (e) {
-                  return { A: 0.03, B: 0, type: i.LINEAR };
-                }),
-                np),
-              category: g.START,
+              category: A.START,
               maxLevel: 10,
             },
             {
-              id: d.POWER_MASTERITY,
+              id: g.REPAIRED_SOLAR_PANEL,
+              name: "Drone Solar Panel",
+              description:
+                "Add a solar panel to your starting drone that grants it small power generation",
+              unlockCondition: function (e) {
+                return !0;
+              },
+              getCost:
+                ((np = {}),
+                (np[l.KNOWLEDGE_POINT] = function (e) {
+                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
+                }),
+                np),
+              getGain:
+                ((ip = {}),
+                (ip[l.POWER] = function (e) {
+                  return { A: 0.03, B: 0, type: i.LINEAR };
+                }),
+                ip),
+              category: A.START,
+              maxLevel: 10,
+            },
+            {
+              id: g.POWER_MASTERITY,
               name: "Power Mastery",
               description:
                 "Your experience with electrical grids helps with power optimization. Every point boosts power production by 4%",
@@ -18239,22 +18243,22 @@
                 return !0;
               },
               getCost:
-                ((ip = {}),
-                (ip[l.KNOWLEDGE_POINT] = function (e) {
+                ((op = {}),
+                (op[l.KNOWLEDGE_POINT] = function (e) {
                   return { A: 3, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                ip),
+                op),
               getGainMultiplier:
-                ((op = {}),
-                (op[l.POWER] = function (e) {
+                ((rp = {}),
+                (rp[l.POWER] = function (e) {
                   return { A: 0.04, B: 1, type: i.LINEAR };
                 }),
-                op),
-              category: g.MASTERITIES,
+                rp),
+              category: A.MASTERITIES,
               maxLevel: 0,
             },
             {
-              id: d.MINING_MASTERITY,
+              id: g.MINING_MASTERITY,
               name: "Mining Mastery",
               description:
                 "Striking the earth can be done in a wide variety of ways. Every point boosts stone, ore, iron and platinum production by 4%",
@@ -18262,31 +18266,31 @@
                 return !0;
               },
               getCost:
-                ((rp = {}),
-                (rp[l.KNOWLEDGE_POINT] = function (e) {
+                ((ap = {}),
+                (ap[l.KNOWLEDGE_POINT] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                rp),
-              getGainMultiplier:
-                ((ap = {}),
-                (ap[l.STONE] = function (e) {
-                  return { A: 0.04, B: 1, type: i.LINEAR };
-                }),
-                (ap[l.ORE] = function (e) {
-                  return { A: 0.04, B: 1, type: i.LINEAR };
-                }),
-                (ap[l.IRON] = function (e) {
-                  return { A: 0.04, B: 1, type: i.LINEAR };
-                }),
-                (ap[l.PLATINUM] = function (e) {
-                  return { A: 0.04, B: 1, type: i.LINEAR };
-                }),
                 ap),
-              category: g.MASTERITIES,
+              getGainMultiplier:
+                ((cp = {}),
+                (cp[l.STONE] = function (e) {
+                  return { A: 0.04, B: 1, type: i.LINEAR };
+                }),
+                (cp[l.ORE] = function (e) {
+                  return { A: 0.04, B: 1, type: i.LINEAR };
+                }),
+                (cp[l.IRON] = function (e) {
+                  return { A: 0.04, B: 1, type: i.LINEAR };
+                }),
+                (cp[l.PLATINUM] = function (e) {
+                  return { A: 0.04, B: 1, type: i.LINEAR };
+                }),
+                cp),
+              category: A.MASTERITIES,
               maxLevel: 0,
             },
             {
-              id: d.NATURE_MASTERITY,
+              id: g.NATURE_MASTERITY,
               name: "Nature Mastery",
               description:
                 "Extensive knowledge of biology and farming helps with spreading greenery on inhospitable worlds. Every point boosts biomass, wood and nutrition production by 4%",
@@ -18294,28 +18298,28 @@
                 return !0;
               },
               getCost:
-                ((cp = {}),
-                (cp[l.KNOWLEDGE_POINT] = function (e) {
+                ((sp = {}),
+                (sp[l.KNOWLEDGE_POINT] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                cp),
-              getGainMultiplier:
-                ((sp = {}),
-                (sp[l.NUTRITION] = function (e) {
-                  return { A: 0.04, B: 1, type: i.LINEAR };
-                }),
-                (sp[l.BIOMASS] = function (e) {
-                  return { A: 0.04, B: 1, type: i.LINEAR };
-                }),
-                (sp[l.WOOD] = function (e) {
-                  return { A: 0.04, B: 1, type: i.LINEAR };
-                }),
                 sp),
-              category: g.MASTERITIES,
+              getGainMultiplier:
+                ((up = {}),
+                (up[l.NUTRITION] = function (e) {
+                  return { A: 0.04, B: 1, type: i.LINEAR };
+                }),
+                (up[l.BIOMASS] = function (e) {
+                  return { A: 0.04, B: 1, type: i.LINEAR };
+                }),
+                (up[l.WOOD] = function (e) {
+                  return { A: 0.04, B: 1, type: i.LINEAR };
+                }),
+                up),
+              category: A.MASTERITIES,
               maxLevel: 0,
             },
             {
-              id: d.GAS_MASTERITY,
+              id: g.GAS_MASTERITY,
               name: "Gas & Liquid Mastery",
               description:
                 "Solid materials are important, but so are other states of matter. Every point boosts oxygen and water production 4%",
@@ -18323,25 +18327,25 @@
                 return !0;
               },
               getCost:
-                ((up = {}),
-                (up[l.KNOWLEDGE_POINT] = function (e) {
+                ((lp = {}),
+                (lp[l.KNOWLEDGE_POINT] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                up),
-              getGainMultiplier:
-                ((lp = {}),
-                (lp[l.OXYGEN] = function (e) {
-                  return { A: 0.04, B: 1, type: i.LINEAR };
-                }),
-                (lp[l.WATER] = function (e) {
-                  return { A: 0.04, B: 1, type: i.LINEAR };
-                }),
                 lp),
-              category: g.MASTERITIES,
+              getGainMultiplier:
+                ((pp = {}),
+                (pp[l.OXYGEN] = function (e) {
+                  return { A: 0.04, B: 1, type: i.LINEAR };
+                }),
+                (pp[l.WATER] = function (e) {
+                  return { A: 0.04, B: 1, type: i.LINEAR };
+                }),
+                pp),
+              category: A.MASTERITIES,
               maxLevel: 0,
             },
             {
-              id: d.BUILDING_MASTERITY,
+              id: g.BUILDING_MASTERITY,
               name: "Refining Mastery",
               description:
                 "Refined materials lie at the core of all complex structures. Every point boosts beam, brick and plate production by 4%",
@@ -18349,28 +18353,28 @@
                 return !0;
               },
               getCost:
-                ((pp = {}),
-                (pp[l.KNOWLEDGE_POINT] = function (e) {
+                ((Ep = {}),
+                (Ep[l.KNOWLEDGE_POINT] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                pp),
-              getGainMultiplier:
-                ((Ep = {}),
-                (Ep[l.BEAM] = function (e) {
-                  return { A: 0.04, B: 1, type: i.LINEAR };
-                }),
-                (Ep[l.BRICK] = function (e) {
-                  return { A: 0.04, B: 1, type: i.LINEAR };
-                }),
-                (Ep[l.PLATE] = function (e) {
-                  return { A: 0.04, B: 1, type: i.LINEAR };
-                }),
                 Ep),
-              category: g.MASTERITIES,
+              getGainMultiplier:
+                ((dp = {}),
+                (dp[l.BEAM] = function (e) {
+                  return { A: 0.04, B: 1, type: i.LINEAR };
+                }),
+                (dp[l.BRICK] = function (e) {
+                  return { A: 0.04, B: 1, type: i.LINEAR };
+                }),
+                (dp[l.PLATE] = function (e) {
+                  return { A: 0.04, B: 1, type: i.LINEAR };
+                }),
+                dp),
+              category: A.MASTERITIES,
               maxLevel: 0,
             },
             {
-              id: d.ELECTRONICS_MASTERITY,
+              id: g.ELECTRONICS_MASTERITY,
               name: "Electronics Mastery",
               description:
                 "Computers kickstarted a second industrial revolution and are very important in automating the industry. Every point boosts electronics (wire, semiconductor, computer, etc) production by 4%",
@@ -18378,31 +18382,31 @@
                 return !0;
               },
               getCost:
-                ((dp = {}),
-                (dp[l.KNOWLEDGE_POINT] = function (e) {
+                ((gp = {}),
+                (gp[l.KNOWLEDGE_POINT] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                dp),
-              getGainMultiplier:
-                ((gp = {}),
-                (gp[l.WIRE] = function (e) {
-                  return { A: 0.04, B: 1, type: i.LINEAR };
-                }),
-                (gp[l.COMPUTER] = function (e) {
-                  return { A: 0.04, B: 1, type: i.LINEAR };
-                }),
-                (gp[l.SEMICONDUCTOR] = function (e) {
-                  return { A: 0.04, B: 1, type: i.LINEAR };
-                }),
-                (gp[l.MAGNETO] = function (e) {
-                  return { A: 0.04, B: 1, type: i.LINEAR };
-                }),
                 gp),
-              category: g.MASTERITIES,
+              getGainMultiplier:
+                ((Ap = {}),
+                (Ap[l.WIRE] = function (e) {
+                  return { A: 0.04, B: 1, type: i.LINEAR };
+                }),
+                (Ap[l.COMPUTER] = function (e) {
+                  return { A: 0.04, B: 1, type: i.LINEAR };
+                }),
+                (Ap[l.SEMICONDUCTOR] = function (e) {
+                  return { A: 0.04, B: 1, type: i.LINEAR };
+                }),
+                (Ap[l.MAGNETO] = function (e) {
+                  return { A: 0.04, B: 1, type: i.LINEAR };
+                }),
+                Ap),
+              category: A.MASTERITIES,
               maxLevel: 0,
             },
             {
-              id: d.ROCKET_MASTERITY,
+              id: g.ROCKET_MASTERITY,
               name: "Rocket Mastery",
               description:
                 "Each space colony starts with a rocket trip, and you are good at making rockets. Every point boosts fuel and rockets production by 4%",
@@ -18410,25 +18414,25 @@
                 return !0;
               },
               getCost:
-                ((Ap = {}),
-                (Ap[l.KNOWLEDGE_POINT] = function (e) {
+                ((fp = {}),
+                (fp[l.KNOWLEDGE_POINT] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                Ap),
-              getGainMultiplier:
-                ((fp = {}),
-                (fp[l.FUEL] = function (e) {
-                  return { A: 0.04, B: 1, type: i.LINEAR };
-                }),
-                (fp[l.ROCKET_ENGINE] = function (e) {
-                  return { A: 0.04, B: 1, type: i.LINEAR };
-                }),
                 fp),
-              category: g.MASTERITIES,
+              getGainMultiplier:
+                ((Rp = {}),
+                (Rp[l.FUEL] = function (e) {
+                  return { A: 0.04, B: 1, type: i.LINEAR };
+                }),
+                (Rp[l.ROCKET_ENGINE] = function (e) {
+                  return { A: 0.04, B: 1, type: i.LINEAR };
+                }),
+                Rp),
+              category: A.MASTERITIES,
               maxLevel: 0,
             },
             {
-              id: d.ORGANICS_MASTERITY,
+              id: g.ORGANICS_MASTERITY,
               name: "Organics Mastery",
               description:
                 "Be more efficient in your precious biomass usage. Every point boosts biomass based creatable resources production (such as plastic and rubber) by 4%",
@@ -18436,28 +18440,28 @@
                 return !0;
               },
               getCost:
-                ((Rp = {}),
-                (Rp[l.KNOWLEDGE_POINT] = function (e) {
+                ((Ip = {}),
+                (Ip[l.KNOWLEDGE_POINT] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                Rp),
-              getGainMultiplier:
-                ((Ip = {}),
-                (Ip[l.PLASTICS] = function (e) {
-                  return { A: 0.04, B: 1, type: i.LINEAR };
-                }),
-                (Ip[l.RUBBER] = function (e) {
-                  return { A: 0.04, B: 1, type: i.LINEAR };
-                }),
-                (Ip[l.GRAPHENE] = function (e) {
-                  return { A: 0.04, B: 1, type: i.LINEAR };
-                }),
                 Ip),
-              category: g.MASTERITIES,
+              getGainMultiplier:
+                ((Np = {}),
+                (Np[l.PLASTICS] = function (e) {
+                  return { A: 0.04, B: 1, type: i.LINEAR };
+                }),
+                (Np[l.RUBBER] = function (e) {
+                  return { A: 0.04, B: 1, type: i.LINEAR };
+                }),
+                (Np[l.GRAPHENE] = function (e) {
+                  return { A: 0.04, B: 1, type: i.LINEAR };
+                }),
+                Np),
+              category: A.MASTERITIES,
               maxLevel: 0,
             },
             {
-              id: d.EXOTIC_MASTERITY,
+              id: g.EXOTIC_MASTERITY,
               name: "Exotic Mastery",
               description:
                 "Prove your civilization power by mastering exotic matter. Every point boosts exotic matter (such as dark matter or antimatter) production 4%",
@@ -18465,25 +18469,25 @@
                 return e.statistics.stats.exoticCollected > 0;
               },
               getCost:
-                ((Np = {}),
-                (Np[l.KNOWLEDGE_POINT] = function (e) {
+                ((Tp = {}),
+                (Tp[l.KNOWLEDGE_POINT] = function (e) {
                   return { A: 10, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                Np),
-              getGainMultiplier:
-                ((Tp = {}),
-                (Tp[l.DARK_MATTER] = function (e) {
-                  return { A: 0.04, B: 1, type: i.LINEAR };
-                }),
-                (Tp[l.ANTIMATTER] = function (e) {
-                  return { A: 0.04, B: 1, type: i.LINEAR };
-                }),
                 Tp),
-              category: g.MASTERITIES,
+              getGainMultiplier:
+                ((Op = {}),
+                (Op[l.DARK_MATTER] = function (e) {
+                  return { A: 0.04, B: 1, type: i.LINEAR };
+                }),
+                (Op[l.ANTIMATTER] = function (e) {
+                  return { A: 0.04, B: 1, type: i.LINEAR };
+                }),
+                Op),
+              category: A.MASTERITIES,
               maxLevel: 0,
             },
             {
-              id: d.POWER_CAPACITY,
+              id: g.POWER_CAPACITY,
               name: "Power Capacity",
               description:
                 "More industry facilities require more power. Learn how to build better batteries to increase your power storage. Every point boosts power capacity by 4%",
@@ -18491,22 +18495,22 @@
                 return !0;
               },
               getCost:
-                ((Op = {}),
-                (Op[l.KNOWLEDGE_POINT] = function (e) {
+                ((yp = {}),
+                (yp[l.KNOWLEDGE_POINT] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                Op),
+                yp),
               getCapacityMultiplier:
-                ((yp = {}),
-                (yp[l.POWER] = function (e) {
+                ((mp = {}),
+                (mp[l.POWER] = function (e) {
                   return { A: 0.04, B: 1, type: i.LINEAR };
                 }),
-                yp),
-              category: g.CAPACITY,
+                mp),
+              category: A.CAPACITY,
               maxLevel: 0,
             },
             {
-              id: d.MATERIALS_CAPACITY,
+              id: g.MATERIALS_CAPACITY,
               name: "Materials Capacity",
               description:
                 "You know all about stocking containers to the top. Every point boosts all solid materials capacity by 4%",
@@ -18514,11 +18518,11 @@
                 return !0;
               },
               getCost:
-                ((mp = {}),
-                (mp[l.KNOWLEDGE_POINT] = function (e) {
+                ((hp = {}),
+                (hp[l.KNOWLEDGE_POINT] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                mp),
+                hp),
               getCapacityMultiplier:
                 ((Lp = {}),
                 (Lp[l.STONE] = function (e) {
@@ -18540,11 +18544,11 @@
                   return { A: 0.04, B: 1, type: i.LINEAR };
                 }),
                 Lp),
-              category: g.CAPACITY,
+              category: A.CAPACITY,
               maxLevel: 0,
             },
             {
-              id: d.LIQUIDS_CAPACITY,
+              id: g.LIQUIDS_CAPACITY,
               name: "Gas & Liquid Capacity",
               description:
                 "You know how important full oxygen tank and filled water storage is. Every point boosts oxygen and water capacity by 4%",
@@ -18552,25 +18556,25 @@
                 return !0;
               },
               getCost:
-                ((hp = {}),
-                (hp[l.KNOWLEDGE_POINT] = function (e) {
+                ((Cp = {}),
+                (Cp[l.KNOWLEDGE_POINT] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                hp),
-              getCapacityMultiplier:
-                ((Cp = {}),
-                (Cp[l.OXYGEN] = function (e) {
-                  return { A: 0.04, B: 1, type: i.LINEAR };
-                }),
-                (Cp[l.WATER] = function (e) {
-                  return { A: 0.04, B: 1, type: i.LINEAR };
-                }),
                 Cp),
-              category: g.CAPACITY,
+              getCapacityMultiplier:
+                ((vp = {}),
+                (vp[l.OXYGEN] = function (e) {
+                  return { A: 0.04, B: 1, type: i.LINEAR };
+                }),
+                (vp[l.WATER] = function (e) {
+                  return { A: 0.04, B: 1, type: i.LINEAR };
+                }),
+                vp),
+              category: A.CAPACITY,
               maxLevel: 0,
             },
             {
-              id: d.RESEARCH_CAPACITY,
+              id: g.RESEARCH_CAPACITY,
               name: "Research Capacity",
               description:
                 "Pursuit of knowledge never stops for someone as cursious as you. Every point increases research capacity by 4%",
@@ -18578,22 +18582,22 @@
                 return !0;
               },
               getCost:
-                ((vp = {}),
-                (vp[l.KNOWLEDGE_POINT] = function (e) {
+                ((Sp = {}),
+                (Sp[l.KNOWLEDGE_POINT] = function (e) {
                   return { A: 2, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                vp),
+                Sp),
               getCapacityMultiplier:
-                ((Sp = {}),
-                (Sp[l.RESEARCH] = function (e) {
+                ((Pp = {}),
+                (Pp[l.RESEARCH] = function (e) {
                   return { A: 0.04, B: 1, type: i.LINEAR };
                 }),
-                Sp),
-              category: g.CAPACITY,
+                Pp),
+              category: A.CAPACITY,
               maxLevel: 0,
             },
             {
-              id: d.EXOTIC_CAPACITY,
+              id: g.EXOTIC_CAPACITY,
               name: "Exotic Capacity",
               description:
                 "More exotic matter means more benefits to your space empire. Every point boosts antimatter and dark matter capacity by 4%",
@@ -18601,46 +18605,28 @@
                 return e.statistics.stats.exoticCollected > 0;
               },
               getCost:
-                ((Pp = {}),
-                (Pp[l.KNOWLEDGE_POINT] = function (e) {
+                ((Bp = {}),
+                (Bp[l.KNOWLEDGE_POINT] = function (e) {
                   return { A: 10, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                Pp),
-              getCapacityMultiplier:
-                ((Bp = {}),
-                (Bp[l.DARK_MATTER] = function (e) {
-                  return { A: 0.04, B: 1, type: i.LINEAR };
-                }),
-                (Bp[l.ANTIMATTER] = function (e) {
-                  return { A: 0.04, B: 1, type: i.LINEAR };
-                }),
                 Bp),
-              category: g.CAPACITY,
+              getCapacityMultiplier:
+                ((_p = {}),
+                (_p[l.DARK_MATTER] = function (e) {
+                  return { A: 0.04, B: 1, type: i.LINEAR };
+                }),
+                (_p[l.ANTIMATTER] = function (e) {
+                  return { A: 0.04, B: 1, type: i.LINEAR };
+                }),
+                _p),
+              category: A.CAPACITY,
               maxLevel: 0,
             },
             {
-              id: d.AESTHETICS_CONSUMPTION,
+              id: g.AESTHETICS_CONSUMPTION,
               name: "Aesthetics Consumption",
               description:
                 "Pretty environment is surprisingly effective at boosting productivity. Every point decreases aesthetics requirements by 4",
-              unlockCondition: function (e) {
-                return !0;
-              },
-              getCost:
-                ((_p = {}),
-                (_p[l.KNOWLEDGE_POINT] = function (e) {
-                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
-                }),
-                _p),
-              getCapacityMultiplier: {},
-              category: g.COLONY,
-              maxLevel: 0,
-            },
-            {
-              id: d.ENTERTAINMENT_CONSUMPTION,
-              name: "Entertainment Consumption",
-              description:
-                "You are not easily bored and know how to distract people from boredom. Every point decreases entertainment requirements by 4",
               unlockCondition: function (e) {
                 return !0;
               },
@@ -18651,14 +18637,14 @@
                 }),
                 Mp),
               getCapacityMultiplier: {},
-              category: g.COLONY,
+              category: A.COLONY,
               maxLevel: 0,
             },
             {
-              id: d.RELIGION_CONSUMPTION,
-              name: "Religion Consumption",
+              id: g.ENTERTAINMENT_CONSUMPTION,
+              name: "Entertainment Consumption",
               description:
-                "In every prayer, a strength of the spirit. From strong spirit, a stronger body. Every point decreases religion requirements by 4",
+                "You are not easily bored and know how to distract people from boredom. Every point decreases entertainment requirements by 4",
               unlockCondition: function (e) {
                 return !0;
               },
@@ -18669,14 +18655,14 @@
                 }),
                 Up),
               getCapacityMultiplier: {},
-              category: g.COLONY,
+              category: A.COLONY,
               maxLevel: 0,
             },
             {
-              id: d.SECURITY_CONSUMPTION,
-              name: "Security Consumption",
+              id: g.RELIGION_CONSUMPTION,
+              name: "Religion Consumption",
               description:
-                "Know when to de-escalate, know when to intervene. Every point decreases security requirements by 4",
+                "In every prayer, a strength of the spirit. From strong spirit, a stronger body. Every point decreases religion requirements by 4",
               unlockCondition: function (e) {
                 return !0;
               },
@@ -18687,14 +18673,14 @@
                 }),
                 Gp),
               getCapacityMultiplier: {},
-              category: g.COLONY,
+              category: A.COLONY,
               maxLevel: 0,
             },
             {
-              id: d.HEALTH_CONSUMPTION,
-              name: "Healthcare Consumption",
+              id: g.SECURITY_CONSUMPTION,
+              name: "Security Consumption",
               description:
-                "You know how to review a candidate for a future colony, and how to act when things go wrong. Every point decreases healthcare requirements by 4",
+                "Know when to de-escalate, know when to intervene. Every point decreases security requirements by 4",
               unlockCondition: function (e) {
                 return !0;
               },
@@ -18705,11 +18691,29 @@
                 }),
                 bp),
               getCapacityMultiplier: {},
-              category: g.COLONY,
+              category: A.COLONY,
+              maxLevel: 0,
+            },
+            {
+              id: g.HEALTH_CONSUMPTION,
+              name: "Healthcare Consumption",
+              description:
+                "You know how to review a candidate for a future colony, and how to act when things go wrong. Every point decreases healthcare requirements by 4",
+              unlockCondition: function (e) {
+                return !0;
+              },
+              getCost:
+                ((Dp = {}),
+                (Dp[l.KNOWLEDGE_POINT] = function (e) {
+                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
+                }),
+                Dp),
+              getCapacityMultiplier: {},
+              category: A.COLONY,
               maxLevel: 0,
             },
           ],
-          nE = (function () {
+          iE = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -18743,13 +18747,13 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          iE = (function (e) {
+          oE = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (t.currentGoalIdx = 0), (t.goalsState = []), t;
             }
             return (
-              nE(t, e),
+              iE(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -18767,7 +18771,7 @@
               }),
               (t.prototype.getCurrentGoalDB = function () {
                 var e;
-                return null !== (e = eE[this.currentGoalIdx]) && void 0 !== e
+                return null !== (e = tE[this.currentGoalIdx]) && void 0 !== e
                   ? e
                   : {
                       id: "complete",
@@ -18787,7 +18791,7 @@
                     a =
                       "Resource: " +
                       (null ===
-                        (t = U.find(function (t) {
+                        (t = G.find(function (t) {
                           return t.id === e.target;
                         })) || void 0 === t
                         ? void 0
@@ -18807,7 +18811,7 @@
                     a =
                       "Research: " +
                       (null ===
-                        (i = kl.find(function (t) {
+                        (i = xl.find(function (t) {
                           return t.id === e.target;
                         })) || void 0 === i
                         ? void 0
@@ -18817,7 +18821,7 @@
                     a =
                       "Building: " +
                       (null ===
-                        (o = El.find(function (t) {
+                        (o = dl.find(function (t) {
                           return t.id === e.target;
                         })) || void 0 === o
                         ? void 0
@@ -18830,7 +18834,7 @@
                     a =
                       "Knowledge Upgrade: " +
                       (null ===
-                        (r = tE.find(function (t) {
+                        (r = nE.find(function (t) {
                           return t.id === e.target;
                         })) || void 0 === r
                         ? void 0
@@ -18842,26 +18846,26 @@
                 var t = 0;
                 switch (e.type) {
                   case Hu.RESOURCE:
-                    t = xg.resources.getResource(e.target);
+                    t = Yg.resources.getResource(e.target);
                     break;
                   case Hu.UPGRADE:
-                    t = xg.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                    t = Yg.landingZone.landingZoneUpgrades.getUpgradeLevel(
                       e.target
                     );
                     break;
                   case Hu.RESEARCH:
-                    t = xg.science.scienceResearches.getResearchLevel(e.target);
+                    t = Yg.science.scienceResearches.getResearchLevel(e.target);
                     break;
                   case Hu.BUILDING:
-                    t = xg.landingZone.landingZoneBuildings.getBuildingLevel(
+                    t = Yg.landingZone.landingZoneBuildings.getBuildingLevel(
                       e.target
                     );
                     break;
                   case Hu.POPULATION:
-                    t = xg.colony.colonists;
+                    t = Yg.colony.colonists;
                     break;
                   case Hu.KP_UPGRADE:
-                    t = xg.prestige.transmitKnowledge.getUpgradeLevel(e.target);
+                    t = Yg.prestige.transmitKnowledge.getUpgradeLevel(e.target);
                 }
                 return t;
               }),
@@ -18872,7 +18876,7 @@
                 t.requirements.forEach(function (t) {
                   e.getRequirementAmount(t) < t.amount && (n = !1);
                 }),
-                  n && this.currentGoalIdx < eE.length && this.currentGoalIdx++;
+                  n && this.currentGoalIdx < tE.length && this.currentGoalIdx++;
               }),
               (t.prototype.currentGoalToUI = function () {
                 var e = this,
@@ -18898,20 +18902,20 @@
               }),
               t
             );
-          })(C),
-          oE = iE.getInstance(),
-          rE = [
+          })(v),
+          rE = oE.getInstance(),
+          aE = [
             {
-              id: M.EXPERIMENTAL_MEDICINE,
+              id: U.EXPERIMENTAL_MEDICINE,
               name: "Experimental Medicine",
               description: "Regulates the use of experimental drugs",
               unlockCondition: function (e) {
                 return (
-                  e.science.scienceResearches.getResearchLevel(v.CODEX_OF_LAW) >
+                  e.science.scienceResearches.getResearchLevel(S.CODEX_OF_LAW) >
                   0
                 );
               },
-              category: _.SOCIAL,
+              category: M.SOCIAL,
               options: [
                 {
                   name: "Forbid All",
@@ -18926,16 +18930,16 @@
               ],
             },
             {
-              id: M.WATER_FILTERING,
+              id: U.WATER_FILTERING,
               name: "Water Filtering Control",
               description: "Changes the water filtration method",
               unlockCondition: function (e) {
                 return (
-                  e.science.scienceResearches.getResearchLevel(v.CODEX_OF_LAW) >
+                  e.science.scienceResearches.getResearchLevel(S.CODEX_OF_LAW) >
                   0
                 );
               },
-              category: _.SOCIAL,
+              category: M.SOCIAL,
               options: [
                 {
                   name: "Quick",
@@ -18949,17 +18953,17 @@
               ],
             },
             {
-              id: M.RESEARCH_GRANTS,
+              id: U.RESEARCH_GRANTS,
               name: "Research Focus",
               description:
                 "Setting research as priority through providing better equipment to your scientists can boost the development of your colony, but it won't be cheap",
               unlockCondition: function (e) {
                 return (
-                  e.science.scienceResearches.getResearchLevel(v.CODEX_OF_LAW) >
+                  e.science.scienceResearches.getResearchLevel(S.CODEX_OF_LAW) >
                   0
                 );
               },
-              category: _.SCIENCE,
+              category: M.SCIENCE,
               options: [
                 {
                   name: "No Extra Support",
@@ -18978,19 +18982,19 @@
               ],
             },
             {
-              id: M.FOREST_BEHAVOUR,
+              id: U.FOREST_BEHAVOUR,
               name: "Forest Use",
               description:
                 "Your forest plants can be used in different ways to provide various advantages",
               unlockCondition: function (e) {
                 return (
-                  e.science.scienceResearches.getResearchLevel(v.CODEX_OF_LAW) >
+                  e.science.scienceResearches.getResearchLevel(S.CODEX_OF_LAW) >
                     0 &&
-                  e.science.scienceResearches.getResearchLevel(v.EXOFORESTRY) >
+                  e.science.scienceResearches.getResearchLevel(S.EXOFORESTRY) >
                     0
                 );
               },
-              category: _.SOCIAL,
+              category: M.SOCIAL,
               options: [
                 {
                   name: "Lungs of the Colony",
@@ -19009,19 +19013,19 @@
               ],
             },
             {
-              id: M.PARK_ZONES_UPKEEP,
+              id: U.PARK_ZONES_UPKEEP,
               name: "Park Zones Upkeep",
               description:
                 "Your parks require constant care to be effective. Choose a park maintenance mode",
               unlockCondition: function (e) {
                 return (
-                  e.science.scienceResearches.getResearchLevel(v.CODEX_OF_LAW) >
+                  e.science.scienceResearches.getResearchLevel(S.CODEX_OF_LAW) >
                     0 &&
-                  e.science.scienceResearches.getResearchLevel(v.EXOFORESTRY) >
+                  e.science.scienceResearches.getResearchLevel(S.EXOFORESTRY) >
                     0
                 );
               },
-              category: _.SOCIAL,
+              category: M.SOCIAL,
               options: [
                 {
                   name: "Volunteer Work",
@@ -19036,20 +19040,20 @@
               ],
             },
             {
-              id: M.SECURITY_DOTATIONS,
+              id: U.SECURITY_DOTATIONS,
               name: "Guards Rations",
               description:
                 "Regulate rations for your policemen to motivate them to work harder",
               unlockCondition: function (e) {
                 return (
-                  e.science.scienceResearches.getResearchLevel(v.CODEX_OF_LAW) >
+                  e.science.scienceResearches.getResearchLevel(S.CODEX_OF_LAW) >
                     0 &&
                   e.science.scienceResearches.getResearchLevel(
-                    v.PUBLIC_SERVICE
+                    S.PUBLIC_SERVICE
                   ) > 0
                 );
               },
-              category: _.SOCIAL,
+              category: M.SOCIAL,
               options: [
                 {
                   name: "Regular",
@@ -19064,20 +19068,20 @@
               ],
             },
             {
-              id: M.ARTIFICIAL_ORGANS,
+              id: U.ARTIFICIAL_ORGANS,
               name: "Artificial Organs",
               description:
                 "Using 3D printers in creating organs to heal people can significantly boost healthcare, but religious people won't like it",
               unlockCondition: function (e) {
                 return (
-                  e.science.scienceResearches.getResearchLevel(v.CODEX_OF_LAW) >
+                  e.science.scienceResearches.getResearchLevel(S.CODEX_OF_LAW) >
                     0 &&
                   e.landingZone.landingZoneUpgrades.getUpgradeLevel(
                     r.ORGANISM_PRINTING
                   ) > 0
                 );
               },
-              category: _.SOCIAL,
+              category: M.SOCIAL,
               options: [
                 {
                   name: "Forbid All",
@@ -19088,34 +19092,34 @@
                   description:
                     "Improves healthcare service, but decrease religious one",
                   getEffectGain:
-                    ((Dp = {}),
-                    (Dp[B.HEALTHCARE] = function (e) {
-                      return 20;
-                    }),
-                    Dp),
-                  getEffectConsumption:
                     ((wp = {}),
-                    (wp[B.RELIGION] = function (e) {
+                    (wp[_.HEALTHCARE] = function (e) {
                       return 20;
                     }),
                     wp),
+                  getEffectConsumption:
+                    ((Xp = {}),
+                    (Xp[_.RELIGION] = function (e) {
+                      return 20;
+                    }),
+                    Xp),
                 },
               ],
             },
             {
-              id: M.TEMPLE_RIGHTS,
+              id: U.TEMPLE_RIGHTS,
               name: "Temple Rights",
               description: "Regulate religious aspect of your colony life",
               unlockCondition: function (e) {
                 return (
-                  e.science.scienceResearches.getResearchLevel(v.CODEX_OF_LAW) >
+                  e.science.scienceResearches.getResearchLevel(S.CODEX_OF_LAW) >
                     0 &&
                   e.landingZone.landingZoneBuildings.getBuildingLevel(
                     a.TEMPLE
                   ) > 0
                 );
               },
-              category: _.SOCIAL,
+              category: M.SOCIAL,
               options: [
                 {
                   name: "Freedom of Conscience",
@@ -19127,14 +19131,14 @@
                   description:
                     "Colonists are encouraged to gather every sunday for a speech. Provides 10% boost to religion gain, 15% penalty to entertainment",
                   getEffectMultiplier:
-                    ((Xp = {}),
-                    (Xp[B.RELIGION] = function (e) {
+                    ((kp = {}),
+                    (kp[_.RELIGION] = function (e) {
                       return 1.1;
                     }),
-                    (Xp[B.ENTERTAINMENT] = function (e) {
+                    (kp[_.ENTERTAINMENT] = function (e) {
                       return 0.85;
                     }),
-                    Xp),
+                    kp),
                 },
                 {
                   name: "Keepers of Order",
@@ -19142,13 +19146,13 @@
                     "Local priests are granted rights to enforce order... as they see fit. Provides 5% boost to religion and security gain, 15% penalty to entertainment",
                   getEffectMultiplier:
                     ((Hp = {}),
-                    (Hp[B.RELIGION] = function (e) {
+                    (Hp[_.RELIGION] = function (e) {
                       return 1.05;
                     }),
-                    (Hp[B.SECURITY] = function (e) {
+                    (Hp[_.SECURITY] = function (e) {
                       return 1.05;
                     }),
-                    (Hp[B.ENTERTAINMENT] = function (e) {
+                    (Hp[_.ENTERTAINMENT] = function (e) {
                       return 0.85;
                     }),
                     Hp),
@@ -19156,19 +19160,19 @@
               ],
             },
             {
-              id: M.CLEAR_CUTTING,
+              id: U.CLEAR_CUTTING,
               name: "Woodcutting Policy",
               description:
                 "Change forest cutting restrictions in order to balance your wood production and environmental effects",
               unlockCondition: function (e) {
                 return (
-                  e.science.scienceResearches.getResearchLevel(v.CODEX_OF_LAW) >
+                  e.science.scienceResearches.getResearchLevel(S.CODEX_OF_LAW) >
                     0 &&
-                  e.science.scienceResearches.getResearchLevel(v.EXOFORESTRY) >
+                  e.science.scienceResearches.getResearchLevel(S.EXOFORESTRY) >
                     0
                 );
               },
-              category: _.ECONOMY,
+              category: M.ECONOMY,
               options: [
                 {
                   name: "Minor Regulations",
@@ -19187,18 +19191,18 @@
               ],
             },
             {
-              id: M.COAL_BURNING,
+              id: U.COAL_BURNING,
               name: "Coal Burning Regulations",
               description: "Allow or forbid wood usage as coal",
               unlockCondition: function (e) {
                 return (
-                  e.science.scienceResearches.getResearchLevel(v.CODEX_OF_LAW) >
+                  e.science.scienceResearches.getResearchLevel(S.CODEX_OF_LAW) >
                     0 &&
-                  e.science.scienceResearches.getResearchLevel(v.EXOFORESTRY) >
+                  e.science.scienceResearches.getResearchLevel(S.EXOFORESTRY) >
                     0
                 );
               },
-              category: _.ECONOMY,
+              category: M.ECONOMY,
               options: [
                 {
                   name: "Forbid All",
@@ -19218,20 +19222,20 @@
               ],
             },
             {
-              id: M.FURNACE_SMELTING,
+              id: U.FURNACE_SMELTING,
               name: "Furnace Metal Processing",
               description:
                 "Regulate metalworking process and its environmental impact",
               unlockCondition: function (e) {
                 return (
-                  e.science.scienceResearches.getResearchLevel(v.CODEX_OF_LAW) >
+                  e.science.scienceResearches.getResearchLevel(S.CODEX_OF_LAW) >
                     0 &&
                   e.science.scienceResearches.getResearchLevel(
-                    v.MATERIAL_KNOWLEDGE
+                    S.MATERIAL_KNOWLEDGE
                   ) > 0
                 );
               },
-              category: _.ECONOMY,
+              category: M.ECONOMY,
               options: [
                 {
                   name: "Environment-Friendly Metal Processing",
@@ -19243,45 +19247,45 @@
                   description:
                     "Allow using a minor amount of wood for metal processing. Plates and wires craftsmen are 10% more efficient, but consume 0.2 wood each",
                   getGainMultiplier:
-                    ((kp = {}),
-                    (kp[l.PLATE] = function (e) {
+                    ((xp = {}),
+                    (xp[l.PLATE] = function (e) {
                       return 1.1;
                     }),
-                    (kp[l.WIRE] = function (e) {
+                    (xp[l.WIRE] = function (e) {
                       return 1.1;
                     }),
-                    kp),
+                    xp),
                 },
                 {
                   name: "Unregulated Metal Processing",
                   description:
                     "Why would the one take care of environment if need so much materials? Plates and wires craftsmen are 20% more efficient, but consume 0.4 wood each and provide 1 penalty to healthcare",
                   getGainMultiplier:
-                    ((xp = {}),
-                    (xp[l.PLATE] = function (e) {
+                    ((Yp = {}),
+                    (Yp[l.PLATE] = function (e) {
                       return 1.2;
                     }),
-                    (xp[l.WIRE] = function (e) {
+                    (Yp[l.WIRE] = function (e) {
                       return 1.2;
                     }),
-                    xp),
+                    Yp),
                 },
               ],
             },
             {
-              id: M.FOOD_CHEMICAL_PROCESSING,
+              id: U.FOOD_CHEMICAL_PROCESSING,
               name: "Food Chemical Processing",
               description: "Regulate the chemical processing of food",
               unlockCondition: function (e) {
                 return (
-                  e.science.scienceResearches.getResearchLevel(v.CODEX_OF_LAW) >
+                  e.science.scienceResearches.getResearchLevel(S.CODEX_OF_LAW) >
                     0 &&
                   e.science.scienceResearches.getResearchLevel(
-                    v.ADVANCED_ANATOMY
+                    S.ADVANCED_ANATOMY
                   ) > 0
                 );
               },
-              category: _.ECONOMY,
+              category: M.ECONOMY,
               options: [
                 {
                   name: "Forbid All",
@@ -19293,31 +19297,31 @@
                   description:
                     "Process food to increase shelf life and nutritional value at the cost of its quality. Provides 10% bonus to nutrition production, but decrease healthcare by 10%",
                   getGainMultiplier:
-                    ((Yp = {}),
-                    (Yp[l.NUTRITION] = function (e) {
+                    ((Wp = {}),
+                    (Wp[l.NUTRITION] = function (e) {
                       return 1.1;
                     }),
-                    Yp),
+                    Wp),
                   getEffectMultiplier:
-                    ((Wp = {}),
-                    (Wp[B.HEALTHCARE] = function (e) {
+                    ((Zp = {}),
+                    (Zp[_.HEALTHCARE] = function (e) {
                       return 0.9;
                     }),
-                    Wp),
+                    Zp),
                 },
                 {
                   name: "Healthy Food",
                   description:
                     "Use vitamins-saving technologies during food processing. Provides 5% bonus to healthcare, but decrease food production by 30%",
                   getGainMultiplier:
-                    ((Zp = {}),
-                    (Zp[l.NUTRITION] = function (e) {
+                    ((jp = {}),
+                    (jp[l.NUTRITION] = function (e) {
                       return 0.7;
                     }),
-                    Zp),
+                    jp),
                   getEffectMultiplier:
                     ((Fp = {}),
-                    (Fp[B.HEALTHCARE] = function (e) {
+                    (Fp[_.HEALTHCARE] = function (e) {
                       return 1.05;
                     }),
                     Fp),
@@ -19325,19 +19329,19 @@
               ],
             },
             {
-              id: M.ELECTROTHERMAL_SMELTING,
+              id: U.ELECTROTHERMAL_SMELTING,
               name: "Smelting Method",
               description: "Use alternative methods to boost metal smelting",
               unlockCondition: function (e) {
                 return (
-                  e.science.scienceResearches.getResearchLevel(v.CODEX_OF_LAW) >
+                  e.science.scienceResearches.getResearchLevel(S.CODEX_OF_LAW) >
                     0 &&
                   e.science.scienceResearches.getResearchLevel(
-                    v.ELECTRICITY_STUDY
+                    S.ELECTRICITY_STUDY
                   ) > 0
                 );
               },
-              category: _.ECONOMY,
+              category: M.ECONOMY,
               options: [
                 {
                   name: "Traditional",
@@ -19351,19 +19355,19 @@
               ],
             },
             {
-              id: M.FUEL_PROCESSING,
+              id: U.FUEL_PROCESSING,
               name: "Fuel Processing Mode",
               description: "Regulate fuel processing mode",
               unlockCondition: function (e) {
                 return (
-                  e.science.scienceResearches.getResearchLevel(v.CODEX_OF_LAW) >
+                  e.science.scienceResearches.getResearchLevel(S.CODEX_OF_LAW) >
                     0 &&
                   e.science.scienceResearches.getResearchLevel(
-                    v.ROCKET_SCIENCE
+                    S.ROCKET_SCIENCE
                   ) > 0
                 );
               },
-              category: _.ECONOMY,
+              category: M.ECONOMY,
               options: [
                 {
                   name: "Safe processing",
@@ -19375,40 +19379,40 @@
                   description:
                     "Indicators of harmful emissions may vary within permissible limits. Each fuel craftsman incurs 1 health penalty, but has 15% higher efficiency",
                   getGainMultiplier:
-                    ((jp = {}),
-                    (jp[l.FUEL] = function (e) {
+                    ((Kp = {}),
+                    (Kp[l.FUEL] = function (e) {
                       return 1.15;
                     }),
-                    jp),
+                    Kp),
                 },
                 {
                   name: "No Control",
                   description:
                     "Each fuel craftsman incurs 2 health penalties, but has 25% higher efficiency",
                   getGainMultiplier:
-                    ((Kp = {}),
-                    (Kp[l.FUEL] = function (e) {
+                    ((Vp = {}),
+                    (Vp[l.FUEL] = function (e) {
                       return 1.25;
                     }),
-                    Kp),
+                    Vp),
                 },
               ],
             },
             {
-              id: M.LIGHTNING_MODE,
+              id: U.LIGHTNING_MODE,
               name: "Lighting Mode",
               description:
                 "Use different approaches to lighting your streets and civil infrastructure",
               unlockCondition: function (e) {
                 return (
-                  e.science.scienceResearches.getResearchLevel(v.CODEX_OF_LAW) >
+                  e.science.scienceResearches.getResearchLevel(S.CODEX_OF_LAW) >
                     0 &&
                   e.science.scienceResearches.getResearchLevel(
-                    v.ELECTRICITY_STUDY
+                    S.ELECTRICITY_STUDY
                   ) > 0
                 );
               },
-              category: _.SOCIAL,
+              category: M.SOCIAL,
               options: [
                 {
                   name: "Natural",
@@ -19419,46 +19423,46 @@
                   description:
                     "Consumes a small amount of power but enhances security. +10% to law enforcement effectiveness, -5% power production",
                   getGainMultiplier:
-                    ((Vp = {}),
-                    (Vp[l.POWER] = function (e) {
+                    ((qp = {}),
+                    (qp[l.POWER] = function (e) {
                       return 0.95;
                     }),
-                    Vp),
+                    qp),
                 },
                 {
                   name: "Colorful Lights",
                   description:
                     "Consumes a significant amount of electricity but enhances aesthetics. +20 aesthetics and its maximum value, -10% power production",
                   getEffectGain:
-                    ((qp = {}),
-                    (qp[B.AESTHETICS] = function (e) {
+                    ((zp = {}),
+                    (zp[_.AESTHETICS] = function (e) {
                       return 20;
                     }),
-                    qp),
+                    zp),
                   getGainMultiplier:
-                    ((zp = {}),
-                    (zp[l.POWER] = function (e) {
+                    ((Qp = {}),
+                    (Qp[l.POWER] = function (e) {
                       return 0.9;
                     }),
-                    zp),
+                    Qp),
                 },
               ],
             },
             {
-              id: M.ORBITAL_BIOEXPERIMENT,
+              id: U.ORBITAL_BIOEXPERIMENT,
               name: "Orbital Bio-experiments",
               description:
                 "Allow your Biolabs to run orbital research expeditions.",
               unlockCondition: function (e) {
                 return (
-                  e.science.scienceResearches.getResearchLevel(v.CODEX_OF_LAW) >
+                  e.science.scienceResearches.getResearchLevel(S.CODEX_OF_LAW) >
                     0 &&
                   e.landingZone.landingZoneUpgrades.getUpgradeLevel(
                     r.ORBITAL_BIORESEARCH
                   ) > 0
                 );
               },
-              category: _.SCIENCE,
+              category: M.SCIENCE,
               options: [
                 { name: "Forbid", description: "Bio-labs operate normally" },
                 {
@@ -19469,19 +19473,19 @@
               ],
             },
             {
-              id: M.AGRESSIVE_BACTERIA_USAGE,
+              id: U.AGRESSIVE_BACTERIA_USAGE,
               name: "Bacteria Incubator Mode",
               description: "Select mode of your bacteria incubators usage.",
               unlockCondition: function (e) {
                 return (
-                  e.science.scienceResearches.getResearchLevel(v.CODEX_OF_LAW) >
+                  e.science.scienceResearches.getResearchLevel(S.CODEX_OF_LAW) >
                     0 &&
                   e.landingZone.landingZoneUpgrades.getUpgradeLevel(
                     r.ORGANIC_PROCESSING_INCUBATOR
                   ) > 0
                 );
               },
-              category: _.ECONOMY,
+              category: M.ECONOMY,
               options: [
                 {
                   name: "Safe",
@@ -19500,19 +19504,19 @@
               ],
             },
             {
-              id: M.EXOTIC_MATTER_EXPERIMENTS,
+              id: U.EXOTIC_MATTER_EXPERIMENTS,
               name: "Hadron Collider Mode",
               description: "Select mode of your hadron colliders usage.",
               unlockCondition: function (e) {
                 return (
-                  e.science.scienceResearches.getResearchLevel(v.CODEX_OF_LAW) >
+                  e.science.scienceResearches.getResearchLevel(S.CODEX_OF_LAW) >
                     0 &&
                   e.science.scienceResearches.getResearchLevel(
-                    v.DARK_MATTER_STUDY
+                    S.DARK_MATTER_STUDY
                   ) > 0
                 );
               },
-              category: _.ECONOMY,
+              category: M.ECONOMY,
               options: [
                 {
                   name: "Safe",
@@ -19531,20 +19535,20 @@
               ],
             },
             {
-              id: M.MASSMEDIA,
+              id: U.MASSMEDIA,
               name: "Mass media Mode",
               description:
                 "Adjust the operation of mass media to achieve various benefits.",
               unlockCondition: function (e) {
                 return (
-                  e.science.scienceResearches.getResearchLevel(v.CODEX_OF_LAW) >
+                  e.science.scienceResearches.getResearchLevel(S.CODEX_OF_LAW) >
                     0 &&
                   e.landingZone.landingZoneUpgrades.getUpgradeLevel(
                     r.COMPUTERS
                   ) > 0
                 );
               },
-              category: _.SOCIAL,
+              category: M.SOCIAL,
               options: [
                 {
                   name: "Official Propaganda",
@@ -19564,7 +19568,7 @@
               ],
             },
           ],
-          aE = (function () {
+          cE = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -19598,9 +19602,9 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          cE = function () {
+          sE = function () {
             return (
-              (cE =
+              (sE =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -19609,10 +19613,10 @@
                         (e[o] = t[o]);
                   return e;
                 }),
-              cE.apply(this, arguments)
+              sE.apply(this, arguments)
             );
           },
-          sE = (function (e) {
+          uE = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -19625,7 +19629,7 @@
               );
             }
             return (
-              aE(t, e),
+              cE(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -19638,12 +19642,12 @@
               (t.prototype.dataToUI = function () {
                 var e = this;
                 return {
-                  laws: rE.map(function (t) {
+                  laws: aE.map(function (t) {
                     return e.processToUI(t);
                   }),
                   isUnlocked:
-                    xg.science.scienceResearches.getResearchLevel(
-                      v.CODEX_OF_LAW
+                    Yg.science.scienceResearches.getResearchLevel(
+                      S.CODEX_OF_LAW
                     ) > 0,
                 };
               }),
@@ -19671,78 +19675,72 @@
                     name: e.name,
                     description: e.description,
                     gain: e.getGain
-                      ? w
-                          .getValue(e.getGain, kg.getInstance())
+                      ? X.getValue(e.getGain, xg.getInstance())
                           .filter(function (e) {
                             return e.amount;
                           })
                           .map(function (e) {
-                            return cE(cE({}, e), {
+                            return sE(sE({}, e), {
                               amountValue: e.amount,
                               amount: H(e.amount),
                             });
                           })
                       : [],
                     max: e.getStorage
-                      ? w
-                          .getValue(e.getStorage, kg.getInstance())
+                      ? X.getValue(e.getStorage, xg.getInstance())
                           .filter(function (e) {
                             return e.amount;
                           })
                           .map(function (e) {
-                            return cE(cE({}, e), {
+                            return sE(sE({}, e), {
                               amountValue: e.amount,
                               amount: H(e.amount),
                             });
                           })
                       : [],
                     consume: e.getConsumption
-                      ? w
-                          .getValue(e.getConsumption, kg.getInstance())
+                      ? X.getValue(e.getConsumption, xg.getInstance())
                           .filter(function (e) {
                             return e.amount;
                           })
                           .map(function (e) {
-                            return cE(cE({}, e), {
+                            return sE(sE({}, e), {
                               amountValue: e.amount,
                               amount: H(e.amount),
                             });
                           })
                       : [],
                     consumeEffect: e.getEffectConsumption
-                      ? w
-                          .getValue(e.getEffectConsumption, kg.getInstance())
+                      ? X.getValue(e.getEffectConsumption, xg.getInstance())
                           .filter(function (e) {
                             return e.amount;
                           })
                           .map(function (e) {
-                            return cE(cE({}, e), {
+                            return sE(sE({}, e), {
                               amountValue: e.amount,
                               amount: H(e.amount),
                             });
                           })
                       : [],
                     gainEffect: e.getEffectGain
-                      ? w
-                          .getValue(e.getEffectGain, kg.getInstance())
+                      ? X.getValue(e.getEffectGain, xg.getInstance())
                           .filter(function (e) {
                             return e.amount;
                           })
                           .map(function (e) {
-                            return cE(cE({}, e), {
+                            return sE(sE({}, e), {
                               amountValue: e.amount,
                               amount: H(e.amount),
                             });
                           })
                       : [],
                     gainMult: e.getGainMultiplier
-                      ? w
-                          .getValue(e.getGainMultiplier, kg.getInstance())
+                      ? X.getValue(e.getGainMultiplier, xg.getInstance())
                           .filter(function (e) {
                             return e.amount;
                           })
                           .map(function (e) {
-                            return cE(cE({}, e), {
+                            return sE(sE({}, e), {
                               amountValue: e.amount,
                               amount: "x".concat(H(e.amount)),
                             });
@@ -19752,10 +19750,10 @@
                   };
                   n.push(o);
                 });
-                var i = e.unlockCondition(xg);
+                var i = e.unlockCondition(Yg);
                 return (
                   i &&
-                    xg.newNotifications.registerNotification(
+                    Yg.newNotifications.registerNotification(
                       "laws:orders:".concat(e.category, ":").concat(e.id)
                     ),
                   {
@@ -19771,7 +19769,7 @@
               }),
               (t.prototype.getEffectGain = function (e) {
                 var t = this,
-                  n = rE.filter(function (n) {
+                  n = aE.filter(function (n) {
                     var i;
                     return !!(null ===
                       (i = n.options[t.getLawSelected(n.id)].getEffectGain) ||
@@ -19794,7 +19792,7 @@
                           ? void 0
                           : r[e])
                       ) {
-                        var s = c.getEffectGain[e](kg.getInstance());
+                        var s = c.getEffectGain[e](xg.getInstance());
                         i.push({
                           label: "Law ".concat(a.name, ": ").concat(c.name),
                           value: s,
@@ -19809,7 +19807,7 @@
               }),
               (t.prototype.getEffectMultiplier = function (e) {
                 var t = this,
-                  n = rE.filter(function (n) {
+                  n = aE.filter(function (n) {
                     var i;
                     return !!(null ===
                       (i =
@@ -19833,7 +19831,7 @@
                           ? void 0
                           : r[e])
                       ) {
-                        var s = c.getEffectMultiplier[e](kg.getInstance());
+                        var s = c.getEffectMultiplier[e](xg.getInstance());
                         i.push({
                           label: "Law ".concat(a.name, ": ").concat(c.name),
                           value: s,
@@ -19848,7 +19846,7 @@
               }),
               (t.prototype.getEffectBeingConsumed = function (e) {
                 var t = this,
-                  n = rE.filter(function (n) {
+                  n = aE.filter(function (n) {
                     var i;
                     return !!(null ===
                       (i =
@@ -19872,7 +19870,7 @@
                           ? void 0
                           : r[e])
                       ) {
-                        var s = c.getEffectConsumption[e](kg.getInstance());
+                        var s = c.getEffectConsumption[e](xg.getInstance());
                         i.push({
                           label: "Law ".concat(a.name, ": ").concat(c.name),
                           value: s,
@@ -19887,7 +19885,7 @@
               }),
               (t.prototype.getResourceBeingProduced = function (e) {
                 var t = this,
-                  n = rE.filter(function (n) {
+                  n = aE.filter(function (n) {
                     var i;
                     return !!(null ===
                       (i = n.options[t.getLawSelected(n.id)].getGain) ||
@@ -19910,7 +19908,7 @@
                           ? void 0
                           : r[e])
                       ) {
-                        var s = c.getGain[e](kg.getInstance());
+                        var s = c.getGain[e](xg.getInstance());
                         i.push({
                           label: "Law ".concat(a.name, ": ").concat(c.name),
                           value: s,
@@ -19925,7 +19923,7 @@
               }),
               (t.prototype.getResourceMultiplier = function (e) {
                 var t = this,
-                  n = rE.filter(function (n) {
+                  n = aE.filter(function (n) {
                     var i;
                     return !!(null ===
                       (i =
@@ -19949,7 +19947,7 @@
                           ? void 0
                           : r[e])
                       ) {
-                        var s = c.getGainMultiplier[e](kg.getInstance());
+                        var s = c.getGainMultiplier[e](xg.getInstance());
                         i.push({
                           label: "Law ".concat(a.name, ": ").concat(c.name),
                           value: s,
@@ -19964,7 +19962,7 @@
               }),
               (t.prototype.getResourceBeingConsumed = function (e) {
                 var t = this,
-                  n = rE.filter(function (n) {
+                  n = aE.filter(function (n) {
                     var i;
                     return !!(null ===
                       (i = n.options[t.getLawSelected(n.id)].getConsumption) ||
@@ -19987,7 +19985,7 @@
                           ? void 0
                           : r[e])
                       ) {
-                        var s = c.getConsumption[e](kg.getInstance());
+                        var s = c.getConsumption[e](xg.getInstance());
                         i.push({
                           label: "Law ".concat(a.name, ": ").concat(c.name),
                           value: s,
@@ -20002,7 +20000,7 @@
               }),
               (t.prototype.getResourceBeingStored = function (e) {
                 var t = this,
-                  n = rE.filter(function (n) {
+                  n = aE.filter(function (n) {
                     var i;
                     return !!(null ===
                       (i = n.options[t.getLawSelected(n.id)].getStorage) ||
@@ -20025,7 +20023,7 @@
                           ? void 0
                           : r[e])
                       ) {
-                        var s = c.getStorage[e](kg.getInstance());
+                        var s = c.getStorage[e](xg.getInstance());
                         i.push({
                           label: "Law ".concat(a.name, ": ").concat(c.name),
                           value: s,
@@ -20040,7 +20038,7 @@
               }),
               (t.prototype.getColonistsCap = function () {
                 var e = this,
-                  t = rE.filter(function (t) {
+                  t = aE.filter(function (t) {
                     return !!t.options[e.getLawSelected(t.id)].getMaxColonists;
                   }),
                   n = [];
@@ -20052,7 +20050,7 @@
                     if (o) {
                       var r = o.options[e.getLawSelected(o.id)];
                       if (o && r.getMaxColonists) {
-                        var a = r.getMaxColonists(kg.getInstance());
+                        var a = r.getMaxColonists(xg.getInstance());
                         n.push({
                           label: "Law ".concat(o.name, ": ").concat(r.name),
                           value: a,
@@ -20072,12 +20070,12 @@
                 n < 0
                   ? this.lawsStatuses.push({ id: e, selectedOptionId: t })
                   : (this.lawsStatuses[n].selectedOptionId = t),
-                  kg.getInstance().resources.reassertBalances();
-                var i = rE.find(function (t) {
+                  xg.getInstance().resources.reassertBalances();
+                var i = aE.find(function (t) {
                   return t.id === e;
                 });
                 i &&
-                  kg
+                  xg
                     .getInstance()
                     .eventLog.registerLaw(i.name, i.options[t].name);
               }),
@@ -20087,15 +20085,15 @@
               }),
               t
             );
-          })(C),
-          uE = sE.getInstance();
+          })(v),
+          lE = uE.getInstance();
         !(function (e) {
           (e.HEAD = "Head"),
             (e.CORPUS = "Corpus"),
             (e.WEAPONS = "Weapons"),
             (e.POWER_SUPPLY = "Power Supply"),
             (e.ENGINE = "Engine");
-        })(Qp || (Qp = {})),
+        })(Jp || (Jp = {})),
           (function (e) {
             (e.DURABILITY = "Durability"),
               (e.SHIELD_CAP = "Shield Capacity"),
@@ -20107,14 +20105,13 @@
               (e.SPEED = "Speed"),
               (e.POWER = "Power"),
               (e.FUEL_CONSUMPTION = "Fuel Consumption");
-          })(Jp || (Jp = {})),
+          })($p || ($p = {})),
           (function (e) {
             (e.ACTUAL_DURABILITY = "Actual Durability"),
               (e.ACTUAL_SHIELD = "Actual Shield"),
               (e.ACTUAL_RECHARGE = "Actual Recharge");
-          })($p || ($p = {}));
-        var lE,
-          pE,
+          })(eE || (eE = {}));
+        var pE,
           EE,
           dE,
           gE,
@@ -20127,8 +20124,8 @@
           OE,
           yE,
           mE,
-          LE,
           hE,
+          LE,
           CE,
           vE,
           SE,
@@ -20142,14 +20139,14 @@
           DE,
           wE,
           XE,
-          HE,
           kE,
+          HE,
           xE,
           YE,
           WE,
           ZE,
-          FE,
           jE,
+          FE,
           KE,
           VE,
           qE,
@@ -20178,9 +20175,10 @@
           Id,
           Nd,
           Td,
-          Od = function () {
+          Od,
+          yd = function () {
             return (
-              (Od =
+              (yd =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -20189,30 +20187,30 @@
                         (e[o] = t[o]);
                   return e;
                 }),
-              Od.apply(this, arguments)
+              yd.apply(this, arguments)
             );
           },
-          yd = { income: 0, consume: 0, multiplier: 1 },
-          md = {
+          md = { income: 0, consume: 0, multiplier: 1 },
+          hd = {
             stats:
-              ((lE = {}),
-              (lE[Jp.SPEED] = 0),
-              (lE[Jp.POWER] = 0),
-              (lE[Jp.DAMAGE] = 0),
-              (lE[Jp.DURABILITY] = 0),
-              (lE[Jp.SHIELD_CAP] = 0),
-              (lE[Jp.SHIELD_MITIGATION] = 0),
-              (lE[Jp.SHIELD_REGEN] = 0),
-              (lE[Jp.HULL_REPAIR] = 0),
-              (lE[Jp.WEAPON_COOLDOWN] = 0),
-              (lE[Jp.FUEL_CONSUMPTION] = 0),
-              lE),
+              ((pE = {}),
+              (pE[$p.SPEED] = 0),
+              (pE[$p.POWER] = 0),
+              (pE[$p.DAMAGE] = 0),
+              (pE[$p.DURABILITY] = 0),
+              (pE[$p.SHIELD_CAP] = 0),
+              (pE[$p.SHIELD_MITIGATION] = 0),
+              (pE[$p.SHIELD_REGEN] = 0),
+              (pE[$p.HULL_REPAIR] = 0),
+              (pE[$p.WEAPON_COOLDOWN] = 0),
+              (pE[$p.FUEL_CONSUMPTION] = 0),
+              pE),
             costs: [],
           },
           Ld = function (e) {
             return Math.pow(1.05, e.space.battlefield.state.pilot.level);
           },
-          hd = function (e) {
+          Cd = function (e) {
             return (
               Math.pow(
                 0.5,
@@ -20228,7 +20226,7 @@
               )
             );
           },
-          Cd = function (e) {
+          vd = function (e) {
             return (
               Math.pow(
                 1.3,
@@ -20250,15 +20248,15 @@
               ) *
               Math.pow(
                 1.2,
-                e.prestige.colonizePlanet.getUpgradeLevel(R.SHIPS_DURABILITY)
+                e.prestige.colonizePlanet.getUpgradeLevel(I.SHIPS_DURABILITY)
               )
             );
           },
-          vd = function (e) {
+          Sd = function (e) {
             return (
               Math.pow(
                 1.2,
-                e.prestige.colonizePlanet.getUpgradeLevel(R.SHIPS_DAMAGE)
+                e.prestige.colonizePlanet.getUpgradeLevel(I.SHIPS_DAMAGE)
               ) *
               Math.pow(
                 1.2,
@@ -20268,7 +20266,7 @@
               )
             );
           },
-          Sd = function (e) {
+          Pd = function (e) {
             return Math.pow(
               0.8,
               e.landingZone.landingZoneUpgrades.getUpgradeLevel(
@@ -20276,7 +20274,7 @@
               )
             );
           },
-          Pd = function (e) {
+          Bd = function (e) {
             return (
               Math.pow(
                 1.2,
@@ -20292,39 +20290,39 @@
               )
             );
           },
-          Bd = [
+          _d = [
             {
               name: "Regular",
               id: "regular",
               bonusConsume:
-                ((pE = {}),
-                (pE[Jp.POWER] = function (e) {
+                ((EE = {}),
+                (EE[$p.POWER] = function (e) {
                   return { A: 1, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                pE),
+                EE),
               bonusGain: {},
               bonusMultiplier:
-                ((EE = {}),
-                (EE[Jp.SPEED] = function (e) {
+                ((dE = {}),
+                (dE[$p.SPEED] = function (e) {
                   return { A: 0.01, B: 1, type: i.LINEAR };
                 }),
-                (EE[Jp.WEAPON_COOLDOWN] = function (e) {
+                (dE[$p.WEAPON_COOLDOWN] = function (e) {
                   return { A: 0.9, B: 0, type: i.LINEAR };
                 }),
-                EE),
-              category: Qp.HEAD,
-              cost:
-                ((dE = {}),
-                (dE[l.WIRE] = function (e) {
-                  return { A: 5e3 * Sd(e), B: 1.5, type: i.EXPONENTIAL };
-                }),
-                (dE[l.COMPUTER] = function (e) {
-                  return { A: 400 * Sd(e), B: 1.5, type: i.EXPONENTIAL };
-                }),
-                (dE[l.RUBBER] = function (e) {
-                  return { A: 1e3 * Sd(e), B: 1.5, type: i.EXPONENTIAL };
-                }),
                 dE),
+              category: Jp.HEAD,
+              cost:
+                ((gE = {}),
+                (gE[l.WIRE] = function (e) {
+                  return { A: 5e3 * Pd(e), B: 1.5, type: i.EXPONENTIAL };
+                }),
+                (gE[l.COMPUTER] = function (e) {
+                  return { A: 400 * Pd(e), B: 1.5, type: i.EXPONENTIAL };
+                }),
+                (gE[l.RUBBER] = function (e) {
+                  return { A: 1e3 * Pd(e), B: 1.5, type: i.EXPONENTIAL };
+                }),
+                gE),
               unlockCondition: function (e) {
                 return !0;
               },
@@ -20333,31 +20331,31 @@
               name: "Transport Spaceship Head",
               id: "transport",
               bonusConsume:
-                ((gE = {}),
-                (gE[Jp.POWER] = function (e) {
+                ((AE = {}),
+                (AE[$p.POWER] = function (e) {
                   return { A: 1, B: 1.05, type: i.EXPONENTIAL };
                 }),
-                gE),
+                AE),
               bonusGain: {},
               bonusMultiplier:
-                ((AE = {}),
-                (AE[Jp.SPEED] = function (e) {
+                ((fE = {}),
+                (fE[$p.SPEED] = function (e) {
                   return { A: 0.03, B: 1, type: i.LINEAR };
                 }),
-                (AE[Jp.FUEL_CONSUMPTION] = function (e) {
+                (fE[$p.FUEL_CONSUMPTION] = function (e) {
                   return { A: 0, B: 0.8, type: i.LINEAR };
                 }),
-                AE),
-              category: Qp.HEAD,
-              cost:
-                ((fE = {}),
-                (fE[l.WIRE] = function (e) {
-                  return { A: 1e4 * Sd(e), B: 1.5, type: i.EXPONENTIAL };
-                }),
-                (fE[l.COMPUTER] = function (e) {
-                  return { A: 1e3 * Sd(e), B: 1.5, type: i.EXPONENTIAL };
-                }),
                 fE),
+              category: Jp.HEAD,
+              cost:
+                ((RE = {}),
+                (RE[l.WIRE] = function (e) {
+                  return { A: 1e4 * Pd(e), B: 1.5, type: i.EXPONENTIAL };
+                }),
+                (RE[l.COMPUTER] = function (e) {
+                  return { A: 1e3 * Pd(e), B: 1.5, type: i.EXPONENTIAL };
+                }),
+                RE),
               unlockCondition: function (e) {
                 return !0;
               },
@@ -20366,28 +20364,28 @@
               name: "Plated Corpus",
               id: "plated",
               bonusConsume:
-                ((RE = {}),
-                (RE[Jp.POWER] = function (e) {
+                ((IE = {}),
+                (IE[$p.POWER] = function (e) {
                   return { A: 1, B: 1.05, type: i.EXPONENTIAL };
                 }),
-                RE),
-              bonusGain:
-                ((IE = {}),
-                (IE[Jp.DURABILITY] = function (e) {
-                  return { A: 200 * Ld(e) * Cd(e), B: 0, type: i.LINEAR };
-                }),
                 IE),
-              bonusMultiplier: {},
-              category: Qp.CORPUS,
-              cost:
+              bonusGain:
                 ((NE = {}),
-                (NE[l.PLATE] = function (e) {
-                  return { A: 1e4 * Sd(e), B: 1.5, type: i.EXPONENTIAL };
-                }),
-                (NE[l.WIRE] = function (e) {
-                  return { A: 1e3 * Sd(e), B: 1.5, type: i.EXPONENTIAL };
+                (NE[$p.DURABILITY] = function (e) {
+                  return { A: 200 * Ld(e) * vd(e), B: 0, type: i.LINEAR };
                 }),
                 NE),
+              bonusMultiplier: {},
+              category: Jp.CORPUS,
+              cost:
+                ((TE = {}),
+                (TE[l.PLATE] = function (e) {
+                  return { A: 1e4 * Pd(e), B: 1.5, type: i.EXPONENTIAL };
+                }),
+                (TE[l.WIRE] = function (e) {
+                  return { A: 1e3 * Pd(e), B: 1.5, type: i.EXPONENTIAL };
+                }),
+                TE),
               unlockCondition: function (e) {
                 return !0;
               },
@@ -20396,31 +20394,31 @@
               name: "Graphene Corpus",
               id: "graphene",
               bonusConsume:
-                ((TE = {}),
-                (TE[Jp.POWER] = function (e) {
+                ((OE = {}),
+                (OE[$p.POWER] = function (e) {
                   return { A: 2, B: 1.05, type: i.EXPONENTIAL };
                 }),
-                TE),
-              bonusGain:
-                ((OE = {}),
-                (OE[Jp.DURABILITY] = function (e) {
-                  return { A: 280 * Ld(e) * Cd(e), B: 0, type: i.LINEAR };
-                }),
                 OE),
-              bonusMultiplier: {},
-              category: Qp.CORPUS,
-              cost:
+              bonusGain:
                 ((yE = {}),
-                (yE[l.PLATE] = function (e) {
-                  return { A: 8e3 * Sd(e), B: 1.5, type: i.EXPONENTIAL };
-                }),
-                (yE[l.WIRE] = function (e) {
-                  return { A: 1e3 * Sd(e), B: 1.5, type: i.EXPONENTIAL };
-                }),
-                (yE[l.GRAPHENE] = function (e) {
-                  return { A: 400 * Sd(e), B: 1.5, type: i.EXPONENTIAL };
+                (yE[$p.DURABILITY] = function (e) {
+                  return { A: 280 * Ld(e) * vd(e), B: 0, type: i.LINEAR };
                 }),
                 yE),
+              bonusMultiplier: {},
+              category: Jp.CORPUS,
+              cost:
+                ((mE = {}),
+                (mE[l.PLATE] = function (e) {
+                  return { A: 8e3 * Pd(e), B: 1.5, type: i.EXPONENTIAL };
+                }),
+                (mE[l.WIRE] = function (e) {
+                  return { A: 1e3 * Pd(e), B: 1.5, type: i.EXPONENTIAL };
+                }),
+                (mE[l.GRAPHENE] = function (e) {
+                  return { A: 400 * Pd(e), B: 1.5, type: i.EXPONENTIAL };
+                }),
+                mE),
               unlockCondition: function (e) {
                 return !0;
               },
@@ -20429,34 +20427,34 @@
               name: "Rocket Launcher",
               id: "rls",
               bonusConsume:
-                ((mE = {}),
-                (mE[Jp.POWER] = function (e) {
+                ((hE = {}),
+                (hE[$p.POWER] = function (e) {
                   return { A: 1.5, B: 1.05, type: i.EXPONENTIAL };
                 }),
-                (mE[Jp.FUEL_CONSUMPTION] = function (e) {
-                  return { A: 2 * hd(e), B: 1.05, type: i.EXPONENTIAL };
+                (hE[$p.FUEL_CONSUMPTION] = function (e) {
+                  return { A: 2 * Cd(e), B: 1.05, type: i.EXPONENTIAL };
                 }),
-                mE),
+                hE),
               bonusGain:
                 ((LE = {}),
-                (LE[Jp.DAMAGE] = function (e) {
-                  return { A: 9 * Ld(e) * vd(e), B: 0, type: i.LINEAR };
+                (LE[$p.DAMAGE] = function (e) {
+                  return { A: 9 * Ld(e) * Sd(e), B: 0, type: i.LINEAR };
                 }),
                 LE),
               bonusMultiplier: {},
-              category: Qp.WEAPONS,
+              category: Jp.WEAPONS,
               cost:
-                ((hE = {}),
-                (hE[l.WIRE] = function (e) {
-                  return { A: 1e3 * Sd(e), B: 1.5, type: i.EXPONENTIAL };
+                ((CE = {}),
+                (CE[l.WIRE] = function (e) {
+                  return { A: 1e3 * Pd(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (hE[l.PLATE] = function (e) {
-                  return { A: 1e3 * Sd(e), B: 1.5, type: i.EXPONENTIAL };
+                (CE[l.PLATE] = function (e) {
+                  return { A: 1e3 * Pd(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (hE[l.FUEL] = function (e) {
-                  return { A: 2e3 * Sd(e), B: 1.5, type: i.EXPONENTIAL };
+                (CE[l.FUEL] = function (e) {
+                  return { A: 2e3 * Pd(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                hE),
+                CE),
               unlockCondition: function (e) {
                 return !0;
               },
@@ -20465,39 +20463,39 @@
               name: "MRLS",
               id: "mrls",
               bonusConsume:
-                ((CE = {}),
-                (CE[Jp.POWER] = function (e) {
+                ((vE = {}),
+                (vE[$p.POWER] = function (e) {
                   return { A: 3, B: 1.05, type: i.EXPONENTIAL };
                 }),
-                (CE[Jp.FUEL_CONSUMPTION] = function (e) {
-                  return { A: 3 * hd(e), B: 1.05, type: i.EXPONENTIAL };
-                }),
-                CE),
-              bonusGain:
-                ((vE = {}),
-                (vE[Jp.DAMAGE] = function (e) {
-                  return { A: 4 * Ld(e) * vd(e), B: 0, type: i.LINEAR };
+                (vE[$p.FUEL_CONSUMPTION] = function (e) {
+                  return { A: 3 * Cd(e), B: 1.05, type: i.EXPONENTIAL };
                 }),
                 vE),
-              bonusMultiplier:
+              bonusGain:
                 ((SE = {}),
-                (SE[Jp.WEAPON_COOLDOWN] = function (e) {
-                  return { A: 0, B: 0.75, type: i.LINEAR };
+                (SE[$p.DAMAGE] = function (e) {
+                  return { A: 4 * Ld(e) * Sd(e), B: 0, type: i.LINEAR };
                 }),
                 SE),
-              category: Qp.WEAPONS,
-              cost:
+              bonusMultiplier:
                 ((PE = {}),
-                (PE[l.WIRE] = function (e) {
-                  return { A: 5e3 * Sd(e), B: 1.5, type: i.EXPONENTIAL };
-                }),
-                (PE[l.PLATE] = function (e) {
-                  return { A: 5e3 * Sd(e), B: 1.5, type: i.EXPONENTIAL };
-                }),
-                (PE[l.FUEL] = function (e) {
-                  return { A: 5e3 * Sd(e), B: 1.5, type: i.EXPONENTIAL };
+                (PE[$p.WEAPON_COOLDOWN] = function (e) {
+                  return { A: 0, B: 0.75, type: i.LINEAR };
                 }),
                 PE),
+              category: Jp.WEAPONS,
+              cost:
+                ((BE = {}),
+                (BE[l.WIRE] = function (e) {
+                  return { A: 5e3 * Pd(e), B: 1.5, type: i.EXPONENTIAL };
+                }),
+                (BE[l.PLATE] = function (e) {
+                  return { A: 5e3 * Pd(e), B: 1.5, type: i.EXPONENTIAL };
+                }),
+                (BE[l.FUEL] = function (e) {
+                  return { A: 5e3 * Pd(e), B: 1.5, type: i.EXPONENTIAL };
+                }),
+                BE),
               unlockCondition: function (e) {
                 return !0;
               },
@@ -20506,34 +20504,34 @@
               name: "Quark-Gluon Canon",
               id: "quark-gluon-canon",
               bonusConsume:
-                ((BE = {}),
-                (BE[Jp.POWER] = function (e) {
+                ((_E = {}),
+                (_E[$p.POWER] = function (e) {
                   return { A: 8, B: 1.05, type: i.EXPONENTIAL };
                 }),
-                (BE[Jp.FUEL_CONSUMPTION] = function (e) {
-                  return { A: 12 * hd(e), B: 1.05, type: i.EXPONENTIAL };
-                }),
-                BE),
-              bonusGain:
-                ((_E = {}),
-                (_E[Jp.DAMAGE] = function (e) {
-                  return { A: 19 * Ld(e) * vd(e), B: 0, type: i.LINEAR };
+                (_E[$p.FUEL_CONSUMPTION] = function (e) {
+                  return { A: 12 * Cd(e), B: 1.05, type: i.EXPONENTIAL };
                 }),
                 _E),
-              bonusMultiplier: {},
-              category: Qp.WEAPONS,
-              cost:
+              bonusGain:
                 ((ME = {}),
-                (ME[l.WIRE] = function (e) {
-                  return { A: 9e3 * Sd(e), B: 1.5, type: i.EXPONENTIAL };
-                }),
-                (ME[l.COMPUTER] = function (e) {
-                  return { A: 300 * Sd(e), B: 1.5, type: i.EXPONENTIAL };
-                }),
-                (ME[l.FUEL] = function (e) {
-                  return { A: 9e3 * Sd(e), B: 1.5, type: i.EXPONENTIAL };
+                (ME[$p.DAMAGE] = function (e) {
+                  return { A: 19 * Ld(e) * Sd(e), B: 0, type: i.LINEAR };
                 }),
                 ME),
+              bonusMultiplier: {},
+              category: Jp.WEAPONS,
+              cost:
+                ((UE = {}),
+                (UE[l.WIRE] = function (e) {
+                  return { A: 9e3 * Pd(e), B: 1.5, type: i.EXPONENTIAL };
+                }),
+                (UE[l.COMPUTER] = function (e) {
+                  return { A: 300 * Pd(e), B: 1.5, type: i.EXPONENTIAL };
+                }),
+                (UE[l.FUEL] = function (e) {
+                  return { A: 9e3 * Pd(e), B: 1.5, type: i.EXPONENTIAL };
+                }),
+                UE),
               unlockCondition: function (e) {
                 return (
                   e.landingZone.landingZoneUpgrades.getUpgradeLevel(
@@ -20546,22 +20544,22 @@
               name: "Positron Canon",
               id: "positron-canon",
               bonusConsume:
-                ((UE = {}),
-                (UE[Jp.POWER] = function (e) {
+                ((GE = {}),
+                (GE[$p.POWER] = function (e) {
                   return { A: 18, B: 1.05, type: i.EXPONENTIAL };
                 }),
-                (UE[Jp.FUEL_CONSUMPTION] = function (e) {
-                  return { A: 30 * hd(e), B: 1.05, type: i.EXPONENTIAL };
+                (GE[$p.FUEL_CONSUMPTION] = function (e) {
+                  return { A: 30 * Cd(e), B: 1.05, type: i.EXPONENTIAL };
                 }),
-                UE),
+                GE),
               bonusGain:
-                ((GE = {}),
-                (GE[Jp.DAMAGE] = function (e) {
+                ((bE = {}),
+                (bE[$p.DAMAGE] = function (e) {
                   return {
                     A:
                       45 *
                       Ld(e) *
-                      vd(e) *
+                      Sd(e) *
                       Math.pow(
                         1.2,
                         e.landingZone.landingZoneUpgrades.getUpgradeLevel(
@@ -20572,21 +20570,21 @@
                     type: i.LINEAR,
                   };
                 }),
-                GE),
-              bonusMultiplier: {},
-              category: Qp.WEAPONS,
-              cost:
-                ((bE = {}),
-                (bE[l.WIRE] = function (e) {
-                  return { A: 3e4 * Sd(e), B: 1.5, type: i.EXPONENTIAL };
-                }),
-                (bE[l.COMPUTER] = function (e) {
-                  return { A: 900 * Sd(e), B: 1.5, type: i.EXPONENTIAL };
-                }),
-                (bE[l.FUEL] = function (e) {
-                  return { A: 3e4 * Sd(e), B: 1.5, type: i.EXPONENTIAL };
-                }),
                 bE),
+              bonusMultiplier: {},
+              category: Jp.WEAPONS,
+              cost:
+                ((DE = {}),
+                (DE[l.WIRE] = function (e) {
+                  return { A: 3e4 * Pd(e), B: 1.5, type: i.EXPONENTIAL };
+                }),
+                (DE[l.COMPUTER] = function (e) {
+                  return { A: 900 * Pd(e), B: 1.5, type: i.EXPONENTIAL };
+                }),
+                (DE[l.FUEL] = function (e) {
+                  return { A: 3e4 * Pd(e), B: 1.5, type: i.EXPONENTIAL };
+                }),
+                DE),
               unlockCondition: function (e) {
                 return (
                   e.landingZone.landingZoneUpgrades.getUpgradeLevel(
@@ -20599,40 +20597,40 @@
               name: "Magnetic Shield",
               id: "shield",
               bonusConsume:
-                ((DE = {}),
-                (DE[Jp.POWER] = function (e) {
+                ((wE = {}),
+                (wE[$p.POWER] = function (e) {
                   return { A: 6, B: 1.05, type: i.EXPONENTIAL };
                 }),
-                (DE[Jp.FUEL_CONSUMPTION] = function (e) {
-                  return { A: 5 * hd(e), B: 1.05, type: i.EXPONENTIAL };
-                }),
-                DE),
-              bonusGain:
-                ((wE = {}),
-                (wE[Jp.SHIELD_CAP] = function (e) {
-                  return { A: 80 * Ld(e), B: 0, type: i.LINEAR };
-                }),
-                (wE[Jp.SHIELD_REGEN] = function (e) {
-                  return { A: 3 * Ld(e), B: 0, type: i.LINEAR };
-                }),
-                (wE[Jp.SHIELD_MITIGATION] = function (e) {
-                  return { A: 0, B: 0.2, type: i.LINEAR };
+                (wE[$p.FUEL_CONSUMPTION] = function (e) {
+                  return { A: 5 * Cd(e), B: 1.05, type: i.EXPONENTIAL };
                 }),
                 wE),
-              bonusMultiplier: {},
-              category: Qp.WEAPONS,
-              cost:
+              bonusGain:
                 ((XE = {}),
-                (XE[l.WIRE] = function (e) {
-                  return { A: 9e3 * Sd(e), B: 1.5, type: i.EXPONENTIAL };
+                (XE[$p.SHIELD_CAP] = function (e) {
+                  return { A: 80 * Ld(e), B: 0, type: i.LINEAR };
                 }),
-                (XE[l.COMPUTER] = function (e) {
-                  return { A: 500 * Sd(e), B: 1.5, type: i.EXPONENTIAL };
+                (XE[$p.SHIELD_REGEN] = function (e) {
+                  return { A: 3 * Ld(e), B: 0, type: i.LINEAR };
                 }),
-                (XE[l.MAGNETO] = function (e) {
-                  return { A: 100 * Sd(e), B: 1.5, type: i.EXPONENTIAL };
+                (XE[$p.SHIELD_MITIGATION] = function (e) {
+                  return { A: 0, B: 0.2, type: i.LINEAR };
                 }),
                 XE),
+              bonusMultiplier: {},
+              category: Jp.WEAPONS,
+              cost:
+                ((kE = {}),
+                (kE[l.WIRE] = function (e) {
+                  return { A: 9e3 * Pd(e), B: 1.5, type: i.EXPONENTIAL };
+                }),
+                (kE[l.COMPUTER] = function (e) {
+                  return { A: 500 * Pd(e), B: 1.5, type: i.EXPONENTIAL };
+                }),
+                (kE[l.MAGNETO] = function (e) {
+                  return { A: 100 * Pd(e), B: 1.5, type: i.EXPONENTIAL };
+                }),
+                kE),
               unlockCondition: function (e) {
                 return (
                   e.landingZone.landingZoneUpgrades.getUpgradeLevel(
@@ -20646,27 +20644,27 @@
               id: "solar",
               bonusConsume:
                 ((HE = {}),
-                (HE[Jp.FUEL_CONSUMPTION] = function (e) {
-                  return { A: 0.5 * hd(e), B: 1.05, type: i.EXPONENTIAL };
+                (HE[$p.FUEL_CONSUMPTION] = function (e) {
+                  return { A: 0.5 * Cd(e), B: 1.05, type: i.EXPONENTIAL };
                 }),
                 HE),
               bonusGain:
-                ((kE = {}),
-                (kE[Jp.POWER] = function (e) {
-                  return { A: 4 * Pd(e), B: 0, type: i.LINEAR };
-                }),
-                kE),
-              bonusMultiplier: {},
-              category: Qp.POWER_SUPPLY,
-              cost:
                 ((xE = {}),
-                (xE[l.WIRE] = function (e) {
-                  return { A: 2e3 * Sd(e), B: 1.5, type: i.EXPONENTIAL };
-                }),
-                (xE[l.SEMICONDUCTOR] = function (e) {
-                  return { A: 2e3 * Sd(e), B: 1.5, type: i.EXPONENTIAL };
+                (xE[$p.POWER] = function (e) {
+                  return { A: 4 * Bd(e), B: 0, type: i.LINEAR };
                 }),
                 xE),
+              bonusMultiplier: {},
+              category: Jp.POWER_SUPPLY,
+              cost:
+                ((YE = {}),
+                (YE[l.WIRE] = function (e) {
+                  return { A: 2e3 * Pd(e), B: 1.5, type: i.EXPONENTIAL };
+                }),
+                (YE[l.SEMICONDUCTOR] = function (e) {
+                  return { A: 2e3 * Pd(e), B: 1.5, type: i.EXPONENTIAL };
+                }),
+                YE),
               unlockCondition: function (e) {
                 return !0;
               },
@@ -20675,28 +20673,28 @@
               name: "Thermonuclear Power Plant",
               id: "thermonuclear",
               bonusConsume:
-                ((YE = {}),
-                (YE[Jp.FUEL_CONSUMPTION] = function (e) {
-                  return { A: 3.5 * hd(e), B: 1.05, type: i.EXPONENTIAL };
-                }),
-                YE),
-              bonusGain:
                 ((WE = {}),
-                (WE[Jp.POWER] = function (e) {
-                  return { A: 10 * Pd(e), B: 0, type: i.LINEAR };
+                (WE[$p.FUEL_CONSUMPTION] = function (e) {
+                  return { A: 3.5 * Cd(e), B: 1.05, type: i.EXPONENTIAL };
                 }),
                 WE),
-              bonusMultiplier: {},
-              category: Qp.POWER_SUPPLY,
-              cost:
+              bonusGain:
                 ((ZE = {}),
-                (ZE[l.PLATE] = function (e) {
-                  return { A: 9e3 * Sd(e), B: 1.5, type: i.EXPONENTIAL };
-                }),
-                (ZE[l.WIRE] = function (e) {
-                  return { A: 5e3 * Sd(e), B: 1.5, type: i.EXPONENTIAL };
+                (ZE[$p.POWER] = function (e) {
+                  return { A: 10 * Bd(e), B: 0, type: i.LINEAR };
                 }),
                 ZE),
+              bonusMultiplier: {},
+              category: Jp.POWER_SUPPLY,
+              cost:
+                ((jE = {}),
+                (jE[l.PLATE] = function (e) {
+                  return { A: 9e3 * Pd(e), B: 1.5, type: i.EXPONENTIAL };
+                }),
+                (jE[l.WIRE] = function (e) {
+                  return { A: 5e3 * Pd(e), B: 1.5, type: i.EXPONENTIAL };
+                }),
+                jE),
               unlockCondition: function (e) {
                 return !0;
               },
@@ -20706,30 +20704,30 @@
               id: "reactive",
               bonusConsume:
                 ((FE = {}),
-                (FE[Jp.FUEL_CONSUMPTION] = function (e) {
-                  return { A: 4 * hd(e), B: 1, type: i.EXPONENTIAL };
+                (FE[$p.FUEL_CONSUMPTION] = function (e) {
+                  return { A: 4 * Cd(e), B: 1, type: i.EXPONENTIAL };
                 }),
-                (FE[Jp.POWER] = function (e) {
+                (FE[$p.POWER] = function (e) {
                   return { A: 2, B: 1.5, type: i.EXPONENTIAL };
                 }),
                 FE),
               bonusGain:
-                ((jE = {}),
-                (jE[Jp.SPEED] = function (e) {
+                ((KE = {}),
+                (KE[$p.SPEED] = function (e) {
                   return { A: 0.05, B: 1, type: i.LINEAR };
                 }),
-                jE),
-              bonusMultiplier: {},
-              category: Qp.ENGINE,
-              cost:
-                ((KE = {}),
-                (KE[l.PLATE] = function (e) {
-                  return { A: 14e3 * Sd(e), B: 1.5, type: i.EXPONENTIAL };
-                }),
-                (KE[l.WIRE] = function (e) {
-                  return { A: 7e3 * Sd(e), B: 1.5, type: i.EXPONENTIAL };
-                }),
                 KE),
+              bonusMultiplier: {},
+              category: Jp.ENGINE,
+              cost:
+                ((VE = {}),
+                (VE[l.PLATE] = function (e) {
+                  return { A: 14e3 * Pd(e), B: 1.5, type: i.EXPONENTIAL };
+                }),
+                (VE[l.WIRE] = function (e) {
+                  return { A: 7e3 * Pd(e), B: 1.5, type: i.EXPONENTIAL };
+                }),
+                VE),
               unlockCondition: function (e) {
                 return !0;
               },
@@ -20738,31 +20736,31 @@
               name: "Hyperspace Engine",
               id: "hyperspace",
               bonusConsume:
-                ((VE = {}),
-                (VE[Jp.FUEL_CONSUMPTION] = function (e) {
-                  return { A: 40 * hd(e), B: 1, type: i.EXPONENTIAL };
+                ((qE = {}),
+                (qE[$p.FUEL_CONSUMPTION] = function (e) {
+                  return { A: 40 * Cd(e), B: 1, type: i.EXPONENTIAL };
                 }),
-                (VE[Jp.POWER] = function (e) {
+                (qE[$p.POWER] = function (e) {
                   return { A: 5, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                VE),
+                qE),
               bonusGain:
-                ((qE = {}),
-                (qE[Jp.SPEED] = function (e) {
+                ((zE = {}),
+                (zE[$p.SPEED] = function (e) {
                   return { A: 0.1, B: 1, type: i.LINEAR };
                 }),
-                qE),
-              bonusMultiplier: {},
-              category: Qp.ENGINE,
-              cost:
-                ((zE = {}),
-                (zE[l.PLATE] = function (e) {
-                  return { A: 54e3 * Sd(e), B: 1.5, type: i.EXPONENTIAL };
-                }),
-                (zE[l.WIRE] = function (e) {
-                  return { A: 15e3 * Sd(e), B: 1.5, type: i.EXPONENTIAL };
-                }),
                 zE),
+              bonusMultiplier: {},
+              category: Jp.ENGINE,
+              cost:
+                ((QE = {}),
+                (QE[l.PLATE] = function (e) {
+                  return { A: 54e3 * Pd(e), B: 1.5, type: i.EXPONENTIAL };
+                }),
+                (QE[l.WIRE] = function (e) {
+                  return { A: 15e3 * Pd(e), B: 1.5, type: i.EXPONENTIAL };
+                }),
+                QE),
               unlockCondition: function (e) {
                 return (
                   e.landingZone.landingZoneUpgrades.getUpgradeLevel(
@@ -20772,8 +20770,8 @@
               },
             },
           ],
-          _d = n(8721),
-          Md = (function () {
+          Md = n(8721),
+          Ud = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -20807,9 +20805,9 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          Ud = function () {
+          Gd = function () {
             return (
-              (Ud =
+              (Gd =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -20818,10 +20816,10 @@
                         (e[o] = t[o]);
                   return e;
                 }),
-              Ud.apply(this, arguments)
+              Gd.apply(this, arguments)
             );
           },
-          Gd = (function (e) {
+          bd = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -20840,7 +20838,7 @@
                       ? {
                           name: n.name,
                           uuid: n.uuid,
-                          parts: Ud({}, JSON.parse(JSON.stringify(n.parts))),
+                          parts: Gd({}, JSON.parse(JSON.stringify(n.parts))),
                         }
                       : { name: "Unknown", uuid: "", parts: {} };
                   }
@@ -20873,20 +20871,20 @@
                       var i = void 0;
                       switch (e.key) {
                         case "head":
-                          i = Qp.HEAD;
+                          i = Jp.HEAD;
                           break;
                         case "weapon1":
                         case "weapon2":
-                          i = Qp.WEAPONS;
+                          i = Jp.WEAPONS;
                           break;
                         case "corpus":
-                          i = Qp.CORPUS;
+                          i = Jp.CORPUS;
                           break;
                         case "power":
-                          i = Qp.POWER_SUPPLY;
+                          i = Jp.POWER_SUPPLY;
                           break;
                         case "engine":
-                          i = Qp.ENGINE;
+                          i = Jp.ENGINE;
                       }
                       t.editing.parts[e.key] = {
                         id: e.id,
@@ -20921,7 +20919,7 @@
               );
             }
             return (
-              Md(t, e),
+              Ud(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -20930,7 +20928,7 @@
                   return t.uuid === e;
                 });
                 if (t > -1) {
-                  if (xg.space.hangar.getAmountById(e) > 0) return;
+                  if (Yg.space.hangar.getAmountById(e) > 0) return;
                   this.models.splice(t, 1);
                 }
               }),
@@ -20939,59 +20937,59 @@
                   n = (function () {
                     var e;
                     return (
-                      ((e = {})[Jp.SPEED] = {
+                      ((e = {})[$p.SPEED] = {
                         income: 1,
                         consume: 0,
                         multiplier: 1,
                       }),
-                      (e[Jp.POWER] = Od({}, yd)),
-                      (e[Jp.DAMAGE] = Od({}, yd)),
-                      (e[Jp.DURABILITY] = Od({}, yd)),
-                      (e[Jp.SHIELD_CAP] = Od({}, yd)),
-                      (e[Jp.SHIELD_MITIGATION] = Od({}, yd)),
-                      (e[Jp.SHIELD_REGEN] = Od({}, yd)),
-                      (e[Jp.HULL_REPAIR] = Od({}, yd)),
-                      (e[Jp.WEAPON_COOLDOWN] = {
+                      (e[$p.POWER] = yd({}, md)),
+                      (e[$p.DAMAGE] = yd({}, md)),
+                      (e[$p.DURABILITY] = yd({}, md)),
+                      (e[$p.SHIELD_CAP] = yd({}, md)),
+                      (e[$p.SHIELD_MITIGATION] = yd({}, md)),
+                      (e[$p.SHIELD_REGEN] = yd({}, md)),
+                      (e[$p.HULL_REPAIR] = yd({}, md)),
+                      (e[$p.WEAPON_COOLDOWN] = {
                         income: 3,
                         consume: 0,
                         multiplier: 1,
                       }),
-                      (e[Jp.FUEL_CONSUMPTION] = Od({}, yd)),
+                      (e[$p.FUEL_CONSUMPTION] = yd({}, md)),
                       e
                     );
                   })(),
                   i = [];
                 t.forEach(function (e) {
                   var t = e.id,
-                    o = Bd.find(function (e) {
+                    o = _d.find(function (e) {
                       return e.id === t;
                     });
                   if (o) {
                     Object.entries(o.bonusGain).forEach(function (t) {
                       var i = t[0],
                         o = t[1],
-                        r = w.calculate(kg.getInstance(), o, 0, e.level);
+                        r = X.calculate(xg.getInstance(), o, 0, e.level);
                       n[i].income += r;
                     }),
                       Object.entries(o.bonusConsume).forEach(function (t) {
                         var i = t[0],
                           o = t[1],
-                          r = w.calculate(kg.getInstance(), o, 0, e.level);
+                          r = X.calculate(xg.getInstance(), o, 0, e.level);
                         n[i].consume += r;
                       }),
                       Object.entries(o.bonusMultiplier).forEach(function (t) {
                         var i = t[0],
                           o = t[1],
-                          r = w.calculate(kg.getInstance(), o, e.level, 1);
+                          r = X.calculate(xg.getInstance(), o, e.level, 1);
                         n[i].multiplier *= r;
                       });
-                    var r = w.calcBatchAll(
+                    var r = X.calcBatchAll(
                       o.cost,
-                      kg.getInstance(),
+                      xg.getInstance(),
                       e.level,
-                      kg.getInstance().resources.getBatchObject()
+                      xg.getInstance().resources.getBatchObject()
                     );
-                    i = w.calcSum(kg.getInstance(), i, r);
+                    i = X.calcSum(xg.getInstance(), i, r);
                   }
                 });
                 var o = {};
@@ -21011,12 +21009,12 @@
                   }, 0),
                   {
                     stats: o,
-                    costs: kg
+                    costs: xg
                       .getInstance()
                       .resources.assertEnought(
                         i,
-                        kg.getInstance().resources.getBatchObject(),
-                        kg.getInstance().resources.getBatchBalanceObject()
+                        xg.getInstance().resources.getBatchObject(),
+                        xg.getInstance().resources.getBatchBalanceObject()
                       ),
                     costsOriginal: i,
                     progress: c < 1 ? (100 * c).toPrecision(3) : "100",
@@ -21031,7 +21029,7 @@
                 });
                 if (t) {
                   var n = this.calculateStats(t);
-                  return Ud(Ud({}, t), n);
+                  return Gd(Gd({}, t), n);
                 }
               }),
               (t.prototype.validateBeforeSave = function (e) {
@@ -21068,7 +21066,7 @@
                     reason: "Power source should be selected",
                   };
                 var r = this.calculateStats(e).stats;
-                return !r[Jp.POWER] || r[Jp.POWER] < 0
+                return !r[$p.POWER] || r[$p.POWER] < 0
                   ? { result: !1, reason: "Power supply is not enough" }
                   : (null == e ? void 0 : e.name)
                   ? { result: !0 }
@@ -21084,7 +21082,7 @@
                     : e.uuid);
                   if (
                     !i &&
-                    xg.space.hangar.getAmountById(
+                    Yg.space.hangar.getAmountById(
                       null === (t = this.editing) || void 0 === t
                         ? void 0
                         : t.uuid
@@ -21113,9 +21111,9 @@
                       console.error(r), void (this.validationError = r.reason)
                     );
                   if (((this.validationError = void 0), i)) {
-                    var a = _d.Z();
+                    var a = Md.Z();
                     return (
-                      this.models.push(Ud(Ud({}, this.editing), { uuid: a })),
+                      this.models.push(Gd(Gd({}, this.editing), { uuid: a })),
                       void (this.editing.uuid = a)
                     );
                   }
@@ -21128,7 +21126,7 @@
                         : t.uuid)
                     );
                   });
-                  (this.models[c] = Ud({}, this.editing)),
+                  (this.models[c] = Gd({}, this.editing)),
                     (this.editing = null);
                 }
               }),
@@ -21140,27 +21138,27 @@
               }),
               (t.prototype.processShipPartsToUI = function (e) {
                 var t = {
-                  head: { category: Qp.HEAD },
-                  weapon1: { category: Qp.WEAPONS },
-                  weapon2: { category: Qp.WEAPONS },
-                  corpus: { category: Qp.CORPUS },
-                  engine: { category: Qp.ENGINE },
-                  power: { category: Qp.POWER_SUPPLY },
+                  head: { category: Jp.HEAD },
+                  weapon1: { category: Jp.WEAPONS },
+                  weapon2: { category: Jp.WEAPONS },
+                  corpus: { category: Jp.CORPUS },
+                  engine: { category: Jp.ENGINE },
+                  power: { category: Jp.POWER_SUPPLY },
                 };
                 return (
                   Object.entries(e.parts).forEach(function (e) {
                     var n = e[0],
                       i = e[1];
                     if (i) {
-                      var o = Bd.find(function (e) {
+                      var o = _d.find(function (e) {
                         return e.id === i.id;
                       });
                       if (o) {
-                        var r = w.calcBatchAll(
+                        var r = X.calcBatchAll(
                             o.cost,
-                            kg.getInstance(),
+                            xg.getInstance(),
                             i.level,
-                            kg.getInstance().resources.getBatchObject()
+                            xg.getInstance().resources.getBatchObject()
                           ),
                           a = {
                             category: o.category,
@@ -21168,54 +21166,48 @@
                               id: i.id,
                               name: o.name,
                               level: i.level,
-                              cost: kg
+                              cost: xg
                                 .getInstance()
                                 .resources.assertEnought(
                                   r,
-                                  kg.getInstance().resources.getBatchObject(),
-                                  kg
+                                  xg.getInstance().resources.getBatchObject(),
+                                  xg
                                     .getInstance()
                                     .resources.getBatchBalanceObject()
                                 ),
-                              gain: w
-                                .calcBatch(
-                                  o.bonusGain,
-                                  kg.getInstance(),
-                                  0,
-                                  i.level
-                                )
-                                .map(function (e) {
-                                  return Ud(Ud({}, e), {
-                                    amountValue: e.amount,
-                                    amount: "+".concat(H(e.amount)),
-                                  });
-                                }),
-                              gainMult: w
-                                .calcBatch(
-                                  o.bonusMultiplier,
-                                  kg.getInstance(),
-                                  i.level,
-                                  1
-                                )
-                                .map(function (e) {
-                                  return Ud(Ud({}, e), {
-                                    amountValue: e.amount,
-                                    amount: "x".concat(H(e.amount)),
-                                  });
-                                }),
-                              consume: w
-                                .calcBatch(
-                                  o.bonusConsume,
-                                  kg.getInstance(),
-                                  0,
-                                  i.level
-                                )
-                                .map(function (e) {
-                                  return Ud(Ud({}, e), {
-                                    amountValue: e.amount,
-                                    amount: "-".concat(H(e.amount)),
-                                  });
-                                }),
+                              gain: X.calcBatch(
+                                o.bonusGain,
+                                xg.getInstance(),
+                                0,
+                                i.level
+                              ).map(function (e) {
+                                return Gd(Gd({}, e), {
+                                  amountValue: e.amount,
+                                  amount: "+".concat(H(e.amount)),
+                                });
+                              }),
+                              gainMult: X.calcBatch(
+                                o.bonusMultiplier,
+                                xg.getInstance(),
+                                i.level,
+                                1
+                              ).map(function (e) {
+                                return Gd(Gd({}, e), {
+                                  amountValue: e.amount,
+                                  amount: "x".concat(H(e.amount)),
+                                });
+                              }),
+                              consume: X.calcBatch(
+                                o.bonusConsume,
+                                xg.getInstance(),
+                                0,
+                                i.level
+                              ).map(function (e) {
+                                return Gd(Gd({}, e), {
+                                  amountValue: e.amount,
+                                  amount: "-".concat(H(e.amount)),
+                                });
+                              }),
                             },
                           };
                         t[n] = a;
@@ -21232,11 +21224,11 @@
                   i = this.editing
                     ? this.calculateStats(this.editing)
                     : { costs: [], stats: {} },
-                  o = { stats: Ud(Ud({}, md.stats), i.stats), costs: i.costs };
+                  o = { stats: Gd(Gd({}, hd.stats), i.stats), costs: i.costs };
                 return {
                   isUnlocked:
-                    xg.science.scienceResearches.getResearchLevel(
-                      v.ADVANCED_SPACE_CONSTRUCTION
+                    Yg.science.scienceResearches.getResearchLevel(
+                      S.ADVANCED_SPACE_CONSTRUCTION
                     ) > 0,
                   list: this.models.map(function (e) {
                     var t;
@@ -21248,7 +21240,7 @@
                         (null === (t = n.editing) || void 0 === t
                           ? void 0
                           : t.uuid),
-                      amountPurchased: xg.space.hangar.getAmountById(e.uuid),
+                      amountPurchased: Yg.space.hangar.getAmountById(e.uuid),
                     };
                   }),
                   shipConstructor: this.editing
@@ -21262,15 +21254,17 @@
                             ? void 0
                             : t.name) || "",
                         parts: this.processShipPartsToUI(this.editing),
-                        availableParts: Bd.filter(function (e) {
-                          return e.unlockCondition(kg.getInstance());
-                        }).map(function (e) {
-                          return {
-                            name: e.name,
-                            id: e.id,
-                            category: e.category,
-                          };
-                        }),
+                        availableParts: _d
+                          .filter(function (e) {
+                            return e.unlockCondition(xg.getInstance());
+                          })
+                          .map(function (e) {
+                            return {
+                              name: e.name,
+                              id: e.id,
+                              category: e.category,
+                            };
+                          }),
                         totalStats: o,
                         validationError: this.validationError,
                       }
@@ -21284,9 +21278,9 @@
               }),
               t
             );
-          })(C),
-          bd = Gd.getInstance(),
-          Dd = (function () {
+          })(v),
+          Dd = bd.getInstance(),
+          wd = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -21320,9 +21314,9 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          wd = function () {
+          Xd = function () {
             return (
-              (wd =
+              (Xd =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -21331,10 +21325,10 @@
                         (e[o] = t[o]);
                   return e;
                 }),
-              wd.apply(this, arguments)
+              Xd.apply(this, arguments)
             );
           },
-          Xd = (function (e) {
+          kd = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -21349,7 +21343,7 @@
               );
             }
             return (
-              Dd(t, e),
+              wd(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -21360,13 +21354,13 @@
                 return this.hangar;
               }),
               (t.prototype.destroyShip = function (e) {
-                var t = kg
+                var t = xg
                   .getInstance()
                   .space.spaceship.models.find(function (t) {
                     return t.uuid === e;
                   });
                 if (t) {
-                  var n = kg
+                  var n = xg
                       .getInstance()
                       .space.spaceship.calculateStats(t).costsOriginal,
                     i = this.hangar.findIndex(function (t) {
@@ -21375,29 +21369,29 @@
                   i > -1 &&
                     (this.hangar[i].amount--,
                     n.forEach(function (e) {
-                      kg.getInstance().resources.addResource(
+                      xg.getInstance().resources.addResource(
                         e.id,
                         0.8 * e.amount
                       );
                     }),
-                    xg.resources.reassertBalances());
+                    Yg.resources.reassertBalances());
                 } else console.error("Model ".concat(e, " not found"));
               }),
               (t.prototype.buildShip = function (e) {
-                var t = kg
+                var t = xg
                   .getInstance()
                   .space.spaceship.models.find(function (t) {
                     return t.uuid === e;
                   });
                 if (t) {
-                  var n = kg.getInstance().space.spaceship.calculateStats(t),
+                  var n = xg.getInstance().space.spaceship.calculateStats(t),
                     i = n.costsOriginal;
                   if (n.isAvailable) {
                     var o = this.hangar.findIndex(function (t) {
                       return t.id === e;
                     });
-                    kg.getInstance().resources.subtractResourceBatch(i),
-                      xg.resources.reassertBalances(),
+                    xg.getInstance().resources.subtractResourceBatch(i),
+                      Yg.resources.reassertBalances(),
                       o > -1
                         ? this.hangar[o].amount++
                         : this.hangar.push({ id: e, amount: 1 });
@@ -21409,8 +21403,8 @@
                   return t.id === e.uuid;
                 });
                 t || (t = { id: e.uuid, amount: 0 });
-                var n = kg.getInstance().space.spaceship.calculateStats(e),
-                  i = { stats: wd(wd({}, md.stats), n.stats), costs: n.costs };
+                var n = xg.getInstance().space.spaceship.calculateStats(e),
+                  i = { stats: Xd(Xd({}, hd.stats), n.stats), costs: n.costs };
                 return {
                   id: t.id,
                   amount: t.amount,
@@ -21435,8 +21429,8 @@
               (t.prototype.dataToUI = function () {
                 var e = this;
                 return {
-                  isUnlocked: xg.space.spaceship.models.length > 0,
-                  ships: kg
+                  isUnlocked: Yg.space.spaceship.models.length > 0,
+                  ships: xg
                     .getInstance()
                     .space.spaceship.models.map(function (t) {
                       return e.processToUI(t);
@@ -21448,9 +21442,9 @@
               }),
               t
             );
-          })(C),
-          Hd = Xd.getInstance(),
-          kd = (function () {
+          })(v),
+          Hd = kd.getInstance(),
+          xd = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -21484,9 +21478,9 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          xd = function () {
+          Yd = function () {
             return (
-              (xd =
+              (Yd =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -21495,10 +21489,10 @@
                         (e[o] = t[o]);
                   return e;
                 }),
-              xd.apply(this, arguments)
+              Yd.apply(this, arguments)
             );
           },
-          Yd = (function (e) {
+          Wd = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -21507,7 +21501,7 @@
                   "[spaceship-fleet] load-to-editor",
                   function (e) {
                     console.log("Load to editor", e),
-                      (t.editing = xd(
+                      (t.editing = Yd(
                         {},
                         t.fleets.find(function (t) {
                           return t.uuid === e.uuid;
@@ -21547,7 +21541,7 @@
               );
             }
             return (
-              kd(t, e),
+              xd(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -21575,7 +21569,7 @@
                       (n[e.shipId] || (n[e.shipId] = 0),
                       n[e.shipId]++,
                       n[e.shipId] >
-                        kg.getInstance().space.hangar.getAmountById(e.shipId) &&
+                        xg.getInstance().space.hangar.getAmountById(e.shipId) &&
                         t.push(e));
                   }),
                   t
@@ -21594,7 +21588,7 @@
                     this.editing.slots[r].shipId = void 0;
                   else {
                     var a = this.getModelUsed(e);
-                    xg.space.hangar.getAmountById(e) <= a ||
+                    Yg.space.hangar.getAmountById(e) <= a ||
                       (r < 0
                         ? null === (o = this.editing) ||
                           void 0 === o ||
@@ -21627,10 +21621,10 @@
                           : n.uuid)
                       );
                     });
-                    this.fleets[n] = xd({}, this.editing);
+                    this.fleets[n] = Yd({}, this.editing);
                   } else
                     this.fleets.push(
-                      xd(xd({}, this.editing), { uuid: _d.Z() })
+                      Yd(Yd({}, this.editing), { uuid: Md.Z() })
                     );
               }),
               (t.prototype.deleteFleet = function (e) {
@@ -21668,14 +21662,14 @@
                                       return e.line === i && e.column === r;
                                     });
                             if (!c || !c.shipId) return t.push(a), "continue";
-                            var s = xg.space.spaceship.getModelWithStats(
+                            var s = Yg.space.spaceship.getModelWithStats(
                               c.shipId
                             );
                             if (!s) return t.push(a), "continue";
                             var u = s.stats,
                               l = s.name,
                               p = s.uuid;
-                            (a.stats = xd(xd({}, md.stats), u)),
+                            (a.stats = Yd(Yd({}, hd.stats), u)),
                               (a.selectedName = l),
                               (a.selectedUUID = p),
                               t.push(a);
@@ -21698,7 +21692,7 @@
                 var e,
                   t = this;
                 return {
-                  isUnlocked: xg.space.spaceship.models.length > 0,
+                  isUnlocked: Yg.space.spaceship.models.length > 0,
                   list: this.fleets.map(function (e) {
                     var n;
                     return {
@@ -21719,7 +21713,7 @@
                             : e.uuid,
                         name: this.editing.name,
                         slots: this.slotsToUI(),
-                        options: xg.space.hangar.hangar.map(function (e) {
+                        options: Yg.space.hangar.hangar.map(function (e) {
                           var n;
                           return {
                             id: e.id,
@@ -21727,7 +21721,7 @@
                             used: t.getModelUsed(e.id),
                             name:
                               (null ===
-                                (n = xg.space.spaceship.models.find(function (
+                                (n = Yg.space.spaceship.models.find(function (
                                   t
                                 ) {
                                   return t.uuid === e.id;
@@ -21745,9 +21739,9 @@
               }),
               t
             );
-          })(C),
-          Wd = Yd.getInstance(),
-          Zd = (function () {
+          })(v),
+          Zd = Wd.getInstance(),
+          jd = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -21795,7 +21789,7 @@
               Fd.apply(this, arguments)
             );
           },
-          jd = (function (e) {
+          Kd = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -21804,7 +21798,7 @@
               );
             }
             return (
-              Zd(t, e),
+              jd(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -21812,16 +21806,16 @@
                 for (var t, n = [], i = 0; i < 2; i++)
                   for (var o = 0; o < 5; o++) {
                     var r =
-                      (((t = {})[Jp.SPEED] = 2 + 0.1 * e),
-                      (t[Jp.POWER] = 1),
-                      (t[Jp.FUEL_CONSUMPTION] = 0),
-                      (t[Jp.WEAPON_COOLDOWN] = 3),
-                      (t[Jp.DAMAGE] = 4 * (e + 1) * Math.pow(1.4, e)),
-                      (t[Jp.HULL_REPAIR] = 0),
-                      (t[Jp.DURABILITY] = 45 * (e + 1) * Math.pow(1.4, e)),
-                      (t[Jp.SHIELD_REGEN] = 0.1 * Math.pow(1.4, e)),
-                      (t[Jp.SHIELD_MITIGATION] = 0.3),
-                      (t[Jp.SHIELD_CAP] = 20 * (e + 1) * Math.pow(1.4, e)),
+                      (((t = {})[$p.SPEED] = 2 + 0.1 * e),
+                      (t[$p.POWER] = 1),
+                      (t[$p.FUEL_CONSUMPTION] = 0),
+                      (t[$p.WEAPON_COOLDOWN] = 3),
+                      (t[$p.DAMAGE] = 4 * (e + 1) * Math.pow(1.4, e)),
+                      (t[$p.HULL_REPAIR] = 0),
+                      (t[$p.DURABILITY] = 45 * (e + 1) * Math.pow(1.4, e)),
+                      (t[$p.SHIELD_REGEN] = 0.1 * Math.pow(1.4, e)),
+                      (t[$p.SHIELD_MITIGATION] = 0.3),
+                      (t[$p.SHIELD_CAP] = 20 * (e + 1) * Math.pow(1.4, e)),
                       t);
                     n.push({ shipId: "Nomad", line: i, column: o, stats: r });
                   }
@@ -21831,16 +21825,16 @@
                 var t;
                 return Fd(
                   Fd({}, e),
-                  (((t = {})[$p.ACTUAL_DURABILITY] = e.Durability),
-                  (t[$p.ACTUAL_RECHARGE] = 0),
-                  (t[$p.ACTUAL_SHIELD] = e[Jp.SHIELD_CAP]),
+                  (((t = {})[eE.ACTUAL_DURABILITY] = e.Durability),
+                  (t[eE.ACTUAL_RECHARGE] = 0),
+                  (t[eE.ACTUAL_SHIELD] = e[$p.SHIELD_CAP]),
                   t)
                 );
               }),
               (t.prototype.initializeFight = function (e) {
                 var t = this,
-                  n = xg.space.fleet.fleets.find(function (e) {
-                    return e.uuid === xg.space.battlefield.state.fleetUsed;
+                  n = Yg.space.fleet.fleets.find(function (e) {
+                    return e.uuid === Yg.space.battlefield.state.fleetUsed;
                   });
                 n &&
                   ((this.state.me = n.slots
@@ -21848,7 +21842,7 @@
                       return !!e.shipId;
                     })
                     .map(function (e) {
-                      var n = xg.space.spaceship.getModelWithStats(e.shipId);
+                      var n = Yg.space.spaceship.getModelWithStats(e.shipId);
                       if (!n)
                         throw new Error("Cant calculate model " + e.shipId);
                       return {
@@ -21858,7 +21852,7 @@
                         line: e.line,
                         side: 0,
                         stats: t.fullfillStatsBeforeBattle(
-                          Fd(Fd({}, md.stats), n.stats)
+                          Fd(Fd({}, hd.stats), n.stats)
                         ),
                       };
                     })),
@@ -21870,7 +21864,7 @@
                       line: e.line,
                       side: 1,
                       stats: t.fullfillStatsBeforeBattle(
-                        Fd(Fd({}, md.stats), e.stats)
+                        Fd(Fd({}, hd.stats), e.stats)
                       ),
                     };
                   })),
@@ -21889,9 +21883,9 @@
                 t.forEach(function (e, i) {
                   (e.line < t[n].line ||
                     (e.line === t[n].line &&
-                      e.stats[Jp.DAMAGE] / e.stats[$p.ACTUAL_DURABILITY] >
-                        t[n].stats[Jp.DAMAGE] /
-                          t[n].stats[$p.ACTUAL_DURABILITY])) &&
+                      e.stats[$p.DAMAGE] / e.stats[eE.ACTUAL_DURABILITY] >
+                        t[n].stats[$p.DAMAGE] /
+                          t[n].stats[eE.ACTUAL_DURABILITY])) &&
                     (n = i);
                 });
                 var i = {
@@ -21900,8 +21894,8 @@
                   side: e.side,
                   tx: t[n].x,
                   ty: t[n].y,
-                  dmg: e.stats[Jp.DAMAGE],
-                  uuid: _d.Z(),
+                  dmg: e.stats[$p.DAMAGE],
+                  uuid: Md.Z(),
                 };
                 this.state.bullets.push(i);
               }),
@@ -21932,37 +21926,37 @@
                     var c = e.dmg,
                       s = Math.min(
                         c,
-                        r.stats[$p.ACTUAL_SHIELD] /
-                          (1 - r.stats[Jp.SHIELD_MITIGATION])
+                        r.stats[eE.ACTUAL_SHIELD] /
+                          (1 - r.stats[$p.SHIELD_MITIGATION])
                       );
-                    (r.stats[$p.ACTUAL_SHIELD] -=
-                      c * (1 - r.stats[Jp.SHIELD_MITIGATION])),
+                    (r.stats[eE.ACTUAL_SHIELD] -=
+                      c * (1 - r.stats[$p.SHIELD_MITIGATION])),
                       (c -= s),
-                      (r.stats[$p.ACTUAL_DURABILITY] -= c),
-                      r.stats[$p.ACTUAL_SHIELD] < 0 &&
-                        (r.stats[$p.ACTUAL_SHIELD] = 0),
-                      r.stats[$p.ACTUAL_DURABILITY] < 0 && i.splice(a, 1);
+                      (r.stats[eE.ACTUAL_DURABILITY] -= c),
+                      r.stats[eE.ACTUAL_SHIELD] < 0 &&
+                        (r.stats[eE.ACTUAL_SHIELD] = 0),
+                      r.stats[eE.ACTUAL_DURABILITY] < 0 && i.splice(a, 1);
                   }
                   return !0;
                 }
                 return !1;
               }),
               (t.prototype.processShip = function (e, t) {
-                e.stats[$p.ACTUAL_DURABILITY] < e.stats[Jp.DURABILITY] &&
-                  e.stats[Jp.HULL_REPAIR] > 0 &&
-                  (e.stats[$p.ACTUAL_DURABILITY] = Math.min(
-                    e.stats[$p.ACTUAL_DURABILITY] + t * e.stats[Jp.HULL_REPAIR],
-                    e.stats[Jp.DURABILITY]
+                e.stats[eE.ACTUAL_DURABILITY] < e.stats[$p.DURABILITY] &&
+                  e.stats[$p.HULL_REPAIR] > 0 &&
+                  (e.stats[eE.ACTUAL_DURABILITY] = Math.min(
+                    e.stats[eE.ACTUAL_DURABILITY] + t * e.stats[$p.HULL_REPAIR],
+                    e.stats[$p.DURABILITY]
                   )),
-                  e.stats[$p.ACTUAL_SHIELD] < e.stats[Jp.SHIELD_CAP] &&
-                    e.stats[Jp.SHIELD_REGEN] > 0 &&
-                    (e.stats[$p.ACTUAL_SHIELD] = Math.min(
-                      e.stats[$p.ACTUAL_SHIELD] + t * e.stats[Jp.SHIELD_REGEN],
-                      e.stats[Jp.SHIELD_CAP]
+                  e.stats[eE.ACTUAL_SHIELD] < e.stats[$p.SHIELD_CAP] &&
+                    e.stats[$p.SHIELD_REGEN] > 0 &&
+                    (e.stats[eE.ACTUAL_SHIELD] = Math.min(
+                      e.stats[eE.ACTUAL_SHIELD] + t * e.stats[$p.SHIELD_REGEN],
+                      e.stats[$p.SHIELD_CAP]
                     )),
-                  (e.stats[$p.ACTUAL_RECHARGE] += t),
-                  e.stats[$p.ACTUAL_RECHARGE] >= e.stats[Jp.WEAPON_COOLDOWN] &&
-                    ((e.stats[$p.ACTUAL_RECHARGE] = 0),
+                  (e.stats[eE.ACTUAL_RECHARGE] += t),
+                  e.stats[eE.ACTUAL_RECHARGE] >= e.stats[$p.WEAPON_COOLDOWN] &&
+                    ((e.stats[eE.ACTUAL_RECHARGE] = 0),
                     this.spaceshipAttack(e));
               }),
               (t.prototype.process = function (e) {
@@ -21994,7 +21988,7 @@
                         null !==
                           (n =
                             null ===
-                              (t = xg.space.spaceship.models.find(function (t) {
+                              (t = Yg.space.spaceship.models.find(function (t) {
                                 return t.uuid === e.modelId;
                               })) || void 0 === t
                               ? void 0
@@ -22011,9 +22005,9 @@
               }),
               t
             );
-          })(C),
-          Kd = jd.getInstance(),
-          Vd = (function () {
+          })(v),
+          Vd = Kd.getInstance(),
+          qd = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -22047,9 +22041,9 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          qd = function () {
+          zd = function () {
             return (
-              (qd =
+              (zd =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -22058,10 +22052,10 @@
                         (e[o] = t[o]);
                   return e;
                 }),
-              qd.apply(this, arguments)
+              zd.apply(this, arguments)
             );
           },
-          zd = (function (e) {
+          Qd = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -22076,7 +22070,7 @@
                   pilot: { xp: 0, maxXp: 10, level: 0 },
                 }),
                 (t.statsCached = { speed: 0 }),
-                (t.fight = Kd),
+                (t.fight = Vd),
                 t.workDispatcher.on(
                   "[space-battlefield] set fleet",
                   function (e) {
@@ -22133,7 +22127,7 @@
               );
             }
             return (
-              Vd(t, e),
+              qd(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -22158,7 +22152,7 @@
               (t.prototype.calcUsedFleetStats = function () {
                 var e = this;
                 if (this.state.fleetUsed) {
-                  var t = xg.space.fleet.fleets.find(function (t) {
+                  var t = Yg.space.fleet.fleets.find(function (t) {
                     return t.uuid === e.state.fleetUsed;
                   });
                   if (t) {
@@ -22167,13 +22161,13 @@
                     return (
                       t.slots.forEach(function (e) {
                         if (e.shipId) {
-                          var t = xg.space.spaceship.getModelWithStats(
+                          var t = Yg.space.spaceship.getModelWithStats(
                             e.shipId
                           );
                           if (t) {
                             var o = t.stats;
                             (n = Math.min(n, o.Speed || 1)),
-                              (i += o[Jp.FUEL_CONSUMPTION] || 0);
+                              (i += o[$p.FUEL_CONSUMPTION] || 0);
                           }
                         }
                       }),
@@ -22197,12 +22191,12 @@
               }),
               (t.prototype.dataToUI = function () {
                 var e = this,
-                  t = xg.space.fleet.fleets.find(function (t) {
+                  t = Yg.space.fleet.fleets.find(function (t) {
                     return t.uuid === e.state.fleetUsed;
                   }),
                   n = this.getFromCache();
                 return {
-                  isUnlocked: xg.space.fleet.fleets.length > 0,
+                  isUnlocked: Yg.space.fleet.fleets.length > 0,
                   battlefield: {
                     level: this.state.level,
                     maxLevel: this.state.maxLevel,
@@ -22220,23 +22214,23 @@
                       ? this.state.traveling.progress /
                         this.state.traveling.total
                       : 0,
-                    travelEta: X(
+                    travelEta: k(
                       (this.state.traveling.total -
                         this.state.traveling.progress) /
                         ((null == n ? void 0 : n.speed) || 1e-50)
                     ),
                   },
-                  fleetSelectable: xg.space.fleet.fleets.map(function (t) {
+                  fleetSelectable: Yg.space.fleet.fleets.map(function (t) {
                     return {
                       uuid: t.uuid,
                       name: t.name,
                       isEditing: e.state.fleetUsed === t.uuid,
-                      isInvalid: xg.space.fleet.getInvalidSlots(t).length > 0,
+                      isInvalid: Yg.space.fleet.getInvalidSlots(t).length > 0,
                     };
                   }),
                   fight: this.fight.dataToUI(),
-                  pilot: qd(qd({}, this.state.pilot), {
-                    bonus: "x".concat(H(Ld(xg))),
+                  pilot: zd(zd({}, this.state.pilot), {
+                    bonus: "x".concat(H(Ld(Yg))),
                   }),
                 };
               }),
@@ -22254,21 +22248,21 @@
                   t = this;
                 if (this.state.fleetUsed)
                   if (
-                    xg.space.fleet.getInvalidSlots(
-                      xg.space.fleet.fleets.find(function (e) {
+                    Yg.space.fleet.getInvalidSlots(
+                      Yg.space.fleet.fleets.find(function (e) {
                         return e.uuid === t.state.fleetUsed;
                       })
                     ).length > 0
                   )
                     this.state.fleetUsed = void 0;
                   else {
-                    var n = xg.resources.getResource(l.FUEL),
+                    var n = Yg.resources.getResource(l.FUEL),
                       i =
                         (null === (e = this.getFromCache()) || void 0 === e
                           ? void 0
                           : e.fuelConsumption) || 0;
                     n + i > 0 &&
-                      (xg.resources.subtractResource(l.FUEL, -i),
+                      (Yg.resources.subtractResource(l.FUEL, -i),
                       (this.state.isFighting = !0),
                       this.resetTravel());
                   }
@@ -22277,15 +22271,15 @@
                 var e =
                     0.05 +
                     0.01 *
-                      xg.landingZone.landingZoneBuildings.getBuildingLevel(
+                      Yg.landingZone.landingZoneBuildings.getBuildingLevel(
                         a.ANTIMATTER_STUDY_CENTER
                       ),
                   t = Math.random();
                 if ((console.log("Check: ", e, t), t < e)) {
                   var n = 0.1 + 0.01 * this.state.level;
-                  xg.resources.addResource(l.ANOMALITIES, n),
-                    xg.resources.reassertBalances(),
-                    xg.eventLog.registerGain("Anomalies", H(n));
+                  Yg.resources.addResource(l.ANOMALITIES, n),
+                    Yg.resources.reassertBalances(),
+                    Yg.eventLog.registerGain("Anomalies", H(n));
                 }
               }),
               (t.prototype.process = function (e) {
@@ -22316,14 +22310,14 @@
                         Math.pow(1.2, this.state.level) *
                         Math.pow(
                           1.3,
-                          xg.prestige.colonizePlanet.getUpgradeLevel(R.PILOT_XP)
+                          Yg.prestige.colonizePlanet.getUpgradeLevel(I.PILOT_XP)
                         )),
                       (this.state.maxLevel = Math.max(
                         this.state.maxLevel,
                         this.state.level + 1
                       )),
-                      xg.science.scienceResearches.getResearchLevel(
-                        v.EXOTIC_MATTER_STUDY
+                      Yg.science.scienceResearches.getResearchLevel(
+                        S.EXOTIC_MATTER_STUDY
                       ) > 0 && this.awardAnomaly(),
                       this.stopFight(),
                       this.state.isAutofight && this.startFight(),
@@ -22353,9 +22347,9 @@
               }),
               t
             );
-          })(C),
-          Qd = zd.getInstance(),
-          Jd = (function () {
+          })(v),
+          Jd = Qd.getInstance(),
+          $d = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -22389,19 +22383,19 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          $d = (function (e) {
+          eg = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
-                (t.spaceship = bd),
+                (t.spaceship = Dd),
                 (t.hangar = Hd),
-                (t.fleet = Wd),
-                (t.battlefield = Qd),
+                (t.fleet = Zd),
+                (t.battlefield = Jd),
                 t
               );
             }
             return (
-              Jd(t, e),
+              $d(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -22424,8 +22418,8 @@
               (t.prototype.dataToUI = function () {
                 return {
                   isUnlocked:
-                    xg.science.scienceResearches.getResearchLevel(
-                      v.ROCKET_SCIENCE
+                    Yg.science.scienceResearches.getResearchLevel(
+                      S.ROCKET_SCIENCE
                     ) > 0,
                   spaceship: this.spaceship.dataToUI(),
                   hangar: this.hangar.dataToUI(),
@@ -22444,8 +22438,8 @@
               }),
               t
             );
-          })(C).getInstance(),
-          eg = (function () {
+          })(v).getInstance(),
+          tg = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -22479,7 +22473,7 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          tg = (function (e) {
+          ng = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -22501,7 +22495,7 @@
               );
             }
             return (
-              eg(t, e),
+              tg(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -22517,19 +22511,19 @@
               }),
               (t.prototype.dataToUI = function () {
                 var e = this,
-                  t = tE.map(function (t) {
+                  t = nE.map(function (t) {
                     return e.processToUI(t);
                   });
                 return (
                   this.isPrestigeAvailable() &&
-                    xg.newNotifications.registerNotification(
+                    Yg.newNotifications.registerNotification(
                       "prestige:transmit-knowledge"
                     ),
                   {
                     upgrades: t,
                     isUnlocked:
                       this.numPrestiged > 0 || this.isPrestigeAvailable(),
-                    kp: H(xg.resources.getResource(l.KNOWLEDGE_POINT)),
+                    kp: H(Yg.resources.getResource(l.KNOWLEDGE_POINT)),
                     prestige: {
                       isAvailable: this.isPrestigeAvailable(),
                       description: "",
@@ -22554,11 +22548,11 @@
                   return t.id === e.id;
                 });
                 t || ((t = { id: e.id, level: 0 }), this.upgrades.push(t));
-                var n = w.calcBatchAll(
+                var n = X.calcBatchAll(
                     e.getCost,
-                    kg.getInstance(),
+                    xg.getInstance(),
                     t.level,
-                    kg.getInstance().resources.getBatchObject()
+                    xg.getInstance().resources.getBatchObject()
                   ),
                   i = n.reduce(function (e, t) {
                     return Math.min(e, t.max);
@@ -22567,14 +22561,14 @@
                   id: e.id,
                   name: e.name,
                   description: e.description,
-                  isUnlocked: e.unlockCondition(xg),
+                  isUnlocked: e.unlockCondition(Yg),
                   isAvailable: i >= 1,
-                  cost: kg
+                  cost: xg
                     .getInstance()
                     .resources.assertEnought(
                       n,
-                      kg.getInstance().resources.getBatchObject(),
-                      kg.getInstance().resources.getBatchBalanceObject()
+                      xg.getInstance().resources.getBatchObject(),
+                      xg.getInstance().resources.getBatchBalanceObject()
                     ),
                   progress: i < 1 ? (100 * i).toPrecision(3) : "100",
                   isMaxedOut: !!e.maxLevel && e.maxLevel <= t.level,
@@ -22584,7 +22578,7 @@
                 };
               }),
               (t.prototype.getEffectGain = function (e) {
-                var t = tE.filter(function (t) {
+                var t = nE.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getEffectGain) || void 0 === n
                       ? void 0
@@ -22603,7 +22597,7 @@
                         ? void 0
                         : o[e])
                     ) {
-                      var a = w.calculate(xg, r.getEffectGain[e], 0, i.level);
+                      var a = X.calculate(Yg, r.getEffectGain[e], 0, i.level);
                       n.push({
                         label: "Knowledge: ".concat(r.name),
                         value: a,
@@ -22616,7 +22610,7 @@
                 );
               }),
               (t.prototype.getEffectMultiplier = function (e) {
-                var t = tE.filter(function (t) {
+                var t = nE.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getEffectMultiplier) ||
                     void 0 === n
@@ -22636,8 +22630,8 @@
                         ? void 0
                         : o[e])
                     ) {
-                      var a = w.calculate(
-                        xg,
+                      var a = X.calculate(
+                        Yg,
                         r.getEffectMultiplier[e],
                         i.level,
                         1
@@ -22655,7 +22649,7 @@
                 );
               }),
               (t.prototype.getResourceBeingProduced = function (e) {
-                var t = tE.filter(function (t) {
+                var t = nE.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getGain) || void 0 === n
                       ? void 0
@@ -22672,7 +22666,7 @@
                       r &&
                       (null === (o = r.getGain) || void 0 === o ? void 0 : o[e])
                     ) {
-                      var a = w.calculate(xg, r.getGain[e], 0, i.level);
+                      var a = X.calculate(Yg, r.getGain[e], 0, i.level);
                       n.push({
                         label: "Knowledge: ".concat(r.name),
                         value: a,
@@ -22685,7 +22679,7 @@
                 );
               }),
               (t.prototype.getResourceMultiplier = function (e) {
-                var t = tE.filter(function (t) {
+                var t = nE.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getGainMultiplier) || void 0 === n
                       ? void 0
@@ -22704,8 +22698,8 @@
                         ? void 0
                         : o[e])
                     ) {
-                      var a = w.calculate(
-                        xg,
+                      var a = X.calculate(
+                        Yg,
                         r.getGainMultiplier[e],
                         0,
                         i.level
@@ -22724,7 +22718,7 @@
                 );
               }),
               (t.prototype.getResourceBeingStored = function (e) {
-                var t = tE.filter(function (t) {
+                var t = nE.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getCapacityEffect) || void 0 === n
                       ? void 0
@@ -22744,8 +22738,8 @@
                         ? void 0
                         : o[e])
                     ) {
-                      var c = w.calculate(
-                        xg,
+                      var c = X.calculate(
+                        Yg,
                         null === (r = a.getCapacityEffect) || void 0 === r
                           ? void 0
                           : r[e],
@@ -22764,7 +22758,7 @@
                 );
               }),
               (t.prototype.getCapacityMult = function (e) {
-                var t = tE.filter(function (t) {
+                var t = nE.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getCapacityMultiplier) ||
                     void 0 === n
@@ -22778,8 +22772,8 @@
                       return e.id === i.id;
                     });
                     if (o && o.getCapacityMultiplier) {
-                      var r = w.calculate(
-                        xg,
+                      var r = X.calculate(
+                        Yg,
                         o.getCapacityMultiplier[e],
                         0,
                         i.level
@@ -22798,7 +22792,7 @@
               }),
               (t.prototype.doUpgrade = function (e, t) {
                 void 0 === t && (t = 1);
-                var n = tE.find(function (t) {
+                var n = nE.find(function (t) {
                   return t.id === e;
                 });
                 if (n) {
@@ -22810,52 +22804,50 @@
                       this.upgrades.push({ id: e, level: 0 });
                   else if (n.maxLevel && this.upgrades[i].level >= n.maxLevel)
                     return;
-                  var o = w
-                    .calcBatchAll(
-                      n.getCost,
-                      kg.getInstance(),
-                      this.upgrades[i].level,
-                      kg.getInstance().resources.getBatchObject(),
-                      t
-                    )
-                    .reduce(function (e, t) {
-                      return Math.min(e, Math.floor(t.max));
-                    }, 1e300);
+                  var o = X.calcBatchAll(
+                    n.getCost,
+                    xg.getInstance(),
+                    this.upgrades[i].level,
+                    xg.getInstance().resources.getBatchObject(),
+                    t
+                  ).reduce(function (e, t) {
+                    return Math.min(e, Math.floor(t.max));
+                  }, 1e300);
                   if (!(o < 1)) {
                     var r = Math.min(Math.floor(o), t),
-                      a = w.calcBatchAll(
+                      a = X.calcBatchAll(
                         n.getCost,
-                        kg.getInstance(),
+                        xg.getInstance(),
                         this.upgrades[i].level,
-                        kg.getInstance().resources.getBatchObject(),
+                        xg.getInstance().resources.getBatchObject(),
                         r
                       );
                     (this.upgrades[i].level += r),
                       console.log("costs: ", a),
-                      kg.getInstance().resources.subtractResourceBatch(a),
-                      xg.resources.reassertBalances();
+                      xg.getInstance().resources.subtractResourceBatch(a),
+                      Yg.resources.reassertBalances();
                   }
                 }
               }),
               (t.prototype.isPrestigeAvailable = function () {
                 return (
-                  xg.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                  Yg.landingZone.landingZoneUpgrades.getUpgradeLevel(
                     r.GREAT_RADIO_TRANSMITTER
-                  ) > 0 && xg.colony.colonists > 50
+                  ) > 0 && Yg.colony.colonists > 50
                 );
               }),
               (t.prototype.getPrestigeGain = function () {
-                var e = kg
+                var e = xg
                   .getInstance()
                   .prestige.colonizePlanet.processPlanetToUI(
-                    kg.getInstance().prestige.colonizePlanet.current
+                    xg.getInstance().prestige.colonizePlanet.current
                   );
                 return (
-                  (xg.colony.colonists - 50) *
-                  kg.getInstance().prestige.colonizePlanet.getCurrentXPBonus() *
+                  (Yg.colony.colonists - 50) *
+                  xg.getInstance().prestige.colonizePlanet.getCurrentXPBonus() *
                   Math.pow(
                     1.5,
-                    kg
+                    xg
                       .getInstance()
                       .landingZone.landingZoneUpgrades.getUpgradeLevel(
                         r.QUANTUM_ENCRYPTION
@@ -22863,157 +22855,142 @@
                   ) *
                   Math.pow(
                     1.5,
-                    kg
+                    xg
                       .getInstance()
                       .landingZone.landingZoneUpgrades.getUpgradeLevel(
                         r.HUGE_GAMMA_TRANSMITTER
                       )
                   ) *
                   e.xpGain *
-                  kg.getInstance().space.battlefield.getKPBonus()
+                  xg.getInstance().space.battlefield.getKPBonus()
                 );
               }),
               (t.prototype.doPrestige = function () {
                 if (this.isPrestigeAvailable()) {
                   var e = this.getPrestigeGain(),
-                    t = xg.resources.getResource(l.COLONIZE_XP) || 0,
-                    n = xg.resources.getResource(l.KNOWLEDGE_POINT) || 0;
-                  xg.eventLog.registerPrestige(
+                    t = Yg.resources.getResource(l.COLONIZE_XP) || 0,
+                    n = Yg.resources.getResource(l.KNOWLEDGE_POINT) || 0;
+                  Yg.eventLog.registerPrestige(
                     "Transmit knowledge",
                     "".concat(H(e), " KP")
                   ),
-                    xg.landingZone.reset(),
-                    xg.colony.reset(),
-                    xg.crafting.reset(),
-                    xg.science.reset(),
-                    xg.laws.reset(),
-                    xg.resources.reset(),
-                    xg.space.reset(),
-                    xg.queuedItems.reset(),
-                    (xg.statistics.stats.kpTotal =
-                      (xg.statistics.stats.kpTotal || 0) + e),
-                    (xg.statistics.stats.kpMaxGain = Math.max(
-                      xg.statistics.stats.kpMaxGain || 0,
+                    Yg.landingZone.reset(),
+                    Yg.colony.reset(),
+                    Yg.crafting.reset(),
+                    Yg.science.reset(),
+                    Yg.laws.reset(),
+                    Yg.resources.reset(),
+                    Yg.space.reset(),
+                    Yg.queuedItems.reset(),
+                    (Yg.statistics.stats.kpTotal =
+                      (Yg.statistics.stats.kpTotal || 0) + e),
+                    (Yg.statistics.stats.kpMaxGain = Math.max(
+                      Yg.statistics.stats.kpMaxGain || 0,
                       e
                     )),
-                    xg.resources.addResource(l.KNOWLEDGE_POINT, e + n),
-                    xg.resources.addResource(l.COLONIZE_XP, t),
-                    (xg.statistics.stats.timeThisPrestige = 0),
+                    Yg.resources.addResource(l.KNOWLEDGE_POINT, e + n),
+                    Yg.resources.addResource(l.COLONIZE_XP, t),
+                    (Yg.statistics.stats.timeThisPrestige = 0),
                     this.numPrestiged++,
-                    xg.resources.reassertBalances();
+                    Yg.resources.reassertBalances();
                 }
               }),
               (t.prototype.process = function (e) {}),
               t
             );
-          })(C),
-          ng = tg.getInstance(),
-          ig = [
+          })(v),
+          ig = ng.getInstance(),
+          og = [
             {
-              id: f.COLD,
-              category: A.TEMPERATURE,
+              id: R.COLD,
+              category: f.TEMPERATURE,
               name: "Cold",
               complexityModifier: 1.15,
               getGainMultiplier:
-                ((QE = {}),
-                (QE[l.POWER] = function (e) {
-                  return { A: 1, B: 0.9, type: i.EXPONENTIAL };
-                }),
-                (QE[l.NUTRITION] = function (e) {
-                  return { A: 1, B: 0.9, type: i.EXPONENTIAL };
-                }),
-                (QE[l.BIOMASS] = function (e) {
-                  return { A: 1, B: 0.9, type: i.EXPONENTIAL };
-                }),
-                (QE[l.WATER] = function (e) {
-                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
-                }),
-                (QE[l.OXYGEN] = function (e) {
-                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
-                }),
-                QE),
-            },
-            {
-              id: f.HOT,
-              category: A.TEMPERATURE,
-              name: "Hot",
-              complexityModifier: 0.9,
-              getGainMultiplier:
                 ((JE = {}),
                 (JE[l.POWER] = function (e) {
-                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
+                  return { A: 1, B: 0.9, type: i.EXPONENTIAL };
+                }),
+                (JE[l.NUTRITION] = function (e) {
+                  return { A: 1, B: 0.9, type: i.EXPONENTIAL };
+                }),
+                (JE[l.BIOMASS] = function (e) {
+                  return { A: 1, B: 0.9, type: i.EXPONENTIAL };
                 }),
                 (JE[l.WATER] = function (e) {
-                  return { A: 1, B: 0.95, type: i.EXPONENTIAL };
+                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
                 }),
                 (JE[l.OXYGEN] = function (e) {
-                  return { A: 1, B: 0.95, type: i.EXPONENTIAL };
+                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
                 }),
                 JE),
             },
             {
-              id: f.ORE_POOR,
-              category: A.CRUST,
-              name: "Ore Poor",
-              complexityModifier: 1.2,
+              id: R.HOT,
+              category: f.TEMPERATURE,
+              name: "Hot",
+              complexityModifier: 0.9,
               getGainMultiplier:
                 (($E = {}),
-                ($E[l.ORE] = function (e) {
-                  return { A: 1, B: 0.8, type: i.EXPONENTIAL };
+                ($E[l.POWER] = function (e) {
+                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                ($E[l.STONE] = function (e) {
-                  return { A: 1, B: 0.8, type: i.EXPONENTIAL };
+                ($E[l.WATER] = function (e) {
+                  return { A: 1, B: 0.95, type: i.EXPONENTIAL };
                 }),
-                ($E[l.PLATINUM] = function (e) {
-                  return { A: 1, B: 0.8, type: i.EXPONENTIAL };
-                }),
-                ($E[l.IRON] = function (e) {
-                  return { A: 1, B: 0.8, type: i.EXPONENTIAL };
+                ($E[l.OXYGEN] = function (e) {
+                  return { A: 1, B: 0.95, type: i.EXPONENTIAL };
                 }),
                 $E),
             },
             {
-              id: f.ORE_RICH,
-              category: A.CRUST,
-              name: "Ore Rich",
-              complexityModifier: 0.85,
+              id: R.ORE_POOR,
+              category: f.CRUST,
+              name: "Ore Poor",
+              complexityModifier: 1.2,
               getGainMultiplier:
                 ((ed = {}),
                 (ed[l.ORE] = function (e) {
-                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
+                  return { A: 1, B: 0.8, type: i.EXPONENTIAL };
                 }),
                 (ed[l.STONE] = function (e) {
-                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
+                  return { A: 1, B: 0.8, type: i.EXPONENTIAL };
                 }),
                 (ed[l.PLATINUM] = function (e) {
-                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
+                  return { A: 1, B: 0.8, type: i.EXPONENTIAL };
                 }),
                 (ed[l.IRON] = function (e) {
-                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
+                  return { A: 1, B: 0.8, type: i.EXPONENTIAL };
                 }),
                 ed),
             },
             {
-              id: f.SMALL,
-              category: A.SIZE,
-              name: "Small",
-              complexityModifier: 1.2,
+              id: R.ORE_RICH,
+              category: f.CRUST,
+              name: "Ore Rich",
+              complexityModifier: 0.85,
               getGainMultiplier:
                 ((td = {}),
                 (td[l.ORE] = function (e) {
-                  return { A: 1, B: 0.9, type: i.EXPONENTIAL };
+                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
                 (td[l.STONE] = function (e) {
-                  return { A: 1, B: 0.9, type: i.EXPONENTIAL };
+                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
                 (td[l.PLATINUM] = function (e) {
-                  return { A: 1, B: 0.9, type: i.EXPONENTIAL };
+                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
                 (td[l.IRON] = function (e) {
-                  return { A: 1, B: 0.9, type: i.EXPONENTIAL };
+                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
                 td),
-              getCapacityMultiplier:
+            },
+            {
+              id: R.SMALL,
+              category: f.SIZE,
+              name: "Small",
+              complexityModifier: 1.2,
+              getGainMultiplier:
                 ((nd = {}),
                 (nd[l.ORE] = function (e) {
                   return { A: 1, B: 0.9, type: i.EXPONENTIAL };
@@ -23028,28 +23005,28 @@
                   return { A: 1, B: 0.9, type: i.EXPONENTIAL };
                 }),
                 nd),
+              getCapacityMultiplier:
+                ((id = {}),
+                (id[l.ORE] = function (e) {
+                  return { A: 1, B: 0.9, type: i.EXPONENTIAL };
+                }),
+                (id[l.STONE] = function (e) {
+                  return { A: 1, B: 0.9, type: i.EXPONENTIAL };
+                }),
+                (id[l.PLATINUM] = function (e) {
+                  return { A: 1, B: 0.9, type: i.EXPONENTIAL };
+                }),
+                (id[l.IRON] = function (e) {
+                  return { A: 1, B: 0.9, type: i.EXPONENTIAL };
+                }),
+                id),
             },
             {
-              id: f.LARGE,
-              category: A.SIZE,
+              id: R.LARGE,
+              category: f.SIZE,
               name: "Big",
               complexityModifier: 0.9,
               getGainMultiplier:
-                ((id = {}),
-                (id[l.ORE] = function (e) {
-                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
-                }),
-                (id[l.STONE] = function (e) {
-                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
-                }),
-                (id[l.PLATINUM] = function (e) {
-                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
-                }),
-                (id[l.IRON] = function (e) {
-                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
-                }),
-                id),
-              getCapacityMultiplier:
                 ((od = {}),
                 (od[l.ORE] = function (e) {
                   return { A: 1, B: 1.05, type: i.EXPONENTIAL };
@@ -23064,105 +23041,105 @@
                   return { A: 1, B: 1.05, type: i.EXPONENTIAL };
                 }),
                 od),
+              getCapacityMultiplier:
+                ((rd = {}),
+                (rd[l.ORE] = function (e) {
+                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
+                }),
+                (rd[l.STONE] = function (e) {
+                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
+                }),
+                (rd[l.PLATINUM] = function (e) {
+                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
+                }),
+                (rd[l.IRON] = function (e) {
+                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
+                }),
+                rd),
             },
             {
-              id: f.WET,
-              category: A.HUMIDITY,
+              id: R.WET,
+              category: f.HUMIDITY,
               name: "Wet",
               complexityModifier: 0.85,
               getGainMultiplier:
-                ((rd = {}),
-                (rd[l.WATER] = function (e) {
-                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
-                }),
-                (rd[l.NUTRITION] = function (e) {
-                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
-                }),
-                (rd[l.BIOMASS] = function (e) {
-                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
-                }),
-                (rd[l.WOOD] = function (e) {
-                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
-                }),
-                rd),
-              getCapacityMultiplier: {},
-            },
-            {
-              id: f.DRY,
-              category: A.HUMIDITY,
-              name: "Dry",
-              complexityModifier: 1.15,
-              getGainMultiplier:
                 ((ad = {}),
                 (ad[l.WATER] = function (e) {
-                  return { A: 1, B: 0.9, type: i.EXPONENTIAL };
+                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
                 (ad[l.NUTRITION] = function (e) {
-                  return { A: 1, B: 0.9, type: i.EXPONENTIAL };
+                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
                 (ad[l.BIOMASS] = function (e) {
-                  return { A: 1, B: 0.9, type: i.EXPONENTIAL };
+                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
                 (ad[l.WOOD] = function (e) {
-                  return { A: 1, B: 0.9, type: i.EXPONENTIAL };
+                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
                 ad),
               getCapacityMultiplier: {},
             },
             {
-              id: f.PEATY,
-              category: A.CRUST,
-              name: "Peaty",
-              complexityModifier: 1.3,
+              id: R.DRY,
+              category: f.HUMIDITY,
+              name: "Dry",
+              complexityModifier: 1.15,
               getGainMultiplier:
                 ((cd = {}),
+                (cd[l.WATER] = function (e) {
+                  return { A: 1, B: 0.9, type: i.EXPONENTIAL };
+                }),
+                (cd[l.NUTRITION] = function (e) {
+                  return { A: 1, B: 0.9, type: i.EXPONENTIAL };
+                }),
                 (cd[l.BIOMASS] = function (e) {
-                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
+                  return { A: 1, B: 0.9, type: i.EXPONENTIAL };
                 }),
                 (cd[l.WOOD] = function (e) {
-                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
+                  return { A: 1, B: 0.9, type: i.EXPONENTIAL };
                 }),
                 cd),
-              getEffectMultiplier:
+              getCapacityMultiplier: {},
+            },
+            {
+              id: R.PEATY,
+              category: f.CRUST,
+              name: "Peaty",
+              complexityModifier: 1.25,
+              getGainMultiplier:
                 ((sd = {}),
-                (sd[B.SECURITY] = function (e) {
-                  return { A: 1, B: 0.85, type: i.EXPONENTIAL };
+                (sd[l.BIOMASS] = function (e) {
+                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
+                }),
+                (sd[l.WOOD] = function (e) {
+                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
                 sd),
-              getCapacityMultiplier: {},
-            },
-            {
-              id: f.VOLCANIC,
-              category: A.TECTONICS,
-              name: "Volcanic",
-              complexityModifier: 1.4,
-              getGainMultiplier:
+              getEffectMultiplier:
                 ((ud = {}),
-                (ud[l.ORE] = function (e) {
-                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
-                }),
-                (ud[l.IRON] = function (e) {
-                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
+                (ud[_.SECURITY] = function (e) {
+                  return { A: 1, B: 0.85, type: i.EXPONENTIAL };
                 }),
                 ud),
-              getEffectMultiplier:
-                ((ld = {}),
-                (ld[B.AESTHETICS] = function (e) {
-                  return { A: 1, B: 0.82, type: i.EXPONENTIAL };
-                }),
-                ld),
               getCapacityMultiplier: {},
-              probabilityReduction: 0.5,
             },
             {
-              id: f.INACTIVE,
-              category: A.TECTONICS,
-              name: "Inactive",
-              complexityModifier: 1.4,
-              getGainMultiplier: {},
+              id: R.VOLCANIC,
+              category: f.TECTONICS,
+              name: "Volcanic",
+              complexityModifier: 1.25,
+              getGainMultiplier:
+                ((ld = {}),
+                (ld[l.ORE] = function (e) {
+                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
+                }),
+                (ld[l.IRON] = function (e) {
+                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
+                }),
+                ld),
               getEffectMultiplier:
                 ((pd = {}),
-                (pd[B.HEALTHCARE] = function (e) {
+                (pd[_.AESTHETICS] = function (e) {
                   return { A: 1, B: 0.82, type: i.EXPONENTIAL };
                 }),
                 pd),
@@ -23170,43 +23147,42 @@
               probabilityReduction: 0.5,
             },
             {
-              id: f.CALM,
-              category: A.TECTONICS,
-              name: "Calm",
-              complexityModifier: 0.8,
+              id: R.INACTIVE,
+              category: f.TECTONICS,
+              name: "Inactive",
+              complexityModifier: 1.25,
               getGainMultiplier: {},
               getEffectMultiplier:
                 ((Ed = {}),
-                (Ed[B.HEALTHCARE] = function (e) {
-                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
+                (Ed[_.HEALTHCARE] = function (e) {
+                  return { A: 1, B: 0.82, type: i.EXPONENTIAL };
                 }),
                 Ed),
               getCapacityMultiplier: {},
               probabilityReduction: 0.5,
             },
-          ],
-          og = [
             {
-              id: R.PRODUCTIVITY,
+              id: R.CALM,
+              category: f.TECTONICS,
+              name: "Calm",
+              complexityModifier: 0.8,
+              getGainMultiplier: {},
+              getEffectMultiplier:
+                ((dd = {}),
+                (dd[_.HEALTHCARE] = function (e) {
+                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
+                }),
+                dd),
+              getCapacityMultiplier: {},
+              probabilityReduction: 0.5,
+            },
+          ],
+          rg = [
+            {
+              id: I.PRODUCTIVITY,
               name: "Productivity",
               description:
                 "Learn experience of the ancestors to increase overall productivity by 10% (additive)",
-              unlockCondition: function (e) {
-                return !0;
-              },
-              getCost:
-                ((dd = {}),
-                (dd[l.COLONIZE_XP] = function (e) {
-                  return { A: 3, B: 1.5, type: i.EXPONENTIAL };
-                }),
-                dd),
-              maxLevel: 0,
-            },
-            {
-              id: R.BUILDING_PRICES,
-              name: "Building Knowledge",
-              description:
-                "Learn old architecture schemas and plans to reduce all buildings prices by 5% multiplicative",
               unlockCondition: function (e) {
                 return !0;
               },
@@ -23219,10 +23195,10 @@
               maxLevel: 0,
             },
             {
-              id: R.PILOT_XP,
-              name: "Pilot XP",
+              id: I.BUILDING_PRICES,
+              name: "Building Knowledge",
               description:
-                "Investigate ancient ships driving instructions and pass this knowledge to your pilots. Receive 30% multiplicative bonus to pilot XP",
+                "Learn old architecture schemas and plans to reduce all buildings prices by 5% multiplicative",
               unlockCondition: function (e) {
                 return !0;
               },
@@ -23235,10 +23211,10 @@
               maxLevel: 0,
             },
             {
-              id: R.SHIPS_DAMAGE,
-              name: "Ships Damage",
+              id: I.PILOT_XP,
+              name: "Pilot XP",
               description:
-                "Learn more about destructive weapons that terrified whole galaxies once upon the time . Receive 20% multiplicative bonus to ships damage",
+                "Investigate ancient ships driving instructions and pass this knowledge to your pilots. Receive 30% multiplicative bonus to pilot XP",
               unlockCondition: function (e) {
                 return !0;
               },
@@ -23251,10 +23227,10 @@
               maxLevel: 0,
             },
             {
-              id: R.SHIPS_DURABILITY,
-              name: "Ships Durability",
+              id: I.SHIPS_DAMAGE,
+              name: "Ships Damage",
               description:
-                "Learn more about trading civilizations technologies that had to protect their ships from aggressive barbarian in order to survive. Receive 20% multiplicative bonus to ships durability",
+                "Learn more about destructive weapons that terrified whole galaxies once upon the time . Receive 20% multiplicative bonus to ships damage",
               unlockCondition: function (e) {
                 return !0;
               },
@@ -23266,8 +23242,24 @@
                 Rd),
               maxLevel: 0,
             },
+            {
+              id: I.SHIPS_DURABILITY,
+              name: "Ships Durability",
+              description:
+                "Learn more about trading civilizations technologies that had to protect their ships from aggressive barbarian in order to survive. Receive 20% multiplicative bonus to ships durability",
+              unlockCondition: function (e) {
+                return !0;
+              },
+              getCost:
+                ((Id = {}),
+                (Id[l.COLONIZE_XP] = function (e) {
+                  return { A: 3, B: 1.5, type: i.EXPONENTIAL };
+                }),
+                Id),
+              maxLevel: 0,
+            },
           ],
-          rg = (function () {
+          ag = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -23301,9 +23293,9 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          ag = function () {
+          cg = function () {
             return (
-              (ag =
+              (cg =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -23312,10 +23304,10 @@
                         (e[o] = t[o]);
                   return e;
                 }),
-              ag.apply(this, arguments)
+              cg.apply(this, arguments)
             );
           },
-          cg = function (e, t, n) {
+          sg = function (e, t, n) {
             if (n || 2 === arguments.length)
               for (var i, o = 0, r = t.length; o < r; o++)
                 (!i && o in t) ||
@@ -23323,7 +23315,7 @@
                   (i[o] = t[o]));
             return e.concat(i || Array.prototype.slice.call(t));
           },
-          sg = (function (e) {
+          ug = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -23372,7 +23364,7 @@
               );
             }
             return (
-              rg(t, e),
+              ag(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -23408,14 +23400,14 @@
                 );
               }),
               (t.prototype.getResourceUpgradeMultiplier = function (e) {
-                var t = og.find(function (e) {
-                  return e.id === R.PRODUCTIVITY;
+                var t = rg.find(function (e) {
+                  return e.id === I.PRODUCTIVITY;
                 });
                 return t
                   ? [
                       {
                         label: "XP Upgrade: ".concat(t.name),
-                        value: 1 + 0.1 * this.getUpgradeLevel(R.PRODUCTIVITY),
+                        value: 1 + 0.1 * this.getUpgradeLevel(I.PRODUCTIVITY),
                         id: "knowledge-".concat(t.id),
                         category: "XP Upgrades",
                       },
@@ -23423,7 +23415,7 @@
                   : [];
               }),
               (t.prototype.doUpgrade = function (e) {
-                var t = og.find(function (t) {
+                var t = rg.find(function (t) {
                   return t.id === e;
                 });
                 if (t) {
@@ -23435,19 +23427,19 @@
                       this.upgrades.push({ id: e, level: 0 });
                   else if (t.maxLevel && this.upgrades[n].level >= t.maxLevel)
                     return;
-                  var i = w.calcBatchAll(
+                  var i = X.calcBatchAll(
                     t.getCost,
-                    kg.getInstance(),
+                    xg.getInstance(),
                     this.upgrades[n].level,
-                    kg.getInstance().resources.getBatchObject()
+                    xg.getInstance().resources.getBatchObject()
                   );
                   i.reduce(function (e, t) {
                     return Math.min(e, Math.floor(t.max));
                   }, 1e300) < 1 ||
                     (this.upgrades[n].level++,
                     console.log("costs: ", i),
-                    kg.getInstance().resources.subtractResourceBatch(i),
-                    xg.resources.reassertBalances());
+                    xg.getInstance().resources.subtractResourceBatch(i),
+                    Yg.resources.reassertBalances());
                 }
               }),
               (t.prototype.processUpgradeToUI = function (e) {
@@ -23455,11 +23447,11 @@
                   return t.id === e.id;
                 });
                 t || ((t = { id: e.id, level: 0 }), this.upgrades.push(t));
-                var n = w.calcBatchAll(
+                var n = X.calcBatchAll(
                     e.getCost,
-                    kg.getInstance(),
+                    xg.getInstance(),
                     t.level,
-                    kg.getInstance().resources.getBatchObject()
+                    xg.getInstance().resources.getBatchObject()
                   ),
                   i = n.reduce(function (e, t) {
                     return Math.min(e, t.max);
@@ -23468,14 +23460,14 @@
                   id: e.id,
                   name: e.name,
                   description: e.description,
-                  isUnlocked: e.unlockCondition(xg),
+                  isUnlocked: e.unlockCondition(Yg),
                   isAvailable: i >= 1,
-                  cost: kg
+                  cost: xg
                     .getInstance()
                     .resources.assertEnought(
                       n,
-                      kg.getInstance().resources.getBatchObject(),
-                      kg.getInstance().resources.getBatchBalanceObject()
+                      xg.getInstance().resources.getBatchObject(),
+                      xg.getInstance().resources.getBatchBalanceObject()
                     ),
                   progress: i < 1 ? (100 * i).toPrecision(3) : "100",
                   isMaxedOut: !!e.maxLevel && e.maxLevel <= t.level,
@@ -23490,8 +23482,8 @@
                     return t.processPlanetToUI(e);
                   });
                 this.isPrestigeAvailable() &&
-                  xg.newNotifications.registerNotification("prestige:colonize");
-                var i = og.map(function (e) {
+                  Yg.newNotifications.registerNotification("prestige:colonize");
+                var i = rg.map(function (e) {
                     return t.processUpgradeToUI(e);
                   }),
                   o = this.processPlanetToUI(this.current),
@@ -23506,25 +23498,25 @@
                   isUnlocked:
                     this.numPrestiged > 0 || this.isPrestigeAvailable(),
                   isPrestigeAvailable: this.isPrestigeAvailable(),
-                  currentXP: xg.resources.getResource(l.COLONIZE_XP),
+                  currentXP: Yg.resources.getResource(l.COLONIZE_XP),
                   search: {
                     isAvailable: c >= 1,
-                    cost: kg
+                    cost: xg
                       .getInstance()
                       .resources.assertEnought(
                         a,
-                        kg.getInstance().resources.getBatchObject(),
-                        kg.getInstance().resources.getBatchBalanceObject()
+                        xg.getInstance().resources.getBatchObject(),
+                        xg.getInstance().resources.getBatchBalanceObject()
                       ),
                     progress: c < 1 ? (100 * c).toPrecision(3) : "100",
                     filter: {
                       isAvailable:
-                        xg.science.scienceResearches.getResearchLevel(
-                          v.EXOPLANET_SCIENCE
+                        Yg.science.scienceResearches.getResearchLevel(
+                          S.EXOPLANET_SCIENCE
                         ) > 0,
                       modifierName:
                         (null ===
-                          (e = ig.find(function (e) {
+                          (e = og.find(function (e) {
                             var n, i;
                             return (
                               e.id ===
@@ -23540,9 +23532,9 @@
                           })) || void 0 === e
                           ? void 0
                           : e.name) || "None",
-                      modifiersAvailable: cg(
+                      modifiersAvailable: sg(
                         [],
-                        ig.map(function (e) {
+                        og.map(function (e) {
                           return { id: e.id, name: e.name };
                         }),
                         !0
@@ -23556,11 +23548,11 @@
                     gainBattleMult: r.battleXPGain > 1 ? H(r.battleXPGain) : "",
                     potentialBonus: H(
                       this.getXpBonus(
-                        xg.resources.getResource(l.COLONIZE_XP) + r.xpGain
+                        Yg.resources.getResource(l.COLONIZE_XP) + r.xpGain
                       )
                     ),
                     currentBonus: H(
-                      this.getXpBonus(xg.resources.getResource(l.COLONIZE_XP))
+                      this.getXpBonus(Yg.resources.getResource(l.COLONIZE_XP))
                     ),
                   },
                   upgrades: i,
@@ -23568,28 +23560,28 @@
               }),
               (t.prototype.isPrestigeAvailable = function () {
                 return (
-                  xg.landingZone.landingZoneBuildings.getBuildingActiveLevel(
+                  Yg.landingZone.landingZoneBuildings.getBuildingActiveLevel(
                     a.SPACESHIP_STATION
                   ) > 0
                 );
               }),
               (t.prototype.setSearchFilter = function (e) {
-                xg.science.scienceResearches.getResearchLevel(
-                  v.EXOPLANET_SCIENCE
+                Yg.science.scienceResearches.getResearchLevel(
+                  S.EXOPLANET_SCIENCE
                 ) > 0 &&
                   (this.currentSearchFilters =
                     e && "None" !== e ? [{ modifierId: e }] : []);
               }),
               (t.prototype.doGenerate = function (e) {
                 var t = {},
-                  n = ig.reduce(function (e, t) {
+                  n = og.reduce(function (e, t) {
                     return (
                       e[t.category] || (e[t.category] = [t]),
                       e[t.category].push(t),
                       e
                     );
                   }, {}),
-                  i = ig.reduce(function (t, n) {
+                  i = og.reduce(function (t, n) {
                     return (
                       e.find(function (e) {
                         return e.modifierId === n.id;
@@ -23647,7 +23639,7 @@
                     return Math.min(e, t.max);
                   }, 1e300) < 1 ||
                     ((this.available = []),
-                    kg.getInstance().resources.subtractResourceBatch(t),
+                    xg.getInstance().resources.subtractResourceBatch(t),
                     Array.from({ length: 3 }).forEach(function () {
                       return e.doGenerate(e.currentSearchFilters);
                     }));
@@ -23655,7 +23647,7 @@
               }),
               (t.prototype.getResourceMultiplier = function (e) {
                 var t = Object.values(this.current.modifiers),
-                  n = ig.filter(function (n) {
+                  n = og.filter(function (n) {
                     var i;
                     return (
                       t
@@ -23681,8 +23673,8 @@
                         ? void 0
                         : o[e])
                     ) {
-                      var a = w.calculate(
-                        xg,
+                      var a = X.calculate(
+                        Yg,
                         r.getGainMultiplier[e],
                         t.level,
                         1
@@ -23702,7 +23694,7 @@
               }),
               (t.prototype.getEffectMultiplier = function (e) {
                 var t = Object.values(this.current.modifiers),
-                  n = ig.filter(function (n) {
+                  n = og.filter(function (n) {
                     var i;
                     return (
                       t
@@ -23728,8 +23720,8 @@
                         ? void 0
                         : o[e])
                     ) {
-                      var a = w.calculate(
-                        xg,
+                      var a = X.calculate(
+                        Yg,
                         r.getEffectMultiplier[e],
                         t.level,
                         1
@@ -23748,7 +23740,7 @@
               }),
               (t.prototype.getCapacityMultiplier = function (e) {
                 var t = Object.values(this.current.modifiers),
-                  n = ig.filter(function (n) {
+                  n = og.filter(function (n) {
                     var i;
                     return (
                       t
@@ -23774,8 +23766,8 @@
                         ? void 0
                         : o[e])
                     ) {
-                      var a = w.calculate(
-                        xg,
+                      var a = X.calculate(
+                        Yg,
                         r.getCapacityMultiplier[e],
                         t.level,
                         1
@@ -23814,56 +23806,50 @@
                     var c = e.modifiers[a];
                     if (!c) return "continue";
                     var s = c.id,
-                      u = ig.find(function (e) {
+                      u = og.find(function (e) {
                         return e.id === s;
                       });
                     if (!u) return "continue";
                     (o = "".concat(u.name, " ").concat(o)),
                       u.getGainMultiplier &&
-                        w
-                          .calcBatch(
-                            u.getGainMultiplier,
-                            kg.getInstance(),
-                            c.level
-                          )
-                          .forEach(function (e) {
-                            var n;
-                            t[e.id]
-                              ? null === (n = t[e.id]) ||
-                                void 0 === n ||
-                                (n.amount *= e.amount)
-                              : (t[e.id] = e);
-                          }),
+                        X.calcBatch(
+                          u.getGainMultiplier,
+                          xg.getInstance(),
+                          c.level
+                        ).forEach(function (e) {
+                          var n;
+                          t[e.id]
+                            ? null === (n = t[e.id]) ||
+                              void 0 === n ||
+                              (n.amount *= e.amount)
+                            : (t[e.id] = e);
+                        }),
                       u.getEffectMultiplier &&
-                        w
-                          .calcBatch(
-                            u.getEffectMultiplier,
-                            kg.getInstance(),
-                            c.level
-                          )
-                          .forEach(function (e) {
-                            var t;
-                            i[e.id]
-                              ? null === (t = i[e.id]) ||
-                                void 0 === t ||
-                                (t.amount *= e.amount)
-                              : (i[e.id] = e);
-                          }),
+                        X.calcBatch(
+                          u.getEffectMultiplier,
+                          xg.getInstance(),
+                          c.level
+                        ).forEach(function (e) {
+                          var t;
+                          i[e.id]
+                            ? null === (t = i[e.id]) ||
+                              void 0 === t ||
+                              (t.amount *= e.amount)
+                            : (i[e.id] = e);
+                        }),
                       u.getCapacityMultiplier &&
-                        w
-                          .calcBatch(
-                            u.getCapacityMultiplier,
-                            kg.getInstance(),
-                            c.level
-                          )
-                          .forEach(function (e) {
-                            var t;
-                            n[e.id]
-                              ? null === (t = n[e.id]) ||
-                                void 0 === t ||
-                                (t.amount *= e.amount)
-                              : (n[e.id] = e);
-                          }),
+                        X.calcBatch(
+                          u.getCapacityMultiplier,
+                          xg.getInstance(),
+                          c.level
+                        ).forEach(function (e) {
+                          var t;
+                          n[e.id]
+                            ? null === (t = n[e.id]) ||
+                              void 0 === t ||
+                              (t.amount *= e.amount)
+                            : (n[e.id] = e);
+                        }),
                       (r *= Math.pow(u.complexityModifier, c.level));
                   };
                 for (var c in e.modifiers) a(c);
@@ -23878,25 +23864,25 @@
                     name: e.name,
                     description: o,
                     gainMult: Object.values(t).map(function (e) {
-                      return ag(ag({}, e), {
+                      return cg(cg({}, e), {
                         amountValue: e.amount,
                         amount: H(e.amount),
                       });
                     }),
                     max: [],
-                    cost: kg
+                    cost: xg
                       .getInstance()
                       .resources.assertEnought(
                         s,
-                        kg.getInstance().resources.getBatchObject(),
-                        kg.getInstance().resources.getBatchBalanceObject()
+                        xg.getInstance().resources.getBatchObject(),
+                        xg.getInstance().resources.getBatchBalanceObject()
                       ),
                     isAvailable: u >= 1,
                     progress: u < 1 ? (100 * u).toPrecision(3) : "100",
                     consume: [],
                     consumeEffect: [],
                     effectMult: Object.values(i).map(function (e) {
-                      return ag(ag({}, e), {
+                      return cg(cg({}, e), {
                         amountValue: e.amount,
                         amount: H(e.amount),
                       });
@@ -23904,7 +23890,7 @@
                     gainEffect: [],
                     gain: [],
                     maxMult: Object.values(n).map(function (e) {
-                      return ag(ag({}, e), {
+                      return cg(cg({}, e), {
                         amountValue: e.amount,
                         amount: H(e.amount),
                       });
@@ -23922,24 +23908,24 @@
                 return 1 + 0.3 * Math.pow(e, 0.4);
               }),
               (t.prototype.getCurrentXPBonus = function () {
-                return this.getXpBonus(xg.resources.getResource(l.COLONIZE_XP));
+                return this.getXpBonus(Yg.resources.getResource(l.COLONIZE_XP));
               }),
               (t.prototype.getColonizeCost = function () {
                 var e;
-                return w.calcBatchAll(
+                return X.calcBatchAll(
                   (((e = {})[l.ROCKET_ENGINE] = function (e) {
                     return { A: 1e3, B: 1, type: i.EXPONENTIAL };
                   }),
                   e),
-                  kg.getInstance(),
+                  xg.getInstance(),
                   1,
-                  kg.getInstance().resources.getBatchObject()
+                  xg.getInstance().resources.getBatchObject()
                 );
               }),
               (t.prototype.getSearchCost = function () {
                 var e,
                   t = this;
-                return w.calcBatchAll(
+                return X.calcBatchAll(
                   (((e = {})[l.FUEL] = function (e) {
                     return {
                       A: 2500 * Math.pow(2, t.currentSearchFilters.length),
@@ -23948,9 +23934,9 @@
                     };
                   }),
                   e),
-                  kg.getInstance(),
+                  xg.getInstance(),
                   1,
-                  kg.getInstance().resources.getBatchObject()
+                  xg.getInstance().resources.getBatchObject()
                 );
               }),
               (t.prototype.getCurrentXPGainBreakdown = function (e) {
@@ -23959,19 +23945,19 @@
                       .xpGain *
                     Math.pow(
                       1.5,
-                      xg.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                      Yg.landingZone.landingZoneUpgrades.getUpgradeLevel(
                         r.QUANTUM_ENCRYPTION
                       )
                     ) *
                     Math.pow(
                       1.5,
-                      kg
+                      xg
                         .getInstance()
                         .landingZone.landingZoneUpgrades.getUpgradeLevel(
                           r.HUGE_GAMMA_TRANSMITTER
                         )
                     ),
-                  n = xg.space.battlefield.getXPBonus();
+                  n = Yg.space.battlefield.getXPBonus();
                 return { baseXpGain: t, battleXPGain: n, xpGain: t * n };
               }),
               (t.prototype.doColonize = function (e, t) {
@@ -23985,31 +23971,31 @@
                   if (!this.isPrestigeAvailable()) return;
                   i = this.getCurrentXPGainBreakdown().xpGain;
                 }
-                var o = xg.resources.getResource(l.KNOWLEDGE_POINT),
-                  r = xg.resources.getResource(l.COLONIZE_XP);
-                (xg.statistics.stats.xpTotal =
-                  (xg.statistics.stats.xpTotal || 0) + i),
-                  (xg.statistics.stats.xpMaxGain = Math.max(
-                    xg.statistics.stats.xpMaxGain || 0,
+                var o = Yg.resources.getResource(l.KNOWLEDGE_POINT),
+                  r = Yg.resources.getResource(l.COLONIZE_XP);
+                (Yg.statistics.stats.xpTotal =
+                  (Yg.statistics.stats.xpTotal || 0) + i),
+                  (Yg.statistics.stats.xpMaxGain = Math.max(
+                    Yg.statistics.stats.xpMaxGain || 0,
                     i
                   )),
-                  xg.eventLog.registerPrestige(
+                  Yg.eventLog.registerPrestige(
                     "New planet colonization",
                     "".concat(H(i), " XP")
                   ),
-                  xg.landingZone.reset(),
-                  xg.colony.reset(),
-                  xg.crafting.reset(),
-                  xg.science.reset(),
-                  xg.laws.reset(),
-                  xg.resources.reset(),
-                  xg.space.reset(),
-                  xg.queuedItems.reset(),
-                  xg.resources.addResource(l.COLONIZE_XP, r + i),
-                  xg.resources.addResource(l.KNOWLEDGE_POINT, o),
+                  Yg.landingZone.reset(),
+                  Yg.colony.reset(),
+                  Yg.crafting.reset(),
+                  Yg.science.reset(),
+                  Yg.laws.reset(),
+                  Yg.resources.reset(),
+                  Yg.space.reset(),
+                  Yg.queuedItems.reset(),
+                  Yg.resources.addResource(l.COLONIZE_XP, r + i),
+                  Yg.resources.addResource(l.KNOWLEDGE_POINT, o),
                   this.numPrestiged++,
-                  (xg.statistics.stats.timeThisPlanet = 0),
-                  (xg.statistics.stats.timeThisPrestige = 0),
+                  (Yg.statistics.stats.timeThisPlanet = 0),
+                  (Yg.statistics.stats.timeThisPrestige = 0),
                   (this.current = t
                     ? {
                         name: "Default",
@@ -24023,13 +24009,13 @@
                     ((this.current.yearLength = 365),
                     (this.current.eccentricity = 0)),
                   (this.available = []),
-                  xg.resources.reassertBalances();
+                  Yg.resources.reassertBalances();
               }),
               t
             );
-          })(C),
-          ug = sg.getInstance(),
-          lg = (function () {
+          })(v),
+          lg = ug.getInstance(),
+          pg = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -24063,13 +24049,13 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          pg = (function (e) {
+          Eg = (function (e) {
             function t() {
               var t = e.call(this) || this;
-              return (t.transmitKnowledge = ng), (t.colonizePlanet = ug), t;
+              return (t.transmitKnowledge = ig), (t.colonizePlanet = lg), t;
             }
             return (
-              lg(t, e),
+              pg(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -24100,8 +24086,8 @@
               }),
               t
             );
-          })(C).getInstance(),
-          Eg = (function () {
+          })(v).getInstance(),
+          dg = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -24135,7 +24121,7 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          dg = (function (e) {
+          gg = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -24168,7 +24154,7 @@
               );
             }
             return (
-              Eg(t, e),
+              dg(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -24193,17 +24179,18 @@
                   ).map(function (e) {
                     var t = e[0],
                       n = e[1];
-                    return { id: t, amount: H(n), name: b(t), amountValue: n };
+                    return { id: t, amount: H(n), name: D(t), amountValue: n };
                   }),
                   isUnlocked: this.isExpeditionUnlocked(),
                   isInProgress: this.expeditionsState.isInProgress,
-                  eta: X(
+                  eta: k(
                     this.expeditionsState.currentMax -
                       this.expeditionsState.progress
                   ),
-                  percentage:
-                    (100 * this.expeditionsState.progress) /
-                    this.expeditionsState.currentMax,
+                  percentage: this.expeditionsState.isInProgress
+                    ? (100 * this.expeditionsState.progress) /
+                      this.expeditionsState.currentMax
+                    : 100,
                   multiplier: H(this.getLootMultiplier()),
                   currentMode:
                     null !== (e = this.expeditionsState.currentMode) &&
@@ -24214,7 +24201,7 @@
               }),
               (t.prototype.isExpeditionUnlocked = function () {
                 return (
-                  xg.science.scienceResearches.getResearchLevel(v.GEOGRAPHY) > 0
+                  Yg.science.scienceResearches.getResearchLevel(S.GEOGRAPHY) > 0
                 );
               }),
               (t.prototype.startExpedition = function () {
@@ -24243,8 +24230,8 @@
                     t = 16;
                 }
                 for (
-                  var n = U.filter(function (e) {
-                      return e.unlockCondition(xg) && e.valuability < 1e6;
+                  var n = G.filter(function (e) {
+                      return e.unlockCondition(Yg) && e.valuability < 1e6;
                     }),
                     i = {},
                     o = 0;
@@ -24264,13 +24251,13 @@
                 return (
                   Math.pow(
                     1.05,
-                    xg.landingZone.landingZoneBuildings.getBuildingActiveLevel(
+                    Yg.landingZone.landingZoneBuildings.getBuildingActiveLevel(
                       a.EXPEDITION_CENTER
                     )
                   ) *
                   Math.pow(
                     1.3,
-                    xg.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                    Yg.landingZone.landingZoneUpgrades.getUpgradeLevel(
                       r.ENERGY_SAVING_EXPEDITION_DRONES
                     )
                   )
@@ -24282,12 +24269,12 @@
                 var e,
                   t = this.getLoot();
                 for (var n in ((this.expeditionsState.lastLooted = t), t))
-                  xg.resources.addResource(n, t[n] || 0);
-                xg.eventLog.registerExpeditionArrived(
+                  Yg.resources.addResource(n, t[n] || 0);
+                Yg.eventLog.registerExpeditionArrived(
                   ((e = t),
                   Object.entries(e).map(function (e) {
                     var t = e[0];
-                    return { id: t, amount: e[1], name: b(t) };
+                    return { id: t, amount: e[1], name: D(t) };
                   })),
                   ""
                 );
@@ -24320,9 +24307,9 @@
               }),
               t
             );
-          })(C),
-          gg = dg.getInstance(),
-          Ag = (function () {
+          })(v),
+          Ag = gg.getInstance(),
+          fg = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -24356,7 +24343,7 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          fg = (function (e) {
+          Rg = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -24373,7 +24360,7 @@
               );
             }
             return (
-              Ag(t, e),
+              fg(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -24412,9 +24399,9 @@
               }),
               t
             );
-          })(C),
-          Rg = fg.getInstance(),
-          Ig = (function () {
+          })(v),
+          Ig = Rg.getInstance(),
+          Ng = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -24448,9 +24435,9 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          Ng = function () {
+          Tg = function () {
             return (
-              (Ng =
+              (Tg =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -24459,10 +24446,10 @@
                         (e[o] = t[o]);
                   return e;
                 }),
-              Ng.apply(this, arguments)
+              Tg.apply(this, arguments)
             );
           },
-          Tg = (function (e) {
+          Og = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -24482,15 +24469,15 @@
               );
             }
             return (
-              Ig(t, e),
+              Ng(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
               (t.prototype.importData = function (e) {
                 (this.stats = e || {
-                  timeInGame: xg.timeInGame,
-                  timeThisPlanet: xg.timeInGame,
-                  timeThisPrestige: xg.timeInPrestige,
+                  timeInGame: Yg.timeInGame,
+                  timeThisPlanet: Yg.timeInGame,
+                  timeThisPrestige: Yg.timeInPrestige,
                   maxColonists: 0,
                   maxHappiness: 0,
                   exoticCollected: 0,
@@ -24502,10 +24489,10 @@
                 return this.stats;
               }),
               (t.prototype.dataToUI = function () {
-                return Ng(Ng({}, this.stats), {
+                return Tg(Tg({}, this.stats), {
                   maxHappiness: Math.round(100 * this.stats.maxHappiness),
-                  numPrestiges: xg.prestige.transmitKnowledge.numPrestiged,
-                  numColonized: xg.prestige.colonizePlanet.numPrestiged,
+                  numPrestiges: Yg.prestige.transmitKnowledge.numPrestiged,
+                  numColonized: Yg.prestige.colonizePlanet.numPrestiged,
                 });
               }),
               (t.prototype.process = function (e) {
@@ -24514,16 +24501,16 @@
                   (this.stats.timeInGame += e),
                   (this.stats.maxHappiness = Math.max(
                     this.stats.maxHappiness,
-                    xg.colony.getColonistsHappiness()
+                    Yg.colony.getColonistsHappiness()
                   )),
                   (this.stats.maxColonists = Math.max(
                     this.stats.maxColonists,
-                    xg.colony.colonists
+                    Yg.colony.colonists
                   ));
               }),
               t
             );
-          })(C).getInstance();
+          })(v).getInstance();
         !(function (e) {
           (e[(e.EXTREMELY_COLD = 0)] = "EXTREMELY_COLD"),
             (e[(e.VERY_COLD = 1)] = "VERY_COLD"),
@@ -24534,76 +24521,76 @@
             (e[(e.WARM = 6)] = "WARM"),
             (e[(e.HOT = 7)] = "HOT"),
             (e[(e.VERY_HOT = 8)] = "VERY_HOT");
-        })(Id || (Id = {})),
+        })(Nd || (Nd = {})),
           (function (e) {
             (e[(e.SPRING = 0)] = "SPRING"),
               (e[(e.SUMMER = 1)] = "SUMMER"),
               (e[(e.AUTUMN = 2)] = "AUTUMN"),
               (e[(e.WINTER = 3)] = "WINTER");
-          })(Nd || (Nd = {}));
-        var Og = [
+          })(Td || (Td = {}));
+        var yg = [
             {
-              id: Id.VERY_HOT,
+              id: Nd.VERY_HOT,
               distanceCondition: 0.35,
               temperatureModifier: 1.75,
               name: "Very Hot",
             },
             {
-              id: Id.HOT,
+              id: Nd.HOT,
               distanceCondition: 0.45,
               temperatureModifier: 1.5,
               name: "Hot",
             },
             {
-              id: Id.WARM,
+              id: Nd.WARM,
               distanceCondition: 0.6,
               temperatureModifier: 1.3,
               name: "Warm",
             },
             {
-              id: Id.SLIGHTLY_WARM,
+              id: Nd.SLIGHTLY_WARM,
               distanceCondition: 0.8,
               temperatureModifier: 1.1,
               name: "Slightly Warm",
             },
             {
-              id: Id.NORMAL,
+              id: Nd.NORMAL,
               distanceCondition: 1.2,
               temperatureModifier: 1,
               name: "Normal",
             },
             {
-              id: Id.SLIGHTLY_COLD,
+              id: Nd.SLIGHTLY_COLD,
               distanceCondition: 1.4,
               temperatureModifier: 0.9,
               name: "Slightly Cold",
             },
             {
-              id: Id.COLD,
+              id: Nd.COLD,
               distanceCondition: 1.55,
               temperatureModifier: 0.75,
               name: "Cold",
             },
             {
-              id: Id.VERY_COLD,
+              id: Nd.VERY_COLD,
               distanceCondition: 1.65,
               temperatureModifier: 0.66,
               name: "Very Cold",
             },
             {
-              id: Id.EXTREMELY_COLD,
+              id: Nd.EXTREMELY_COLD,
               distanceCondition: 1.7,
               temperatureModifier: 0.62,
               name: "Extremely Cold",
             },
           ],
-          yg =
-            (((Td = {})[Nd.SPRING] = "Spring"),
-            (Td[Nd.SUMMER] = "Summer"),
-            (Td[Nd.AUTUMN] = "Autumn"),
-            (Td[Nd.WINTER] = "Winter"),
-            Td),
-          mg = (function () {
+          mg =
+            (((Od = {})[Td.SPRING] = "Spring"),
+            (Od[Td.SUMMER] = "Summer"),
+            (Od[Td.AUTUMN] = "Autumn"),
+            (Od[Td.WINTER] = "Winter"),
+            Od),
+          hg = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -24643,23 +24630,23 @@
               return (
                 (t.climateState = {
                   day: 0,
-                  season: Nd.SPRING,
-                  temperature: Id.NORMAL,
+                  season: Td.SPRING,
+                  temperature: Nd.NORMAL,
                   year: 0,
                 }),
                 t
               );
             }
             return (
-              mg(t, e),
+              hg(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
               (t.prototype.importData = function (e) {
                 this.climateState = e || {
                   day: 0,
-                  season: Nd.SPRING,
-                  temperature: Id.NORMAL,
+                  season: Td.SPRING,
+                  temperature: Nd.NORMAL,
                   year: 0,
                 };
               }),
@@ -24668,7 +24655,7 @@
               }),
               (t.prototype.dataToUI = function () {
                 var e = this,
-                  t = Og.find(function (t) {
+                  t = yg.find(function (t) {
                     return t.id === e.climateState.temperature;
                   });
                 if (!t)
@@ -24681,20 +24668,20 @@
                   temperature: t.name,
                   year: this.climateState.year,
                   day: this.climateState.day,
-                  season: yg[this.climateState.season],
+                  season: mg[this.climateState.season],
                 };
               }),
               (t.prototype.getDays = function () {
-                return 0.2 * xg.statistics.stats.timeThisPrestige;
+                return 0.2 * Yg.statistics.stats.timeThisPrestige;
               }),
               (t.prototype.getSeasonId = function () {
-                var e = xg.prestige.colonizePlanet.current.yearLength,
+                var e = Yg.prestige.colonizePlanet.current.yearLength,
                   t = this.getDays() % e;
                 return Math.floor((4 * t) / e);
               }),
               (t.prototype.getResourceMultiplier = function (e) {
                 var t = this,
-                  n = Og.find(function (e) {
+                  n = yg.find(function (e) {
                     return e.id === t.climateState.temperature;
                   });
                 if (!n)
@@ -24737,7 +24724,7 @@
               }),
               (t.prototype.process = function (e) {
                 var t = this.getDays(),
-                  n = xg.prestige.colonizePlanet.current.yearLength;
+                  n = Yg.prestige.colonizePlanet.current.yearLength;
                 (this.climateState.year = 1 + Math.floor(t / n)),
                   (this.climateState.day = 1 + (this.getDays() % n)),
                   (this.climateState.season = this.getSeasonId());
@@ -24745,26 +24732,26 @@
                   var i = Math.floor((16 * this.climateState.day) / n),
                     o =
                       1 -
-                      xg.prestige.colonizePlanet.current.eccentricity *
+                      Yg.prestige.colonizePlanet.current.eccentricity *
                         Math.sin((6.28 * i) / 16),
                     r = 0;
-                  Og[r].distanceCondition < o;
+                  yg[r].distanceCondition < o;
 
                 )
                   r++;
-                Og[r].id !== this.climateState.temperature &&
+                yg[r].id !== this.climateState.temperature &&
                   (console.log(
                     "Weather changed: "
                       .concat(this.climateState.temperature, " -> ")
-                      .concat(Og[r].id)
+                      .concat(yg[r].id)
                   ),
-                  (this.climateState.temperature = Og[r].id),
-                  xg.resources.reassertBalances());
+                  (this.climateState.temperature = yg[r].id),
+                  Yg.resources.reassertBalances());
               }),
               t
             );
-          })(C).getInstance(),
-          hg = (function () {
+          })(v).getInstance(),
+          Cg = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -24798,7 +24785,7 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          Cg = (function (e) {
+          vg = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -24817,7 +24804,7 @@
               );
             }
             return (
-              hg(t, e),
+              Cg(t, e),
               (t.prototype.setMultiplier = function (e) {
                 e < 1 && (e = 1),
                   e > 4 && (e = 4),
@@ -24858,8 +24845,8 @@
               }),
               t
             );
-          })(C).getInstance(),
-          vg = (function () {
+          })(v).getInstance(),
+          Sg = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -24893,13 +24880,13 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          Sg = (function (e) {
+          Pg = (function (e) {
             function t() {
               var t = e.call(this) || this;
-              return (t.climate = Lg), (t.bankedTime = Cg), t;
+              return (t.climate = Lg), (t.bankedTime = vg), t;
             }
             return (
-              vg(t, e),
+              Sg(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -24925,8 +24912,8 @@
               (t.prototype.reset = function () {}),
               t
             );
-          })(C).getInstance(),
-          Pg = (function () {
+          })(v).getInstance(),
+          Bg = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -24960,9 +24947,9 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          Bg = function () {
+          _g = function () {
             return (
-              (Bg =
+              (_g =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -24971,10 +24958,10 @@
                         (e[o] = t[o]);
                   return e;
                 }),
-              Bg.apply(this, arguments)
+              _g.apply(this, arguments)
             );
           },
-          _g = (function (e) {
+          Mg = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -24986,6 +24973,9 @@
                 t.workDispatcher.on("[queue] move", function (e) {
                   console.log("move to queue", e), t.moveItem(e.index, e.by);
                 }),
+                t.workDispatcher.on("[queue] sort by eta", function (e) {
+                  console.log("sort queue by eta", e), t.sortByEta();
+                }),
                 t.workDispatcher.on("[queue] delete", function (e) {
                   console.log("remove from queue", e),
                     t.removeFromQueue(e.index);
@@ -24994,7 +24984,7 @@
               );
             }
             return (
-              Pg(t, e),
+              Bg(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -25013,13 +25003,75 @@
                   this.queue.push({ scope: e, id: t });
                 }
               }),
+              (t.prototype.sortByEta = function () {
+                var e = this,
+                  t = this.queue.map(function (t, n) {
+                    return {
+                      id: t.id,
+                      scope: t.scope,
+                      isUpAvailable: n > 0,
+                      isDownAvailable: n < e.queue.length - 1,
+                      meta: e.processQueueItem(t, n),
+                    };
+                  }),
+                  n = (function (e, t, n) {
+                    if (n || 2 === arguments.length)
+                      for (var i, o = 0, r = t.length; o < r; o++)
+                        (!i && o in t) ||
+                          (i || (i = Array.prototype.slice.call(t, 0, o)),
+                          (i[o] = t[o]));
+                    return e.concat(i || Array.prototype.slice.call(t));
+                  })([], this.queue, !0).map(function (e, n) {
+                    var i;
+                    return _g(_g({}, e), {
+                      eta:
+                        (null === (i = t[n].meta) || void 0 === i
+                          ? void 0
+                          : i.etaNum) || 0,
+                    });
+                  }),
+                  i = n
+                    .sort(function (e, t) {
+                      return e.eta - t.eta;
+                    })
+                    .map(function (e) {
+                      e.eta;
+                      var t = (function (e, t) {
+                        var n = {};
+                        for (var i in e)
+                          Object.prototype.hasOwnProperty.call(e, i) &&
+                            t.indexOf(i) < 0 &&
+                            (n[i] = e[i]);
+                        if (
+                          null != e &&
+                          "function" == typeof Object.getOwnPropertySymbols
+                        ) {
+                          var o = 0;
+                          for (
+                            i = Object.getOwnPropertySymbols(e);
+                            o < i.length;
+                            o++
+                          )
+                            t.indexOf(i[o]) < 0 &&
+                              Object.prototype.propertyIsEnumerable.call(
+                                e,
+                                i[o]
+                              ) &&
+                              (n[i[o]] = e[i[o]]);
+                        }
+                        return n;
+                      })(e, ["eta"]);
+                      return _g({}, t);
+                    });
+                this.queue = i;
+              }),
               (t.prototype.removeFromQueue = function (e) {
                 this.queue.splice(e, 1);
               }),
               (t.prototype.moveItem = function (e, t) {
                 var n = this.queue[e + t];
-                (this.queue[e + t] = Bg({}, this.queue[e])),
-                  (this.queue[e] = Bg({}, n));
+                (this.queue[e + t] = _g({}, this.queue[e])),
+                  (this.queue[e] = _g({}, n));
               }),
               (t.prototype.importData = function (e) {
                 this.queue = (null == e ? void 0 : e.queue) || [];
@@ -25033,20 +25085,20 @@
                 }).length;
                 switch (e.scope) {
                   case p.BUILDING:
-                    var i = El.find(function (t) {
+                    var i = dl.find(function (t) {
                       return t.id === e.id;
                     });
                     return i
-                      ? xg.landingZone.landingZoneBuildings.processToUI(i, n)
+                      ? Yg.landingZone.landingZoneBuildings.processToUI(i, n)
                       : void console.error(
                           "Building ".concat(e.id, " was not found")
                         );
                   case p.RESEARCH:
-                    var o = kl.find(function (t) {
+                    var o = xl.find(function (t) {
                       return t.id === e.id;
                     });
                     return o
-                      ? xg.science.scienceResearches.processToUI(o)
+                      ? Yg.science.scienceResearches.processToUI(o)
                       : void console.error(
                           "Research ".concat(e.id, " was not found")
                         );
@@ -25055,7 +25107,7 @@
                       return t.id === e.id;
                     });
                     return r
-                      ? xg.landingZone.landingZoneUpgrades.processToUI(r, n)
+                      ? Yg.landingZone.landingZoneUpgrades.processToUI(r, n)
                       : void console.error(
                           "Upgrade ".concat(e.id, " was not found")
                         );
@@ -25092,34 +25144,46 @@
                       scopes: Object.values(p),
                       choices:
                         ((e = {}),
-                        (e[p.BUILDING] = El.filter(function (e) {
-                          return e.unlockCondition(xg);
-                        }).map(function (e) {
-                          return { id: e.id, name: e.name };
-                        })),
+                        (e[p.BUILDING] = dl
+                          .filter(function (e) {
+                            return e.unlockCondition(Yg);
+                          })
+                          .map(function (e) {
+                            return { id: e.id, name: e.name };
+                          })
+                          .sort(function (e, t) {
+                            return e.name > t.name ? 1 : -1;
+                          })),
                         (e[p.UPGRADE] = Fu.filter(function (e) {
                           return (
-                            e.unlockCondition(xg) &&
+                            e.unlockCondition(Yg) &&
                             (!e.maxLevel ||
                               e.maxLevel >
-                                xg.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                                Yg.landingZone.landingZoneUpgrades.getUpgradeLevel(
                                   e.id
                                 ))
                           );
-                        }).map(function (e) {
-                          return { id: e.id, name: e.name };
-                        })),
-                        (e[p.RESEARCH] = kl
+                        })
+                          .map(function (e) {
+                            return { id: e.id, name: e.name };
+                          })
+                          .sort(function (e, t) {
+                            return e.name > t.name ? 1 : -1;
+                          })),
+                        (e[p.RESEARCH] = xl
                           .filter(function (e) {
                             return (
-                              e.unlockCondition(xg) &&
-                              xg.science.scienceResearches.getResearchLevel(
+                              e.unlockCondition(Yg) &&
+                              Yg.science.scienceResearches.getResearchLevel(
                                 e.id
                               ) < 1
                             );
                           })
                           .map(function (e) {
                             return { id: e.id, name: e.name };
+                          })
+                          .sort(function (e, t) {
+                            return e.name > t.name ? 1 : -1;
                           })),
                         e),
                     },
@@ -25150,7 +25214,7 @@
                     if (t.scope === p.UPGRADE) {
                       var n = t.id,
                         i =
-                          xg.landingZone.landingZoneUpgrades.getUpgradeLevel(n),
+                          Yg.landingZone.landingZoneUpgrades.getUpgradeLevel(n),
                         o = Fu.find(function (e) {
                           return e.id === n;
                         });
@@ -25158,34 +25222,34 @@
                       return o.maxLevel && o.maxLevel <= i
                         ? void this.queue.shift()
                         : void (
-                            xg.landingZone.landingZoneUpgrades.doUpgrade(n) &&
+                            Yg.landingZone.landingZoneUpgrades.doUpgrade(n) &&
                             this.queue.shift()
                           );
                     }
                     if (t.scope === p.RESEARCH)
                       return (
                         (r = t.id),
-                        (i = xg.science.scienceResearches.getResearchLevel(r)) >
+                        (i = Yg.science.scienceResearches.getResearchLevel(r)) >
                           0 && this.queue.shift(),
                         void (
-                          xg.science.scienceResearches.doResearch(r) &&
+                          Yg.science.scienceResearches.doResearch(r) &&
                           this.queue.shift()
                         )
                       );
                   } else {
                     var r = t.id;
-                    xg.landingZone.landingZoneBuildings.doBuild(r) &&
+                    Yg.landingZone.landingZoneBuildings.doBuild(r) &&
                       this.queue.shift();
                   }
                 }
               }),
               t
             );
-          })(C),
-          Mg = _g.getInstance(),
-          Ug = n(381),
-          Gg = n.n(Ug),
-          bg = (function () {
+          })(v),
+          Ug = Mg.getInstance(),
+          Gg = n(381),
+          bg = n.n(Gg),
+          Dg = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -25219,7 +25283,7 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          Dg = (function (e) {
+          wg = (function (e) {
             function t() {
               var t,
                 n = e.call(this) || this;
@@ -25245,7 +25309,7 @@
               );
             }
             return (
-              bg(t, e),
+              Dg(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -25253,8 +25317,8 @@
                 this.events.unshift({
                   scope: e,
                   time: new Date(),
-                  year: Math.floor(xg.environment.climate.climateState.year),
-                  day: Math.floor(xg.environment.climate.climateState.day),
+                  year: Math.floor(Yg.environment.climate.climateState.year),
+                  day: Math.floor(Yg.environment.climate.climateState.day),
                   message: t,
                 });
               }),
@@ -25379,7 +25443,7 @@
                     .map(function (e) {
                       return {
                         date: "[".concat(
-                          Gg()(e.time).format("MMM D, Y HH:mm:ss"),
+                          bg()(e.time).format("MMM D, Y HH:mm:ss"),
                           "]"
                         ),
                         time: "Year ".concat(e.year, ", Day ").concat(e.day),
@@ -25414,9 +25478,9 @@
               }),
               t
             );
-          })(C),
-          wg = Dg.getInstance(),
-          Xg = (function () {
+          })(v),
+          Xg = wg.getInstance(),
+          kg = (function () {
             function e() {}
             return (
               (e.getInstance = function () {
@@ -25426,9 +25490,9 @@
                 var t = [];
                 if (
                   e === l.RESEARCH &&
-                  xg.resources.getResource(l.ANOMALITIES) > 0
+                  Yg.resources.getResource(l.ANOMALITIES) > 0
                 ) {
-                  var n = 1 + 0.01 * xg.resources.getResource(l.ANOMALITIES);
+                  var n = 1 + 0.01 * Yg.resources.getResource(l.ANOMALITIES);
                   t.push({
                     label: "Resource: Anomaly",
                     value: n,
@@ -25475,7 +25539,7 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          kg = (function (e) {
+          xg = (function (e) {
             function t() {
               var t = this,
                 n = Date.now();
@@ -25486,27 +25550,27 @@
                 (t.isFirstIter = !1),
                 (t.isLoading = !0),
                 (t.speedUpFactor = 1),
-                (t.settings = { turnAnimationsOn: !0 }),
+                (t.settings = { turnAnimationsOn: !0, theme: d.DARK }),
                 t.workDispatcher.on("initialize", function (e) {
                   console.log("Received payload", e);
                 }),
-                (t.resources = fl),
-                (t.milestones = hl),
-                (t.landingZone = yl),
+                (t.resources = Rl),
+                (t.milestones = Cl),
+                (t.landingZone = ml),
                 (t.colony = Hl),
                 (t.science = Fl),
-                (t.crafting = $l),
-                (t.goals = oE),
-                (t.laws = uE),
-                (t.space = $d),
-                (t.expedition = gg),
-                (t.newNotifications = Rg),
-                (t.prestige = pg),
-                (t.statistics = Tg),
-                (t.environment = Sg),
-                (t.queuedItems = Mg),
-                (t.eventLog = wg),
-                (t.resourceEffect = Xg),
+                (t.crafting = ep),
+                (t.goals = rE),
+                (t.laws = lE),
+                (t.space = eg),
+                (t.expedition = Ag),
+                (t.newNotifications = Ig),
+                (t.prestige = Eg),
+                (t.statistics = Og),
+                (t.environment = Pg),
+                (t.queuedItems = Ug),
+                (t.eventLog = Xg),
+                (t.resourceEffect = kg),
                 setInterval(function () {
                   t.isLoading
                     ? console.warn("Game is loading... Skip")
@@ -25543,6 +25607,13 @@
                 }),
                 t.workDispatcher.on("[game] toggle animations", function (e) {
                   (t.settings.turnAnimationsOn = e),
+                    t.workDispatcher.output(
+                      "[game] save and reload",
+                      t.exportData()
+                    );
+                }),
+                t.workDispatcher.on("[game] toggle theme", function (e) {
+                  (t.settings.theme = e),
                     t.workDispatcher.output(
                       "[game] save and reload",
                       t.exportData()
@@ -25603,7 +25674,11 @@
                   this.space.importData(e.space),
                   this.queuedItems.importData(e.queuedItems),
                   this.eventLog.importData(e.events),
-                  (this.settings = e.settings || { turnAnimationsOn: !0 }),
+                  (this.settings = e.settings || {
+                    turnAnimationsOn: !0,
+                    theme: d.DARK,
+                  }),
+                  this.settings.theme || (this.settings.theme = d.DARK),
                   (this.timeInGame = e.timeInGame),
                   (this.timeInPrestige = e.timeInPrestige),
                   (this.isFirstIter = !0),
@@ -25652,20 +25727,20 @@
                     environment: this.environment.dataToUI(),
                     queueItems: this.queuedItems.dataToUI(),
                     eventLogs: this.eventLog.dataToUI(),
-                    timeInPrestige: X(this.timeInPrestige),
-                    timeInGame: X(this.timeInGame),
+                    timeInPrestige: k(this.timeInPrestige),
+                    timeInGame: k(this.timeInGame),
                   }
                 );
               }),
               (t.prototype.purchaseMax = function () {}),
               t
             );
-          })(C),
-          xg = kg.getInstance();
+          })(v),
+          Yg = xg.getInstance();
         self.addEventListener("message", function (e) {
           var t = e.data;
           console.log("send to worker: ", t),
-            xg.workDispatcher.handleInput(t.type, t.payload);
+            Yg.workDispatcher.handleInput(t.type, t.payload);
         });
       },
     },
