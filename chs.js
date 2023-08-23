@@ -301,7 +301,7 @@ var cnItems = {
     "Gravitational Lensing Study": "引力透镜研究",
     "Learn more about the powerful physical effect from massive celestial bodies that causes the curvature of spacetime. Provides more knowledge about the universe and surrounding stars and boosts space telescope effect by 40%": "进一步研究大质量天体导致时空弯曲的物理效应，以获得更多关于宇宙及周围恒星的知识。太空望远镜的研究上限提升40%",
     "Radiative Dissociation": "辐射解离",
-    "Using radiation can improve dissociation processes, improving your electrolytes efficiency.  Improves your power storage facilities by 20%.": "使用辐射可以改良电解流程，提高电解质效率。电力上限提升 20%",
+    "Using radiation can improve dissociation processes, improving your electrolysis efficiency.  Improves your power storage facilities by 20%.": "使用辐射可以改良电解流程，提高电解质效率。电力上限提升 20%",
     "Radiative Catalyzation": "辐射催化",
     "Use radiation in chemical reactions to boost your fuel output by 20%": "在化学反应中使用辐射进行催化。燃料产量提升 20%",
     "Plasma Knife": "等离子刀",
@@ -1384,6 +1384,13 @@ var cnItems = {
     "Join our Discord": "加入 Discord 频道",
 
     //更新日志正文
+    //v0.2.5
+    "Added color themes settings": "加入了主题的选择，目前可以在暗色/黑色/明亮三种主题中切换；更新了暗色模式的配色，现在对低色差的显示器更友好",
+    "Added option to sort queue by ETA": "加入了一个按钮，可以根据预计完成时间为队列一键排序",
+    "Clicking on unavailable item will now add it to queue": "点击目前无法购买的项目会直接将其加入队列",
+    "XP bonus now shown on planet options": "星球的经验倍率现在会直接显示在星球按钮上",
+    "Produced/Consumed/Boosted resources are now highlighted when you hover over building/job": "鼠标放在建筑物/工作上时，其所生产/消耗/加成的资源会高亮显示",
+    "Plenty of other less significant fixes": "许多其他相对次要的修复",
     //v0.2.4a
     "Decreased power requirements for some early-game buildings": "降低了一些前期建筑物的电力需求",
     "Fixed bug when queue didnt cleared on reset": "修复了重置时不会清除队列的bug",
@@ -1740,7 +1747,7 @@ var cnItems = {
     "Show Resources": "显示资源",
     "Hide resources": "隐藏资源",
 
-    //更新日志标题及日期
+    //更新日志标题
     "v0.2.4a Small Update": "v0.2.4a 小型更新",
     "v0.2.4 Minor Update": "v0.2.4 次级更新",
     "v0.2.3 Regular update": "v0.2.3 常规更新",
@@ -1841,7 +1848,7 @@ var cnPrefix = {
     "Temperature modifier: ": "温度修正：",
 
     //
-    "Law Lightning Mode: ": "照明模式政策：",
+    "Law Lighting Mode: ": "照明模式政策：",
     "Law Fuel Processing Mode: ": "燃料生产政策：",
     "Law Food Chemical Processing: ": "食品加工政策：",
     "Law Furnace Metal Processing": "金属加工政策：",
@@ -1980,8 +1987,8 @@ var cnRegReplace = new Map([
     [/^Expedition arrived. Obtained: (.+).$/, '探险完成，获得：$2'],
     [/^Prestige: (.+). Received: (.+)$/, '重置：$1，获得：$2'],
     [/^You received (.+)$/, '您获得了：$1'],
-    [/^Colonist arrived. Colony grew up to (\d+) citizens$/, '新的殖民者到来了。当前人口：$1'],
-    [/^Colonist died. You now have (\d+) survivors left$/, '有殖民者死亡了。剩余人口：$1'],
+    [/^Colonist arrived. Colony grew up to ([\d\.]+) citizens$/, '新的殖民者到来了。当前人口：$1'],
+    [/^Colonist died. You now have ([\d\.]+) survivors left$/, '有殖民者死亡了。剩余人口：$1'],
     [/^Law&Order: (.+)$/, '政策变更：$1'],
     [/^(\d)(\d)\/(\d)(\d)\/(\d)(\d)(\d)(\d)$/, '$5$6$7$8\/$3$4\/$1$2'],
 
