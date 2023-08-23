@@ -1364,6 +1364,11 @@ var cnItems = {
     "On": "开启",
     "Off": "关闭",
     "This will save game and reload page": "更改此选项会立即保存游戏并刷新网页",
+    "Toggle theme": "切换主题",
+    "dark": "暗色",
+    "black": "黑色",
+    "light": "明亮",
+    "Changing this will save game and reload page": "更改此选项会立即保存游戏并刷新网页",
     
     //
     "Science": "科学",
@@ -1738,6 +1743,7 @@ var cnItems = {
     "Items:": "项目：",
     "of": "/",
     "Select scope first": "请先选择分类",
+    "Sort by ETA": "按完成时间排序",
     "Add to queue": "加入队列",
     "Queue is full": "队列已满",
     "Events Filters": "日志过滤",
