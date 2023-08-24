@@ -463,7 +463,7 @@ var cnItems = {
     "Microflora Helpers": "微生物群助手",
     "Better understanding and control over your microflora allows you now to use it more widely without risk of pandemic. Use it in production lines to improve efficiency of building and electronics factory by 1% per level": "更好地了解和控制微生物群，使您可以将其直接运用在生产线上，而无需担心其致病性。使每级建筑材料工厂和电子元件工厂的产量加成增加 1%",
     "Annihilation Beam": "湮灭光束",
-    "Use controlled annihilation to further boost your industries. Increase stone, ore and platinum output by 20% per level": "利用可控的湮灭反应来进一步提升矿物产量。每级使石头、矿石和铂金产量提升 20%",
+    "Use controlled annihilation to further boost your industries. Increase stone, ore and platinum output by 30% per level": "利用可控的湮灭反应来进一步提升矿物产量。每级使石头、矿石和铂金产量提升 30%",
     "Huge Gamma-Transmitter": "大型伽马射线发射机",
     "Use focused annihilation gamma-quanta beam to communicate with other civilizations. Increase XP and KP gain by 50%": "聚焦湮灭反应中产生的伽马量子束，并用它和宇宙中的其他文明交流。使本轮游戏的知识或经验获取量提升 50%",
     "Radiation Blowing": "辐射移除",
