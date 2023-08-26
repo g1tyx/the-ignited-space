@@ -1166,6 +1166,18 @@ var cnItems = {
     "Wet Big Cold": "潮湿 大型 寒冷",
     "Wet Big Hot": "潮湿 大型 炎热",
 
+    "Wet Ore Poor": "潮湿 矿物贫瘠",
+    "Wet Ore Poor Cold": "潮湿 矿物贫瘠 寒冷",
+    "Wet Ore Poor Hot": "潮湿 矿物贫瘠 炎热",
+
+    "Wet Ore Rich": "潮湿 矿物丰富",
+    "Wet Ore Rich Cold": "潮湿 矿物丰富 寒冷",
+    "Wet Ore Rich Hot": "潮湿 矿物丰富 炎热",
+
+    "Wet Peaty": "潮湿 泥质",
+    "Wet Peaty Cold": "潮湿 泥质 寒冷",
+    "Wet Peaty Hot": "潮湿 泥质 炎热",
+
     "Wet Cold": "潮湿 寒冷",
     "Wet Hot": "潮湿 炎热",
     
@@ -1201,6 +1213,19 @@ var cnItems = {
 
     "Dry Big Cold": "干燥 大型 寒冷",
     "Dry Big Hot": "干燥 大型 炎热",
+
+    "Dry": "干燥 大型",
+    "Dry Ore Poor": "干燥 矿物贫瘠",
+    "Dry Ore Poor Cold": "干燥 矿物贫瘠 寒冷",
+    "Dry Ore Poor Hot": "干燥 矿物贫瘠 炎热",
+
+    "Dry Ore Rich": "干燥 矿物丰富",
+    "Dry Ore Rich Cold": "干燥 矿物丰富 寒冷",
+    "Dry Ore Rich Hot": "干燥 矿物丰富 炎热",
+
+    "Dry Peaty": "干燥 泥质",
+    "Dry Peaty Cold": "干燥 泥质 寒冷",
+    "Dry Peaty Hot": "干燥 泥质 炎热",
 
     "Dry Cold": "干燥 寒冷",
     "Dry Hot": "干燥 炎热",
@@ -1452,6 +1477,7 @@ var cnItems = {
     "Landing zone": "着陆区",
     "Colony": "殖民地",
     "Crafting": "制造",
+    "Expeditions": "探险",
     "Researches": "研究",
     "Hide researched": "隐藏研究",
     "Show researched": "显示已研究",
@@ -1786,7 +1812,7 @@ var cnItems = {
     "Weather: x": "天气倍率：x",
     "Select search for specific modifier. This will increase search cost": "您可以搜索特定的行星词条，但这会增加搜索行星时的燃料消耗",
 
-    "Select disasters harshness (be careful, it can significantly ramp up difficulty)": "选择灾害严峻程度。（小心，这可能会导致难度大幅提高）",
+    "Select disasters harshness (be careful, it can significantly ramp up difficulty)": "选择灾害严峻程度（小心，这可能会导致难度大幅提高）",
     "Small": "小型",
     "Realistic": "合理",
     "Hard": "困难",
@@ -1805,7 +1831,7 @@ var cnItems = {
     "Seasons:": "季节：",
 
     "Disasters level: ": "灾害等级：",
-    "Star class: ": "星球种类：",
+    "Star class: ": "恒星种类：",
 
     "KP Gain multiplier:": "经验获取倍率（同时影响经验和知识获取量）：x",
     "Consume": "消耗",
@@ -1890,6 +1916,8 @@ var cnItems = {
     "Hide resources": "隐藏资源",
 
     //更新日志标题
+    "v0.2.6a Balance Hotfix": "v0.2.6a 平衡性更新",
+    "v0.2.6 Regular Update": "v0.2.6 常规更新",
     "v0.2.5 Small Update": "v0.2.5 小型更新",
     "v0.2.4a Small Update": "v0.2.4a 小型更新",
     "v0.2.4 Minor Update": "v0.2.4 次级更新",
@@ -1990,6 +2018,9 @@ var cnPrefix = {
     "Planet modifier: ": "行星修正：",
     "Star modifier: ": "恒星修正：",
     "Temperature modifier: ": "温度修正：",
+    "Disasters level: ": "灾害等级：",
+    "Star class: ": "恒星种类：",
+
 
     //
     "Law Artificial Organs: ": "人造器官政策：",
@@ -2016,6 +2047,8 @@ var cnPrefix = {
     "Volcanic ": "火山 ",
     "Inactive ": "低磁性 ",
     "Calm ": "平静 ",
+
+    "ETA: ": "预计完成时间",
 }
 
 //需处理的后缀
