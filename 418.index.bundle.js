@@ -812,7 +812,7 @@
 						})) || D.find((function(t) {
 							return t.id === e
 						}));
-						return t ? t.unlockCondition(kf) ? t.name : "???" : e
+						return t ? t.unlockCondition(xf) ? t.name : "???" : e
 					},
 					X = function(e) {
 						return Object.entries(e)
@@ -1064,9 +1064,9 @@
 								progress: 0,
 								performed: 0
 							}, this.actions.push(t));
-							var n = k.calcBatchAll(e.getCost, xf.getInstance(), 0, xf.getInstance()
+							var n = k.calcBatchAll(e.getCost, Xf.getInstance(), 0, Xf.getInstance()
 									.resources.getBatchObject()),
-								i = k.calcBatch(e.getGain, xf.getInstance(), 0),
+								i = k.calcBatch(e.getGain, Xf.getInstance(), 0),
 								o = n.reduce((function(e, t) {
 									return Math.min(e, Math.floor(t.max))
 								}), 1e300),
@@ -1076,16 +1076,16 @@
 								a = n.reduce((function(e, t) {
 									return Math.max(e, t.eta)
 								}), 0),
-								c = e.unlockCondition(kf);
-							return c && kf.newNotifications.registerNotification("planet:landing-zone:actions:".concat(e.id)), {
+								c = e.unlockCondition(xf);
+							return c && xf.newNotifications.registerNotification("planet:landing-zone:actions:".concat(e.id)), {
 								id: e.id,
 								name: e.name,
 								description: e.description,
 								isUnlocked: c,
-								isAvailable: e.availableCondition(kf) && o >= 1,
-								cost: xf.getInstance()
-									.resources.assertEnought(n, xf.getInstance()
-										.resources.getBatchObject(), xf.getInstance()
+								isAvailable: e.availableCondition(xf) && o >= 1,
+								cost: Xf.getInstance()
+									.resources.assertEnought(n, Xf.getInstance()
+										.resources.getBatchObject(), Xf.getInstance()
 										.resources.getBatchBalanceObject()),
 								gain: i.map((function(e) {
 									return Zu(Zu({}, e), {
@@ -1113,12 +1113,12 @@
 									performed: 0
 								});
 								else if (this.actions[n].cooldown > 0) return;
-								var i = k.calcBatchAll(t.getCost, xf.getInstance(), 0, xf.getInstance()
+								var i = k.calcBatchAll(t.getCost, Xf.getInstance(), 0, Xf.getInstance()
 									.resources.getBatchObject());
 								i.reduce((function(e, t) {
 									return Math.min(e, Math.floor(t.max))
-								}), 1e300) < 1 || (this.actions[n].cooldown = 1.5, this.actions[n].performed++, console.log("costs: ", i), xf.getInstance()
-									.resources.subtractResourceBatch(i), kf.resources.reassertBalances(), kf.expeditionV2.generateCache())
+								}), 1e300) < 1 || (this.actions[n].cooldown = 1.5, this.actions[n].performed++, console.log("costs: ", i), Xf.getInstance()
+									.resources.subtractResourceBatch(i), xf.resources.reassertBalances(), xf.expeditionV2.generateCache())
 							}
 						}, t.prototype.getActionPerformed = function(e) {
 							var t;
@@ -1133,13 +1133,13 @@
 										return t.id === e.id
 									}));
 									if (!i) return;
-									var o = k.calcBatch(i.getGain, xf.getInstance(), 0),
-										r = k.calcBatchAll(i.getCost, xf.getInstance(), 0, xf.getInstance()
+									var o = k.calcBatch(i.getGain, Xf.getInstance(), 0),
+										r = k.calcBatchAll(i.getCost, Xf.getInstance(), 0, Xf.getInstance()
 											.resources.getBatchObject());
-									xf.getInstance()
+									Xf.getInstance()
 										.eventLog.registerAction(i.name, r, o), o.forEach((function(e) {
-											kf.resources.addResource(e.id, e.amount)
-										})), kf.resources.reassertBalances(), kf.expeditionV2.generateCache()
+											xf.resources.addResource(e.id, e.amount)
+										})), xf.resources.reassertBalances(), xf.expeditionV2.generateCache()
 								}
 							}))
 						}, t.prototype.reset = function() {
@@ -6592,7 +6592,7 @@
 								id: e.id,
 								level: 0
 							}, this.upgrades.push(i));
-							var o = k.calcBatchAll(e.getCost, xf.getInstance(), i.level + t, xf.getInstance()
+							var o = k.calcBatchAll(e.getCost, Xf.getInstance(), i.level + t, Xf.getInstance()
 									.resources.getBatchObject()),
 								r = o.reduce((function(e, t) {
 									return e && !t.isBlocked
@@ -6600,23 +6600,23 @@
 								a = o.reduce((function(e, t) {
 									return Math.max(e, t.eta)
 								}), 0),
-								c = e.getCapacityEffect ? k.calcBatch(e.getCapacityEffect, xf.getInstance(), 0) : [],
-								s = e.getCapacityMultiplier ? k.calcBatch(e.getCapacityMultiplier, xf.getInstance(), i.level + 1) : [],
-								l = e.getGain ? k.calcBatch(e.getGain, xf.getInstance(), 0) : [],
-								p = e.getGainMultiplier ? k.calcBatch(e.getGainMultiplier, xf.getInstance(), i.level + 1) : [],
+								c = e.getCapacityEffect ? k.calcBatch(e.getCapacityEffect, Xf.getInstance(), 0) : [],
+								s = e.getCapacityMultiplier ? k.calcBatch(e.getCapacityMultiplier, Xf.getInstance(), i.level + 1) : [],
+								l = e.getGain ? k.calcBatch(e.getGain, Xf.getInstance(), 0) : [],
+								p = e.getGainMultiplier ? k.calcBatch(e.getGainMultiplier, Xf.getInstance(), i.level + 1) : [],
 								E = o.reduce((function(e, t) {
 									return Math.min(e, t.max)
 								}), 1e300),
-								d = e.unlockCondition(kf);
-							return d && i.level <= 0 && kf.newNotifications.registerNotification("planet:landing-zone:upgrades:".concat(e.id)), {
+								d = e.unlockCondition(xf);
+							return d && i.level <= 0 && xf.newNotifications.registerNotification("planet:landing-zone:upgrades:".concat(e.id)), {
 								id: e.id,
 								name: e.name,
 								description: e.description,
 								isUnlocked: d,
 								isAvailable: E >= 1,
-								cost: xf.getInstance()
-									.resources.assertEnought(o, xf.getInstance()
-										.resources.getBatchObject(), xf.getInstance()
+								cost: Xf.getInstance()
+									.resources.assertEnought(o, Xf.getInstance()
+										.resources.getBatchObject(), Xf.getInstance()
 										.resources.getBatchBalanceObject()),
 								max: c.map((function(e) {
 									return qu(qu({}, e), {
@@ -6665,13 +6665,13 @@
 									level: 0
 								});
 								else if (t.maxLevel && this.upgrades[n].level >= t.maxLevel) return;
-								var i = k.calcBatchAll(t.getCost, xf.getInstance(), this.upgrades[n].level, xf.getInstance()
+								var i = k.calcBatchAll(t.getCost, Xf.getInstance(), this.upgrades[n].level, Xf.getInstance()
 									.resources.getBatchObject());
 								if (!(i.reduce((function(e, t) {
 									return Math.min(e, Math.floor(t.max))
-								}), 1e300) < 1)) return this.upgrades[n].level++, console.log("costs: ", i), xf.getInstance()
-									.resources.subtractResourceBatch(i), kf.resources.reassertBalances(), kf.expeditionV2.generateCache(), xf.getInstance()
-									.eventLog.registerUpgrade(t.name, i, this.upgrades[n].level), xf.getInstance()
+								}), 1e300) < 1)) return this.upgrades[n].level++, console.log("costs: ", i), Xf.getInstance()
+									.resources.subtractResourceBatch(i), xf.resources.reassertBalances(), xf.expeditionV2.generateCache(), Xf.getInstance()
+									.eventLog.registerUpgrade(t.name, i, this.upgrades[n].level), Xf.getInstance()
 									.queuedItems.checkUnregisterUpgrade(e, this.upgrades[n].level, t.maxLevel), !0
 							}
 						}, t.prototype.getGain = function(e) {
@@ -6685,7 +6685,7 @@
 									return e.id === i.id
 								}));
 								if (o && o.getGain) {
-									var r = k.calculate(kf, o.getGain[e], 0, i.level);
+									var r = k.calculate(xf, o.getGain[e], 0, i.level);
 									n.push({
 										label: "Upgrade: ".concat(o.name),
 										value: r,
@@ -6705,7 +6705,7 @@
 									return e.id === i.id
 								}));
 								if (o && o.getGainMultiplier) {
-									var r = k.calculate(kf, o.getGainMultiplier[e], i.level, 1);
+									var r = k.calculate(xf, o.getGainMultiplier[e], i.level, 1);
 									r && n.push({
 										label: "Upgrade: ".concat(o.name),
 										value: r,
@@ -6725,7 +6725,7 @@
 									return e.id === i.id
 								}));
 								if (o && o.getCapacityEffect) {
-									var r = k.calculate(kf, o.getCapacityEffect[e], 0, i.level);
+									var r = k.calculate(xf, o.getCapacityEffect[e], 0, i.level);
 									n.push({
 										label: "Upgrade: ".concat(o.name),
 										value: r,
@@ -6745,7 +6745,7 @@
 									return e.id === i.id
 								}));
 								if (o && o.getCapacityMultiplier) {
-									var r = k.calculate(kf, o.getCapacityMultiplier[e], i.level, 1);
+									var r = k.calculate(xf, o.getCapacityMultiplier[e], i.level, 1);
 									r && n.push({
 										label: "Upgrade: ".concat(o.name),
 										value: r,
@@ -7095,7 +7095,7 @@
 						}, So),
 						getGain: (Po = {}, Po[l.POWER] = function(e) {
 							return {
-								A: 15 * Math.pow(1.1, kf.landingZone.landingZoneUpgrades.getUpgradeLevel(r.CONTROLLABLE_THERMONUCLEAR_REACTIONS)) * Math.pow(1.05, kf.landingZone.landingZoneUpgrades.getUpgradeLevel(r.NEUTRINO_COOLERS)) * (1 + .05 * e.landingZone.landingZoneBuildings.getBuildingActiveLevel(a.FUEL_PURIFICATION_STATION)),
+								A: 15 * Math.pow(1.1, xf.landingZone.landingZoneUpgrades.getUpgradeLevel(r.CONTROLLABLE_THERMONUCLEAR_REACTIONS)) * Math.pow(1.05, xf.landingZone.landingZoneUpgrades.getUpgradeLevel(r.NEUTRINO_COOLERS)) * (1 + .05 * e.landingZone.landingZoneBuildings.getBuildingActiveLevel(a.FUEL_PURIFICATION_STATION)),
 								B: 0,
 								type: i.LINEAR
 							}
@@ -9245,7 +9245,7 @@
 						}, Fa),
 						getConsumption: (Va = {}, Va[l.POWER] = function(e) {
 							return {
-								A: 25 * Math.pow(.8, kf.landingZone.landingZoneUpgrades.getUpgradeLevel(r.EFFICIENT_COLLIDERS)),
+								A: 25 * Math.pow(.8, xf.landingZone.landingZoneUpgrades.getUpgradeLevel(r.EFFICIENT_COLLIDERS)),
 								B: 0,
 								type: i.LINEAR
 							}
@@ -9937,7 +9937,7 @@
 									consumption: [{
 										id: "population",
 										label: "Population",
-										value: .005 * kf.colony.colonists,
+										value: .005 * xf.colony.colonists,
 										category: "Buildings"
 									}]
 								},
@@ -9957,7 +9957,7 @@
 									consumption: [{
 										id: "population",
 										label: "Population",
-										value: .1 * kf.colony.colonists,
+										value: .1 * xf.colony.colonists,
 										category: "Buildings"
 									}]
 								},
@@ -10226,19 +10226,19 @@
 									return t.id === e
 								}))) || void 0 === n ? void 0 : n.isCraftable;
 								(t = T[e].income.linear)
-								.push.apply(t, kf.landingZone.landingZoneBuildings.getResourceBeingProduced(e)), (l = T[e].income.multiplier)
-									.push.apply(l, kf.landingZone.landingZoneBuildings.getResourceMultiplier(e)), null === (i = T[e].income.consumption) || void 0 === i || i.push.apply(i, kf.landingZone.landingZoneBuildings.getResourceBeingConsumed(e)), null === (o = T[e].max.linear) || void 0 === o || o.push.apply(o, kf.landingZone.landingZoneBuildings.getResourceBeingStored(e)), (O = T[e].income.linear)
-									.push.apply(O, kf.landingZone.landingZoneUpgrades.getGain(e)), (L = T[e].income.multiplier)
-									.push.apply(L, kf.landingZone.landingZoneUpgrades.getGainMultiplier(e)), null === (r = T[e].max.linear) || void 0 === r || r.push.apply(r, kf.landingZone.landingZoneUpgrades.getCapacity(e)), null === (a = T[e].max.multiplier) || void 0 === a || a.push.apply(a, kf.landingZone.landingZoneUpgrades.getCapacityMult(e)), D && ((C = T[e].income.multiplier)
-										.push.apply(C, kf.landingZone.landingZoneBuildings.getCraftingMultiplier()), null === (c = T[e].max.multiplier) || void 0 === c || c.push.apply(c, kf.environment.ongoingEffects.getCraftingMultiplier())), (v = T[e].income.linear)
-									.push.apply(v, kf.colony.colonyJobs.getResourceBeingProduced(e)), null === (s = T[e].income.consumption) || void 0 === s || s.push.apply(s, kf.colony.colonyJobs.getResourceBeingConsumed(e)), null === (u = T[e].income.multiplier) || void 0 === u || u.push.apply(u, kf.colony.colonyJobs.getResourceBeingMultiplied(e)), (S = T[e].income.linear)
-									.push.apply(S, kf.crafting.craftingJobs.getResourceBeingProduced(e)), null === (p = T[e].income.consumption) || void 0 === p || p.push.apply(p, kf.crafting.craftingJobs.getResourceBeingConsumed(e)), (P = T[e].income.linear)
-									.push.apply(P, kf.laws.getResourceBeingProduced(e)), (B = T[e].income.multiplier)
-									.push.apply(B, kf.laws.getResourceMultiplier(e)), null === (E = T[e].income.consumption) || void 0 === E || E.push.apply(E, kf.laws.getResourceBeingConsumed(e)), null === (d = T[e].max.linear) || void 0 === d || d.push.apply(d, kf.laws.getResourceBeingStored(e)), (_ = T[e].income.linear)
-									.push.apply(_, kf.prestige.transmitKnowledge.getResourceBeingProduced(e)), (M = T[e].income.multiplier)
-									.push.apply(M, kf.prestige.transmitKnowledge.getResourceMultiplier(e)), null === (g = T[e].max.linear) || void 0 === g || g.push.apply(g, kf.prestige.transmitKnowledge.getResourceBeingStored(e)), null === (f = T[e].max.multiplier) || void 0 === f || f.push.apply(f, kf.prestige.transmitKnowledge.getCapacityMult(e)), null === (A = T[e].income.multiplier) || void 0 === A || A.push.apply(A, kf.prestige.colonizePlanet.getResourceMultiplier(e)), null === (N = T[e].max.multiplier) || void 0 === N || N.push.apply(N, kf.prestige.colonizePlanet.getCapacityMultiplier(e)), null === (R = T[e].income.multiplier) || void 0 === R || R.push.apply(R, kf.environment.climate.getResourceMultiplier(e)), null === (I = T[e].income.multiplier) || void 0 === I || I.push.apply(I, kf.prestige.colonizePlanet.getResourceUpgradeMultiplier(e)), null === (y = T[e].max.multiplier) || void 0 === y || y.push.apply(y, kf.resourceEffect.getResourceCapMultiplier(e)), (U = T[e].income.linear)
-									.push.apply(U, kf.environment.ongoingEffects.getResourceBeingProduced(e)), (b = T[e].income.multiplier)
-									.push.apply(b, kf.environment.ongoingEffects.getResourceMultiplier(e)), null === (h = T[e].income.consumption) || void 0 === h || h.push.apply(h, kf.environment.ongoingEffects.getResourceBeingConsumed(e)), null === (m = T[e].max.multiplier) || void 0 === m || m.push.apply(m, kf.environment.ongoingEffects.getResourceStoreMultiplier(e))
+								.push.apply(t, xf.landingZone.landingZoneBuildings.getResourceBeingProduced(e)), (l = T[e].income.multiplier)
+									.push.apply(l, xf.landingZone.landingZoneBuildings.getResourceMultiplier(e)), null === (i = T[e].income.consumption) || void 0 === i || i.push.apply(i, xf.landingZone.landingZoneBuildings.getResourceBeingConsumed(e)), null === (o = T[e].max.linear) || void 0 === o || o.push.apply(o, xf.landingZone.landingZoneBuildings.getResourceBeingStored(e)), (O = T[e].income.linear)
+									.push.apply(O, xf.landingZone.landingZoneUpgrades.getGain(e)), (L = T[e].income.multiplier)
+									.push.apply(L, xf.landingZone.landingZoneUpgrades.getGainMultiplier(e)), null === (r = T[e].max.linear) || void 0 === r || r.push.apply(r, xf.landingZone.landingZoneUpgrades.getCapacity(e)), null === (a = T[e].max.multiplier) || void 0 === a || a.push.apply(a, xf.landingZone.landingZoneUpgrades.getCapacityMult(e)), D && ((C = T[e].income.multiplier)
+										.push.apply(C, xf.landingZone.landingZoneBuildings.getCraftingMultiplier()), null === (c = T[e].max.multiplier) || void 0 === c || c.push.apply(c, xf.environment.ongoingEffects.getCraftingMultiplier())), (v = T[e].income.linear)
+									.push.apply(v, xf.colony.colonyJobs.getResourceBeingProduced(e)), null === (s = T[e].income.consumption) || void 0 === s || s.push.apply(s, xf.colony.colonyJobs.getResourceBeingConsumed(e)), null === (u = T[e].income.multiplier) || void 0 === u || u.push.apply(u, xf.colony.colonyJobs.getResourceBeingMultiplied(e)), (S = T[e].income.linear)
+									.push.apply(S, xf.crafting.craftingJobs.getResourceBeingProduced(e)), null === (p = T[e].income.consumption) || void 0 === p || p.push.apply(p, xf.crafting.craftingJobs.getResourceBeingConsumed(e)), (P = T[e].income.linear)
+									.push.apply(P, xf.laws.getResourceBeingProduced(e)), (B = T[e].income.multiplier)
+									.push.apply(B, xf.laws.getResourceMultiplier(e)), null === (E = T[e].income.consumption) || void 0 === E || E.push.apply(E, xf.laws.getResourceBeingConsumed(e)), null === (d = T[e].max.linear) || void 0 === d || d.push.apply(d, xf.laws.getResourceBeingStored(e)), (_ = T[e].income.linear)
+									.push.apply(_, xf.prestige.transmitKnowledge.getResourceBeingProduced(e)), (M = T[e].income.multiplier)
+									.push.apply(M, xf.prestige.transmitKnowledge.getResourceMultiplier(e)), null === (g = T[e].max.linear) || void 0 === g || g.push.apply(g, xf.prestige.transmitKnowledge.getResourceBeingStored(e)), null === (f = T[e].max.multiplier) || void 0 === f || f.push.apply(f, xf.prestige.transmitKnowledge.getCapacityMult(e)), null === (A = T[e].income.multiplier) || void 0 === A || A.push.apply(A, xf.prestige.colonizePlanet.getResourceMultiplier(e)), null === (N = T[e].max.multiplier) || void 0 === N || N.push.apply(N, xf.prestige.colonizePlanet.getCapacityMultiplier(e)), null === (R = T[e].income.multiplier) || void 0 === R || R.push.apply(R, xf.environment.climate.getResourceMultiplier(e)), null === (I = T[e].income.multiplier) || void 0 === I || I.push.apply(I, xf.prestige.colonizePlanet.getResourceUpgradeMultiplier(e)), null === (y = T[e].max.multiplier) || void 0 === y || y.push.apply(y, xf.resourceEffect.getResourceCapMultiplier(e)), (U = T[e].income.linear)
+									.push.apply(U, xf.environment.ongoingEffects.getResourceBeingProduced(e)), (b = T[e].income.multiplier)
+									.push.apply(b, xf.environment.ongoingEffects.getResourceMultiplier(e)), null === (h = T[e].income.consumption) || void 0 === h || h.push.apply(h, xf.environment.ongoingEffects.getResourceBeingConsumed(e)), null === (m = T[e].max.multiplier) || void 0 === m || m.push.apply(m, xf.environment.ongoingEffects.getResourceStoreMultiplier(e))
 							};
 						for (var L in T) O(L);
 						return T
@@ -10389,13 +10389,13 @@
 							this.resourcesStatus[n].max = t
 						}, e.prototype.saveBalances = function() {
 							var t = this;
-							kf.colony.colonyEffects.getBreakdowns();
+							xf.colony.colonyEffects.getBreakdowns();
 							var n = Al(),
 								i = {},
 								o = {};
 							G.forEach((function(r) {
 								var a, c, s, u, p, E, d, g;
-								if (r.unlockCondition(kf)) {
+								if (r.unlockCondition(xf)) {
 									i[r.id] = {
 										max: {
 											income: [],
@@ -10535,10 +10535,10 @@
 								}
 							})), console.log("asserts: ", n[l.NUTRITION], o[l.NUTRITION]), this.cachedBreakdown = i, this.cachedShortenedBreakdown = o
 						}, e.prototype.resetEfficiency = function() {
-							e.lackEfficiencyResources = {}, kf.landingZone.landingZoneBuildings.resetEfficiency(), kf.crafting.craftingJobs.resetEfficiency()
+							e.lackEfficiencyResources = {}, xf.landingZone.landingZoneBuildings.resetEfficiency(), xf.crafting.craftingJobs.resetEfficiency()
 						}, e.prototype.assertBalances = function(t) {
 							var n;
-							void 0 === t && (t = !1), kf.colony.colonyEffects.getBreakdowns();
+							void 0 === t && (t = !1), xf.colony.colonyEffects.getBreakdowns();
 							var i = Al(),
 								o = {};
 							for (var r in i) {
@@ -10567,7 +10567,7 @@
 							}
 							e.lackEfficiencyResourcesCached = Nl({}, e.lackEfficiencyResources)
 						}, e.prototype.applyEfficiencies = function() {
-							kf.landingZone.landingZoneBuildings.adaptEfficiency(), kf.crafting.craftingJobs.adaptEfficiency()
+							xf.landingZone.landingZoneBuildings.adaptEfficiency(), xf.crafting.craftingJobs.adaptEfficiency()
 						}, e.prototype.assertAndApplyBalances = function() {
 							var t = this.assertBalances(),
 								n = 0;
@@ -10581,7 +10581,7 @@
 							this.resourcesStatus.forEach((function(e) {
 								e.balance < 0 && e.balance < -e.amount && (i = !0, o = e.id)
 							})), i && (console.log("should re-assert: ", i, o, e.lackEfficiencyResources), this.reassertBalances()), this.resourcesStatus.forEach((function(e) {
-								n.addResource(e.id, e.balance * t), [l.ANTIMATTER, l.DARK_MATTER].includes(e.id) && (kf.statistics.stats.exoticCollected += e.balance * t)
+								n.addResource(e.id, e.balance * t), [l.ANTIMATTER, l.DARK_MATTER].includes(e.id) && (xf.statistics.stats.exoticCollected += e.balance * t)
 							}))
 						}, e.prototype.getResource = function(e) {
 							var t = this.resourcesStatus.findIndex((function(t) {
@@ -10665,7 +10665,7 @@
 										name: t.name,
 										amount: Y((null == o ? void 0 : o.amount) || 0),
 										balance: Y((null == o ? void 0 : o.balance) || 0),
-										isUnlocked: t.unlockCondition(kf),
+										isUnlocked: t.unlockCondition(xf),
 										max: Y((null == o ? void 0 : o.max) || 0),
 										toFullPercentage: (o && o.max > 0 ? o.amount / o.max : 0)
 											.toPrecision(3),
@@ -10677,7 +10677,7 @@
 										isSecondary: null !== (n = t.isCraftable) && void 0 !== n && n,
 										isHidden: null !== (i = t.isHidden) && void 0 !== i && i,
 										isNegative: ((null == o ? void 0 : o.balance) || 0) < 0 || (e.getResourceEfficiency(t.id) || 0) < 1,
-										isCapped: !!o && o.max > 0 && o.max <= o.amount + 2 * kf.dT * o.balance
+										isCapped: !!o && o.max > 0 && o.max <= o.amount + 2 * xf.dT * o.balance
 									}
 								}))
 							}
@@ -10750,7 +10750,7 @@
 								.includes(e.category) ? "planet:landing-zone" : Object.values(s)
 								.includes(e.category) ? "space" : ""
 						}, t.prototype.getAllCostReduction = function() {
-							return Math.pow(.95, xf.getInstance()
+							return Math.pow(.95, Xf.getInstance()
 								.prestige.colonizePlanet.getUpgradeLevel(R.BUILDING_PRICES))
 						}, t.prototype.processToUI = function(e, t) {
 							void 0 === t && (t = 0);
@@ -10764,7 +10764,7 @@
 								activeAmount: 0,
 								efficiencyToUI: 1
 							}, this.buildings.push(n));
-							var i = k.calcBatchAll(e.getCost, xf.getInstance(), n.level + t, xf.getInstance()
+							var i = k.calcBatchAll(e.getCost, Xf.getInstance(), n.level + t, Xf.getInstance()
 									.resources.getBatchObject()),
 								o = i.reduce((function(e, t) {
 									return Math.min(e, t.max)
@@ -10775,16 +10775,16 @@
 								a = i.reduce((function(e, t) {
 									return Math.max(e, t.eta)
 								}), 0),
-								c = k.calcBatchAll(e.getConsumption, xf.getInstance(), 0, xf.getInstance()
+								c = k.calcBatchAll(e.getConsumption, Xf.getInstance(), 0, Xf.getInstance()
 									.resources.getBatchObject()),
-								s = k.calcBatch(e.getGain, xf.getInstance(), 0),
-								u = e.getStorage ? k.calcBatch(e.getStorage, xf.getInstance(), 0) : [],
-								l = e.getGainMultiplier ? k.calcBatch(e.getGainMultiplier, xf.getInstance(), 1) : [],
-								p = e.getEffectConsumption ? k.calcBatchAll(e.getEffectConsumption, xf.getInstance(), 0, xf.getInstance()
+								s = k.calcBatch(e.getGain, Xf.getInstance(), 0),
+								u = e.getStorage ? k.calcBatch(e.getStorage, Xf.getInstance(), 0) : [],
+								l = e.getGainMultiplier ? k.calcBatch(e.getGainMultiplier, Xf.getInstance(), 1) : [],
+								p = e.getEffectConsumption ? k.calcBatchAll(e.getEffectConsumption, Xf.getInstance(), 0, Xf.getInstance()
 									.resources.getBatchObject()) : [],
-								E = e.getEffectGain ? k.calcBatch(e.getEffectGain, xf.getInstance(), 0) : [],
-								d = e.unlockCondition(kf);
-							return d && n.level <= 0 && kf.newNotifications.registerNotification("".concat(this.getPreffix(e), ":building:")
+								E = e.getEffectGain ? k.calcBatch(e.getEffectGain, Xf.getInstance(), 0) : [],
+								d = e.unlockCondition(xf);
+							return d && n.level <= 0 && xf.newNotifications.registerNotification("".concat(this.getPreffix(e), ":building:")
 								.concat(e.category, ":")
 								.concat(e.id)), {
 								id: e.id,
@@ -10792,9 +10792,9 @@
 								description: e.description,
 								isUnlocked: d,
 								isAvailable: o >= 1,
-								cost: xf.getInstance()
-									.resources.assertEnought(i, xf.getInstance()
-										.resources.getBatchObject(), xf.getInstance()
+								cost: Xf.getInstance()
+									.resources.assertEnought(i, Xf.getInstance()
+										.resources.getBatchObject(), Xf.getInstance()
 										.resources.getBatchBalanceObject()),
 								progress: o < 1 ? (100 * o)
 									.toPrecision(3) : "100",
@@ -10870,7 +10870,7 @@
 							var n = this.buildings.findIndex((function(t) {
 								return t.id === e
 							}));
-							n < 0 || (this.buildings[n].activeAmount = Math.min(t, this.buildings[n].level), kf.resources.reassertBalances(), kf.expeditionV2.generateCache())
+							n < 0 || (this.buildings[n].activeAmount = Math.min(t, this.buildings[n].level), xf.resources.reassertBalances(), xf.expeditionV2.generateCache())
 						}, t.prototype.doBuild = function(e) {
 							var t = fl.find((function(t) {
 								return t.id === e
@@ -10886,12 +10886,12 @@
 									activeAmount: 0,
 									efficiencyToUI: 1
 								}));
-								var i = k.calcBatchAll(t.getCost, xf.getInstance(), this.buildings[n].level, xf.getInstance()
+								var i = k.calcBatchAll(t.getCost, Xf.getInstance(), this.buildings[n].level, Xf.getInstance()
 									.resources.getBatchObject());
 								if (!(i.reduce((function(e, t) {
 									return Math.min(e, Math.floor(t.max))
-								}), 1e300) < 1)) return this.buildings[n].level++, this.buildings[n].activeAmount++, console.log("costs: ", i), xf.getInstance()
-									.resources.subtractResourceBatch(i), kf.resources.reassertBalances(), kf.expeditionV2.generateCache(), xf.getInstance()
+								}), 1e300) < 1)) return this.buildings[n].level++, this.buildings[n].activeAmount++, console.log("costs: ", i), Xf.getInstance()
+									.resources.subtractResourceBatch(i), xf.resources.reassertBalances(), xf.expeditionV2.generateCache(), Xf.getInstance()
 									.eventLog.registerBuilding(t.name, i, this.buildings[n].level), !0
 							}
 						}, t.prototype.getEffectGain = function(e) {
@@ -10905,7 +10905,7 @@
 									return e.id === i.id
 								}));
 								if (r && (null === (o = r.getEffectGain) || void 0 === o ? void 0 : o[e])) {
-									var a = k.calculate(kf, r.getEffectGain[e], 0, i.activeAmount) * i.efficiency;
+									var a = k.calculate(xf, r.getEffectGain[e], 0, i.activeAmount) * i.efficiency;
 									n.push({
 										label: "Building: ".concat(r.name),
 										value: a,
@@ -10925,7 +10925,7 @@
 									return e.id === i.id
 								}));
 								if (r && (null === (o = r.getEffectMultiplier) || void 0 === o ? void 0 : o[e])) {
-									var a = k.calculate(kf, r.getEffectMultiplier[e], i.activeAmount, 1) * i.efficiency,
+									var a = k.calculate(xf, r.getEffectMultiplier[e], i.activeAmount, 1) * i.efficiency,
 										c = 1 + (a - 1) * i.efficiency;
 									a && n.push({
 										label: "Building: ".concat(r.name),
@@ -10946,7 +10946,7 @@
 									return e.id === i.id
 								}));
 								if (r && (null === (o = r.getEffectConsumption) || void 0 === o ? void 0 : o[e])) {
-									var a = k.calculate(kf, r.getEffectConsumption[e], 0, i.activeAmount) * i.efficiency;
+									var a = k.calculate(xf, r.getEffectConsumption[e], 0, i.activeAmount) * i.efficiency;
 									n.push({
 										label: "Building: ".concat(r.name),
 										value: a,
@@ -10965,7 +10965,7 @@
 									return e.id === i.id
 								}));
 								if (o) {
-									var r = k.calculate(kf, o.getGain[e], 0, i.activeAmount) * i.efficiency;
+									var r = k.calculate(xf, o.getGain[e], 0, i.activeAmount) * i.efficiency;
 									n.push({
 										label: "Building: ".concat(o.name),
 										value: r,
@@ -10984,7 +10984,7 @@
 									return e.id === n.id
 								}));
 								if (i && i.getCraftingMultiplier) {
-									var o = k.calculate(kf, i.getCraftingMultiplier, n.activeAmount, 1),
+									var o = k.calculate(xf, i.getCraftingMultiplier, n.activeAmount, 1),
 										r = 1 + (o - 1) * n.efficiency;
 									o && t.push({
 										label: "Building: ".concat(i.name),
@@ -11005,7 +11005,7 @@
 									return e.id === i.id
 								}));
 								if (r && (null === (o = r.getGainMultiplier) || void 0 === o ? void 0 : o[e])) {
-									var a = k.calculate(kf, r.getGainMultiplier[e], i.activeAmount, 1),
+									var a = k.calculate(xf, r.getGainMultiplier[e], i.activeAmount, 1),
 										c = 1 + (a - 1) * i.efficiency;
 									a && n.push({
 										label: "Building: ".concat(r.name),
@@ -11025,7 +11025,7 @@
 									return e.id === i.id
 								}));
 								if (o) {
-									var r = k.calculate(kf, o.getConsumption[e], 0, i.activeAmount) * i.efficiency;
+									var r = k.calculate(xf, o.getConsumption[e], 0, i.activeAmount) * i.efficiency;
 									n.push({
 										label: "Building: ".concat(o.name),
 										value: r,
@@ -11044,7 +11044,7 @@
 									return e.id === i.id
 								}));
 								if (o) {
-									var r = k.calculate(kf, o.getStorage[e], 0, i.activeAmount) * i.efficiency;
+									var r = k.calculate(xf, o.getStorage[e], 0, i.activeAmount) * i.efficiency;
 									n.push({
 										label: "Building: ".concat(o.name),
 										value: r,
@@ -11063,7 +11063,7 @@
 									return e.id === n.id
 								}));
 								if (i && i.getMaxColonists) {
-									var o = k.calculate(kf, i.getMaxColonists, 0, n.activeAmount) * n.efficiency;
+									var o = k.calculate(xf, i.getMaxColonists, 0, n.activeAmount) * n.efficiency;
 									t.push({
 										label: "Building: ".concat(i.name),
 										value: o,
@@ -11082,7 +11082,7 @@
 									return e.id === n.id
 								}));
 								if (i && i.getHappinessBonus) {
-									var o = k.calculate(kf, i.getHappinessBonus, 0, n.activeAmount) * n.efficiency;
+									var o = k.calculate(xf, i.getHappinessBonus, 0, n.activeAmount) * n.efficiency;
 									t.push({
 										label: "Building: ".concat(i.name),
 										value: o,
@@ -11115,7 +11115,7 @@
 											return a.includes(e)
 										}));
 									e.buildings[o].efficiencyToUI = 1, c.forEach((function(n) {
-										k.calculate(kf, r.getConsumption[n], 0, i.activeAmount) > 0 && ((t[n] || 0) < e.buildings[o].efficiency && (e.buildings[o].efficiencyReason = n), e.buildings[o].efficiency = Math.min(e.buildings[o].efficiency, t[n] || 0), e.buildings[o].efficiencyToUI = e.buildings[o].efficiency)
+										k.calculate(xf, r.getConsumption[n], 0, i.activeAmount) > 0 && ((t[n] || 0) < e.buildings[o].efficiency && (e.buildings[o].efficiencyReason = n), e.buildings[o].efficiency = Math.min(e.buildings[o].efficiency, t[n] || 0), e.buildings[o].efficiencyToUI = e.buildings[o].efficiency)
 									}))
 								}
 							}))
@@ -11220,7 +11220,7 @@
 									}))
 								}))
 								.forEach((function(e) {
-									e.unlockCondition(kf) && t.milestonesState.push({
+									e.unlockCondition(xf) && t.milestonesState.push({
 										id: e.id,
 										isReached: !0
 									})
@@ -11468,12 +11468,12 @@
 								efficiency: 1,
 								labour: 0
 							}, this.jobs.push(t));
-							var n = e.getConsumption ? k.calcBatchAll(e.getConsumption, xf.getInstance(), 0, xf.getInstance()
+							var n = e.getConsumption ? k.calcBatchAll(e.getConsumption, Xf.getInstance(), 0, Xf.getInstance()
 									.resources.getBatchObject()) : [],
-								i = e.getGain ? k.calcBatch(e.getGain, xf.getInstance(), 0) : [],
-								o = e.getMultiplier ? k.calcBatch(e.getMultiplier, xf.getInstance(), 0) : [],
-								a = e.unlockCondition(kf);
-							return a && kf.landingZone.landingZoneUpgrades.getUpgradeLevel(r.DOCKING_MODULE) > 0 && (t.amount > 0 && kf.newNotifications.setViewed("planet:colony:jobs:".concat(e.id)), kf.newNotifications.registerNotification("planet:colony:jobs:".concat(e.id))), {
+								i = e.getGain ? k.calcBatch(e.getGain, Xf.getInstance(), 0) : [],
+								o = e.getMultiplier ? k.calcBatch(e.getMultiplier, Xf.getInstance(), 0) : [],
+								a = e.unlockCondition(xf);
+							return a && xf.landingZone.landingZoneUpgrades.getUpgradeLevel(r.DOCKING_MODULE) > 0 && (t.amount > 0 && xf.newNotifications.setViewed("planet:colony:jobs:".concat(e.id)), xf.newNotifications.registerNotification("planet:colony:jobs:".concat(e.id))), {
 								id: e.id,
 								name: e.name,
 								description: e.description,
@@ -11523,7 +11523,7 @@
 							}));
 							var i = this.freeLabour + this.freeWorkers,
 								o = Math.max(t, 0) - this.jobs[n].amount - this.freeWorkers;
-							o > 0 && (console.log("ADD: Get from labour", o, Math.max(-o, -this.freeLabour)), this.addAmount(_.LABOUR, Math.max(-o, -this.freeLabour))), this.jobs[n].amount = Math.min(Math.max(t, 0), this.jobs[n].amount + i), kf.resources.reassertBalances(), kf.expeditionV2.generateCache()
+							o > 0 && (console.log("ADD: Get from labour", o, Math.max(-o, -this.freeLabour)), this.addAmount(_.LABOUR, Math.max(-o, -this.freeLabour))), this.jobs[n].amount = Math.min(Math.max(t, 0), this.jobs[n].amount + i), xf.resources.reassertBalances(), xf.expeditionV2.generateCache()
 						}, t.prototype.addAmount = function(e, t) {
 							t = Math.floor(t);
 							var n = this.jobs.findIndex((function(t) {
@@ -11536,7 +11536,7 @@
 								labour: 0
 							}));
 							var i = t + this.jobs[n].amount;
-							console.log("ADD: ", e, i, t, this.jobs[n].amount), this.jobs[n].amount = Math.min(Math.max(i, 0), this.jobs[n].amount + this.freeWorkers), kf.resources.reassertBalances(), kf.expeditionV2.generateCache()
+							console.log("ADD: ", e, i, t, this.jobs[n].amount), this.jobs[n].amount = Math.min(Math.max(i, 0), this.jobs[n].amount + this.freeWorkers), xf.resources.reassertBalances(), xf.expeditionV2.generateCache()
 						}, t.prototype.setLabour = function(e, t) {
 							t = Math.floor(t);
 							var n = this.jobs.findIndex((function(t) {
@@ -11547,7 +11547,7 @@
 								amount: 0,
 								efficiency: 1,
 								labour: 0
-							})), this.jobs[n].labour = Math.min(Math.max(t, 0), this.jobs[n].labour + this.freeLabour), kf.resources.reassertBalances(), kf.expeditionV2.generateCache()
+							})), this.jobs[n].labour = Math.min(Math.max(t, 0), this.jobs[n].labour + this.freeLabour), xf.resources.reassertBalances(), xf.expeditionV2.generateCache()
 						}, t.prototype.addLabour = function(e, t) {
 							t = Math.floor(t);
 							var n = this.jobs.findIndex((function(t) {
@@ -11558,7 +11558,7 @@
 								amount: 0,
 								efficiency: 1,
 								labour: 0
-							})), this.jobs[n].labour = Math.min(Math.max(t + this.jobs[n].labour, 0), this.jobs[n].labour + this.freeLabour), kf.resources.reassertBalances(), kf.expeditionV2.generateCache()
+							})), this.jobs[n].labour = Math.min(Math.max(t + this.jobs[n].labour, 0), this.jobs[n].labour + this.freeLabour), xf.resources.reassertBalances(), xf.expeditionV2.generateCache()
 						}, t.prototype.getEffectGain = function(e) {
 							var t = Ml.filter((function(t) {
 									var n;
@@ -11570,7 +11570,7 @@
 									return e.id === i.id
 								}));
 								if (r && (null === (o = r.getEffectGain) || void 0 === o ? void 0 : o[e])) {
-									var a = k.calculate(kf, r.getEffectGain[e], 0, i.amount + (i.labour || 0)) * i.efficiency;
+									var a = k.calculate(xf, r.getEffectGain[e], 0, i.amount + (i.labour || 0)) * i.efficiency;
 									n.push({
 										label: "Job: ".concat(r.name),
 										value: a,
@@ -11590,7 +11590,7 @@
 									return e.id === i.id
 								}));
 								if (r && (null === (o = r.getEffectMultiplier) || void 0 === o ? void 0 : o[e])) {
-									var a = k.calculate(kf, r.getEffectMultiplier[e], i.amount + (i.labour || 0), 1) * i.efficiency;
+									var a = k.calculate(xf, r.getEffectMultiplier[e], i.amount + (i.labour || 0), 1) * i.efficiency;
 									a && n.push({
 										label: "Job: ".concat(r.name),
 										value: a,
@@ -11610,7 +11610,7 @@
 									return e.id === i.id
 								}));
 								if (r && (null === (o = r.getEffectConsumption) || void 0 === o ? void 0 : o[e])) {
-									var a = k.calculate(kf, r.getEffectConsumption[e], 0, i.amount + (i.labour || 0)) * i.efficiency;
+									var a = k.calculate(xf, r.getEffectConsumption[e], 0, i.amount + (i.labour || 0)) * i.efficiency;
 									n.push({
 										label: "Job: ".concat(r.name),
 										value: a,
@@ -11624,13 +11624,13 @@
 									return t.getGain && !!t.getGain[e]
 								})),
 								n = [],
-								i = kf.colony.getColonistsHappiness();
+								i = xf.colony.getColonistsHappiness();
 							return this.jobs.forEach((function(o) {
 								var r, a = t.find((function(e) {
 									return e.id === o.id
 								}));
 								if (a && (null === (r = a.getGain) || void 0 === r ? void 0 : r[e])) {
-									var c = k.calculate(kf, a.getGain[e], 0, o.amount + (o.labour || 0)) * o.efficiency * i;
+									var c = k.calculate(xf, a.getGain[e], 0, o.amount + (o.labour || 0)) * o.efficiency * i;
 									n.push({
 										label: "Job: ".concat(a.name),
 										value: c,
@@ -11649,7 +11649,7 @@
 									return e.id === i.id
 								}));
 								if (r && (null === (o = r.getConsumption) || void 0 === o ? void 0 : o[e])) {
-									var a = k.calculate(kf, r.getConsumption[e], 0, i.amount + (i.labour || 0)) * i.efficiency;
+									var a = k.calculate(xf, r.getConsumption[e], 0, i.amount + (i.labour || 0)) * i.efficiency;
 									n.push({
 										label: "Job: ".concat(r.name),
 										value: a,
@@ -11668,7 +11668,7 @@
 									return e.id === i.id
 								}));
 								if (r && (null === (o = r.getMultiplier) || void 0 === o ? void 0 : o[e])) {
-									var a = k.calculate(kf, r.getMultiplier[e], 0, i.amount + (i.labour || 0)) * i.efficiency;
+									var a = k.calculate(xf, r.getMultiplier[e], 0, i.amount + (i.labour || 0)) * i.efficiency;
 									n.push({
 										label: "Job: ".concat(r.name),
 										value: a,
@@ -11701,19 +11701,19 @@
 								}
 							}))
 						}, t.prototype.process = function(e) {
-							var t = kf.colony.colonists - this.getBusyWorkers();
+							var t = xf.colony.colonists - this.getBusyWorkers();
 							if (t < 0) {
 								for (var n = this.jobs.length - 1; n >= 0; n--) {
 									var i = Math.min(this.jobs[n].amount, -t);
 									if (this.jobs[n].amount -= i, (t += i) >= 0) break
 								}
-								kf.resources.reassertBalances(), kf.expeditionV2.generateCache()
+								xf.resources.reassertBalances(), xf.expeditionV2.generateCache()
 							}
 							this.freeWorkers = t;
 							var o = this.getFreeLabour();
 							if (o < 0) {
 								for (n = this.jobs.length - 1; n >= 0 && (i = Math.min(this.jobs[n].labour || 0, -o), this.jobs[n].labour -= i, !((o += i) >= 0)); n--);
-								kf.resources.reassertBalances(), kf.expeditionV2.generateCache()
+								xf.resources.reassertBalances(), xf.expeditionV2.generateCache()
 							}
 							this.freeLabour = o
 						}, t.prototype.reset = function() {
@@ -11771,14 +11771,14 @@
 									return e * (t / 100)
 								}), 1), .25)
 						}, t.prototype.assertConsumptionMitigation = function() {
-							return Math.pow(.98, kf.landingZone.landingZoneBuildings.getBuildingActiveLevel(a.ADMINISTRATIVE_CENTER)) * Math.pow(.9, kf.landingZone.landingZoneUpgrades.getUpgradeLevel(r.GORMONE_DELIVERY_NANOBOTS))
+							return Math.pow(.98, xf.landingZone.landingZoneBuildings.getBuildingActiveLevel(a.ADMINISTRATIVE_CENTER)) * Math.pow(.9, xf.landingZone.landingZoneUpgrades.getUpgradeLevel(r.GORMONE_DELIVERY_NANOBOTS))
 						}, t.prototype.getEffectBeingConsumed = function(e) {
 							var t = [],
 								n = D.find((function(t) {
 									return t.id === e
 								}));
 							if (null == n ? void 0 : n.getConsumption) {
-								var i = n.getConsumption(kf) * this.assertConsumptionMitigation();
+								var i = n.getConsumption(xf) * this.assertConsumptionMitigation();
 								t.push({
 									label: "Population",
 									value: i,
@@ -11846,20 +11846,20 @@
 										consumption: []
 									}, t);
 									for (var N in A)(n = A[N].linear)
-										.push.apply(n, kf.landingZone.landingZoneBuildings.getEffectGain(N)), (i = A[N].multiplier)
-										.push.apply(i, kf.landingZone.landingZoneBuildings.getEffectMultiplier(N)), null === (l = A[N].consumption) || void 0 === l || l.push.apply(l, kf.landingZone.landingZoneBuildings.getEffectBeingConsumed(N)), (o = A[N].linear)
-										.push.apply(o, kf.colony.colonyJobs.getEffectGain(N)), (r = A[N].multiplier)
-										.push.apply(r, kf.colony.colonyJobs.getEffectMultiplier(N)), null === (p = A[N].consumption) || void 0 === p || p.push.apply(p, kf.colony.colonyJobs.getEffectBeingConsumed(N)), null === (E = A[N].consumption) || void 0 === E || E.push.apply(E, kf.crafting.craftingJobs.getEffectBeingConsumed(N)), null === (d = A[N].consumption) || void 0 === d || d.push.apply(d, kf.colony.colonyEffects.getEffectBeingConsumed(N)), (a = A[N].linear)
-										.push.apply(a, kf.laws.getEffectGain(N)), (c = A[N].multiplier)
-										.push.apply(c, kf.laws.getEffectMultiplier(N)), null === (g = A[N].consumption) || void 0 === g || g.push.apply(g, kf.laws.getEffectBeingConsumed(N)), (s = A[N].multiplier)
-										.push.apply(s, kf.prestige.colonizePlanet.getEffectMultiplier(N)), (u = A[N].multiplier)
-										.push.apply(u, kf.environment.ongoingEffects.getHappinessMultiplier(N)), null === (f = A[N].linear) || void 0 === f || f.push.apply(f, kf.environment.ongoingEffects.getHappinessBonus(N));
+										.push.apply(n, xf.landingZone.landingZoneBuildings.getEffectGain(N)), (i = A[N].multiplier)
+										.push.apply(i, xf.landingZone.landingZoneBuildings.getEffectMultiplier(N)), null === (l = A[N].consumption) || void 0 === l || l.push.apply(l, xf.landingZone.landingZoneBuildings.getEffectBeingConsumed(N)), (o = A[N].linear)
+										.push.apply(o, xf.colony.colonyJobs.getEffectGain(N)), (r = A[N].multiplier)
+										.push.apply(r, xf.colony.colonyJobs.getEffectMultiplier(N)), null === (p = A[N].consumption) || void 0 === p || p.push.apply(p, xf.colony.colonyJobs.getEffectBeingConsumed(N)), null === (E = A[N].consumption) || void 0 === E || E.push.apply(E, xf.crafting.craftingJobs.getEffectBeingConsumed(N)), null === (d = A[N].consumption) || void 0 === d || d.push.apply(d, xf.colony.colonyEffects.getEffectBeingConsumed(N)), (a = A[N].linear)
+										.push.apply(a, xf.laws.getEffectGain(N)), (c = A[N].multiplier)
+										.push.apply(c, xf.laws.getEffectMultiplier(N)), null === (g = A[N].consumption) || void 0 === g || g.push.apply(g, xf.laws.getEffectBeingConsumed(N)), (s = A[N].multiplier)
+										.push.apply(s, xf.prestige.colonizePlanet.getEffectMultiplier(N)), (u = A[N].multiplier)
+										.push.apply(u, xf.environment.ongoingEffects.getHappinessMultiplier(N)), null === (f = A[N].linear) || void 0 === f || f.push.apply(f, xf.environment.ongoingEffects.getHappinessBonus(N));
 									return A
 								}(),
 								n = {};
 							D.forEach((function(i) {
 								var o, r, a;
-								if (i.unlockCondition(kf)) {
+								if (i.unlockCondition(xf)) {
 									n[i.id] = {
 										income: [],
 										multiplier: [],
@@ -11874,7 +11874,7 @@
 										u = (null === (a = t[i.id].consumption) || void 0 === a ? void 0 : a.reduce((function(e, t) {
 											return e + t.value
 										}), 0)) || 0;
-									e.happinessEffects[i.id] = Math.min(i.getMaximum(kf), Math.max(i.minimum, c * s - u)), e.happinessEffectsExcess[i.id] = Math.max(0, c * s - u - i.getMaximum(kf)), n[i.id].income = t[i.id].linear.filter((function(e) {
+									e.happinessEffects[i.id] = Math.min(i.getMaximum(xf), Math.max(i.minimum, c * s - u)), e.happinessEffectsExcess[i.id] = Math.max(0, c * s - u - i.getMaximum(xf)), n[i.id].income = t[i.id].linear.filter((function(e) {
 											return e.value
 										}))
 										.map((function(e) {
@@ -11899,9 +11899,9 @@
 								}
 							})), this.happinessBreakdowns = n
 						}, t.prototype.processToUI = function(e) {
-							e.getConsumption && e.getConsumption(kf);
-							var t, n, i, o = e.unlockCondition(kf);
-							return o && kf.newNotifications.registerNotification("planet:colony:effects:".concat(e.id)), {
+							e.getConsumption && e.getConsumption(xf);
+							var t, n, i, o = e.unlockCondition(xf);
+							return o && xf.newNotifications.registerNotification("planet:colony:effects:".concat(e.id)), {
 								id: e.id,
 								name: e.name,
 								isUnlocked: o,
@@ -12291,9 +12291,9 @@
 						return Yl(t, e), t.getInstance = function() {
 							return t.instance || (t.instance = new t), t.instance
 						}, t.prototype.getUnlocked = function() {
-							return kf.prestige.colonizePlanet.getUpgradeLevel(R.OVERSEER) > 0
+							return xf.prestige.colonizePlanet.getUpgradeLevel(R.OVERSEER) > 0
 						}, t.prototype.shouldTrigger = function(e) {
-							return !!this.getUnlocked() && Math.abs(kf.environment.climate.getDays() % 5) < .2 * e
+							return !!this.getUnlocked() && Math.abs(xf.environment.climate.getDays() % 5) < .2 * e
 						}, t.prototype.assignCrafting = function(e) {
 							var t = Hl.filter((function(t) {
 								return e.filter((function(e) {
@@ -12308,7 +12308,7 @@
 									return e.filter((function(e) {
 											return null == i ? void 0 : i[e]
 										}))
-										.length ? "continue" : (kf.colony.colonyJobs.addLabour(_.ARTISAN, 1), kf.crafting.craftingJobs.addAmount(t[n].id, 1), console.log("Assigned labour as crafter: ".concat(t[n].id)), {
+										.length ? "continue" : (xf.colony.colonyJobs.addLabour(_.ARTISAN, 1), xf.crafting.craftingJobs.addAmount(t[n].id, 1), console.log("Assigned labour as crafter: ".concat(t[n].id)), {
 											value: !0
 										})
 								}, i = 0; i < t.length; i++) {
@@ -12318,7 +12318,7 @@
 							return !1
 						}, t.prototype.assignJobs = function(e) {
 							var t = Ml.filter((function(t) {
-								return t.unlockCondition(kf) && e.filter((function(e) {
+								return t.unlockCondition(xf) && e.filter((function(e) {
 										var n;
 										return null === (n = t.getGain) || void 0 === n ? void 0 : n[e]
 									}))
@@ -12330,7 +12330,7 @@
 									return e.filter((function(e) {
 											return null == i ? void 0 : i[e]
 										}))
-										.length ? "continue" : (kf.colony.colonyJobs.addLabour(t[n].id, 1), console.log("Overseer: Assigned labour as ".concat(t[n].name)), {
+										.length ? "continue" : (xf.colony.colonyJobs.addLabour(t[n].id, 1), console.log("Overseer: Assigned labour as ".concat(t[n].name)), {
 											value: !0
 										})
 								}, i = 0; i < t.length; i++) {
@@ -12340,7 +12340,7 @@
 							return !1
 						}, t.prototype.assignToHapp = function(e) {
 							var t = Ml.filter((function(t) {
-								return t.unlockCondition(kf) && e.filter((function(e) {
+								return t.unlockCondition(xf) && e.filter((function(e) {
 										var n;
 										return null === (n = t.getEffectGain) || void 0 === n ? void 0 : n[e]
 									}))
@@ -12352,7 +12352,7 @@
 									return e.filter((function(e) {
 											return null == i ? void 0 : i[e]
 										}))
-										.length ? "continue" : (kf.colony.colonyJobs.addLabour(t[n].id, 1), console.log("Overseer: Assigned labour as ".concat(t[n].name)), {
+										.length ? "continue" : (xf.colony.colonyJobs.addLabour(t[n].id, 1), console.log("Overseer: Assigned labour as ".concat(t[n].name)), {
 											value: !0
 										})
 								}, i = 0; i < t.length; i++) {
@@ -12364,21 +12364,21 @@
 							return console.log("Overseer LIST MISSING: ", t, n), !!this.assignJobs(t) || !!this.assignToHapp(n)
 						}, t.prototype.process = function(e) {
 							var t;
-							if (this.shouldTrigger(e) && (console.log("Overseer triggered. Checking", kf.colony.colonyJobs.freeLabour, kf.colony.colonyJobs.getBusyLabour()), !(kf.colony.colonyJobs.freeLabour <= 0))) {
-								if (kf.resources.getBalance(l.NUTRITION) < 0 && (null === (t = Ml.find((function(e) {
+							if (this.shouldTrigger(e) && (console.log("Overseer triggered. Checking", xf.colony.colonyJobs.freeLabour, xf.colony.colonyJobs.getBusyLabour()), !(xf.colony.colonyJobs.freeLabour <= 0))) {
+								if (xf.resources.getBalance(l.NUTRITION) < 0 && (null === (t = Ml.find((function(e) {
 									return e.id === _.FARMER
-								}))) || void 0 === t ? void 0 : t.unlockCondition(kf))) return kf.colony.colonyJobs.addLabour(_.FARMER, 1), kf.resources.reassertBalances(), void kf.expeditionV2.generateCache();
-								var n = kf.resources.resourcesStatus.filter((function(e) {
-										return ((null == e ? void 0 : e.balance) || 0) < 0 || (kf.resources.getResourceEfficiency(e.id) || 0) < 1
+								}))) || void 0 === t ? void 0 : t.unlockCondition(xf))) return xf.colony.colonyJobs.addLabour(_.FARMER, 1), xf.resources.reassertBalances(), void xf.expeditionV2.generateCache();
+								var n = xf.resources.resourcesStatus.filter((function(e) {
+										return ((null == e ? void 0 : e.balance) || 0) < 0 || (xf.resources.getResourceEfficiency(e.id) || 0) < 1
 									})),
 									i = n.map((function(e) {
 										return e.id
 									})),
-									o = Object.keys(kf.colony.colonyEffects.happinessEffects)
+									o = Object.keys(xf.colony.colonyEffects.happinessEffects)
 									.filter((function(e) {
-										return !kf.colony.colonyEffects.happinessEffectsExcess[e]
+										return !xf.colony.colonyEffects.happinessEffectsExcess[e]
 									}));
-								return console.log("Overseer LCK: ", n, i), (i.length || o.length) && this.processChanges(e, i, o) ? (kf.resources.reassertBalances(), void kf.expeditionV2.generateCache()) : void 0
+								return console.log("Overseer LCK: ", n, i), (i.length || o.length) && this.processChanges(e, i, o) ? (xf.resources.reassertBalances(), void xf.expeditionV2.generateCache()) : void 0
 							}
 						}, t
 					}(S),
@@ -12421,12 +12421,12 @@
 							return {
 								colonists: this.colonists || 0,
 								maxColonists: this.maxColonists,
-								isUnlocked: kf.landingZone.landingZoneUpgrades.getUpgradeLevel(r.DOCKING_MODULE) > 0,
+								isUnlocked: xf.landingZone.landingZoneUpgrades.getUpgradeLevel(r.DOCKING_MODULE) > 0,
 								jobs: this.colonyJobs.dataToUI(),
 								effects: this.colonyEffects.dataToUI()
 							}
 						}, t.prototype.getMaxColonists = function() {
-							return Math.round(kf.landingZone.landingZoneBuildings.getColonistsCap()
+							return Math.round(xf.landingZone.landingZoneBuildings.getColonistsCap()
 								.reduce((function(e, t) {
 									return e + t.value
 								}), 0))
@@ -12435,7 +12435,7 @@
 						}, t.prototype.missingSupply = function() {
 							return !!this.colonists && (null != Rl.lackEfficiencyResources[l.NUTRITION] && (Rl.lackEfficiencyResources[l.NUTRITION] || 0) < 1 || null != Rl.lackEfficiencyResources[l.WATER] && (Rl.lackEfficiencyResources[l.WATER] || 0) < 1)
 						}, t.prototype.process = function(e) {
-							this.maxColonists = this.getMaxColonists(), (this.missingSupply() || this.colonists > this.maxColonists) && (console.log("missing supply. Colonist is leaving"), Math.random() < .05 * e / .1 && (this.colonists--, kf.eventLog.colonistDied(Y(this.colonists)), kf.resources.reassertBalances(), kf.expeditionV2.generateCache())), this.colonists < this.maxColonists && Math.random() < .025 * e / .1 && (this.colonists++, kf.eventLog.colonistArrived(Y(this.colonists)), kf.resources.reassertBalances(), kf.expeditionV2.generateCache(), this.overseer.getUnlocked() && this.colonyJobs.addAmount(_.LABOUR, 1)), this.colonyEffects.process(e), this.colonyJobs.process(e), this.overseer.process(e)
+							this.maxColonists = this.getMaxColonists(), (this.missingSupply() || this.colonists > this.maxColonists) && (console.log("missing supply. Colonist is leaving"), Math.random() < .05 * e / .1 && (this.colonists--, xf.eventLog.colonistDied(Y(this.colonists)), xf.resources.reassertBalances(), xf.expeditionV2.generateCache())), this.colonists < this.maxColonists && Math.random() < .025 * e / .1 && (this.colonists++, xf.eventLog.colonistArrived(Y(this.colonists)), xf.resources.reassertBalances(), xf.expeditionV2.generateCache(), this.overseer.getUnlocked() && this.colonyJobs.addAmount(_.LABOUR, 1)), this.colonyEffects.process(e), this.colonyJobs.process(e), this.overseer.process(e)
 						}, t.prototype.reset = function() {
 							this.colonists = 0, this.maxColonists = 0, this.colonyJobs.reset(), this.colonyEffects.reset()
 						}, t
@@ -12467,7 +12467,7 @@
 							}
 						}, Rs),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.EXOFARMING) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.EXOFARMING) > 0
 						}
 					}, {
 						id: P.MINERALOGY,
@@ -12481,7 +12481,7 @@
 							}
 						}, Is),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.EXOFARMING) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.EXOFARMING) > 0
 						}
 					}, {
 						id: P.CIVIL_SERVICE,
@@ -12495,7 +12495,7 @@
 							}
 						}, ys),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.EXOFARMING) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.EXOFARMING) > 0
 						}
 					}, {
 						id: P.ENGINEERING,
@@ -12509,7 +12509,7 @@
 							}
 						}, hs),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.MINERALOGY) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.MINERALOGY) > 0
 						}
 					}, {
 						id: P.EXOBIOLOGY,
@@ -12523,7 +12523,7 @@
 							}
 						}, ms),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.METEOROLOGY) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.METEOROLOGY) > 0
 						}
 					}, {
 						id: P.EXOFORESTRY,
@@ -12537,7 +12537,7 @@
 							}
 						}, Ts),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.EXOBIOLOGY) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.EXOBIOLOGY) > 0
 						}
 					}, {
 						id: P.METALLURGY,
@@ -12551,7 +12551,7 @@
 							}
 						}, Os),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.MINERALOGY) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.MINERALOGY) > 0
 						}
 					}, {
 						id: P.FLORA_RESEARCH,
@@ -12565,7 +12565,7 @@
 							}
 						}, Ls),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.EXOFORESTRY) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.EXOFORESTRY) > 0
 						}
 					}, {
 						id: P.CHEMISTRY,
@@ -12579,7 +12579,7 @@
 							}
 						}, Cs),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.FLORA_RESEARCH) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.FLORA_RESEARCH) > 0
 						}
 					}, {
 						id: P.GEOLOGY,
@@ -12593,7 +12593,7 @@
 							}
 						}, vs),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.METALLURGY) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.METALLURGY) > 0
 						}
 					}, {
 						id: P.GEOGRAPHY,
@@ -12607,7 +12607,7 @@
 							}
 						}, Ss),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.METEOROLOGY) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.METEOROLOGY) > 0
 						}
 					}, {
 						id: P.SOCIOLOGY,
@@ -12621,7 +12621,7 @@
 							}
 						}, Ps),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.CIVIL_SERVICE) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.CIVIL_SERVICE) > 0
 						}
 					}, {
 						id: P.MATERIAL_KNOWLEDGE,
@@ -12635,7 +12635,7 @@
 							}
 						}, Bs),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.CHEMISTRY) > 0 && kf.science.scienceResearches.getResearchLevel(P.METALLURGY) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.CHEMISTRY) > 0 && xf.science.scienceResearches.getResearchLevel(P.METALLURGY) > 0
 						}
 					}, {
 						id: P.CODEX_OF_LAW,
@@ -12649,7 +12649,7 @@
 							}
 						}, _s),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.SOCIOLOGY) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.SOCIOLOGY) > 0
 						}
 					}, {
 						id: P.ELECTRICITY_STUDY,
@@ -12663,7 +12663,7 @@
 							}
 						}, Ms),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.MATERIAL_KNOWLEDGE) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.MATERIAL_KNOWLEDGE) > 0
 						}
 					}, {
 						id: P.ORGANIC_CHEMISTRY,
@@ -12677,7 +12677,7 @@
 							}
 						}, Us),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.MATERIAL_KNOWLEDGE) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.MATERIAL_KNOWLEDGE) > 0
 						}
 					}, {
 						id: P.ELECTRONICS,
@@ -12691,7 +12691,7 @@
 							}
 						}, bs),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.ELECTRICITY_STUDY) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.ELECTRICITY_STUDY) > 0
 						}
 					}, {
 						id: P.PUBLIC_SERVICE,
@@ -12705,7 +12705,7 @@
 							}
 						}, Gs),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.CODEX_OF_LAW) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.CODEX_OF_LAW) > 0
 						}
 					}, {
 						id: P.PRINTING_3D,
@@ -12719,7 +12719,7 @@
 							}
 						}, Ds),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.ELECTRONICS) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.ELECTRONICS) > 0
 						}
 					}, {
 						id: P.HIGH_GRAVITY_PHYSICS,
@@ -12733,7 +12733,7 @@
 							}
 						}, ws),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.ELECTRICITY_STUDY) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.ELECTRICITY_STUDY) > 0
 						}
 					}, {
 						id: P.ADVANCED_ANATOMY,
@@ -12747,7 +12747,7 @@
 							}
 						}, Xs),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.ORGANIC_CHEMISTRY) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.ORGANIC_CHEMISTRY) > 0
 						}
 					}, {
 						id: P.ROCKET_SCIENCE,
@@ -12761,7 +12761,7 @@
 							}
 						}, xs),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.ORGANIC_CHEMISTRY) > 0 && kf.science.scienceResearches.getResearchLevel(P.HIGH_GRAVITY_PHYSICS) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.ORGANIC_CHEMISTRY) > 0 && xf.science.scienceResearches.getResearchLevel(P.HIGH_GRAVITY_PHYSICS) > 0
 						}
 					}, {
 						id: P.ADVANCED_BIOLOGY,
@@ -12775,7 +12775,7 @@
 							}
 						}, ks),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.ADVANCED_ANATOMY) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.ADVANCED_ANATOMY) > 0
 						}
 					}, {
 						id: P.RADIATION_STUDY,
@@ -12789,7 +12789,7 @@
 							}
 						}, Hs),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.ADVANCED_BIOLOGY) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.ADVANCED_BIOLOGY) > 0
 						}
 					}, {
 						id: P.QUANTUM_PHYSICS,
@@ -12803,7 +12803,7 @@
 							}
 						}, Ys),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.HIGH_GRAVITY_PHYSICS) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.HIGH_GRAVITY_PHYSICS) > 0
 						}
 					}, {
 						id: P.GRAVITY_THEORY,
@@ -12817,7 +12817,7 @@
 							}
 						}, Ws),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.QUANTUM_PHYSICS) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.QUANTUM_PHYSICS) > 0
 						}
 					}, {
 						id: P.NANO_PHYSICS,
@@ -12831,7 +12831,7 @@
 							}
 						}, Zs),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.QUANTUM_PHYSICS) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.QUANTUM_PHYSICS) > 0
 						}
 					}, {
 						id: P.ASTROPHYSICS,
@@ -12845,7 +12845,7 @@
 							}
 						}, js),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.GRAVITY_THEORY) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.GRAVITY_THEORY) > 0
 						}
 					}, {
 						id: P.RELATIVITY_PHYSICS,
@@ -12859,7 +12859,7 @@
 							}
 						}, Fs),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.GRAVITY_THEORY) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.GRAVITY_THEORY) > 0
 						}
 					}, {
 						id: P.ADVANCED_GENETICS,
@@ -12873,7 +12873,7 @@
 							}
 						}, Vs),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.NANO_PHYSICS) > 0 && kf.science.scienceResearches.getResearchLevel(P.ADVANCED_BIOLOGY) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.NANO_PHYSICS) > 0 && xf.science.scienceResearches.getResearchLevel(P.ADVANCED_BIOLOGY) > 0
 						}
 					}, {
 						id: P.PHOTOCHEMISTRY,
@@ -12887,7 +12887,7 @@
 							}
 						}, Ks),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.QUANTUM_PHYSICS) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.QUANTUM_PHYSICS) > 0
 						}
 					}, {
 						id: P.HIGH_ENERGY_PHYSICS,
@@ -12901,7 +12901,7 @@
 							}
 						}, zs),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.RELATIVITY_PHYSICS) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.RELATIVITY_PHYSICS) > 0
 						}
 					}, {
 						id: P.PHOTO_LITHOGRAPHY,
@@ -12915,7 +12915,7 @@
 							}
 						}, qs),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.PHOTOCHEMISTRY) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.PHOTOCHEMISTRY) > 0
 						}
 					}, {
 						id: P.THERMONUCLEAR_SYNTHESIS,
@@ -12929,7 +12929,7 @@
 							}
 						}, Qs),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.HIGH_ENERGY_PHYSICS) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.HIGH_ENERGY_PHYSICS) > 0
 						}
 					}, {
 						id: P.ADVANCED_POLYMERIZATION,
@@ -12943,7 +12943,7 @@
 							}
 						}, Js),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.PHOTO_LITHOGRAPHY) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.PHOTO_LITHOGRAPHY) > 0
 						}
 					}, {
 						id: P.MOLECULAR_PHYSICS,
@@ -12957,7 +12957,7 @@
 							}
 						}, $s),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.PHOTO_LITHOGRAPHY) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.PHOTO_LITHOGRAPHY) > 0
 						}
 					}, {
 						id: P.SUPER_CONDUCTIVITY,
@@ -12971,7 +12971,7 @@
 							}
 						}, eu),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.THERMONUCLEAR_SYNTHESIS) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.THERMONUCLEAR_SYNTHESIS) > 0
 						}
 					}, {
 						id: P.ADVANCED_COMPOSITES,
@@ -12985,7 +12985,7 @@
 							}
 						}, tu),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.ADVANCED_POLYMERIZATION) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.ADVANCED_POLYMERIZATION) > 0
 						}
 					}, {
 						id: P.MAGNETODYNAMICS,
@@ -12999,7 +12999,7 @@
 							}
 						}, nu),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.SUPER_CONDUCTIVITY) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.SUPER_CONDUCTIVITY) > 0
 						}
 					}, {
 						id: P.SPACESHIP_BUILDINGS,
@@ -13013,7 +13013,7 @@
 							}
 						}, iu),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.SUPER_CONDUCTIVITY) > 0 && kf.science.scienceResearches.getResearchLevel(P.MOLECULAR_PHYSICS) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.SUPER_CONDUCTIVITY) > 0 && xf.science.scienceResearches.getResearchLevel(P.MOLECULAR_PHYSICS) > 0
 						}
 					}, {
 						id: P.PARTICLE_PHYSICS,
@@ -13027,7 +13027,7 @@
 							}
 						}, ou),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.MAGNETODYNAMICS) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.MAGNETODYNAMICS) > 0
 						}
 					}, {
 						id: P.ADVANCED_SPACE_CONSTRUCTION,
@@ -13041,7 +13041,7 @@
 							}
 						}, ru),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.SPACESHIP_BUILDINGS) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.SPACESHIP_BUILDINGS) > 0
 						}
 					}, {
 						id: P.ADVANCED_THERMODYNAMICS,
@@ -13055,7 +13055,7 @@
 							}
 						}, au),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.ADVANCED_COMPOSITES) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.ADVANCED_COMPOSITES) > 0
 						}
 					}, {
 						id: P.EXOPLANET_SCIENCE,
@@ -13069,7 +13069,7 @@
 							}
 						}, cu),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.SPACESHIP_BUILDINGS) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.SPACESHIP_BUILDINGS) > 0
 						}
 					}, {
 						id: P.LOW_TEMP_PHYSICS,
@@ -13083,7 +13083,7 @@
 							}
 						}, su),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.ADVANCED_THERMODYNAMICS) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.ADVANCED_THERMODYNAMICS) > 0
 						}
 					}, {
 						id: P.NEUTRINO_PHYSICS,
@@ -13097,7 +13097,7 @@
 							}
 						}, uu),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.PARTICLE_PHYSICS) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.PARTICLE_PHYSICS) > 0
 						}
 					}, {
 						id: P.QUARK_PHYSICS,
@@ -13111,7 +13111,7 @@
 							}
 						}, lu),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.PARTICLE_PHYSICS) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.PARTICLE_PHYSICS) > 0
 						}
 					}, {
 						id: P.CRYOGENICS,
@@ -13125,7 +13125,7 @@
 							}
 						}, pu),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.LOW_TEMP_PHYSICS) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.LOW_TEMP_PHYSICS) > 0
 						}
 					}, {
 						id: P.SPACE_ORGANICS,
@@ -13139,7 +13139,7 @@
 							}
 						}, Eu),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.ADVANCED_SPACE_CONSTRUCTION) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.ADVANCED_SPACE_CONSTRUCTION) > 0
 						}
 					}, {
 						id: P.NANO_BIOLOGY,
@@ -13153,7 +13153,7 @@
 							}
 						}, du),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.SPACE_ORGANICS) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.SPACE_ORGANICS) > 0
 						}
 					}, {
 						id: P.ADVANCED_NUCLEAR_RESEARCH,
@@ -13167,7 +13167,7 @@
 							}
 						}, gu),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.QUARK_PHYSICS) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.QUARK_PHYSICS) > 0
 						}
 					}, {
 						id: P.ADVANCED_SUPERCONDUCTIVITY,
@@ -13181,7 +13181,7 @@
 							}
 						}, fu),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.CRYOGENICS) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.CRYOGENICS) > 0
 						}
 					}, {
 						id: P.QUANTUM_MAGNETICS,
@@ -13195,7 +13195,7 @@
 							}
 						}, Au),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.ADVANCED_SUPERCONDUCTIVITY) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.ADVANCED_SUPERCONDUCTIVITY) > 0
 						}
 					}, {
 						id: P.QUANTUM_MAGNETICS_DETECTION,
@@ -13209,7 +13209,7 @@
 							}
 						}, Nu),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.QUANTUM_MAGNETICS) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.QUANTUM_MAGNETICS) > 0
 						}
 					}, {
 						id: P.QUANTUM_STATE_STUDY,
@@ -13223,7 +13223,7 @@
 							}
 						}, Ru),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.QUANTUM_MAGNETICS_DETECTION) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.QUANTUM_MAGNETICS_DETECTION) > 0
 						}
 					}, {
 						id: P.QUARK_GLUON_PLASMA_STUDY,
@@ -13237,7 +13237,7 @@
 							}
 						}, Iu),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.ADVANCED_NUCLEAR_RESEARCH) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.ADVANCED_NUCLEAR_RESEARCH) > 0
 						}
 					}, {
 						id: P.HIGH_DENSITY_STUDY,
@@ -13251,7 +13251,7 @@
 							}
 						}, yu),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.QUARK_GLUON_PLASMA_STUDY) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.QUARK_GLUON_PLASMA_STUDY) > 0
 						}
 					}, {
 						id: P.GRAVITONE_STUDY,
@@ -13265,7 +13265,7 @@
 							}
 						}, hu),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.HIGH_DENSITY_STUDY) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.HIGH_DENSITY_STUDY) > 0
 						}
 					}, {
 						id: P.ORGANIC_NANOCONSTRUCTION,
@@ -13279,7 +13279,7 @@
 							}
 						}, mu),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.NANO_BIOLOGY) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.NANO_BIOLOGY) > 0
 						}
 					}, {
 						id: P.ORGANIC_BASED_COMPUTATION,
@@ -13293,7 +13293,7 @@
 							}
 						}, Tu),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.ORGANIC_NANOCONSTRUCTION) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.ORGANIC_NANOCONSTRUCTION) > 0
 						}
 					}, {
 						id: P.SYNTHETIC_ORGANISMS,
@@ -13307,7 +13307,7 @@
 							}
 						}, Ou),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.ORGANIC_BASED_COMPUTATION) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.ORGANIC_BASED_COMPUTATION) > 0
 						}
 					}, {
 						id: P.ANDROID_CONSTRUCTION,
@@ -13321,7 +13321,7 @@
 							}
 						}, Lu),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.SYNTHETIC_ORGANISMS) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.SYNTHETIC_ORGANISMS) > 0
 						}
 					}, {
 						id: P.DARK_MATTER_STUDY,
@@ -13335,7 +13335,7 @@
 							}
 						}, Cu),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.GRAVITONE_STUDY) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.GRAVITONE_STUDY) > 0
 						}
 					}, {
 						id: P.ADVANCED_ORGANISMS_GENERATION,
@@ -13349,7 +13349,7 @@
 							}
 						}, vu),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.ANDROID_CONSTRUCTION) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.ANDROID_CONSTRUCTION) > 0
 						}
 					}, {
 						id: P.DEGENERATE_MATTER,
@@ -13363,7 +13363,7 @@
 							}
 						}, Su),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.QUANTUM_STATE_STUDY) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.QUANTUM_STATE_STUDY) > 0
 						}
 					}, {
 						id: P.EXPANDED_PARTICLE_THEORY,
@@ -13377,7 +13377,7 @@
 							}
 						}, Pu),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.DARK_MATTER_STUDY) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.DARK_MATTER_STUDY) > 0
 						}
 					}, {
 						id: P.BOSE_EINSTEIN_CONDENSATE,
@@ -13391,7 +13391,7 @@
 							}
 						}, Bu),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.DEGENERATE_MATTER) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.DEGENERATE_MATTER) > 0
 						}
 					}, {
 						id: P.EXOTIC_BIOCHEMISTRY,
@@ -13405,7 +13405,7 @@
 							}
 						}, _u),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.ADVANCED_ORGANISMS_GENERATION) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.ADVANCED_ORGANISMS_GENERATION) > 0
 						}
 					}, {
 						id: P.EXOTIC_MATTER_STUDY,
@@ -13419,7 +13419,7 @@
 							}
 						}, Mu),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.EXPANDED_PARTICLE_THEORY) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.EXPANDED_PARTICLE_THEORY) > 0
 						}
 					}, {
 						id: P.ANTIMATTER_STUDY,
@@ -13433,7 +13433,7 @@
 							}
 						}, Uu),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.EXOTIC_MATTER_STUDY) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.EXOTIC_MATTER_STUDY) > 0
 						}
 					}, {
 						id: P.ANTIMATTER_USAGE,
@@ -13447,7 +13447,7 @@
 							}
 						}, bu),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.ANTIMATTER_STUDY) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.ANTIMATTER_STUDY) > 0
 						}
 					}, {
 						id: P.ANNIHILATION_STUDY,
@@ -13461,7 +13461,7 @@
 							}
 						}, Gu),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.ANTIMATTER_USAGE) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.ANTIMATTER_USAGE) > 0
 						}
 					}, {
 						id: P.ADVANCED_SYNTHETIC_BIOLOGY,
@@ -13475,7 +13475,7 @@
 							}
 						}, Du),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.EXOTIC_BIOCHEMISTRY) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.EXOTIC_BIOCHEMISTRY) > 0
 						}
 					}, {
 						id: P.ATOM_BIOLOGY,
@@ -13489,7 +13489,7 @@
 							}
 						}, wu),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.ADVANCED_SYNTHETIC_BIOLOGY) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.ADVANCED_SYNTHETIC_BIOLOGY) > 0
 						}
 					}, {
 						id: P.QUANTUM_BIOLOGY,
@@ -13503,7 +13503,7 @@
 							}
 						}, Xu),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.ATOM_BIOLOGY) > 0 && !1
+							return xf.science.scienceResearches.getResearchLevel(P.ATOM_BIOLOGY) > 0 && !1
 						}
 					}, {
 						id: P.ADVANCED_BOSE_EINSTEIN,
@@ -13517,7 +13517,7 @@
 							}
 						}, xu),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.DEGENERATE_MATTER) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.DEGENERATE_MATTER) > 0
 						}
 					}, {
 						id: P.DEGENERATE_ATOMS,
@@ -13531,7 +13531,7 @@
 							}
 						}, ku),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.ADVANCED_BOSE_EINSTEIN) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.ADVANCED_BOSE_EINSTEIN) > 0
 						}
 					}, {
 						id: P.HYPERSPACE_TECH,
@@ -13545,7 +13545,7 @@
 							}
 						}, Hu),
 						unlockCondition: function(e) {
-							return kf.science.scienceResearches.getResearchLevel(P.DEGENERATE_ATOMS) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.DEGENERATE_ATOMS) > 0
 						}
 					}],
 					Kl = function() {
@@ -13601,7 +13601,7 @@
 								id: e.id,
 								amount: 0
 							}, this.researches.push(t));
-							var n = k.calcBatchAll(e.getCost, xf.getInstance(), t.amount, xf.getInstance()
+							var n = k.calcBatchAll(e.getCost, Xf.getInstance(), t.amount, Xf.getInstance()
 									.resources.getBatchObject()),
 								i = n.reduce((function(e, t) {
 									return Math.min(e, t.max)
@@ -13612,16 +13612,16 @@
 								a = n.reduce((function(e, t) {
 									return Math.max(e, t.eta)
 								}), 0),
-								c = e.unlockCondition(kf);
-							return c && 0 === t.amount && kf.landingZone.landingZoneUpgrades.getUpgradeLevel(r.RESEARCH_MODULE) > 0 && kf.newNotifications.registerNotification("science:researches:".concat(e.id)), {
+								c = e.unlockCondition(xf);
+							return c && 0 === t.amount && xf.landingZone.landingZoneUpgrades.getUpgradeLevel(r.RESEARCH_MODULE) > 0 && xf.newNotifications.registerNotification("science:researches:".concat(e.id)), {
 								id: e.id,
 								name: e.name,
 								description: e.description,
 								isUnlocked: c,
 								isAvailable: i >= 1,
-								cost: xf.getInstance()
-									.resources.assertEnought(n, xf.getInstance()
-										.resources.getBatchObject(), xf.getInstance()
+								cost: Xf.getInstance()
+									.resources.assertEnought(n, Xf.getInstance()
+										.resources.getBatchObject(), Xf.getInstance()
 										.resources.getBatchBalanceObject()),
 								progress: i < 1 ? (100 * i)
 									.toPrecision(3) : "100",
@@ -13641,12 +13641,12 @@
 								return t.id === e
 							}));
 							if (n) {
-								var i = k.calcBatchAll(n.getCost, xf.getInstance(), this.researches[t].amount, xf.getInstance()
+								var i = k.calcBatchAll(n.getCost, Xf.getInstance(), this.researches[t].amount, Xf.getInstance()
 									.resources.getBatchObject());
 								if (!(i.reduce((function(e, t) {
 									return Math.min(e, Math.floor(t.max))
-								}), 1e300) < 1)) return xf.getInstance()
-									.resources.subtractResourceBatch(i), this.researches[t].amount++, kf.resources.reassertBalances(), kf.expeditionV2.generateCache(), !0
+								}), 1e300) < 1)) return Xf.getInstance()
+									.resources.subtractResourceBatch(i), this.researches[t].amount++, xf.resources.reassertBalances(), xf.expeditionV2.generateCache(), !0
 							}
 						}, t.prototype.process = function(e) {}, t.prototype.reset = function() {
 							this.researches = []
@@ -13689,7 +13689,7 @@
 						}, t.prototype.dataToUI = function() {
 							return {
 								research: this.scienceResearches.dataToUI(),
-								isUnlocked: kf.landingZone.landingZoneUpgrades.getUpgradeLevel(r.RESEARCH_MODULE) > 0
+								isUnlocked: xf.landingZone.landingZoneUpgrades.getUpgradeLevel(r.RESEARCH_MODULE) > 0
 							}
 						}, t.prototype.process = function(e) {
 							this.scienceResearches.process(e)
@@ -13747,7 +13747,7 @@
 								craftingSlots: this.craftingSlots
 							}
 						}, t.prototype.getTotalCraftingBonus = function() {
-							return Math.pow(1.05, kf.landingZone.landingZoneUpgrades.getUpgradeLevel(r.INDUSTRY_AUTOMATION)) * Math.pow(1.05, kf.landingZone.landingZoneUpgrades.getUpgradeLevel(r.MAGNETIC_PRESS)) * Math.pow(1.1, kf.landingZone.landingZoneUpgrades.getUpgradeLevel(r.HUMAN_LIKE_HELPERS)) * Math.pow(1.1, kf.landingZone.landingZoneUpgrades.getUpgradeLevel(r.MASS_PRODUCTION_TELEPORT))
+							return Math.pow(1.05, xf.landingZone.landingZoneUpgrades.getUpgradeLevel(r.INDUSTRY_AUTOMATION)) * Math.pow(1.05, xf.landingZone.landingZoneUpgrades.getUpgradeLevel(r.MAGNETIC_PRESS)) * Math.pow(1.1, xf.landingZone.landingZoneUpgrades.getUpgradeLevel(r.HUMAN_LIKE_HELPERS)) * Math.pow(1.1, xf.landingZone.landingZoneUpgrades.getUpgradeLevel(r.MASS_PRODUCTION_TELEPORT))
 						}, t.prototype.getBusyWorkers = function() {
 							return this.crafters.reduce((function(e, t) {
 								return e + t.amount
@@ -13770,11 +13770,11 @@
 								return t.id === e.id
 							}));
 							if (!n) throw new Error("Invalid recipe: ".concat(e.id));
-							var i = e.getConsumption ? k.calcBatchAll(e.getConsumption, xf.getInstance(), 0, xf.getInstance()
+							var i = e.getConsumption ? k.calcBatchAll(e.getConsumption, Xf.getInstance(), 0, Xf.getInstance()
 									.resources.getBatchObject()) : [],
-								o = e.getGain ? k.calcBatch(e.getGain, xf.getInstance(), 0) : [],
-								r = n.unlockCondition(kf);
-							return r && (t.amount > 0 && kf.newNotifications.setViewed("planet:crafting:jobs:".concat(e.id)), kf.newNotifications.registerNotification("planet:crafting:jobs:".concat(e.id))), {
+								o = e.getGain ? k.calcBatch(e.getGain, Xf.getInstance(), 0) : [],
+								r = n.unlockCondition(xf);
+							return r && (t.amount > 0 && xf.newNotifications.setViewed("planet:crafting:jobs:".concat(e.id)), xf.newNotifications.registerNotification("planet:crafting:jobs:".concat(e.id))), {
 								id: e.id,
 								name: n.name,
 								isUnlocked: r,
@@ -13813,10 +13813,10 @@
 							var i = Math.min(Math.max(t, 0), this.crafters[n].amount + this.craftingSlots);
 							if (i < t) {
 								var o = t - i,
-									r = Math.min(kf.colony.colonyJobs.freeWorkers, o);
-								kf.colony.colonyJobs.setAmount(_.ARTISAN, kf.colony.colonyJobs.getWorkersAmount(_.ARTISAN) + r), i += r
+									r = Math.min(xf.colony.colonyJobs.freeWorkers, o);
+								xf.colony.colonyJobs.setAmount(_.ARTISAN, xf.colony.colonyJobs.getWorkersAmount(_.ARTISAN) + r), i += r
 							}
-							this.crafters[n].amount = Math.min(Math.max(t, 0), i), kf.resources.reassertBalances(), kf.expeditionV2.generateCache()
+							this.crafters[n].amount = Math.min(Math.max(t, 0), i), xf.resources.reassertBalances(), xf.expeditionV2.generateCache()
 						}, t.prototype.addAmount = function(e, t) {
 							t = Math.floor(t);
 							var n = this.crafters.findIndex((function(t) {
@@ -13831,10 +13831,10 @@
 								o = Math.min(Math.max(i, 0), this.crafters[n].amount + this.craftingSlots);
 							if (o < i) {
 								var r = i - o,
-									a = Math.min(kf.colony.colonyJobs.freeWorkers, r);
-								kf.colony.colonyJobs.setAmount(_.ARTISAN, kf.colony.colonyJobs.getWorkersAmount(_.ARTISAN) + a), o += a
+									a = Math.min(xf.colony.colonyJobs.freeWorkers, r);
+								xf.colony.colonyJobs.setAmount(_.ARTISAN, xf.colony.colonyJobs.getWorkersAmount(_.ARTISAN) + a), o += a
 							}
-							this.crafters[n].amount = Math.min(Math.max(i, 0), o), kf.resources.reassertBalances(), kf.expeditionV2.generateCache()
+							this.crafters[n].amount = Math.min(Math.max(i, 0), o), xf.resources.reassertBalances(), xf.expeditionV2.generateCache()
 						}, t.prototype.getResourceBeingProduced = function(e) {
 							var t = this,
 								n = Hl.filter((function(t) {
@@ -13846,7 +13846,7 @@
 									return e.id === o.id
 								}));
 								if (a && (null === (r = a.getGain) || void 0 === r ? void 0 : r[e])) {
-									var c = k.calculate(kf, a.getGain[e], 0, o.amount) * o.efficiency * t.getTotalCraftingBonus();
+									var c = k.calculate(xf, a.getGain[e], 0, o.amount) * o.efficiency * t.getTotalCraftingBonus();
 									i.push({
 										label: "Crafting",
 										value: c,
@@ -13868,7 +13868,7 @@
 									return e.id === i.id
 								}));
 								if (r && (null === (o = r.getConsumption) || void 0 === o ? void 0 : o[e])) {
-									var a = k.calculate(kf, r.getConsumption[e], 0, i.amount) * i.efficiency;
+									var a = k.calculate(xf, r.getConsumption[e], 0, i.amount) * i.efficiency;
 									n.push({
 										label: "Crafting: ".concat(w(r.id)),
 										value: a,
@@ -13888,7 +13888,7 @@
 									return e.id === i.id
 								}));
 								if (r && (null === (o = r.getEffectConsumption) || void 0 === o ? void 0 : o[e])) {
-									var a = k.calculate(kf, r.getEffectConsumption[e], 0, i.amount) * i.efficiency;
+									var a = k.calculate(xf, r.getEffectConsumption[e], 0, i.amount) * i.efficiency;
 									n.push({
 										label: "Crafting: ".concat(w(r.id)),
 										value: a,
@@ -13921,13 +13921,13 @@
 								}
 							}))
 						}, t.prototype.process = function(e) {
-							var t = kf.crafting.slots - this.getBusyWorkers();
+							var t = xf.crafting.slots - this.getBusyWorkers();
 							if (t < 0) {
 								for (var n = this.crafters.length - 1; n >= 0; n--) {
 									var i = Math.min(this.crafters[n].amount, -t);
 									if (this.crafters[n].amount -= i, (t += i) >= 0) break
 								}
-								kf.resources.reassertBalances(), kf.expeditionV2.generateCache()
+								xf.resources.reassertBalances(), xf.expeditionV2.generateCache()
 							}
 							this.craftingSlots = t
 						}, t.prototype.reset = function() {
@@ -13971,14 +13971,14 @@
 						}, t.prototype.dataToUI = function() {
 							return {
 								maxSlots: this.slots || 0,
-								isUnlocked: kf.science.scienceResearches.getResearchLevel(P.METALLURGY) > 0,
+								isUnlocked: xf.science.scienceResearches.getResearchLevel(P.METALLURGY) > 0,
 								jobs: this.craftingJobs.dataToUI()
 							}
 						}, t.prototype.getCraftingSlots = function() {
 							var e, t, n = 0;
-							return (n += (null === (e = kf.colony.colonyJobs.jobs.find((function(e) {
+							return (n += (null === (e = xf.colony.colonyJobs.jobs.find((function(e) {
 								return e.id === _.ARTISAN
-							}))) || void 0 === e ? void 0 : e.amount) || 0) + ((null === (t = kf.colony.colonyJobs.jobs.find((function(e) {
+							}))) || void 0 === e ? void 0 : e.amount) || 0) + ((null === (t = xf.colony.colonyJobs.jobs.find((function(e) {
 								return e.id === _.ARTISAN
 							}))) || void 0 === t ? void 0 : t.labour) || 0)
 						}, t.prototype.process = function(e) {
@@ -15060,22 +15060,22 @@
 							var t = 0;
 							switch (e.type) {
 								case Yu.RESOURCE:
-									t = kf.resources.getResource(e.target);
+									t = xf.resources.getResource(e.target);
 									break;
 								case Yu.UPGRADE:
-									t = kf.landingZone.landingZoneUpgrades.getUpgradeLevel(e.target);
+									t = xf.landingZone.landingZoneUpgrades.getUpgradeLevel(e.target);
 									break;
 								case Yu.RESEARCH:
-									t = kf.science.scienceResearches.getResearchLevel(e.target);
+									t = xf.science.scienceResearches.getResearchLevel(e.target);
 									break;
 								case Yu.BUILDING:
-									t = kf.landingZone.landingZoneBuildings.getBuildingLevel(e.target);
+									t = xf.landingZone.landingZoneBuildings.getBuildingLevel(e.target);
 									break;
 								case Yu.POPULATION:
-									t = kf.colony.colonists;
+									t = xf.colony.colonists;
 									break;
 								case Yu.KP_UPGRADE:
-									t = kf.prestige.transmitKnowledge.getUpgradeLevel(e.target)
+									t = xf.prestige.transmitKnowledge.getUpgradeLevel(e.target)
 							}
 							return t
 						}, t.prototype.checkGoalStatus = function() {
@@ -15533,7 +15533,7 @@
 								laws: EE.map((function(t) {
 									return e.processToUI(t)
 								})),
-								isUnlocked: kf.science.scienceResearches.getResearchLevel(P.CODEX_OF_LAW) > 0
+								isUnlocked: xf.science.scienceResearches.getResearchLevel(P.CODEX_OF_LAW) > 0
 							}
 						}, t.prototype.getLawSelected = function(e) {
 							var t;
@@ -15553,7 +15553,7 @@
 								var o = {
 									name: e.name,
 									description: e.description,
-									gain: e.getGain ? k.getValue(e.getGain, xf.getInstance())
+									gain: e.getGain ? k.getValue(e.getGain, Xf.getInstance())
 										.filter((function(e) {
 											return e.amount
 										}))
@@ -15563,7 +15563,7 @@
 												amount: Y(e.amount)
 											})
 										})) : [],
-									max: e.getStorage ? k.getValue(e.getStorage, xf.getInstance())
+									max: e.getStorage ? k.getValue(e.getStorage, Xf.getInstance())
 										.filter((function(e) {
 											return e.amount
 										}))
@@ -15573,7 +15573,7 @@
 												amount: Y(e.amount)
 											})
 										})) : [],
-									consume: e.getConsumption ? k.getValue(e.getConsumption, xf.getInstance())
+									consume: e.getConsumption ? k.getValue(e.getConsumption, Xf.getInstance())
 										.filter((function(e) {
 											return e.amount
 										}))
@@ -15583,7 +15583,7 @@
 												amount: Y(e.amount)
 											})
 										})) : [],
-									consumeEffect: e.getEffectConsumption ? k.getValue(e.getEffectConsumption, xf.getInstance())
+									consumeEffect: e.getEffectConsumption ? k.getValue(e.getEffectConsumption, Xf.getInstance())
 										.filter((function(e) {
 											return e.amount
 										}))
@@ -15593,7 +15593,7 @@
 												amount: Y(e.amount)
 											})
 										})) : [],
-									gainEffect: e.getEffectGain ? k.getValue(e.getEffectGain, xf.getInstance())
+									gainEffect: e.getEffectGain ? k.getValue(e.getEffectGain, Xf.getInstance())
 										.filter((function(e) {
 											return e.amount
 										}))
@@ -15603,7 +15603,7 @@
 												amount: Y(e.amount)
 											})
 										})) : [],
-									gainMult: e.getGainMultiplier ? k.getValue(e.getGainMultiplier, xf.getInstance())
+									gainMult: e.getGainMultiplier ? k.getValue(e.getGainMultiplier, Xf.getInstance())
 										.filter((function(e) {
 											return e.amount
 										}))
@@ -15617,8 +15617,8 @@
 								};
 								n.push(o)
 							}));
-							var i = e.unlockCondition(kf);
-							return i && kf.newNotifications.registerNotification("laws:orders:".concat(e.category, ":")
+							var i = e.unlockCondition(xf);
+							return i && xf.newNotifications.registerNotification("laws:orders:".concat(e.category, ":")
 								.concat(e.id)), {
 								id: e.id,
 								name: e.name,
@@ -15642,7 +15642,7 @@
 								if (a) {
 									var c = a.options[t.getLawSelected(a.id)];
 									if (a && (null === (r = c.getEffectGain) || void 0 === r ? void 0 : r[e])) {
-										var s = c.getEffectGain[e](xf.getInstance());
+										var s = c.getEffectGain[e](Xf.getInstance());
 										i.push({
 											label: "Law ".concat(a.name, ": ")
 												.concat(c.name),
@@ -15667,7 +15667,7 @@
 								if (a) {
 									var c = a.options[t.getLawSelected(a.id)];
 									if (a && (null === (r = c.getEffectMultiplier) || void 0 === r ? void 0 : r[e])) {
-										var s = c.getEffectMultiplier[e](xf.getInstance());
+										var s = c.getEffectMultiplier[e](Xf.getInstance());
 										i.push({
 											label: "Law ".concat(a.name, ": ")
 												.concat(c.name),
@@ -15692,7 +15692,7 @@
 								if (a) {
 									var c = a.options[t.getLawSelected(a.id)];
 									if (a && (null === (r = c.getEffectConsumption) || void 0 === r ? void 0 : r[e])) {
-										var s = c.getEffectConsumption[e](xf.getInstance());
+										var s = c.getEffectConsumption[e](Xf.getInstance());
 										i.push({
 											label: "Law ".concat(a.name, ": ")
 												.concat(c.name),
@@ -15717,7 +15717,7 @@
 								if (a) {
 									var c = a.options[t.getLawSelected(a.id)];
 									if (a && (null === (r = c.getGain) || void 0 === r ? void 0 : r[e])) {
-										var s = c.getGain[e](xf.getInstance());
+										var s = c.getGain[e](Xf.getInstance());
 										i.push({
 											label: "Law ".concat(a.name, ": ")
 												.concat(c.name),
@@ -15742,7 +15742,7 @@
 								if (a) {
 									var c = a.options[t.getLawSelected(a.id)];
 									if (a && (null === (r = c.getGainMultiplier) || void 0 === r ? void 0 : r[e])) {
-										var s = c.getGainMultiplier[e](xf.getInstance());
+										var s = c.getGainMultiplier[e](Xf.getInstance());
 										i.push({
 											label: "Law ".concat(a.name, ": ")
 												.concat(c.name),
@@ -15767,7 +15767,7 @@
 								if (a) {
 									var c = a.options[t.getLawSelected(a.id)];
 									if (a && (null === (r = c.getConsumption) || void 0 === r ? void 0 : r[e])) {
-										var s = c.getConsumption[e](xf.getInstance());
+										var s = c.getConsumption[e](Xf.getInstance());
 										i.push({
 											label: "Law ".concat(a.name, ": ")
 												.concat(c.name),
@@ -15792,7 +15792,7 @@
 								if (a) {
 									var c = a.options[t.getLawSelected(a.id)];
 									if (a && (null === (r = c.getStorage) || void 0 === r ? void 0 : r[e])) {
-										var s = c.getStorage[e](xf.getInstance());
+										var s = c.getStorage[e](Xf.getInstance());
 										i.push({
 											label: "Law ".concat(a.name, ": ")
 												.concat(c.name),
@@ -15816,7 +15816,7 @@
 								if (o) {
 									var r = o.options[e.getLawSelected(o.id)];
 									if (o && r.getMaxColonists) {
-										var a = r.getMaxColonists(xf.getInstance());
+										var a = r.getMaxColonists(Xf.getInstance());
 										n.push({
 											label: "Law ".concat(o.name, ": ")
 												.concat(r.name),
@@ -15834,12 +15834,12 @@
 							n < 0 ? this.lawsStatuses.push({
 									id: e,
 									selectedOptionId: t
-								}) : this.lawsStatuses[n].selectedOptionId = t, xf.getInstance()
-								.resources.reassertBalances(), kf.expeditionV2.generateCache();
+								}) : this.lawsStatuses[n].selectedOptionId = t, Xf.getInstance()
+								.resources.reassertBalances(), xf.expeditionV2.generateCache();
 							var i = EE.find((function(t) {
 								return t.id === e
 							}));
-							i && xf.getInstance()
+							i && Xf.getInstance()
 								.eventLog.registerLaw(i.name, i.options[t].name)
 						}, t.prototype.process = function(e) {}, t.prototype.reset = function() {
 							this.lawsStatuses = []
@@ -15855,41 +15855,41 @@
 				function(e) {
 					e.ACTUAL_DURABILITY = "Actual Durability", e.ACTUAL_SHIELD = "Actual Shield", e.ACTUAL_RECHARGE = "Actual Recharge"
 				}(aE || (aE = {}));
-				var NE, RE, IE, yE, hE, mE, TE, OE, LE, CE, vE, SE, PE, BE, _E, ME, UE, bE, GE, DE, wE, XE, xE, kE, HE, YE, WE, ZE, jE, FE, VE, KE, zE, qE, QE, JE, $E, ed, td, nd, id, od, rd, ad, cd, sd, ud, ld, pd, Ed, dd, gd, fd, Ad, Nd, Rd, Id, yd, hd, md, Td, Od, Ld, Cd, vd, Sd, Pd, Bd, _d, Md, Ud, bd, Gd, Dd, wd, Xd, xd = function() {
-						return xd = Object.assign || function(e) {
+				var NE, RE, IE, yE, hE, mE, TE, OE, LE, CE, vE, SE, PE, BE, _E, ME, UE, bE, GE, DE, wE, XE, xE, kE, HE, YE, WE, ZE, jE, FE, VE, KE, zE, qE, QE, JE, $E, ed, td, nd, id, od, rd, ad, cd, sd, ud, ld, pd, Ed, dd, gd, fd, Ad, Nd, Rd, Id, yd, hd, md, Td, Od, Ld, Cd, vd, Sd, Pd, Bd, _d, Md, Ud, bd, Gd, Dd, wd, Xd = function() {
+						return Xd = Object.assign || function(e) {
 							for (var t, n = 1, i = arguments.length; n < i; n++)
 								for (var o in t = arguments[n]) Object.prototype.hasOwnProperty.call(t, o) && (e[o] = t[o]);
 							return e
-						}, xd.apply(this, arguments)
+						}, Xd.apply(this, arguments)
 					},
-					kd = {
+					xd = {
 						income: 0,
 						consume: 0,
 						multiplier: 1
 					},
-					Hd = {
+					kd = {
 						stats: (NE = {}, NE[rE.SPEED] = 0, NE[rE.POWER] = 0, NE[rE.DAMAGE] = 0, NE[rE.DURABILITY] = 0, NE[rE.SHIELD_CAP] = 0, NE[rE.SHIELD_MITIGATION] = 0, NE[rE.SHIELD_REGEN] = 0, NE[rE.HULL_REPAIR] = 0, NE[rE.WEAPON_COOLDOWN] = 0, NE[rE.FUEL_CONSUMPTION] = 0, NE),
 						costs: []
 					},
-					Yd = function(e) {
+					Hd = function(e) {
 						return Math.pow(1.05, e.space.battlefield.state.pilot.level)
 					},
-					Wd = function(e) {
+					Yd = function(e) {
 						return Math.pow(.5, e.landingZone.landingZoneUpgrades.getUpgradeLevel(r.QUANTUM_TELEPORT)) * Math.pow(.8, e.landingZone.landingZoneUpgrades.getUpgradeLevel(r.FUEL_DELIVERY_BACTERIA))
 					},
-					Zd = function(e) {
+					Wd = function(e) {
 						return Math.pow(1.3, e.landingZone.landingZoneUpgrades.getUpgradeLevel(r.DARK_MATTER_CORPUS)) * Math.pow(1.25, e.landingZone.landingZoneUpgrades.getUpgradeLevel(r.PRESSED_ARMOR)) * Math.pow(1.2, e.landingZone.landingZoneUpgrades.getUpgradeLevel(r.CORROSION_EATING_BACTERIA)) * Math.pow(1.2, e.prestige.colonizePlanet.getUpgradeLevel(R.SHIPS_DURABILITY))
 					},
-					jd = function(e) {
+					Zd = function(e) {
 						return Math.pow(1.2, e.prestige.colonizePlanet.getUpgradeLevel(R.SHIPS_DAMAGE)) * Math.pow(1.2, e.landingZone.landingZoneUpgrades.getUpgradeLevel(r.LASER_TARGETING))
 					},
-					Fd = function(e) {
+					jd = function(e) {
 						return Math.pow(.8, e.landingZone.landingZoneUpgrades.getUpgradeLevel(r.OPTIMIZED_SPACESHIPS_MATERIALS))
 					},
-					Vd = function(e) {
+					Fd = function(e) {
 						return Math.pow(1.2, e.landingZone.landingZoneUpgrades.getUpgradeLevel(r.BOSE_EINSTEIN_SPACESHIP_BATTERIES)) * Math.pow(1.2, e.landingZone.landingZoneUpgrades.getUpgradeLevel(r.PORTABLE_BATTERIES))
 					},
-					Kd = [{
+					Vd = [{
 						name: "Regular",
 						id: "regular",
 						bonusConsume: (RE = {}, RE[rE.POWER] = function(e) {
@@ -15916,19 +15916,19 @@
 						category: oE.HEAD,
 						cost: (yE = {}, yE[l.WIRE] = function(e) {
 							return {
-								A: 5e3 * Fd(e),
+								A: 5e3 * jd(e),
 								B: 1.5,
 								type: i.EXPONENTIAL
 							}
 						}, yE[l.COMPUTER] = function(e) {
 							return {
-								A: 400 * Fd(e),
+								A: 400 * jd(e),
 								B: 1.5,
 								type: i.EXPONENTIAL
 							}
 						}, yE[l.RUBBER] = function(e) {
 							return {
-								A: 1e3 * Fd(e),
+								A: 1e3 * jd(e),
 								B: 1.5,
 								type: i.EXPONENTIAL
 							}
@@ -15963,13 +15963,13 @@
 						category: oE.HEAD,
 						cost: (TE = {}, TE[l.WIRE] = function(e) {
 							return {
-								A: 1e4 * Fd(e),
+								A: 1e4 * jd(e),
 								B: 1.5,
 								type: i.EXPONENTIAL
 							}
 						}, TE[l.COMPUTER] = function(e) {
 							return {
-								A: 1e3 * Fd(e),
+								A: 1e3 * jd(e),
 								B: 1.5,
 								type: i.EXPONENTIAL
 							}
@@ -15989,7 +15989,7 @@
 						}, OE),
 						bonusGain: (LE = {}, LE[rE.DURABILITY] = function(e) {
 							return {
-								A: 200 * Yd(e) * Zd(e),
+								A: 200 * Hd(e) * Wd(e),
 								B: 0,
 								type: i.LINEAR
 							}
@@ -15998,13 +15998,13 @@
 						category: oE.CORPUS,
 						cost: (CE = {}, CE[l.PLATE] = function(e) {
 							return {
-								A: 1e4 * Fd(e),
+								A: 1e4 * jd(e),
 								B: 1.5,
 								type: i.EXPONENTIAL
 							}
 						}, CE[l.WIRE] = function(e) {
 							return {
-								A: 1e3 * Fd(e),
+								A: 1e3 * jd(e),
 								B: 1.5,
 								type: i.EXPONENTIAL
 							}
@@ -16024,7 +16024,7 @@
 						}, vE),
 						bonusGain: (SE = {}, SE[rE.DURABILITY] = function(e) {
 							return {
-								A: 280 * Yd(e) * Zd(e),
+								A: 280 * Hd(e) * Wd(e),
 								B: 0,
 								type: i.LINEAR
 							}
@@ -16033,19 +16033,19 @@
 						category: oE.CORPUS,
 						cost: (PE = {}, PE[l.PLATE] = function(e) {
 							return {
-								A: 8e3 * Fd(e),
+								A: 8e3 * jd(e),
 								B: 1.5,
 								type: i.EXPONENTIAL
 							}
 						}, PE[l.WIRE] = function(e) {
 							return {
-								A: 1e3 * Fd(e),
+								A: 1e3 * jd(e),
 								B: 1.5,
 								type: i.EXPONENTIAL
 							}
 						}, PE[l.GRAPHENE] = function(e) {
 							return {
-								A: 400 * Fd(e),
+								A: 400 * jd(e),
 								B: 1.5,
 								type: i.EXPONENTIAL
 							}
@@ -16064,14 +16064,14 @@
 							}
 						}, BE[rE.FUEL_CONSUMPTION] = function(e) {
 							return {
-								A: 2 * Wd(e),
+								A: 2 * Yd(e),
 								B: 1.05,
 								type: i.EXPONENTIAL
 							}
 						}, BE),
 						bonusGain: (_E = {}, _E[rE.DAMAGE] = function(e) {
 							return {
-								A: 9 * Yd(e) * jd(e),
+								A: 9 * Hd(e) * Zd(e),
 								B: 0,
 								type: i.LINEAR
 							}
@@ -16080,19 +16080,19 @@
 						category: oE.WEAPONS,
 						cost: (ME = {}, ME[l.WIRE] = function(e) {
 							return {
-								A: 1e3 * Fd(e),
+								A: 1e3 * jd(e),
 								B: 1.5,
 								type: i.EXPONENTIAL
 							}
 						}, ME[l.PLATE] = function(e) {
 							return {
-								A: 1e3 * Fd(e),
+								A: 1e3 * jd(e),
 								B: 1.5,
 								type: i.EXPONENTIAL
 							}
 						}, ME[l.FUEL] = function(e) {
 							return {
-								A: 2e3 * Fd(e),
+								A: 2e3 * jd(e),
 								B: 1.5,
 								type: i.EXPONENTIAL
 							}
@@ -16111,14 +16111,14 @@
 							}
 						}, UE[rE.FUEL_CONSUMPTION] = function(e) {
 							return {
-								A: 3 * Wd(e),
+								A: 3 * Yd(e),
 								B: 1.05,
 								type: i.EXPONENTIAL
 							}
 						}, UE),
 						bonusGain: (bE = {}, bE[rE.DAMAGE] = function(e) {
 							return {
-								A: 4 * Yd(e) * jd(e),
+								A: 4 * Hd(e) * Zd(e),
 								B: 0,
 								type: i.LINEAR
 							}
@@ -16133,19 +16133,19 @@
 						category: oE.WEAPONS,
 						cost: (DE = {}, DE[l.WIRE] = function(e) {
 							return {
-								A: 5e3 * Fd(e),
+								A: 5e3 * jd(e),
 								B: 1.5,
 								type: i.EXPONENTIAL
 							}
 						}, DE[l.PLATE] = function(e) {
 							return {
-								A: 5e3 * Fd(e),
+								A: 5e3 * jd(e),
 								B: 1.5,
 								type: i.EXPONENTIAL
 							}
 						}, DE[l.FUEL] = function(e) {
 							return {
-								A: 5e3 * Fd(e),
+								A: 5e3 * jd(e),
 								B: 1.5,
 								type: i.EXPONENTIAL
 							}
@@ -16164,14 +16164,14 @@
 							}
 						}, wE[rE.FUEL_CONSUMPTION] = function(e) {
 							return {
-								A: 12 * Wd(e),
+								A: 12 * Yd(e),
 								B: 1.05,
 								type: i.EXPONENTIAL
 							}
 						}, wE),
 						bonusGain: (XE = {}, XE[rE.DAMAGE] = function(e) {
 							return {
-								A: 19 * Yd(e) * jd(e),
+								A: 19 * Hd(e) * Zd(e),
 								B: 0,
 								type: i.LINEAR
 							}
@@ -16180,19 +16180,19 @@
 						category: oE.WEAPONS,
 						cost: (xE = {}, xE[l.WIRE] = function(e) {
 							return {
-								A: 9e3 * Fd(e),
+								A: 9e3 * jd(e),
 								B: 1.5,
 								type: i.EXPONENTIAL
 							}
 						}, xE[l.COMPUTER] = function(e) {
 							return {
-								A: 300 * Fd(e),
+								A: 300 * jd(e),
 								B: 1.5,
 								type: i.EXPONENTIAL
 							}
 						}, xE[l.FUEL] = function(e) {
 							return {
-								A: 9e3 * Fd(e),
+								A: 9e3 * jd(e),
 								B: 1.5,
 								type: i.EXPONENTIAL
 							}
@@ -16211,14 +16211,14 @@
 							}
 						}, kE[rE.FUEL_CONSUMPTION] = function(e) {
 							return {
-								A: 30 * Wd(e),
+								A: 30 * Yd(e),
 								B: 1.05,
 								type: i.EXPONENTIAL
 							}
 						}, kE),
 						bonusGain: (HE = {}, HE[rE.DAMAGE] = function(e) {
 							return {
-								A: 45 * Yd(e) * jd(e) * Math.pow(1.2, e.landingZone.landingZoneUpgrades.getUpgradeLevel(r.POSITRON_WEAPONS)),
+								A: 45 * Hd(e) * Zd(e) * Math.pow(1.2, e.landingZone.landingZoneUpgrades.getUpgradeLevel(r.POSITRON_WEAPONS)),
 								B: 0,
 								type: i.LINEAR
 							}
@@ -16227,19 +16227,19 @@
 						category: oE.WEAPONS,
 						cost: (YE = {}, YE[l.WIRE] = function(e) {
 							return {
-								A: 3e4 * Fd(e),
+								A: 3e4 * jd(e),
 								B: 1.5,
 								type: i.EXPONENTIAL
 							}
 						}, YE[l.COMPUTER] = function(e) {
 							return {
-								A: 900 * Fd(e),
+								A: 900 * jd(e),
 								B: 1.5,
 								type: i.EXPONENTIAL
 							}
 						}, YE[l.FUEL] = function(e) {
 							return {
-								A: 3e4 * Fd(e),
+								A: 3e4 * jd(e),
 								B: 1.5,
 								type: i.EXPONENTIAL
 							}
@@ -16258,20 +16258,20 @@
 							}
 						}, WE[rE.FUEL_CONSUMPTION] = function(e) {
 							return {
-								A: 5 * Wd(e),
+								A: 5 * Yd(e),
 								B: 1.05,
 								type: i.EXPONENTIAL
 							}
 						}, WE),
 						bonusGain: (ZE = {}, ZE[rE.SHIELD_CAP] = function(e) {
 							return {
-								A: 80 * Yd(e),
+								A: 80 * Hd(e),
 								B: 0,
 								type: i.LINEAR
 							}
 						}, ZE[rE.SHIELD_REGEN] = function(e) {
 							return {
-								A: 3 * Yd(e),
+								A: 3 * Hd(e),
 								B: 0,
 								type: i.LINEAR
 							}
@@ -16286,19 +16286,19 @@
 						category: oE.WEAPONS,
 						cost: (jE = {}, jE[l.WIRE] = function(e) {
 							return {
-								A: 9e3 * Fd(e),
+								A: 9e3 * jd(e),
 								B: 1.5,
 								type: i.EXPONENTIAL
 							}
 						}, jE[l.COMPUTER] = function(e) {
 							return {
-								A: 500 * Fd(e),
+								A: 500 * jd(e),
 								B: 1.5,
 								type: i.EXPONENTIAL
 							}
 						}, jE[l.MAGNETO] = function(e) {
 							return {
-								A: 100 * Fd(e),
+								A: 100 * jd(e),
 								B: 1.5,
 								type: i.EXPONENTIAL
 							}
@@ -16311,14 +16311,14 @@
 						id: "solar",
 						bonusConsume: (FE = {}, FE[rE.FUEL_CONSUMPTION] = function(e) {
 							return {
-								A: .5 * Wd(e),
+								A: .5 * Yd(e),
 								B: 1.05,
 								type: i.EXPONENTIAL
 							}
 						}, FE),
 						bonusGain: (VE = {}, VE[rE.POWER] = function(e) {
 							return {
-								A: 4 * Vd(e),
+								A: 4 * Fd(e),
 								B: 0,
 								type: i.LINEAR
 							}
@@ -16327,13 +16327,13 @@
 						category: oE.POWER_SUPPLY,
 						cost: (KE = {}, KE[l.WIRE] = function(e) {
 							return {
-								A: 2e3 * Fd(e),
+								A: 2e3 * jd(e),
 								B: 1.5,
 								type: i.EXPONENTIAL
 							}
 						}, KE[l.SEMICONDUCTOR] = function(e) {
 							return {
-								A: 2e3 * Fd(e),
+								A: 2e3 * jd(e),
 								B: 1.5,
 								type: i.EXPONENTIAL
 							}
@@ -16346,14 +16346,14 @@
 						id: "thermonuclear",
 						bonusConsume: (zE = {}, zE[rE.FUEL_CONSUMPTION] = function(e) {
 							return {
-								A: 3.5 * Wd(e),
+								A: 3.5 * Yd(e),
 								B: 1.05,
 								type: i.EXPONENTIAL
 							}
 						}, zE),
 						bonusGain: (qE = {}, qE[rE.POWER] = function(e) {
 							return {
-								A: 10 * Vd(e),
+								A: 10 * Fd(e),
 								B: 0,
 								type: i.LINEAR
 							}
@@ -16362,13 +16362,13 @@
 						category: oE.POWER_SUPPLY,
 						cost: (QE = {}, QE[l.PLATE] = function(e) {
 							return {
-								A: 9e3 * Fd(e),
+								A: 9e3 * jd(e),
 								B: 1.5,
 								type: i.EXPONENTIAL
 							}
 						}, QE[l.WIRE] = function(e) {
 							return {
-								A: 5e3 * Fd(e),
+								A: 5e3 * jd(e),
 								B: 1.5,
 								type: i.EXPONENTIAL
 							}
@@ -16381,7 +16381,7 @@
 						id: "reactive",
 						bonusConsume: (JE = {}, JE[rE.FUEL_CONSUMPTION] = function(e) {
 							return {
-								A: 4 * Wd(e),
+								A: 4 * Yd(e),
 								B: 1,
 								type: i.EXPONENTIAL
 							}
@@ -16403,13 +16403,13 @@
 						category: oE.ENGINE,
 						cost: (ed = {}, ed[l.PLATE] = function(e) {
 							return {
-								A: 14e3 * Fd(e),
+								A: 14e3 * jd(e),
 								B: 1.5,
 								type: i.EXPONENTIAL
 							}
 						}, ed[l.WIRE] = function(e) {
 							return {
-								A: 7e3 * Fd(e),
+								A: 7e3 * jd(e),
 								B: 1.5,
 								type: i.EXPONENTIAL
 							}
@@ -16422,7 +16422,7 @@
 						id: "hyperspace",
 						bonusConsume: (td = {}, td[rE.FUEL_CONSUMPTION] = function(e) {
 							return {
-								A: 40 * Wd(e),
+								A: 40 * Yd(e),
 								B: 1,
 								type: i.EXPONENTIAL
 							}
@@ -16444,13 +16444,13 @@
 						category: oE.ENGINE,
 						cost: (id = {}, id[l.PLATE] = function(e) {
 							return {
-								A: 54e3 * Fd(e),
+								A: 54e3 * jd(e),
 								B: 1.5,
 								type: i.EXPONENTIAL
 							}
 						}, id[l.WIRE] = function(e) {
 							return {
-								A: 15e3 * Fd(e),
+								A: 15e3 * jd(e),
 								B: 1.5,
 								type: i.EXPONENTIAL
 							}
@@ -16459,8 +16459,8 @@
 							return e.landingZone.landingZoneUpgrades.getUpgradeLevel(r.HYPERSPACE_ENGINE) > 0
 						}
 					}],
-					zd = n(8721),
-					qd = function() {
+					Kd = n(8721),
+					zd = function() {
 						var e = function(t, n) {
 							return e = Object.setPrototypeOf || {
 								__proto__: []
@@ -16480,14 +16480,14 @@
 							e(t, n), t.prototype = null === n ? Object.create(n) : (i.prototype = n.prototype, new i)
 						}
 					}(),
-					Qd = function() {
-						return Qd = Object.assign || function(e) {
+					qd = function() {
+						return qd = Object.assign || function(e) {
 							for (var t, n = 1, i = arguments.length; n < i; n++)
 								for (var o in t = arguments[n]) Object.prototype.hasOwnProperty.call(t, o) && (e[o] = t[o]);
 							return e
-						}, Qd.apply(this, arguments)
+						}, qd.apply(this, arguments)
 					},
-					Jd = function(e) {
+					Qd = function(e) {
 						function t() {
 							var t = e.call(this) || this;
 							return t.models = [], t.editing = null, t.validationError = void 0, t.workDispatcher.on("[spaceship-constructor] load-to-editor", (function(e) {
@@ -16498,7 +16498,7 @@
 								t.editing = n ? {
 									name: n.name,
 									uuid: n.uuid,
-									parts: Qd({}, JSON.parse(JSON.stringify(n.parts)))
+									parts: qd({}, JSON.parse(JSON.stringify(n.parts)))
 								} : {
 									name: "Unknown",
 									uuid: "",
@@ -16548,14 +16548,14 @@
 								console.log("Load to editor", e), t.editing && (t.editing.name = e)
 							})), t
 						}
-						return qd(t, e), t.getInstance = function() {
+						return zd(t, e), t.getInstance = function() {
 							return t.instance || (t.instance = new t), t.instance
 						}, t.prototype.deleteShipModel = function(e) {
 							var t = this.models.findIndex((function(t) {
 								return t.uuid === e
 							}));
 							if (t > -1) {
-								if (kf.space.hangar.getAmountById(e) > 0) return;
+								if (xf.space.hangar.getAmountById(e) > 0) return;
 								this.models.splice(t, 1)
 							}
 						}, t.prototype.calculateStats = function(e) {
@@ -16566,16 +16566,16 @@
 										income: 1,
 										consume: 0,
 										multiplier: 1
-									}, e[rE.POWER] = xd({}, kd), e[rE.DAMAGE] = xd({}, kd), e[rE.DURABILITY] = xd({}, kd), e[rE.SHIELD_CAP] = xd({}, kd), e[rE.SHIELD_MITIGATION] = xd({}, kd), e[rE.SHIELD_REGEN] = xd({}, kd), e[rE.HULL_REPAIR] = xd({}, kd), e[rE.WEAPON_COOLDOWN] = {
+									}, e[rE.POWER] = Xd({}, xd), e[rE.DAMAGE] = Xd({}, xd), e[rE.DURABILITY] = Xd({}, xd), e[rE.SHIELD_CAP] = Xd({}, xd), e[rE.SHIELD_MITIGATION] = Xd({}, xd), e[rE.SHIELD_REGEN] = Xd({}, xd), e[rE.HULL_REPAIR] = Xd({}, xd), e[rE.WEAPON_COOLDOWN] = {
 										income: 3,
 										consume: 0,
 										multiplier: 1
-									}, e[rE.FUEL_CONSUMPTION] = xd({}, kd), e
+									}, e[rE.FUEL_CONSUMPTION] = Xd({}, xd), e
 								}(),
 								i = [];
 							t.forEach((function(e) {
 								var t = e.id,
-									o = Kd.find((function(e) {
+									o = Vd.find((function(e) {
 										return e.id === t
 									}));
 								if (o) {
@@ -16583,24 +16583,24 @@
 										.forEach((function(t) {
 											var i = t[0],
 												o = t[1],
-												r = k.calculate(xf.getInstance(), o, 0, e.level);
+												r = k.calculate(Xf.getInstance(), o, 0, e.level);
 											n[i].income += r
 										})), Object.entries(o.bonusConsume)
 										.forEach((function(t) {
 											var i = t[0],
 												o = t[1],
-												r = k.calculate(xf.getInstance(), o, 0, e.level);
+												r = k.calculate(Xf.getInstance(), o, 0, e.level);
 											n[i].consume += r
 										})), Object.entries(o.bonusMultiplier)
 										.forEach((function(t) {
 											var i = t[0],
 												o = t[1],
-												r = k.calculate(xf.getInstance(), o, e.level, 1);
+												r = k.calculate(Xf.getInstance(), o, e.level, 1);
 											n[i].multiplier *= r
 										}));
-									var r = k.calcBatchAll(o.cost, xf.getInstance(), e.level, xf.getInstance()
+									var r = k.calcBatchAll(o.cost, Xf.getInstance(), e.level, Xf.getInstance()
 										.resources.getBatchObject());
-									i = k.calcSum(xf.getInstance(), i, r)
+									i = k.calcSum(Xf.getInstance(), i, r)
 								}
 							}));
 							var o = {};
@@ -16618,9 +16618,9 @@
 								return Math.max(e, t.eta)
 							}), 0), {
 								stats: o,
-								costs: xf.getInstance()
-									.resources.assertEnought(i, xf.getInstance()
-										.resources.getBatchObject(), xf.getInstance()
+								costs: Xf.getInstance()
+									.resources.assertEnought(i, Xf.getInstance()
+										.resources.getBatchObject(), Xf.getInstance()
 										.resources.getBatchBalanceObject()),
 								costsOriginal: i,
 								progress: c < 1 ? (100 * c)
@@ -16634,7 +16634,7 @@
 							}));
 							if (t) {
 								var n = this.calculateStats(t);
-								return Qd(Qd({}, t), n)
+								return qd(qd({}, t), n)
 							}
 						}, t.prototype.validateBeforeSave = function(e) {
 							var t, n, i, o;
@@ -16669,7 +16669,7 @@
 							var e, t, n = this;
 							if (this.validationError = void 0, this.editing) {
 								var i = !(null === (e = this.editing) || void 0 === e ? void 0 : e.uuid);
-								if (!i && kf.space.hangar.getAmountById(null === (t = this.editing) || void 0 === t ? void 0 : t.uuid)) {
+								if (!i && xf.space.hangar.getAmountById(null === (t = this.editing) || void 0 === t ? void 0 : t.uuid)) {
 									i = !0;
 									var o = this.models.find((function(e) {
 										var t;
@@ -16681,8 +16681,8 @@
 								var r = this.validateBeforeSave(this.editing);
 								if (!r.result) return console.error(r), void(this.validationError = r.reason);
 								if (this.validationError = void 0, i) {
-									var a = zd.Z();
-									return this.models.push(Qd(Qd({}, this.editing), {
+									var a = Kd.Z();
+									return this.models.push(qd(qd({}, this.editing), {
 										uuid: a
 									})), void(this.editing.uuid = a)
 								}
@@ -16690,7 +16690,7 @@
 									var t;
 									return e.uuid === (null === (t = n.editing) || void 0 === t ? void 0 : t.uuid)
 								}));
-								this.models[c] = Qd({}, this.editing), this.editing = null
+								this.models[c] = qd({}, this.editing), this.editing = null
 							}
 						}, t.prototype.importData = function(e) {
 							this.models = (null == e ? void 0 : e.models) || []
@@ -16724,11 +16724,11 @@
 									var n = e[0],
 										i = e[1];
 									if (i) {
-										var o = Kd.find((function(e) {
+										var o = Vd.find((function(e) {
 											return e.id === i.id
 										}));
 										if (o) {
-											var r = k.calcBatchAll(o.cost, xf.getInstance(), i.level, xf.getInstance()
+											var r = k.calcBatchAll(o.cost, Xf.getInstance(), i.level, Xf.getInstance()
 													.resources.getBatchObject()),
 												a = {
 													category: o.category,
@@ -16736,27 +16736,27 @@
 														id: i.id,
 														name: o.name,
 														level: i.level,
-														cost: xf.getInstance()
-															.resources.assertEnought(r, xf.getInstance()
-																.resources.getBatchObject(), xf.getInstance()
+														cost: Xf.getInstance()
+															.resources.assertEnought(r, Xf.getInstance()
+																.resources.getBatchObject(), Xf.getInstance()
 																.resources.getBatchBalanceObject()),
-														gain: k.calcBatch(o.bonusGain, xf.getInstance(), 0, i.level)
+														gain: k.calcBatch(o.bonusGain, Xf.getInstance(), 0, i.level)
 															.map((function(e) {
-																return Qd(Qd({}, e), {
+																return qd(qd({}, e), {
 																	amountValue: e.amount,
 																	amount: "+".concat(Y(e.amount))
 																})
 															})),
-														gainMult: k.calcBatch(o.bonusMultiplier, xf.getInstance(), i.level, 1)
+														gainMult: k.calcBatch(o.bonusMultiplier, Xf.getInstance(), i.level, 1)
 															.map((function(e) {
-																return Qd(Qd({}, e), {
+																return qd(qd({}, e), {
 																	amountValue: e.amount,
 																	amount: "x".concat(Y(e.amount))
 																})
 															})),
-														consume: k.calcBatch(o.bonusConsume, xf.getInstance(), 0, i.level)
+														consume: k.calcBatch(o.bonusConsume, Xf.getInstance(), 0, i.level)
 															.map((function(e) {
-																return Qd(Qd({}, e), {
+																return qd(qd({}, e), {
 																	amountValue: e.amount,
 																	amount: "-".concat(Y(e.amount))
 																})
@@ -16774,26 +16774,26 @@
 									stats: {}
 								},
 								o = {
-									stats: Qd(Qd({}, Hd.stats), i.stats),
+									stats: qd(qd({}, kd.stats), i.stats),
 									costs: i.costs
 								};
 							return {
-								isUnlocked: kf.science.scienceResearches.getResearchLevel(P.ADVANCED_SPACE_CONSTRUCTION) > 0,
+								isUnlocked: xf.science.scienceResearches.getResearchLevel(P.ADVANCED_SPACE_CONSTRUCTION) > 0,
 								list: this.models.map((function(e) {
 									var t;
 									return {
 										name: e.name,
 										uuid: e.uuid,
 										isEditing: e.uuid === (null === (t = n.editing) || void 0 === t ? void 0 : t.uuid),
-										amountPurchased: kf.space.hangar.getAmountById(e.uuid)
+										amountPurchased: xf.space.hangar.getAmountById(e.uuid)
 									}
 								})),
 								shipConstructor: this.editing ? {
 									uuid: (null === (e = this.editing) || void 0 === e ? void 0 : e.uuid) || "",
 									name: (null === (t = this.editing) || void 0 === t ? void 0 : t.name) || "",
 									parts: this.processShipPartsToUI(this.editing),
-									availableParts: Kd.filter((function(e) {
-											return e.unlockCondition(xf.getInstance())
+									availableParts: Vd.filter((function(e) {
+											return e.unlockCondition(Xf.getInstance())
 										}))
 										.map((function(e) {
 											return {
@@ -16810,8 +16810,8 @@
 							this.editing = null, this.models = [], this.validationError = void 0
 						}, t
 					}(S),
-					$d = Jd.getInstance(),
-					eg = function() {
+					Jd = Qd.getInstance(),
+					$d = function() {
 						var e = function(t, n) {
 							return e = Object.setPrototypeOf || {
 								__proto__: []
@@ -16831,14 +16831,14 @@
 							e(t, n), t.prototype = null === n ? Object.create(n) : (i.prototype = n.prototype, new i)
 						}
 					}(),
-					tg = function() {
-						return tg = Object.assign || function(e) {
+					eg = function() {
+						return eg = Object.assign || function(e) {
 							for (var t, n = 1, i = arguments.length; n < i; n++)
 								for (var o in t = arguments[n]) Object.prototype.hasOwnProperty.call(t, o) && (e[o] = t[o]);
 							return e
-						}, tg.apply(this, arguments)
+						}, eg.apply(this, arguments)
 					},
-					ng = function(e) {
+					tg = function(e) {
 						function t() {
 							var t = e.call(this) || this;
 							return t.hangar = [], t.workDispatcher.on("[spaceship-hangar] build", (function(e) {
@@ -16847,44 +16847,44 @@
 								console.log("Destroying", e), t.destroyShip(e)
 							})), t
 						}
-						return eg(t, e), t.getInstance = function() {
+						return $d(t, e), t.getInstance = function() {
 							return t.instance || (t.instance = new t), t.instance
 						}, t.prototype.importData = function(e) {
 							this.hangar = e || []
 						}, t.prototype.exportData = function() {
 							return this.hangar
 						}, t.prototype.destroyShip = function(e) {
-							var t = xf.getInstance()
+							var t = Xf.getInstance()
 								.space.spaceship.models.find((function(t) {
 									return t.uuid === e
 								}));
 							if (t) {
-								var n = xf.getInstance()
+								var n = Xf.getInstance()
 									.space.spaceship.calculateStats(t)
 									.costsOriginal,
 									i = this.hangar.findIndex((function(t) {
 										return t.id === e
 									}));
 								i > -1 && (this.hangar[i].amount--, n.forEach((function(e) {
-									xf.getInstance()
+									Xf.getInstance()
 										.resources.addResource(e.id, .8 * e.amount)
-								})), kf.resources.reassertBalances())
+								})), xf.resources.reassertBalances())
 							} else console.error("Model ".concat(e, " not found"))
 						}, t.prototype.buildShip = function(e) {
-							var t = xf.getInstance()
+							var t = Xf.getInstance()
 								.space.spaceship.models.find((function(t) {
 									return t.uuid === e
 								}));
 							if (t) {
-								var n = xf.getInstance()
+								var n = Xf.getInstance()
 									.space.spaceship.calculateStats(t),
 									i = n.costsOriginal;
 								if (n.isAvailable) {
 									var o = this.hangar.findIndex((function(t) {
 										return t.id === e
 									}));
-									xf.getInstance()
-										.resources.subtractResourceBatch(i), kf.resources.reassertBalances(), o > -1 ? this.hangar[o].amount++ : this.hangar.push({
+									Xf.getInstance()
+										.resources.subtractResourceBatch(i), xf.resources.reassertBalances(), o > -1 ? this.hangar[o].amount++ : this.hangar.push({
 											id: e,
 											amount: 1
 										})
@@ -16898,10 +16898,10 @@
 								id: e.uuid,
 								amount: 0
 							});
-							var n = xf.getInstance()
+							var n = Xf.getInstance()
 								.space.spaceship.calculateStats(e),
 								i = {
-									stats: tg(tg({}, Hd.stats), n.stats),
+									stats: eg(eg({}, kd.stats), n.stats),
 									costs: n.costs
 								};
 							return {
@@ -16921,8 +16921,8 @@
 						}, t.prototype.dataToUI = function() {
 							var e = this;
 							return {
-								isUnlocked: kf.space.spaceship.models.length > 0,
-								ships: xf.getInstance()
+								isUnlocked: xf.space.spaceship.models.length > 0,
+								ships: Xf.getInstance()
 									.space.spaceship.models.map((function(t) {
 										return e.processToUI(t)
 									}))
@@ -16931,8 +16931,8 @@
 							this.hangar = []
 						}, t
 					}(S),
-					ig = ng.getInstance(),
-					og = function() {
+					ng = tg.getInstance(),
+					ig = function() {
 						var e = function(t, n) {
 							return e = Object.setPrototypeOf || {
 								__proto__: []
@@ -16952,18 +16952,18 @@
 							e(t, n), t.prototype = null === n ? Object.create(n) : (i.prototype = n.prototype, new i)
 						}
 					}(),
-					rg = function() {
-						return rg = Object.assign || function(e) {
+					og = function() {
+						return og = Object.assign || function(e) {
 							for (var t, n = 1, i = arguments.length; n < i; n++)
 								for (var o in t = arguments[n]) Object.prototype.hasOwnProperty.call(t, o) && (e[o] = t[o]);
 							return e
-						}, rg.apply(this, arguments)
+						}, og.apply(this, arguments)
 					},
-					ag = function(e) {
+					rg = function(e) {
 						function t() {
 							var t = e.call(this) || this;
 							return t.fleets = [], t.workDispatcher.on("[spaceship-fleet] load-to-editor", (function(e) {
-								console.log("Load to editor", e), t.editing = rg({}, t.fleets.find((function(t) {
+								console.log("Load to editor", e), t.editing = og({}, t.fleets.find((function(t) {
 									return t.uuid === e.uuid
 								})) || {
 									name: "Unknown",
@@ -16990,7 +16990,7 @@
 								console.log("Set name", e), t.editing && (t.editing.name = e)
 							})), t
 						}
-						return og(t, e), t.getInstance = function() {
+						return ig(t, e), t.getInstance = function() {
 							return t.instance || (t.instance = new t), t.instance
 						}, t.prototype.getModelUsed = function(e) {
 							var t;
@@ -17005,7 +17005,7 @@
 							var t = [],
 								n = {};
 							return e.slots.forEach((function(e) {
-								e.shipId && (n[e.shipId] || (n[e.shipId] = 0), n[e.shipId]++, n[e.shipId] > xf.getInstance()
+								e.shipId && (n[e.shipId] || (n[e.shipId] = 0), n[e.shipId]++, n[e.shipId] > Xf.getInstance()
 									.space.hangar.getAmountById(e.shipId) && t.push(e))
 							})), t
 						}, t.prototype.deployModel = function(e, t, n) {
@@ -17017,7 +17017,7 @@
 								if ("none" === e && r > -1) this.editing.slots[r].shipId = void 0;
 								else {
 									var a = this.getModelUsed(e);
-									kf.space.hangar.getAmountById(e) <= a || (r < 0 ? null === (o = this.editing) || void 0 === o || o.slots.push({
+									xf.space.hangar.getAmountById(e) <= a || (r < 0 ? null === (o = this.editing) || void 0 === o || o.slots.push({
 										line: t,
 										column: n,
 										shipId: e,
@@ -17033,9 +17033,9 @@
 										var n;
 										return e.uuid === (null === (n = t.editing) || void 0 === n ? void 0 : n.uuid)
 									}));
-									this.fleets[n] = rg({}, this.editing)
-								} else this.fleets.push(rg(rg({}, this.editing), {
-									uuid: zd.Z()
+									this.fleets[n] = og({}, this.editing)
+								} else this.fleets.push(og(og({}, this.editing), {
+									uuid: Kd.Z()
 								}))
 						}, t.prototype.deleteFleet = function(e) {
 							var t = this.fleets.findIndex((function(t) {
@@ -17063,19 +17063,19 @@
 											return e.line === i && e.column === r
 										}));
 									if (!c || !c.shipId) return t.push(a), "continue";
-									var s = kf.space.spaceship.getModelWithStats(c.shipId);
+									var s = xf.space.spaceship.getModelWithStats(c.shipId);
 									if (!s) return t.push(a), "continue";
 									var u = s.stats,
 										l = s.name,
 										p = s.uuid;
-									a.stats = rg(rg({}, Hd.stats), u), a.selectedName = l, a.selectedUUID = p, t.push(a)
+									a.stats = og(og({}, kd.stats), u), a.selectedName = l, a.selectedUUID = p, t.push(a)
 								}, a = 0; a < 5; a++) r(a)
 							}, o = this, r = 0; r < 2; r++) i(r);
 							return t
 						}, t.prototype.dataToUI = function() {
 							var e, t = this;
 							return {
-								isUnlocked: kf.space.spaceship.models.length > 0,
+								isUnlocked: xf.space.spaceship.models.length > 0,
 								list: this.fleets.map((function(e) {
 									var n;
 									return {
@@ -17090,13 +17090,13 @@
 									uuid: null === (e = this.editing) || void 0 === e ? void 0 : e.uuid,
 									name: this.editing.name,
 									slots: this.slotsToUI(),
-									options: kf.space.hangar.hangar.map((function(e) {
+									options: xf.space.hangar.hangar.map((function(e) {
 										var n;
 										return {
 											id: e.id,
 											available: e.amount,
 											used: t.getModelUsed(e.id),
-											name: (null === (n = kf.space.spaceship.models.find((function(t) {
+											name: (null === (n = xf.space.spaceship.models.find((function(t) {
 												return t.uuid === e.id
 											}))) || void 0 === n ? void 0 : n.name) || ""
 										}
@@ -17107,8 +17107,8 @@
 							this.editing = void 0, this.fleets = []
 						}, t
 					}(S),
-					cg = ag.getInstance(),
-					sg = function() {
+					ag = rg.getInstance(),
+					cg = function() {
 						var e = function(t, n) {
 							return e = Object.setPrototypeOf || {
 								__proto__: []
@@ -17128,14 +17128,14 @@
 							e(t, n), t.prototype = null === n ? Object.create(n) : (i.prototype = n.prototype, new i)
 						}
 					}(),
-					ug = function() {
-						return ug = Object.assign || function(e) {
+					sg = function() {
+						return sg = Object.assign || function(e) {
 							for (var t, n = 1, i = arguments.length; n < i; n++)
 								for (var o in t = arguments[n]) Object.prototype.hasOwnProperty.call(t, o) && (e[o] = t[o]);
 							return e
-						}, ug.apply(this, arguments)
+						}, sg.apply(this, arguments)
 					},
-					lg = function(e) {
+					ug = function(e) {
 						function t() {
 							var t = e.call(this) || this;
 							return t.state = {
@@ -17145,7 +17145,7 @@
 								bullets: []
 							}, t
 						}
-						return sg(t, e), t.getInstance = function() {
+						return cg(t, e), t.getInstance = function() {
 							return t.instance || (t.instance = new t), t.instance
 						}, t.prototype.initializeEnemy = function(e) {
 							for (var t, n = [], i = 0; i < 2; i++)
@@ -17161,17 +17161,17 @@
 							return n
 						}, t.prototype.fullfillStatsBeforeBattle = function(e) {
 							var t;
-							return ug(ug({}, e), ((t = {})[aE.ACTUAL_DURABILITY] = e.Durability, t[aE.ACTUAL_RECHARGE] = 0, t[aE.ACTUAL_SHIELD] = e[rE.SHIELD_CAP], t))
+							return sg(sg({}, e), ((t = {})[aE.ACTUAL_DURABILITY] = e.Durability, t[aE.ACTUAL_RECHARGE] = 0, t[aE.ACTUAL_SHIELD] = e[rE.SHIELD_CAP], t))
 						}, t.prototype.initializeFight = function(e) {
 							var t = this,
-								n = kf.space.fleet.fleets.find((function(e) {
-									return e.uuid === kf.space.battlefield.state.fleetUsed
+								n = xf.space.fleet.fleets.find((function(e) {
+									return e.uuid === xf.space.battlefield.state.fleetUsed
 								}));
 							n && (this.state.me = n.slots.filter((function(e) {
 									return !!e.shipId
 								}))
 								.map((function(e) {
-									var n = kf.space.spaceship.getModelWithStats(e.shipId);
+									var n = xf.space.spaceship.getModelWithStats(e.shipId);
 									if (!n) throw new Error("Cant calculate model " + e.shipId);
 									return {
 										modelId: e.shipId,
@@ -17179,7 +17179,7 @@
 										y: 95 - 15 * (1 - e.line),
 										line: e.line,
 										side: 0,
-										stats: t.fullfillStatsBeforeBattle(ug(ug({}, Hd.stats), n.stats))
+										stats: t.fullfillStatsBeforeBattle(sg(sg({}, kd.stats), n.stats))
 									}
 								})), this.state.enemy = this.initializeEnemy(e)
 								.map((function(e) {
@@ -17189,7 +17189,7 @@
 										y: 5 + 15 * (1 - e.line),
 										line: e.line,
 										side: 1,
-										stats: t.fullfillStatsBeforeBattle(ug(ug({}, Hd.stats), e.stats))
+										stats: t.fullfillStatsBeforeBattle(sg(sg({}, kd.stats), e.stats))
 									}
 								})), this.state.bullets = [], this.state.inProgress = !0)
 						}, t.prototype.finalizeFight = function() {
@@ -17207,7 +17207,7 @@
 								tx: t[n].x,
 								ty: t[n].y,
 								dmg: e.stats[rE.DAMAGE],
-								uuid: zd.Z()
+								uuid: Kd.Z()
 							};
 							this.state.bullets.push(i)
 						}, t.prototype.processBullet = function(e, t) {
@@ -17249,14 +17249,14 @@
 								inProgress: this.state.inProgress,
 								me: this.state.me.map((function(e) {
 									var t, n;
-									return ug(ug({}, e), {
-										name: null !== (n = null === (t = kf.space.spaceship.models.find((function(t) {
+									return sg(sg({}, e), {
+										name: null !== (n = null === (t = xf.space.spaceship.models.find((function(t) {
 											return t.uuid === e.modelId
 										}))) || void 0 === t ? void 0 : t.name) && void 0 !== n ? n : e.modelId
 									})
 								})),
 								enemy: this.state.enemy.map((function(e) {
-									return ug(ug({}, e), {
+									return sg(sg({}, e), {
 										name: e.modelId
 									})
 								})),
@@ -17264,8 +17264,8 @@
 							}
 						}, t
 					}(S),
-					pg = lg.getInstance(),
-					Eg = function() {
+					lg = ug.getInstance(),
+					pg = function() {
 						var e = function(t, n) {
 							return e = Object.setPrototypeOf || {
 								__proto__: []
@@ -17285,14 +17285,14 @@
 							e(t, n), t.prototype = null === n ? Object.create(n) : (i.prototype = n.prototype, new i)
 						}
 					}(),
-					dg = function() {
-						return dg = Object.assign || function(e) {
+					Eg = function() {
+						return Eg = Object.assign || function(e) {
 							for (var t, n = 1, i = arguments.length; n < i; n++)
 								for (var o in t = arguments[n]) Object.prototype.hasOwnProperty.call(t, o) && (e[o] = t[o]);
 							return e
-						}, dg.apply(this, arguments)
+						}, Eg.apply(this, arguments)
 					},
-					gg = function(e) {
+					dg = function(e) {
 						function t() {
 							var t = e.call(this) || this;
 							return t.state = {
@@ -17313,7 +17313,7 @@
 								}
 							}, t.statsCached = {
 								speed: 0
-							}, t.fight = pg, t.workDispatcher.on("[space-battlefield] set fleet", (function(e) {
+							}, t.fight = lg, t.workDispatcher.on("[space-battlefield] set fleet", (function(e) {
 								if (console.log("Selecting fleet", e), t.statsCached = void 0, "None" === e) return t.state.fleetUsed = void 0, void t.stopFight();
 								t.state.fleetUsed = e
 							})), t.workDispatcher.on("[space-battlefield] set level", (function(e) {
@@ -17326,7 +17326,7 @@
 								console.log("Toggling autoprogress", e), t.state.isAutoadvance = e
 							})), t
 						}
-						return Eg(t, e), t.getInstance = function() {
+						return pg(t, e), t.getInstance = function() {
 							return t.instance || (t.instance = new t), t.instance
 						}, t.prototype.importData = function(e) {
 							this.state = (null == e ? void 0 : e.battlefield) || {
@@ -17357,7 +17357,7 @@
 						}, t.prototype.calcUsedFleetStats = function() {
 							var e = this;
 							if (this.state.fleetUsed) {
-								var t = kf.space.fleet.fleets.find((function(t) {
+								var t = xf.space.fleet.fleets.find((function(t) {
 									return t.uuid === e.state.fleetUsed
 								}));
 								if (t) {
@@ -17365,7 +17365,7 @@
 										i = 0;
 									return t.slots.forEach((function(e) {
 										if (e.shipId) {
-											var t = kf.space.spaceship.getModelWithStats(e.shipId);
+											var t = xf.space.spaceship.getModelWithStats(e.shipId);
 											if (t) {
 												var o = t.stats;
 												n = Math.min(n, o.Speed || 1), i += o[rE.FUEL_CONSUMPTION] || 0
@@ -17385,12 +17385,12 @@
 							return Math.pow(1.1, this.state.maxLevel)
 						}, t.prototype.dataToUI = function() {
 							var e = this,
-								t = kf.space.fleet.fleets.find((function(t) {
+								t = xf.space.fleet.fleets.find((function(t) {
 									return t.uuid === e.state.fleetUsed
 								})),
 								n = this.getFromCache();
 							return {
-								isUnlocked: kf.space.fleet.fleets.length > 0,
+								isUnlocked: xf.space.fleet.fleets.length > 0,
 								battlefield: {
 									level: this.state.level,
 									maxLevel: this.state.maxLevel,
@@ -17406,18 +17406,18 @@
 									travelProgress: this.state.traveling.total ? this.state.traveling.progress / this.state.traveling.total : 0,
 									travelEta: H((this.state.traveling.total - this.state.traveling.progress) / ((null == n ? void 0 : n.speed) || 1e-50))
 								},
-								fleetSelectable: kf.space.fleet.fleets.map((function(t) {
+								fleetSelectable: xf.space.fleet.fleets.map((function(t) {
 									return {
 										uuid: t.uuid,
 										name: t.name,
 										isEditing: e.state.fleetUsed === t.uuid,
-										isInvalid: kf.space.fleet.getInvalidSlots(t)
+										isInvalid: xf.space.fleet.getInvalidSlots(t)
 											.length > 0
 									}
 								})),
 								fight: this.fight.dataToUI(),
-								pilot: dg(dg({}, this.state.pilot), {
-									bonus: "x".concat(Y(Yd(kf)))
+								pilot: Eg(Eg({}, this.state.pilot), {
+									bonus: "x".concat(Y(Hd(xf)))
 								})
 							}
 						}, t.prototype.resetTravel = function() {
@@ -17427,28 +17427,28 @@
 						}, t.prototype.startFight = function() {
 							var e, t = this;
 							if (this.state.fleetUsed)
-								if (kf.space.fleet.getInvalidSlots(kf.space.fleet.fleets.find((function(e) {
+								if (xf.space.fleet.getInvalidSlots(xf.space.fleet.fleets.find((function(e) {
 										return e.uuid === t.state.fleetUsed
 									})))
 									.length > 0) this.state.fleetUsed = void 0;
 								else {
-									var n = kf.resources.getResource(l.FUEL),
+									var n = xf.resources.getResource(l.FUEL),
 										i = (null === (e = this.getFromCache()) || void 0 === e ? void 0 : e.fuelConsumption) || 0;
-									n + i > 0 && (kf.resources.subtractResource(l.FUEL, -i), this.state.isFighting = !0, this.resetTravel())
+									n + i > 0 && (xf.resources.subtractResource(l.FUEL, -i), this.state.isFighting = !0, this.resetTravel())
 								}
 						}, t.prototype.awardAnomaly = function() {
-							var e = .05 + .01 * kf.landingZone.landingZoneBuildings.getBuildingLevel(a.ANTIMATTER_STUDY_CENTER),
+							var e = .05 + .01 * xf.landingZone.landingZoneBuildings.getBuildingLevel(a.ANTIMATTER_STUDY_CENTER),
 								t = Math.random();
 							if (console.log("Check: ", e, t), t < e) {
 								var n = .1 + .01 * this.state.level;
-								kf.resources.addResource(l.ANOMALITIES, n), kf.resources.reassertBalances(), kf.eventLog.registerGain("Anomalies", Y(n))
+								xf.resources.addResource(l.ANOMALITIES, n), xf.resources.reassertBalances(), xf.eventLog.registerGain("Anomalies", Y(n))
 							}
 						}, t.prototype.process = function(e) {
 							var t;
 							if (this.state.pilot.xp > this.state.pilot.maxXp && (this.state.pilot.xp = 0, this.state.pilot.level++, this.state.pilot.maxXp = 10 * Math.pow(2, this.state.pilot.level)), this.state.isFighting) {
 								if (this.state.traveling.progress < this.state.traveling.total) return void(this.state.traveling.progress += e * (null === (t = this.getFromCache()) || void 0 === t ? void 0 : t.speed) || 0);
 								if (!this.fight.state.inProgress) return void this.fight.initializeFight(this.state.level);
-								this.fight.isBattleWon() ? (this.fight.finalizeFight(), this.state.pilot.xp += 2 * this.state.level * Math.pow(1.2, this.state.level) * Math.pow(1.3, kf.prestige.colonizePlanet.getUpgradeLevel(R.PILOT_XP)), this.state.maxLevel = Math.max(this.state.maxLevel, this.state.level + 1), kf.science.scienceResearches.getResearchLevel(P.EXOTIC_MATTER_STUDY) > 0 && this.awardAnomaly(), this.stopFight(), this.state.isAutofight && this.startFight(), this.state.isAutoadvance && (this.state.level = Math.min(this.state.level + 1, this.state.maxLevel))) : this.fight.isBattleLost() ? (this.fight.finalizeFight(), this.state.level = Math.max(0, this.state.level - 1)) : this.fight.process(e)
+								this.fight.isBattleWon() ? (this.fight.finalizeFight(), this.state.pilot.xp += 2 * this.state.level * Math.pow(1.2, this.state.level) * Math.pow(1.3, xf.prestige.colonizePlanet.getUpgradeLevel(R.PILOT_XP)), this.state.maxLevel = Math.max(this.state.maxLevel, this.state.level + 1), xf.science.scienceResearches.getResearchLevel(P.EXOTIC_MATTER_STUDY) > 0 && this.awardAnomaly(), this.stopFight(), this.state.isAutofight && this.startFight(), this.state.isAutoadvance && (this.state.level = Math.min(this.state.level + 1, this.state.maxLevel))) : this.fight.isBattleLost() ? (this.fight.finalizeFight(), this.state.level = Math.max(0, this.state.level - 1)) : this.fight.process(e)
 							}
 						}, t.prototype.reset = function() {
 							this.fight.finalizeFight(), this.state = {
@@ -17470,8 +17470,8 @@
 							}
 						}, t
 					}(S),
-					fg = gg.getInstance(),
-					Ag = function() {
+					gg = dg.getInstance(),
+					fg = function() {
 						var e = function(t, n) {
 							return e = Object.setPrototypeOf || {
 								__proto__: []
@@ -17491,12 +17491,12 @@
 							e(t, n), t.prototype = null === n ? Object.create(n) : (i.prototype = n.prototype, new i)
 						}
 					}(),
-					Ng = function(e) {
+					Ag = function(e) {
 						function t() {
 							var t = e.call(this) || this;
-							return t.spaceship = $d, t.hangar = ig, t.fleet = cg, t.battlefield = fg, t
+							return t.spaceship = Jd, t.hangar = ng, t.fleet = ag, t.battlefield = gg, t
 						}
-						return Ag(t, e), t.getInstance = function() {
+						return fg(t, e), t.getInstance = function() {
 							return t.instance || (t.instance = new t), t.instance
 						}, t.prototype.importData = function(e) {
 							this.spaceship.importData(null == e ? void 0 : e.spaceship), this.hangar.importData(null == e ? void 0 : e.hangar), this.fleet.importData(null == e ? void 0 : e.fleet), this.battlefield.importData(null == e ? void 0 : e.battlefield)
@@ -17509,7 +17509,7 @@
 							}
 						}, t.prototype.dataToUI = function() {
 							return {
-								isUnlocked: kf.science.scienceResearches.getResearchLevel(P.ROCKET_SCIENCE) > 0,
+								isUnlocked: xf.science.scienceResearches.getResearchLevel(P.ROCKET_SCIENCE) > 0,
 								spaceship: this.spaceship.dataToUI(),
 								hangar: this.hangar.dataToUI(),
 								fleet: this.fleet.dataToUI(),
@@ -17522,7 +17522,7 @@
 						}, t
 					}(S)
 					.getInstance(),
-					Rg = function() {
+					Ng = function() {
 						var e = function(t, n) {
 							return e = Object.setPrototypeOf || {
 								__proto__: []
@@ -17542,7 +17542,7 @@
 							e(t, n), t.prototype = null === n ? Object.create(n) : (i.prototype = n.prototype, new i)
 						}
 					}(),
-					Ig = function(e) {
+					Rg = function(e) {
 						function t() {
 							var t = e.call(this) || this;
 							return t.upgrades = [], t.numPrestiged = 0, t.workDispatcher.on("[transmit-knowledge] do prestige", (function(e) {
@@ -17551,7 +17551,7 @@
 								console.log("do prestige", e), t.doUpgrade(e.id, e.amount)
 							})), t
 						}
-						return Rg(t, e), t.getInstance = function() {
+						return Ng(t, e), t.getInstance = function() {
 							return t.instance || (t.instance = new t), t.instance
 						}, t.prototype.importData = function(e) {
 							this.upgrades = e.upgrades, this.numPrestiged = e.numPrestiged
@@ -17565,10 +17565,10 @@
 								t = sE.map((function(t) {
 									return e.processToUI(t)
 								}));
-							return this.isPrestigeAvailable() && kf.newNotifications.registerNotification("prestige:transmit-knowledge"), {
+							return this.isPrestigeAvailable() && xf.newNotifications.registerNotification("prestige:transmit-knowledge"), {
 								upgrades: t,
 								isUnlocked: this.numPrestiged > 0 || this.isPrestigeAvailable(),
-								kp: Y(kf.resources.getResource(l.KNOWLEDGE_POINT)),
+								kp: Y(xf.resources.getResource(l.KNOWLEDGE_POINT)),
 								prestige: {
 									isAvailable: this.isPrestigeAvailable(),
 									description: "",
@@ -17588,7 +17588,7 @@
 								id: e.id,
 								level: 0
 							}, this.upgrades.push(t));
-							var n = k.calcBatchAll(e.getCost, xf.getInstance(), t.level, xf.getInstance()
+							var n = k.calcBatchAll(e.getCost, Xf.getInstance(), t.level, Xf.getInstance()
 									.resources.getBatchObject()),
 								i = n.reduce((function(e, t) {
 									return Math.min(e, t.max)
@@ -17597,11 +17597,11 @@
 								id: e.id,
 								name: e.name,
 								description: e.description,
-								isUnlocked: e.unlockCondition(kf),
+								isUnlocked: e.unlockCondition(xf),
 								isAvailable: i >= 1,
-								cost: xf.getInstance()
-									.resources.assertEnought(n, xf.getInstance()
-										.resources.getBatchObject(), xf.getInstance()
+								cost: Xf.getInstance()
+									.resources.assertEnought(n, Xf.getInstance()
+										.resources.getBatchObject(), Xf.getInstance()
 										.resources.getBatchBalanceObject()),
 								progress: i < 1 ? (100 * i)
 									.toPrecision(3) : "100",
@@ -17621,7 +17621,7 @@
 									return e.id === i.id
 								}));
 								if (r && (null === (o = r.getEffectGain) || void 0 === o ? void 0 : o[e])) {
-									var a = k.calculate(kf, r.getEffectGain[e], 0, i.level);
+									var a = k.calculate(xf, r.getEffectGain[e], 0, i.level);
 									n.push({
 										label: "Knowledge: ".concat(r.name),
 										value: a,
@@ -17641,7 +17641,7 @@
 									return e.id === i.id
 								}));
 								if (r && (null === (o = r.getEffectMultiplier) || void 0 === o ? void 0 : o[e])) {
-									var a = k.calculate(kf, r.getEffectMultiplier[e], i.level, 1);
+									var a = k.calculate(xf, r.getEffectMultiplier[e], i.level, 1);
 									a && n.push({
 										label: "Knowledge: ".concat(r.name),
 										value: a,
@@ -17661,7 +17661,7 @@
 									return e.id === i.id
 								}));
 								if (r && (null === (o = r.getGain) || void 0 === o ? void 0 : o[e])) {
-									var a = k.calculate(kf, r.getGain[e], 0, i.level);
+									var a = k.calculate(xf, r.getGain[e], 0, i.level);
 									n.push({
 										label: "Knowledge: ".concat(r.name),
 										value: a,
@@ -17681,7 +17681,7 @@
 									return e.id === i.id
 								}));
 								if (r && (null === (o = r.getGainMultiplier) || void 0 === o ? void 0 : o[e])) {
-									var a = k.calculate(kf, r.getGainMultiplier[e], 0, i.level);
+									var a = k.calculate(xf, r.getGainMultiplier[e], 0, i.level);
 									a && n.push({
 										label: "Knowledge: ".concat(r.name),
 										value: a,
@@ -17701,7 +17701,7 @@
 									return e.id === i.id
 								}));
 								if (a && (null === (o = a.getCapacityEffect) || void 0 === o ? void 0 : o[e])) {
-									var c = k.calculate(kf, null === (r = a.getCapacityEffect) || void 0 === r ? void 0 : r[e], 0, i.level);
+									var c = k.calculate(xf, null === (r = a.getCapacityEffect) || void 0 === r ? void 0 : r[e], 0, i.level);
 									n.push({
 										label: "Knowledge: ".concat(a.name),
 										value: c,
@@ -17721,7 +17721,7 @@
 									return e.id === i.id
 								}));
 								if (o && o.getCapacityMultiplier) {
-									var r = k.calculate(kf, o.getCapacityMultiplier[e], 0, i.level);
+									var r = k.calculate(xf, o.getCapacityMultiplier[e], 0, i.level);
 									r && n.push({
 										label: "Knowledge: ".concat(o.name),
 										value: r,
@@ -17744,41 +17744,41 @@
 									level: 0
 								});
 								else if (n.maxLevel && this.upgrades[i].level >= n.maxLevel) return;
-								var o = k.calcBatchAll(n.getCost, xf.getInstance(), this.upgrades[i].level, xf.getInstance()
+								var o = k.calcBatchAll(n.getCost, Xf.getInstance(), this.upgrades[i].level, Xf.getInstance()
 										.resources.getBatchObject(), t)
 									.reduce((function(e, t) {
 										return Math.min(e, Math.floor(t.max))
 									}), 1e300);
 								if (!(o < 1)) {
 									var r = Math.min(Math.floor(o), t),
-										a = k.calcBatchAll(n.getCost, xf.getInstance(), this.upgrades[i].level, xf.getInstance()
+										a = k.calcBatchAll(n.getCost, Xf.getInstance(), this.upgrades[i].level, Xf.getInstance()
 											.resources.getBatchObject(), r);
-									this.upgrades[i].level += r, console.log("costs: ", a), xf.getInstance()
-										.resources.subtractResourceBatch(a), kf.resources.reassertBalances(), kf.expeditionV2.generateCache()
+									this.upgrades[i].level += r, console.log("costs: ", a), Xf.getInstance()
+										.resources.subtractResourceBatch(a), xf.resources.reassertBalances(), xf.expeditionV2.generateCache()
 								}
 							}
 						}, t.prototype.isPrestigeAvailable = function() {
-							return kf.landingZone.landingZoneUpgrades.getUpgradeLevel(r.GREAT_RADIO_TRANSMITTER) > 0 && kf.colony.colonists > 50
+							return xf.landingZone.landingZoneUpgrades.getUpgradeLevel(r.GREAT_RADIO_TRANSMITTER) > 0 && xf.colony.colonists > 50
 						}, t.prototype.getPrestigeGain = function() {
-							var e = xf.getInstance()
-								.prestige.colonizePlanet.processPlanetToUI(xf.getInstance()
+							var e = Xf.getInstance()
+								.prestige.colonizePlanet.processPlanetToUI(Xf.getInstance()
 									.prestige.colonizePlanet.current);
-							return (kf.colony.colonists - 50) * xf.getInstance()
-								.prestige.colonizePlanet.getCurrentXPBonus() * Math.pow(1.5, xf.getInstance()
-									.landingZone.landingZoneUpgrades.getUpgradeLevel(r.QUANTUM_ENCRYPTION)) * Math.pow(1.5, xf.getInstance()
-									.landingZone.landingZoneUpgrades.getUpgradeLevel(r.HUGE_GAMMA_TRANSMITTER)) * e.xpGain * xf.getInstance()
+							return (xf.colony.colonists - 50) * Xf.getInstance()
+								.prestige.colonizePlanet.getCurrentXPBonus() * Math.pow(1.5, Xf.getInstance()
+									.landingZone.landingZoneUpgrades.getUpgradeLevel(r.QUANTUM_ENCRYPTION)) * Math.pow(1.5, Xf.getInstance()
+									.landingZone.landingZoneUpgrades.getUpgradeLevel(r.HUGE_GAMMA_TRANSMITTER)) * e.xpGain * Xf.getInstance()
 								.space.battlefield.getKPBonus()
 						}, t.prototype.doPrestige = function() {
 							if (this.isPrestigeAvailable()) {
 								var e = this.getPrestigeGain(),
-									t = kf.resources.getResource(l.COLONIZE_XP) || 0,
-									n = kf.resources.getResource(l.KNOWLEDGE_POINT) || 0;
-								kf.eventLog.registerPrestige("Transmit knowledge", "".concat(Y(e), " KP")), kf.landingZone.reset(), kf.colony.reset(), kf.crafting.reset(), kf.science.reset(), kf.laws.reset(), kf.resources.reset(), kf.space.reset(), kf.queuedItems.reset(), kf.environment.reset(), kf.statistics.stats.kpTotal = (kf.statistics.stats.kpTotal || 0) + e, kf.statistics.stats.kpMaxGain = Math.max(kf.statistics.stats.kpMaxGain || 0, e), kf.resources.addResource(l.KNOWLEDGE_POINT, e + n), kf.resources.addResource(l.COLONIZE_XP, t), kf.statistics.stats.timeThisPrestige = 0, this.numPrestiged++, kf.resources.reassertBalances(), kf.expeditionV2.generateCache()
+									t = xf.resources.getResource(l.COLONIZE_XP) || 0,
+									n = xf.resources.getResource(l.KNOWLEDGE_POINT) || 0;
+								xf.eventLog.registerPrestige("Transmit knowledge", "".concat(Y(e), " KP")), xf.landingZone.reset(), xf.colony.reset(), xf.crafting.reset(), xf.science.reset(), xf.laws.reset(), xf.resources.reset(), xf.space.reset(), xf.queuedItems.reset(), xf.environment.reset(), xf.statistics.stats.kpTotal = (xf.statistics.stats.kpTotal || 0) + e, xf.statistics.stats.kpMaxGain = Math.max(xf.statistics.stats.kpMaxGain || 0, e), xf.resources.addResource(l.KNOWLEDGE_POINT, e + n), xf.resources.addResource(l.COLONIZE_XP, t), xf.statistics.stats.timeThisPrestige = 0, this.numPrestiged++, xf.resources.reassertBalances(), xf.expeditionV2.generateCache()
 							}
 						}, t.prototype.process = function(e) {}, t
 					}(S),
-					yg = Ig.getInstance(),
-					hg = [{
+					Ig = Rg.getInstance(),
+					yg = [{
 						id: N.COLD,
 						category: A.TEMPERATURE,
 						name: "Cold",
@@ -17818,7 +17818,7 @@
 						id: N.HOT,
 						category: A.TEMPERATURE,
 						name: "Hot",
-						complexityModifier: .9,
+						complexityModifier: .92,
 						getGainMultiplier: (rd = {}, rd[l.POWER] = function(e) {
 							return {
 								A: 1,
@@ -17902,7 +17902,7 @@
 						id: N.SMALL,
 						category: A.SIZE,
 						name: "Small",
-						complexityModifier: 1.2,
+						complexityModifier: 1.15,
 						getGainMultiplier: (sd = {}, sd[l.ORE] = function(e) {
 							return {
 								A: 1,
@@ -18012,7 +18012,7 @@
 						id: N.WET,
 						category: A.HUMIDITY,
 						name: "Wet",
-						complexityModifier: .85,
+						complexityModifier: .9,
 						getGainMultiplier: (Ed = {}, Ed[l.WATER] = function(e) {
 							return {
 								A: 1,
@@ -18074,7 +18074,7 @@
 						id: N.PEATY,
 						category: A.CRUST,
 						name: "Peaty",
-						complexityModifier: 1.25,
+						complexityModifier: 1.4,
 						getGainMultiplier: (gd = {}, gd[l.BIOMASS] = function(e) {
 							return {
 								A: 1,
@@ -18100,7 +18100,7 @@
 						id: N.VOLCANIC,
 						category: A.TECTONICS,
 						name: "Volcanic",
-						complexityModifier: 1.25,
+						complexityModifier: 1.4,
 						getGainMultiplier: (Ad = {}, Ad[l.ORE] = function(e) {
 							return {
 								A: 1,
@@ -18127,7 +18127,7 @@
 						id: N.INACTIVE,
 						category: A.TECTONICS,
 						name: "Inactive",
-						complexityModifier: 1.25,
+						complexityModifier: 1.4,
 						getGainMultiplier: {},
 						getEffectMultiplier: (Rd = {}, Rd[M.HEALTHCARE] = function(e) {
 							return {
@@ -18154,7 +18154,7 @@
 						getCapacityMultiplier: {},
 						probabilityReduction: .5
 					}],
-					mg = [{
+					hg = [{
 						id: R.PRODUCTIVITY,
 						name: "Productivity",
 						description: "Learn experience of the ancestors to increase overall productivity by 10% (additive)",
@@ -18275,14 +18275,14 @@
 						}, vd),
 						maxLevel: 10
 					}],
-					Tg = [{
+					mg = [{
 						type: I.M,
 						name: "Red Dwarf",
 						unlockCondition: function(e) {
 							return e.prestige.colonizePlanet.getUpgradeLevel(R.TOUGHNESS) >= 2
 						},
 						effects: ["Insane star splashes reduce healthcare and religion significantly", "Reduced Power generation", "Reduced Nutrition generation"],
-						xpMultiplier: 1.75,
+						xpMultiplier: 3.8,
 						getEffectMultiplier: (Sd = {}, Sd[M.HEALTHCARE] = function(e) {
 							return {
 								A: 1,
@@ -18316,7 +18316,7 @@
 							return e.prestige.colonizePlanet.getUpgradeLevel(R.TOUGHNESS) >= 1
 						},
 						effects: ["Moderate star splashes reduce healthcare and religion", "Reduced Power generation", "Slightly reduced nutrition generation"],
-						xpMultiplier: 1.25,
+						xpMultiplier: 1.6,
 						getEffectMultiplier: (Bd = {}, Bd[M.HEALTHCARE] = function(e) {
 							return {
 								A: 1,
@@ -18354,13 +18354,13 @@
 						getEffectMultiplier: {},
 						getGainMultiplier: {}
 					}, {
-						type: I.K,
+						type: I.F,
 						name: "Sub-giant",
 						unlockCondition: function(e) {
 							return e.prestige.colonizePlanet.getUpgradeLevel(R.TOUGHNESS) >= 1
 						},
-						effects: ["UV-radiation reduce healthcare and security", "Gravity increase building costs"],
-						xpMultiplier: 1.25,
+						effects: ["UV-radiation reduce healthcare and security", "Gravity increase building costs twice"],
+						xpMultiplier: 1.6,
 						getEffectMultiplier: (Md = {}, Md[M.HEALTHCARE] = function(e) {
 							return {
 								A: 1,
@@ -18375,68 +18375,47 @@
 							}
 						}, Md)
 					}, {
-						type: I.F,
-						name: "Sub-giant",
-						unlockCondition: function(e) {
-							return e.prestige.colonizePlanet.getUpgradeLevel(R.TOUGHNESS) >= 1
-						},
-						effects: ["UV-radiation reduce healthcare and security", "Gravity increase building costs twice"],
-						xpMultiplier: 1.5,
-						getEffectMultiplier: (Ud = {}, Ud[M.HEALTHCARE] = function(e) {
-							return {
-								A: 1,
-								B: .5,
-								type: i.EXPONENTIAL
-							}
-						}, Ud[M.SECURITY] = function(e) {
-							return {
-								A: 1,
-								B: .5,
-								type: i.EXPONENTIAL
-							}
-						}, Ud)
-					}, {
 						type: I.A,
 						name: "Blue Giant",
 						unlockCondition: function(e) {
 							return e.prestige.colonizePlanet.getUpgradeLevel(R.TOUGHNESS) >= 2
 						},
 						effects: ["UV-radiation reduce healthcare and security", "Gravity increase building costs 4 times", "Gamma-radiation significantly reduce nutrition, biomass and wood production"],
-						xpMultiplier: 2.25,
-						getEffectMultiplier: (bd = {}, bd[M.HEALTHCARE] = function(e) {
+						xpMultiplier: 3.8,
+						getEffectMultiplier: (Ud = {}, Ud[M.HEALTHCARE] = function(e) {
 							return {
 								A: 1,
 								B: .2,
 								type: i.EXPONENTIAL
 							}
-						}, bd[M.SECURITY] = function(e) {
+						}, Ud[M.SECURITY] = function(e) {
 							return {
 								A: 1,
 								B: .2,
 								type: i.EXPONENTIAL
 							}
-						}, bd),
-						getGainMultiplier: (Gd = {}, Gd[l.BIOMASS] = function(e) {
+						}, Ud),
+						getGainMultiplier: (bd = {}, bd[l.BIOMASS] = function(e) {
 							return {
 								A: 1,
 								B: .2,
 								type: i.EXPONENTIAL
 							}
-						}, Gd[l.NUTRITION] = function(e) {
+						}, bd[l.NUTRITION] = function(e) {
 							return {
 								A: 1,
 								B: .2,
 								type: i.EXPONENTIAL
 							}
-						}, Gd[l.WOOD] = function(e) {
+						}, bd[l.WOOD] = function(e) {
 							return {
 								A: 1,
 								B: .2,
 								type: i.EXPONENTIAL
 							}
-						}, Gd)
+						}, bd)
 					}],
-					Og = function() {
+					Tg = function() {
 						var e = function(t, n) {
 							return e = Object.setPrototypeOf || {
 								__proto__: []
@@ -18456,19 +18435,19 @@
 							e(t, n), t.prototype = null === n ? Object.create(n) : (i.prototype = n.prototype, new i)
 						}
 					}(),
-					Lg = function() {
-						return Lg = Object.assign || function(e) {
+					Og = function() {
+						return Og = Object.assign || function(e) {
 							for (var t, n = 1, i = arguments.length; n < i; n++)
 								for (var o in t = arguments[n]) Object.prototype.hasOwnProperty.call(t, o) && (e[o] = t[o]);
 							return e
-						}, Lg.apply(this, arguments)
+						}, Og.apply(this, arguments)
 					},
-					Cg = function(e, t, n) {
+					Lg = function(e, t, n) {
 						if (n || 2 === arguments.length)
 							for (var i, o = 0, r = t.length; o < r; o++) !i && o in t || (i || (i = Array.prototype.slice.call(t, 0, o)), i[o] = t[o]);
 						return e.concat(i || Array.prototype.slice.call(t))
 					},
-					vg = function(e) {
+					Cg = function(e) {
 						function t() {
 							var t = e.call(this) || this;
 							return t.current = {
@@ -18495,7 +18474,7 @@
 								console.log("do xp upgrade", e), t.doUpgrade(e.id)
 							})), t
 						}
-						return Og(t, e), t.getInstance = function() {
+						return Tg(t, e), t.getInstance = function() {
 							return t.instance || (t.instance = new t), t.instance
 						}, t.prototype.importData = function(e) {
 							this.available = e.available, this.current = e.current, this.current.disastersLevel || (this.current.disastersLevel = 0), this.numPrestiged = e.numPrestiged, this.currentSearchFilters = e.filters || [], this.upgrades = e.upgrades || [], this.current.eccentricity || (this.current.eccentricity = 0), this.current.yearLength || (this.current.yearLength = 365), this.current.asteroidsDanger || (this.current.asteroidsDanger = 0), this.current.starClass || (this.current.starClass = I.G)
@@ -18513,7 +18492,7 @@
 								return t.id === e
 							}))) || void 0 === t ? void 0 : t.level) || 0
 						}, t.prototype.getResourceUpgradeMultiplier = function(e) {
-							var t = mg.find((function(e) {
+							var t = hg.find((function(e) {
 								return e.id === R.PRODUCTIVITY
 							}));
 							return t ? [{
@@ -18523,7 +18502,7 @@
 								category: "XP Upgrades"
 							}] : []
 						}, t.prototype.doUpgrade = function(e) {
-							var t = mg.find((function(t) {
+							var t = hg.find((function(t) {
 								return t.id === e
 							}));
 							if (t) {
@@ -18535,12 +18514,12 @@
 									level: 0
 								});
 								else if (t.maxLevel && this.upgrades[n].level >= t.maxLevel) return;
-								var i = k.calcBatchAll(t.getCost, xf.getInstance(), this.upgrades[n].level, xf.getInstance()
+								var i = k.calcBatchAll(t.getCost, Xf.getInstance(), this.upgrades[n].level, Xf.getInstance()
 									.resources.getBatchObject());
 								i.reduce((function(e, t) {
 									return Math.min(e, Math.floor(t.max))
-								}), 1e300) < 1 || (this.upgrades[n].level++, console.log("costs: ", i), xf.getInstance()
-									.resources.subtractResourceBatch(i), kf.resources.reassertBalances(), kf.expeditionV2.generateCache())
+								}), 1e300) < 1 || (this.upgrades[n].level++, console.log("costs: ", i), Xf.getInstance()
+									.resources.subtractResourceBatch(i), xf.resources.reassertBalances(), xf.expeditionV2.generateCache())
 							}
 						}, t.prototype.processUpgradeToUI = function(e) {
 							var t = this.upgrades.find((function(t) {
@@ -18550,7 +18529,7 @@
 								id: e.id,
 								level: 0
 							}, this.upgrades.push(t));
-							var n = k.calcBatchAll(e.getCost, xf.getInstance(), t.level, xf.getInstance()
+							var n = k.calcBatchAll(e.getCost, Xf.getInstance(), t.level, Xf.getInstance()
 									.resources.getBatchObject()),
 								i = n.reduce((function(e, t) {
 									return Math.min(e, t.max)
@@ -18559,11 +18538,11 @@
 								id: e.id,
 								name: e.name,
 								description: e.description,
-								isUnlocked: e.unlockCondition(kf),
+								isUnlocked: e.unlockCondition(xf),
 								isAvailable: i >= 1,
-								cost: xf.getInstance()
-									.resources.assertEnought(n, xf.getInstance()
-										.resources.getBatchObject(), xf.getInstance()
+								cost: Xf.getInstance()
+									.resources.assertEnought(n, Xf.getInstance()
+										.resources.getBatchObject(), Xf.getInstance()
 										.resources.getBatchBalanceObject()),
 								progress: i < 1 ? (100 * i)
 									.toPrecision(3) : "100",
@@ -18574,10 +18553,10 @@
 						}, t.prototype.dataToUI = function() {
 							var e, t = this,
 								n = this.available.map((function(e) {
-									return t.processPlanetToUI(e)
+									return t.processPlanetToUI(e, !1)
 								}));
-							this.isPrestigeAvailable() && kf.newNotifications.registerNotification("prestige:colonize");
-							var i = mg.map((function(e) {
+							this.isPrestigeAvailable() && xf.newNotifications.registerNotification("prestige:colonize");
+							var i = hg.map((function(e) {
 									return t.processUpgradeToUI(e)
 								})),
 								o = this.processPlanetToUI(this.current),
@@ -18591,22 +18570,22 @@
 								current: o,
 								isUnlocked: this.numPrestiged > 0 || this.isPrestigeAvailable(),
 								isPrestigeAvailable: this.isPrestigeAvailable(),
-								currentXP: kf.resources.getResource(l.COLONIZE_XP),
+								currentXP: xf.resources.getResource(l.COLONIZE_XP),
 								search: {
 									isAvailable: c >= 1,
-									cost: xf.getInstance()
-										.resources.assertEnought(a, xf.getInstance()
-											.resources.getBatchObject(), xf.getInstance()
+									cost: Xf.getInstance()
+										.resources.assertEnought(a, Xf.getInstance()
+											.resources.getBatchObject(), Xf.getInstance()
 											.resources.getBatchBalanceObject()),
 									progress: c < 1 ? (100 * c)
 										.toPrecision(3) : "100",
 									filter: {
-										isAvailable: kf.science.scienceResearches.getResearchLevel(P.EXOPLANET_SCIENCE) > 0,
-										modifierName: (null === (e = hg.find((function(e) {
+										isAvailable: xf.science.scienceResearches.getResearchLevel(P.EXOPLANET_SCIENCE) > 0,
+										modifierName: (null === (e = yg.find((function(e) {
 											var n, i;
 											return e.id === (null === (i = null === (n = t.currentSearchFilters) || void 0 === n ? void 0 : n[0]) || void 0 === i ? void 0 : i.modifierId)
 										}))) || void 0 === e ? void 0 : e.name) || "None",
-										modifiersAvailable: Cg([], hg.map((function(e) {
+										modifiersAvailable: Lg([], yg.map((function(e) {
 											return {
 												id: e.id,
 												name: e.name
@@ -18620,24 +18599,24 @@
 									potentialGain: Y(r.xpGain),
 									gainBase: Y(r.baseXpGain),
 									gainBattleMult: r.battleXPGain > 1 ? Y(r.battleXPGain) : "",
-									potentialBonus: Y(this.getXpBonus(kf.resources.getResource(l.COLONIZE_XP) + r.xpGain)),
-									currentBonus: Y(this.getXpBonus(kf.resources.getResource(l.COLONIZE_XP)))
+									potentialBonus: Y(this.getXpBonus(xf.resources.getResource(l.COLONIZE_XP) + r.xpGain)),
+									currentBonus: Y(this.getXpBonus(xf.resources.getResource(l.COLONIZE_XP)))
 								},
 								upgrades: i
 							}
 						}, t.prototype.isPrestigeAvailable = function() {
-							return kf.landingZone.landingZoneBuildings.getBuildingActiveLevel(a.SPACESHIP_STATION) > 0
+							return xf.landingZone.landingZoneBuildings.getBuildingActiveLevel(a.SPACESHIP_STATION) > 0
 						}, t.prototype.setSearchFilter = function(e) {
-							kf.science.scienceResearches.getResearchLevel(P.EXOPLANET_SCIENCE) > 0 && (this.currentSearchFilters = e && "None" !== e ? [{
+							xf.science.scienceResearches.getResearchLevel(P.EXOPLANET_SCIENCE) > 0 && (this.currentSearchFilters = e && "None" !== e ? [{
 								modifierId: e
 							}] : [])
 						}, t.prototype.doGenerate = function(e) {
 							var t = this,
 								n = {},
-								i = hg.reduce((function(e, t) {
+								i = yg.reduce((function(e, t) {
 									return e[t.category] || (e[t.category] = [t]), e[t.category].push(t), e
 								}), {}),
-								o = hg.reduce((function(t, n) {
+								o = yg.reduce((function(t, n) {
 									return e.find((function(e) {
 										return e.modifierId === n.id
 									})) && (t[n.category] = n), t
@@ -18660,8 +18639,8 @@
 										}, (null === (r = n[a]) || void 0 === r ? void 0 : r.level) > 3 && console.log("Overseal: ", n[a])
 									}
 								}));
-							var r = Tg.filter((function(e) {
-									return e.unlockCondition(kf)
+							var r = mg.filter((function(e) {
+									return e.unlockCondition(xf)
 								})),
 								a = r[Math.floor(Math.random() * r.length)].type,
 								c = ["AD", "TOI", "HAP", "HAT", "Gliese", "CORROT", "Kepler", "WASP"],
@@ -18683,7 +18662,7 @@
 								var t = this.getSearchCost();
 								t.reduce((function(e, t) {
 									return Math.min(e, t.max)
-								}), 1e300) < 1 || (this.available = [], xf.getInstance()
+								}), 1e300) < 1 || (this.available = [], Xf.getInstance()
 									.resources.subtractResourceBatch(t), Array.from({
 										length: 3
 									})
@@ -18693,7 +18672,7 @@
 							}
 						}, t.prototype.getResourceMultiplier = function(e) {
 							var t = Object.values(this.current.modifiers),
-								n = hg.filter((function(n) {
+								n = yg.filter((function(n) {
 									var i;
 									return t.map((function(e) {
 											return e.id
@@ -18706,7 +18685,7 @@
 									return e.id === t.id
 								}));
 								if (r && (null === (o = r.getGainMultiplier) || void 0 === o ? void 0 : o[e])) {
-									var a = k.calculate(kf, r.getGainMultiplier[e], t.level, 1);
+									var a = k.calculate(xf, r.getGainMultiplier[e], t.level, 1);
 									a && i.push({
 										label: "Planet modifier: ".concat(r.name),
 										value: a,
@@ -18716,11 +18695,11 @@
 								}
 							}), 0);
 							var o = this.current.starClass,
-								r = Tg.find((function(e) {
+								r = mg.find((function(e) {
 									return e.type === o
 								}));
 							if (r && r.getGainMultiplier && r.getGainMultiplier[e]) {
-								var a = k.calculate(kf, r.getGainMultiplier[e], 1, 1);
+								var a = k.calculate(xf, r.getGainMultiplier[e], 1, 1);
 								a && i.push({
 									label: "Star modifier: ".concat(r.name),
 									value: a,
@@ -18731,7 +18710,7 @@
 							return i
 						}, t.prototype.getEffectMultiplier = function(e) {
 							var t = Object.values(this.current.modifiers),
-								n = hg.filter((function(n) {
+								n = yg.filter((function(n) {
 									var i;
 									return t.map((function(e) {
 											return e.id
@@ -18744,7 +18723,7 @@
 									return e.id === t.id
 								}));
 								if (r && (null === (o = r.getEffectMultiplier) || void 0 === o ? void 0 : o[e])) {
-									var a = k.calculate(kf, r.getEffectMultiplier[e], t.level, 1);
+									var a = k.calculate(xf, r.getEffectMultiplier[e], t.level, 1);
 									a && i.push({
 										label: "Planet modifier: ".concat(r.name),
 										value: a,
@@ -18754,11 +18733,11 @@
 								}
 							}), 0);
 							var o = this.current.starClass,
-								r = Tg.find((function(e) {
+								r = mg.find((function(e) {
 									return e.type === o
 								}));
 							if (r && r.getEffectMultiplier && r.getEffectMultiplier[e]) {
-								var a = k.calculate(kf, r.getEffectMultiplier[e], 1, 1);
+								var a = k.calculate(xf, r.getEffectMultiplier[e], 1, 1);
 								a && i.push({
 									label: "Star modifier: ".concat(r.name),
 									value: a,
@@ -18769,7 +18748,7 @@
 							return i
 						}, t.prototype.getCapacityMultiplier = function(e) {
 							var t = Object.values(this.current.modifiers),
-								n = hg.filter((function(n) {
+								n = yg.filter((function(n) {
 									var i;
 									return t.map((function(e) {
 											return e.id
@@ -18782,7 +18761,7 @@
 									return e.id === t.id
 								}));
 								if (r && (null === (o = r.getCapacityMultiplier) || void 0 === o ? void 0 : o[e])) {
-									var a = k.calculate(kf, r.getCapacityMultiplier[e], t.level, 1);
+									var a = k.calculate(xf, r.getCapacityMultiplier[e], t.level, 1);
 									a && i.push({
 										label: "Planet modifier: ".concat(r.name),
 										value: a,
@@ -18793,102 +18772,103 @@
 							}), 0), i
 						}, t.prototype.getClimateChangeText = function(e) {
 							return e <= .01 ? "Stable" : e <= .2 ? "Small Season Changes" : e <= .4 ? "Moderate Season Changes" : e <= .6 ? "Big Season Changes" : "Terrible"
-						}, t.prototype.processPlanetToUI = function(e) {
-							var t = {},
-								n = {},
+						}, t.prototype.processPlanetToUI = function(e, t) {
+							void 0 === t && (t = !1), t && console.log("ATTR START_PLANET--- ");
+							var n = {},
 								i = {},
-								o = "",
-								r = 1,
-								a = function(a) {
-									var c = e.modifiers[a];
-									if (!c) return "continue";
-									var s = c.id,
-										u = hg.find((function(e) {
-											return e.id === s
+								o = {},
+								r = "",
+								a = 1,
+								c = function(c) {
+									var s = e.modifiers[c];
+									if (!s) return "continue";
+									var u = s.id,
+										l = yg.find((function(e) {
+											return e.id === u
 										}));
-									if (!u) return "continue";
-									o = "".concat(u.name, " ")
-										.concat(o), u.getGainMultiplier && k.calcBatch(u.getGainMultiplier, xf.getInstance(), c.level)
-										.forEach((function(e) {
-											var n;
-											t[e.id] ? null === (n = t[e.id]) || void 0 === n || (n.amount *= e.amount) : t[e.id] = e
-										})), u.getEffectMultiplier && k.calcBatch(u.getEffectMultiplier, xf.getInstance(), c.level)
-										.forEach((function(e) {
-											var t;
-											i[e.id] ? null === (t = i[e.id]) || void 0 === t || (t.amount *= e.amount) : i[e.id] = e
-										})), u.getCapacityMultiplier && k.calcBatch(u.getCapacityMultiplier, xf.getInstance(), c.level)
+									if (!l) return "continue";
+									r = "".concat(l.name, " ")
+										.concat(r), l.getGainMultiplier && k.calcBatch(l.getGainMultiplier, Xf.getInstance(), s.level)
 										.forEach((function(e) {
 											var t;
 											n[e.id] ? null === (t = n[e.id]) || void 0 === t || (t.amount *= e.amount) : n[e.id] = e
-										})), r *= Math.pow(u.complexityModifier, c.level)
+										})), l.getEffectMultiplier && k.calcBatch(l.getEffectMultiplier, Xf.getInstance(), s.level)
+										.forEach((function(e) {
+											var t;
+											o[e.id] ? null === (t = o[e.id]) || void 0 === t || (t.amount *= e.amount) : o[e.id] = e
+										})), l.getCapacityMultiplier && k.calcBatch(l.getCapacityMultiplier, Xf.getInstance(), s.level)
+										.forEach((function(e) {
+											var t;
+											i[e.id] ? null === (t = i[e.id]) || void 0 === t || (t.amount *= e.amount) : i[e.id] = e
+										})), a *= Math.pow(l.complexityModifier, s.level), t && console.log("ATTR XP_AFTER: ".concat(l.id), a, l.complexityModifier, s.level)
 								};
-							for (var c in e.modifiers) a(c);
-							var s = e.starClass || I.G,
-								u = Tg.find((function(e) {
-									return e.type === s
+							for (var s in e.modifiers) c(s);
+							var u = e.starClass || I.G,
+								l = mg.find((function(e) {
+									return e.type === u
 								}));
-							u && (u.getGainMultiplier && k.calcBatch(u.getGainMultiplier, xf.getInstance(), 1)
-								.forEach((function(e) {
-									var n;
-									t[e.id] ? null === (n = t[e.id]) || void 0 === n || (n.amount *= e.amount) : t[e.id] = e
-								})), u.getEffectMultiplier && k.calcBatch(u.getEffectMultiplier, xf.getInstance(), 1)
+							t && console.log("ATTR_XP: ", a), l && (l.getGainMultiplier && k.calcBatch(l.getGainMultiplier, Xf.getInstance(), 1)
 								.forEach((function(e) {
 									var t;
-									i[e.id] ? null === (t = i[e.id]) || void 0 === t || (t.amount *= e.amount) : i[e.id] = e
-								})), r *= u.xpMultiplier);
-							var l = this.getColonizeCost(),
-								p = l.reduce((function(e, t) {
+									n[e.id] ? null === (t = n[e.id]) || void 0 === t || (t.amount *= e.amount) : n[e.id] = e
+								})), l.getEffectMultiplier && k.calcBatch(l.getEffectMultiplier, Xf.getInstance(), 1)
+								.forEach((function(e) {
+									var t;
+									o[e.id] ? null === (t = o[e.id]) || void 0 === t || (t.amount *= e.amount) : o[e.id] = e
+								})), a *= l.xpMultiplier), t && console.log("ATTR_AS: ", a);
+							var p = this.getColonizeCost(),
+								E = p.reduce((function(e, t) {
 									return Math.min(e, t.max)
 								}), 1e300),
-								E = 1 + Math.pow(e.eccentricity || 0, 2);
-							return (r *= E) > 4 && (r = 4 + Math.pow(r - 4, .6)), r *= Math.pow(1.25, e.disastersLevel), {
+								d = 1 + Math.pow(e.eccentricity || 0, 2);
+							return a *= d, t && console.log("ATTR_AW: ", a), a > 4 && (a = 4 + Math.pow(a - 4, .6)), a *= Math.pow(1.25, e.disastersLevel), {
 								name: e.name,
-								description: o,
-								gainMult: Object.values(t)
+								description: r,
+								gainMult: Object.values(n)
 									.map((function(e) {
-										return Lg(Lg({}, e), {
+										return Og(Og({}, e), {
 											amountValue: e.amount,
 											amount: Y(e.amount)
 										})
 									})),
 								max: [],
-								cost: xf.getInstance()
-									.resources.assertEnought(l, xf.getInstance()
-										.resources.getBatchObject(), xf.getInstance()
+								cost: Xf.getInstance()
+									.resources.assertEnought(p, Xf.getInstance()
+										.resources.getBatchObject(), Xf.getInstance()
 										.resources.getBatchBalanceObject()),
-								isAvailable: p >= 1,
-								progress: p < 1 ? (100 * p)
+								isAvailable: E >= 1,
+								progress: E < 1 ? (100 * E)
 									.toPrecision(3) : "100",
 								consume: [],
 								consumeEffect: [],
-								effectMult: Object.values(i)
+								effectMult: Object.values(o)
 									.map((function(e) {
-										return Lg(Lg({}, e), {
+										return Og(Og({}, e), {
 											amountValue: e.amount,
 											amount: Y(e.amount)
 										})
 									})),
 								gainEffect: [],
 								gain: [],
-								maxMult: Object.values(n)
+								maxMult: Object.values(i)
 									.map((function(e) {
-										return Lg(Lg({}, e), {
+										return Og(Og({}, e), {
 											amountValue: e.amount,
 											amount: Y(e.amount)
 										})
 									})),
-								xpGain: r,
+								xpGain: a,
 								daysPerYear: Y(e.yearLength || 365, 3),
 								climateChange: this.getClimateChangeText(e.eccentricity || 0),
-								climateHarshness: E,
+								climateHarshness: d,
 								disastersLevel: e.disastersLevel,
-								starClass: (null == u ? void 0 : u.name) || "G",
-								starModif: (null == u ? void 0 : u.effects) || []
+								starClass: (null == l ? void 0 : l.name) || "G",
+								starModif: (null == l ? void 0 : l.effects) || []
 							}
 						}, t.prototype.getXpBonus = function(e) {
 							return 1 + .3 * Math.pow(e, .4)
 						}, t.prototype.getCurrentXPBonus = function() {
-							return this.getXpBonus(kf.resources.getResource(l.COLONIZE_XP))
+							return this.getXpBonus(xf.resources.getResource(l.COLONIZE_XP))
 						}, t.prototype.getColonizeCost = function() {
 							var e;
 							return k.calcBatchAll(((e = {})[l.ROCKET_ENGINE] = function(e) {
@@ -18897,7 +18877,7 @@
 										B: 1,
 										type: i.EXPONENTIAL
 									}
-								}, e), xf.getInstance(), 1, xf.getInstance()
+								}, e), Xf.getInstance(), 1, Xf.getInstance()
 								.resources.getBatchObject())
 						}, t.prototype.getSearchCost = function() {
 							var e, t = this;
@@ -18907,13 +18887,13 @@
 										B: 1,
 										type: i.EXPONENTIAL
 									}
-								}, e), xf.getInstance(), 1, xf.getInstance()
+								}, e), Xf.getInstance(), 1, Xf.getInstance()
 								.resources.getBatchObject())
 						}, t.prototype.getCurrentXPGainBreakdown = function(e) {
 							var t = (null != e ? e : this.processPlanetToUI(this.current))
-								.xpGain * Math.pow(1.5, kf.landingZone.landingZoneUpgrades.getUpgradeLevel(r.QUANTUM_ENCRYPTION)) * Math.pow(1.5, xf.getInstance()
+								.xpGain * Math.pow(1.5, xf.landingZone.landingZoneUpgrades.getUpgradeLevel(r.QUANTUM_ENCRYPTION)) * Math.pow(1.5, Xf.getInstance()
 									.landingZone.landingZoneUpgrades.getUpgradeLevel(r.HUGE_GAMMA_TRANSMITTER)),
-								n = kf.space.battlefield.getXPBonus();
+								n = xf.space.battlefield.getXPBonus();
 							return {
 								baseXpGain: t,
 								battleXPGain: n,
@@ -18932,9 +18912,9 @@
 								i = this.getCurrentXPGainBreakdown()
 									.xpGain
 							}
-							var o = kf.resources.getResource(l.KNOWLEDGE_POINT),
-								r = kf.resources.getResource(l.COLONIZE_XP);
-							kf.statistics.stats.xpTotal = (kf.statistics.stats.xpTotal || 0) + i, kf.statistics.stats.xpMaxGain = Math.max(kf.statistics.stats.xpMaxGain || 0, i), kf.eventLog.registerPrestige("New planet colonization", "".concat(Y(i), " XP")), kf.landingZone.reset(), kf.colony.reset(), kf.crafting.reset(), kf.science.reset(), kf.laws.reset(), kf.resources.reset(), kf.space.reset(), kf.queuedItems.reset(), kf.environment.reset(), kf.resources.addResource(l.COLONIZE_XP, r + i), kf.resources.addResource(l.KNOWLEDGE_POINT, o), this.numPrestiged++, kf.statistics.stats.timeThisPlanet = 0, kf.statistics.stats.timeThisPrestige = 0, this.current = t ? {
+							var o = xf.resources.getResource(l.KNOWLEDGE_POINT),
+								r = xf.resources.getResource(l.COLONIZE_XP);
+							xf.statistics.stats.xpTotal = (xf.statistics.stats.xpTotal || 0) + i, xf.statistics.stats.xpMaxGain = Math.max(xf.statistics.stats.xpMaxGain || 0, i), xf.eventLog.registerPrestige("New planet colonization", "".concat(Y(i), " XP")), xf.landingZone.reset(), xf.colony.reset(), xf.crafting.reset(), xf.science.reset(), xf.laws.reset(), xf.resources.reset(), xf.space.reset(), xf.queuedItems.reset(), xf.environment.reset(), xf.resources.addResource(l.COLONIZE_XP, r + i), xf.resources.addResource(l.KNOWLEDGE_POINT, o), this.numPrestiged++, xf.statistics.stats.timeThisPlanet = 0, xf.statistics.stats.timeThisPrestige = 0, this.current = t ? {
 								name: "Default",
 								modifiers: {},
 								yearLength: 365,
@@ -18942,11 +18922,11 @@
 								asteroidsDanger: 0,
 								disastersLevel: 0,
 								starClass: I.G
-							} : this.available[e], this.current.yearLength || (this.current.yearLength = 365, this.current.eccentricity = 0), this.available = [], kf.resources.reassertBalances(), kf.expeditionV2.generateCache()
+							} : this.available[e], this.current.yearLength || (this.current.yearLength = 365, this.current.eccentricity = 0), this.available = [], xf.resources.reassertBalances(), xf.expeditionV2.generateCache()
 						}, t
 					}(S),
-					Sg = vg.getInstance(),
-					Pg = function() {
+					vg = Cg.getInstance(),
+					Sg = function() {
 						var e = function(t, n) {
 							return e = Object.setPrototypeOf || {
 								__proto__: []
@@ -18966,12 +18946,12 @@
 							e(t, n), t.prototype = null === n ? Object.create(n) : (i.prototype = n.prototype, new i)
 						}
 					}(),
-					Bg = function(e) {
+					Pg = function(e) {
 						function t() {
 							var t = e.call(this) || this;
-							return t.transmitKnowledge = yg, t.colonizePlanet = Sg, t
+							return t.transmitKnowledge = Ig, t.colonizePlanet = vg, t
 						}
-						return Pg(t, e), t.getInstance = function() {
+						return Sg(t, e), t.getInstance = function() {
 							return t.instance || (t.instance = new t), t.instance
 						}, t.prototype.importData = function(e) {
 							this.transmitKnowledge.importData(e.transmitKnowledge), this.colonizePlanet.importData(e.colonizePlanet)
@@ -18991,7 +18971,7 @@
 						}, t
 					}(S)
 					.getInstance(),
-					_g = function() {
+					Bg = function() {
 						var e = function(t, n) {
 							return e = Object.setPrototypeOf || {
 								__proto__: []
@@ -19011,7 +18991,7 @@
 							e(t, n), t.prototype = null === n ? Object.create(n) : (i.prototype = n.prototype, new i)
 						}
 					}(),
-					Mg = function(e) {
+					_g = function(e) {
 						function t() {
 							var t = e.call(this) || this;
 							return t.expeditionsState = {
@@ -19036,7 +19016,7 @@
 								console.log("set expedition mode", e), t.expeditionsState.currentMode = e.mode
 							})), t
 						}
-						return _g(t, e), t.getInstance = function() {
+						return Bg(t, e), t.getInstance = function() {
 							return t.instance || (t.instance = new t), t.instance
 						}, t.prototype.importData = function(e) {
 							this.expeditionsState = e || {
@@ -19071,7 +19051,7 @@
 								currentMode: null !== (e = this.expeditionsState.currentMode) && void 0 !== e ? e : 0
 							}
 						}, t.prototype.isExpeditionUnlocked = function() {
-							return kf.science.scienceResearches.getResearchLevel(P.GEOGRAPHY) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.GEOGRAPHY) > 0
 						}, t.prototype.startExpedition = function() {
 							!this.expeditionsState.isInProgress && this.isExpeditionUnlocked() && (this.expeditionsState.currentMax = this.getExpeditionDuration(), this.expeditionsState.isInProgress = !0, this.expeditionsState.progress = 0, this.expeditionsState.runningExpeditionMode = this.expeditionsState.currentMode, this.expeditionsState.numExpeditions++)
 						}, t.prototype.getLoot = function() {
@@ -19089,19 +19069,19 @@
 									t = 16
 							}
 							for (var n = G.filter((function(e) {
-								return e.unlockCondition(kf) && e.valuability < 1e6
+								return e.unlockCondition(xf) && e.valuability < 1e6
 							})), i = {}, o = 0; o < 2; o++) {
 								var r = n.splice(Math.floor(Math.random() * (n.length - 1e-5)), 1)[0];
 								i[r.id] = 100 * (Math.random() + .5) * e * t / r.valuability
 							}
 							return i
 						}, t.prototype.getLootMultiplier = function() {
-							return Math.pow(1.05, kf.landingZone.landingZoneBuildings.getBuildingActiveLevel(a.EXPEDITION_CENTER)) * Math.pow(1.3, kf.landingZone.landingZoneUpgrades.getUpgradeLevel(r.ENERGY_SAVING_EXPEDITION_DRONES))
+							return Math.pow(1.05, xf.landingZone.landingZoneBuildings.getBuildingActiveLevel(a.EXPEDITION_CENTER)) * Math.pow(1.3, xf.landingZone.landingZoneUpgrades.getUpgradeLevel(r.ENERGY_SAVING_EXPEDITION_DRONES))
 						}, t.prototype.endExpedition = function() {
 							this.expeditionsState.isInProgress = !1, this.expeditionsState.progress = 0;
 							var e = this.getLoot();
-							for (var t in this.expeditionsState.lastLooted = e, e) kf.resources.addResource(t, e[t] || 0);
-							kf.eventLog.registerExpeditionArrived(X(e), "")
+							for (var t in this.expeditionsState.lastLooted = e, e) xf.resources.addResource(t, e[t] || 0);
+							xf.eventLog.registerExpeditionArrived(X(e), "")
 						}, t.prototype.getExpeditionDuration = function() {
 							switch (this.expeditionsState.currentMode) {
 								case 0:
@@ -19118,8 +19098,8 @@
 							this.expeditionsState.isInProgress = !1, this.expeditionsState.progress = 0, this.expeditionsState.lastLooted = {}
 						}, t
 					}(S),
-					Ug = Mg.getInstance(),
-					bg = function() {
+					Mg = _g.getInstance(),
+					Ug = function() {
 						var e = function(t, n) {
 							return e = Object.setPrototypeOf || {
 								__proto__: []
@@ -19139,14 +19119,14 @@
 							e(t, n), t.prototype = null === n ? Object.create(n) : (i.prototype = n.prototype, new i)
 						}
 					}(),
-					Gg = function(e) {
+					bg = function(e) {
 						function t() {
 							var t = e.call(this) || this;
 							return t.newNotificationState = {}, t.notificationsToUI = {}, t.workDispatcher.on("[new-notification] set viewed", (function(e) {
 								console.log("new-notification set viewed", e), t.setViewed(e.id)
 							})), t
 						}
-						return bg(t, e), t.getInstance = function() {
+						return Ug(t, e), t.getInstance = function() {
 							return t.instance || (t.instance = new t), t.instance
 						}, t.prototype.importData = function(e) {
 							this.newNotificationState = e || {}
@@ -19171,8 +19151,8 @@
 							this.notificationsToUI = {}
 						}, t
 					}(S),
-					Dg = Gg.getInstance(),
-					wg = function() {
+					Gg = bg.getInstance(),
+					Dg = function() {
 						var e = function(t, n) {
 							return e = Object.setPrototypeOf || {
 								__proto__: []
@@ -19192,14 +19172,14 @@
 							e(t, n), t.prototype = null === n ? Object.create(n) : (i.prototype = n.prototype, new i)
 						}
 					}(),
-					Xg = function() {
-						return Xg = Object.assign || function(e) {
+					wg = function() {
+						return wg = Object.assign || function(e) {
 							for (var t, n = 1, i = arguments.length; n < i; n++)
 								for (var o in t = arguments[n]) Object.prototype.hasOwnProperty.call(t, o) && (e[o] = t[o]);
 							return e
-						}, Xg.apply(this, arguments)
+						}, wg.apply(this, arguments)
 					},
-					xg = function(e) {
+					Xg = function(e) {
 						function t() {
 							var t = e.call(this) || this;
 							return t.stats = {
@@ -19215,13 +19195,13 @@
 								exoticCollected: 0
 							}, t
 						}
-						return wg(t, e), t.getInstance = function() {
+						return Dg(t, e), t.getInstance = function() {
 							return t.instance || (t.instance = new t), t.instance
 						}, t.prototype.importData = function(e) {
 							this.stats = e || {
-								timeInGame: kf.timeInGame,
-								timeThisPlanet: kf.timeInGame,
-								timeThisPrestige: kf.timeInPrestige,
+								timeInGame: xf.timeInGame,
+								timeThisPlanet: xf.timeInGame,
+								timeThisPrestige: xf.timeInPrestige,
 								maxColonists: 0,
 								maxHappiness: 0,
 								exoticCollected: 0
@@ -19229,70 +19209,70 @@
 						}, t.prototype.exportData = function() {
 							return this.stats
 						}, t.prototype.dataToUI = function() {
-							return Xg(Xg({}, this.stats), {
+							return wg(wg({}, this.stats), {
 								maxHappiness: Math.round(100 * this.stats.maxHappiness),
-								numPrestiges: kf.prestige.transmitKnowledge.numPrestiged,
-								numColonized: kf.prestige.colonizePlanet.numPrestiged
+								numPrestiges: xf.prestige.transmitKnowledge.numPrestiged,
+								numColonized: xf.prestige.colonizePlanet.numPrestiged
 							})
 						}, t.prototype.process = function(e) {
-							this.stats.timeThisPrestige += e, this.stats.timeThisPlanet += e, this.stats.timeInGame += e, this.stats.maxHappiness = Math.max(this.stats.maxHappiness, kf.colony.getColonistsHappiness()), this.stats.maxColonists = Math.max(this.stats.maxColonists, kf.colony.colonists)
+							this.stats.timeThisPrestige += e, this.stats.timeThisPlanet += e, this.stats.timeInGame += e, this.stats.maxHappiness = Math.max(this.stats.maxHappiness, xf.colony.getColonistsHappiness()), this.stats.maxColonists = Math.max(this.stats.maxColonists, xf.colony.colonists)
 						}, t
 					}(S)
 					.getInstance();
 				! function(e) {
 					e[e.EXTREMELY_COLD = 0] = "EXTREMELY_COLD", e[e.VERY_COLD = 1] = "VERY_COLD", e[e.COLD = 2] = "COLD", e[e.SLIGHTLY_COLD = 3] = "SLIGHTLY_COLD", e[e.NORMAL = 4] = "NORMAL", e[e.SLIGHTLY_WARM = 5] = "SLIGHTLY_WARM", e[e.WARM = 6] = "WARM", e[e.HOT = 7] = "HOT", e[e.VERY_HOT = 8] = "VERY_HOT"
-				}(Dd || (Dd = {})),
+				}(Gd || (Gd = {})),
 				function(e) {
 					e[e.SPRING = 0] = "SPRING", e[e.SUMMER = 1] = "SUMMER", e[e.AUTUMN = 2] = "AUTUMN", e[e.WINTER = 3] = "WINTER"
-				}(wd || (wd = {}));
-				var kg, Hg, Yg, Wg, Zg, jg, Fg, Vg, Kg, zg, qg, Qg, Jg, $g, ef, tf, nf, of , rf, af, cf, sf, uf, lf, pf, Ef = [{
-						id: Dd.VERY_HOT,
+				}(Dd || (Dd = {}));
+				var xg, kg, Hg, Yg, Wg, Zg, jg, Fg, Vg, Kg, zg, qg, Qg, Jg, $g, ef, tf, nf, of , rf, af, cf, sf, uf, lf, pf = [{
+						id: Gd.VERY_HOT,
 						distanceCondition: .35,
 						temperatureModifier: 1.75,
 						name: "Very Hot"
 					}, {
-						id: Dd.HOT,
+						id: Gd.HOT,
 						distanceCondition: .45,
 						temperatureModifier: 1.5,
 						name: "Hot"
 					}, {
-						id: Dd.WARM,
+						id: Gd.WARM,
 						distanceCondition: .6,
 						temperatureModifier: 1.3,
 						name: "Warm"
 					}, {
-						id: Dd.SLIGHTLY_WARM,
+						id: Gd.SLIGHTLY_WARM,
 						distanceCondition: .8,
 						temperatureModifier: 1.1,
 						name: "Slightly Warm"
 					}, {
-						id: Dd.NORMAL,
+						id: Gd.NORMAL,
 						distanceCondition: 1.2,
 						temperatureModifier: 1,
 						name: "Normal"
 					}, {
-						id: Dd.SLIGHTLY_COLD,
+						id: Gd.SLIGHTLY_COLD,
 						distanceCondition: 1.4,
 						temperatureModifier: .9,
 						name: "Slightly Cold"
 					}, {
-						id: Dd.COLD,
+						id: Gd.COLD,
 						distanceCondition: 1.55,
 						temperatureModifier: .75,
 						name: "Cold"
 					}, {
-						id: Dd.VERY_COLD,
+						id: Gd.VERY_COLD,
 						distanceCondition: 1.65,
 						temperatureModifier: .66,
 						name: "Very Cold"
 					}, {
-						id: Dd.EXTREMELY_COLD,
+						id: Gd.EXTREMELY_COLD,
 						distanceCondition: 1.7,
 						temperatureModifier: .62,
 						name: "Extremely Cold"
 					}],
-					df = ((Xd = {})[wd.SPRING] = "Spring", Xd[wd.SUMMER] = "Summer", Xd[wd.AUTUMN] = "Autumn", Xd[wd.WINTER] = "Winter", Xd),
-					gf = function() {
+					Ef = ((wd = {})[Dd.SPRING] = "Spring", wd[Dd.SUMMER] = "Summer", wd[Dd.AUTUMN] = "Autumn", wd[Dd.WINTER] = "Winter", wd),
+					df = function() {
 						var e = function(t, n) {
 							return e = Object.setPrototypeOf || {
 								__proto__: []
@@ -19312,30 +19292,30 @@
 							e(t, n), t.prototype = null === n ? Object.create(n) : (i.prototype = n.prototype, new i)
 						}
 					}(),
-					ff = function(e) {
+					gf = function(e) {
 						function t() {
 							var t = e.call(this) || this;
 							return t.climateState = {
 								day: 0,
-								season: wd.SPRING,
-								temperature: Dd.NORMAL,
+								season: Dd.SPRING,
+								temperature: Gd.NORMAL,
 								year: 0
 							}, t
 						}
-						return gf(t, e), t.getInstance = function() {
+						return df(t, e), t.getInstance = function() {
 							return t.instance || (t.instance = new t), t.instance
 						}, t.prototype.importData = function(e) {
 							this.climateState = e || {
 								day: 0,
-								season: wd.SPRING,
-								temperature: Dd.NORMAL,
+								season: Dd.SPRING,
+								temperature: Gd.NORMAL,
 								year: 0
 							}
 						}, t.prototype.exportData = function() {
 							return this.climateState
 						}, t.prototype.dataToUI = function() {
 							var e = this,
-								t = Ef.find((function(t) {
+								t = pf.find((function(t) {
 									return t.id === e.climateState.temperature
 								}));
 							if (!t) throw new Error("Invalid temperature modifier ".concat(this.climateState.temperature));
@@ -19343,17 +19323,17 @@
 								temperature: t.name,
 								year: this.climateState.year,
 								day: this.climateState.day,
-								season: df[this.climateState.season]
+								season: Ef[this.climateState.season]
 							}
 						}, t.prototype.getDays = function() {
-							return .2 * kf.statistics.stats.timeThisPrestige
+							return .2 * xf.statistics.stats.timeThisPrestige
 						}, t.prototype.getSeasonId = function() {
-							var e = kf.prestige.colonizePlanet.current.yearLength,
+							var e = xf.prestige.colonizePlanet.current.yearLength,
 								t = this.getDays() % e;
 							return Math.floor(4 * t / e)
 						}, t.prototype.getResourceMultiplier = function(e) {
 							var t = this,
-								n = Ef.find((function(e) {
+								n = pf.find((function(e) {
 									return e.id === t.climateState.temperature
 								}));
 							if (!n) throw new Error("Invalid temperature modifier ".concat(this.climateState.temperature));
@@ -19378,15 +19358,15 @@
 							}] : []
 						}, t.prototype.process = function(e) {
 							var t = this.getDays(),
-								n = kf.prestige.colonizePlanet.current.yearLength;
+								n = xf.prestige.colonizePlanet.current.yearLength;
 							this.climateState.year = 1 + Math.floor(t / n), this.climateState.day = 1 + this.getDays() % n, this.climateState.season = this.getSeasonId();
-							for (var i = Math.floor(16 * this.climateState.day / n), o = 1 - kf.prestige.colonizePlanet.current.eccentricity * Math.sin(6.28 * i / 16), r = 0; Ef[r].distanceCondition < o;) r++;
-							Ef[r].id !== this.climateState.temperature && (console.log("Weather changed: ".concat(this.climateState.temperature, " -> ")
-								.concat(Ef[r].id)), this.climateState.temperature = Ef[r].id, kf.resources.reassertBalances(), kf.expeditionV2.generateCache())
+							for (var i = Math.floor(16 * this.climateState.day / n), o = 1 - xf.prestige.colonizePlanet.current.eccentricity * Math.sin(6.28 * i / 16), r = 0; pf[r].distanceCondition < o;) r++;
+							pf[r].id !== this.climateState.temperature && (console.log("Weather changed: ".concat(this.climateState.temperature, " -> ")
+								.concat(pf[r].id)), this.climateState.temperature = pf[r].id, xf.resources.reassertBalances(), xf.expeditionV2.generateCache())
 						}, t
 					}(S)
 					.getInstance(),
-					Af = function() {
+					ff = function() {
 						var e = function(t, n) {
 							return e = Object.setPrototypeOf || {
 								__proto__: []
@@ -19406,7 +19386,7 @@
 							e(t, n), t.prototype = null === n ? Object.create(n) : (i.prototype = n.prototype, new i)
 						}
 					}(),
-					Nf = function(e) {
+					Af = function(e) {
 						function t() {
 							var t = e.call(this) || this;
 							return t.state = {
@@ -19417,7 +19397,7 @@
 								t.setMultiplier(e)
 							})), t
 						}
-						return Af(t, e), t.prototype.setMultiplier = function(e) {
+						return ff(t, e), t.prototype.setMultiplier = function(e) {
 							e < 1 && (e = 1), e > 4 && (e = 4), this.state.amountLeft <= 0 && (e = 1), this.state.multiplier = e
 						}, t.getInstance = function() {
 							return t.instance || (t.instance = new t), t.instance
@@ -19436,7 +19416,7 @@
 						}, t
 					}(S)
 					.getInstance(),
-					Rf = [{
+					Nf = [{
 						id: "meteor-shower",
 						name: "Meteor Shower",
 						description: "Meteor shower started. Seems pretty beautiful and harmless, but maybe your scientists could use it to improve celestial mechanics knowledge",
@@ -19449,13 +19429,13 @@
 						maxLevel: function(e) {
 							return 3
 						},
-						getGainMultiplier: (kg = {}, kg[l.RESEARCH] = function(e) {
+						getGainMultiplier: (xg = {}, xg[l.RESEARCH] = function(e) {
 							return {
 								A: 1,
 								B: 1.2,
 								type: i.EXPONENTIAL
 							}
-						}, kg),
+						}, xg),
 						onStartEvent: function(e, t) {
 							e.eventLog.registerEvent(E.EVENT, "Meteor shower started. Seems pretty beautiful and harmless, but maybe your researchers could use it to improve celestial mechanics knowledge, boosting your research income")
 						},
@@ -19547,7 +19527,7 @@
 									e.resources.subtractResource(t, a), i[t] = a, o.push("".concat(w(t), ": ")
 										.concat(Y(a)))
 								}
-							})), e.eventLog.registerEvent(E.DISASTER, "Earthquake have damaged some of your buildings. You should spend on repairing now: ".concat(o.join(";")))
+							})), e.eventLog.registerEvent(E.DISASTER, "Earthquake damaged some of your buildings. You should spend on repairing now: ".concat(o.join(";")))
 						}
 					}, {
 						id: "riot",
@@ -19565,18 +19545,18 @@
 						minLevel: function(e) {
 							return 1.5 * e.prestige.colonizePlanet.current.disastersLevel
 						},
-						getEffectMultiplier: (Hg = {}, Hg[M.SECURITY] = function(e) {
+						getEffectMultiplier: (kg = {}, kg[M.SECURITY] = function(e) {
 							return {
 								A: 1,
 								B: .8,
 								type: i.EXPONENTIAL
 							}
-						}, Hg),
+						}, kg),
 						onStartEvent: function(e, t) {
 							e.eventLog.registerEvent(E.EVENT, "Some of your colonists started riot. Security dropped temporarily")
 						},
 						getSecondaryEffect: function(e, t) {
-							e.eventLog.registerEvent(E.EVENT, "Riot have ended.")
+							e.eventLog.registerEvent(E.EVENT, "Riot has ended.")
 						}
 					}, {
 						id: "pandemy",
@@ -19594,18 +19574,18 @@
 						minLevel: function(e) {
 							return 1.5 * e.prestige.colonizePlanet.current.disastersLevel
 						},
-						getEffectMultiplier: (Yg = {}, Yg[M.HEALTHCARE] = function(e) {
+						getEffectMultiplier: (Hg = {}, Hg[M.HEALTHCARE] = function(e) {
 							return {
 								A: 1,
 								B: .8,
 								type: i.EXPONENTIAL
 							}
-						}, Yg),
+						}, Hg),
 						onStartEvent: function(e, t) {
 							e.eventLog.registerEvent(E.EVENT, "Some of your colonists have contracted a strange illness. It doesn't seem fatal, but it's quite complex to treat. Healthcare has decreased")
 						},
 						getSecondaryEffect: function(e, t) {
-							e.eventLog.registerEvent(E.EVENT, "Pandemic have ended.")
+							e.eventLog.registerEvent(E.EVENT, "Pandemic has ended.")
 						}
 					}, {
 						id: "pests",
@@ -19623,13 +19603,13 @@
 						minLevel: function(e) {
 							return 1.5 * e.prestige.colonizePlanet.current.disastersLevel
 						},
-						getConsumption: (Wg = {}, Wg[l.NUTRITION] = function(e) {
+						getConsumption: (Yg = {}, Yg[l.NUTRITION] = function(e) {
 							return {
 								A: .02 * e.resources.getResourceCap(l.NUTRITION),
 								B: 1.2,
 								type: i.EXPONENTIAL
 							}
-						}, Wg),
+						}, Yg),
 						onStartEvent: function(e, t) {
 							e.eventLog.registerEvent(E.DISASTER, "Some unknown kind of pests started destroying your provision, reducing nutrition amount you have")
 						},
@@ -19652,22 +19632,22 @@
 						minLevel: function(e) {
 							return 1.5 * e.prestige.colonizePlanet.current.disastersLevel
 						},
-						getGainMultiplier: (Zg = {}, Zg[l.POWER] = function(e) {
+						getGainMultiplier: (Wg = {}, Wg[l.POWER] = function(e) {
 							return {
 								A: 1,
 								B: .8,
 								type: i.EXPONENTIAL
 							}
-						}, Zg),
-						getEffectMultiplier: (jg = {}, jg[M.HEALTHCARE] = function(e) {
+						}, Wg),
+						getEffectMultiplier: (Zg = {}, Zg[M.HEALTHCARE] = function(e) {
 							return {
 								A: 1,
 								B: .9,
 								type: i.EXPONENTIAL
 							}
-						}, jg),
+						}, Zg),
 						onStartEvent: function(e, t) {
-							e.eventLog.registerEvent(E.DISASTER, "Magnetic storm have started, providing significant harm to your electronics as well as healthcare services")
+							e.eventLog.registerEvent(E.DISASTER, "Magnetic storm has started, providing significant harm to your electronics as well as healthcare services")
 						},
 						getSecondaryEffect: function(e, t) {
 							e.eventLog.registerEvent(E.DISASTER, "Magnetic storm ended.")
@@ -19688,13 +19668,13 @@
 						minLevel: function(e) {
 							return 1.5 * e.prestige.colonizePlanet.current.disastersLevel
 						},
-						getGainMultiplier: (Fg = {}, Fg[l.POWER] = function(e) {
+						getGainMultiplier: (jg = {}, jg[l.POWER] = function(e) {
 							return {
 								A: 1,
 								B: .8,
 								type: i.EXPONENTIAL
 							}
-						}, Fg),
+						}, jg),
 						getCraftingMultiplier: function(e) {
 							return {
 								A: 1,
@@ -19703,7 +19683,7 @@
 							}
 						},
 						onStartEvent: function(e, t) {
-							e.eventLog.registerEvent(E.DISASTER, "Sand storm have started, providing significant harm to your electronics as well as crafting efficiency")
+							e.eventLog.registerEvent(E.DISASTER, "Sand storm has started, providing significant harm to your electronics as well as crafting efficiency")
 						},
 						getSecondaryEffect: function(e, t) {
 							e.eventLog.registerEvent(E.DISASTER, "Sand storm ended.")
@@ -19724,13 +19704,13 @@
 						minLevel: function(e) {
 							return 1.5 * e.prestige.colonizePlanet.current.disastersLevel
 						},
-						getEffectMultiplier: (Vg = {}, Vg[M.SECURITY] = function(e) {
+						getEffectMultiplier: (Fg = {}, Fg[M.SECURITY] = function(e) {
 							return {
 								A: 1,
 								B: .8,
 								type: i.EXPONENTIAL
 							}
-						}, Vg),
+						}, Fg),
 						getCraftingMultiplier: function(e) {
 							return {
 								A: 1,
@@ -19760,32 +19740,32 @@
 						minLevel: function(e) {
 							return 1.5 * e.prestige.colonizePlanet.current.disastersLevel
 						},
-						getGainMultiplier: (Kg = {}, Kg[l.POWER] = function(e) {
+						getGainMultiplier: (Vg = {}, Vg[l.POWER] = function(e) {
 							return {
 								A: 1,
 								B: .9,
 								type: i.EXPONENTIAL
 							}
-						}, Kg[l.BIOMASS] = function(e) {
+						}, Vg[l.BIOMASS] = function(e) {
 							return {
 								A: 1,
 								B: .5,
 								type: i.EXPONENTIAL
 							}
-						}, Kg[l.WOOD] = function(e) {
+						}, Vg[l.WOOD] = function(e) {
 							return {
 								A: 1,
 								B: .5,
+								type: i.EXPONENTIAL
+							}
+						}, Vg),
+						getEffectMultiplier: (Kg = {}, Kg[M.HEALTHCARE] = function(e) {
+							return {
+								A: 1,
+								B: .9,
 								type: i.EXPONENTIAL
 							}
 						}, Kg),
-						getEffectMultiplier: (zg = {}, zg[M.HEALTHCARE] = function(e) {
-							return {
-								A: 1,
-								B: .9,
-								type: i.EXPONENTIAL
-							}
-						}, zg),
 						onStartEvent: function(e, t) {
 							e.eventLog.registerEvent(E.DISASTER, "Abnormal star activity significantly increased radiation level, causing major issues to all living organisms. Healthcare and organic yield decreased")
 						},
@@ -19805,13 +19785,13 @@
 						maxLevel: function(e) {
 							return 3
 						},
-						getEffectMultiplier: (qg = {}, qg[M.AESTHETICS] = function(e) {
+						getEffectMultiplier: (zg = {}, zg[M.AESTHETICS] = function(e) {
 							return {
 								A: 1,
 								B: 1.1,
 								type: i.EXPONENTIAL
 							}
-						}, qg),
+						}, zg),
 						onStartEvent: function(e, t) {
 							e.eventLog.registerEvent(E.EVENT, "Rare celestial glowing inspires your colonists, making them more satisfied with aesthetics")
 						},
@@ -19831,30 +19811,30 @@
 						maxLevel: function(e) {
 							return 3
 						},
-						getGainMultiplier: (Qg = {}, Qg[l.NUTRITION] = function(e) {
+						getGainMultiplier: (qg = {}, qg[l.NUTRITION] = function(e) {
 							return {
 								A: 1,
 								B: 1.3,
 								type: i.EXPONENTIAL
 							}
-						}, Qg[l.WOOD] = function(e) {
+						}, qg[l.WOOD] = function(e) {
 							return {
 								A: 1,
 								B: 1.3,
 								type: i.EXPONENTIAL
 							}
-						}, Qg[l.BIOMASS] = function(e) {
+						}, qg[l.BIOMASS] = function(e) {
 							return {
 								A: 1,
 								B: 1.3,
 								type: i.EXPONENTIAL
 							}
-						}, Qg),
+						}, qg),
 						onStartEvent: function(e, t) {
 							e.eventLog.registerEvent(E.EVENT, "Your colony experiencing fertile period. Your organic production boosted")
 						},
 						getSecondaryEffect: function(e, t) {
-							e.eventLog.registerEvent(E.EVENT, "Good weather have gone.")
+							e.eventLog.registerEvent(E.EVENT, "Good weather has gone.")
 						}
 					}, {
 						id: "rich-ore",
@@ -19869,31 +19849,31 @@
 						maxLevel: function(e) {
 							return 3
 						},
-						getGainMultiplier: (Jg = {}, Jg[l.ORE] = function(e) {
+						getGainMultiplier: (Qg = {}, Qg[l.ORE] = function(e) {
 							return {
 								A: 1,
 								B: 1.3,
 								type: i.EXPONENTIAL
 							}
-						}, Jg[l.IRON] = function(e) {
+						}, Qg[l.IRON] = function(e) {
 							return {
 								A: 1,
 								B: 1.3,
 								type: i.EXPONENTIAL
 							}
-						}, Jg[l.PLATE] = function(e) {
+						}, Qg[l.PLATE] = function(e) {
 							return {
 								A: 1,
 								B: 1.3,
 								type: i.EXPONENTIAL
 							}
-						}, Jg[l.WIRE] = function(e) {
+						}, Qg[l.WIRE] = function(e) {
 							return {
 								A: 1,
 								B: 1.3,
 								type: i.EXPONENTIAL
 							}
-						}, Jg),
+						}, Qg),
 						onStartEvent: function(e, t) {
 							e.eventLog.registerEvent(E.EVENT, "You found rich ore mining area. Your ore, metal and metal goods output increased")
 						},
@@ -19913,13 +19893,13 @@
 						maxLevel: function(e) {
 							return 3
 						},
-						getEffectMultiplier: ($g = {}, $g[M.ENTERTAINMENT] = function(e) {
+						getEffectMultiplier: (Jg = {}, Jg[M.ENTERTAINMENT] = function(e) {
 							return {
 								A: 1,
 								B: 1.1,
 								type: i.EXPONENTIAL
 							}
-						}, $g),
+						}, Jg),
 						onStartEvent: function(e, t) {
 							e.eventLog.registerEvent(E.EVENT, "You have found mysterious bones of an unknown gigantic creature near the landing zone. Your people have rushed from all corners of the settlement to see the discovered wonder.")
 						},
@@ -19939,13 +19919,13 @@
 						maxLevel: function(e) {
 							return 3
 						},
-						getEffectMultiplier: (ef = {}, ef[M.RELIGION] = function(e) {
+						getEffectMultiplier: ($g = {}, $g[M.RELIGION] = function(e) {
 							return {
 								A: 1,
 								B: 1.1,
 								type: i.EXPONENTIAL
 							}
-						}, ef),
+						}, $g),
 						onStartEvent: function(e, t) {
 							e.eventLog.registerEvent(E.EVENT, "Some of your people have seen mysterious nimbus over your Sun. Scientists are pretty sure its pretty common optical phenomena, but religious people are sure its the sigh of the Gods blessing")
 						},
@@ -19965,13 +19945,13 @@
 						maxLevel: function(e) {
 							return 3
 						},
-						getGainMultiplier: (tf = {}, tf[l.WOOD] = function(e) {
+						getGainMultiplier: (ef = {}, ef[l.WOOD] = function(e) {
 							return {
 								A: 1,
 								B: 1.5,
 								type: i.EXPONENTIAL
 							}
-						}, tf),
+						}, ef),
 						onStartEvent: function(e, t) {
 							e.eventLog.registerEvent(E.EVENT, "Your foresters telling they saw forest elves dancing around the tree. You pretty sure it were some hallucinogenic mushrooms, but you dont argue. Foresters got inspired.")
 						},
@@ -19991,19 +19971,19 @@
 						maxLevel: function(e) {
 							return 3
 						},
-						getGainMultiplier: (nf = {}, nf[l.ROCKET_ENGINE] = function(e) {
+						getGainMultiplier: (tf = {}, tf[l.ROCKET_ENGINE] = function(e) {
 							return {
 								A: 1,
 								B: 1.3,
 								type: i.EXPONENTIAL
 							}
-						}, nf[l.FUEL] = function(e) {
+						}, tf[l.FUEL] = function(e) {
 							return {
 								A: 1,
 								B: 1.3,
 								type: i.EXPONENTIAL
 							}
-						}, nf),
+						}, tf),
 						onStartEvent: function(e, t) {
 							e.eventLog.registerEvent(E.EVENT, "Your astronomers shown everyone a new star they found on the sky. You engineers got inspired to reach it one day. Rocket and Fuel production boosted")
 						},
@@ -20023,19 +20003,19 @@
 						maxLevel: function(e) {
 							return 3
 						},
-						getGainMultiplier: ( of = {}, of [l.BEAM] = function(e) {
+						getGainMultiplier: (nf = {}, nf[l.BEAM] = function(e) {
 							return {
 								A: 1,
 								B: 1.3,
 								type: i.EXPONENTIAL
 							}
-						}, of [l.BRICK] = function(e) {
+						}, nf[l.BRICK] = function(e) {
 							return {
 								A: 1,
 								B: 1.3,
 								type: i.EXPONENTIAL
 							}
-						}, of ),
+						}, nf),
 						onStartEvent: function(e, t) {
 							e.eventLog.registerEvent(E.EVENT, "Your colonists decided to say thanks to your builders by making some celebration on their behalf. Now they got inspired, brick and beam production boosted")
 						},
@@ -20043,7 +20023,7 @@
 							e.eventLog.registerEvent(E.EVENT, "You builders have sobered up after celebrations")
 						}
 					}],
-					If = function() {
+					Rf = function() {
 						var e = function(t, n) {
 							return e = Object.setPrototypeOf || {
 								__proto__: []
@@ -20063,12 +20043,12 @@
 							e(t, n), t.prototype = null === n ? Object.create(n) : (i.prototype = n.prototype, new i)
 						}
 					}(),
-					yf = function(e) {
+					If = function(e) {
 						function t() {
 							var t = e.call(this) || this;
 							return t.state = [], t
 						}
-						return If(t, e), t.getInstance = function() {
+						return Rf(t, e), t.getInstance = function() {
 							return t.instance || (t.instance = new t), t.instance
 						}, t.prototype.importData = function(e) {
 							this.state = e.events
@@ -20080,40 +20060,40 @@
 							return {}
 						}, t.prototype.process = function(e) {
 							var t = 0;
-							Math.abs(kf.environment.climate.getDays() % 1) < .2 * e && this.selectEventToTrigger(), this.state = this.state.filter((function(e) {
-								if (e.endAt < kf.statistics.stats.timeThisPrestige) {
-									var n = Rf.find((function(t) {
+							Math.abs(xf.environment.climate.getDays() % 1) < .2 * e && this.selectEventToTrigger(), this.state = this.state.filter((function(e) {
+								if (e.endAt < xf.statistics.stats.timeThisPrestige) {
+									var n = Nf.find((function(t) {
 										return t.id === e.id
 									}));
-									return t++, n && n.getSecondaryEffect && n.getSecondaryEffect(kf, e.level), !1
+									return t++, n && n.getSecondaryEffect && n.getSecondaryEffect(xf, e.level), !1
 								}
 								return !0
-							})), t && kf.resources.reassertBalances()
+							})), t && xf.resources.reassertBalances()
 						}, t.prototype.selectEventToTrigger = function() {
 							var e = this;
-							Rf.filter((function(t) {
+							Nf.filter((function(t) {
 									return !e.state.find((function(e) {
 										return e.id === t.id
 									}))
 								}))
 								.forEach((function(t) {
-									var n = t.autoTriggerChance(kf);
+									var n = t.autoTriggerChance(xf);
 									Math.random() < n && e.triggerEvent(t)
 								}))
 						}, t.prototype.triggerEvent = function(e) {
-							var t = e.maxLevel(kf),
+							var t = e.maxLevel(xf),
 								n = 0;
-							e.minLevel && (n = e.minLevel(kf));
-							var i = e.duration(kf),
+							e.minLevel && (n = e.minLevel(xf));
+							var i = e.duration(xf),
 								o = n + Math.random() * (t - n);
 							console.log("triggered: ", e.id, o, t), this.state.push({
 								id: e.id,
 								level: o,
-								startAt: kf.statistics.stats.timeThisPrestige,
-								endAt: kf.statistics.stats.timeThisPrestige + i
-							}), e.onStartEvent && e.onStartEvent(kf, o), kf.resources.reassertBalances()
+								startAt: xf.statistics.stats.timeThisPrestige,
+								endAt: xf.statistics.stats.timeThisPrestige + i
+							}), e.onStartEvent && e.onStartEvent(xf, o), xf.resources.reassertBalances()
 						}, t.prototype.getResourceBeingProduced = function(e) {
-							var t = Rf.filter((function(t) {
+							var t = Nf.filter((function(t) {
 									return t.getGain && !!t.getGain[e]
 								})),
 								n = [];
@@ -20122,7 +20102,7 @@
 									return e.id === i.id
 								}));
 								if (o && o.getGain) {
-									var r = k.calculate(kf, o.getGain[e], 0, i.level);
+									var r = k.calculate(xf, o.getGain[e], 0, i.level);
 									n.push({
 										label: "Event: ".concat(o.name),
 										value: r,
@@ -20132,7 +20112,7 @@
 								}
 							}), 0), n
 						}, t.prototype.getCraftingMultiplier = function() {
-							var e = Rf.filter((function(e) {
+							var e = Nf.filter((function(e) {
 									return !!e.getCraftingMultiplier
 								})),
 								t = [];
@@ -20141,7 +20121,7 @@
 									return e.id === n.id
 								}));
 								if (i && i.getCraftingMultiplier) {
-									var o = k.calculate(kf, i.getCraftingMultiplier, n.level, 1),
+									var o = k.calculate(xf, i.getCraftingMultiplier, n.level, 1),
 										r = o;
 									o && t.push({
 										label: "Event: ".concat(i.name),
@@ -20152,7 +20132,7 @@
 								}
 							}), 0), t
 						}, t.prototype.getResourceMultiplier = function(e) {
-							var t = Rf.filter((function(t) {
+							var t = Nf.filter((function(t) {
 									var n;
 									return !!(null === (n = t.getGainMultiplier) || void 0 === n ? void 0 : n[e])
 								})),
@@ -20162,7 +20142,7 @@
 									return e.id === i.id
 								}));
 								if (r && (null === (o = r.getGainMultiplier) || void 0 === o ? void 0 : o[e])) {
-									var a = k.calculate(kf, r.getGainMultiplier[e], i.level, 1),
+									var a = k.calculate(xf, r.getGainMultiplier[e], i.level, 1),
 										c = a;
 									a && n.push({
 										label: "Event: ".concat(r.name),
@@ -20173,7 +20153,7 @@
 								}
 							}), 0), n
 						}, t.prototype.getResourceBeingConsumed = function(e) {
-							var t = Rf.filter((function(t) {
+							var t = Nf.filter((function(t) {
 									return t.getConsumption && !!t.getConsumption[e]
 								})),
 								n = [];
@@ -20182,7 +20162,7 @@
 									return e.id === i.id
 								}));
 								if (o && o.getConsumption) {
-									var r = k.calculate(kf, o.getConsumption[e], 0, i.level);
+									var r = k.calculate(xf, o.getConsumption[e], 0, i.level);
 									n.push({
 										label: "Event: ".concat(o.name),
 										value: r,
@@ -20192,7 +20172,7 @@
 								}
 							}), 0), n
 						}, t.prototype.getResourceStoreMultiplier = function(e) {
-							var t = Rf.filter((function(t) {
+							var t = Nf.filter((function(t) {
 									return t.getStorageMultiplier && !!t.getStorageMultiplier[e]
 								})),
 								n = [];
@@ -20201,7 +20181,7 @@
 									return e.id === i.id
 								}));
 								if (o && o.getStorageMultiplier) {
-									var r = k.calculate(kf, o.getStorageMultiplier[e], i.level, 1);
+									var r = k.calculate(xf, o.getStorageMultiplier[e], i.level, 1);
 									n.push({
 										label: "Event: ".concat(o.name),
 										value: r,
@@ -20211,7 +20191,7 @@
 								}
 							}), 0), n
 						}, t.prototype.getHappinessMultiplier = function(e) {
-							var t = Rf.filter((function(t) {
+							var t = Nf.filter((function(t) {
 									return !!t.getEffectMultiplier && !!t.getEffectMultiplier[e]
 								})),
 								n = [];
@@ -20220,7 +20200,7 @@
 									return e.id === i.id
 								}));
 								if (o && o.getEffectMultiplier) {
-									var r = k.calculate(kf, o.getEffectMultiplier[e], i.level, 1);
+									var r = k.calculate(xf, o.getEffectMultiplier[e], i.level, 1);
 									n.push({
 										label: "Event: ".concat(o.name),
 										value: r,
@@ -20230,7 +20210,7 @@
 								}
 							}), 0), n
 						}, t.prototype.getHappinessBonus = function(e) {
-							var t = Rf.filter((function(t) {
+							var t = Nf.filter((function(t) {
 									return !!t.getEffectGain && !!t.getEffectGain[e]
 								})),
 								n = [];
@@ -20239,7 +20219,7 @@
 									return e.id === i.id
 								}));
 								if (o && o.getEffectGain) {
-									var r = k.calculate(kf, o.getEffectGain[e], 0, i.level);
+									var r = k.calculate(xf, o.getEffectGain[e], 0, i.level);
 									n.push({
 										label: "Event: ".concat(o.name),
 										value: r,
@@ -20252,8 +20232,8 @@
 							this.state = []
 						}, t
 					}(S),
-					hf = yf.getInstance(),
-					mf = function() {
+					yf = If.getInstance(),
+					hf = function() {
 						var e = function(t, n) {
 							return e = Object.setPrototypeOf || {
 								__proto__: []
@@ -20273,12 +20253,12 @@
 							e(t, n), t.prototype = null === n ? Object.create(n) : (i.prototype = n.prototype, new i)
 						}
 					}(),
-					Tf = function(e) {
+					mf = function(e) {
 						function t() {
 							var t = e.call(this) || this;
-							return t.climate = ff, t.bankedTime = Nf, t.ongoingEffects = hf, t
+							return t.climate = gf, t.bankedTime = Af, t.ongoingEffects = yf, t
 						}
-						return mf(t, e), t.getInstance = function() {
+						return hf(t, e), t.getInstance = function() {
 							return t.instance || (t.instance = new t), t.instance
 						}, t.prototype.importData = function(e) {
 							this.climate.importData(null == e ? void 0 : e.climate), this.bankedTime.importData(null == e ? void 0 : e.bankedTime)
@@ -20300,7 +20280,7 @@
 						}, t
 					}(S)
 					.getInstance(),
-					Of = function() {
+					Tf = function() {
 						var e = function(t, n) {
 							return e = Object.setPrototypeOf || {
 								__proto__: []
@@ -20320,14 +20300,14 @@
 							e(t, n), t.prototype = null === n ? Object.create(n) : (i.prototype = n.prototype, new i)
 						}
 					}(),
-					Lf = function() {
-						return Lf = Object.assign || function(e) {
+					Of = function() {
+						return Of = Object.assign || function(e) {
 							for (var t, n = 1, i = arguments.length; n < i; n++)
 								for (var o in t = arguments[n]) Object.prototype.hasOwnProperty.call(t, o) && (e[o] = t[o]);
 							return e
-						}, Lf.apply(this, arguments)
+						}, Of.apply(this, arguments)
 					},
-					Cf = function(e) {
+					Lf = function(e) {
 						function t() {
 							var t = e.call(this) || this;
 							return t.queue = [], t.notificationsToUI = {}, t.workDispatcher.on("[queue] add", (function(e) {
@@ -20340,7 +20320,7 @@
 								console.log("remove from queue", e), t.removeFromQueue(e.index)
 							})), t
 						}
-						return Of(t, e), t.getInstance = function() {
+						return Tf(t, e), t.getInstance = function() {
 							return t.instance || (t.instance = new t), t.instance
 						}, t.prototype.getMaxLength = function() {
 							return 3
@@ -20372,7 +20352,7 @@
 								}([], this.queue, !0)
 								.map((function(e, n) {
 									var i;
-									return Lf(Lf({}, e), {
+									return Of(Of({}, e), {
 										eta: (null === (i = t[n].meta) || void 0 === i ? void 0 : i.etaNum) || 0
 									})
 								})),
@@ -20390,14 +20370,14 @@
 										}
 										return n
 									}(e, ["eta"]);
-									return Lf({}, t)
+									return Of({}, t)
 								}));
 							this.queue = i
 						}, t.prototype.removeFromQueue = function(e) {
 							this.queue.splice(e, 1)
 						}, t.prototype.moveItem = function(e, t) {
 							var n = this.queue[e + t];
-							this.queue[e + t] = Lf({}, this.queue[e]), this.queue[e] = Lf({}, n)
+							this.queue[e + t] = Of({}, this.queue[e]), this.queue[e] = Of({}, n)
 						}, t.prototype.importData = function(e) {
 							this.queue = (null == e ? void 0 : e.queue) || []
 						}, t.prototype.exportData = function() {
@@ -20414,17 +20394,17 @@
 									var i = fl.find((function(t) {
 										return t.id === e.id
 									}));
-									return i ? kf.landingZone.landingZoneBuildings.processToUI(i, n) : void console.error("Building ".concat(e.id, " was not found"));
+									return i ? xf.landingZone.landingZoneBuildings.processToUI(i, n) : void console.error("Building ".concat(e.id, " was not found"));
 								case p.RESEARCH:
 									var o = Vl.find((function(t) {
 										return t.id === e.id
 									}));
-									return o ? kf.science.scienceResearches.processToUI(o) : void console.error("Research ".concat(e.id, " was not found"));
+									return o ? xf.science.scienceResearches.processToUI(o) : void console.error("Research ".concat(e.id, " was not found"));
 								case p.UPGRADE:
 									var r = Ku.find((function(t) {
 										return t.id === e.id
 									}));
-									return r ? kf.landingZone.landingZoneUpgrades.processToUI(r, n) : void console.error("Upgrade ".concat(e.id, " was not found"));
+									return r ? xf.landingZone.landingZoneUpgrades.processToUI(r, n) : void console.error("Upgrade ".concat(e.id, " was not found"));
 								default:
 									throw Error("Invalid queue item.")
 							}
@@ -20451,7 +20431,7 @@
 									isAvailable: this.queue.length < this.getMaxLength(),
 									scopes: Object.values(p),
 									choices: (e = {}, e[p.BUILDING] = fl.filter((function(e) {
-											return e.unlockCondition(kf)
+											return e.unlockCondition(xf)
 										}))
 										.map((function(e) {
 											return {
@@ -20462,7 +20442,7 @@
 										.sort((function(e, t) {
 											return e.name > t.name ? 1 : -1
 										})), e[p.UPGRADE] = Ku.filter((function(e) {
-											return e.unlockCondition(kf) && (!e.maxLevel || e.maxLevel > kf.landingZone.landingZoneUpgrades.getUpgradeLevel(e.id))
+											return e.unlockCondition(xf) && (!e.maxLevel || e.maxLevel > xf.landingZone.landingZoneUpgrades.getUpgradeLevel(e.id))
 										}))
 										.map((function(e) {
 											return {
@@ -20473,7 +20453,7 @@
 										.sort((function(e, t) {
 											return e.name > t.name ? 1 : -1
 										})), e[p.RESEARCH] = Vl.filter((function(e) {
-											return e.unlockCondition(kf) && kf.science.scienceResearches.getResearchLevel(e.id) < 1
+											return e.unlockCondition(xf) && xf.science.scienceResearches.getResearchLevel(e.id) < 1
 										}))
 										.map((function(e) {
 											return {
@@ -20506,25 +20486,25 @@
 								if (t.scope !== p.BUILDING) {
 									if (t.scope === p.UPGRADE) {
 										var n = t.id,
-											i = kf.landingZone.landingZoneUpgrades.getUpgradeLevel(n),
+											i = xf.landingZone.landingZoneUpgrades.getUpgradeLevel(n),
 											o = Ku.find((function(e) {
 												return e.id === n
 											}));
 										if (!o) return;
-										return o.maxLevel && o.maxLevel <= i ? void this.queue.shift() : void(kf.landingZone.landingZoneUpgrades.doUpgrade(n) && this.queue.shift())
+										return o.maxLevel && o.maxLevel <= i ? void this.queue.shift() : void(xf.landingZone.landingZoneUpgrades.doUpgrade(n) && this.queue.shift())
 									}
-									if (t.scope === p.RESEARCH) return r = t.id, (i = kf.science.scienceResearches.getResearchLevel(r)) > 0 && this.queue.shift(), void(kf.science.scienceResearches.doResearch(r) && this.queue.shift())
+									if (t.scope === p.RESEARCH) return r = t.id, (i = xf.science.scienceResearches.getResearchLevel(r)) > 0 && this.queue.shift(), void(xf.science.scienceResearches.doResearch(r) && this.queue.shift())
 								} else {
 									var r = t.id;
-									kf.landingZone.landingZoneBuildings.doBuild(r) && this.queue.shift()
+									xf.landingZone.landingZoneBuildings.doBuild(r) && this.queue.shift()
 								}
 							}
 						}, t
 					}(S),
-					vf = Cf.getInstance(),
-					Sf = n(381),
-					Pf = n.n(Sf),
-					Bf = function() {
+					Cf = Lf.getInstance(),
+					vf = n(381),
+					Sf = n.n(vf),
+					Pf = function() {
 						var e = function(t, n) {
 							return e = Object.setPrototypeOf || {
 								__proto__: []
@@ -20544,21 +20524,21 @@
 							e(t, n), t.prototype = null === n ? Object.create(n) : (i.prototype = n.prototype, new i)
 						}
 					}(),
-					_f = function(e) {
+					Bf = function(e) {
 						function t() {
 							var t, n = e.call(this) || this;
 							return n.events = [], n.filters = ((t = {})[E.UPGRADE] = !0, t[E.ACTION] = !0, t[E.RESEARCH] = !0, t[E.RARE_GAIN] = !0, t[E.PRESTIGE] = !0, t[E.EXPEDITION_ARRIVED] = !0, t[E.COLONIST_ARRIVED] = !0, t[E.COLONIST_DIED] = !0, t[E.BUILDING] = !0, t[E.LAW] = !0, t[E.EVENT] = !0, t[E.DISASTER] = !0, t), n.workDispatcher.on("[event-logs] set filter", (function(e) {
 								console.log("[event-logs] set filter", e), n.filters[e.scope] = e.flag
 							})), n
 						}
-						return Bf(t, e), t.getInstance = function() {
+						return Pf(t, e), t.getInstance = function() {
 							return t.instance || (t.instance = new t), t.instance
 						}, t.prototype.registerEvent = function(e, t) {
 							this.events.unshift({
 								scope: e,
 								time: new Date,
-								year: Math.floor(kf.environment.climate.climateState.year),
-								day: Math.floor(kf.environment.climate.climateState.day),
+								year: Math.floor(xf.environment.climate.climateState.year),
+								day: Math.floor(xf.environment.climate.climateState.day),
 								message: t
 							})
 						}, t.prototype.registerAction = function(e, t, n) {
@@ -20619,7 +20599,7 @@
 									}))
 									.map((function(e) {
 										return {
-											date: "[".concat(Pf()(e.time)
+											date: "[".concat(Sf()(e.time)
 												.format("MMM D, Y HH:mm:ss"), "]"),
 											time: "Year ".concat(e.year, ", Day ")
 												.concat(e.day),
@@ -20641,15 +20621,15 @@
 								}))
 						}, t
 					}(S),
-					Mf = _f.getInstance(),
-					Uf = function() {
+					_f = Bf.getInstance(),
+					Mf = function() {
 						function e() {}
 						return e.getInstance = function() {
 							return e.instance || (e.instance = new e), e.instance
 						}, e.prototype.getResourceCapMultiplier = function(e) {
 							var t = [];
-							if (e === l.RESEARCH && kf.resources.getResource(l.ANOMALITIES) > 0) {
-								var n = 1 + .01 * kf.resources.getResource(l.ANOMALITIES);
+							if (e === l.RESEARCH && xf.resources.getResource(l.ANOMALITIES) > 0) {
+								var n = 1 + .01 * xf.resources.getResource(l.ANOMALITIES);
 								t.push({
 									label: "Resource: Anomaly",
 									value: n,
@@ -20663,45 +20643,45 @@
 					.getInstance();
 				! function(e) {
 					e.DESERT = "Desert", e.TUNDRA = "Tundra", e.MOUNTAINS = "Mountains", e.PLAINS = "Plains", e.HILLS = "Hills", e.MUD = "Muds"
-				}(rf || (rf = {}));
-				var bf = [{
-						type: rf.DESERT,
+				}( of || ( of = {}));
+				var Uf = [{
+						type: of .DESERT,
 						name: "Desert",
 						description: "Who knows what is hidden under this sand",
-						lootChances: (af = {}, af[l.STONE] = .75, af[l.BRICK] = .25, af[l.PLATE] = .25, af[l.SEMICONDUCTOR] = .15, af),
+						lootChances: (rf = {}, rf[l.STONE] = .75, rf[l.BRICK] = .25, rf[l.PLATE] = .25, rf[l.SEMICONDUCTOR] = .15, rf),
 						color: "#d8c767"
 					}, {
-						type: rf.MUD,
+						type: of .MUD,
 						name: "Muds",
 						description: "Wet and dangerous",
-						lootChances: (cf = {}, cf[l.BIOMASS] = .75, cf[l.WOOD] = .5, cf[l.RUBBER] = .2, cf[l.PLASTICS] = .2, cf),
+						lootChances: (af = {}, af[l.BIOMASS] = .75, af[l.WOOD] = .5, af[l.RUBBER] = .2, af[l.PLASTICS] = .2, af),
 						color: "#787747"
 					}, {
-						type: rf.MOUNTAINS,
+						type: of .MOUNTAINS,
 						name: "Mountains",
 						description: "Its hard to climb, but maybe the high is worth the pain?",
-						lootChances: (sf = {}, sf[l.ORE] = .75, sf[l.IRON] = .35, sf[l.WIRE] = .2, sf[l.PLATINUM] = .1, sf),
+						lootChances: (cf = {}, cf[l.ORE] = .75, cf[l.IRON] = .35, cf[l.WIRE] = .2, cf[l.PLATINUM] = .1, cf),
 						color: "#aa9"
 					}, {
-						type: rf.HILLS,
+						type: of .HILLS,
 						name: "Hills",
 						description: "Could we find ancient settlement here?",
-						lootChances: (uf = {}, uf[l.RESEARCH] = .75, uf[l.COMPUTER] = .2, uf[l.MAGNETO] = .2, uf[l.PLATINUM] = .2, uf),
+						lootChances: (sf = {}, sf[l.RESEARCH] = .75, sf[l.COMPUTER] = .2, sf[l.MAGNETO] = .2, sf[l.PLATINUM] = .2, sf),
 						color: "#388757"
 					}, {
-						type: rf.TUNDRA,
+						type: of .TUNDRA,
 						name: "Tundra",
 						description: "Frozen and empty",
-						lootChances: (lf = {}, lf[l.WATER] = .75, lf[l.OXYGEN] = .75, lf[l.FUEL] = .2, lf[l.GRAPHENE] = .2, lf),
+						lootChances: (uf = {}, uf[l.WATER] = .75, uf[l.OXYGEN] = .75, uf[l.FUEL] = .2, uf[l.GRAPHENE] = .2, uf),
 						color: "#78a7d7"
 					}, {
-						type: rf.PLAINS,
+						type: of .PLAINS,
 						name: "Plains",
 						description: "Empty and windy",
-						lootChances: (pf = {}, pf[l.NUTRITION] = .75, pf[l.WOOD] = .5, pf[l.BEAM] = .2, pf[l.PLATE] = .2, pf),
+						lootChances: (lf = {}, lf[l.NUTRITION] = .75, lf[l.WOOD] = .5, lf[l.BEAM] = .2, lf[l.PLATE] = .2, lf),
 						color: "#78a747"
 					}],
-					Gf = function() {
+					bf = function() {
 						var e = function(t, n) {
 							return e = Object.setPrototypeOf || {
 								__proto__: []
@@ -20721,7 +20701,7 @@
 							e(t, n), t.prototype = null === n ? Object.create(n) : (i.prototype = n.prototype, new i)
 						}
 					}(),
-					Df = function(e) {
+					Gf = function(e) {
 						function t() {
 							var t = e.call(this) || this;
 							return t.expeditionsState = {
@@ -20758,7 +20738,7 @@
 								console.log("set expedition mode", e), t.expeditionsState.currentX = e.x, t.expeditionsState.currentY = e.y
 							})), t
 						}
-						return Gf(t, e), t.getInstance = function() {
+						return bf(t, e), t.getInstance = function() {
 							return t.instance || (t.instance = new t), t.instance
 						}, t.prototype.importData = function(e) {
 							this.expeditionsState = e || {
@@ -20777,7 +20757,7 @@
 						}, t.prototype.exportData = function() {
 							return this.expeditionsState
 						}, t.prototype.dataToUI = function() {
-							return this.isExpeditionUnlocked() && kf.newNotifications.registerNotification("planet:expeditions"), {
+							return this.isExpeditionUnlocked() && xf.newNotifications.registerNotification("planet:expeditions"), {
 								numExpeditions: this.expeditionsState.numExpeditions,
 								progress: this.expeditionsState.progress,
 								lastLooted: Object.entries(this.expeditionsState.lastLooted)
@@ -20818,11 +20798,11 @@
 							for (var e = -10; e <= 10; e++) {
 								this.expeditionsState.map.cells.push([]);
 								for (var t = -10; t <= 10; t++) {
-									var n = Math.floor(Math.random() * bf.length);
+									var n = Math.floor(Math.random() * Uf.length);
 									this.expeditionsState.map.cells[10 + e].push({
 										x: t,
 										y: e,
-										type: bf[n].type,
+										type: Uf[n].type,
 										radiusMultiplier: Math.pow(e * e + t * t, .75)
 									})
 								}
@@ -20831,12 +20811,12 @@
 						}, t.prototype.mapLootChances = function(e, t, n) {
 							void 0 === n && (n = 1);
 							var i = {},
-								o = 1 + .04 * kf.prestige.transmitKnowledge.getUpgradeLevel(g.EXPEDITION_MASTERITY),
+								o = 1 + .04 * xf.prestige.transmitKnowledge.getUpgradeLevel(g.EXPEDITION_MASTERITY),
 								r = function(r) {
 									var a = G.find((function(e) {
 										return e.id === r
 									}));
-									if (!(null == a ? void 0 : a.unlockCondition(kf))) return "continue";
+									if (!(null == a ? void 0 : a.unlockCondition(xf))) return "continue";
 									i[r] = {
 										chance: Math.min(n * e[r], 1),
 										min: 100 * t * o / a.valuability,
@@ -20851,7 +20831,7 @@
 								multiplier: 4
 							}
 						}, t.prototype.processCell = function(e) {
-							var t = bf.find((function(t) {
+							var t = Uf.find((function(t) {
 								return t.type === e.type
 							}));
 							if (!t) throw new Error("Cell type not found");
@@ -20880,7 +20860,7 @@
 								color: t.color
 							}
 						}, t.prototype.isExpeditionUnlocked = function() {
-							return kf.science.scienceResearches.getResearchLevel(P.GEOGRAPHY) > 0
+							return xf.science.scienceResearches.getResearchLevel(P.GEOGRAPHY) > 0
 						}, t.prototype.startExpedition = function() {
 							!this.expeditionsState.isInProgress && this.isExpeditionUnlocked() && (0 === this.expeditionsState.currentX && 0 === this.expeditionsState.currentY || (this.expeditionsState.currentMax = this.getExpeditionDuration(this.expeditionsState.currentX, this.expeditionsState.currentY), this.expeditionsState.isInProgress = !0, this.expeditionsState.progress = 0, this.expeditionsState.runningX = this.expeditionsState.currentX, this.expeditionsState.runningY = this.expeditionsState.currentY))
 						}, t.prototype.getLoot = function() {
@@ -20903,12 +20883,12 @@
 									Math.random() < i.chance && (n[t] = o)
 								})), n
 						}, t.prototype.getLootMultiplier = function() {
-							return Math.pow(1.05, kf.landingZone.landingZoneBuildings.getBuildingActiveLevel(a.EXPEDITION_CENTER)) * Math.pow(1.3, kf.landingZone.landingZoneUpgrades.getUpgradeLevel(r.ENERGY_SAVING_EXPEDITION_DRONES))
+							return Math.pow(1.05, xf.landingZone.landingZoneBuildings.getBuildingActiveLevel(a.EXPEDITION_CENTER)) * Math.pow(1.3, xf.landingZone.landingZoneUpgrades.getUpgradeLevel(r.ENERGY_SAVING_EXPEDITION_DRONES))
 						}, t.prototype.endExpedition = function() {
 							this.expeditionsState.isInProgress = !1, this.expeditionsState.progress = 0;
 							var e = this.getLoot();
-							for (var t in this.expeditionsState.runningX = 0, this.expeditionsState.runningY = 0, this.expeditionsState.lastLooted = e, e) kf.resources.addResource(t, e[t] || 0);
-							kf.eventLog.registerExpeditionArrived(X(e), ""), this.expeditionsState.numExpeditions++
+							for (var t in this.expeditionsState.runningX = 0, this.expeditionsState.runningY = 0, this.expeditionsState.lastLooted = e, e) xf.resources.addResource(t, e[t] || 0);
+							xf.eventLog.registerExpeditionArrived(X(e), ""), this.expeditionsState.numExpeditions++
 						}, t.prototype.getExpeditionDuration = function(e, t) {
 							var n = Math.pow(e * e + t * t, .5);
 							return 100 * Math.pow(n, 2)
@@ -20918,8 +20898,8 @@
 							this.expeditionsState.isInProgress = !1, this.expeditionsState.progress = 0, this.expeditionsState.lastLooted = {}
 						}, t
 					}(S),
-					wf = Df.getInstance(),
-					Xf = function() {
+					Df = Gf.getInstance(),
+					wf = function() {
 						var e = function(t, n) {
 							return e = Object.setPrototypeOf || {
 								__proto__: []
@@ -20939,7 +20919,7 @@
 							e(t, n), t.prototype = null === n ? Object.create(n) : (i.prototype = n.prototype, new i)
 						}
 					}(),
-					xf = function(e) {
+					Xf = function(e) {
 						function t() {
 							var t = this,
 								n = Date.now();
@@ -20949,7 +20929,7 @@
 									theme: d.DARK
 								}, t.workDispatcher.on("initialize", (function(e) {
 									console.log("Received payload", e)
-								})), t.resources = Il, t.milestones = Sl, t.landingZone = Ll, t.colony = Fl, t.science = Jl, t.crafting = rp, t.goals = pE, t.laws = AE, t.space = Ng, t.expedition = Ug, t.newNotifications = Dg, t.prestige = Bg, t.statistics = xg, t.environment = Tf, t.queuedItems = vf, t.eventLog = Mf, t.resourceEffect = Uf, t.expeditionV2 = wf, setInterval((function() {
+								})), t.resources = Il, t.milestones = Sl, t.landingZone = Ll, t.colony = Fl, t.science = Jl, t.crafting = rp, t.goals = pE, t.laws = AE, t.space = Ag, t.expedition = Mg, t.newNotifications = Gg, t.prestige = Pg, t.statistics = Xg, t.environment = mf, t.queuedItems = Cf, t.eventLog = _f, t.resourceEffect = Mf, t.expeditionV2 = Df, setInterval((function() {
 									t.isLoading ? console.warn("Game is loading... Skip") : t.process(.1)
 								}), 100), setInterval((function() {
 									t.workDispatcher.output("[game] update ui", t.dataToUI())
@@ -20973,7 +20953,7 @@
 									ttp: Date.now() - n
 								}), t.isLoading = !1, t
 						}
-						return Xf(t, e), t.getInstance = function() {
+						return wf(t, e), t.getInstance = function() {
 							return t.instance || (t.instance = new t), t.instance
 						}, t.prototype.process = function(e) {
 							var t = 1 * this.speedUpFactor * (this.environment.bankedTime.state.multiplier || 1);
@@ -21028,10 +21008,10 @@
 							}
 						}, t.prototype.purchaseMax = function() {}, t
 					}(S),
-					kf = xf.getInstance();
+					xf = Xf.getInstance();
 				self.addEventListener("message", (function(e) {
 					var t = e.data;
-					console.log("send to worker: ", t), kf.workDispatcher.handleInput(t.type, t.payload)
+					console.log("send to worker: ", t), xf.workDispatcher.handleInput(t.type, t.payload)
 				}))
 			}
 		},

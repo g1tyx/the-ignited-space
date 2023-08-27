@@ -416,7 +416,7 @@ var cnItems = {
     "Dark Matter Corpus": "暗物质船体",
     "Use dark-matter features to open new generation of stealth-technologies. Each level provides 30% bonus to corpus durability": "利用暗物质的特性，研究下一代的隐形技术。每级使飞船耐久度提升 30%",
     "Dark Matter Tools": "暗物质工具",
-    "Use non-interacting with the electromagnetic field tools to significantly increase electronics crafting. Increase semiconductor, wires, computers and magneto production by 20% per level": "运用不会和磁场发生相互作用的工具，大幅度提升电子产品的工艺产量。每级提升电线、半导体、计算机和磁电机产量 20%",
+    "Use non-interacting with the electromagnetic field tools to significantly increase electronics crafting. Increase semiconductor, wires, computers and magneto production by 20% per level": "运用不会和磁场发生相互作用的工具，大幅度提升电子产品的工艺产量。每级提升电线、半导体、计算机和磁电机产量 10%",
     "Advanced Organics Processing": "高级有机物处理",
     "Use new technologies to improve your organics processing bacteria. Increase rubber, plastic and graphene production by 20% per level": "运用全新的技术，进一步改良您用于处理有机物的菌种。每级使橡胶、塑料和石墨烯产量提升 20%",
     "Pests-killing bacteria": "灭虫细菌",
@@ -1455,7 +1455,7 @@ var cnItems = {
     "Expeditions completed:": "探险完成次数：",
     "Time to complete:": "距离完成：",
     "Last Loot": "上次战利品",
-    "ETA: ": "预计完成时间",
+    "ETA: ": "预计完成时间：",
     "Colonists": "殖民者",
     "Craftable": "工艺制造材料",
     "Consume": "消耗",
@@ -1538,10 +1538,10 @@ var cnItems = {
     "Decreased colonists death speed": "降低了殖民者死亡的速度",
     "Updated some XP prices": "调整了部分经验升级的价格",
     //v0.2.6
-    "Added events and disasters": "增加了事件和灾害",
+    "Added events and disasters": "增加了事件和灾害机制",
     "Reworked expeditions": "重做了探险系统",
     "Added new XP upgrades related to planet modifiers/complexity": "增加了和星球词条与难度相关的经验升级",
-    'Added XP upgrade unlocking new \"Labor\" job, that auto-assign to jobs depending on what resource is negative': "增加了解锁“劳工”工作的经验升级，这种工人会被自动分配到当前产量为负的资源上，且也可以直接分配工作",
+    'Added XP upgrade unlocking new \"Labor\" job, that auto-assign to jobs depending on what resource is negative': "增加了解锁“劳工”工作的经验升级，这种工人会被自动分配到当前产量为负的资源上，也可以直接被分配工作",
     //v0.2.5
     "Added color themes settings": "加入了主题的选择，目前可以在深色/黑色/明亮三种主题中切换；更新了深色模式的配色，现在对低色差的显示器更友好",
     "Added option to sort queue by ETA": "加入了一个按钮，可以根据预计完成时间为队列一键排序",
@@ -2048,7 +2048,7 @@ var cnPrefix = {
     "Inactive ": "低磁性 ",
     "Calm ": "平静 ",
 
-    "ETA: ": "预计完成时间",
+    "ETA: ": "预计完成时间：",
 }
 
 //需处理的后缀
@@ -2163,7 +2163,7 @@ var cnRegReplace = new Map([
     [/^Building finish: (.+), lvl (\d+). Spent: (.+)\n(.*)$/, '建筑完成：$1 等级 $2，消耗：$3'],
     [/^Upgrade finish: (.+), lvl (\d+). Spent: (.+)\n(.*)$/, '升级完成：$1 等级 $2，消耗：$3'],
     [/^Research finish: (.+). Spent: (.+)\n( *)$/, '研究完成：$1，消耗：$2'],
-    [/^Expedition arrived. Obtained: (.+).$/, '探险完成，获得：$2'],
+    [/^Expedition arrived. Obtained: (.+).$/, '探险完成，获得：$1'],
     [/^Prestige: (.+). Received: (.+)$/, '重置：$1，获得：$2'],
     [/^You received (.+)$/, '您获得了：$1'],
     [/^Colonist arrived. Colony grew up to ([\d\.]+) citizens$/, '新的殖民者到来了。当前人口：$1'],
