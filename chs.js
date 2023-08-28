@@ -1517,6 +1517,11 @@ var cnItems = {
     "Special": "特殊",
     "None": "无",
     "Landing zone": "着陆区",
+    "Different cell types, indicated by different color have different possible loot. Hover over cell to see possible loot": "不同颜色代表不同种类的格子，拥有不同类型的掉落。将鼠标放置在上面可以查看掉落详情",
+    "Every cell can have special find. You can reveal it in advance for cells that are up to": "每个格子都可能有特殊事件。您可以预览距离中心最多 ",
+    "away from center (distance value can be upgraded)": " 格以内的特殊事件（该距离可以升级）",
+
+    //
     "Colony": "殖民地",
     "Crafting": "制造",
     "Expeditions": "探险",
