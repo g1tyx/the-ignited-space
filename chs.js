@@ -1342,7 +1342,7 @@ var cnItems = {
     "Some unknown kind of pests started destroying your provision, reducing nutrition amount you have": "一种未知种类的害虫开始肆虐，导致营养物质减少",
     "Pests were eliminated.": "害虫已被消灭",
     "Magnetic Storm": "磁暴",
-    "Magnetic storm has started, providing significant harm to your electronics as well as healthcare services": "磁暴开始了。这对您的电子产品和医疗设施造成了显著的影响",
+    "Magnetic storm has started, providing significant harm to your electronics as well as healthcare services": "磁暴开始了。这对您的电力产量和医疗设施造成了显著的影响",
     "Magnetic storm ended.": "磁暴结束了",
     "Sand Storm": "沙暴",
     "Sand storm has started, providing significant harm to your electronics as well as crafting efficiency": "沙暴开始了。这对您的电力和工艺产量造成了显著的影响",
