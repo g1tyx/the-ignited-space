@@ -1105,13 +1105,10 @@ var cnItems = {
     "Yellow Dwarf": "黄矮星",
     "Sub-giant": "亚巨星",
     "UV-radiation reduce healthcare and security": "强烈的紫外线辐射会降低医疗和安保",
-    "Gravity increase building costs": "较强的重力会增加建筑物的消耗",
-    "Sub-giant": "亚巨星",
-    "UV-radiation reduce healthcare and security": "强烈的紫外线辐射会降低医疗和安保",
-    "Gravity increase building costs twice": "强大的重力会大幅增加建筑物的消耗",
+    "Gravity increase building costs twice": "强大的引力使建筑物成本变为 2 倍",
     "Blue Giant": "蓝巨星",
     "UV-radiation reduce healthcare and security": "强烈的紫外线辐射会降低医疗和安保",
-    "Gravity increase building costs 4 times": "惊人的重力会巨幅增加建筑物的消耗",
+    "Gravity increase building costs 4 times": "巨大的引力使建筑物成本变为 4 倍",
     "Gamma-radiation significantly reduce nutrition, biomass and wood production": "强烈的伽马射线会降低营养物质、生物质和木材的产量",
     
 
@@ -1214,7 +1211,7 @@ var cnItems = {
     "Dry Big Cold": "干燥 大型 寒冷",
     "Dry Big Hot": "干燥 大型 炎热",
 
-    "Dry": "干燥 大型",
+    "Dry": "干燥",
     "Dry Ore Poor": "干燥 矿物贫瘠",
     "Dry Ore Poor Cold": "干燥 矿物贫瘠 寒冷",
     "Dry Ore Poor Hot": "干燥 矿物贫瘠 炎热",
@@ -1345,13 +1342,13 @@ var cnItems = {
     "Some unknown kind of pests started destroying your provision, reducing nutrition amount you have": "一种未知种类的害虫开始肆虐，导致营养物质减少",
     "Pests were eliminated.": "害虫已被消灭",
     "Magnetic Storm": "磁暴",
-    "Magnetic storm has started, providing significant harm to your electronics as well as healthcare services": "磁暴开始了。这对您的电子产品和医疗设施造成了显著的影响",
+    "Magnetic storm has started, providing significant harm to your electronics as well as healthcare services": "磁暴开始了。这对您的电力产量和医疗设施造成了显著的影响",
     "Magnetic storm ended.": "磁暴结束了",
     "Sand Storm": "沙暴",
-    "Sand storm has started, providing significant harm to your electronics as well as crafting efficiency": "沙暴开始了。这对您的电子产品和工艺制造效率造成了显著的影响",
+    "Sand storm has started, providing significant harm to your electronics as well as crafting efficiency": "沙暴开始了。这对您的电力和工艺产量造成了显著的影响",
     "Sand storm ended.": "沙暴结束了",
     "Hurricane": "飓风",
-    "Hurricane started. Your crafting production as well as security service significantly reduced": "飓风开始了。这对您的工艺制造效率和安保造成了显著的影响",
+    "Hurricane started. Your crafting production as well as security service significantly reduced": "飓风开始了。这对您的工艺产量和安保造成了显著的影响",
     "Weather back to normal now": "天气已恢复正常",
     "Star Activity": "恒星活动",
     "Abnormal star activity significantly increased radiation level, causing major issues to all living organisms. Healthcare and organic yield decreased": "异常的恒星活动导致了强烈的宇宙辐射，对所有活物都造成了很大的影响。医疗和有机物合成效率降低",
@@ -2050,6 +2047,7 @@ var cnPrefix = {
     "Temperature modifier: ": "温度修正：",
     "Disasters level: ": "灾害等级：",
     "Star class: ": "恒星种类：",
+    "Event: ": "事件：",
 
 
     //
