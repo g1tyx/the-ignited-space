@@ -1936,7 +1936,8 @@ var cnItems = {
     "Queue is full": "队列已满",
     "Events Filters": "日志过滤",
     "Queue": "队列",
-    "Events": "日志",
+    "Log": "日志",
+    "Events": "事件",
 
     "Show Resources": "显示资源",
     "Hide resources": "隐藏资源",
