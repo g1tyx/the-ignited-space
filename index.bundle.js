@@ -32566,6 +32566,7 @@
           craftman: [],
           job: [],
           laws: [],
+          resources: [],
           totalCount: 0,
         },
         sd =
@@ -32597,14 +32598,15 @@
             o,
             s,
             l,
-            c = n.search,
-            u = (0, r.useState)(""),
-            d = u[0],
-            p = u[1],
-            f = (0, r.useMemo)(
+            c,
+            u = n.search,
+            d = (0, r.useState)(""),
+            p = d[0],
+            f = d[1],
+            h = (0, r.useMemo)(
               function () {
-                if (!c.results) return [];
-                var e = Object.entries(c.results)
+                if (!u.results) return [];
+                var e = Object.entries(u.results)
                   .filter(function (e) {
                     return e[0], e[1].totalCount > 0;
                   })
@@ -32635,31 +32637,31 @@
                   });
                 return e;
               },
-              [c.query]
+              [u.query]
             );
           (0, r.useEffect)(
             function () {
               var e;
-              !d && f.length && p(f[0].id),
-                f.find(function (e) {
-                  return e.id === d;
+              !p && h.length && f(h[0].id),
+                h.find(function (e) {
+                  return e.id === p;
                 }) ||
-                  p(
-                    (null === (e = f[0]) || void 0 === e ? void 0 : e.id) || ""
+                  f(
+                    (null === (e = h[0]) || void 0 === e ? void 0 : e.id) || ""
                   );
             },
-            [f]
+            [h]
           );
-          var h = (0, r.useMemo)(
+          var m = (0, r.useMemo)(
             function () {
               var e;
-              return d
-                ? null === (e = c.results) || void 0 === e
+              return p
+                ? null === (e = u.results) || void 0 === e
                   ? void 0
-                  : e[d]
+                  : e[p]
                 : sd({}, od);
             },
-            [d, c.query]
+            [p, u.query]
           );
           return (0, e.jsxs)(
             "div",
@@ -32677,7 +32679,7 @@
                             "p",
                             sd(
                               { className: "modal-title" },
-                              { children: c.query }
+                              { children: u.query }
                             )
                           ),
                           (0, e.jsx)(
@@ -32707,16 +32709,16 @@
                             sd(
                               { className: "tabs submenu" },
                               {
-                                children: f.map(function (n) {
+                                children: h.map(function (n) {
                                   return (0, e.jsxs)(
                                     "div",
                                     sd(
                                       {
                                         className: "submenu-item ".concat(
-                                          d === n.id ? "selected" : ""
+                                          p === n.id ? "selected" : ""
                                         ),
                                         onClick: function () {
-                                          return p(n.id);
+                                          return f(n.id);
                                         },
                                       },
                                       { children: [n.name, " (", n.count, ")"] }
@@ -32735,7 +32737,7 @@
                                   children: [
                                     (
                                       null ===
-                                        (t = null == h ? void 0 : h.upgrades) ||
+                                        (t = null == m ? void 0 : m.upgrades) ||
                                       void 0 === t
                                         ? void 0
                                         : t.length
@@ -32750,9 +32752,9 @@
                                             },
                                             {
                                               children:
-                                                null == h
+                                                null == m
                                                   ? void 0
-                                                  : h.upgrades.map(function (
+                                                  : m.upgrades.map(function (
                                                       n
                                                     ) {
                                                       return (0, e.jsxs)(
@@ -32803,7 +32805,7 @@
                                     (
                                       null ===
                                         (i =
-                                          null == h ? void 0 : h.buildings) ||
+                                          null == m ? void 0 : m.buildings) ||
                                       void 0 === i
                                         ? void 0
                                         : i.length
@@ -32818,9 +32820,9 @@
                                             },
                                             {
                                               children:
-                                                null == h
+                                                null == m
                                                   ? void 0
-                                                  : h.buildings.map(function (
+                                                  : m.buildings.map(function (
                                                       n
                                                     ) {
                                                       return (0, e.jsxs)(
@@ -32870,7 +32872,7 @@
                                       : null,
                                     (
                                       null ===
-                                        (a = null == h ? void 0 : h.space) ||
+                                        (a = null == m ? void 0 : m.space) ||
                                       void 0 === a
                                         ? void 0
                                         : a.length
@@ -32885,9 +32887,9 @@
                                             },
                                             {
                                               children:
-                                                null == h
+                                                null == m
                                                   ? void 0
-                                                  : h.space.map(function (n) {
+                                                  : m.space.map(function (n) {
                                                       return (0,
                                                       e.jsxs)("div", sd({ className: "search-item" }, { children: [(0, e.jsx)("p", sd({ className: "name" }, { children: n.data.name })), (0, e.jsx)("p", sd({ className: "effect" }, { children: n.effectString }))] }));
                                                     }),
@@ -32897,7 +32899,7 @@
                                       : null,
                                     (
                                       null ===
-                                        (o = null == h ? void 0 : h.job) ||
+                                        (o = null == m ? void 0 : m.job) ||
                                       void 0 === o
                                         ? void 0
                                         : o.length
@@ -32912,9 +32914,9 @@
                                             },
                                             {
                                               children:
-                                                null == h
+                                                null == m
                                                   ? void 0
-                                                  : h.job.map(function (n) {
+                                                  : m.job.map(function (n) {
                                                       return (0,
                                                       e.jsxs)("div", sd({ className: "search-item" }, { children: [(0, e.jsx)("p", sd({ className: "name" }, { children: n.data.name })), (0, e.jsx)("p", sd({ className: "effect" }, { children: n.effectString }))] }));
                                                     }),
@@ -32924,7 +32926,7 @@
                                       : null,
                                     (
                                       null ===
-                                        (s = null == h ? void 0 : h.craftman) ||
+                                        (s = null == m ? void 0 : m.craftman) ||
                                       void 0 === s
                                         ? void 0
                                         : s.length
@@ -32939,9 +32941,9 @@
                                             },
                                             {
                                               children:
-                                                null == h
+                                                null == m
                                                   ? void 0
-                                                  : h.craftman.map(function (
+                                                  : m.craftman.map(function (
                                                       n
                                                     ) {
                                                       return (0, e.jsxs)(
@@ -32991,7 +32993,7 @@
                                       : null,
                                     (
                                       null ===
-                                        (l = null == h ? void 0 : h.laws) ||
+                                        (l = null == m ? void 0 : m.laws) ||
                                       void 0 === l
                                         ? void 0
                                         : l.length
@@ -33006,9 +33008,9 @@
                                             },
                                             {
                                               children:
-                                                null == h
+                                                null == m
                                                   ? void 0
-                                                  : h.laws
+                                                  : m.laws
                                                       .map(function (n) {
                                                         return n.optionIds.map(
                                                           function (t, r) {
@@ -33069,6 +33071,73 @@
                                                         );
                                                       })
                                                       .flat(),
+                                            }
+                                          )
+                                        )
+                                      : null,
+                                    (
+                                      null ===
+                                        (c =
+                                          null == m ? void 0 : m.resources) ||
+                                      void 0 === c
+                                        ? void 0
+                                        : c.length
+                                    )
+                                      ? (0, e.jsx)(
+                                          Da,
+                                          sd(
+                                            {
+                                              id: "search-resource",
+                                              label: "Resources",
+                                              className: "search-results-list",
+                                            },
+                                            {
+                                              children:
+                                                null == m
+                                                  ? void 0
+                                                  : m.resources.map(function (
+                                                      n
+                                                    ) {
+                                                      return (0, e.jsxs)(
+                                                        "div",
+                                                        sd(
+                                                          {
+                                                            className:
+                                                              "search-item",
+                                                          },
+                                                          {
+                                                            children: [
+                                                              (0, e.jsx)(
+                                                                "p",
+                                                                sd(
+                                                                  {
+                                                                    className:
+                                                                      "name",
+                                                                  },
+                                                                  {
+                                                                    children:
+                                                                      n.data,
+                                                                  }
+                                                                )
+                                                              ),
+                                                              (0, e.jsx)(
+                                                                "p",
+                                                                sd(
+                                                                  {
+                                                                    className:
+                                                                      "effect",
+                                                                  },
+                                                                  {
+                                                                    children:
+                                                                      n.effectString,
+                                                                  }
+                                                                )
+                                                              ),
+                                                            ],
+                                                          }
+                                                        )
+                                                      );
+                                                    }),
                                             }
                                           )
                                         )

@@ -30138,21 +30138,24 @@
               (e.getInstance = function () {
                 return e.instance || (e.instance = new e()), e.instance;
               }),
-              (e.prototype.getResourceCapMultiplier = function (e) {
-                var t = [];
+              (e.prototype.getResourceCapMultiplier = function (e, t) {
+                var n = [];
                 if (
                   e === l.RESEARCH &&
                   uN.resources.getResource(l.ANOMALITIES) > 0
                 ) {
-                  var n = 1 + 0.01 * uN.resources.getResource(l.ANOMALITIES);
-                  t.push({
+                  var i =
+                    1 +
+                    0.01 *
+                      (null != t ? t : uN.resources.getResource(l.ANOMALITIES));
+                  n.push({
                     label: "Resource: Anomaly",
-                    value: n,
+                    value: i,
                     id: "resource-anomaly",
                     category: "Resources",
                   });
                 }
-                return t;
+                return n;
               }),
               e
             );
@@ -30787,6 +30790,7 @@
                   job: [],
                   craftman: [],
                   laws: [],
+                  resources: [],
                   totalCount: n.length + r.length + i.length,
                 };
               }),
@@ -30815,11 +30819,11 @@
                         return t.id === e;
                       });
                     }),
-                  o = Wp.filter(function (t) {
-                    var n = G.find(function (t) {
-                      return t.id === e;
+                  o = Wp.filter(function (e) {
+                    var t = G.find(function (t) {
+                      return t.id === e.id;
                     });
-                    return !(!n || !n.unlockCondition(uN));
+                    return !(!t || !t.unlockCondition(uN));
                   })
                     .map(function (e) {
                       return uN.crafting.craftingJobs.processToUI(e);
@@ -30903,6 +30907,7 @@
                     };
                   }),
                   laws: [],
+                  resources: [],
                   totalCount:
                     n.length + a.length + i.length + r.length + o.length,
                 };
@@ -31020,6 +31025,7 @@
                     };
                   }),
                   laws: [],
+                  resources: [],
                   totalCount:
                     n.length + a.length + i.length + r.length + o.length,
                 };
@@ -31154,6 +31160,7 @@
                   }),
                   craftman: [],
                   laws: u,
+                  resources: [],
                   totalCount:
                     r.length + l.length + o.length + a.length + u.length,
                 };
@@ -31274,6 +31281,7 @@
                   }),
                   craftman: [],
                   laws: o,
+                  resources: [],
                   totalCount:
                     n.length + a.length + i.length + r.length + o.length,
                 };
@@ -31342,17 +31350,26 @@
                   job: [],
                   craftman: [],
                   laws: [],
+                  resources: [],
                   totalCount: n.length + r.length + i.length,
                 };
               }),
               (t.prototype.getCapBoostedBy = function (e) {
                 var t = uN.landingZone.landingZoneUpgrades
-                  .dataFromCache()
-                  .filter(function (t) {
-                    return t.maxMult.find(function (t) {
-                      return t.id === e && t.amountValue > 1;
+                    .dataFromCache()
+                    .filter(function (t) {
+                      return t.maxMult.find(function (t) {
+                        return t.id === e && t.amountValue > 1;
+                      });
+                    }),
+                  n = uN.resourceEffect
+                    .getResourceCapMultiplier(e, 1)
+                    .map(function (e) {
+                      return {
+                        effectString: "x".concat(e.value),
+                        data: e.label,
+                      };
                     });
-                  });
                 return {
                   buildings: [],
                   upgrades: t.map(function (t) {
@@ -31372,7 +31389,8 @@
                   job: [],
                   craftman: [],
                   laws: [],
-                  totalCount: t.length,
+                  resources: n,
+                  totalCount: t.length + n.length,
                 };
               }),
               (t.prototype.doSearchResource = function (e) {
