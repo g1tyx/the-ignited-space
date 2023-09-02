@@ -1707,7 +1707,7 @@ var cnItems = {
     //v0.2.7
     "Added new late game content": "增加了新的后期游戏内容",
     "Added new early-game law": "增加了新的前期政策",
-    "Rebalanced prices of some previously added late game buildings ": "调整了部分之前增加的后期建筑的价格",
+    "Rebalanced prices of some previously added late game buildings": "调整了部分之前增加的后期建筑的价格",
     "Added more visualization for ongoing events. Now active events counter displayed next to corresponding right-panel tab name, as well as modified stats are highlighted": "现在会更清晰地展示进行中的事件。页面右侧的标签会显示当前进行中事件的数量，并且目前受事件影响中的资源会有特殊的高亮显示",
     "Added new KP upgrade to boost research production": "增加了影响研究产量的知识升级",
     "Now you can click on resource name to view all unlocked buildings/upgrades/jobs that can impact or be affected by resource": "现在你可以点击资源名称打开一个弹窗，其中会展示所有和它相关的建筑、升级、工作",
@@ -2111,6 +2111,7 @@ var cnItems = {
     "Hide resources": "隐藏资源",
 
     //更新日志标题
+    "v0.2.7 Big Update": "v0.2.7 大型更新",
     "v0.2.6c Tiny Update": "v0.2.6c 微型更新",
     "v0.2.6b Tiny Update": "v0.2.6b 微型更新",
     "v0.2.6a Balance Hotfix": "v0.2.6a 平衡性更新",
