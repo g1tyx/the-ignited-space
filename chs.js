@@ -40,6 +40,8 @@ var cnItems = {
     "Rare Gain": "稀有战利品",
     "Event": "事件",
     "Disaster": "灾害",
+    
+    "Space Buildings": "太空建筑",
 
     //一阶重置
     "Drone Masterity": "无人机精通",
@@ -2248,6 +2250,8 @@ var cnPrefix = {
     "Calm ": "平静 ",
 
     "ETA: ": "预计完成时间：",
+
+    "Search results for resource: ": "资源明细",
 }
 
 //需处理的后缀
