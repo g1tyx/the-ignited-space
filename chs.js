@@ -2230,6 +2230,7 @@ var cnPrefix = {
     "Law Fuel Processing Mode: ": "燃料生产政策：",
     "Law Food Chemical Processing: ": "食品加工政策：",
     "Law Furnace Metal Processing: ": "金属加工政策：",
+    "Law Education: ": "教育政策：",
 
     //
     "Shield: ": "护盾：",
