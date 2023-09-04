@@ -976,11 +976,11 @@ var cnItems = {
     "You know how to review a candidate for a future colony, and how to act when things go wrong. Every point decreases healthcare requirements by 4": "您知道如何审查未来殖民地的候选人，以及当出现问题时如何采取行动。每级使医疗消耗降低 4",
 
     //政策
-    "Experimental Medicine": "实验性医学",
+    /*"Experimental Medicine": "实验性医学",
     "Regulates the use of experimental drugs": "规范实验性药物的使用",
     "Forbid All": "禁止",
     "Clinics are working in a regular way, providing service using only reliable and tested methods": "诊所以正常的方式运作，只使用可靠的传统的方法提供医疗服务",
-    "Allow All": "允许",
+    "Allow All": "允许",*/
     "Using experimental medicine reduces healthcare from clinics, but they also provide a boost to max research": "使用实验性的医疗方案，这会降低诊所的医疗加成，但也会让诊所提供研究上限",
     "Water Filtering Control": "水过滤控制",
     "Changes the water filtration method": "改变水过滤方法",
@@ -993,9 +993,9 @@ var cnItems = {
     "No Extra Support": "无额外支持",
     "Science buildings operate normally": "科学建筑以正常的方式运行",
     "Minor Support": "少量支持",
-    "Grant your scientists better tools to work with. Science buildings consume 25% more power, but provide 5% more research capacity": "为您的科学家提供更好的设备。地面科学建筑消耗额外 25% 的电力，但提供额外 5% 的研究上限",
+    "Grant your scientists better tools to work with. Science buildings consume 25% more power, but provide 2% boost to your researchers per building": "为您的科学家提供更好的设备。地面科研建筑的电力消耗提升 25%，但每级建筑使研究产量提升 2%",
     "Major Support": "大量支持",
-    "Grant your scientists state-of-the-art tools to work on prototypes. Science buildings consume 75% more power, but provide 10% more research capacity": "为您的科学家提供最先进的设备。地面科学建筑消耗额外 75% 的电力，但提供额外 10% 的研究上限",
+    "Grant your scientists state-of-the-art tools to work on prototypes. Science buildings consume 75% more power, but provide 10% more research capacity": "为您的科学家提供最先进的设备。地面科学建筑的电力消耗提升 75%，但每级建筑使研究产量提升 4%",
     "Education": "教育",
     "Educated people tend to be more efficient. Regulate education rules": "受教育的人口会更善于工作。规范您殖民地的教育法规",
     "Voluntary Education": "志愿教育",
@@ -2282,7 +2282,7 @@ var cnPrefix = {
 
     "ETA: ": "预计完成时间：",
 
-    "Search results for resource: ": "资源详情",
+    "Search results for resource: ": "资源详情：",
 }
 
 //需处理的后缀
