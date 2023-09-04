@@ -995,7 +995,7 @@ var cnItems = {
     "Minor Support": "少量支持",
     "Grant your scientists better tools to work with. Science buildings consume 25% more power, but provide 2% boost to your researchers per building": "为您的科学家提供更好的设备。地面科研建筑的电力消耗提升 25%，但每级建筑使研究产量提升 2%",
     "Major Support": "大量支持",
-    "Grant your scientists state-of-the-art tools to work on prototypes. Science buildings consume 75% more power, but provide 10% more research capacity": "为您的科学家提供最先进的设备。地面科学建筑的电力消耗提升 75%，但每级建筑使研究产量提升 4%",
+    "Grant your scientists state-of-the-art tools to work on prototypes. Science buildings consume 75% more power, but provide 4% boost to your researchers per building": "为您的科学家提供最先进的设备。地面科学建筑的电力消耗提升 75%，但每级建筑使研究产量提升 4%",
     "Education": "教育",
     "Educated people tend to be more efficient. Regulate education rules": "受教育的人口会更善于工作。规范您殖民地的教育法规",
     "Voluntary Education": "志愿教育",
