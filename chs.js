@@ -40,6 +40,8 @@ var cnItems = {
     "Rare Gain": "稀有战利品",
     "Event": "事件",
     "Disaster": "灾害",
+    
+    "Space Buildings": "太空建筑",
 
     //一阶重置
     "Drone Masterity": "无人机精通",
@@ -651,7 +653,7 @@ var cnItems = {
     "Antimatter Laboratory": "反物质实验室",
     "Uses special infrastructure to learn more about antimatter. Requires huge amount of power to operate, but provides good bonus to research capacity": "建造特殊的设施来研究反物质。需要巨量电力来运行，但也能提供很高的研究上限",
     "Magnetic Press": "磁力压机",
-    "Uses synthetic neutron-based source of high gravity and magnetic field to optimize production lines. Increase all crafting output by additional 5% per level multiplicative": "合成全新的基于中子的重力和磁场源，来优化所有生产线",
+    "Uses synthetic neutron-based source of high gravity and magnetic field to optimize production lines. Increase all crafting output": "合成全新的基于中子的重力和磁场源，来优化所有生产线",
     "Fuel Purification Station": "燃料纯化站",
     "Uses specific bacteria to improve fuel formula for thermonuclear reactions. Consumes wood and biomass but increase thermonuclear power plant output by 5% additively": "用特殊的细菌来优化热核反应的燃料配方。需消耗木材和生物质来运行，使热核发电站的电力产量增加 5%",
     "Dark Matter Purifier": "暗物质纯化器",
@@ -661,11 +663,11 @@ var cnItems = {
     "Exotic Bacteria Plant": "特殊物质细菌站",
     "Consumes huge amount of biomass and power, but boosts exotic matter gain. Your people however thinking its dangerous. Reduces security and healthcare": "消耗巨量的生物质和水，提高特殊物质产量。您的人民认为这非常危险，因此降低医疗和安保",
     "Big Data Center": "大数据中心",
-    "Use quantum computers clusters to process huge data amount and optimize your industries. Boost some high-tech crafting activities by 3% per level. However your religious people pretty sure wide AI usage is a sin ": "运用量子计算机集群来处理庞大的数据量并优化工业流程。提升部分高科技工艺产品的产量。然而，宗教人士们认为对 AI 的过度滥用是一种罪孽",
+    "Use quantum computers clusters to process huge data amount and optimize your industries. Boost some high-tech crafting activities by 3% per level. However your religious people pretty sure wide AI usage is a sin ": "运用量子计算机集群来处理庞大的数据量并优化工业流程。提升部分高科技工艺产品的产量。然而，宗教人士们认为对 AI 的滥用是一种罪孽",
     "Strange Matter Vessel": "奇异物质容器",
     "Finally you found way to store strange matter. But its still so dangerous...": "终于，您找到了一种能存储奇异物质的方法。但它依然无比危险……",
     "Neutron Core": "中子核心",
-    "Literally consists of your civilization power! Each one boost KP gain by 50% additively": "您文明实力的结晶！每座使本轮游戏的知识获取量增加 50%",
+    "Literally consists of your civilization power! Each one boost KP gain by 50% additively": "这就是您文明实力的璀璨结晶！每座使本轮游戏的知识获取量增加 50%",
 
 
     //
@@ -1564,6 +1566,7 @@ var cnItems = {
     "Laws & Order": "政策与秩序",
     "Prestige": "重置",
     "Settings": "设置",
+    "Presets": "预设",
     "About & Change Log": "关于 & 更新日志",
     "Statistics": "统计",
     "Support project": "支持本游戏",
@@ -1620,6 +1623,9 @@ var cnItems = {
     "Overview": "概览",
     "Population:": "人口：",
     "Free colonists:": "空闲人口：",
+    "Load presets": "载入预设",
+    "Choose here": "在此选择",
+    "Apply Preset": "应用预设",
     "Happiness:": "幸福度：",
     "Happiness affects your colonists productivity. Has no effect on machinery production.": "幸福度会影响殖民者的生产力，不影响建筑物的生产力。",
     "Jobs": "工作",
@@ -1684,6 +1690,9 @@ var cnItems = {
     "Add item to queue when click unavailable": "点击不可用项目直接将其加入队列",
     "On": "开启",
     "Off": "关闭",
+    "Build Residental Disabled": "新建造的人口建筑会默认处于关闭状态",
+    "On": "开启",
+    "Off": "关闭",
     
     //
     "Science": "科学",
@@ -1704,6 +1713,13 @@ var cnItems = {
     "Join our Discord": "加入 Discord 频道",
 
     //更新日志正文
+    //v0.2.7a
+    "Added presets for colonists assignments": "增加了人口分配的预设",
+    "Re-balanced some early game stuff to make it easier": "调整了部分前期内容以降低难度",
+    "Added option in setting to turn off residential by default": "增加了一个选项，可以使新建造的人口建筑默认处于关闭状态",
+    "Added option to pause game": "增加暂停游戏的选项（译注：此时离线时间会自动增长）",
+    "Hitting Ctrl now also works when you click +/-5 buttons": "点击+/-5按钮时 Ctrl 键的功能同样适用",
+    "Fixed some bugs for resource details window": "修复了资源详情窗口的一些bug",
     //v0.2.7
     "Added new late game content": "增加了新的后期游戏内容",
     "Added new early-game law": "增加了新的前期政策",
@@ -2083,7 +2099,7 @@ var cnItems = {
     "The Sun is not a solid object, but rather a giant, churning ball of hot plasma.": "太阳不是一个固体，而是一个巨大的、翻腾的热等离子体球。",
     "Light travels at a speed of approximately 299,792 kilometers per second (186,282 miles per second) in a vacuum. Despite this incredible speed, it still takes over 8 minutes for light from the Sun to reach us on Earth due to the vast distance between the two.": "光在真空中的传播速度约为每秒 299,792 公里（每秒 186,282 英里）。尽管速度如此惊人，但由于太阳与地球之间的距离遥远，太阳光仍然需要 8 分钟以上才能到达地球上的我们。",
     "The Sun's magnetic field is a complex and dynamic system that undergoes a complete reversal of its polarity approximately every 11 years. This phenomenon is known as the solar magnetic field reversal or solar magnetic cycle.": "太阳磁场是一个复杂且动态的系统，大约每 11 年就会发生一次极性完全反转。这种现象被称为太阳磁场反转或太阳磁循环。",
-    '51 Pegasi b, also called "Dimidium," was discovered in 1995 and is located approximately 50 light-years away from Earth in the constellation Pegasus. It was the first exoplanet discovered orbiting a main-sequence star similar to our Sun.': "51 Pegasi b，也称为“Dimidium”，于 1995 年被发现，位于距离地球约 50 光年的飞马座。 这是发现的第一颗围绕类似于太阳的主序恒星运行的系外行星。",
+    '51 Pegasi b, also called "Dimidium," was discovered in 1995 and is located approximately 50 light-years away from Earth in the constellation Pegasus. It was the first exoplanet discovered orbiting a main-sequence star similar to our Sun.': "51 Pegasi B，也称为“Dimidium”（译注：该词为拉丁文的“一半”，意指该行星质量恰好是木星的一半），于 1995 年被发现，位于距离地球约 50 光年的飞马座。 这是发现的第一颗围绕类似于太阳的主序恒星运行的系外行星。",
     "The first exoplanet discovered in the habitable zone of its star is called Gliese 581d. It was discovered in 2007 and is located approximately 20.3 light-years away from Earth in the constellation Libra. It orbits the red dwarf star Gliese 581, which is smaller and cooler than our Sun.": "在其恒星的宜居带中发现的第一颗系外行星被称为 Gliese 581d。它于 2007 年被发现，位于距离地球约 20.3 光年的天秤座。它围绕红矮星 Gliese 581 运行，它比太阳更小、温度更低。",
     "When we think of radiation, we often associate it with electromagnetic waves like X-rays, gamma rays, or visible light. However, radiation can also refer to particles emitted during certain radioactive processes.": "当我们想到辐射时，我们经常将其与 X 射线、伽马射线或可见光等电磁波联系起来。然而，辐射也可以指在某些放射性过程中发射的粒子。",
     "During the Big Bang, high-energy radiation was generated as the universe rapidly expanded and cooled. This radiation, known as the cosmic microwave background (CMB), can still be detected today and is considered one of the strongest pieces of evidence supporting the Big Bang theory.": "大爆炸期间，随着宇宙迅速膨胀和冷却，产生高能辐射。这种辐射被称为宇宙微波背景辐射（CMB），至今仍然可以被检测到，并被认为是支持大爆炸理论的最有力的证据之一。",
@@ -2110,7 +2126,23 @@ var cnItems = {
     "Show Resources": "显示资源",
     "Hide resources": "隐藏资源",
 
+    "Name": "名称",
+    "Load current distribution": "加载当前分配数值",
+    "Load current distribution percentage": "加载当前分配百分比",
+    "Jobs": "工作",
+    "Set as percentage": "设置为百分比",
+    "Set amount": "设置",
+    ", percentage": "（百分比）",
+    "Minimum": "最小值",
+    "Maximum": "最大值",
+    "Craftsmen": "工匠",
+    "Save": "保存",
+    "Jobs Presets": "工作预设",
+
+    "Pause": "暂停",
+
     //更新日志标题
+    "v0.2.7a Small Update": "v0.2.7a 小型更新",
     "v0.2.7 Big Update": "v0.2.7 大型更新",
     "v0.2.6c Tiny Update": "v0.2.6c 微型更新",
     "v0.2.6b Tiny Update": "v0.2.6b 微型更新",
@@ -2228,6 +2260,7 @@ var cnPrefix = {
     "Law Fuel Processing Mode: ": "燃料生产政策：",
     "Law Food Chemical Processing: ": "食品加工政策：",
     "Law Furnace Metal Processing: ": "金属加工政策：",
+    "Law Education: ": "教育政策：",
 
     //
     "Shield: ": "护盾：",
@@ -2248,6 +2281,8 @@ var cnPrefix = {
     "Calm ": "平静 ",
 
     "ETA: ": "预计完成时间：",
+
+    "Search results for resource: ": "资源详情",
 }
 
 //需处理的后缀
