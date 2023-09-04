@@ -1566,6 +1566,7 @@ var cnItems = {
     "Laws & Order": "政策与秩序",
     "Prestige": "重置",
     "Settings": "设置",
+    "Presets": "预设",
     "About & Change Log": "关于 & 更新日志",
     "Statistics": "统计",
     "Support project": "支持本游戏",
@@ -2127,15 +2128,18 @@ var cnItems = {
 
     "Name": "名称",
     "Load current distribution": "加载当前分配数值",
-    "Load current distribution percentage": "加载当前分配比例",
+    "Load current distribution percentage": "加载当前分配百分比",
     "Jobs": "工作",
-    "Set as percentage": "设置为比例",
-    "Set amount ": "设置为数值",
+    "Set as percentage": "设置为百分比",
+    "Set amount": "设置",
+    ", percentage": "（百分比）",
     "Minimum": "最小值",
     "Maximum": "最大值",
     "Craftsmen": "工匠",
     "Save": "保存",
     "Jobs Presets": "工作预设",
+
+    "Pause": "暂停",
 
     //更新日志标题
     "v0.2.7a Small Update": "v0.2.7a 小型更新",
