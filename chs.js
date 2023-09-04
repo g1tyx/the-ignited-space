@@ -667,7 +667,7 @@ var cnItems = {
     "Strange Matter Vessel": "奇异物质容器",
     "Finally you found way to store strange matter. But its still so dangerous...": "终于，您找到了一种能存储奇异物质的方法。但它依然无比危险……",
     "Neutron Core": "中子核心",
-    "Literally consists of your civilization power! Each one boost KP gain by 50% additively": "您文明实力的结晶！每座使本轮游戏的知识获取量增加 50%",
+    "Literally consists of your civilization power! Each one boost KP gain by 50% additively": "这就是您文明实力的璀璨结晶！每座使本轮游戏的知识获取量增加 50%",
 
 
     //
