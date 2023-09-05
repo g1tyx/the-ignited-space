@@ -1135,7 +1135,7 @@ var cnItems = {
     "Mass media freely cover everything happening in society. Raises demands for all services by 20%, but increases the maximum positive effect of each service by 10 units.": "允许大众媒体讨论社会上发生的一切事情。所有服务消耗提升 20%，但使所有服务的可生效上限增加 20",
     "Annihilation Purifiers": "纯化器湮灭反应规范",
     "Control usage of extremely dangerous power of annihilation in your DM purifiers": "您可以规范是否将极度危险的湮灭反应用于强化暗物质纯化器",
-    "Safe Power Source": "禁止使用反物质湮灭。暗物质纯化器以正常的方式工作",
+    "Safe Power Source": "安全能量来源",
     "Antimatter annihilation usage is forbidden": "禁止使用反物质湮灭。暗物质纯化器以正常的方式工作",
     "Limited Antimatter Usage": "轻度使用",
     "Dark matter purifiers using small amount of antimatter but provide bigger bonus to DM production. Religious individuals are dissatisfied with your experiments, as they believe that you are interfering in the affairs of God": "暗物质纯化器会使用少量的反物质，但对暗物质产量的加成增加。宗教人士对你的实验不太满意，因为他们认为你在干涉神的事务",
