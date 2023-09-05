@@ -1712,7 +1712,7 @@ var cnItems = {
     "Add item to queue when click unavailable": "点击不可用项目直接将其加入队列",
     "On": "开启",
     "Off": "关闭",
-    "Build Residental Disabled": "新建造人口建筑的默认状态",
+    "Build Residental Disabled": "新建造的人口建筑需手动开启",
     "On": "开启",
     "Off": "关闭",
     
