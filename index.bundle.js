@@ -55,7 +55,7 @@
       },
       51: (e, n, t) => {
         "use strict";
-        t.d(n, { Z: () => g });
+        t.d(n, { Z: () => y });
         var r = t(8081),
           i = t.n(r),
           a = t(3645),
@@ -65,22 +65,30 @@
           c = new URL(t(947), t.b),
           u = new URL(t(1538), t.b),
           d = new URL(t(5874), t.b),
-          p = o()(i()),
-          f = l()(c),
-          h = l()(u),
-          m = l()(d);
-        p.push([
+          p = new URL(t(6087), t.b),
+          f = new URL(t(2336), t.b),
+          h = o()(i()),
+          m = l()(c),
+          g = l()(u),
+          v = l()(d),
+          b = l()(p),
+          x = l()(f);
+        h.push([
           e.id,
           "\nbody {\n    padding: 0;\n    margin: 0;\n}\n\nbody * {\n    box-sizing: border-box;\n    font-family: 'Abel', sans-serif;;\n}\n\nbutton, input {\n    border: 1px solid #777;\n    border-radius: 5px;\n    padding: 10px;\n}\n\ninput {\n    padding: 5px;\n}\n\ninput[type=\"file\"] {\n    display: none;\n}\n\nbutton {\n    cursor: pointer;\n    padding: 8px 12px;\n}\n\nbutton.secondary {\n    background: rgb(35, 68, 92);\n}\n\nbutton.med {\n    min-width: 80px;\n}\n\nbutton.big {\n    min-width: 130px;\n}\n\nbutton.danger {\n    background: rgb(223,53,54);\n}\n\n.page {\n    height: 100vh;\n}\n\n.game {\n    display: flex;\n}\n\n.game .content {\n    flex: 1;\n    padding-left: 20px;\n    padding-right: 20px;\n    font-size: 14px;\n    height: calc(100vh - 160px);\n    /*overflow-y: auto;*/\n}\n\n.game .right-panel {\n    position: relative;\n    height: calc(100vh - 160px);\n}\n\n.game .right-panel.expanded {\n    width: 320px;\n    padding: 0 16px;\n}\n\n.game .right-panel.collapsed {\n    width: 0;\n}\n\n.game .right-panel.collapsed .submenu {\n    display: none;\n}\n\n.game .right-panel .expand-collapse-panel {\n    position: absolute;\n    display: flex;\n    width: 32px;\n    height: 32px;\n    font-size: 20px;\n    left: 0px;\n    top: 0px;\n    justify-content: center;\n    align-items: center;\n    cursor: pointer;\n    border-radius: 4px;\n}\n\n.game .right-panel .submenu {\n    margin-left: 48px;\n}\n\n.game .right-panel.collapsed .expand-collapse-panel {\n    left: -48px;\n}\n\n.game .right-panel .add-to-queue select,\n.game .right-panel .add-to-queue button\n{\n    margin: 5px 0;\n    width: 140px;\n}\n\n.game .right-panel .queue-item {\n    display: flex;\n    justify-content: space-between;\n    padding: 5px 0;\n    align-items: center;\n    font-size: 12px;\n}\n\n.game .right-panel .queue-item .move-controls {\n    width: 30px;\n    display: flex;\n    justify-content: space-between;\n}\n\n.game .right-panel .queue-item .move-controls .move {\n    cursor: pointer;\n    padding: 5px;\n}\n\n.game .right-panel .queue-item p {\n    margin: 5px 0;\n    width: 140px;\n    text-overflow: ellipsis;\n}\n\n.game .right-panel .event-item {\n    font-size: 12px;\n}\n\n.game .right-panel .event-item.colonist-arrived .line,\n.game .right-panel .event-item.expedition-arrived .line{\n    color: #90fd70;\n}\n\n.game .right-panel .event-item.colonist-died .line {\n    color: #ff6767;\n}\n\n.game .right-panel .event-item .time {\n    color: #9799f9;\n}\n.game .right-panel .event-item .line {\n    display: inline-block;\n    margin-left: 8px;\n}\n\n.game .right-panel .filters .feature-list {\n    display: flex;\n    flex-wrap: wrap;\n}\n\n.game .right-panel .filters .feature-list .filter-entry{\n    width: 130px;\n}\n\n\n.game .sidebar {\n    height: calc(100vh - 160px);\n}\n\n.header {\n    height: 140px;\n}\n\n.header .top {\n    padding: 16px;\n    display: flex;\n    justify-content: space-between;\n}\n\n.header .top h1 {\n    margin: 0 0 20px;\n}\n\n.header .menu ul {\n    list-style: none;\n    display: flex;\n    padding: 0;\n    margin: 0 0 8px;\n}\n\n.header .menu ul li .menu-inner {\n    padding: 8px 16px;\n    cursor: pointer;\n}\n\n.flex {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n}\n\n.sidebar {\n    padding: 0;\n    margin: 0;\n}\n\n.resources-sidebar .resource-item {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    padding: 5px 8px;\n    font-size: 14px;\n}\n\n.resources-sidebar .resource-item p {\n    margin: 0;\n    position: relative;\n    min-width: 60px;\n}\n\n\n.resources-sidebar .resource-item .resource {\n    width: 85px;\n}\n\n.features-block {\n    border: 1px solid #222;\n    padding: 12px;\n    border-radius: 4px;\n    margin-bottom: 8px;\n}\n\n.features-block .features-title {\n    margin-bottom: 16px;\n    font-size: 16px;\n    display: flex;\n    justify-content: space-between;\n}\n\n.feature-list.flex {\n    flex-wrap: wrap;\n    justify-content: flex-start;\n}\n\n.buildings-wrap .chips-wrap .chip {\n    width: 270px;\n}\n\n.chips-wrap .chip {\n    width: 200px;\n    height: 40px;\n    padding: 8px;\n    border: 1px solid #234;\n    border-radius: 4px;\n    position: relative;\n    margin: 5px 20px;\n    font-size: 15px;\n    position: relative;\n    background-color: #222222;\n}\n\n.chips-wrap .chip .bg {\n    position: absolute;\n    height: 100%;\n    top: 0;\n    left: 0;\n    background-color: #172334;\n    border-radius: 4px;\n}\n\n.animated .chips-wrap .chip .bg {\n    transition-property: width;\n    transition-duration: 0.2s;\n}\n\n.chips-wrap.building-unlock .chip .bg {\n    background-color: #376384;\n}\n\n.chips-wrap.resource-unlock .chip .bg {\n    background-color: #377334;\n}\n\n.chips-wrap.special .chip .bg {\n    background-color: #775374;\n}\n\n\n.chips-wrap .chip .chip-content {\n    position: absolute;\n    height: 100%;\n    width: 100%;\n    top: 0;\n    left: 0;\n    display: flex;\n    align-items: center;\n}\n\n.chips-wrap .chip .chip-content .stick-left {\n    flex: 1;\n    padding-left: 5px;\n    cursor: pointer;\n}\n\n.chips-wrap .chip .name-label {\n    text-overflow: ellipsis;\n    max-width: calc(100% - 30px);\n    white-space: nowrap;\n    overflow: hidden;\n    display: inline-block;\n    user-select: none;\n}\n\n.chips-wrap.disabled .chip {\n    color: #999;\n    cursor: not-allowed;\n    border-color: #444;\n}\n\nbody .chips-wrap.warning .chip {\n    border-color: rgba(244, 202, 44, 0.3);\n}\n\nbody .chips-wrap.warning .chip:after {\n    background-image: url(" +
-            f +
-            ");\n    background-size: 25px 25px;\n    display: block;\n    position: absolute;\n    width: 25px;\n    height: 25px;\n    z-index: 3;\n    content: '';\n    top: -10px;\n    right: -10px;\n}\n\n.chips-wrap.usage-highlight .chip {\n    border-color: #eeaa44;\n}\n\n.chips-wrap.disabled.blocked.soft-lock .chip {\n    color: #ff5757;\n    cursor: not-allowed;\n}\n\n.chips-wrap.disabled.soft-lock .chip {\n    color: #ffa767;\n    cursor: not-allowed;\n}\n\n.chips-wrap.enabled .chip .chip-content .stick-left:hover {\n    filter: brightness(140%);\n}\n\n.chips-wrap .chip .stick-right {\n    position: absolute;\n    right: 8px;\n    top: 2px;\n    display: flex;\n    align-items: center;\n}\n\n.chips-wrap .chip .level-label {\n    padding: 5px;\n    font-size: 12px;\n    border-radius: 8px;\n}\n\n.chips-wrap .chip .controls {\n    display: block;\n    font-size: 18px;\n    padding: 3px 2px;\n}\n\n.chips-wrap .chip .controls .control {\n    display: block;\n    width: 24px;\n    height: 24px;\n    text-align: center;\n    cursor: pointer;\n}\n.chips-wrap .chip .controls.disabled .control {\n    display: block;\n    width: 24px;\n    height: 24px;\n    text-align: center;\n    cursor: not-allowed;\n}\n\n.chips-wrap .chip .controls:not(.disabled) .control:hover {\n    border-radius: 50%;\n}\n\n.description-hint {\n    padding: 16px;\n    border-radius: 4px;\n}\n\n.description-hint .description {\n    font-size: 13px;\n}\n\n.description-hint .wrap {\n    padding: 8px 0;\n}\n\n.cost-block {\n    width: 160px;\n    padding-bottom: 4px;\n}\n\n.cost-block p.requirement,\n.gain-block p.requirement{\n    font-size: 13px;\n    padding-bottom: 2px;\n    margin-bottom: 2px;\n    margin-top: 4px;\n    display: flex;\n    justify-content: space-between;\n}\n\n.gain-block p.requirement.green {\n    color: #90fd70;\n}\n\n.gain-block p.requirement.red {\n    color: #ff6767;\n}\n\n.cost-block .requirement.missing {\n    color: #ff6767;\n}\n\n.cost-block .progressBar {\n    width: 100%;\n    position: relative;\n    height: 3px;\n    background: #333;\n}\n\n.cost-block .progressBar .filling {\n    background: #575989;\n    height: 100%;\n    position: absolute;\n    top: 0px;\n    left: 0px;\n}\n\n.submenu {\n    display: flex;\n    justify-content: flex-start;\n}\n\n.submenu .submenu-item {\n    padding: 8px 16px;\n    cursor: pointer;\n}\n\n.jobs .feature-list {\n    display: flex;\n    flex-wrap: wrap;\n}\n\n.job-card {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    width: 380px;\n    padding: 8px;\n    margin: 8px;\n    border-radius: 4px;\n}\n\n.job-card .job-labour {\n    width: 40px;\n    padding-left: 5px;\n}\n\n.job-card .title {\n    width: 160px;\n}\n.job-card .set-amount {\n    display: flex;\n    align-items: center;\n}\n\n\n.job-card .set-amount button {\n    width: 30px;\n    height: 30px;\n    border-radius: 4px;\n    padding: 4px;\n    cursor: pointer;\n    margin: 0 4px;\n}\n\n.job-card .set-amount input {\n    width: 80px;\n    height: 30px;\n    border-radius: 4px;\n}\n\n.resources-sidebar {\n    height: calc(100% - 40px);\n    display: flex;\n    flex-direction: column;\n}\n\n.resources-sidebar .main-resources-wrap {\n    max-height: calc(100vh - 550px);\n}\n\n.resources-sidebar .main-resources-wrap .main-resources {\n    height: 100%;\n}\n\n.resources-sidebar .bottom-block {\n    position: absolute;\n    bottom: 12px\n}\n\n.resources-sidebar .secondary-resources {\n    display: flex;\n    flex: 1;\n    min-height: 0px;\n}\n\n.resources-sidebar .secondary-resources .secondary-wrap {\n    width: 100%;\n}\n\n.resources-sidebar .secondary-resources .container-scrollable {\n    height: calc(100% - 50px);\n}\n\n.heading-pre-menu {\n    display: flex;\n}\n\n.heading-pre-menu .env-wrap {\n    margin-left: 40px;\n    display: flex;\n}\n.heading-pre-menu .env-wrap p {\n    margin: 5px 0;\n}\n\n.heading-pre-menu .env-wrap .time-wrap {\n    margin-left: 20px;\n}\n\n.heading-pre-menu .env-wrap .use-mult {\n    display: flex;\n}\n\n.heading-pre-menu .env-wrap .use-mult .item {\n    margin-right: 10px;\n    text-decoration: underline;\n    cursor: pointer;\n}\n\n.heading-pre-menu .env-wrap .use-mult .item.selected {\n    color: #ee7744;\n}\n\n.inner .editor-wrap.columns {\n    height: calc(100vh - 220px);\n}\n\n.inner .editor-wrap.columns .ship-stats-wrap {\n    height: calc(100vh - 340px);\n}\n\n.small-note {\n    font-size: 12px;\n    font-style: italic;\n}\n\n@media screen and (max-height: 850px) {\n\n   /* .resources-sidebar .main-resources {\n        height: calc(100vh - 550px);\n    }*/\n\n    .resources-sidebar .secondary-resources .container-scrollable {\n        height: 150px;\n    }\n\n}\n\n.hint-caps p {\n    display: flex;\n    justify-content: space-between;\n    font-size: 12px;\n    margin: 4px;\n}\n\n.break-down .block {\n    padding-left: 12px;\n    padding-bottom: 12px;\n}\n\n.break-down .block p {\n    display: flex;\n    justify-content: space-between;\n    font-size: 12px;\n    margin: 4px;\n}\n\n.break-down .block p span:first-child {\n    margin-right: 20px;\n}\n\n.fit-height {\n    height: 100%;\n}\n\n.inner-scrollable.planet,\n.inner-scrollable.science {\n    height: calc(100% - 35px);\n}\n\n.inner {}\n\n.goal-paper {\n    width: 320px;\n    height: 100px;\n    padding: 4px;\n}\n\n.goal-paper .goal-container p {\n    font-size: 12px;\n    margin: 5px;\n}\n\n.goal-paper .goal-container .goal-req {\n    display: flex;\n    justify-content: space-between;\n}\n\n.goal-req.complete span{\n    color: #45cd45;\n}\n\n.goal-paper.features-block .features-title {\n    margin-bottom: 8px;\n}\n\n.settings .set-row {\n    display: flex;\n    padding: 4px;\n}\n\n.settings .set-row .label {\n    width: 30%;\n}\n\n.settings .set-row .val textarea {\n    height: 100px;\n    width: 300px;\n    margin: 5px 0px;\n    display: block;\n}\n\n.happiness .factor-wrap {\n    margin-right: 25px;\n    padding-right: 15px;\n}\n\n.overview.population .line {\n    display: flex;\n    flex-wrap: wrap;\n}\n\n.overview.population .line p{\n    width: 150px;\n}\n\n.overview.happiness .feature-list .line {\n    display: flex;\n    flex-wrap: wrap;\n}\n\n.law-description .title {\n    font-weight: bold;\n}\n\n.laws-list .law-box {\n    padding: 10px;\n}\n\n.laws-list .law-box .law-options {\n    display: flex;\n}\n\n.laws-list .law-box .law-options .option-box {\n    padding: 4px 12px;\n    cursor: pointer;\n    margin: 0 10px;\n}\n\n.law-option-inner p {\n    margin: 0;\n}\n\n.version-panes {\n    display: flex;\n}\n\n.version-title {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n}\n\n.version-panes .about {\n    margin: 0 30px;\n    max-width: 300px;\n}\n\n.goal-paper.features-block .features-title span {\n    color: #ee7744;\n}\n\n.goal-paper.features-block {\n    border-color: #233444;\n}\n\n.transmit-wrap .bold {\n    color: #ee7744;\n    font-weight: bold;\n}\n\n.popup-link {\n    color: #ee7744;\n    cursor: pointer;\n}\n\n.expeditions-wrap .chips-wrap .chip {\n    width: 340px;\n    margin-left: 10px;\n    margin-top: 10px;\n}\n\n.notification-container {\n    position: relative;\n}\n\n.notification-container.label-wrap {\n    padding-right: 18px;\n}\n\n.notification-container span.new-label {\n    position: absolute;\n    display: block;\n    top: 0;\n    right: 0;\n    width: 15px;\n    height: 15px;\n    border-radius: 50%;\n    background-color: #ee7744;\n}\n\n.animated .notification-container span.new-label {\n    animation: blinkingBackground 2s infinite;\n}\n\n@keyframes blinkingBackground{\n    0%\t\t{ background-color: #ee7744;}\n    25%\t\t{ background-color: #fd5020;}\n    50%\t\t{ background-color: #ef0a1a;}\n    75%\t\t{ background-color: #fd5020;}\n    100%\t        { background-color: #ee7744;}\n}\n\n.notification-container.action-wrap span.new-label,\n.notification-container.building-wrap span.new-label,\n.notification-container.upgrade-wrap span.new-label,\n.notification-container.science-wrap span.new-label {\n    right: 10px;\n}\n\n.notification-container span.new-label::after{\n    content: '!';\n    color: #fff;\n    padding-left: 6px;\n    display: block;\n    margin-top: -3px;\n}\n\n.buildings-cat-label {\n    padding-right: 20px;\n}\n\n.science-wrap {\n    width: 238px;\n}\n\n.expeditions-mode {\n    display: flex;\n    justify-content: space-around;\n}\n\n.expeditions-mode span {\n    font-size: 14px;\n}\n\n.expeditions-mode .mode {\n    text-decoration: underline;\n    margin-top: 0px;\n    font-size: 14px;\n    cursor: pointer;\n}\n\n.expeditions-mode .mode.selected {\n    color: #ee7744;\n}\n\n.change-log {\n    height: calc(100vh - 160px);\n}\n\n.research-body .feature-list{\n    height: calc(100vh - 330px);\n}\n\n.search-wrap .chips-wrap .chip {\n    margin-left: 0;\n}\n\n.search-filter {\n    margin-top: 12px;\n    margin-bottom: 8px;\n}\n.search-filter p {\n    font-size: 16px;\n}\n\n.list-wrap.planets-wrap {\n    width: 220px;\n}\n\n\n@media screen and (min-width: 1900px){\n\n/*    body .game .sidebar {\n        height: auto;\n    }*/\n\n    body .game .content {\n        font-size: 16px;\n    }\n\n    body .chips-wrap .chip {\n        width: 250px;\n        font-size: 17px;\n    }\n\n    body .buildings-wrap .chips-wrap .chip {\n        width: 300px;\n    }\n\n    body .chips-wrap .chip .level-label {\n        font-size: 14px;\n    }\n\n    body .chips-wrap .chip .controls {\n        display: block;\n        font-size: 20px;\n        padding: 3px 2px;\n    }\n\n    body .chips-wrap .chip .controls.disabled .control {\n        width: 28px;\n        height: 28px;\n    }\n\n    body .resources-sidebar .resource-item {\n        font-size: 16px;\n    }\n\n    body .features-block .features-title .collapse-expand {\n        font-size: 15px;\n    }\n\n    body .header .menu-item .menu-inner {\n        font-size: 17px;\n    }\n\n    body .features-block .features-title {\n        font-size: 17px;\n    }\n}\n\n@media screen and (max-width: 1280px){\n    .header {\n        height: 160px;\n    }\n\n    .header .menu ul {\n        flex-wrap: wrap;\n    }\n}\n\n.show-hide-resources {\n    display: none;\n}\n\n.info-tooltip {\n    display: none;\n}\n\n.statistics-list .stat-item {\n    padding: 4px 8px;\n    display: flex;\n}\n\n.statistics-list .stat-item p {\n    margin: 0;\n}\n\n.statistics-list .stat-item .label {\n    width: 40%;\n}\n\n.preloader {\n    position: fixed;\n    z-index: 1;\n    top: 0;\n    height: 100vh;\n    width: 100vw;\n    background-color: #09010f;\n    z-index: 5;\n}\n\n.preloader .logo-container {\n    height: min(100vh - 400px, 500px);\n    margin: calc(max(50px, 100vh - 800px)) auto auto;\n    width: 100%;\n    text-align: center;\n}\n\n.preloader .logo-container img {\n    object-fit: contain;\n    margin: auto;\n    height: 100%;\n}\n\n.preloader .loading-container {\n    display: flex;\n    justify-content: center;\n    margin-top: 40px;\n}\n\n.preloader .loading-container .loading-inner {\n    display: flex;\n    align-items: center;\n    width: 150px;\n    justify-content: space-between;\n}\n.preloader .loading-container .loading-inner * {\n    color: #fff;\n}\n\n\n.preloader .loading-container .loading-text {\n    font-weight: bold;\n    font-size: 24px;\n    color: #fff;\n}\n\n.preloader .loading-container .did-you-knew {\n    text-align: center;\n    padding: 0 20px;\n    color: #fff;\n}\n\n.preloader .loading-container .did-you-knew * {\n    color: #fff;\n}\n\n.preloader .loading-container .did-you-knew .title {\n    font-size: 18px;\n    font-weight: bold;\n    display: block;\n    margin-bottom: 10px;\n    color: #fff;\n}\n\n.eff-dropped {\n    color: #ee7744;\n    font-style: italic;\n    font-size: 12px;\n}\n\n.eff-dropped .missing-resource {\n    display: block;\n}\n\n.editor-wrap.columns {\n    display: flex;\n    justify-content: space-between;\n}\n.editor-wrap.columns .column {\n    padding: 20px;\n}\n\n.loader-column {\n    width: 240px;\n    height: calc(100% - 40px);\n    border: 1px solid #222;\n}\n\n.loader-column .select-item {\n    padding: 5px 10px;\n    cursor: pointer;\n    display: flex;\n    justify-content: space-between;\n}\n\n.loader-column .select-item.invalid {\n    color: #ff6767;\n}\n\n.loader-column .select-item .delete-model.disabled {\n    cursor: default;\n    color: #999999;\n}\n\n.loader-column .select-item:hover {\n    color: #ee7744;\n}\n\n.loader-column .select-item.selected {\n    font-weight: bold;\n    cursor: default;\n}\n\n.editor-wrap {\n    height: calc(100vh - 200px);\n}\n\n.editor-column {\n    flex: 1;\n    height: calc(100vh - 240px);\n}\n\n.editor-column .slot-container.invalid .heading-wrap p {\n    color: #ff6767;\n}\n\n.editor-column .slot-container select {\n    margin-right: 10px;\n    width: 140px;\n}\n\n.editor-totals .editor-row {\n    margin: 8px 0;\n}\n\n.editor-totals .editor-row button {\n    width: 140px;\n}\n\n.editor-totals .stats .row {\n    display: flex;\n    justify-content: space-between;\n}\n\n.editor-totals .stats .row p {\n    margin: 0;\n    padding: 5px 5px;\n}\n\n.editor-totals .validation-error {\n    margin-bottom: 16px;\n    margin-top: 8px;\n    color: #fd3030;\n}\n\n.slot-container-outer .stats-wrap {\n    display: flex;\n}\n\n.slot-container-outer .stats-wrap > div {\n    margin: 0 10px;\n}\n\n.ship-totals .row {\n    display: flex;\n    justify-content: space-between;\n}\n\n.ship-totals .row p {\n    margin: 0;\n    padding: 5px 5px;\n    font-size: 13px;\n}\n\n.hangar-wrap {\n    display: flex;\n    flex-wrap: wrap;\n}\n\n.spaceship-inner-wrap .title-wrap {\n    display: flex;\n    justify-content: space-between;\n}\n\n.spaceship-card {\n    width: 300px;\n    padding: 20px;\n    border: 1px solid #222222;\n    border-radius: 4px;\n    margin: 10px;\n}\n\n.spaceship-inner-wrap .chips-wrap .chip {\n    margin: 5px 0px;\n    width: 260px;\n}\n.spaceship-inner-wrap .button {\n    width: 260px;\n}\n\n.editor-column.fleets .line-wrap {\n    display: flex;\n    flex-wrap: wrap;\n}\n\n.editor-column.fleets .line-wrap .slot-container {\n    padding: 10px;\n    border: 1px solid #222;\n    margin: 10px;\n    width: 200px;\n}\n\n.battle-wrap .top-pane {\n    display: flex;\n    justify-content: space-between;\n    padding: 10px;\n    border: 1px solid #222;\n}\n\n.battle-content .battle-centered {\n    margin-top: calc(max(10vh, 30px));\n    text-align: center;\n}\n\n.travel-bar {\n    width: 50%;\n    position: relative;\n    height: 12px;\n    margin: auto;\n}\n\n.travel-bar .travel-bar-inner {\n    position: absolute;\n    top: 0;\n    left: 0;\n    height: 10px;\n}\n\n.animated .travel-bar .travel-bar-inner {\n    transition-property: width;\n    transition-duration: 0.2s;\n}\n\n.fight-space {\n    position: relative;\n    width: 100%;\n    height: calc(100vh - 310px);\n    border: 1px solid #222;\n}\n\n.fight-space .bullet {\n    width: 4px;\n    height: 4px;\n    border-radius: 50%;\n    position: absolute;\n}\n\n.animated .fight-space .bullet {\n    transition-property: left, top;\n    transition-duration: 0.2s;\n    transition-delay: 0s;\n    transition-timing-function: linear;\n}\n\n.fight-space .bullet.side-0 {\n    background-color: #77dddd;\n}\n\n.fight-space .bullet.side-1 {\n    background-color: #dd7777;\n}\n\n.fight-space .space-unit {\n    position: absolute;\n}\n\n.fight-space .space-unit .name-cont {\n    font-size: 12px;\n    margin: 0;\n}\n\n.fight-space .space-unit .image-container {\n    width: 40px;\n    height: 40px;\n}\n\n.fight-space .space-unit .image-container.enemy {\n    background-image: url(" +
-            h +
-            ");\n    background-size: contain;\n    transform: rotate(180deg);\n}\n\n.fight-space .space-unit .image-container.my {\n    background-image: url(" +
             m +
-            ");\n    background-size: contain;\n}\n\n.bars-container .bar-outer {\n    height: 8px;\n    width: 50px;\n    position: relative;\n    border: 1px solid #222;\n    background-color: #999999;\n}\n\n.bars-container.wide .bar-outer {\n    width: 120px;\n}\n\n.bars-container .bar-outer .bar-inner {\n    height: 6px;\n    position: absolute;\n    left: 0;\n    top: 0;\n}\n\n.bars-container .bar-outer.shield-bar .bar-inner {\n    background-color: #589dd7;\n}\n\n.bars-container .bar-outer.durability-bar .bar-inner {\n    background-color: #58dd77;\n}\n\n.bars-container .bar-outer.recharge-bar .bar-inner {\n    background-color: #e8dd67;\n}\n\n.bars-container .bar-outer.pilot .bar-inner {\n    background-color: #58add7;\n}\n\n.current-planet-wrap .feature-list {\n    display: flex;\n    justify-content: space-between;\n    flex-wrap: wrap;\n}\n\n.description-hint .att {\n    margin: 5px 0;\n    font-size: 14px;\n}\n\n.star-modifs p {\n    margin: 5px 5px;\n    font-size: 13px;\n}\n\n@media screen and (max-width: 860px){\n\n    .resources-sidebar .main-resources-wrap {\n        max-height: unset;\n    }\n\n    .game .sidebar {\n        height: auto;\n    }\n\n    .heading-pre-menu {\n        display: block;\n    }\n\n    .heading-pre-menu .env-wrap {\n        margin-left: 12px;\n    }\n    /* Mobile version */\n    .header .menu ul li {\n        width: 160px;\n    }\n\n    .header {\n        height: auto;\n    }\n\n    .game {\n        display: block;\n    }\n\n    .page {\n        height: auto;\n        min-height: 100vh;\n    }\n\n    .resources-sidebar {\n        width: 100%;\n        height: auto;\n    }\n\n    .resources-sidebar .secondary-resources .container-scrollable {\n        height: auto;\n    }\n\n    body .show-hide-resources {\n        display: block;\n        padding: 5px 10px;\n    }\n\n    .resources-sidebar.hidden {\n        display: none;\n    }\n\n    .header .top {\n        display: block;\n    }\n\n    .header .menu ul li.selected .menu-inner {\n        border-bottom: 1px solid #344555;\n        background: #344555;\n        color: #ee7744;\n        padding-bottom: 8px;\n    }\n\n    .header .menu ul li .menu-inner {\n        border: 1px solid #344555;\n    }\n\n    .bottom-block {\n        display: none;\n    }\n\n    .goal-paper.features-block {\n        width: 100%;\n        height: auto;\n    }\n\n    body .chips-wrap .chip {\n        width: 250px;\n        font-size: 17px;\n    }\n\n    body .feature-list.flex {\n        display: block;\n    }\n\n    body .chips-wrap .chip {\n        width: 80%;\n        font-size: 17px;\n    }\n\n    body .buildings-wrap .chips-wrap .chip {\n        width: 80%;\n        font-size: 17px;\n    }\n\n    body .job-card-wrap .job-card {\n        min-width: 80vw;\n        font-size: 17px;\n    }\n\n    body .info-tooltip {\n        display: block;\n    }\n\n    body .info-tooltip .info-tooltip-inner{\n        display: flex;\n        width: 28px;\n        height: 28px;\n        background: #575989;\n        border-radius: 50%;\n        font-size: 20px;\n        align-items: center;\n        justify-content: center;\n        margin-left: 5px;\n        margin-right: 5px;\n    }\n\n    body .mobile-tooltip {\n        position: absolute;\n        width: calc(100vw - 100px);\n        height: calc(100vh - 100px);\n        top: 50px;\n        left: 50px;\n        background: #131518;\n        padding: 20px;\n        border: 1px solid #223344;\n    }\n\n    body .mobile-tooltip-wrap {\n        background: rgba(21,21,21,0.7);\n        position: fixed;\n        top: 0;\n        left: 0;\n        width: 100vw;\n        height: 100vh;\n        z-index: 3;\n    }\n\n    body .mobile-tooltip-wrap.hidden {\n        display: none;\n    }\n\n    body .mobile-tooltip .head {\n        display: flex;\n        justify-content: space-between;\n    }\n\n    body .mobile-tooltip .head .close {\n        font-size: 20px;\n    }\n\n    body .mobile-tooltip-wrap .mobile-tooltip .body {\n        max-height: calc(100% - 40px);\n        overflow-y: scroll;\n    }\n\n    .settings .set-row .val textarea {\n        width: calc(0.6 * 100vw);\n    }\n\n    body .resources-sidebar .resource-item p {\n        display: flex;\n        font-size: 16px;\n    }\n\n    body .science-wrap {\n        width: auto;\n    }\n\n    .version-panes {\n        display: block;\n    }\n\n    body .inner-scrollable.planet,\n    body .inner-scrollable.science {\n        height: auto;\n    }\n\n    body .game .content {\n        height: auto;\n    }\n\n    body .resources-sidebar .resource-item {\n        padding: 3px 8px;\n    }\n\n    body .resources-sidebar .main-resources {\n        height: auto;\n    }\n\n    body .resources-sidebar .secondary-resources {\n        height: auto;\n    }\n\n    body .editor-wrap.columns {\n        display: flex;\n        flex-direction: column;\n    }\n\n    body .editor-wrap.columns .column {\n        height: auto;\n        width: 100%;\n    }\n\n    body .editor-wrap.columns .column.editor-totals {\n        order: 2;\n    }\n\n    body .editor-wrap.columns .column.editor-column {\n        order: 1;\n    }\n\n    body .inner .editor-wrap.columns .ship-stats-wrap {\n        height: auto;\n    }\n\n    body .battle-wrap .top-pane {\n        display: block;\n    }\n\n    body .battle-wrap .top-pane > div {\n        margin-bottom: 10px;\n    }\n\n    body .battle-wrap .bars-container.wide .bar-outer {\n        width: calc(100% - 120px);\n    }\n\n    body .battle-wrap .bars-container.wide {\n        display: flex;\n    }\n\n    body .battle-wrap .top-pane button,\n    body .battle-wrap .top-pane select{\n        width: calc(100% - 40px);\n    }\n\n    body .battle-wrap .top-pane input[type=\"number\"] {\n        width: calc(100% - 80px);\n    }\n\n    body .battle-content .battle-centered {\n        padding-bottom: 30px;\n    }\n}\n\n@media screen and (max-width: 650px){\n\n\n}\n\np.no-margin {\n    margin-top: 4px;\n    margin-bottom: 8px;\n}\n\n.queue-list .queue-utils {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    font-size: 13px;\n}\n\n.clickable-highlight {\n    cursor: pointer;\n}\n\n.expeditions-map .map-cell {\n    width: 30px;\n    height: 30px;\n    box-sizing: border-box;\n}\n\n.expeditions-map .map-cell.selected {\n    width: 30px;\n    height: 30px;\n    box-sizing: border-box;\n    border: 1px solid #ff6767;\n}\n\n.expeditions-map .map-cell.current {\n    width: 30px;\n    height: 30px;\n    box-sizing: border-box;\n    border: 1px solid #56afff;\n}\n\n.expeditions-map .map-cell.home {\n    background: #222222;\n}\n\n.expeditions-map .map-row {\n    display: flex;\n}\n\n.description-hint .loot-line {\n    display: flex;\n}\n\n.description-hint .loot-line p {\n    margin-right: 20px;\n}\n\n.description-hint .loot-line p{\n    font-size: 13px;\n}\n\n.happiness .line .factor {\n    position: relative;\n    min-width: 100px;\n}\n\n.resources-sidebar .resource-item p.boosted::after,\n.happiness .line .factor.boosted::after {\n    display: block;\n    position: absolute;\n    content: 'E';\n    font-size: 12px;\n    background: #30ad30;\n    color: #fff;\n    top: 0;\n    right: 0;\n    width: 14px;\n    height: 14px;\n    border-radius: 50%;\n    text-align: center;\n    padding: 1px;\n}\n\n.resources-sidebar .resource-item p.decreased::after,\n.happiness .line .factor.decreased::after {\n    display: block;\n    position: absolute;\n    content: 'E';\n    font-size: 12px;\n    background: #ff3030;\n    color: #fff;\n    top: 0;\n    right: 0;\n    width: 14px;\n    height: 14px;\n    border-radius: 50%;\n    text-align: center;\n    padding: 1px;\n}\n\n.modal-wrap.opened {\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100vw;\n    height: 100vh;\n    z-index: 1;\n    background: rgba(0,0,0,0.3);\n}\n\n.modal-wrap.opened .modal {\n    width: 80%;\n    height: calc(100vh - 100px);\n    margin: 50px auto;\n    padding: 12px;\n}\n\n.modal-wrap.opened .modal .modal-header {\n    display: flex;\n    justify-content: space-between;\n}\n\n.modal-wrap.opened .modal .modal-header .close {\n    cursor: pointer;\n}\n\n.search-content {\n    height: calc(100vh - 220px);\n}\n\n.search-content .search-item {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    padding: 6px 8px;\n    border: 1px solid #222;\n    width: 260px;\n    margin: 4px 8px;\n    border-radius: 4px;\n    font-size: 14px;\n}\n\n.search-content .search-results-list .feature-list {\n    display: flex;\n    flex-wrap: wrap;\n}\n\n.search-content .search-item p {\n    margin: 0;\n}\n\n.editor-wrap .editor-column .details {\n    height: calc(100vh - 480px);\n}\n\n.editor-wrap .editor-column .save-area {\n    margin-top: 10px;\n}\n\n.editor-wrap .editor-column .row {\n    display: flex;\n    align-items: center;\n}\n\n.editor-wrap .editor-column .main .buttons button {\n    margin: 4px;\n}\n\n.editor-wrap .editor-column .row {\n    margin: 4px;\n    padding: 4px;\n}\n\n.editor-wrap .editor-column .row.job-container {\n    margin: 4px;\n    padding: 4px;\n    border: 1px solid #222222;\n    width: 100%;\n}\n\n.editor-wrap .editor-column .row.job-container .value {\n    padding: 5px;\n    margin: 5px;\n}\n\n.editor-wrap .editor-column .row.job-container .value p {\n    margin: 4px 0;\n}\n\n.editor-wrap .editor-column .row.job-container .value input[type=\"number\"] {\n    width: 80px;\n}\n\n.colony-wrap .line .presets {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    width: 400px;\n    margin-left: 20px;\n}\n\n.colony-wrap .line .presets button {\n    width: 180px;\n    margin-left: 5px;\n}\n\n/* Themes */\nbody.dark-theme * {\n    color: #ffffff;\n}\n\nbody.dark-theme span.greenish {\n    color: #90fd70;\n}\n\nbody.dark-theme span.red {\n    color: #ff6767;\n}\n\nbody.dark-theme .page {\n    background-color: #131115;\n}\n\nbody.dark-theme input {\n    background: #233444;\n}\n\nbody.dark-theme button {\n    background: #344555;\n    border-radius: 0;\n    border-color: #575989;\n}\n\nbody.dark-theme button:hover {\n    background: #575989;\n}\n\nbody.dark-theme button:disabled {\n    background: rgba(31,41,51,0.5);\n    pointer-events: none;\n}\n\nbody.dark-theme select {\n    border: 1px solid #777;\n    border-radius: 5px;\n    padding: 8px;\n    min-width: 163px;\n    background: rgb(19, 25, 38);\n    color: #fff;\n}\n\nbody.dark-theme .right-panel .expand-collapse-panel {\n    background-color: rgb(19, 25, 38);\n    border-color: #fff;\n}\n\nbody.dark-theme .game .right-panel .queue-item .move-controls .move:hover {\n    color: #ffa767;\n}\n\nbody.dark-theme .game .right-panel .queue-item .close:hover {\n    cursor: pointer;\n    color: #ee7744;\n}\n\nbody.dark-theme .header .menu ul li .menu-inner:hover {\n    color: #e74;\n}\n\nbody.dark-theme .header .menu ul li.selected .menu-inner {\n    border-bottom: 5px solid #e74;\n    padding-bottom: 4px;\n    pointer-events: none;\n}\n\nbody.dark-theme .resources-sidebar {\n    width: 360px;\n    border: 1px solid #222;\n}\n\n\nbody.dark-theme .resources-sidebar .hl.resource-item.missing-highlight,\nbody.dark-theme .resources-sidebar .resource-item.missing-highlight * {\n    background: #fd3030;\n    color: #fff;\n}\n\nbody.dark-theme .resources-sidebar .hl.resource-item.produced-highlight,\nbody.dark-theme .resources-sidebar .resource-item.produced-highlight * {\n    background: #30ad30;\n    color: #fff;\n}\n\nbody.dark-theme .resources-sidebar .hl.resource-item.consumed-highlight,\nbody.dark-theme .resources-sidebar .resource-item.consumed-highlight * {\n    background: #fd7050;\n    color: #fff;\n}\n\nbody.dark-theme .resources-sidebar .resource-item.negative p {\n    color: #fd7050;\n}\n\nbody.dark-theme .resources-sidebar .resource-item.capped p {\n    color: #ffe0a0;\n}\n\nbody.dark-theme .resources-sidebar .resource-item p.boosted {\n    color: #90fd70;\n}\n\nbody.dark-theme .resources-sidebar .resource-item p.decreased {\n    color: #ff5757;\n}\n\nbody.dark-theme .resources-sidebar .resource-item:nth-child(even) {\n    background: #131115;\n}\n\nbody.dark-theme .resources-sidebar .resource-item:nth-child(odd) {\n    background: #222;\n}\n\nbody.dark-theme .features-block .features-title .collapse-expand {\n    font-size: 12px;\n    color: #ee7744;\n    cursor: pointer;\n}\n\nbody.dark-theme .chips-wrap .chip {\n    border: 1px solid #234;\n    background-color: #222;\n}\n\nbody.dark-theme .chips-wrap .chip .bg {\n    background-color: #193344;\n}\n\nbody.dark-theme .chips-wrap.building-unlock .chip .bg {\n    background-color: #376384;\n}\n\nbody.dark-theme .chips-wrap.resource-unlock .chip .bg {\n    background-color: #377334;\n}\n\nbody.dark-theme .chips-wrap.special .chip .bg {\n    background-color: #775374;\n}\n\nbody.dark-theme .chips-wrap .chip .controls.disabled .control {\n    color: #ccbbaa;\n}\n\nbody.dark-theme .chips-wrap .chip .controls:not(.disabled) .control:hover {\n    background: #344555;\n    border: 1px solid #222;\n    border-radius: 50%;\n}\n\nbody.dark-theme .description-hint {\n    background: #131518;\n    border: 1px solid #222;\n}\n\nbody.dark-theme .chips-wrap .chip .level-label {\n    background: #344555;\n    border: 1px solid #222;\n}\n\nbody.dark-theme .hint-caps {\n    background: #131115;\n    padding: 16px;\n}\n\nbody.dark-theme .chips-wrap.disabled .chip span.name-label {\n    color: #cba;\n}\n\nbody.dark-theme .chips-wrap.disabled.blocked.soft-lock .chip span.name-label {\n    color: #ff5757;\n}\n\nbody.dark-theme .chips-wrap.disabled.soft-lock .chip span.name-label {\n    color: #ffa767;\n    cursor: not-allowed;\n}\n\nbody.dark-theme .chips-wrap.usage-highlight .chip {\n    border-color: #eeaa44;\n}\n\nbody.dark-theme .travel-bar {\n    border: 1px solid #222222;\n    background: #223344;\n}\n\nbody.dark-theme .travel-bar .travel-bar-inner {\n    background: #575989;\n}\n\nbody.dark-theme .cost-block .progressBar .filling {\n    background: #575989;\n}\n\nbody.dark-theme .job-card {\n    border: 1px solid #222;\n}\n\nbody.dark-theme .job-card .set-amount button {\n    background: #233444;\n    border: 1px solid #222222;\n}\n\nbody.dark-theme .job-card .set-amount button:hover {\n    background: #344555;\n}\n\nbody.dark-theme .job-card .set-amount input {\n    background: #131115;\n    border: 1px solid #222222;\n    border-radius: 4px;\n}\n\nbody.dark-theme .settings .set-row .val textarea {\n    background: #222222;\n}\n\nbody.dark-theme .happiness .factor-wrap .factor.excess {\n    color: #ffe0a0;\n}\n\nbody.dark-theme .laws-list .law-box .law-options .option-box {\n    padding: 4px 12px;\n    border: 1px solid #222222;\n    cursor: pointer;\n    margin: 0 10px;\n}\n\nbody.dark-theme .laws-list .law-box .law-options .option-box.selected {\n    background-color: #233444;\n}\n\nbody.dark-theme .submenu .submenu-item.selected {\n    color: #ee7744;\n}\n\n@media screen and (max-width: 860px) {\n    body.dark-theme .mobile-tooltip {\n        background: #131518;\n        border: 1px solid #223344;\n    }\n\n    body.dark-theme .mobile-tooltip-wrap {\n        background: rgba(21,21,21,0.7);\n    }\n}\n\nbody.dark-theme .clickable-highlight {\n    color: #ee7744;\n}\n\nbody.dark-theme .modal-wrap.opened .modal {\n    background: #131115;\n    border: 1px solid #222222;\n    border-radius: 4px;\n}\n\n/* THEME: LIGHT THEME */\n\nbody.light-theme * {\n    font-family: 'Lato', sans-serif;\n}\n\nbody.light-theme * {\n    color: #222;\n}\n\nbody.light-theme span.greenish {\n    color: #30ad30;\n}\n\nbody.light-theme span.red {\n    color: #df2727;\n}\n\nbody.light-theme .page {\n    background-color: #f6f1f6;\n}\n\nbody.light-theme input {\n    background: #eee;\n    border: 1px solid #333;\n    border-radius: 2px;\n}\n\nbody.light-theme button {\n    background: #eee;\n    color: #222222;\n    border-radius: 4px;\n    border-color: #333;\n}\n\n\nbody.light-theme button:hover {\n    background: #ccc;\n}\n\nbody.light-theme button:disabled {\n    background: rgba(31,41,51,0.5);\n    pointer-events: none;\n}\n\nbody.light-theme select {\n    border: 1px solid #333;\n    border-radius: 5px;\n    padding: 8px;\n    min-width: 163px;\n    background: #eee;\n    color: #333;\n}\n\nbody.light-theme .right-panel .expand-collapse-panel {\n    background-color: #eee;\n    border-color: #333;\n}\n\nbody.light-theme .game .right-panel .queue-item .move-controls .move:hover {\n    color: #3558aa;\n}\n\nbody.light-theme .game .right-panel .queue-item .close:hover {\n    cursor: pointer;\n    color: #3558aa;\n}\n\nbody.light-theme .header .menu ul li .menu-inner:hover {\n    color: #3558aa;\n}\n\nbody.light-theme .header .menu ul li.selected .menu-inner {\n    border-bottom: 2px solid #35488a;\n    padding-bottom: 4px;\n    pointer-events: none;\n}\n\nbody.light-theme .resources-sidebar {\n    width: 360px;\n    border: 1px solid #777;\n    border-radius: 4px;\n    background: #eee;\n}\n\nbody.light-theme .resources-sidebar .hl.resource-item.missing-highlight,\nbody.light-theme .resources-sidebar .resource-item.missing-highlight * {\n    background: #fda0a0;\n    color: #222;\n}\n\nbody.light-theme .resources-sidebar .hl.resource-item.produced-highlight,\nbody.light-theme .resources-sidebar .resource-item.produced-highlight * {\n    background: #a0fda0;\n    color: #222;\n}\n\nbody.light-theme .resources-sidebar .hl.resource-item.consumed-highlight,\nbody.light-theme .resources-sidebar .resource-item.consumed-highlight * {\n    background: #ffd090;\n    color: #222;\n}\n\nbody.light-theme .resources-sidebar .resource-item.negative p {\n    color: #fd7050;\n}\n\nbody.light-theme .resources-sidebar .resource-item.capped p {\n    color: #8f6020;\n}\n\nbody.light-theme .resources-sidebar .resource-item p.boosted {\n    color: #30ad30;\n}\n\nbody.light-theme .resources-sidebar .resource-item p.decreased {\n    color: #df2727;\n}\n\nbody.light-theme .resources-sidebar .resource-item:nth-child(even) {\n    background: #eee9ee;\n}\n\nbody.light-theme .resources-sidebar .resource-item:nth-child(odd) {\n    background: #f6f6f6;\n}\n\nbody.light-theme .features-block .features-title .collapse-expand {\n    font-size: 12px;\n    color: #112224;\n    cursor: pointer;\n}\n\nbody.light-theme .label-wrap {\n    font-weight: bold;\n}\n\nbody.light-theme .chips-wrap .chip {\n    border: 1px solid #333;\n    background-color: #ddd;\n}\n\nbody.light-theme .chips-wrap .chip .stick-left {\n    width: 150px;\n}\n\nbody.light-theme .buildings-wrap .chips-wrap .chip .stick-left {\n    width: 200px;\n}\n\nbody.light-theme .chips-wrap .chip * {\n    color: #000;\n}\n\nbody.light-theme .chips-wrap .chip .bg {\n    background-color: #fff;\n    border-right: 1px solid #888;\n}\n\nbody.light-theme .chips-wrap.building-unlock .chip .bg {\n    background-color: #67c3f4;\n}\n\nbody.light-theme .chips-wrap.resource-unlock .chip .bg {\n    background-color: #a7f3a4;\n}\n\nbody.light-theme .chips-wrap.special .chip .bg {\n    background-color: #d7a3d4;\n}\n\nbody.light-theme .chips-wrap .chip-content {\n    display: flex;\n    align-items: center;\n}\n\nbody.light-theme .chips-wrap .chip-content .name-label {\n    font-size: 14px;\n}\n\nbody.light-theme .chips-wrap .chip-content .stick-right {\n    position: relative;\n    flex-shrink: 0;\n    top: -2px;\n}\n\nbody.light-theme .chips-wrap .chip .controls.disabled .control {\n    color: #555;\n}\n\nbody.light-theme .chips-wrap .chip .controls:not(.disabled) .control:hover {\n    background: #123;\n    border: 1px solid #123;\n    color: #fff;\n    border-radius: 50%;\n}\n\nbody.light-theme .description-hint {\n    background: #fff;\n    border: 1px solid #222;\n}\n\nbody.light-theme .chips-wrap .chip .level-label {\n    background: none;\n    border: none;\n    font-size: 13px;\n}\n\nbody.light-theme .hint-caps {\n    background: #fff;\n    padding: 16px;\n    border: 1px solid #222;\n    border-radius: 4px;\n}\n\nbody.light-theme .notification-container span.new-label::after {\n    margin-top: 0;\n    padding-left: 5px;\n}\n\nbody.light-theme .chips-wrap.disabled .chip span.name-label {\n    color: #444;\n}\n\nbody.light-theme .chips-wrap.disabled.blocked.soft-lock .chip span.name-label {\n    color: #ef0707;\n}\n\nbody.light-theme .chips-wrap.disabled.soft-lock .chip span.name-label {\n    color: #7f6707;\n    cursor: not-allowed;\n}\n\nbody.light-theme .travel-bar {\n    border: 1px solid #222222;\n    background: #eee;\n}\n\nbody.light-theme .travel-bar .travel-bar-inner {\n    background: #123;\n}\n\nbody.light-theme .cost-block .progressBar .filling {\n    background: #37a939;\n}\n\nbody.light-theme .job-card {\n    border: 1px solid #222;\n}\n\nbody.light-theme .job-card .set-amount button {\n    background: #eee;\n    border: 1px solid #222222;\n}\n\nbody.light-theme .job-card .set-amount button:hover {\n    background: #ccc;\n}\n\nbody.light-theme .job-card .set-amount input {\n    background: #fff;\n    border: 1px solid #222222;\n    border-radius: 4px;\n}\n\nbody.light-theme .settings .set-row .val textarea {\n    background: #eee;\n    border: 1px solid #222222;\n    border-radius: 4px;\n}\n\nbody.light-theme .happiness .factor-wrap .factor.excess {\n    color: #8f6020;\n}\n\nbody.light-theme .laws-list .law-box .law-options .option-box {\n    padding: 4px 12px;\n    border: 1px solid #222222;\n    cursor: pointer;\n    margin: 0 10px;\n}\n\nbody.light-theme .laws-list .law-box .law-options .option-box.selected {\n    background-color: #ccc;\n}\n\nbody.light-theme .submenu .submenu-item.selected {\n    color: #3558aa;\n}\n\n\n@media screen and (max-width: 860px) {\n    body.light-theme .mobile-tooltip {\n        background: #eee;\n        border: 1px solid #222;\n    }\n\n    body.light-theme .mobile-tooltip-wrap {\n        background: #eee;\n    }\n}\n\nbody.light-theme .clickable-highlight {\n    color: #3558aa;\n}\n\nbody.light-theme .chips-wrap.usage-highlight .chip {\n    border-color: #55a8fa;\n}\n\nbody.light-theme .modal-wrap.opened .modal {\n    background: #fefefe;\n    border: 1px solid #222;\n    border-radius: 4px;\n}\n\n\n/* THEME: BLACK THEME */\n\nbody.black-theme * {\n    /*font-family: 'Nunito', sans-serif;*/\n    font-family: 'DM Sans', sans-serif;\n}\n\nbody.black-theme * {\n    color: #fff;\n}\n\nbody.black-theme span.greenish {\n    color: #90fd70;\n}\n\nbody.black-theme span.red {\n    color: #ff6767;\n}\n\nbody.black-theme .page {\n    background-color: #111;\n}\n\nbody.black-theme input {\n    background: #333;\n    border: 1px solid #333;\n    border-radius: 2px;\n}\n\nbody.black-theme button {\n    background: #000;\n    color: #fff;\n    border-radius: 4px;\n    border-color: #333;\n}\n\n\nbody.black-theme button:hover {\n    background: #111;\n}\n\nbody.black-theme button:disabled {\n    background: rgba(31,41,51,0.5);\n    pointer-events: none;\n}\n\nbody.black-theme select {\n    border: 1px solid #333;\n    border-radius: 5px;\n    padding: 8px;\n    min-width: 163px;\n    background: #111;\n    color: #fff;\n}\n\nbody.black-theme .right-panel .expand-collapse-panel {\n    background-color: #111;\n    border-color: #fff;\n}\n\nbody.black-theme .game .right-panel .queue-item .move-controls .move:hover {\n    color: #eee;\n}\n\nbody.black-theme .game .right-panel .queue-item .close:hover {\n    cursor: pointer;\n    color: #eee;\n}\n\nbody.black-theme .header .menu ul li .menu-inner:hover {\n    color: #eee;\n}\n\nbody.black-theme .header .menu ul li.selected .menu-inner {\n    border-bottom: 2px solid #eee;\n    padding-bottom: 4px;\n    pointer-events: none;\n}\n\nbody.black-theme .resources-sidebar {\n    width: 360px;\n    border: 1px solid #777;\n    border-radius: 4px;\n    background: #111;\n}\n\nbody.black-theme .resources-sidebar .hl.resource-item.missing-highlight,\nbody.black-theme .resources-sidebar .resource-item.missing-highlight * {\n    background: #fd3030;\n    color: #fff;\n}\n\nbody.black-theme .resources-sidebar .hl.resource-item.produced-highlight,\nbody.black-theme .resources-sidebar .resource-item.produced-highlight * {\n    background: #30ad30;\n    color: #fff;\n}\n\nbody.black-theme .resources-sidebar .hl.resource-item.consumed-highlight,\nbody.black-theme .resources-sidebar .resource-item.consumed-highlight * {\n    background: #fd7050;\n    color: #fff;\n}\n\nbody.black-theme .resources-sidebar .resource-item.negative p {\n    color: #fd7050;\n}\n\nbody.black-theme .resources-sidebar .resource-item.capped p {\n    color: #ffe0a0;\n}\n\nbody.black-theme .resources-sidebar .resource-item p.boosted {\n    color: #90fd70;\n}\n\nbody.black-theme .resources-sidebar .resource-item p.decreased {\n    color: #ff5757;\n}\n\nbody.black-theme .resources-sidebar .resource-item:nth-child(even) {\n    background: #111;\n}\n\nbody.black-theme .resources-sidebar .resource-item:nth-child(odd) {\n    background: #333;\n}\n\nbody.black-theme .features-block .features-title .collapse-expand {\n    font-size: 12px;\n    color: #fff;\n    cursor: pointer;\n}\n\nbody.black-theme .label-wrap {\n    font-weight: bold;\n}\n\nbody.black-theme .chips-wrap .chip {\n    border: 1px solid #333;\n    background-color: #333;\n}\n\nbody.black-theme .chips-wrap .chip .stick-left {\n    width: 150px;\n}\n\nbody.black-theme .buildings-wrap .chips-wrap .chip .stick-left {\n    width: 200px;\n}\n\nbody.black-theme .chips-wrap .chip * {\n    color: #fff;\n}\n\nbody.black-theme .chips-wrap .chip .bg {\n    background-color: #000;\n}\n\nbody.black-theme .chips-wrap.building-unlock .chip .bg {\n    background-color: #67c3f4;\n}\n\nbody.black-theme .chips-wrap.resource-unlock .chip .bg {\n    background-color: #a7f3a4;\n}\n\nbody.black-theme .chips-wrap.special .chip .bg {\n    background-color: #d7a3d4;\n}\n\nbody.black-theme .chips-wrap .chip-content {\n    display: flex;\n    align-items: center;\n}\n\nbody.black-theme .chips-wrap .chip-content .name-label {\n    font-size: 14px;\n}\n\nbody.black-theme .chips-wrap .chip-content .stick-right {\n    position: relative;\n    flex-shrink: 0;\n    top: -2px;\n}\n\nbody.black-theme .chips-wrap .chip .controls.disabled .control {\n    color: #555;\n}\n\nbody.black-theme .chips-wrap .chip .controls:not(.disabled) .control:hover {\n    background: #222;\n    border: 1px solid #333;\n    color: #fff;\n    border-radius: 50%;\n}\n\nbody.black-theme .description-hint {\n    background: #222;\n    border: 1px solid #555;\n}\n\nbody.black-theme .chips-wrap .chip .level-label {\n    background: none;\n    border: none;\n    font-size: 13px;\n}\n\nbody.black-theme .hint-caps {\n    background: #222;\n    padding: 16px;\n    border: 1px solid #555;\n    border-radius: 4px;\n}\n\nbody.black-theme .notification-container span.new-label::after {\n    margin-top: 0;\n    padding-left: 5px;\n}\n\nbody.black-theme .chips-wrap.disabled .chip span.name-label {\n    color: #eee;\n}\n\nbody.black-theme .chips-wrap.disabled.blocked.soft-lock .chip span.name-label {\n    color: #ff5717;\n}\n\nbody.black-theme .chips-wrap.disabled.soft-lock .chip span.name-label {\n    color: #ffa727;\n    cursor: not-allowed;\n}\n\nbody.black-theme .travel-bar {\n    border: 1px solid #555;\n    background: #555;\n}\n\nbody.black-theme .travel-bar .travel-bar-inner {\n    background: #555;\n}\n\nbody.black-theme .cost-block .progressBar .filling {\n    background: #eee;\n}\n\nbody.black-theme .job-card {\n    border: 1px solid #222;\n}\n\nbody.black-theme .job-card .set-amount button {\n    background: #000;\n    border: 1px solid #222222;\n}\n\nbody.black-theme .job-card .set-amount button:hover {\n    background: #333;\n}\n\nbody.black-theme .job-card .set-amount input {\n    background: #222;\n    border: 1px solid #222222;\n    border-radius: 4px;\n}\n\nbody.black-theme .settings .set-row .val textarea {\n    background: #222;\n    border: 1px solid #222222;\n    border-radius: 4px;\n}\n\nbody.black-theme .happiness .factor-wrap .factor.excess {\n    color: #ffe0a0;\n}\n\nbody.black-theme .laws-list .law-box .law-options .option-box {\n    padding: 4px 12px;\n    border: 1px solid #222222;\n    cursor: pointer;\n    margin: 0 10px;\n}\n\nbody.black-theme .laws-list .law-box .law-options .option-box.selected {\n    background-color: #000;\n}\n\nbody.black-theme .submenu .submenu-item.selected {\n    color: #ee7744;\n}\n\n\n@media screen and (max-width: 860px) {\n    body.black-theme .mobile-tooltip {\n        background: #131518;\n        border: 1px solid #333;\n    }\n\n    body.black-theme .mobile-tooltip-wrap {\n        background: rgba(21,21,21,0.7);\n    }\n}\n\nbody.black-theme .clickable-highlight {\n    color: #ee7744;\n}\n\nbody.black-theme .chips-wrap.usage-highlight .chip {\n    border-color: #ee7744;\n}\n\nbody.black-theme .modal-wrap.opened .modal {\n    background: #131115;\n    border: 1px solid #222222;\n    border-radius: 4px;\n}",
+            ");\n    background-size: 25px 25px;\n    display: block;\n    position: absolute;\n    width: 25px;\n    height: 25px;\n    z-index: 3;\n    content: '';\n    top: -10px;\n    right: -10px;\n}\n\n.chips-wrap.usage-highlight .chip {\n    border-color: #eeaa44;\n}\n\n.chips-wrap.disabled.blocked.soft-lock .chip {\n    color: #ff5757;\n    cursor: not-allowed;\n}\n\n.chips-wrap.disabled.soft-lock .chip {\n    color: #ffa767;\n    cursor: not-allowed;\n}\n\n.chips-wrap.enabled .chip .chip-content .stick-left:hover {\n    filter: brightness(140%);\n}\n\n.chips-wrap .chip .stick-right {\n    position: absolute;\n    right: 8px;\n    top: 2px;\n    display: flex;\n    align-items: center;\n}\n\n.chips-wrap .chip .level-label {\n    padding: 5px;\n    font-size: 12px;\n    border-radius: 8px;\n}\n\n.chips-wrap .chip .controls {\n    display: block;\n    font-size: 18px;\n    padding: 3px 2px;\n}\n\n.chips-wrap .chip .controls .control {\n    display: block;\n    width: 24px;\n    height: 24px;\n    text-align: center;\n    cursor: pointer;\n}\n.chips-wrap .chip .controls.disabled .control {\n    display: block;\n    width: 24px;\n    height: 24px;\n    text-align: center;\n    cursor: not-allowed;\n}\n\n.chips-wrap .chip .controls:not(.disabled) .control:hover {\n    border-radius: 50%;\n}\n\n.description-hint {\n    padding: 16px;\n    border-radius: 4px;\n}\n\n.description-hint .description {\n    font-size: 13px;\n}\n\n.description-hint .wrap {\n    padding: 8px 0;\n}\n\n.cost-block {\n    width: 160px;\n    padding-bottom: 4px;\n}\n\n.cost-block p.requirement,\n.gain-block p.requirement{\n    font-size: 13px;\n    padding-bottom: 2px;\n    margin-bottom: 2px;\n    margin-top: 4px;\n    display: flex;\n    justify-content: space-between;\n}\n\n.gain-block p.requirement.green {\n    color: #90fd70;\n}\n\n.gain-block p.requirement.red {\n    color: #ff6767;\n}\n\n.cost-block .requirement.missing {\n    color: #ff6767;\n}\n\n.cost-block .progressBar {\n    width: 100%;\n    position: relative;\n    height: 3px;\n    background: #333;\n}\n\n.cost-block .progressBar .filling {\n    background: #575989;\n    height: 100%;\n    position: absolute;\n    top: 0px;\n    left: 0px;\n}\n\n.submenu {\n    display: flex;\n    justify-content: flex-start;\n}\n\n.submenu .submenu-item {\n    padding: 8px 16px;\n    cursor: pointer;\n}\n\n.jobs .feature-list {\n    display: flex;\n    flex-wrap: wrap;\n}\n\n.job-card {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    width: 380px;\n    padding: 8px;\n    margin: 8px;\n    border-radius: 4px;\n}\n\n.job-card .job-labour {\n    width: 40px;\n    padding-left: 5px;\n}\n\n.job-card .title {\n    width: 160px;\n}\n.job-card .set-amount {\n    display: flex;\n    align-items: center;\n}\n\n\n.job-card .set-amount button {\n    width: 30px;\n    height: 30px;\n    border-radius: 4px;\n    padding: 4px;\n    cursor: pointer;\n    margin: 0 4px;\n}\n\n.job-card .set-amount input {\n    width: 80px;\n    height: 30px;\n    border-radius: 4px;\n}\n\n.resources-sidebar {\n    height: calc(100% - 40px);\n    display: flex;\n    flex-direction: column;\n}\n\n.resources-sidebar .main-resources-wrap {\n    max-height: calc(100vh - 550px);\n}\n\n.resources-sidebar .main-resources-wrap .main-resources {\n    height: 100%;\n}\n\n.resources-sidebar .bottom-block {\n    position: absolute;\n    bottom: 12px\n}\n\n.resources-sidebar .secondary-resources {\n    display: flex;\n    flex: 1;\n    min-height: 0px;\n}\n\n.resources-sidebar .secondary-resources .secondary-wrap {\n    width: 100%;\n}\n\n.resources-sidebar .secondary-resources .container-scrollable {\n    height: calc(100% - 50px);\n}\n\n.heading-pre-menu {\n    display: flex;\n}\n\n.heading-pre-menu .env-wrap {\n    margin-left: 40px;\n    display: flex;\n}\n.heading-pre-menu .env-wrap p {\n    margin: 5px 0;\n}\n\n.heading-pre-menu .env-wrap .time-wrap {\n    margin-left: 20px;\n}\n\n.heading-pre-menu .env-wrap .use-mult {\n    display: flex;\n}\n\n.heading-pre-menu .env-wrap .use-mult .item {\n    margin-right: 10px;\n    text-decoration: underline;\n    cursor: pointer;\n}\n\n.heading-pre-menu .env-wrap .use-mult .item.selected {\n    color: #ee7744;\n}\n\n.inner .editor-wrap.columns {\n    height: calc(100vh - 220px);\n}\n\n.inner .editor-wrap.columns .ship-stats-wrap {\n    height: calc(100vh - 340px);\n}\n\n.small-note {\n    font-size: 12px;\n    font-style: italic;\n}\n\n@media screen and (max-height: 850px) {\n\n   /* .resources-sidebar .main-resources {\n        height: calc(100vh - 550px);\n    }*/\n\n    .resources-sidebar .secondary-resources .container-scrollable {\n        height: 150px;\n    }\n\n}\n\n.hint-caps p {\n    display: flex;\n    justify-content: space-between;\n    font-size: 12px;\n    margin: 4px;\n}\n\n.break-down .block {\n    padding-left: 12px;\n    padding-bottom: 12px;\n}\n\n.break-down .block p {\n    display: flex;\n    justify-content: space-between;\n    font-size: 12px;\n    margin: 4px;\n}\n\n.break-down .block p span:first-child {\n    margin-right: 20px;\n}\n\n.fit-height {\n    height: 100%;\n}\n\n.inner-scrollable.planet,\n.inner-scrollable.science {\n    height: calc(100% - 35px);\n}\n\n.inner {}\n\n.goal-paper {\n    width: 320px;\n    height: 100px;\n    padding: 4px;\n}\n\n.goal-paper .goal-container p {\n    font-size: 12px;\n    margin: 5px;\n}\n\n.goal-paper .goal-container .goal-req {\n    display: flex;\n    justify-content: space-between;\n}\n\n.goal-req.complete span{\n    color: #45cd45;\n}\n\n.goal-paper.features-block .features-title {\n    margin-bottom: 8px;\n}\n\n.settings .set-row {\n    display: flex;\n    padding: 4px;\n}\n\n.settings .set-row .label {\n    width: 30%;\n}\n\n.settings .set-row .val textarea {\n    height: 100px;\n    width: 300px;\n    margin: 5px 0px;\n    display: block;\n}\n\n.happiness .factor-wrap {\n    margin-right: 25px;\n    padding-right: 15px;\n}\n\n.overview.population .line {\n    display: flex;\n    flex-wrap: wrap;\n}\n\n.overview.population .line p{\n    width: 150px;\n}\n\n.overview.happiness .feature-list .line {\n    display: flex;\n    flex-wrap: wrap;\n}\n\n.law-description .title {\n    font-weight: bold;\n}\n\n.laws-list .law-box {\n    padding: 10px;\n}\n\n.laws-list .law-box .law-options {\n    display: flex;\n}\n\n.laws-list .law-box .law-options .option-box {\n    padding: 4px 12px;\n    cursor: pointer;\n    margin: 0 10px;\n}\n\n.law-option-inner p {\n    margin: 0;\n}\n\n.version-panes {\n    display: flex;\n}\n\n.version-title {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n}\n\n.version-panes .about {\n    margin: 0 30px;\n    max-width: 300px;\n}\n\n.goal-paper.features-block .features-title span {\n    color: #ee7744;\n}\n\n.goal-paper.features-block {\n    border-color: #233444;\n}\n\n.transmit-wrap .bold {\n    color: #ee7744;\n    font-weight: bold;\n}\n\n.popup-link {\n    color: #ee7744;\n    cursor: pointer;\n}\n\n.expeditions-wrap .chips-wrap .chip {\n    width: 340px;\n    margin-left: 10px;\n    margin-top: 10px;\n}\n\n.notification-container {\n    position: relative;\n}\n\n.notification-container.label-wrap {\n    padding-right: 18px;\n}\n\n.notification-container span.new-label {\n    position: absolute;\n    display: block;\n    top: 0;\n    right: 0;\n    width: 15px;\n    height: 15px;\n    border-radius: 50%;\n    background-color: #ee7744;\n}\n\n.animated .notification-container span.new-label {\n    animation: blinkingBackground 2s infinite;\n}\n\n@keyframes blinkingBackground{\n    0%\t\t{ background-color: #ee7744;}\n    25%\t\t{ background-color: #fd5020;}\n    50%\t\t{ background-color: #ef0a1a;}\n    75%\t\t{ background-color: #fd5020;}\n    100%\t        { background-color: #ee7744;}\n}\n\n.notification-container.action-wrap span.new-label,\n.notification-container.building-wrap span.new-label,\n.notification-container.upgrade-wrap span.new-label,\n.notification-container.science-wrap span.new-label {\n    right: 10px;\n}\n\n.notification-container span.new-label::after{\n    content: '!';\n    color: #fff;\n    padding-left: 6px;\n    display: block;\n    margin-top: -3px;\n}\n\n.buildings-cat-label {\n    padding-right: 20px;\n}\n\n.science-wrap {\n    width: 238px;\n}\n\n.expeditions-mode {\n    display: flex;\n    justify-content: space-around;\n}\n\n.expeditions-mode span {\n    font-size: 14px;\n}\n\n.expeditions-mode .mode {\n    text-decoration: underline;\n    margin-top: 0px;\n    font-size: 14px;\n    cursor: pointer;\n}\n\n.expeditions-mode .mode.selected {\n    color: #ee7744;\n}\n\n.change-log {\n    height: calc(100vh - 160px);\n}\n\n.research-body .feature-list{\n    height: calc(100vh - 330px);\n}\n\n.search-wrap .chips-wrap .chip {\n    margin-left: 0;\n}\n\n.search-filter {\n    margin-top: 12px;\n    margin-bottom: 8px;\n}\n.search-filter p {\n    font-size: 16px;\n}\n\n.list-wrap.planets-wrap {\n    width: 220px;\n}\n\n\n@media screen and (min-width: 1900px){\n\n/*    body .game .sidebar {\n        height: auto;\n    }*/\n\n    body .game .content {\n        font-size: 16px;\n    }\n\n    body .chips-wrap .chip {\n        width: 250px;\n        font-size: 17px;\n    }\n\n    body .buildings-wrap .chips-wrap .chip {\n        width: 300px;\n    }\n\n    body .chips-wrap .chip .level-label {\n        font-size: 14px;\n    }\n\n    body .chips-wrap .chip .controls {\n        display: block;\n        font-size: 20px;\n        padding: 3px 2px;\n    }\n\n    body .chips-wrap .chip .controls.disabled .control {\n        width: 28px;\n        height: 28px;\n    }\n\n    body .resources-sidebar .resource-item {\n        font-size: 16px;\n    }\n\n    body .features-block .features-title .collapse-expand {\n        font-size: 15px;\n    }\n\n    body .header .menu-item .menu-inner {\n        font-size: 17px;\n    }\n\n    body .features-block .features-title {\n        font-size: 17px;\n    }\n}\n\n@media screen and (max-width: 1280px){\n    .header {\n        height: 160px;\n    }\n\n    .header .menu ul {\n        flex-wrap: wrap;\n    }\n}\n\n.show-hide-resources {\n    display: none;\n}\n\n.info-tooltip {\n    display: none;\n}\n\n.statistics-list .stat-item {\n    padding: 4px 8px;\n    display: flex;\n}\n\n.statistics-list .stat-item p {\n    margin: 0;\n}\n\n.statistics-list .stat-item .label {\n    width: 40%;\n}\n\n.preloader {\n    position: fixed;\n    z-index: 1;\n    top: 0;\n    height: 100vh;\n    width: 100vw;\n    background-color: #09010f;\n    z-index: 5;\n}\n\n.preloader .logo-container {\n    height: min(100vh - 400px, 500px);\n    margin: calc(max(50px, 100vh - 800px)) auto auto;\n    width: 100%;\n    text-align: center;\n}\n\n.preloader .logo-container img {\n    object-fit: contain;\n    margin: auto;\n    height: 100%;\n}\n\n.preloader .loading-container {\n    display: flex;\n    justify-content: center;\n    margin-top: 40px;\n}\n\n.preloader .loading-container .loading-inner {\n    display: flex;\n    align-items: center;\n    width: 150px;\n    justify-content: space-between;\n}\n.preloader .loading-container .loading-inner * {\n    color: #fff;\n}\n\n\n.preloader .loading-container .loading-text {\n    font-weight: bold;\n    font-size: 24px;\n    color: #fff;\n}\n\n.preloader .loading-container .did-you-knew {\n    text-align: center;\n    padding: 0 20px;\n    color: #fff;\n}\n\n.preloader .loading-container .did-you-knew * {\n    color: #fff;\n}\n\n.preloader .loading-container .did-you-knew .title {\n    font-size: 18px;\n    font-weight: bold;\n    display: block;\n    margin-bottom: 10px;\n    color: #fff;\n}\n\n.eff-dropped {\n    color: #ee7744;\n    font-style: italic;\n    font-size: 12px;\n}\n\n.eff-dropped .missing-resource {\n    display: block;\n}\n\n.editor-wrap.columns {\n    display: flex;\n    justify-content: space-between;\n}\n.editor-wrap.columns .column {\n    padding: 20px;\n}\n\n.loader-column {\n    width: 240px;\n    height: calc(100% - 40px);\n    border: 1px solid #222;\n}\n\n.loader-column .select-item {\n    padding: 5px 10px;\n    cursor: pointer;\n    display: flex;\n    justify-content: space-between;\n}\n\n.loader-column .select-item.invalid {\n    color: #ff6767;\n}\n\n.loader-column .select-item .delete-model.disabled {\n    cursor: default;\n    color: #999999;\n}\n\n.loader-column .select-item:hover {\n    color: #ee7744;\n}\n\n.loader-column .select-item.selected {\n    font-weight: bold;\n    cursor: default;\n}\n\n.editor-wrap {\n    height: calc(100vh - 200px);\n}\n\n.editor-column {\n    flex: 1;\n    height: calc(100vh - 240px);\n}\n\n.editor-column .slot-container.invalid .heading-wrap p {\n    color: #ff6767;\n}\n\n.editor-column .slot-container select {\n    margin-right: 10px;\n    width: 140px;\n}\n\n.editor-totals .editor-row {\n    margin: 8px 0;\n}\n\n.editor-totals .editor-row button {\n    width: 140px;\n}\n\n.editor-totals .stats .row {\n    display: flex;\n    justify-content: space-between;\n}\n\n.editor-totals .stats .row p {\n    margin: 0;\n    padding: 5px 5px;\n}\n\n.editor-totals .validation-error {\n    margin-bottom: 16px;\n    margin-top: 8px;\n    color: #fd3030;\n}\n\n.slot-container-outer .stats-wrap {\n    display: flex;\n}\n\n.slot-container-outer .stats-wrap > div {\n    margin: 0 10px;\n}\n\n.ship-totals .row {\n    display: flex;\n    justify-content: space-between;\n}\n\n.ship-totals .row p {\n    margin: 0;\n    padding: 5px 5px;\n    font-size: 13px;\n}\n\n.hangar-wrap {\n    display: flex;\n    flex-wrap: wrap;\n}\n\n.spaceship-inner-wrap .title-wrap {\n    display: flex;\n    justify-content: space-between;\n}\n\n.spaceship-card {\n    width: 300px;\n    padding: 20px;\n    border: 1px solid #222222;\n    border-radius: 4px;\n    margin: 10px;\n}\n\n.spaceship-inner-wrap .chips-wrap .chip {\n    margin: 5px 0px;\n    width: 260px;\n}\n.spaceship-inner-wrap .button {\n    width: 260px;\n}\n\n.editor-column.fleets .line-wrap {\n    display: flex;\n    flex-wrap: wrap;\n}\n\n.editor-column.fleets .line-wrap .slot-container {\n    padding: 10px;\n    border: 1px solid #222;\n    margin: 10px;\n    width: 200px;\n}\n\n.battle-wrap .top-pane {\n    display: flex;\n    justify-content: space-between;\n    padding: 10px;\n    border: 1px solid #222;\n}\n\n.battle-content .battle-centered {\n    margin-top: calc(max(10vh, 30px));\n    text-align: center;\n}\n\n.travel-bar {\n    width: 50%;\n    position: relative;\n    height: 12px;\n    margin: auto;\n}\n\n.travel-bar .travel-bar-inner {\n    position: absolute;\n    top: 0;\n    left: 0;\n    height: 10px;\n}\n\n.animated .travel-bar .travel-bar-inner {\n    transition-property: width;\n    transition-duration: 0.2s;\n}\n\n.fight-space {\n    position: relative;\n    width: 100%;\n    height: calc(100vh - 310px);\n    border: 1px solid #222;\n}\n\n.fight-space .bullet {\n    width: 4px;\n    height: 4px;\n    border-radius: 50%;\n    position: absolute;\n}\n\n.animated .fight-space .bullet {\n    transition-property: left, top;\n    transition-duration: 0.2s;\n    transition-delay: 0s;\n    transition-timing-function: linear;\n}\n\n.fight-space .bullet.side-0 {\n    background-color: #77dddd;\n}\n\n.fight-space .bullet.side-1 {\n    background-color: #dd7777;\n}\n\n.fight-space .space-unit {\n    position: absolute;\n}\n\n.fight-space .space-unit .name-cont {\n    font-size: 12px;\n    margin: 0;\n}\n\n.fight-space .space-unit .image-container {\n    width: 40px;\n    height: 40px;\n}\n\n.fight-space .space-unit .image-container.enemy {\n    background-image: url(" +
+            g +
+            ");\n    background-size: contain;\n    transform: rotate(180deg);\n}\n\n.fight-space .space-unit .image-container.my {\n    background-image: url(" +
+            v +
+            ');\n    background-size: contain;\n}\n\n.bars-container .bar-outer {\n    height: 8px;\n    width: 50px;\n    position: relative;\n    border: 1px solid #222;\n    background-color: #999999;\n}\n\n.bars-container.wide .bar-outer {\n    width: 120px;\n}\n\n.bars-container .bar-outer .bar-inner {\n    height: 6px;\n    position: absolute;\n    left: 0;\n    top: 0;\n}\n\n.bars-container .bar-outer.shield-bar .bar-inner {\n    background-color: #589dd7;\n}\n\n.bars-container .bar-outer.durability-bar .bar-inner {\n    background-color: #58dd77;\n}\n\n.bars-container .bar-outer.recharge-bar .bar-inner {\n    background-color: #e8dd67;\n}\n\n.bars-container .bar-outer.pilot .bar-inner {\n    background-color: #58add7;\n}\n\n.current-planet-wrap .feature-list {\n    display: flex;\n    justify-content: space-between;\n    flex-wrap: wrap;\n}\n\n.description-hint .att {\n    margin: 5px 0;\n    font-size: 14px;\n}\n\n.star-modifs p {\n    margin: 5px 5px;\n    font-size: 13px;\n}\n\n@media screen and (max-width: 860px){\n\n    .resources-sidebar .main-resources-wrap {\n        max-height: unset;\n    }\n\n    .game .sidebar {\n        height: auto;\n    }\n\n    .heading-pre-menu {\n        display: block;\n    }\n\n    .heading-pre-menu .env-wrap {\n        margin-left: 12px;\n    }\n    /* Mobile version */\n    .header .menu ul li {\n        width: 160px;\n    }\n\n    .header {\n        height: auto;\n    }\n\n    .game {\n        display: block;\n    }\n\n    .page {\n        height: auto;\n        min-height: 100vh;\n    }\n\n    .resources-sidebar {\n        width: 100%;\n        height: auto;\n    }\n\n    .resources-sidebar .secondary-resources .container-scrollable {\n        height: auto;\n    }\n\n    body .show-hide-resources {\n        display: block;\n        padding: 5px 10px;\n    }\n\n    .resources-sidebar.hidden {\n        display: none;\n    }\n\n    .header .top {\n        display: block;\n    }\n\n    .header .menu ul li.selected .menu-inner {\n        border-bottom: 1px solid #344555;\n        background: #344555;\n        color: #ee7744;\n        padding-bottom: 8px;\n    }\n\n    .header .menu ul li .menu-inner {\n        border: 1px solid #344555;\n    }\n\n    .bottom-block {\n        display: none;\n    }\n\n    .goal-paper.features-block {\n        width: 100%;\n        height: auto;\n    }\n\n    body .chips-wrap .chip {\n        width: 250px;\n        font-size: 17px;\n    }\n\n    body .feature-list.flex {\n        display: block;\n    }\n\n    body .chips-wrap .chip {\n        width: 80%;\n        font-size: 17px;\n    }\n\n    body .buildings-wrap .chips-wrap .chip {\n        width: 80%;\n        font-size: 17px;\n    }\n\n    body .job-card-wrap .job-card {\n        min-width: 80vw;\n        font-size: 17px;\n    }\n\n    body .info-tooltip {\n        display: block;\n    }\n\n    body .info-tooltip .info-tooltip-inner{\n        display: flex;\n        width: 28px;\n        height: 28px;\n        background: #575989;\n        border-radius: 50%;\n        font-size: 20px;\n        align-items: center;\n        justify-content: center;\n        margin-left: 5px;\n        margin-right: 5px;\n    }\n\n    body .mobile-tooltip {\n        position: absolute;\n        width: calc(100vw - 100px);\n        height: calc(100vh - 100px);\n        top: 50px;\n        left: 50px;\n        background: #131518;\n        padding: 20px;\n        border: 1px solid #223344;\n    }\n\n    body .mobile-tooltip-wrap {\n        background: rgba(21,21,21,0.7);\n        position: fixed;\n        top: 0;\n        left: 0;\n        width: 100vw;\n        height: 100vh;\n        z-index: 3;\n    }\n\n    body .mobile-tooltip-wrap.hidden {\n        display: none;\n    }\n\n    body .mobile-tooltip .head {\n        display: flex;\n        justify-content: space-between;\n    }\n\n    body .mobile-tooltip .head .close {\n        font-size: 20px;\n    }\n\n    body .mobile-tooltip-wrap .mobile-tooltip .body {\n        max-height: calc(100% - 40px);\n        overflow-y: scroll;\n    }\n\n    .settings .set-row .val textarea {\n        width: calc(0.6 * 100vw);\n    }\n\n    body .resources-sidebar .resource-item p {\n        display: flex;\n        font-size: 16px;\n    }\n\n    body .science-wrap {\n        width: auto;\n    }\n\n    .version-panes {\n        display: block;\n    }\n\n    body .inner-scrollable.planet,\n    body .inner-scrollable.science {\n        height: auto;\n    }\n\n    body .game .content {\n        height: auto;\n    }\n\n    body .resources-sidebar .resource-item {\n        padding: 3px 8px;\n    }\n\n    body .resources-sidebar .main-resources {\n        height: auto;\n    }\n\n    body .resources-sidebar .secondary-resources {\n        height: auto;\n    }\n\n    body .editor-wrap.columns {\n        display: flex;\n        flex-direction: column;\n    }\n\n    body .editor-wrap.columns .column {\n        height: auto;\n        width: 100%;\n    }\n\n    body .editor-wrap.columns .column.editor-totals {\n        order: 2;\n    }\n\n    body .editor-wrap.columns .column.editor-column {\n        order: 1;\n    }\n\n    body .inner .editor-wrap.columns .ship-stats-wrap {\n        height: auto;\n    }\n\n    body .battle-wrap .top-pane {\n        display: block;\n    }\n\n    body .battle-wrap .top-pane > div {\n        margin-bottom: 10px;\n    }\n\n    body .battle-wrap .bars-container.wide .bar-outer {\n        width: calc(100% - 120px);\n    }\n\n    body .battle-wrap .bars-container.wide {\n        display: flex;\n    }\n\n    body .battle-wrap .top-pane button,\n    body .battle-wrap .top-pane select{\n        width: calc(100% - 40px);\n    }\n\n    body .battle-wrap .top-pane input[type="number"] {\n        width: calc(100% - 80px);\n    }\n\n    body .battle-content .battle-centered {\n        padding-bottom: 30px;\n    }\n}\n\n@media screen and (max-width: 650px){\n\n\n}\n\np.no-margin {\n    margin-top: 4px;\n    margin-bottom: 8px;\n}\n\n.queue-list .queue-utils {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    font-size: 13px;\n}\n\n.clickable-highlight {\n    cursor: pointer;\n}\n\n.expeditions-map .map-cell {\n    width: 30px;\n    height: 30px;\n    box-sizing: border-box;\n    position: relative;\n}\n\n.expeditions-map .map-cell.selected {\n    width: 30px;\n    height: 30px;\n    box-sizing: border-box;\n    border: 1px solid #ff6767;\n}\n\n.expeditions-map .map-cell.current {\n    width: 30px;\n    height: 30px;\n    box-sizing: border-box;\n    border: 1px solid #56afff;\n}\n\n.expeditions-map .map-cell.event:after {\n    background-image: url(' +
+            b +
+            ");\n    background-size: 28px 28px;\n    display: block;\n    position: absolute;\n    width: 28px;\n    height: 28px;\n    z-index: 3;\n    content: '';\n    top: 0px;\n    left: 0px;\n}\n\n.expeditions-map .map-cell.current:after {\n    background-image: url(" +
+            x +
+            ");\n    background-size: 28px 28px;\n    display: block;\n    position: absolute;\n    width: 28px;\n    height: 28px;\n    z-index: 3;\n    content: '';\n    top: 0px;\n    left: 0px;\n}\n\n.expeditions-map .map-cell.home {\n    background: #222222;\n}\n\n.expeditions-map .map-row {\n    display: flex;\n}\n\n.description-hint .loot-line {\n    display: flex;\n}\n\n.description-hint .loot-line p {\n    margin-right: 20px;\n}\n\n.description-hint .loot-line p{\n    font-size: 13px;\n}\n\n.happiness .line .factor {\n    position: relative;\n    min-width: 100px;\n}\n\n.resources-sidebar .resource-item p.boosted::after,\n.happiness .line .factor.boosted::after {\n    display: block;\n    position: absolute;\n    content: 'E';\n    font-size: 12px;\n    background: #30ad30;\n    color: #fff;\n    top: 0;\n    right: 0;\n    width: 14px;\n    height: 14px;\n    border-radius: 50%;\n    text-align: center;\n    padding: 1px;\n}\n\n.resources-sidebar .resource-item p.decreased::after,\n.happiness .line .factor.decreased::after {\n    display: block;\n    position: absolute;\n    content: 'E';\n    font-size: 12px;\n    background: #ff3030;\n    color: #fff;\n    top: 0;\n    right: 0;\n    width: 14px;\n    height: 14px;\n    border-radius: 50%;\n    text-align: center;\n    padding: 1px;\n}\n\n.modal-wrap.opened {\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100vw;\n    height: 100vh;\n    z-index: 1;\n    background: rgba(0,0,0,0.3);\n}\n\n.modal-wrap.opened .modal {\n    width: 80%;\n    height: calc(100vh - 100px);\n    margin: 50px auto;\n    padding: 12px;\n}\n\n.modal-wrap.opened .modal .modal-header {\n    display: flex;\n    justify-content: space-between;\n}\n\n.modal-wrap.opened .modal .modal-header .close {\n    cursor: pointer;\n}\n\n.search-content {\n    height: calc(100vh - 220px);\n}\n\n.search-content .search-item {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    padding: 6px 8px;\n    border: 1px solid #222;\n    width: 260px;\n    margin: 4px 8px;\n    border-radius: 4px;\n    font-size: 14px;\n}\n\n.search-content .search-results-list .feature-list {\n    display: flex;\n    flex-wrap: wrap;\n}\n\n.search-content .search-item p {\n    margin: 0;\n}\n\n.editor-wrap .editor-column .details {\n    height: calc(100vh - 480px);\n}\n\n.editor-wrap .editor-column .save-area {\n    margin-top: 10px;\n}\n\n.editor-wrap .editor-column .row {\n    display: flex;\n    align-items: center;\n}\n\n.editor-wrap .editor-column .main .buttons button {\n    margin: 4px;\n}\n\n.editor-wrap .editor-column .row {\n    margin: 4px;\n    padding: 4px;\n}\n\n.editor-wrap .editor-column .row.job-container {\n    margin: 4px;\n    padding: 4px;\n    border: 1px solid #222222;\n    width: 100%;\n}\n\n.editor-wrap .editor-column .row.job-container .value {\n    padding: 5px;\n    margin: 5px;\n}\n\n.editor-wrap .editor-column .row.job-container .value p {\n    margin: 4px 0;\n}\n\n.editor-wrap .editor-column .row.job-container .value input[type=\"number\"] {\n    width: 80px;\n}\n\n.colony-wrap .line .presets {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    width: 400px;\n    margin-left: 20px;\n}\n\n.colony-wrap .line .presets button {\n    width: 180px;\n    margin-left: 5px;\n}\n\n/* Themes */\nbody.dark-theme * {\n    color: #ffffff;\n}\n\nbody.dark-theme span.greenish {\n    color: #90fd70;\n}\n\nbody.dark-theme span.red {\n    color: #ff6767;\n}\n\nbody.dark-theme .page {\n    background-color: #131115;\n}\n\nbody.dark-theme input {\n    background: #233444;\n}\n\nbody.dark-theme button {\n    background: #344555;\n    border-radius: 0;\n    border-color: #575989;\n}\n\nbody.dark-theme button:hover {\n    background: #575989;\n}\n\nbody.dark-theme button:disabled {\n    background: rgba(31,41,51,0.5);\n    pointer-events: none;\n}\n\nbody.dark-theme select {\n    border: 1px solid #777;\n    border-radius: 5px;\n    padding: 8px;\n    min-width: 163px;\n    background: rgb(19, 25, 38);\n    color: #fff;\n}\n\nbody.dark-theme .right-panel .expand-collapse-panel {\n    background-color: rgb(19, 25, 38);\n    border-color: #fff;\n}\n\nbody.dark-theme .game .right-panel .queue-item .move-controls .move:hover {\n    color: #ffa767;\n}\n\nbody.dark-theme .game .right-panel .queue-item .close:hover {\n    cursor: pointer;\n    color: #ee7744;\n}\n\nbody.dark-theme .header .menu ul li .menu-inner:hover {\n    color: #e74;\n}\n\nbody.dark-theme .header .menu ul li.selected .menu-inner {\n    border-bottom: 5px solid #e74;\n    padding-bottom: 4px;\n    pointer-events: none;\n}\n\nbody.dark-theme .resources-sidebar {\n    width: 360px;\n    border: 1px solid #222;\n}\n\n\nbody.dark-theme .resources-sidebar .hl.resource-item.missing-highlight,\nbody.dark-theme .resources-sidebar .resource-item.missing-highlight * {\n    background: #fd3030;\n    color: #fff;\n}\n\nbody.dark-theme .resources-sidebar .hl.resource-item.produced-highlight,\nbody.dark-theme .resources-sidebar .resource-item.produced-highlight * {\n    background: #30ad30;\n    color: #fff;\n}\n\nbody.dark-theme .resources-sidebar .hl.resource-item.consumed-highlight,\nbody.dark-theme .resources-sidebar .resource-item.consumed-highlight * {\n    background: #fd7050;\n    color: #fff;\n}\n\nbody.dark-theme .resources-sidebar .resource-item.negative p {\n    color: #fd7050;\n}\n\nbody.dark-theme .resources-sidebar .resource-item.capped p {\n    color: #ffe0a0;\n}\n\nbody.dark-theme .resources-sidebar .resource-item p.boosted {\n    color: #90fd70;\n}\n\nbody.dark-theme .resources-sidebar .resource-item p.decreased {\n    color: #ff5757;\n}\n\nbody.dark-theme .resources-sidebar .resource-item:nth-child(even) {\n    background: #131115;\n}\n\nbody.dark-theme .resources-sidebar .resource-item:nth-child(odd) {\n    background: #222;\n}\n\nbody.dark-theme .features-block .features-title .collapse-expand {\n    font-size: 12px;\n    color: #ee7744;\n    cursor: pointer;\n}\n\nbody.dark-theme .chips-wrap .chip {\n    border: 1px solid #234;\n    background-color: #222;\n}\n\nbody.dark-theme .chips-wrap .chip .bg {\n    background-color: #193344;\n}\n\nbody.dark-theme .chips-wrap.building-unlock .chip .bg {\n    background-color: #376384;\n}\n\nbody.dark-theme .chips-wrap.resource-unlock .chip .bg {\n    background-color: #377334;\n}\n\nbody.dark-theme .chips-wrap.special .chip .bg {\n    background-color: #775374;\n}\n\nbody.dark-theme .chips-wrap .chip .controls.disabled .control {\n    color: #ccbbaa;\n}\n\nbody.dark-theme .chips-wrap .chip .controls:not(.disabled) .control:hover {\n    background: #344555;\n    border: 1px solid #222;\n    border-radius: 50%;\n}\n\nbody.dark-theme .description-hint {\n    background: #131518;\n    border: 1px solid #222;\n}\n\nbody.dark-theme .chips-wrap .chip .level-label {\n    background: #344555;\n    border: 1px solid #222;\n}\n\nbody.dark-theme .hint-caps {\n    background: #131115;\n    padding: 16px;\n}\n\nbody.dark-theme .chips-wrap.disabled .chip span.name-label {\n    color: #cba;\n}\n\nbody.dark-theme .chips-wrap.disabled.blocked.soft-lock .chip span.name-label {\n    color: #ff5757;\n}\n\nbody.dark-theme .chips-wrap.disabled.soft-lock .chip span.name-label {\n    color: #ffa767;\n    cursor: not-allowed;\n}\n\nbody.dark-theme .chips-wrap.usage-highlight .chip {\n    border-color: #eeaa44;\n}\n\nbody.dark-theme .travel-bar {\n    border: 1px solid #222222;\n    background: #223344;\n}\n\nbody.dark-theme .travel-bar .travel-bar-inner {\n    background: #575989;\n}\n\nbody.dark-theme .cost-block .progressBar .filling {\n    background: #575989;\n}\n\nbody.dark-theme .job-card {\n    border: 1px solid #222;\n}\n\nbody.dark-theme .job-card .set-amount button {\n    background: #233444;\n    border: 1px solid #222222;\n}\n\nbody.dark-theme .job-card .set-amount button:hover {\n    background: #344555;\n}\n\nbody.dark-theme .job-card .set-amount input {\n    background: #131115;\n    border: 1px solid #222222;\n    border-radius: 4px;\n}\n\nbody.dark-theme .settings .set-row .val textarea {\n    background: #222222;\n}\n\nbody.dark-theme .happiness .factor-wrap .factor.excess {\n    color: #ffe0a0;\n}\n\nbody.dark-theme .laws-list .law-box .law-options .option-box {\n    padding: 4px 12px;\n    border: 1px solid #222222;\n    cursor: pointer;\n    margin: 0 10px;\n}\n\nbody.dark-theme .laws-list .law-box .law-options .option-box.selected {\n    background-color: #233444;\n}\n\nbody.dark-theme .submenu .submenu-item.selected {\n    color: #ee7744;\n}\n\n@media screen and (max-width: 860px) {\n    body.dark-theme .mobile-tooltip {\n        background: #131518;\n        border: 1px solid #223344;\n    }\n\n    body.dark-theme .mobile-tooltip-wrap {\n        background: rgba(21,21,21,0.7);\n    }\n}\n\nbody.dark-theme .clickable-highlight {\n    color: #ee7744;\n}\n\nbody.dark-theme .modal-wrap.opened .modal {\n    background: #131115;\n    border: 1px solid #222222;\n    border-radius: 4px;\n}\n\n/* THEME: LIGHT THEME */\n\nbody.light-theme * {\n    font-family: 'Lato', sans-serif;\n}\n\nbody.light-theme * {\n    color: #222;\n}\n\nbody.light-theme span.greenish {\n    color: #30ad30;\n}\n\nbody.light-theme span.red {\n    color: #df2727;\n}\n\nbody.light-theme .page {\n    background-color: #f6f1f6;\n}\n\nbody.light-theme input {\n    background: #eee;\n    border: 1px solid #333;\n    border-radius: 2px;\n}\n\nbody.light-theme button {\n    background: #eee;\n    color: #222222;\n    border-radius: 4px;\n    border-color: #333;\n}\n\n\nbody.light-theme button:hover {\n    background: #ccc;\n}\n\nbody.light-theme button:disabled {\n    background: rgba(31,41,51,0.5);\n    pointer-events: none;\n}\n\nbody.light-theme select {\n    border: 1px solid #333;\n    border-radius: 5px;\n    padding: 8px;\n    min-width: 163px;\n    background: #eee;\n    color: #333;\n}\n\nbody.light-theme .right-panel .expand-collapse-panel {\n    background-color: #eee;\n    border-color: #333;\n}\n\nbody.light-theme .game .right-panel .queue-item .move-controls .move:hover {\n    color: #3558aa;\n}\n\nbody.light-theme .game .right-panel .queue-item .close:hover {\n    cursor: pointer;\n    color: #3558aa;\n}\n\nbody.light-theme .header .menu ul li .menu-inner:hover {\n    color: #3558aa;\n}\n\nbody.light-theme .header .menu ul li.selected .menu-inner {\n    border-bottom: 2px solid #35488a;\n    padding-bottom: 4px;\n    pointer-events: none;\n}\n\nbody.light-theme .resources-sidebar {\n    width: 360px;\n    border: 1px solid #777;\n    border-radius: 4px;\n    background: #eee;\n}\n\nbody.light-theme .resources-sidebar .hl.resource-item.missing-highlight,\nbody.light-theme .resources-sidebar .resource-item.missing-highlight * {\n    background: #fda0a0;\n    color: #222;\n}\n\nbody.light-theme .resources-sidebar .hl.resource-item.produced-highlight,\nbody.light-theme .resources-sidebar .resource-item.produced-highlight * {\n    background: #a0fda0;\n    color: #222;\n}\n\nbody.light-theme .resources-sidebar .hl.resource-item.consumed-highlight,\nbody.light-theme .resources-sidebar .resource-item.consumed-highlight * {\n    background: #ffd090;\n    color: #222;\n}\n\nbody.light-theme .resources-sidebar .resource-item.negative p {\n    color: #fd7050;\n}\n\nbody.light-theme .resources-sidebar .resource-item.capped p {\n    color: #8f6020;\n}\n\nbody.light-theme .resources-sidebar .resource-item p.boosted {\n    color: #30ad30;\n}\n\nbody.light-theme .resources-sidebar .resource-item p.decreased {\n    color: #df2727;\n}\n\nbody.light-theme .resources-sidebar .resource-item:nth-child(even) {\n    background: #eee9ee;\n}\n\nbody.light-theme .resources-sidebar .resource-item:nth-child(odd) {\n    background: #f6f6f6;\n}\n\nbody.light-theme .features-block .features-title .collapse-expand {\n    font-size: 12px;\n    color: #112224;\n    cursor: pointer;\n}\n\nbody.light-theme .label-wrap {\n    font-weight: bold;\n}\n\nbody.light-theme .chips-wrap .chip {\n    border: 1px solid #333;\n    background-color: #ddd;\n}\n\nbody.light-theme .chips-wrap .chip .stick-left {\n    width: 150px;\n}\n\nbody.light-theme .buildings-wrap .chips-wrap .chip .stick-left {\n    width: 200px;\n}\n\nbody.light-theme .chips-wrap .chip * {\n    color: #000;\n}\n\nbody.light-theme .chips-wrap .chip .bg {\n    background-color: #fff;\n    border-right: 1px solid #888;\n}\n\nbody.light-theme .chips-wrap.building-unlock .chip .bg {\n    background-color: #67c3f4;\n}\n\nbody.light-theme .chips-wrap.resource-unlock .chip .bg {\n    background-color: #a7f3a4;\n}\n\nbody.light-theme .chips-wrap.special .chip .bg {\n    background-color: #d7a3d4;\n}\n\nbody.light-theme .chips-wrap .chip-content {\n    display: flex;\n    align-items: center;\n}\n\nbody.light-theme .chips-wrap .chip-content .name-label {\n    font-size: 14px;\n}\n\nbody.light-theme .chips-wrap .chip-content .stick-right {\n    position: relative;\n    flex-shrink: 0;\n    top: -2px;\n}\n\nbody.light-theme .chips-wrap .chip .controls.disabled .control {\n    color: #555;\n}\n\nbody.light-theme .chips-wrap .chip .controls:not(.disabled) .control:hover {\n    background: #123;\n    border: 1px solid #123;\n    color: #fff;\n    border-radius: 50%;\n}\n\nbody.light-theme .description-hint {\n    background: #fff;\n    border: 1px solid #222;\n}\n\nbody.light-theme .chips-wrap .chip .level-label {\n    background: none;\n    border: none;\n    font-size: 13px;\n}\n\nbody.light-theme .hint-caps {\n    background: #fff;\n    padding: 16px;\n    border: 1px solid #222;\n    border-radius: 4px;\n}\n\nbody.light-theme .notification-container span.new-label::after {\n    margin-top: 0;\n    padding-left: 5px;\n}\n\nbody.light-theme .chips-wrap.disabled .chip span.name-label {\n    color: #444;\n}\n\nbody.light-theme .chips-wrap.disabled.blocked.soft-lock .chip span.name-label {\n    color: #ef0707;\n}\n\nbody.light-theme .chips-wrap.disabled.soft-lock .chip span.name-label {\n    color: #7f6707;\n    cursor: not-allowed;\n}\n\nbody.light-theme .travel-bar {\n    border: 1px solid #222222;\n    background: #eee;\n}\n\nbody.light-theme .travel-bar .travel-bar-inner {\n    background: #123;\n}\n\nbody.light-theme .cost-block .progressBar .filling {\n    background: #37a939;\n}\n\nbody.light-theme .job-card {\n    border: 1px solid #222;\n}\n\nbody.light-theme .job-card .set-amount button {\n    background: #eee;\n    border: 1px solid #222222;\n}\n\nbody.light-theme .job-card .set-amount button:hover {\n    background: #ccc;\n}\n\nbody.light-theme .job-card .set-amount input {\n    background: #fff;\n    border: 1px solid #222222;\n    border-radius: 4px;\n}\n\nbody.light-theme .settings .set-row .val textarea {\n    background: #eee;\n    border: 1px solid #222222;\n    border-radius: 4px;\n}\n\nbody.light-theme .happiness .factor-wrap .factor.excess {\n    color: #8f6020;\n}\n\nbody.light-theme .laws-list .law-box .law-options .option-box {\n    padding: 4px 12px;\n    border: 1px solid #222222;\n    cursor: pointer;\n    margin: 0 10px;\n}\n\nbody.light-theme .laws-list .law-box .law-options .option-box.selected {\n    background-color: #ccc;\n}\n\nbody.light-theme .submenu .submenu-item.selected {\n    color: #3558aa;\n}\n\n\n@media screen and (max-width: 860px) {\n    body.light-theme .mobile-tooltip {\n        background: #eee;\n        border: 1px solid #222;\n    }\n\n    body.light-theme .mobile-tooltip-wrap {\n        background: #eee;\n    }\n}\n\nbody.light-theme .clickable-highlight {\n    color: #3558aa;\n}\n\nbody.light-theme .chips-wrap.usage-highlight .chip {\n    border-color: #55a8fa;\n}\n\nbody.light-theme .modal-wrap.opened .modal {\n    background: #fefefe;\n    border: 1px solid #222;\n    border-radius: 4px;\n}\n\n\n/* THEME: BLACK THEME */\n\nbody.black-theme * {\n    /*font-family: 'Nunito', sans-serif;*/\n    font-family: 'DM Sans', sans-serif;\n}\n\nbody.black-theme * {\n    color: #fff;\n}\n\nbody.black-theme span.greenish {\n    color: #90fd70;\n}\n\nbody.black-theme span.red {\n    color: #ff6767;\n}\n\nbody.black-theme .page {\n    background-color: #111;\n}\n\nbody.black-theme input {\n    background: #333;\n    border: 1px solid #333;\n    border-radius: 2px;\n}\n\nbody.black-theme button {\n    background: #000;\n    color: #fff;\n    border-radius: 4px;\n    border-color: #333;\n}\n\n\nbody.black-theme button:hover {\n    background: #111;\n}\n\nbody.black-theme button:disabled {\n    background: rgba(31,41,51,0.5);\n    pointer-events: none;\n}\n\nbody.black-theme select {\n    border: 1px solid #333;\n    border-radius: 5px;\n    padding: 8px;\n    min-width: 163px;\n    background: #111;\n    color: #fff;\n}\n\nbody.black-theme .right-panel .expand-collapse-panel {\n    background-color: #111;\n    border-color: #fff;\n}\n\nbody.black-theme .game .right-panel .queue-item .move-controls .move:hover {\n    color: #eee;\n}\n\nbody.black-theme .game .right-panel .queue-item .close:hover {\n    cursor: pointer;\n    color: #eee;\n}\n\nbody.black-theme .header .menu ul li .menu-inner:hover {\n    color: #eee;\n}\n\nbody.black-theme .header .menu ul li.selected .menu-inner {\n    border-bottom: 2px solid #eee;\n    padding-bottom: 4px;\n    pointer-events: none;\n}\n\nbody.black-theme .resources-sidebar {\n    width: 360px;\n    border: 1px solid #777;\n    border-radius: 4px;\n    background: #111;\n}\n\nbody.black-theme .resources-sidebar .hl.resource-item.missing-highlight,\nbody.black-theme .resources-sidebar .resource-item.missing-highlight * {\n    background: #fd3030;\n    color: #fff;\n}\n\nbody.black-theme .resources-sidebar .hl.resource-item.produced-highlight,\nbody.black-theme .resources-sidebar .resource-item.produced-highlight * {\n    background: #30ad30;\n    color: #fff;\n}\n\nbody.black-theme .resources-sidebar .hl.resource-item.consumed-highlight,\nbody.black-theme .resources-sidebar .resource-item.consumed-highlight * {\n    background: #fd7050;\n    color: #fff;\n}\n\nbody.black-theme .resources-sidebar .resource-item.negative p {\n    color: #fd7050;\n}\n\nbody.black-theme .resources-sidebar .resource-item.capped p {\n    color: #ffe0a0;\n}\n\nbody.black-theme .resources-sidebar .resource-item p.boosted {\n    color: #90fd70;\n}\n\nbody.black-theme .resources-sidebar .resource-item p.decreased {\n    color: #ff5757;\n}\n\nbody.black-theme .resources-sidebar .resource-item:nth-child(even) {\n    background: #111;\n}\n\nbody.black-theme .resources-sidebar .resource-item:nth-child(odd) {\n    background: #333;\n}\n\nbody.black-theme .features-block .features-title .collapse-expand {\n    font-size: 12px;\n    color: #fff;\n    cursor: pointer;\n}\n\nbody.black-theme .label-wrap {\n    font-weight: bold;\n}\n\nbody.black-theme .chips-wrap .chip {\n    border: 1px solid #333;\n    background-color: #333;\n}\n\nbody.black-theme .chips-wrap .chip .stick-left {\n    width: 150px;\n}\n\nbody.black-theme .buildings-wrap .chips-wrap .chip .stick-left {\n    width: 200px;\n}\n\nbody.black-theme .chips-wrap .chip * {\n    color: #fff;\n}\n\nbody.black-theme .chips-wrap .chip .bg {\n    background-color: #000;\n}\n\nbody.black-theme .chips-wrap.building-unlock .chip .bg {\n    background-color: #67c3f4;\n}\n\nbody.black-theme .chips-wrap.resource-unlock .chip .bg {\n    background-color: #a7f3a4;\n}\n\nbody.black-theme .chips-wrap.special .chip .bg {\n    background-color: #d7a3d4;\n}\n\nbody.black-theme .chips-wrap .chip-content {\n    display: flex;\n    align-items: center;\n}\n\nbody.black-theme .chips-wrap .chip-content .name-label {\n    font-size: 14px;\n}\n\nbody.black-theme .chips-wrap .chip-content .stick-right {\n    position: relative;\n    flex-shrink: 0;\n    top: -2px;\n}\n\nbody.black-theme .chips-wrap .chip .controls.disabled .control {\n    color: #555;\n}\n\nbody.black-theme .chips-wrap .chip .controls:not(.disabled) .control:hover {\n    background: #222;\n    border: 1px solid #333;\n    color: #fff;\n    border-radius: 50%;\n}\n\nbody.black-theme .description-hint {\n    background: #222;\n    border: 1px solid #555;\n}\n\nbody.black-theme .chips-wrap .chip .level-label {\n    background: none;\n    border: none;\n    font-size: 13px;\n}\n\nbody.black-theme .hint-caps {\n    background: #222;\n    padding: 16px;\n    border: 1px solid #555;\n    border-radius: 4px;\n}\n\nbody.black-theme .notification-container span.new-label::after {\n    margin-top: 0;\n    padding-left: 5px;\n}\n\nbody.black-theme .chips-wrap.disabled .chip span.name-label {\n    color: #eee;\n}\n\nbody.black-theme .chips-wrap.disabled.blocked.soft-lock .chip span.name-label {\n    color: #ff5717;\n}\n\nbody.black-theme .chips-wrap.disabled.soft-lock .chip span.name-label {\n    color: #ffa727;\n    cursor: not-allowed;\n}\n\nbody.black-theme .travel-bar {\n    border: 1px solid #555;\n    background: #555;\n}\n\nbody.black-theme .travel-bar .travel-bar-inner {\n    background: #555;\n}\n\nbody.black-theme .cost-block .progressBar .filling {\n    background: #eee;\n}\n\nbody.black-theme .job-card {\n    border: 1px solid #222;\n}\n\nbody.black-theme .job-card .set-amount button {\n    background: #000;\n    border: 1px solid #222222;\n}\n\nbody.black-theme .job-card .set-amount button:hover {\n    background: #333;\n}\n\nbody.black-theme .job-card .set-amount input {\n    background: #222;\n    border: 1px solid #222222;\n    border-radius: 4px;\n}\n\nbody.black-theme .settings .set-row .val textarea {\n    background: #222;\n    border: 1px solid #222222;\n    border-radius: 4px;\n}\n\nbody.black-theme .happiness .factor-wrap .factor.excess {\n    color: #ffe0a0;\n}\n\nbody.black-theme .laws-list .law-box .law-options .option-box {\n    padding: 4px 12px;\n    border: 1px solid #222222;\n    cursor: pointer;\n    margin: 0 10px;\n}\n\nbody.black-theme .laws-list .law-box .law-options .option-box.selected {\n    background-color: #000;\n}\n\nbody.black-theme .submenu .submenu-item.selected {\n    color: #ee7744;\n}\n\n\n@media screen and (max-width: 860px) {\n    body.black-theme .mobile-tooltip {\n        background: #131518;\n        border: 1px solid #333;\n    }\n\n    body.black-theme .mobile-tooltip-wrap {\n        background: rgba(21,21,21,0.7);\n    }\n}\n\nbody.black-theme .clickable-highlight {\n    color: #ee7744;\n}\n\nbody.black-theme .chips-wrap.usage-highlight .chip {\n    border-color: #ee7744;\n}\n\nbody.black-theme .modal-wrap.opened .modal {\n    background: #131115;\n    border: 1px solid #222222;\n    border-radius: 4px;\n}",
           "",
         ]);
-        const g = p;
+        const y = h;
       },
       3645: (e) => {
         "use strict";
@@ -593,7 +601,7 @@
               ? ((e.scrollbarXActive = !0),
                 (e.railXWidth = e.containerWidth - e.railXMarginWidth),
                 (e.railXRatio = e.containerWidth / e.railXWidth),
-                (e.scrollbarXWidth = T(
+                (e.scrollbarXWidth = A(
                   e,
                   E((e.railXWidth * e.containerWidth) / e.contentWidth)
                 )),
@@ -608,7 +616,7 @@
               ? ((e.scrollbarYActive = !0),
                 (e.railYHeight = e.containerHeight - e.railYMarginHeight),
                 (e.railYRatio = e.containerHeight / e.railYHeight),
-                (e.scrollbarYHeight = T(
+                (e.scrollbarYHeight = A(
                   e,
                   E((e.railYHeight * e.containerHeight) / e.contentHeight)
                 )),
@@ -677,7 +685,7 @@
                 (e.scrollbarYTop = 0),
                 (n.scrollTop = 0));
         }
-        function T(e, n) {
+        function A(e, n) {
           return (
             e.settings.minScrollbarLength &&
               (n = Math.max(n, e.settings.minScrollbarLength)),
@@ -686,7 +694,7 @@
             n
           );
         }
-        function A(e, n) {
+        function T(e, n) {
           var t = n[0],
             r = n[1],
             i = n[2],
@@ -770,7 +778,7 @@
                 });
             },
             "drag-thumb": function (e) {
-              A(e, [
+              T(e, [
                 "containerWidth",
                 "contentWidth",
                 "pageX",
@@ -781,7 +789,7 @@
                 "x",
                 "scrollbarXRail",
               ]),
-                A(e, [
+                T(e, [
                   "containerHeight",
                   "contentHeight",
                   "pageY",
@@ -1573,8 +1581,8 @@
           E = Symbol.for("react.profiler"),
           S = Symbol.for("react.provider"),
           C = Symbol.for("react.context"),
-          T = Symbol.for("react.forward_ref"),
-          A = Symbol.for("react.suspense"),
+          A = Symbol.for("react.forward_ref"),
+          T = Symbol.for("react.suspense"),
           O = Symbol.for("react.suspense_list"),
           _ = Symbol.for("react.memo"),
           R = Symbol.for("react.lazy");
@@ -1712,7 +1720,7 @@
               return "Profiler";
             case N:
               return "StrictMode";
-            case A:
+            case T:
               return "Suspense";
             case O:
               return "SuspenseList";
@@ -1723,7 +1731,7 @@
                 return (e.displayName || "Context") + ".Consumer";
               case S:
                 return (e._context.displayName || "Context") + ".Provider";
-              case T:
+              case A:
                 var n = e.render;
                 return (
                   (e = e.displayName) ||
@@ -1883,7 +1891,7 @@
             return e.body;
           }
         }
-        function $(e, n) {
+        function Q(e, n) {
           var t = n.checked;
           return D({}, n, {
             defaultChecked: void 0,
@@ -1905,11 +1913,11 @@
                   : null != n.value,
             });
         }
-        function Q(e, n) {
+        function $(e, n) {
           null != (n = n.checked) && x(e, "checked", n, !1);
         }
         function Z(e, n) {
-          Q(e, n);
+          $(e, n);
           var t = W(n.value),
             r = n.type;
           if (null != t)
@@ -2219,18 +2227,18 @@
               for (e = 0; e < n.length; e++) Ee(n[e]);
           }
         }
-        function Te(e, n) {
+        function Ae(e, n) {
           return e(n);
         }
-        function Ae() {}
+        function Te() {}
         var Oe = !1;
         function _e(e, n, t) {
           if (Oe) return e(n, t);
           Oe = !0;
           try {
-            return Te(e, n, t);
+            return Ae(e, n, t);
           } finally {
-            (Oe = !1), (null !== ke || null !== Ne) && (Ae(), Ce());
+            (Oe = !1), (null !== ke || null !== Ne) && (Te(), Ce());
           }
         }
         function Re(e, n) {
@@ -2403,9 +2411,9 @@
         }
         var Ve = i.unstable_scheduleCallback,
           qe = i.unstable_cancelCallback,
-          $e = i.unstable_shouldYield,
+          Qe = i.unstable_shouldYield,
           Ke = i.unstable_requestPaint,
-          Qe = i.unstable_now,
+          $e = i.unstable_now,
           Ze = i.unstable_getCurrentPriorityLevel,
           Je = i.unstable_ImmediatePriority,
           en = i.unstable_UserBlockingPriority,
@@ -2567,8 +2575,8 @@
           En,
           Sn = !1,
           Cn = [],
-          Tn = null,
           An = null,
+          Tn = null,
           On = null,
           _n = new Map(),
           Rn = new Map(),
@@ -2581,11 +2589,11 @@
           switch (e) {
             case "focusin":
             case "focusout":
-              Tn = null;
+              An = null;
               break;
             case "dragenter":
             case "dragleave":
-              An = null;
+              Tn = null;
               break;
             case "mouseover":
             case "mouseout":
@@ -2654,8 +2662,8 @@
         }
         function zn() {
           (Sn = !1),
-            null !== Tn && Un(Tn) && (Tn = null),
             null !== An && Un(An) && (An = null),
+            null !== Tn && Un(Tn) && (Tn = null),
             null !== On && Un(On) && (On = null),
             _n.forEach(Fn),
             Rn.forEach(Fn);
@@ -2679,8 +2687,8 @@
             }
           }
           for (
-            null !== Tn && Bn(Tn, e),
-              null !== An && Bn(An, e),
+            null !== An && Bn(An, e),
+              null !== Tn && Bn(Tn, e),
               null !== On && Bn(On, e),
               _n.forEach(n),
               Rn.forEach(n),
@@ -2720,9 +2728,9 @@
             (function (e, n, t, r, i) {
               switch (n) {
                 case "focusin":
-                  return (Tn = Mn(Tn, e, n, t, r, i)), !0;
-                case "dragenter":
                   return (An = Mn(An, e, n, t, r, i)), !0;
+                case "dragenter":
+                  return (Tn = Mn(Tn, e, n, t, r, i)), !0;
                 case "mouseover":
                   return (On = Mn(On, e, n, t, r, i)), !0;
                 case "pointerover":
@@ -2767,7 +2775,7 @@
             } else n !== e && (e = null);
           return (Vn = e), null;
         }
-        function $n(e) {
+        function Qn(e) {
           switch (e) {
             case "cancel":
             case "click":
@@ -2860,13 +2868,13 @@
           }
         }
         var Kn = null,
-          Qn = null,
+          $n = null,
           Zn = null;
         function Jn() {
           if (Zn) return Zn;
           var e,
             n,
-            t = Qn,
+            t = $n,
             r = t.length,
             i = "value" in Kn ? Kn.value : Kn.textContent,
             a = i.length;
@@ -3137,10 +3145,10 @@
               getModifierState: kt,
             })
           ),
-          Tt = rt(
+          At = rt(
             D({}, st, { propertyName: 0, elapsedTime: 0, pseudoElement: 0 })
           ),
-          At = D({}, dt, {
+          Tt = D({}, dt, {
             deltaX: function (e) {
               return "deltaX" in e
                 ? e.deltaX
@@ -3160,7 +3168,7 @@
             deltaZ: 0,
             deltaMode: 0,
           }),
-          Ot = rt(At),
+          Ot = rt(Tt),
           _t = [9, 13, 27, 32],
           Rt = u && "CompositionEvent" in window,
           It = null;
@@ -3227,19 +3235,19 @@
         function qt(e, n) {
           if ("change" === e) return n;
         }
-        var $t = !1;
+        var Qt = !1;
         if (u) {
           var Kt;
           if (u) {
-            var Qt = "oninput" in document;
-            if (!Qt) {
+            var $t = "oninput" in document;
+            if (!$t) {
               var Zt = document.createElement("div");
               Zt.setAttribute("oninput", "return;"),
-                (Qt = "function" == typeof Zt.oninput);
+                ($t = "function" == typeof Zt.oninput);
             }
-            Kt = Qt;
+            Kt = $t;
           } else Kt = !1;
-          $t = Kt && (!document.documentMode || 9 < document.documentMode);
+          Qt = Kt && (!document.documentMode || 9 < document.documentMode);
         }
         function Jt() {
           Wt && (Wt.detachEvent("onpropertychange", er), (Yt = Wt = null));
@@ -3482,16 +3490,16 @@
           Er = kr("animationiteration"),
           Sr = kr("animationstart"),
           Cr = kr("transitionend"),
-          Tr = new Map(),
-          Ar =
+          Ar = new Map(),
+          Tr =
             "abort auxClick cancel canPlay canPlayThrough click close contextMenu copy cut drag dragEnd dragEnter dragExit dragLeave dragOver dragStart drop durationChange emptied encrypted ended error gotPointerCapture input invalid keyDown keyPress keyUp load loadedData loadedMetadata loadStart lostPointerCapture mouseDown mouseMove mouseOut mouseOver mouseUp paste pause play playing pointerCancel pointerDown pointerMove pointerOut pointerOver pointerUp progress rateChange reset resize seeked seeking stalled submit suspend timeUpdate touchCancel touchEnd touchStart volumeChange scroll toggle touchMove waiting wheel".split(
               " "
             );
         function Or(e, n) {
-          Tr.set(e, n), l(n, [e]);
+          Ar.set(e, n), l(n, [e]);
         }
-        for (var _r = 0; _r < Ar.length; _r++) {
-          var Rr = Ar[_r];
+        for (var _r = 0; _r < Tr.length; _r++) {
+          var Rr = Tr[_r];
           Or(Rr.toLowerCase(), "on" + (Rr[0].toUpperCase() + Rr.slice(1)));
         }
         Or(Nr, "onAnimationEnd"),
@@ -3615,7 +3623,7 @@
           }
         }
         function Br(e, n, t, r) {
-          switch ($n(n)) {
+          switch (Qn(n)) {
             case 1:
               var i = Wn;
               break;
@@ -3674,7 +3682,7 @@
               i = we(t),
               o = [];
             e: {
-              var s = Tr.get(e);
+              var s = Ar.get(e);
               if (void 0 !== s) {
                 var l = lt,
                   c = e;
@@ -3729,7 +3737,7 @@
                     l = mt;
                     break;
                   case Cr:
-                    l = Tt;
+                    l = At;
                     break;
                   case "scroll":
                     l = ut;
@@ -3846,7 +3854,7 @@
               )
                 var g = qt;
               else if (Ht(s))
-                if ($t) g = ir;
+                if (Qt) g = ir;
                 else {
                   g = tr;
                   var v = nr;
@@ -3916,7 +3924,7 @@
                   "ko" !== t.locale &&
                   (zt || "onCompositionStart" !== x
                     ? "onCompositionEnd" === x && zt && (b = Jn())
-                    : ((Qn = "value" in (Kn = i) ? Kn.value : Kn.textContent),
+                    : (($n = "value" in (Kn = i) ? Kn.value : Kn.textContent),
                       (zt = !0))),
                 0 < (v = Wr(r, x)).length &&
                   ((x = new bt(x, e, null, t, i)),
@@ -3938,7 +3946,7 @@
                   : (function (e, n) {
                       if (zt)
                         return "compositionend" === e || (!Rt && Ut(e, n))
-                          ? ((e = Jn()), (Zn = Qn = Kn = null), (zt = !1), e)
+                          ? ((e = Jn()), (Zn = $n = Kn = null), (zt = !1), e)
                           : null;
                       switch (e) {
                         case "paste":
@@ -4006,15 +4014,15 @@
         }
         var Vr = /\r\n?/g,
           qr = /\u0000|\uFFFD/g;
-        function $r(e) {
+        function Qr(e) {
           return ("string" == typeof e ? e : "" + e)
             .replace(Vr, "\n")
             .replace(qr, "");
         }
         function Kr(e, n, t) {
-          if (((n = $r(n)), $r(e) !== n && t)) throw Error(a(425));
+          if (((n = Qr(n)), Qr(e) !== n && t)) throw Error(a(425));
         }
-        function Qr() {}
+        function $r() {}
         var Zr = null;
         function Jr(e, n) {
           return (
@@ -4136,7 +4144,7 @@
           Ei = wi(Ni),
           Si = wi(!1),
           Ci = Ni;
-        function Ti(e, n) {
+        function Ai(e, n) {
           var t = e.type.contextTypes;
           if (!t) return Ni;
           var r = e.stateNode;
@@ -4153,7 +4161,7 @@
             a
           );
         }
-        function Ai(e) {
+        function Ti(e) {
           return null != e.childContextTypes;
         }
         function Oi() {
@@ -4258,7 +4266,7 @@
             e = e.return;
           }
         }
-        function $i(e, n) {
+        function Qi(e, n) {
           (Gi = e),
             (Yi = Wi = null),
             null !== (e = e.dependencies) &&
@@ -4276,7 +4284,7 @@
             } else Wi = Wi.next = e;
           return n;
         }
-        var Qi = null,
+        var $i = null,
           Zi = !1;
         function Ji(e) {
           e.updateQueue = {
@@ -4314,7 +4322,7 @@
             ((t = t.shared),
             null !== vl && 0 != (1 & e.mode) && 0 == (2 & gl)
               ? (null === (e = t.interleaved)
-                  ? ((n.next = n), null === Qi ? (Qi = [t]) : Qi.push(t))
+                  ? ((n.next = n), null === $i ? ($i = [t]) : $i.push(t))
                   : ((n.next = e.next), (e.next = n)),
                 (t.interleaved = n))
               : (null === (e = t.pending)
@@ -4537,8 +4545,8 @@
           return (
             "object" == typeof a && null !== a
               ? (a = Ki(a))
-              : ((i = Ai(n) ? Ci : Ei.current),
-                (a = (r = null != (r = n.contextTypes)) ? Ti(e, i) : Ni)),
+              : ((i = Ti(n) ? Ci : Ei.current),
+                (a = (r = null != (r = n.contextTypes)) ? Ai(e, i) : Ni)),
             (n = new n(t, a)),
             (e.memoizedState =
               null !== n.state && void 0 !== n.state ? n.state : null),
@@ -4566,7 +4574,7 @@
           var a = n.contextType;
           "object" == typeof a && null !== a
             ? (i.context = Ki(a))
-            : ((a = Ai(n) ? Ci : Ei.current), (i.context = Ti(e, a))),
+            : ((a = Ti(n) ? Ci : Ei.current), (i.context = Ai(e, a))),
             (i.state = e.memoizedState),
             "function" == typeof (a = n.getDerivedStateFromProps) &&
               (la(e, n, a, t), (i.state = e.memoizedState)),
@@ -4627,8 +4635,8 @@
               (ba[xa] = null);
         }
         var Ca = null,
-          Ta = null,
-          Aa = !1,
+          Aa = null,
+          Ta = !1,
           Oa = null;
         function _a(e, n) {
           var t = xc(5, null, null, 0);
@@ -4650,13 +4658,13 @@
                     t.toLowerCase() !== n.nodeName.toLowerCase()
                       ? null
                       : n) &&
-                ((e.stateNode = n), (Ca = e), (Ta = oi(n.firstChild)), !0)
+                ((e.stateNode = n), (Ca = e), (Aa = oi(n.firstChild)), !0)
               );
             case 6:
               return (
                 null !==
                   (n = "" === e.pendingProps || 3 !== n.nodeType ? null : n) &&
-                ((e.stateNode = n), (Ca = e), (Ta = null), !0)
+                ((e.stateNode = n), (Ca = e), (Aa = null), !0)
               );
             case 13:
               return (
@@ -4671,7 +4679,7 @@
                 (t.return = e),
                 (e.child = t),
                 (Ca = e),
-                (Ta = null),
+                (Aa = null),
                 !0)
               );
             default:
@@ -4682,8 +4690,8 @@
           return 0 != (1 & e.mode) && 0 == (128 & e.flags);
         }
         function Pa(e) {
-          if (Aa) {
-            var n = Ta;
+          if (Ta) {
+            var n = Aa;
             if (n) {
               var t = n;
               if (!Ra(e, n)) {
@@ -4692,11 +4700,11 @@
                 var r = Ca;
                 n && Ra(e, n)
                   ? _a(r, t)
-                  : ((e.flags = (-4097 & e.flags) | 2), (Aa = !1), (Ca = e));
+                  : ((e.flags = (-4097 & e.flags) | 2), (Ta = !1), (Ca = e));
               }
             } else {
               if (Ia(e)) throw Error(a(418));
-              (e.flags = (-4097 & e.flags) | 2), (Aa = !1), (Ca = e);
+              (e.flags = (-4097 & e.flags) | 2), (Ta = !1), (Ca = e);
             }
           }
         }
@@ -4711,7 +4719,7 @@
         }
         function Ma(e) {
           if (e !== Ca) return !1;
-          if (!Aa) return La(e), (Aa = !0), !1;
+          if (!Ta) return La(e), (Ta = !0), !1;
           var n;
           if (
             ((n = 3 !== e.tag) &&
@@ -4720,10 +4728,10 @@
                 "head" !== (n = e.type) &&
                 "body" !== n &&
                 !Jr(e.type, e.memoizedProps)),
-            n && (n = Ta))
+            n && (n = Aa))
           ) {
             if (Ia(e)) {
-              for (e = Ta; e; ) e = oi(e.nextSibling);
+              for (e = Aa; e; ) e = oi(e.nextSibling);
               throw Error(a(418));
             }
             for (; n; ) _a(e, n), (n = oi(n.nextSibling));
@@ -4737,7 +4745,7 @@
                   var t = e.data;
                   if ("/$" === t) {
                     if (0 === n) {
-                      Ta = oi(e.nextSibling);
+                      Aa = oi(e.nextSibling);
                       break e;
                     }
                     n--;
@@ -4745,13 +4753,13 @@
                 }
                 e = e.nextSibling;
               }
-              Ta = null;
+              Aa = null;
             }
-          } else Ta = Ca ? oi(e.stateNode.nextSibling) : null;
+          } else Aa = Ca ? oi(e.stateNode.nextSibling) : null;
           return !0;
         }
         function Da() {
-          (Ta = Ca = null), (Aa = !1);
+          (Aa = Ca = null), (Ta = !1);
         }
         function Ua(e) {
           null === Oa ? (Oa = [e]) : Oa.push(e);
@@ -4967,14 +4975,14 @@
                 (u = v),
                 (d = g);
             }
-            if (m === s.length) return t(i, d), Aa && ka(i, m), c;
+            if (m === s.length) return t(i, d), Ta && ka(i, m), c;
             if (null === d) {
               for (; m < s.length; m++)
                 null !== (d = p(i, s[m], l)) &&
                   ((a = o(d, a, m)),
                   null === u ? (c = d) : (u.sibling = d),
                   (u = d));
-              return Aa && ka(i, m), c;
+              return Ta && ka(i, m), c;
             }
             for (d = r(i, d); m < s.length; m++)
               null !== (g = h(d, i, m, s[m], l)) &&
@@ -4989,7 +4997,7 @@
                 d.forEach(function (e) {
                   return n(i, e);
                 }),
-              Aa && ka(i, m),
+              Ta && ka(i, m),
               c
             );
           }
@@ -5014,14 +5022,14 @@
                 (d = x),
                 (m = v);
             }
-            if (b.done) return t(i, m), Aa && ka(i, g), u;
+            if (b.done) return t(i, m), Ta && ka(i, g), u;
             if (null === m) {
               for (; !b.done; g++, b = l.next())
                 null !== (b = p(i, b.value, c)) &&
                   ((s = o(b, s, g)),
                   null === d ? (u = b) : (d.sibling = b),
                   (d = b));
-              return Aa && ka(i, g), u;
+              return Ta && ka(i, g), u;
             }
             for (m = r(i, m); !b.done; g++, b = l.next())
               null !== (b = h(m, i, g, b.value, c)) &&
@@ -5036,7 +5044,7 @@
                 m.forEach(function (e) {
                   return n(i, e);
                 }),
-              Aa && ka(i, g),
+              Ta && ka(i, g),
               u
             );
           }
@@ -5139,7 +5147,7 @@
           Xa = wi(Ya),
           Va = wi(Ya),
           qa = wi(Ya);
-        function $a(e) {
+        function Qa(e) {
           if (e === Ya) throw Error(a(174));
           return e;
         }
@@ -5157,12 +5165,12 @@
           }
           ji(Xa), ki(Xa, n);
         }
-        function Qa() {
+        function $a() {
           ji(Xa), ji(Va), ji(qa);
         }
         function Za(e) {
-          $a(qa.current);
-          var n = $a(Xa.current),
+          Qa(qa.current);
+          var n = Qa(Xa.current),
             t = le(n, e.type);
           n !== t && (ki(Va, e), ki(Xa, t));
         }
@@ -5384,7 +5392,7 @@
           if (
             (o && ((r.memoizedState = i), (vs = !0)),
             (r = r.queue),
-            Mo(To.bind(null, t, r, e), [e]),
+            Mo(Ao.bind(null, t, r, e), [e]),
             r.getSnapshot !== n ||
               o ||
               (null !== co && 1 & co.memoizedState.tag))
@@ -5411,14 +5419,14 @@
               : t.push(e);
         }
         function Co(e, n, t, r) {
-          (n.value = t), (n.getSnapshot = r), Ao(n) && Gl(e, 1, -1);
+          (n.value = t), (n.getSnapshot = r), To(n) && Gl(e, 1, -1);
         }
-        function To(e, n, t) {
+        function Ao(e, n, t) {
           return t(function () {
-            Ao(n) && Gl(e, 1, -1);
+            To(n) && Gl(e, 1, -1);
           });
         }
-        function Ao(e) {
+        function To(e) {
           var n = e.getSnapshot;
           e = e.value;
           try {
@@ -5552,9 +5560,9 @@
             next: null,
           }),
             qo(e)
-              ? $o(n, t)
+              ? Qo(n, t)
               : (Ko(e, n, t),
-                null !== (e = Gl(e, r, (t = Bl()))) && Qo(e, n, r));
+                null !== (e = Gl(e, r, (t = Bl()))) && $o(e, n, r));
         }
         function Vo(e, n, t) {
           var r = Hl(e),
@@ -5565,7 +5573,7 @@
               eagerState: null,
               next: null,
             };
-          if (qo(e)) $o(n, i);
+          if (qo(e)) Qo(n, i);
           else {
             Ko(e, n, i);
             var a = e.alternate;
@@ -5580,14 +5588,14 @@
                 if (((i.hasEagerState = !0), (i.eagerState = s), ar(s, o)))
                   return;
               } catch (e) {}
-            null !== (e = Gl(e, r, (t = Bl()))) && Qo(e, n, r);
+            null !== (e = Gl(e, r, (t = Bl()))) && $o(e, n, r);
           }
         }
         function qo(e) {
           var n = e.alternate;
           return e === so || (null !== n && n === so);
         }
-        function $o(e, n) {
+        function Qo(e, n) {
           po = uo = !0;
           var t = e.pending;
           null === t ? (n.next = n) : ((n.next = t.next), (t.next = n)),
@@ -5596,7 +5604,7 @@
         function Ko(e, n, t) {
           null !== vl && 0 != (1 & e.mode) && 0 == (2 & gl)
             ? (null === (e = n.interleaved)
-                ? ((t.next = t), null === Qi ? (Qi = [n]) : Qi.push(n))
+                ? ((t.next = t), null === $i ? ($i = [n]) : $i.push(n))
                 : ((t.next = e.next), (e.next = t)),
               (n.interleaved = t))
             : (null === (e = n.pending)
@@ -5604,7 +5612,7 @@
                 : ((t.next = e.next), (e.next = t)),
               (n.pending = t));
         }
-        function Qo(e, n, t) {
+        function $o(e, n, t) {
           if (0 != (4194240 & t)) {
             var r = n.lanes;
             (t |= r &= e.pendingLanes), (n.lanes = t), bn(e, t);
@@ -5712,7 +5720,7 @@
             useSyncExternalStore: function (e, n, t) {
               var r = so,
                 i = xo();
-              if (Aa) {
+              if (Ta) {
                 if (void 0 === t) throw Error(a(407));
                 t = t();
               } else {
@@ -5723,7 +5731,7 @@
               var o = { value: t, getSnapshot: n };
               return (
                 (i.queue = o),
-                Lo(To.bind(null, r, o, e), [e]),
+                Lo(Ao.bind(null, r, o, e), [e]),
                 (r.flags |= 2048),
                 _o(9, Co.bind(null, r, o, t, n), void 0, null),
                 t
@@ -5732,7 +5740,7 @@
             useId: function () {
               var e = xo(),
                 n = vl.identifierPrefix;
-              if (Aa) {
+              if (Ta) {
                 var t = ja;
                 (n =
                   ":" +
@@ -5934,7 +5942,7 @@
             : ((e.flags |= 65536), (e.lanes = i), e);
         }
         function fs(e, n) {
-          if (!Aa)
+          if (!Ta)
             switch (e.tailMode) {
               case "hidden":
                 n = e.tail;
@@ -5989,11 +5997,11 @@
               return hs(n), null;
             case 1:
             case 17:
-              return Ai(n.type) && Oi(), hs(n), null;
+              return Ti(n.type) && Oi(), hs(n), null;
             case 3:
               return (
                 (r = n.stateNode),
-                Qa(),
+                $a(),
                 ji(Si),
                 ji(Ei),
                 ro(),
@@ -6011,7 +6019,7 @@
               );
             case 5:
               Ja(n);
-              var i = $a(qa.current);
+              var i = Qa(qa.current);
               if (((t = n.type), null !== e && null != n.stateNode))
                 as(e, n, t, r),
                   e.ref !== n.ref && ((n.flags |= 512), (n.flags |= 2097152));
@@ -6020,7 +6028,7 @@
                   if (null === n.stateNode) throw Error(a(166));
                   return hs(n), null;
                 }
-                if (((e = $a(Xa.current)), Ma(n))) {
+                if (((e = Qa(Xa.current)), Ma(n))) {
                   (r = n.stateNode), (t = n.type);
                   var o = n.memoizedProps;
                   switch (
@@ -6086,7 +6094,7 @@
                     case "option":
                       break;
                     default:
-                      "function" == typeof o.onClick && (r.onclick = Qr);
+                      "function" == typeof o.onClick && (r.onclick = $r);
                   }
                   (r = i), (n.updateQueue = r), null !== r && (n.flags |= 4);
                 } else {
@@ -6137,7 +6145,7 @@
                         Dr("toggle", e), (i = r);
                         break;
                       case "input":
-                        K(e, r), (i = $(e, r)), Dr("invalid", e);
+                        K(e, r), (i = Q(e, r)), Dr("invalid", e);
                         break;
                       case "option":
                       default:
@@ -6188,7 +6196,7 @@
                               te(e, !!r.multiple, r.defaultValue, !0);
                         break;
                       default:
-                        "function" == typeof i.onClick && (e.onclick = Qr);
+                        "function" == typeof i.onClick && (e.onclick = $r);
                     }
                     switch (t) {
                       case "button":
@@ -6214,7 +6222,7 @@
               else {
                 if ("string" != typeof r && null === n.stateNode)
                   throw Error(a(166));
-                if (((t = $a(qa.current)), $a(Xa.current), Ma(n))) {
+                if (((t = Qa(qa.current)), Qa(Xa.current), Ma(n))) {
                   if (
                     ((r = n.stateNode),
                     (t = n.memoizedProps),
@@ -6240,9 +6248,9 @@
               if (
                 (ji(eo),
                 (r = n.memoizedState),
-                Aa && null !== Ta && 0 != (1 & n.mode) && 0 == (128 & n.flags))
+                Ta && null !== Aa && 0 != (1 & n.mode) && 0 == (128 & n.flags))
               ) {
-                for (r = Ta; r; ) r = oi(r.nextSibling);
+                for (r = Aa; r; ) r = oi(r.nextSibling);
                 return Da(), (n.flags |= 98560), n;
               }
               if (null !== r && null !== r.dehydrated) {
@@ -6279,7 +6287,7 @@
               );
             case 4:
               return (
-                Qa(), null === e && zr(n.stateNode.containerInfo), hs(n), null
+                $a(), null === e && zr(n.stateNode.containerInfo), hs(n), null
               );
             case 10:
               return Vi(n.type._context), hs(n), null;
@@ -6337,7 +6345,7 @@
                       e = e.sibling;
                     }
                   null !== o.tail &&
-                    Qe() > Ol &&
+                    $e() > Ol &&
                     ((n.flags |= 128),
                     (r = !0),
                     fs(o, !1),
@@ -6355,11 +6363,11 @@
                       null === o.tail &&
                         "hidden" === o.tailMode &&
                         !l.alternate &&
-                        !Aa)
+                        !Ta)
                     )
                       return hs(n), null;
                   } else
-                    2 * Qe() - o.renderingStartTime > Ol &&
+                    2 * $e() - o.renderingStartTime > Ol &&
                       1073741824 !== t &&
                       ((n.flags |= 128),
                       (r = !0),
@@ -6374,7 +6382,7 @@
                 ? ((n = o.tail),
                   (o.rendering = n),
                   (o.tail = n.sibling),
-                  (o.renderingStartTime = Qe()),
+                  (o.renderingStartTime = $e()),
                   (n.sibling = null),
                   (t = eo.current),
                   ki(eo, r ? (1 & t) | 2 : 1 & t),
@@ -6418,12 +6426,12 @@
           (as = function (e, n, t, r) {
             var i = e.memoizedProps;
             if (i !== r) {
-              (e = n.stateNode), $a(Xa.current);
+              (e = n.stateNode), Qa(Xa.current);
               var a,
                 o = null;
               switch (t) {
                 case "input":
-                  (i = $(e, i)), (r = $(e, r)), (o = []);
+                  (i = Q(e, i)), (r = Q(e, r)), (o = []);
                   break;
                 case "select":
                   (i = D({}, i, { value: void 0 })),
@@ -6436,7 +6444,7 @@
                 default:
                   "function" != typeof i.onClick &&
                     "function" == typeof r.onClick &&
-                    (e.onclick = Qr);
+                    (e.onclick = $r);
               }
               for (u in (be(t, r), (t = null), i))
                 if (!r.hasOwnProperty(u) && i.hasOwnProperty(u) && null != i[u])
@@ -6502,11 +6510,11 @@
           t = t.render;
           var a = n.ref;
           return (
-            $i(n, i),
+            Qi(n, i),
             (r = vo(e, n, t, r, a, i)),
             (t = bo()),
             null === e || vs
-              ? (Aa && t && Ea(n), (n.flags |= 1), bs(e, n, r, i), n.child)
+              ? (Ta && t && Ea(n), (n.flags |= 1), bs(e, n, r, i), n.child)
               : ((n.updateQueue = e.updateQueue),
                 (n.flags &= -2053),
                 (e.lanes &= ~i),
@@ -6588,14 +6596,14 @@
             ((n.flags |= 512), (n.flags |= 2097152));
         }
         function Ns(e, n, t, r, i) {
-          var a = Ai(t) ? Ci : Ei.current;
+          var a = Ti(t) ? Ci : Ei.current;
           return (
-            (a = Ti(n, a)),
-            $i(n, i),
+            (a = Ai(n, a)),
+            Qi(n, i),
             (t = vo(e, n, t, r, a, i)),
             (r = bo()),
             null === e || vs
-              ? (Aa && r && Ea(n), (n.flags |= 1), bs(e, n, t, i), n.child)
+              ? (Ta && r && Ea(n), (n.flags |= 1), bs(e, n, t, i), n.child)
               : ((n.updateQueue = e.updateQueue),
                 (n.flags &= -2053),
                 (e.lanes &= ~i),
@@ -6603,11 +6611,11 @@
           );
         }
         function Es(e, n, t, r, i) {
-          if (Ai(t)) {
+          if (Ti(t)) {
             var a = !0;
             Ii(n);
           } else a = !1;
-          if (($i(n, i), null === n.stateNode))
+          if ((Qi(n, i), null === n.stateNode))
             null !== e &&
               ((e.alternate = null), (n.alternate = null), (n.flags |= 2)),
               da(n, t, r),
@@ -6622,7 +6630,7 @@
             c =
               "object" == typeof c && null !== c
                 ? Ki(c)
-                : Ti(n, (c = Ai(t) ? Ci : Ei.current));
+                : Ai(n, (c = Ti(t) ? Ci : Ei.current));
             var u = t.getDerivedStateFromProps,
               d =
                 "function" == typeof u ||
@@ -6671,7 +6679,7 @@
               (l =
                 "object" == typeof (l = t.contextType) && null !== l
                   ? Ki(l)
-                  : Ti(n, (l = Ai(t) ? Ci : Ei.current)));
+                  : Ai(n, (l = Ti(t) ? Ci : Ei.current)));
             var f = t.getDerivedStateFromProps;
             (u =
               "function" == typeof f ||
@@ -6747,10 +6755,10 @@
             : n.context && _i(0, n.context, !1),
             Ka(e, n.containerInfo);
         }
-        function Ts(e, n, t, r, i) {
+        function As(e, n, t, r, i) {
           return Da(), Ua(i), (n.flags |= 256), bs(e, n, t, r), n.child;
         }
-        var As = { dehydrated: null, treeContext: null, retryLane: 0 };
+        var Ts = { dehydrated: null, treeContext: null, retryLane: 0 };
         function Os(e) {
           return { baseLanes: e, cachePool: null };
         }
@@ -6793,7 +6801,7 @@
                       (s.sibling = e),
                       (n.child = s),
                       (n.child.memoizedState = Os(t)),
-                      (n.memoizedState = As),
+                      (n.memoizedState = Ts),
                       e)
                     : Rs(n, o))
             );
@@ -6819,7 +6827,7 @@
                     (n.child = i),
                     0 != (1 & n.mode) && Ga(n, e.child, null, t),
                     (n.child.memoizedState = Os(t)),
-                    (n.memoizedState = As),
+                    (n.memoizedState = Ts),
                     s);
               if (0 == (1 & n.mode)) n = Ls(e, n, t, null);
               else if ("$!" === r.data) n = Ls(e, n, t, Error(a(419)));
@@ -6874,9 +6882,9 @@
                     (r._reactRetry = n),
                     (n = null))
                   : ((t = o.treeContext),
-                    (Ta = oi(r.nextSibling)),
+                    (Aa = oi(r.nextSibling)),
                     (Ca = n),
-                    (Aa = !0),
+                    (Ta = !0),
                     (Oa = null),
                     null !== t &&
                       ((ba[xa++] = wa),
@@ -6897,7 +6905,7 @@
                     ? Os(t)
                     : { baseLanes: o.baseLanes | t, cachePool: null }),
                 (s.childLanes = e.childLanes & ~t),
-                (n.memoizedState = As),
+                (n.memoizedState = Ts),
                 i)
               : ((t = Is(e, n, i.children, t)), (n.memoizedState = null), t);
           }
@@ -6910,7 +6918,7 @@
                   ? Os(t)
                   : { baseLanes: o.baseLanes | t, cachePool: null }),
               (s.childLanes = e.childLanes & ~t),
-              (n.memoizedState = As),
+              (n.memoizedState = Ts),
               i)
             : ((t = Is(e, n, i.children, t)), (n.memoizedState = null), t);
         }
@@ -7068,14 +7076,14 @@
           switch ((Sa(n), n.tag)) {
             case 1:
               return (
-                Ai(n.type) && Oi(),
+                Ti(n.type) && Oi(),
                 65536 & (e = n.flags)
                   ? ((n.flags = (-65537 & e) | 128), n)
                   : null
               );
             case 3:
               return (
-                Qa(),
+                $a(),
                 ji(Si),
                 ji(Ei),
                 ro(),
@@ -7099,7 +7107,7 @@
             case 19:
               return ji(eo), null;
             case 4:
-              return Qa(), null;
+              return $a(), null;
             case 10:
               return Vi(n.type._context), null;
             case 22:
@@ -7145,7 +7153,7 @@
             } while (i !== r);
           }
         }
-        function $s(e, n) {
+        function Qs(e, n) {
           if (
             null !== (n = null !== (n = n.updateQueue) ? n.lastEffect : null)
           ) {
@@ -7166,7 +7174,7 @@
             e.tag, (e = t), "function" == typeof n ? n(e) : (n.current = e);
           }
         }
-        function Qs(e, n, t) {
+        function $s(e, n, t) {
           if (on && "function" == typeof on.onCommitFiberUnmount)
             try {
               on.onCommitFiberUnmount(an, n);
@@ -7288,7 +7296,7 @@
                     : (n = t).appendChild(e),
                   null != (t = t._reactRootContainer) ||
                     null !== n.onclick ||
-                    (n.onclick = Qr));
+                    (n.onclick = $r));
           else if (4 !== r && null !== (e = e.child))
             for (tl(e, n, t), e = e.sibling; null !== e; )
               tl(e, n, t), (e = e.sibling);
@@ -7322,7 +7330,7 @@
             }
             if (5 === o.tag || 6 === o.tag) {
               e: for (var l = e, c = o, u = t, d = c; ; )
-                if ((Qs(l, d, u), null !== d.child && 4 !== d.tag))
+                if (($s(l, d, u), null !== d.child && 4 !== d.tag))
                   (d.child.return = d), (d = d.child);
                 else {
                   if (d === c) break e;
@@ -7356,7 +7364,7 @@
                   (o = o.child);
                 continue;
               }
-            } else if ((Qs(e, o, t), null !== o.child)) {
+            } else if (($s(e, o, t), null !== o.child)) {
               (o.child.return = o), (o = o.child);
               continue;
             }
@@ -7374,7 +7382,7 @@
             case 11:
             case 14:
             case 15:
-              return qs(3, n, n.return), $s(3, n), void qs(5, n, n.return);
+              return qs(3, n, n.return), Qs(3, n), void qs(5, n, n.return);
             case 1:
             case 12:
             case 17:
@@ -7391,7 +7399,7 @@
                     "input" === e &&
                       "radio" === r.type &&
                       null != r.name &&
-                      Q(t, r),
+                      $(t, r),
                       xe(e, i),
                       n = xe(e, r),
                       i = 0;
@@ -7498,7 +7506,7 @@
                     case 0:
                     case 11:
                     case 15:
-                      Hs || $s(5, n);
+                      Hs || Qs(5, n);
                       break;
                     case 1:
                       var r = n.stateNode;
@@ -7612,7 +7620,7 @@
                 case 15:
                   var t = n.return;
                   try {
-                    $s(4, n);
+                    Qs(4, n);
                   } catch (e) {
                     pc(n, t, e);
                   }
@@ -7674,8 +7682,8 @@
           El = 0,
           Sl = 0,
           Cl = null,
-          Tl = null,
-          Al = 0,
+          Al = null,
+          Tl = 0,
           Ol = 1 / 0,
           _l = !1,
           Rl = null,
@@ -7688,7 +7696,7 @@
           Fl = -1,
           zl = 0;
         function Bl() {
-          return 0 != (6 & gl) ? Qe() : -1 !== Fl ? Fl : (Fl = Qe());
+          return 0 != (6 & gl) ? $e() : -1 !== Fl ? Fl : (Fl = $e());
         }
         function Hl(e) {
           return 0 == (1 & e.mode)
@@ -7701,7 +7709,7 @@
               zl)
             : 0 !== (e = xn)
             ? e
-            : (e = void 0 === (e = window.event) ? 16 : $n(e.type));
+            : (e = void 0 === (e = window.event) ? 16 : Qn(e.type));
         }
         function Gl(e, n, t) {
           if (50 < Dl) throw ((Dl = 0), (Ul = null), Error(a(185)));
@@ -7711,12 +7719,12 @@
             : (vn(r, n, t),
               (0 != (2 & gl) && r === vl) ||
                 (r === vl &&
-                  (0 == (2 & gl) && (El |= n), 4 === jl && $l(r, xl)),
+                  (0 == (2 & gl) && (El |= n), 4 === jl && Ql(r, xl)),
                 Yl(r, t),
                 1 === n &&
                   0 === gl &&
                   0 == (1 & e.mode) &&
-                  ((Ol = Qe() + 500), Mi && Fi())),
+                  ((Ol = $e() + 500), Mi && Fi())),
               r);
         }
         function Wl(e, n) {
@@ -7797,7 +7805,7 @@
             var i = gl;
             gl |= 2;
             var o = tc();
-            for ((vl === e && xl === n) || ((Ol = Qe() + 500), ec(e, n)); ; )
+            for ((vl === e && xl === n) || ((Ol = $e() + 500), ec(e, n)); ; )
               try {
                 oc();
                 break;
@@ -7814,8 +7822,8 @@
               (2 === n && 0 !== (i = mn(e)) && ((r = i), (n = Vl(e, i))),
               1 === n)
             )
-              throw ((t = kl), ec(e, 0), $l(e, r), Yl(e, Qe()), t);
-            if (6 === n) $l(e, r);
+              throw ((t = kl), ec(e, 0), Ql(e, r), Yl(e, $e()), t);
+            if (6 === n) Ql(e, r);
             else {
               if (
                 ((i = e.current.alternate),
@@ -7854,32 +7862,32 @@
                     ((r = o), (n = Vl(e, o))),
                   1 === n))
               )
-                throw ((t = kl), ec(e, 0), $l(e, r), Yl(e, Qe()), t);
+                throw ((t = kl), ec(e, 0), Ql(e, r), Yl(e, $e()), t);
               switch (((e.finishedWork = i), (e.finishedLanes = r), n)) {
                 case 0:
                 case 1:
                   throw Error(a(345));
                 case 2:
                 case 5:
-                  cc(e, Tl);
+                  cc(e, Al);
                   break;
                 case 3:
                   if (
-                    ($l(e, r),
-                    (130023424 & r) === r && 10 < (n = Al + 500 - Qe()))
+                    (Ql(e, r),
+                    (130023424 & r) === r && 10 < (n = Tl + 500 - $e()))
                   ) {
                     if (0 !== fn(e, 0)) break;
                     if (((i = e.suspendedLanes) & r) !== r) {
                       Bl(), (e.pingedLanes |= e.suspendedLanes & i);
                       break;
                     }
-                    e.timeoutHandle = ei(cc.bind(null, e, Tl), n);
+                    e.timeoutHandle = ei(cc.bind(null, e, Al), n);
                     break;
                   }
-                  cc(e, Tl);
+                  cc(e, Al);
                   break;
                 case 4:
-                  if (($l(e, r), (4194240 & r) === r)) break;
+                  if ((Ql(e, r), (4194240 & r) === r)) break;
                   for (n = e.eventTimes, i = -1; 0 < r; ) {
                     var s = 31 - sn(r);
                     (o = 1 << s), (s = n[s]) > i && (i = s), (r &= ~o);
@@ -7888,7 +7896,7 @@
                     ((r = i),
                     10 <
                       (r =
-                        (120 > (r = Qe() - r)
+                        (120 > (r = $e() - r)
                           ? 120
                           : 480 > r
                           ? 480
@@ -7902,30 +7910,30 @@
                           ? 4320
                           : 1960 * pl(r / 1960)) - r))
                   ) {
-                    e.timeoutHandle = ei(cc.bind(null, e, Tl), r);
+                    e.timeoutHandle = ei(cc.bind(null, e, Al), r);
                     break;
                   }
-                  cc(e, Tl);
+                  cc(e, Al);
                   break;
                 default:
                   throw Error(a(329));
               }
             }
           }
-          return Yl(e, Qe()), e.callbackNode === t ? Xl.bind(null, e) : null;
+          return Yl(e, $e()), e.callbackNode === t ? Xl.bind(null, e) : null;
         }
         function Vl(e, n) {
           var t = Cl;
           return (
             e.current.memoizedState.isDehydrated && (ec(e, n).flags |= 256),
-            2 !== (e = ic(e, n)) && ((n = Tl), (Tl = t), null !== n && ql(n)),
+            2 !== (e = ic(e, n)) && ((n = Al), (Al = t), null !== n && ql(n)),
             e
           );
         }
         function ql(e) {
-          null === Tl ? (Tl = e) : Tl.push.apply(Tl, e);
+          null === Al ? (Al = e) : Al.push.apply(Al, e);
         }
-        function $l(e, n) {
+        function Ql(e, n) {
           for (
             n &= ~Sl,
               n &= ~El,
@@ -7944,29 +7952,29 @@
           if (0 != (6 & gl)) throw Error(a(327));
           uc();
           var n = fn(e, 0);
-          if (0 == (1 & n)) return Yl(e, Qe()), null;
+          if (0 == (1 & n)) return Yl(e, $e()), null;
           var t = ic(e, n);
           if (0 !== e.tag && 2 === t) {
             var r = mn(e);
             0 !== r && ((n = r), (t = Vl(e, r)));
           }
-          if (1 === t) throw ((t = kl), ec(e, 0), $l(e, n), Yl(e, Qe()), t);
+          if (1 === t) throw ((t = kl), ec(e, 0), Ql(e, n), Yl(e, $e()), t);
           if (6 === t) throw Error(a(345));
           return (
             (e.finishedWork = e.current.alternate),
             (e.finishedLanes = n),
-            cc(e, Tl),
-            Yl(e, Qe()),
+            cc(e, Al),
+            Yl(e, $e()),
             null
           );
         }
-        function Ql(e, n) {
+        function $l(e, n) {
           var t = gl;
           gl |= 1;
           try {
             return e(n);
           } finally {
-            0 === (gl = t) && ((Ol = Qe() + 500), Mi && Fi());
+            0 === (gl = t) && ((Ol = $e() + 500), Mi && Fi());
           }
         }
         function Zl(e) {
@@ -7995,13 +8003,13 @@
                   null != (r = r.type.childContextTypes) && Oi();
                   break;
                 case 3:
-                  Qa(), ji(Si), ji(Ei), ro();
+                  $a(), ji(Si), ji(Ei), ro();
                   break;
                 case 5:
                   Ja(r);
                   break;
                 case 4:
-                  Qa();
+                  $a();
                   break;
                 case 13:
                 case 19:
@@ -8023,11 +8031,11 @@
             (jl = 0),
             (kl = null),
             (Sl = El = Nl = 0),
-            (Tl = Cl = null),
-            null !== Qi)
+            (Al = Cl = null),
+            null !== $i)
           ) {
-            for (n = 0; n < Qi.length; n++)
-              if (null !== (r = (t = Qi[n]).interleaved)) {
+            for (n = 0; n < $i.length; n++)
+              if (null !== (r = (t = $i[n]).interleaved)) {
                 t.interleaved = null;
                 var i = r.next,
                   a = t.pending;
@@ -8037,7 +8045,7 @@
                 }
                 t.pending = r;
               }
-            Qi = null;
+            $i = null;
           }
           return e;
         }
@@ -8104,7 +8112,7 @@
                     break e;
                   }
                   c = Error(a(426));
-                } else if (Aa && 1 & l.mode) {
+                } else if (Ta && 1 & l.mode) {
                   var v = ds(s);
                   if (null !== v) {
                     0 == (65536 & v.flags) && (v.flags |= 256),
@@ -8163,7 +8171,7 @@
           (0 !== jl && 3 !== jl && 2 !== jl) || (jl = 4),
             null === vl ||
               (0 == (268435455 & Nl) && 0 == (268435455 & El)) ||
-              $l(vl, xl);
+              Ql(vl, xl);
         }
         function ic(e, n) {
           var t = gl;
@@ -8184,7 +8192,7 @@
           for (; null !== bl; ) sc(bl);
         }
         function oc() {
-          for (; null !== bl && !$e(); ) sc(bl);
+          for (; null !== bl && !Qe(); ) sc(bl);
         }
         function sc(e) {
           var n = dl(e.alternate, e, yl);
@@ -8433,7 +8441,7 @@
                                       var c = n.alternate;
                                       (null !== c &&
                                         null !== c.memoizedState) ||
-                                        (Al = Qe());
+                                        (Tl = $e());
                                     }
                                     break;
                                   case 22:
@@ -8595,7 +8603,7 @@
                         );
                       } catch (e) {}
                   })(r.stateNode),
-                  Yl(e, Qe()),
+                  Yl(e, $e()),
                   null !== n)
                 )
                   for (t = e.onRecoverableError, r = 0; r < n.length; r++)
@@ -8706,7 +8714,7 @@
                             case 0:
                             case 11:
                             case 15:
-                              $s(9, l);
+                              Qs(9, l);
                           }
                         } catch (e) {
                           pc(l, l.return, e);
@@ -8777,7 +8785,7 @@
             vl === e &&
               (xl & t) === t &&
               (4 === jl ||
-              (3 === jl && (130023424 & xl) === xl && 500 > Qe() - Al)
+              (3 === jl && (130023424 & xl) === xl && 500 > $e() - Tl)
                 ? ec(e, 0)
                 : (Sl |= t)),
             Yl(e, n);
@@ -8892,9 +8900,9 @@
                 return (
                   ((e = xc(12, t, n, 2 | i)).elementType = E), (e.lanes = o), e
                 );
-              case A:
+              case T:
                 return (
-                  ((e = xc(13, t, n, i)).elementType = A), (e.lanes = o), e
+                  ((e = xc(13, t, n, i)).elementType = T), (e.lanes = o), e
                 );
               case O:
                 return (
@@ -8911,7 +8919,7 @@
                     case C:
                       s = 9;
                       break e;
-                    case T:
+                    case A:
                       s = 11;
                       break e;
                     case _:
@@ -8986,7 +8994,7 @@
             (this.onRecoverableError = i),
             (this.mutableSourceEagerHydrationData = null);
         }
-        function Tc(e, n, t, r, i, a, o, s, l) {
+        function Ac(e, n, t, r, i, a, o, s, l) {
           return (
             (e = new Cc(e, n, t, s, l)),
             1 === n ? ((n = 1), !0 === a && (n |= 8)) : (n = 0),
@@ -9003,7 +9011,7 @@
             e
           );
         }
-        function Ac(e, n, t) {
+        function Tc(e, n, t) {
           var r =
             3 < arguments.length && void 0 !== arguments[3]
               ? arguments[3]
@@ -9028,7 +9036,7 @@
                   n = n.stateNode.context;
                   break e;
                 case 1:
-                  if (Ai(n.type)) {
+                  if (Ti(n.type)) {
                     n = n.stateNode.__reactInternalMemoizedMergedChildContext;
                     break e;
                   }
@@ -9039,13 +9047,13 @@
           }
           if (1 === e.tag) {
             var t = e.type;
-            if (Ai(t)) return Ri(e, t, n);
+            if (Ti(t)) return Ri(e, t, n);
           }
           return n;
         }
         function _c(e, n, t, r, i, a, o, s, l) {
           return (
-            ((e = Tc(t, r, !0, e, 0, a, 0, s, l)).context = Oc(null)),
+            ((e = Ac(t, r, !0, e, 0, a, 0, s, l)).context = Oc(null)),
             (t = e.current),
             ((a = na((r = Bl()), (i = Hl(t)))).callback = null != n ? n : null),
             ta(t, a),
@@ -9099,7 +9107,7 @@
                         Za(n);
                         break;
                       case 1:
-                        Ai(n.type) && Ii(n);
+                        Ti(n.type) && Ii(n);
                         break;
                       case 4:
                         Ka(n, n.stateNode.containerInfo);
@@ -9145,15 +9153,15 @@
                 );
               vs = 0 != (131072 & e.flags);
             }
-          else (vs = !1), Aa && 0 != (1048576 & n.flags) && Na(n, va, n.index);
+          else (vs = !1), Ta && 0 != (1048576 & n.flags) && Na(n, va, n.index);
           switch (((n.lanes = 0), n.tag)) {
             case 2:
               var r = n.type;
               null !== e &&
                 ((e.alternate = null), (n.alternate = null), (n.flags |= 2)),
                 (e = n.pendingProps);
-              var i = Ti(n, Ei.current);
-              $i(n, t), (i = vo(null, n, r, e, i, t));
+              var i = Ai(n, Ei.current);
+              Qi(n, t), (i = vo(null, n, r, e, i, t));
               var o = bo();
               return (
                 (n.flags |= 1),
@@ -9164,7 +9172,7 @@
                   ? ((n.tag = 1),
                     (n.memoizedState = null),
                     (n.updateQueue = null),
-                    Ai(r) ? ((o = !0), Ii(n)) : (o = !1),
+                    Ti(r) ? ((o = !0), Ii(n)) : (o = !1),
                     (n.memoizedState =
                       null !== i.state && void 0 !== i.state ? i.state : null),
                     Ji(n),
@@ -9174,7 +9182,7 @@
                     fa(n, r, e, t),
                     (n = Ss(null, n, r, !0, o, t)))
                   : ((n.tag = 0),
-                    Aa && o && Ea(n),
+                    Ta && o && Ea(n),
                     bs(null, n, i, t),
                     (n = n.child)),
                 n
@@ -9194,7 +9202,7 @@
                     (function (e) {
                       if ("function" == typeof e) return yc(e) ? 1 : 0;
                       if (null != e) {
-                        if ((e = e.$$typeof) === T) return 11;
+                        if ((e = e.$$typeof) === A) return 11;
                         if (e === _) return 14;
                       }
                       return 2;
@@ -9250,17 +9258,17 @@
                     (n.memoizedState = o),
                     256 & n.flags)
                   ) {
-                    n = Ts(e, n, r, t, (i = Error(a(423))));
+                    n = As(e, n, r, t, (i = Error(a(423))));
                     break e;
                   }
                   if (r !== i) {
-                    n = Ts(e, n, r, t, (i = Error(a(424))));
+                    n = As(e, n, r, t, (i = Error(a(424))));
                     break e;
                   }
                   for (
-                    Ta = oi(n.stateNode.containerInfo.firstChild),
+                    Aa = oi(n.stateNode.containerInfo.firstChild),
                       Ca = n,
-                      Aa = !0,
+                      Ta = !0,
                       Oa = null,
                       t = Wa(n, null, r, t),
                       n.child = t;
@@ -9392,7 +9400,7 @@
               return (
                 (i = n.type),
                 (r = n.pendingProps.children),
-                $i(n, t),
+                Qi(n, t),
                 (r = r((i = Ki(i)))),
                 (n.flags |= 1),
                 bs(e, n, r, t),
@@ -9413,8 +9421,8 @@
                 null !== e &&
                   ((e.alternate = null), (n.alternate = null), (n.flags |= 2)),
                 (n.tag = 1),
-                Ai(r) ? ((e = !0), Ii(n)) : (e = !1),
-                $i(n, t),
+                Ti(r) ? ((e = !0), Ii(n)) : (e = !1),
+                Qi(n, t),
                 da(n, r, i),
                 fa(n, r, i, t),
                 Ss(null, n, r, !0, e, t)
@@ -9494,7 +9502,7 @@
                   s.call(e);
                 };
               }
-              var l = Tc(e, 0, !1, null, 0, !1, 0, "", Bc);
+              var l = Ac(e, 0, !1, null, 0, !1, 0, "", Bc);
               return (
                 (e._reactRootContainer = l),
                 (e[di] = l.current),
@@ -9545,8 +9553,8 @@
                   var t = pn(n.pendingLanes);
                   0 !== t &&
                     (bn(n, 1 | t),
-                    Yl(n, Qe()),
-                    0 == (6 & gl) && ((Ol = Qe() + 500), Fi()));
+                    Yl(n, $e()),
+                    0 == (6 & gl) && ((Ol = $e() + 500), Fi()));
                 }
                 break;
               case 13:
@@ -9607,11 +9615,11 @@
                 null != (n = t.value) && te(e, !!t.multiple, n, !1);
             }
           }),
-          (Te = Ql),
-          (Ae = Zl);
+          (Ae = $l),
+          (Te = Zl);
         var Gc = {
             usingClientEntryPoint: !1,
-            Events: [gi, vi, bi, Se, Ce, Ql],
+            Events: [gi, vi, bi, Se, Ce, $l],
           },
           Wc = {
             findFiberByHostInstance: mi,
@@ -9663,7 +9671,7 @@
                 ? arguments[2]
                 : null;
             if (!Fc(n)) throw Error(a(200));
-            return Ac(e, n, null, t);
+            return Tc(e, n, null, t);
           }),
           (n.createRoot = function (e, n) {
             if (!Fc(e)) throw Error(a(299));
@@ -9675,7 +9683,7 @@
                 (!0 === n.unstable_strictMode && (t = !0),
                 void 0 !== n.identifierPrefix && (r = n.identifierPrefix),
                 void 0 !== n.onRecoverableError && (i = n.onRecoverableError)),
-              (n = Tc(e, 1, !1, null, 0, t, 0, r, i)),
+              (n = Ac(e, 1, !1, null, 0, t, 0, r, i)),
               (e[di] = n.current),
               zr(8 === e.nodeType ? e.parentNode : e),
               new Dc(n)
@@ -9737,7 +9745,7 @@
               !0)
             );
           }),
-          (n.unstable_batchedUpdates = Ql),
+          (n.unstable_batchedUpdates = $l),
           (n.unstable_renderSubtreeIntoContainer = function (e, n, t, r) {
             if (!zc(t)) throw Error(a(200));
             if (null == e || void 0 === e._reactInternals) throw Error(a(38));
@@ -10272,7 +10280,7 @@
           return "object" == typeof e && null !== e && e.$$typeof === t;
         }
         var C = /\/+/g;
-        function T(e, n) {
+        function A(e, n) {
           return "object" == typeof e && null !== e && null != e.key
             ? (function (e) {
                 var n = { "=": "=0", ":": "=2" };
@@ -10285,7 +10293,7 @@
               })("" + e.key)
             : n.toString(36);
         }
-        function A(e, n, i, a, o) {
+        function T(e, n, i, a, o) {
           var s = typeof e;
           ("undefined" !== s && "boolean" !== s) || (e = null);
           var l = !1;
@@ -10306,11 +10314,11 @@
           if (l)
             return (
               (o = o((l = e))),
-              (e = "" === a ? "." + T(l, 0) : a),
+              (e = "" === a ? "." + A(l, 0) : a),
               w(o)
                 ? ((i = ""),
                   null != e && (i = e.replace(C, "$&/") + "/"),
-                  A(o, n, i, "", function (e) {
+                  T(o, n, i, "", function (e) {
                     return e;
                   }))
                 : null != o &&
@@ -10337,8 +10345,8 @@
             );
           if (((l = 0), (a = "" === a ? "." : a + ":"), w(e)))
             for (var c = 0; c < e.length; c++) {
-              var u = a + T((s = e[c]), c);
-              l += A(s, n, i, u, o);
+              var u = a + A((s = e[c]), c);
+              l += T(s, n, i, u, o);
             }
           else if (
             ((u = (function (e) {
@@ -10351,7 +10359,7 @@
             "function" == typeof u)
           )
             for (e = u.call(e), c = 0; !(s = e.next()).done; )
-              l += A((s = s.value), n, i, (u = a + T(s, c++)), o);
+              l += T((s = s.value), n, i, (u = a + A(s, c++)), o);
           else if ("object" === s)
             throw (
               ((n = String(e)),
@@ -10370,7 +10378,7 @@
           var r = [],
             i = 0;
           return (
-            A(e, r, "", "", function (e) {
+            T(e, r, "", "", function (e) {
               return n.call(t, e, i++);
             }),
             r
@@ -10678,7 +10686,7 @@
           try {
             for (
               y(t), p = r(c);
-              null !== p && (!(p.expirationTime > t) || (e && !A()));
+              null !== p && (!(p.expirationTime > t) || (e && !T()));
 
             ) {
               var o = p.callback;
@@ -10712,14 +10720,14 @@
           E = null,
           S = -1,
           C = 5,
-          T = -1;
-        function A() {
-          return !(n.unstable_now() - T < C);
+          A = -1;
+        function T() {
+          return !(n.unstable_now() - A < C);
         }
         function O() {
           if (null !== E) {
             var e = n.unstable_now();
-            T = e;
+            A = e;
             var t = !0;
             try {
               t = E(!0, e);
@@ -10861,7 +10869,7 @@
               e
             );
           }),
-          (n.unstable_shouldYield = A),
+          (n.unstable_shouldYield = T),
           (n.unstable_wrapCallback = function (e) {
             var n = f;
             return function () {
@@ -11072,11 +11080,19 @@
       1538: (e, n, t) => {
         e.exports = t.p + "e993a905749c966d32bd9d8175bd00cf.png";
       },
+      6087: (e) => {
+        e.exports =
+          "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAUkSURBVHgB1VpNbBtFFP78k42TOKkDrRIkUFxzaQWlqeASLnVFeybcQBxobhxAbbnADSMu9FKoxKE9UQ6cCWeQajhALwhDEUVIDa4EUoqK7CZx4sRrh/nGM+vxsjb+Gcfmk543szu7+97s+5+EYAcJQcuCFgUtqGNCkUZe0Y+CcoKyajw0kLl3Bd0UtN8j/SDovKAkDhCa8QJ6ZzyIPkEPgoTQHcj4RTSrBkLRKUQmUnAeWULEmUN0KoVQJC7PE/tuCdW9dXmsbNwW9BPczdut3pER9B4sC5AU9Dnquu0hOn1CMh07fM5jtlNQmN3Ctyivf4Hq9pr/cl7QGXRgI50I8Jqgj2CsOhmffPxVjM08AxvgF9lau4La7l/m6aKgFUGr7e6NoD2oMmQ+xgFXefKJFcSPvonI+Bxsgc+amF8WajcFt/QrUKtAvfNlNeXrlve2eS6Zz+hBWLzk0FNX4CSew6AwNn0MzqOnsVf4DvvVkj6dVsdAIVoJQJ9+TQ+ikynB/IcIO7MYNMLROJzZJbjC2GuVgj6dRiOGNCHIBpKo+2ep82R+5vjlro20X+y7W9i48w7choHTJk7BZ9hBAvwO5Y+pNjPHP7Cq792AQhR/fsM0bkbwU+YcvwpR76k+csWp88NiXvIQdqQ67T74Shv2POqLntVzTAGSMFwWvc0gDbZT0CYQclB5+L0+xVh0XVBZXjfmZryblFsbFUw8tixjjwJt86IeaAGSqAcsiXjqEkYNDJwGLkA5GS1AWl+JiDzGRoQt3buOQm5FehIbIE9BX0ELcEFfic3ZUR3mOrXd+6gKsgXmXQZO84cCJGEkaeOzSxhVxA6fNeNRWlAiDEN9xmZOHHjA6gYh4ZGYthtYpgDe6ken7WSXzS+1uyA+NVqkACf1iF/AFjTj4YhdAVgwGUhSgKONl8ZhC6zIBgF6SQMnKcCCd9EZXtrQKXxfNGFG4pE2YA2fljQL8H8EBSjqAYPPqIMptgkK8NC7WB19AXyFf54C5PSosn0Xo45a8yLfi8Io0WoW8xaWouMi9NsuiNiCMZCjAI0vILoBtuoARkxf1LQCdvYM5KhCXhXGAtqmIfv0tW/QgN3Npi+Q1V4oW59QQvnBl7CBbVkPnEdR1AS2FoX9IgPUnLyOA17TqNI8qWfsiJ4nwXrAteQcyuqZClf5owVg+1DGA9097hfjR16QR9bXNio88uU2N4Gz/NFdCVb4E1C1QW3vvmDgHPqBM/s8YkfO+mvZnrF5520zTt0Q9Cn/MNsq1KnXBcVofGGRF0Xjx9APbGW3O+ur2Pv7G/PUS1AaY+ZCPHFVD7b//MxqXOgV5GFH8GKAmx95PQhqLbIvKqs0BqFDT388tCyVzG8I1ak23HEeRv1CBGWj3uepqgcMI8njOzd/e99knjyd8c8Laq9zInVHhmS2uNnWcxLPWq3Y2oHMc+F8XucVQbf8c1vtD9CgqV5pDqQQhVuy0TpoIaTa/HIJ1fIf5mnq/bWg+e12aLIwhKALY5eYHeN+vVMr0Nts3b0sFqxonibzmVb3dLLJR1XiHq63yUfjnkq9Za2LwSBFT+MLoJSCTdob7e7tZpv1Jnwb0dHJJxGbf1GpVvfbrMy7qJoBkZ8qTGeS/6/ndLvRnUF9E+Rf0M1XHuXGt+hwmBvdVEG3tCY3vMk086MA76ZjUQYDRBL1z2rz3wwKiukEDhBJ1P9RI4feGc+iT8a7VaFWSKLurRYVcbxgXKdqsHkgc3h1XIXREekV/wBt7vO5ytDZXAAAAABJRU5ErkJggg==";
+      },
       904: (e, n, t) => {
         e.exports = t.p + "4ef1d46d3144ae58fbbdda533092ea04.png";
       },
       5874: (e, n, t) => {
         e.exports = t.p + "990147b814997d2a85dc3ce62f4bf203.png";
+      },
+      2336: (e) => {
+        e.exports =
+          "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAyCAYAAAAweqkjAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAEwSURBVHgB7ZixcYQwEEUl8Mwx40SZIbM7cAWugQ5cgskc+i50ZndACXYHHldwHRwZXKaQROik4GY4iWSj/cG+ROJHbz6DWNDT/6dXK+qXd60AKBQosGJ3aXBumnbx/lnx0mdiQaottH5VfAwP47iHu5XhyfuJK5yY8/47rlBiWuu+maYh7qHE3LIcrnsYsXDK/17biuCIef+1vkYRG0Jbf+sAQiycnYc0QxCLbfVpyC621VaEXcw5d9zK2cXKsmy3cnaxMDC8nYwxWa74MVVVdWkIcVxstYZywGatwbyS0taQpoub1qDGnnVraBOsud/tPuIGbrT2RdGNdf2YfSXN89yFe71XjAQHm4k9WWvDYhUz8ouAiohRETEqIkZFxKiIGBURoyJiVESMiohRETEqF8DoTJctgSX4AAAAAElFTkSuQmCC";
       },
       947: (e) => {
         e.exports =
@@ -11430,7 +11446,7 @@
         }
         return e;
       }
-      function T(e) {
+      function A(e) {
         return (
           "Minified Redux error #" +
           e +
@@ -11440,7 +11456,7 @@
         );
       }
       (j = N.unstable_batchedUpdates), (a = j);
-      var A =
+      var T =
           ("function" == typeof Symbol && Symbol.observable) || "@@observable",
         O = function () {
           return Math.random().toString(36).substring(7).split("").join(".");
@@ -11470,9 +11486,9 @@
             Object.keys(e).forEach(function (n) {
               var t = e[n];
               if (void 0 === t(void 0, { type: _.INIT }))
-                throw new Error(T(12));
+                throw new Error(A(12));
               if (void 0 === t(void 0, { type: _.PROBE_UNKNOWN_ACTION() }))
-                throw new Error(T(13));
+                throw new Error(A(13));
             });
           })(t);
         } catch (e) {
@@ -11485,7 +11501,7 @@
               c = t[l],
               u = e[l],
               d = c(u, n);
-            if (void 0 === d) throw (n && n.type, new Error(T(14)));
+            if (void 0 === d) throw (n && n.type, new Error(A(14)));
             (i[l] = d), (r = r || d !== u);
           }
           return (r = r || o.length !== Object.keys(e).length) ? i : e;
@@ -11526,27 +11542,27 @@
         q = function (e) {
           return null != e;
         },
-        $ = function (e) {
+        Q = function (e) {
           return "function" == typeof e;
         },
         K = function (e) {
           return "string" == typeof e;
         },
-        Q = Array.isArray,
+        $ = Array.isArray,
         Z = function (e) {
-          return e && $(e.then);
+          return e && Q(e.then);
         },
         J = function (e) {
-          return e && $(e.next) && $(e.throw);
+          return e && Q(e.next) && Q(e.throw);
         },
         ee = function e(n) {
-          return n && (K(n) || re(n) || $(n) || (Q(n) && n.every(e)));
+          return n && (K(n) || re(n) || Q(n) || ($(n) && n.every(e)));
         },
         ne = function (e) {
-          return e && $(e.take) && $(e.close);
+          return e && Q(e.take) && Q(e.close);
         },
         te = function (e) {
-          return $(e) && e.hasOwnProperty("toString");
+          return Q(e) && e.hasOwnProperty("toString");
         },
         re = function (e) {
           return (
@@ -11648,7 +11664,7 @@
           r = Object.keys(e),
           i = r.length,
           a = 0,
-          o = Q(e) ? ge(i) : {},
+          o = $(e) ? ge(i) : {},
           s = {};
         return (
           r.forEach(function (e) {
@@ -11729,8 +11745,8 @@
         },
         Se = "TAKE",
         Ce = "CALL",
-        Te = "FORK",
-        Ae = function (e, n) {
+        Ae = "FORK",
+        Te = function (e, n) {
           var t;
           return (
             ((t = {})[U] = !0),
@@ -11744,28 +11760,28 @@
         return (
           void 0 === e && (e = "*"),
           ee(e)
-            ? Ae(Se, { pattern: e })
+            ? Te(Se, { pattern: e })
             : ne((t = e)) && t[z] && q(n) && ee(n)
-            ? Ae(Se, { channel: e, pattern: n })
+            ? Te(Se, { channel: e, pattern: n })
             : ne(e)
-            ? Ae(Se, { channel: e })
+            ? Te(Se, { channel: e })
             : void 0
         );
         var t;
       }
       function _e(e, n) {
         return (
-          V(n) && ((n = e), (e = void 0)), Ae("PUT", { channel: e, action: n })
+          V(n) && ((n = e), (e = void 0)), Te("PUT", { channel: e, action: n })
         );
       }
       function Re(e, n) {
         var t,
           r = null;
         return (
-          $(e)
+          Q(e)
             ? (t = e)
-            : (Q(e) ? ((r = e[0]), (t = e[1])) : ((r = e.context), (t = e.fn)),
-              r && K(t) && $(r[t]) && (t = r[t])),
+            : ($(e) ? ((r = e[0]), (t = e[1])) : ((r = e.context), (t = e.fn)),
+              r && K(t) && Q(r[t]) && (t = r[t])),
           { context: r, fn: t, args: n }
         );
       }
@@ -11776,7 +11792,7 @@
           r++
         )
           t[r - 1] = arguments[r];
-        return Ae(Ce, Re(e, t));
+        return Te(Ce, Re(e, t));
       }
       function Pe(e) {
         for (
@@ -11785,10 +11801,10 @@
           r++
         )
           t[r - 1] = arguments[r];
-        return Ae(Te, Re(e, t));
+        return Te(Ae, Re(e, t));
       }
       function Le(e) {
-        return void 0 === e && (e = H), Ae("CANCEL", e);
+        return void 0 === e && (e = H), Te("CANCEL", e);
       }
       var Me = Ie.bind(null, ie);
       const De = function () {
@@ -11832,7 +11848,7 @@
       var Xe = function (e) {
           return function (n) {
             return e.some(function (e) {
-              return Qe(e)(n);
+              return $e(e)(n);
             });
           };
         },
@@ -11846,7 +11862,7 @@
             return n.type === String(e);
           };
         },
-        $e = function (e) {
+        Qe = function (e) {
           return function (n) {
             return n.type === e;
           };
@@ -11854,20 +11870,20 @@
         Ke = function () {
           return oe;
         };
-      function Qe(e) {
+      function $e(e) {
         var n =
           "*" === e
             ? Ke
             : K(e)
             ? qe
-            : Q(e)
+            : $(e)
             ? Xe
             : te(e)
             ? qe
-            : $(e)
+            : Q(e)
             ? Ve
             : re(e)
-            ? $e
+            ? Qe
             : null;
         if (null === n) throw new Error("invalid pattern: " + e);
         return n(e);
@@ -11968,7 +11984,7 @@
       }
       function tn(e, n) {
         var t = e[M];
-        $(t) && (n.cancel = t),
+        Q(t) && (n.cancel = t),
           e.then(n, function (e) {
             n(e, !0);
           });
@@ -11991,7 +12007,7 @@
               e instanceof Error ? t(e, !0) : !Je(e) || o ? t(e) : t(Y);
             };
           try {
-            i.take(s, q(a) ? Qe(a) : null);
+            i.take(s, q(a) ? $e(a) : null);
           } catch (e) {
             return void t(e, !0);
           }
@@ -12020,13 +12036,13 @@
             o.forEach(function (e) {
               i(n[e], a, s[e], e);
             });
-          } else t(Q(n) ? [] : {});
+          } else t($(n) ? [] : {});
         }),
         (rn.RACE = function (e, n, t, r) {
           var i = r.digestEffect,
             a = an,
             o = Object.keys(n),
-            s = Q(n) ? ge(o.length) : {},
+            s = $(n) ? ge(o.length) : {},
             l = {},
             c = !1;
           o.forEach(function (e) {
@@ -12126,7 +12142,7 @@
                   e.joiners.push(t);
               } else e.isAborted() ? n(e.error(), !0) : n(e.result());
             };
-          if (Q(n)) {
+          if ($(n)) {
             if (0 === n.length) return void t([]);
             var o = we(n, t);
             n.forEach(function (e, n) {
@@ -12136,7 +12152,7 @@
         }),
         (rn.CANCEL = function (e, n, t, r) {
           var i = r.task;
-          n === H ? sn(i) : Q(n) ? n.forEach(sn) : sn(n), t();
+          n === H ? sn(i) : $(n) ? n.forEach(sn) : sn(n), t();
         }),
         (rn.SELECT = function (e, n, t) {
           var r = n.selector,
@@ -12150,7 +12166,7 @@
         (rn.ACTION_CHANNEL = function (e, n, t) {
           var r = n.pattern,
             i = en(n.buffer),
-            a = Qe(r),
+            a = $e(r),
             o = function n(t) {
               Je(t) || e.channel.take(n, a), i.put(t);
             },
@@ -12367,9 +12383,9 @@
               : xe(e)
               ? ((l.status = 1),
                 d.cancel(),
-                (i = $(n.return) ? n.return(W) : { done: !0, value: W }))
+                (i = Q(n.return) ? n.return(W) : { done: !0, value: W }))
               : (i = be(e)
-                  ? $(n.return)
+                  ? Q(n.return)
                     ? n.return()
                     : { done: !0 }
                   : n.next(e)),
@@ -12575,15 +12591,15 @@
       var Cn = function () {
         this.resources = [];
       };
-      const Tn = jn(new Cn());
-      var An = function () {
+      const An = jn(new Cn());
+      var Tn = function () {
         (this.isUnlocked = !1),
           (this.colonists = 0),
           (this.maxColonists = 0),
           (this.jobs = { list: [], freeWorkers: 0 }),
           (this.effects = { happiness: 0, buff: 0, effects: [] });
       };
-      const On = jn(new An());
+      const On = jn(new Tn());
       var _n = function () {
         (this.isUnlocked = !1),
           (this.maxSlots = 0),
@@ -12693,6 +12709,8 @@
                 modifiersAvailable: [],
               },
               disastersLevel: 0,
+              starsList: [],
+              starSelected: "None",
             },
             prestige: {
               isAvailable: !1,
@@ -12725,7 +12743,7 @@
           (this.exoticCollected = 0);
       };
       const qn = jn(new Vn());
-      var $n = function () {
+      var Qn = function () {
         (this.climate = {
           year: 0,
           day: 0,
@@ -12735,14 +12753,14 @@
           (this.bankedTime = { multiplier: 1, amountLeft: 0 }),
           (this.events = { amount: 0, events: [] });
       };
-      const Kn = jn(new $n());
-      var Qn = function () {
+      const Kn = jn(new Qn());
+      var $n = function () {
         (this.slots = 0),
           (this.maxSlots = 0),
           (this.queue = []),
           (this.selection = { isAvailable: !1, scopes: [], choices: {} });
       };
-      const Zn = jn(new Qn());
+      const Zn = jn(new $n());
       var Jn, et, nt, tt;
       !(function (e) {
         (e.STONE = "stone"),
@@ -12877,7 +12895,7 @@
         dt = jn(
           new (function () {
             (this.landingZone = new En()),
-              (this.colony = new An()),
+              (this.colony = new Tn()),
               (this.science = new In()),
               (this.resources = new Cn()),
               (this.crafting = new _n()),
@@ -12888,8 +12906,8 @@
               (this.expeditions = new Bn()),
               (this.newNotifications = new Yn()),
               (this.statistics = new Vn()),
-              (this.environment = new $n()),
-              (this.queueItems = new Qn()),
+              (this.environment = new Qn()),
+              (this.queueItems = new $n()),
               (this.eventLogs = new rt()),
               (this.searchData = new at()),
               (this.presets = new st()),
@@ -12940,7 +12958,7 @@
           };
         })(
           I({
-            resources: Tn,
+            resources: An,
             landingZone: Sn,
             crafting: Rn,
             science: Pn,
@@ -13164,13 +13182,13 @@
       var Ct = function (e) {
           return { done: !0, value: e };
         },
-        Tt = {};
-      function At(e) {
+        At = {};
+      function Tt(e) {
         return ne(e)
           ? "channel"
           : te(e)
           ? String(e)
-          : $(e)
+          : Q(e)
           ? e.name
           : String(e);
       }
@@ -13180,8 +13198,8 @@
           a,
           o = n;
         function s(n, t) {
-          if (o === Tt) return Ct(n);
-          if (t && !i) throw ((o = Tt), t);
+          if (o === At) return Ct(n);
+          if (t && !i) throw ((o = At), t);
           r && r(n);
           var s = t ? e[i](t) : e[o]();
           return (
@@ -13189,7 +13207,7 @@
             (a = s.effect),
             (r = s.stateUpdater),
             (i = s.errorState),
-            o === Tt ? Ct(n) : a
+            o === At ? Ct(n) : a
           );
         }
         return he(
@@ -13225,7 +13243,7 @@
             },
           },
           "q1",
-          "takeEvery(" + At(e) + ", " + n.name + ")"
+          "takeEvery(" + Tt(e) + ", " + n.name + ")"
         );
       }
       function Rt(e, n) {
@@ -13265,7 +13283,7 @@
             },
           },
           "q1",
-          "takeLatest(" + At(e) + ", " + n.name + ")"
+          "takeLatest(" + Tt(e) + ", " + n.name + ")"
         );
       }
       function It(e, n) {
@@ -13419,7 +13437,7 @@
                   return [
                     4,
                     ((t = [Ie(e.startupWorker), Ie(e.listen)]),
-                    (r = Ae("ALL", t)),
+                    (r = Te("ALL", t)),
                     (r.combinator = !0),
                     r),
                   ];
@@ -13528,7 +13546,7 @@
                             a = !1,
                             o = en(t),
                             s = function () {
-                              a || ((a = !0), $(r) && r(), o.close());
+                              a || ((a = !0), Q(r) && r(), o.close());
                             };
                           return (
                             (r = de(
@@ -13589,15 +13607,15 @@
             ("function" == typeof t && "function" == typeof r) ||
             ("function" == typeof r && "function" == typeof arguments[3])
           )
-            throw new Error(T(0));
+            throw new Error(A(0));
           if (
             ("function" == typeof t && void 0 === r && ((r = t), (t = void 0)),
             void 0 !== r)
           ) {
-            if ("function" != typeof r) throw new Error(T(1));
+            if ("function" != typeof r) throw new Error(A(1));
             return r(e)(n, t);
           }
-          if ("function" != typeof n) throw new Error(T(2));
+          if ("function" != typeof n) throw new Error(A(2));
           var a = n,
             o = t,
             s = [],
@@ -13607,19 +13625,19 @@
             l === s && (l = s.slice());
           }
           function d() {
-            if (c) throw new Error(T(3));
+            if (c) throw new Error(A(3));
             return o;
           }
           function p(e) {
-            if ("function" != typeof e) throw new Error(T(4));
-            if (c) throw new Error(T(5));
+            if ("function" != typeof e) throw new Error(A(4));
+            if (c) throw new Error(A(5));
             var n = !0;
             return (
               u(),
               l.push(e),
               function () {
                 if (n) {
-                  if (c) throw new Error(T(6));
+                  if (c) throw new Error(A(6));
                   (n = !1), u();
                   var t = l.indexOf(e);
                   l.splice(t, 1), (s = null);
@@ -13628,9 +13646,9 @@
             );
           }
           function f(e) {
-            if (!R(e)) throw new Error(T(7));
-            if (void 0 === e.type) throw new Error(T(8));
-            if (c) throw new Error(T(9));
+            if (!R(e)) throw new Error(A(7));
+            if (void 0 === e.type) throw new Error(A(8));
+            if (c) throw new Error(A(9));
             try {
               (c = !0), (o = a(o, e));
             } finally {
@@ -13640,7 +13658,7 @@
             return e;
           }
           function h(e) {
-            if ("function" != typeof e) throw new Error(T(10));
+            if ("function" != typeof e) throw new Error(A(10));
             (a = e), f({ type: _.REPLACE });
           }
           function m() {
@@ -13650,13 +13668,13 @@
               ((e = {
                 subscribe: function (e) {
                   if ("object" != typeof e || null === e)
-                    throw new Error(T(11));
+                    throw new Error(A(11));
                   function t() {
                     e.next && e.next(d());
                   }
                   return t(), { unsubscribe: n(t) };
                 },
-              })[A] = function () {
+              })[T] = function () {
                 return this;
               }),
               e
@@ -13669,7 +13687,7 @@
               subscribe: p,
               getState: d,
               replaceReducer: h,
-            })[A] = m),
+            })[T] = m),
             i
           );
         })(
@@ -13681,7 +13699,7 @@
               return function () {
                 var t = e.apply(void 0, arguments),
                   r = function () {
-                    throw new Error(T(15));
+                    throw new Error(A(15));
                   },
                   i = {
                     getState: t.getState,
@@ -13784,10 +13802,10 @@
         Xt = t.n(Yt),
         Vt = t(7795),
         qt = t.n(Vt),
-        $t = t(569),
-        Kt = t.n($t),
-        Qt = t(3565),
-        Zt = t.n(Qt),
+        Qt = t(569),
+        Kt = t.n(Qt),
+        $t = t(3565),
+        Zt = t.n($t),
         Jt = t(9216),
         er = t.n(Jt),
         nr = t(4589),
@@ -13936,7 +13954,7 @@
           }
         );
       }
-      function Tr(e) {
+      function Ar(e) {
         var n = yr(e),
           t = e.offsetWidth,
           r = e.offsetHeight;
@@ -13946,7 +13964,7 @@
           { x: e.offsetLeft, y: e.offsetTop, width: t, height: r }
         );
       }
-      function Ar(e) {
+      function Tr(e) {
         return "html" === jr(e)
           ? e
           : e.assignedSlot || e.parentNode || (hr(e) ? e.host : null) || kr(e);
@@ -13956,7 +13974,7 @@
           ? e.ownerDocument.body
           : fr(e) && Sr(e)
           ? e
-          : Or(Ar(e));
+          : Or(Tr(e));
       }
       function _r(e, n) {
         var t;
@@ -13966,7 +13984,7 @@
           a = dr(r),
           o = i ? [a].concat(a.visualViewport || [], Sr(r) ? r : []) : r,
           s = n.concat(o);
-        return i ? s : s.concat(_r(Ar(o)));
+        return i ? s : s.concat(_r(Tr(o)));
       }
       function Rr(e) {
         return ["table", "td", "th"].indexOf(jr(e)) >= 0;
@@ -13994,7 +14012,7 @@
                   "fixed" === Er(e).position
                 )
                   return null;
-                var t = Ar(e);
+                var t = Tr(e);
                 for (
                   hr(t) && (t = t.host);
                   fr(t) && ["html", "body"].indexOf(jr(t)) < 0;
@@ -14069,7 +14087,7 @@
           r
         );
       }
-      var $r = { placement: "bottom", modifiers: [], strategy: "absolute" };
+      var Qr = { placement: "bottom", modifiers: [], strategy: "absolute" };
       function Kr() {
         for (var e = arguments.length, n = new Array(e), t = 0; t < e; t++)
           n[t] = arguments[t];
@@ -14077,13 +14095,13 @@
           return !(e && "function" == typeof e.getBoundingClientRect);
         });
       }
-      function Qr(e) {
+      function $r(e) {
         void 0 === e && (e = {});
         var n = e,
           t = n.defaultModifiers,
           r = void 0 === t ? [] : t,
           i = n.defaultOptions,
-          a = void 0 === i ? $r : i;
+          a = void 0 === i ? Qr : i;
         return function (e, n, t) {
           void 0 === t && (t = a);
           var i,
@@ -14091,7 +14109,7 @@
             s = {
               placement: "bottom",
               orderedModifiers: [],
-              options: Object.assign({}, $r, a),
+              options: Object.assign({}, Qr, a),
               modifiersData: {},
               elements: { reference: e, popper: n },
               attributes: {},
@@ -14167,7 +14185,7 @@
                   if (Kr(n, t)) {
                     (s.rects = {
                       reference: Cr(n, Pr(t), "fixed" === s.options.strategy),
-                      popper: Tr(t),
+                      popper: Ar(t),
                     }),
                       (s.reset = !1),
                       (s.placement = s.options.placement),
@@ -14672,7 +14690,7 @@
             var i =
                 "clippingParents" === n
                   ? (function (e) {
-                      var n = _r(Ar(e)),
+                      var n = _r(Tr(e)),
                         t =
                           ["absolute", "fixed"].indexOf(Er(e).position) >= 0 &&
                           fr(e)
@@ -14722,11 +14740,11 @@
           },
           C = e.modifiersData.offset;
         if (p === Wr && C) {
-          var T = C[i];
+          var A = C[i];
           Object.keys(S).forEach(function (e) {
             var n = [Dr, Mr].indexOf(e) >= 0 ? 1 : -1,
               t = [Lr, Mr].indexOf(e) >= 0 ? "y" : "x";
-            S[e] += T[t] * n;
+            S[e] += A[t] * n;
           });
         }
         return S;
@@ -14825,9 +14843,9 @@
             ) {
               var S = x[E],
                 C = ei(S),
-                T = ni(S) === Br,
-                A = [Lr, Mr].indexOf(C) >= 0,
-                O = A ? "width" : "height",
+                A = ni(S) === Br,
+                T = [Lr, Mr].indexOf(C) >= 0,
+                O = T ? "width" : "height",
                 _ = bi(n, {
                   placement: S,
                   boundary: u,
@@ -14835,7 +14853,7 @@
                   altBoundary: p,
                   padding: c,
                 }),
-                R = A ? (T ? Dr : Ur) : T ? Mr : Lr;
+                R = T ? (A ? Dr : Ur) : A ? Mr : Lr;
               y[O] > w[O] && (R = ui(R));
               var I = ui(R),
                 P = [];
@@ -14924,10 +14942,10 @@
               C = n.modifiersData.offset
                 ? n.modifiersData.offset[n.placement]
                 : null,
-              T = { x: 0, y: 0 };
+              A = { x: 0, y: 0 };
             if (j) {
               if (a) {
-                var A,
+                var T,
                   O = "y" === y ? Lr : Ur,
                   _ = "y" === y ? Mr : Dr,
                   R = "y" === y ? "height" : "width",
@@ -14938,7 +14956,7 @@
                   D = b === Br ? k[R] : N[R],
                   U = b === Br ? -N[R] : -k[R],
                   F = n.elements.arrow,
-                  z = f && F ? Tr(F) : { width: 0, height: 0 },
+                  z = f && F ? Ar(F) : { width: 0, height: 0 },
                   B = n.modifiersData["arrow#persistent"]
                     ? n.modifiersData["arrow#persistent"].padding
                     : { top: 0, right: 0, bottom: 0, left: 0 },
@@ -14957,10 +14975,10 @@
                       ? V.clientTop || 0
                       : V.clientLeft || 0
                     : 0,
-                  $ = null != (A = null == C ? void 0 : C[y]) ? A : 0,
-                  K = I + X - $,
-                  Q = yi(f ? gr(P, I + Y - $ - q) : P, I, f ? mr(L, K) : L);
-                (j[y] = Q), (T[y] = Q - I);
+                  Q = null != (T = null == C ? void 0 : C[y]) ? T : 0,
+                  K = I + X - Q,
+                  $ = yi(f ? gr(P, I + Y - Q - q) : P, I, f ? mr(L, K) : L);
+                (j[y] = $), (A[y] = $ - I);
               }
               if (s) {
                 var Z,
@@ -14981,9 +14999,9 @@
                           return r > t ? t : r;
                         })(se, ne, le)
                       : yi(f ? se : re, ne, f ? le : ie);
-                (j[w] = ce), (T[w] = ce - ne);
+                (j[w] = ce), (A[w] = ce - ne);
               }
-              n.modifiersData[r] = T;
+              n.modifiersData[r] = A;
             }
           },
           requiresIfExists: ["offset"],
@@ -15018,7 +15036,7 @@
                       : vi(e, zr)
                   );
                 })(i.padding, t),
-                d = Tr(a),
+                d = Ar(a),
                 p = "y" === l ? Lr : Ur,
                 f = "y" === l ? Mr : Dr,
                 h =
@@ -15072,7 +15090,7 @@
           return e[n] >= 0;
         });
       }
-      var Ei = Qr({
+      var Ei = $r({
           defaultModifiers: [
             Jr,
             {
@@ -15134,8 +15152,8 @@
         }),
         Si = "tippy-content",
         Ci = "tippy-arrow",
-        Ti = "tippy-svg-arrow",
-        Ai = { passive: !0, capture: !0 },
+        Ai = "tippy-svg-arrow",
+        Ti = { passive: !0, capture: !0 },
         Oi = function () {
           return document.body;
         };
@@ -15226,7 +15244,7 @@
           ((Yi.isTouch = !1), document.removeEventListener("mousemove", qi)),
           (Xi = e);
       }
-      function $i() {
+      function Qi() {
         var e,
           n = document.activeElement;
         if ((e = n) && e._tippy && e._tippy.reference === e) {
@@ -15239,7 +15257,7 @@
           "undefined" == typeof document ||
           !window.msCrypto
         ),
-        Qi = Object.assign(
+        $i = Object.assign(
           {
             appendTo: Oi,
             aria: { content: "auto", expanded: "auto" },
@@ -15292,14 +15310,14 @@
             zIndex: 9999,
           }
         ),
-        Zi = Object.keys(Qi);
+        Zi = Object.keys($i);
       function Ji(e) {
         var n = (e.plugins || []).reduce(function (n, t) {
           var r,
             i = t.name,
             a = t.defaultValue;
           return (
-            i && (n[i] = void 0 !== e[i] ? e[i] : null != (r = Qi[i]) ? r : a),
+            i && (n[i] = void 0 !== e[i] ? e[i] : null != (r = $i[i]) ? r : a),
             n
           );
         }, {});
@@ -15315,7 +15333,7 @@
             : (function (e, n) {
                 return (
                   n
-                    ? Object.keys(Ji(Object.assign({}, Qi, { plugins: n })))
+                    ? Object.keys(Ji(Object.assign({}, $i, { plugins: n })))
                     : Zi
                 ).reduce(function (n, t) {
                   var r = (e.getAttribute("data-tippy-" + t) || "").trim();
@@ -15332,7 +15350,7 @@
               })(e, n.plugins)
         );
         return (
-          (t.aria = Object.assign({}, Qi.aria, t.aria)),
+          (t.aria = Object.assign({}, $i.aria, t.aria)),
           (t.aria = {
             expanded:
               "auto" === t.aria.expanded ? n.interactive : t.aria.expanded,
@@ -15354,7 +15372,7 @@
         return (
           !0 === e
             ? (n.className = Ci)
-            : ((n.className = Ti), zi(e) ? n.appendChild(e) : na(n, e)),
+            : ((n.className = Ai), zi(e) ? n.appendChild(e) : na(n, e)),
           n
         );
       }
@@ -15373,7 +15391,7 @@
             return e.classList.contains(Si);
           }),
           arrow: t.find(function (e) {
-            return e.classList.contains(Ci) || e.classList.contains(Ti);
+            return e.classList.contains(Ci) || e.classList.contains(Ai);
           }),
           backdrop: t.find(function (e) {
             return e.classList.contains("tippy-backdrop");
@@ -15436,7 +15454,7 @@
           s,
           l,
           c,
-          u = ea(e, Object.assign({}, Qi, Ji(Ui(n)))),
+          u = ea(e, Object.assign({}, $i, Ji(Ui(n)))),
           d = !1,
           p = !1,
           f = !1,
@@ -15485,7 +15503,7 @@
                   R(),
                   j && j(t, r),
                   x.popperInstance &&
-                    (Q(),
+                    ($(),
                     J().forEach(function (e) {
                       requestAnimationFrame(
                         e._tippy.popperInstance.forceUpdate
@@ -15502,14 +15520,14 @@
                 n = x.state.isDestroyed,
                 t = !x.state.isEnabled,
                 r = Yi.isTouch && !x.props.touch,
-                i = _i(x.props.duration, 0, Qi.duration);
+                i = _i(x.props.duration, 0, $i.duration);
               if (
                 !(
                   e ||
                   n ||
                   t ||
                   r ||
-                  T().hasAttribute("disabled") ||
+                  A().hasAttribute("disabled") ||
                   (I("onShow", [x], !1), !1 === x.props.onShow(x))
                 )
               ) {
@@ -15554,20 +15572,20 @@
                   }
                 }),
                   (l = x.props.appendTo),
-                  (c = T()),
+                  (c = A()),
                   (o =
                     (x.props.interactive && l === Oi) || "parent" === l
                       ? c.parentNode
                       : Ii(l, [c])).contains(w) || o.appendChild(w),
                   (x.state.isMounted = !0),
-                  Q();
+                  $();
               }
             },
             hide: function () {
               var e = !x.state.isVisible,
                 n = x.state.isDestroyed,
                 t = !x.state.isEnabled,
-                r = _i(x.props.duration, 1, Qi.duration);
+                r = _i(x.props.duration, 1, $i.duration);
               if (
                 !(e || n || t) &&
                 (I("onHide", [x], !1), !1 !== x.props.onHide(x))
@@ -15604,7 +15622,7 @@
               }
             },
             hideWithInteractivity: function (e) {
-              A().addEventListener("mousemove", g), Mi(sa, g), g(e);
+              T().addEventListener("mousemove", g), Mi(sa, g), g(e);
             },
             enable: function () {
               x.state.isEnabled = !0;
@@ -15661,7 +15679,7 @@
           w.addEventListener("mouseleave", function () {
             x.props.interactive &&
               x.props.trigger.indexOf("mouseenter") >= 0 &&
-              A().addEventListener("mousemove", g);
+              T().addEventListener("mousemove", g);
           }),
           x
         );
@@ -15676,13 +15694,13 @@
           var e;
           return !(null == (e = x.props.render) || !e.$$tippy);
         }
-        function T() {
+        function A() {
           return l || e;
         }
-        function A() {
+        function T() {
           var e,
             n,
-            t = T().parentNode;
+            t = A().parentNode;
           return t
             ? null != (n = Li(t)[0]) && null != (e = n.ownerDocument) && e.body
               ? n.ownerDocument
@@ -15697,7 +15715,7 @@
             Yi.isTouch ||
             (a && "focus" === a.type)
             ? 0
-            : _i(x.props.delay, e ? 0 : 1, Qi.delay);
+            : _i(x.props.delay, e ? 0 : 1, $i.delay);
         }
         function R(e) {
           void 0 === e && (e = !1),
@@ -15734,13 +15752,13 @@
               x.props.interactive
                 ? e.setAttribute(
                     "aria-expanded",
-                    x.state.isVisible && e === T() ? "true" : "false"
+                    x.state.isVisible && e === A() ? "true" : "false"
                   )
                 : e.removeAttribute("aria-expanded");
             });
         }
         function M() {
-          A().removeEventListener("mousemove", g),
+          T().removeEventListener("mousemove", g),
             (sa = sa.filter(function (e) {
               return e !== g;
             }));
@@ -15776,18 +15794,18 @@
           f = !1;
         }
         function z() {
-          var e = A();
+          var e = T();
           e.addEventListener("mousedown", D, !0),
-            e.addEventListener("touchend", D, Ai),
-            e.addEventListener("touchstart", F, Ai),
-            e.addEventListener("touchmove", U, Ai);
+            e.addEventListener("touchend", D, Ti),
+            e.addEventListener("touchstart", F, Ti),
+            e.addEventListener("touchmove", U, Ti);
         }
         function B() {
-          var e = A();
+          var e = T();
           e.removeEventListener("mousedown", D, !0),
-            e.removeEventListener("touchend", D, Ai),
-            e.removeEventListener("touchstart", F, Ai),
-            e.removeEventListener("touchmove", U, Ai);
+            e.removeEventListener("touchend", D, Ti),
+            e.removeEventListener("touchstart", F, Ti),
+            e.removeEventListener("touchmove", U, Ti);
         }
         function H(e, n) {
           var t = O().box;
@@ -15817,10 +15835,10 @@
                       G("mouseleave", q);
                       break;
                     case "focus":
-                      G(Ki ? "focusout" : "blur", $);
+                      G(Ki ? "focusout" : "blur", Q);
                       break;
                     case "focusin":
-                      G("focusout", $);
+                      G("focusout", Q);
                   }
               }
             );
@@ -15860,7 +15878,7 @@
         }
         function V(e) {
           var n = e.target,
-            t = T().contains(n) || w.contains(n);
+            t = A().contains(n) || w.contains(n);
           if ("mousemove" !== e.type || !t) {
             var r = J()
               .concat(w)
@@ -15904,8 +15922,8 @@
             (x.props.trigger.indexOf("click") >= 0 && d) ||
             (x.props.interactive ? x.hideWithInteractivity(e) : ne(e));
         }
-        function $(e) {
-          (x.props.trigger.indexOf("focusin") < 0 && e.target !== T()) ||
+        function Q(e) {
+          (x.props.trigger.indexOf("focusin") < 0 && e.target !== A()) ||
             (x.props.interactive &&
               e.relatedTarget &&
               w.contains(e.relatedTarget)) ||
@@ -15914,7 +15932,7 @@
         function K(e) {
           return !!Yi.isTouch && S() !== e.type.indexOf("touch") >= 0;
         }
-        function Q() {
+        function $() {
           Z();
           var n = x.props,
             t = n.popperOptions,
@@ -15926,7 +15944,7 @@
             c = a
               ? {
                   getBoundingClientRect: a,
-                  contextElement: a.contextElement || T(),
+                  contextElement: a.contextElement || A(),
                 }
               : e,
             u = [
@@ -16022,9 +16040,9 @@
       }
       function ua(e, n) {
         void 0 === n && (n = {});
-        var t = Qi.plugins.concat(n.plugins || []);
-        document.addEventListener("touchstart", Vi, Ai),
-          window.addEventListener("blur", $i);
+        var t = $i.plugins.concat(n.plugins || []);
+        document.addEventListener("touchstart", Vi, Ti),
+          window.addEventListener("blur", Qi);
         var r,
           i = Object.assign({}, n, { plugins: t }),
           a = ((r = e),
@@ -16042,10 +16060,10 @@
           }, []);
         return zi(e) ? a[0] : a;
       }
-      (ua.defaultProps = Qi),
+      (ua.defaultProps = $i),
         (ua.setDefaultProps = function (e) {
           Object.keys(e).forEach(function (n) {
-            Qi[n] = e[n];
+            $i[n] = e[n];
           });
         }),
         (ua.currentInput = Yi);
@@ -16367,13 +16385,13 @@
               content: S.container,
             });
           h && ((C.trigger = "manual"), (C.hideOnClick = !1)), m && (u = !0);
-          var T = C,
-            A = C.plugins || [];
+          var A = C,
+            T = C.plugins || [];
           s &&
-            (T = Object.assign({}, C, {
+            (A = Object.assign({}, C, {
               plugins:
                 m && null != o.data
-                  ? [].concat(A, [
+                  ? [].concat(T, [
                       {
                         fn: function () {
                           return {
@@ -16388,7 +16406,7 @@
                         },
                       },
                     ])
-                  : A,
+                  : T,
               render: function () {
                 return { popper: S.container };
               },
@@ -16400,7 +16418,7 @@
               l && l.hasOwnProperty("current") && (n = l.current);
               var t = e(
                 n || S.ref || va(),
-                Object.assign({}, T, { plugins: [Na].concat(C.plugins || []) })
+                Object.assign({}, A, { plugins: [Na].concat(C.plugins || []) })
               );
               return (
                 (S.instance = t),
@@ -16410,7 +16428,7 @@
                   o.hook({
                     instance: t,
                     content: i,
-                    props: T,
+                    props: A,
                     setSingletonContent: E,
                   }),
                 b(!0),
@@ -16423,7 +16441,7 @@
               var e;
               if (1 !== S.renders) {
                 var n = S.instance;
-                n.setProps(ya(n.props, T)),
+                n.setProps(ya(n.props, A)),
                   null == (e = n.popperInstance) || e.forceUpdate(),
                   u ? n.disable() : n.enable(),
                   h && (a ? n.show() : n.hide()),
@@ -16431,7 +16449,7 @@
                     o.hook({
                       instance: n,
                       content: i,
-                      props: T,
+                      props: A,
                       setSingletonContent: E,
                     });
               } else S.renders++;
@@ -16648,8 +16666,8 @@
             );
           });
         },
-        Ta = Sa(pa);
-      const Aa = Ca(Ea(fa));
+        Aa = Sa(pa);
+      const Ta = Ca(Ea(fa));
       var Oa = function (e) {
           return e.ui.uiState.missingResourcesHighlight;
         },
@@ -16689,7 +16707,7 @@
             r = n.children;
           return t
             ? (0, e.jsx)(
-                Aa,
+                Ta,
                 Ma(
                   {
                     duration: 20,
@@ -16855,7 +16873,7 @@
               {
                 children: t.hint
                   ? (0, e.jsx)(
-                      Aa,
+                      Ta,
                       za(
                         {
                           content: (0, e.jsx)(
@@ -16898,13 +16916,13 @@
         qa = function (e) {
           return e.game.space.hangar.isUnlocked;
         },
-        $a = function (e) {
+        Qa = function (e) {
           return e.game.space.fleet.isUnlocked;
         },
         Ka = function (e) {
           return e.game.space.battle.isUnlocked;
         },
-        Qa = function (e) {
+        $a = function (e) {
           return e.game.prestige.isUnlocked;
         },
         Za = function (e) {
@@ -17224,7 +17242,7 @@
             t = k(cr),
             r = k(Wa),
             i = k(Xa),
-            a = k(Qa),
+            a = k($a),
             o = k(wo),
             s = x();
           return (0, e.jsx)(
@@ -17768,6 +17786,8 @@
             (e.MONUMENT = "monument"),
             (e.CLINIC = "clinic"),
             (e.PARK = "park"),
+            (e.FOUNTAIN = "fountain"),
+            (e.BROADCAST_TOWER = "broadcast_tower"),
             (e.BIO_LAB = "bio-lab"),
             (e.FOREST_PLANT = "forest-plant"),
             (e.SMELTER = "smelter"),
@@ -17847,9 +17867,9 @@
             (e.RESOURCE = "resource-unlock"),
             (e.UPGRADE = "upgrade");
         })(go || (go = {}));
-      var To = function () {
+      var Ao = function () {
           return (
-            (To =
+            (Ao =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -17857,34 +17877,34 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            To.apply(this, arguments)
+            Ao.apply(this, arguments)
           );
         },
-        Ao = function (n) {
+        To = function (n) {
           var t = n.isVisible,
             r = n.children,
             i = n.onClose;
           return (0, e.jsx)(
             "div",
-            To(
+            Ao(
               { className: "mobile-tooltip-wrap ".concat(t ? "" : "hidden") },
               {
                 children: (0, e.jsxs)(
                   "div",
-                  To(
+                  Ao(
                     { className: "mobile-tooltip" },
                     {
                       children: [
                         (0, e.jsxs)(
                           "div",
-                          To(
+                          Ao(
                             { className: "head" },
                             {
                               children: [
                                 (0, e.jsx)("span", {}),
                                 (0, e.jsx)(
                                   "span",
-                                  To(
+                                  Ao(
                                     { className: "close", onClick: i },
                                     { children: "X" }
                                   )
@@ -17895,7 +17915,7 @@
                         ),
                         (0, e.jsx)(
                           "div",
-                          To({ className: "body" }, { children: r })
+                          Ao({ className: "body" }, { children: r })
                         ),
                       ],
                     }
@@ -17938,7 +17958,7 @@
             x = b[0],
             y = b[1],
             w = window.innerWidth <= 860,
-            j = Ta(),
+            j = Aa(),
             k = j[0],
             N = j[1],
             E = ["chips-wrap"];
@@ -17995,7 +18015,7 @@
                                       children: [
                                         p
                                           ? (0, e.jsx)(
-                                              Aa,
+                                              Ta,
                                               Oo(
                                                 {
                                                   placement: "right",
@@ -18087,7 +18107,7 @@
                                           : null,
                                         p
                                           ? (0, e.jsx)(
-                                              Aa,
+                                              Ta,
                                               Oo(
                                                 {
                                                   placement: "right",
@@ -18213,7 +18233,7 @@
                   S,
                   x
                     ? (0, e.jsx)(
-                        Ao,
+                        To,
                         Oo(
                           {
                             isVisible: x,
@@ -18229,10 +18249,10 @@
               })
             : (0, e.jsxs)(e.Fragment, {
                 children: [
-                  (0, e.jsx)(Aa, { singleton: k, duration: 20 }),
+                  (0, e.jsx)(Ta, { singleton: k, duration: 20 }),
                   c
                     ? (0, e.jsx)(
-                        Aa,
+                        Ta,
                         Oo(
                           {
                             duration: 20,
@@ -19085,6 +19105,47 @@
                                           )
                                         )
                                       : (0, e.jsx)(e.Fragment, {}),
+                                    n.craftingMult && 1 !== n.craftingMult
+                                      ? (0, e.jsxs)(
+                                          "div",
+                                          Wo(
+                                            { className: "gain wrap" },
+                                            {
+                                              children: [
+                                                (0, e.jsx)("span", {
+                                                  children:
+                                                    "Crafting Multiplier",
+                                                }),
+                                                (0, e.jsx)(
+                                                  "div",
+                                                  Wo(
+                                                    { className: "gain-block" },
+                                                    {
+                                                      children: (0, e.jsxs)(
+                                                        "p",
+                                                        Wo(
+                                                          {
+                                                            className:
+                                                              "requirement",
+                                                          },
+                                                          {
+                                                            children: [
+                                                              "All craftable: x",
+                                                              co(
+                                                                n.craftingMult
+                                                              ),
+                                                            ],
+                                                          }
+                                                        )
+                                                      ),
+                                                    }
+                                                  )
+                                                ),
+                                              ],
+                                            }
+                                          )
+                                        )
+                                      : (0, e.jsx)(e.Fragment, {}),
                                     n.max.length
                                       ? (0, e.jsxs)(
                                           "div",
@@ -19163,7 +19224,7 @@
             }),
           });
         },
-        $o = function () {
+        Qo = function () {
           var n = k(So),
             t = (k(no), k(La("q")));
           return (0, e.jsxs)(e.Fragment, {
@@ -19177,7 +19238,7 @@
         Ko = function (e) {
           return e.game.colony;
         },
-        Qo = function (e) {
+        $o = function (e) {
           return e.game.colony.isUnlocked;
         },
         Zo = function (e) {
@@ -19344,7 +19405,7 @@
               {
                 children: [
                   (0, e.jsx)(
-                    Aa,
+                    Ta,
                     us(
                       {
                         duration: 20,
@@ -19379,7 +19440,7 @@
                     )
                   ),
                   (0, e.jsx)(
-                    Aa,
+                    Ta,
                     us(
                       {
                         duration: 20,
@@ -19449,7 +19510,7 @@
                   ),
                   k
                     ? (0, e.jsx)(
-                        Ao,
+                        To,
                         us(
                           {
                             isVisible: w,
@@ -19473,7 +19534,7 @@
                       )
                     : null,
                   (0, e.jsx)(
-                    Aa,
+                    Ta,
                     us(
                       {
                         placement: "right",
@@ -19540,7 +19601,7 @@
                   ),
                   k
                     ? (0, e.jsx)(
-                        Ao,
+                        To,
                         us(
                           {
                             isVisible: v,
@@ -20010,7 +20071,7 @@
             o = (0, r.useState)(!1),
             s = o[0],
             l = o[1],
-            c = Ta(),
+            c = Aa(),
             u = c[0],
             d = c[1],
             p = window.innerWidth <= 860,
@@ -20089,9 +20150,9 @@
               { onMouseEnter: i, onMouseLeave: a },
               {
                 children: [
-                  (0, e.jsx)(Aa, { singleton: u, duration: 20 }),
+                  (0, e.jsx)(Ta, { singleton: u, duration: 20 }),
                   (0, e.jsx)(
-                    Aa,
+                    Ta,
                     xs(
                       {
                         singleton: d,
@@ -20137,7 +20198,7 @@
                                                 {
                                                   children: [
                                                     (0, e.jsx)(
-                                                      Aa,
+                                                      Ta,
                                                       xs(
                                                         {
                                                           placement: "right",
@@ -20187,7 +20248,7 @@
                                                       )
                                                     ),
                                                     (0, e.jsx)(
-                                                      Aa,
+                                                      Ta,
                                                       xs(
                                                         {
                                                           placement: "right",
@@ -20269,7 +20330,7 @@
                                                       )
                                                     ),
                                                     (0, e.jsx)(
-                                                      Aa,
+                                                      Ta,
                                                       xs(
                                                         {
                                                           placement: "right",
@@ -20319,7 +20380,7 @@
                                                       )
                                                     ),
                                                     (0, e.jsx)(
-                                                      Aa,
+                                                      Ta,
                                                       xs(
                                                         {
                                                           placement: "right",
@@ -20412,7 +20473,7 @@
                   ),
                   s && p
                     ? (0, e.jsx)(
-                        Ao,
+                        To,
                         xs(
                           {
                             isVisible: s,
@@ -20554,7 +20615,7 @@
                                 })
                                 .map(function (n) {
                                   return (0,
-                                  e.jsx)(Aa, xs({ placement: "right", duration: 20, content: (0, e.jsx)(gs, { isDetailMode: !0, name: n.name, breakdown: n.breakdown }) }, { children: (0, e.jsx)(io, xs({ id: "planet:colony:effects:".concat(n.id), className: "factor-wrap" }, { children: (0, e.jsxs)("p", xs({ className: "factor ".concat(n.excess > 0 ? "excess" : "").concat(((t = n.breakdown.buffDirection || 0), t > 0 ? " boosted" : t < 0 ? " decreased" : "")) }, { children: [n.name, ": ", n.amount, " ", n.excess > 0 ? "(".concat(co(n.excess), ")") : ""] })) })) }));
+                                  e.jsx)(Ta, xs({ placement: "right", duration: 20, content: (0, e.jsx)(gs, { isDetailMode: !0, name: n.name, breakdown: n.breakdown }) }, { children: (0, e.jsx)(io, xs({ id: "planet:colony:effects:".concat(n.id), className: "factor-wrap" }, { children: (0, e.jsxs)("p", xs({ className: "factor ".concat(n.excess > 0 ? "excess" : "").concat(((t = n.breakdown.buffDirection || 0), t > 0 ? " boosted" : t < 0 ? " decreased" : "")) }, { children: [n.name, ": ", n.amount, " ", n.excess > 0 ? "(".concat(co(n.excess), ")") : ""] })) })) }));
                                   var t;
                                 }),
                             }
@@ -20662,7 +20723,7 @@
             o = (0, r.useState)(!1),
             s = o[0],
             l = o[1],
-            c = Ta(),
+            c = Aa(),
             u = c[0],
             d = c[1],
             p = window.innerWidth <= 860,
@@ -20721,9 +20782,9 @@
               { onMouseEnter: i, onMouseLeave: a },
               {
                 children: [
-                  (0, e.jsx)(Aa, { singleton: u, duration: 20 }),
+                  (0, e.jsx)(Ta, { singleton: u, duration: 20 }),
                   (0, e.jsx)(
-                    Aa,
+                    Ta,
                     Ns(
                       {
                         singleton: d,
@@ -20769,7 +20830,7 @@
                                                 {
                                                   children: [
                                                     (0, e.jsx)(
-                                                      Aa,
+                                                      Ta,
                                                       Ns(
                                                         {
                                                           placement: "right",
@@ -20819,7 +20880,7 @@
                                                       )
                                                     ),
                                                     (0, e.jsx)(
-                                                      Aa,
+                                                      Ta,
                                                       Ns(
                                                         {
                                                           placement: "right",
@@ -20879,7 +20940,7 @@
                                                       },
                                                     }),
                                                     (0, e.jsx)(
-                                                      Aa,
+                                                      Ta,
                                                       Ns(
                                                         {
                                                           placement: "right",
@@ -20929,7 +20990,7 @@
                                                       )
                                                     ),
                                                     (0, e.jsx)(
-                                                      Aa,
+                                                      Ta,
                                                       Ns(
                                                         {
                                                           placement: "right",
@@ -21022,7 +21083,7 @@
                   ),
                   s && p
                     ? (0, e.jsx)(
-                        Ao,
+                        To,
                         Ns(
                           {
                             isVisible: s,
@@ -21120,7 +21181,7 @@
             )
           );
         };
-      function Ts(e, n) {
+      function As(e, n) {
         var t,
           i = (0, r.useState)(null),
           a = i[0],
@@ -21142,7 +21203,7 @@
           },
         ];
       }
-      function As() {
+      function Ts() {
         localStorage.removeItem("cache");
       }
       var Os,
@@ -21222,7 +21283,7 @@
                                       children: n.map(function (n) {
                                         var i;
                                         return (0, e.jsx)(
-                                          Aa,
+                                          Ta,
                                           Rs(
                                             {
                                               duration: 0,
@@ -21501,6 +21562,14 @@
                                                     n.x === t.runningX &&
                                                       n.y === t.runningY
                                                       ? "current"
+                                                      : "",
+                                                    " "
+                                                  )
+                                                  .concat(
+                                                    n.specialEvent &&
+                                                      "Unknown" !==
+                                                        n.specialEvent
+                                                      ? "event"
                                                       : ""
                                                   ),
                                                 style: {
@@ -21566,7 +21635,7 @@
         Ms = function (n) {
           var t = n.page;
           return "landingZone" === t
-            ? (0, e.jsx)($o, {})
+            ? (0, e.jsx)(Qo, {})
             : "colony" === t
             ? (0, e.jsx)(js, {})
             : "crafting" === t
@@ -21576,10 +21645,10 @@
             : (0, e.jsx)("p", { children: "None" });
         },
         Ds = function () {
-          var n = Ts("landing-zone-page", "landingZone"),
+          var n = As("landing-zone-page", "landingZone"),
             t = n[0],
             r = n[1],
-            i = k(Qo),
+            i = k($o),
             a = k(fs),
             o = k(ss);
           return (0, e.jsxs)(
@@ -22611,9 +22680,9 @@
             (e.ANNIHILATION_POWER = "annihilation-power"),
             (e.ORGANIC_TRANSMUTATION = "organic-transmutation");
         })(_s || (_s = {}));
-      var $s,
+      var Qs,
         Ks,
-        Qs,
+        $s,
         Zs = {
           selectLawOption: Nn("[laws] set option", function (e) {
             return e;
@@ -22695,7 +22764,7 @@
                                             },
                                             {
                                               children: (0, e.jsx)(
-                                                Aa,
+                                                Ta,
                                                 Js(
                                                   {
                                                     placement: "right",
@@ -23037,7 +23106,7 @@
           );
         },
         nl = function () {
-          var n = Ts("laws-category", Os.SOCIAL),
+          var n = As("laws-category", Os.SOCIAL),
             t = n[0],
             r = n[1],
             i = k(Ga).laws.filter(function (e) {
@@ -23198,6 +23267,83 @@
                             {
                               children: (0, e.jsxs)(as(), {
                                 children: [
+                                  (0, e.jsxs)(
+                                    "div",
+                                    tl(
+                                      { className: "version-block" },
+                                      {
+                                        children: [
+                                          (0, e.jsxs)(
+                                            "div",
+                                            tl(
+                                              { className: "version-title" },
+                                              {
+                                                children: [
+                                                  (0, e.jsx)("h3", {
+                                                    children:
+                                                      "v0.2.8 Regular Update",
+                                                  }),
+                                                  (0, e.jsx)(
+                                                    "span",
+                                                    tl(
+                                                      { className: "date" },
+                                                      { children: "04/09/2023" }
+                                                    )
+                                                  ),
+                                                ],
+                                              }
+                                            )
+                                          ),
+                                          (0, e.jsxs)(
+                                            "ul",
+                                            tl(
+                                              { className: "features" },
+                                              {
+                                                children: [
+                                                  (0, e.jsx)("li", {
+                                                    children:
+                                                      "Added new XP upgrades",
+                                                  }),
+                                                  (0, e.jsx)("li", {
+                                                    children:
+                                                      'Added "Lost Technologies" - XP upgrades that can provide new buildings/effects',
+                                                  }),
+                                                  (0, e.jsx)("li", {
+                                                    children:
+                                                      "Refined expedition page to show special events",
+                                                  }),
+                                                  (0, e.jsx)("li", {
+                                                    children:
+                                                      "Added new star types",
+                                                  }),
+                                                  (0, e.jsx)("li", {
+                                                    children:
+                                                      "Added filter by star type when search for planet",
+                                                  }),
+                                                  (0, e.jsx)("li", {
+                                                    children:
+                                                      "Happiness can now go above 20, but with diminishing effect",
+                                                  }),
+                                                  (0, e.jsx)("li", {
+                                                    children:
+                                                      "Fixed bug when resource percentages could show incorrectly",
+                                                  }),
+                                                  (0, e.jsx)("li", {
+                                                    children:
+                                                      "Fixed bug when was unable to pause game when have 0 banked time",
+                                                  }),
+                                                  (0, e.jsx)("li", {
+                                                    children:
+                                                      "Fixed some bugs related to expedition events",
+                                                  }),
+                                                ],
+                                              }
+                                            )
+                                          ),
+                                        ],
+                                      }
+                                    )
+                                  ),
                                   (0, e.jsxs)(
                                     "div",
                                     tl(
@@ -25628,6 +25774,47 @@
                                           )
                                         )
                                       : (0, e.jsx)(e.Fragment, {}),
+                                    n.craftingMult && 1 !== n.craftingMult
+                                      ? (0, e.jsxs)(
+                                          "div",
+                                          il(
+                                            { className: "gain wrap" },
+                                            {
+                                              children: [
+                                                (0, e.jsx)("span", {
+                                                  children:
+                                                    "Crafting Multiplier",
+                                                }),
+                                                (0, e.jsx)(
+                                                  "div",
+                                                  il(
+                                                    { className: "gain-block" },
+                                                    {
+                                                      children: (0, e.jsxs)(
+                                                        "p",
+                                                        il(
+                                                          {
+                                                            className:
+                                                              "requirement",
+                                                          },
+                                                          {
+                                                            children: [
+                                                              "All craftable: x",
+                                                              co(
+                                                                n.craftingMult
+                                                              ),
+                                                            ],
+                                                          }
+                                                        )
+                                                      ),
+                                                    }
+                                                  )
+                                                ),
+                                              ],
+                                            }
+                                          )
+                                        )
+                                      : (0, e.jsx)(e.Fragment, {}),
                                     n.max.length
                                       ? (0, e.jsxs)(
                                           "div",
@@ -25858,7 +26045,7 @@
                                     children: [
                                       n.name,
                                       (0, e.jsx)(
-                                        Aa,
+                                        Ta,
                                         cl(
                                           {
                                             placement: "right",
@@ -26369,7 +26556,7 @@
                       {
                         children: [
                           (0, e.jsx)(
-                            Aa,
+                            Ta,
                             pl(
                               { content: c, placement: "right" },
                               {
@@ -26479,7 +26666,7 @@
                   ),
                   a && s
                     ? (0, e.jsx)(
-                        Ao,
+                        To,
                         pl(
                           {
                             isVisible: a,
@@ -26739,7 +26926,7 @@
                                                                   n.selectedName
                                                                     ? (0,
                                                                       e.jsx)(
-                                                                        Aa,
+                                                                        Ta,
                                                                         gl(
                                                                           {
                                                                             placement:
@@ -27024,7 +27211,7 @@
           (e.WEAPONS = "Weapons"),
           (e.POWER_SUPPLY = "Power Supply"),
           (e.ENGINE = "Engine");
-      })($s || ($s = {})),
+      })(Qs || (Qs = {})),
         (function (e) {
           (e.DURABILITY = "Durability"),
             (e.SHIELD_CAP = "Shield Capacity"),
@@ -27041,7 +27228,7 @@
           (e.ACTUAL_DURABILITY = "Actual Durability"),
             (e.ACTUAL_SHIELD = "Actual Shield"),
             (e.ACTUAL_RECHARGE = "Actual Recharge");
-        })(Qs || (Qs = {}));
+        })($s || ($s = {}));
       var xl = function () {
           return (
             (xl =
@@ -27070,7 +27257,7 @@
                     xl({ className: "name-cont" }, { children: i.name })
                   ),
                   (0, e.jsx)(
-                    Aa,
+                    Ta,
                     xl(
                       {
                         placement: "right",
@@ -27083,7 +27270,7 @@
                                 (0, e.jsxs)("p", {
                                   children: [
                                     "Shield: ",
-                                    co(i.stats[Qs.ACTUAL_SHIELD]),
+                                    co(i.stats[$s.ACTUAL_SHIELD]),
                                     "/",
                                     co(i.stats[Ks.SHIELD_CAP]),
                                   ],
@@ -27091,7 +27278,7 @@
                                 (0, e.jsxs)("p", {
                                   children: [
                                     "Durability: ",
-                                    co(i.stats[Qs.ACTUAL_DURABILITY]),
+                                    co(i.stats[$s.ACTUAL_DURABILITY]),
                                     "/",
                                     co(i.stats[Ks.DURABILITY]),
                                   ],
@@ -27129,7 +27316,7 @@
                                         className: "bar-inner",
                                         style: {
                                           width: "".concat(
-                                            (100 * i.stats[Qs.ACTUAL_SHIELD]) /
+                                            (100 * i.stats[$s.ACTUAL_SHIELD]) /
                                               i.stats[Ks.SHIELD_CAP],
                                             "%"
                                           ),
@@ -27148,7 +27335,7 @@
                                         style: {
                                           width: "".concat(
                                             (100 *
-                                              i.stats[Qs.ACTUAL_DURABILITY]) /
+                                              i.stats[$s.ACTUAL_DURABILITY]) /
                                               i.stats[Ks.DURABILITY],
                                             "%"
                                           ),
@@ -27167,7 +27354,7 @@
                                         style: {
                                           width: "".concat(
                                             (100 *
-                                              i.stats[Qs.ACTUAL_RECHARGE]) /
+                                              i.stats[$s.ACTUAL_RECHARGE]) /
                                               i.stats[Ks.WEAPON_COOLDOWN],
                                             "%"
                                           ),
@@ -27378,7 +27565,7 @@
                   (0, e.jsxs)("div", {
                     children: [
                       (0, e.jsx)(
-                        Aa,
+                        Ta,
                         jl(
                           {
                             placement: "right",
@@ -27491,7 +27678,7 @@
                       ),
                       o && i
                         ? (0, e.jsx)(
-                            Ao,
+                            To,
                             jl(
                               {
                                 isVisible: o,
@@ -27685,7 +27872,7 @@
             Cl.apply(this, arguments)
           );
         },
-        Tl = function (n) {
+        Al = function (n) {
           var t = n.page;
           return "spaceBuildings" === t
             ? (0, e.jsx)(sl, {})
@@ -27699,13 +27886,13 @@
             ? (0, e.jsx)(Sl, {})
             : (0, e.jsx)("p", { children: "None" });
         },
-        Al = function () {
-          var n = Ts("space-page", "spaceBuildings"),
+        Tl = function () {
+          var n = As("space-page", "spaceBuildings"),
             t = n[0],
             r = n[1],
             i = k(Va),
             a = k(qa),
-            o = k($a),
+            o = k(Qa),
             s = k(Ka);
           return (0, e.jsxs)(
             "div",
@@ -27813,7 +28000,7 @@
                             "div",
                             Cl(
                               { className: "inner" },
-                              { children: (0, e.jsx)(Tl, { page: t }) }
+                              { children: (0, e.jsx)(Al, { page: t }) }
                             )
                           ),
                         }),
@@ -27837,6 +28024,12 @@
           }),
           doColonizeSetSearchFilter: Nn(
             "[colonize-planet] set search filter",
+            function (e) {
+              return e;
+            }
+          ),
+          doColonizeSetStarFilter: Nn(
+            "[colonize-planet] set star filter",
             function (e) {
               return e;
             }
@@ -28043,7 +28236,7 @@
                             {
                               onClick: function () {
                                 confirm("Are you sure?") &&
-                                  (Ol.doTKPrestige.send({}), As());
+                                  (Ol.doTKPrestige.send({}), Ts());
                               },
                             },
                             {
@@ -28093,8 +28286,9 @@
           );
         },
         Ml = function (n) {
-          var t = n.state;
-          return t.isPrestigeAvailable
+          var t,
+            r = n.state;
+          return r.isPrestigeAvailable
             ? (0, e.jsxs)(
                 Fa,
                 Ll(
@@ -28114,27 +28308,27 @@
                               (0, e.jsxs)("p", {
                                 children: [
                                   "You have ",
-                                  co(t.currentXP),
+                                  co(r.currentXP),
                                   " XP points, providing X",
-                                  t.prestige.currentBonus,
+                                  r.prestige.currentBonus,
                                   " multiplier to your KP gain",
                                 ],
                               }),
                               (0, e.jsxs)("p", {
                                 children: [
                                   "You will lose all your resources, upgrades, buildings and science. Knowledge points and upgrades you already have will persist. You won't receive any transmit knowledge but you will receive ",
-                                  t.prestige.potentialGain,
+                                  r.prestige.potentialGain,
                                   " XP points. (x",
-                                  t.prestige.gainBase,
+                                  r.prestige.gainBase,
                                   " from planet difficulty ",
-                                  t.prestige.gainBattleMult
+                                  r.prestige.gainBattleMult
                                     ? ", x".concat(
-                                        t.prestige.gainBattleMult,
+                                        r.prestige.gainBattleMult,
                                         " from max level beaten in fights"
                                       )
                                     : "",
                                   ") Your KP gain multiplier will be X",
-                                  t.prestige.potentialBonus,
+                                  r.prestige.potentialBonus,
                                 ],
                               }),
                             ],
@@ -28146,7 +28340,7 @@
                         Ll(
                           { className: "list-wrap planets-wrap" },
                           {
-                            children: t.available.map(function (n, t) {
+                            children: r.available.map(function (n, t) {
                               return (0, e.jsxs)(
                                 _o,
                                 Ll(
@@ -28173,7 +28367,7 @@
                                           (Ol.doColonizePrestige.send({
                                             id: e,
                                           }),
-                                          As())
+                                          Ts())
                                         )
                                       );
                                       var e;
@@ -28546,72 +28740,154 @@
                           { className: "search-wrap" },
                           {
                             children: [
-                              t.search.filter.isAvailable
+                              r.search.filter.isAvailable
                                 ? (0, e.jsxs)(
                                     "div",
                                     Ll(
                                       { className: "search-filter" },
                                       {
                                         children: [
-                                          (0, e.jsx)("p", {
-                                            children:
-                                              "Select search for specific modifier. This will increase search cost",
-                                          }),
-                                          (0, e.jsxs)(
-                                            "select",
-                                            Ll(
-                                              {
-                                                onChange: function (e) {
-                                                  return (
-                                                    (n = e.target.value),
-                                                    console.log(
-                                                      "setting filter option: ",
-                                                      n
-                                                    ),
-                                                    void Ol.doColonizeSetSearchFilter.send(
-                                                      { id: n }
-                                                    )
-                                                  );
-                                                  var n;
-                                                },
-                                              },
-                                              {
-                                                children: [
-                                                  t.search.filter.modifiersAvailable.map(
-                                                    function (n) {
-                                                      return (0, e.jsx)(
+                                          (0, e.jsxs)("div", {
+                                            children: [
+                                              (0, e.jsx)("p", {
+                                                children:
+                                                  "Select search for specific modifier. This will increase search cost",
+                                              }),
+                                              (0, e.jsxs)(
+                                                "select",
+                                                Ll(
+                                                  {
+                                                    onChange: function (e) {
+                                                      return (
+                                                        (n = e.target.value),
+                                                        console.log(
+                                                          "setting filter option: ",
+                                                          n
+                                                        ),
+                                                        void Ol.doColonizeSetSearchFilter.send(
+                                                          { id: n }
+                                                        )
+                                                      );
+                                                      var n;
+                                                    },
+                                                  },
+                                                  {
+                                                    children: [
+                                                      r.search.filter.modifiersAvailable.map(
+                                                        function (n) {
+                                                          return (0, e.jsx)(
+                                                            "option",
+                                                            Ll(
+                                                              {
+                                                                value: n.id,
+                                                                selected:
+                                                                  n.name ===
+                                                                  r.search
+                                                                    .filter
+                                                                    .modifierName,
+                                                              },
+                                                              {
+                                                                children:
+                                                                  n.name,
+                                                              }
+                                                            )
+                                                          );
+                                                        }
+                                                      ),
+                                                      (0, e.jsx)(
                                                         "option",
                                                         Ll(
                                                           {
-                                                            value: n.id,
                                                             selected:
-                                                              n.name ===
-                                                              t.search.filter
-                                                                .modifierName,
+                                                              !r.search.filter
+                                                                .modifierName ||
+                                                              "None" ===
+                                                                r.search.filter
+                                                                  .modifierName,
                                                           },
-                                                          { children: n.name }
+                                                          { children: "None" }
                                                         )
-                                                      );
-                                                    }
-                                                  ),
-                                                  (0, e.jsx)(
-                                                    "option",
+                                                      ),
+                                                    ],
+                                                  }
+                                                )
+                                              ),
+                                            ],
+                                          }),
+                                          (null === (t = r.search.starsList) ||
+                                          void 0 === t
+                                            ? void 0
+                                            : t.length) > 1
+                                            ? (0, e.jsxs)("div", {
+                                                children: [
+                                                  (0, e.jsx)("p", {
+                                                    children: "Select star",
+                                                  }),
+                                                  (0, e.jsxs)(
+                                                    "select",
                                                     Ll(
                                                       {
-                                                        selected:
-                                                          !t.search.filter
-                                                            .modifierName ||
-                                                          "None" ===
-                                                            t.search.filter
-                                                              .modifierName,
+                                                        onChange: function (e) {
+                                                          return (
+                                                            (n =
+                                                              e.target.value),
+                                                            console.log(
+                                                              "setting star option: ",
+                                                              n
+                                                            ),
+                                                            void Ol.doColonizeSetStarFilter.send(
+                                                              { id: n }
+                                                            )
+                                                          );
+                                                          var n;
+                                                        },
                                                       },
-                                                      { children: "None" }
+                                                      {
+                                                        children: [
+                                                          r.search.starsList.map(
+                                                            function (n) {
+                                                              return (0, e.jsx)(
+                                                                "option",
+                                                                Ll(
+                                                                  {
+                                                                    value: n.id,
+                                                                    selected:
+                                                                      n.name ===
+                                                                      r.search
+                                                                        .starSelected,
+                                                                  },
+                                                                  {
+                                                                    children:
+                                                                      n.name,
+                                                                  }
+                                                                )
+                                                              );
+                                                            }
+                                                          ),
+                                                          (0, e.jsx)(
+                                                            "option",
+                                                            Ll(
+                                                              {
+                                                                selected:
+                                                                  !r.search
+                                                                    .starSelected ||
+                                                                  "None" ===
+                                                                    r.search
+                                                                      .starSelected,
+                                                              },
+                                                              {
+                                                                children:
+                                                                  "None",
+                                                              }
+                                                            )
+                                                          ),
+                                                        ],
+                                                      }
                                                     )
                                                   ),
                                                 ],
-                                              }
-                                            )
-                                          ),
+                                              })
+                                            : null,
                                         ],
                                       }
                                     )
@@ -28650,7 +28926,7 @@
                                                     value: 0,
                                                     selected:
                                                       0 ===
-                                                      t.search.disastersLevel,
+                                                      r.search.disastersLevel,
                                                   },
                                                   { children: "Small" }
                                                 )
@@ -28662,7 +28938,7 @@
                                                     value: 1,
                                                     selected:
                                                       1 ===
-                                                      t.search.disastersLevel,
+                                                      r.search.disastersLevel,
                                                   },
                                                   { children: "Realistic" }
                                                 )
@@ -28674,7 +28950,7 @@
                                                     value: 2,
                                                     selected:
                                                       2 ===
-                                                      t.search.disastersLevel,
+                                                      r.search.disastersLevel,
                                                   },
                                                   { children: "Hard" }
                                                 )
@@ -28686,7 +28962,7 @@
                                                     value: 3,
                                                     selected:
                                                       3 ===
-                                                      t.search.disastersLevel,
+                                                      r.search.disastersLevel,
                                                   },
                                                   { children: "Incredible" }
                                                 )
@@ -28704,16 +28980,16 @@
                                 Ll(
                                   {
                                     label: "Search New Planets",
-                                    isAvailable: t.search.isAvailable,
+                                    isAvailable: r.search.isAvailable,
                                     isBlocked: !1,
-                                    progress: t.search.progress,
+                                    progress: r.search.progress,
                                     className: "feature-item search-item",
                                     onClick: function () {
                                       Ol.doColonizeSearch.send({});
                                     },
                                     onMouseEnter: function () {
                                       return Mo(
-                                        t.search.cost.filter(function (e) {
+                                        r.search.cost.filter(function (e) {
                                           return !e.isAvailable;
                                         })
                                       );
@@ -28741,7 +29017,7 @@
                                           }
                                         )
                                       ),
-                                      t.search.cost.length
+                                      r.search.cost.length
                                         ? (0, e.jsxs)(
                                             "div",
                                             Ll(
@@ -28751,7 +29027,7 @@
                                                   (0, e.jsx)("span", {
                                                     children: "Cost",
                                                   }),
-                                                  t.search.cost.map(function (
+                                                  r.search.cost.map(function (
                                                     n
                                                   ) {
                                                     return (0, e.jsx)(Io, {
@@ -28797,9 +29073,9 @@
                             (0, e.jsxs)("p", {
                               children: [
                                 "You have ",
-                                co(t.currentXP),
+                                co(r.currentXP),
                                 " XP points, providing X",
-                                t.prestige.currentBonus,
+                                r.prestige.currentBonus,
                                 " multiplier to your KP gain",
                               ],
                             }),
@@ -29060,7 +29336,7 @@
               {
                 children: t
                   .filter(function (e) {
-                    return e.isUnlocked;
+                    return e.isUnlocked && !e.isLostTech;
                   })
                   .map(function (n) {
                     return (0, e.jsxs)(
@@ -29131,19 +29407,115 @@
             )
           );
         },
-        Fl = function () {
+        Fl = function (n) {
+          var t = n.upgrades;
+          return t.filter(function (e) {
+            return e.isUnlocked && e.isLostTech;
+          }).length <= 0
+            ? null
+            : (0, e.jsx)(
+                Fa,
+                Ll(
+                  {
+                    isCollapsable: !0,
+                    id: "lost-tech-upgrades",
+                    label: "Lost Technologies",
+                    className: "xp-wrap",
+                    contentClassName: "flex",
+                  },
+                  {
+                    children: t
+                      .filter(function (e) {
+                        return e.isUnlocked && e.isLostTech;
+                      })
+                      .map(function (n) {
+                        return (0, e.jsxs)(
+                          _o,
+                          Ll(
+                            {
+                              label: n.name,
+                              isAvailable: n.isAvailable,
+                              isBlocked: !1,
+                              progress: n.progress,
+                              className: "feature-item",
+                              onClick: function () {
+                                return (
+                                  (e = n.id),
+                                  void Ol.doXPUpgrade.send({ id: e })
+                                );
+                                var e;
+                              },
+                              level: n.level,
+                              maxLevel: n.maxLevel,
+                              onMouseEnter: function () {
+                                return Mo(
+                                  n.cost.filter(function (e) {
+                                    return !e.isAvailable;
+                                  })
+                                );
+                              },
+                              onMouseLeave: function () {
+                                return Mo(null);
+                              },
+                            },
+                            {
+                              children: [
+                                (0, e.jsx)(
+                                  "p",
+                                  Ll(
+                                    { className: "title" },
+                                    { children: n.name }
+                                  )
+                                ),
+                                (0, e.jsx)(
+                                  "p",
+                                  Ll(
+                                    { className: "description" },
+                                    { children: n.description }
+                                  )
+                                ),
+                                n.cost.length
+                                  ? (0, e.jsxs)(
+                                      "div",
+                                      Ll(
+                                        { className: "costs wrap" },
+                                        {
+                                          children: [
+                                            (0, e.jsx)("span", {
+                                              children: "Cost",
+                                            }),
+                                            n.cost.map(function (n) {
+                                              return (0,
+                                              e.jsx)(Io, { cost: n });
+                                            }),
+                                          ],
+                                        }
+                                      )
+                                    )
+                                  : (0, e.jsx)(e.Fragment, {}),
+                              ],
+                            }
+                          )
+                        );
+                      }),
+                  }
+                )
+              );
+        },
+        zl = function () {
           var n = k(eo);
           return (0, e.jsxs)(e.Fragment, {
             children: [
               (0, e.jsx)(Ml, { state: n }),
               (0, e.jsx)(Dl, { colonize: n }),
               (0, e.jsx)(Ul, { upgrades: n.upgrades }),
+              (0, e.jsx)(Fl, { upgrades: n.upgrades }),
             ],
           });
         },
-        zl = function () {
+        Bl = function () {
           return (
-            (zl =
+            (Bl =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -29151,37 +29523,37 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            zl.apply(this, arguments)
+            Bl.apply(this, arguments)
           );
         },
-        Bl = function (n) {
+        Hl = function (n) {
           var t = n.page;
           return "transmitKnowledge" === t
             ? (0, e.jsx)(Pl, {})
             : "colonize" === t
-            ? (0, e.jsx)(Fl, {})
+            ? (0, e.jsx)(zl, {})
             : (0, e.jsx)("p", { children: "None" });
         },
-        Hl = function () {
-          var n = Ts("prestige-page", "transmitKnowledge"),
+        Gl = function () {
+          var n = As("prestige-page", "transmitKnowledge"),
             t = n[0],
             r = n[1],
             i = k(Za);
           return (0, e.jsxs)(
             "div",
-            zl(
+            Bl(
               { className: "fit-height" },
               {
                 children: [
                   (0, e.jsxs)(
                     "div",
-                    zl(
+                    Bl(
                       { className: "submenu" },
                       {
                         children: [
                           (0, e.jsx)(
                             io,
-                            zl(
+                            Bl(
                               {
                                 id: "prestige:transmit-knowledge",
                                 className: "submenu-item-wrap",
@@ -29189,7 +29561,7 @@
                               {
                                 children: (0, e.jsx)(
                                   "div",
-                                  zl(
+                                  Bl(
                                     {
                                       className: "submenu-item ".concat(
                                         "transmitKnowledge" === t
@@ -29209,7 +29581,7 @@
                           i
                             ? (0, e.jsx)(
                                 io,
-                                zl(
+                                Bl(
                                   {
                                     id: "prestige:colonize",
                                     className: "submenu-item-wrap",
@@ -29217,7 +29589,7 @@
                                   {
                                     children: (0, e.jsx)(
                                       "div",
-                                      zl(
+                                      Bl(
                                         {
                                           className: "submenu-item ".concat(
                                             "colonize" === t ? "selected" : ""
@@ -29239,15 +29611,15 @@
                   ),
                   (0, e.jsx)(
                     "div",
-                    zl(
+                    Bl(
                       { className: "inner-scrollable planet" },
                       {
                         children: (0, e.jsx)(as(), {
                           children: (0, e.jsx)(
                             "div",
-                            zl(
+                            Bl(
                               { className: "inner" },
-                              { children: (0, e.jsx)(Bl, { page: t }) }
+                              { children: (0, e.jsx)(Hl, { page: t }) }
                             )
                           ),
                         }),
@@ -29259,12 +29631,12 @@
             )
           );
         },
-        Gl = function (e) {
+        Wl = function (e) {
           return e.game.statistics;
         },
-        Wl = function () {
+        Yl = function () {
           return (
-            (Wl =
+            (Yl =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -29272,14 +29644,14 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            Wl.apply(this, arguments)
+            Yl.apply(this, arguments)
           );
         },
-        Yl = function (n) {
+        Xl = function (n) {
           var t = n.stats;
           return (0, e.jsx)(
             Fa,
-            Wl(
+            Yl(
               {
                 id: "stats",
                 label: "General Statistics",
@@ -29290,20 +29662,20 @@
                   children: [
                     (0, e.jsxs)(
                       "div",
-                      Wl(
+                      Yl(
                         { className: "stat-item" },
                         {
                           children: [
                             (0, e.jsx)(
                               "p",
-                              Wl(
+                              Yl(
                                 { className: "label" },
                                 { children: "Time In Game" }
                               )
                             ),
                             (0, e.jsx)(
                               "p",
-                              Wl(
+                              Yl(
                                 { className: "value" },
                                 { children: lo(t.timeInGame) }
                               )
@@ -29317,13 +29689,13 @@
                           children: [
                             (0, e.jsxs)(
                               "div",
-                              Wl(
+                              Yl(
                                 { className: "stat-item" },
                                 {
                                   children: [
                                     (0, e.jsx)(
                                       "p",
-                                      Wl(
+                                      Yl(
                                         { className: "label" },
                                         {
                                           children:
@@ -29333,7 +29705,7 @@
                                     ),
                                     (0, e.jsx)(
                                       "p",
-                                      Wl(
+                                      Yl(
                                         { className: "value" },
                                         { children: t.numPrestiges }
                                       )
@@ -29344,20 +29716,20 @@
                             ),
                             (0, e.jsxs)(
                               "div",
-                              Wl(
+                              Yl(
                                 { className: "stat-item" },
                                 {
                                   children: [
                                     (0, e.jsx)(
                                       "p",
-                                      Wl(
+                                      Yl(
                                         { className: "label" },
                                         { children: "Time This Prestige" }
                                       )
                                     ),
                                     (0, e.jsx)(
                                       "p",
-                                      Wl(
+                                      Yl(
                                         { className: "value" },
                                         { children: lo(t.timeThisPrestige) }
                                       )
@@ -29368,20 +29740,20 @@
                             ),
                             (0, e.jsxs)(
                               "div",
-                              Wl(
+                              Yl(
                                 { className: "stat-item" },
                                 {
                                   children: [
                                     (0, e.jsx)(
                                       "p",
-                                      Wl(
+                                      Yl(
                                         { className: "label" },
                                         { children: "Total KP Gain (All time)" }
                                       )
                                     ),
                                     (0, e.jsx)(
                                       "p",
-                                      Wl(
+                                      Yl(
                                         { className: "value" },
                                         { children: Math.round(t.kpTotal || 0) }
                                       )
@@ -29392,13 +29764,13 @@
                             ),
                             (0, e.jsxs)(
                               "div",
-                              Wl(
+                              Yl(
                                 { className: "stat-item" },
                                 {
                                   children: [
                                     (0, e.jsx)(
                                       "p",
-                                      Wl(
+                                      Yl(
                                         { className: "label" },
                                         {
                                           children:
@@ -29408,7 +29780,7 @@
                                     ),
                                     (0, e.jsx)(
                                       "p",
-                                      Wl(
+                                      Yl(
                                         { className: "value" },
                                         {
                                           children: Math.round(
@@ -29429,20 +29801,20 @@
                           children: [
                             (0, e.jsxs)(
                               "div",
-                              Wl(
+                              Yl(
                                 { className: "stat-item" },
                                 {
                                   children: [
                                     (0, e.jsx)(
                                       "p",
-                                      Wl(
+                                      Yl(
                                         { className: "label" },
                                         { children: "Colonize Prestiges" }
                                       )
                                     ),
                                     (0, e.jsx)(
                                       "p",
-                                      Wl(
+                                      Yl(
                                         { className: "value" },
                                         { children: t.numColonized }
                                       )
@@ -29453,20 +29825,20 @@
                             ),
                             (0, e.jsxs)(
                               "div",
-                              Wl(
+                              Yl(
                                 { className: "stat-item" },
                                 {
                                   children: [
                                     (0, e.jsx)(
                                       "p",
-                                      Wl(
+                                      Yl(
                                         { className: "label" },
                                         { children: "Time This Planet" }
                                       )
                                     ),
                                     (0, e.jsx)(
                                       "p",
-                                      Wl(
+                                      Yl(
                                         { className: "value" },
                                         { children: lo(t.timeThisPlanet) }
                                       )
@@ -29477,20 +29849,20 @@
                             ),
                             (0, e.jsxs)(
                               "div",
-                              Wl(
+                              Yl(
                                 { className: "stat-item" },
                                 {
                                   children: [
                                     (0, e.jsx)(
                                       "p",
-                                      Wl(
+                                      Yl(
                                         { className: "label" },
                                         { children: "Total XP Gain (All time)" }
                                       )
                                     ),
                                     (0, e.jsx)(
                                       "p",
-                                      Wl(
+                                      Yl(
                                         { className: "value" },
                                         { children: co(t.xpTotal || 0) }
                                       )
@@ -29501,13 +29873,13 @@
                             ),
                             (0, e.jsxs)(
                               "div",
-                              Wl(
+                              Yl(
                                 { className: "stat-item" },
                                 {
                                   children: [
                                     (0, e.jsx)(
                                       "p",
-                                      Wl(
+                                      Yl(
                                         { className: "label" },
                                         {
                                           children:
@@ -29517,7 +29889,7 @@
                                     ),
                                     (0, e.jsx)(
                                       "p",
-                                      Wl(
+                                      Yl(
                                         { className: "value" },
                                         { children: co(+t.xpMaxGain || 0) }
                                       )
@@ -29531,20 +29903,20 @@
                       : null,
                     (0, e.jsxs)(
                       "div",
-                      Wl(
+                      Yl(
                         { className: "stat-item" },
                         {
                           children: [
                             (0, e.jsx)(
                               "p",
-                              Wl(
+                              Yl(
                                 { className: "label" },
                                 { children: "Maximum Colonists" }
                               )
                             ),
                             (0, e.jsx)(
                               "p",
-                              Wl(
+                              Yl(
                                 { className: "value" },
                                 { children: t.maxColonists }
                               )
@@ -29555,20 +29927,20 @@
                     ),
                     (0, e.jsxs)(
                       "div",
-                      Wl(
+                      Yl(
                         { className: "stat-item" },
                         {
                           children: [
                             (0, e.jsx)(
                               "p",
-                              Wl(
+                              Yl(
                                 { className: "label" },
                                 { children: "Maximum Happiness" }
                               )
                             ),
                             (0, e.jsxs)(
                               "p",
-                              Wl(
+                              Yl(
                                 { className: "value" },
                                 { children: [t.maxHappiness, "%"] }
                               )
@@ -29579,20 +29951,20 @@
                     ),
                     (0, e.jsxs)(
                       "div",
-                      Wl(
+                      Yl(
                         { className: "stat-item" },
                         {
                           children: [
                             (0, e.jsx)(
                               "p",
-                              Wl(
+                              Yl(
                                 { className: "label" },
                                 { children: "Exotic Matter Collected" }
                               )
                             ),
                             (0, e.jsx)(
                               "p",
-                              Wl(
+                              Yl(
                                 { className: "value" },
                                 { children: co(+t.exoticCollected || 0) }
                               )
@@ -29607,26 +29979,26 @@
             )
           );
         },
-        Xl = function () {
-          var n = Ts("statistics-page", "General"),
+        Vl = function () {
+          var n = As("statistics-page", "General"),
             t = n[0],
             r = n[1],
-            i = k(Gl);
+            i = k(Wl);
           return (0, e.jsxs)(
             "div",
-            Wl(
+            Yl(
               { className: "fit-height" },
               {
                 children: [
                   (0, e.jsx)(
                     "div",
-                    Wl(
+                    Yl(
                       { className: "submenu" },
                       {
                         children: Object.values(["General"]).map(function (n) {
                           return (0, e.jsx)(
                             io,
-                            Wl(
+                            Yl(
                               {
                                 id: "stats:General",
                                 className: "submenu-wrap",
@@ -29634,7 +30006,7 @@
                               {
                                 children: (0, e.jsx)(
                                   "div",
-                                  Wl(
+                                  Yl(
                                     {
                                       className: "submenu-item ".concat(
                                         t === n ? "selected" : ""
@@ -29655,15 +30027,15 @@
                   ),
                   (0, e.jsx)(
                     "div",
-                    Wl(
+                    Yl(
                       { className: "inner-scrollable stats" },
                       {
                         children: (0, e.jsx)(as(), {
                           children: (0, e.jsx)(
                             "div",
-                            Wl(
+                            Yl(
                               { className: "inner" },
-                              { children: (0, e.jsx)(Yl, { stats: i }) }
+                              { children: (0, e.jsx)(Xl, { stats: i }) }
                             )
                           ),
                         }),
@@ -29675,9 +30047,9 @@
             )
           );
         },
-        Vl = function () {
+        ql = function () {
           return (
-            (Vl =
+            (ql =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -29685,17 +30057,17 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            Vl.apply(this, arguments)
+            ql.apply(this, arguments)
           );
         },
-        ql = function (e, n, t) {
+        Ql = function (e, n, t) {
           if (t || 2 === arguments.length)
             for (var r, i = 0, a = n.length; i < a; i++)
               (!r && i in n) ||
                 (r || (r = Array.prototype.slice.call(n, 0, i)), (r[i] = n[i]));
           return e.concat(r || Array.prototype.slice.call(n));
         },
-        $l = function (n) {
+        Kl = function (n) {
           var t = n.presets,
             i = (0, r.useState)(void 0),
             a = i[0],
@@ -29713,9 +30085,9 @@
                     ? i
                     : -1;
                 if (!(s < 0)) {
-                  var l = ql([], a.jobs, !0);
-                  l[s] = Vl(Vl({}, l[s]), (((r = {})[n] = t), r));
-                  var c = Vl(Vl({}, a), { jobs: l });
+                  var l = Ql([], a.jobs, !0);
+                  l[s] = ql(ql({}, l[s]), (((r = {})[n] = t), r));
+                  var c = ql(ql({}, a), { jobs: l });
                   o(c);
                 }
               }
@@ -29731,28 +30103,28 @@
                     ? i
                     : -1;
                 if (!(s < 0)) {
-                  var l = ql([], a.crafting, !0);
-                  l[s] = Vl(Vl({}, l[s]), (((r = {})[n] = t), r));
-                  var c = Vl(Vl({}, a), { crafting: l });
+                  var l = Ql([], a.crafting, !0);
+                  l[s] = ql(ql({}, l[s]), (((r = {})[n] = t), r));
+                  var c = ql(ql({}, a), { crafting: l });
                   o(c);
                 }
               }
             };
           return (0, e.jsxs)(
             "div",
-            Vl(
+            ql(
               { className: "editor-wrap columns" },
               {
                 children: [
                   (0, e.jsxs)(
                     "div",
-                    Vl(
+                    ql(
                       { className: "loader-column column" },
                       {
                         children: [
                           (0, e.jsx)(
                             "div",
-                            Vl(
+                            ql(
                               {
                                 className: "select-item primary",
                                 onClick: function () {
@@ -29791,7 +30163,7 @@
                             children: t.list.map(function (n) {
                               return (0, e.jsxs)(
                                 "div",
-                                Vl(
+                                ql(
                                   {
                                     className: "select-item ".concat(
                                       (null == a ? void 0 : a.uuid) === n.uuid
@@ -29815,7 +30187,7 @@
                                       n.name,
                                       (0, e.jsx)(
                                         "span",
-                                        Vl(
+                                        ql(
                                           {
                                             className: "delete-preset",
                                             onClick: function () {
@@ -29841,7 +30213,7 @@
                   ),
                   (0, e.jsx)(
                     "div",
-                    Vl(
+                    ql(
                       { className: "editor-column column" },
                       {
                         children: a
@@ -29849,19 +30221,19 @@
                               children: [
                                 (0, e.jsxs)(
                                   "div",
-                                  Vl(
+                                  ql(
                                     { className: "main" },
                                     {
                                       children: [
                                         (0, e.jsxs)(
                                           "div",
-                                          Vl(
+                                          ql(
                                             { className: "row" },
                                             {
                                               children: [
                                                 (0, e.jsx)(
                                                   "p",
-                                                  Vl(
+                                                  ql(
                                                     { className: "label" },
                                                     { children: "Name" }
                                                   )
@@ -29872,7 +30244,7 @@
                                                     null == a ? void 0 : a.name,
                                                   onChange: function (e) {
                                                     o(
-                                                      Vl(Vl({}, a), {
+                                                      ql(ql({}, a), {
                                                         name: e.target.value,
                                                       })
                                                     );
@@ -29884,17 +30256,17 @@
                                         ),
                                         (0, e.jsxs)(
                                           "div",
-                                          Vl(
+                                          ql(
                                             { className: "row buttons" },
                                             {
                                               children: [
                                                 (0, e.jsx)(
                                                   "button",
-                                                  Vl(
+                                                  ql(
                                                     {
                                                       onClick: function () {
                                                         if (a) {
-                                                          var e = Vl({}, a);
+                                                          var e = ql({}, a);
                                                           (e.jobs = e.jobs.map(
                                                             function (e) {
                                                               var n,
@@ -29921,8 +30293,8 @@
                                                                   void 0 !== t
                                                                     ? t
                                                                     : 0;
-                                                              return Vl(
-                                                                Vl({}, e),
+                                                              return ql(
+                                                                ql({}, e),
                                                                 {
                                                                   isValueAmount:
                                                                     !0,
@@ -29959,8 +30331,8 @@
                                                                         t
                                                                         ? t
                                                                         : 0;
-                                                                  return Vl(
-                                                                    Vl({}, e),
+                                                                  return ql(
+                                                                    ql({}, e),
                                                                     {
                                                                       isValueAmount:
                                                                         !0,
@@ -29981,11 +30353,11 @@
                                                 ),
                                                 (0, e.jsx)(
                                                   "button",
-                                                  Vl(
+                                                  ql(
                                                     {
                                                       onClick: function () {
                                                         if (a) {
-                                                          var e = Vl({}, a);
+                                                          var e = ql({}, a);
                                                           (e.jobs = e.jobs.map(
                                                             function (e) {
                                                               var n,
@@ -30012,8 +30384,8 @@
                                                                   void 0 !== t
                                                                     ? t
                                                                     : 0;
-                                                              return Vl(
-                                                                Vl({}, e),
+                                                              return ql(
+                                                                ql({}, e),
                                                                 {
                                                                   isValueAmount:
                                                                     !1,
@@ -30052,8 +30424,8 @@
                                                                         t
                                                                         ? t
                                                                         : 0;
-                                                                  return Vl(
-                                                                    Vl({}, e),
+                                                                  return ql(
+                                                                    ql({}, e),
                                                                     {
                                                                       isValueAmount:
                                                                         !1,
@@ -30085,19 +30457,19 @@
                                 ),
                                 (0, e.jsx)(
                                   "div",
-                                  Vl(
+                                  ql(
                                     { className: "details" },
                                     {
                                       children: (0, e.jsx)(as(), {
                                         children: (0, e.jsxs)(
                                           "div",
-                                          Vl(
+                                          ql(
                                             { className: "jobs" },
                                             {
                                               children: [
                                                 (0, e.jsx)(
                                                   Fa,
-                                                  Vl(
+                                                  ql(
                                                     {
                                                       id: "preset-jobs",
                                                       label: "Jobs",
@@ -30110,7 +30482,7 @@
                                                         function (n) {
                                                           return (0, e.jsxs)(
                                                             "div",
-                                                            Vl(
+                                                            ql(
                                                               {
                                                                 className:
                                                                   "row job-container",
@@ -30119,7 +30491,7 @@
                                                                 children: [
                                                                   (0, e.jsx)(
                                                                     "p",
-                                                                    Vl(
+                                                                    ql(
                                                                       {
                                                                         className:
                                                                           "title",
@@ -30132,7 +30504,7 @@
                                                                   ),
                                                                   (0, e.jsx)(
                                                                     "div",
-                                                                    Vl(
+                                                                    ql(
                                                                       {
                                                                         className:
                                                                           "toggle-mode",
@@ -30142,7 +30514,7 @@
                                                                           (0,
                                                                           e.jsx)(
                                                                             "div",
-                                                                            Vl(
+                                                                            ql(
                                                                               {
                                                                                 className:
                                                                                   "value set-percentage",
@@ -30184,7 +30556,7 @@
                                                                   ),
                                                                   (0, e.jsx)(
                                                                     "div",
-                                                                    Vl(
+                                                                    ql(
                                                                       {
                                                                         className:
                                                                           "values",
@@ -30194,7 +30566,7 @@
                                                                           (0,
                                                                           e.jsxs)(
                                                                             "div",
-                                                                            Vl(
+                                                                            ql(
                                                                               {
                                                                                 className:
                                                                                   "value",
@@ -30248,7 +30620,7 @@
                                                                     : (0,
                                                                       e.jsxs)(
                                                                         "div",
-                                                                        Vl(
+                                                                        ql(
                                                                           {
                                                                             className:
                                                                               "additional flex",
@@ -30259,7 +30631,7 @@
                                                                                 (0,
                                                                                 e.jsxs)(
                                                                                   "div",
-                                                                                  Vl(
+                                                                                  ql(
                                                                                     {
                                                                                       className:
                                                                                         "value",
@@ -30303,7 +30675,7 @@
                                                                                 (0,
                                                                                 e.jsxs)(
                                                                                   "div",
-                                                                                  Vl(
+                                                                                  ql(
                                                                                     {
                                                                                       className:
                                                                                         "value",
@@ -30359,7 +30731,7 @@
                                                 ),
                                                 (0, e.jsx)(
                                                   Fa,
-                                                  Vl(
+                                                  ql(
                                                     {
                                                       id: "preset-crafting",
                                                       label: "Craftsmen",
@@ -30372,7 +30744,7 @@
                                                         function (n) {
                                                           return (0, e.jsxs)(
                                                             "div",
-                                                            Vl(
+                                                            ql(
                                                               {
                                                                 className:
                                                                   "row job-container",
@@ -30381,7 +30753,7 @@
                                                                 children: [
                                                                   (0, e.jsx)(
                                                                     "p",
-                                                                    Vl(
+                                                                    ql(
                                                                       {
                                                                         className:
                                                                           "title",
@@ -30394,7 +30766,7 @@
                                                                   ),
                                                                   (0, e.jsx)(
                                                                     "div",
-                                                                    Vl(
+                                                                    ql(
                                                                       {
                                                                         className:
                                                                           "toggle-mode",
@@ -30404,7 +30776,7 @@
                                                                           (0,
                                                                           e.jsx)(
                                                                             "div",
-                                                                            Vl(
+                                                                            ql(
                                                                               {
                                                                                 className:
                                                                                   "value set-percentage",
@@ -30446,7 +30818,7 @@
                                                                   ),
                                                                   (0, e.jsx)(
                                                                     "div",
-                                                                    Vl(
+                                                                    ql(
                                                                       {
                                                                         className:
                                                                           "values",
@@ -30456,7 +30828,7 @@
                                                                           (0,
                                                                           e.jsxs)(
                                                                             "div",
-                                                                            Vl(
+                                                                            ql(
                                                                               {
                                                                                 className:
                                                                                   "value",
@@ -30510,7 +30882,7 @@
                                                                     : (0,
                                                                       e.jsxs)(
                                                                         "div",
-                                                                        Vl(
+                                                                        ql(
                                                                           {
                                                                             className:
                                                                               "additional flex",
@@ -30521,7 +30893,7 @@
                                                                                 (0,
                                                                                 e.jsxs)(
                                                                                   "div",
-                                                                                  Vl(
+                                                                                  ql(
                                                                                     {
                                                                                       className:
                                                                                         "value",
@@ -30565,7 +30937,7 @@
                                                                                 (0,
                                                                                 e.jsxs)(
                                                                                   "div",
-                                                                                  Vl(
+                                                                                  ql(
                                                                                     {
                                                                                       className:
                                                                                         "value",
@@ -30629,12 +31001,12 @@
                                 ),
                                 (0, e.jsx)(
                                   "div",
-                                  Vl(
+                                  ql(
                                     { className: "save-area" },
                                     {
                                       children: (0, e.jsx)(
                                         "button",
-                                        Vl(
+                                        ql(
                                           {
                                             onClick: function () {
                                               bs.saveJobsPreset.send(a);
@@ -30657,19 +31029,19 @@
             )
           );
         },
-        Kl = function () {
+        $l = function () {
           var n = k(jo);
           return (0, e.jsx)(
             "div",
-            Vl(
+            ql(
               { className: "presets-wrap" },
-              { children: (0, e.jsx)($l, { presets: n }) }
+              { children: (0, e.jsx)(Kl, { presets: n }) }
             )
           );
         },
-        Ql = function () {
+        Zl = function () {
           return (
-            (Ql =
+            (Zl =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -30677,34 +31049,34 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            Ql.apply(this, arguments)
+            Zl.apply(this, arguments)
           );
         },
-        Zl = function (n) {
+        Jl = function (n) {
           return "jobs" === n.page
-            ? (0, e.jsx)(Kl, {})
+            ? (0, e.jsx)($l, {})
             : (0, e.jsx)("p", { children: "None" });
         },
-        Jl = function () {
+        ec = function () {
           var n = k(yo),
-            t = Ts("presets-page", "jobs"),
+            t = As("presets-page", "jobs"),
             r = t[0],
             i = t[1];
           return (0, e.jsxs)(
             "div",
-            Ql(
+            Zl(
               { className: "fit-height" },
               {
                 children: [
                   (0, e.jsx)(
                     "div",
-                    Ql(
+                    Zl(
                       { className: "submenu" },
                       {
                         children: n.jobs.isUnlocked
                           ? (0, e.jsx)(
                               "div",
-                              Ql(
+                              Zl(
                                 {
                                   className: "submenu-item ".concat(
                                     "jobs" === r ? "selected" : ""
@@ -30722,14 +31094,14 @@
                   ),
                   (0, e.jsx)(
                     "div",
-                    Ql(
+                    Zl(
                       { className: "inner-scrollable planet" },
                       {
                         children: (0, e.jsx)(
                           "div",
-                          Ql(
+                          Zl(
                             { className: "inner" },
-                            { children: (0, e.jsx)(Zl, { page: r }) }
+                            { children: (0, e.jsx)(Jl, { page: r }) }
                           )
                         ),
                       }
@@ -30740,46 +31112,46 @@
             )
           );
         },
-        ec = function () {
+        nc = function () {
           var n = k(ar);
           return n === ht.PLANET
             ? (0, e.jsx)(Ds, {})
             : n === ht.SCIENCE
             ? (0, e.jsx)(Gs, {})
             : n === ht.SPACE
-            ? (0, e.jsx)(Al, {})
+            ? (0, e.jsx)(Tl, {})
             : n === ht.SETTINGS
             ? (0, e.jsx)(qs, {})
             : n === ht.LAWS
             ? (0, e.jsx)(nl, {})
             : n === ht.PRESTIGE
-            ? (0, e.jsx)(Hl, {})
+            ? (0, e.jsx)(Gl, {})
             : n === ht.PRESETS
-            ? (0, e.jsx)(Jl, {})
+            ? (0, e.jsx)(ec, {})
             : n === ht.ABOUT
             ? (0, e.jsx)(rl, {})
             : n === ht.STATISTICS
-            ? (0, e.jsx)(Xl, {})
+            ? (0, e.jsx)(Vl, {})
             : (0, e.jsx)("h2", { children: "Empty and cold here" });
         },
-        nc = t(8397),
-        tc = {};
-      (tc.styleTagTransform = tr()),
-        (tc.setAttributes = Zt()),
-        (tc.insert = Kt().bind(null, "head")),
-        (tc.domAPI = qt()),
-        (tc.insertStyleElement = er()),
-        Xt()(nc.Z, tc),
-        nc.Z && nc.Z.locals && nc.Z.locals;
-      var rc = t(904),
-        ic = t.n(rc),
-        ac = { "aria-busy": !0, role: "status" },
-        oc = function (e) {
+        tc = t(8397),
+        rc = {};
+      (rc.styleTagTransform = tr()),
+        (rc.setAttributes = Zt()),
+        (rc.insert = Kt().bind(null, "head")),
+        (rc.domAPI = qt()),
+        (rc.insertStyleElement = er()),
+        Xt()(tc.Z, rc),
+        tc.Z && tc.Z.locals && tc.Z.locals;
+      var ic = t(904),
+        ac = t.n(ic),
+        oc = { "aria-busy": !0, role: "status" },
+        sc = function (e) {
           return { display: e ? "flex" : "none" };
         },
-        sc = function () {
+        lc = function () {
           return (
-            (sc =
+            (lc =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -30787,10 +31159,10 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            sc.apply(this, arguments)
+            lc.apply(this, arguments)
           );
         };
-      const lc = function (e) {
+      const cc = function (e) {
         var n = e.wrapperStyle,
           t = void 0 === n ? {} : n,
           i = e.visible,
@@ -30810,9 +31182,9 @@
           b = void 0 === v ? "circles-with-bar-loading" : v;
         return r.createElement(
           "div",
-          sc(
-            { style: sc(sc({}, oc(a)), t), className: s, "aria-label": b },
-            ac,
+          lc(
+            { style: lc(lc({}, sc(a)), t), className: s, "aria-label": b },
+            oc,
             { "data-testid": "circles-with-bar-wrapper" }
           ),
           r.createElement(
@@ -30944,9 +31316,9 @@
           )
         );
       };
-      var cc = t(6774),
-        uc = t.n(cc);
-      const dc = function (e) {
+      var uc = t(6774),
+        dc = t.n(uc);
+      const pc = function (e) {
           function n(e, r, l, c, p) {
             for (
               var f,
@@ -31073,7 +31445,7 @@
                       if (
                         ((F = (m = n(r, D, m, h, p + 1)).length),
                         0 < I &&
-                          ((y = s(3, m, (D = t(_, H, U)), r, T, C, F, h, p, c)),
+                          ((y = s(3, m, (D = t(_, H, U)), r, A, C, F, h, p, c)),
                           (H = D.join("")),
                           void 0 !== y &&
                             0 === (F = (m = y.trim()).length) &&
@@ -31118,7 +31490,7 @@
                           (F = (H = H.replace(" ", ":")).length),
                         0 < I &&
                           void 0 !==
-                            (y = s(1, H, r, e, T, C, G.length, c, p, c)) &&
+                            (y = s(1, H, r, e, A, C, G.length, c, p, c)) &&
                           0 === (F = (H = y.trim()).length) &&
                           (H = "\0\0"),
                         (f = H.charCodeAt(0)),
@@ -31148,9 +31520,9 @@
                       107 !== c &&
                       0 < H.length &&
                       ((D = 1), (H += "\0")),
-                    0 < I * L && s(0, H, r, e, T, C, G.length, c, p, c),
+                    0 < I * L && s(0, H, r, e, A, C, G.length, c, p, c),
                     (C = 1),
-                    T++;
+                    A++;
                   break;
                 case 59:
                 case 125:
@@ -31187,12 +31559,12 @@
                       0 === E + k + j && ((D = U = 1), (g = "\f" + g));
                       break;
                     case 108:
-                      if (0 === E + k + j + A && 0 < P)
+                      if (0 === E + k + j + T && 0 < P)
                         switch (M - P) {
                           case 2:
-                            112 === S && 58 === l.charCodeAt(M - 3) && (A = S);
+                            112 === S && 58 === l.charCodeAt(M - 3) && (T = S);
                           case 8:
-                            111 === R && (A = R);
+                            111 === R && (T = R);
                         }
                       break;
                     case 58:
@@ -31252,12 +31624,12 @@
               if (
                 ((D = r),
                 0 < I &&
-                  void 0 !== (y = s(2, G, D, e, T, C, F, c, p, c)) &&
+                  void 0 !== (y = s(2, G, D, e, A, C, F, c, p, c)) &&
                   0 === (G = y).length)
               )
                 return Y + G + W;
-              if (((G = D.join(",") + "{" + G + "}"), 0 != O * A)) {
-                switch ((2 !== O || a(G, 2) || (A = 0), A)) {
+              if (((G = D.join(",") + "{" + G + "}"), 0 != O * T)) {
+                switch ((2 !== O || a(G, 2) || (T = 0), T)) {
                   case 111:
                     G = G.replace(x, ":-moz-$1") + G;
                     break;
@@ -31268,7 +31640,7 @@
                       G.replace(b, ":-ms-input-$1") +
                       G;
                 }
-                A = 0;
+                T = 0;
               }
             }
             return Y + G + W;
@@ -31550,16 +31922,16 @@
           function c(e, t) {
             var r = e;
             if ((33 > r.charCodeAt(0) && (r = r.trim()), (r = [r]), 0 < I)) {
-              var i = s(-1, t, r, r, T, C, 0, 0, 0, 0);
+              var i = s(-1, t, r, r, A, C, 0, 0, 0, 0);
               void 0 !== i && "string" == typeof i && (t = i);
             }
             var a = n(_, r, t, 0, 0);
             return (
               0 < I &&
-                void 0 !== (i = s(-2, a, r, r, T, C, a.length, 0, 0, 0)) &&
+                void 0 !== (i = s(-2, a, r, r, A, C, a.length, 0, 0, 0)) &&
                 (a = i),
-              (A = 0),
-              (C = T = 1),
+              (T = 0),
+              (C = A = 1),
               a
             );
           }
@@ -31581,8 +31953,8 @@
             E = /stretch|:\s*\w+\-(?:conte|avail)/,
             S = /([^-])(image-set\()/,
             C = 1,
-            T = 1,
-            A = 0,
+            A = 1,
+            T = 0,
             O = 1,
             _ = [],
             R = [],
@@ -31609,7 +31981,7 @@
             c
           );
         },
-        pc = {
+        fc = {
           animationIterationCount: 1,
           borderImageOutset: 1,
           borderImageSlice: 1,
@@ -31656,16 +32028,16 @@
           strokeOpacity: 1,
           strokeWidth: 1,
         };
-      var fc =
+      var hc =
         /^((children|dangerouslySetInnerHTML|key|ref|autoFocus|defaultValue|defaultChecked|innerHTML|suppressContentEditableWarning|suppressHydrationWarning|valueLink|abbr|accept|acceptCharset|accessKey|action|allow|allowUserMedia|allowPaymentRequest|allowFullScreen|allowTransparency|alt|async|autoComplete|autoPlay|capture|cellPadding|cellSpacing|challenge|charSet|checked|cite|classID|className|cols|colSpan|content|contentEditable|contextMenu|controls|controlsList|coords|crossOrigin|data|dateTime|decoding|default|defer|dir|disabled|disablePictureInPicture|download|draggable|encType|enterKeyHint|form|formAction|formEncType|formMethod|formNoValidate|formTarget|frameBorder|headers|height|hidden|high|href|hrefLang|htmlFor|httpEquiv|id|inputMode|integrity|is|keyParams|keyType|kind|label|lang|list|loading|loop|low|marginHeight|marginWidth|max|maxLength|media|mediaGroup|method|min|minLength|multiple|muted|name|nonce|noValidate|open|optimum|pattern|placeholder|playsInline|poster|preload|profile|radioGroup|readOnly|referrerPolicy|rel|required|reversed|role|rows|rowSpan|sandbox|scope|scoped|scrolling|seamless|selected|shape|size|sizes|slot|span|spellCheck|src|srcDoc|srcLang|srcSet|start|step|style|summary|tabIndex|target|title|translate|type|useMap|value|width|wmode|wrap|about|datatype|inlist|prefix|property|resource|typeof|vocab|autoCapitalize|autoCorrect|autoSave|color|incremental|fallback|inert|itemProp|itemScope|itemType|itemID|itemRef|on|option|results|security|unselectable|accentHeight|accumulate|additive|alignmentBaseline|allowReorder|alphabetic|amplitude|arabicForm|ascent|attributeName|attributeType|autoReverse|azimuth|baseFrequency|baselineShift|baseProfile|bbox|begin|bias|by|calcMode|capHeight|clip|clipPathUnits|clipPath|clipRule|colorInterpolation|colorInterpolationFilters|colorProfile|colorRendering|contentScriptType|contentStyleType|cursor|cx|cy|d|decelerate|descent|diffuseConstant|direction|display|divisor|dominantBaseline|dur|dx|dy|edgeMode|elevation|enableBackground|end|exponent|externalResourcesRequired|fill|fillOpacity|fillRule|filter|filterRes|filterUnits|floodColor|floodOpacity|focusable|fontFamily|fontSize|fontSizeAdjust|fontStretch|fontStyle|fontVariant|fontWeight|format|from|fr|fx|fy|g1|g2|glyphName|glyphOrientationHorizontal|glyphOrientationVertical|glyphRef|gradientTransform|gradientUnits|hanging|horizAdvX|horizOriginX|ideographic|imageRendering|in|in2|intercept|k|k1|k2|k3|k4|kernelMatrix|kernelUnitLength|kerning|keyPoints|keySplines|keyTimes|lengthAdjust|letterSpacing|lightingColor|limitingConeAngle|local|markerEnd|markerMid|markerStart|markerHeight|markerUnits|markerWidth|mask|maskContentUnits|maskUnits|mathematical|mode|numOctaves|offset|opacity|operator|order|orient|orientation|origin|overflow|overlinePosition|overlineThickness|panose1|paintOrder|pathLength|patternContentUnits|patternTransform|patternUnits|pointerEvents|points|pointsAtX|pointsAtY|pointsAtZ|preserveAlpha|preserveAspectRatio|primitiveUnits|r|radius|refX|refY|renderingIntent|repeatCount|repeatDur|requiredExtensions|requiredFeatures|restart|result|rotate|rx|ry|scale|seed|shapeRendering|slope|spacing|specularConstant|specularExponent|speed|spreadMethod|startOffset|stdDeviation|stemh|stemv|stitchTiles|stopColor|stopOpacity|strikethroughPosition|strikethroughThickness|string|stroke|strokeDasharray|strokeDashoffset|strokeLinecap|strokeLinejoin|strokeMiterlimit|strokeOpacity|strokeWidth|surfaceScale|systemLanguage|tableValues|targetX|targetY|textAnchor|textDecoration|textRendering|textLength|to|transform|u1|u2|underlinePosition|underlineThickness|unicode|unicodeBidi|unicodeRange|unitsPerEm|vAlphabetic|vHanging|vIdeographic|vMathematical|values|vectorEffect|version|vertAdvY|vertOriginX|vertOriginY|viewBox|viewTarget|visibility|widths|wordSpacing|writingMode|x|xHeight|x1|x2|xChannelSelector|xlinkActuate|xlinkArcrole|xlinkHref|xlinkRole|xlinkShow|xlinkTitle|xlinkType|xmlBase|xmlns|xmlnsXlink|xmlLang|xmlSpace|y|y1|y2|yChannelSelector|z|zoomAndPan|for|class|autofocus)|(([Dd][Aa][Tt][Aa]|[Aa][Rr][Ii][Aa]|x)-.*))$/;
-      const hc = (function (e) {
+      const mc = (function (e) {
         var n = Object.create(null);
         return function (e) {
           return (
             void 0 === n[e] &&
               (n[e] =
                 ((t = e),
-                fc.test(t) ||
+                hc.test(t) ||
                   (111 === t.charCodeAt(0) &&
                     110 === t.charCodeAt(1) &&
                     t.charCodeAt(2) < 91))),
@@ -31674,8 +32046,8 @@
           var t;
         };
       })();
-      function mc() {
-        return (mc =
+      function gc() {
+        return (gc =
           Object.assign ||
           function (e) {
             for (var n = 1; n < arguments.length; n++) {
@@ -31686,12 +32058,12 @@
             return e;
           }).apply(this, arguments);
       }
-      var gc = function (e, n) {
+      var vc = function (e, n) {
           for (var t = [e[0]], r = 0, i = n.length; r < i; r += 1)
             t.push(n[r], e[r + 1]);
           return t;
         },
-        vc = function (e) {
+        bc = function (e) {
           return (
             null !== e &&
             "object" == typeof e &&
@@ -31700,24 +32072,24 @@
             !(0, f.typeOf)(e)
           );
         },
-        bc = Object.freeze([]),
-        xc = Object.freeze({});
-      function yc(e) {
+        xc = Object.freeze([]),
+        yc = Object.freeze({});
+      function wc(e) {
         return "function" == typeof e;
       }
-      function wc(e) {
+      function jc(e) {
         return e.displayName || e.name || "Component";
       }
-      function jc(e) {
+      function kc(e) {
         return e && "string" == typeof e.styledComponentId;
       }
-      var kc =
+      var Nc =
           ("undefined" != typeof process &&
             void 0 !== process.env &&
             (process.env.REACT_APP_SC_ATTR || process.env.SC_ATTR)) ||
           "data-styled",
-        Nc = "undefined" != typeof window && "HTMLElement" in window,
-        Ec = Boolean(
+        Ec = "undefined" != typeof window && "HTMLElement" in window,
+        Sc = Boolean(
           "boolean" == typeof SC_DISABLE_SPEEDY
             ? SC_DISABLE_SPEEDY
             : "undefined" != typeof process &&
@@ -31731,7 +32103,7 @@
                     "false" !== process.env.SC_DISABLE_SPEEDY &&
                     process.env.SC_DISABLE_SPEEDY)
         );
-      function Sc(e) {
+      function Cc(e) {
         for (
           var n = arguments.length, t = new Array(n > 1 ? n - 1 : 0), r = 1;
           r < n;
@@ -31745,7 +32117,7 @@
             (t.length > 0 ? " Args: " + t.join(", ") : "")
         );
       }
-      var Cc = (function () {
+      var Ac = (function () {
           function e(e) {
             (this.groupSizes = new Uint32Array(512)),
               (this.length = 512),
@@ -31760,7 +32132,7 @@
             (n.insertRules = function (e, n) {
               if (e >= this.groupSizes.length) {
                 for (var t = this.groupSizes, r = t.length, i = r; e >= i; )
-                  (i <<= 1) < 0 && Sc(16, "" + e);
+                  (i <<= 1) < 0 && Cc(16, "" + e);
                 (this.groupSizes = new Uint32Array(i)),
                   this.groupSizes.set(t),
                   (this.length = i);
@@ -31800,29 +32172,29 @@
           );
         })(),
         Tc = new Map(),
-        Ac = new Map(),
-        Oc = 1,
-        _c = function (e) {
-          if (Tc.has(e)) return Tc.get(e);
-          for (; Ac.has(Oc); ) Oc++;
-          var n = Oc++;
-          return Tc.set(e, n), Ac.set(n, e), n;
-        },
+        Oc = new Map(),
+        _c = 1,
         Rc = function (e) {
-          return Ac.get(e);
+          if (Tc.has(e)) return Tc.get(e);
+          for (; Oc.has(_c); ) _c++;
+          var n = _c++;
+          return Tc.set(e, n), Oc.set(n, e), n;
         },
-        Ic = function (e, n) {
-          n >= Oc && (Oc = n + 1), Tc.set(e, n), Ac.set(n, e);
+        Ic = function (e) {
+          return Oc.get(e);
         },
-        Pc = "style[" + kc + '][data-styled-version="5.3.11"]',
-        Lc = new RegExp(
-          "^" + kc + '\\.g(\\d+)\\[id="([\\w\\d-]+)"\\].*?"([^"]*)'
+        Pc = function (e, n) {
+          n >= _c && (_c = n + 1), Tc.set(e, n), Oc.set(n, e);
+        },
+        Lc = "style[" + Nc + '][data-styled-version="5.3.11"]',
+        Mc = new RegExp(
+          "^" + Nc + '\\.g(\\d+)\\[id="([\\w\\d-]+)"\\].*?"([^"]*)'
         ),
-        Mc = function (e, n, t) {
+        Dc = function (e, n, t) {
           for (var r, i = t.split(","), a = 0, o = i.length; a < o; a++)
             (r = i[a]) && e.registerName(n, r);
         },
-        Dc = function (e, n) {
+        Uc = function (e, n) {
           for (
             var t = (n.textContent || "").split("/*!sc*/\n"),
               r = [],
@@ -31833,39 +32205,39 @@
           ) {
             var o = t[i].trim();
             if (o) {
-              var s = o.match(Lc);
+              var s = o.match(Mc);
               if (s) {
                 var l = 0 | parseInt(s[1], 10),
                   c = s[2];
                 0 !== l &&
-                  (Ic(c, l), Mc(e, c, s[3]), e.getTag().insertRules(l, r)),
+                  (Pc(c, l), Dc(e, c, s[3]), e.getTag().insertRules(l, r)),
                   (r.length = 0);
               } else r.push(o);
             }
           }
         },
-        Uc = function () {
+        Fc = function () {
           return t.nc;
         },
-        Fc = function (e) {
+        zc = function (e) {
           var n = document.head,
             t = e || n,
             r = document.createElement("style"),
             i = (function (e) {
               for (var n = e.childNodes, t = n.length; t >= 0; t--) {
                 var r = n[t];
-                if (r && 1 === r.nodeType && r.hasAttribute(kc)) return r;
+                if (r && 1 === r.nodeType && r.hasAttribute(Nc)) return r;
               }
             })(t),
             a = void 0 !== i ? i.nextSibling : null;
-          r.setAttribute(kc, "active"),
+          r.setAttribute(Nc, "active"),
             r.setAttribute("data-styled-version", "5.3.11");
-          var o = Uc();
+          var o = Fc();
           return o && r.setAttribute("nonce", o), t.insertBefore(r, a), r;
         },
-        zc = (function () {
+        Bc = (function () {
           function e(e) {
-            var n = (this.element = Fc(e));
+            var n = (this.element = zc(e));
             n.appendChild(document.createTextNode("")),
               (this.sheet = (function (e) {
                 if (e.sheet) return e.sheet;
@@ -31877,7 +32249,7 @@
                   var i = n[t];
                   if (i.ownerNode === e) return i;
                 }
-                Sc(17);
+                Cc(17);
               })(n)),
               (this.length = 0);
           }
@@ -31902,9 +32274,9 @@
             e
           );
         })(),
-        Bc = (function () {
+        Hc = (function () {
           function e(e) {
-            var n = (this.element = Fc(e));
+            var n = (this.element = zc(e));
             (this.nodes = n.childNodes), (this.length = 0);
           }
           var n = e.prototype;
@@ -31928,7 +32300,7 @@
             e
           );
         })(),
-        Hc = (function () {
+        Gc = (function () {
           function e(e) {
             (this.rules = []), (this.length = 0);
           }
@@ -31949,35 +32321,35 @@
             e
           );
         })(),
-        Gc = Nc,
-        Wc = { isServer: !Nc, useCSSOMInjection: !Ec },
-        Yc = (function () {
+        Wc = Ec,
+        Yc = { isServer: !Ec, useCSSOMInjection: !Sc },
+        Xc = (function () {
           function e(e, n, t) {
-            void 0 === e && (e = xc),
+            void 0 === e && (e = yc),
               void 0 === n && (n = {}),
-              (this.options = mc({}, Wc, {}, e)),
+              (this.options = gc({}, Yc, {}, e)),
               (this.gs = n),
               (this.names = new Map(t)),
               (this.server = !!e.isServer),
               !this.server &&
-                Nc &&
-                Gc &&
-                ((Gc = !1),
+                Ec &&
+                Wc &&
+                ((Wc = !1),
                 (function (e) {
                   for (
-                    var n = document.querySelectorAll(Pc), t = 0, r = n.length;
+                    var n = document.querySelectorAll(Lc), t = 0, r = n.length;
                     t < r;
                     t++
                   ) {
                     var i = n[t];
                     i &&
-                      "active" !== i.getAttribute(kc) &&
-                      (Dc(e, i), i.parentNode && i.parentNode.removeChild(i));
+                      "active" !== i.getAttribute(Nc) &&
+                      (Uc(e, i), i.parentNode && i.parentNode.removeChild(i));
                   }
                 })(this));
           }
           e.registerId = function (e) {
-            return _c(e);
+            return Rc(e);
           };
           var n = e.prototype;
           return (
@@ -31985,7 +32357,7 @@
               return (
                 void 0 === t && (t = !0),
                 new e(
-                  mc({}, this.options, {}, n),
+                  gc({}, this.options, {}, n),
                   this.gs,
                   (t && this.names) || void 0
                 )
@@ -32001,8 +32373,8 @@
                   ((t = (n = this.options).isServer),
                   (r = n.useCSSOMInjection),
                   (i = n.target),
-                  (e = t ? new Hc(i) : r ? new zc(i) : new Bc(i)),
-                  new Cc(e)))
+                  (e = t ? new Gc(i) : r ? new Bc(i) : new Hc(i)),
+                  new Ac(e)))
               );
               var e, n, t, r, i;
             }),
@@ -32010,20 +32382,20 @@
               return this.names.has(e) && this.names.get(e).has(n);
             }),
             (n.registerName = function (e, n) {
-              if ((_c(e), this.names.has(e))) this.names.get(e).add(n);
+              if ((Rc(e), this.names.has(e))) this.names.get(e).add(n);
               else {
                 var t = new Set();
                 t.add(n), this.names.set(e, t);
               }
             }),
             (n.insertRules = function (e, n, t) {
-              this.registerName(e, n), this.getTag().insertRules(_c(e), t);
+              this.registerName(e, n), this.getTag().insertRules(Rc(e), t);
             }),
             (n.clearNames = function (e) {
               this.names.has(e) && this.names.get(e).clear();
             }),
             (n.clearRules = function (e) {
-              this.getTag().clearGroup(_c(e)), this.clearNames(e);
+              this.getTag().clearGroup(Rc(e)), this.clearNames(e);
             }),
             (n.clearTag = function () {
               this.tag = void 0;
@@ -32035,12 +32407,12 @@
                   i < t;
                   i++
                 ) {
-                  var a = Rc(i);
+                  var a = Ic(i);
                   if (void 0 !== a) {
                     var o = e.names.get(a),
                       s = n.getGroup(i);
                     if (o && s && o.size) {
-                      var l = kc + ".g" + i + '[id="' + a + '"]',
+                      var l = Nc + ".g" + i + '[id="' + a + '"]',
                         c = "";
                       void 0 !== o &&
                         o.forEach(function (e) {
@@ -32056,40 +32428,40 @@
             e
           );
         })(),
-        Xc = /(a)(d)/gi,
-        Vc = function (e) {
+        Vc = /(a)(d)/gi,
+        qc = function (e) {
           return String.fromCharCode(e + (e > 25 ? 39 : 97));
         };
-      function qc(e) {
+      function Qc(e) {
         var n,
           t = "";
-        for (n = Math.abs(e); n > 52; n = (n / 52) | 0) t = Vc(n % 52) + t;
-        return (Vc(n % 52) + t).replace(Xc, "$1-$2");
+        for (n = Math.abs(e); n > 52; n = (n / 52) | 0) t = qc(n % 52) + t;
+        return (qc(n % 52) + t).replace(Vc, "$1-$2");
       }
-      var $c = function (e, n) {
+      var Kc = function (e, n) {
           for (var t = n.length; t; ) e = (33 * e) ^ n.charCodeAt(--t);
           return e;
         },
-        Kc = function (e) {
-          return $c(5381, e);
+        $c = function (e) {
+          return Kc(5381, e);
         };
-      function Qc(e) {
+      function Zc(e) {
         for (var n = 0; n < e.length; n += 1) {
           var t = e[n];
-          if (yc(t) && !jc(t)) return !1;
+          if (wc(t) && !kc(t)) return !1;
         }
         return !0;
       }
-      var Zc = Kc("5.3.11"),
-        Jc = (function () {
+      var Jc = $c("5.3.11"),
+        eu = (function () {
           function e(e, n, t) {
             (this.rules = e),
               (this.staticRulesId = ""),
-              (this.isStatic = (void 0 === t || t.isStatic) && Qc(e)),
+              (this.isStatic = (void 0 === t || t.isStatic) && Zc(e)),
               (this.componentId = n),
-              (this.baseHash = $c(Zc, n)),
+              (this.baseHash = Kc(Jc, n)),
               (this.baseStyle = t),
-              Yc.registerId(n);
+              Xc.registerId(n);
           }
           return (
             (e.prototype.generateAndInjectStyles = function (e, n, t) {
@@ -32103,8 +32475,8 @@
                 if (this.staticRulesId && n.hasNameForId(r, this.staticRulesId))
                   i.push(this.staticRulesId);
                 else {
-                  var a = gu(this.rules, e, n, t).join(""),
-                    o = qc($c(this.baseHash, a) >>> 0);
+                  var a = vu(this.rules, e, n, t).join(""),
+                    o = Qc(Kc(this.baseHash, a) >>> 0);
                   if (!n.hasNameForId(r, o)) {
                     var s = t(a, "." + o, void 0, r);
                     n.insertRules(r, o, s);
@@ -32114,7 +32486,7 @@
               else {
                 for (
                   var l = this.rules.length,
-                    c = $c(this.baseHash, t.hash),
+                    c = Kc(this.baseHash, t.hash),
                     u = "",
                     d = 0;
                   d < l;
@@ -32123,13 +32495,13 @@
                   var p = this.rules[d];
                   if ("string" == typeof p) u += p;
                   else if (p) {
-                    var f = gu(p, e, n, t),
+                    var f = vu(p, e, n, t),
                       h = Array.isArray(f) ? f.join("") : f;
-                    (c = $c(c, h + d)), (u += h);
+                    (c = Kc(c, h + d)), (u += h);
                   }
                 }
                 if (u) {
-                  var m = qc(c >>> 0);
+                  var m = Qc(c >>> 0);
                   if (!n.hasNameForId(r, m)) {
                     var g = t(u, "." + m, void 0, r);
                     n.insertRules(r, m, g);
@@ -32142,19 +32514,19 @@
             e
           );
         })(),
-        eu = /^\s*\/\/.*$/gm,
-        nu = [":", "[", ".", "#"];
-      function tu(e) {
+        nu = /^\s*\/\/.*$/gm,
+        tu = [":", "[", ".", "#"];
+      function ru(e) {
         var n,
           t,
           r,
           i,
-          a = void 0 === e ? xc : e,
+          a = void 0 === e ? yc : e,
           o = a.options,
-          s = void 0 === o ? xc : o,
+          s = void 0 === o ? yc : o,
           l = a.plugins,
-          c = void 0 === l ? bc : l,
-          u = new dc(s),
+          c = void 0 === l ? xc : l,
+          u = new pc(s),
           d = [],
           p = (function (e) {
             function n(n) {
@@ -32187,13 +32559,13 @@
             d.push(e);
           }),
           f = function (e, r, a) {
-            return (0 === r && -1 !== nu.indexOf(a[t.length])) || a.match(i)
+            return (0 === r && -1 !== tu.indexOf(a[t.length])) || a.match(i)
               ? e
               : "." + n;
           };
         function h(e, a, o, s) {
           void 0 === s && (s = "&");
-          var l = e.replace(eu, ""),
+          var l = e.replace(nu, ""),
             c = a && o ? o + " " + a + " { " + l + " }" : l;
           return (
             (n = s),
@@ -32224,25 +32596,25 @@
           (h.hash = c.length
             ? c
                 .reduce(function (e, n) {
-                  return n.name || Sc(15), $c(e, n.name);
+                  return n.name || Cc(15), Kc(e, n.name);
                 }, 5381)
                 .toString()
             : ""),
           h
         );
       }
-      var ru = r.createContext(),
-        iu = (ru.Consumer, r.createContext()),
-        au = (iu.Consumer, new Yc()),
-        ou = tu();
-      function su() {
-        return (0, r.useContext)(ru) || au;
+      var iu = r.createContext(),
+        au = (iu.Consumer, r.createContext()),
+        ou = (au.Consumer, new Xc()),
+        su = ru();
+      function lu() {
+        return (0, r.useContext)(iu) || ou;
       }
-      function lu(e) {
+      function cu(e) {
         var n = (0, r.useState)(e.stylisPlugins),
           t = n[0],
           i = n[1],
-          a = su(),
+          a = lu(),
           o = (0, r.useMemo)(
             function () {
               var n = a;
@@ -32260,7 +32632,7 @@
           ),
           s = (0, r.useMemo)(
             function () {
-              return tu({
+              return ru({
                 options: { prefix: !e.disableVendorPrefixes },
                 plugins: t,
               });
@@ -32270,28 +32642,28 @@
         return (
           (0, r.useEffect)(
             function () {
-              uc()(t, e.stylisPlugins) || i(e.stylisPlugins);
+              dc()(t, e.stylisPlugins) || i(e.stylisPlugins);
             },
             [e.stylisPlugins]
           ),
           r.createElement(
-            ru.Provider,
+            iu.Provider,
             { value: o },
-            r.createElement(iu.Provider, { value: s }, e.children)
+            r.createElement(au.Provider, { value: s }, e.children)
           )
         );
       }
-      var cu = (function () {
+      var uu = (function () {
           function e(e, n) {
             var t = this;
             (this.inject = function (e, n) {
-              void 0 === n && (n = ou);
+              void 0 === n && (n = su);
               var r = t.name + n.hash;
               e.hasNameForId(t.id, r) ||
                 e.insertRules(t.id, r, n(t.rules, r, "@keyframes"));
             }),
               (this.toString = function () {
-                return Sc(12, String(t.name));
+                return Cc(12, String(t.name));
               }),
               (this.name = e),
               (this.id = "sc-keyframes-" + e),
@@ -32299,58 +32671,58 @@
           }
           return (
             (e.prototype.getName = function (e) {
-              return void 0 === e && (e = ou), this.name + e.hash;
+              return void 0 === e && (e = su), this.name + e.hash;
             }),
             e
           );
         })(),
-        uu = /([A-Z])/,
-        du = /([A-Z])/g,
-        pu = /^ms-/,
-        fu = function (e) {
+        du = /([A-Z])/,
+        pu = /([A-Z])/g,
+        fu = /^ms-/,
+        hu = function (e) {
           return "-" + e.toLowerCase();
         };
-      function hu(e) {
-        return uu.test(e) ? e.replace(du, fu).replace(pu, "-ms-") : e;
+      function mu(e) {
+        return du.test(e) ? e.replace(pu, hu).replace(fu, "-ms-") : e;
       }
-      var mu = function (e) {
+      var gu = function (e) {
         return null == e || !1 === e || "" === e;
       };
-      function gu(e, n, t, r) {
+      function vu(e, n, t, r) {
         if (Array.isArray(e)) {
           for (var i, a = [], o = 0, s = e.length; o < s; o += 1)
-            "" !== (i = gu(e[o], n, t, r)) &&
+            "" !== (i = vu(e[o], n, t, r)) &&
               (Array.isArray(i) ? a.push.apply(a, i) : a.push(i));
           return a;
         }
-        return mu(e)
+        return gu(e)
           ? ""
-          : jc(e)
+          : kc(e)
           ? "." + e.styledComponentId
-          : yc(e)
+          : wc(e)
           ? "function" != typeof (l = e) ||
             (l.prototype && l.prototype.isReactComponent) ||
             !n
             ? e
-            : gu(e(n), n, t, r)
-          : e instanceof cu
+            : vu(e(n), n, t, r)
+          : e instanceof uu
           ? t
             ? (e.inject(t, r), e.getName(r))
             : e
-          : vc(e)
+          : bc(e)
           ? (function e(n, t) {
               var r,
                 i,
                 a = [];
               for (var o in n)
                 n.hasOwnProperty(o) &&
-                  !mu(n[o]) &&
-                  ((Array.isArray(n[o]) && n[o].isCss) || yc(n[o])
-                    ? a.push(hu(o) + ":", n[o], ";")
-                    : vc(n[o])
+                  !gu(n[o]) &&
+                  ((Array.isArray(n[o]) && n[o].isCss) || wc(n[o])
+                    ? a.push(mu(o) + ":", n[o], ";")
+                    : bc(n[o])
                     ? a.push.apply(a, e(n[o], o))
                     : a.push(
-                        hu(o) +
+                        mu(o) +
                           ": " +
                           ((r = o),
                           (null == (i = n[o]) ||
@@ -32359,7 +32731,7 @@
                             ? ""
                             : "number" != typeof i ||
                               0 === i ||
-                              r in pc ||
+                              r in fc ||
                               r.startsWith("--")
                             ? String(i).trim()
                             : i + "px") + ";")
@@ -32369,48 +32741,48 @@
           : e.toString();
         var l;
       }
-      var vu = function (e) {
+      var bu = function (e) {
         return Array.isArray(e) && (e.isCss = !0), e;
       };
-      function bu(e) {
+      function xu(e) {
         for (
           var n = arguments.length, t = new Array(n > 1 ? n - 1 : 0), r = 1;
           r < n;
           r++
         )
           t[r - 1] = arguments[r];
-        return yc(e) || vc(e)
-          ? vu(gu(gc(bc, [e].concat(t))))
+        return wc(e) || bc(e)
+          ? bu(vu(vc(xc, [e].concat(t))))
           : 0 === t.length && 1 === e.length && "string" == typeof e[0]
           ? e
-          : vu(gu(gc(e, t)));
+          : bu(vu(vc(e, t)));
       }
       new Set();
-      var xu = /[!"#$%&'()*+,./:;<=>?@[\\\]^`{|}~-]+/g,
-        yu = /(^-|-$)/g;
-      function wu(e) {
-        return e.replace(xu, "-").replace(yu, "");
+      var yu = /[!"#$%&'()*+,./:;<=>?@[\\\]^`{|}~-]+/g,
+        wu = /(^-|-$)/g;
+      function ju(e) {
+        return e.replace(yu, "-").replace(wu, "");
       }
-      var ju = function (e) {
-        return qc(Kc(e) >>> 0);
+      var ku = function (e) {
+        return Qc($c(e) >>> 0);
       };
-      function ku(e) {
+      function Nu(e) {
         return "string" == typeof e && !0;
       }
-      var Nu = function (e) {
+      var Eu = function (e) {
           return (
             "function" == typeof e ||
             ("object" == typeof e && null !== e && !Array.isArray(e))
           );
         },
-        Eu = function (e) {
+        Su = function (e) {
           return "__proto__" !== e && "constructor" !== e && "prototype" !== e;
         };
-      function Su(e, n, t) {
+      function Cu(e, n, t) {
         var r = e[t];
-        Nu(n) && Nu(r) ? Cu(r, n) : (e[t] = n);
+        Eu(n) && Eu(r) ? Au(r, n) : (e[t] = n);
       }
-      function Cu(e) {
+      function Au(e) {
         for (
           var n = arguments.length, t = new Array(n > 1 ? n - 1 : 0), r = 1;
           r < n;
@@ -32419,25 +32791,25 @@
           t[r - 1] = arguments[r];
         for (var i = 0, a = t; i < a.length; i++) {
           var o = a[i];
-          if (Nu(o)) for (var s in o) Eu(s) && Su(e, o[s], s);
+          if (Eu(o)) for (var s in o) Su(s) && Cu(e, o[s], s);
         }
         return e;
       }
       var Tu = r.createContext();
       Tu.Consumer;
-      var Au = {};
-      function Ou(e, n, t) {
-        var i = jc(e),
-          a = !ku(e),
+      var Ou = {};
+      function _u(e, n, t) {
+        var i = kc(e),
+          a = !Nu(e),
           o = n.attrs,
-          s = void 0 === o ? bc : o,
+          s = void 0 === o ? xc : o,
           l = n.componentId,
           c =
             void 0 === l
               ? (function (e, n) {
-                  var t = "string" != typeof e ? "sc" : wu(e);
-                  Au[t] = (Au[t] || 0) + 1;
-                  var r = t + "-" + ju("5.3.11" + t + Au[t]);
+                  var t = "string" != typeof e ? "sc" : ju(e);
+                  Ou[t] = (Ou[t] || 0) + 1;
+                  var r = t + "-" + ku("5.3.11" + t + Ou[t]);
                   return n ? n + "-" + r : r;
                 })(n.displayName, n.parentComponentId)
               : l,
@@ -32445,12 +32817,12 @@
           d =
             void 0 === u
               ? (function (e) {
-                  return ku(e) ? "styled." + e : "Styled(" + wc(e) + ")";
+                  return Nu(e) ? "styled." + e : "Styled(" + jc(e) + ")";
                 })(e)
               : u,
           f =
             n.displayName && n.componentId
-              ? wu(n.displayName) + "-" + n.componentId
+              ? ju(n.displayName) + "-" + n.componentId
               : n.componentId || c,
           h =
             i && e.attrs
@@ -32467,7 +32839,7 @@
               }
             : e.shouldForwardProp);
         var g,
-          v = new Jc(t, f, i ? e.componentStyle : void 0),
+          v = new eu(t, f, i ? e.componentStyle : void 0),
           b = v.isStatic && 0 === s.length,
           x = function (e, n) {
             return (function (e, n, t, i) {
@@ -32479,8 +32851,8 @@
                 u = e.styledComponentId,
                 d = e.target,
                 p = (function (e, n, t) {
-                  void 0 === e && (e = xc);
-                  var r = mc({}, n, { theme: e }),
+                  void 0 === e && (e = yc);
+                  var r = gc({}, n, { theme: e }),
                     i = {};
                   return (
                     t.forEach(function (e) {
@@ -32488,7 +32860,7 @@
                         t,
                         a,
                         o = e;
-                      for (n in (yc(o) && (o = o(r)), o))
+                      for (n in (wc(o) && (o = o(r)), o))
                         r[n] = i[n] =
                           "className" === n
                             ? ((t = i[n]),
@@ -32501,37 +32873,37 @@
                 })(
                   (function (e, n, t) {
                     return (
-                      void 0 === t && (t = xc),
+                      void 0 === t && (t = yc),
                       (e.theme !== t.theme && e.theme) || n || t.theme
                     );
-                  })(n, (0, r.useContext)(Tu), s) || xc,
+                  })(n, (0, r.useContext)(Tu), s) || yc,
                   n,
                   a
                 ),
                 f = p[0],
                 h = p[1],
                 m = (function (e, n, t, i) {
-                  var a = su(),
-                    o = (0, r.useContext)(iu) || ou;
+                  var a = lu(),
+                    o = (0, r.useContext)(au) || su;
                   return n
-                    ? e.generateAndInjectStyles(xc, a, o)
+                    ? e.generateAndInjectStyles(yc, a, o)
                     : e.generateAndInjectStyles(t, a, o);
                 })(o, i, f),
                 g = t,
                 v = h.$as || n.$as || h.as || n.as || d,
-                b = ku(v),
-                x = h !== n ? mc({}, n, {}, h) : n,
+                b = Nu(v),
+                x = h !== n ? gc({}, n, {}, h) : n,
                 y = {};
               for (var w in x)
                 "$" !== w[0] &&
                   "as" !== w &&
                   ("forwardedAs" === w
                     ? (y.as = x[w])
-                    : (c ? c(w, hc, v) : !b || hc(w)) && (y[w] = x[w]));
+                    : (c ? c(w, mc, v) : !b || mc(w)) && (y[w] = x[w]));
               return (
                 n.style &&
                   h.style !== n.style &&
-                  (y.style = mc({}, n.style, {}, h.style)),
+                  (y.style = gc({}, n.style, {}, h.style)),
                 (y.className = Array.prototype
                   .concat(l, u, m !== u ? m : null, n.className, h.className)
                   .filter(Boolean)
@@ -32549,7 +32921,7 @@
           (g.shouldForwardProp = m),
           (g.foldedComponentIds = i
             ? Array.prototype.concat(e.foldedComponentIds, e.styledComponentId)
-            : bc),
+            : xc),
           (g.styledComponentId = f),
           (g.target = i ? e.target : e),
           (g.withComponent = function (e) {
@@ -32564,15 +32936,15 @@
                   (t = a[r]), n.indexOf(t) >= 0 || (i[t] = e[t]);
                 return i;
               })(n, ["componentId"]),
-              a = r && r + "-" + (ku(e) ? e : wu(wc(e)));
-            return Ou(e, mc({}, i, { attrs: h, componentId: a }), t);
+              a = r && r + "-" + (Nu(e) ? e : ju(jc(e)));
+            return _u(e, gc({}, i, { attrs: h, componentId: a }), t);
           }),
           Object.defineProperty(g, "defaultProps", {
             get: function () {
               return this._foldedDefaultProps;
             },
             set: function (n) {
-              this._foldedDefaultProps = i ? Cu({}, e.defaultProps, n) : n;
+              this._foldedDefaultProps = i ? Au({}, e.defaultProps, n) : n;
             },
           }),
           Object.defineProperty(g, "toString", {
@@ -32594,41 +32966,41 @@
           g
         );
       }
-      var _u,
-        Ru = function (e) {
+      var Ru,
+        Iu = function (e) {
           return (function e(n, t, r) {
-            if ((void 0 === r && (r = xc), !(0, f.isValidElementType)(t)))
-              return Sc(1, String(t));
+            if ((void 0 === r && (r = yc), !(0, f.isValidElementType)(t)))
+              return Cc(1, String(t));
             var i = function () {
-              return n(t, r, bu.apply(void 0, arguments));
+              return n(t, r, xu.apply(void 0, arguments));
             };
             return (
               (i.withConfig = function (i) {
-                return e(n, t, mc({}, r, {}, i));
+                return e(n, t, gc({}, r, {}, i));
               }),
               (i.attrs = function (i) {
                 return e(
                   n,
                   t,
-                  mc({}, r, {
+                  gc({}, r, {
                     attrs: Array.prototype.concat(r.attrs, i).filter(Boolean),
                   })
                 );
               }),
               i
             );
-          })(Ou, e);
+          })(_u, e);
         };
-      function Iu(e) {
+      function Pu(e) {
         for (
           var n = arguments.length, t = new Array(n > 1 ? n - 1 : 0), r = 1;
           r < n;
           r++
         )
           t[r - 1] = arguments[r];
-        var i = bu.apply(void 0, [e].concat(t)).join(""),
-          a = ju(i);
-        return new cu(a, i);
+        var i = xu.apply(void 0, [e].concat(t)).join(""),
+          a = ku(i);
+        return new uu(a, i);
       }
       [
         "a",
@@ -32768,24 +33140,24 @@
         "textPath",
         "tspan",
       ].forEach(function (e) {
-        Ru[e] = Ru(e);
+        Iu[e] = Iu(e);
       }),
-        (_u = function (e, n) {
+        (Ru = function (e, n) {
           (this.rules = e),
             (this.componentId = n),
-            (this.isStatic = Qc(e)),
-            Yc.registerId(this.componentId + 1);
+            (this.isStatic = Zc(e)),
+            Xc.registerId(this.componentId + 1);
         }.prototype),
-        (_u.createStyles = function (e, n, t, r) {
-          var i = r(gu(this.rules, n, t, r).join(""), ""),
+        (Ru.createStyles = function (e, n, t, r) {
+          var i = r(vu(this.rules, n, t, r).join(""), ""),
             a = this.componentId + e;
           t.insertRules(a, a, i);
         }),
-        (_u.removeStyles = function (e, n) {
+        (Ru.removeStyles = function (e, n) {
           n.clearRules(this.componentId + e);
         }),
-        (_u.renderStyles = function (e, n, t, r) {
-          e > 2 && Yc.registerId(this.componentId + e),
+        (Ru.renderStyles = function (e, n, t, r) {
+          e > 2 && Xc.registerId(this.componentId + e),
             this.removeStyles(e, t),
             this.createStyles(e, n, t, r);
         }),
@@ -32795,12 +33167,12 @@
             (this._emitSheetCSS = function () {
               var n = e.instance.toString();
               if (!n) return "";
-              var t = Uc();
+              var t = Fc();
               return (
                 "<style " +
                 [
                   t && 'nonce="' + t + '"',
-                  kc + '="true"',
+                  Nc + '="true"',
                   'data-styled-version="5.3.11"',
                 ]
                   .filter(Boolean)
@@ -32811,43 +33183,43 @@
               );
             }),
               (this.getStyleTags = function () {
-                return e.sealed ? Sc(2) : e._emitSheetCSS();
+                return e.sealed ? Cc(2) : e._emitSheetCSS();
               }),
               (this.getStyleElement = function () {
                 var n;
-                if (e.sealed) return Sc(2);
+                if (e.sealed) return Cc(2);
                 var t =
-                    (((n = {})[kc] = ""),
+                    (((n = {})[Nc] = ""),
                     (n["data-styled-version"] = "5.3.11"),
                     (n.dangerouslySetInnerHTML = {
                       __html: e.instance.toString(),
                     }),
                     n),
-                  i = Uc();
+                  i = Fc();
                 return (
                   i && (t.nonce = i),
-                  [r.createElement("style", mc({}, t, { key: "sc-0-0" }))]
+                  [r.createElement("style", gc({}, t, { key: "sc-0-0" }))]
                 );
               }),
               (this.seal = function () {
                 e.sealed = !0;
               }),
-              (this.instance = new Yc({ isServer: !0 })),
+              (this.instance = new Xc({ isServer: !0 })),
               (this.sealed = !1);
           }.prototype;
           (e.collectStyles = function (e) {
             return this.sealed
-              ? Sc(2)
-              : r.createElement(lu, { sheet: this.instance }, e);
+              ? Cc(2)
+              : r.createElement(cu, { sheet: this.instance }, e);
           }),
             (e.interleaveWithNodeStream = function (e) {
-              return Sc(3);
+              return Cc(3);
             });
         })();
-      const Pu = Ru;
-      var Lu,
-        Mu,
-        Du = function (e, n) {
+      const Lu = Iu;
+      var Mu,
+        Du,
+        Uu = function (e, n) {
           return (
             Object.defineProperty
               ? Object.defineProperty(e, "raw", { value: n })
@@ -32855,10 +33227,10 @@
             e
           );
         },
-        Uu = 242.776657104492,
-        Fu = Iu(
-          Lu ||
-            (Lu = Du(
+        Fu = 242.776657104492,
+        zu = Pu(
+          Mu ||
+            (Mu = Uu(
               [
                 "\n  12.5% {\n    stroke-dasharray: ",
                 "px, ",
@@ -32884,19 +33256,19 @@
                 "px;\n  }\n",
               ]
             )),
-          0.14 * Uu,
-          Uu,
-          0.11 * Uu,
-          0.35 * Uu,
-          Uu,
-          0.35 * Uu,
-          0.01 * Uu,
-          Uu,
-          0.99 * Uu
+          0.14 * Fu,
+          Fu,
+          0.11 * Fu,
+          0.35 * Fu,
+          Fu,
+          0.35 * Fu,
+          0.01 * Fu,
+          Fu,
+          0.99 * Fu
         );
-      Pu.path(
-        Mu ||
-          (Mu = Du(
+      Lu.path(
+        Du ||
+          (Du = Uu(
             [
               "\n  stroke-dasharray: ",
               "px, ",
@@ -32912,17 +33284,17 @@
               "s linear infinite;\n",
             ]
           )),
-        0.01 * Uu,
-        Uu,
+        0.01 * Fu,
         Fu,
+        zu,
         1.6
       );
-      var zu,
-        Bu,
+      var Bu,
         Hu,
         Gu,
         Wu,
-        Yu = function (e, n) {
+        Yu,
+        Xu = function (e, n) {
           return (
             Object.defineProperty
               ? Object.defineProperty(e, "raw", { value: n })
@@ -32930,16 +33302,16 @@
             e
           );
         },
-        Xu = Iu(
-          zu ||
-            (zu = Yu(
+        Vu = Pu(
+          Bu ||
+            (Bu = Xu(
               ["\n to {\n    transform: rotate(360deg);\n  }\n"],
               ["\n to {\n    transform: rotate(360deg);\n  }\n"]
             ))
         );
-      Pu.svg(
-        Bu ||
-          (Bu = Yu(
+      Lu.svg(
+        Hu ||
+          (Hu = Xu(
             [
               "\n  animation: ",
               " 0.75s steps(12, end) infinite;\n  animation-duration: ",
@@ -32951,28 +33323,28 @@
               "s;\n",
             ]
           )),
-        Xu,
-        ((Gu = "speed"),
-        (Wu = "0.75"),
+        Vu,
+        ((Wu = "speed"),
+        (Yu = "0.75"),
         function () {
           var e =
             arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
-          if (void 0 !== e[Gu]) return e[Gu];
-          if (Gu && Gu.indexOf(".") > 0) {
+          if (void 0 !== e[Wu]) return e[Wu];
+          if (Wu && Wu.indexOf(".") > 0) {
             for (
-              var n = Gu.split("."), t = n.length, r = e[n[0]], i = 1;
+              var n = Wu.split("."), t = n.length, r = e[n[0]], i = 1;
               null != r && i < t;
 
             )
               (r = r[n[i]]), (i += 1);
             if (void 0 !== r) return r;
           }
-          return Wu;
+          return Yu;
         })
       ),
-        Pu.polyline(
-          Hu ||
-            (Hu = Yu(
+        Lu.polyline(
+          Gu ||
+            (Gu = Xu(
               [
                 "\n  stroke-width: ",
                 "px;\n  stroke-linecap: round;\n\n  &:nth-child(12n + 0) {\n    stroke-opacity: 0.08;\n  }\n\n  &:nth-child(12n + 1) {\n    stroke-opacity: 0.17;\n  }\n\n  &:nth-child(12n + 2) {\n    stroke-opacity: 0.25;\n  }\n\n  &:nth-child(12n + 3) {\n    stroke-opacity: 0.33;\n  }\n\n  &:nth-child(12n + 4) {\n    stroke-opacity: 0.42;\n  }\n\n  &:nth-child(12n + 5) {\n    stroke-opacity: 0.5;\n  }\n\n  &:nth-child(12n + 6) {\n    stroke-opacity: 0.58;\n  }\n\n  &:nth-child(12n + 7) {\n    stroke-opacity: 0.66;\n  }\n\n  &:nth-child(12n + 8) {\n    stroke-opacity: 0.75;\n  }\n\n  &:nth-child(12n + 9) {\n    stroke-opacity: 0.83;\n  }\n\n  &:nth-child(12n + 11) {\n    stroke-opacity: 0.92;\n  }\n",
@@ -32986,10 +33358,10 @@
             return e.width;
           }
         );
-      var Vu,
-        qu,
-        $u,
-        Ku = function (e, n) {
+      var qu,
+        Qu,
+        Ku,
+        $u = function (e, n) {
           return (
             Object.defineProperty
               ? Object.defineProperty(e, "raw", { value: n })
@@ -32997,16 +33369,16 @@
             e
           );
         },
-        Qu = Iu(
-          Vu ||
-            (Vu = Ku(
+        Zu = Pu(
+          qu ||
+            (qu = $u(
               ["\n to {\n    stroke-dashoffset: 136;\n  }\n"],
               ["\n to {\n    stroke-dashoffset: 136;\n  }\n"]
             ))
         );
-      Pu.polygon(
-        qu ||
-          (qu = Ku(
+      Lu.polygon(
+        Qu ||
+          (Qu = $u(
             [
               "\n  stroke-dasharray: 17;\n  animation: ",
               " 2.5s cubic-bezier(0.35, 0.04, 0.63, 0.95) infinite;\n",
@@ -33016,19 +33388,19 @@
               " 2.5s cubic-bezier(0.35, 0.04, 0.63, 0.95) infinite;\n",
             ]
           )),
-        Qu
+        Zu
       ),
-        Pu.svg(
-          $u ||
-            ($u = Ku(
+        Lu.svg(
+          Ku ||
+            (Ku = $u(
               ["\n  transform-origin: 50% 65%;\n"],
               ["\n  transform-origin: 50% 65%;\n"]
             ))
         );
-      var Zu,
-        Ju = function () {
+      var Ju,
+        ed = function () {
           return (
-            (Ju =
+            (ed =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -33036,10 +33408,10 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            Ju.apply(this, arguments)
+            ed.apply(this, arguments)
           );
         },
-        ed = [
+        nd = [
           "As a general rule of thumb, a person can survive without water for about 3 days. So, keep your water supply stable otherwise your colony will die",
           "You have to setup basic food and water supply before you can meet first colonists",
           "The International Space Station completes one full orbit around the Earth every 90 minutes. As a result, its crew observes the sunrise every 90 minutes. Each day, the people on board the ISS witness 16 sunrises and 16 sunsets.",
@@ -33080,37 +33452,37 @@
           "The human body is composed of trillions of cells, but only about 10% of those cells are actually human. Other 90% belongs to viruses, fungi, and other microscopic organisms, collectively known as the human microbiota.",
           "The human brain is one of the most energy-demanding organs in the body, consuming about 20% of the body's total energy.",
         ],
-        nd = function () {
+        td = function () {
           var n = (0, r.useState)(-1),
             t = n[0],
             i = n[1];
           return (
-            t < 0 && i(Math.floor(Math.random() * ed.length)),
+            t < 0 && i(Math.floor(Math.random() * nd.length)),
             (0, e.jsxs)(
               "div",
-              Ju(
+              ed(
                 { className: "preloader" },
                 {
                   children: [
                     (0, e.jsx)(
                       "div",
-                      Ju(
+                      ed(
                         { className: "logo-container" },
-                        { children: (0, e.jsx)("img", { src: ic() }) }
+                        { children: (0, e.jsx)("img", { src: ac() }) }
                       )
                     ),
                     (0, e.jsx)(
                       "div",
-                      Ju(
+                      ed(
                         { className: "loading-container" },
                         {
                           children: (0, e.jsxs)(
                             "div",
-                            Ju(
+                            ed(
                               { className: "loading-inner loading-text" },
                               {
                                 children: [
-                                  (0, e.jsx)(lc, {
+                                  (0, e.jsx)(cc, {
                                     height: "50",
                                     width: "50",
                                     color: "#fff",
@@ -33134,23 +33506,23 @@
                     ),
                     (0, e.jsx)(
                       "div",
-                      Ju(
+                      ed(
                         { className: "loading-container" },
                         {
                           children: (0, e.jsxs)(
                             "div",
-                            Ju(
+                            ed(
                               { className: "did-you-knew" },
                               {
                                 children: [
                                   (0, e.jsx)(
                                     "span",
-                                    Ju(
+                                    ed(
                                       { className: "title" },
                                       { children: "Did you know?" }
                                     )
                                   ),
-                                  (0, e.jsx)("span", { children: ed[t] }),
+                                  (0, e.jsx)("span", { children: nd[t] }),
                                 ],
                               }
                             )
@@ -33164,12 +33536,12 @@
             )
           );
         },
-        td = function (e) {
+        rd = function (e) {
           return e.game.queueItems;
         },
-        rd = function () {
+        id = function () {
           return (
-            (rd =
+            (id =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -33177,10 +33549,10 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            rd.apply(this, arguments)
+            id.apply(this, arguments)
           );
         },
-        id = function (n) {
+        ad = function (n) {
           var t = n.queue,
             i = (0, r.useState)(""),
             a = i[0],
@@ -33193,7 +33565,7 @@
             };
           return (0, e.jsxs)(
             "div",
-            rd(
+            id(
               { className: "queueWrap" },
               {
                 children: [
@@ -33202,24 +33574,24 @@
                   }),
                   (0, e.jsx)(
                     "div",
-                    rd(
+                    id(
                       { className: "add-to-queue" },
                       {
                         children: t.selection.isAvailable
                           ? (0, e.jsxs)(
                               "div",
-                              rd(
+                              id(
                                 { className: "selection-area" },
                                 {
                                   children: [
                                     (0, e.jsx)(
                                       "div",
-                                      rd(
+                                      id(
                                         { className: "select-scope" },
                                         {
                                           children: (0, e.jsxs)(
                                             "select",
-                                            rd(
+                                            id(
                                               {
                                                 onChange: function (e) {
                                                   return o(e.target.value);
@@ -33229,7 +33601,7 @@
                                                 children: [
                                                   (0, e.jsx)(
                                                     "option",
-                                                    rd(
+                                                    id(
                                                       { value: "" },
                                                       { children: "None" }
                                                     )
@@ -33238,7 +33610,7 @@
                                                     function (n) {
                                                       return (0, e.jsx)(
                                                         "option",
-                                                        rd(
+                                                        id(
                                                           {
                                                             value: n,
                                                             selected: a === n,
@@ -33257,13 +33629,13 @@
                                     ),
                                     (0, e.jsx)(
                                       "div",
-                                      rd(
+                                      id(
                                         { className: "select-item" },
                                         {
                                           children: a
                                             ? (0, e.jsxs)(
                                                 "select",
-                                                rd(
+                                                id(
                                                   {
                                                     onChange: function (e) {
                                                       return c(e.target.value);
@@ -33273,7 +33645,7 @@
                                                     children: [
                                                       (0, e.jsx)(
                                                         "option",
-                                                        rd(
+                                                        id(
                                                           { value: "" },
                                                           { children: "None" }
                                                         )
@@ -33282,7 +33654,7 @@
                                                         t.selection.choices[a]
                                                       ).map(function (n) {
                                                         return (0,
-                                                        e.jsx)("option", rd({ value: n.id, selected: l === n.id }, { children: n.name }));
+                                                        e.jsx)("option", id({ value: n.id, selected: l === n.id }, { children: n.name }));
                                                       }),
                                                     ],
                                                   }
@@ -33296,14 +33668,14 @@
                                     ),
                                     (0, e.jsx)(
                                       "div",
-                                      rd(
+                                      id(
                                         { className: "add-block" },
                                         {
                                           children:
                                             a && l
                                               ? (0, e.jsx)(
                                                   "button",
-                                                  rd(
+                                                  id(
                                                     {
                                                       className: "add-to-queue",
                                                       onClick: function () {
@@ -33332,18 +33704,18 @@
                   ),
                   (0, e.jsxs)(
                     "div",
-                    rd(
+                    id(
                       { className: "queue-list" },
                       {
                         children: [
                           (0, e.jsx)(
                             "div",
-                            rd(
+                            id(
                               { className: "queue-utils" },
                               {
                                 children: (0, e.jsx)(
                                   "span",
-                                  rd(
+                                  id(
                                     {
                                       onClick: function () {
                                         Fo.sortByEta.send();
@@ -33359,7 +33731,7 @@
                           t.queue.map(function (n, t) {
                             return (0, e.jsxs)(
                               "div",
-                              rd(
+                              id(
                                 { className: "queue-item" },
                                 {
                                   children: [
@@ -33371,14 +33743,14 @@
                                     }),
                                     (0, e.jsxs)(
                                       "div",
-                                      rd(
+                                      id(
                                         { className: "move-controls" },
                                         {
                                           children: [
                                             n.isUpAvailable
                                               ? (0, e.jsx)(
                                                   "span",
-                                                  rd(
+                                                  id(
                                                     {
                                                       className: "move up",
                                                       onClick: function () {
@@ -33397,7 +33769,7 @@
                                             n.isDownAvailable
                                               ? (0, e.jsx)(
                                                   "span",
-                                                  rd(
+                                                  id(
                                                     {
                                                       className: "move down",
                                                       onClick: function () {
@@ -33414,7 +33786,7 @@
                                     ),
                                     (0, e.jsx)(
                                       "span",
-                                      rd(
+                                      id(
                                         {
                                           className: "close",
                                           onClick: function () {
@@ -33443,14 +33815,14 @@
             )
           );
         },
-        ad = function () {
-          var n = k(td);
-          return (0, e.jsx)(id, { queue: n });
+        od = function () {
+          var n = k(rd);
+          return (0, e.jsx)(ad, { queue: n });
         },
-        od = function (e) {
+        sd = function (e) {
           return e.game.eventLogs;
         },
-        sd = {
+        ld = {
           clear: Nn("[event-logs] clear", function (e) {
             return e;
           }),
@@ -33458,9 +33830,9 @@
             return e;
           }),
         },
-        ld = function () {
+        cd = function () {
           return (
-            (ld =
+            (cd =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -33468,20 +33840,20 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            ld.apply(this, arguments)
+            cd.apply(this, arguments)
           );
         },
-        cd = function (n) {
+        ud = function (n) {
           var t = n.events;
           return (0, e.jsxs)(
             "div",
-            ld(
+            cd(
               { className: "events-wrapper" },
               {
                 children: [
                   (0, e.jsx)(
                     Fa,
-                    ld(
+                    cd(
                       {
                         id: "events-filters",
                         label: "Events Filters",
@@ -33498,12 +33870,12 @@
                             i = n[1];
                           return (0, e.jsx)(
                             "div",
-                            ld(
+                            cd(
                               { className: "filter-entry" },
                               {
                                 children: (0, e.jsxs)(
                                   "label",
-                                  ld(
+                                  cd(
                                     { htmlFor: "filter-".concat(t) },
                                     {
                                       children: [
@@ -33513,7 +33885,7 @@
                                           checked: i,
                                           onChange: function () {
                                             return (function (e, n) {
-                                              sd.setFilter.send({
+                                              ld.setFilter.send({
                                                 scope: e,
                                                 flag: n,
                                               });
@@ -33534,20 +33906,20 @@
                   ),
                   t.events.map(function (n) {
                     return (0,
-                    e.jsxs)("div", ld({ className: "event-item ".concat(n.scope) }, { children: [(0, e.jsx)("span", ld({ className: "time" }, { children: n.date })), (0, e.jsxs)("span", ld({ className: "line" }, { children: [n.time, " ", n.message] }))] }));
+                    e.jsxs)("div", cd({ className: "event-item ".concat(n.scope) }, { children: [(0, e.jsx)("span", cd({ className: "time" }, { children: n.date })), (0, e.jsxs)("span", cd({ className: "line" }, { children: [n.time, " ", n.message] }))] }));
                   }),
                 ],
               }
             )
           );
         },
-        ud = function () {
-          var n = k(od);
-          return (0, e.jsx)(cd, { events: n });
-        },
         dd = function () {
+          var n = k(sd);
+          return (0, e.jsx)(ud, { events: n });
+        },
+        pd = function () {
           return (
-            (dd =
+            (pd =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -33555,44 +33927,44 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            dd.apply(this, arguments)
+            pd.apply(this, arguments)
           );
         },
-        pd = function (n) {
+        fd = function (n) {
           var t = n.events;
           return (0, e.jsx)(
             "div",
-            dd(
+            pd(
               { className: "events-wrapper" },
               {
                 children: t.events.map(function (n) {
                   return (0, e.jsx)(
                     "div",
-                    dd(
+                    pd(
                       { className: "ongoing-event-item-wrap" },
                       {
                         children: (0, e.jsx)(
-                          Aa,
-                          dd(
+                          Ta,
+                          pd(
                             {
                               duration: 0,
                               placement: "left",
                               content: (0, e.jsxs)(
                                 "div",
-                                dd(
+                                pd(
                                   { className: "description-hint" },
                                   {
                                     children: [
                                       (0, e.jsx)(
                                         "p",
-                                        dd(
+                                        pd(
                                           { className: "title" },
                                           { children: n.name }
                                         )
                                       ),
                                       (0, e.jsx)(
                                         "p",
-                                        dd(
+                                        pd(
                                           { className: "description" },
                                           { children: n.description }
                                         )
@@ -33600,7 +33972,7 @@
                                       n.consume.length
                                         ? (0, e.jsxs)(
                                             "div",
-                                            dd(
+                                            pd(
                                               { className: "costs wrap" },
                                               {
                                                 children: [
@@ -33619,7 +33991,7 @@
                                       n.gain.length
                                         ? (0, e.jsxs)(
                                             "div",
-                                            dd(
+                                            pd(
                                               { className: "gain wrap" },
                                               {
                                                 children: [
@@ -33638,7 +34010,7 @@
                                       n.gainMult.length
                                         ? (0, e.jsxs)(
                                             "div",
-                                            dd(
+                                            pd(
                                               { className: "gain wrap" },
                                               {
                                                 children: [
@@ -33658,7 +34030,7 @@
                                       n.max.length
                                         ? (0, e.jsxs)(
                                             "div",
-                                            dd(
+                                            pd(
                                               { className: "store wrap" },
                                               {
                                                 children: [
@@ -33677,7 +34049,7 @@
                                       n.maxMult.length
                                         ? (0, e.jsxs)(
                                             "div",
-                                            dd(
+                                            pd(
                                               { className: "gain wrap" },
                                               {
                                                 children: [
@@ -33697,7 +34069,7 @@
                                       n.consumeEffect.length
                                         ? (0, e.jsxs)(
                                             "div",
-                                            dd(
+                                            pd(
                                               { className: "costs wrap" },
                                               {
                                                 children: [
@@ -33719,7 +34091,7 @@
                                       n.gainEffect.length
                                         ? (0, e.jsxs)(
                                             "div",
-                                            dd(
+                                            pd(
                                               { className: "gain wrap" },
                                               {
                                                 children: [
@@ -33741,7 +34113,7 @@
                                       n.effectMult.length
                                         ? (0, e.jsxs)(
                                             "div",
-                                            dd(
+                                            pd(
                                               { className: "gain wrap" },
                                               {
                                                 children: [
@@ -33764,7 +34136,7 @@
                                       n.addEffects.length
                                         ? (0, e.jsxs)(
                                             "div",
-                                            dd(
+                                            pd(
                                               { className: "gain wrap" },
                                               {
                                                 children: [
@@ -33777,7 +34149,7 @@
                                                   ) {
                                                     return (0, e.jsx)(
                                                       "div",
-                                                      dd(
+                                                      pd(
                                                         {
                                                           className:
                                                             "gain-block",
@@ -33785,7 +34157,7 @@
                                                         {
                                                           children: (0, e.jsx)(
                                                             "p",
-                                                            dd(
+                                                            pd(
                                                               {
                                                                 className:
                                                                   "requirement",
@@ -33810,7 +34182,7 @@
                             {
                               children: (0, e.jsxs)(
                                 "div",
-                                dd(
+                                pd(
                                   { className: "event-inner flex" },
                                   {
                                     children: [
@@ -33833,13 +34205,13 @@
             )
           );
         },
-        fd = function () {
-          var n = k(oo);
-          return (0, e.jsx)(pd, { events: n });
-        },
         hd = function () {
+          var n = k(oo);
+          return (0, e.jsx)(fd, { events: n });
+        },
+        md = function () {
           return (
-            (hd =
+            (md =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -33847,32 +34219,32 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            hd.apply(this, arguments)
+            md.apply(this, arguments)
           );
         },
-        md = function (n) {
+        gd = function (n) {
           switch (n.tab) {
             case "Queue":
-              return (0, e.jsx)(ad, {});
+              return (0, e.jsx)(od, {});
             case "Events":
-              return (0, e.jsx)(ud, {});
+              return (0, e.jsx)(dd, {});
             case "Ongoing":
-              return (0, e.jsx)(fd, {});
+              return (0, e.jsx)(hd, {});
             default:
               return (0, e.jsx)("p", { children: "Not implemented" });
           }
         },
-        gd = function () {
-          var n = Ts("right-panel", !0),
+        vd = function () {
+          var n = As("right-panel", !0),
             t = n[0],
             r = n[1],
-            i = Ts("right-panel-tab", "Queue"),
+            i = As("right-panel-tab", "Queue"),
             a = i[0],
             o = i[1],
             s = k(so);
           return (0, e.jsxs)(
             "div",
-            hd(
+            md(
               {
                 className: "right-panel ".concat(t ? "expanded" : "collapsed"),
               },
@@ -33880,7 +34252,7 @@
                 children: [
                   (0, e.jsx)(
                     "span",
-                    hd(
+                    md(
                       {
                         className: "expand-collapse-panel",
                         onClick: function () {
@@ -33892,13 +34264,13 @@
                   ),
                   (0, e.jsxs)(
                     "div",
-                    hd(
+                    md(
                       { className: "submenu" },
                       {
                         children: [
                           (0, e.jsx)(
                             "div",
-                            hd(
+                            md(
                               {
                                 className: "submenu-item ".concat(
                                   "Queue" === a ? "selected" : ""
@@ -33912,7 +34284,7 @@
                           ),
                           (0, e.jsx)(
                             "div",
-                            hd(
+                            md(
                               {
                                 className: "submenu-item ".concat(
                                   "Events" === a ? "selected" : ""
@@ -33926,7 +34298,7 @@
                           ),
                           (0, e.jsxs)(
                             "div",
-                            hd(
+                            md(
                               {
                                 className: "submenu-item ".concat(
                                   "Ongoing" === a ? "selected" : ""
@@ -33949,15 +34321,15 @@
                   ),
                   (0, e.jsx)(
                     "div",
-                    hd(
+                    md(
                       { className: "inner-scrollable planet" },
                       {
                         children: (0, e.jsx)(as(), {
                           children: (0, e.jsx)(
                             "div",
-                            hd(
+                            md(
                               { className: "inner" },
-                              { children: (0, e.jsx)(md, { tab: a }) }
+                              { children: (0, e.jsx)(gd, { tab: a }) }
                             )
                           ),
                         }),
@@ -33969,12 +34341,12 @@
             )
           );
         },
-        vd = function (e) {
+        bd = function (e) {
           return e.game.searchData;
         },
-        bd = function () {
+        xd = function () {
           return (
-            (bd =
+            (xd =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -33982,7 +34354,7 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            bd.apply(this, arguments)
+            xd.apply(this, arguments)
           );
         };
       !(function (e) {
@@ -33992,8 +34364,8 @@
           (e.LAW = "law"),
           (e.JOB = "job"),
           (e.CRAFTSMAN = "craftsman");
-      })(Zu || (Zu = {}));
-      var xd = {
+      })(Ju || (Ju = {}));
+      var yd = {
           buildings: [],
           upgrades: [],
           space: [],
@@ -34003,17 +34375,17 @@
           resources: [],
           totalCount: 0,
         },
-        yd =
-          (bd({}, xd),
-          bd({}, xd),
-          bd({}, xd),
-          bd({}, xd),
-          bd({}, xd),
-          bd({}, xd),
-          bd({}, xd),
+        wd =
+          (xd({}, yd),
+          xd({}, yd),
+          xd({}, yd),
+          xd({}, yd),
+          xd({}, yd),
+          xd({}, yd),
+          xd({}, yd),
           function () {
             return (
-              (yd =
+              (wd =
                 Object.assign ||
                 function (e) {
                   for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -34022,10 +34394,10 @@
                         (e[i] = n[i]);
                   return e;
                 }),
-              yd.apply(this, arguments)
+              wd.apply(this, arguments)
             );
           }),
-        wd = function (n) {
+        jd = function (n) {
           var t,
             i,
             a,
@@ -34093,32 +34465,32 @@
                 ? null === (e = u.results) || void 0 === e
                   ? void 0
                   : e[p]
-                : yd({}, xd);
+                : wd({}, yd);
             },
             [p, u.query]
           );
           return (0, e.jsxs)(
             "div",
-            yd(
+            wd(
               { className: "modal" },
               {
                 children: [
                   (0, e.jsxs)(
                     "div",
-                    yd(
+                    wd(
                       { className: "modal-header" },
                       {
                         children: [
                           (0, e.jsx)(
                             "p",
-                            yd(
+                            wd(
                               { className: "modal-title" },
                               { children: u.query }
                             )
                           ),
                           (0, e.jsx)(
                             "span",
-                            yd(
+                            wd(
                               {
                                 className: "close",
                                 onClick: function () {
@@ -34134,19 +34506,19 @@
                   ),
                   (0, e.jsxs)(
                     "div",
-                    yd(
+                    wd(
                       { className: "modal-content" },
                       {
                         children: [
                           (0, e.jsx)(
                             "div",
-                            yd(
+                            wd(
                               { className: "tabs submenu" },
                               {
                                 children: h.map(function (n) {
                                   return (0, e.jsxs)(
                                     "div",
-                                    yd(
+                                    wd(
                                       {
                                         className: "submenu-item ".concat(
                                           p === n.id ? "selected" : ""
@@ -34164,7 +34536,7 @@
                           ),
                           (0, e.jsx)(
                             "div",
-                            yd(
+                            wd(
                               { className: "search-content" },
                               {
                                 children: (0, e.jsxs)(as(), {
@@ -34178,7 +34550,7 @@
                                     )
                                       ? (0, e.jsx)(
                                           Fa,
-                                          yd(
+                                          wd(
                                             {
                                               id: "search-upgrades",
                                               label: "Upgrades",
@@ -34193,7 +34565,7 @@
                                                     ) {
                                                       return (0, e.jsxs)(
                                                         "div",
-                                                        yd(
+                                                        wd(
                                                           {
                                                             className:
                                                               "search-item",
@@ -34202,7 +34574,7 @@
                                                             children: [
                                                               (0, e.jsx)(
                                                                 "p",
-                                                                yd(
+                                                                wd(
                                                                   {
                                                                     className:
                                                                       "name",
@@ -34216,7 +34588,7 @@
                                                               ),
                                                               (0, e.jsx)(
                                                                 "p",
-                                                                yd(
+                                                                wd(
                                                                   {
                                                                     className:
                                                                       "effect",
@@ -34246,7 +34618,7 @@
                                     )
                                       ? (0, e.jsx)(
                                           Fa,
-                                          yd(
+                                          wd(
                                             {
                                               id: "search-buildings",
                                               label: "Buildings",
@@ -34261,7 +34633,7 @@
                                                     ) {
                                                       return (0, e.jsxs)(
                                                         "div",
-                                                        yd(
+                                                        wd(
                                                           {
                                                             className:
                                                               "search-item",
@@ -34270,7 +34642,7 @@
                                                             children: [
                                                               (0, e.jsx)(
                                                                 "p",
-                                                                yd(
+                                                                wd(
                                                                   {
                                                                     className:
                                                                       "name",
@@ -34284,7 +34656,7 @@
                                                               ),
                                                               (0, e.jsx)(
                                                                 "p",
-                                                                yd(
+                                                                wd(
                                                                   {
                                                                     className:
                                                                       "effect",
@@ -34313,7 +34685,7 @@
                                     )
                                       ? (0, e.jsx)(
                                           Fa,
-                                          yd(
+                                          wd(
                                             {
                                               id: "search-space",
                                               label: "Space Buildings",
@@ -34325,7 +34697,7 @@
                                                   ? void 0
                                                   : m.space.map(function (n) {
                                                       return (0,
-                                                      e.jsxs)("div", yd({ className: "search-item" }, { children: [(0, e.jsx)("p", yd({ className: "name" }, { children: n.data.name })), (0, e.jsx)("p", yd({ className: "effect" }, { children: n.effectString }))] }));
+                                                      e.jsxs)("div", wd({ className: "search-item" }, { children: [(0, e.jsx)("p", wd({ className: "name" }, { children: n.data.name })), (0, e.jsx)("p", wd({ className: "effect" }, { children: n.effectString }))] }));
                                                     }),
                                             }
                                           )
@@ -34340,7 +34712,7 @@
                                     )
                                       ? (0, e.jsx)(
                                           Fa,
-                                          yd(
+                                          wd(
                                             {
                                               id: "search-jobs",
                                               label: "Jobs",
@@ -34352,7 +34724,7 @@
                                                   ? void 0
                                                   : m.job.map(function (n) {
                                                       return (0,
-                                                      e.jsxs)("div", yd({ className: "search-item" }, { children: [(0, e.jsx)("p", yd({ className: "name" }, { children: n.data.name })), (0, e.jsx)("p", yd({ className: "effect" }, { children: n.effectString }))] }));
+                                                      e.jsxs)("div", wd({ className: "search-item" }, { children: [(0, e.jsx)("p", wd({ className: "name" }, { children: n.data.name })), (0, e.jsx)("p", wd({ className: "effect" }, { children: n.effectString }))] }));
                                                     }),
                                             }
                                           )
@@ -34367,7 +34739,7 @@
                                     )
                                       ? (0, e.jsx)(
                                           Fa,
-                                          yd(
+                                          wd(
                                             {
                                               id: "search-craftman",
                                               label: "Crafting",
@@ -34382,7 +34754,7 @@
                                                     ) {
                                                       return (0, e.jsxs)(
                                                         "div",
-                                                        yd(
+                                                        wd(
                                                           {
                                                             className:
                                                               "search-item",
@@ -34391,7 +34763,7 @@
                                                             children: [
                                                               (0, e.jsx)(
                                                                 "p",
-                                                                yd(
+                                                                wd(
                                                                   {
                                                                     className:
                                                                       "name",
@@ -34405,7 +34777,7 @@
                                                               ),
                                                               (0, e.jsx)(
                                                                 "p",
-                                                                yd(
+                                                                wd(
                                                                   {
                                                                     className:
                                                                       "effect",
@@ -34434,7 +34806,7 @@
                                     )
                                       ? (0, e.jsx)(
                                           Fa,
-                                          yd(
+                                          wd(
                                             {
                                               id: "search-laws",
                                               label: "Laws",
@@ -34450,7 +34822,7 @@
                                                           function (t, r) {
                                                             return (0, e.jsxs)(
                                                               "div",
-                                                              yd(
+                                                              wd(
                                                                 {
                                                                   className:
                                                                     "search-item",
@@ -34459,7 +34831,7 @@
                                                                   children: [
                                                                     (0, e.jsxs)(
                                                                       "p",
-                                                                      yd(
+                                                                      wd(
                                                                         {
                                                                           className:
                                                                             "name",
@@ -34483,7 +34855,7 @@
                                                                     ),
                                                                     (0, e.jsx)(
                                                                       "p",
-                                                                      yd(
+                                                                      wd(
                                                                         {
                                                                           className:
                                                                             "effect",
@@ -34519,7 +34891,7 @@
                                     )
                                       ? (0, e.jsx)(
                                           Fa,
-                                          yd(
+                                          wd(
                                             {
                                               id: "search-resource",
                                               label: "Resources",
@@ -34534,7 +34906,7 @@
                                                     ) {
                                                       return (0, e.jsxs)(
                                                         "div",
-                                                        yd(
+                                                        wd(
                                                           {
                                                             className:
                                                               "search-item",
@@ -34543,7 +34915,7 @@
                                                             children: [
                                                               (0, e.jsx)(
                                                                 "p",
-                                                                yd(
+                                                                wd(
                                                                   {
                                                                     className:
                                                                       "name",
@@ -34556,7 +34928,7 @@
                                                               ),
                                                               (0, e.jsx)(
                                                                 "p",
-                                                                yd(
+                                                                wd(
                                                                   {
                                                                     className:
                                                                       "effect",
@@ -34590,21 +34962,21 @@
             )
           );
         },
-        jd = function () {
-          var n = k(vd);
+        kd = function () {
+          var n = k(bd);
           return (0, e.jsx)(
             "div",
-            yd(
+            wd(
               {
                 className: "modal-wrap ".concat(n.query ? "opened" : "closed"),
               },
-              { children: n.query ? (0, e.jsx)(wd, { search: n }) : null }
+              { children: n.query ? (0, e.jsx)(jd, { search: n }) : null }
             )
           );
         },
-        kd = function () {
+        Nd = function () {
           return (
-            (kd =
+            (Nd =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -34612,10 +34984,10 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            kd.apply(this, arguments)
+            Nd.apply(this, arguments)
           );
         },
-        Nd = function () {
+        Ed = function () {
           var n = (0, r.useState)(!1),
             t = n[0],
             i = n[1],
@@ -34636,7 +35008,7 @@
             ),
             (0, e.jsxs)(
               "div",
-              kd(
+              Nd(
                 {
                   className: "page "
                     .concat(s, "-theme ")
@@ -34644,22 +35016,22 @@
                 },
                 {
                   children: [
-                    a ? (0, e.jsx)(nd, {}) : null,
+                    a ? (0, e.jsx)(td, {}) : null,
                     (0, e.jsx)(Eo, {}),
                     (0, e.jsxs)(
                       "div",
-                      kd(
+                      Nd(
                         { className: "game" },
                         {
                           children: [
                             (0, e.jsx)(
                               "div",
-                              kd(
+                              Nd(
                                 { className: "show-hide-resources" },
                                 {
                                   children: (0, e.jsx)(
                                     "span",
-                                    kd(
+                                    Nd(
                                       {
                                         className: "show-hide popup-link",
                                         onClick: function () {
@@ -34678,33 +35050,33 @@
                             ),
                             (0, e.jsx)(
                               "div",
-                              kd(
+                              Nd(
                                 { className: "sidebar" },
                                 { children: (0, e.jsx)(vs, { isHidden: t }) }
                               )
                             ),
                             (0, e.jsx)(
                               "div",
-                              kd(
+                              Nd(
                                 { className: "content" },
-                                { children: (0, e.jsx)(ec, {}) }
+                                { children: (0, e.jsx)(nc, {}) }
                               )
                             ),
-                            (0, e.jsx)(gd, {}),
+                            (0, e.jsx)(vd, {}),
                           ],
                         }
                       )
                     ),
-                    (0, e.jsx)(jd, {}),
+                    (0, e.jsx)(kd, {}),
                   ],
                 }
               )
             )
           );
         },
-        Ed = function () {
+        Sd = function () {
           return (
-            (Ed =
+            (Sd =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -34712,14 +35084,14 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            Ed.apply(this, arguments)
+            Sd.apply(this, arguments)
           );
         };
       Gt(),
         (0, n.s)(document.getElementById("root")).render(
           (0, e.jsx)(function () {
             return (0,
-            e.jsx)(u, Ed({ store: Ut }, { children: (0, e.jsx)(Nd, {}) }));
+            e.jsx)(u, Sd({ store: Ut }, { children: (0, e.jsx)(Ed, {}) }));
           }, {})
         );
     })();

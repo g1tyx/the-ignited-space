@@ -565,6 +565,10 @@ var cnItems = {
     "Provides even more research storage and boost research output by 5% multiplicatively": "提供更多的研究上限，并使研究产量提升 5%",
     "Forest Plant": "森林",
     "Rich forest area that generates oxygen": "一片美丽的森林，能够产出氧气",
+    "Fountain": "喷泉",
+    "Provides some aesthetics, but consumes water and power": "提供一些美观加成，但需要消耗水和电力",
+    "Broadcast Tower": "广播塔",
+    "Improves communication with your society using television. Boosts maximum effect of each happiness aspect by 0.5, but increase their consumption by 2": "利用电视台加强您和您社会之间的联系。每个幸福度分项的上限增加 0.5，但其消耗增加 2",
     "Smelter": "冶炼厂",
     "Burns wood to smelt ore into metal": "燃烧木材，将矿石熔炼成金属",
     "Expedition Center": "探险中心",
@@ -1208,8 +1212,22 @@ var cnItems = {
     "Living next to very huge or very small stars can be very challenging. However, you can defy the wild nature, and build your settlement in inhabitable places. Unlocks new star types available for colonization": "在非常大或者非常小的恒星附近定居都极端困难。但你也可以逆天而行，将殖民地设置在过去无法想象的位置。殖民星球时可以搜索到新的恒星种类",
     "Harshness": "行星复杂度",
     "There are billions of exo-planets in our galaxy. Only tiny part of them placed in habitable zone. Expand your limits by learning how to survive in really harsh planets. Each level increase maximum planet complexity": "我们的星系中有数以亿计的行星，但其中只有很小的一部分适合居住；但您也可以学习如何在更加不适合生存的星球上定居。每级提升星球词条的等级上限",
+    "Broadcasting Transmitter": "广播信号发射机",
+    "Now you know how to pass much more knowledge to your posterity. KP gain now also boosted by your happiness": "您能学会如何向后代传输多得多的知识。知识获取量将会受到幸福度的加成",
+    "Technology Market": "科技市场",
+    "You may miss something important about your civilization development. But maybe there was someone who faced same problems and ready to share his knowledge with you? Unlock xp upgrades providing access to new buildings and upgrades.": "您可能遗失了一些对于发展至关重要的科技，但或许有其他人遇到了类似的发展瓶颈，能不能借鉴一下他们的解决办法呢？解锁一类全新的经验升级，它们将解锁新的建筑和升级，",
+    "Fountain": "喷泉",
+    "Learn how to use water to decorate your settlement. Unlocks building fountains, boosting your aesthetics": "学习如何利用水来装点您的殖民地。解锁喷泉建筑，它将提供美观加成",
+    "Television": "电视",
+    "Let your people share their thoughts and express your opinion to them more efficiently by using television. Unlocks building broadcast towers": "让您的人民可以更高效地分享自己的想法。解锁广播塔建筑",
+    "GPS Tracking": "GPS 定位",
+    "Use your GPS satellites to monitor your planet surface, boosting your security services. Upgrading level will make bonus stronger": "运用 GPS 卫星监视行星表面，提供安保加成。升级会令加成更强大",
 
     //
+    "Brown Dwarf": "",
+    "Star is cold and lifeless. Severe religious and aesthetics penalty": "",
+    "Reduced Power generation": "",
+    "Reduced Nutrition, biomass and wood generation": "",
     "Red Dwarf": "红矮星",
     "Insane star splashes reduce healthcare and religion significantly": "剧烈的恒星耀斑会显著地降低医疗和宗教",
     "Reduced Power generation": "降低电力产量",
@@ -1713,6 +1731,16 @@ var cnItems = {
     "Join our Discord": "加入 Discord 频道",
 
     //更新日志正文
+    //v0.2.8
+    "Added new XP upgrades": "增加了新的经验升级",
+    'Added \"Lost Technologies\" - XP upgrades that can provide new buildings/effects': "增加了“失落科技”——这是一类全新的经验升级，可以解锁新的建筑或效果",
+    "Refined expedition page to show special events": "调整了探险页面，来更清晰地展示特殊事件",
+    "Added new star types": "增加了新的恒星种类",
+    "Added filter by star type when search for planet": "增加了一个选项，可以在搜索星球时筛选恒星种类",
+    "Happiness can now go above 20, but with diminishing effect": "幸福度分项现在不再有 20 的下限，但低于 20 时的消耗会有所减缓",
+    "Fixed bug when resource percentages could show incorrectly": "修复了部分资源百分比显示错误的bug",
+    "Fixed bug when was unable to pause game when have 0 banked time": "修复了离线时间为 0 时无法暂停游戏的bug",
+    "Fixed some bugs related to expedition events": "修复了探险事件相关的bug",
     //v0.2.7a
     "Added presets for colonists assignments": "增加了人口分配的预设",
     "Re-balanced some early game stuff to make it easier": "调整了部分前期内容以降低难度",
@@ -1910,6 +1938,7 @@ var cnItems = {
     "Storage": "存储",
     "Negative Effect": "负面影响",
     "Positive Effect": "正面作用",
+    "Crafting Multiplier": "工艺产量加成",
     
 
     //太空页
@@ -2021,7 +2050,7 @@ var cnItems = {
     "XP Gain: x": "经验获取倍率：x",
     "Weather: x": "天气倍率：x",
     "Select search for specific modifier. This will increase search cost": "您可以搜索特定的行星词条，但这会增加搜索行星时的燃料消耗",
-
+    "Select star": "选择恒星",
     "Select disasters harshness (be careful, it can significantly ramp up difficulty)": "选择灾害严峻程度（小心，这可能会导致难度大幅提高）",
     "Small": "小型",
     "Realistic": "合理",
@@ -2050,6 +2079,7 @@ var cnItems = {
     "Income Multipliers": "产量倍率：",
     "Storage Multipliers": "上限倍率：",
     "None": "无",
+    "Lost Technologies": "失落科技",
     "Transmit Knowledge": "传输知识",
     "Colonize New Planet": "殖民星球",
     "General Statistics": "总体统计",
@@ -2142,6 +2172,7 @@ var cnItems = {
     "Pause": "暂停",
 
     //更新日志标题
+    "v0.2.8 Regular Update": "v0.2.8 常规更新",
     "v0.2.7a Small Update": "v0.2.7a 小型更新",
     "v0.2.7 Big Update": "v0.2.7 大型更新",
     "v0.2.6c Tiny Update": "v0.2.6c 微型更新",
@@ -2233,6 +2264,7 @@ var cnPrefix = {
     "Job: ": '工作：',
     "Crafting: ": '制造：',
     "Goal: ": "目标：",
+    "All craftable: x": "所有工艺产量：x",
 
     //
     "Banked time: ": "已存储的时间：",
