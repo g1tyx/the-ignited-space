@@ -85,7 +85,7 @@
             b +
             ");\n    background-size: 28px 28px;\n    display: block;\n    position: absolute;\n    width: 28px;\n    height: 28px;\n    z-index: 3;\n    content: '';\n    top: 0px;\n    left: 0px;\n}\n\n.expeditions-map .map-cell.current:after {\n    background-image: url(" +
             x +
-            ");\n    background-size: 28px 28px;\n    display: block;\n    position: absolute;\n    width: 28px;\n    height: 28px;\n    z-index: 3;\n    content: '';\n    top: 0px;\n    left: 0px;\n}\n\n.expeditions-map .map-cell.home {\n    background: #222222;\n}\n\n.expeditions-map .map-row {\n    display: flex;\n}\n\n.description-hint .loot-line {\n    display: flex;\n}\n\n.description-hint .loot-line p {\n    margin-right: 20px;\n}\n\n.description-hint .loot-line p{\n    font-size: 13px;\n}\n\n.happiness .line .factor {\n    position: relative;\n    min-width: 100px;\n}\n\n.resources-sidebar .resource-item p.boosted::after,\n.happiness .line .factor.boosted::after {\n    display: block;\n    position: absolute;\n    content: 'E';\n    font-size: 12px;\n    background: #30ad30;\n    color: #fff;\n    top: 0;\n    right: 0;\n    width: 14px;\n    height: 14px;\n    border-radius: 50%;\n    text-align: center;\n    padding: 1px;\n}\n\n.resources-sidebar .resource-item p.decreased::after,\n.happiness .line .factor.decreased::after {\n    display: block;\n    position: absolute;\n    content: 'E';\n    font-size: 12px;\n    background: #ff3030;\n    color: #fff;\n    top: 0;\n    right: 0;\n    width: 14px;\n    height: 14px;\n    border-radius: 50%;\n    text-align: center;\n    padding: 1px;\n}\n\n.modal-wrap.opened {\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100vw;\n    height: 100vh;\n    z-index: 1;\n    background: rgba(0,0,0,0.3);\n}\n\n.modal-wrap.opened .modal {\n    width: 80%;\n    height: calc(100vh - 100px);\n    margin: 50px auto;\n    padding: 12px;\n}\n\n.modal-wrap.opened .modal .modal-header {\n    display: flex;\n    justify-content: space-between;\n}\n\n.modal-wrap.opened .modal .modal-header .close {\n    cursor: pointer;\n}\n\n.search-content {\n    height: calc(100vh - 220px);\n}\n\n.search-content .search-item {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    padding: 6px 8px;\n    border: 1px solid #222;\n    width: 260px;\n    margin: 4px 8px;\n    border-radius: 4px;\n    font-size: 14px;\n}\n\n.search-content .search-results-list .feature-list {\n    display: flex;\n    flex-wrap: wrap;\n}\n\n.search-content .search-item p {\n    margin: 0;\n}\n\n.editor-wrap .editor-column .details {\n    height: calc(100vh - 480px);\n}\n\n.editor-wrap .editor-column .save-area {\n    margin-top: 10px;\n}\n\n.editor-wrap .editor-column .row {\n    display: flex;\n    align-items: center;\n}\n\n.editor-wrap .editor-column .main .buttons button {\n    margin: 4px;\n}\n\n.editor-wrap .editor-column .row {\n    margin: 4px;\n    padding: 4px;\n}\n\n.editor-wrap .editor-column .row.job-container {\n    margin: 4px;\n    padding: 4px;\n    border: 1px solid #222222;\n    width: 100%;\n}\n\n.editor-wrap .editor-column .row.job-container .value {\n    padding: 5px;\n    margin: 5px;\n}\n\n.editor-wrap .editor-column .row.job-container .value p {\n    margin: 4px 0;\n}\n\n.editor-wrap .editor-column .row.job-container .value input[type=\"number\"] {\n    width: 80px;\n}\n\n.colony-wrap .line .presets {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    width: 400px;\n    margin-left: 20px;\n}\n\n.colony-wrap .line .presets button {\n    width: 180px;\n    margin-left: 5px;\n}\n\n/* Themes */\nbody.dark-theme * {\n    color: #ffffff;\n}\n\nbody.dark-theme span.greenish {\n    color: #90fd70;\n}\n\nbody.dark-theme span.red {\n    color: #ff6767;\n}\n\nbody.dark-theme .page {\n    background-color: #131115;\n}\n\nbody.dark-theme input {\n    background: #233444;\n}\n\nbody.dark-theme button {\n    background: #344555;\n    border-radius: 0;\n    border-color: #575989;\n}\n\nbody.dark-theme button:hover {\n    background: #575989;\n}\n\nbody.dark-theme button:disabled {\n    background: rgba(31,41,51,0.5);\n    pointer-events: none;\n}\n\nbody.dark-theme select {\n    border: 1px solid #777;\n    border-radius: 5px;\n    padding: 8px;\n    min-width: 163px;\n    background: rgb(19, 25, 38);\n    color: #fff;\n}\n\nbody.dark-theme .right-panel .expand-collapse-panel {\n    background-color: rgb(19, 25, 38);\n    border-color: #fff;\n}\n\nbody.dark-theme .game .right-panel .queue-item .move-controls .move:hover {\n    color: #ffa767;\n}\n\nbody.dark-theme .game .right-panel .queue-item .close:hover {\n    cursor: pointer;\n    color: #ee7744;\n}\n\nbody.dark-theme .header .menu ul li .menu-inner:hover {\n    color: #e74;\n}\n\nbody.dark-theme .header .menu ul li.selected .menu-inner {\n    border-bottom: 5px solid #e74;\n    padding-bottom: 4px;\n    pointer-events: none;\n}\n\nbody.dark-theme .resources-sidebar {\n    width: 360px;\n    border: 1px solid #222;\n}\n\n\nbody.dark-theme .resources-sidebar .hl.resource-item.missing-highlight,\nbody.dark-theme .resources-sidebar .resource-item.missing-highlight * {\n    background: #fd3030;\n    color: #fff;\n}\n\nbody.dark-theme .resources-sidebar .hl.resource-item.produced-highlight,\nbody.dark-theme .resources-sidebar .resource-item.produced-highlight * {\n    background: #30ad30;\n    color: #fff;\n}\n\nbody.dark-theme .resources-sidebar .hl.resource-item.consumed-highlight,\nbody.dark-theme .resources-sidebar .resource-item.consumed-highlight * {\n    background: #fd7050;\n    color: #fff;\n}\n\nbody.dark-theme .resources-sidebar .resource-item.negative p {\n    color: #fd7050;\n}\n\nbody.dark-theme .resources-sidebar .resource-item.capped p {\n    color: #ffe0a0;\n}\n\nbody.dark-theme .resources-sidebar .resource-item p.boosted {\n    color: #90fd70;\n}\n\nbody.dark-theme .resources-sidebar .resource-item p.decreased {\n    color: #ff5757;\n}\n\nbody.dark-theme .resources-sidebar .resource-item:nth-child(even) {\n    background: #131115;\n}\n\nbody.dark-theme .resources-sidebar .resource-item:nth-child(odd) {\n    background: #222;\n}\n\nbody.dark-theme .features-block .features-title .collapse-expand {\n    font-size: 12px;\n    color: #ee7744;\n    cursor: pointer;\n}\n\nbody.dark-theme .chips-wrap .chip {\n    border: 1px solid #234;\n    background-color: #222;\n}\n\nbody.dark-theme .chips-wrap .chip .bg {\n    background-color: #193344;\n}\n\nbody.dark-theme .chips-wrap.building-unlock .chip .bg {\n    background-color: #376384;\n}\n\nbody.dark-theme .chips-wrap.resource-unlock .chip .bg {\n    background-color: #377334;\n}\n\nbody.dark-theme .chips-wrap.special .chip .bg {\n    background-color: #775374;\n}\n\nbody.dark-theme .chips-wrap .chip .controls.disabled .control {\n    color: #ccbbaa;\n}\n\nbody.dark-theme .chips-wrap .chip .controls:not(.disabled) .control:hover {\n    background: #344555;\n    border: 1px solid #222;\n    border-radius: 50%;\n}\n\nbody.dark-theme .description-hint {\n    background: #131518;\n    border: 1px solid #222;\n}\n\nbody.dark-theme .chips-wrap .chip .level-label {\n    background: #344555;\n    border: 1px solid #222;\n}\n\nbody.dark-theme .hint-caps {\n    background: #131115;\n    padding: 16px;\n}\n\nbody.dark-theme .chips-wrap.disabled .chip span.name-label {\n    color: #cba;\n}\n\nbody.dark-theme .chips-wrap.disabled.blocked.soft-lock .chip span.name-label {\n    color: #ff5757;\n}\n\nbody.dark-theme .chips-wrap.disabled.soft-lock .chip span.name-label {\n    color: #ffa767;\n    cursor: not-allowed;\n}\n\nbody.dark-theme .chips-wrap.usage-highlight .chip {\n    border-color: #eeaa44;\n}\n\nbody.dark-theme .travel-bar {\n    border: 1px solid #222222;\n    background: #223344;\n}\n\nbody.dark-theme .travel-bar .travel-bar-inner {\n    background: #575989;\n}\n\nbody.dark-theme .cost-block .progressBar .filling {\n    background: #575989;\n}\n\nbody.dark-theme .job-card {\n    border: 1px solid #222;\n}\n\nbody.dark-theme .job-card .set-amount button {\n    background: #233444;\n    border: 1px solid #222222;\n}\n\nbody.dark-theme .job-card .set-amount button:hover {\n    background: #344555;\n}\n\nbody.dark-theme .job-card .set-amount input {\n    background: #131115;\n    border: 1px solid #222222;\n    border-radius: 4px;\n}\n\nbody.dark-theme .settings .set-row .val textarea {\n    background: #222222;\n}\n\nbody.dark-theme .happiness .factor-wrap .factor.excess {\n    color: #ffe0a0;\n}\n\nbody.dark-theme .laws-list .law-box .law-options .option-box {\n    padding: 4px 12px;\n    border: 1px solid #222222;\n    cursor: pointer;\n    margin: 0 10px;\n}\n\nbody.dark-theme .laws-list .law-box .law-options .option-box.selected {\n    background-color: #233444;\n}\n\nbody.dark-theme .submenu .submenu-item.selected {\n    color: #ee7744;\n}\n\n@media screen and (max-width: 860px) {\n    body.dark-theme .mobile-tooltip {\n        background: #131518;\n        border: 1px solid #223344;\n    }\n\n    body.dark-theme .mobile-tooltip-wrap {\n        background: rgba(21,21,21,0.7);\n    }\n}\n\nbody.dark-theme .clickable-highlight {\n    color: #ee7744;\n}\n\nbody.dark-theme .modal-wrap.opened .modal {\n    background: #131115;\n    border: 1px solid #222222;\n    border-radius: 4px;\n}\n\n/* THEME: LIGHT THEME */\n\nbody.light-theme * {\n    font-family: 'Lato', sans-serif;\n}\n\nbody.light-theme * {\n    color: #222;\n}\n\nbody.light-theme span.greenish {\n    color: #30ad30;\n}\n\nbody.light-theme span.red {\n    color: #df2727;\n}\n\nbody.light-theme .page {\n    background-color: #f6f1f6;\n}\n\nbody.light-theme input {\n    background: #eee;\n    border: 1px solid #333;\n    border-radius: 2px;\n}\n\nbody.light-theme button {\n    background: #eee;\n    color: #222222;\n    border-radius: 4px;\n    border-color: #333;\n}\n\n\nbody.light-theme button:hover {\n    background: #ccc;\n}\n\nbody.light-theme button:disabled {\n    background: rgba(31,41,51,0.5);\n    pointer-events: none;\n}\n\nbody.light-theme select {\n    border: 1px solid #333;\n    border-radius: 5px;\n    padding: 8px;\n    min-width: 163px;\n    background: #eee;\n    color: #333;\n}\n\nbody.light-theme .right-panel .expand-collapse-panel {\n    background-color: #eee;\n    border-color: #333;\n}\n\nbody.light-theme .game .right-panel .queue-item .move-controls .move:hover {\n    color: #3558aa;\n}\n\nbody.light-theme .game .right-panel .queue-item .close:hover {\n    cursor: pointer;\n    color: #3558aa;\n}\n\nbody.light-theme .header .menu ul li .menu-inner:hover {\n    color: #3558aa;\n}\n\nbody.light-theme .header .menu ul li.selected .menu-inner {\n    border-bottom: 2px solid #35488a;\n    padding-bottom: 4px;\n    pointer-events: none;\n}\n\nbody.light-theme .resources-sidebar {\n    width: 360px;\n    border: 1px solid #777;\n    border-radius: 4px;\n    background: #eee;\n}\n\nbody.light-theme .resources-sidebar .hl.resource-item.missing-highlight,\nbody.light-theme .resources-sidebar .resource-item.missing-highlight * {\n    background: #fda0a0;\n    color: #222;\n}\n\nbody.light-theme .resources-sidebar .hl.resource-item.produced-highlight,\nbody.light-theme .resources-sidebar .resource-item.produced-highlight * {\n    background: #a0fda0;\n    color: #222;\n}\n\nbody.light-theme .resources-sidebar .hl.resource-item.consumed-highlight,\nbody.light-theme .resources-sidebar .resource-item.consumed-highlight * {\n    background: #ffd090;\n    color: #222;\n}\n\nbody.light-theme .resources-sidebar .resource-item.negative p {\n    color: #fd7050;\n}\n\nbody.light-theme .resources-sidebar .resource-item.capped p {\n    color: #8f6020;\n}\n\nbody.light-theme .resources-sidebar .resource-item p.boosted {\n    color: #30ad30;\n}\n\nbody.light-theme .resources-sidebar .resource-item p.decreased {\n    color: #df2727;\n}\n\nbody.light-theme .resources-sidebar .resource-item:nth-child(even) {\n    background: #eee9ee;\n}\n\nbody.light-theme .resources-sidebar .resource-item:nth-child(odd) {\n    background: #f6f6f6;\n}\n\nbody.light-theme .features-block .features-title .collapse-expand {\n    font-size: 12px;\n    color: #112224;\n    cursor: pointer;\n}\n\nbody.light-theme .label-wrap {\n    font-weight: bold;\n}\n\nbody.light-theme .chips-wrap .chip {\n    border: 1px solid #333;\n    background-color: #ddd;\n}\n\nbody.light-theme .chips-wrap .chip .stick-left {\n    width: 150px;\n}\n\nbody.light-theme .buildings-wrap .chips-wrap .chip .stick-left {\n    width: 200px;\n}\n\nbody.light-theme .chips-wrap .chip * {\n    color: #000;\n}\n\nbody.light-theme .chips-wrap .chip .bg {\n    background-color: #fff;\n    border-right: 1px solid #888;\n}\n\nbody.light-theme .chips-wrap.building-unlock .chip .bg {\n    background-color: #67c3f4;\n}\n\nbody.light-theme .chips-wrap.resource-unlock .chip .bg {\n    background-color: #a7f3a4;\n}\n\nbody.light-theme .chips-wrap.special .chip .bg {\n    background-color: #d7a3d4;\n}\n\nbody.light-theme .chips-wrap .chip-content {\n    display: flex;\n    align-items: center;\n}\n\nbody.light-theme .chips-wrap .chip-content .name-label {\n    font-size: 14px;\n}\n\nbody.light-theme .chips-wrap .chip-content .stick-right {\n    position: relative;\n    flex-shrink: 0;\n    top: -2px;\n}\n\nbody.light-theme .chips-wrap .chip .controls.disabled .control {\n    color: #555;\n}\n\nbody.light-theme .chips-wrap .chip .controls:not(.disabled) .control:hover {\n    background: #123;\n    border: 1px solid #123;\n    color: #fff;\n    border-radius: 50%;\n}\n\nbody.light-theme .description-hint {\n    background: #fff;\n    border: 1px solid #222;\n}\n\nbody.light-theme .chips-wrap .chip .level-label {\n    background: none;\n    border: none;\n    font-size: 13px;\n}\n\nbody.light-theme .hint-caps {\n    background: #fff;\n    padding: 16px;\n    border: 1px solid #222;\n    border-radius: 4px;\n}\n\nbody.light-theme .notification-container span.new-label::after {\n    margin-top: 0;\n    padding-left: 5px;\n}\n\nbody.light-theme .chips-wrap.disabled .chip span.name-label {\n    color: #444;\n}\n\nbody.light-theme .chips-wrap.disabled.blocked.soft-lock .chip span.name-label {\n    color: #ef0707;\n}\n\nbody.light-theme .chips-wrap.disabled.soft-lock .chip span.name-label {\n    color: #7f6707;\n    cursor: not-allowed;\n}\n\nbody.light-theme .travel-bar {\n    border: 1px solid #222222;\n    background: #eee;\n}\n\nbody.light-theme .travel-bar .travel-bar-inner {\n    background: #123;\n}\n\nbody.light-theme .cost-block .progressBar .filling {\n    background: #37a939;\n}\n\nbody.light-theme .job-card {\n    border: 1px solid #222;\n}\n\nbody.light-theme .job-card .set-amount button {\n    background: #eee;\n    border: 1px solid #222222;\n}\n\nbody.light-theme .job-card .set-amount button:hover {\n    background: #ccc;\n}\n\nbody.light-theme .job-card .set-amount input {\n    background: #fff;\n    border: 1px solid #222222;\n    border-radius: 4px;\n}\n\nbody.light-theme .settings .set-row .val textarea {\n    background: #eee;\n    border: 1px solid #222222;\n    border-radius: 4px;\n}\n\nbody.light-theme .happiness .factor-wrap .factor.excess {\n    color: #8f6020;\n}\n\nbody.light-theme .laws-list .law-box .law-options .option-box {\n    padding: 4px 12px;\n    border: 1px solid #222222;\n    cursor: pointer;\n    margin: 0 10px;\n}\n\nbody.light-theme .laws-list .law-box .law-options .option-box.selected {\n    background-color: #ccc;\n}\n\nbody.light-theme .submenu .submenu-item.selected {\n    color: #3558aa;\n}\n\n\n@media screen and (max-width: 860px) {\n    body.light-theme .mobile-tooltip {\n        background: #eee;\n        border: 1px solid #222;\n    }\n\n    body.light-theme .mobile-tooltip-wrap {\n        background: #eee;\n    }\n}\n\nbody.light-theme .clickable-highlight {\n    color: #3558aa;\n}\n\nbody.light-theme .chips-wrap.usage-highlight .chip {\n    border-color: #55a8fa;\n}\n\nbody.light-theme .modal-wrap.opened .modal {\n    background: #fefefe;\n    border: 1px solid #222;\n    border-radius: 4px;\n}\n\n\n/* THEME: BLACK THEME */\n\nbody.black-theme * {\n    /*font-family: 'Nunito', sans-serif;*/\n    font-family: 'DM Sans', sans-serif;\n}\n\nbody.black-theme * {\n    color: #fff;\n}\n\nbody.black-theme span.greenish {\n    color: #90fd70;\n}\n\nbody.black-theme span.red {\n    color: #ff6767;\n}\n\nbody.black-theme .page {\n    background-color: #111;\n}\n\nbody.black-theme input {\n    background: #333;\n    border: 1px solid #333;\n    border-radius: 2px;\n}\n\nbody.black-theme button {\n    background: #000;\n    color: #fff;\n    border-radius: 4px;\n    border-color: #333;\n}\n\n\nbody.black-theme button:hover {\n    background: #111;\n}\n\nbody.black-theme button:disabled {\n    background: rgba(31,41,51,0.5);\n    pointer-events: none;\n}\n\nbody.black-theme select {\n    border: 1px solid #333;\n    border-radius: 5px;\n    padding: 8px;\n    min-width: 163px;\n    background: #111;\n    color: #fff;\n}\n\nbody.black-theme .right-panel .expand-collapse-panel {\n    background-color: #111;\n    border-color: #fff;\n}\n\nbody.black-theme .game .right-panel .queue-item .move-controls .move:hover {\n    color: #eee;\n}\n\nbody.black-theme .game .right-panel .queue-item .close:hover {\n    cursor: pointer;\n    color: #eee;\n}\n\nbody.black-theme .header .menu ul li .menu-inner:hover {\n    color: #eee;\n}\n\nbody.black-theme .header .menu ul li.selected .menu-inner {\n    border-bottom: 2px solid #eee;\n    padding-bottom: 4px;\n    pointer-events: none;\n}\n\nbody.black-theme .resources-sidebar {\n    width: 360px;\n    border: 1px solid #777;\n    border-radius: 4px;\n    background: #111;\n}\n\nbody.black-theme .resources-sidebar .hl.resource-item.missing-highlight,\nbody.black-theme .resources-sidebar .resource-item.missing-highlight * {\n    background: #fd3030;\n    color: #fff;\n}\n\nbody.black-theme .resources-sidebar .hl.resource-item.produced-highlight,\nbody.black-theme .resources-sidebar .resource-item.produced-highlight * {\n    background: #30ad30;\n    color: #fff;\n}\n\nbody.black-theme .resources-sidebar .hl.resource-item.consumed-highlight,\nbody.black-theme .resources-sidebar .resource-item.consumed-highlight * {\n    background: #fd7050;\n    color: #fff;\n}\n\nbody.black-theme .resources-sidebar .resource-item.negative p {\n    color: #fd7050;\n}\n\nbody.black-theme .resources-sidebar .resource-item.capped p {\n    color: #ffe0a0;\n}\n\nbody.black-theme .resources-sidebar .resource-item p.boosted {\n    color: #90fd70;\n}\n\nbody.black-theme .resources-sidebar .resource-item p.decreased {\n    color: #ff5757;\n}\n\nbody.black-theme .resources-sidebar .resource-item:nth-child(even) {\n    background: #111;\n}\n\nbody.black-theme .resources-sidebar .resource-item:nth-child(odd) {\n    background: #333;\n}\n\nbody.black-theme .features-block .features-title .collapse-expand {\n    font-size: 12px;\n    color: #fff;\n    cursor: pointer;\n}\n\nbody.black-theme .label-wrap {\n    font-weight: bold;\n}\n\nbody.black-theme .chips-wrap .chip {\n    border: 1px solid #333;\n    background-color: #333;\n}\n\nbody.black-theme .chips-wrap .chip .stick-left {\n    width: 150px;\n}\n\nbody.black-theme .buildings-wrap .chips-wrap .chip .stick-left {\n    width: 200px;\n}\n\nbody.black-theme .chips-wrap .chip * {\n    color: #fff;\n}\n\nbody.black-theme .chips-wrap .chip .bg {\n    background-color: #000;\n}\n\nbody.black-theme .chips-wrap.building-unlock .chip .bg {\n    background-color: #67c3f4;\n}\n\nbody.black-theme .chips-wrap.resource-unlock .chip .bg {\n    background-color: #a7f3a4;\n}\n\nbody.black-theme .chips-wrap.special .chip .bg {\n    background-color: #d7a3d4;\n}\n\nbody.black-theme .chips-wrap .chip-content {\n    display: flex;\n    align-items: center;\n}\n\nbody.black-theme .chips-wrap .chip-content .name-label {\n    font-size: 14px;\n}\n\nbody.black-theme .chips-wrap .chip-content .stick-right {\n    position: relative;\n    flex-shrink: 0;\n    top: -2px;\n}\n\nbody.black-theme .chips-wrap .chip .controls.disabled .control {\n    color: #555;\n}\n\nbody.black-theme .chips-wrap .chip .controls:not(.disabled) .control:hover {\n    background: #222;\n    border: 1px solid #333;\n    color: #fff;\n    border-radius: 50%;\n}\n\nbody.black-theme .description-hint {\n    background: #222;\n    border: 1px solid #555;\n}\n\nbody.black-theme .chips-wrap .chip .level-label {\n    background: none;\n    border: none;\n    font-size: 13px;\n}\n\nbody.black-theme .hint-caps {\n    background: #222;\n    padding: 16px;\n    border: 1px solid #555;\n    border-radius: 4px;\n}\n\nbody.black-theme .notification-container span.new-label::after {\n    margin-top: 0;\n    padding-left: 5px;\n}\n\nbody.black-theme .chips-wrap.disabled .chip span.name-label {\n    color: #eee;\n}\n\nbody.black-theme .chips-wrap.disabled.blocked.soft-lock .chip span.name-label {\n    color: #ff5717;\n}\n\nbody.black-theme .chips-wrap.disabled.soft-lock .chip span.name-label {\n    color: #ffa727;\n    cursor: not-allowed;\n}\n\nbody.black-theme .travel-bar {\n    border: 1px solid #555;\n    background: #555;\n}\n\nbody.black-theme .travel-bar .travel-bar-inner {\n    background: #555;\n}\n\nbody.black-theme .cost-block .progressBar .filling {\n    background: #eee;\n}\n\nbody.black-theme .job-card {\n    border: 1px solid #222;\n}\n\nbody.black-theme .job-card .set-amount button {\n    background: #000;\n    border: 1px solid #222222;\n}\n\nbody.black-theme .job-card .set-amount button:hover {\n    background: #333;\n}\n\nbody.black-theme .job-card .set-amount input {\n    background: #222;\n    border: 1px solid #222222;\n    border-radius: 4px;\n}\n\nbody.black-theme .settings .set-row .val textarea {\n    background: #222;\n    border: 1px solid #222222;\n    border-radius: 4px;\n}\n\nbody.black-theme .happiness .factor-wrap .factor.excess {\n    color: #ffe0a0;\n}\n\nbody.black-theme .laws-list .law-box .law-options .option-box {\n    padding: 4px 12px;\n    border: 1px solid #222222;\n    cursor: pointer;\n    margin: 0 10px;\n}\n\nbody.black-theme .laws-list .law-box .law-options .option-box.selected {\n    background-color: #000;\n}\n\nbody.black-theme .submenu .submenu-item.selected {\n    color: #ee7744;\n}\n\n\n@media screen and (max-width: 860px) {\n    body.black-theme .mobile-tooltip {\n        background: #131518;\n        border: 1px solid #333;\n    }\n\n    body.black-theme .mobile-tooltip-wrap {\n        background: rgba(21,21,21,0.7);\n    }\n}\n\nbody.black-theme .clickable-highlight {\n    color: #ee7744;\n}\n\nbody.black-theme .chips-wrap.usage-highlight .chip {\n    border-color: #ee7744;\n}\n\nbody.black-theme .modal-wrap.opened .modal {\n    background: #131115;\n    border: 1px solid #222222;\n    border-radius: 4px;\n}",
+            ");\n    background-size: 28px 28px;\n    display: block;\n    position: absolute;\n    width: 28px;\n    height: 28px;\n    z-index: 3;\n    content: '';\n    top: 0px;\n    left: 0px;\n}\n\n.expeditions-map .map-cell.home {\n    background: #222222;\n}\n\n.expeditions-map .map-row {\n    display: flex;\n}\n\n.description-hint .loot-line {\n    display: flex;\n}\n\n.description-hint .loot-line p {\n    margin-right: 20px;\n}\n\n.description-hint .loot-line p{\n    font-size: 13px;\n}\n\n.happiness .line .factor {\n    position: relative;\n    min-width: 100px;\n}\n\n.resources-sidebar .resource-item p.boosted::after,\n.happiness .line .factor.boosted::after {\n    display: block;\n    position: absolute;\n    content: 'E';\n    font-size: 12px;\n    background: #30ad30;\n    color: #fff;\n    top: 0;\n    right: 0px;\n    width: 14px;\n    height: 14px;\n    border-radius: 50%;\n    text-align: center;\n    padding: 1px;\n}\n\n.resources-sidebar .resource-item p.decreased::after,\n.happiness .line .factor.decreased::after {\n    display: block;\n    position: absolute;\n    content: 'E';\n    font-size: 12px;\n    background: #ff3030;\n    color: #fff;\n    top: 0;\n    right: 0px;\n    width: 14px;\n    height: 14px;\n    border-radius: 50%;\n    text-align: center;\n    padding: 1px;\n}\n\n.happiness .line .factor.decreased::after,\n.happiness .line .factor.boosted::after {\n    right: -18px;\n}\n\n.modal-wrap.opened {\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100vw;\n    height: 100vh;\n    z-index: 1;\n    background: rgba(0,0,0,0.3);\n}\n\n.modal-wrap.opened .modal {\n    width: 80%;\n    height: calc(100vh - 100px);\n    margin: 50px auto;\n    padding: 12px;\n}\n\n.modal-wrap.opened .modal .modal-header {\n    display: flex;\n    justify-content: space-between;\n}\n\n.modal-wrap.opened .modal .modal-header .close {\n    cursor: pointer;\n}\n\n.search-content {\n    height: calc(100vh - 220px);\n}\n\n.search-content .search-item {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    padding: 6px 8px;\n    border: 1px solid #222;\n    width: 260px;\n    margin: 4px 8px;\n    border-radius: 4px;\n    font-size: 14px;\n}\n\n.search-content .search-results-list .feature-list {\n    display: flex;\n    flex-wrap: wrap;\n}\n\n.search-content .search-item p {\n    margin: 0;\n}\n\n.editor-wrap .editor-column .details {\n    height: calc(100vh - 480px);\n}\n\n.editor-wrap .editor-column .save-area {\n    margin-top: 10px;\n}\n\n.editor-wrap .editor-column .row {\n    display: flex;\n    align-items: center;\n}\n\n.editor-wrap .editor-column .main .buttons button {\n    margin: 4px;\n}\n\n.editor-wrap .editor-column .row {\n    margin: 4px;\n    padding: 4px;\n}\n\n.editor-wrap .editor-column .row.job-container {\n    margin: 4px;\n    padding: 4px;\n    border: 1px solid #222222;\n    width: 100%;\n}\n\n.editor-wrap .editor-column .row.job-container .value {\n    padding: 5px;\n    margin: 5px;\n}\n\n.editor-wrap .editor-column .row.job-container .value p {\n    margin: 4px 0;\n}\n\n.editor-wrap .editor-column .row.job-container .value input[type=\"number\"] {\n    width: 80px;\n}\n\n.colony-wrap .line .presets {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    width: 400px;\n    margin-left: 20px;\n}\n\n.colony-wrap .line .presets button {\n    width: 180px;\n    margin-left: 5px;\n}\n\n/* Themes */\nbody.dark-theme * {\n    color: #ffffff;\n}\n\nbody.dark-theme span.greenish {\n    color: #90fd70;\n}\n\nbody.dark-theme span.red {\n    color: #ff6767;\n}\n\nbody.dark-theme .page {\n    background-color: #131115;\n}\n\nbody.dark-theme input {\n    background: #233444;\n}\n\nbody.dark-theme button {\n    background: #344555;\n    border-radius: 0;\n    border-color: #575989;\n}\n\nbody.dark-theme button:hover {\n    background: #575989;\n}\n\nbody.dark-theme button:disabled {\n    background: rgba(31,41,51,0.5);\n    pointer-events: none;\n}\n\nbody.dark-theme select {\n    border: 1px solid #777;\n    border-radius: 5px;\n    padding: 8px;\n    min-width: 163px;\n    background: rgb(19, 25, 38);\n    color: #fff;\n}\n\nbody.dark-theme .right-panel .expand-collapse-panel {\n    background-color: rgb(19, 25, 38);\n    border-color: #fff;\n}\n\nbody.dark-theme .game .right-panel .queue-item .move-controls .move:hover {\n    color: #ffa767;\n}\n\nbody.dark-theme .game .right-panel .queue-item .close:hover {\n    cursor: pointer;\n    color: #ee7744;\n}\n\nbody.dark-theme .header .menu ul li .menu-inner:hover {\n    color: #e74;\n}\n\nbody.dark-theme .header .menu ul li.selected .menu-inner {\n    border-bottom: 5px solid #e74;\n    padding-bottom: 4px;\n    pointer-events: none;\n}\n\nbody.dark-theme .resources-sidebar {\n    width: 360px;\n    border: 1px solid #222;\n}\n\n\nbody.dark-theme .resources-sidebar .hl.resource-item.missing-highlight,\nbody.dark-theme .resources-sidebar .resource-item.missing-highlight * {\n    background: #fd3030;\n    color: #fff;\n}\n\nbody.dark-theme .resources-sidebar .hl.resource-item.produced-highlight,\nbody.dark-theme .resources-sidebar .resource-item.produced-highlight * {\n    background: #30ad30;\n    color: #fff;\n}\n\nbody.dark-theme .resources-sidebar .hl.resource-item.consumed-highlight,\nbody.dark-theme .resources-sidebar .resource-item.consumed-highlight * {\n    background: #fd7050;\n    color: #fff;\n}\n\nbody.dark-theme .resources-sidebar .resource-item.negative p {\n    color: #fd7050;\n}\n\nbody.dark-theme .resources-sidebar .resource-item.capped p {\n    color: #ffe0a0;\n}\n\nbody.dark-theme .resources-sidebar .resource-item p.boosted {\n    color: #90fd70;\n}\n\nbody.dark-theme .resources-sidebar .resource-item p.decreased {\n    color: #ff5757;\n}\n\nbody.dark-theme .resources-sidebar .resource-item:nth-child(even) {\n    background: #131115;\n}\n\nbody.dark-theme .resources-sidebar .resource-item:nth-child(odd) {\n    background: #222;\n}\n\nbody.dark-theme .features-block .features-title .collapse-expand {\n    font-size: 12px;\n    color: #ee7744;\n    cursor: pointer;\n}\n\nbody.dark-theme .chips-wrap .chip {\n    border: 1px solid #234;\n    background-color: #222;\n}\n\nbody.dark-theme .chips-wrap .chip .bg {\n    background-color: #193344;\n}\n\nbody.dark-theme .chips-wrap.building-unlock .chip .bg {\n    background-color: #376384;\n}\n\nbody.dark-theme .chips-wrap.resource-unlock .chip .bg {\n    background-color: #377334;\n}\n\nbody.dark-theme .chips-wrap.special .chip .bg {\n    background-color: #775374;\n}\n\nbody.dark-theme .chips-wrap .chip .controls.disabled .control {\n    color: #ccbbaa;\n}\n\nbody.dark-theme .chips-wrap .chip .controls:not(.disabled) .control:hover {\n    background: #344555;\n    border: 1px solid #222;\n    border-radius: 50%;\n}\n\nbody.dark-theme .description-hint {\n    background: #131518;\n    border: 1px solid #222;\n}\n\nbody.dark-theme .chips-wrap .chip .level-label {\n    background: #344555;\n    border: 1px solid #222;\n}\n\nbody.dark-theme .hint-caps {\n    background: #131115;\n    padding: 16px;\n}\n\nbody.dark-theme .chips-wrap.disabled .chip span.name-label {\n    color: #cba;\n}\n\nbody.dark-theme .chips-wrap.disabled.blocked.soft-lock .chip span.name-label {\n    color: #ff5757;\n}\n\nbody.dark-theme .chips-wrap.disabled.soft-lock .chip span.name-label {\n    color: #ffa767;\n    cursor: not-allowed;\n}\n\nbody.dark-theme .chips-wrap.usage-highlight .chip {\n    border-color: #eeaa44;\n}\n\nbody.dark-theme .travel-bar {\n    border: 1px solid #222222;\n    background: #223344;\n}\n\nbody.dark-theme .travel-bar .travel-bar-inner {\n    background: #575989;\n}\n\nbody.dark-theme .cost-block .progressBar .filling {\n    background: #575989;\n}\n\nbody.dark-theme .job-card {\n    border: 1px solid #222;\n}\n\nbody.dark-theme .job-card .set-amount button {\n    background: #233444;\n    border: 1px solid #222222;\n}\n\nbody.dark-theme .job-card .set-amount button:hover {\n    background: #344555;\n}\n\nbody.dark-theme .job-card .set-amount input {\n    background: #131115;\n    border: 1px solid #222222;\n    border-radius: 4px;\n}\n\nbody.dark-theme .settings .set-row .val textarea {\n    background: #222222;\n}\n\nbody.dark-theme .happiness .factor-wrap .factor.excess {\n    color: #ffe0a0;\n}\n\nbody.dark-theme .laws-list .law-box .law-options .option-box {\n    padding: 4px 12px;\n    border: 1px solid #222222;\n    cursor: pointer;\n    margin: 0 10px;\n}\n\nbody.dark-theme .laws-list .law-box .law-options .option-box.selected {\n    background-color: #233444;\n}\n\nbody.dark-theme .submenu .submenu-item.selected {\n    color: #ee7744;\n}\n\n@media screen and (max-width: 860px) {\n    body.dark-theme .mobile-tooltip {\n        background: #131518;\n        border: 1px solid #223344;\n    }\n\n    body.dark-theme .mobile-tooltip-wrap {\n        background: rgba(21,21,21,0.7);\n    }\n}\n\nbody.dark-theme .clickable-highlight {\n    color: #ee7744;\n}\n\nbody.dark-theme .modal-wrap.opened .modal {\n    background: #131115;\n    border: 1px solid #222222;\n    border-radius: 4px;\n}\n\n/* THEME: LIGHT THEME */\n\nbody.light-theme * {\n    font-family: 'Lato', sans-serif;\n}\n\nbody.light-theme * {\n    color: #222;\n}\n\nbody.light-theme span.greenish {\n    color: #30ad30;\n}\n\nbody.light-theme span.red {\n    color: #df2727;\n}\n\nbody.light-theme .page {\n    background-color: #f6f1f6;\n}\n\nbody.light-theme input {\n    background: #eee;\n    border: 1px solid #333;\n    border-radius: 2px;\n}\n\nbody.light-theme button {\n    background: #eee;\n    color: #222222;\n    border-radius: 4px;\n    border-color: #333;\n}\n\n\nbody.light-theme button:hover {\n    background: #ccc;\n}\n\nbody.light-theme button:disabled {\n    background: rgba(31,41,51,0.5);\n    pointer-events: none;\n}\n\nbody.light-theme select {\n    border: 1px solid #333;\n    border-radius: 5px;\n    padding: 8px;\n    min-width: 163px;\n    background: #eee;\n    color: #333;\n}\n\nbody.light-theme .right-panel .expand-collapse-panel {\n    background-color: #eee;\n    border-color: #333;\n}\n\nbody.light-theme .game .right-panel .queue-item .move-controls .move:hover {\n    color: #3558aa;\n}\n\nbody.light-theme .game .right-panel .queue-item .close:hover {\n    cursor: pointer;\n    color: #3558aa;\n}\n\nbody.light-theme .header .menu ul li .menu-inner:hover {\n    color: #3558aa;\n}\n\nbody.light-theme .header .menu ul li.selected .menu-inner {\n    border-bottom: 2px solid #35488a;\n    padding-bottom: 4px;\n    pointer-events: none;\n}\n\nbody.light-theme .resources-sidebar {\n    width: 360px;\n    border: 1px solid #777;\n    border-radius: 4px;\n    background: #eee;\n}\n\nbody.light-theme .resources-sidebar .hl.resource-item.missing-highlight,\nbody.light-theme .resources-sidebar .resource-item.missing-highlight * {\n    background: #fda0a0;\n    color: #222;\n}\n\nbody.light-theme .resources-sidebar .hl.resource-item.produced-highlight,\nbody.light-theme .resources-sidebar .resource-item.produced-highlight * {\n    background: #a0fda0;\n    color: #222;\n}\n\nbody.light-theme .resources-sidebar .hl.resource-item.consumed-highlight,\nbody.light-theme .resources-sidebar .resource-item.consumed-highlight * {\n    background: #ffd090;\n    color: #222;\n}\n\nbody.light-theme .resources-sidebar .resource-item.negative p {\n    color: #fd7050;\n}\n\nbody.light-theme .resources-sidebar .resource-item.capped p {\n    color: #8f6020;\n}\n\nbody.light-theme .resources-sidebar .resource-item p.boosted {\n    color: #30ad30;\n}\n\nbody.light-theme .resources-sidebar .resource-item p.decreased {\n    color: #df2727;\n}\n\nbody.light-theme .resources-sidebar .resource-item:nth-child(even) {\n    background: #eee9ee;\n}\n\nbody.light-theme .resources-sidebar .resource-item:nth-child(odd) {\n    background: #f6f6f6;\n}\n\nbody.light-theme .features-block .features-title .collapse-expand {\n    font-size: 12px;\n    color: #112224;\n    cursor: pointer;\n}\n\nbody.light-theme .label-wrap {\n    font-weight: bold;\n}\n\nbody.light-theme .chips-wrap .chip {\n    border: 1px solid #333;\n    background-color: #ddd;\n}\n\nbody.light-theme .chips-wrap .chip .stick-left {\n    width: 150px;\n}\n\nbody.light-theme .buildings-wrap .chips-wrap .chip .stick-left {\n    width: 200px;\n}\n\nbody.light-theme .chips-wrap .chip * {\n    color: #000;\n}\n\nbody.light-theme .chips-wrap .chip .bg {\n    background-color: #fff;\n    border-right: 1px solid #888;\n}\n\nbody.light-theme .chips-wrap.building-unlock .chip .bg {\n    background-color: #67c3f4;\n}\n\nbody.light-theme .chips-wrap.resource-unlock .chip .bg {\n    background-color: #a7f3a4;\n}\n\nbody.light-theme .chips-wrap.special .chip .bg {\n    background-color: #d7a3d4;\n}\n\nbody.light-theme .chips-wrap .chip-content {\n    display: flex;\n    align-items: center;\n}\n\nbody.light-theme .chips-wrap .chip-content .name-label {\n    font-size: 14px;\n}\n\nbody.light-theme .chips-wrap .chip-content .stick-right {\n    position: relative;\n    flex-shrink: 0;\n    top: -2px;\n}\n\nbody.light-theme .chips-wrap .chip .controls.disabled .control {\n    color: #555;\n}\n\nbody.light-theme .chips-wrap .chip .controls:not(.disabled) .control:hover {\n    background: #123;\n    border: 1px solid #123;\n    color: #fff;\n    border-radius: 50%;\n}\n\nbody.light-theme .description-hint {\n    background: #fff;\n    border: 1px solid #222;\n}\n\nbody.light-theme .chips-wrap .chip .level-label {\n    background: none;\n    border: none;\n    font-size: 13px;\n}\n\nbody.light-theme .hint-caps {\n    background: #fff;\n    padding: 16px;\n    border: 1px solid #222;\n    border-radius: 4px;\n}\n\nbody.light-theme .notification-container span.new-label::after {\n    margin-top: 0;\n    padding-left: 5px;\n}\n\nbody.light-theme .chips-wrap.disabled .chip span.name-label {\n    color: #444;\n}\n\nbody.light-theme .chips-wrap.disabled.blocked.soft-lock .chip span.name-label {\n    color: #ef0707;\n}\n\nbody.light-theme .chips-wrap.disabled.soft-lock .chip span.name-label {\n    color: #7f6707;\n    cursor: not-allowed;\n}\n\nbody.light-theme .travel-bar {\n    border: 1px solid #222222;\n    background: #eee;\n}\n\nbody.light-theme .travel-bar .travel-bar-inner {\n    background: #123;\n}\n\nbody.light-theme .cost-block .progressBar .filling {\n    background: #37a939;\n}\n\nbody.light-theme .job-card {\n    border: 1px solid #222;\n}\n\nbody.light-theme .job-card .set-amount button {\n    background: #eee;\n    border: 1px solid #222222;\n}\n\nbody.light-theme .job-card .set-amount button:hover {\n    background: #ccc;\n}\n\nbody.light-theme .job-card .set-amount input {\n    background: #fff;\n    border: 1px solid #222222;\n    border-radius: 4px;\n}\n\nbody.light-theme .settings .set-row .val textarea {\n    background: #eee;\n    border: 1px solid #222222;\n    border-radius: 4px;\n}\n\nbody.light-theme .happiness .factor-wrap .factor.excess {\n    color: #8f6020;\n}\n\nbody.light-theme .laws-list .law-box .law-options .option-box {\n    padding: 4px 12px;\n    border: 1px solid #222222;\n    cursor: pointer;\n    margin: 0 10px;\n}\n\nbody.light-theme .laws-list .law-box .law-options .option-box.selected {\n    background-color: #ccc;\n}\n\nbody.light-theme .submenu .submenu-item.selected {\n    color: #3558aa;\n}\n\n\n@media screen and (max-width: 860px) {\n    body.light-theme .mobile-tooltip {\n        background: #eee;\n        border: 1px solid #222;\n    }\n\n    body.light-theme .mobile-tooltip-wrap {\n        background: #eee;\n    }\n}\n\nbody.light-theme .clickable-highlight {\n    color: #3558aa;\n}\n\nbody.light-theme .chips-wrap.usage-highlight .chip {\n    border-color: #55a8fa;\n}\n\nbody.light-theme .modal-wrap.opened .modal {\n    background: #fefefe;\n    border: 1px solid #222;\n    border-radius: 4px;\n}\n\n\n/* THEME: BLACK THEME */\n\nbody.black-theme * {\n    /*font-family: 'Nunito', sans-serif;*/\n    font-family: 'DM Sans', sans-serif;\n}\n\nbody.black-theme * {\n    color: #fff;\n}\n\nbody.black-theme span.greenish {\n    color: #90fd70;\n}\n\nbody.black-theme span.red {\n    color: #ff6767;\n}\n\nbody.black-theme .page {\n    background-color: #111;\n}\n\nbody.black-theme input {\n    background: #333;\n    border: 1px solid #333;\n    border-radius: 2px;\n}\n\nbody.black-theme button {\n    background: #000;\n    color: #fff;\n    border-radius: 4px;\n    border-color: #333;\n}\n\n\nbody.black-theme button:hover {\n    background: #111;\n}\n\nbody.black-theme button:disabled {\n    background: rgba(31,41,51,0.5);\n    pointer-events: none;\n}\n\nbody.black-theme select {\n    border: 1px solid #333;\n    border-radius: 5px;\n    padding: 8px;\n    min-width: 163px;\n    background: #111;\n    color: #fff;\n}\n\nbody.black-theme .right-panel .expand-collapse-panel {\n    background-color: #111;\n    border-color: #fff;\n}\n\nbody.black-theme .game .right-panel .queue-item .move-controls .move:hover {\n    color: #eee;\n}\n\nbody.black-theme .game .right-panel .queue-item .close:hover {\n    cursor: pointer;\n    color: #eee;\n}\n\nbody.black-theme .header .menu ul li .menu-inner:hover {\n    color: #eee;\n}\n\nbody.black-theme .header .menu ul li.selected .menu-inner {\n    border-bottom: 2px solid #eee;\n    padding-bottom: 4px;\n    pointer-events: none;\n}\n\nbody.black-theme .resources-sidebar {\n    width: 360px;\n    border: 1px solid #777;\n    border-radius: 4px;\n    background: #111;\n}\n\nbody.black-theme .resources-sidebar .hl.resource-item.missing-highlight,\nbody.black-theme .resources-sidebar .resource-item.missing-highlight * {\n    background: #fd3030;\n    color: #fff;\n}\n\nbody.black-theme .resources-sidebar .hl.resource-item.produced-highlight,\nbody.black-theme .resources-sidebar .resource-item.produced-highlight * {\n    background: #30ad30;\n    color: #fff;\n}\n\nbody.black-theme .resources-sidebar .hl.resource-item.consumed-highlight,\nbody.black-theme .resources-sidebar .resource-item.consumed-highlight * {\n    background: #fd7050;\n    color: #fff;\n}\n\nbody.black-theme .resources-sidebar .resource-item.negative p {\n    color: #fd7050;\n}\n\nbody.black-theme .resources-sidebar .resource-item.capped p {\n    color: #ffe0a0;\n}\n\nbody.black-theme .resources-sidebar .resource-item p.boosted {\n    color: #90fd70;\n}\n\nbody.black-theme .resources-sidebar .resource-item p.decreased {\n    color: #ff5757;\n}\n\nbody.black-theme .resources-sidebar .resource-item:nth-child(even) {\n    background: #111;\n}\n\nbody.black-theme .resources-sidebar .resource-item:nth-child(odd) {\n    background: #333;\n}\n\nbody.black-theme .features-block .features-title .collapse-expand {\n    font-size: 12px;\n    color: #fff;\n    cursor: pointer;\n}\n\nbody.black-theme .label-wrap {\n    font-weight: bold;\n}\n\nbody.black-theme .chips-wrap .chip {\n    border: 1px solid #333;\n    background-color: #333;\n}\n\nbody.black-theme .chips-wrap .chip .stick-left {\n    width: 150px;\n}\n\nbody.black-theme .buildings-wrap .chips-wrap .chip .stick-left {\n    width: 200px;\n}\n\nbody.black-theme .chips-wrap .chip * {\n    color: #fff;\n}\n\nbody.black-theme .chips-wrap .chip .bg {\n    background-color: #000;\n}\n\nbody.black-theme .chips-wrap.building-unlock .chip .bg {\n    background-color: #67c3f4;\n}\n\nbody.black-theme .chips-wrap.resource-unlock .chip .bg {\n    background-color: #a7f3a4;\n}\n\nbody.black-theme .chips-wrap.special .chip .bg {\n    background-color: #d7a3d4;\n}\n\nbody.black-theme .chips-wrap .chip-content {\n    display: flex;\n    align-items: center;\n}\n\nbody.black-theme .chips-wrap .chip-content .name-label {\n    font-size: 14px;\n}\n\nbody.black-theme .chips-wrap .chip-content .stick-right {\n    position: relative;\n    flex-shrink: 0;\n    top: -2px;\n}\n\nbody.black-theme .chips-wrap .chip .controls.disabled .control {\n    color: #555;\n}\n\nbody.black-theme .chips-wrap .chip .controls:not(.disabled) .control:hover {\n    background: #222;\n    border: 1px solid #333;\n    color: #fff;\n    border-radius: 50%;\n}\n\nbody.black-theme .description-hint {\n    background: #222;\n    border: 1px solid #555;\n}\n\nbody.black-theme .chips-wrap .chip .level-label {\n    background: none;\n    border: none;\n    font-size: 13px;\n}\n\nbody.black-theme .hint-caps {\n    background: #222;\n    padding: 16px;\n    border: 1px solid #555;\n    border-radius: 4px;\n}\n\nbody.black-theme .notification-container span.new-label::after {\n    margin-top: 0;\n    padding-left: 5px;\n}\n\nbody.black-theme .chips-wrap.disabled .chip span.name-label {\n    color: #eee;\n}\n\nbody.black-theme .chips-wrap.disabled.blocked.soft-lock .chip span.name-label {\n    color: #ff5717;\n}\n\nbody.black-theme .chips-wrap.disabled.soft-lock .chip span.name-label {\n    color: #ffa727;\n    cursor: not-allowed;\n}\n\nbody.black-theme .travel-bar {\n    border: 1px solid #555;\n    background: #555;\n}\n\nbody.black-theme .travel-bar .travel-bar-inner {\n    background: #555;\n}\n\nbody.black-theme .cost-block .progressBar .filling {\n    background: #eee;\n}\n\nbody.black-theme .job-card {\n    border: 1px solid #222;\n}\n\nbody.black-theme .job-card .set-amount button {\n    background: #000;\n    border: 1px solid #222222;\n}\n\nbody.black-theme .job-card .set-amount button:hover {\n    background: #333;\n}\n\nbody.black-theme .job-card .set-amount input {\n    background: #222;\n    border: 1px solid #222222;\n    border-radius: 4px;\n}\n\nbody.black-theme .settings .set-row .val textarea {\n    background: #222;\n    border: 1px solid #222222;\n    border-radius: 4px;\n}\n\nbody.black-theme .happiness .factor-wrap .factor.excess {\n    color: #ffe0a0;\n}\n\nbody.black-theme .laws-list .law-box .law-options .option-box {\n    padding: 4px 12px;\n    border: 1px solid #222222;\n    cursor: pointer;\n    margin: 0 10px;\n}\n\nbody.black-theme .laws-list .law-box .law-options .option-box.selected {\n    background-color: #000;\n}\n\nbody.black-theme .submenu .submenu-item.selected {\n    color: #ee7744;\n}\n\n\n@media screen and (max-width: 860px) {\n    body.black-theme .mobile-tooltip {\n        background: #131518;\n        border: 1px solid #333;\n    }\n\n    body.black-theme .mobile-tooltip-wrap {\n        background: rgba(21,21,21,0.7);\n    }\n}\n\nbody.black-theme .clickable-highlight {\n    color: #ee7744;\n}\n\nbody.black-theme .chips-wrap.usage-highlight .chip {\n    border-color: #ee7744;\n}\n\nbody.black-theme .modal-wrap.opened .modal {\n    background: #131115;\n    border: 1px solid #222222;\n    border-radius: 4px;\n}",
           "",
         ]);
         const y = h;
@@ -475,13 +475,13 @@
         var j = function () {
           this.eventElements = [];
         };
-        function k(e) {
+        function N(e) {
           if ("function" == typeof window.CustomEvent)
             return new CustomEvent(e);
           var n = document.createEvent("CustomEvent");
           return n.initCustomEvent(e, !1, !1, void 0), n;
         }
-        function N(e, n, t, r, i) {
+        function k(e, n, t, r, i) {
           var a;
           if ((void 0 === r && (r = !0), void 0 === i && (i = !1), "top" === n))
             a = [
@@ -517,17 +517,17 @@
               d[s] < 1 && (e.reach[l] = "start"),
               d[s] > e[a] - e[o] - 1 && (e.reach[l] = "end"),
               n &&
-                (d.dispatchEvent(k("ps-scroll-" + l)),
+                (d.dispatchEvent(N("ps-scroll-" + l)),
                 n < 0
-                  ? d.dispatchEvent(k("ps-scroll-" + c))
-                  : n > 0 && d.dispatchEvent(k("ps-scroll-" + u)),
+                  ? d.dispatchEvent(N("ps-scroll-" + c))
+                  : n > 0 && d.dispatchEvent(N("ps-scroll-" + u)),
                 r &&
                   (function (e, n) {
                     b(e, n), x(e, n);
                   })(e, l)),
               e.reach[l] &&
                 (n || i) &&
-                d.dispatchEvent(k("ps-" + l + "-reach-" + e.reach[l]));
+                d.dispatchEvent(N("ps-" + l + "-reach-" + e.reach[l]));
           })(e, t, a, r, i);
         }
         function E(e) {
@@ -1280,16 +1280,16 @@
             i(this.scrollbarXRail, { display: "none" }),
             i(this.scrollbarYRail, { display: "none" }),
             C(this),
-            N(this, "top", 0, !1, !0),
-            N(this, "left", 0, !1, !0),
+            k(this, "top", 0, !1, !0),
+            k(this, "left", 0, !1, !0),
             i(this.scrollbarXRail, { display: "" }),
             i(this.scrollbarYRail, { display: "" }));
         }),
           (_.prototype.onScroll = function (e) {
             this.isAlive &&
               (C(this),
-              N(this, "top", this.element.scrollTop - this.lastScrollTop),
-              N(this, "left", this.element.scrollLeft - this.lastScrollLeft),
+              k(this, "top", this.element.scrollTop - this.lastScrollTop),
+              k(this, "left", this.element.scrollLeft - this.lastScrollLeft),
               (this.lastScrollTop = Math.floor(this.element.scrollTop)),
               (this.lastScrollLeft = this.element.scrollLeft));
           }),
@@ -1576,8 +1576,8 @@
         var y = r.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED,
           w = Symbol.for("react.element"),
           j = Symbol.for("react.portal"),
-          k = Symbol.for("react.fragment"),
-          N = Symbol.for("react.strict_mode"),
+          N = Symbol.for("react.fragment"),
+          k = Symbol.for("react.strict_mode"),
           E = Symbol.for("react.profiler"),
           S = Symbol.for("react.provider"),
           C = Symbol.for("react.context"),
@@ -1712,13 +1712,13 @@
           if ("function" == typeof e) return e.displayName || e.name || null;
           if ("string" == typeof e) return e;
           switch (e) {
-            case k:
+            case N:
               return "Fragment";
             case j:
               return "Portal";
             case E:
               return "Profiler";
-            case N:
+            case k:
               return "StrictMode";
             case T:
               return "Suspense";
@@ -1783,7 +1783,7 @@
             case 16:
               return H(n);
             case 8:
-              return n === N ? "StrictMode" : "Mode";
+              return n === k ? "StrictMode" : "Mode";
             case 22:
               return "Offscreen";
             case 12:
@@ -2207,8 +2207,8 @@
           );
         }
         var je = null,
-          ke = null,
-          Ne = null;
+          Ne = null,
+          ke = null;
         function Ee(e) {
           if ((e = gi(e))) {
             if ("function" != typeof je) throw Error(a(280));
@@ -2217,13 +2217,13 @@
           }
         }
         function Se(e) {
-          ke ? (Ne ? Ne.push(e) : (Ne = [e])) : (ke = e);
+          Ne ? (ke ? ke.push(e) : (ke = [e])) : (Ne = e);
         }
         function Ce() {
-          if (ke) {
-            var e = ke,
-              n = Ne;
-            if (((Ne = ke = null), Ee(e), n))
+          if (Ne) {
+            var e = Ne,
+              n = ke;
+            if (((ke = Ne = null), Ee(e), n))
               for (e = 0; e < n.length; e++) Ee(n[e]);
           }
         }
@@ -2238,7 +2238,7 @@
           try {
             return Ae(e, n, t);
           } finally {
-            (Oe = !1), (null !== ke || null !== Ne) && (Te(), Ce());
+            (Oe = !1), (null !== Ne || null !== ke) && (Te(), Ce());
           }
         }
         function Re(e, n) {
@@ -2570,8 +2570,8 @@
         }
         var wn,
           jn,
-          kn,
           Nn,
+          kn,
           En,
           Sn = !1,
           Cn = [],
@@ -2634,7 +2634,7 @@
                   return (
                     (e.blockedOn = n),
                     void En(e.priority, function () {
-                      kn(t);
+                      Nn(t);
                     })
                   );
               } else if (
@@ -2974,7 +2974,7 @@
             shiftKey: 0,
             altKey: 0,
             metaKey: 0,
-            getModifierState: kt,
+            getModifierState: Nt,
             button: 0,
             buttons: 0,
             relatedTarget: function (e) {
@@ -3078,10 +3078,10 @@
             ? n.getModifierState(e)
             : !!(e = wt[e]) && !!n[e];
         }
-        function kt() {
+        function Nt() {
           return jt;
         }
-        var Nt = D({}, ct, {
+        var kt = D({}, ct, {
             key: function (e) {
               if (e.key) {
                 var n = xt[e.key] || e.key;
@@ -3103,7 +3103,7 @@
             metaKey: 0,
             repeat: 0,
             locale: 0,
-            getModifierState: kt,
+            getModifierState: Nt,
             charCode: function (e) {
               return "keypress" === e.type ? et(e) : 0;
             },
@@ -3118,7 +3118,7 @@
                 : 0;
             },
           }),
-          Et = rt(Nt),
+          Et = rt(kt),
           St = rt(
             D({}, dt, {
               pointerId: 0,
@@ -3142,7 +3142,7 @@
               metaKey: 0,
               ctrlKey: 0,
               shiftKey: 0,
-              getModifierState: kt,
+              getModifierState: Nt,
             })
           ),
           At = rt(
@@ -3470,7 +3470,7 @@
           },
           wr = {},
           jr = {};
-        function kr(e) {
+        function Nr(e) {
           if (wr[e]) return wr[e];
           if (!yr[e]) return e;
           var n,
@@ -3486,10 +3486,10 @@
             delete yr.animationiteration.animation,
             delete yr.animationstart.animation),
           "TransitionEvent" in window || delete yr.transitionend.transition);
-        var Nr = kr("animationend"),
-          Er = kr("animationiteration"),
-          Sr = kr("animationstart"),
-          Cr = kr("transitionend"),
+        var kr = Nr("animationend"),
+          Er = Nr("animationiteration"),
+          Sr = Nr("animationstart"),
+          Cr = Nr("transitionend"),
           Ar = new Map(),
           Tr =
             "abort auxClick cancel canPlay canPlayThrough click close contextMenu copy cut drag dragEnd dragEnter dragExit dragLeave dragOver dragStart drop durationChange emptied encrypted ended error gotPointerCapture input invalid keyDown keyPress keyUp load loadedData loadedMetadata loadStart lostPointerCapture mouseDown mouseMove mouseOut mouseOver mouseUp paste pause play playing pointerCancel pointerDown pointerMove pointerOut pointerOver pointerUp progress rateChange reset resize seeked seeking stalled submit suspend timeUpdate touchCancel touchEnd touchStart volumeChange scroll toggle touchMove waiting wheel".split(
@@ -3502,7 +3502,7 @@
           var Rr = Tr[_r];
           Or(Rr.toLowerCase(), "on" + (Rr[0].toUpperCase() + Rr.slice(1)));
         }
-        Or(Nr, "onAnimationEnd"),
+        Or(kr, "onAnimationEnd"),
           Or(Er, "onAnimationIteration"),
           Or(Sr, "onAnimationStart"),
           Or("dblclick", "onDoubleClick"),
@@ -3731,7 +3731,7 @@
                   case "touchstart":
                     l = Ct;
                     break;
-                  case Nr:
+                  case kr:
                   case Er:
                   case Sr:
                     l = mt;
@@ -4137,16 +4137,16 @@
         function ji(e) {
           0 > yi || ((e.current = xi[yi]), (xi[yi] = null), yi--);
         }
-        function ki(e, n) {
+        function Ni(e, n) {
           yi++, (xi[yi] = e.current), (e.current = n);
         }
-        var Ni = {},
-          Ei = wi(Ni),
+        var ki = {},
+          Ei = wi(ki),
           Si = wi(!1),
-          Ci = Ni;
+          Ci = ki;
         function Ai(e, n) {
           var t = e.type.contextTypes;
-          if (!t) return Ni;
+          if (!t) return ki;
           var r = e.stateNode;
           if (r && r.__reactInternalMemoizedUnmaskedChildContext === n)
             return r.__reactInternalMemoizedMaskedChildContext;
@@ -4168,8 +4168,8 @@
           ji(Si), ji(Ei);
         }
         function _i(e, n, t) {
-          if (Ei.current !== Ni) throw Error(a(168));
-          ki(Ei, n), ki(Si, t);
+          if (Ei.current !== ki) throw Error(a(168));
+          Ni(Ei, n), Ni(Si, t);
         }
         function Ri(e, n, t) {
           var r = e.stateNode;
@@ -4186,10 +4186,10 @@
             (e =
               ((e = e.stateNode) &&
                 e.__reactInternalMemoizedMergedChildContext) ||
-              Ni),
+              ki),
             (Ci = Ei.current),
-            ki(Ei, e),
-            ki(Si, Si.current),
+            Ni(Ei, e),
+            Ni(Si, Si.current),
             !0
           );
         }
@@ -4201,9 +4201,9 @@
               (r.__reactInternalMemoizedMergedChildContext = e),
               ji(Si),
               ji(Ei),
-              ki(Ei, e))
+              Ni(Ei, e))
             : ji(Si),
-            ki(Si, t);
+            Ni(Si, t);
         }
         var Li = null,
           Mi = !1,
@@ -4471,7 +4471,7 @@
                 (o |= i.lane), (i = i.next);
               } while (i !== n);
             } else null === a && (i.shared.lanes = 0);
-            (Nl |= o), (e.lanes = o), (e.memoizedState = d);
+            (kl |= o), (e.lanes = o), (e.memoizedState = d);
           }
         }
         function oa(e, n, t) {
@@ -4540,13 +4540,13 @@
         }
         function da(e, n, t) {
           var r = !1,
-            i = Ni,
+            i = ki,
             a = n.contextType;
           return (
             "object" == typeof a && null !== a
               ? (a = Ki(a))
               : ((i = Ti(n) ? Ci : Ei.current),
-                (a = (r = null != (r = n.contextTypes)) ? Ai(e, i) : Ni)),
+                (a = (r = null != (r = n.contextTypes)) ? Ai(e, i) : ki)),
             (n = new n(t, a)),
             (e.memoizedState =
               null !== n.state && void 0 !== n.state ? n.state : null),
@@ -4601,10 +4601,10 @@
           ya = null,
           wa = 1,
           ja = "";
-        function ka(e, n) {
+        function Na(e, n) {
           (ha[ma++] = va), (ha[ma++] = ga), (ga = e), (va = n);
         }
-        function Na(e, n, t) {
+        function ka(e, n, t) {
           (ba[xa++] = wa), (ba[xa++] = ja), (ba[xa++] = ya), (ya = e);
           var r = wa;
           e = ja;
@@ -4621,7 +4621,7 @@
           } else (wa = (1 << a) | (t << i) | r), (ja = e);
         }
         function Ea(e) {
-          null !== e.return && (ka(e, 1), Na(e, 1, 0));
+          null !== e.return && (Na(e, 1), ka(e, 1, 0));
         }
         function Sa(e) {
           for (; e === ga; )
@@ -4855,7 +4855,7 @@
           }
           function c(e, n, t, r) {
             var a = t.type;
-            return a === k
+            return a === N
               ? d(e, n, t.props.children, r, t.key)
               : null !== n &&
                 (n.elementType === a ||
@@ -4882,7 +4882,7 @@
           }
           function d(e, n, t, r, a) {
             return null === n || 7 !== n.tag
-              ? (((n = kc(t, e.mode, r, a)).return = e), n)
+              ? (((n = Nc(t, e.mode, r, a)).return = e), n)
               : (((n = i(n, t)).return = e), n);
           }
           function p(e, n, t) {
@@ -4906,7 +4906,7 @@
                   return p(e, (0, n._init)(n._payload), t);
               }
               if (ne(n) || L(n))
-                return ((n = kc(n, e.mode, t, null)).return = e), n;
+                return ((n = Nc(n, e.mode, t, null)).return = e), n;
               za(e, n);
             }
             return null;
@@ -4975,14 +4975,14 @@
                 (u = v),
                 (d = g);
             }
-            if (m === s.length) return t(i, d), Ta && ka(i, m), c;
+            if (m === s.length) return t(i, d), Ta && Na(i, m), c;
             if (null === d) {
               for (; m < s.length; m++)
                 null !== (d = p(i, s[m], l)) &&
                   ((a = o(d, a, m)),
                   null === u ? (c = d) : (u.sibling = d),
                   (u = d));
-              return Ta && ka(i, m), c;
+              return Ta && Na(i, m), c;
             }
             for (d = r(i, d); m < s.length; m++)
               null !== (g = h(d, i, m, s[m], l)) &&
@@ -4997,7 +4997,7 @@
                 d.forEach(function (e) {
                   return n(i, e);
                 }),
-              Ta && ka(i, m),
+              Ta && Na(i, m),
               c
             );
           }
@@ -5022,14 +5022,14 @@
                 (d = x),
                 (m = v);
             }
-            if (b.done) return t(i, m), Ta && ka(i, g), u;
+            if (b.done) return t(i, m), Ta && Na(i, g), u;
             if (null === m) {
               for (; !b.done; g++, b = l.next())
                 null !== (b = p(i, b.value, c)) &&
                   ((s = o(b, s, g)),
                   null === d ? (u = b) : (d.sibling = b),
                   (d = b));
-              return Ta && ka(i, g), u;
+              return Ta && Na(i, g), u;
             }
             for (m = r(i, m); !b.done; g++, b = l.next())
               null !== (b = h(m, i, g, b.value, c)) &&
@@ -5044,7 +5044,7 @@
                 m.forEach(function (e) {
                   return n(i, e);
                 }),
-              Ta && ka(i, g),
+              Ta && Na(i, g),
               u
             );
           }
@@ -5052,7 +5052,7 @@
             if (
               ("object" == typeof o &&
                 null !== o &&
-                o.type === k &&
+                o.type === N &&
                 null === o.key &&
                 (o = o.props.children),
               "object" == typeof o && null !== o)
@@ -5062,7 +5062,7 @@
                   e: {
                     for (var c = o.key, u = a; null !== u; ) {
                       if (u.key === c) {
-                        if ((c = o.type) === k) {
+                        if ((c = o.type) === N) {
                           if (7 === u.tag) {
                             t(r, u.sibling),
                               ((a = i(u, o.props.children)).return = r),
@@ -5087,8 +5087,8 @@
                       }
                       n(r, u), (u = u.sibling);
                     }
-                    o.type === k
-                      ? (((a = kc(o.props.children, r.mode, l, o.key)).return =
+                    o.type === N
+                      ? (((a = Nc(o.props.children, r.mode, l, o.key)).return =
                           r),
                         (r = a))
                       : (((l = jc(
@@ -5152,7 +5152,7 @@
           return e;
         }
         function Ka(e, n) {
-          switch ((ki(qa, n), ki(Va, e), ki(Xa, Ya), (e = n.nodeType))) {
+          switch ((Ni(qa, n), Ni(Va, e), Ni(Xa, Ya), (e = n.nodeType))) {
             case 9:
             case 11:
               n = (n = n.documentElement) ? n.namespaceURI : le(null, "");
@@ -5163,7 +5163,7 @@
                 (e = e.tagName)
               );
           }
-          ji(Xa), ki(Xa, n);
+          ji(Xa), Ni(Xa, n);
         }
         function $a() {
           ji(Xa), ji(Va), ji(qa);
@@ -5172,7 +5172,7 @@
           Qa(qa.current);
           var n = Qa(Xa.current),
             t = le(n, e.type);
-          n !== t && (ki(Va, e), ki(Xa, t));
+          n !== t && (Ni(Va, e), Ni(Xa, t));
         }
         function Ja(e) {
           Va.current === e && (ji(Xa), ji(Va));
@@ -5343,7 +5343,7 @@
                 };
                 null === c ? ((l = c = p), (s = r)) : (c = c.next = p),
                   (so.lanes |= d),
-                  (Nl |= d);
+                  (kl |= d);
               }
               u = u.next;
             } while (null !== u && u !== o);
@@ -5357,12 +5357,12 @@
           if (null !== (e = t.interleaved)) {
             i = e;
             do {
-              (o = i.lane), (so.lanes |= o), (Nl |= o), (i = i.next);
+              (o = i.lane), (so.lanes |= o), (kl |= o), (i = i.next);
             } while (i !== e);
           } else null === i && (t.lanes = 0);
           return [n.memoizedState, t.dispatch];
         }
-        function ko(e) {
+        function No(e) {
           var n = yo(),
             t = n.queue;
           if (null === t) throw Error(a(311));
@@ -5383,7 +5383,7 @@
           }
           return [o, r];
         }
-        function No() {}
+        function ko() {}
         function Eo(e, n) {
           var t = so,
             r = yo(),
@@ -5792,7 +5792,7 @@
             useTransition: function () {
               return [jo(wo)[0], yo().memoizedState];
             },
-            useMutableSource: No,
+            useMutableSource: ko,
             useSyncExternalStore: Eo,
             useId: Yo,
             unstable_isNewReconciler: !1,
@@ -5806,14 +5806,14 @@
             useInsertionEffect: Do,
             useLayoutEffect: Uo,
             useMemo: Go,
-            useReducer: ko,
+            useReducer: No,
             useRef: Ro,
             useState: function () {
-              return ko(wo);
+              return No(wo);
             },
             useDebugValue: Bo,
             useDeferredValue: function (e) {
-              var n = ko(wo),
+              var n = No(wo),
                 t = n[0],
                 r = n[1];
               return (
@@ -5833,9 +5833,9 @@
               );
             },
             useTransition: function () {
-              return [ko(wo)[0], yo().memoizedState];
+              return [No(wo)[0], yo().memoizedState];
             },
-            useMutableSource: No,
+            useMutableSource: ko,
             useSyncExternalStore: Eo,
             useId: Yo,
             unstable_isNewReconciler: !1,
@@ -6340,7 +6340,7 @@
                                         firstContext: e.firstContext,
                                       })),
                             (t = t.sibling);
-                        return ki(eo, (1 & eo.current) | 2), n.child;
+                        return Ni(eo, (1 & eo.current) | 2), n.child;
                       }
                       e = e.sibling;
                     }
@@ -6385,7 +6385,7 @@
                   (o.renderingStartTime = $e()),
                   (n.sibling = null),
                   (t = eo.current),
-                  ki(eo, r ? (1 & t) | 2 : 1 & t),
+                  Ni(eo, r ? (1 & t) | 2 : 1 & t),
                   n)
                 : (hs(n), null);
             case 22:
@@ -6555,7 +6555,7 @@
               return (n.lanes = e.lanes), Fs(e, n, i);
             0 != (131072 & e.flags) && (vs = !0);
           }
-          return Ns(e, n, t, r, i);
+          return ks(e, n, t, r, i);
         }
         function js(e, n, t) {
           var r = n.pendingProps,
@@ -6564,7 +6564,7 @@
           if ("hidden" === r.mode)
             if (0 == (1 & n.mode))
               (n.memoizedState = { baseLanes: 0, cachePool: null }),
-                ki(wl, yl),
+                Ni(wl, yl),
                 (yl |= t);
             else {
               if (0 == (1073741824 & t))
@@ -6573,29 +6573,29 @@
                   (n.lanes = n.childLanes = 1073741824),
                   (n.memoizedState = { baseLanes: e, cachePool: null }),
                   (n.updateQueue = null),
-                  ki(wl, yl),
+                  Ni(wl, yl),
                   (yl |= e),
                   null
                 );
               (n.memoizedState = { baseLanes: 0, cachePool: null }),
                 (r = null !== a ? a.baseLanes : t),
-                ki(wl, yl),
+                Ni(wl, yl),
                 (yl |= r);
             }
           else
             null !== a
               ? ((r = a.baseLanes | t), (n.memoizedState = null))
               : (r = t),
-              ki(wl, yl),
+              Ni(wl, yl),
               (yl |= r);
           return bs(e, n, i, t), n.child;
         }
-        function ks(e, n) {
+        function Ns(e, n) {
           var t = n.ref;
           ((null === e && null !== t) || (null !== e && e.ref !== t)) &&
             ((n.flags |= 512), (n.flags |= 2097152));
         }
-        function Ns(e, n, t, r, i) {
+        function ks(e, n, t, r, i) {
           var a = Ti(t) ? Ci : Ei.current;
           return (
             (a = Ai(n, a)),
@@ -6729,7 +6729,7 @@
           return Ss(e, n, t, r, a, i);
         }
         function Ss(e, n, t, r, i, a) {
-          ks(e, n);
+          Ns(e, n);
           var o = 0 != (128 & n.flags);
           if (!r && !o) return i && Pi(n, t, !1), Fs(e, n, a);
           (r = n.stateNode), (gs.current = n);
@@ -6774,7 +6774,7 @@
             r
               ? ((s = !0), (n.flags &= -129))
               : (null !== e && null === e.memoizedState) || (o |= 1),
-            ki(eo, 1 & o),
+            Ni(eo, 1 & o),
             null === e)
           )
             return (
@@ -6794,8 +6794,8 @@
                       (o = { mode: "hidden", children: o }),
                       0 == (1 & i) && null !== s
                         ? ((s.childLanes = 0), (s.pendingProps = o))
-                        : (s = Nc(o, i, 0, null)),
-                      (e = kc(e, i, t, null)),
+                        : (s = kc(o, i, 0, null)),
+                      (e = Nc(e, i, t, null)),
                       (s.return = n),
                       (e.return = n),
                       (s.sibling = e),
@@ -6814,13 +6814,13 @@
                   ? ((n.child = e.child), (n.flags |= 128), null)
                   : ((s = i.fallback),
                     (o = n.mode),
-                    (i = Nc(
+                    (i = kc(
                       { mode: "visible", children: i.children },
                       o,
                       0,
                       null
                     )),
-                    ((s = kc(s, o, t, null)).flags |= 2),
+                    ((s = Nc(s, o, t, null)).flags |= 2),
                     (i.return = n),
                     (s.return = n),
                     (i.sibling = s),
@@ -6924,7 +6924,7 @@
         }
         function Rs(e, n) {
           return (
-            ((n = Nc(
+            ((n = kc(
               { mode: "visible", children: n },
               e.mode,
               0,
@@ -6958,7 +6958,7 @@
                 (t.pendingProps = s),
                 (n.deletions = null))
               : ((t = wc(e, s)).subtreeFlags = 14680064 & e.subtreeFlags),
-            null !== o ? (r = wc(o, r)) : ((r = kc(r, a, i, null)).flags |= 2),
+            null !== o ? (r = wc(o, r)) : ((r = Nc(r, a, i, null)).flags |= 2),
             (r.return = n),
             (t.return = n),
             (t.sibling = r),
@@ -7022,7 +7022,7 @@
               }
             r &= 1;
           }
-          if ((ki(eo, r), 0 == (1 & n.mode))) n.memoizedState = null;
+          if ((Ni(eo, r), 0 == (1 & n.mode))) n.memoizedState = null;
           else
             switch (i) {
               case "forwards":
@@ -7055,7 +7055,7 @@
         function Fs(e, n, t) {
           if (
             (null !== e && (n.dependencies = e.dependencies),
-            (Nl |= n.lanes),
+            (kl |= n.lanes),
             0 == (t & n.childLanes))
           )
             return null;
@@ -7677,8 +7677,8 @@
           yl = 0,
           wl = wi(0),
           jl = 0,
-          kl = null,
-          Nl = 0,
+          Nl = null,
+          kl = 0,
           El = 0,
           Sl = 0,
           Cl = null,
@@ -7822,7 +7822,7 @@
               (2 === n && 0 !== (i = mn(e)) && ((r = i), (n = Vl(e, i))),
               1 === n)
             )
-              throw ((t = kl), ec(e, 0), Ql(e, r), Yl(e, $e()), t);
+              throw ((t = Nl), ec(e, 0), Ql(e, r), Yl(e, $e()), t);
             if (6 === n) Ql(e, r);
             else {
               if (
@@ -7862,7 +7862,7 @@
                     ((r = o), (n = Vl(e, o))),
                   1 === n))
               )
-                throw ((t = kl), ec(e, 0), Ql(e, r), Yl(e, $e()), t);
+                throw ((t = Nl), ec(e, 0), Ql(e, r), Yl(e, $e()), t);
               switch (((e.finishedWork = i), (e.finishedLanes = r), n)) {
                 case 0:
                 case 1:
@@ -7958,7 +7958,7 @@
             var r = mn(e);
             0 !== r && ((n = r), (t = Vl(e, r)));
           }
-          if (1 === t) throw ((t = kl), ec(e, 0), Ql(e, n), Yl(e, $e()), t);
+          if (1 === t) throw ((t = Nl), ec(e, 0), Ql(e, n), Yl(e, $e()), t);
           if (6 === t) throw Error(a(345));
           return (
             (e.finishedWork = e.current.alternate),
@@ -8029,8 +8029,8 @@
             (bl = e = wc(e.current, null)),
             (xl = yl = n),
             (jl = 0),
-            (kl = null),
-            (Sl = El = Nl = 0),
+            (Nl = null),
+            (Sl = El = kl = 0),
             (Al = Cl = null),
             null !== $i)
           ) {
@@ -8068,7 +8068,7 @@
                 (hl.current = null),
                 null === t || null === t.return)
               ) {
-                (jl = 1), (kl = n), (bl = null);
+                (jl = 1), (Nl = n), (bl = null);
                 break;
               }
               e: {
@@ -8170,7 +8170,7 @@
         function rc() {
           (0 !== jl && 3 !== jl && 2 !== jl) || (jl = 4),
             null === vl ||
-              (0 == (268435455 & Nl) && 0 == (268435455 & El)) ||
+              (0 == (268435455 & kl) && 0 == (268435455 & El)) ||
               Ql(vl, xl);
         }
         function ic(e, n) {
@@ -8526,13 +8526,13 @@
                                                 "function" ==
                                                 typeof j.componentWillUnmount
                                               ) {
-                                                var k = r.return;
+                                                var N = r.return;
                                                 try {
                                                   (j.props = r.memoizedProps),
                                                     (j.state = r.memoizedState),
                                                     j.componentWillUnmount();
                                                 } catch (e) {
-                                                  pc(r, k, e);
+                                                  pc(r, N, e);
                                                 }
                                               }
                                               break;
@@ -8891,9 +8891,9 @@
           else if ("string" == typeof e) s = 5;
           else
             e: switch (e) {
-              case k:
-                return kc(t.children, i, o, n);
               case N:
+                return Nc(t.children, i, o, n);
+              case k:
                 (s = 8), (i |= 8);
                 break;
               case E:
@@ -8909,7 +8909,7 @@
                   ((e = xc(19, t, n, i)).elementType = O), (e.lanes = o), e
                 );
               case I:
-                return Nc(t, i, o, n);
+                return kc(t, i, o, n);
               default:
                 if ("object" == typeof e && null !== e)
                   switch (e.$$typeof) {
@@ -8938,10 +8938,10 @@
             n
           );
         }
-        function kc(e, n, t, r) {
+        function Nc(e, n, t, r) {
           return ((e = xc(7, e, r, n)).lanes = t), e;
         }
-        function Nc(e, n, t, r) {
+        function kc(e, n, t, r) {
           return (
             ((e = xc(22, e, r, n)).elementType = I),
             (e.lanes = t),
@@ -9025,7 +9025,7 @@
           };
         }
         function Oc(e) {
-          if (!e) return Ni;
+          if (!e) return ki;
           e: {
             if (He((e = e._reactInternals)) !== e || 1 !== e.tag)
               throw Error(a(170));
@@ -9115,17 +9115,17 @@
                       case 10:
                         var r = n.type._context,
                           i = n.memoizedProps.value;
-                        ki(Hi, r._currentValue), (r._currentValue = i);
+                        Ni(Hi, r._currentValue), (r._currentValue = i);
                         break;
                       case 13:
                         if (null !== (r = n.memoizedState))
                           return null !== r.dehydrated
-                            ? (ki(eo, 1 & eo.current), (n.flags |= 128), null)
+                            ? (Ni(eo, 1 & eo.current), (n.flags |= 128), null)
                             : 0 != (t & n.child.childLanes)
                             ? _s(e, n, t)
-                            : (ki(eo, 1 & eo.current),
+                            : (Ni(eo, 1 & eo.current),
                               null !== (e = Fs(e, n, t)) ? e.sibling : null);
-                        ki(eo, 1 & eo.current);
+                        Ni(eo, 1 & eo.current);
                         break;
                       case 19:
                         if (
@@ -9139,7 +9139,7 @@
                             ((i.rendering = null),
                             (i.tail = null),
                             (i.lastEffect = null)),
-                          ki(eo, eo.current),
+                          Ni(eo, eo.current),
                           r)
                         )
                           break;
@@ -9153,7 +9153,7 @@
                 );
               vs = 0 != (131072 & e.flags);
             }
-          else (vs = !1), Ta && 0 != (1048576 & n.flags) && Na(n, va, n.index);
+          else (vs = !1), Ta && 0 != (1048576 & n.flags) && ka(n, va, n.index);
           switch (((n.lanes = 0), n.tag)) {
             case 2:
               var r = n.type;
@@ -9211,7 +9211,7 @@
                   i)
                 ) {
                   case 0:
-                    n = Ns(null, n, r, e, t);
+                    n = ks(null, n, r, e, t);
                     break e;
                   case 1:
                     n = Es(null, n, r, e, t);
@@ -9230,7 +9230,7 @@
               return (
                 (r = n.type),
                 (i = n.pendingProps),
-                Ns(e, n, r, (i = n.elementType === r ? i : Bi(r, i)), t)
+                ks(e, n, r, (i = n.elementType === r ? i : Bi(r, i)), t)
               );
             case 1:
               return (
@@ -9297,7 +9297,7 @@
                 Jr(r, i)
                   ? (s = null)
                   : null !== o && Jr(r, o) && (n.flags |= 32),
-                ks(e, n),
+                Ns(e, n),
                 bs(e, n, s, t),
                 n.child
               );
@@ -9330,7 +9330,7 @@
                   (i = n.pendingProps),
                   (o = n.memoizedProps),
                   (s = i.value),
-                  ki(Hi, r._currentValue),
+                  Ni(Hi, r._currentValue),
                   (r._currentValue = s),
                   null !== o)
                 )
@@ -9535,7 +9535,7 @@
             }),
           (Uc.prototype.unstable_scheduleHydration = function (e) {
             if (e) {
-              var n = Nn();
+              var n = kn();
               e = { blockedOn: null, target: e, priority: n };
               for (
                 var t = 0;
@@ -9568,14 +9568,14 @@
           (jn = function (e) {
             13 === e.tag && (Gl(e, 134217728, Bl()), Lc(e, 134217728));
           }),
-          (kn = function (e) {
+          (Nn = function (e) {
             if (13 === e.tag) {
               var n = Bl(),
                 t = Hl(e);
               Gl(e, t, n), Lc(e, t);
             }
           }),
-          (Nn = function () {
+          (kn = function () {
             return xn;
           }),
           (En = function (e, n) {
@@ -10247,8 +10247,8 @@
         (y.constructor = x), m(y, v.prototype), (y.isPureReactComponent = !0);
         var w = Array.isArray,
           j = Object.prototype.hasOwnProperty,
-          k = { current: null },
-          N = { key: !0, ref: !0, __self: !0, __source: !0 };
+          N = { current: null },
+          k = { key: !0, ref: !0, __self: !0, __source: !0 };
         function E(e, n, r) {
           var i,
             a = {},
@@ -10258,7 +10258,7 @@
             for (i in (void 0 !== n.ref && (s = n.ref),
             void 0 !== n.key && (o = "" + n.key),
             n))
-              j.call(n, i) && !N.hasOwnProperty(i) && (a[i] = n[i]);
+              j.call(n, i) && !k.hasOwnProperty(i) && (a[i] = n[i]);
           var l = arguments.length - 2;
           if (1 === l) a.children = r;
           else if (1 < l) {
@@ -10273,7 +10273,7 @@
             key: o,
             ref: s,
             props: a,
-            _owner: k.current,
+            _owner: N.current,
           };
         }
         function S(e) {
@@ -10407,7 +10407,7 @@
           P = {
             ReactCurrentDispatcher: R,
             ReactCurrentBatchConfig: I,
-            ReactCurrentOwner: k,
+            ReactCurrentOwner: N,
           };
         (n.Children = {
           map: O,
@@ -10464,14 +10464,14 @@
               s = e._owner;
             if (null != n) {
               if (
-                (void 0 !== n.ref && ((o = n.ref), (s = k.current)),
+                (void 0 !== n.ref && ((o = n.ref), (s = N.current)),
                 void 0 !== n.key && (a = "" + n.key),
                 e.type && e.type.defaultProps)
               )
                 var l = e.type.defaultProps;
               for (c in n)
                 j.call(n, c) &&
-                  !N.hasOwnProperty(c) &&
+                  !k.hasOwnProperty(c) &&
                   (i[c] = void 0 === n[c] && void 0 !== l ? l[c] : n[c]);
             }
             var c = arguments.length - 2;
@@ -10715,8 +10715,8 @@
           void 0 !== navigator.scheduling &&
           void 0 !== navigator.scheduling.isInputPending &&
           navigator.scheduling.isInputPending.bind(navigator.scheduling);
-        var k,
-          N = !1,
+        var N,
+          k = !1,
           E = null,
           S = -1,
           C = 5,
@@ -10732,27 +10732,27 @@
             try {
               t = E(!0, e);
             } finally {
-              t ? k() : ((N = !1), (E = null));
+              t ? N() : ((k = !1), (E = null));
             }
-          } else N = !1;
+          } else k = !1;
         }
         if ("function" == typeof x)
-          k = function () {
+          N = function () {
             x(O);
           };
         else if ("undefined" != typeof MessageChannel) {
           var _ = new MessageChannel(),
             R = _.port2;
           (_.port1.onmessage = O),
-            (k = function () {
+            (N = function () {
               R.postMessage(null);
             });
         } else
-          k = function () {
+          N = function () {
             v(O, 0);
           };
         function I(e) {
-          (E = e), N || ((N = !0), k());
+          (E = e), k || ((k = !0), N());
         }
         function P(e, t) {
           S = v(function () {
@@ -11400,8 +11400,8 @@
         };
       }
       var j,
-        k = w(),
-        N = t(3935);
+        N = w(),
+        k = t(3935);
       function E(e, n, t) {
         return (
           n in e
@@ -11455,7 +11455,7 @@
           " for the full message or use the non-minified dev environment for full errors. "
         );
       }
-      (j = N.unstable_batchedUpdates), (a = j);
+      (j = k.unstable_batchedUpdates), (a = j);
       var T =
           ("function" == typeof Symbol && Symbol.observable) || "@@observable",
         O = function () {
@@ -11687,12 +11687,12 @@
         );
       }
       function je(e) {
-        return { name: e.name || "anonymous", location: ke(e) };
+        return { name: e.name || "anonymous", location: Ne(e) };
       }
-      function ke(e) {
+      function Ne(e) {
         return e[X];
       }
-      var Ne = { isEmpty: oe, put: se, take: se };
+      var ke = { isEmpty: oe, put: se, take: se };
       var Ee = function (e) {
           return (function (e, n) {
             void 0 === e && (e = 10);
@@ -12229,7 +12229,7 @@
             r = fn.slice(1),
             i = t.crashedEffect
               ? ((e = t.crashedEffect),
-                (n = ke(e)) ? n.code + "  " + cn(n.fileName, n.lineNumber) : "")
+                (n = Ne(e)) ? n.code + "  " + cn(n.fileName, n.lineNumber) : "")
               : null;
           return [
             "The above error occurred in task " +
@@ -12560,12 +12560,12 @@
             }, n || e);
           };
         },
-        kn = function (e, n) {
+        Nn = function (e, n) {
           return function (t, r) {
             return r.type === e.type ? n(t, r) : t;
           };
         },
-        Nn = function (e) {
+        kn = function (e) {
           var n =
             arguments.length > 1 && void 0 !== arguments[1]
               ? arguments[1]
@@ -12851,31 +12851,31 @@
           setUI: wn("[game] update ui", function (e) {
             return e;
           }),
-          purchaseMax: Nn("[game] purchase max", function (e) {
+          purchaseMax: kn("[game] purchase max", function (e) {
             return e;
           }),
-          exportToFile: Nn("[game] export file", function (e) {
+          exportToFile: kn("[game] export file", function (e) {
             return e;
           }),
-          exportToText: Nn("[game] export text", function (e) {
+          exportToText: kn("[game] export text", function (e) {
             return e;
           }),
-          loadGame: Nn("[game] load", function (e) {
+          loadGame: kn("[game] load", function (e) {
             return e;
           }),
-          triggerSave: Nn("[game] trigger save", function (e) {
+          triggerSave: kn("[game] trigger save", function (e) {
             return e;
           }),
-          turnAnimations: Nn("[game] toggle animations", function (e) {
+          turnAnimations: kn("[game] toggle animations", function (e) {
             return e;
           }),
-          toggleTheme: Nn("[game] toggle theme", function (e) {
+          toggleTheme: kn("[game] toggle theme", function (e) {
             return e;
           }),
-          toggleSetting: Nn("[game] toggle setting", function (e) {
+          toggleSetting: kn("[game] toggle setting", function (e) {
             return e;
           }),
-          abandonPlanet: Nn("[colonize-planet] do abandon", function (e) {
+          abandonPlanet: kn("[colonize-planet] do abandon", function (e) {
             return e;
           }),
         },
@@ -12920,7 +12920,7 @@
               (this.timeInGame = "00:00:00"),
               (this.timeInPrestige = "00:00:00");
           })(),
-          kn(ct.setUI, function (e, n) {
+          Nn(ct.setUI, function (e, n) {
             var t = n.payload;
             return ut(ut({}, e), t);
           })
@@ -13020,7 +13020,7 @@
         new (function () {
           this.page = ht.PLANET;
         })(),
-        kn(gt.changePage, function (e, n) {
+        Nn(gt.changePage, function (e, n) {
           var t = n.payload;
           return vt(vt({}, e), { page: t, subPage: null });
         })
@@ -13070,7 +13070,7 @@
             (this.keys = {}),
             (this.isLoading = !0);
         })(),
-        kn(xt.setCollapsed, function (e, n) {
+        Nn(xt.setCollapsed, function (e, n) {
           var t,
             r = n.payload;
           return yt(yt({}, e), {
@@ -13080,26 +13080,26 @@
             ),
           });
         }),
-        kn(xt.setMissingHighlight, function (e, n) {
+        Nn(xt.setMissingHighlight, function (e, n) {
           var t = n.payload;
           return yt(yt({}, e), { missingResourcesHighlight: t });
         }),
-        kn(xt.setUsageHighlight, function (e, n) {
+        Nn(xt.setUsageHighlight, function (e, n) {
           var t = n.payload;
           return yt(yt({}, e), { usageHighlight: t });
         }),
-        kn(xt.setProduceHighlight, function (e, n) {
+        Nn(xt.setProduceHighlight, function (e, n) {
           var t = n.payload;
           return yt(yt({}, e), { producingResourcesHighlight: t });
         }),
-        kn(xt.setConsumeHighlight, function (e, n) {
+        Nn(xt.setConsumeHighlight, function (e, n) {
           var t = n.payload;
           return yt(yt({}, e), { consumingResourcesHighlight: t });
         }),
-        kn(xt.stopLoading, function (e, n) {
+        Nn(xt.stopLoading, function (e, n) {
           return n.payload, yt(yt({}, e), { isLoading: !1 });
         }),
-        kn(xt.setKeyIsHold, function (e, n) {
+        Nn(xt.setKeyIsHold, function (e, n) {
           var t,
             r = n.payload;
           return (
@@ -13124,9 +13124,9 @@
             return e;
           }),
         },
-        kt = function () {
+        Nt = function () {
           return (
-            (kt =
+            (Nt =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -13134,10 +13134,10 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            kt.apply(this, arguments)
+            Nt.apply(this, arguments)
           );
         },
-        Nt = function (e, n, t) {
+        kt = function (e, n, t) {
           if (t || 2 === arguments.length)
             for (var r, i = 0, a = n.length; i < a; i++)
               (!r && i in n) ||
@@ -13150,11 +13150,11 @@
             new (function () {
               this.messages = [];
             })(),
-            kn(jt.postNotificationMessage, function (e, n) {
+            Nn(jt.postNotificationMessage, function (e, n) {
               var t = n.payload;
-              return kt(kt({}, e), {
-                messages: Nt(
-                  Nt([], e.messages, !0),
+              return Nt(Nt({}, e), {
+                messages: kt(
+                  kt([], e.messages, !0),
                   [
                     {
                       id: "msg_".concat(Math.round(1e4 * Math.random())),
@@ -13167,9 +13167,9 @@
                 ),
               });
             }),
-            kn(jt.delNotification, function (e, n) {
+            Nn(jt.delNotification, function (e, n) {
               var t = n.payload;
-              return kt(kt({}, e), {
+              return Nt(Nt({}, e), {
                 messages: e.messages.filter(function (e) {
                   return e.id !== t;
                 }),
@@ -13540,7 +13540,7 @@
                       4,
                       It(
                         (function (n, t) {
-                          void 0 === t && (t = Ne);
+                          void 0 === t && (t = ke);
                           var r,
                             i,
                             a = !1,
@@ -13902,12 +13902,12 @@
       function jr(e) {
         return e ? (e.nodeName || "").toLowerCase() : null;
       }
-      function kr(e) {
+      function Nr(e) {
         return ((pr(e) ? e.ownerDocument : e.document) || window.document)
           .documentElement;
       }
-      function Nr(e) {
-        return yr(kr(e)).left + wr(e).scrollLeft;
+      function kr(e) {
+        return yr(Nr(e)).left + wr(e).scrollLeft;
       }
       function Er(e) {
         return dr(e).getComputedStyle(e);
@@ -13932,7 +13932,7 @@
                 r = vr(n.height) / e.offsetHeight || 1;
               return 1 !== t || 1 !== r;
             })(n),
-          s = kr(n),
+          s = Nr(n),
           l = yr(e, o, t),
           c = { scrollLeft: 0, scrollTop: 0 },
           u = { x: 0, y: 0 };
@@ -13945,7 +13945,7 @@
                   : wr(r)),
             fr(n)
               ? (((u = yr(n, !0)).x += n.clientLeft), (u.y += n.clientTop))
-              : s && (u.x = Nr(s))),
+              : s && (u.x = kr(s))),
           {
             x: l.left + c.scrollLeft - u.x,
             y: l.top + c.scrollTop - u.y,
@@ -13967,7 +13967,7 @@
       function Tr(e) {
         return "html" === jr(e)
           ? e
-          : e.assignedSlot || e.parentNode || (hr(e) ? e.host : null) || kr(e);
+          : e.assignedSlot || e.parentNode || (hr(e) ? e.host : null) || Nr(e);
       }
       function Or(e) {
         return ["html", "body", "#document"].indexOf(jr(e)) >= 0
@@ -14352,26 +14352,26 @@
           w = window;
         if (c) {
           var j = Pr(t),
-            k = "clientHeight",
-            N = "clientWidth";
+            N = "clientHeight",
+            k = "clientWidth";
           j === dr(t) &&
-            "static" !== Er((j = kr(t))).position &&
+            "static" !== Er((j = Nr(t))).position &&
             "absolute" === s &&
-            ((k = "scrollHeight"), (N = "scrollWidth")),
+            ((N = "scrollHeight"), (k = "scrollWidth")),
             (j = j),
             (i === Lr || ((i === Ur || i === Dr) && a === Hr)) &&
               ((y = Mr),
               (m -=
                 (d && j === w && w.visualViewport
                   ? w.visualViewport.height
-                  : j[k]) - r.height),
+                  : j[N]) - r.height),
               (m *= l ? 1 : -1)),
             (i !== Ur && ((i !== Lr && i !== Mr) || a !== Hr)) ||
               ((x = Dr),
               (f -=
                 (d && j === w && w.visualViewport
                   ? w.visualViewport.width
-                  : j[N]) - r.width),
+                  : j[k]) - r.width),
               (f *= l ? 1 : -1));
         }
         var E,
@@ -14599,7 +14599,7 @@
           ? hi(
               (function (e, n) {
                 var t = dr(e),
-                  r = kr(e),
+                  r = Nr(e),
                   i = t.visualViewport,
                   a = r.clientWidth,
                   o = r.clientHeight,
@@ -14611,7 +14611,7 @@
                   (c || (!c && "fixed" === n)) &&
                     ((s = i.offsetLeft), (l = i.offsetTop));
                 }
-                return { width: a, height: o, x: s + Nr(e), y: l };
+                return { width: a, height: o, x: s + kr(e), y: l };
               })(e, t)
             )
           : pr(n)
@@ -14632,7 +14632,7 @@
           : hi(
               (function (e) {
                 var n,
-                  t = kr(e),
+                  t = Nr(e),
                   r = wr(e),
                   i = null == (n = e.ownerDocument) ? void 0 : n.body,
                   a = mr(
@@ -14647,14 +14647,14 @@
                     i ? i.scrollHeight : 0,
                     i ? i.clientHeight : 0
                   ),
-                  s = -r.scrollLeft + Nr(e),
+                  s = -r.scrollLeft + kr(e),
                   l = -r.scrollTop;
                 return (
                   "rtl" === Er(i || t).direction &&
                     (s += mr(t.clientWidth, i ? i.clientWidth : 0) - a),
                   { width: a, height: o, x: s, y: l }
                 );
-              })(kr(e))
+              })(Nr(e))
             );
       }
       function gi(e) {
@@ -14722,16 +14722,16 @@
               (s.y = s.top),
               s
             );
-          })(pr(y) ? y : y.contextElement || kr(e.elements.popper), l, u, o),
+          })(pr(y) ? y : y.contextElement || Nr(e.elements.popper), l, u, o),
           j = yr(e.elements.reference),
-          k = ri({
+          N = ri({
             reference: j,
             element: x,
             strategy: "absolute",
             placement: i,
           }),
-          N = hi(Object.assign({}, x, k)),
-          E = p === Wr ? N : j,
+          k = hi(Object.assign({}, x, N)),
+          E = p === Wr ? k : j,
           S = {
             top: w.top - E.top + v.top,
             bottom: E.bottom - w.bottom + v.bottom,
@@ -14835,8 +14835,8 @@
                 y = n.rects.reference,
                 w = n.rects.popper,
                 j = new Map(),
-                k = !0,
-                N = x[0],
+                N = !0,
+                k = x[0],
                 E = 0;
               E < x.length;
               E++
@@ -14864,12 +14864,12 @@
                   return e;
                 }))
               ) {
-                (N = S), (k = !1);
+                (k = S), (N = !1);
                 break;
               }
               j.set(S, P);
             }
-            if (k)
+            if (N)
               for (
                 var L = function (e) {
                     var n = x.find(function (n) {
@@ -14879,15 +14879,15 @@
                           return e;
                         });
                     });
-                    if (n) return (N = n), "break";
+                    if (n) return (k = n), "break";
                   },
                   M = h ? 3 : 1;
                 M > 0 && "break" !== L(M);
                 M--
               );
-            n.placement !== N &&
+            n.placement !== k &&
               ((n.modifiersData[r]._skip = !0),
-              (n.placement = N),
+              (n.placement = k),
               (n.reset = !0));
           }
         },
@@ -14929,8 +14929,8 @@
               y = ti(v),
               w = "x" === y ? "y" : "x",
               j = n.modifiersData.popperOffsets,
-              k = n.rects.reference,
-              N = n.rects.popper,
+              N = n.rects.reference,
+              k = n.rects.popper,
               E =
                 "function" == typeof m
                   ? m(Object.assign({}, n.rects, { placement: n.placement }))
@@ -14952,9 +14952,9 @@
                   I = j[y],
                   P = I + g[O],
                   L = I - g[_],
-                  M = f ? -N[R] / 2 : 0,
-                  D = b === Br ? k[R] : N[R],
-                  U = b === Br ? -N[R] : -k[R],
+                  M = f ? -k[R] / 2 : 0,
+                  D = b === Br ? N[R] : k[R],
+                  U = b === Br ? -k[R] : -N[R],
                   F = n.elements.arrow,
                   z = f && F ? Ar(F) : { width: 0, height: 0 },
                   B = n.modifiersData["arrow#persistent"]
@@ -14962,12 +14962,12 @@
                     : { top: 0, right: 0, bottom: 0, left: 0 },
                   H = B[O],
                   G = B[_],
-                  W = yi(0, k[R], z[R]),
+                  W = yi(0, N[R], z[R]),
                   Y = x
-                    ? k[R] / 2 - M - W - H - S.mainAxis
+                    ? N[R] / 2 - M - W - H - S.mainAxis
                     : D - W - H - S.mainAxis,
                   X = x
-                    ? -k[R] / 2 + M + W + G + S.mainAxis
+                    ? -N[R] / 2 + M + W + G + S.mainAxis
                     : U + W + G + S.mainAxis,
                   V = n.elements.arrow && Pr(n.elements.arrow),
                   q = V
@@ -14990,8 +14990,8 @@
                   ie = ne - g[ee],
                   ae = -1 !== [Lr, Ur].indexOf(v),
                   oe = null != (Z = null == C ? void 0 : C[w]) ? Z : 0,
-                  se = ae ? re : ne - k[te] - N[te] - oe + S.altAxis,
-                  le = ae ? ne + k[te] + N[te] - oe - S.altAxis : ie,
+                  se = ae ? re : ne - N[te] - k[te] - oe + S.altAxis,
+                  le = ae ? ne + N[te] + k[te] - oe - S.altAxis : ie,
                   ce =
                     f && ae
                       ? (function (e, n, t) {
@@ -15056,9 +15056,9 @@
                 y = v - d[c] - u[f],
                 w = v / 2 - d[c] / 2 + b,
                 j = yi(x, w, y),
-                k = l;
+                N = l;
               t.modifiersData[r] =
-                (((n = {})[k] = j), (n.centerOffset = j - w), n);
+                (((n = {})[N] = j), (n.centerOffset = j - w), n);
             }
           },
           effect: function (e) {
@@ -15074,7 +15074,7 @@
           requires: ["popperOffsets"],
           requiresIfExists: ["preventOverflow"],
         };
-      function ki(e, n, t) {
+      function Ni(e, n, t) {
         return (
           void 0 === t && (t = { x: 0, y: 0 }),
           {
@@ -15085,7 +15085,7 @@
           }
         );
       }
-      function Ni(e) {
+      function ki(e) {
         return [Lr, Dr, Mr, Ur].some(function (n) {
           return e[n] >= 0;
         });
@@ -15128,10 +15128,10 @@
                   a = n.modifiersData.preventOverflow,
                   o = bi(n, { elementContext: "reference" }),
                   s = bi(n, { altBoundary: !0 }),
-                  l = ki(o, r),
-                  c = ki(s, i, a),
-                  u = Ni(l),
-                  d = Ni(c);
+                  l = Ni(o, r),
+                  c = Ni(s, i, a),
+                  u = ki(l),
+                  d = ki(c);
                 (n.modifiersData[t] = {
                   referenceClippingOffsets: l,
                   popperEscapeOffsets: c,
@@ -15663,10 +15663,10 @@
           (x.popper = w),
           (e._tippy = x),
           (w._tippy = x);
-        var k = b.map(function (e) {
+        var N = b.map(function (e) {
             return e.fn(x);
           }),
-          N = e.hasAttribute("aria-expanded");
+          k = e.hasAttribute("aria-expanded");
         return (
           W(),
           L(),
@@ -15725,7 +15725,7 @@
         function I(e, n, t) {
           var r;
           void 0 === t && (t = !0),
-            k.forEach(function (t) {
+            N.forEach(function (t) {
               t[e] && t[e].apply(t, n);
             }),
             t && (r = x.props)[e].apply(r, n);
@@ -15746,7 +15746,7 @@
           }
         }
         function L() {
-          !N &&
+          !k &&
             x.props.aria.expanded &&
             Li(x.props.triggerTarget || e).forEach(function (e) {
               x.props.interactive
@@ -16314,12 +16314,12 @@
           n.current || (n.current = "function" == typeof e ? e() : e), n.current
         );
       }
-      function ka(e, n, t) {
+      function Na(e, n, t) {
         t.split(/\s+/).forEach(function (t) {
           t && e.classList[n](t);
         });
       }
-      var Na = {
+      var ka = {
         name: "className",
         defaultValue: "",
         fn: function (e) {
@@ -16329,12 +16329,12 @@
               return !!(null == (n = e.props.render) ? void 0 : n.$$tippy);
             };
           function r() {
-            (e.props.className && !t()) || ka(n, "add", e.props.className);
+            (e.props.className && !t()) || Na(n, "add", e.props.className);
           }
           return {
             onCreate: r,
             onBeforeUpdate: function () {
-              t() && ka(n, "remove", e.props.className);
+              t() && Na(n, "remove", e.props.className);
             },
             onAfterUpdate: r,
           };
@@ -16376,7 +16376,7 @@
             y = x[0],
             w = x[1],
             j = (0, r.useState)(),
-            k = j[0],
+            N = j[0],
             E = j[1],
             S = ja(function () {
               return { container: va(), renders: 1 };
@@ -16418,7 +16418,7 @@
               l && l.hasOwnProperty("current") && (n = l.current);
               var t = e(
                 n || S.ref || va(),
-                Object.assign({}, A, { plugins: [Na].concat(C.plugins || []) })
+                Object.assign({}, A, { plugins: [ka].concat(C.plugins || []) })
               );
               return (
                 (S.instance = t),
@@ -16511,7 +16511,7 @@
                   })
                 : null,
               v &&
-                (0, N.createPortal)(
+                (0, k.createPortal)(
                   s
                     ? s(
                         (function (e) {
@@ -16523,7 +16523,7 @@
                             n
                           );
                         })(y),
-                        k,
+                        N,
                         S.instance
                       )
                     : i,
@@ -16558,7 +16558,7 @@
                       Object.assign({}, t.props, {
                         popperOptions: t.instance.props.popperOptions,
                         overrides: s,
-                        plugins: [Na].concat(t.props.plugins || []),
+                        plugins: [ka].concat(t.props.plugins || []),
                       })
                     );
                     return (
@@ -16799,7 +16799,7 @@
             s = n.contentClassName,
             l = n.hint,
             c = n.isCollapsable,
-            u = k(
+            u = N(
               (function (e) {
                 return function (n) {
                   var t;
@@ -16895,7 +16895,7 @@
           );
         },
         Ha = function () {
-          var n = k(ur);
+          var n = N(ur);
           return (0, e.jsx)(Ba, { goal: n.current });
         },
         Ga = function (e) {
@@ -16938,7 +16938,7 @@
           return e.game.newNotifications;
         },
         to = {
-          setViewed: Nn("[new-notification] set viewed", function (e) {
+          setViewed: kn("[new-notification] set viewed", function (e) {
             return e;
           }),
         },
@@ -16959,7 +16959,7 @@
           var r = n.id,
             i = n.children,
             a = n.className,
-            o = k(
+            o = N(
               (function (e) {
                 return function (n) {
                   return n.game.newNotifications.new[e];
@@ -17048,7 +17048,7 @@
         mo,
         go,
         vo = {
-          setMultiplier: Nn("[banked-time] set multiplier", function (e) {
+          setMultiplier: kn("[banked-time] set multiplier", function (e) {
             return e;
           }),
         },
@@ -17066,7 +17066,7 @@
           );
         },
         xo = function () {
-          var n = k(ao),
+          var n = N(ao),
             t = function (e) {
               vo.setMultiplier.send(e);
             };
@@ -17224,9 +17224,9 @@
         jo = function (e) {
           return e.game.presets.jobs;
         },
-        ko = function () {
+        No = function () {
           return (
-            (ko =
+            (No =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -17234,27 +17234,27 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            ko.apply(this, arguments)
+            No.apply(this, arguments)
           );
         },
-        No = function () {
-          var n = k(ar),
-            t = k(cr),
-            r = k(Wa),
-            i = k(Xa),
-            a = k($a),
-            o = k(wo),
+        ko = function () {
+          var n = N(ar),
+            t = N(cr),
+            r = N(Wa),
+            i = N(Xa),
+            a = N($a),
+            o = N(wo),
             s = x();
           return (0, e.jsx)(
             "div",
-            ko(
+            No(
               { className: "menu" },
               {
                 children: (0, e.jsxs)("ul", {
                   children: [
                     (0, e.jsx)(
                       "li",
-                      ko(
+                      No(
                         {
                           className: sr()({
                             "menu-item": !0,
@@ -17267,7 +17267,7 @@
                         {
                           children: (0, e.jsx)(
                             io,
-                            ko(
+                            No(
                               { id: "planet", className: "menu-inner" },
                               { children: "Planet" }
                             )
@@ -17278,7 +17278,7 @@
                     t
                       ? (0, e.jsx)(
                           "li",
-                          ko(
+                          No(
                             {
                               className: sr()({
                                 "menu-item": !0,
@@ -17291,7 +17291,7 @@
                             {
                               children: (0, e.jsx)(
                                 io,
-                                ko(
+                                No(
                                   { id: "science", className: "menu-inner" },
                                   { children: "Science" }
                                 )
@@ -17303,7 +17303,7 @@
                     i
                       ? (0, e.jsx)(
                           "li",
-                          ko(
+                          No(
                             {
                               className: sr()({
                                 "menu-item": !0,
@@ -17316,7 +17316,7 @@
                             {
                               children: (0, e.jsx)(
                                 io,
-                                ko(
+                                No(
                                   { id: "space", className: "menu-inner" },
                                   { children: "Space" }
                                 )
@@ -17328,7 +17328,7 @@
                     r
                       ? (0, e.jsx)(
                           "li",
-                          ko(
+                          No(
                             {
                               className: sr()({
                                 "menu-item": !0,
@@ -17341,7 +17341,7 @@
                             {
                               children: (0, e.jsx)(
                                 io,
-                                ko(
+                                No(
                                   { id: "laws", className: "menu-inner" },
                                   { children: "Laws & Order" }
                                 )
@@ -17353,7 +17353,7 @@
                     a
                       ? (0, e.jsx)(
                           "li",
-                          ko(
+                          No(
                             {
                               className: sr()({
                                 "menu-item": !0,
@@ -17366,7 +17366,7 @@
                             {
                               children: (0, e.jsx)(
                                 io,
-                                ko(
+                                No(
                                   { id: "prestige", className: "menu-inner" },
                                   { children: "Prestige" }
                                 )
@@ -17377,7 +17377,7 @@
                       : null,
                     (0, e.jsx)(
                       "li",
-                      ko(
+                      No(
                         {
                           className: sr()({
                             "menu-item": !0,
@@ -17390,7 +17390,7 @@
                         {
                           children: (0, e.jsx)(
                             io,
-                            ko(
+                            No(
                               { id: "settings", className: "menu-inner" },
                               { children: "Settings" }
                             )
@@ -17401,7 +17401,7 @@
                     o
                       ? (0, e.jsx)(
                           "li",
-                          ko(
+                          No(
                             {
                               className: sr()({
                                 "menu-item": !0,
@@ -17414,7 +17414,7 @@
                             {
                               children: (0, e.jsx)(
                                 io,
-                                ko(
+                                No(
                                   { id: "presets", className: "menu-inner" },
                                   { children: "Presets" }
                                 )
@@ -17425,7 +17425,7 @@
                       : null,
                     (0, e.jsx)(
                       "li",
-                      ko(
+                      No(
                         {
                           className: sr()({
                             "menu-item": !0,
@@ -17438,7 +17438,7 @@
                         {
                           children: (0, e.jsx)(
                             io,
-                            ko(
+                            No(
                               { id: "about", className: "menu-inner" },
                               { children: "About & Change Log" }
                             )
@@ -17448,7 +17448,7 @@
                     ),
                     (0, e.jsx)(
                       "li",
-                      ko(
+                      No(
                         {
                           className: sr()({
                             "menu-item": !0,
@@ -17461,7 +17461,7 @@
                         {
                           children: (0, e.jsx)(
                             io,
-                            ko(
+                            No(
                               { id: "statistics", className: "menu-inner" },
                               { children: "Statistics" }
                             )
@@ -17472,12 +17472,12 @@
                     (0, e.jsx)("li", {
                       children: (0, e.jsx)(
                         io,
-                        ko(
+                        No(
                           { id: "support", className: "menu-inner" },
                           {
                             children: (0, e.jsx)(
                               "a",
-                              ko(
+                              No(
                                 {
                                   href: "https://patreon.com/user?u=83421544",
                                   target: "_blank",
@@ -17498,24 +17498,24 @@
         Eo = function () {
           return (0, e.jsx)(
             "div",
-            ko(
+            No(
               { className: "header" },
               {
                 children: (0, e.jsxs)(
                   "div",
-                  ko(
+                  No(
                     { className: "top" },
                     {
                       children: [
                         (0, e.jsxs)(
                           "div",
-                          ko(
+                          No(
                             { className: "left" },
                             {
                               children: [
                                 (0, e.jsxs)(
                                   "div",
-                                  ko(
+                                  No(
                                     { className: "heading-pre-menu" },
                                     {
                                       children: [
@@ -17527,7 +17527,7 @@
                                     }
                                   )
                                 ),
-                                (0, e.jsx)(No, {}),
+                                (0, e.jsx)(ko, {}),
                               ],
                             }
                           )
@@ -17545,19 +17545,19 @@
           return e.game.landingZone;
         },
         Co = {
-          doAction: Nn("[landing-zone] do action", function (e) {
+          doAction: kn("[landing-zone] do action", function (e) {
             return e;
           }),
-          doBuild: Nn("[landing-zone] do build", function (e) {
+          doBuild: kn("[landing-zone] do build", function (e) {
             return e;
           }),
-          setBuildingAmount: Nn(
+          setBuildingAmount: kn(
             "[landing-zone] set building amount",
             function (e) {
               return e;
             }
           ),
-          doUpgrade: Nn("[landing-zone] do upgrade", function (e) {
+          doUpgrade: kn("[landing-zone] do upgrade", function (e) {
             return e;
           }),
         };
@@ -17959,8 +17959,8 @@
             y = b[1],
             w = window.innerWidth <= 860,
             j = Aa(),
-            k = j[0],
-            N = j[1],
+            N = j[0],
+            k = j[1],
             E = ["chips-wrap"];
           i && E.push(i),
             s && E.push("blocked"),
@@ -18019,7 +18019,7 @@
                                               Oo(
                                                 {
                                                   placement: "right",
-                                                  singleton: N,
+                                                  singleton: k,
                                                   content: (0, e.jsxs)(
                                                     "div",
                                                     Oo(
@@ -18111,7 +18111,7 @@
                                               Oo(
                                                 {
                                                   placement: "right",
-                                                  singleton: N,
+                                                  singleton: k,
                                                   content: (0, e.jsxs)(
                                                     "div",
                                                     Oo(
@@ -18249,14 +18249,14 @@
               })
             : (0, e.jsxs)(e.Fragment, {
                 children: [
-                  (0, e.jsx)(Ta, { singleton: k, duration: 20 }),
+                  (0, e.jsx)(Ta, { singleton: N, duration: 20 }),
                   c
                     ? (0, e.jsx)(
                         Ta,
                         Oo(
                           {
                             duration: 20,
-                            singleton: N,
+                            singleton: k,
                             content: (0, e.jsx)(
                               "div",
                               Oo(
@@ -18422,16 +18422,16 @@
             Ut.dispatch(xt.setProduceHighlight.make(n));
         },
         Fo = {
-          addToQueue: Nn("[queue] add", function (e) {
+          addToQueue: kn("[queue] add", function (e) {
             return e;
           }),
-          deleteFromQueue: Nn("[queue] delete", function (e) {
+          deleteFromQueue: kn("[queue] delete", function (e) {
             return e;
           }),
-          moveQueue: Nn("[queue] move", function (e) {
+          moveQueue: kn("[queue] move", function (e) {
             return e;
           }),
-          sortByEta: Nn("[queue] sort by eta", function (e) {
+          sortByEta: kn("[queue] sort by eta", function (e) {
             return e;
           }),
         },
@@ -18469,7 +18469,7 @@
         },
         Xo = function (n) {
           var t = n.actions,
-            r = k(_a);
+            r = N(_a);
           return (0, e.jsx)(
             Fa,
             Wo(
@@ -18604,8 +18604,8 @@
         Vo = function (n) {
           var t = n.upgrades,
             r = n.isQHold,
-            i = k(_a),
-            a = k(Bo).addToQueueUnavailable;
+            i = N(_a),
+            a = N(Bo).addToQueueUnavailable;
           return (0, e.jsx)(
             Fa,
             Wo(
@@ -18844,8 +18844,8 @@
         qo = function (n) {
           var t = n.buildings,
             r = n.isQHold,
-            i = k(_a),
-            a = k(Bo).addToQueueUnavailable,
+            i = N(_a),
+            a = N(Bo).addToQueueUnavailable,
             o = t.list
               .filter(function (e) {
                 return e.isUnlocked && Object.values(ho).includes(e.category);
@@ -19146,6 +19146,46 @@
                                           )
                                         )
                                       : (0, e.jsx)(e.Fragment, {}),
+                                    n.maxColonists
+                                      ? (0, e.jsxs)(
+                                          "div",
+                                          Wo(
+                                            { className: "gain wrap" },
+                                            {
+                                              children: [
+                                                (0, e.jsx)("span", {
+                                                  children: "Max Population",
+                                                }),
+                                                (0, e.jsx)(
+                                                  "div",
+                                                  Wo(
+                                                    { className: "gain-block" },
+                                                    {
+                                                      children: (0, e.jsxs)(
+                                                        "p",
+                                                        Wo(
+                                                          {
+                                                            className:
+                                                              "requirement",
+                                                          },
+                                                          {
+                                                            children: [
+                                                              "Colonists: ",
+                                                              co(
+                                                                n.maxColonists
+                                                              ),
+                                                            ],
+                                                          }
+                                                        )
+                                                      ),
+                                                    }
+                                                  )
+                                                ),
+                                              ],
+                                            }
+                                          )
+                                        )
+                                      : (0, e.jsx)(e.Fragment, {}),
                                     n.max.length
                                       ? (0, e.jsxs)(
                                           "div",
@@ -19157,6 +19197,26 @@
                                                   children: "Storage",
                                                 }),
                                                 n.max.map(function (n) {
+                                                  return (0,
+                                                  e.jsx)(Lo, { gain: n });
+                                                }),
+                                              ],
+                                            }
+                                          )
+                                        )
+                                      : (0, e.jsx)(e.Fragment, {}),
+                                    n.storeMult.length
+                                      ? (0, e.jsxs)(
+                                          "div",
+                                          Wo(
+                                            { className: "gain wrap" },
+                                            {
+                                              children: [
+                                                (0, e.jsx)("span", {
+                                                  children:
+                                                    "Storage Multiplier",
+                                                }),
+                                                n.storeMult.map(function (n) {
                                                   return (0,
                                                   e.jsx)(Lo, { gain: n });
                                                 }),
@@ -19225,8 +19285,8 @@
           });
         },
         Qo = function () {
-          var n = k(So),
-            t = (k(no), k(La("q")));
+          var n = N(So),
+            t = (N(no), N(La("q")));
           return (0, e.jsxs)(e.Fragment, {
             children: [
               (0, e.jsx)(Xo, { actions: n.actions }),
@@ -19248,7 +19308,7 @@
           return e.game.colony.effects.buff;
         },
         es = {
-          assignColonist: Nn("[colony] assign colonists", function (e) {
+          assignColonist: kn("[colony] assign colonists", function (e) {
             return e;
           }),
         },
@@ -19334,18 +19394,18 @@
           return e.game.expeditions.isUnlocked;
         },
         ls = {
-          sendExpedition: Nn("[expedition-v2] send", function (e) {
+          sendExpedition: kn("[expedition-v2] send", function (e) {
             return e;
           }),
-          setExpeditionMode: Nn("[expedition-v2] set mode", function (e) {
+          setExpeditionMode: kn("[expedition-v2] set mode", function (e) {
             return e;
           }),
         },
         cs = {
-          doSearchResource: Nn("[search] resource", function (e) {
+          doSearchResource: kn("[search] resource", function (e) {
             return e;
           }),
-          closeSearch: Nn("[search] close", function (e) {
+          closeSearch: kn("[search] close", function (e) {
             return e;
           }),
         },
@@ -19382,10 +19442,10 @@
             y = (0, r.useState)(!1),
             w = y[0],
             j = y[1],
-            k = window.innerWidth <= 860,
-            N = x(),
+            N = window.innerWidth <= 860,
+            k = x(),
             E = function (e) {
-              N(xt.setUsageHighlight.make(e));
+              k(xt.setUsageHighlight.make(e));
             },
             S = function (e) {
               return e > 0 ? " boosted" : e < 0 ? " decreased" : "";
@@ -19446,10 +19506,10 @@
                         duration: 20,
                         placement: "right",
                         content: (0, e.jsx)(ms, {
-                          isDetailMode: m || k,
+                          isDetailMode: m || N,
                           name: d.name,
                           breakdown:
-                            m || k
+                            m || N
                               ? null === (t = d.breakdown) || void 0 === t
                                 ? void 0
                                 : t.max
@@ -19508,7 +19568,7 @@
                       }
                     )
                   ),
-                  k
+                  N
                     ? (0, e.jsx)(
                         To,
                         us(
@@ -19540,10 +19600,10 @@
                         placement: "right",
                         duration: 20,
                         content: (0, e.jsx)(gs, {
-                          isDetailMode: m || k,
+                          isDetailMode: m || N,
                           name: d.name,
                           breakdown:
-                            m || k
+                            m || N
                               ? null === (s = d.breakdown) || void 0 === s
                                 ? void 0
                                 : s.income
@@ -19599,7 +19659,7 @@
                       }
                     )
                   ),
-                  k
+                  N
                     ? (0, e.jsx)(
                         To,
                         us(
@@ -19718,15 +19778,15 @@
         },
         vs = function (n) {
           var t = n.isHidden,
-            i = k(ns),
-            a = k(Ko),
-            o = k(ps),
-            s = (k(zo), k(Zo)),
-            l = k(Jo),
-            c = k(Oa),
-            u = k(Ra),
-            d = k(Ia),
-            p = k(os),
+            i = N(ns),
+            a = N(Ko),
+            o = N(ps),
+            s = (N(zo), N(Zo)),
+            l = N(Jo),
+            c = N(Oa),
+            u = N(Ra),
+            d = N(Ia),
+            p = N(os),
             f = (0, r.useState)(!1),
             h = f[0],
             m = f[1],
@@ -20034,13 +20094,13 @@
           );
         },
         bs = {
-          saveJobsPreset: Nn("[jobs-preset] save", function (e) {
+          saveJobsPreset: kn("[jobs-preset] save", function (e) {
             return e;
           }),
-          deletePreset: Nn("[jobs-preset] delete", function (e) {
+          deletePreset: kn("[jobs-preset] delete", function (e) {
             return e;
           }),
-          applyPreset: Nn("[jobs-preset] apply", function (e) {
+          applyPreset: kn("[jobs-preset] apply", function (e) {
             return e;
           }),
         },
@@ -20129,6 +20189,40 @@
                           children: [
                             (0, e.jsx)("span", { children: "Storage Bonuses" }),
                             t.multiplier.map(function (n) {
+                              return (0, e.jsx)(Lo, { gain: n });
+                            }),
+                          ],
+                        }
+                      )
+                    )
+                  : (0, e.jsx)(e.Fragment, {}),
+                t.gainEffect.length
+                  ? (0, e.jsxs)(
+                      "div",
+                      xs(
+                        { className: "mult wrap" },
+                        {
+                          children: [
+                            (0, e.jsx)("span", { children: "Effect Gain" }),
+                            t.gainEffect.map(function (n) {
+                              return (0, e.jsx)(Lo, { gain: n });
+                            }),
+                          ],
+                        }
+                      )
+                    )
+                  : (0, e.jsx)(e.Fragment, {}),
+                t.consumeEffect.length
+                  ? (0, e.jsxs)(
+                      "div",
+                      xs(
+                        { className: "mult wrap" },
+                        {
+                          children: [
+                            (0, e.jsx)("span", {
+                              children: "Effect Consumption",
+                            }),
+                            t.consumeEffect.map(function (n) {
                               return (0, e.jsx)(Lo, { gain: n });
                             }),
                           ],
@@ -20491,11 +20585,11 @@
           );
         },
         js = function () {
-          var n = k(Ko),
+          var n = N(Ko),
             t = (0, r.useState)(""),
             i = t[0],
             a = t[1],
-            o = k(jo);
+            o = N(jo);
           return (0, e.jsxs)(
             "div",
             xs(
@@ -20691,14 +20785,14 @@
             )
           );
         },
-        ks = {
-          assignCrafter: Nn("[crafting] assign crafter", function (e) {
+        Ns = {
+          assignCrafter: kn("[crafting] assign crafter", function (e) {
             return e;
           }),
         },
-        Ns = function () {
+        ks = function () {
           return (
-            (Ns =
+            (ks =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -20706,7 +20800,7 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            Ns.apply(this, arguments)
+            ks.apply(this, arguments)
           );
         },
         Es = function (e, n, t) {
@@ -20728,18 +20822,18 @@
             d = c[1],
             p = window.innerWidth <= 860,
             f = function (e, n) {
-              ks.assignCrafter.send({ id: e, amount: n });
+              Ns.assignCrafter.send({ id: e, amount: n });
             },
             h = (0, e.jsxs)(e.Fragment, {
               children: [
                 (0, e.jsx)(
                   "p",
-                  Ns({ className: "title" }, { children: t.name })
+                  ks({ className: "title" }, { children: t.name })
                 ),
                 t.consume.length
                   ? (0, e.jsxs)(
                       "div",
-                      Ns(
+                      ks(
                         { className: "costs wrap" },
                         {
                           children: [
@@ -20755,7 +20849,7 @@
                 t.gain.length
                   ? (0, e.jsxs)(
                       "div",
-                      Ns(
+                      ks(
                         { className: "gain wrap" },
                         {
                           children: [
@@ -20774,18 +20868,18 @@
               ? null
               : (0, e.jsx)(
                   "div",
-                  Ns({ className: "description-hint" }, { children: h })
+                  ks({ className: "description-hint" }, { children: h })
                 );
           return (0, e.jsxs)(
             "div",
-            Ns(
+            ks(
               { onMouseEnter: i, onMouseLeave: a },
               {
                 children: [
                   (0, e.jsx)(Ta, { singleton: u, duration: 20 }),
                   (0, e.jsx)(
                     Ta,
-                    Ns(
+                    ks(
                       {
                         singleton: d,
                         duration: 20,
@@ -20795,7 +20889,7 @@
                       {
                         children: (0, e.jsx)(
                           io,
-                          Ns(
+                          ks(
                             {
                               id: "planet:crafting:jobs:".concat(t.id),
                               className: "job-card-wrap",
@@ -20803,13 +20897,13 @@
                             {
                               children: (0, e.jsxs)(
                                 "div",
-                                Ns(
+                                ks(
                                   { className: "job-card" },
                                   {
                                     children: [
                                       (0, e.jsx)(
                                         "div",
-                                        Ns(
+                                        ks(
                                           { className: "title" },
                                           {
                                             children: (0, e.jsx)("p", {
@@ -20820,24 +20914,24 @@
                                       ),
                                       (0, e.jsx)(
                                         "div",
-                                        Ns(
+                                        ks(
                                           { className: "controls" },
                                           {
                                             children: (0, e.jsxs)(
                                               "div",
-                                              Ns(
+                                              ks(
                                                 { className: "set-amount" },
                                                 {
                                                   children: [
                                                     (0, e.jsx)(
                                                       Ta,
-                                                      Ns(
+                                                      ks(
                                                         {
                                                           placement: "right",
                                                           singleton: d,
                                                           content: (0, e.jsx)(
                                                             "div",
-                                                            Ns(
+                                                            ks(
                                                               {
                                                                 className:
                                                                   "description-hint",
@@ -20855,7 +20949,7 @@
                                                         {
                                                           children: (0, e.jsx)(
                                                             "button",
-                                                            Ns(
+                                                            ks(
                                                               {
                                                                 className:
                                                                   "control minus",
@@ -20881,13 +20975,13 @@
                                                     ),
                                                     (0, e.jsx)(
                                                       Ta,
-                                                      Ns(
+                                                      ks(
                                                         {
                                                           placement: "right",
                                                           singleton: d,
                                                           content: (0, e.jsx)(
                                                             "div",
-                                                            Ns(
+                                                            ks(
                                                               {
                                                                 className:
                                                                   "description-hint",
@@ -20905,7 +20999,7 @@
                                                         {
                                                           children: (0, e.jsx)(
                                                             "button",
-                                                            Ns(
+                                                            ks(
                                                               {
                                                                 className:
                                                                   "control minus",
@@ -20941,13 +21035,13 @@
                                                     }),
                                                     (0, e.jsx)(
                                                       Ta,
-                                                      Ns(
+                                                      ks(
                                                         {
                                                           placement: "right",
                                                           singleton: d,
                                                           content: (0, e.jsx)(
                                                             "div",
-                                                            Ns(
+                                                            ks(
                                                               {
                                                                 className:
                                                                   "description-hint",
@@ -20965,7 +21059,7 @@
                                                         {
                                                           children: (0, e.jsx)(
                                                             "button",
-                                                            Ns(
+                                                            ks(
                                                               {
                                                                 className:
                                                                   "control plus",
@@ -20991,13 +21085,13 @@
                                                     ),
                                                     (0, e.jsx)(
                                                       Ta,
-                                                      Ns(
+                                                      ks(
                                                         {
                                                           placement: "right",
                                                           singleton: d,
                                                           content: (0, e.jsx)(
                                                             "div",
-                                                            Ns(
+                                                            ks(
                                                               {
                                                                 className:
                                                                   "description-hint",
@@ -21015,7 +21109,7 @@
                                                         {
                                                           children: (0, e.jsx)(
                                                             "button",
-                                                            Ns(
+                                                            ks(
                                                               {
                                                                 className:
                                                                   "control plus",
@@ -21048,7 +21142,7 @@
                                       ),
                                       (0, e.jsx)(
                                         "span",
-                                        Ns(
+                                        ks(
                                           {
                                             className: "info-tooltip",
                                             onClick: function (e) {
@@ -21060,7 +21154,7 @@
                                           {
                                             children: (0, e.jsx)(
                                               "span",
-                                              Ns(
+                                              ks(
                                                 {
                                                   className:
                                                     "info-tooltip-inner",
@@ -21084,7 +21178,7 @@
                   s && p
                     ? (0, e.jsx)(
                         To,
-                        Ns(
+                        ks(
                           {
                             isVisible: s,
                             onClose: function () {
@@ -21101,16 +21195,16 @@
           );
         },
         Cs = function () {
-          var n = k(ps);
+          var n = N(ps);
           return (0, e.jsxs)(
             "div",
-            Ns(
+            ks(
               { className: "crafting-wrap" },
               {
                 children: [
                   (0, e.jsx)(
                     Fa,
-                    Ns(
+                    ks(
                       {
                         id: "crafting-overview",
                         label: "Overview",
@@ -21119,7 +21213,7 @@
                       {
                         children: (0, e.jsxs)(
                           "div",
-                          Ns(
+                          ks(
                             { className: "line" },
                             {
                               children: [
@@ -21141,12 +21235,12 @@
                   ),
                   (0, e.jsx)(
                     Fa,
-                    Ns(
+                    ks(
                       {
                         id: "crafting-jobs",
                         label: (0, e.jsx)(
                           io,
-                          Ns(
+                          ks(
                             {
                               id: "planet:crafting:jobs",
                               className: "label-wrap",
@@ -21615,8 +21709,8 @@
           }
         ),
         Ps = function () {
-          var n = k(os),
-            t = k(ns);
+          var n = N(os),
+            t = N(ns);
           return (0, e.jsx)(Is, { expeditions: n, resources: t });
         },
         Ls = function () {
@@ -21648,9 +21742,9 @@
           var n = As("landing-zone-page", "landingZone"),
             t = n[0],
             r = n[1],
-            i = k($o),
-            a = k(fs),
-            o = k(ss);
+            i = N($o),
+            a = N(fs),
+            o = N(ss);
           return (0, e.jsxs)(
             "div",
             Ls(
@@ -21798,7 +21892,7 @@
           );
         },
         Us = {
-          doResearch: Nn("[science] do research", function (e) {
+          doResearch: kn("[science] do research", function (e) {
             return e;
           }),
         },
@@ -21816,12 +21910,12 @@
           );
         },
         zs = function () {
-          var n = k(lr),
+          var n = N(lr),
             t = (0, r.useState)(!1),
             i = t[0],
             a = t[1],
-            o = k(La("q")),
-            s = k(Bo).addToQueueUnavailable;
+            o = N(La("q")),
+            s = N(Bo).addToQueueUnavailable;
           return (0, e.jsx)(
             "div",
             Fs(
@@ -22641,7 +22735,7 @@
           );
         },
         qs = function () {
-          var n = k(Bo);
+          var n = N(Bo);
           return (0, e.jsx)(as(), {
             children: (0, e.jsxs)(e.Fragment, {
               children: [
@@ -22678,13 +22772,17 @@
             (e.TEMPLE_RIGHTS = "temple-rights"),
             (e.FURNACE_SMELTING = "furnace-smelting"),
             (e.ANNIHILATION_POWER = "annihilation-power"),
-            (e.ORGANIC_TRANSMUTATION = "organic-transmutation");
+            (e.ORGANIC_TRANSMUTATION = "organic-transmutation"),
+            (e.WASTE_DISPOSAL = "waste-disposal"),
+            (e.CARGO_LIFTS = "cargo-lifts"),
+            (e.INTENSIVE_MAGNETIC_GENERATORS = "intensive-magnetic-generation"),
+            (e.FUEL_PURIFICATION_MODE = "fuel-purification-mode");
         })(_s || (_s = {}));
       var Qs,
         Ks,
         $s,
         Zs = {
-          selectLawOption: Nn("[laws] set option", function (e) {
+          selectLawOption: kn("[laws] set option", function (e) {
             return e;
           }),
         },
@@ -23109,7 +23207,7 @@
           var n = As("laws-category", Os.SOCIAL),
             t = n[0],
             r = n[1],
-            i = k(Ga).laws.filter(function (e) {
+            i = N(Ga).laws.filter(function (e) {
               return e.isUnlocked && e.category === t;
             });
           return (0, e.jsxs)(
@@ -23267,6 +23365,71 @@
                             {
                               children: (0, e.jsxs)(as(), {
                                 children: [
+                                  (0, e.jsxs)(
+                                    "div",
+                                    tl(
+                                      { className: "version-block" },
+                                      {
+                                        children: [
+                                          (0, e.jsxs)(
+                                            "div",
+                                            tl(
+                                              { className: "version-title" },
+                                              {
+                                                children: [
+                                                  (0, e.jsx)("h3", {
+                                                    children:
+                                                      "v0.2.8a Tiny Update",
+                                                  }),
+                                                  (0, e.jsx)(
+                                                    "span",
+                                                    tl(
+                                                      { className: "date" },
+                                                      { children: "05/09/2023" }
+                                                    )
+                                                  ),
+                                                ],
+                                              }
+                                            )
+                                          ),
+                                          (0, e.jsxs)(
+                                            "ul",
+                                            tl(
+                                              { className: "features" },
+                                              {
+                                                children: [
+                                                  (0, e.jsx)("li", {
+                                                    children:
+                                                      'Added new "Lost Technologies"',
+                                                  }),
+                                                  (0, e.jsx)("li", {
+                                                    children:
+                                                      "Added several new laws",
+                                                  }),
+                                                  (0, e.jsx)("li", {
+                                                    children:
+                                                      "Changed Furnace Metal Processing law a bit",
+                                                  }),
+                                                  (0, e.jsx)("li", {
+                                                    children:
+                                                      "Crafting bonus and other multipliers are now not displayed on buildings if they are equal to 1",
+                                                  }),
+                                                  (0, e.jsx)("li", {
+                                                    children:
+                                                      "Fixed colonists capacities in residential buildings descriptions - now they shown always correctly",
+                                                  }),
+                                                  (0, e.jsx)("li", {
+                                                    children:
+                                                      "Fixed some UI bugs",
+                                                  }),
+                                                ],
+                                              }
+                                            )
+                                          ),
+                                        ],
+                                      }
+                                    )
+                                  ),
                                   (0, e.jsxs)(
                                     "div",
                                     tl(
@@ -25522,8 +25685,8 @@
         ol = function (n) {
           var t = n.buildings,
             r = n.isQHold,
-            i = k(_a),
-            a = k(Bo).addToQueueUnavailable,
+            i = N(_a),
+            a = N(Bo).addToQueueUnavailable,
             o = t.list
               .filter(function (e) {
                 return e.isUnlocked && Object.values(mo).includes(e.category);
@@ -25815,6 +25978,46 @@
                                           )
                                         )
                                       : (0, e.jsx)(e.Fragment, {}),
+                                    n.maxColonists
+                                      ? (0, e.jsxs)(
+                                          "div",
+                                          il(
+                                            { className: "gain wrap" },
+                                            {
+                                              children: [
+                                                (0, e.jsx)("span", {
+                                                  children: "Max Population",
+                                                }),
+                                                (0, e.jsx)(
+                                                  "div",
+                                                  il(
+                                                    { className: "gain-block" },
+                                                    {
+                                                      children: (0, e.jsxs)(
+                                                        "p",
+                                                        il(
+                                                          {
+                                                            className:
+                                                              "requirement",
+                                                          },
+                                                          {
+                                                            children: [
+                                                              "Colonists: ",
+                                                              co(
+                                                                n.maxColonists
+                                                              ),
+                                                            ],
+                                                          }
+                                                        )
+                                                      ),
+                                                    }
+                                                  )
+                                                ),
+                                              ],
+                                            }
+                                          )
+                                        )
+                                      : (0, e.jsx)(e.Fragment, {}),
                                     n.max.length
                                       ? (0, e.jsxs)(
                                           "div",
@@ -25894,77 +26097,77 @@
           });
         },
         sl = function () {
-          var n = k(So),
-            t = k(La("q"));
+          var n = N(So),
+            t = N(La("q"));
           return (0, e.jsx)(e.Fragment, {
             children: (0, e.jsx)(ol, { buildings: n.buildings, isQHold: t }),
           });
         },
         ll = {
-          doCreate: Nn("[spaceship-constructor] create-new", function (e) {
+          doCreate: kn("[spaceship-constructor] create-new", function (e) {
             return e;
           }),
-          doEdit: Nn("[spaceship-constructor] load-to-editor", function (e) {
+          doEdit: kn("[spaceship-constructor] load-to-editor", function (e) {
             return e;
           }),
-          doSave: Nn("[spaceship-constructor] save", function (e) {
+          doSave: kn("[spaceship-constructor] save", function (e) {
             return e;
           }),
-          doSetId: Nn("[spaceship-constructor] set part id", function (e) {
+          doSetId: kn("[spaceship-constructor] set part id", function (e) {
             return e;
           }),
-          doSetLevel: Nn(
+          doSetLevel: kn(
             "[spaceship-constructor] set part level",
             function (e) {
               return e;
             }
           ),
-          doSetName: Nn("[spaceship-constructor] set name", function (e) {
+          doSetName: kn("[spaceship-constructor] set name", function (e) {
             return e;
           }),
-          doDeleteModel: Nn("[spaceship-constructor] delete", function (e) {
+          doDeleteModel: kn("[spaceship-constructor] delete", function (e) {
             return e;
           }),
-          doBuildShip: Nn("[spaceship-hangar] build", function (e) {
+          doBuildShip: kn("[spaceship-hangar] build", function (e) {
             return e;
           }),
-          doDestroyShip: Nn("[spaceship-hangar] destroy", function (e) {
+          doDestroyShip: kn("[spaceship-hangar] destroy", function (e) {
             return e;
           }),
-          doCreateFleet: Nn("[spaceship-fleet] create-new", function (e) {
+          doCreateFleet: kn("[spaceship-fleet] create-new", function (e) {
             return e;
           }),
-          doEditFleet: Nn("[spaceship-fleet] load-to-editor", function (e) {
+          doEditFleet: kn("[spaceship-fleet] load-to-editor", function (e) {
             return e;
           }),
-          doSaveFleet: Nn("[spaceship-fleet] save", function (e) {
+          doSaveFleet: kn("[spaceship-fleet] save", function (e) {
             return e;
           }),
-          doSetFleetId: Nn("[spaceship-fleet] set id", function (e) {
+          doSetFleetId: kn("[spaceship-fleet] set id", function (e) {
             return e;
           }),
-          doSetFleetName: Nn("[spaceship-fleet] set name", function (e) {
+          doSetFleetName: kn("[spaceship-fleet] set name", function (e) {
             return e;
           }),
-          doDeleteFleet: Nn("[spaceship-fleet] delete", function (e) {
+          doDeleteFleet: kn("[spaceship-fleet] delete", function (e) {
             return e;
           }),
-          doSetBattleFleet: Nn("[space-battlefield] set fleet", function (e) {
+          doSetBattleFleet: kn("[space-battlefield] set fleet", function (e) {
             return e;
           }),
-          doSetBattleLevel: Nn("[space-battlefield] set level", function (e) {
+          doSetBattleLevel: kn("[space-battlefield] set level", function (e) {
             return e;
           }),
-          doToggleFight: Nn("[space-battlefield] toggle fight", function (e) {
+          doToggleFight: kn("[space-battlefield] toggle fight", function (e) {
             return e;
           }),
-          doToggleAutoFight: Nn(
+          doToggleAutoFight: kn(
             "[space-battlefield] toggle autofight",
             function (e) {
               return e;
             }
           ),
-          doToggleAutoAdvance: Nn(
+          doToggleAutoAdvance: kn(
             "[space-battlefield] toggle autoprogress",
             function (e) {
               return e;
@@ -26470,7 +26673,7 @@
           );
         },
         dl = function () {
-          var n = k(Ya);
+          var n = N(Ya);
           return (0, e.jsx)(e.Fragment, {
             children: (0, e.jsx)(ul, { spaceship: n.spaceship }),
           });
@@ -26698,7 +26901,7 @@
           );
         },
         ml = function () {
-          var n = k(Ya);
+          var n = N(Ya);
           return (0, e.jsx)(hl, { hangar: n.hangar });
         },
         gl = function () {
@@ -27200,7 +27403,7 @@
           );
         },
         bl = function () {
-          var n = k(Ya);
+          var n = N(Ya);
           return (0, e.jsx)(e.Fragment, {
             children: (0, e.jsx)(vl, { fleet: n.fleet }),
           });
@@ -27443,7 +27646,7 @@
             jl.apply(this, arguments)
           );
         },
-        kl = function (n) {
+        Nl = function (n) {
           var t = n.battle,
             i = window.innerWidth <= 860,
             a = (0, r.useState)(!1),
@@ -27742,7 +27945,7 @@
             )
           );
         },
-        Nl = function (n) {
+        kl = function (n) {
           var t = n.battle;
           return t.battlefield.selectedFleetId
             ? t.battlefield.isFighting
@@ -27842,12 +28045,12 @@
               { className: "battle-wrap" },
               {
                 children: [
-                  (0, e.jsx)(kl, { battle: t }),
+                  (0, e.jsx)(Nl, { battle: t }),
                   (0, e.jsx)(
                     "div",
                     jl(
                       { className: "battle-content" },
-                      { children: (0, e.jsx)(Nl, { battle: t }) }
+                      { children: (0, e.jsx)(kl, { battle: t }) }
                     )
                   ),
                 ],
@@ -27856,7 +28059,7 @@
           );
         },
         Sl = function () {
-          var n = k(Ya);
+          var n = N(Ya);
           return (0, e.jsx)(El, { battle: n.battle });
         },
         Cl = function () {
@@ -27890,10 +28093,10 @@
           var n = As("space-page", "spaceBuildings"),
             t = n[0],
             r = n[1],
-            i = k(Va),
-            a = k(qa),
-            o = k(Qa),
-            s = k(Ka);
+            i = N(Va),
+            a = N(qa),
+            o = N(Qa),
+            s = N(Ka);
           return (0, e.jsxs)(
             "div",
             Cl(
@@ -28013,37 +28216,37 @@
           );
         },
         Ol = {
-          doTKUpgrade: Nn("[transmit-knowledge] do upgrade", function (e) {
+          doTKUpgrade: kn("[transmit-knowledge] do upgrade", function (e) {
             return e;
           }),
-          doTKPrestige: Nn("[transmit-knowledge] do prestige", function (e) {
+          doTKPrestige: kn("[transmit-knowledge] do prestige", function (e) {
             return e;
           }),
-          doColonizeSearch: Nn("[colonize-planet] do search", function (e) {
+          doColonizeSearch: kn("[colonize-planet] do search", function (e) {
             return e;
           }),
-          doColonizeSetSearchFilter: Nn(
+          doColonizeSetSearchFilter: kn(
             "[colonize-planet] set search filter",
             function (e) {
               return e;
             }
           ),
-          doColonizeSetStarFilter: Nn(
+          doColonizeSetStarFilter: kn(
             "[colonize-planet] set star filter",
             function (e) {
               return e;
             }
           ),
-          doColonizeSetDisasters: Nn(
+          doColonizeSetDisasters: kn(
             "[colonize-planet] set disasters",
             function (e) {
               return e;
             }
           ),
-          doColonizePrestige: Nn("[colonize-planet] do prestige", function (e) {
+          doColonizePrestige: kn("[colonize-planet] do prestige", function (e) {
             return e;
           }),
-          doXPUpgrade: Nn("[colonize-planet] do upgrade", function (e) {
+          doXPUpgrade: kn("[colonize-planet] do upgrade", function (e) {
             return e;
           }),
         },
@@ -28264,7 +28467,7 @@
           );
         },
         Pl = function () {
-          var n = k(Ja);
+          var n = N(Ja);
           return (0, e.jsxs)(e.Fragment, {
             children: [
               (0, e.jsx)(Il, { transmit: n }),
@@ -29503,7 +29706,7 @@
               );
         },
         zl = function () {
-          var n = k(eo);
+          var n = N(eo);
           return (0, e.jsxs)(e.Fragment, {
             children: [
               (0, e.jsx)(Ml, { state: n }),
@@ -29538,7 +29741,7 @@
           var n = As("prestige-page", "transmitKnowledge"),
             t = n[0],
             r = n[1],
-            i = k(Za);
+            i = N(Za);
           return (0, e.jsxs)(
             "div",
             Bl(
@@ -29983,7 +30186,7 @@
           var n = As("statistics-page", "General"),
             t = n[0],
             r = n[1],
-            i = k(Wl);
+            i = N(Wl);
           return (0, e.jsxs)(
             "div",
             Yl(
@@ -30072,8 +30275,8 @@
             i = (0, r.useState)(void 0),
             a = i[0],
             o = i[1],
-            s = k(Ko),
-            l = k(ps),
+            s = N(Ko),
+            l = N(ps),
             c = function (e, n, t) {
               var r, i;
               if (a) {
@@ -31030,7 +31233,7 @@
           );
         },
         $l = function () {
-          var n = k(jo);
+          var n = N(jo);
           return (0, e.jsx)(
             "div",
             ql(
@@ -31058,7 +31261,7 @@
             : (0, e.jsx)("p", { children: "None" });
         },
         ec = function () {
-          var n = k(yo),
+          var n = N(yo),
             t = As("presets-page", "jobs"),
             r = t[0],
             i = t[1];
@@ -31113,7 +31316,7 @@
           );
         },
         nc = function () {
-          var n = k(ar);
+          var n = N(ar);
           return n === ht.PLANET
             ? (0, e.jsx)(Ds, {})
             : n === ht.SCIENCE
@@ -31327,8 +31530,8 @@
                 g,
                 y,
                 j = 0,
-                k = 0,
                 N = 0,
+                k = 0,
                 E = 0,
                 S = 0,
                 R = 0,
@@ -31349,12 +31552,12 @@
               if (
                 ((h = l.charCodeAt(M)),
                 M === B &&
-                  0 !== k + E + N + j &&
-                  (0 !== k && (h = 47 === k ? 10 : 47),
-                  (E = N = j = 0),
+                  0 !== N + E + k + j &&
+                  (0 !== N && (h = 47 === N ? 10 : 47),
+                  (E = k = j = 0),
                   z++,
                   B++),
-                0 === k + E + N + j)
+                0 === N + E + k + j)
               ) {
                 if (
                   M === B &&
@@ -31514,8 +31717,8 @@
               switch (h) {
                 case 13:
                 case 10:
-                  47 === k
-                    ? (k = 0)
+                  47 === N
+                    ? (N = 0)
                     : 0 === 1 + f &&
                       107 !== c &&
                       0 < H.length &&
@@ -31526,7 +31729,7 @@
                   break;
                 case 59:
                 case 125:
-                  if (0 === k + E + N + j) {
+                  if (0 === N + E + k + j) {
                     C++;
                     break;
                   }
@@ -31534,7 +31737,7 @@
                   switch ((C++, (g = l.charAt(M)), h)) {
                     case 9:
                     case 32:
-                      if (0 === E + j + k)
+                      if (0 === E + j + N)
                         switch (S) {
                           case 44:
                           case 58:
@@ -31556,10 +31759,10 @@
                       g = "\\v";
                       break;
                     case 38:
-                      0 === E + k + j && ((D = U = 1), (g = "\f" + g));
+                      0 === E + N + j && ((D = U = 1), (g = "\f" + g));
                       break;
                     case 108:
-                      if (0 === E + k + j + T && 0 < P)
+                      if (0 === E + N + j + T && 0 < P)
                         switch (M - P) {
                           case 2:
                             112 === S && 58 === l.charCodeAt(M - 3) && (T = S);
@@ -31568,42 +31771,42 @@
                         }
                       break;
                     case 58:
-                      0 === E + k + j && (P = M);
+                      0 === E + N + j && (P = M);
                       break;
                     case 44:
-                      0 === k + N + E + j && ((D = 1), (g += "\r"));
+                      0 === N + k + E + j && ((D = 1), (g += "\r"));
                       break;
                     case 34:
                     case 39:
-                      0 === k && (E = E === h ? 0 : 0 === E ? h : E);
+                      0 === N && (E = E === h ? 0 : 0 === E ? h : E);
                       break;
                     case 91:
-                      0 === E + k + N && j++;
+                      0 === E + N + k && j++;
                       break;
                     case 93:
-                      0 === E + k + N && j--;
+                      0 === E + N + k && j--;
                       break;
                     case 41:
-                      0 === E + k + j && N--;
+                      0 === E + N + j && k--;
                       break;
                     case 40:
-                      0 === E + k + j &&
-                        (0 === f && (2 * S + 3 * R == 533 || (f = 1)), N++);
+                      0 === E + N + j &&
+                        (0 === f && (2 * S + 3 * R == 533 || (f = 1)), k++);
                       break;
                     case 64:
-                      0 === k + N + E + j + P + m && (m = 1);
+                      0 === N + k + E + j + P + m && (m = 1);
                       break;
                     case 42:
                     case 47:
-                      if (!(0 < E + j + N))
-                        switch (k) {
+                      if (!(0 < E + j + k))
+                        switch (N) {
                           case 0:
                             switch (2 * h + 3 * l.charCodeAt(M + 1)) {
                               case 235:
-                                k = 47;
+                                N = 47;
                                 break;
                               case 220:
-                                (F = M), (k = 42);
+                                (F = M), (N = 42);
                             }
                             break;
                           case 42:
@@ -31613,10 +31816,10 @@
                               (33 === l.charCodeAt(F + 2) &&
                                 (G += l.substring(F, M + 1)),
                               (g = ""),
-                              (k = 0));
+                              (N = 0));
                         }
                   }
-                  0 === k && (H += g);
+                  0 === N && (H += g);
               }
               (R = S), (S = h), M++;
             }
@@ -31831,14 +32034,14 @@
                       );
                     case 115:
                       return (
-                        "-webkit-" + o + "-ms-flex-item-" + o.replace(k, "") + o
+                        "-webkit-" + o + "-ms-flex-item-" + o.replace(N, "") + o
                       );
                     default:
                       return (
                         "-webkit-" +
                         o +
                         "-ms-flex-line-pack" +
-                        o.replace("align-content", "").replace(k, "") +
+                        o.replace("align-content", "").replace(N, "") +
                         o
                       );
                   }
@@ -31885,7 +32088,7 @@
               r = e.substring(0, 3 !== n ? t : 10);
             return (
               (t = e.substring(t + 1, e.length - 1)),
-              P(2 !== n ? r : r.replace(N, "$1"), t, n)
+              P(2 !== n ? r : r.replace(k, "$1"), t, n)
             );
           }
           function o(e, n) {
@@ -31948,8 +32151,8 @@
             y = /[svh]\w+-[tblr]{2}/,
             w = /\(\s*(.*)\s*\)/g,
             j = /([\s\S]*?);/g,
-            k = /-self|flex-/g,
-            N = /[^]*?(:[rp][el]a[\w-]+)[^]*/,
+            N = /-self|flex-/g,
+            k = /[^]*?(:[rp][el]a[\w-]+)[^]*/,
             E = /stretch|:\s*\w+\-(?:conte|avail)/,
             S = /([^-])(image-set\()/,
             C = 1,
@@ -32080,10 +32283,10 @@
       function jc(e) {
         return e.displayName || e.name || "Component";
       }
-      function kc(e) {
+      function Nc(e) {
         return e && "string" == typeof e.styledComponentId;
       }
-      var Nc =
+      var kc =
           ("undefined" != typeof process &&
             void 0 !== process.env &&
             (process.env.REACT_APP_SC_ATTR || process.env.SC_ATTR)) ||
@@ -32186,9 +32389,9 @@
         Pc = function (e, n) {
           n >= _c && (_c = n + 1), Tc.set(e, n), Oc.set(n, e);
         },
-        Lc = "style[" + Nc + '][data-styled-version="5.3.11"]',
+        Lc = "style[" + kc + '][data-styled-version="5.3.11"]',
         Mc = new RegExp(
-          "^" + Nc + '\\.g(\\d+)\\[id="([\\w\\d-]+)"\\].*?"([^"]*)'
+          "^" + kc + '\\.g(\\d+)\\[id="([\\w\\d-]+)"\\].*?"([^"]*)'
         ),
         Dc = function (e, n, t) {
           for (var r, i = t.split(","), a = 0, o = i.length; a < o; a++)
@@ -32226,11 +32429,11 @@
             i = (function (e) {
               for (var n = e.childNodes, t = n.length; t >= 0; t--) {
                 var r = n[t];
-                if (r && 1 === r.nodeType && r.hasAttribute(Nc)) return r;
+                if (r && 1 === r.nodeType && r.hasAttribute(kc)) return r;
               }
             })(t),
             a = void 0 !== i ? i.nextSibling : null;
-          r.setAttribute(Nc, "active"),
+          r.setAttribute(kc, "active"),
             r.setAttribute("data-styled-version", "5.3.11");
           var o = Fc();
           return o && r.setAttribute("nonce", o), t.insertBefore(r, a), r;
@@ -32343,7 +32546,7 @@
                   ) {
                     var i = n[t];
                     i &&
-                      "active" !== i.getAttribute(Nc) &&
+                      "active" !== i.getAttribute(kc) &&
                       (Uc(e, i), i.parentNode && i.parentNode.removeChild(i));
                   }
                 })(this));
@@ -32412,7 +32615,7 @@
                     var o = e.names.get(a),
                       s = n.getGroup(i);
                     if (o && s && o.size) {
-                      var l = Nc + ".g" + i + '[id="' + a + '"]',
+                      var l = kc + ".g" + i + '[id="' + a + '"]',
                         c = "";
                       void 0 !== o &&
                         o.forEach(function (e) {
@@ -32448,7 +32651,7 @@
       function Zc(e) {
         for (var n = 0; n < e.length; n += 1) {
           var t = e[n];
-          if (wc(t) && !kc(t)) return !1;
+          if (wc(t) && !Nc(t)) return !1;
         }
         return !0;
       }
@@ -32697,7 +32900,7 @@
         }
         return gu(e)
           ? ""
-          : kc(e)
+          : Nc(e)
           ? "." + e.styledComponentId
           : wc(e)
           ? "function" != typeof (l = e) ||
@@ -32763,10 +32966,10 @@
       function ju(e) {
         return e.replace(yu, "-").replace(wu, "");
       }
-      var ku = function (e) {
+      var Nu = function (e) {
         return Qc($c(e) >>> 0);
       };
-      function Nu(e) {
+      function ku(e) {
         return "string" == typeof e && !0;
       }
       var Eu = function (e) {
@@ -32799,8 +33002,8 @@
       Tu.Consumer;
       var Ou = {};
       function _u(e, n, t) {
-        var i = kc(e),
-          a = !Nu(e),
+        var i = Nc(e),
+          a = !ku(e),
           o = n.attrs,
           s = void 0 === o ? xc : o,
           l = n.componentId,
@@ -32809,7 +33012,7 @@
               ? (function (e, n) {
                   var t = "string" != typeof e ? "sc" : ju(e);
                   Ou[t] = (Ou[t] || 0) + 1;
-                  var r = t + "-" + ku("5.3.11" + t + Ou[t]);
+                  var r = t + "-" + Nu("5.3.11" + t + Ou[t]);
                   return n ? n + "-" + r : r;
                 })(n.displayName, n.parentComponentId)
               : l,
@@ -32817,7 +33020,7 @@
           d =
             void 0 === u
               ? (function (e) {
-                  return Nu(e) ? "styled." + e : "Styled(" + jc(e) + ")";
+                  return ku(e) ? "styled." + e : "Styled(" + jc(e) + ")";
                 })(e)
               : u,
           f =
@@ -32891,7 +33094,7 @@
                 })(o, i, f),
                 g = t,
                 v = h.$as || n.$as || h.as || n.as || d,
-                b = Nu(v),
+                b = ku(v),
                 x = h !== n ? gc({}, n, {}, h) : n,
                 y = {};
               for (var w in x)
@@ -32936,7 +33139,7 @@
                   (t = a[r]), n.indexOf(t) >= 0 || (i[t] = e[t]);
                 return i;
               })(n, ["componentId"]),
-              a = r && r + "-" + (Nu(e) ? e : ju(jc(e)));
+              a = r && r + "-" + (ku(e) ? e : ju(jc(e)));
             return _u(e, gc({}, i, { attrs: h, componentId: a }), t);
           }),
           Object.defineProperty(g, "defaultProps", {
@@ -32999,7 +33202,7 @@
         )
           t[r - 1] = arguments[r];
         var i = xu.apply(void 0, [e].concat(t)).join(""),
-          a = ku(i);
+          a = Nu(i);
         return new uu(a, i);
       }
       [
@@ -33172,7 +33375,7 @@
                 "<style " +
                 [
                   t && 'nonce="' + t + '"',
-                  Nc + '="true"',
+                  kc + '="true"',
                   'data-styled-version="5.3.11"',
                 ]
                   .filter(Boolean)
@@ -33189,7 +33392,7 @@
                 var n;
                 if (e.sealed) return Cc(2);
                 var t =
-                    (((n = {})[Nc] = ""),
+                    (((n = {})[kc] = ""),
                     (n["data-styled-version"] = "5.3.11"),
                     (n.dangerouslySetInnerHTML = {
                       __html: e.instance.toString(),
@@ -33816,17 +34019,17 @@
           );
         },
         od = function () {
-          var n = k(rd);
+          var n = N(rd);
           return (0, e.jsx)(ad, { queue: n });
         },
         sd = function (e) {
           return e.game.eventLogs;
         },
         ld = {
-          clear: Nn("[event-logs] clear", function (e) {
+          clear: kn("[event-logs] clear", function (e) {
             return e;
           }),
-          setFilter: Nn("[event-logs] set filter", function (e) {
+          setFilter: kn("[event-logs] set filter", function (e) {
             return e;
           }),
         },
@@ -33914,7 +34117,7 @@
           );
         },
         dd = function () {
-          var n = k(sd);
+          var n = N(sd);
           return (0, e.jsx)(ud, { events: n });
         },
         pd = function () {
@@ -34206,7 +34409,7 @@
           );
         },
         hd = function () {
-          var n = k(oo);
+          var n = N(oo);
           return (0, e.jsx)(fd, { events: n });
         },
         md = function () {
@@ -34241,7 +34444,7 @@
             i = As("right-panel-tab", "Queue"),
             a = i[0],
             o = i[1],
-            s = k(so);
+            s = N(so);
           return (0, e.jsxs)(
             "div",
             md(
@@ -34962,8 +35165,8 @@
             )
           );
         },
-        kd = function () {
-          var n = k(bd);
+        Nd = function () {
+          var n = N(bd);
           return (0, e.jsx)(
             "div",
             wd(
@@ -34974,9 +35177,9 @@
             )
           );
         },
-        Nd = function () {
+        kd = function () {
           return (
-            (Nd =
+            (kd =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -34984,16 +35187,16 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            Nd.apply(this, arguments)
+            kd.apply(this, arguments)
           );
         },
         Ed = function () {
           var n = (0, r.useState)(!1),
             t = n[0],
             i = n[1],
-            a = k(Pa),
-            o = k(Ho),
-            s = k(Go);
+            a = N(Pa),
+            o = N(Ho),
+            s = N(Go);
           return (
             (0, r.useEffect)(
               function () {
@@ -35008,7 +35211,7 @@
             ),
             (0, e.jsxs)(
               "div",
-              Nd(
+              kd(
                 {
                   className: "page "
                     .concat(s, "-theme ")
@@ -35020,18 +35223,18 @@
                     (0, e.jsx)(Eo, {}),
                     (0, e.jsxs)(
                       "div",
-                      Nd(
+                      kd(
                         { className: "game" },
                         {
                           children: [
                             (0, e.jsx)(
                               "div",
-                              Nd(
+                              kd(
                                 { className: "show-hide-resources" },
                                 {
                                   children: (0, e.jsx)(
                                     "span",
-                                    Nd(
+                                    kd(
                                       {
                                         className: "show-hide popup-link",
                                         onClick: function () {
@@ -35050,14 +35253,14 @@
                             ),
                             (0, e.jsx)(
                               "div",
-                              Nd(
+                              kd(
                                 { className: "sidebar" },
                                 { children: (0, e.jsx)(vs, { isHidden: t }) }
                               )
                             ),
                             (0, e.jsx)(
                               "div",
-                              Nd(
+                              kd(
                                 { className: "content" },
                                 { children: (0, e.jsx)(nc, {}) }
                               )
@@ -35067,7 +35270,7 @@
                         }
                       )
                     ),
-                    (0, e.jsx)(kd, {}),
+                    (0, e.jsx)(Nd, {}),
                   ],
                 }
               )
