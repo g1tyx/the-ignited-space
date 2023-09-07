@@ -1779,7 +1779,7 @@ var cnItems = {
     //更新日志正文
     //v0.2.8b
     'Added new levels for one of "Lost Technologies"': "增加了一项“失落科技”的等级上限",
-    "Fixed compability issues for some old saves": "修复了和旧版本存档的适配性",
+    "Fixed compability issues for some old saves": "修复了旧版本存档的适配性问题",
     "Fixed bug that prevented expeditions map regeneration in some cases": "修复了探险地图有时不会按照期望刷新的bug",
     //v0.2.8a
     'Added new \"Lost Technologies\"': "增加了新的“失落科技”",
