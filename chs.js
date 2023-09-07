@@ -494,7 +494,7 @@ var cnItems = {
     "Unlock ways to obtain strange matter. Now your antimatter collectors will also provide trace amount of strange matter": "解锁获取奇异物质的方式。您的反物质收集器也将制造极微量的奇异物质",
     "Strange Matter Knife": "奇异物质刀",
     "Use features of so called \"strangelets\" to cut metal goods. Improves plates, wires and rockets output by 20%": "运用这种被称为“奇异粒”的物质来切割金属制品。金属板、电线和火箭产量提升 20%",
-    "Compact Electronics": "紧凑型电子产量",
+    "Compact Electronics": "紧凑型电子元件",
     "Use your knowledge of interactions between particles to invent tiny electronic elements. Improves semiconductors, computers and magneto output by 20%": "运用您对于粒子相互作用的了解，发明极小的电子元器件。半导体，电脑和磁电机产量提升 20%",
     "Quantum Dissociation": "量子解离",
     "Use variable electromagnetic field with specific polarization in your batteries. Improves batteries capacity by 10%": "在电池中使用具有特定极化的可变电磁场。电力上限提升 10%",
