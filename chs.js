@@ -1262,7 +1262,7 @@ var cnItems = {
     "Medical Experiment": "医疗实验",
     "Use your clinics to improve understanding of human body. Each clinics will now provide tiny boost to research caps": "运用诊所来进行对人体的研究。诊所将会略微提升研究上限",
     "Communal Service": "公共服务",
-    "Unlock cleaners, who can help maintaining your settlement shining": "解锁清洁工。他们可以保持您的殖民地光彩照人",
+    "Unlock cleaners, who can help maintaining your settlement shining. Every level improves efficiency": "解锁清洁工。他们可以保持您的殖民地光彩照人。每级使其效率增加",
     
     //
     "Brown Dwarf": "棕矮星",
@@ -1612,6 +1612,7 @@ var cnItems = {
     "Frozen and empty": "空旷且寒冷",
     "Plains": "平原",
     "Empty and windy": "狂风肆虐",
+    "Not Selected": "未选择",
     "Landing Zone": "着陆区",
     "Sweet home": "甜蜜的家",
 
@@ -1776,6 +1777,10 @@ var cnItems = {
     "Join our Discord": "加入 Discord 频道",
 
     //更新日志正文
+    //v0.2.8b
+    'Added new levels for one of "Lost Technologies"': "增加了一项“失落科技”的等级上限",
+    "Fixed compability issues for some old saves": "修复了和旧版本存档的适配性",
+    "Fixed bug that prevented expeditions map regeneration in some cases": "修复了探险地图有时不会按照期望刷新的bug",
     //v0.2.8a
     'Added new \"Lost Technologies\"': "增加了新的“失落科技”",
     "Added several new laws": "增加了几条新的政策",
@@ -1998,7 +2003,7 @@ var cnItems = {
 
     //太空页
     "+ Create New": "+ 创建",
-    "You can\'t delete model since you have spaceships purchased": "无法删除该型号，因为还有该型号的飞船",
+    "You cant delete model since you have spaceships purchased": "存在该型号的飞船，因此无法删除型号",
     "Delete model": "删除型号",
     "X": "X",
     "Save": "保存",
@@ -2227,6 +2232,7 @@ var cnItems = {
     "Pause": "暂停",
 
     //更新日志标题
+    "v0.2.8b Hotfix Update": "v0.2.8b 热更新",
     "v0.2.8a Tiny Update": "v0.2.8a 微型更新",
     "v0.2.8 Regular Update": "v0.2.8 常规更新",
     "v0.2.7a Small Update": "v0.2.7a 小型更新",

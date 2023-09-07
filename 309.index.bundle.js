@@ -14604,7 +14604,7 @@
                   i = {},
                   o = {};
                 G.forEach(function (r) {
-                  var a, c, s, u, l, p, E, d, g, f, A, N, I;
+                  var a, c, s, u, p, E, d, g, f, A, N, I, R;
                   if (r.unlockCondition(YN)) {
                     (i[r.id] = {
                       max: { income: [], multiplier: [], consumption: [] },
@@ -14614,14 +14614,14 @@
                         max: { income: [], multiplier: [], consumption: [] },
                         income: { income: [], multiplier: [], consumption: [] },
                       });
-                    var R = n[r.id].max.linear.reduce(function (e, t) {
+                    var m = n[r.id].max.linear.reduce(function (e, t) {
                         return e + t.value;
                       }, 0),
-                      m = n[r.id].max.multiplier.reduce(function (e, t) {
+                      T = n[r.id].max.multiplier.reduce(function (e, t) {
                         return e * t.value;
                       }, 1);
-                    t.setCapacity(r.id, R * m);
-                    var T = e.collapseEffects(n[r.id].max);
+                    t.setCapacity(r.id, m * T);
+                    var y = e.collapseEffects(n[r.id].max);
                     (i[r.id].max.income = n[r.id].max.linear
                       .filter(function (e) {
                         return e.value;
@@ -14634,7 +14634,7 @@
                           value: "+".concat(Y(e.value, 4)),
                         });
                       })),
-                      (o[r.id].max.income = T.linear
+                      (o[r.id].max.income = y.linear
                         .filter(function (e) {
                           return e.value;
                         })
@@ -14655,7 +14655,7 @@
                             value: "x".concat(Y(e.value, 4)),
                           });
                         })),
-                      (o[r.id].max.multiplier = T.multiplier
+                      (o[r.id].max.multiplier = y.multiplier
                         .filter(function (e) {
                           return 1 !== e.value;
                         })
@@ -14665,14 +14665,14 @@
                           });
                         })),
                       (o[r.id].max.buffDirection = 0);
-                    var y = n[r.id].max.linear
+                    var h = n[r.id].max.linear
                         .filter(function (e) {
                           return "Events" !== e.category;
                         })
                         .reduce(function (e, t) {
                           return e + t.value;
                         }, 0),
-                      h =
+                      O =
                         (n[r.id].max.multiplier
                           .filter(function (e) {
                             return "Events" !== e.category;
@@ -14680,24 +14680,24 @@
                           .reduce(function (e, t) {
                             return e * t.value;
                           }, 1),
-                        y * m);
-                    o[r.id].max.buffDirection = Math.sign(R * m - h);
-                    var O = e.collapseEffects(n[r.id].income),
-                      L = n[r.id].income.linear.reduce(function (e, t) {
+                        h * T);
+                    o[r.id].max.buffDirection = Math.sign(m * T - O);
+                    var L = e.collapseEffects(n[r.id].income),
+                      C = n[r.id].income.linear.reduce(function (e, t) {
                         return e + t.value;
                       }, 0),
-                      C = n[r.id].income.multiplier.reduce(function (e, t) {
+                      v = n[r.id].income.multiplier.reduce(function (e, t) {
                         return e * t.value;
                       }, 1),
-                      v =
+                      S =
                         (null === (a = n[r.id].income.consumption) ||
                         void 0 === a
                           ? void 0
                           : a.reduce(function (e, t) {
                               return e + t.value;
                             }, 0)) || 0,
-                      S = L * C - v;
-                    t.setBalance(r.id, S),
+                      P = C * v - S;
+                    t.setBalance(r.id, P),
                       null === (c = i[r.id]) ||
                         void 0 === c ||
                         (c.income.income = n[r.id].income.linear
@@ -14714,7 +14714,7 @@
                           })),
                       null === (s = o[r.id]) ||
                         void 0 === s ||
-                        (s.income.income = O.linear
+                        (s.income.income = L.linear
                           .filter(function (e) {
                             return e.value;
                           })
@@ -14737,9 +14737,9 @@
                               value: "x".concat(Y(e.value, 4)),
                             });
                           })),
-                      null === (l = o[r.id]) ||
-                        void 0 === l ||
-                        (l.income.multiplier = O.multiplier
+                      null === (p = o[r.id]) ||
+                        void 0 === p ||
+                        (p.income.multiplier = L.multiplier
                           .filter(function (e) {
                             return 1 !== e.value;
                           })
@@ -14748,9 +14748,9 @@
                               value: "x".concat(Y(e.value, 4)),
                             });
                           })),
-                      null === (p = i[r.id]) ||
-                        void 0 === p ||
-                        (p.income.consumption = n[r.id].income.consumption
+                      null === (E = i[r.id]) ||
+                        void 0 === E ||
+                        (E.income.consumption = n[r.id].income.consumption
                           .filter(function (e) {
                             return e.value;
                           })
@@ -14762,12 +14762,12 @@
                               value: "-".concat(Y(e.value, 4)),
                             });
                           })),
-                      null === (E = o[r.id]) ||
-                        void 0 === E ||
-                        (E.income.consumption =
-                          null === (d = O.consumption) || void 0 === d
+                      null === (d = o[r.id]) ||
+                        void 0 === d ||
+                        (d.income.consumption =
+                          null === (g = L.consumption) || void 0 === g
                             ? void 0
-                            : d
+                            : g
                                 .filter(function (e) {
                                   return e.value;
                                 })
@@ -14776,70 +14776,77 @@
                                     value: "-".concat(Y(e.value, 4)),
                                   });
                                 }));
-                    var P = n[r.id].income.linear
+                    var B = n[r.id].income.linear
                         .filter(function (e) {
                           return "Events" !== e.category;
                         })
                         .reduce(function (e, t) {
                           return e + t.value;
                         }, 0),
-                      B = n[r.id].income.multiplier
+                      M = n[r.id].income.multiplier
                         .filter(function (e) {
                           return "Events" !== e.category;
                         })
                         .reduce(function (e, t) {
                           return e * t.value;
                         }, 1),
-                      M = n[r.id].income.consumption
+                      _ = n[r.id].income.consumption
                         .filter(function (e) {
                           return e.value && "Events" !== e.category;
                         })
                         .reduce(function (e, t) {
                           return e + t.value;
                         }, 0),
-                      _ = P * B - M;
+                      U = B * M - _;
                     if (
-                      (null === (g = o[r.id]) ||
-                        void 0 === g ||
-                        (g.income.buffDirection = Math.sign(S - _)),
+                      (null === (f = o[r.id]) ||
+                        void 0 === f ||
+                        (f.income.buffDirection = Math.sign(P - U)),
                       0 !==
                         (null ===
-                          (A =
-                            null === (f = null == o ? void 0 : o[r.id]) ||
-                            void 0 === f
+                          (N =
+                            null === (A = null == o ? void 0 : o[r.id]) ||
+                            void 0 === A
                               ? void 0
-                              : f.income) || void 0 === A
+                              : A.income) || void 0 === N
                           ? void 0
-                          : A.buffDirection) &&
+                          : N.buffDirection) &&
                         (console.log(
                           "boost Direction: ",
                           r.id,
                           null ===
-                            (I =
-                              null === (N = null == o ? void 0 : o[r.id]) ||
-                              void 0 === N
+                            (R =
+                              null === (I = null == o ? void 0 : o[r.id]) ||
+                              void 0 === I
                                 ? void 0
-                                : N.max) || void 0 === I
+                                : I.max) || void 0 === R
                             ? void 0
-                            : I.buffDirection,
-                          _,
-                          S
+                            : R.buffDirection,
+                          U,
+                          P
                         ),
-                        console.log("boost rbComponents: ", L, C, v),
-                        console.log("boost weComp: ", P, B, M)),
+                        console.log("boost rbComponents: ", C, v, S),
+                        console.log("boost weComp: ", B, M, _)),
                       r.hasCapacityLimit)
                     ) {
-                      var U = n[r.id].max.linear.reduce(function (e, t) {
+                      var b = n[r.id].max.linear.reduce(function (e, t) {
                           return e + t.value;
                         }, 0),
-                        b = n[r.id].max.multiplier.reduce(function (e, t) {
+                        G = n[r.id].max.multiplier.reduce(function (e, t) {
                           return e * t.value;
                         }, 1);
-                      t.setCapacity(r.id, U * b);
+                      t.setCapacity(r.id, b * G);
                     }
+                    (r.id !== l.WATER && r.id !== l.POWER) ||
+                      console.log(
+                        "setting ".concat(r.id, " caps: "),
+                        m,
+                        T,
+                        m * T
+                      );
                   }
                 }),
-                  console.log("asserts: ", n[l.NUTRITION], o[l.NUTRITION]),
+                  console.log("asserts: ", n[l.WATER], o[l.WATER]),
                   (this.cachedBreakdown = i),
                   (this.cachedShortenedBreakdown = o);
               }),
@@ -16357,7 +16364,16 @@
               getEffectGain:
                 ((Hs = {}),
                 (Hs[_.AESTHETICS] = function (e) {
-                  return { A: 6, B: 0, type: i.LINEAR };
+                  return {
+                    A:
+                      6 +
+                      2 *
+                        e.prestige.colonizePlanet.getUpgradeLevel(
+                          I.COMMUNAL_SERVICE
+                        ),
+                    B: 0,
+                    type: i.LINEAR,
+                  };
                 }),
                 Hs),
             },
@@ -26001,6 +26017,7 @@
                     YN.space.reset(),
                     YN.queuedItems.reset(),
                     YN.environment.reset(),
+                    YN.expeditionV2.reset(),
                     (YN.statistics.stats.kpTotal =
                       (YN.statistics.stats.kpTotal || 0) + e),
                     (YN.statistics.stats.kpMaxGain = Math.max(
@@ -26550,7 +26567,7 @@
               id: I.COMMUNAL_SERVICE,
               name: "Communal Service",
               description:
-                "Unlock cleaners, who can help maintaining your settlement shining",
+                "Unlock cleaners, who can help maintaining your settlement shining. Every level improves efficiency",
               unlockCondition: function (e) {
                 return (
                   e.prestige.colonizePlanet.getUpgradeLevel(I.TECHNOLOGY_HUB) >
@@ -26563,7 +26580,7 @@
                   return { A: 100, B: 3, type: i.EXPONENTIAL };
                 }),
                 af),
-              maxLevel: 1,
+              maxLevel: 5,
               isLostTech: !0,
             },
           ],
@@ -27660,6 +27677,7 @@
                   YN.space.reset(),
                   YN.queuedItems.reset(),
                   YN.environment.reset(),
+                  YN.expeditionV2.reset(),
                   YN.resources.addResource(l.COLONIZE_XP, r + i),
                   YN.resources.addResource(l.KNOWLEDGE_POINT, o),
                   this.numPrestiged++,
@@ -29891,7 +29909,7 @@
                 return t.instance || (t.instance = new t()), t.instance;
               }),
               (t.prototype.importData = function (e) {
-                this.state = e.events;
+                this.state = (null == e ? void 0 : e.events) || [];
               }),
               (t.prototype.exportData = function () {
                 return { events: this.state };
@@ -31167,11 +31185,12 @@
                 return this.expeditionsState;
               }),
               (t.prototype.dataToUI = function () {
+                var e, t, n, i, o;
                 this.isExpeditionUnlocked() &&
                   YN.newNotifications.registerNotification(
                     "planet:expeditions"
                   );
-                var e = this.expeditionsState.currentMax
+                var r = this.expeditionsState.currentMax
                   ? this.expeditionsState.currentMax -
                     this.expeditionsState.progress
                   : this.getExpeditionDuration(
@@ -31205,10 +31224,28 @@
                   runningX: this.expeditionsState.runningX,
                   runningY: this.expeditionsState.runningY,
                   tileName:
-                    this.mapCache.cells[this.expeditionsState.currentY + 10][
-                      this.expeditionsState.currentX + 10
-                    ].name,
-                  potentialEta: H(e),
+                    null !==
+                      (o =
+                        null ===
+                          (i =
+                            null ===
+                              (n =
+                                null ===
+                                  (t =
+                                    null === (e = this.mapCache) || void 0 === e
+                                      ? void 0
+                                      : e.cells) || void 0 === t
+                                  ? void 0
+                                  : t[this.expeditionsState.currentY + 10]) ||
+                            void 0 === n
+                              ? void 0
+                              : n[this.expeditionsState.currentX + 10]) ||
+                        void 0 === i
+                          ? void 0
+                          : i.name) && void 0 !== o
+                      ? o
+                      : "Not Selected",
+                  potentialEta: H(r),
                   viewRadius: this.getViewRadius(),
                 };
               }),

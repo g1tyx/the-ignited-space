@@ -22800,406 +22800,412 @@
           );
         },
         el = function (n) {
-          var t = n.laws,
-            r = x();
-          return (0, e.jsx)(
-            "div",
-            Js(
-              { className: "laws-list" },
-              {
-                children: t.map(function (n) {
-                  return (0, e.jsx)(
-                    io,
-                    Js(
-                      {
-                        id: "laws:orders:".concat(n.category, ":").concat(n.id),
-                        className: "law-box-wrap",
-                      },
-                      {
-                        children: (0, e.jsxs)(
-                          "div",
-                          Js(
-                            { className: "law-box" },
-                            {
-                              children: [
-                                (0, e.jsxs)(
-                                  "div",
-                                  Js(
-                                    { className: "law-description" },
-                                    {
-                                      children: [
-                                        (0, e.jsx)(
-                                          "p",
-                                          Js(
-                                            { className: "title" },
-                                            { children: n.name }
-                                          )
-                                        ),
-                                        (0, e.jsx)(
-                                          "p",
-                                          Js(
-                                            { className: "description" },
-                                            { children: n.description }
-                                          )
-                                        ),
-                                      ],
-                                    }
-                                  )
-                                ),
-                                (0, e.jsx)(
-                                  "div",
-                                  Js(
-                                    { className: "law-options" },
-                                    {
-                                      children: n.options.map(function (t, i) {
-                                        return (0, e.jsx)(
-                                          "div",
-                                          Js(
-                                            {
-                                              className: "option-box ".concat(
-                                                t.isSelected ? "selected" : ""
-                                              ),
-                                            },
-                                            {
-                                              children: (0, e.jsx)(
-                                                Ta,
-                                                Js(
-                                                  {
-                                                    placement: "right",
-                                                    duration: 20,
-                                                    content: (0, e.jsxs)(
-                                                      "div",
-                                                      Js(
-                                                        {
-                                                          className:
-                                                            "description-hint",
-                                                        },
-                                                        {
-                                                          children: [
-                                                            (0, e.jsx)(
-                                                              "p",
-                                                              Js(
-                                                                {
-                                                                  className:
-                                                                    "title",
-                                                                },
-                                                                {
-                                                                  children:
-                                                                    t.name,
-                                                                }
-                                                              )
-                                                            ),
-                                                            (0, e.jsx)(
-                                                              "p",
-                                                              Js(
-                                                                {
-                                                                  className:
-                                                                    "description",
-                                                                },
-                                                                {
-                                                                  children:
-                                                                    t.description,
-                                                                }
-                                                              )
-                                                            ),
-                                                            t.consume.length
-                                                              ? (0, e.jsxs)(
-                                                                  "div",
-                                                                  Js(
-                                                                    {
-                                                                      className:
-                                                                        "costs wrap",
-                                                                    },
-                                                                    {
-                                                                      children:
-                                                                        [
-                                                                          (0,
-                                                                          e.jsx)(
-                                                                            "span",
-                                                                            {
-                                                                              children:
-                                                                                "Consume",
-                                                                            }
-                                                                          ),
-                                                                          t.consume.map(
-                                                                            function (
-                                                                              n
-                                                                            ) {
-                                                                              return (0,
-                                                                              e.jsx)(
-                                                                                Lo,
-                                                                                {
-                                                                                  gain: n,
-                                                                                }
-                                                                              );
-                                                                            }
-                                                                          ),
-                                                                        ],
-                                                                    }
-                                                                  )
-                                                                )
-                                                              : (0, e.jsx)(
-                                                                  e.Fragment,
-                                                                  {}
-                                                                ),
-                                                            t.gain.length
-                                                              ? (0, e.jsxs)(
-                                                                  "div",
-                                                                  Js(
-                                                                    {
-                                                                      className:
-                                                                        "gain wrap",
-                                                                    },
-                                                                    {
-                                                                      children:
-                                                                        [
-                                                                          (0,
-                                                                          e.jsx)(
-                                                                            "span",
-                                                                            {
-                                                                              children:
-                                                                                "Produce",
-                                                                            }
-                                                                          ),
-                                                                          t.gain.map(
-                                                                            function (
-                                                                              n
-                                                                            ) {
-                                                                              return (0,
-                                                                              e.jsx)(
-                                                                                Lo,
-                                                                                {
-                                                                                  gain: n,
-                                                                                }
-                                                                              );
-                                                                            }
-                                                                          ),
-                                                                        ],
-                                                                    }
-                                                                  )
-                                                                )
-                                                              : (0, e.jsx)(
-                                                                  e.Fragment,
-                                                                  {}
-                                                                ),
-                                                            t.gainMult.length
-                                                              ? (0, e.jsxs)(
-                                                                  "div",
-                                                                  Js(
-                                                                    {
-                                                                      className:
-                                                                        "gain wrap",
-                                                                    },
-                                                                    {
-                                                                      children:
-                                                                        [
-                                                                          (0,
-                                                                          e.jsx)(
-                                                                            "span",
-                                                                            {
-                                                                              children:
-                                                                                "Income Multipliers",
-                                                                            }
-                                                                          ),
-                                                                          t.gainMult.map(
-                                                                            function (
-                                                                              n
-                                                                            ) {
-                                                                              return (0,
-                                                                              e.jsx)(
-                                                                                Lo,
-                                                                                {
-                                                                                  gain: n,
-                                                                                }
-                                                                              );
-                                                                            }
-                                                                          ),
-                                                                        ],
-                                                                    }
-                                                                  )
-                                                                )
-                                                              : (0, e.jsx)(
-                                                                  e.Fragment,
-                                                                  {}
-                                                                ),
-                                                            t.max.length
-                                                              ? (0, e.jsxs)(
-                                                                  "div",
-                                                                  Js(
-                                                                    {
-                                                                      className:
-                                                                        "store wrap",
-                                                                    },
-                                                                    {
-                                                                      children:
-                                                                        [
-                                                                          (0,
-                                                                          e.jsx)(
-                                                                            "span",
-                                                                            {
-                                                                              children:
-                                                                                "Storage",
-                                                                            }
-                                                                          ),
-                                                                          t.max.map(
-                                                                            function (
-                                                                              n
-                                                                            ) {
-                                                                              return (0,
-                                                                              e.jsx)(
-                                                                                Lo,
-                                                                                {
-                                                                                  gain: n,
-                                                                                }
-                                                                              );
-                                                                            }
-                                                                          ),
-                                                                        ],
-                                                                    }
-                                                                  )
-                                                                )
-                                                              : (0, e.jsx)(
-                                                                  e.Fragment,
-                                                                  {}
-                                                                ),
-                                                            t.consumeEffect
-                                                              .length
-                                                              ? (0, e.jsxs)(
-                                                                  "div",
-                                                                  Js(
-                                                                    {
-                                                                      className:
-                                                                        "costs wrap",
-                                                                    },
-                                                                    {
-                                                                      children:
-                                                                        [
-                                                                          (0,
-                                                                          e.jsx)(
-                                                                            "span",
-                                                                            {
-                                                                              children:
-                                                                                "Negative Effect",
-                                                                            }
-                                                                          ),
-                                                                          t.consumeEffect.map(
-                                                                            function (
-                                                                              n
-                                                                            ) {
-                                                                              return (0,
-                                                                              e.jsx)(
-                                                                                Lo,
-                                                                                {
-                                                                                  gain: n,
-                                                                                }
-                                                                              );
-                                                                            }
-                                                                          ),
-                                                                        ],
-                                                                    }
-                                                                  )
-                                                                )
-                                                              : (0, e.jsx)(
-                                                                  e.Fragment,
-                                                                  {}
-                                                                ),
-                                                            t.gainEffect.length
-                                                              ? (0, e.jsxs)(
-                                                                  "div",
-                                                                  Js(
-                                                                    {
-                                                                      className:
-                                                                        "gain wrap",
-                                                                    },
-                                                                    {
-                                                                      children:
-                                                                        [
-                                                                          (0,
-                                                                          e.jsx)(
-                                                                            "span",
-                                                                            {
-                                                                              children:
-                                                                                "Positive Effect",
-                                                                            }
-                                                                          ),
-                                                                          t.gainEffect.map(
-                                                                            function (
-                                                                              n
-                                                                            ) {
-                                                                              return (0,
-                                                                              e.jsx)(
-                                                                                Lo,
-                                                                                {
-                                                                                  gain: n,
-                                                                                }
-                                                                              );
-                                                                            }
-                                                                          ),
-                                                                        ],
-                                                                    }
-                                                                  )
-                                                                )
-                                                              : (0, e.jsx)(
-                                                                  e.Fragment,
-                                                                  {}
-                                                                ),
-                                                          ],
-                                                        }
-                                                      )
-                                                    ),
-                                                  },
-                                                  {
-                                                    children: (0, e.jsx)(
-                                                      "div",
-                                                      Js(
-                                                        {
-                                                          className:
-                                                            "law-option-inner",
-                                                          onClick: function (
-                                                            e
-                                                          ) {
-                                                            return (
-                                                              (t = n.id),
-                                                              (a = i),
-                                                              void r(
-                                                                Zs.selectLawOption.send(
+          var t = n.laws;
+          return (
+            x(),
+            (0, e.jsx)(
+              "div",
+              Js(
+                { className: "laws-list" },
+                {
+                  children: t.map(function (n) {
+                    return (0, e.jsx)(
+                      io,
+                      Js(
+                        {
+                          id: "laws:orders:"
+                            .concat(n.category, ":")
+                            .concat(n.id),
+                          className: "law-box-wrap",
+                        },
+                        {
+                          children: (0, e.jsxs)(
+                            "div",
+                            Js(
+                              { className: "law-box" },
+                              {
+                                children: [
+                                  (0, e.jsxs)(
+                                    "div",
+                                    Js(
+                                      { className: "law-description" },
+                                      {
+                                        children: [
+                                          (0, e.jsx)(
+                                            "p",
+                                            Js(
+                                              { className: "title" },
+                                              { children: n.name }
+                                            )
+                                          ),
+                                          (0, e.jsx)(
+                                            "p",
+                                            Js(
+                                              { className: "description" },
+                                              { children: n.description }
+                                            )
+                                          ),
+                                        ],
+                                      }
+                                    )
+                                  ),
+                                  (0, e.jsx)(
+                                    "div",
+                                    Js(
+                                      { className: "law-options" },
+                                      {
+                                        children: n.options.map(function (
+                                          t,
+                                          r
+                                        ) {
+                                          return (0, e.jsx)(
+                                            "div",
+                                            Js(
+                                              {
+                                                className: "option-box ".concat(
+                                                  t.isSelected ? "selected" : ""
+                                                ),
+                                              },
+                                              {
+                                                children: (0, e.jsx)(
+                                                  Ta,
+                                                  Js(
+                                                    {
+                                                      placement: "right",
+                                                      duration: 20,
+                                                      content: (0, e.jsxs)(
+                                                        "div",
+                                                        Js(
+                                                          {
+                                                            className:
+                                                              "description-hint",
+                                                          },
+                                                          {
+                                                            children: [
+                                                              (0, e.jsx)(
+                                                                "p",
+                                                                Js(
                                                                   {
-                                                                    id: t,
-                                                                    optionId: a,
+                                                                    className:
+                                                                      "title",
+                                                                  },
+                                                                  {
+                                                                    children:
+                                                                      t.name,
                                                                   }
                                                                 )
-                                                              )
-                                                            );
-                                                            var t, a;
+                                                              ),
+                                                              (0, e.jsx)(
+                                                                "p",
+                                                                Js(
+                                                                  {
+                                                                    className:
+                                                                      "description",
+                                                                  },
+                                                                  {
+                                                                    children:
+                                                                      t.description,
+                                                                  }
+                                                                )
+                                                              ),
+                                                              t.consume.length
+                                                                ? (0, e.jsxs)(
+                                                                    "div",
+                                                                    Js(
+                                                                      {
+                                                                        className:
+                                                                          "costs wrap",
+                                                                      },
+                                                                      {
+                                                                        children:
+                                                                          [
+                                                                            (0,
+                                                                            e.jsx)(
+                                                                              "span",
+                                                                              {
+                                                                                children:
+                                                                                  "Consume",
+                                                                              }
+                                                                            ),
+                                                                            t.consume.map(
+                                                                              function (
+                                                                                n
+                                                                              ) {
+                                                                                return (0,
+                                                                                e.jsx)(
+                                                                                  Lo,
+                                                                                  {
+                                                                                    gain: n,
+                                                                                  }
+                                                                                );
+                                                                              }
+                                                                            ),
+                                                                          ],
+                                                                      }
+                                                                    )
+                                                                  )
+                                                                : (0, e.jsx)(
+                                                                    e.Fragment,
+                                                                    {}
+                                                                  ),
+                                                              t.gain.length
+                                                                ? (0, e.jsxs)(
+                                                                    "div",
+                                                                    Js(
+                                                                      {
+                                                                        className:
+                                                                          "gain wrap",
+                                                                      },
+                                                                      {
+                                                                        children:
+                                                                          [
+                                                                            (0,
+                                                                            e.jsx)(
+                                                                              "span",
+                                                                              {
+                                                                                children:
+                                                                                  "Produce",
+                                                                              }
+                                                                            ),
+                                                                            t.gain.map(
+                                                                              function (
+                                                                                n
+                                                                              ) {
+                                                                                return (0,
+                                                                                e.jsx)(
+                                                                                  Lo,
+                                                                                  {
+                                                                                    gain: n,
+                                                                                  }
+                                                                                );
+                                                                              }
+                                                                            ),
+                                                                          ],
+                                                                      }
+                                                                    )
+                                                                  )
+                                                                : (0, e.jsx)(
+                                                                    e.Fragment,
+                                                                    {}
+                                                                  ),
+                                                              t.gainMult.length
+                                                                ? (0, e.jsxs)(
+                                                                    "div",
+                                                                    Js(
+                                                                      {
+                                                                        className:
+                                                                          "gain wrap",
+                                                                      },
+                                                                      {
+                                                                        children:
+                                                                          [
+                                                                            (0,
+                                                                            e.jsx)(
+                                                                              "span",
+                                                                              {
+                                                                                children:
+                                                                                  "Income Multipliers",
+                                                                              }
+                                                                            ),
+                                                                            t.gainMult.map(
+                                                                              function (
+                                                                                n
+                                                                              ) {
+                                                                                return (0,
+                                                                                e.jsx)(
+                                                                                  Lo,
+                                                                                  {
+                                                                                    gain: n,
+                                                                                  }
+                                                                                );
+                                                                              }
+                                                                            ),
+                                                                          ],
+                                                                      }
+                                                                    )
+                                                                  )
+                                                                : (0, e.jsx)(
+                                                                    e.Fragment,
+                                                                    {}
+                                                                  ),
+                                                              t.max.length
+                                                                ? (0, e.jsxs)(
+                                                                    "div",
+                                                                    Js(
+                                                                      {
+                                                                        className:
+                                                                          "store wrap",
+                                                                      },
+                                                                      {
+                                                                        children:
+                                                                          [
+                                                                            (0,
+                                                                            e.jsx)(
+                                                                              "span",
+                                                                              {
+                                                                                children:
+                                                                                  "Storage",
+                                                                              }
+                                                                            ),
+                                                                            t.max.map(
+                                                                              function (
+                                                                                n
+                                                                              ) {
+                                                                                return (0,
+                                                                                e.jsx)(
+                                                                                  Lo,
+                                                                                  {
+                                                                                    gain: n,
+                                                                                  }
+                                                                                );
+                                                                              }
+                                                                            ),
+                                                                          ],
+                                                                      }
+                                                                    )
+                                                                  )
+                                                                : (0, e.jsx)(
+                                                                    e.Fragment,
+                                                                    {}
+                                                                  ),
+                                                              t.consumeEffect
+                                                                .length
+                                                                ? (0, e.jsxs)(
+                                                                    "div",
+                                                                    Js(
+                                                                      {
+                                                                        className:
+                                                                          "costs wrap",
+                                                                      },
+                                                                      {
+                                                                        children:
+                                                                          [
+                                                                            (0,
+                                                                            e.jsx)(
+                                                                              "span",
+                                                                              {
+                                                                                children:
+                                                                                  "Negative Effect",
+                                                                              }
+                                                                            ),
+                                                                            t.consumeEffect.map(
+                                                                              function (
+                                                                                n
+                                                                              ) {
+                                                                                return (0,
+                                                                                e.jsx)(
+                                                                                  Lo,
+                                                                                  {
+                                                                                    gain: n,
+                                                                                  }
+                                                                                );
+                                                                              }
+                                                                            ),
+                                                                          ],
+                                                                      }
+                                                                    )
+                                                                  )
+                                                                : (0, e.jsx)(
+                                                                    e.Fragment,
+                                                                    {}
+                                                                  ),
+                                                              t.gainEffect
+                                                                .length
+                                                                ? (0, e.jsxs)(
+                                                                    "div",
+                                                                    Js(
+                                                                      {
+                                                                        className:
+                                                                          "gain wrap",
+                                                                      },
+                                                                      {
+                                                                        children:
+                                                                          [
+                                                                            (0,
+                                                                            e.jsx)(
+                                                                              "span",
+                                                                              {
+                                                                                children:
+                                                                                  "Positive Effect",
+                                                                              }
+                                                                            ),
+                                                                            t.gainEffect.map(
+                                                                              function (
+                                                                                n
+                                                                              ) {
+                                                                                return (0,
+                                                                                e.jsx)(
+                                                                                  Lo,
+                                                                                  {
+                                                                                    gain: n,
+                                                                                  }
+                                                                                );
+                                                                              }
+                                                                            ),
+                                                                          ],
+                                                                      }
+                                                                    )
+                                                                  )
+                                                                : (0, e.jsx)(
+                                                                    e.Fragment,
+                                                                    {}
+                                                                  ),
+                                                            ],
+                                                          }
+                                                        )
+                                                      ),
+                                                    },
+                                                    {
+                                                      children: (0, e.jsx)(
+                                                        "div",
+                                                        Js(
+                                                          {
+                                                            className:
+                                                              "law-option-inner",
+                                                            onClick: function (
+                                                              e
+                                                            ) {
+                                                              return (
+                                                                (t = n.id),
+                                                                (i = r),
+                                                                void Zs.selectLawOption.send(
+                                                                  {
+                                                                    id: t,
+                                                                    optionId: i,
+                                                                  }
+                                                                )
+                                                              );
+                                                              var t, i;
+                                                            },
                                                           },
-                                                        },
-                                                        {
-                                                          children: (0, e.jsx)(
-                                                            "p",
-                                                            { children: t.name }
-                                                          ),
-                                                        }
-                                                      )
-                                                    ),
-                                                  }
-                                                )
-                                              ),
-                                            }
-                                          )
-                                        );
-                                      }),
-                                    }
-                                  )
-                                ),
-                              ],
-                            }
-                          )
-                        ),
-                      }
-                    )
-                  );
-                }),
-              }
+                                                          {
+                                                            children: (0,
+                                                            e.jsx)("p", {
+                                                              children: t.name,
+                                                            }),
+                                                          }
+                                                        )
+                                                      ),
+                                                    }
+                                                  )
+                                                ),
+                                              }
+                                            )
+                                          );
+                                        }),
+                                      }
+                                    )
+                                  ),
+                                ],
+                              }
+                            )
+                          ),
+                        }
+                      )
+                    );
+                  }),
+                }
+              )
             )
           );
         },
@@ -23365,6 +23371,59 @@
                             {
                               children: (0, e.jsxs)(as(), {
                                 children: [
+                                  (0, e.jsxs)(
+                                    "div",
+                                    tl(
+                                      { className: "version-block" },
+                                      {
+                                        children: [
+                                          (0, e.jsxs)(
+                                            "div",
+                                            tl(
+                                              { className: "version-title" },
+                                              {
+                                                children: [
+                                                  (0, e.jsx)("h3", {
+                                                    children:
+                                                      "v0.2.8b Hotfix Update",
+                                                  }),
+                                                  (0, e.jsx)(
+                                                    "span",
+                                                    tl(
+                                                      { className: "date" },
+                                                      { children: "06/09/2023" }
+                                                    )
+                                                  ),
+                                                ],
+                                              }
+                                            )
+                                          ),
+                                          (0, e.jsxs)(
+                                            "ul",
+                                            tl(
+                                              { className: "features" },
+                                              {
+                                                children: [
+                                                  (0, e.jsx)("li", {
+                                                    children:
+                                                      'Added new levels for one of "Lost Technologies"',
+                                                  }),
+                                                  (0, e.jsx)("li", {
+                                                    children:
+                                                      "Fixed compability issues for some old saves",
+                                                  }),
+                                                  (0, e.jsx)("li", {
+                                                    children:
+                                                      "Fixed bug that prevented expeditions map regeneration in some cases",
+                                                  }),
+                                                ],
+                                              }
+                                            )
+                                          ),
+                                        ],
+                                      }
+                                    )
+                                  ),
                                   (0, e.jsxs)(
                                     "div",
                                     tl(
