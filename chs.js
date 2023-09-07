@@ -667,7 +667,7 @@ var cnItems = {
     "Exotic Bacteria Plant": "特殊物质细菌站",
     "Consumes huge amount of biomass and power, but boosts exotic matter gain. Your people however thinking its dangerous. Reduces security and healthcare": "消耗巨量的生物质和水，提高特殊物质产量。您的人民认为这非常危险，因此降低医疗和安保",
     "Big Data Center": "大数据中心",
-    "Use quantum computers clusters to process huge data amount and optimize your industries. Boost some high-tech crafting activities by 3% per level. However your religious people pretty sure wide AI usage is a sin ": "运用量子计算机集群来处理庞大的数据量并优化工业流程。提升部分高科技工艺产品的产量。然而，宗教人士们认为对 AI 的滥用是一种罪孽",
+    "Use quantum computers clusters to process huge data amount and optimize your industries. Boost some high-tech crafting activities by 3% per level. However your religious people pretty sure wide AI usage is a sin": "运用量子计算机集群来处理庞大的数据量并优化工业流程。每级使部分高科技工艺产品的产量提升 3%。然而，宗教人士们认为对 AI 的滥用是一种罪孽",
     "Strange Matter Vessel": "奇异物质容器",
     "Finally you found way to store strange matter. But its still so dangerous...": "终于，您找到了一种能存储奇异物质的方法。但它依然无比危险……",
     "Neutron Core": "中子核心",
