@@ -485,7 +485,7 @@ var cnItems = {
     "Synthetic RNA": "合成 RNA",
     "Use your knowledge of biological synthesis to boost your biomass production. Unlocks new building": "运用您在生物合成方面的知识积累来提高生物质产量。解锁新建筑",
     "Exotic Processing Bacteria": "特殊物质处理细菌",
-    "Learn how to make your microflora processing exotic matter for you ": "学习如何让您的微生物群适应对特殊物质的处理",
+    "Learn how to make your microflora processing exotic matter for you": "学习如何让您的微生物群适应对特殊物质的处理",
     "Antimatter Experiments": "反物质实验",
     "Taking control over annihilation process allows now to run some antimatter-related experiments on your magnetos. Every magnetic press now boost AM Laboratory by 1%": "对湮灭反应的进一步控制使您能够在磁电设备中进行和反物质相关的实验。每座电磁压力机令反物质实验室的研究上限提升 2%",
     "Quark-Gluon Plasma Machines": "夸克-胶子等离子体机械",
