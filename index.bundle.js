@@ -77,7 +77,7 @@
           e.id,
           "\nbody {\n    padding: 0;\n    margin: 0;\n}\n\nbody * {\n    box-sizing: border-box;\n    font-family: 'Abel', sans-serif;;\n}\n\nbutton, input {\n    border: 1px solid #777;\n    border-radius: 5px;\n    padding: 10px;\n}\n\ninput {\n    padding: 5px;\n}\n\ninput[type=\"file\"] {\n    display: none;\n}\n\nbutton {\n    cursor: pointer;\n    padding: 8px 12px;\n}\n\nbutton.secondary {\n    background: rgb(35, 68, 92);\n}\n\nbutton.med {\n    min-width: 80px;\n}\n\nbutton.big {\n    min-width: 130px;\n}\n\nbutton.danger {\n    background: rgb(223,53,54);\n}\n\n.page {\n    height: 100vh;\n}\n\n.game {\n    display: flex;\n}\n\n.game .content {\n    flex: 1;\n    padding-left: 20px;\n    padding-right: 20px;\n    font-size: 14px;\n    height: calc(100vh - 160px);\n    /*overflow-y: auto;*/\n}\n\n.game .right-panel {\n    position: relative;\n    height: calc(100vh - 160px);\n}\n\n.game .right-panel.expanded {\n    width: 320px;\n    padding: 0 16px;\n}\n\n.game .right-panel.collapsed {\n    width: 0;\n}\n\n.game .right-panel.collapsed .submenu {\n    display: none;\n}\n\n.game .right-panel .expand-collapse-panel {\n    position: absolute;\n    display: flex;\n    width: 32px;\n    height: 32px;\n    font-size: 20px;\n    left: 0px;\n    top: 0px;\n    justify-content: center;\n    align-items: center;\n    cursor: pointer;\n    border-radius: 4px;\n}\n\n.game .right-panel .submenu {\n    margin-left: 48px;\n}\n\n.game .right-panel.collapsed .expand-collapse-panel {\n    left: -48px;\n}\n\n.game .right-panel .add-to-queue select,\n.game .right-panel .add-to-queue button\n{\n    margin: 5px 0;\n    width: 140px;\n}\n\n.game .right-panel .queue-item {\n    display: flex;\n    justify-content: space-between;\n    padding: 5px 0;\n    align-items: center;\n    font-size: 12px;\n}\n\n.game .right-panel .queue-item .move-controls {\n    width: 30px;\n    display: flex;\n    justify-content: space-between;\n}\n\n.game .right-panel .queue-item .move-controls .move {\n    cursor: pointer;\n    padding: 5px;\n}\n\n.game .right-panel .queue-item p {\n    margin: 5px 0;\n    width: 140px;\n    text-overflow: ellipsis;\n}\n\n.game .right-panel .event-item {\n    font-size: 12px;\n}\n\n.game .right-panel .event-item.colonist-arrived .line,\n.game .right-panel .event-item.expedition-arrived .line{\n    color: #90fd70;\n}\n\n.game .right-panel .event-item.colonist-died .line {\n    color: #ff6767;\n}\n\n.game .right-panel .event-item .time {\n    color: #9799f9;\n}\n.game .right-panel .event-item .line {\n    display: inline-block;\n    margin-left: 8px;\n}\n\n.game .right-panel .filters .feature-list {\n    display: flex;\n    flex-wrap: wrap;\n}\n\n.game .right-panel .filters .feature-list .filter-entry{\n    width: 130px;\n}\n\n\n.game .sidebar {\n    height: calc(100vh - 160px);\n}\n\n.header {\n    height: 140px;\n}\n\n.header .top {\n    padding: 16px;\n    display: flex;\n    justify-content: space-between;\n}\n\n.header .top h1 {\n    margin: 0 0 20px;\n}\n\n.header .menu ul {\n    list-style: none;\n    display: flex;\n    padding: 0;\n    margin: 0 0 8px;\n}\n\n.header .menu ul li .menu-inner {\n    padding: 8px 16px;\n    cursor: pointer;\n}\n\n.flex {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n}\n\n.sidebar {\n    padding: 0;\n    margin: 0;\n}\n\n.resources-sidebar .resource-item {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    padding: 5px 8px;\n    font-size: 14px;\n}\n\n.resources-sidebar .resource-item p {\n    margin: 0;\n    position: relative;\n    min-width: 60px;\n}\n\n\n.resources-sidebar .resource-item .resource {\n    width: 85px;\n}\n\n.features-block {\n    border: 1px solid #222;\n    padding: 12px;\n    border-radius: 4px;\n    margin-bottom: 8px;\n}\n\n.features-block .features-title {\n    margin-bottom: 16px;\n    font-size: 16px;\n    display: flex;\n    justify-content: space-between;\n}\n\n.feature-list.flex {\n    flex-wrap: wrap;\n    justify-content: flex-start;\n}\n\n.buildings-wrap .chips-wrap .chip {\n    width: 270px;\n}\n\n.chips-wrap .chip {\n    width: 200px;\n    height: 40px;\n    padding: 8px;\n    border: 1px solid #234;\n    border-radius: 4px;\n    position: relative;\n    margin: 5px 20px;\n    font-size: 15px;\n    position: relative;\n    background-color: #222222;\n}\n\n.chips-wrap .chip .bg {\n    position: absolute;\n    height: 100%;\n    top: 0;\n    left: 0;\n    background-color: #172334;\n    border-radius: 4px;\n}\n\n.animated .chips-wrap .chip .bg {\n    transition-property: width;\n    transition-duration: 0.2s;\n}\n\n.chips-wrap.building-unlock .chip .bg {\n    background-color: #376384;\n}\n\n.chips-wrap.resource-unlock .chip .bg {\n    background-color: #377334;\n}\n\n.chips-wrap.special .chip .bg {\n    background-color: #775374;\n}\n\n\n.chips-wrap .chip .chip-content {\n    position: absolute;\n    height: 100%;\n    width: 100%;\n    top: 0;\n    left: 0;\n    display: flex;\n    align-items: center;\n}\n\n.chips-wrap .chip .chip-content .stick-left {\n    flex: 1;\n    padding-left: 5px;\n    cursor: pointer;\n}\n\n.chips-wrap .chip .name-label {\n    text-overflow: ellipsis;\n    max-width: calc(100% - 30px);\n    white-space: nowrap;\n    overflow: hidden;\n    display: inline-block;\n    user-select: none;\n}\n\n.chips-wrap.disabled .chip {\n    color: #999;\n    cursor: not-allowed;\n    border-color: #444;\n}\n\nbody .chips-wrap.warning .chip {\n    border-color: rgba(244, 202, 44, 0.3);\n}\n\nbody .chips-wrap.warning .chip:after {\n    background-image: url(" +
             m +
-            ");\n    background-size: 25px 25px;\n    display: block;\n    position: absolute;\n    width: 25px;\n    height: 25px;\n    z-index: 3;\n    content: '';\n    top: -10px;\n    right: -10px;\n}\n\n.chips-wrap.usage-highlight .chip {\n    border-color: #eeaa44;\n}\n\n.chips-wrap.disabled.blocked.soft-lock .chip {\n    color: #ff5757;\n    cursor: not-allowed;\n}\n\n.chips-wrap.disabled.soft-lock .chip {\n    color: #ffa767;\n    cursor: not-allowed;\n}\n\n.chips-wrap.enabled .chip .chip-content .stick-left:hover {\n    filter: brightness(140%);\n}\n\n.chips-wrap .chip .stick-right {\n    position: absolute;\n    right: 8px;\n    top: 2px;\n    display: flex;\n    align-items: center;\n}\n\n.chips-wrap .chip .level-label {\n    padding: 5px;\n    font-size: 12px;\n    border-radius: 8px;\n}\n\n.chips-wrap .chip .controls {\n    display: block;\n    font-size: 18px;\n    padding: 3px 2px;\n}\n\n.chips-wrap .chip .controls .control {\n    display: block;\n    width: 24px;\n    height: 24px;\n    text-align: center;\n    cursor: pointer;\n}\n.chips-wrap .chip .controls.disabled .control {\n    display: block;\n    width: 24px;\n    height: 24px;\n    text-align: center;\n    cursor: not-allowed;\n}\n\n.chips-wrap .chip .controls:not(.disabled) .control:hover {\n    border-radius: 50%;\n}\n\n.description-hint {\n    padding: 16px;\n    border-radius: 4px;\n}\n\n.description-hint .description {\n    font-size: 13px;\n}\n\n.description-hint .wrap {\n    padding: 8px 0;\n}\n\n.cost-block {\n    width: 160px;\n    padding-bottom: 4px;\n}\n\n.cost-block p.requirement,\n.gain-block p.requirement{\n    font-size: 13px;\n    padding-bottom: 2px;\n    margin-bottom: 2px;\n    margin-top: 4px;\n    display: flex;\n    justify-content: space-between;\n}\n\n.gain-block p.requirement.green {\n    color: #90fd70;\n}\n\n.gain-block p.requirement.red {\n    color: #ff6767;\n}\n\n.cost-block .requirement.missing {\n    color: #ff6767;\n}\n\n.cost-block .progressBar {\n    width: 100%;\n    position: relative;\n    height: 3px;\n    background: #333;\n}\n\n.cost-block .progressBar .filling {\n    background: #575989;\n    height: 100%;\n    position: absolute;\n    top: 0px;\n    left: 0px;\n}\n\n.submenu {\n    display: flex;\n    justify-content: flex-start;\n}\n\n.submenu .submenu-item {\n    padding: 8px 16px;\n    cursor: pointer;\n}\n\n.jobs .feature-list {\n    display: flex;\n    flex-wrap: wrap;\n}\n\n.job-card {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    width: 380px;\n    padding: 8px;\n    margin: 8px;\n    border-radius: 4px;\n}\n\n.job-card .job-labour {\n    width: 40px;\n    padding-left: 5px;\n}\n\n.job-card .title {\n    width: 160px;\n}\n.job-card .set-amount {\n    display: flex;\n    align-items: center;\n}\n\n\n.job-card .set-amount button {\n    width: 30px;\n    height: 30px;\n    border-radius: 4px;\n    padding: 4px;\n    cursor: pointer;\n    margin: 0 4px;\n}\n\n.job-card .set-amount input {\n    width: 80px;\n    height: 30px;\n    border-radius: 4px;\n}\n\n.resources-sidebar {\n    height: calc(100% - 40px);\n    display: flex;\n    flex-direction: column;\n}\n\n.resources-sidebar .main-resources-wrap {\n    max-height: calc(100vh - 550px);\n}\n\n.resources-sidebar .main-resources-wrap .main-resources {\n    height: 100%;\n}\n\n.resources-sidebar .bottom-block {\n    position: absolute;\n    bottom: 12px\n}\n\n.resources-sidebar .secondary-resources {\n    display: flex;\n    flex: 1;\n    min-height: 0px;\n}\n\n.resources-sidebar .secondary-resources .secondary-wrap {\n    width: 100%;\n}\n\n.resources-sidebar .secondary-resources .container-scrollable {\n    height: calc(100% - 50px);\n}\n\n.heading-pre-menu {\n    display: flex;\n}\n\n.heading-pre-menu .env-wrap {\n    margin-left: 40px;\n    display: flex;\n}\n.heading-pre-menu .env-wrap p {\n    margin: 5px 0;\n}\n\n.heading-pre-menu .env-wrap .time-wrap {\n    margin-left: 20px;\n}\n\n.heading-pre-menu .env-wrap .use-mult {\n    display: flex;\n}\n\n.heading-pre-menu .env-wrap .use-mult .item {\n    margin-right: 10px;\n    text-decoration: underline;\n    cursor: pointer;\n}\n\n.heading-pre-menu .env-wrap .use-mult .item.selected {\n    color: #ee7744;\n}\n\n.inner .editor-wrap.columns {\n    height: calc(100vh - 220px);\n}\n\n.inner .editor-wrap.columns .ship-stats-wrap {\n    height: calc(100vh - 340px);\n}\n\n.small-note {\n    font-size: 12px;\n    font-style: italic;\n}\n\n@media screen and (max-height: 850px) {\n\n   /* .resources-sidebar .main-resources {\n        height: calc(100vh - 550px);\n    }*/\n\n    .resources-sidebar .secondary-resources .container-scrollable {\n        height: 150px;\n    }\n\n}\n\n.hint-caps p {\n    display: flex;\n    justify-content: space-between;\n    font-size: 12px;\n    margin: 4px;\n}\n\n.break-down .block {\n    padding-left: 12px;\n    padding-bottom: 12px;\n}\n\n.break-down .block p {\n    display: flex;\n    justify-content: space-between;\n    font-size: 12px;\n    margin: 4px;\n}\n\n.break-down .block p span:first-child {\n    margin-right: 20px;\n}\n\n.fit-height {\n    height: 100%;\n}\n\n.inner-scrollable.planet,\n.inner-scrollable.science {\n    height: calc(100% - 35px);\n}\n\n.inner {}\n\n.goal-paper {\n    width: 320px;\n    height: 100px;\n    padding: 4px;\n}\n\n.goal-paper .goal-container p {\n    font-size: 12px;\n    margin: 5px;\n}\n\n.goal-paper .goal-container .goal-req {\n    display: flex;\n    justify-content: space-between;\n}\n\n.goal-req.complete span{\n    color: #45cd45;\n}\n\n.goal-paper.features-block .features-title {\n    margin-bottom: 8px;\n}\n\n.settings .set-row {\n    display: flex;\n    padding: 4px;\n}\n\n.settings .set-row .label {\n    width: 30%;\n}\n\n.settings .set-row .val textarea {\n    height: 100px;\n    width: 300px;\n    margin: 5px 0px;\n    display: block;\n}\n\n.happiness .factor-wrap {\n    margin-right: 25px;\n    padding-right: 15px;\n}\n\n.overview.population .line {\n    display: flex;\n    flex-wrap: wrap;\n}\n\n.overview.population .line p{\n    width: 150px;\n}\n\n.overview.happiness .feature-list .line {\n    display: flex;\n    flex-wrap: wrap;\n}\n\n.law-description .title {\n    font-weight: bold;\n}\n\n.laws-list .law-box {\n    padding: 10px;\n}\n\n.laws-list .law-box .law-options {\n    display: flex;\n}\n\n.laws-list .law-box .law-options .option-box {\n    padding: 4px 12px;\n    cursor: pointer;\n    margin: 0 10px;\n}\n\n.law-option-inner p {\n    margin: 0;\n}\n\n.version-panes {\n    display: flex;\n}\n\n.version-title {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n}\n\n.version-panes .about {\n    margin: 0 30px;\n    max-width: 300px;\n}\n\n.goal-paper.features-block .features-title span {\n    color: #ee7744;\n}\n\n.goal-paper.features-block {\n    border-color: #233444;\n}\n\n.transmit-wrap .bold {\n    color: #ee7744;\n    font-weight: bold;\n}\n\n.popup-link {\n    color: #ee7744;\n    cursor: pointer;\n}\n\n.expeditions-wrap .chips-wrap .chip {\n    width: 340px;\n    margin-left: 10px;\n    margin-top: 10px;\n}\n\n.notification-container {\n    position: relative;\n}\n\n.notification-container.label-wrap {\n    padding-right: 18px;\n}\n\n.notification-container span.new-label {\n    position: absolute;\n    display: block;\n    top: 0;\n    right: 0;\n    width: 15px;\n    height: 15px;\n    border-radius: 50%;\n    background-color: #ee7744;\n}\n\n.animated .notification-container span.new-label {\n    animation: blinkingBackground 2s infinite;\n}\n\n@keyframes blinkingBackground{\n    0%\t\t{ background-color: #ee7744;}\n    25%\t\t{ background-color: #fd5020;}\n    50%\t\t{ background-color: #ef0a1a;}\n    75%\t\t{ background-color: #fd5020;}\n    100%\t        { background-color: #ee7744;}\n}\n\n.notification-container.action-wrap span.new-label,\n.notification-container.building-wrap span.new-label,\n.notification-container.upgrade-wrap span.new-label,\n.notification-container.science-wrap span.new-label {\n    right: 10px;\n}\n\n.notification-container span.new-label::after{\n    content: '!';\n    color: #fff;\n    padding-left: 6px;\n    display: block;\n    margin-top: -3px;\n}\n\n.buildings-cat-label {\n    padding-right: 20px;\n}\n\n.science-wrap {\n    width: 238px;\n}\n\n.expeditions-mode {\n    display: flex;\n    justify-content: space-around;\n}\n\n.expeditions-mode span {\n    font-size: 14px;\n}\n\n.expeditions-mode .mode {\n    text-decoration: underline;\n    margin-top: 0px;\n    font-size: 14px;\n    cursor: pointer;\n}\n\n.expeditions-mode .mode.selected {\n    color: #ee7744;\n}\n\n.change-log {\n    height: calc(100vh - 160px);\n}\n\n.research-body .feature-list{\n    height: calc(100vh - 330px);\n}\n\n.search-wrap .chips-wrap .chip {\n    margin-left: 0;\n}\n\n.search-filter {\n    margin-top: 12px;\n    margin-bottom: 8px;\n}\n.search-filter p {\n    font-size: 16px;\n}\n\n.list-wrap.planets-wrap {\n    width: 220px;\n}\n\n\n@media screen and (min-width: 1900px){\n\n/*    body .game .sidebar {\n        height: auto;\n    }*/\n\n    body .game .content {\n        font-size: 16px;\n    }\n\n    body .chips-wrap .chip {\n        width: 250px;\n        font-size: 17px;\n    }\n\n    body .buildings-wrap .chips-wrap .chip {\n        width: 300px;\n    }\n\n    body .chips-wrap .chip .level-label {\n        font-size: 14px;\n    }\n\n    body .chips-wrap .chip .controls {\n        display: block;\n        font-size: 20px;\n        padding: 3px 2px;\n    }\n\n    body .chips-wrap .chip .controls.disabled .control {\n        width: 28px;\n        height: 28px;\n    }\n\n    body .resources-sidebar .resource-item {\n        font-size: 16px;\n    }\n\n    body .features-block .features-title .collapse-expand {\n        font-size: 15px;\n    }\n\n    body .header .menu-item .menu-inner {\n        font-size: 17px;\n    }\n\n    body .features-block .features-title {\n        font-size: 17px;\n    }\n}\n\n@media screen and (max-width: 1280px){\n    .header {\n        height: 160px;\n    }\n\n    .header .menu ul {\n        flex-wrap: wrap;\n    }\n}\n\n.show-hide-resources {\n    display: none;\n}\n\n.info-tooltip {\n    display: none;\n}\n\n.statistics-list .stat-item {\n    padding: 4px 8px;\n    display: flex;\n}\n\n.statistics-list .stat-item p {\n    margin: 0;\n}\n\n.statistics-list .stat-item .label {\n    width: 40%;\n}\n\n.preloader {\n    position: fixed;\n    z-index: 1;\n    top: 0;\n    height: 100vh;\n    width: 100vw;\n    background-color: #09010f;\n    z-index: 5;\n}\n\n.preloader .logo-container {\n    height: min(100vh - 400px, 500px);\n    margin: calc(max(50px, 100vh - 800px)) auto auto;\n    width: 100%;\n    text-align: center;\n}\n\n.preloader .logo-container img {\n    object-fit: contain;\n    margin: auto;\n    height: 100%;\n}\n\n.preloader .loading-container {\n    display: flex;\n    justify-content: center;\n    margin-top: 40px;\n}\n\n.preloader .loading-container .loading-inner {\n    display: flex;\n    align-items: center;\n    width: 150px;\n    justify-content: space-between;\n}\n.preloader .loading-container .loading-inner * {\n    color: #fff;\n}\n\n\n.preloader .loading-container .loading-text {\n    font-weight: bold;\n    font-size: 24px;\n    color: #fff;\n}\n\n.preloader .loading-container .did-you-knew {\n    text-align: center;\n    padding: 0 20px;\n    color: #fff;\n}\n\n.preloader .loading-container .did-you-knew * {\n    color: #fff;\n}\n\n.preloader .loading-container .did-you-knew .title {\n    font-size: 18px;\n    font-weight: bold;\n    display: block;\n    margin-bottom: 10px;\n    color: #fff;\n}\n\n.eff-dropped {\n    color: #ee7744;\n    font-style: italic;\n    font-size: 12px;\n}\n\n.eff-dropped .missing-resource {\n    display: block;\n}\n\n.editor-wrap.columns {\n    display: flex;\n    justify-content: space-between;\n}\n.editor-wrap.columns .column {\n    padding: 20px;\n}\n\n.loader-column {\n    width: 240px;\n    height: calc(100% - 40px);\n    border: 1px solid #222;\n}\n\n.loader-column .select-item {\n    padding: 5px 10px;\n    cursor: pointer;\n    display: flex;\n    justify-content: space-between;\n}\n\n.loader-column .select-item.invalid {\n    color: #ff6767;\n}\n\n.loader-column .select-item .delete-model.disabled {\n    cursor: default;\n    color: #999999;\n}\n\n.loader-column .select-item:hover {\n    color: #ee7744;\n}\n\n.loader-column .select-item.selected {\n    font-weight: bold;\n    cursor: default;\n}\n\n.editor-wrap {\n    height: calc(100vh - 200px);\n}\n\n.editor-column {\n    flex: 1;\n    height: calc(100vh - 240px);\n}\n\n.editor-column .slot-container.invalid .heading-wrap p {\n    color: #ff6767;\n}\n\n.editor-column .slot-container select {\n    margin-right: 10px;\n    width: 140px;\n}\n\n.editor-totals .editor-row {\n    margin: 8px 0;\n}\n\n.editor-totals .editor-row button {\n    width: 140px;\n}\n\n.editor-totals .stats .row {\n    display: flex;\n    justify-content: space-between;\n}\n\n.editor-totals .stats .row p {\n    margin: 0;\n    padding: 5px 5px;\n}\n\n.editor-totals .validation-error {\n    margin-bottom: 16px;\n    margin-top: 8px;\n    color: #fd3030;\n}\n\n.slot-container-outer .stats-wrap {\n    display: flex;\n}\n\n.slot-container-outer .stats-wrap > div {\n    margin: 0 10px;\n}\n\n.ship-totals .row {\n    display: flex;\n    justify-content: space-between;\n}\n\n.ship-totals .row p {\n    margin: 0;\n    padding: 5px 5px;\n    font-size: 13px;\n}\n\n.hangar-wrap {\n    display: flex;\n    flex-wrap: wrap;\n}\n\n.spaceship-inner-wrap .title-wrap {\n    display: flex;\n    justify-content: space-between;\n}\n\n.spaceship-card {\n    width: 300px;\n    padding: 20px;\n    border: 1px solid #222222;\n    border-radius: 4px;\n    margin: 10px;\n}\n\n.spaceship-inner-wrap .chips-wrap .chip {\n    margin: 5px 0px;\n    width: 260px;\n}\n.spaceship-inner-wrap .button {\n    width: 260px;\n}\n\n.editor-column.fleets .line-wrap {\n    display: flex;\n    flex-wrap: wrap;\n}\n\n.editor-column.fleets .line-wrap .slot-container {\n    padding: 10px;\n    border: 1px solid #222;\n    margin: 10px;\n    width: 200px;\n}\n\n.battle-wrap .top-pane {\n    display: flex;\n    justify-content: space-between;\n    padding: 10px;\n    border: 1px solid #222;\n}\n\n.battle-content .battle-centered {\n    margin-top: calc(max(10vh, 30px));\n    text-align: center;\n}\n\n.travel-bar {\n    width: 50%;\n    position: relative;\n    height: 12px;\n    margin: auto;\n}\n\n.travel-bar .travel-bar-inner {\n    position: absolute;\n    top: 0;\n    left: 0;\n    height: 10px;\n}\n\n.animated .travel-bar .travel-bar-inner {\n    transition-property: width;\n    transition-duration: 0.2s;\n}\n\n.fight-space {\n    position: relative;\n    width: 100%;\n    height: calc(100vh - 310px);\n    border: 1px solid #222;\n}\n\n.fight-space .bullet {\n    width: 4px;\n    height: 4px;\n    border-radius: 50%;\n    position: absolute;\n}\n\n.animated .fight-space .bullet {\n    transition-property: left, top;\n    transition-duration: 0.2s;\n    transition-delay: 0s;\n    transition-timing-function: linear;\n}\n\n.fight-space .bullet.side-0 {\n    background-color: #77dddd;\n}\n\n.fight-space .bullet.side-1 {\n    background-color: #dd7777;\n}\n\n.fight-space .space-unit {\n    position: absolute;\n}\n\n.fight-space .space-unit .name-cont {\n    font-size: 12px;\n    margin: 0;\n}\n\n.fight-space .space-unit .image-container {\n    width: 40px;\n    height: 40px;\n}\n\n.fight-space .space-unit .image-container.enemy {\n    background-image: url(" +
+            ");\n    background-size: 25px 25px;\n    display: block;\n    position: absolute;\n    width: 25px;\n    height: 25px;\n    z-index: 3;\n    content: '';\n    top: -10px;\n    right: -10px;\n}\n\n.chips-wrap.usage-highlight .chip {\n    border-color: #eeaa44;\n}\n\n.chips-wrap.disabled.blocked.soft-lock .chip {\n    color: #ff5757;\n    cursor: not-allowed;\n}\n\n.chips-wrap.disabled.soft-lock .chip {\n    color: #ffa767;\n    cursor: not-allowed;\n}\n\n.chips-wrap.enabled .chip .chip-content .stick-left:hover {\n    filter: brightness(140%);\n}\n\n.chips-wrap .chip .stick-right {\n    position: absolute;\n    right: 8px;\n    top: 2px;\n    display: flex;\n    align-items: center;\n}\n\n.chips-wrap .chip .level-label {\n    padding: 5px;\n    font-size: 12px;\n    border-radius: 8px;\n}\n\n.chips-wrap .chip .controls {\n    display: block;\n    font-size: 18px;\n    padding: 3px 2px;\n}\n\n.chips-wrap .chip .controls .control {\n    display: block;\n    width: 24px;\n    height: 24px;\n    text-align: center;\n    cursor: pointer;\n}\n.chips-wrap .chip .controls.disabled .control {\n    display: block;\n    width: 24px;\n    height: 24px;\n    text-align: center;\n    cursor: not-allowed;\n}\n\n.chips-wrap .chip .controls:not(.disabled) .control:hover {\n    border-radius: 50%;\n}\n\n.description-hint {\n    padding: 16px;\n    border-radius: 4px;\n}\n\n.description-hint .description {\n    font-size: 13px;\n}\n\n.description-hint .wrap {\n    padding: 8px 0;\n}\n\n.cost-block {\n    width: 160px;\n    padding-bottom: 4px;\n}\n\n.cost-block p.requirement,\n.gain-block p.requirement{\n    font-size: 13px;\n    padding-bottom: 2px;\n    margin-bottom: 2px;\n    margin-top: 4px;\n    display: flex;\n    justify-content: space-between;\n}\n\n.gain-block p.requirement.green {\n    color: #90fd70;\n}\n\n.gain-block p.requirement.red {\n    color: #ff6767;\n}\n\n.cost-block .requirement.missing {\n    color: #ff6767;\n}\n\n.cost-block .progressBar {\n    width: 100%;\n    position: relative;\n    height: 3px;\n    background: #333;\n}\n\n.cost-block .progressBar .filling {\n    background: #575989;\n    height: 100%;\n    position: absolute;\n    top: 0px;\n    left: 0px;\n}\n\n.submenu {\n    display: flex;\n    justify-content: flex-start;\n}\n\n.submenu .submenu-item {\n    padding: 8px 16px;\n    cursor: pointer;\n}\n\n.jobs .feature-list {\n    display: flex;\n    flex-wrap: wrap;\n}\n\n.job-card {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    width: 380px;\n    padding: 8px;\n    margin: 8px;\n    border-radius: 4px;\n}\n\n.job-card .job-labour {\n    width: 40px;\n    padding-left: 5px;\n}\n\n.job-card .title {\n    width: 160px;\n}\n.job-card .set-amount {\n    display: flex;\n    align-items: center;\n}\n\n\n.job-card .set-amount button {\n    width: 30px;\n    height: 30px;\n    border-radius: 4px;\n    padding: 4px;\n    cursor: pointer;\n    margin: 0 4px;\n}\n\n.job-card .set-amount input {\n    width: 80px;\n    height: 30px;\n    border-radius: 4px;\n}\n\n.resources-sidebar {\n    height: calc(100% - 40px);\n    display: flex;\n    flex-direction: column;\n}\n\n.resources-sidebar .main-resources-wrap {\n    max-height: calc(100vh - 550px);\n}\n\n.resources-sidebar .main-resources-wrap .main-resources {\n    height: 100%;\n}\n\n.resources-sidebar .bottom-block {\n    position: absolute;\n    bottom: 12px\n}\n\n.resources-sidebar .secondary-resources {\n    display: flex;\n    flex: 1;\n    min-height: 0px;\n}\n\n.resources-sidebar .secondary-resources .secondary-wrap {\n    width: 100%;\n}\n\n.resources-sidebar .secondary-resources .container-scrollable {\n    height: calc(100% - 50px);\n}\n\n.heading-pre-menu {\n    display: flex;\n}\n\n.heading-pre-menu .env-wrap {\n    margin-left: 40px;\n    display: flex;\n}\n.heading-pre-menu .env-wrap p {\n    margin: 5px 0;\n}\n\n.heading-pre-menu .env-wrap .time-wrap {\n    margin-left: 20px;\n}\n\n.heading-pre-menu .env-wrap .use-mult {\n    display: flex;\n}\n\n.heading-pre-menu .env-wrap .use-mult .item {\n    margin-right: 10px;\n    text-decoration: underline;\n    cursor: pointer;\n}\n\n.heading-pre-menu .env-wrap .use-mult .item.selected {\n    color: #ee7744;\n}\n\n.inner .editor-wrap.columns {\n    height: calc(100vh - 220px);\n}\n\n.inner .editor-wrap.columns .ship-stats-wrap {\n    height: calc(100vh - 340px);\n}\n\n.small-note {\n    font-size: 12px;\n    font-style: italic;\n}\n\n@media screen and (max-height: 850px) {\n\n   /* .resources-sidebar .main-resources {\n        height: calc(100vh - 550px);\n    }*/\n\n    .resources-sidebar .secondary-resources .container-scrollable {\n        height: 150px;\n    }\n\n}\n\n.hint-caps p {\n    display: flex;\n    justify-content: space-between;\n    font-size: 12px;\n    margin: 4px;\n}\n\n.break-down .block {\n    padding-left: 12px;\n    padding-bottom: 12px;\n}\n\n.break-down .block p {\n    display: flex;\n    justify-content: space-between;\n    font-size: 12px;\n    margin: 4px;\n}\n\n.break-down .block p span:first-child {\n    margin-right: 20px;\n}\n\n.fit-height {\n    height: 100%;\n}\n\n.inner-scrollable.planet,\n.inner-scrollable.science {\n    height: calc(100% - 35px);\n}\n\n.inner-scrollable.laws {\n    height: calc(100% - 95px);\n}\n\n.inner {}\n\n.goal-paper {\n    width: 320px;\n    height: 100px;\n    padding: 4px;\n}\n\n.goal-paper .goal-container p {\n    font-size: 12px;\n    margin: 5px;\n}\n\n.goal-paper .goal-container .goal-req {\n    display: flex;\n    justify-content: space-between;\n}\n\n.goal-req.complete span{\n    color: #45cd45;\n}\n\n.goal-paper.features-block .features-title {\n    margin-bottom: 8px;\n}\n\n.settings .set-row {\n    display: flex;\n    padding: 4px;\n}\n\n.settings .set-row .label {\n    width: 30%;\n}\n\n.settings .set-row .val textarea {\n    height: 100px;\n    width: 300px;\n    margin: 5px 0px;\n    display: block;\n}\n\n.happiness .factor-wrap {\n    margin-right: 25px;\n    padding-right: 15px;\n}\n\n.overview.population .line {\n    display: flex;\n    flex-wrap: wrap;\n}\n\n.overview.population .line p{\n    width: 150px;\n}\n\n.overview.happiness .feature-list .line {\n    display: flex;\n    flex-wrap: wrap;\n}\n\n.law-description .title {\n    font-weight: bold;\n}\n\n.laws-list .law-box {\n    padding: 10px;\n}\n\n.laws-list .law-box .law-options {\n    display: flex;\n}\n\n.laws-list .law-box .law-options .option-box {\n    padding: 4px 12px;\n    cursor: pointer;\n    margin: 0 10px;\n}\n\n.law-option-inner p {\n    margin: 0;\n}\n\n.version-panes {\n    display: flex;\n}\n\n.version-title {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n}\n\n.version-panes .about {\n    margin: 0 30px;\n    max-width: 300px;\n}\n\n.goal-paper.features-block .features-title span {\n    color: #ee7744;\n}\n\n.goal-paper.features-block {\n    border-color: #233444;\n}\n\n.transmit-wrap .bold {\n    color: #ee7744;\n    font-weight: bold;\n}\n\n.popup-link {\n    color: #ee7744;\n    cursor: pointer;\n}\n\n.expeditions-wrap .chips-wrap .chip {\n    width: 340px;\n    margin-left: 10px;\n    margin-top: 10px;\n}\n\n.notification-container {\n    position: relative;\n}\n\n.notification-container.label-wrap {\n    padding-right: 18px;\n}\n\n.notification-container span.new-label {\n    position: absolute;\n    display: block;\n    top: 0;\n    right: 0;\n    width: 15px;\n    height: 15px;\n    border-radius: 50%;\n    background-color: #ee7744;\n}\n\n.animated .notification-container span.new-label {\n    animation: blinkingBackground 2s infinite;\n}\n\n@keyframes blinkingBackground{\n    0%\t\t{ background-color: #ee7744;}\n    25%\t\t{ background-color: #fd5020;}\n    50%\t\t{ background-color: #ef0a1a;}\n    75%\t\t{ background-color: #fd5020;}\n    100%\t        { background-color: #ee7744;}\n}\n\n.notification-container.action-wrap span.new-label,\n.notification-container.building-wrap span.new-label,\n.notification-container.upgrade-wrap span.new-label,\n.notification-container.science-wrap span.new-label {\n    right: 10px;\n}\n\n.notification-container span.new-label::after{\n    content: '!';\n    color: #fff;\n    padding-left: 6px;\n    display: block;\n    margin-top: -3px;\n}\n\n.buildings-cat-label {\n    padding-right: 20px;\n}\n\n.science-wrap {\n    width: 238px;\n}\n\n.expeditions-mode {\n    display: flex;\n    justify-content: space-around;\n}\n\n.expeditions-mode span {\n    font-size: 14px;\n}\n\n.expeditions-mode .mode {\n    text-decoration: underline;\n    margin-top: 0px;\n    font-size: 14px;\n    cursor: pointer;\n}\n\n.expeditions-mode .mode.selected {\n    color: #ee7744;\n}\n\n.change-log {\n    height: calc(100vh - 160px);\n}\n\n.research-body .feature-list{\n    height: calc(100vh - 330px);\n}\n\n.search-wrap .chips-wrap .chip {\n    margin-left: 0;\n}\n\n.search-filter {\n    margin-top: 12px;\n    margin-bottom: 8px;\n}\n.search-filter p {\n    font-size: 16px;\n}\n\n.list-wrap.planets-wrap {\n    width: 220px;\n}\n\n\n@media screen and (min-width: 1900px){\n\n/*    body .game .sidebar {\n        height: auto;\n    }*/\n\n    body .game .content {\n        font-size: 16px;\n    }\n\n    body .chips-wrap .chip {\n        width: 250px;\n        font-size: 17px;\n    }\n\n    body .buildings-wrap .chips-wrap .chip {\n        width: 300px;\n    }\n\n    body .chips-wrap .chip .level-label {\n        font-size: 14px;\n    }\n\n    body .chips-wrap .chip .controls {\n        display: block;\n        font-size: 20px;\n        padding: 3px 2px;\n    }\n\n    body .chips-wrap .chip .controls.disabled .control {\n        width: 28px;\n        height: 28px;\n    }\n\n    body .resources-sidebar .resource-item {\n        font-size: 16px;\n    }\n\n    body .features-block .features-title .collapse-expand {\n        font-size: 15px;\n    }\n\n    body .header .menu-item .menu-inner {\n        font-size: 17px;\n    }\n\n    body .features-block .features-title {\n        font-size: 17px;\n    }\n}\n\n@media screen and (max-width: 1280px){\n    .header {\n        height: 160px;\n    }\n\n    .header .menu ul {\n        flex-wrap: wrap;\n    }\n}\n\n.show-hide-resources {\n    display: none;\n}\n\n.info-tooltip {\n    display: none;\n}\n\n.statistics-list .stat-item {\n    padding: 4px 8px;\n    display: flex;\n}\n\n.statistics-list .stat-item p {\n    margin: 0;\n}\n\n.statistics-list .stat-item .label {\n    width: 40%;\n}\n\n.preloader {\n    position: fixed;\n    z-index: 1;\n    top: 0;\n    height: 100vh;\n    width: 100vw;\n    background-color: #09010f;\n    z-index: 5;\n}\n\n.preloader .logo-container {\n    height: min(100vh - 400px, 500px);\n    margin: calc(max(50px, 100vh - 800px)) auto auto;\n    width: 100%;\n    text-align: center;\n}\n\n.preloader .logo-container img {\n    object-fit: contain;\n    margin: auto;\n    height: 100%;\n}\n\n.preloader .loading-container {\n    display: flex;\n    justify-content: center;\n    margin-top: 40px;\n}\n\n.preloader .loading-container .loading-inner {\n    display: flex;\n    align-items: center;\n    width: 150px;\n    justify-content: space-between;\n}\n.preloader .loading-container .loading-inner * {\n    color: #fff;\n}\n\n\n.preloader .loading-container .loading-text {\n    font-weight: bold;\n    font-size: 24px;\n    color: #fff;\n}\n\n.preloader .loading-container .did-you-knew {\n    text-align: center;\n    padding: 0 20px;\n    color: #fff;\n}\n\n.preloader .loading-container .did-you-knew * {\n    color: #fff;\n}\n\n.preloader .loading-container .did-you-knew .title {\n    font-size: 18px;\n    font-weight: bold;\n    display: block;\n    margin-bottom: 10px;\n    color: #fff;\n}\n\n.eff-dropped {\n    color: #ee7744;\n    font-style: italic;\n    font-size: 12px;\n}\n\n.eff-dropped .missing-resource {\n    display: block;\n}\n\n.editor-wrap.columns {\n    display: flex;\n    justify-content: space-between;\n}\n.editor-wrap.columns .column {\n    padding: 20px;\n}\n\n.loader-column {\n    width: 240px;\n    height: calc(100% - 40px);\n    border: 1px solid #222;\n}\n\n.loader-column .select-item {\n    padding: 5px 10px;\n    cursor: pointer;\n    display: flex;\n    justify-content: space-between;\n}\n\n.loader-column .select-item.invalid {\n    color: #ff6767;\n}\n\n.loader-column .select-item .delete-model.disabled {\n    cursor: default;\n    color: #999999;\n}\n\n.loader-column .select-item:hover {\n    color: #ee7744;\n}\n\n.loader-column .select-item.selected {\n    font-weight: bold;\n    cursor: default;\n}\n\n.editor-wrap {\n    height: calc(100vh - 200px);\n}\n\n.editor-column {\n    flex: 1;\n    height: calc(100vh - 240px);\n}\n\n.editor-column .slot-container.invalid .heading-wrap p {\n    color: #ff6767;\n}\n\n.editor-column .slot-container select {\n    margin-right: 10px;\n    width: 140px;\n}\n\n.editor-totals .editor-row {\n    margin: 8px 0;\n}\n\n.editor-totals .editor-row button {\n    width: 140px;\n}\n\n.editor-totals .stats .row {\n    display: flex;\n    justify-content: space-between;\n}\n\n.editor-totals .stats .row p {\n    margin: 0;\n    padding: 5px 5px;\n}\n\n.editor-totals .validation-error {\n    margin-bottom: 16px;\n    margin-top: 8px;\n    color: #fd3030;\n}\n\n.slot-container-outer .stats-wrap {\n    display: flex;\n}\n\n.slot-container-outer .stats-wrap > div {\n    margin: 0 10px;\n}\n\n.ship-totals .row {\n    display: flex;\n    justify-content: space-between;\n}\n\n.ship-totals .row p {\n    margin: 0;\n    padding: 5px 5px;\n    font-size: 13px;\n}\n\n.hangar-wrap {\n    display: flex;\n    flex-wrap: wrap;\n}\n\n.spaceship-inner-wrap .title-wrap {\n    display: flex;\n    justify-content: space-between;\n}\n\n.spaceship-card {\n    width: 300px;\n    padding: 20px;\n    border: 1px solid #222222;\n    border-radius: 4px;\n    margin: 10px;\n}\n\n.spaceship-inner-wrap .chips-wrap .chip {\n    margin: 5px 0px;\n    width: 260px;\n}\n.spaceship-inner-wrap .button {\n    width: 260px;\n}\n\n.editor-column.fleets .line-wrap {\n    display: flex;\n    flex-wrap: wrap;\n}\n\n.editor-column.fleets .line-wrap .slot-container {\n    padding: 10px;\n    border: 1px solid #222;\n    margin: 10px;\n    width: 200px;\n}\n\n.battle-wrap .top-pane {\n    display: flex;\n    justify-content: space-between;\n    padding: 10px;\n    border: 1px solid #222;\n}\n\n.battle-content .battle-centered {\n    margin-top: calc(max(10vh, 30px));\n    text-align: center;\n}\n\n.travel-bar {\n    width: 50%;\n    position: relative;\n    height: 12px;\n    margin: auto;\n}\n\n.travel-bar .travel-bar-inner {\n    position: absolute;\n    top: 0;\n    left: 0;\n    height: 10px;\n}\n\n.animated .travel-bar .travel-bar-inner {\n    transition-property: width;\n    transition-duration: 0.2s;\n}\n\n.fight-space {\n    position: relative;\n    width: 100%;\n    height: calc(100vh - 310px);\n    border: 1px solid #222;\n}\n\n.fight-space .bullet {\n    width: 4px;\n    height: 4px;\n    border-radius: 50%;\n    position: absolute;\n}\n\n.animated .fight-space .bullet {\n    transition-property: left, top;\n    transition-duration: 0.2s;\n    transition-delay: 0s;\n    transition-timing-function: linear;\n}\n\n.fight-space .bullet.side-0 {\n    background-color: #77dddd;\n}\n\n.fight-space .bullet.side-1 {\n    background-color: #dd7777;\n}\n\n.fight-space .space-unit {\n    position: absolute;\n}\n\n.fight-space .space-unit .name-cont {\n    font-size: 12px;\n    margin: 0;\n}\n\n.fight-space .space-unit .image-container {\n    width: 40px;\n    height: 40px;\n}\n\n.fight-space .space-unit .image-container.enemy {\n    background-image: url(" +
             g +
             ");\n    background-size: contain;\n    transform: rotate(180deg);\n}\n\n.fight-space .space-unit .image-container.my {\n    background-image: url(" +
             v +
@@ -85,7 +85,7 @@
             b +
             ");\n    background-size: 28px 28px;\n    display: block;\n    position: absolute;\n    width: 28px;\n    height: 28px;\n    z-index: 3;\n    content: '';\n    top: 0px;\n    left: 0px;\n}\n\n.expeditions-map .map-cell.current:after {\n    background-image: url(" +
             x +
-            ");\n    background-size: 28px 28px;\n    display: block;\n    position: absolute;\n    width: 28px;\n    height: 28px;\n    z-index: 3;\n    content: '';\n    top: 0px;\n    left: 0px;\n}\n\n.expeditions-map .map-cell.home {\n    background: #222222;\n}\n\n.expeditions-map .map-row {\n    display: flex;\n}\n\n.description-hint .loot-line {\n    display: flex;\n}\n\n.description-hint .loot-line p {\n    margin-right: 20px;\n}\n\n.description-hint .loot-line p{\n    font-size: 13px;\n}\n\n.happiness .line .factor {\n    position: relative;\n    min-width: 100px;\n}\n\n.resources-sidebar .resource-item p.boosted::after,\n.happiness .line .factor.boosted::after {\n    display: block;\n    position: absolute;\n    content: 'E';\n    font-size: 12px;\n    background: #30ad30;\n    color: #fff;\n    top: 0;\n    right: 0px;\n    width: 14px;\n    height: 14px;\n    border-radius: 50%;\n    text-align: center;\n    padding: 1px;\n}\n\n.resources-sidebar .resource-item p.decreased::after,\n.happiness .line .factor.decreased::after {\n    display: block;\n    position: absolute;\n    content: 'E';\n    font-size: 12px;\n    background: #ff3030;\n    color: #fff;\n    top: 0;\n    right: 0px;\n    width: 14px;\n    height: 14px;\n    border-radius: 50%;\n    text-align: center;\n    padding: 1px;\n}\n\n.happiness .line .factor.decreased::after,\n.happiness .line .factor.boosted::after {\n    right: -18px;\n}\n\n.modal-wrap.opened {\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100vw;\n    height: 100vh;\n    z-index: 1;\n    background: rgba(0,0,0,0.3);\n}\n\n.modal-wrap.opened .modal {\n    width: 80%;\n    height: calc(100vh - 100px);\n    margin: 50px auto;\n    padding: 12px;\n}\n\n.modal-wrap.opened .modal .modal-header {\n    display: flex;\n    justify-content: space-between;\n}\n\n.modal-wrap.opened .modal .modal-header .close {\n    cursor: pointer;\n}\n\n.search-content {\n    height: calc(100vh - 220px);\n}\n\n.search-content .search-item {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    padding: 6px 8px;\n    border: 1px solid #222;\n    width: 260px;\n    margin: 4px 8px;\n    border-radius: 4px;\n    font-size: 14px;\n}\n\n.search-content .search-results-list .feature-list {\n    display: flex;\n    flex-wrap: wrap;\n}\n\n.search-content .search-item p {\n    margin: 0;\n}\n\n.editor-wrap .editor-column .details {\n    height: calc(100vh - 480px);\n}\n\n.editor-wrap .editor-column .save-area {\n    margin-top: 10px;\n}\n\n.editor-wrap .editor-column .row {\n    display: flex;\n    align-items: center;\n}\n\n.editor-wrap .editor-column .main .buttons button {\n    margin: 4px;\n}\n\n.editor-wrap .editor-column .row {\n    margin: 4px;\n    padding: 4px;\n}\n\n.editor-wrap .editor-column .row.job-container {\n    margin: 4px;\n    padding: 4px;\n    border: 1px solid #222222;\n    width: 100%;\n}\n\n.editor-wrap .editor-column .row.job-container .value {\n    padding: 5px;\n    margin: 5px;\n}\n\n.editor-wrap .editor-column .row.job-container .value p {\n    margin: 4px 0;\n}\n\n.editor-wrap .editor-column .row.job-container .value input[type=\"number\"] {\n    width: 80px;\n}\n\n.colony-wrap .line .presets {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    width: 400px;\n    margin-left: 20px;\n}\n\n.colony-wrap .line .presets button {\n    width: 180px;\n    margin-left: 5px;\n}\n\n/* Themes */\nbody.dark-theme * {\n    color: #ffffff;\n}\n\nbody.dark-theme span.greenish {\n    color: #90fd70;\n}\n\nbody.dark-theme span.red {\n    color: #ff6767;\n}\n\nbody.dark-theme .page {\n    background-color: #131115;\n}\n\nbody.dark-theme input {\n    background: #233444;\n}\n\nbody.dark-theme button {\n    background: #344555;\n    border-radius: 0;\n    border-color: #575989;\n}\n\nbody.dark-theme button:hover {\n    background: #575989;\n}\n\nbody.dark-theme button:disabled {\n    background: rgba(31,41,51,0.5);\n    pointer-events: none;\n}\n\nbody.dark-theme select {\n    border: 1px solid #777;\n    border-radius: 5px;\n    padding: 8px;\n    min-width: 163px;\n    background: rgb(19, 25, 38);\n    color: #fff;\n}\n\nbody.dark-theme .right-panel .expand-collapse-panel {\n    background-color: rgb(19, 25, 38);\n    border-color: #fff;\n}\n\nbody.dark-theme .game .right-panel .queue-item .move-controls .move:hover {\n    color: #ffa767;\n}\n\nbody.dark-theme .game .right-panel .queue-item .close:hover {\n    cursor: pointer;\n    color: #ee7744;\n}\n\nbody.dark-theme .header .menu ul li .menu-inner:hover {\n    color: #e74;\n}\n\nbody.dark-theme .header .menu ul li.selected .menu-inner {\n    border-bottom: 5px solid #e74;\n    padding-bottom: 4px;\n    pointer-events: none;\n}\n\nbody.dark-theme .resources-sidebar {\n    width: 360px;\n    border: 1px solid #222;\n}\n\n\nbody.dark-theme .resources-sidebar .hl.resource-item.missing-highlight,\nbody.dark-theme .resources-sidebar .resource-item.missing-highlight * {\n    background: #fd3030;\n    color: #fff;\n}\n\nbody.dark-theme .resources-sidebar .hl.resource-item.produced-highlight,\nbody.dark-theme .resources-sidebar .resource-item.produced-highlight * {\n    background: #30ad30;\n    color: #fff;\n}\n\nbody.dark-theme .resources-sidebar .hl.resource-item.consumed-highlight,\nbody.dark-theme .resources-sidebar .resource-item.consumed-highlight * {\n    background: #fd7050;\n    color: #fff;\n}\n\nbody.dark-theme .resources-sidebar .resource-item.negative p {\n    color: #fd7050;\n}\n\nbody.dark-theme .resources-sidebar .resource-item.capped p {\n    color: #ffe0a0;\n}\n\nbody.dark-theme .resources-sidebar .resource-item p.boosted {\n    color: #90fd70;\n}\n\nbody.dark-theme .resources-sidebar .resource-item p.decreased {\n    color: #ff5757;\n}\n\nbody.dark-theme .resources-sidebar .resource-item:nth-child(even) {\n    background: #131115;\n}\n\nbody.dark-theme .resources-sidebar .resource-item:nth-child(odd) {\n    background: #222;\n}\n\nbody.dark-theme .features-block .features-title .collapse-expand {\n    font-size: 12px;\n    color: #ee7744;\n    cursor: pointer;\n}\n\nbody.dark-theme .chips-wrap .chip {\n    border: 1px solid #234;\n    background-color: #222;\n}\n\nbody.dark-theme .chips-wrap .chip .bg {\n    background-color: #193344;\n}\n\nbody.dark-theme .chips-wrap.building-unlock .chip .bg {\n    background-color: #376384;\n}\n\nbody.dark-theme .chips-wrap.resource-unlock .chip .bg {\n    background-color: #377334;\n}\n\nbody.dark-theme .chips-wrap.special .chip .bg {\n    background-color: #775374;\n}\n\nbody.dark-theme .chips-wrap .chip .controls.disabled .control {\n    color: #ccbbaa;\n}\n\nbody.dark-theme .chips-wrap .chip .controls:not(.disabled) .control:hover {\n    background: #344555;\n    border: 1px solid #222;\n    border-radius: 50%;\n}\n\nbody.dark-theme .description-hint {\n    background: #131518;\n    border: 1px solid #222;\n}\n\nbody.dark-theme .chips-wrap .chip .level-label {\n    background: #344555;\n    border: 1px solid #222;\n}\n\nbody.dark-theme .hint-caps {\n    background: #131115;\n    padding: 16px;\n}\n\nbody.dark-theme .chips-wrap.disabled .chip span.name-label {\n    color: #cba;\n}\n\nbody.dark-theme .chips-wrap.disabled.blocked.soft-lock .chip span.name-label {\n    color: #ff5757;\n}\n\nbody.dark-theme .chips-wrap.disabled.soft-lock .chip span.name-label {\n    color: #ffa767;\n    cursor: not-allowed;\n}\n\nbody.dark-theme .chips-wrap.usage-highlight .chip {\n    border-color: #eeaa44;\n}\n\nbody.dark-theme .travel-bar {\n    border: 1px solid #222222;\n    background: #223344;\n}\n\nbody.dark-theme .travel-bar .travel-bar-inner {\n    background: #575989;\n}\n\nbody.dark-theme .cost-block .progressBar .filling {\n    background: #575989;\n}\n\nbody.dark-theme .job-card {\n    border: 1px solid #222;\n}\n\nbody.dark-theme .job-card .set-amount button {\n    background: #233444;\n    border: 1px solid #222222;\n}\n\nbody.dark-theme .job-card .set-amount button:hover {\n    background: #344555;\n}\n\nbody.dark-theme .job-card .set-amount input {\n    background: #131115;\n    border: 1px solid #222222;\n    border-radius: 4px;\n}\n\nbody.dark-theme .settings .set-row .val textarea {\n    background: #222222;\n}\n\nbody.dark-theme .happiness .factor-wrap .factor.excess {\n    color: #ffe0a0;\n}\n\nbody.dark-theme .laws-list .law-box .law-options .option-box {\n    padding: 4px 12px;\n    border: 1px solid #222222;\n    cursor: pointer;\n    margin: 0 10px;\n}\n\nbody.dark-theme .laws-list .law-box .law-options .option-box.selected {\n    background-color: #233444;\n}\n\nbody.dark-theme .submenu .submenu-item.selected {\n    color: #ee7744;\n}\n\n@media screen and (max-width: 860px) {\n    body.dark-theme .mobile-tooltip {\n        background: #131518;\n        border: 1px solid #223344;\n    }\n\n    body.dark-theme .mobile-tooltip-wrap {\n        background: rgba(21,21,21,0.7);\n    }\n}\n\nbody.dark-theme .clickable-highlight {\n    color: #ee7744;\n}\n\nbody.dark-theme .modal-wrap.opened .modal {\n    background: #131115;\n    border: 1px solid #222222;\n    border-radius: 4px;\n}\n\n/* THEME: LIGHT THEME */\n\nbody.light-theme * {\n    font-family: 'Lato', sans-serif;\n}\n\nbody.light-theme * {\n    color: #222;\n}\n\nbody.light-theme span.greenish {\n    color: #30ad30;\n}\n\nbody.light-theme span.red {\n    color: #df2727;\n}\n\nbody.light-theme .page {\n    background-color: #f6f1f6;\n}\n\nbody.light-theme input {\n    background: #eee;\n    border: 1px solid #333;\n    border-radius: 2px;\n}\n\nbody.light-theme button {\n    background: #eee;\n    color: #222222;\n    border-radius: 4px;\n    border-color: #333;\n}\n\n\nbody.light-theme button:hover {\n    background: #ccc;\n}\n\nbody.light-theme button:disabled {\n    background: rgba(31,41,51,0.5);\n    pointer-events: none;\n}\n\nbody.light-theme select {\n    border: 1px solid #333;\n    border-radius: 5px;\n    padding: 8px;\n    min-width: 163px;\n    background: #eee;\n    color: #333;\n}\n\nbody.light-theme .right-panel .expand-collapse-panel {\n    background-color: #eee;\n    border-color: #333;\n}\n\nbody.light-theme .game .right-panel .queue-item .move-controls .move:hover {\n    color: #3558aa;\n}\n\nbody.light-theme .game .right-panel .queue-item .close:hover {\n    cursor: pointer;\n    color: #3558aa;\n}\n\nbody.light-theme .header .menu ul li .menu-inner:hover {\n    color: #3558aa;\n}\n\nbody.light-theme .header .menu ul li.selected .menu-inner {\n    border-bottom: 2px solid #35488a;\n    padding-bottom: 4px;\n    pointer-events: none;\n}\n\nbody.light-theme .resources-sidebar {\n    width: 360px;\n    border: 1px solid #777;\n    border-radius: 4px;\n    background: #eee;\n}\n\nbody.light-theme .resources-sidebar .hl.resource-item.missing-highlight,\nbody.light-theme .resources-sidebar .resource-item.missing-highlight * {\n    background: #fda0a0;\n    color: #222;\n}\n\nbody.light-theme .resources-sidebar .hl.resource-item.produced-highlight,\nbody.light-theme .resources-sidebar .resource-item.produced-highlight * {\n    background: #a0fda0;\n    color: #222;\n}\n\nbody.light-theme .resources-sidebar .hl.resource-item.consumed-highlight,\nbody.light-theme .resources-sidebar .resource-item.consumed-highlight * {\n    background: #ffd090;\n    color: #222;\n}\n\nbody.light-theme .resources-sidebar .resource-item.negative p {\n    color: #fd7050;\n}\n\nbody.light-theme .resources-sidebar .resource-item.capped p {\n    color: #8f6020;\n}\n\nbody.light-theme .resources-sidebar .resource-item p.boosted {\n    color: #30ad30;\n}\n\nbody.light-theme .resources-sidebar .resource-item p.decreased {\n    color: #df2727;\n}\n\nbody.light-theme .resources-sidebar .resource-item:nth-child(even) {\n    background: #eee9ee;\n}\n\nbody.light-theme .resources-sidebar .resource-item:nth-child(odd) {\n    background: #f6f6f6;\n}\n\nbody.light-theme .features-block .features-title .collapse-expand {\n    font-size: 12px;\n    color: #112224;\n    cursor: pointer;\n}\n\nbody.light-theme .label-wrap {\n    font-weight: bold;\n}\n\nbody.light-theme .chips-wrap .chip {\n    border: 1px solid #333;\n    background-color: #ddd;\n}\n\nbody.light-theme .chips-wrap .chip .stick-left {\n    width: 150px;\n}\n\nbody.light-theme .buildings-wrap .chips-wrap .chip .stick-left {\n    width: 200px;\n}\n\nbody.light-theme .chips-wrap .chip * {\n    color: #000;\n}\n\nbody.light-theme .chips-wrap .chip .bg {\n    background-color: #fff;\n    border-right: 1px solid #888;\n}\n\nbody.light-theme .chips-wrap.building-unlock .chip .bg {\n    background-color: #67c3f4;\n}\n\nbody.light-theme .chips-wrap.resource-unlock .chip .bg {\n    background-color: #a7f3a4;\n}\n\nbody.light-theme .chips-wrap.special .chip .bg {\n    background-color: #d7a3d4;\n}\n\nbody.light-theme .chips-wrap .chip-content {\n    display: flex;\n    align-items: center;\n}\n\nbody.light-theme .chips-wrap .chip-content .name-label {\n    font-size: 14px;\n}\n\nbody.light-theme .chips-wrap .chip-content .stick-right {\n    position: relative;\n    flex-shrink: 0;\n    top: -2px;\n}\n\nbody.light-theme .chips-wrap .chip .controls.disabled .control {\n    color: #555;\n}\n\nbody.light-theme .chips-wrap .chip .controls:not(.disabled) .control:hover {\n    background: #123;\n    border: 1px solid #123;\n    color: #fff;\n    border-radius: 50%;\n}\n\nbody.light-theme .description-hint {\n    background: #fff;\n    border: 1px solid #222;\n}\n\nbody.light-theme .chips-wrap .chip .level-label {\n    background: none;\n    border: none;\n    font-size: 13px;\n}\n\nbody.light-theme .hint-caps {\n    background: #fff;\n    padding: 16px;\n    border: 1px solid #222;\n    border-radius: 4px;\n}\n\nbody.light-theme .notification-container span.new-label::after {\n    margin-top: 0;\n    padding-left: 5px;\n}\n\nbody.light-theme .chips-wrap.disabled .chip span.name-label {\n    color: #444;\n}\n\nbody.light-theme .chips-wrap.disabled.blocked.soft-lock .chip span.name-label {\n    color: #ef0707;\n}\n\nbody.light-theme .chips-wrap.disabled.soft-lock .chip span.name-label {\n    color: #7f6707;\n    cursor: not-allowed;\n}\n\nbody.light-theme .travel-bar {\n    border: 1px solid #222222;\n    background: #eee;\n}\n\nbody.light-theme .travel-bar .travel-bar-inner {\n    background: #123;\n}\n\nbody.light-theme .cost-block .progressBar .filling {\n    background: #37a939;\n}\n\nbody.light-theme .job-card {\n    border: 1px solid #222;\n}\n\nbody.light-theme .job-card .set-amount button {\n    background: #eee;\n    border: 1px solid #222222;\n}\n\nbody.light-theme .job-card .set-amount button:hover {\n    background: #ccc;\n}\n\nbody.light-theme .job-card .set-amount input {\n    background: #fff;\n    border: 1px solid #222222;\n    border-radius: 4px;\n}\n\nbody.light-theme .settings .set-row .val textarea {\n    background: #eee;\n    border: 1px solid #222222;\n    border-radius: 4px;\n}\n\nbody.light-theme .happiness .factor-wrap .factor.excess {\n    color: #8f6020;\n}\n\nbody.light-theme .laws-list .law-box .law-options .option-box {\n    padding: 4px 12px;\n    border: 1px solid #222222;\n    cursor: pointer;\n    margin: 0 10px;\n}\n\nbody.light-theme .laws-list .law-box .law-options .option-box.selected {\n    background-color: #ccc;\n}\n\nbody.light-theme .submenu .submenu-item.selected {\n    color: #3558aa;\n}\n\n\n@media screen and (max-width: 860px) {\n    body.light-theme .mobile-tooltip {\n        background: #eee;\n        border: 1px solid #222;\n    }\n\n    body.light-theme .mobile-tooltip-wrap {\n        background: #eee;\n    }\n}\n\nbody.light-theme .clickable-highlight {\n    color: #3558aa;\n}\n\nbody.light-theme .chips-wrap.usage-highlight .chip {\n    border-color: #55a8fa;\n}\n\nbody.light-theme .modal-wrap.opened .modal {\n    background: #fefefe;\n    border: 1px solid #222;\n    border-radius: 4px;\n}\n\n\n/* THEME: BLACK THEME */\n\nbody.black-theme * {\n    /*font-family: 'Nunito', sans-serif;*/\n    font-family: 'DM Sans', sans-serif;\n}\n\nbody.black-theme * {\n    color: #fff;\n}\n\nbody.black-theme span.greenish {\n    color: #90fd70;\n}\n\nbody.black-theme span.red {\n    color: #ff6767;\n}\n\nbody.black-theme .page {\n    background-color: #111;\n}\n\nbody.black-theme input {\n    background: #333;\n    border: 1px solid #333;\n    border-radius: 2px;\n}\n\nbody.black-theme button {\n    background: #000;\n    color: #fff;\n    border-radius: 4px;\n    border-color: #333;\n}\n\n\nbody.black-theme button:hover {\n    background: #111;\n}\n\nbody.black-theme button:disabled {\n    background: rgba(31,41,51,0.5);\n    pointer-events: none;\n}\n\nbody.black-theme select {\n    border: 1px solid #333;\n    border-radius: 5px;\n    padding: 8px;\n    min-width: 163px;\n    background: #111;\n    color: #fff;\n}\n\nbody.black-theme .right-panel .expand-collapse-panel {\n    background-color: #111;\n    border-color: #fff;\n}\n\nbody.black-theme .game .right-panel .queue-item .move-controls .move:hover {\n    color: #eee;\n}\n\nbody.black-theme .game .right-panel .queue-item .close:hover {\n    cursor: pointer;\n    color: #eee;\n}\n\nbody.black-theme .header .menu ul li .menu-inner:hover {\n    color: #eee;\n}\n\nbody.black-theme .header .menu ul li.selected .menu-inner {\n    border-bottom: 2px solid #eee;\n    padding-bottom: 4px;\n    pointer-events: none;\n}\n\nbody.black-theme .resources-sidebar {\n    width: 360px;\n    border: 1px solid #777;\n    border-radius: 4px;\n    background: #111;\n}\n\nbody.black-theme .resources-sidebar .hl.resource-item.missing-highlight,\nbody.black-theme .resources-sidebar .resource-item.missing-highlight * {\n    background: #fd3030;\n    color: #fff;\n}\n\nbody.black-theme .resources-sidebar .hl.resource-item.produced-highlight,\nbody.black-theme .resources-sidebar .resource-item.produced-highlight * {\n    background: #30ad30;\n    color: #fff;\n}\n\nbody.black-theme .resources-sidebar .hl.resource-item.consumed-highlight,\nbody.black-theme .resources-sidebar .resource-item.consumed-highlight * {\n    background: #fd7050;\n    color: #fff;\n}\n\nbody.black-theme .resources-sidebar .resource-item.negative p {\n    color: #fd7050;\n}\n\nbody.black-theme .resources-sidebar .resource-item.capped p {\n    color: #ffe0a0;\n}\n\nbody.black-theme .resources-sidebar .resource-item p.boosted {\n    color: #90fd70;\n}\n\nbody.black-theme .resources-sidebar .resource-item p.decreased {\n    color: #ff5757;\n}\n\nbody.black-theme .resources-sidebar .resource-item:nth-child(even) {\n    background: #111;\n}\n\nbody.black-theme .resources-sidebar .resource-item:nth-child(odd) {\n    background: #333;\n}\n\nbody.black-theme .features-block .features-title .collapse-expand {\n    font-size: 12px;\n    color: #fff;\n    cursor: pointer;\n}\n\nbody.black-theme .label-wrap {\n    font-weight: bold;\n}\n\nbody.black-theme .chips-wrap .chip {\n    border: 1px solid #333;\n    background-color: #333;\n}\n\nbody.black-theme .chips-wrap .chip .stick-left {\n    width: 150px;\n}\n\nbody.black-theme .buildings-wrap .chips-wrap .chip .stick-left {\n    width: 200px;\n}\n\nbody.black-theme .chips-wrap .chip * {\n    color: #fff;\n}\n\nbody.black-theme .chips-wrap .chip .bg {\n    background-color: #000;\n}\n\nbody.black-theme .chips-wrap.building-unlock .chip .bg {\n    background-color: #67c3f4;\n}\n\nbody.black-theme .chips-wrap.resource-unlock .chip .bg {\n    background-color: #a7f3a4;\n}\n\nbody.black-theme .chips-wrap.special .chip .bg {\n    background-color: #d7a3d4;\n}\n\nbody.black-theme .chips-wrap .chip-content {\n    display: flex;\n    align-items: center;\n}\n\nbody.black-theme .chips-wrap .chip-content .name-label {\n    font-size: 14px;\n}\n\nbody.black-theme .chips-wrap .chip-content .stick-right {\n    position: relative;\n    flex-shrink: 0;\n    top: -2px;\n}\n\nbody.black-theme .chips-wrap .chip .controls.disabled .control {\n    color: #555;\n}\n\nbody.black-theme .chips-wrap .chip .controls:not(.disabled) .control:hover {\n    background: #222;\n    border: 1px solid #333;\n    color: #fff;\n    border-radius: 50%;\n}\n\nbody.black-theme .description-hint {\n    background: #222;\n    border: 1px solid #555;\n}\n\nbody.black-theme .chips-wrap .chip .level-label {\n    background: none;\n    border: none;\n    font-size: 13px;\n}\n\nbody.black-theme .hint-caps {\n    background: #222;\n    padding: 16px;\n    border: 1px solid #555;\n    border-radius: 4px;\n}\n\nbody.black-theme .notification-container span.new-label::after {\n    margin-top: 0;\n    padding-left: 5px;\n}\n\nbody.black-theme .chips-wrap.disabled .chip span.name-label {\n    color: #eee;\n}\n\nbody.black-theme .chips-wrap.disabled.blocked.soft-lock .chip span.name-label {\n    color: #ff5717;\n}\n\nbody.black-theme .chips-wrap.disabled.soft-lock .chip span.name-label {\n    color: #ffa727;\n    cursor: not-allowed;\n}\n\nbody.black-theme .travel-bar {\n    border: 1px solid #555;\n    background: #555;\n}\n\nbody.black-theme .travel-bar .travel-bar-inner {\n    background: #555;\n}\n\nbody.black-theme .cost-block .progressBar .filling {\n    background: #eee;\n}\n\nbody.black-theme .job-card {\n    border: 1px solid #222;\n}\n\nbody.black-theme .job-card .set-amount button {\n    background: #000;\n    border: 1px solid #222222;\n}\n\nbody.black-theme .job-card .set-amount button:hover {\n    background: #333;\n}\n\nbody.black-theme .job-card .set-amount input {\n    background: #222;\n    border: 1px solid #222222;\n    border-radius: 4px;\n}\n\nbody.black-theme .settings .set-row .val textarea {\n    background: #222;\n    border: 1px solid #222222;\n    border-radius: 4px;\n}\n\nbody.black-theme .happiness .factor-wrap .factor.excess {\n    color: #ffe0a0;\n}\n\nbody.black-theme .laws-list .law-box .law-options .option-box {\n    padding: 4px 12px;\n    border: 1px solid #222222;\n    cursor: pointer;\n    margin: 0 10px;\n}\n\nbody.black-theme .laws-list .law-box .law-options .option-box.selected {\n    background-color: #000;\n}\n\nbody.black-theme .submenu .submenu-item.selected {\n    color: #ee7744;\n}\n\n\n@media screen and (max-width: 860px) {\n    body.black-theme .mobile-tooltip {\n        background: #131518;\n        border: 1px solid #333;\n    }\n\n    body.black-theme .mobile-tooltip-wrap {\n        background: rgba(21,21,21,0.7);\n    }\n}\n\nbody.black-theme .clickable-highlight {\n    color: #ee7744;\n}\n\nbody.black-theme .chips-wrap.usage-highlight .chip {\n    border-color: #ee7744;\n}\n\nbody.black-theme .modal-wrap.opened .modal {\n    background: #131115;\n    border: 1px solid #222222;\n    border-radius: 4px;\n}",
+            ");\n    background-size: 28px 28px;\n    display: block;\n    position: absolute;\n    width: 28px;\n    height: 28px;\n    z-index: 3;\n    content: '';\n    top: 0px;\n    left: 0px;\n}\n\n.expeditions-map .map-cell.home {\n    background: #222222;\n}\n\n.expeditions-map .map-row {\n    display: flex;\n}\n\n.description-hint .loot-line {\n    display: flex;\n}\n\n.description-hint .loot-line p {\n    margin-right: 20px;\n}\n\n.description-hint .loot-line p{\n    font-size: 13px;\n}\n\n.happiness .line .factor {\n    position: relative;\n    min-width: 100px;\n}\n\n.resources-sidebar .resource-item p.boosted::after,\n.happiness .line .factor.boosted::after {\n    display: block;\n    position: absolute;\n    content: 'E';\n    font-size: 12px;\n    background: #30ad30;\n    color: #fff;\n    top: 0;\n    right: 0px;\n    width: 14px;\n    height: 14px;\n    border-radius: 50%;\n    text-align: center;\n    padding: 1px;\n}\n\n.resources-sidebar .resource-item p.decreased::after,\n.happiness .line .factor.decreased::after {\n    display: block;\n    position: absolute;\n    content: 'E';\n    font-size: 12px;\n    background: #ff3030;\n    color: #fff;\n    top: 0;\n    right: 0px;\n    width: 14px;\n    height: 14px;\n    border-radius: 50%;\n    text-align: center;\n    padding: 1px;\n}\n\n.happiness .line .factor.decreased::after,\n.happiness .line .factor.boosted::after {\n    right: -18px;\n}\n\n.modal-wrap.opened {\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100vw;\n    height: 100vh;\n    z-index: 1;\n    background: rgba(0,0,0,0.3);\n}\n\n.modal-wrap.opened .modal {\n    width: 80%;\n    height: calc(100vh - 100px);\n    margin: 50px auto;\n    padding: 12px;\n}\n\n.modal-wrap.opened .modal .modal-header {\n    display: flex;\n    justify-content: space-between;\n}\n\n.modal-wrap.opened .modal .modal-header .close {\n    cursor: pointer;\n}\n\n.search-content {\n    height: calc(100vh - 220px);\n}\n\n.search-content .search-item {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    padding: 6px 8px;\n    border: 1px solid #222;\n    width: 260px;\n    margin: 4px 8px;\n    border-radius: 4px;\n    font-size: 14px;\n}\n\n.search-content .search-results-list .feature-list {\n    display: flex;\n    flex-wrap: wrap;\n}\n\n.search-content .search-item p {\n    margin: 0;\n}\n\n.editor-wrap .editor-column .details {\n    height: calc(100vh - 480px);\n}\n\n.editor-wrap .editor-column .save-area {\n    margin-top: 10px;\n}\n\n.editor-wrap .editor-column .row {\n    display: flex;\n    align-items: center;\n}\n\n.editor-wrap .editor-column .main .buttons button {\n    margin: 4px;\n}\n\n.editor-wrap .editor-column .row {\n    margin: 4px;\n    padding: 4px;\n}\n\n.editor-wrap .editor-column .row.job-container {\n    margin: 4px;\n    padding: 4px;\n    border: 1px solid #222222;\n    width: 100%;\n}\n\n.editor-wrap .editor-column .row.job-container .value {\n    padding: 5px;\n    margin: 5px;\n}\n\n.editor-wrap .editor-column .row.job-container .value p {\n    margin: 4px 0;\n}\n\n.editor-wrap .editor-column .row.job-container .value input[type=\"number\"] {\n    width: 80px;\n}\n\n.editor-wrap .editor-column .laws-container .title {\n    font-size: 15px;\n}\n\n.editor-wrap .editor-column .laws-container .toggle-options {\n    display: flex;\n    flex-wrap: wrap;\n}\n\n.editor-wrap .editor-column .laws-container .toggle-options .option {\n    width: 150px;\n    padding: 4px 8px;\n    border: 1px solid #222;\n    margin: 5px;\n}\n\n.editor-wrap .editor-column .laws-container .toggle-options .option.selected {\n    font-weight: bold;\n}\n\n.colony-wrap .line .presets {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    width: 400px;\n    margin-left: 20px;\n}\n\n.colony-wrap .line .presets button {\n    width: 180px;\n    margin-left: 5px;\n}\n\n.upper.laws .presets {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    max-width: 500px;\n    margin-bottom: 10px;\n}\n\n.search-flex-wrap .search-item {\n    padding: 5px;\n}\n.search-flex-wrap .search-item .select-level {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    padding-top: 5px;\n}\n\n\n.search-flex-wrap .search-item .select-level input{\n    padding: 5px;\n    width: 60px;\n}\n\n/* Themes */\nbody.dark-theme * {\n    color: #ffffff;\n}\n\nbody.dark-theme span.greenish {\n    color: #90fd70;\n}\n\nbody.dark-theme span.red {\n    color: #ff6767;\n}\n\nbody.dark-theme .page {\n    background-color: #131115;\n}\n\nbody.dark-theme input {\n    background: #233444;\n}\n\nbody.dark-theme button {\n    background: #344555;\n    border-radius: 0;\n    border-color: #575989;\n}\n\nbody.dark-theme button:hover {\n    background: #575989;\n}\n\nbody.dark-theme button:disabled {\n    background: rgba(31,41,51,0.5);\n    pointer-events: none;\n}\n\nbody.dark-theme select {\n    border: 1px solid #777;\n    border-radius: 5px;\n    padding: 8px;\n    min-width: 163px;\n    background: rgb(19, 25, 38);\n    color: #fff;\n}\n\nbody.dark-theme .right-panel .expand-collapse-panel {\n    background-color: rgb(19, 25, 38);\n    border-color: #fff;\n}\n\nbody.dark-theme .game .right-panel .queue-item .move-controls .move:hover {\n    color: #ffa767;\n}\n\nbody.dark-theme .game .right-panel .queue-item .close:hover {\n    cursor: pointer;\n    color: #ee7744;\n}\n\nbody.dark-theme .header .menu ul li .menu-inner:hover {\n    color: #e74;\n}\n\nbody.dark-theme .header .menu ul li.selected .menu-inner {\n    border-bottom: 5px solid #e74;\n    padding-bottom: 4px;\n    pointer-events: none;\n}\n\nbody.dark-theme .resources-sidebar {\n    width: 360px;\n    border: 1px solid #222;\n}\n\n\nbody.dark-theme .resources-sidebar .hl.resource-item.missing-highlight,\nbody.dark-theme .resources-sidebar .resource-item.missing-highlight * {\n    background: #fd3030;\n    color: #fff;\n}\n\nbody.dark-theme .resources-sidebar .hl.resource-item.produced-highlight,\nbody.dark-theme .resources-sidebar .resource-item.produced-highlight * {\n    background: #30ad30;\n    color: #fff;\n}\n\nbody.dark-theme .resources-sidebar .hl.resource-item.consumed-highlight,\nbody.dark-theme .resources-sidebar .resource-item.consumed-highlight * {\n    background: #fd7050;\n    color: #fff;\n}\n\nbody.dark-theme .resources-sidebar .resource-item.negative p {\n    color: #fd7050;\n}\n\nbody.dark-theme .resources-sidebar .resource-item.capped p {\n    color: #ffe0a0;\n}\n\nbody.dark-theme .resources-sidebar .resource-item p.boosted {\n    color: #90fd70;\n}\n\nbody.dark-theme .resources-sidebar .resource-item p.decreased {\n    color: #ff5757;\n}\n\nbody.dark-theme .resources-sidebar .resource-item:nth-child(even) {\n    background: #131115;\n}\n\nbody.dark-theme .resources-sidebar .resource-item:nth-child(odd) {\n    background: #222;\n}\n\nbody.dark-theme .features-block .features-title .collapse-expand {\n    font-size: 12px;\n    color: #ee7744;\n    cursor: pointer;\n}\n\nbody.dark-theme .chips-wrap .chip {\n    border: 1px solid #234;\n    background-color: #222;\n}\n\nbody.dark-theme .chips-wrap .chip .bg {\n    background-color: #193344;\n}\n\nbody.dark-theme .chips-wrap.building-unlock .chip .bg {\n    background-color: #376384;\n}\n\nbody.dark-theme .chips-wrap.resource-unlock .chip .bg {\n    background-color: #377334;\n}\n\nbody.dark-theme .chips-wrap.special .chip .bg {\n    background-color: #775374;\n}\n\nbody.dark-theme .chips-wrap .chip .controls.disabled .control {\n    color: #ccbbaa;\n}\n\nbody.dark-theme .chips-wrap .chip .controls:not(.disabled) .control:hover {\n    background: #344555;\n    border: 1px solid #222;\n    border-radius: 50%;\n}\n\nbody.dark-theme .description-hint {\n    background: #131518;\n    border: 1px solid #222;\n}\n\nbody.dark-theme .chips-wrap .chip .level-label {\n    background: #344555;\n    border: 1px solid #222;\n}\n\nbody.dark-theme .hint-caps {\n    background: #131115;\n    padding: 16px;\n}\n\nbody.dark-theme .chips-wrap.disabled .chip span.name-label {\n    color: #cba;\n}\n\nbody.dark-theme .chips-wrap.disabled.blocked.soft-lock .chip span.name-label {\n    color: #ff5757;\n}\n\nbody.dark-theme .chips-wrap.disabled.soft-lock .chip span.name-label {\n    color: #ffa767;\n    cursor: not-allowed;\n}\n\nbody.dark-theme .chips-wrap.usage-highlight .chip {\n    border-color: #eeaa44;\n}\n\nbody.dark-theme .travel-bar {\n    border: 1px solid #222222;\n    background: #223344;\n}\n\nbody.dark-theme .travel-bar .travel-bar-inner {\n    background: #575989;\n}\n\nbody.dark-theme .cost-block .progressBar .filling {\n    background: #575989;\n}\n\nbody.dark-theme .job-card {\n    border: 1px solid #222;\n}\n\nbody.dark-theme .job-card .set-amount button {\n    background: #233444;\n    border: 1px solid #222222;\n}\n\nbody.dark-theme .job-card .set-amount button:hover {\n    background: #344555;\n}\n\nbody.dark-theme .job-card .set-amount input {\n    background: #131115;\n    border: 1px solid #222222;\n    border-radius: 4px;\n}\n\nbody.dark-theme .settings .set-row .val textarea {\n    background: #222222;\n}\n\nbody.dark-theme .happiness .factor-wrap .factor.excess {\n    color: #ffe0a0;\n}\n\nbody.dark-theme .laws-list .law-box .law-options .option-box {\n    padding: 4px 12px;\n    border: 1px solid #222222;\n    cursor: pointer;\n    margin: 0 10px;\n}\n\nbody.dark-theme .laws-list .law-box .law-options .option-box.selected {\n    background-color: #233444;\n}\n\nbody.dark-theme .submenu .submenu-item.selected {\n    color: #ee7744;\n}\n\n@media screen and (max-width: 860px) {\n    body.dark-theme .mobile-tooltip {\n        background: #131518;\n        border: 1px solid #223344;\n    }\n\n    body.dark-theme .mobile-tooltip-wrap {\n        background: rgba(21,21,21,0.7);\n    }\n}\n\nbody.dark-theme .clickable-highlight {\n    color: #ee7744;\n}\n\nbody.dark-theme .modal-wrap.opened .modal {\n    background: #131115;\n    border: 1px solid #222222;\n    border-radius: 4px;\n}\n\nbody.dark-theme .editor-wrap .editor-column .laws-container .toggle-options .option.selected {\n    background-color: #223344;\n}\n\n/* THEME: LIGHT THEME */\n\nbody.light-theme * {\n    font-family: 'Lato', sans-serif;\n}\n\nbody.light-theme * {\n    color: #222;\n}\n\nbody.light-theme span.greenish {\n    color: #30ad30;\n}\n\nbody.light-theme span.red {\n    color: #df2727;\n}\n\nbody.light-theme .page {\n    background-color: #f6f1f6;\n}\n\nbody.light-theme input {\n    background: #eee;\n    border: 1px solid #333;\n    border-radius: 2px;\n}\n\nbody.light-theme button {\n    background: #eee;\n    color: #222222;\n    border-radius: 4px;\n    border-color: #333;\n}\n\n\nbody.light-theme button:hover {\n    background: #ccc;\n}\n\nbody.light-theme button:disabled {\n    background: rgba(31,41,51,0.5);\n    pointer-events: none;\n}\n\nbody.light-theme select {\n    border: 1px solid #333;\n    border-radius: 5px;\n    padding: 8px;\n    min-width: 163px;\n    background: #eee;\n    color: #333;\n}\n\nbody.light-theme .right-panel .expand-collapse-panel {\n    background-color: #eee;\n    border-color: #333;\n}\n\nbody.light-theme .game .right-panel .queue-item .move-controls .move:hover {\n    color: #3558aa;\n}\n\nbody.light-theme .game .right-panel .queue-item .close:hover {\n    cursor: pointer;\n    color: #3558aa;\n}\n\nbody.light-theme .header .menu ul li .menu-inner:hover {\n    color: #3558aa;\n}\n\nbody.light-theme .header .menu ul li.selected .menu-inner {\n    border-bottom: 2px solid #35488a;\n    padding-bottom: 4px;\n    pointer-events: none;\n}\n\nbody.light-theme .resources-sidebar {\n    width: 360px;\n    border: 1px solid #777;\n    border-radius: 4px;\n    background: #eee;\n}\n\nbody.light-theme .resources-sidebar .hl.resource-item.missing-highlight,\nbody.light-theme .resources-sidebar .resource-item.missing-highlight * {\n    background: #fda0a0;\n    color: #222;\n}\n\nbody.light-theme .resources-sidebar .hl.resource-item.produced-highlight,\nbody.light-theme .resources-sidebar .resource-item.produced-highlight * {\n    background: #a0fda0;\n    color: #222;\n}\n\nbody.light-theme .resources-sidebar .hl.resource-item.consumed-highlight,\nbody.light-theme .resources-sidebar .resource-item.consumed-highlight * {\n    background: #ffd090;\n    color: #222;\n}\n\nbody.light-theme .resources-sidebar .resource-item.negative p {\n    color: #fd7050;\n}\n\nbody.light-theme .resources-sidebar .resource-item.capped p {\n    color: #8f6020;\n}\n\nbody.light-theme .resources-sidebar .resource-item p.boosted {\n    color: #30ad30;\n}\n\nbody.light-theme .resources-sidebar .resource-item p.decreased {\n    color: #df2727;\n}\n\nbody.light-theme .resources-sidebar .resource-item:nth-child(even) {\n    background: #eee9ee;\n}\n\nbody.light-theme .resources-sidebar .resource-item:nth-child(odd) {\n    background: #f6f6f6;\n}\n\nbody.light-theme .features-block .features-title .collapse-expand {\n    font-size: 12px;\n    color: #112224;\n    cursor: pointer;\n}\n\nbody.light-theme .label-wrap {\n    font-weight: bold;\n}\n\nbody.light-theme .chips-wrap .chip {\n    border: 1px solid #333;\n    background-color: #ddd;\n}\n\nbody.light-theme .chips-wrap .chip .stick-left {\n    width: 150px;\n}\n\nbody.light-theme .buildings-wrap .chips-wrap .chip .stick-left {\n    width: 200px;\n}\n\nbody.light-theme .chips-wrap .chip * {\n    color: #000;\n}\n\nbody.light-theme .chips-wrap .chip .bg {\n    background-color: #fff;\n    border-right: 1px solid #888;\n}\n\nbody.light-theme .chips-wrap.building-unlock .chip .bg {\n    background-color: #67c3f4;\n}\n\nbody.light-theme .chips-wrap.resource-unlock .chip .bg {\n    background-color: #a7f3a4;\n}\n\nbody.light-theme .chips-wrap.special .chip .bg {\n    background-color: #d7a3d4;\n}\n\nbody.light-theme .chips-wrap .chip-content {\n    display: flex;\n    align-items: center;\n}\n\nbody.light-theme .chips-wrap .chip-content .name-label {\n    font-size: 14px;\n}\n\nbody.light-theme .chips-wrap .chip-content .stick-right {\n    position: relative;\n    flex-shrink: 0;\n    top: -2px;\n}\n\nbody.light-theme .chips-wrap .chip .controls.disabled .control {\n    color: #555;\n}\n\nbody.light-theme .chips-wrap .chip .controls:not(.disabled) .control:hover {\n    background: #123;\n    border: 1px solid #123;\n    color: #fff;\n    border-radius: 50%;\n}\n\nbody.light-theme .description-hint {\n    background: #fff;\n    border: 1px solid #222;\n}\n\nbody.light-theme .chips-wrap .chip .level-label {\n    background: none;\n    border: none;\n    font-size: 13px;\n}\n\nbody.light-theme .hint-caps {\n    background: #fff;\n    padding: 16px;\n    border: 1px solid #222;\n    border-radius: 4px;\n}\n\nbody.light-theme .notification-container span.new-label::after {\n    margin-top: 0;\n    padding-left: 5px;\n}\n\nbody.light-theme .chips-wrap.disabled .chip span.name-label {\n    color: #444;\n}\n\nbody.light-theme .chips-wrap.disabled.blocked.soft-lock .chip span.name-label {\n    color: #ef0707;\n}\n\nbody.light-theme .chips-wrap.disabled.soft-lock .chip span.name-label {\n    color: #7f6707;\n    cursor: not-allowed;\n}\n\nbody.light-theme .travel-bar {\n    border: 1px solid #222222;\n    background: #eee;\n}\n\nbody.light-theme .travel-bar .travel-bar-inner {\n    background: #123;\n}\n\nbody.light-theme .cost-block .progressBar .filling {\n    background: #37a939;\n}\n\nbody.light-theme .job-card {\n    border: 1px solid #222;\n}\n\nbody.light-theme .job-card .set-amount button {\n    background: #eee;\n    border: 1px solid #222222;\n}\n\nbody.light-theme .job-card .set-amount button:hover {\n    background: #ccc;\n}\n\nbody.light-theme .job-card .set-amount input {\n    background: #fff;\n    border: 1px solid #222222;\n    border-radius: 4px;\n}\n\nbody.light-theme .settings .set-row .val textarea {\n    background: #eee;\n    border: 1px solid #222222;\n    border-radius: 4px;\n}\n\nbody.light-theme .happiness .factor-wrap .factor.excess {\n    color: #8f6020;\n}\n\nbody.light-theme .laws-list .law-box .law-options .option-box {\n    padding: 4px 12px;\n    border: 1px solid #222222;\n    cursor: pointer;\n    margin: 0 10px;\n}\n\nbody.light-theme .laws-list .law-box .law-options .option-box.selected {\n    background-color: #ccc;\n}\n\nbody.light-theme .submenu .submenu-item.selected {\n    color: #3558aa;\n}\n\n\n@media screen and (max-width: 860px) {\n    body.light-theme .mobile-tooltip {\n        background: #eee;\n        border: 1px solid #222;\n    }\n\n    body.light-theme .mobile-tooltip-wrap {\n        background: #eee;\n    }\n}\n\nbody.light-theme .clickable-highlight {\n    color: #3558aa;\n}\n\nbody.light-theme .chips-wrap.usage-highlight .chip {\n    border-color: #55a8fa;\n}\n\nbody.light-theme .modal-wrap.opened .modal {\n    background: #fefefe;\n    border: 1px solid #222;\n    border-radius: 4px;\n}\n\nbody.light-theme .editor-wrap .editor-column .laws-container .toggle-options .option.selected {\n    background-color: #aaeeaa;\n}\n\n\n/* THEME: BLACK THEME */\n\nbody.black-theme * {\n    /*font-family: 'Nunito', sans-serif;*/\n    font-family: 'DM Sans', sans-serif;\n}\n\nbody.black-theme * {\n    color: #fff;\n}\n\nbody.black-theme span.greenish {\n    color: #90fd70;\n}\n\nbody.black-theme span.red {\n    color: #ff6767;\n}\n\nbody.black-theme .page {\n    background-color: #111;\n}\n\nbody.black-theme input {\n    background: #333;\n    border: 1px solid #333;\n    border-radius: 2px;\n}\n\nbody.black-theme button {\n    background: #000;\n    color: #fff;\n    border-radius: 4px;\n    border-color: #333;\n}\n\n\nbody.black-theme button:hover {\n    background: #111;\n}\n\nbody.black-theme button:disabled {\n    background: rgba(31,41,51,0.5);\n    pointer-events: none;\n}\n\nbody.black-theme select {\n    border: 1px solid #333;\n    border-radius: 5px;\n    padding: 8px;\n    min-width: 163px;\n    background: #111;\n    color: #fff;\n}\n\nbody.black-theme .right-panel .expand-collapse-panel {\n    background-color: #111;\n    border-color: #fff;\n}\n\nbody.black-theme .game .right-panel .queue-item .move-controls .move:hover {\n    color: #eee;\n}\n\nbody.black-theme .game .right-panel .queue-item .close:hover {\n    cursor: pointer;\n    color: #eee;\n}\n\nbody.black-theme .header .menu ul li .menu-inner:hover {\n    color: #eee;\n}\n\nbody.black-theme .header .menu ul li.selected .menu-inner {\n    border-bottom: 2px solid #eee;\n    padding-bottom: 4px;\n    pointer-events: none;\n}\n\nbody.black-theme .resources-sidebar {\n    width: 360px;\n    border: 1px solid #777;\n    border-radius: 4px;\n    background: #111;\n}\n\nbody.black-theme .resources-sidebar .hl.resource-item.missing-highlight,\nbody.black-theme .resources-sidebar .resource-item.missing-highlight * {\n    background: #fd3030;\n    color: #fff;\n}\n\nbody.black-theme .resources-sidebar .hl.resource-item.produced-highlight,\nbody.black-theme .resources-sidebar .resource-item.produced-highlight * {\n    background: #30ad30;\n    color: #fff;\n}\n\nbody.black-theme .resources-sidebar .hl.resource-item.consumed-highlight,\nbody.black-theme .resources-sidebar .resource-item.consumed-highlight * {\n    background: #fd7050;\n    color: #fff;\n}\n\nbody.black-theme .resources-sidebar .resource-item.negative p {\n    color: #fd7050;\n}\n\nbody.black-theme .resources-sidebar .resource-item.capped p {\n    color: #ffe0a0;\n}\n\nbody.black-theme .resources-sidebar .resource-item p.boosted {\n    color: #90fd70;\n}\n\nbody.black-theme .resources-sidebar .resource-item p.decreased {\n    color: #ff5757;\n}\n\nbody.black-theme .resources-sidebar .resource-item:nth-child(even) {\n    background: #111;\n}\n\nbody.black-theme .resources-sidebar .resource-item:nth-child(odd) {\n    background: #333;\n}\n\nbody.black-theme .features-block .features-title .collapse-expand {\n    font-size: 12px;\n    color: #fff;\n    cursor: pointer;\n}\n\nbody.black-theme .label-wrap {\n    font-weight: bold;\n}\n\nbody.black-theme .chips-wrap .chip {\n    border: 1px solid #333;\n    background-color: #333;\n}\n\nbody.black-theme .chips-wrap .chip .stick-left {\n    width: 150px;\n}\n\nbody.black-theme .buildings-wrap .chips-wrap .chip .stick-left {\n    width: 200px;\n}\n\nbody.black-theme .chips-wrap .chip * {\n    color: #fff;\n}\n\nbody.black-theme .chips-wrap .chip .bg {\n    background-color: #000;\n}\n\nbody.black-theme .chips-wrap.building-unlock .chip .bg {\n    background-color: #67c3f4;\n}\n\nbody.black-theme .chips-wrap.resource-unlock .chip .bg {\n    background-color: #a7f3a4;\n}\n\nbody.black-theme .chips-wrap.special .chip .bg {\n    background-color: #d7a3d4;\n}\n\nbody.black-theme .chips-wrap .chip-content {\n    display: flex;\n    align-items: center;\n}\n\nbody.black-theme .chips-wrap .chip-content .name-label {\n    font-size: 14px;\n}\n\nbody.black-theme .chips-wrap .chip-content .stick-right {\n    position: relative;\n    flex-shrink: 0;\n    top: -2px;\n}\n\nbody.black-theme .chips-wrap .chip .controls.disabled .control {\n    color: #555;\n}\n\nbody.black-theme .chips-wrap .chip .controls:not(.disabled) .control:hover {\n    background: #222;\n    border: 1px solid #333;\n    color: #fff;\n    border-radius: 50%;\n}\n\nbody.black-theme .description-hint {\n    background: #222;\n    border: 1px solid #555;\n}\n\nbody.black-theme .chips-wrap .chip .level-label {\n    background: none;\n    border: none;\n    font-size: 13px;\n}\n\nbody.black-theme .hint-caps {\n    background: #222;\n    padding: 16px;\n    border: 1px solid #555;\n    border-radius: 4px;\n}\n\nbody.black-theme .notification-container span.new-label::after {\n    margin-top: 0;\n    padding-left: 5px;\n}\n\nbody.black-theme .chips-wrap.disabled .chip span.name-label {\n    color: #eee;\n}\n\nbody.black-theme .chips-wrap.disabled.blocked.soft-lock .chip span.name-label {\n    color: #ff5717;\n}\n\nbody.black-theme .chips-wrap.disabled.soft-lock .chip span.name-label {\n    color: #ffa727;\n    cursor: not-allowed;\n}\n\nbody.black-theme .travel-bar {\n    border: 1px solid #555;\n    background: #555;\n}\n\nbody.black-theme .travel-bar .travel-bar-inner {\n    background: #555;\n}\n\nbody.black-theme .cost-block .progressBar .filling {\n    background: #eee;\n}\n\nbody.black-theme .job-card {\n    border: 1px solid #222;\n}\n\nbody.black-theme .job-card .set-amount button {\n    background: #000;\n    border: 1px solid #222222;\n}\n\nbody.black-theme .job-card .set-amount button:hover {\n    background: #333;\n}\n\nbody.black-theme .job-card .set-amount input {\n    background: #222;\n    border: 1px solid #222222;\n    border-radius: 4px;\n}\n\nbody.black-theme .settings .set-row .val textarea {\n    background: #222;\n    border: 1px solid #222222;\n    border-radius: 4px;\n}\n\nbody.black-theme .happiness .factor-wrap .factor.excess {\n    color: #ffe0a0;\n}\n\nbody.black-theme .laws-list .law-box .law-options .option-box {\n    padding: 4px 12px;\n    border: 1px solid #222222;\n    cursor: pointer;\n    margin: 0 10px;\n}\n\nbody.black-theme .laws-list .law-box .law-options .option-box.selected {\n    background-color: #000;\n}\n\nbody.black-theme .submenu .submenu-item.selected {\n    color: #ee7744;\n}\n\n\n@media screen and (max-width: 860px) {\n    body.black-theme .mobile-tooltip {\n        background: #131518;\n        border: 1px solid #333;\n    }\n\n    body.black-theme .mobile-tooltip-wrap {\n        background: rgba(21,21,21,0.7);\n    }\n}\n\nbody.black-theme .clickable-highlight {\n    color: #ee7744;\n}\n\nbody.black-theme .chips-wrap.usage-highlight .chip {\n    border-color: #ee7744;\n}\n\nbody.black-theme .modal-wrap.opened .modal {\n    background: #131115;\n    border: 1px solid #222222;\n    border-radius: 4px;\n}\n\nbody.black-theme .editor-wrap .editor-column .laws-container .toggle-options .option.selected {\n    background-color: #111;\n}",
           "",
         ]);
         const y = h;
@@ -1612,7 +1612,7 @@
           return "\n" + M + e;
         }
         var F = !1;
-        function z(e, n) {
+        function B(e, n) {
           if (!e || F) return "";
           F = !0;
           var t = Error.prepareStackTrace;
@@ -1685,7 +1685,7 @@
           }
           return (e = e ? e.displayName || e.name : "") ? U(e) : "";
         }
-        function B(e) {
+        function z(e) {
           switch (e.tag) {
             case 5:
               return U(e.type);
@@ -1698,11 +1698,11 @@
             case 0:
             case 2:
             case 15:
-              return z(e.type, !1);
+              return B(e.type, !1);
             case 11:
-              return z(e.type.render, !1);
+              return B(e.type.render, !1);
             case 1:
-              return z(e.type, !0);
+              return B(e.type, !0);
             default:
               return "";
           }
@@ -2301,13 +2301,13 @@
           De = null,
           Ue = !1,
           Fe = null,
-          ze = {
+          Be = {
             onError: function (e) {
               (Me = !0), (De = e);
             },
           };
-        function Be(e, n, t, r, i, a, o, s, l) {
-          (Me = !1), (De = null), Le.apply(ze, arguments);
+        function ze(e, n, t, r, i, a, o, s, l) {
+          (Me = !1), (De = null), Le.apply(Be, arguments);
         }
         function He(e) {
           var n = e,
@@ -2660,7 +2660,7 @@
         function Fn(e, n, t) {
           Un(e) && t.delete(n);
         }
-        function zn() {
+        function Bn() {
           (Sn = !1),
             null !== An && Un(An) && (An = null),
             null !== Tn && Un(Tn) && (Tn = null),
@@ -2668,28 +2668,28 @@
             _n.forEach(Fn),
             Rn.forEach(Fn);
         }
-        function Bn(e, n) {
+        function zn(e, n) {
           e.blockedOn === n &&
             ((e.blockedOn = null),
             Sn ||
               ((Sn = !0),
-              i.unstable_scheduleCallback(i.unstable_NormalPriority, zn)));
+              i.unstable_scheduleCallback(i.unstable_NormalPriority, Bn)));
         }
         function Hn(e) {
           function n(n) {
-            return Bn(n, e);
+            return zn(n, e);
           }
           if (0 < Cn.length) {
-            Bn(Cn[0], e);
+            zn(Cn[0], e);
             for (var t = 1; t < Cn.length; t++) {
               var r = Cn[t];
               r.blockedOn === e && (r.blockedOn = null);
             }
           }
           for (
-            null !== An && Bn(An, e),
-              null !== Tn && Bn(Tn, e),
-              null !== On && Bn(On, e),
+            null !== An && zn(An, e),
+              null !== Tn && zn(Tn, e),
+              null !== On && zn(On, e),
               _n.forEach(n),
               Rn.forEach(n),
               t = 0;
@@ -3196,8 +3196,8 @@
             ? e.data
             : null;
         }
-        var zt = !1,
-          Bt = {
+        var Bt = !1,
+          zt = {
             color: !0,
             date: !0,
             datetime: !0,
@@ -3216,7 +3216,7 @@
           };
         function Ht(e) {
           var n = e && e.nodeName && e.nodeName.toLowerCase();
-          return "input" === n ? !!Bt[e.type] : "textarea" === n;
+          return "input" === n ? !!zt[e.type] : "textarea" === n;
         }
         function Gt(e, n, t, r) {
           Se(r),
@@ -3560,7 +3560,7 @@
           var r = e.type || "unknown-event";
           (e.currentTarget = t),
             (function (e, n, t, r, i, o, s, l, c) {
-              if ((Be.apply(this, arguments), Me)) {
+              if ((ze.apply(this, arguments), Me)) {
                 if (!Me) throw Error(a(198));
                 var u = De;
                 (Me = !1), (De = null), Ue || ((Ue = !0), (Fe = u));
@@ -3604,14 +3604,14 @@
           var t = n[pi];
           void 0 === t && (t = n[pi] = new Set());
           var r = e + "__bubble";
-          t.has(r) || (Br(n, e, 2, !1), t.add(r));
+          t.has(r) || (zr(n, e, 2, !1), t.add(r));
         }
         function Ur(e, n, t) {
           var r = 0;
-          n && (r |= 4), Br(t, e, r, n);
+          n && (r |= 4), zr(t, e, r, n);
         }
         var Fr = "_reactListening" + Math.random().toString(36).slice(2);
-        function zr(e) {
+        function Br(e) {
           if (!e[Fr]) {
             (e[Fr] = !0),
               o.forEach(function (n) {
@@ -3622,7 +3622,7 @@
             null === n || n[Fr] || ((n[Fr] = !0), Ur("selectionchange", !1, n));
           }
         }
-        function Br(e, n, t, r) {
+        function zr(e, n, t, r) {
           switch (Qn(n)) {
             case 1:
               var i = Wn;
@@ -3914,7 +3914,7 @@
                   x = void 0;
                 }
               else
-                zt
+                Bt
                   ? Ut(e, t) && (x = "onCompositionEnd")
                   : "keydown" === e &&
                     229 === t.keyCode &&
@@ -3922,10 +3922,10 @@
               x &&
                 (Lt &&
                   "ko" !== t.locale &&
-                  (zt || "onCompositionStart" !== x
-                    ? "onCompositionEnd" === x && zt && (b = Jn())
+                  (Bt || "onCompositionStart" !== x
+                    ? "onCompositionEnd" === x && Bt && (b = Jn())
                     : (($n = "value" in (Kn = i) ? Kn.value : Kn.textContent),
-                      (zt = !0))),
+                      (Bt = !0))),
                 0 < (v = Wr(r, x)).length &&
                   ((x = new bt(x, e, null, t, i)),
                   o.push({ event: x, listeners: v }),
@@ -3944,9 +3944,9 @@
                       }
                     })(e, t)
                   : (function (e, n) {
-                      if (zt)
+                      if (Bt)
                         return "compositionend" === e || (!Rt && Ut(e, n))
-                          ? ((e = Jn()), (Zn = $n = Kn = null), (zt = !1), e)
+                          ? ((e = Jn()), (Zn = $n = Kn = null), (Bt = !1), e)
                           : null;
                       switch (e) {
                         case "paste":
@@ -4233,8 +4233,8 @@
           }
           return null;
         }
-        var zi = y.ReactCurrentBatchConfig;
-        function Bi(e, n) {
+        var Bi = y.ReactCurrentBatchConfig;
+        function zi(e, n) {
           if (e && e.defaultProps) {
             for (var t in ((n = D({}, n)), (e = e.defaultProps)))
               void 0 === n[t] && (n[t] = e[t]);
@@ -4498,7 +4498,7 @@
           },
           enqueueSetState: function (e, n, t) {
             e = e._reactInternals;
-            var r = Bl(),
+            var r = zl(),
               i = Hl(e),
               a = na(r, i);
             (a.payload = n),
@@ -4508,7 +4508,7 @@
           },
           enqueueReplaceState: function (e, n, t) {
             e = e._reactInternals;
-            var r = Bl(),
+            var r = zl(),
               i = Hl(e),
               a = na(r, i);
             (a.tag = 1),
@@ -4519,7 +4519,7 @@
           },
           enqueueForceUpdate: function (e, n) {
             e = e._reactInternals;
-            var t = Bl(),
+            var t = zl(),
               r = Hl(e),
               i = na(t, r);
             (i.tag = 2),
@@ -4796,7 +4796,7 @@
           }
           return e;
         }
-        function za(e, n) {
+        function Ba(e, n) {
           throw (
             ((e = Object.prototype.toString.call(n)),
             Error(
@@ -4809,7 +4809,7 @@
             ))
           );
         }
-        function Ba(e) {
+        function za(e) {
           return (0, e._init)(e._payload);
         }
         function Ha(e) {
@@ -4862,7 +4862,7 @@
                   ("object" == typeof a &&
                     null !== a &&
                     a.$$typeof === R &&
-                    Ba(a) === n.type))
+                    za(a) === n.type))
               ? (((r = i(n, t.props)).ref = Fa(e, n, t)), (r.return = e), r)
               : (((r = jc(t.type, t.key, t.props, null, e.mode, r)).ref = Fa(
                   e,
@@ -4907,7 +4907,7 @@
               }
               if (ne(n) || L(n))
                 return ((n = Nc(n, e.mode, t, null)).return = e), n;
-              za(e, n);
+              Ba(e, n);
             }
             return null;
           }
@@ -4925,7 +4925,7 @@
                   return f(e, n, (i = t._init)(t._payload), r);
               }
               if (ne(t) || L(t)) return null !== i ? null : d(e, n, t, r, null);
-              za(e, t);
+              Ba(e, t);
             }
             return null;
           }
@@ -4953,7 +4953,7 @@
               }
               if (ne(r) || L(r))
                 return d(n, (e = e.get(t) || null), r, i, null);
-              za(n, r);
+              Ba(n, r);
             }
             return null;
           }
@@ -5074,7 +5074,7 @@
                           ("object" == typeof c &&
                             null !== c &&
                             c.$$typeof === R &&
-                            Ba(c) === u.type)
+                            za(c) === u.type)
                         ) {
                           t(r, u.sibling),
                             ((a = i(u, o.props)).ref = Fa(r, u, o)),
@@ -5130,7 +5130,7 @@
               }
               if (ne(o)) return m(r, a, o, l);
               if (L(o)) return g(r, a, o, l);
-              za(r, o);
+              Ba(r, o);
             }
             return ("string" == typeof o && "" !== o) || "number" == typeof o
               ? ((o = "" + o),
@@ -5513,13 +5513,13 @@
               })
             : void 0;
         }
-        function zo(e, n, t) {
+        function Bo(e, n, t) {
           return (
             (t = null != t ? t.concat([e]) : null),
             Po(4, 4, Fo.bind(null, n, e), t)
           );
         }
-        function Bo() {}
+        function zo() {}
         function Ho(e, n) {
           var t = yo();
           n = void 0 === n ? null : n;
@@ -5562,7 +5562,7 @@
             qo(e)
               ? Qo(n, t)
               : (Ko(e, n, t),
-                null !== (e = Gl(e, r, (t = Bl()))) && $o(e, n, r));
+                null !== (e = Gl(e, r, (t = zl()))) && $o(e, n, r));
         }
         function Vo(e, n, t) {
           var r = Hl(e),
@@ -5588,7 +5588,7 @@
                 if (((i.hasEagerState = !0), (i.eagerState = s), ar(s, o)))
                   return;
               } catch (e) {}
-            null !== (e = Gl(e, r, (t = Bl()))) && $o(e, n, r);
+            null !== (e = Gl(e, r, (t = zl()))) && $o(e, n, r);
           }
         }
         function qo(e) {
@@ -5688,7 +5688,7 @@
               return (e = { current: e }), (xo().memoizedState = e);
             },
             useState: Oo,
-            useDebugValue: Bo,
+            useDebugValue: zo,
             useDeferredValue: function (e) {
               var n = Oo(e),
                 t = n[0],
@@ -5759,7 +5759,7 @@
             useCallback: Ho,
             useContext: Ki,
             useEffect: Mo,
-            useImperativeHandle: zo,
+            useImperativeHandle: Bo,
             useInsertionEffect: Do,
             useLayoutEffect: Uo,
             useMemo: Go,
@@ -5768,7 +5768,7 @@
             useState: function () {
               return jo(wo);
             },
-            useDebugValue: Bo,
+            useDebugValue: zo,
             useDeferredValue: function (e) {
               var n = jo(wo),
                 t = n[0],
@@ -5802,7 +5802,7 @@
             useCallback: Ho,
             useContext: Ki,
             useEffect: Mo,
-            useImperativeHandle: zo,
+            useImperativeHandle: Bo,
             useInsertionEffect: Do,
             useLayoutEffect: Uo,
             useMemo: Go,
@@ -5811,7 +5811,7 @@
             useState: function () {
               return No(wo);
             },
-            useDebugValue: Bo,
+            useDebugValue: zo,
             useDeferredValue: function (e) {
               var n = No(wo),
                 t = n[0],
@@ -5845,7 +5845,7 @@
             var t = "",
               r = n;
             do {
-              (t += B(r)), (r = r.return);
+              (t += z(r)), (r = r.return);
             } while (r);
             var i = t;
           } catch (e) {
@@ -6287,7 +6287,7 @@
               );
             case 4:
               return (
-                $a(), null === e && zr(n.stateNode.containerInfo), hs(n), null
+                $a(), null === e && Br(n.stateNode.containerInfo), hs(n), null
               );
             case 10:
               return Vi(n.type._context), hs(n), null;
@@ -6672,7 +6672,7 @@
             (o = n.stateNode),
               ea(e, n),
               (s = n.memoizedProps),
-              (c = n.type === n.elementType ? s : Bi(n.type, s)),
+              (c = n.type === n.elementType ? s : zi(n.type, s)),
               (o.props = c),
               (d = n.pendingProps),
               (p = o.context),
@@ -7072,7 +7072,7 @@
           }
           return n.child;
         }
-        function zs(e, n) {
+        function Bs(e, n) {
           switch ((Sa(n), n.tag)) {
             case 1:
               return (
@@ -7117,7 +7117,7 @@
               return null;
           }
         }
-        var Bs = !1,
+        var zs = !1,
           Hs = !1,
           Gs = "function" == typeof WeakSet ? WeakSet : Set,
           Ws = null;
@@ -7471,13 +7471,13 @@
             var i = Ws,
               a = i.child;
             if (22 === i.tag && r) {
-              var o = null !== i.memoizedState || Bs;
+              var o = null !== i.memoizedState || zs;
               if (!o) {
                 var s = i.alternate,
                   l = (null !== s && null !== s.memoizedState) || Hs;
-                s = Bs;
+                s = zs;
                 var c = Hs;
-                if (((Bs = o), (Hs = l) && !c))
+                if (((zs = o), (Hs = l) && !c))
                   for (Ws = i; null !== Ws; )
                     (l = (o = Ws).child),
                       22 === o.tag && null !== o.memoizedState
@@ -7486,7 +7486,7 @@
                         ? ((l.return = o), (Ws = l))
                         : ul(i);
                 for (; null !== a; ) (Ws = a), sl(a, n, t), (a = a.sibling);
-                (Ws = i), (Bs = s), (Hs = c);
+                (Ws = i), (zs = s), (Hs = c);
               }
               ll(e);
             } else
@@ -7516,7 +7516,7 @@
                           var i =
                             n.elementType === n.type
                               ? t.memoizedProps
-                              : Bi(n.type, t.memoizedProps);
+                              : zi(n.type, t.memoizedProps);
                           r.componentDidUpdate(
                             i,
                             t.memoizedState,
@@ -7694,8 +7694,8 @@
           Dl = 0,
           Ul = null,
           Fl = -1,
-          zl = 0;
-        function Bl() {
+          Bl = 0;
+        function zl() {
           return 0 != (6 & gl) ? $e() : -1 !== Fl ? Fl : (Fl = $e());
         }
         function Hl(e) {
@@ -7703,10 +7703,10 @@
             ? 1
             : 0 != (2 & gl) && 0 !== xl
             ? xl & -xl
-            : null !== zi.transition
-            ? (0 === zl &&
-                ((e = un), 0 == (4194240 & (un <<= 1)) && (un = 64), (zl = e)),
-              zl)
+            : null !== Bi.transition
+            ? (0 === Bl &&
+                ((e = un), 0 == (4194240 & (un <<= 1)) && (un = 64), (Bl = e)),
+              Bl)
             : 0 !== (e = xn)
             ? e
             : (e = void 0 === (e = window.event) ? 16 : Qn(e.type));
@@ -7794,7 +7794,7 @@
           }
         }
         function Xl(e, n) {
-          if (((Fl = -1), (zl = 0), 0 != (6 & gl))) throw Error(a(327));
+          if (((Fl = -1), (Bl = 0), 0 != (6 & gl))) throw Error(a(327));
           var t = e.callbackNode;
           if (uc() && e.callbackNode !== t) return null;
           var r = fn(e, e === vl ? xl : 0);
@@ -7878,7 +7878,7 @@
                   ) {
                     if (0 !== fn(e, 0)) break;
                     if (((i = e.suspendedLanes) & r) !== r) {
-                      Bl(), (e.pingedLanes |= e.suspendedLanes & i);
+                      zl(), (e.pingedLanes |= e.suspendedLanes & i);
                       break;
                     }
                     e.timeoutHandle = ei(cc.bind(null, e, Al), n);
@@ -8207,7 +8207,7 @@
             if (((e = n.return), 0 == (32768 & n.flags))) {
               if (null !== (t = ms(t, n, yl))) return void (bl = t);
             } else {
-              if (null !== (t = zs(t, n)))
+              if (null !== (t = Bs(t, n)))
                 return (t.flags &= 32767), void (bl = t);
               if (null === e) return (jl = 6), void (bl = null);
               (e.flags |= 32768), (e.subtreeFlags = 0), (e.deletions = null);
@@ -8371,7 +8371,7 @@
                                         x = b.getSnapshotBeforeUpdate(
                                           n.elementType === n.type
                                             ? g
-                                            : Bi(n.type, g),
+                                            : zi(n.type, g),
                                           v
                                         );
                                       b.__reactInternalSnapshotBeforeUpdate = x;
@@ -8750,7 +8750,7 @@
         }
         function dc(e, n, t) {
           ta(e, (n = ls(0, (n = ts(t, n)), 1))),
-            (n = Bl()),
+            (n = zl()),
             null !== (e = Wl(e, 1)) && (vn(e, 1, n), Yl(e, n));
         }
         function pc(e, n, t) {
@@ -8769,7 +8769,7 @@
                     (null === Il || !Il.has(r)))
                 ) {
                   ta(n, (e = cs(n, (e = ts(t, e)), 1))),
-                    (e = Bl()),
+                    (e = zl()),
                     null !== (n = Wl(n, 1)) && (vn(n, 1, e), Yl(n, e));
                   break;
                 }
@@ -8780,7 +8780,7 @@
         function fc(e, n, t) {
           var r = e.pingCache;
           null !== r && r.delete(n),
-            (n = Bl()),
+            (n = zl()),
             (e.pingedLanes |= e.suspendedLanes & t),
             vl === e &&
               (xl & t) === t &&
@@ -8795,7 +8795,7 @@
             (0 == (1 & e.mode)
               ? (n = 1)
               : ((n = dn), 0 == (130023424 & (dn <<= 1)) && (dn = 4194304)));
-          var t = Bl();
+          var t = zl();
           null !== (e = Wl(e, n)) && (vn(e, n, t), Yl(e, t));
         }
         function mc(e) {
@@ -9055,7 +9055,7 @@
           return (
             ((e = Ac(t, r, !0, e, 0, a, 0, s, l)).context = Oc(null)),
             (t = e.current),
-            ((a = na((r = Bl()), (i = Hl(t)))).callback = null != n ? n : null),
+            ((a = na((r = zl()), (i = Hl(t)))).callback = null != n ? n : null),
             ta(t, a),
             (e.current.lanes = i),
             vn(e, i, r),
@@ -9065,7 +9065,7 @@
         }
         function Rc(e, n, t, r) {
           var i = n.current,
-            a = Bl(),
+            a = zl(),
             o = Hl(i);
           return (
             (t = Oc(t)),
@@ -9207,7 +9207,7 @@
                       }
                       return 2;
                     })(r)),
-                  (e = Bi(r, e)),
+                  (e = zi(r, e)),
                   i)
                 ) {
                   case 0:
@@ -9220,7 +9220,7 @@
                     n = xs(null, n, r, e, t);
                     break e;
                   case 14:
-                    n = ys(null, n, r, Bi(r.type, e), t);
+                    n = ys(null, n, r, zi(r.type, e), t);
                     break e;
                 }
                 throw Error(a(306, r, ""));
@@ -9230,13 +9230,13 @@
               return (
                 (r = n.type),
                 (i = n.pendingProps),
-                ks(e, n, r, (i = n.elementType === r ? i : Bi(r, i)), t)
+                ks(e, n, r, (i = n.elementType === r ? i : zi(r, i)), t)
               );
             case 1:
               return (
                 (r = n.type),
                 (i = n.pendingProps),
-                Es(e, n, r, (i = n.elementType === r ? i : Bi(r, i)), t)
+                Es(e, n, r, (i = n.elementType === r ? i : zi(r, i)), t)
               );
             case 3:
               e: {
@@ -9316,7 +9316,7 @@
               return (
                 (r = n.type),
                 (i = n.pendingProps),
-                xs(e, n, r, (i = n.elementType === r ? i : Bi(r, i)), t)
+                xs(e, n, r, (i = n.elementType === r ? i : zi(r, i)), t)
               );
             case 7:
               return bs(e, n, n.pendingProps, t), n.child;
@@ -9408,8 +9408,8 @@
               );
             case 14:
               return (
-                (i = Bi((r = n.type), n.pendingProps)),
-                ys(e, n, r, (i = Bi(r.type, i)), t)
+                (i = zi((r = n.type), n.pendingProps)),
+                ys(e, n, r, (i = zi(r.type, i)), t)
               );
             case 15:
               return ws(e, n, n.type, n.pendingProps, t);
@@ -9417,7 +9417,7 @@
               return (
                 (r = n.type),
                 (i = n.pendingProps),
-                (i = n.elementType === r ? i : Bi(r, i)),
+                (i = n.elementType === r ? i : zi(r, i)),
                 null !== e &&
                   ((e.alternate = null), (n.alternate = null), (n.flags |= 2)),
                 (n.tag = 1),
@@ -9452,7 +9452,7 @@
             (1 !== e.nodeType && 9 !== e.nodeType && 11 !== e.nodeType)
           );
         }
-        function zc(e) {
+        function Bc(e) {
           return !(
             !e ||
             (1 !== e.nodeType &&
@@ -9462,7 +9462,7 @@
                 " react-mount-point-unstable " !== e.nodeValue))
           );
         }
-        function Bc() {}
+        function zc() {}
         function Hc(e, n, t, r, i) {
           var a = t._reactRootContainer;
           if (a) {
@@ -9485,11 +9485,11 @@
                     a.call(e);
                   };
                 }
-                var o = _c(n, r, e, 0, null, !1, 0, "", Bc);
+                var o = _c(n, r, e, 0, null, !1, 0, "", zc);
                 return (
                   (e._reactRootContainer = o),
                   (e[di] = o.current),
-                  zr(8 === e.nodeType ? e.parentNode : e),
+                  Br(8 === e.nodeType ? e.parentNode : e),
                   Zl(),
                   o
                 );
@@ -9502,11 +9502,11 @@
                   s.call(e);
                 };
               }
-              var l = Ac(e, 0, !1, null, 0, !1, 0, "", Bc);
+              var l = Ac(e, 0, !1, null, 0, !1, 0, "", zc);
               return (
                 (e._reactRootContainer = l),
                 (e[di] = l.current),
-                zr(8 === e.nodeType ? e.parentNode : e),
+                Br(8 === e.nodeType ? e.parentNode : e),
                 Zl(function () {
                   Rc(n, l, t, r);
                 }),
@@ -9558,7 +9558,7 @@
                 }
                 break;
               case 13:
-                var r = Bl();
+                var r = zl();
                 Zl(function () {
                   return Gl(e, 1, r);
                 }),
@@ -9566,11 +9566,11 @@
             }
           }),
           (jn = function (e) {
-            13 === e.tag && (Gl(e, 134217728, Bl()), Lc(e, 134217728));
+            13 === e.tag && (Gl(e, 134217728, zl()), Lc(e, 134217728));
           }),
           (Nn = function (e) {
             if (13 === e.tag) {
-              var n = Bl(),
+              var n = zl(),
                 t = Hl(e);
               Gl(e, t, n), Lc(e, t);
             }
@@ -9685,7 +9685,7 @@
                 void 0 !== n.onRecoverableError && (i = n.onRecoverableError)),
               (n = Ac(e, 1, !1, null, 0, t, 0, r, i)),
               (e[di] = n.current),
-              zr(8 === e.nodeType ? e.parentNode : e),
+              Br(8 === e.nodeType ? e.parentNode : e),
               new Dc(n)
             );
           }),
@@ -9703,7 +9703,7 @@
             return Zl(e);
           }),
           (n.hydrate = function (e, n, t) {
-            if (!zc(n)) throw Error(a(200));
+            if (!Bc(n)) throw Error(a(200));
             return Hc(null, e, n, !0, t);
           }),
           (n.hydrateRoot = function (e, n, t) {
@@ -9719,7 +9719,7 @@
                 void 0 !== t.onRecoverableError && (s = t.onRecoverableError)),
               (n = _c(n, null, e, 1, null != t ? t : null, i, 0, o, s)),
               (e[di] = n.current),
-              zr(e),
+              Br(e),
               r)
             )
               for (e = 0; e < r.length; e++)
@@ -9730,11 +9730,11 @@
             return new Uc(n);
           }),
           (n.render = function (e, n, t) {
-            if (!zc(n)) throw Error(a(200));
+            if (!Bc(n)) throw Error(a(200));
             return Hc(null, e, n, !1, t);
           }),
           (n.unmountComponentAtNode = function (e) {
-            if (!zc(e)) throw Error(a(40));
+            if (!Bc(e)) throw Error(a(40));
             return (
               !!e._reactRootContainer &&
               (Zl(function () {
@@ -9747,7 +9747,7 @@
           }),
           (n.unstable_batchedUpdates = $l),
           (n.unstable_renderSubtreeIntoContainer = function (e, n, t, r) {
-            if (!zc(t)) throw Error(a(200));
+            if (!Bc(t)) throw Error(a(200));
             if (null == e || void 0 === e._reactInternals) throw Error(a(38));
             return Hc(e, n, t, !1, r);
           }),
@@ -11529,8 +11529,8 @@
         D = L("CHANNEL_END"),
         U = L("IO"),
         F = L("MATCH"),
-        z = L("MULTICAST"),
-        B = L("SAGA_ACTION"),
+        B = L("MULTICAST"),
+        z = L("SAGA_ACTION"),
         H = L("SELF_CANCELLATION"),
         G = L("TASK"),
         W = L("TASK_CANCEL"),
@@ -11647,7 +11647,7 @@
         },
         ve = function (e) {
           return function (n) {
-            return e(Object.defineProperty(n, B, { value: !0 }));
+            return e(Object.defineProperty(n, z, { value: !0 }));
           };
         },
         be = function (e) {
@@ -11761,7 +11761,7 @@
           void 0 === e && (e = "*"),
           ee(e)
             ? Te(Se, { pattern: e })
-            : ne((t = e)) && t[z] && q(n) && ee(n)
+            : ne((t = e)) && t[B] && q(n) && ee(n)
             ? Te(Se, { channel: e, pattern: n })
             : ne(e)
             ? Te(Se, { channel: e })
@@ -11818,14 +11818,14 @@
       };
       var Ue = [],
         Fe = 0;
-      function ze(e) {
+      function Be(e) {
         try {
           Ge(), e();
         } finally {
           We();
         }
       }
-      function Be(e) {
+      function ze(e) {
         Ue.push(e), Fe || (Ge(), Ye());
       }
       function He(e) {
@@ -11843,7 +11843,7 @@
       }
       function Ye() {
         var e;
-        for (We(); !Fe && void 0 !== (e = Ue.shift()); ) ze(e);
+        for (We(); !Fe && void 0 !== (e = Ue.shift()); ) Be(e);
       }
       var Xe = function (e) {
           return function (n) {
@@ -11947,7 +11947,7 @@
                   e(Ze);
                 });
             }),
-            ((e = {})[z] = !0),
+            ((e = {})[B] = !0),
             (e.put = function (e) {
               if (!n)
                 if (Je(e)) a();
@@ -11973,9 +11973,9 @@
           s = o.put;
         return (
           (o.put = function (e) {
-            e[B]
+            e[z]
               ? s(e)
-              : Be(function () {
+              : ze(function () {
                   s(e);
                 });
           }),
@@ -12017,7 +12017,7 @@
           var r = n.channel,
             i = n.action,
             a = n.resolve;
-          Be(function () {
+          ze(function () {
             var n;
             try {
               n = (r ? r.put : e.dispatch)(i);
@@ -12644,8 +12644,8 @@
             pilot: { xp: 0, maxXp: 10, level: 0, bonus: "" },
           });
       };
-      const zn = jn(new Fn());
-      var Bn = function () {
+      const Bn = jn(new Fn());
+      var zn = function () {
         (this.isUnlocked = !1),
           (this.isInProgress = !1),
           (this.lastLooted = []),
@@ -12663,7 +12663,7 @@
           (this.potentialEta = ""),
           (this.viewRadius = 5);
       };
-      const Hn = jn(new Bn());
+      const Hn = jn(new zn());
       var Gn = function () {
         (this.isUnlocked = !1),
           (this.transmitKnowledge = {
@@ -12705,12 +12705,14 @@
               progress: "",
               filter: {
                 isAvailable: !1,
-                modifierName: "None",
+                modifiersSelected: [],
                 modifiersAvailable: [],
               },
               disastersLevel: 0,
               starsList: [],
               starSelected: "None",
+              isHarshnessAvailable: !1,
+              harshnessFilter: 0,
             },
             prestige: {
               isAvailable: !1,
@@ -12733,14 +12735,23 @@
           (this.timeThisPlanet = 0),
           (this.timeThisPrestige = 0),
           (this.maxColonists = 0),
+          (this.maxDiedColonists = 0),
+          (this.diedThisPrestige = 0),
           (this.maxHappiness = 0),
           (this.numPrestiges = 0),
           (this.numColonized = 0),
           (this.kpTotal = 0),
           (this.kpMaxGain = 0),
+          (this.kpPerHour = 0),
+          (this.maxKpPerHour = 0),
           (this.xpTotal = 0),
           (this.xpMaxGain = 0),
-          (this.exoticCollected = 0);
+          (this.xpPerHour = 0),
+          (this.maxXpPerHour = 0),
+          (this.maxResearchCapReached = 0),
+          (this.exoticCollected = 0),
+          (this.fightsLost = 0),
+          (this.fightsWon = 0);
       };
       const qn = jn(new Vn());
       var Qn = function () {
@@ -12792,6 +12803,8 @@
           (e.GRAPHENE = "graphene"),
           (e.MAGNETO = "magneto"),
           (e.DM_BLOCK = "DM_BLOCK"),
+          (e.AI_CORE = "AI_CORE"),
+          (e.ANTIMATTER_FUEL = "Antimatter Fuel"),
           (e.KNOWLEDGE_POINT = "knowledge-point"),
           (e.COLONIZE_XP = "XP");
       })(Jn || (Jn = {})),
@@ -12844,7 +12857,8 @@
             isUnlocked: !1,
             list: [],
             newPreset: { jobs: [], crafting: [] },
-          });
+          }),
+          (this.laws = { isUnlocked: !1, list: [], newPreset: { laws: [] } });
       };
       const lt = jn(new st());
       var ct = {
@@ -12903,7 +12917,7 @@
               (this.laws = new Dn()),
               (this.space = new Fn()),
               (this.prestige = new Gn()),
-              (this.expeditions = new Bn()),
+              (this.expeditions = new zn()),
               (this.newNotifications = new Yn()),
               (this.statistics = new Vn()),
               (this.environment = new Qn()),
@@ -12916,6 +12930,7 @@
                 theme: tt.DARK,
                 addToQueueUnavailable: !0,
                 disableResidental: !1,
+                unsafeBulkBuilding: !1,
               }),
               (this.timeInGame = "00:00:00"),
               (this.timeInPrestige = "00:00:00");
@@ -12965,7 +12980,7 @@
             colony: On,
             goals: Mn,
             laws: Un,
-            space: zn,
+            space: Bn,
             expeditions: Hn,
             prestige: Wn,
             newNotifications: Xn,
@@ -13533,7 +13548,7 @@
               switch (n.label) {
                 case 0:
                   return (
-                    (e = new Worker(new URL(t.p + t.u(309), t.b))),
+                    (e = new Worker(new URL(t.p + t.u(193), t.b))),
                     (t.g.worker = e),
                     e.postMessage({ type: "initialize", payload: { a: 1 } }),
                     [
@@ -13721,11 +13736,11 @@
       function Ft() {
         return "undefined" != typeof window;
       }
-      function zt() {
+      function Bt() {
         return window.vam || "production";
       }
-      function Bt() {
-        return "development" === zt();
+      function zt() {
+        return "development" === Bt();
       }
       function Ht(e, { [e]: n, ...t }) {
         return t;
@@ -13753,7 +13768,7 @@
           e.beforeSend &&
             (null == (n = window.va) ||
               n.call(window, "beforeSend", e.beforeSend));
-        const t = Bt()
+        const t = zt()
           ? "https://va.vercel-scripts.com/v1/script.debug.js"
           : "/_vercel/insights/script.js";
         if (document.head.querySelector(`script[src*="${t}"]`)) return;
@@ -13762,7 +13777,7 @@
           (r.defer = !0),
           r.setAttribute("data-sdkn", "@vercel/analytics"),
           r.setAttribute("data-sdkv", "1.0.1"),
-          Bt() && !1 === e.debug && r.setAttribute("data-debug", "false"),
+          zt() && !1 === e.debug && r.setAttribute("data-debug", "false"),
           document.head.appendChild(r);
       }
       Dt.run(Mt.run);
@@ -13785,11 +13800,11 @@
                       )}. Only strings, numbers, booleans, and null are allowed.`
                     );
                   return t;
-                })(n, { strip: "production" === zt() });
+                })(n, { strip: "production" === Bt() });
                 null == (r = window.va) ||
                   r.call(window, "event", { name: e, data: t });
               } catch (e) {
-                e instanceof Error && Bt() && console.error(e);
+                e instanceof Error && zt() && console.error(e);
               }
             else
               null == (t = window.va) || t.call(window, "event", { name: e });
@@ -14039,16 +14054,16 @@
         Dr = "right",
         Ur = "left",
         Fr = "auto",
-        zr = [Lr, Mr, Dr, Ur],
-        Br = "start",
+        Br = [Lr, Mr, Dr, Ur],
+        zr = "start",
         Hr = "end",
         Gr = "viewport",
         Wr = "popper",
-        Yr = zr.reduce(function (e, n) {
-          return e.concat([n + "-" + Br, n + "-" + Hr]);
+        Yr = Br.reduce(function (e, n) {
+          return e.concat([n + "-" + zr, n + "-" + Hr]);
         }, []),
-        Xr = [].concat(zr, [Fr]).reduce(function (e, n) {
-          return e.concat([n, n + "-" + Br, n + "-" + Hr]);
+        Xr = [].concat(Br, [Fr]).reduce(function (e, n) {
+          return e.concat([n, n + "-" + zr, n + "-" + Hr]);
         }, []),
         Vr = [
           "beforeRead",
@@ -14317,7 +14332,7 @@
         if (null != c) {
           var u = "y" === c ? "height" : "width";
           switch (o) {
-            case Br:
+            case zr:
               n[c] = n[c] - (t[u] / 2 - r[u] / 2);
               break;
             case Hr:
@@ -14682,7 +14697,7 @@
           h = void 0 !== f && f,
           m = t.padding,
           g = void 0 === m ? 0 : m,
-          v = gi("number" != typeof g ? g : vi(g, zr)),
+          v = gi("number" != typeof g ? g : vi(g, Br)),
           b = p === Wr ? "reference" : Wr,
           x = e.rects.popper,
           y = e.elements[h ? b : p],
@@ -14802,7 +14817,7 @@
                                 : Yr.filter(function (e) {
                                     return ni(e) === u;
                                   })
-                              : zr,
+                              : Br,
                             p = d.filter(function (e) {
                               return c.indexOf(e) >= 0;
                             });
@@ -14843,7 +14858,7 @@
             ) {
               var S = x[E],
                 C = ei(S),
-                A = ni(S) === Br,
+                A = ni(S) === zr,
                 T = [Lr, Mr].indexOf(C) >= 0,
                 O = T ? "width" : "height",
                 _ = bi(n, {
@@ -14953,16 +14968,16 @@
                   P = I + g[O],
                   L = I - g[_],
                   M = f ? -k[R] / 2 : 0,
-                  D = b === Br ? N[R] : k[R],
-                  U = b === Br ? -k[R] : -N[R],
+                  D = b === zr ? N[R] : k[R],
+                  U = b === zr ? -k[R] : -N[R],
                   F = n.elements.arrow,
-                  z = f && F ? Ar(F) : { width: 0, height: 0 },
-                  B = n.modifiersData["arrow#persistent"]
+                  B = f && F ? Ar(F) : { width: 0, height: 0 },
+                  z = n.modifiersData["arrow#persistent"]
                     ? n.modifiersData["arrow#persistent"].padding
                     : { top: 0, right: 0, bottom: 0, left: 0 },
-                  H = B[O],
-                  G = B[_],
-                  W = yi(0, N[R], z[R]),
+                  H = z[O],
+                  G = z[_],
+                  W = yi(0, N[R], B[R]),
                   Y = x
                     ? N[R] / 2 - M - W - H - S.mainAxis
                     : D - W - H - S.mainAxis,
@@ -15033,7 +15048,7 @@
                             )
                           : e)
                       ? e
-                      : vi(e, zr)
+                      : vi(e, Br)
                   );
                 })(i.padding, t),
                 d = Ar(a),
@@ -15199,12 +15214,12 @@
       function Fi() {
         return document.createElement("div");
       }
-      function zi(e) {
+      function Bi(e) {
         return ["Element", "Fragment"].some(function (n) {
           return Ri(e, n);
         });
       }
-      function Bi(e, n) {
+      function zi(e, n) {
         e.forEach(function (e) {
           e && (e.style.transitionDuration = n + "ms");
         });
@@ -15372,12 +15387,12 @@
         return (
           !0 === e
             ? (n.className = Ci)
-            : ((n.className = Ai), zi(e) ? n.appendChild(e) : na(n, e)),
+            : ((n.className = Ai), Bi(e) ? n.appendChild(e) : na(n, e)),
           n
         );
       }
       function ra(e, n) {
-        zi(n.content)
+        Bi(n.content)
           ? (na(e, ""), e.appendChild(n.content))
           : "function" != typeof n.content &&
             (n.allowHTML ? na(e, n.content) : (e.textContent = n.content));
@@ -15535,12 +15550,12 @@
                   ((x.state.isVisible = !0),
                   C() && (w.style.visibility = "visible"),
                   R(),
-                  z(),
+                  B(),
                   x.state.isMounted || (w.style.transition = "none"),
                   C())
                 ) {
                   var a = O();
-                  Bi([a.box, a.content], 0);
+                  zi([a.box, a.content], 0);
                 }
                 var o, l, c;
                 (s = function () {
@@ -15555,7 +15570,7 @@
                       var n = O(),
                         t = n.box,
                         r = n.content;
-                      Bi([t, r], i), Hi([t, r], "visible");
+                      zi([t, r], i), Hi([t, r], "visible");
                     }
                     P(),
                       L(),
@@ -15597,14 +15612,14 @@
                   (d = !1),
                   C() && (w.style.visibility = "hidden"),
                   M(),
-                  B(),
+                  z(),
                   R(!0),
                   C())
                 ) {
                   var i = O(),
                     a = i.box,
                     o = i.content;
-                  x.props.animation && (Bi([a, o], r), Hi([a, o], "hidden"));
+                  x.props.animation && (zi([a, o], r), Hi([a, o], "hidden"));
                 }
                 P(),
                   L(),
@@ -15783,7 +15798,7 @@
                 setTimeout(function () {
                   p = !1;
                 }),
-                x.state.isMounted || B());
+                x.state.isMounted || z());
             }
           }
         }
@@ -15793,14 +15808,14 @@
         function F() {
           f = !1;
         }
-        function z() {
+        function B() {
           var e = T();
           e.addEventListener("mousedown", D, !0),
             e.addEventListener("touchend", D, Ti),
             e.addEventListener("touchstart", F, Ti),
             e.addEventListener("touchmove", U, Ti);
         }
-        function B() {
+        function z() {
           var e = T();
           e.removeEventListener("mousedown", D, !0),
             e.removeEventListener("touchend", D, Ti),
@@ -16000,7 +16015,7 @@
           return Di(w.querySelectorAll("[data-tippy-root]"));
         }
         function ee(e) {
-          x.clearDelayTimeouts(), e && I("onTrigger", [x, e]), z();
+          x.clearDelayTimeouts(), e && I("onTrigger", [x, e]), B();
           var n = _(!0),
             r = E(),
             i = r[0],
@@ -16035,7 +16050,7 @@
                     x.hide();
                   }));
             }
-          } else B();
+          } else z();
         }
       }
       function ua(e, n) {
@@ -16046,7 +16061,7 @@
         var r,
           i = Object.assign({}, n, { plugins: t }),
           a = ((r = e),
-          zi(r)
+          Bi(r)
             ? [r]
             : (function (e) {
                 return Ri(e, "NodeList");
@@ -16058,7 +16073,7 @@
             var t = n && ca(n, i);
             return t && e.push(t), e;
           }, []);
-        return zi(e) ? a[0] : a;
+        return Bi(e) ? a[0] : a;
       }
       (ua.defaultProps = $i),
         (ua.setDefaultProps = function (e) {
@@ -16827,9 +16842,9 @@
             },
           });
         },
-        za = function () {
+        Ba = function () {
           return (
-            (za =
+            (Ba =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -16837,24 +16852,24 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            za.apply(this, arguments)
+            Ba.apply(this, arguments)
           );
         },
-        Ba = function (n) {
+        za = function (n) {
           var t = n.goal,
             r = (0, e.jsx)(
               "div",
-              za(
+              Ba(
                 { className: "goal-container" },
                 {
                   children: (0, e.jsx)(
                     "div",
-                    za(
+                    Ba(
                       { className: "goal-requirements" },
                       {
                         children: t.requirements.map(function (n) {
                           return (0,
-                          e.jsxs)("p", za({ className: "goal-req ".concat(n.isComplete ? "complete" : "") }, { children: [(0, e.jsx)("span", za({ className: "req-name" }, { children: n.text })), (0, e.jsxs)("span", za({ className: "req-target" }, { children: [Math.round(100 * n.actual) / 100, "/", n.target] }))] }));
+                          e.jsxs)("p", Ba({ className: "goal-req ".concat(n.isComplete ? "complete" : "") }, { children: [(0, e.jsx)("span", Ba({ className: "req-name" }, { children: n.text })), (0, e.jsxs)("span", Ba({ className: "req-target" }, { children: [Math.round(100 * n.actual) / 100, "/", n.target] }))] }));
                         }),
                       }
                     )
@@ -16864,7 +16879,7 @@
             );
           return (0, e.jsx)(
             Fa,
-            za(
+            Ba(
               {
                 id: "main-goals",
                 label: "Goal: ".concat(t.name),
@@ -16874,11 +16889,11 @@
                 children: t.hint
                   ? (0, e.jsx)(
                       Ta,
-                      za(
+                      Ba(
                         {
                           content: (0, e.jsx)(
                             "div",
-                            za(
+                            Ba(
                               { className: "description-hint" },
                               {
                                 children: (0, e.jsx)("p", { children: t.hint }),
@@ -16896,7 +16911,7 @@
         },
         Ha = function () {
           var n = N(ur);
-          return (0, e.jsx)(Ba, { goal: n.current });
+          return (0, e.jsx)(za, { goal: n.current });
         },
         Ga = function (e) {
           return e.game.laws;
@@ -17224,9 +17239,12 @@
         jo = function (e) {
           return e.game.presets.jobs;
         },
-        No = function () {
+        No = function (e) {
+          return e.game.presets.laws;
+        },
+        ko = function () {
           return (
-            (No =
+            (ko =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -17234,10 +17252,10 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            No.apply(this, arguments)
+            ko.apply(this, arguments)
           );
         },
-        ko = function () {
+        Eo = function () {
           var n = N(ar),
             t = N(cr),
             r = N(Wa),
@@ -17247,14 +17265,14 @@
             s = x();
           return (0, e.jsx)(
             "div",
-            No(
+            ko(
               { className: "menu" },
               {
                 children: (0, e.jsxs)("ul", {
                   children: [
                     (0, e.jsx)(
                       "li",
-                      No(
+                      ko(
                         {
                           className: sr()({
                             "menu-item": !0,
@@ -17267,7 +17285,7 @@
                         {
                           children: (0, e.jsx)(
                             io,
-                            No(
+                            ko(
                               { id: "planet", className: "menu-inner" },
                               { children: "Planet" }
                             )
@@ -17278,7 +17296,7 @@
                     t
                       ? (0, e.jsx)(
                           "li",
-                          No(
+                          ko(
                             {
                               className: sr()({
                                 "menu-item": !0,
@@ -17291,7 +17309,7 @@
                             {
                               children: (0, e.jsx)(
                                 io,
-                                No(
+                                ko(
                                   { id: "science", className: "menu-inner" },
                                   { children: "Science" }
                                 )
@@ -17303,7 +17321,7 @@
                     i
                       ? (0, e.jsx)(
                           "li",
-                          No(
+                          ko(
                             {
                               className: sr()({
                                 "menu-item": !0,
@@ -17316,7 +17334,7 @@
                             {
                               children: (0, e.jsx)(
                                 io,
-                                No(
+                                ko(
                                   { id: "space", className: "menu-inner" },
                                   { children: "Space" }
                                 )
@@ -17328,7 +17346,7 @@
                     r
                       ? (0, e.jsx)(
                           "li",
-                          No(
+                          ko(
                             {
                               className: sr()({
                                 "menu-item": !0,
@@ -17341,7 +17359,7 @@
                             {
                               children: (0, e.jsx)(
                                 io,
-                                No(
+                                ko(
                                   { id: "laws", className: "menu-inner" },
                                   { children: "Laws & Order" }
                                 )
@@ -17353,7 +17371,7 @@
                     a
                       ? (0, e.jsx)(
                           "li",
-                          No(
+                          ko(
                             {
                               className: sr()({
                                 "menu-item": !0,
@@ -17366,7 +17384,7 @@
                             {
                               children: (0, e.jsx)(
                                 io,
-                                No(
+                                ko(
                                   { id: "prestige", className: "menu-inner" },
                                   { children: "Prestige" }
                                 )
@@ -17377,7 +17395,7 @@
                       : null,
                     (0, e.jsx)(
                       "li",
-                      No(
+                      ko(
                         {
                           className: sr()({
                             "menu-item": !0,
@@ -17390,7 +17408,7 @@
                         {
                           children: (0, e.jsx)(
                             io,
-                            No(
+                            ko(
                               { id: "settings", className: "menu-inner" },
                               { children: "Settings" }
                             )
@@ -17401,7 +17419,7 @@
                     o
                       ? (0, e.jsx)(
                           "li",
-                          No(
+                          ko(
                             {
                               className: sr()({
                                 "menu-item": !0,
@@ -17414,7 +17432,7 @@
                             {
                               children: (0, e.jsx)(
                                 io,
-                                No(
+                                ko(
                                   { id: "presets", className: "menu-inner" },
                                   { children: "Presets" }
                                 )
@@ -17425,7 +17443,7 @@
                       : null,
                     (0, e.jsx)(
                       "li",
-                      No(
+                      ko(
                         {
                           className: sr()({
                             "menu-item": !0,
@@ -17438,7 +17456,7 @@
                         {
                           children: (0, e.jsx)(
                             io,
-                            No(
+                            ko(
                               { id: "about", className: "menu-inner" },
                               { children: "About & Change Log" }
                             )
@@ -17448,7 +17466,7 @@
                     ),
                     (0, e.jsx)(
                       "li",
-                      No(
+                      ko(
                         {
                           className: sr()({
                             "menu-item": !0,
@@ -17461,7 +17479,7 @@
                         {
                           children: (0, e.jsx)(
                             io,
-                            No(
+                            ko(
                               { id: "statistics", className: "menu-inner" },
                               { children: "Statistics" }
                             )
@@ -17472,12 +17490,12 @@
                     (0, e.jsx)("li", {
                       children: (0, e.jsx)(
                         io,
-                        No(
+                        ko(
                           { id: "support", className: "menu-inner" },
                           {
                             children: (0, e.jsx)(
                               "a",
-                              No(
+                              ko(
                                 {
                                   href: "https://patreon.com/user?u=83421544",
                                   target: "_blank",
@@ -17495,27 +17513,27 @@
             )
           );
         },
-        Eo = function () {
+        So = function () {
           return (0, e.jsx)(
             "div",
-            No(
+            ko(
               { className: "header" },
               {
                 children: (0, e.jsxs)(
                   "div",
-                  No(
+                  ko(
                     { className: "top" },
                     {
                       children: [
                         (0, e.jsxs)(
                           "div",
-                          No(
+                          ko(
                             { className: "left" },
                             {
                               children: [
                                 (0, e.jsxs)(
                                   "div",
-                                  No(
+                                  ko(
                                     { className: "heading-pre-menu" },
                                     {
                                       children: [
@@ -17527,7 +17545,7 @@
                                     }
                                   )
                                 ),
-                                (0, e.jsx)(ko, {}),
+                                (0, e.jsx)(Eo, {}),
                               ],
                             }
                           )
@@ -17541,14 +17559,17 @@
             )
           );
         },
-        So = function (e) {
+        Co = function (e) {
           return e.game.landingZone;
         },
-        Co = {
+        Ao = {
           doAction: kn("[landing-zone] do action", function (e) {
             return e;
           }),
           doBuild: kn("[landing-zone] do build", function (e) {
+            return e;
+          }),
+          setBulk: kn("[landing-zone] set bulk", function (e) {
             return e;
           }),
           setBuildingAmount: kn(
@@ -17674,6 +17695,7 @@
             (e.EFFICIENT_COLLIDERS = "efficient_colliders"),
             (e.NEUTRON_CANON = "neutron_canon"),
             (e.MAGNETIC_FIELD_GENERATOR = "magnetic_field_generator"),
+            (e.TRANSIT_EVENTS_STUDY = "transit_events_study"),
             (e.CONTROLLABLE_THERMONUCLEAR_REACTIONS =
               "controllable_thermonuclear_reactions"),
             (e.ADVANCED_EVAPORATORS = "advanced_evaporators"),
@@ -17761,6 +17783,7 @@
             (e.EXOTIC_MATTER_CAPSULE = "exotic-matter-capsule"),
             (e.COMPACT_ELECTRONICS = "compact-electronics"),
             (e.QUANTUM_DISSOCIATION = "quantum-dissociation"),
+            (e.AI_CORE_CRAFTING = "ai-core-crafting"),
             (e.AI_ECOSYSTEM_CONTROL = "ai-ecosystem-control"),
             (e.DATA_PROCESSING_CLUSTER = "data-processing-cluster"),
             (e.AI_BUILDING_PRINTERS = "ai-building-printers"),
@@ -17768,7 +17791,15 @@
             (e.ADVANCED_COSMOLOGY_MODEL = "advanced-cosmology-model"),
             (e.SPACESHIPS_AI_TARGETING = "spaceships-ai-targeting"),
             (e.AI_SPACEDOCS = "ai-spacedocs"),
-            (e.PICOMETRE_TRANSISTORS = "picometre-transistors");
+            (e.PICOMETRE_TRANSISTORS = "picometre-transistors"),
+            (e.STRANGE_MATTER_DETECTORS = "strange-matter-detectors"),
+            (e.STRANGE_ANTIMATTER_CAPTURING = "strange-antimatter-capturing"),
+            (e.ANTIMATTER_FUEL_CRAFTING = "antimatter-fuel-crafting"),
+            (e.ANTIMATTER_POWER_PLANT = "antimatter-powerplant"),
+            (e.QUANTUM_SIMULATIONS = "quantum-simulations"),
+            (e.QUANTUM_WIRING = "quantum-wiring"),
+            (e.AI_CORE_ENGINEERING = "ai-core-engineering"),
+            (e.VACUUM_PRESS = "vacuum-press");
         })(po || (po = {})),
         (function (e) {
           (e.QUARRY = "quarry"),
@@ -17842,7 +17873,13 @@
             (e.EXOTIC_BACTERIA_PLANT = "exotic-bacteria-plant"),
             (e.BIG_DATA_CENTER = "big-data-center"),
             (e.STRANGE_MATTER_VESSEL = "strange-matter-vessel"),
-            (e.NEUTRON_CORE = "neutron-core");
+            (e.NEUTRON_CORE = "neutron-core"),
+            (e.FLIGHT_SIMULATOR = "flight-simulator"),
+            (e.EXOTIC_PROCESSING_FACTORY = "exotic-processing-factory"),
+            (e.HANGING_GARDENS = "hanging-gardens"),
+            (e.MILITARY_BASE = "military-base"),
+            (e.MUSEUM_OF_EVOLUTION = "museum-of-evolution"),
+            (e.ANTIMATTER_POWER_PLANT = "antimatter-power-plant");
         })(fo || (fo = {})),
         (function (e) {
           (e.POWER = "Power"),
@@ -17867,9 +17904,9 @@
             (e.RESOURCE = "resource-unlock"),
             (e.UPGRADE = "upgrade");
         })(go || (go = {}));
-      var Ao = function () {
+      var To = function () {
           return (
-            (Ao =
+            (To =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -17877,68 +17914,10 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            Ao.apply(this, arguments)
+            To.apply(this, arguments)
           );
         },
-        To = function (n) {
-          var t = n.isVisible,
-            r = n.children,
-            i = n.onClose;
-          return (0, e.jsx)(
-            "div",
-            Ao(
-              { className: "mobile-tooltip-wrap ".concat(t ? "" : "hidden") },
-              {
-                children: (0, e.jsxs)(
-                  "div",
-                  Ao(
-                    { className: "mobile-tooltip" },
-                    {
-                      children: [
-                        (0, e.jsxs)(
-                          "div",
-                          Ao(
-                            { className: "head" },
-                            {
-                              children: [
-                                (0, e.jsx)("span", {}),
-                                (0, e.jsx)(
-                                  "span",
-                                  Ao(
-                                    { className: "close", onClick: i },
-                                    { children: "X" }
-                                  )
-                                ),
-                              ],
-                            }
-                          )
-                        ),
-                        (0, e.jsx)(
-                          "div",
-                          Ao({ className: "body" }, { children: r })
-                        ),
-                      ],
-                    }
-                  )
-                ),
-              }
-            )
-          );
-        },
-        Oo = function () {
-          return (
-            (Oo =
-              Object.assign ||
-              function (e) {
-                for (var n, t = 1, r = arguments.length; t < r; t++)
-                  for (var i in (n = arguments[t]))
-                    Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
-                return e;
-              }),
-            Oo.apply(this, arguments)
-          );
-        },
-        _o = function (n) {
+        Oo = function (n) {
           var t = n.label,
             i = n.className,
             a = n.progress,
@@ -17955,25 +17934,67 @@
             g = n.placement,
             v = (n.fillColor, n.progressColor, n.isWarning),
             b = (n.isAllowMulti, (0, r.useState)(!1)),
-            x = b[0],
-            y = b[1],
-            w = window.innerWidth <= 860,
-            j = Aa(),
-            N = j[0],
-            k = j[1],
-            E = ["chips-wrap"];
-          i && E.push(i),
-            s && E.push("blocked"),
-            o ? E.push("enabled") : E.push("disabled"),
-            v && E.push("warning");
-          var S = (0, e.jsx)(
+            x = (b[0], b[1]),
+            y = window.innerWidth <= 860,
+            w = Aa(),
+            j = w[0],
+            N = w[1],
+            k = ["chips-wrap"];
+          i && k.push(i),
+            s && k.push("blocked"),
+            o ? k.push("enabled") : k.push("disabled"),
+            v && k.push("warning");
+          var E = (0, e.jsx)(
+              "div",
+              To(
+                {
+                  onClick: l,
+                  className: "stick-left",
+                  onMouseEnter: null != h ? h : void 0,
+                  onMouseLeave: null != m ? m : void 0,
+                },
+                {
+                  children: (0, e.jsx)(
+                    "span",
+                    To({ className: "name-label" }, { children: t })
+                  ),
+                }
+              )
+            ),
+            S = (0, e.jsxs)(e.Fragment, {
+              children: [
+                (0, e.jsx)(Ta, { singleton: j, duration: 20 }),
+                c && !y
+                  ? (0, e.jsx)(
+                      Ta,
+                      To(
+                        {
+                          duration: 20,
+                          singleton: N,
+                          content: (0, e.jsx)(
+                            "div",
+                            To(
+                              { className: "description-hint" },
+                              { children: c }
+                            )
+                          ),
+                          inlinePositioning: !1,
+                          placement: y ? "auto" : null != g ? g : "right",
+                        },
+                        { children: E }
+                      )
+                    )
+                  : E,
+              ],
+            });
+          return (0, e.jsx)(
             "div",
-            Oo(
-              { className: E.join(" ") },
+            To(
+              { className: k.join(" ") },
               {
                 children: (0, e.jsxs)(
                   "div",
-                  Oo(
+                  To(
                     { className: "chip v2" },
                     {
                       children: [
@@ -17983,46 +18004,27 @@
                         }),
                         (0, e.jsxs)(
                           "div",
-                          Oo(
+                          To(
                             { className: "chip-content" },
                             {
                               children: [
-                                (0, e.jsx)(
-                                  "div",
-                                  Oo(
-                                    {
-                                      onClick: l,
-                                      className: "stick-left",
-                                      onMouseEnter: null != h ? h : void 0,
-                                      onMouseLeave: null != m ? m : void 0,
-                                    },
-                                    {
-                                      children: (0, e.jsx)(
-                                        "span",
-                                        Oo(
-                                          { className: "name-label" },
-                                          { children: t }
-                                        )
-                                      ),
-                                    }
-                                  )
-                                ),
+                                S,
                                 (0, e.jsxs)(
                                   "span",
-                                  Oo(
+                                  To(
                                     { className: "stick-right" },
                                     {
                                       children: [
                                         p
                                           ? (0, e.jsx)(
                                               Ta,
-                                              Oo(
+                                              To(
                                                 {
                                                   placement: "right",
-                                                  singleton: k,
+                                                  singleton: N,
                                                   content: (0, e.jsxs)(
                                                     "div",
-                                                    Oo(
+                                                    To(
                                                       {
                                                         className:
                                                           "description-hint",
@@ -18045,7 +18047,7 @@
                                                 {
                                                   children: (0, e.jsx)(
                                                     "span",
-                                                    Oo(
+                                                    To(
                                                       {
                                                         className:
                                                           "controls ".concat(
@@ -18057,7 +18059,7 @@
                                                       {
                                                         children: (0, e.jsx)(
                                                           "span",
-                                                          Oo(
+                                                          To(
                                                             {
                                                               className:
                                                                 "minus control",
@@ -18094,7 +18096,7 @@
                                         null != u
                                           ? (0, e.jsxs)(
                                               "span",
-                                              Oo(
+                                              To(
                                                 { className: "level-label" },
                                                 {
                                                   children: [
@@ -18108,13 +18110,13 @@
                                         p
                                           ? (0, e.jsx)(
                                               Ta,
-                                              Oo(
+                                              To(
                                                 {
                                                   placement: "right",
-                                                  singleton: k,
+                                                  singleton: N,
                                                   content: (0, e.jsxs)(
                                                     "div",
-                                                    Oo(
+                                                    To(
                                                       {
                                                         className:
                                                           "description-hint",
@@ -18139,7 +18141,7 @@
                                                 {
                                                   children: (0, e.jsx)(
                                                     "span",
-                                                    Oo(
+                                                    To(
                                                       {
                                                         className:
                                                           "controls ".concat(
@@ -18152,7 +18154,7 @@
                                                       {
                                                         children: (0, e.jsx)(
                                                           "span",
-                                                          Oo(
+                                                          To(
                                                             {
                                                               className:
                                                                 "plus control",
@@ -18189,19 +18191,19 @@
                                           : null,
                                         (0, e.jsx)(
                                           "span",
-                                          Oo(
+                                          To(
                                             {
                                               className: "info-tooltip",
                                               onClick: function (e) {
                                                 e.preventDefault(),
                                                   e.stopPropagation(),
-                                                  y(!0);
+                                                  x(!0);
                                               },
                                             },
                                             {
                                               children: (0, e.jsx)(
                                                 "span",
-                                                Oo(
+                                                To(
                                                   {
                                                     className:
                                                       "info-tooltip-inner",
@@ -18227,56 +18229,10 @@
               }
             )
           );
-          return w
-            ? (0, e.jsxs)(e.Fragment, {
-                children: [
-                  S,
-                  x
-                    ? (0, e.jsx)(
-                        To,
-                        Oo(
-                          {
-                            isVisible: x,
-                            onClose: function () {
-                              return y(!1);
-                            },
-                          },
-                          { children: c }
-                        )
-                      )
-                    : null,
-                ],
-              })
-            : (0, e.jsxs)(e.Fragment, {
-                children: [
-                  (0, e.jsx)(Ta, { singleton: N, duration: 20 }),
-                  c
-                    ? (0, e.jsx)(
-                        Ta,
-                        Oo(
-                          {
-                            duration: 20,
-                            singleton: k,
-                            content: (0, e.jsx)(
-                              "div",
-                              Oo(
-                                { className: "description-hint" },
-                                { children: c }
-                              )
-                            ),
-                            inlinePositioning: !1,
-                            placement: w ? "auto" : null != g ? g : "right",
-                          },
-                          { children: S }
-                        )
-                      )
-                    : S,
-                ],
-              });
         },
-        Ro = function () {
+        _o = function () {
           return (
-            (Ro =
+            (_o =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -18284,22 +18240,22 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            Ro.apply(this, arguments)
+            _o.apply(this, arguments)
           );
         },
-        Io = function (n) {
+        Ro = function (n) {
           var t = n.cost,
             r = n.showBars,
             i = void 0 === r || r;
           return (0, e.jsxs)(
             "div",
-            Ro(
+            _o(
               { className: "cost-block" },
               {
                 children: [
                   (0, e.jsxs)(
                     "p",
-                    Ro(
+                    _o(
                       {
                         className: sr()({
                           requirement: !0,
@@ -18314,7 +18270,7 @@
                           !t.isAvailable && i
                             ? (0, e.jsx)(
                                 "span",
-                                Ro(
+                                _o(
                                   {
                                     className: "".concat(
                                       "Never" === t.eta ? "red" : ""
@@ -18325,7 +18281,7 @@
                               )
                             : (0, e.jsx)(
                                 "span",
-                                Ro(
+                                _o(
                                   { className: "greenish" },
                                   {
                                     children: t.percentageOf
@@ -18341,7 +18297,7 @@
                   i
                     ? (0, e.jsx)(
                         "div",
-                        Ro(
+                        _o(
                           { className: "progressBar" },
                           {
                             children: (0, e.jsx)("div", {
@@ -18357,9 +18313,9 @@
             )
           );
         },
-        Po = function () {
+        Io = function () {
           return (
-            (Po =
+            (Io =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -18367,24 +18323,24 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            Po.apply(this, arguments)
+            Io.apply(this, arguments)
           );
         },
-        Lo = function (n) {
+        Po = function (n) {
           var t,
             r = n.gain,
             i = n.className;
           return (0, e.jsx)(
             "div",
-            Po(
+            Io(
               { className: "gain-block" },
               {
                 children: (0, e.jsxs)(
                   "p",
-                  Po(
+                  Io(
                     {
                       className: sr()(
-                        Po(
+                        Io(
                           { requirement: !0 },
                           i ? ((t = {}), (t[i] = !0), t) : {}
                         )
@@ -18397,7 +18353,7 @@
             )
           );
         },
-        Mo = function (e) {
+        Lo = function (e) {
           var n = {};
           e &&
             e.forEach(function (e) {
@@ -18405,7 +18361,7 @@
             }),
             Ut.dispatch(xt.setMissingHighlight.make(n));
         },
-        Do = function (e) {
+        Mo = function (e) {
           var n = {};
           e &&
             e.forEach(function (e) {
@@ -18413,7 +18369,7 @@
             }),
             Ut.dispatch(xt.setConsumeHighlight.make(n));
         },
-        Uo = function (e) {
+        Do = function (e) {
           var n = {};
           e &&
             e.forEach(function (e) {
@@ -18421,7 +18377,7 @@
             }),
             Ut.dispatch(xt.setProduceHighlight.make(n));
         },
-        Fo = {
+        Uo = {
           addToQueue: kn("[queue] add", function (e) {
             return e;
           }),
@@ -18435,21 +18391,21 @@
             return e;
           }),
         },
-        zo = function (e) {
+        Fo = function (e) {
           return e.game.timeInPrestige;
         },
         Bo = function (e) {
           return e.game.settings;
         },
-        Ho = function (e) {
+        zo = function (e) {
           return e.game.settings.turnAnimationsOn;
         },
-        Go = function (e) {
+        Ho = function (e) {
           return e.game.settings.theme;
         },
-        Wo = function () {
+        Go = function () {
           return (
-            (Wo =
+            (Go =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -18457,28 +18413,28 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            Wo.apply(this, arguments)
+            Go.apply(this, arguments)
           );
         },
-        Yo = function (e, n, t) {
+        Wo = function (e, n, t) {
           if (t || 2 === arguments.length)
             for (var r, i = 0, a = n.length; i < a; i++)
               (!r && i in n) ||
                 (r || (r = Array.prototype.slice.call(n, 0, i)), (r[i] = n[i]));
           return e.concat(r || Array.prototype.slice.call(n));
         },
-        Xo = function (n) {
+        Yo = function (n) {
           var t = n.actions,
             r = N(_a);
           return (0, e.jsx)(
             Fa,
-            Wo(
+            Go(
               {
                 isCollapsable: !0,
                 id: "landing-zone-actions",
                 label: (0, e.jsx)(
                   io,
-                  Wo(
+                  Go(
                     {
                       id: "planet:landing-zone:actions",
                       className: "label-wrap",
@@ -18497,15 +18453,15 @@
                   .map(function (n) {
                     return (0, e.jsx)(
                       io,
-                      Wo(
+                      Go(
                         {
                           id: "planet:landing-zone:actions:".concat(n.id),
                           className: "action-wrap",
                         },
                         {
                           children: (0, e.jsxs)(
-                            _o,
-                            Wo(
+                            Oo,
+                            Go(
                               {
                                 label: n.name,
                                 isAvailable: n.isAvailable,
@@ -18526,40 +18482,40 @@
                                   ),
                                 onClick: function () {
                                   return (
-                                    (e = n.id), void Co.doAction.send({ id: e })
+                                    (e = n.id), void Ao.doAction.send({ id: e })
                                   );
                                   var e;
                                 },
                                 onMouseEnter: function () {
-                                  return Mo(
+                                  return Lo(
                                     n.cost.filter(function (e) {
                                       return !e.isAvailable;
                                     })
                                   );
                                 },
                                 onMouseLeave: function () {
-                                  return Mo(null);
+                                  return Lo(null);
                                 },
                               },
                               {
                                 children: [
                                   (0, e.jsx)(
                                     "p",
-                                    Wo(
+                                    Go(
                                       { className: "title" },
                                       { children: n.name }
                                     )
                                   ),
                                   (0, e.jsx)(
                                     "p",
-                                    Wo(
+                                    Go(
                                       { className: "description" },
                                       { children: n.description }
                                     )
                                   ),
                                   (0, e.jsxs)(
                                     "div",
-                                    Wo(
+                                    Go(
                                       { className: "costs wrap" },
                                       {
                                         children: [
@@ -18567,7 +18523,7 @@
                                             children: "Consume",
                                           }),
                                           n.cost.map(function (n) {
-                                            return (0, e.jsx)(Io, { cost: n });
+                                            return (0, e.jsx)(Ro, { cost: n });
                                           }),
                                         ],
                                       }
@@ -18575,7 +18531,7 @@
                                   ),
                                   (0, e.jsxs)(
                                     "div",
-                                    Wo(
+                                    Go(
                                       { className: "gain wrap" },
                                       {
                                         children: [
@@ -18583,7 +18539,7 @@
                                             children: "Produce",
                                           }),
                                           n.gain.map(function (n) {
-                                            return (0, e.jsx)(Lo, { gain: n });
+                                            return (0, e.jsx)(Po, { gain: n });
                                           }),
                                         ],
                                       }
@@ -18601,20 +18557,20 @@
             )
           );
         },
-        Vo = function (n) {
+        Xo = function (n) {
           var t = n.upgrades,
             r = n.isQHold,
             i = N(_a),
             a = N(Bo).addToQueueUnavailable;
           return (0, e.jsx)(
             Fa,
-            Wo(
+            Go(
               {
                 isCollapsable: !0,
                 id: "landing-zone-upgrades",
                 label: (0, e.jsx)(
                   io,
-                  Wo(
+                  Go(
                     {
                       id: "planet:landing-zone:upgrades",
                       className: "upgrades-wrap label-wrap",
@@ -18633,15 +18589,15 @@
                   .map(function (n) {
                     return (0, e.jsx)(
                       io,
-                      Wo(
+                      Go(
                         {
                           id: "planet:landing-zone:upgrades:".concat(n.id),
                           className: "upgrade-wrap",
                         },
                         {
                           children: (0, e.jsxs)(
-                            _o,
-                            Wo(
+                            Oo,
+                            Go(
                               {
                                 label: n.name,
                                 isAvailable: n.isAvailable,
@@ -18665,48 +18621,48 @@
                                 onClick: function (e) {
                                   var t;
                                   r || (!n.isAvailable && a)
-                                    ? Fo.addToQueue.send({
+                                    ? Uo.addToQueue.send({
                                         scope: et.UPGRADE,
                                         id: n.id,
                                       })
                                     : ((t = n.id),
-                                      Co.doUpgrade.send({ id: t }));
+                                      Ao.doUpgrade.send({ id: t }));
                                 },
                                 level: n.level,
                                 maxLevel: n.maxLevel,
                                 onMouseEnter: function () {
-                                  Mo(
+                                  Lo(
                                     n.cost.filter(function (e) {
                                       return !e.isAvailable;
                                     })
                                   ),
-                                    Uo(
+                                    Do(
                                       n.gainMult.filter(function (e) {
                                         return e.amountValue > 1;
                                       })
                                     ),
-                                    Do(
+                                    Mo(
                                       n.gainMult.filter(function (e) {
                                         return e.amountValue < 1;
                                       })
                                     );
                                 },
                                 onMouseLeave: function () {
-                                  Mo(null), Uo(null), Do(null);
+                                  Lo(null), Do(null), Mo(null);
                                 },
                               },
                               {
                                 children: [
                                   (0, e.jsx)(
                                     "p",
-                                    Wo(
+                                    Go(
                                       { className: "title" },
                                       { children: n.name }
                                     )
                                   ),
                                   (0, e.jsx)(
                                     "p",
-                                    Wo(
+                                    Go(
                                       { className: "description" },
                                       { children: n.description }
                                     )
@@ -18714,7 +18670,7 @@
                                   n.cost.length
                                     ? (0, e.jsxs)(
                                         "div",
-                                        Wo(
+                                        Go(
                                           { className: "costs wrap" },
                                           {
                                             children: [
@@ -18723,7 +18679,7 @@
                                               }),
                                               n.cost.map(function (n) {
                                                 return (0,
-                                                e.jsx)(Io, { cost: n });
+                                                e.jsx)(Ro, { cost: n });
                                               }),
                                             ],
                                           }
@@ -18733,7 +18689,7 @@
                                   n.consume.length
                                     ? (0, e.jsxs)(
                                         "div",
-                                        Wo(
+                                        Go(
                                           { className: "costs wrap" },
                                           {
                                             children: [
@@ -18742,7 +18698,7 @@
                                               }),
                                               n.consume.map(function (n) {
                                                 return (0,
-                                                e.jsx)(Lo, { gain: n });
+                                                e.jsx)(Po, { gain: n });
                                               }),
                                             ],
                                           }
@@ -18752,7 +18708,7 @@
                                   n.gain.length
                                     ? (0, e.jsxs)(
                                         "div",
-                                        Wo(
+                                        Go(
                                           { className: "gain wrap" },
                                           {
                                             children: [
@@ -18761,7 +18717,7 @@
                                               }),
                                               n.gain.map(function (n) {
                                                 return (0,
-                                                e.jsx)(Lo, { gain: n });
+                                                e.jsx)(Po, { gain: n });
                                               }),
                                             ],
                                           }
@@ -18771,7 +18727,7 @@
                                   n.max.length
                                     ? (0, e.jsxs)(
                                         "div",
-                                        Wo(
+                                        Go(
                                           { className: "store wrap" },
                                           {
                                             children: [
@@ -18780,7 +18736,7 @@
                                               }),
                                               n.max.map(function (n) {
                                                 return (0,
-                                                e.jsx)(Lo, { gain: n });
+                                                e.jsx)(Po, { gain: n });
                                               }),
                                             ],
                                           }
@@ -18790,7 +18746,7 @@
                                   n.gainMult.length
                                     ? (0, e.jsxs)(
                                         "div",
-                                        Wo(
+                                        Go(
                                           { className: "gain wrap" },
                                           {
                                             children: [
@@ -18799,7 +18755,7 @@
                                               }),
                                               n.gainMult.map(function (n) {
                                                 return (0,
-                                                e.jsx)(Lo, { gain: n });
+                                                e.jsx)(Po, { gain: n });
                                               }),
                                             ],
                                           }
@@ -18809,7 +18765,7 @@
                                   n.maxMult.length
                                     ? (0, e.jsxs)(
                                         "div",
-                                        Wo(
+                                        Go(
                                           { className: "store wrap" },
                                           {
                                             children: [
@@ -18818,7 +18774,7 @@
                                               }),
                                               n.maxMult.map(function (n) {
                                                 return (0,
-                                                e.jsx)(Lo, { gain: n });
+                                                e.jsx)(Po, { gain: n });
                                               }),
                                             ],
                                           }
@@ -18841,12 +18797,14 @@
             )
           );
         },
-        qo = function (n) {
+        Vo = function (n) {
           var t = n.buildings,
-            r = n.isQHold,
-            i = N(_a),
-            a = N(Bo).addToQueueUnavailable,
-            o = t.list
+            i = n.isQHold,
+            a = N(_a),
+            o = N(Bo),
+            s = o.addToQueueUnavailable,
+            l = o.unsafeBulkBuilding,
+            c = t.list
               .filter(function (e) {
                 return e.isUnlocked && Object.values(ho).includes(e.category);
               })
@@ -18856,453 +18814,516 @@
                   e
                 );
               }, {});
-          return (0, e.jsx)("div", {
-            children: Object.entries(o).map(function (n) {
-              var t = n[0],
-                o = n[1];
-              return (0, e.jsx)(
-                Fa,
-                Wo(
-                  {
-                    isCollapsable: !0,
-                    id: "landing-zone-buildings-".concat(t),
-                    label: (0, e.jsx)(
-                      io,
-                      Wo(
-                        {
-                          id: "planet:landing-zone:building:".concat(t),
-                          className: "buildings-cat-label label-wrap",
-                        },
-                        { children: "".concat(t, " Buildings") }
-                      )
-                    ),
-                    className: "buildings-wrap",
-                    contentClassName: "flex",
-                  },
-                  {
-                    children: o.map(function (n) {
-                      var o;
-                      return (0, e.jsx)(
+          return (
+            (0, r.useEffect)(function () {
+              var e = function (e) {
+                l &&
+                  (e.ctrlKey
+                    ? Ao.setBulk.send(1e100)
+                    : e.shiftKey && Ao.setBulk.send(5));
+              };
+              document.addEventListener("keydown", e);
+              var n = function (e) {
+                l &&
+                  (console.log("released", e.ctrlKey, e.key),
+                  ("Control" !== e.key && "Shift" !== e.key) ||
+                    Ao.setBulk.send(1));
+              };
+              return (
+                document.addEventListener("keyup", n),
+                function () {
+                  document.removeEventListener("keydown", e),
+                    document.removeEventListener("keyup", n),
+                    Ao.setBulk.send(1);
+                }
+              );
+            }, []),
+            (0, e.jsx)("div", {
+              children: Object.entries(c).map(function (n) {
+                var t = n[0],
+                  r = n[1];
+                return (0, e.jsx)(
+                  Fa,
+                  Go(
+                    {
+                      isCollapsable: !0,
+                      id: "landing-zone-buildings-".concat(t),
+                      label: (0, e.jsx)(
                         io,
-                        Wo(
+                        Go(
                           {
-                            id: "planet:landing-zone:building:"
-                              .concat(t, ":")
-                              .concat(n.id),
-                            className: "building-wrap",
+                            id: "planet:landing-zone:building:".concat(t),
+                            className: "buildings-cat-label label-wrap",
                           },
-                          {
-                            children: (0, e.jsxs)(
-                              _o,
-                              Wo(
-                                {
-                                  label: n.name,
-                                  isAvailable: n.isAvailable,
-                                  isBlocked: n.isBlocked,
-                                  progress: n.progress,
-                                  className: "feature-item "
-                                    .concat(
-                                      n.etaNum > 1e80 ? "soft-lock" : "",
-                                      " "
-                                    )
-                                    .concat(
-                                      i &&
-                                        n.cost.find(function (e) {
-                                          return e.id === i;
+                          { children: "".concat(t, " Buildings") }
+                        )
+                      ),
+                      className: "buildings-wrap",
+                      contentClassName: "flex",
+                    },
+                    {
+                      children: r.map(function (n) {
+                        var r;
+                        return (0, e.jsx)(
+                          io,
+                          Go(
+                            {
+                              id: "planet:landing-zone:building:"
+                                .concat(t, ":")
+                                .concat(n.id),
+                              className: "building-wrap",
+                            },
+                            {
+                              children: (0, e.jsxs)(
+                                Oo,
+                                Go(
+                                  {
+                                    label: n.name,
+                                    isAvailable: n.isAvailable,
+                                    isBlocked: n.isBlocked,
+                                    progress: n.progress,
+                                    className: "feature-item "
+                                      .concat(
+                                        n.etaNum > 1e80 ? "soft-lock" : "",
+                                        " "
+                                      )
+                                      .concat(
+                                        a &&
+                                          n.cost.find(function (e) {
+                                            return e.id === a;
+                                          })
+                                          ? "usage-highlight"
+                                          : ""
+                                      ),
+                                    onClick: function (e) {
+                                      var t;
+                                      i || (!n.isAvailable && s)
+                                        ? Uo.addToQueue.send({
+                                            scope: et.BUILDING,
+                                            id: n.id,
+                                          })
+                                        : ((t = n.id),
+                                          Wt("building_built", { id: t }),
+                                          Ao.doBuild.send({ id: t }));
+                                    },
+                                    level: n.activeAmount || 0,
+                                    maxLevel: n.level,
+                                    isLevelControllable: !0,
+                                    onChangeAmount: function (e) {
+                                      var t, r;
+                                      console.log("amount: ", e),
+                                        (t = n.id),
+                                        (r = e),
+                                        Ao.setBuildingAmount.send({
+                                          id: t,
+                                          amount: r,
+                                        });
+                                    },
+                                    onMouseEnter: function () {
+                                      Lo(
+                                        n.cost.filter(function (e) {
+                                          return !e.isAvailable;
                                         })
-                                        ? "usage-highlight"
-                                        : ""
-                                    ),
-                                  onClick: function (e) {
-                                    var t;
-                                    r || (!n.isAvailable && a)
-                                      ? Fo.addToQueue.send({
-                                          scope: et.BUILDING,
-                                          id: n.id,
-                                        })
-                                      : ((t = n.id),
-                                        Wt("building_built", { id: t }),
-                                        Co.doBuild.send({ id: t }));
-                                  },
-                                  level: n.activeAmount || 0,
-                                  maxLevel: n.level,
-                                  isLevelControllable: !0,
-                                  onChangeAmount: function (e) {
-                                    var t, r;
-                                    console.log("amount: ", e),
-                                      (t = n.id),
-                                      (r = e),
-                                      Co.setBuildingAmount.send({
-                                        id: t,
-                                        amount: r,
-                                      });
-                                  },
-                                  onMouseEnter: function () {
-                                    Mo(
-                                      n.cost.filter(function (e) {
-                                        return !e.isAvailable;
-                                      })
-                                    ),
-                                      Uo(
-                                        Yo(
-                                          Yo(
-                                            [],
-                                            n.gainMult.filter(function (e) {
-                                              return e.amountValue > 1;
-                                            }),
+                                      ),
+                                        Do(
+                                          Wo(
+                                            Wo(
+                                              [],
+                                              n.gainMult.filter(function (e) {
+                                                return e.amountValue > 1;
+                                              }),
+                                              !0
+                                            ),
+                                            n.gain,
                                             !0
-                                          ),
-                                          n.gain,
-                                          !0
+                                          )
+                                        ),
+                                        Mo(
+                                          Wo(
+                                            Wo(
+                                              [],
+                                              n.gainMult.filter(function (e) {
+                                                return e.amountValue < 1;
+                                              }),
+                                              !0
+                                            ),
+                                            n.consume,
+                                            !0
+                                          )
+                                        );
+                                    },
+                                    onMouseLeave: function () {
+                                      Lo(null), Do(null), Mo(null);
+                                    },
+                                    isWarning: n.efficiency.isDropped,
+                                  },
+                                  {
+                                    children: [
+                                      (0, e.jsxs)(
+                                        "p",
+                                        Go(
+                                          { className: "title" },
+                                          {
+                                            children: [
+                                              n.name,
+                                              n.bulk > 1
+                                                ? "(+".concat(n.bulk, ")")
+                                                : "",
+                                            ],
+                                          }
                                         )
                                       ),
-                                      Do(
-                                        Yo(
-                                          Yo(
-                                            [],
-                                            n.gainMult.filter(function (e) {
-                                              return e.amountValue < 1;
-                                            }),
-                                            !0
-                                          ),
-                                          n.consume,
-                                          !0
+                                      (0, e.jsx)(
+                                        "p",
+                                        Go(
+                                          { className: "description" },
+                                          { children: n.description }
                                         )
-                                      );
-                                  },
-                                  onMouseLeave: function () {
-                                    Mo(null), Uo(null), Do(null);
-                                  },
-                                  isWarning: n.efficiency.isDropped,
-                                },
-                                {
-                                  children: [
-                                    (0, e.jsx)(
-                                      "p",
-                                      Wo(
-                                        { className: "title" },
-                                        { children: n.name }
-                                      )
-                                    ),
-                                    (0, e.jsx)(
-                                      "p",
-                                      Wo(
-                                        { className: "description" },
-                                        { children: n.description }
-                                      )
-                                    ),
-                                    n.efficiency.isDropped
-                                      ? (0, e.jsxs)(
-                                          "p",
-                                          Wo(
-                                            { className: "eff-dropped" },
-                                            {
-                                              children: [
-                                                "Efficiency: ",
-                                                co(
-                                                  100 * n.efficiency.efficiency
-                                                ),
-                                                "%",
-                                                (0, e.jsxs)(
-                                                  "span",
-                                                  Wo(
-                                                    {
-                                                      className:
-                                                        "missing-resource",
-                                                    },
-                                                    {
-                                                      children: [
-                                                        "Missing ",
-                                                        null ===
-                                                          (o =
-                                                            n.efficiency
-                                                              .missingResource) ||
-                                                        void 0 === o
-                                                          ? void 0
-                                                          : o.name,
-                                                      ],
-                                                    }
-                                                  )
-                                                ),
-                                              ],
-                                            }
+                                      ),
+                                      n.efficiency.isDropped
+                                        ? (0, e.jsxs)(
+                                            "p",
+                                            Go(
+                                              { className: "eff-dropped" },
+                                              {
+                                                children: [
+                                                  "Efficiency: ",
+                                                  co(
+                                                    100 *
+                                                      n.efficiency.efficiency
+                                                  ),
+                                                  "%",
+                                                  (0, e.jsxs)(
+                                                    "span",
+                                                    Go(
+                                                      {
+                                                        className:
+                                                          "missing-resource",
+                                                      },
+                                                      {
+                                                        children: [
+                                                          "Missing ",
+                                                          null ===
+                                                            (r =
+                                                              n.efficiency
+                                                                .missingResource) ||
+                                                          void 0 === r
+                                                            ? void 0
+                                                            : r.name,
+                                                        ],
+                                                      }
+                                                    )
+                                                  ),
+                                                ],
+                                              }
+                                            )
                                           )
-                                        )
-                                      : (0, e.jsx)(e.Fragment, {}),
-                                    n.cost.length
-                                      ? (0, e.jsxs)(
-                                          "div",
-                                          Wo(
-                                            { className: "costs wrap" },
-                                            {
-                                              children: [
-                                                (0, e.jsx)("span", {
-                                                  children: "Cost",
-                                                }),
-                                                n.cost.map(function (n) {
-                                                  return (0,
-                                                  e.jsx)(Io, { cost: n });
-                                                }),
-                                              ],
-                                            }
+                                        : (0, e.jsx)(e.Fragment, {}),
+                                      n.cost.length
+                                        ? (0, e.jsxs)(
+                                            "div",
+                                            Go(
+                                              { className: "costs wrap" },
+                                              {
+                                                children: [
+                                                  (0, e.jsx)("span", {
+                                                    children: "Cost",
+                                                  }),
+                                                  n.cost.map(function (n) {
+                                                    return (0,
+                                                    e.jsx)(Ro, { cost: n });
+                                                  }),
+                                                ],
+                                              }
+                                            )
                                           )
-                                        )
-                                      : (0, e.jsx)(e.Fragment, {}),
-                                    n.consume.length
-                                      ? (0, e.jsxs)(
-                                          "div",
-                                          Wo(
-                                            { className: "costs wrap" },
-                                            {
-                                              children: [
-                                                (0, e.jsx)("span", {
-                                                  children: "Consume",
-                                                }),
-                                                n.consume.map(function (n) {
-                                                  return (0,
-                                                  e.jsx)(Lo, { gain: n });
-                                                }),
-                                              ],
-                                            }
+                                        : (0, e.jsx)(e.Fragment, {}),
+                                      n.consume.length
+                                        ? (0, e.jsxs)(
+                                            "div",
+                                            Go(
+                                              { className: "costs wrap" },
+                                              {
+                                                children: [
+                                                  (0, e.jsx)("span", {
+                                                    children: "Consume",
+                                                  }),
+                                                  n.consume.map(function (n) {
+                                                    return (0,
+                                                    e.jsx)(Po, { gain: n });
+                                                  }),
+                                                ],
+                                              }
+                                            )
                                           )
-                                        )
-                                      : (0, e.jsx)(e.Fragment, {}),
-                                    n.gain.length
-                                      ? (0, e.jsxs)(
-                                          "div",
-                                          Wo(
-                                            { className: "gain wrap" },
-                                            {
-                                              children: [
-                                                (0, e.jsx)("span", {
-                                                  children: "Produce",
-                                                }),
-                                                n.gain.map(function (n) {
-                                                  return (0,
-                                                  e.jsx)(Lo, { gain: n });
-                                                }),
-                                              ],
-                                            }
+                                        : (0, e.jsx)(e.Fragment, {}),
+                                      n.gain.length
+                                        ? (0, e.jsxs)(
+                                            "div",
+                                            Go(
+                                              { className: "gain wrap" },
+                                              {
+                                                children: [
+                                                  (0, e.jsx)("span", {
+                                                    children: "Produce",
+                                                  }),
+                                                  n.gain.map(function (n) {
+                                                    return (0,
+                                                    e.jsx)(Po, { gain: n });
+                                                  }),
+                                                ],
+                                              }
+                                            )
                                           )
-                                        )
-                                      : (0, e.jsx)(e.Fragment, {}),
-                                    n.gainMult.length
-                                      ? (0, e.jsxs)(
-                                          "div",
-                                          Wo(
-                                            { className: "gain wrap" },
-                                            {
-                                              children: [
-                                                (0, e.jsx)("span", {
-                                                  children: "Income Bonuses",
-                                                }),
-                                                n.gainMult.map(function (n) {
-                                                  return (0,
-                                                  e.jsx)(Lo, { gain: n });
-                                                }),
-                                              ],
-                                            }
+                                        : (0, e.jsx)(e.Fragment, {}),
+                                      n.gainMult.length
+                                        ? (0, e.jsxs)(
+                                            "div",
+                                            Go(
+                                              { className: "gain wrap" },
+                                              {
+                                                children: [
+                                                  (0, e.jsx)("span", {
+                                                    children: "Income Bonuses",
+                                                  }),
+                                                  n.gainMult.map(function (n) {
+                                                    return (0,
+                                                    e.jsx)(Po, { gain: n });
+                                                  }),
+                                                ],
+                                              }
+                                            )
                                           )
-                                        )
-                                      : (0, e.jsx)(e.Fragment, {}),
-                                    n.craftingMult && 1 !== n.craftingMult
-                                      ? (0, e.jsxs)(
-                                          "div",
-                                          Wo(
-                                            { className: "gain wrap" },
-                                            {
-                                              children: [
-                                                (0, e.jsx)("span", {
-                                                  children:
-                                                    "Crafting Multiplier",
-                                                }),
-                                                (0, e.jsx)(
-                                                  "div",
-                                                  Wo(
-                                                    { className: "gain-block" },
-                                                    {
-                                                      children: (0, e.jsxs)(
-                                                        "p",
-                                                        Wo(
-                                                          {
-                                                            className:
-                                                              "requirement",
-                                                          },
-                                                          {
-                                                            children: [
-                                                              "All craftable: x",
-                                                              co(
-                                                                n.craftingMult
-                                                              ),
-                                                            ],
-                                                          }
-                                                        )
-                                                      ),
-                                                    }
-                                                  )
-                                                ),
-                                              ],
-                                            }
+                                        : (0, e.jsx)(e.Fragment, {}),
+                                      n.craftingMult && 1 !== n.craftingMult
+                                        ? (0, e.jsxs)(
+                                            "div",
+                                            Go(
+                                              { className: "gain wrap" },
+                                              {
+                                                children: [
+                                                  (0, e.jsx)("span", {
+                                                    children:
+                                                      "Crafting Multiplier",
+                                                  }),
+                                                  (0, e.jsx)(
+                                                    "div",
+                                                    Go(
+                                                      {
+                                                        className: "gain-block",
+                                                      },
+                                                      {
+                                                        children: (0, e.jsxs)(
+                                                          "p",
+                                                          Go(
+                                                            {
+                                                              className:
+                                                                "requirement",
+                                                            },
+                                                            {
+                                                              children: [
+                                                                "All craftable: x",
+                                                                co(
+                                                                  n.craftingMult
+                                                                ),
+                                                              ],
+                                                            }
+                                                          )
+                                                        ),
+                                                      }
+                                                    )
+                                                  ),
+                                                ],
+                                              }
+                                            )
                                           )
-                                        )
-                                      : (0, e.jsx)(e.Fragment, {}),
-                                    n.maxColonists
-                                      ? (0, e.jsxs)(
-                                          "div",
-                                          Wo(
-                                            { className: "gain wrap" },
-                                            {
-                                              children: [
-                                                (0, e.jsx)("span", {
-                                                  children: "Max Population",
-                                                }),
-                                                (0, e.jsx)(
-                                                  "div",
-                                                  Wo(
-                                                    { className: "gain-block" },
-                                                    {
-                                                      children: (0, e.jsxs)(
-                                                        "p",
-                                                        Wo(
-                                                          {
-                                                            className:
-                                                              "requirement",
-                                                          },
-                                                          {
-                                                            children: [
-                                                              "Colonists: ",
-                                                              co(
-                                                                n.maxColonists
-                                                              ),
-                                                            ],
-                                                          }
-                                                        )
-                                                      ),
-                                                    }
-                                                  )
-                                                ),
-                                              ],
-                                            }
+                                        : (0, e.jsx)(e.Fragment, {}),
+                                      n.maxColonists
+                                        ? (0, e.jsxs)(
+                                            "div",
+                                            Go(
+                                              { className: "gain wrap" },
+                                              {
+                                                children: [
+                                                  (0, e.jsx)("span", {
+                                                    children: "Max Population",
+                                                  }),
+                                                  (0, e.jsx)(
+                                                    "div",
+                                                    Go(
+                                                      {
+                                                        className: "gain-block",
+                                                      },
+                                                      {
+                                                        children: (0, e.jsxs)(
+                                                          "p",
+                                                          Go(
+                                                            {
+                                                              className:
+                                                                "requirement",
+                                                            },
+                                                            {
+                                                              children: [
+                                                                "Colonists: ",
+                                                                co(
+                                                                  n.maxColonists
+                                                                ),
+                                                              ],
+                                                            }
+                                                          )
+                                                        ),
+                                                      }
+                                                    )
+                                                  ),
+                                                ],
+                                              }
+                                            )
                                           )
-                                        )
-                                      : (0, e.jsx)(e.Fragment, {}),
-                                    n.max.length
-                                      ? (0, e.jsxs)(
-                                          "div",
-                                          Wo(
-                                            { className: "store wrap" },
-                                            {
-                                              children: [
-                                                (0, e.jsx)("span", {
-                                                  children: "Storage",
-                                                }),
-                                                n.max.map(function (n) {
-                                                  return (0,
-                                                  e.jsx)(Lo, { gain: n });
-                                                }),
-                                              ],
-                                            }
+                                        : (0, e.jsx)(e.Fragment, {}),
+                                      n.max.length
+                                        ? (0, e.jsxs)(
+                                            "div",
+                                            Go(
+                                              { className: "store wrap" },
+                                              {
+                                                children: [
+                                                  (0, e.jsx)("span", {
+                                                    children: "Storage",
+                                                  }),
+                                                  n.max.map(function (n) {
+                                                    return (0,
+                                                    e.jsx)(Po, { gain: n });
+                                                  }),
+                                                ],
+                                              }
+                                            )
                                           )
-                                        )
-                                      : (0, e.jsx)(e.Fragment, {}),
-                                    n.storeMult.length
-                                      ? (0, e.jsxs)(
-                                          "div",
-                                          Wo(
-                                            { className: "gain wrap" },
-                                            {
-                                              children: [
-                                                (0, e.jsx)("span", {
-                                                  children:
-                                                    "Storage Multiplier",
-                                                }),
-                                                n.storeMult.map(function (n) {
-                                                  return (0,
-                                                  e.jsx)(Lo, { gain: n });
-                                                }),
-                                              ],
-                                            }
+                                        : (0, e.jsx)(e.Fragment, {}),
+                                      n.storeMult.length
+                                        ? (0, e.jsxs)(
+                                            "div",
+                                            Go(
+                                              { className: "gain wrap" },
+                                              {
+                                                children: [
+                                                  (0, e.jsx)("span", {
+                                                    children:
+                                                      "Storage Multiplier",
+                                                  }),
+                                                  n.storeMult.map(function (n) {
+                                                    return (0,
+                                                    e.jsx)(Po, { gain: n });
+                                                  }),
+                                                ],
+                                              }
+                                            )
                                           )
-                                        )
-                                      : (0, e.jsx)(e.Fragment, {}),
-                                    n.consumeEffect.length
-                                      ? (0, e.jsxs)(
-                                          "div",
-                                          Wo(
-                                            { className: "costs wrap" },
-                                            {
-                                              children: [
-                                                (0, e.jsx)("span", {
-                                                  children: "Negative Effect",
-                                                }),
-                                                n.consumeEffect.map(function (
-                                                  n
-                                                ) {
-                                                  return (0, e.jsx)(Lo, {
-                                                    gain: n,
-                                                  });
-                                                }),
-                                              ],
-                                            }
+                                        : (0, e.jsx)(e.Fragment, {}),
+                                      n.consumeEffect.length
+                                        ? (0, e.jsxs)(
+                                            "div",
+                                            Go(
+                                              { className: "costs wrap" },
+                                              {
+                                                children: [
+                                                  (0, e.jsx)("span", {
+                                                    children: "Negative Effect",
+                                                  }),
+                                                  n.consumeEffect.map(function (
+                                                    n
+                                                  ) {
+                                                    return (0, e.jsx)(Po, {
+                                                      gain: n,
+                                                    });
+                                                  }),
+                                                ],
+                                              }
+                                            )
                                           )
-                                        )
-                                      : (0, e.jsx)(e.Fragment, {}),
-                                    n.gainEffect.length
-                                      ? (0, e.jsxs)(
-                                          "div",
-                                          Wo(
-                                            { className: "gain wrap" },
-                                            {
-                                              children: [
-                                                (0, e.jsx)("span", {
-                                                  children: "Positive Effect",
-                                                }),
-                                                n.gainEffect.map(function (n) {
-                                                  return (0,
-                                                  e.jsx)(Lo, { gain: n });
-                                                }),
-                                              ],
-                                            }
+                                        : (0, e.jsx)(e.Fragment, {}),
+                                      n.gainEffect.length
+                                        ? (0, e.jsxs)(
+                                            "div",
+                                            Go(
+                                              { className: "gain wrap" },
+                                              {
+                                                children: [
+                                                  (0, e.jsx)("span", {
+                                                    children: "Positive Effect",
+                                                  }),
+                                                  n.gainEffect.map(function (
+                                                    n
+                                                  ) {
+                                                    return (0, e.jsx)(Po, {
+                                                      gain: n,
+                                                    });
+                                                  }),
+                                                ],
+                                              }
+                                            )
                                           )
-                                        )
-                                      : (0, e.jsx)(e.Fragment, {}),
-                                    (0, e.jsx)("p", {
-                                      children:
-                                        "Hold Q while clicking to add item into queue",
-                                    }),
-                                  ],
-                                }
-                              )
-                            ),
-                          }
-                        )
-                      );
-                    }),
-                  }
-                )
-              );
-            }),
-          });
+                                        : (0, e.jsx)(e.Fragment, {}),
+                                      n.effMult.length
+                                        ? (0, e.jsxs)(
+                                            "div",
+                                            Go(
+                                              { className: "gain wrap" },
+                                              {
+                                                children: [
+                                                  (0, e.jsx)("span", {
+                                                    children:
+                                                      "Effect Multiplier",
+                                                  }),
+                                                  n.effMult.map(function (n) {
+                                                    return (0,
+                                                    e.jsx)(Po, { gain: n });
+                                                  }),
+                                                ],
+                                              }
+                                            )
+                                          )
+                                        : (0, e.jsx)(e.Fragment, {}),
+                                      (0, e.jsx)("p", {
+                                        children:
+                                          "Hold Q while clicking to add item into queue",
+                                      }),
+                                    ],
+                                  }
+                                )
+                              ),
+                            }
+                          )
+                        );
+                      }),
+                    }
+                  )
+                );
+              }),
+            })
+          );
         },
-        Qo = function () {
-          var n = N(So),
+        qo = function () {
+          var n = N(Co),
             t = (N(no), N(La("q")));
           return (0, e.jsxs)(e.Fragment, {
             children: [
-              (0, e.jsx)(Xo, { actions: n.actions }),
-              (0, e.jsx)(Vo, { upgrades: n.upgrades, isQHold: t }),
-              (0, e.jsx)(qo, { buildings: n.buildings, isQHold: t }),
+              (0, e.jsx)(Yo, { actions: n.actions }),
+              (0, e.jsx)(Xo, { upgrades: n.upgrades, isQHold: t }),
+              (0, e.jsx)(Vo, { buildings: n.buildings, isQHold: t }),
             ],
           });
         },
-        Ko = function (e) {
+        Qo = function (e) {
           return e.game.colony;
         },
-        $o = function (e) {
+        Ko = function (e) {
           return e.game.colony.isUnlocked;
         },
-        Zo = function (e) {
+        $o = function (e) {
           return e.game.colony.effects.happiness;
+        },
+        Zo = function (e) {
+          return e.game.colony.effects.effects;
         },
         Jo = function (e) {
           return e.game.colony.effects.buff;
@@ -19401,17 +19422,9 @@
             return e;
           }),
         },
-        cs = {
-          doSearchResource: kn("[search] resource", function (e) {
-            return e;
-          }),
-          closeSearch: kn("[search] close", function (e) {
-            return e;
-          }),
-        },
-        us = function () {
+        cs = function () {
           return (
-            (us =
+            (cs =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -19419,10 +19432,76 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            us.apply(this, arguments)
+            cs.apply(this, arguments)
           );
         },
-        ds = function (n) {
+        us = function (n) {
+          var t = n.isVisible,
+            r = n.children,
+            i = n.onClose;
+          return (0, e.jsx)(
+            "div",
+            cs(
+              { className: "mobile-tooltip-wrap ".concat(t ? "" : "hidden") },
+              {
+                children: (0, e.jsxs)(
+                  "div",
+                  cs(
+                    { className: "mobile-tooltip" },
+                    {
+                      children: [
+                        (0, e.jsxs)(
+                          "div",
+                          cs(
+                            { className: "head" },
+                            {
+                              children: [
+                                (0, e.jsx)("span", {}),
+                                (0, e.jsx)(
+                                  "span",
+                                  cs(
+                                    { className: "close", onClick: i },
+                                    { children: "X" }
+                                  )
+                                ),
+                              ],
+                            }
+                          )
+                        ),
+                        (0, e.jsx)(
+                          "div",
+                          cs({ className: "body" }, { children: r })
+                        ),
+                      ],
+                    }
+                  )
+                ),
+              }
+            )
+          );
+        },
+        ds = {
+          doSearchResource: kn("[search] resource", function (e) {
+            return e;
+          }),
+          closeSearch: kn("[search] close", function (e) {
+            return e;
+          }),
+        },
+        ps = function () {
+          return (
+            (ps =
+              Object.assign ||
+              function (e) {
+                for (var n, t = 1, r = arguments.length; t < r; t++)
+                  for (var i in (n = arguments[t]))
+                    Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
+                return e;
+              }),
+            ps.apply(this, arguments)
+          );
+        },
+        fs = function (n) {
           var t,
             i,
             a,
@@ -19452,7 +19531,7 @@
             };
           return (0, e.jsxs)(
             "div",
-            us(
+            ps(
               {
                 className: "resource-item ".concat(f),
                 onMouseEnter: function () {
@@ -19466,13 +19545,13 @@
                 children: [
                   (0, e.jsx)(
                     Ta,
-                    us(
+                    ps(
                       {
                         duration: 20,
                         placement: "right",
                         content: (0, e.jsx)(
                           "div",
-                          us(
+                          ps(
                             { className: "description-hint" },
                             {
                               children: (0, e.jsx)("p", {
@@ -19486,11 +19565,11 @@
                       {
                         children: (0, e.jsx)(
                           "p",
-                          us(
+                          ps(
                             {
                               className: "resource",
                               onClick: function () {
-                                cs.doSearchResource.send(d.id);
+                                ds.doSearchResource.send(d.id);
                               },
                             },
                             { children: d.name }
@@ -19501,11 +19580,11 @@
                   ),
                   (0, e.jsx)(
                     Ta,
-                    us(
+                    ps(
                       {
                         duration: 20,
                         placement: "right",
-                        content: (0, e.jsx)(ms, {
+                        content: (0, e.jsx)(vs, {
                           isDetailMode: m || N,
                           name: d.name,
                           breakdown:
@@ -19524,7 +19603,7 @@
                       {
                         children: (0, e.jsxs)(
                           "p",
-                          us(
+                          ps(
                             {
                               className: "amount".concat(
                                 S(
@@ -19541,7 +19620,7 @@
                                 d.hasMaxLimit ? " / ".concat(d.max) : "",
                                 (0, e.jsx)(
                                   "span",
-                                  us(
+                                  ps(
                                     {
                                       className: "info-tooltip",
                                       onClick: function (e) {
@@ -19553,7 +19632,7 @@
                                     {
                                       children: (0, e.jsx)(
                                         "span",
-                                        us(
+                                        ps(
                                           { className: "info-tooltip-inner" },
                                           { children: "!" }
                                         )
@@ -19570,8 +19649,8 @@
                   ),
                   N
                     ? (0, e.jsx)(
-                        To,
-                        us(
+                        us,
+                        ps(
                           {
                             isVisible: w,
                             onClose: function () {
@@ -19579,7 +19658,7 @@
                             },
                           },
                           {
-                            children: (0, e.jsx)(ms, {
+                            children: (0, e.jsx)(vs, {
                               isDetailMode: !0,
                               name: d.name,
                               breakdown:
@@ -19595,11 +19674,11 @@
                     : null,
                   (0, e.jsx)(
                     Ta,
-                    us(
+                    ps(
                       {
                         placement: "right",
                         duration: 20,
-                        content: (0, e.jsx)(gs, {
+                        content: (0, e.jsx)(bs, {
                           isDetailMode: m || N,
                           name: d.name,
                           breakdown:
@@ -19616,7 +19695,7 @@
                       {
                         children: (0, e.jsxs)(
                           "p",
-                          us(
+                          ps(
                             {
                               className: "income".concat(
                                 S(
@@ -19632,7 +19711,7 @@
                                 d.balance,
                                 (0, e.jsx)(
                                   "span",
-                                  us(
+                                  ps(
                                     {
                                       className: "info-tooltip",
                                       onClick: function (e) {
@@ -19644,7 +19723,7 @@
                                     {
                                       children: (0, e.jsx)(
                                         "span",
-                                        us(
+                                        ps(
                                           { className: "info-tooltip-inner" },
                                           { children: "!" }
                                         )
@@ -19661,8 +19740,8 @@
                   ),
                   N
                     ? (0, e.jsx)(
-                        To,
-                        us(
+                        us,
+                        ps(
                           {
                             isVisible: v,
                             onClose: function () {
@@ -19670,7 +19749,7 @@
                             },
                           },
                           {
-                            children: (0, e.jsx)(gs, {
+                            children: (0, e.jsx)(bs, {
                               isDetailMode: !0,
                               name: d.name,
                               breakdown:
@@ -19687,15 +19766,15 @@
             )
           );
         },
-        ps = function (e) {
+        hs = function (e) {
           return e.game.crafting;
         },
-        fs = function (e) {
+        ms = function (e) {
           return e.game.crafting.isUnlocked;
         },
-        hs = function () {
+        gs = function () {
           return (
-            (hs =
+            (gs =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -19703,10 +19782,10 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            hs.apply(this, arguments)
+            gs.apply(this, arguments)
           );
         },
-        ms = function (n) {
+        vs = function (n) {
           var t = n.name,
             r = n.breakdown,
             i = n.toEmpty,
@@ -19714,7 +19793,7 @@
             o = n.isDetailMode;
           return (0, e.jsxs)(
             "div",
-            hs(
+            gs(
               { className: "hint-caps" },
               {
                 children: [
@@ -19724,14 +19803,14 @@
                     ? null
                     : (0, e.jsx)(
                         "p",
-                        hs(
+                        gs(
                           { className: "small-note" },
                           { children: "Hold Ctrl to see more details" }
                         )
                       ),
                   (0, e.jsxs)(
                     "div",
-                    hs(
+                    gs(
                       { className: "to-empty-or-full" },
                       {
                         children: [
@@ -19750,13 +19829,13 @@
             )
           );
         },
-        gs = function (n) {
+        bs = function (n) {
           var t = n.breakdown,
             r = n.name,
             i = n.isDetailMode;
           return (0, e.jsxs)(
             "div",
-            hs(
+            gs(
               { className: "hint-caps" },
               {
                 children: [
@@ -19766,7 +19845,7 @@
                     ? null
                     : (0, e.jsx)(
                         "p",
-                        hs(
+                        gs(
                           { className: "small-note" },
                           { children: "Hold Ctrl to see more details" }
                         )
@@ -19776,12 +19855,46 @@
             )
           );
         },
-        vs = function (n) {
+        xs = function () {
+          var n = N(Zo);
+          return (0, e.jsx)(
+            "div",
+            gs(
+              { className: "description-hint" },
+              {
+                children: (0, e.jsxs)(
+                  "div",
+                  gs(
+                    { className: "break-down" },
+                    {
+                      children: [
+                        (0, e.jsx)("p", { children: "Happiness Breakdown:" }),
+                        (0, e.jsx)(
+                          "div",
+                          gs(
+                            { className: "block" },
+                            {
+                              children: n.map(function (n) {
+                                return (0,
+                                e.jsxs)("p", gs({ className: "item line" }, { children: [n.name, ": ", n.amount, " (", co(n.excess), ")"] }));
+                              }),
+                            }
+                          )
+                        ),
+                      ],
+                    }
+                  )
+                ),
+              }
+            )
+          );
+        },
+        ys = function (n) {
           var t = n.isHidden,
             i = N(ns),
-            a = N(Ko),
-            o = N(ps),
-            s = (N(zo), N(Zo)),
+            a = N(Qo),
+            o = N(hs),
+            s = (N(Fo), N($o)),
             l = N(Jo),
             c = N(Oa),
             u = N(Ra),
@@ -19823,20 +19936,20 @@
             };
           return (0, e.jsxs)(
             "div",
-            hs(
+            gs(
               { className: "resources-sidebar ".concat(t ? "hidden" : "") },
               {
                 children: [
                   p.isUnlocked
                     ? (0, e.jsxs)(
                         "div",
-                        hs(
+                        gs(
                           { className: "expeditions-wrap" },
                           {
                             children: [
                               (0, e.jsx)(
-                                _o,
-                                hs(
+                                Oo,
+                                gs(
                                   {
                                     label: "Expedition",
                                     progress: (
@@ -19856,7 +19969,7 @@
                                       children: [
                                         (0, e.jsxs)(
                                           "p",
-                                          hs(
+                                          gs(
                                             { className: "loot-mult" },
                                             {
                                               children: [
@@ -19868,7 +19981,7 @@
                                         ),
                                         (0, e.jsxs)(
                                           "p",
-                                          hs(
+                                          gs(
                                             { className: "num-exps" },
                                             {
                                               children: [
@@ -19881,7 +19994,7 @@
                                         p.isInProgress
                                           ? (0, e.jsxs)(
                                               "p",
-                                              hs(
+                                              gs(
                                                 { className: "eta" },
                                                 {
                                                   children: [
@@ -19894,7 +20007,7 @@
                                           : null,
                                         (0, e.jsxs)(
                                           "div",
-                                          hs(
+                                          gs(
                                             {
                                               className: "last-loot gain wrap",
                                             },
@@ -19905,7 +20018,7 @@
                                                 }),
                                                 p.lastLooted.map(function (n) {
                                                   return (0,
-                                                  e.jsx)(Lo, { gain: n });
+                                                  e.jsx)(Po, { gain: n });
                                                 }),
                                               ],
                                             }
@@ -19918,7 +20031,7 @@
                               ),
                               (0, e.jsxs)(
                                 "div",
-                                hs(
+                                gs(
                                   { className: "expeditions-mode flex" },
                                   {
                                     children: [
@@ -19947,7 +20060,7 @@
                   a.isUnlocked
                     ? (0, e.jsxs)(
                         "div",
-                        hs(
+                        gs(
                           {
                             className: "resource-item ".concat(
                               a.jobs.freeWorkers + o.jobs.craftingSlots > 0
@@ -19959,14 +20072,14 @@
                             children: [
                               (0, e.jsx)(
                                 "p",
-                                hs(
+                                gs(
                                   { className: "resource" },
                                   { children: "Colonists" }
                                 )
                               ),
                               (0, e.jsxs)(
                                 "p",
-                                hs(
+                                gs(
                                   { className: "amount" },
                                   {
                                     children: [
@@ -19986,20 +20099,32 @@
                                   }
                                 )
                               ),
-                              (0, e.jsxs)(
-                                "p",
-                                hs(
+                              (0, e.jsx)(
+                                Ta,
+                                gs(
                                   {
-                                    className: "income".concat(
-                                      ((b = l),
-                                      b > 0
-                                        ? " boosted"
-                                        : b < 0
-                                        ? " decreased"
-                                        : "")
-                                    ),
+                                    content: (0, e.jsx)(xs, {}),
+                                    placement: "right",
+                                    duration: 0,
                                   },
-                                  { children: [Math.round(100 * s), "%"] }
+                                  {
+                                    children: (0, e.jsxs)(
+                                      "p",
+                                      gs(
+                                        {
+                                          className: "income".concat(
+                                            ((b = l),
+                                            b > 0
+                                              ? " boosted"
+                                              : b < 0
+                                              ? " decreased"
+                                              : "")
+                                          ),
+                                        },
+                                        { children: [Math.round(100 * s), "%"] }
+                                      )
+                                    ),
+                                  }
                                 )
                               ),
                             ],
@@ -20009,12 +20134,12 @@
                     : null,
                   (0, e.jsx)(
                     "div",
-                    hs(
+                    gs(
                       { className: "main-resources-wrap" },
                       {
                         children: (0, e.jsx)(
                           "div",
-                          hs(
+                          gs(
                             { className: "main-resources" },
                             {
                               children: (0, e.jsx)(as(), {
@@ -20029,7 +20154,7 @@
                                   .map(function (n) {
                                     var t;
                                     return (0,
-                                    e.jsx)(ds, { isDetailMode: h, resource: n, className: "".concat(null !== (t = y(n.id)) && void 0 !== t ? t : "".concat(n.isNegative ? " negative" : "".concat(n.isCapped ? " capped" : ""))) });
+                                    e.jsx)(fs, { isDetailMode: h, resource: n, className: "".concat(null !== (t = y(n.id)) && void 0 !== t ? t : "".concat(n.isNegative ? " negative" : "".concat(n.isCapped ? " capped" : ""))) });
                                   }),
                               }),
                             }
@@ -20043,25 +20168,25 @@
                   }).length
                     ? (0, e.jsx)(
                         "div",
-                        hs(
+                        gs(
                           { className: "secondary-resources" },
                           {
                             children: (0, e.jsxs)(
                               "div",
-                              hs(
+                              gs(
                                 { className: "secondary-wrap" },
                                 {
                                   children: [
                                     (0, e.jsx)(
                                       "p",
-                                      hs(
+                                      gs(
                                         { className: "subtitle" },
                                         { children: "Craftable" }
                                       )
                                     ),
                                     (0, e.jsx)(
                                       "div",
-                                      hs(
+                                      gs(
                                         { className: "container-scrollable" },
                                         {
                                           children: (0, e.jsx)(as(), {
@@ -20074,7 +20199,7 @@
                                               .map(function (n) {
                                                 var t;
                                                 return (0,
-                                                e.jsx)(ds, { isDetailMode: h, resource: n, className: "".concat(null !== (t = y(n.id)) && void 0 !== t ? t : "".concat(n.isNegative ? " negative" : "".concat(n.isCapped ? " capped" : ""))) });
+                                                e.jsx)(fs, { isDetailMode: h, resource: n, className: "".concat(null !== (t = y(n.id)) && void 0 !== t ? t : "".concat(n.isNegative ? " negative" : "".concat(n.isCapped ? " capped" : ""))) });
                                               }),
                                           }),
                                         }
@@ -20093,7 +20218,7 @@
             )
           );
         },
-        bs = {
+        ws = {
           saveJobsPreset: kn("[jobs-preset] save", function (e) {
             return e;
           }),
@@ -20103,10 +20228,19 @@
           applyPreset: kn("[jobs-preset] apply", function (e) {
             return e;
           }),
+          saveLawsPreset: kn("[laws-preset] save", function (e) {
+            return e;
+          }),
+          deleteLawsPreset: kn("[laws-preset] delete", function (e) {
+            return e;
+          }),
+          applyLawsPreset: kn("[laws-preset] apply", function (e) {
+            return e;
+          }),
         },
-        xs = function () {
+        js = function () {
           return (
-            (xs =
+            (js =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -20114,17 +20248,17 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            xs.apply(this, arguments)
+            js.apply(this, arguments)
           );
         },
-        ys = function (e, n, t) {
+        Ns = function (e, n, t) {
           if (t || 2 === arguments.length)
             for (var r, i = 0, a = n.length; i < a; i++)
               (!r && i in n) ||
                 (r || (r = Array.prototype.slice.call(n, 0, i)), (r[i] = n[i]));
           return e.concat(r || Array.prototype.slice.call(n));
         },
-        ws = function (n) {
+        ks = function (n) {
           var t = n.one,
             i = n.onMouseEnter,
             a = n.onMouseLeave,
@@ -20142,22 +20276,22 @@
               children: [
                 (0, e.jsx)(
                   "p",
-                  xs({ className: "title" }, { children: t.name })
+                  js({ className: "title" }, { children: t.name })
                 ),
                 (0, e.jsx)(
                   "p",
-                  xs({ className: "description" }, { children: t.description })
+                  js({ className: "description" }, { children: t.description })
                 ),
                 t.consume.length
                   ? (0, e.jsxs)(
                       "div",
-                      xs(
+                      js(
                         { className: "costs wrap" },
                         {
                           children: [
                             (0, e.jsx)("span", { children: "Consume" }),
                             t.consume.map(function (n) {
-                              return (0, e.jsx)(Lo, { gain: n });
+                              return (0, e.jsx)(Po, { gain: n });
                             }),
                           ],
                         }
@@ -20167,13 +20301,13 @@
                 t.gain.length
                   ? (0, e.jsxs)(
                       "div",
-                      xs(
+                      js(
                         { className: "gain wrap" },
                         {
                           children: [
                             (0, e.jsx)("span", { children: "Produce" }),
                             t.gain.map(function (n) {
-                              return (0, e.jsx)(Lo, { gain: n });
+                              return (0, e.jsx)(Po, { gain: n });
                             }),
                           ],
                         }
@@ -20183,13 +20317,13 @@
                 t.multiplier.length
                   ? (0, e.jsxs)(
                       "div",
-                      xs(
+                      js(
                         { className: "mult wrap" },
                         {
                           children: [
                             (0, e.jsx)("span", { children: "Storage Bonuses" }),
                             t.multiplier.map(function (n) {
-                              return (0, e.jsx)(Lo, { gain: n });
+                              return (0, e.jsx)(Po, { gain: n });
                             }),
                           ],
                         }
@@ -20199,13 +20333,13 @@
                 t.gainEffect.length
                   ? (0, e.jsxs)(
                       "div",
-                      xs(
+                      js(
                         { className: "mult wrap" },
                         {
                           children: [
                             (0, e.jsx)("span", { children: "Effect Gain" }),
                             t.gainEffect.map(function (n) {
-                              return (0, e.jsx)(Lo, { gain: n });
+                              return (0, e.jsx)(Po, { gain: n });
                             }),
                           ],
                         }
@@ -20215,7 +20349,7 @@
                 t.consumeEffect.length
                   ? (0, e.jsxs)(
                       "div",
-                      xs(
+                      js(
                         { className: "mult wrap" },
                         {
                           children: [
@@ -20223,7 +20357,7 @@
                               children: "Effect Consumption",
                             }),
                             t.consumeEffect.map(function (n) {
-                              return (0, e.jsx)(Lo, { gain: n });
+                              return (0, e.jsx)(Po, { gain: n });
                             }),
                           ],
                         }
@@ -20236,18 +20370,18 @@
               ? null
               : (0, e.jsx)(
                   "div",
-                  xs({ className: "description-hint" }, { children: h })
+                  js({ className: "description-hint" }, { children: h })
                 );
           return (0, e.jsxs)(
             "div",
-            xs(
+            js(
               { onMouseEnter: i, onMouseLeave: a },
               {
                 children: [
                   (0, e.jsx)(Ta, { singleton: u, duration: 20 }),
                   (0, e.jsx)(
                     Ta,
-                    xs(
+                    js(
                       {
                         singleton: d,
                         duration: 20,
@@ -20257,7 +20391,7 @@
                       {
                         children: (0, e.jsx)(
                           io,
-                          xs(
+                          js(
                             {
                               id: "planet:colony:jobs:".concat(t.id),
                               className: "job-card-wrap",
@@ -20265,13 +20399,13 @@
                             {
                               children: (0, e.jsxs)(
                                 "div",
-                                xs(
+                                js(
                                   { className: "job-card" },
                                   {
                                     children: [
                                       (0, e.jsx)(
                                         "div",
-                                        xs(
+                                        js(
                                           { className: "title" },
                                           {
                                             children: (0, e.jsx)("p", {
@@ -20282,24 +20416,24 @@
                                       ),
                                       (0, e.jsx)(
                                         "div",
-                                        xs(
+                                        js(
                                           { className: "controls" },
                                           {
                                             children: (0, e.jsxs)(
                                               "div",
-                                              xs(
+                                              js(
                                                 { className: "set-amount" },
                                                 {
                                                   children: [
                                                     (0, e.jsx)(
                                                       Ta,
-                                                      xs(
+                                                      js(
                                                         {
                                                           placement: "right",
                                                           singleton: d,
                                                           content: (0, e.jsx)(
                                                             "div",
-                                                            xs(
+                                                            js(
                                                               {
                                                                 className:
                                                                   "description-hint",
@@ -20317,7 +20451,7 @@
                                                         {
                                                           children: (0, e.jsx)(
                                                             "button",
-                                                            xs(
+                                                            js(
                                                               {
                                                                 className:
                                                                   "control minus",
@@ -20343,13 +20477,13 @@
                                                     ),
                                                     (0, e.jsx)(
                                                       Ta,
-                                                      xs(
+                                                      js(
                                                         {
                                                           placement: "right",
                                                           singleton: d,
                                                           content: (0, e.jsx)(
                                                             "div",
-                                                            xs(
+                                                            js(
                                                               {
                                                                 className:
                                                                   "description-hint",
@@ -20367,7 +20501,7 @@
                                                         {
                                                           children: (0, e.jsx)(
                                                             "button",
-                                                            xs(
+                                                            js(
                                                               {
                                                                 className:
                                                                   "control minus",
@@ -20403,7 +20537,7 @@
                                                     }),
                                                     (0, e.jsx)(
                                                       "div",
-                                                      xs(
+                                                      js(
                                                         {
                                                           className:
                                                             "job-labour",
@@ -20425,13 +20559,13 @@
                                                     ),
                                                     (0, e.jsx)(
                                                       Ta,
-                                                      xs(
+                                                      js(
                                                         {
                                                           placement: "right",
                                                           singleton: d,
                                                           content: (0, e.jsx)(
                                                             "div",
-                                                            xs(
+                                                            js(
                                                               {
                                                                 className:
                                                                   "description-hint",
@@ -20449,7 +20583,7 @@
                                                         {
                                                           children: (0, e.jsx)(
                                                             "button",
-                                                            xs(
+                                                            js(
                                                               {
                                                                 className:
                                                                   "control plus",
@@ -20475,13 +20609,13 @@
                                                     ),
                                                     (0, e.jsx)(
                                                       Ta,
-                                                      xs(
+                                                      js(
                                                         {
                                                           placement: "right",
                                                           singleton: d,
                                                           content: (0, e.jsx)(
                                                             "div",
-                                                            xs(
+                                                            js(
                                                               {
                                                                 className:
                                                                   "description-hint",
@@ -20499,7 +20633,7 @@
                                                         {
                                                           children: (0, e.jsx)(
                                                             "button",
-                                                            xs(
+                                                            js(
                                                               {
                                                                 className:
                                                                   "control plus",
@@ -20532,7 +20666,7 @@
                                       ),
                                       (0, e.jsx)(
                                         "span",
-                                        xs(
+                                        js(
                                           {
                                             className: "info-tooltip",
                                             onClick: function (e) {
@@ -20544,7 +20678,7 @@
                                           {
                                             children: (0, e.jsx)(
                                               "span",
-                                              xs(
+                                              js(
                                                 {
                                                   className:
                                                     "info-tooltip-inner",
@@ -20567,8 +20701,8 @@
                   ),
                   s && p
                     ? (0, e.jsx)(
-                        To,
-                        xs(
+                        us,
+                        js(
                           {
                             isVisible: s,
                             onClose: function () {
@@ -20584,21 +20718,21 @@
             )
           );
         },
-        js = function () {
-          var n = N(Ko),
+        Es = function () {
+          var n = N(Qo),
             t = (0, r.useState)(""),
             i = t[0],
             a = t[1],
             o = N(jo);
           return (0, e.jsxs)(
             "div",
-            xs(
+            js(
               { className: "colony-wrap" },
               {
                 children: [
                   (0, e.jsx)(
                     Fa,
-                    xs(
+                    js(
                       {
                         id: "colony-overview",
                         label: "Overview",
@@ -20607,7 +20741,7 @@
                       {
                         children: (0, e.jsxs)(
                           "div",
-                          xs(
+                          js(
                             { className: "line" },
                             {
                               children: [
@@ -20627,7 +20761,7 @@
                                 }),
                                 (0, e.jsxs)(
                                   "div",
-                                  xs(
+                                  js(
                                     { className: "presets" },
                                     {
                                       children: [
@@ -20636,7 +20770,7 @@
                                         }),
                                         (0, e.jsxs)(
                                           "select",
-                                          xs(
+                                          js(
                                             {
                                               onChange: function (e) {
                                                 a(e.target.value);
@@ -20646,7 +20780,7 @@
                                               children: [
                                                 (0, e.jsx)(
                                                   "option",
-                                                  xs(
+                                                  js(
                                                     {
                                                       selected: !0,
                                                       disabled: !0,
@@ -20656,7 +20790,7 @@
                                                 ),
                                                 o.list.map(function (n) {
                                                   return (0,
-                                                  e.jsx)("option", xs({ value: n.uuid, id: n.uuid }, { children: n.name }));
+                                                  e.jsx)("option", js({ value: n.uuid, id: n.uuid }, { children: n.name }));
                                                 }),
                                               ],
                                             }
@@ -20664,10 +20798,10 @@
                                         ),
                                         (0, e.jsx)(
                                           "button",
-                                          xs(
+                                          js(
                                             {
                                               onClick: function () {
-                                                bs.applyPreset.send(i);
+                                                ws.applyPreset.send(i);
                                               },
                                             },
                                             { children: "Apply Preset" }
@@ -20686,7 +20820,7 @@
                   ),
                   (0, e.jsx)(
                     Fa,
-                    xs(
+                    js(
                       {
                         isCollapsable: !0,
                         id: "colony-happiness",
@@ -20700,7 +20834,7 @@
                       {
                         children: (0, e.jsx)(
                           "div",
-                          xs(
+                          js(
                             { className: "line" },
                             {
                               children: n.effects.effects
@@ -20709,7 +20843,7 @@
                                 })
                                 .map(function (n) {
                                   return (0,
-                                  e.jsx)(Ta, xs({ placement: "right", duration: 20, content: (0, e.jsx)(gs, { isDetailMode: !0, name: n.name, breakdown: n.breakdown }) }, { children: (0, e.jsx)(io, xs({ id: "planet:colony:effects:".concat(n.id), className: "factor-wrap" }, { children: (0, e.jsxs)("p", xs({ className: "factor ".concat(n.excess > 0 ? "excess" : "").concat(((t = n.breakdown.buffDirection || 0), t > 0 ? " boosted" : t < 0 ? " decreased" : "")) }, { children: [n.name, ": ", n.amount, " ", n.excess > 0 ? "(".concat(co(n.excess), ")") : ""] })) })) }));
+                                  e.jsx)(Ta, js({ placement: "right", duration: 20, content: (0, e.jsx)(bs, { isDetailMode: !0, name: n.name, breakdown: n.breakdown }) }, { children: (0, e.jsx)(io, js({ id: "planet:colony:effects:".concat(n.id), className: "factor-wrap" }, { children: (0, e.jsxs)("p", js({ className: "factor ".concat(n.excess > 0 ? "excess" : "").concat(((t = n.breakdown.buffDirection || 0), t > 0 ? " boosted" : t < 0 ? " decreased" : "")) }, { children: [n.name, ": ", n.amount, " ", n.excess > 0 ? "(".concat(co(n.excess), ")") : ""] })) })) }));
                                   var t;
                                 }),
                             }
@@ -20720,13 +20854,13 @@
                   ),
                   (0, e.jsx)(
                     Fa,
-                    xs(
+                    js(
                       {
                         isCollapsable: !0,
                         id: "colony-jobs",
                         label: (0, e.jsx)(
                           io,
-                          xs(
+                          js(
                             {
                               id: "planet:colony:jobs",
                               className: "label-wrap",
@@ -20742,12 +20876,12 @@
                             return e.isUnlocked;
                           })
                           .map(function (n) {
-                            return (0, e.jsx)(ws, {
+                            return (0, e.jsx)(ks, {
                               one: n,
                               onMouseEnter: function () {
-                                Uo(
-                                  ys(
-                                    ys(
+                                Do(
+                                  Ns(
+                                    Ns(
                                       [],
                                       n.multiplier.filter(function (e) {
                                         return e.amountValue > 1;
@@ -20758,9 +20892,9 @@
                                     !0
                                   )
                                 ),
-                                  Do(
-                                    ys(
-                                      ys(
+                                  Mo(
+                                    Ns(
+                                      Ns(
                                         [],
                                         n.multiplier.filter(function (e) {
                                           return e.amountValue < 1;
@@ -20773,7 +20907,7 @@
                                   );
                               },
                               onMouseLeave: function () {
-                                Uo(null), Do(null);
+                                Do(null), Mo(null);
                               },
                             });
                           }),
@@ -20785,14 +20919,14 @@
             )
           );
         },
-        Ns = {
+        Ss = {
           assignCrafter: kn("[crafting] assign crafter", function (e) {
             return e;
           }),
         },
-        ks = function () {
+        Cs = function () {
           return (
-            (ks =
+            (Cs =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -20800,17 +20934,17 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            ks.apply(this, arguments)
+            Cs.apply(this, arguments)
           );
         },
-        Es = function (e, n, t) {
+        As = function (e, n, t) {
           if (t || 2 === arguments.length)
             for (var r, i = 0, a = n.length; i < a; i++)
               (!r && i in n) ||
                 (r || (r = Array.prototype.slice.call(n, 0, i)), (r[i] = n[i]));
           return e.concat(r || Array.prototype.slice.call(n));
         },
-        Ss = function (n) {
+        Ts = function (n) {
           var t = n.one,
             i = n.onMouseEnter,
             a = n.onMouseLeave,
@@ -20822,24 +20956,24 @@
             d = c[1],
             p = window.innerWidth <= 860,
             f = function (e, n) {
-              Ns.assignCrafter.send({ id: e, amount: n });
+              Ss.assignCrafter.send({ id: e, amount: n });
             },
             h = (0, e.jsxs)(e.Fragment, {
               children: [
                 (0, e.jsx)(
                   "p",
-                  ks({ className: "title" }, { children: t.name })
+                  Cs({ className: "title" }, { children: t.name })
                 ),
                 t.consume.length
                   ? (0, e.jsxs)(
                       "div",
-                      ks(
+                      Cs(
                         { className: "costs wrap" },
                         {
                           children: [
                             (0, e.jsx)("span", { children: "Consume" }),
                             t.consume.map(function (n) {
-                              return (0, e.jsx)(Lo, { gain: n });
+                              return (0, e.jsx)(Po, { gain: n });
                             }),
                           ],
                         }
@@ -20849,13 +20983,13 @@
                 t.gain.length
                   ? (0, e.jsxs)(
                       "div",
-                      ks(
+                      Cs(
                         { className: "gain wrap" },
                         {
                           children: [
                             (0, e.jsx)("span", { children: "Produce" }),
                             t.gain.map(function (n) {
-                              return (0, e.jsx)(Lo, { gain: n });
+                              return (0, e.jsx)(Po, { gain: n });
                             }),
                           ],
                         }
@@ -20868,18 +21002,18 @@
               ? null
               : (0, e.jsx)(
                   "div",
-                  ks({ className: "description-hint" }, { children: h })
+                  Cs({ className: "description-hint" }, { children: h })
                 );
           return (0, e.jsxs)(
             "div",
-            ks(
+            Cs(
               { onMouseEnter: i, onMouseLeave: a },
               {
                 children: [
                   (0, e.jsx)(Ta, { singleton: u, duration: 20 }),
                   (0, e.jsx)(
                     Ta,
-                    ks(
+                    Cs(
                       {
                         singleton: d,
                         duration: 20,
@@ -20889,7 +21023,7 @@
                       {
                         children: (0, e.jsx)(
                           io,
-                          ks(
+                          Cs(
                             {
                               id: "planet:crafting:jobs:".concat(t.id),
                               className: "job-card-wrap",
@@ -20897,13 +21031,13 @@
                             {
                               children: (0, e.jsxs)(
                                 "div",
-                                ks(
+                                Cs(
                                   { className: "job-card" },
                                   {
                                     children: [
                                       (0, e.jsx)(
                                         "div",
-                                        ks(
+                                        Cs(
                                           { className: "title" },
                                           {
                                             children: (0, e.jsx)("p", {
@@ -20914,24 +21048,24 @@
                                       ),
                                       (0, e.jsx)(
                                         "div",
-                                        ks(
+                                        Cs(
                                           { className: "controls" },
                                           {
                                             children: (0, e.jsxs)(
                                               "div",
-                                              ks(
+                                              Cs(
                                                 { className: "set-amount" },
                                                 {
                                                   children: [
                                                     (0, e.jsx)(
                                                       Ta,
-                                                      ks(
+                                                      Cs(
                                                         {
                                                           placement: "right",
                                                           singleton: d,
                                                           content: (0, e.jsx)(
                                                             "div",
-                                                            ks(
+                                                            Cs(
                                                               {
                                                                 className:
                                                                   "description-hint",
@@ -20949,7 +21083,7 @@
                                                         {
                                                           children: (0, e.jsx)(
                                                             "button",
-                                                            ks(
+                                                            Cs(
                                                               {
                                                                 className:
                                                                   "control minus",
@@ -20975,13 +21109,13 @@
                                                     ),
                                                     (0, e.jsx)(
                                                       Ta,
-                                                      ks(
+                                                      Cs(
                                                         {
                                                           placement: "right",
                                                           singleton: d,
                                                           content: (0, e.jsx)(
                                                             "div",
-                                                            ks(
+                                                            Cs(
                                                               {
                                                                 className:
                                                                   "description-hint",
@@ -20999,7 +21133,7 @@
                                                         {
                                                           children: (0, e.jsx)(
                                                             "button",
-                                                            ks(
+                                                            Cs(
                                                               {
                                                                 className:
                                                                   "control minus",
@@ -21035,13 +21169,13 @@
                                                     }),
                                                     (0, e.jsx)(
                                                       Ta,
-                                                      ks(
+                                                      Cs(
                                                         {
                                                           placement: "right",
                                                           singleton: d,
                                                           content: (0, e.jsx)(
                                                             "div",
-                                                            ks(
+                                                            Cs(
                                                               {
                                                                 className:
                                                                   "description-hint",
@@ -21059,7 +21193,7 @@
                                                         {
                                                           children: (0, e.jsx)(
                                                             "button",
-                                                            ks(
+                                                            Cs(
                                                               {
                                                                 className:
                                                                   "control plus",
@@ -21085,13 +21219,13 @@
                                                     ),
                                                     (0, e.jsx)(
                                                       Ta,
-                                                      ks(
+                                                      Cs(
                                                         {
                                                           placement: "right",
                                                           singleton: d,
                                                           content: (0, e.jsx)(
                                                             "div",
-                                                            ks(
+                                                            Cs(
                                                               {
                                                                 className:
                                                                   "description-hint",
@@ -21109,7 +21243,7 @@
                                                         {
                                                           children: (0, e.jsx)(
                                                             "button",
-                                                            ks(
+                                                            Cs(
                                                               {
                                                                 className:
                                                                   "control plus",
@@ -21142,7 +21276,7 @@
                                       ),
                                       (0, e.jsx)(
                                         "span",
-                                        ks(
+                                        Cs(
                                           {
                                             className: "info-tooltip",
                                             onClick: function (e) {
@@ -21154,7 +21288,7 @@
                                           {
                                             children: (0, e.jsx)(
                                               "span",
-                                              ks(
+                                              Cs(
                                                 {
                                                   className:
                                                     "info-tooltip-inner",
@@ -21177,8 +21311,8 @@
                   ),
                   s && p
                     ? (0, e.jsx)(
-                        To,
-                        ks(
+                        us,
+                        Cs(
                           {
                             isVisible: s,
                             onClose: function () {
@@ -21194,17 +21328,17 @@
             )
           );
         },
-        Cs = function () {
-          var n = N(ps);
+        Os = function () {
+          var n = N(hs);
           return (0, e.jsxs)(
             "div",
-            ks(
+            Cs(
               { className: "crafting-wrap" },
               {
                 children: [
                   (0, e.jsx)(
                     Fa,
-                    ks(
+                    Cs(
                       {
                         id: "crafting-overview",
                         label: "Overview",
@@ -21213,7 +21347,7 @@
                       {
                         children: (0, e.jsxs)(
                           "div",
-                          ks(
+                          Cs(
                             { className: "line" },
                             {
                               children: [
@@ -21235,12 +21369,12 @@
                   ),
                   (0, e.jsx)(
                     Fa,
-                    ks(
+                    Cs(
                       {
                         id: "crafting-jobs",
                         label: (0, e.jsx)(
                           io,
-                          ks(
+                          Cs(
                             {
                               id: "planet:crafting:jobs",
                               className: "label-wrap",
@@ -21256,14 +21390,14 @@
                             return e.isUnlocked;
                           })
                           .map(function (n) {
-                            return (0, e.jsx)(Ss, {
+                            return (0, e.jsx)(Ts, {
                               one: n,
                               onMouseEnter: function () {
-                                Uo(Es([], n.gain, !0)),
-                                  Do(Es([], n.consume, !0));
+                                Do(As([], n.gain, !0)),
+                                  Mo(As([], n.consume, !0));
                               },
                               onMouseLeave: function () {
-                                Uo(null), Do(null);
+                                Do(null), Mo(null);
                               },
                             });
                           }),
@@ -21275,7 +21409,7 @@
             )
           );
         };
-      function As(e, n) {
+      function _s(e, n) {
         var t,
           i = (0, r.useState)(null),
           a = i[0],
@@ -21297,14 +21431,14 @@
           },
         ];
       }
-      function Ts() {
+      function Rs() {
         localStorage.removeItem("cache");
       }
-      var Os,
-        _s,
-        Rs = function () {
+      var Is,
+        Ps,
+        Ls = function () {
           return (
-            (Rs =
+            (Ls =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -21312,10 +21446,10 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            Rs.apply(this, arguments)
+            Ls.apply(this, arguments)
           );
         },
-        Is = r.memo(
+        Ms = r.memo(
           function (n) {
             var t = n.expeditions,
               r = n.resources.resources.reduce(function (e, n) {
@@ -21325,19 +21459,19 @@
               console.log("re-rendering: ", t.map.regenerateUUID),
               (0, e.jsxs)(
                 "div",
-                Rs(
+                Ls(
                   { className: "expeditions-wrap" },
                   {
                     children: [
                       (0, e.jsxs)(
                         "div",
-                        Rs(
+                        Ls(
                           { className: "explanation" },
                           {
                             children: [
                               (0, e.jsx)(
                                 "p",
-                                Rs(
+                                Ls(
                                   { className: "desc" },
                                   {
                                     children:
@@ -21347,7 +21481,7 @@
                               ),
                               (0, e.jsxs)(
                                 "p",
-                                Rs(
+                                Ls(
                                   { className: "desc" },
                                   {
                                     children: [
@@ -21365,25 +21499,25 @@
                       (0, e.jsx)(as(), {
                         children: (0, e.jsx)(
                           "div",
-                          Rs(
+                          Ls(
                             { className: "expeditions-map" },
                             {
                               children: t.map.cells.map(function (n) {
                                 return (0, e.jsx)(
                                   "div",
-                                  Rs(
+                                  Ls(
                                     { className: "map-row" },
                                     {
                                       children: n.map(function (n) {
                                         var i;
                                         return (0, e.jsx)(
                                           Ta,
-                                          Rs(
+                                          Ls(
                                             {
                                               duration: 0,
                                               content: (0, e.jsxs)(
                                                 "div",
-                                                Rs(
+                                                Ls(
                                                   {
                                                     className:
                                                       "description-hint",
@@ -21392,7 +21526,7 @@
                                                     children: [
                                                       (0, e.jsx)(
                                                         "p",
-                                                        Rs(
+                                                        Ls(
                                                           {
                                                             className: "title",
                                                           },
@@ -21401,7 +21535,7 @@
                                                       ),
                                                       (0, e.jsx)(
                                                         "p",
-                                                        Rs(
+                                                        Ls(
                                                           {
                                                             className:
                                                               "description",
@@ -21414,7 +21548,7 @@
                                                       ),
                                                       (0, e.jsxs)(
                                                         "div",
-                                                        Rs(
+                                                        Ls(
                                                           { className: "loot" },
                                                           {
                                                             children: [
@@ -21428,7 +21562,7 @@
                                                                 return (0,
                                                                 e.jsxs)(
                                                                   "div",
-                                                                  Rs(
+                                                                  Ls(
                                                                     {
                                                                       className:
                                                                         "loot-line",
@@ -21439,7 +21573,7 @@
                                                                           (0,
                                                                           e.jsx)(
                                                                             "p",
-                                                                            Rs(
+                                                                            Ls(
                                                                               {
                                                                                 className:
                                                                                   "name",
@@ -21455,7 +21589,7 @@
                                                                           (0,
                                                                           e.jsxs)(
                                                                             "p",
-                                                                            Rs(
+                                                                            Ls(
                                                                               {
                                                                                 className:
                                                                                   "chance",
@@ -21475,7 +21609,7 @@
                                                                           (0,
                                                                           e.jsxs)(
                                                                             "p",
-                                                                            Rs(
+                                                                            Ls(
                                                                               {
                                                                                 className:
                                                                                   "amounts",
@@ -21501,7 +21635,7 @@
                                                               }),
                                                               (0, e.jsxs)(
                                                                 "div",
-                                                                Rs(
+                                                                Ls(
                                                                   {
                                                                     className:
                                                                       "loot-line",
@@ -21511,7 +21645,7 @@
                                                                       (0,
                                                                       e.jsx)(
                                                                         "p",
-                                                                        Rs(
+                                                                        Ls(
                                                                           {
                                                                             className:
                                                                               "name",
@@ -21525,7 +21659,7 @@
                                                                       (0,
                                                                       e.jsxs)(
                                                                         "p",
-                                                                        Rs(
+                                                                        Ls(
                                                                           {
                                                                             className:
                                                                               "chance",
@@ -21547,7 +21681,7 @@
                                                                       (0,
                                                                       e.jsxs)(
                                                                         "p",
-                                                                        Rs(
+                                                                        Ls(
                                                                           {
                                                                             className:
                                                                               "amounts",
@@ -21571,7 +21705,7 @@
                                                               ),
                                                               (0, e.jsxs)(
                                                                 "div",
-                                                                Rs(
+                                                                Ls(
                                                                   {
                                                                     className:
                                                                       "loot-line",
@@ -21581,7 +21715,7 @@
                                                                       (0,
                                                                       e.jsx)(
                                                                         "p",
-                                                                        Rs(
+                                                                        Ls(
                                                                           {
                                                                             className:
                                                                               "name",
@@ -21595,7 +21729,7 @@
                                                                       (0,
                                                                       e.jsx)(
                                                                         "p",
-                                                                        Rs(
+                                                                        Ls(
                                                                           {
                                                                             className:
                                                                               "special",
@@ -21622,7 +21756,7 @@
                                                       ),
                                                       (0, e.jsx)(
                                                         "p",
-                                                        Rs(
+                                                        Ls(
                                                           { className: "eta" },
                                                           {
                                                             children: lo(
@@ -21708,14 +21842,14 @@
             );
           }
         ),
-        Ps = function () {
+        Ds = function () {
           var n = N(os),
             t = N(ns);
-          return (0, e.jsx)(Is, { expeditions: n, resources: t });
+          return (0, e.jsx)(Ms, { expeditions: n, resources: t });
         },
-        Ls = function () {
+        Us = function () {
           return (
-            (Ls =
+            (Us =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -21723,43 +21857,43 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            Ls.apply(this, arguments)
+            Us.apply(this, arguments)
           );
         },
-        Ms = function (n) {
+        Fs = function (n) {
           var t = n.page;
           return "landingZone" === t
-            ? (0, e.jsx)(Qo, {})
+            ? (0, e.jsx)(qo, {})
             : "colony" === t
-            ? (0, e.jsx)(js, {})
+            ? (0, e.jsx)(Es, {})
             : "crafting" === t
-            ? (0, e.jsx)(Cs, {})
+            ? (0, e.jsx)(Os, {})
             : "expeditions" === t
-            ? (0, e.jsx)(Ps, {})
+            ? (0, e.jsx)(Ds, {})
             : (0, e.jsx)("p", { children: "None" });
         },
-        Ds = function () {
-          var n = As("landing-zone-page", "landingZone"),
+        Bs = function () {
+          var n = _s("landing-zone-page", "landingZone"),
             t = n[0],
             r = n[1],
-            i = N($o),
-            a = N(fs),
+            i = N(Ko),
+            a = N(ms),
             o = N(ss);
           return (0, e.jsxs)(
             "div",
-            Ls(
+            Us(
               { className: "fit-height" },
               {
                 children: [
                   (0, e.jsxs)(
                     "div",
-                    Ls(
+                    Us(
                       { className: "submenu" },
                       {
                         children: [
                           (0, e.jsx)(
                             io,
-                            Ls(
+                            Us(
                               {
                                 id: "planet:landing-zone",
                                 className: "submenu-item-wrap",
@@ -21767,7 +21901,7 @@
                               {
                                 children: (0, e.jsx)(
                                   "div",
-                                  Ls(
+                                  Us(
                                     {
                                       className: "submenu-item ".concat(
                                         "landingZone" === t ? "selected" : ""
@@ -21785,7 +21919,7 @@
                           i
                             ? (0, e.jsx)(
                                 io,
-                                Ls(
+                                Us(
                                   {
                                     id: "planet:colony",
                                     className: "submenu-item-wrap",
@@ -21793,7 +21927,7 @@
                                   {
                                     children: (0, e.jsx)(
                                       "div",
-                                      Ls(
+                                      Us(
                                         {
                                           className: "submenu-item ".concat(
                                             "colony" === t ? "selected" : ""
@@ -21812,7 +21946,7 @@
                           a
                             ? (0, e.jsx)(
                                 io,
-                                Ls(
+                                Us(
                                   {
                                     id: "planet:crafting",
                                     className: "submenu-item-wrap",
@@ -21820,7 +21954,7 @@
                                   {
                                     children: (0, e.jsx)(
                                       "div",
-                                      Ls(
+                                      Us(
                                         {
                                           className: "submenu-item ".concat(
                                             "crafting" === t ? "selected" : ""
@@ -21839,7 +21973,7 @@
                           o
                             ? (0, e.jsx)(
                                 io,
-                                Ls(
+                                Us(
                                   {
                                     id: "planet:expeditions",
                                     className: "submenu-item-wrap",
@@ -21847,7 +21981,7 @@
                                   {
                                     children: (0, e.jsx)(
                                       "div",
-                                      Ls(
+                                      Us(
                                         {
                                           className: "submenu-item ".concat(
                                             "expeditions" === t
@@ -21871,15 +22005,15 @@
                   ),
                   (0, e.jsx)(
                     "div",
-                    Ls(
+                    Us(
                       { className: "inner-scrollable planet" },
                       {
                         children: (0, e.jsx)(as(), {
                           children: (0, e.jsx)(
                             "div",
-                            Ls(
+                            Us(
                               { className: "inner" },
-                              { children: (0, e.jsx)(Ms, { page: t }) }
+                              { children: (0, e.jsx)(Fs, { page: t }) }
                             )
                           ),
                         }),
@@ -21891,14 +22025,14 @@
             )
           );
         },
-        Us = {
+        zs = {
           doResearch: kn("[science] do research", function (e) {
             return e;
           }),
         },
-        Fs = function () {
+        Hs = function () {
           return (
-            (Fs =
+            (Hs =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -21906,10 +22040,10 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            Fs.apply(this, arguments)
+            Hs.apply(this, arguments)
           );
         },
-        zs = function () {
+        Gs = function () {
           var n = N(lr),
             t = (0, r.useState)(!1),
             i = t[0],
@@ -21918,35 +22052,35 @@
             s = N(Bo).addToQueueUnavailable;
           return (0, e.jsx)(
             "div",
-            Fs(
+            Hs(
               { className: "researches-wrap" },
               {
                 children: (0, e.jsx)(
                   "div",
-                  Fs(
+                  Hs(
                     { className: "research-body" },
                     {
                       children: (0, e.jsx)(
                         Fa,
-                        Fs(
+                        Hs(
                           {
                             id: "science-researches",
                             label: (0, e.jsxs)(
                               "div",
-                              Fs(
+                              Hs(
                                 { className: "research-heading" },
                                 {
                                   children: [
                                     (0, e.jsx)(
                                       "p",
-                                      Fs(
+                                      Hs(
                                         { className: "title" },
                                         { children: "Researches" }
                                       )
                                     ),
                                     (0, e.jsx)(
                                       "p",
-                                      Fs(
+                                      Hs(
                                         {
                                           className: "popup-link",
                                           onClick: function () {
@@ -21975,15 +22109,15 @@
                                 .map(function (n) {
                                   return (0, e.jsx)(
                                     io,
-                                    Fs(
+                                    Hs(
                                       {
                                         id: "science:researches:".concat(n.id),
                                         className: "science-wrap",
                                       },
                                       {
                                         children: (0, e.jsxs)(
-                                          _o,
-                                          Fs(
+                                          Oo,
+                                          Hs(
                                             {
                                               label: n.name,
                                               isAvailable:
@@ -21999,7 +22133,7 @@
                                               onClick: function () {
                                                 var e;
                                                 o || (!n.isAvailable && s)
-                                                  ? Fo.addToQueue.send({
+                                                  ? Uo.addToQueue.send({
                                                       scope: et.RESEARCH,
                                                       id: n.id,
                                                     })
@@ -22007,33 +22141,33 @@
                                                     Wt("research_requested", {
                                                       id: e,
                                                     }),
-                                                    Us.doResearch.send({
+                                                    zs.doResearch.send({
                                                       id: e,
                                                     }));
                                               },
                                               onMouseEnter: function () {
-                                                return Mo(
+                                                return Lo(
                                                   n.cost.filter(function (e) {
                                                     return !e.isAvailable;
                                                   })
                                                 );
                                               },
                                               onMouseLeave: function () {
-                                                return Mo(null);
+                                                return Lo(null);
                                               },
                                             },
                                             {
                                               children: [
                                                 (0, e.jsx)(
                                                   "p",
-                                                  Fs(
+                                                  Hs(
                                                     { className: "title" },
                                                     { children: n.name }
                                                   )
                                                 ),
                                                 (0, e.jsx)(
                                                   "p",
-                                                  Fs(
+                                                  Hs(
                                                     {
                                                       className: "description",
                                                     },
@@ -22042,7 +22176,7 @@
                                                 ),
                                                 (0, e.jsxs)(
                                                   "div",
-                                                  Fs(
+                                                  Hs(
                                                     { className: "costs wrap" },
                                                     {
                                                       children: [
@@ -22053,7 +22187,7 @@
                                                           n
                                                         ) {
                                                           return (0, e.jsx)(
-                                                            Io,
+                                                            Ro,
                                                             { cost: n }
                                                           );
                                                         }),
@@ -22084,9 +22218,9 @@
             )
           );
         },
-        Bs = function () {
+        Ws = function () {
           return (
-            (Bs =
+            (Ws =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -22094,32 +22228,32 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            Bs.apply(this, arguments)
+            Ws.apply(this, arguments)
           );
         },
-        Hs = function (n) {
+        Ys = function (n) {
           return "research" === n.page
-            ? (0, e.jsx)(zs, {})
+            ? (0, e.jsx)(Gs, {})
             : (0, e.jsx)("p", { children: "None" });
         },
-        Gs = function () {
+        Xs = function () {
           var n = (0, r.useState)("research"),
             t = n[0],
             i = n[1];
           return (0, e.jsxs)(
             "div",
-            Bs(
+            Ws(
               { className: "fit-height" },
               {
                 children: [
                   (0, e.jsx)(
                     "div",
-                    Bs(
+                    Ws(
                       { className: "submenu" },
                       {
                         children: (0, e.jsx)(
                           io,
-                          Bs(
+                          Ws(
                             {
                               id: "science:researches",
                               className: "submenu-wrap",
@@ -22127,7 +22261,7 @@
                             {
                               children: (0, e.jsx)(
                                 "div",
-                                Bs(
+                                Ws(
                                   {
                                     className: "submenu-item ".concat(
                                       "research" === t ? "selected" : ""
@@ -22147,9 +22281,9 @@
                   ),
                   (0, e.jsx)(
                     "div",
-                    Bs(
+                    Ws(
                       { className: "inner-scrollable science" },
-                      { children: (0, e.jsx)(Hs, { page: t }) }
+                      { children: (0, e.jsx)(Ys, { page: t }) }
                     )
                   ),
                 ],
@@ -22157,9 +22291,9 @@
             )
           );
         },
-        Ws = function () {
+        Vs = function () {
           return (
-            (Ws =
+            (Vs =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -22167,10 +22301,10 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            Ws.apply(this, arguments)
+            Vs.apply(this, arguments)
           );
         },
-        Ys = function () {
+        qs = function () {
           x();
           var n = (0, r.useRef)(null),
             t = (0, r.useState)(""),
@@ -22178,7 +22312,7 @@
             a = t[1];
           return (0, e.jsxs)(
             Fa,
-            Ws(
+            Vs(
               {
                 id: "settings-import-export",
                 label: "Game Data",
@@ -22188,25 +22322,25 @@
                 children: [
                   (0, e.jsxs)(
                     "div",
-                    Ws(
+                    Vs(
                       { className: "set-row" },
                       {
                         children: [
                           (0, e.jsx)(
                             "div",
-                            Ws(
+                            Vs(
                               { className: "label" },
                               { children: "Export to file" }
                             )
                           ),
                           (0, e.jsx)(
                             "div",
-                            Ws(
+                            Vs(
                               { className: "val" },
                               {
                                 children: (0, e.jsx)(
                                   "button",
-                                  Ws(
+                                  Vs(
                                     {
                                       onClick: function () {
                                         ct.exportToFile.send();
@@ -22224,20 +22358,20 @@
                   ),
                   (0, e.jsxs)(
                     "div",
-                    Ws(
+                    Vs(
                       { className: "set-row" },
                       {
                         children: [
                           (0, e.jsx)(
                             "div",
-                            Ws(
+                            Vs(
                               { className: "label" },
                               { children: "Import from file" }
                             )
                           ),
                           (0, e.jsxs)(
                             "div",
-                            Ws(
+                            Vs(
                               { className: "val" },
                               {
                                 children: [
@@ -22272,7 +22406,7 @@
                                   }),
                                   (0, e.jsx)(
                                     "button",
-                                    Ws(
+                                    Vs(
                                       {
                                         className: "import",
                                         onClick: function () {
@@ -22295,20 +22429,20 @@
                   ),
                   (0, e.jsxs)(
                     "div",
-                    Ws(
+                    Vs(
                       { className: "set-row" },
                       {
                         children: [
                           (0, e.jsx)(
                             "div",
-                            Ws(
+                            Vs(
                               { className: "label" },
                               { children: "Get export text" }
                             )
                           ),
                           (0, e.jsxs)(
                             "div",
-                            Ws(
+                            Vs(
                               { className: "val" },
                               {
                                 children: [
@@ -22317,7 +22451,7 @@
                                   }),
                                   (0, e.jsx)(
                                     "button",
-                                    Ws(
+                                    Vs(
                                       {
                                         onClick: function () {
                                           ct.exportToText.send();
@@ -22336,26 +22470,26 @@
                   ),
                   (0, e.jsxs)(
                     "div",
-                    Ws(
+                    Vs(
                       { className: "set-row" },
                       {
                         children: [
                           (0, e.jsx)(
                             "div",
-                            Ws(
+                            Vs(
                               { className: "label" },
                               { children: "Import from text" }
                             )
                           ),
                           (0, e.jsxs)(
                             "div",
-                            Ws(
+                            Vs(
                               { className: "val" },
                               {
                                 children: [
                                   (0, e.jsx)(
                                     "textarea",
-                                    Ws(
+                                    Vs(
                                       {
                                         onChange: function (e) {
                                           return a(e.target.value);
@@ -22366,7 +22500,7 @@
                                   ),
                                   (0, e.jsx)(
                                     "button",
-                                    Ws(
+                                    Vs(
                                       {
                                         className: "import",
                                         onClick: function () {
@@ -22386,22 +22520,22 @@
                   ),
                   (0, e.jsxs)(
                     "div",
-                    Ws(
+                    Vs(
                       { className: "set-row" },
                       {
                         children: [
                           (0, e.jsx)(
                             "div",
-                            Ws({ className: "label" }, { children: "Save" })
+                            Vs({ className: "label" }, { children: "Save" })
                           ),
                           (0, e.jsx)(
                             "div",
-                            Ws(
+                            Vs(
                               { className: "val" },
                               {
                                 children: (0, e.jsx)(
                                   "button",
-                                  Ws(
+                                  Vs(
                                     {
                                       onClick: function () {
                                         ct.triggerSave.send();
@@ -22419,25 +22553,25 @@
                   ),
                   (0, e.jsxs)(
                     "div",
-                    Ws(
+                    Vs(
                       { className: "set-row" },
                       {
                         children: [
                           (0, e.jsx)(
                             "div",
-                            Ws(
+                            Vs(
                               { className: "label" },
                               { children: "Abandon Planet" }
                             )
                           ),
                           (0, e.jsx)(
                             "div",
-                            Ws(
+                            Vs(
                               { className: "val" },
                               {
                                 children: (0, e.jsx)(
                                   "button",
-                                  Ws(
+                                  Vs(
                                     {
                                       onClick: function () {
                                         confirm(
@@ -22457,25 +22591,25 @@
                   ),
                   (0, e.jsxs)(
                     "div",
-                    Ws(
+                    Vs(
                       { className: "set-row" },
                       {
                         children: [
                           (0, e.jsx)(
                             "div",
-                            Ws(
+                            Vs(
                               { className: "label" },
                               { children: "Hard reset" }
                             )
                           ),
                           (0, e.jsx)(
                             "div",
-                            Ws(
+                            Vs(
                               { className: "val" },
                               {
                                 children: (0, e.jsx)(
                                   "button",
-                                  Ws(
+                                  Vs(
                                     {
                                       onClick: function () {
                                         confirm(
@@ -22502,11 +22636,11 @@
             )
           );
         },
-        Xs = function (n) {
+        Qs = function (n) {
           var t = n.settings;
           return (0, e.jsxs)(
             Fa,
-            Ws(
+            Vs(
               {
                 id: "settings-import-export",
                 label: "UI Preferences",
@@ -22516,26 +22650,26 @@
                 children: [
                   (0, e.jsxs)(
                     "div",
-                    Ws(
+                    Vs(
                       { className: "set-row" },
                       {
                         children: [
                           (0, e.jsx)(
                             "div",
-                            Ws(
+                            Vs(
                               { className: "label" },
                               { children: "Toggle animations" }
                             )
                           ),
                           (0, e.jsxs)(
                             "div",
-                            Ws(
+                            Vs(
                               { className: "val" },
                               {
                                 children: [
                                   (0, e.jsx)(
                                     "button",
-                                    Ws(
+                                    Vs(
                                       {
                                         onClick: function () {
                                           ct.turnAnimations.send(
@@ -22564,26 +22698,26 @@
                   ),
                   (0, e.jsxs)(
                     "div",
-                    Ws(
+                    Vs(
                       { className: "set-row" },
                       {
                         children: [
                           (0, e.jsx)(
                             "div",
-                            Ws(
+                            Vs(
                               { className: "label" },
                               { children: "Toggle theme" }
                             )
                           ),
                           (0, e.jsxs)(
                             "div",
-                            Ws(
+                            Vs(
                               { className: "val" },
                               {
                                 children: [
                                   (0, e.jsx)(
                                     "select",
-                                    Ws(
+                                    Vs(
                                       {
                                         onChange: function (e) {
                                           return (
@@ -22598,7 +22732,7 @@
                                           function (n) {
                                             return (0, e.jsx)(
                                               "option",
-                                              Ws(
+                                              Vs(
                                                 { selected: n === t.theme },
                                                 { children: n }
                                               )
@@ -22625,14 +22759,14 @@
             )
           );
         },
-        Vs = function (n) {
+        Ks = function (n) {
           var t = n.settings,
             r = function (e, n) {
               ct.toggleSetting.send({ key: e, value: n });
             };
           return (0, e.jsxs)(
             Fa,
-            Ws(
+            Vs(
               {
                 id: "settings-gameplay",
                 label: "Game Preferences",
@@ -22642,13 +22776,13 @@
                 children: [
                   (0, e.jsxs)(
                     "div",
-                    Ws(
+                    Vs(
                       { className: "set-row" },
                       {
                         children: [
                           (0, e.jsx)(
                             "div",
-                            Ws(
+                            Vs(
                               { className: "label" },
                               {
                                 children:
@@ -22658,12 +22792,12 @@
                           ),
                           (0, e.jsx)(
                             "div",
-                            Ws(
+                            Vs(
                               { className: "val" },
                               {
                                 children: (0, e.jsx)(
                                   "button",
-                                  Ws(
+                                  Vs(
                                     {
                                       onClick: function () {
                                         return r(
@@ -22688,25 +22822,25 @@
                   ),
                   (0, e.jsxs)(
                     "div",
-                    Ws(
+                    Vs(
                       { className: "set-row" },
                       {
                         children: [
                           (0, e.jsx)(
                             "div",
-                            Ws(
+                            Vs(
                               { className: "label" },
-                              { children: "Build Residental Disabled" }
+                              { children: "Build residental disabled" }
                             )
                           ),
                           (0, e.jsx)(
                             "div",
-                            Ws(
+                            Vs(
                               { className: "val" },
                               {
                                 children: (0, e.jsx)(
                                   "button",
-                                  Ws(
+                                  Vs(
                                     {
                                       onClick: function () {
                                         return r(
@@ -22729,26 +22863,69 @@
                       }
                     )
                   ),
+                  (0, e.jsxs)(
+                    "div",
+                    Vs(
+                      { className: "set-row" },
+                      {
+                        children: [
+                          (0, e.jsx)(
+                            "div",
+                            Vs(
+                              { className: "label" },
+                              { children: "Enable bulk building purchase" }
+                            )
+                          ),
+                          (0, e.jsx)(
+                            "div",
+                            Vs(
+                              { className: "val" },
+                              {
+                                children: (0, e.jsx)(
+                                  "button",
+                                  Vs(
+                                    {
+                                      onClick: function () {
+                                        return r(
+                                          "unsafeBulkBuilding",
+                                          !t.unsafeBulkBuilding
+                                        );
+                                      },
+                                    },
+                                    {
+                                      children: t.unsafeBulkBuilding
+                                        ? "On"
+                                        : "Off",
+                                    }
+                                  )
+                                ),
+                              }
+                            )
+                          ),
+                        ],
+                      }
+                    )
+                  ),
                 ],
               }
             )
           );
         },
-        qs = function () {
+        $s = function () {
           var n = N(Bo);
           return (0, e.jsx)(as(), {
             children: (0, e.jsxs)(e.Fragment, {
               children: [
-                (0, e.jsx)(Ys, {}),
-                (0, e.jsx)(Xs, { settings: n }),
-                (0, e.jsx)(Vs, { settings: n }),
+                (0, e.jsx)(qs, {}),
+                (0, e.jsx)(Qs, { settings: n }),
+                (0, e.jsx)(Ks, { settings: n }),
               ],
             }),
           });
         };
       !(function (e) {
         (e.SCIENCE = "Science"), (e.ECONOMY = "Economy"), (e.SOCIAL = "Social");
-      })(Os || (Os = {})),
+      })(Is || (Is = {})),
         (function (e) {
           (e.EXPERIMENTAL_MEDICINE = "experimental_medicine"),
             (e.WATER_FILTERING = "water_filtering"),
@@ -22776,19 +22953,20 @@
             (e.WASTE_DISPOSAL = "waste-disposal"),
             (e.CARGO_LIFTS = "cargo-lifts"),
             (e.INTENSIVE_MAGNETIC_GENERATORS = "intensive-magnetic-generation"),
-            (e.FUEL_PURIFICATION_MODE = "fuel-purification-mode");
-        })(_s || (_s = {}));
-      var Qs,
-        Ks,
-        $s,
-        Zs = {
+            (e.FUEL_PURIFICATION_MODE = "fuel-purification-mode"),
+            (e.FUEL_TRANSMUTATION = "fuel-transmutation");
+        })(Ps || (Ps = {}));
+      var Zs,
+        Js,
+        el,
+        nl = {
           selectLawOption: kn("[laws] set option", function (e) {
             return e;
           }),
         },
-        Js = function () {
+        tl = function () {
           return (
-            (Js =
+            (tl =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -22796,22 +22974,22 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            Js.apply(this, arguments)
+            tl.apply(this, arguments)
           );
         },
-        el = function (n) {
+        rl = function (n) {
           var t = n.laws;
           return (
             x(),
             (0, e.jsx)(
               "div",
-              Js(
+              tl(
                 { className: "laws-list" },
                 {
                   children: t.map(function (n) {
                     return (0, e.jsx)(
                       io,
-                      Js(
+                      tl(
                         {
                           id: "laws:orders:"
                             .concat(n.category, ":")
@@ -22821,26 +22999,26 @@
                         {
                           children: (0, e.jsxs)(
                             "div",
-                            Js(
+                            tl(
                               { className: "law-box" },
                               {
                                 children: [
                                   (0, e.jsxs)(
                                     "div",
-                                    Js(
+                                    tl(
                                       { className: "law-description" },
                                       {
                                         children: [
                                           (0, e.jsx)(
                                             "p",
-                                            Js(
+                                            tl(
                                               { className: "title" },
                                               { children: n.name }
                                             )
                                           ),
                                           (0, e.jsx)(
                                             "p",
-                                            Js(
+                                            tl(
                                               { className: "description" },
                                               { children: n.description }
                                             )
@@ -22851,7 +23029,7 @@
                                   ),
                                   (0, e.jsx)(
                                     "div",
-                                    Js(
+                                    tl(
                                       { className: "law-options" },
                                       {
                                         children: n.options.map(function (
@@ -22860,7 +23038,7 @@
                                         ) {
                                           return (0, e.jsx)(
                                             "div",
-                                            Js(
+                                            tl(
                                               {
                                                 className: "option-box ".concat(
                                                   t.isSelected ? "selected" : ""
@@ -22869,13 +23047,13 @@
                                               {
                                                 children: (0, e.jsx)(
                                                   Ta,
-                                                  Js(
+                                                  tl(
                                                     {
                                                       placement: "right",
                                                       duration: 20,
                                                       content: (0, e.jsxs)(
                                                         "div",
-                                                        Js(
+                                                        tl(
                                                           {
                                                             className:
                                                               "description-hint",
@@ -22884,7 +23062,7 @@
                                                             children: [
                                                               (0, e.jsx)(
                                                                 "p",
-                                                                Js(
+                                                                tl(
                                                                   {
                                                                     className:
                                                                       "title",
@@ -22897,7 +23075,7 @@
                                                               ),
                                                               (0, e.jsx)(
                                                                 "p",
-                                                                Js(
+                                                                tl(
                                                                   {
                                                                     className:
                                                                       "description",
@@ -22911,7 +23089,7 @@
                                                               t.consume.length
                                                                 ? (0, e.jsxs)(
                                                                     "div",
-                                                                    Js(
+                                                                    tl(
                                                                       {
                                                                         className:
                                                                           "costs wrap",
@@ -22933,7 +23111,7 @@
                                                                               ) {
                                                                                 return (0,
                                                                                 e.jsx)(
-                                                                                  Lo,
+                                                                                  Po,
                                                                                   {
                                                                                     gain: n,
                                                                                   }
@@ -22951,7 +23129,7 @@
                                                               t.gain.length
                                                                 ? (0, e.jsxs)(
                                                                     "div",
-                                                                    Js(
+                                                                    tl(
                                                                       {
                                                                         className:
                                                                           "gain wrap",
@@ -22973,7 +23151,7 @@
                                                                               ) {
                                                                                 return (0,
                                                                                 e.jsx)(
-                                                                                  Lo,
+                                                                                  Po,
                                                                                   {
                                                                                     gain: n,
                                                                                   }
@@ -22991,7 +23169,7 @@
                                                               t.gainMult.length
                                                                 ? (0, e.jsxs)(
                                                                     "div",
-                                                                    Js(
+                                                                    tl(
                                                                       {
                                                                         className:
                                                                           "gain wrap",
@@ -23013,7 +23191,7 @@
                                                                               ) {
                                                                                 return (0,
                                                                                 e.jsx)(
-                                                                                  Lo,
+                                                                                  Po,
                                                                                   {
                                                                                     gain: n,
                                                                                   }
@@ -23031,7 +23209,7 @@
                                                               t.max.length
                                                                 ? (0, e.jsxs)(
                                                                     "div",
-                                                                    Js(
+                                                                    tl(
                                                                       {
                                                                         className:
                                                                           "store wrap",
@@ -23053,7 +23231,7 @@
                                                                               ) {
                                                                                 return (0,
                                                                                 e.jsx)(
-                                                                                  Lo,
+                                                                                  Po,
                                                                                   {
                                                                                     gain: n,
                                                                                   }
@@ -23072,7 +23250,7 @@
                                                                 .length
                                                                 ? (0, e.jsxs)(
                                                                     "div",
-                                                                    Js(
+                                                                    tl(
                                                                       {
                                                                         className:
                                                                           "costs wrap",
@@ -23094,7 +23272,7 @@
                                                                               ) {
                                                                                 return (0,
                                                                                 e.jsx)(
-                                                                                  Lo,
+                                                                                  Po,
                                                                                   {
                                                                                     gain: n,
                                                                                   }
@@ -23113,7 +23291,7 @@
                                                                 .length
                                                                 ? (0, e.jsxs)(
                                                                     "div",
-                                                                    Js(
+                                                                    tl(
                                                                       {
                                                                         className:
                                                                           "gain wrap",
@@ -23135,7 +23313,7 @@
                                                                               ) {
                                                                                 return (0,
                                                                                 e.jsx)(
-                                                                                  Lo,
+                                                                                  Po,
                                                                                   {
                                                                                     gain: n,
                                                                                   }
@@ -23158,7 +23336,7 @@
                                                     {
                                                       children: (0, e.jsx)(
                                                         "div",
-                                                        Js(
+                                                        tl(
                                                           {
                                                             className:
                                                               "law-option-inner",
@@ -23168,7 +23346,7 @@
                                                               return (
                                                                 (t = n.id),
                                                                 (i = r),
-                                                                void Zs.selectLawOption.send(
+                                                                void nl.selectLawOption.send(
                                                                   {
                                                                     id: t,
                                                                     optionId: i,
@@ -23209,65 +23387,127 @@
             )
           );
         },
-        nl = function () {
-          var n = As("laws-category", Os.SOCIAL),
+        il = function () {
+          var n = _s("laws-category", Is.SOCIAL),
             t = n[0],
-            r = n[1],
-            i = N(Ga).laws.filter(function (e) {
+            i = n[1],
+            a = N(Ga),
+            o = (0, r.useState)(""),
+            s = o[0],
+            l = o[1],
+            c = N(No),
+            u = a.laws.filter(function (e) {
               return e.isUnlocked && e.category === t;
             });
           return (0, e.jsxs)(
             "div",
-            Js(
+            tl(
               { className: "fit-height" },
               {
                 children: [
-                  (0, e.jsx)(
+                  (0, e.jsxs)(
                     "div",
-                    Js(
-                      { className: "submenu" },
+                    tl(
+                      { className: "upper laws" },
                       {
-                        children: Object.values(Os).map(function (n) {
-                          return (0, e.jsx)(
-                            io,
-                            Js(
+                        children: [
+                          (0, e.jsxs)(
+                            "div",
+                            tl(
+                              { className: "presets" },
                               {
-                                id: "laws:orders:".concat(n),
-                                className: "submenu-wrap",
-                              },
-                              {
-                                children: (0, e.jsx)(
-                                  "div",
-                                  Js(
-                                    {
-                                      className: "submenu-item ".concat(
-                                        t === n ? "selected" : ""
-                                      ),
-                                      onClick: function () {
-                                        return r(n);
+                                children: [
+                                  (0, e.jsx)("p", { children: "Load presets" }),
+                                  (0, e.jsxs)(
+                                    "select",
+                                    tl(
+                                      {
+                                        onChange: function (e) {
+                                          l(e.target.value);
+                                        },
                                       },
-                                    },
-                                    { children: n }
-                                  )
-                                ),
+                                      {
+                                        children: [
+                                          (0, e.jsx)(
+                                            "option",
+                                            tl(
+                                              { selected: !0, disabled: !0 },
+                                              { children: "Choose here" }
+                                            )
+                                          ),
+                                          c.list.map(function (n) {
+                                            return (0,
+                                            e.jsx)("option", tl({ value: n.uuid, id: n.uuid }, { children: n.name }));
+                                          }),
+                                        ],
+                                      }
+                                    )
+                                  ),
+                                  (0, e.jsx)(
+                                    "button",
+                                    tl(
+                                      {
+                                        onClick: function () {
+                                          ws.applyLawsPreset.send(s);
+                                        },
+                                      },
+                                      { children: "Apply Preset" }
+                                    )
+                                  ),
+                                ],
                               }
                             )
-                          );
-                        }),
+                          ),
+                          (0, e.jsx)(
+                            "div",
+                            tl(
+                              { className: "submenu" },
+                              {
+                                children: Object.values(Is).map(function (n) {
+                                  return (0, e.jsx)(
+                                    io,
+                                    tl(
+                                      {
+                                        id: "laws:orders:".concat(n),
+                                        className: "submenu-wrap",
+                                      },
+                                      {
+                                        children: (0, e.jsx)(
+                                          "div",
+                                          tl(
+                                            {
+                                              className: "submenu-item ".concat(
+                                                t === n ? "selected" : ""
+                                              ),
+                                              onClick: function () {
+                                                return i(n);
+                                              },
+                                            },
+                                            { children: n }
+                                          )
+                                        ),
+                                      }
+                                    )
+                                  );
+                                }),
+                              }
+                            )
+                          ),
+                        ],
                       }
                     )
                   ),
                   (0, e.jsx)(
                     "div",
-                    Js(
-                      { className: "inner-scrollable planet" },
+                    tl(
+                      { className: "inner-scrollable laws" },
                       {
                         children: (0, e.jsx)(as(), {
                           children: (0, e.jsx)(
                             "div",
-                            Js(
+                            tl(
                               { className: "inner" },
-                              { children: (0, e.jsx)(el, { laws: i }) }
+                              { children: (0, e.jsx)(rl, { laws: u }) }
                             )
                           ),
                         }),
@@ -23279,9 +23519,9 @@
             )
           );
         },
-        tl = function () {
+        al = function () {
           return (
-            (tl =
+            (al =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -23289,24 +23529,24 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            tl.apply(this, arguments)
+            al.apply(this, arguments)
           );
         },
-        rl = function () {
+        ol = function () {
           return (0, e.jsx)(
             "div",
-            tl(
+            al(
               { className: "fit-height" },
               {
                 children: (0, e.jsxs)(
                   "div",
-                  tl(
+                  al(
                     { className: "version-panes" },
                     {
                       children: [
                         (0, e.jsxs)(
                           "div",
-                          tl(
+                          al(
                             { className: "about" },
                             {
                               children: [
@@ -23315,7 +23555,7 @@
                                     "This game was pretty much inspired by ",
                                     (0, e.jsx)(
                                       "a",
-                                      tl(
+                                      al(
                                         {
                                           href: "https://kittensgame.com/web/",
                                           target: "_blank",
@@ -23337,7 +23577,7 @@
                                 (0, e.jsx)("p", {
                                   children: (0, e.jsx)(
                                     "a",
-                                    tl(
+                                    al(
                                       {
                                         className: "popup-link",
                                         href: "https://patreon.com/user?u=83421544",
@@ -23350,7 +23590,7 @@
                                 (0, e.jsx)("p", {
                                   children: (0, e.jsx)(
                                     "a",
-                                    tl(
+                                    al(
                                       {
                                         className: "popup-link",
                                         href: "https://discord.gg/TRRvKf4ZTG",
@@ -23360,26 +23600,223 @@
                                     )
                                   ),
                                 }),
+                                (0, e.jsxs)("p", {
+                                  children: [
+                                    (0, e.jsx)(
+                                      "a",
+                                      al(
+                                        {
+                                          className: "popup-link",
+                                          href: "https://www.reddit.com/r/the_ignited_space",
+                                        },
+                                        { children: "Reddit Community" }
+                                      )
+                                    ),
+                                    " ",
+                                  ],
+                                }),
                               ],
                             }
                           )
                         ),
                         (0, e.jsx)(
                           "div",
-                          tl(
+                          al(
                             { className: "change-log" },
                             {
                               children: (0, e.jsxs)(as(), {
                                 children: [
                                   (0, e.jsxs)(
                                     "div",
-                                    tl(
+                                    al(
                                       { className: "version-block" },
                                       {
                                         children: [
                                           (0, e.jsxs)(
                                             "div",
-                                            tl(
+                                            al(
+                                              { className: "version-title" },
+                                              {
+                                                children: [
+                                                  (0, e.jsx)("h3", {
+                                                    children:
+                                                      "v0.2.9 Regular Update",
+                                                  }),
+                                                  (0, e.jsx)(
+                                                    "span",
+                                                    al(
+                                                      { className: "date" },
+                                                      { children: "09/09/2023" }
+                                                    )
+                                                  ),
+                                                ],
+                                              }
+                                            )
+                                          ),
+                                          (0, e.jsxs)(
+                                            "ul",
+                                            al(
+                                              { className: "features" },
+                                              {
+                                                children: [
+                                                  (0, e.jsx)("li", {
+                                                    children:
+                                                      "Added new late game content/rebalanced a bit existing",
+                                                  }),
+                                                  (0, e.jsx)("li", {
+                                                    children:
+                                                      "Added setting to enable bulk building",
+                                                  }),
+                                                  (0, e.jsx)("li", {
+                                                    children:
+                                                      "Added upgrades that allow more convenient planets search (more search results, more filters, etc)",
+                                                  }),
+                                                  (0, e.jsx)("li", {
+                                                    children:
+                                                      "Ships models now persist through resets",
+                                                  }),
+                                                  (0, e.jsx)("li", {
+                                                    children:
+                                                      "Fixed bug preventing tooltips from showing when hover buildings/upgrades from right direction",
+                                                  }),
+                                                  (0, e.jsx)("li", {
+                                                    children:
+                                                      "Fixed bug causing progress on spaceship availability not showing",
+                                                  }),
+                                                  (0, e.jsx)("li", {
+                                                    children: "Tiny UI fixes",
+                                                  }),
+                                                ],
+                                              }
+                                            )
+                                          ),
+                                        ],
+                                      }
+                                    )
+                                  ),
+                                  (0, e.jsxs)(
+                                    "div",
+                                    al(
+                                      { className: "version-block" },
+                                      {
+                                        children: [
+                                          (0, e.jsxs)(
+                                            "div",
+                                            al(
+                                              { className: "version-title" },
+                                              {
+                                                children: [
+                                                  (0, e.jsx)("h3", {
+                                                    children:
+                                                      "v0.2.8d Small Update",
+                                                  }),
+                                                  (0, e.jsx)(
+                                                    "span",
+                                                    al(
+                                                      { className: "date" },
+                                                      { children: "08/09/2023" }
+                                                    )
+                                                  ),
+                                                ],
+                                              }
+                                            )
+                                          ),
+                                          (0, e.jsxs)(
+                                            "ul",
+                                            al(
+                                              { className: "features" },
+                                              {
+                                                children: [
+                                                  (0, e.jsx)("li", {
+                                                    children:
+                                                      "Added new planet modifiers",
+                                                  }),
+                                                  (0, e.jsx)("li", {
+                                                    children:
+                                                      "Added harshness filtering",
+                                                  }),
+                                                  (0, e.jsx)("li", {
+                                                    children:
+                                                      "Re-balanced late game content: added new law, new resource, reduced some prices",
+                                                  }),
+                                                  (0, e.jsx)("li", {
+                                                    children:
+                                                      "Fixed bug preventing notifications from showing",
+                                                  }),
+                                                ],
+                                              }
+                                            )
+                                          ),
+                                        ],
+                                      }
+                                    )
+                                  ),
+                                  (0, e.jsxs)(
+                                    "div",
+                                    al(
+                                      { className: "version-block" },
+                                      {
+                                        children: [
+                                          (0, e.jsxs)(
+                                            "div",
+                                            al(
+                                              { className: "version-title" },
+                                              {
+                                                children: [
+                                                  (0, e.jsx)("h3", {
+                                                    children:
+                                                      "v0.2.8с Small Update",
+                                                  }),
+                                                  (0, e.jsx)(
+                                                    "span",
+                                                    al(
+                                                      { className: "date" },
+                                                      { children: "07/09/2023" }
+                                                    )
+                                                  ),
+                                                ],
+                                              }
+                                            )
+                                          ),
+                                          (0, e.jsxs)(
+                                            "ul",
+                                            al(
+                                              { className: "features" },
+                                              {
+                                                children: [
+                                                  (0, e.jsx)("li", {
+                                                    children:
+                                                      'Added new "Lost Technologies"',
+                                                  }),
+                                                  (0, e.jsx)("li", {
+                                                    children:
+                                                      "Added laws presets",
+                                                  }),
+                                                  (0, e.jsx)("li", {
+                                                    children:
+                                                      "Fixed bug when after prestige event indicator shown up",
+                                                  }),
+                                                  (0, e.jsx)("li", {
+                                                    children:
+                                                      "Hovering over happiness in resources sidebar now shows hint with all happiness aspects",
+                                                  }),
+                                                ],
+                                              }
+                                            )
+                                          ),
+                                        ],
+                                      }
+                                    )
+                                  ),
+                                  (0, e.jsxs)(
+                                    "div",
+                                    al(
+                                      { className: "version-block" },
+                                      {
+                                        children: [
+                                          (0, e.jsxs)(
+                                            "div",
+                                            al(
                                               { className: "version-title" },
                                               {
                                                 children: [
@@ -23389,7 +23826,7 @@
                                                   }),
                                                   (0, e.jsx)(
                                                     "span",
-                                                    tl(
+                                                    al(
                                                       { className: "date" },
                                                       { children: "06/09/2023" }
                                                     )
@@ -23400,7 +23837,7 @@
                                           ),
                                           (0, e.jsxs)(
                                             "ul",
-                                            tl(
+                                            al(
                                               { className: "features" },
                                               {
                                                 children: [
@@ -23426,13 +23863,13 @@
                                   ),
                                   (0, e.jsxs)(
                                     "div",
-                                    tl(
+                                    al(
                                       { className: "version-block" },
                                       {
                                         children: [
                                           (0, e.jsxs)(
                                             "div",
-                                            tl(
+                                            al(
                                               { className: "version-title" },
                                               {
                                                 children: [
@@ -23442,7 +23879,7 @@
                                                   }),
                                                   (0, e.jsx)(
                                                     "span",
-                                                    tl(
+                                                    al(
                                                       { className: "date" },
                                                       { children: "05/09/2023" }
                                                     )
@@ -23453,7 +23890,7 @@
                                           ),
                                           (0, e.jsxs)(
                                             "ul",
-                                            tl(
+                                            al(
                                               { className: "features" },
                                               {
                                                 children: [
@@ -23491,13 +23928,13 @@
                                   ),
                                   (0, e.jsxs)(
                                     "div",
-                                    tl(
+                                    al(
                                       { className: "version-block" },
                                       {
                                         children: [
                                           (0, e.jsxs)(
                                             "div",
-                                            tl(
+                                            al(
                                               { className: "version-title" },
                                               {
                                                 children: [
@@ -23507,7 +23944,7 @@
                                                   }),
                                                   (0, e.jsx)(
                                                     "span",
-                                                    tl(
+                                                    al(
                                                       { className: "date" },
                                                       { children: "04/09/2023" }
                                                     )
@@ -23518,7 +23955,7 @@
                                           ),
                                           (0, e.jsxs)(
                                             "ul",
-                                            tl(
+                                            al(
                                               { className: "features" },
                                               {
                                                 children: [
@@ -23568,13 +24005,13 @@
                                   ),
                                   (0, e.jsxs)(
                                     "div",
-                                    tl(
+                                    al(
                                       { className: "version-block" },
                                       {
                                         children: [
                                           (0, e.jsxs)(
                                             "div",
-                                            tl(
+                                            al(
                                               { className: "version-title" },
                                               {
                                                 children: [
@@ -23584,7 +24021,7 @@
                                                   }),
                                                   (0, e.jsx)(
                                                     "span",
-                                                    tl(
+                                                    al(
                                                       { className: "date" },
                                                       { children: "03/09/2023" }
                                                     )
@@ -23595,7 +24032,7 @@
                                           ),
                                           (0, e.jsxs)(
                                             "ul",
-                                            tl(
+                                            al(
                                               { className: "features" },
                                               {
                                                 children: [
@@ -23633,13 +24070,13 @@
                                   ),
                                   (0, e.jsxs)(
                                     "div",
-                                    tl(
+                                    al(
                                       { className: "version-block" },
                                       {
                                         children: [
                                           (0, e.jsxs)(
                                             "div",
-                                            tl(
+                                            al(
                                               { className: "version-title" },
                                               {
                                                 children: [
@@ -23649,7 +24086,7 @@
                                                   }),
                                                   (0, e.jsx)(
                                                     "span",
-                                                    tl(
+                                                    al(
                                                       { className: "date" },
                                                       { children: "02/09/2023" }
                                                     )
@@ -23660,7 +24097,7 @@
                                           ),
                                           (0, e.jsxs)(
                                             "ul",
-                                            tl(
+                                            al(
                                               { className: "features" },
                                               {
                                                 children: [
@@ -23726,13 +24163,13 @@
                                   ),
                                   (0, e.jsxs)(
                                     "div",
-                                    tl(
+                                    al(
                                       { className: "version-block" },
                                       {
                                         children: [
                                           (0, e.jsxs)(
                                             "div",
-                                            tl(
+                                            al(
                                               { className: "version-title" },
                                               {
                                                 children: [
@@ -23742,7 +24179,7 @@
                                                   }),
                                                   (0, e.jsx)(
                                                     "span",
-                                                    tl(
+                                                    al(
                                                       { className: "date" },
                                                       { children: "28/08/2023" }
                                                     )
@@ -23753,7 +24190,7 @@
                                           ),
                                           (0, e.jsxs)(
                                             "ul",
-                                            tl(
+                                            al(
                                               { className: "features" },
                                               {
                                                 children: [
@@ -23779,13 +24216,13 @@
                                   ),
                                   (0, e.jsxs)(
                                     "div",
-                                    tl(
+                                    al(
                                       { className: "version-block" },
                                       {
                                         children: [
                                           (0, e.jsxs)(
                                             "div",
-                                            tl(
+                                            al(
                                               { className: "version-title" },
                                               {
                                                 children: [
@@ -23795,7 +24232,7 @@
                                                   }),
                                                   (0, e.jsx)(
                                                     "span",
-                                                    tl(
+                                                    al(
                                                       { className: "date" },
                                                       { children: "27/08/2023" }
                                                     )
@@ -23806,7 +24243,7 @@
                                           ),
                                           (0, e.jsxs)(
                                             "ul",
-                                            tl(
+                                            al(
                                               { className: "features" },
                                               {
                                                 children: [
@@ -23828,13 +24265,13 @@
                                   ),
                                   (0, e.jsxs)(
                                     "div",
-                                    tl(
+                                    al(
                                       { className: "version-block" },
                                       {
                                         children: [
                                           (0, e.jsxs)(
                                             "div",
-                                            tl(
+                                            al(
                                               { className: "version-title" },
                                               {
                                                 children: [
@@ -23844,7 +24281,7 @@
                                                   }),
                                                   (0, e.jsx)(
                                                     "span",
-                                                    tl(
+                                                    al(
                                                       { className: "date" },
                                                       { children: "26/08/2023" }
                                                     )
@@ -23855,7 +24292,7 @@
                                           ),
                                           (0, e.jsxs)(
                                             "ul",
-                                            tl(
+                                            al(
                                               { className: "features" },
                                               {
                                                 children: [
@@ -23885,13 +24322,13 @@
                                   ),
                                   (0, e.jsxs)(
                                     "div",
-                                    tl(
+                                    al(
                                       { className: "version-block" },
                                       {
                                         children: [
                                           (0, e.jsxs)(
                                             "div",
-                                            tl(
+                                            al(
                                               { className: "version-title" },
                                               {
                                                 children: [
@@ -23901,7 +24338,7 @@
                                                   }),
                                                   (0, e.jsx)(
                                                     "span",
-                                                    tl(
+                                                    al(
                                                       { className: "date" },
                                                       { children: "26/08/2023" }
                                                     )
@@ -23912,7 +24349,7 @@
                                           ),
                                           (0, e.jsxs)(
                                             "ul",
-                                            tl(
+                                            al(
                                               { className: "features" },
                                               {
                                                 children: [
@@ -23942,13 +24379,13 @@
                                   ),
                                   (0, e.jsxs)(
                                     "div",
-                                    tl(
+                                    al(
                                       { className: "version-block" },
                                       {
                                         children: [
                                           (0, e.jsxs)(
                                             "div",
-                                            tl(
+                                            al(
                                               { className: "version-title" },
                                               {
                                                 children: [
@@ -23958,7 +24395,7 @@
                                                   }),
                                                   (0, e.jsx)(
                                                     "span",
-                                                    tl(
+                                                    al(
                                                       { className: "date" },
                                                       { children: "22/08/2023" }
                                                     )
@@ -23969,7 +24406,7 @@
                                           ),
                                           (0, e.jsxs)(
                                             "ul",
-                                            tl(
+                                            al(
                                               { className: "features" },
                                               {
                                                 children: [
@@ -24007,13 +24444,13 @@
                                   ),
                                   (0, e.jsxs)(
                                     "div",
-                                    tl(
+                                    al(
                                       { className: "version-block" },
                                       {
                                         children: [
                                           (0, e.jsxs)(
                                             "div",
-                                            tl(
+                                            al(
                                               { className: "version-title" },
                                               {
                                                 children: [
@@ -24023,7 +24460,7 @@
                                                   }),
                                                   (0, e.jsx)(
                                                     "span",
-                                                    tl(
+                                                    al(
                                                       { className: "date" },
                                                       { children: "21/08/2023" }
                                                     )
@@ -24034,7 +24471,7 @@
                                           ),
                                           (0, e.jsxs)(
                                             "ul",
-                                            tl(
+                                            al(
                                               { className: "features" },
                                               {
                                                 children: [
@@ -24063,13 +24500,13 @@
                                   ),
                                   (0, e.jsxs)(
                                     "div",
-                                    tl(
+                                    al(
                                       { className: "version-block" },
                                       {
                                         children: [
                                           (0, e.jsxs)(
                                             "div",
-                                            tl(
+                                            al(
                                               { className: "version-title" },
                                               {
                                                 children: [
@@ -24079,7 +24516,7 @@
                                                   }),
                                                   (0, e.jsx)(
                                                     "span",
-                                                    tl(
+                                                    al(
                                                       { className: "date" },
                                                       { children: "20/08/2023" }
                                                     )
@@ -24090,7 +24527,7 @@
                                           ),
                                           (0, e.jsxs)(
                                             "ul",
-                                            tl(
+                                            al(
                                               { className: "features" },
                                               {
                                                 children: [
@@ -24124,13 +24561,13 @@
                                   ),
                                   (0, e.jsxs)(
                                     "div",
-                                    tl(
+                                    al(
                                       { className: "version-block" },
                                       {
                                         children: [
                                           (0, e.jsxs)(
                                             "div",
-                                            tl(
+                                            al(
                                               { className: "version-title" },
                                               {
                                                 children: [
@@ -24140,7 +24577,7 @@
                                                   }),
                                                   (0, e.jsx)(
                                                     "span",
-                                                    tl(
+                                                    al(
                                                       { className: "date" },
                                                       { children: "19/08/2023" }
                                                     )
@@ -24151,7 +24588,7 @@
                                           ),
                                           (0, e.jsxs)(
                                             "ul",
-                                            tl(
+                                            al(
                                               { className: "features" },
                                               {
                                                 children: [
@@ -24185,13 +24622,13 @@
                                   ),
                                   (0, e.jsxs)(
                                     "div",
-                                    tl(
+                                    al(
                                       { className: "version-block" },
                                       {
                                         children: [
                                           (0, e.jsxs)(
                                             "div",
-                                            tl(
+                                            al(
                                               { className: "version-title" },
                                               {
                                                 children: [
@@ -24201,7 +24638,7 @@
                                                   }),
                                                   (0, e.jsx)(
                                                     "span",
-                                                    tl(
+                                                    al(
                                                       { className: "date" },
                                                       { children: "09/08/2023" }
                                                     )
@@ -24212,7 +24649,7 @@
                                           ),
                                           (0, e.jsxs)(
                                             "ul",
-                                            tl(
+                                            al(
                                               { className: "features" },
                                               {
                                                 children: [
@@ -24234,13 +24671,13 @@
                                   ),
                                   (0, e.jsxs)(
                                     "div",
-                                    tl(
+                                    al(
                                       { className: "version-block" },
                                       {
                                         children: [
                                           (0, e.jsxs)(
                                             "div",
-                                            tl(
+                                            al(
                                               { className: "version-title" },
                                               {
                                                 children: [
@@ -24250,7 +24687,7 @@
                                                   }),
                                                   (0, e.jsx)(
                                                     "span",
-                                                    tl(
+                                                    al(
                                                       { className: "date" },
                                                       { children: "29/07/2023" }
                                                     )
@@ -24261,7 +24698,7 @@
                                           ),
                                           (0, e.jsxs)(
                                             "ul",
-                                            tl(
+                                            al(
                                               { className: "features" },
                                               {
                                                 children: [
@@ -24283,13 +24720,13 @@
                                   ),
                                   (0, e.jsxs)(
                                     "div",
-                                    tl(
+                                    al(
                                       { className: "version-block" },
                                       {
                                         children: [
                                           (0, e.jsxs)(
                                             "div",
-                                            tl(
+                                            al(
                                               { className: "version-title" },
                                               {
                                                 children: [
@@ -24299,7 +24736,7 @@
                                                   }),
                                                   (0, e.jsx)(
                                                     "span",
-                                                    tl(
+                                                    al(
                                                       { className: "date" },
                                                       { children: "28/07/2023" }
                                                     )
@@ -24310,7 +24747,7 @@
                                           ),
                                           (0, e.jsxs)(
                                             "ul",
-                                            tl(
+                                            al(
                                               { className: "features" },
                                               {
                                                 children: [
@@ -24356,13 +24793,13 @@
                                   ),
                                   (0, e.jsxs)(
                                     "div",
-                                    tl(
+                                    al(
                                       { className: "version-block" },
                                       {
                                         children: [
                                           (0, e.jsxs)(
                                             "div",
-                                            tl(
+                                            al(
                                               { className: "version-title" },
                                               {
                                                 children: [
@@ -24372,7 +24809,7 @@
                                                   }),
                                                   (0, e.jsx)(
                                                     "span",
-                                                    tl(
+                                                    al(
                                                       { className: "date" },
                                                       { children: "26/07/2023" }
                                                     )
@@ -24383,7 +24820,7 @@
                                           ),
                                           (0, e.jsxs)(
                                             "ul",
-                                            tl(
+                                            al(
                                               { className: "features" },
                                               {
                                                 children: [
@@ -24405,13 +24842,13 @@
                                   ),
                                   (0, e.jsxs)(
                                     "div",
-                                    tl(
+                                    al(
                                       { className: "version-block" },
                                       {
                                         children: [
                                           (0, e.jsxs)(
                                             "div",
-                                            tl(
+                                            al(
                                               { className: "version-title" },
                                               {
                                                 children: [
@@ -24421,7 +24858,7 @@
                                                   }),
                                                   (0, e.jsx)(
                                                     "span",
-                                                    tl(
+                                                    al(
                                                       { className: "date" },
                                                       { children: "25/07/2023" }
                                                     )
@@ -24432,7 +24869,7 @@
                                           ),
                                           (0, e.jsxs)(
                                             "ul",
-                                            tl(
+                                            al(
                                               { className: "features" },
                                               {
                                                 children: [
@@ -24458,13 +24895,13 @@
                                   ),
                                   (0, e.jsxs)(
                                     "div",
-                                    tl(
+                                    al(
                                       { className: "version-block" },
                                       {
                                         children: [
                                           (0, e.jsxs)(
                                             "div",
-                                            tl(
+                                            al(
                                               { className: "version-title" },
                                               {
                                                 children: [
@@ -24474,7 +24911,7 @@
                                                   }),
                                                   (0, e.jsx)(
                                                     "span",
-                                                    tl(
+                                                    al(
                                                       { className: "date" },
                                                       { children: "24/07/2023" }
                                                     )
@@ -24485,7 +24922,7 @@
                                           ),
                                           (0, e.jsxs)(
                                             "ul",
-                                            tl(
+                                            al(
                                               { className: "features" },
                                               {
                                                 children: [
@@ -24515,13 +24952,13 @@
                                   ),
                                   (0, e.jsxs)(
                                     "div",
-                                    tl(
+                                    al(
                                       { className: "version-block" },
                                       {
                                         children: [
                                           (0, e.jsxs)(
                                             "div",
-                                            tl(
+                                            al(
                                               { className: "version-title" },
                                               {
                                                 children: [
@@ -24531,7 +24968,7 @@
                                                   }),
                                                   (0, e.jsx)(
                                                     "span",
-                                                    tl(
+                                                    al(
                                                       { className: "date" },
                                                       { children: "22/07/2023" }
                                                     )
@@ -24542,7 +24979,7 @@
                                           ),
                                           (0, e.jsxs)(
                                             "ul",
-                                            tl(
+                                            al(
                                               { className: "features" },
                                               {
                                                 children: [
@@ -24564,13 +25001,13 @@
                                   ),
                                   (0, e.jsxs)(
                                     "div",
-                                    tl(
+                                    al(
                                       { className: "version-block" },
                                       {
                                         children: [
                                           (0, e.jsxs)(
                                             "div",
-                                            tl(
+                                            al(
                                               { className: "version-title" },
                                               {
                                                 children: [
@@ -24580,7 +25017,7 @@
                                                   }),
                                                   (0, e.jsx)(
                                                     "span",
-                                                    tl(
+                                                    al(
                                                       { className: "date" },
                                                       { children: "22/07/2023" }
                                                     )
@@ -24591,7 +25028,7 @@
                                           ),
                                           (0, e.jsxs)(
                                             "ul",
-                                            tl(
+                                            al(
                                               { className: "features" },
                                               {
                                                 children: [
@@ -24621,13 +25058,13 @@
                                   ),
                                   (0, e.jsxs)(
                                     "div",
-                                    tl(
+                                    al(
                                       { className: "version-block" },
                                       {
                                         children: [
                                           (0, e.jsxs)(
                                             "div",
-                                            tl(
+                                            al(
                                               { className: "version-title" },
                                               {
                                                 children: [
@@ -24637,7 +25074,7 @@
                                                   }),
                                                   (0, e.jsx)(
                                                     "span",
-                                                    tl(
+                                                    al(
                                                       { className: "date" },
                                                       { children: "05/07/2023" }
                                                     )
@@ -24648,7 +25085,7 @@
                                           ),
                                           (0, e.jsx)(
                                             "ul",
-                                            tl(
+                                            al(
                                               { className: "features" },
                                               {
                                                 children: (0, e.jsx)("li", {
@@ -24664,13 +25101,13 @@
                                   ),
                                   (0, e.jsxs)(
                                     "div",
-                                    tl(
+                                    al(
                                       { className: "version-block" },
                                       {
                                         children: [
                                           (0, e.jsxs)(
                                             "div",
-                                            tl(
+                                            al(
                                               { className: "version-title" },
                                               {
                                                 children: [
@@ -24680,7 +25117,7 @@
                                                   }),
                                                   (0, e.jsx)(
                                                     "span",
-                                                    tl(
+                                                    al(
                                                       { className: "date" },
                                                       { children: "05/07/2023" }
                                                     )
@@ -24691,7 +25128,7 @@
                                           ),
                                           (0, e.jsxs)(
                                             "ul",
-                                            tl(
+                                            al(
                                               { className: "features" },
                                               {
                                                 children: [
@@ -24713,13 +25150,13 @@
                                   ),
                                   (0, e.jsxs)(
                                     "div",
-                                    tl(
+                                    al(
                                       { className: "version-block" },
                                       {
                                         children: [
                                           (0, e.jsxs)(
                                             "div",
-                                            tl(
+                                            al(
                                               { className: "version-title" },
                                               {
                                                 children: [
@@ -24729,7 +25166,7 @@
                                                   }),
                                                   (0, e.jsx)(
                                                     "span",
-                                                    tl(
+                                                    al(
                                                       { className: "date" },
                                                       { children: "04/07/2023" }
                                                     )
@@ -24740,7 +25177,7 @@
                                           ),
                                           (0, e.jsxs)(
                                             "ul",
-                                            tl(
+                                            al(
                                               { className: "features" },
                                               {
                                                 children: [
@@ -24762,13 +25199,13 @@
                                   ),
                                   (0, e.jsxs)(
                                     "div",
-                                    tl(
+                                    al(
                                       { className: "version-block" },
                                       {
                                         children: [
                                           (0, e.jsxs)(
                                             "div",
-                                            tl(
+                                            al(
                                               { className: "version-title" },
                                               {
                                                 children: [
@@ -24778,7 +25215,7 @@
                                                   }),
                                                   (0, e.jsx)(
                                                     "span",
-                                                    tl(
+                                                    al(
                                                       { className: "date" },
                                                       { children: "02/07/2023" }
                                                     )
@@ -24789,7 +25226,7 @@
                                           ),
                                           (0, e.jsxs)(
                                             "ul",
-                                            tl(
+                                            al(
                                               { className: "features" },
                                               {
                                                 children: [
@@ -24839,13 +25276,13 @@
                                   ),
                                   (0, e.jsxs)(
                                     "div",
-                                    tl(
+                                    al(
                                       { className: "version-block" },
                                       {
                                         children: [
                                           (0, e.jsxs)(
                                             "div",
-                                            tl(
+                                            al(
                                               { className: "version-title" },
                                               {
                                                 children: [
@@ -24855,7 +25292,7 @@
                                                   }),
                                                   (0, e.jsx)(
                                                     "span",
-                                                    tl(
+                                                    al(
                                                       { className: "date" },
                                                       { children: "29/06/2023" }
                                                     )
@@ -24866,7 +25303,7 @@
                                           ),
                                           (0, e.jsxs)(
                                             "ul",
-                                            tl(
+                                            al(
                                               { className: "features" },
                                               {
                                                 children: [
@@ -24891,13 +25328,13 @@
                                   ),
                                   (0, e.jsxs)(
                                     "div",
-                                    tl(
+                                    al(
                                       { className: "version-block" },
                                       {
                                         children: [
                                           (0, e.jsxs)(
                                             "div",
-                                            tl(
+                                            al(
                                               { className: "version-title" },
                                               {
                                                 children: [
@@ -24907,7 +25344,7 @@
                                                   }),
                                                   (0, e.jsx)(
                                                     "span",
-                                                    tl(
+                                                    al(
                                                       { className: "date" },
                                                       { children: "28/06/2023" }
                                                     )
@@ -24918,7 +25355,7 @@
                                           ),
                                           (0, e.jsxs)(
                                             "ul",
-                                            tl(
+                                            al(
                                               { className: "features" },
                                               {
                                                 children: [
@@ -24948,13 +25385,13 @@
                                   ),
                                   (0, e.jsxs)(
                                     "div",
-                                    tl(
+                                    al(
                                       { className: "version-block" },
                                       {
                                         children: [
                                           (0, e.jsxs)(
                                             "div",
-                                            tl(
+                                            al(
                                               { className: "version-title" },
                                               {
                                                 children: [
@@ -24964,7 +25401,7 @@
                                                   }),
                                                   (0, e.jsx)(
                                                     "span",
-                                                    tl(
+                                                    al(
                                                       { className: "date" },
                                                       { children: "26/06/2023" }
                                                     )
@@ -24975,7 +25412,7 @@
                                           ),
                                           (0, e.jsxs)(
                                             "ul",
-                                            tl(
+                                            al(
                                               { className: "features" },
                                               {
                                                 children: [
@@ -25005,13 +25442,13 @@
                                   ),
                                   (0, e.jsxs)(
                                     "div",
-                                    tl(
+                                    al(
                                       { className: "version-block" },
                                       {
                                         children: [
                                           (0, e.jsxs)(
                                             "div",
-                                            tl(
+                                            al(
                                               { className: "version-title" },
                                               {
                                                 children: [
@@ -25021,7 +25458,7 @@
                                                   }),
                                                   (0, e.jsx)(
                                                     "span",
-                                                    tl(
+                                                    al(
                                                       { className: "date" },
                                                       { children: "25/06/2023" }
                                                     )
@@ -25032,7 +25469,7 @@
                                           ),
                                           (0, e.jsxs)(
                                             "ul",
-                                            tl(
+                                            al(
                                               { className: "features" },
                                               {
                                                 children: [
@@ -25070,13 +25507,13 @@
                                   ),
                                   (0, e.jsxs)(
                                     "div",
-                                    tl(
+                                    al(
                                       { className: "version-block" },
                                       {
                                         children: [
                                           (0, e.jsxs)(
                                             "div",
-                                            tl(
+                                            al(
                                               { className: "version-title" },
                                               {
                                                 children: [
@@ -25085,7 +25522,7 @@
                                                   }),
                                                   (0, e.jsx)(
                                                     "span",
-                                                    tl(
+                                                    al(
                                                       { className: "date" },
                                                       { children: "18/06/2023" }
                                                     )
@@ -25096,7 +25533,7 @@
                                           ),
                                           (0, e.jsxs)(
                                             "ul",
-                                            tl(
+                                            al(
                                               { className: "features" },
                                               {
                                                 children: [
@@ -25118,13 +25555,13 @@
                                   ),
                                   (0, e.jsxs)(
                                     "div",
-                                    tl(
+                                    al(
                                       { className: "version-block" },
                                       {
                                         children: [
                                           (0, e.jsxs)(
                                             "div",
-                                            tl(
+                                            al(
                                               { className: "version-title" },
                                               {
                                                 children: [
@@ -25134,7 +25571,7 @@
                                                   }),
                                                   (0, e.jsx)(
                                                     "span",
-                                                    tl(
+                                                    al(
                                                       { className: "date" },
                                                       { children: "18/06/2023" }
                                                     )
@@ -25145,7 +25582,7 @@
                                           ),
                                           (0, e.jsxs)(
                                             "ul",
-                                            tl(
+                                            al(
                                               { className: "features" },
                                               {
                                                 children: [
@@ -25187,13 +25624,13 @@
                                   ),
                                   (0, e.jsxs)(
                                     "div",
-                                    tl(
+                                    al(
                                       { className: "version-block" },
                                       {
                                         children: [
                                           (0, e.jsxs)(
                                             "div",
-                                            tl(
+                                            al(
                                               { className: "version-title" },
                                               {
                                                 children: [
@@ -25203,7 +25640,7 @@
                                                   }),
                                                   (0, e.jsx)(
                                                     "span",
-                                                    tl(
+                                                    al(
                                                       { className: "date" },
                                                       { children: "16/06/2023" }
                                                     )
@@ -25214,7 +25651,7 @@
                                           ),
                                           (0, e.jsxs)(
                                             "ul",
-                                            tl(
+                                            al(
                                               { className: "features" },
                                               {
                                                 children: [
@@ -25236,13 +25673,13 @@
                                   ),
                                   (0, e.jsxs)(
                                     "div",
-                                    tl(
+                                    al(
                                       { className: "version-block" },
                                       {
                                         children: [
                                           (0, e.jsxs)(
                                             "div",
-                                            tl(
+                                            al(
                                               { className: "version-title" },
                                               {
                                                 children: [
@@ -25252,7 +25689,7 @@
                                                   }),
                                                   (0, e.jsx)(
                                                     "span",
-                                                    tl(
+                                                    al(
                                                       { className: "date" },
                                                       { children: "16/06/2023" }
                                                     )
@@ -25263,7 +25700,7 @@
                                           ),
                                           (0, e.jsx)(
                                             "ul",
-                                            tl(
+                                            al(
                                               { className: "features" },
                                               {
                                                 children: (0, e.jsx)("li", {
@@ -25279,13 +25716,13 @@
                                   ),
                                   (0, e.jsxs)(
                                     "div",
-                                    tl(
+                                    al(
                                       { className: "version-block" },
                                       {
                                         children: [
                                           (0, e.jsxs)(
                                             "div",
-                                            tl(
+                                            al(
                                               { className: "version-title" },
                                               {
                                                 children: [
@@ -25295,7 +25732,7 @@
                                                   }),
                                                   (0, e.jsx)(
                                                     "span",
-                                                    tl(
+                                                    al(
                                                       { className: "date" },
                                                       { children: "15/06/2023" }
                                                     )
@@ -25306,7 +25743,7 @@
                                           ),
                                           (0, e.jsxs)(
                                             "ul",
-                                            tl(
+                                            al(
                                               { className: "features" },
                                               {
                                                 children: [
@@ -25343,13 +25780,13 @@
                                   ),
                                   (0, e.jsxs)(
                                     "div",
-                                    tl(
+                                    al(
                                       { className: "version-block" },
                                       {
                                         children: [
                                           (0, e.jsxs)(
                                             "div",
-                                            tl(
+                                            al(
                                               { className: "version-title" },
                                               {
                                                 children: [
@@ -25359,7 +25796,7 @@
                                                   }),
                                                   (0, e.jsx)(
                                                     "span",
-                                                    tl(
+                                                    al(
                                                       { className: "date" },
                                                       { children: "12/06/2023" }
                                                     )
@@ -25370,7 +25807,7 @@
                                           ),
                                           (0, e.jsxs)(
                                             "ul",
-                                            tl(
+                                            al(
                                               { className: "features" },
                                               {
                                                 children: [
@@ -25396,13 +25833,13 @@
                                   ),
                                   (0, e.jsxs)(
                                     "div",
-                                    tl(
+                                    al(
                                       { className: "version-block" },
                                       {
                                         children: [
                                           (0, e.jsxs)(
                                             "div",
-                                            tl(
+                                            al(
                                               { className: "version-title" },
                                               {
                                                 children: [
@@ -25412,7 +25849,7 @@
                                                   }),
                                                   (0, e.jsx)(
                                                     "span",
-                                                    tl(
+                                                    al(
                                                       { className: "date" },
                                                       { children: "10/06/2023" }
                                                     )
@@ -25423,7 +25860,7 @@
                                           ),
                                           (0, e.jsxs)(
                                             "ul",
-                                            tl(
+                                            al(
                                               { className: "features" },
                                               {
                                                 children: [
@@ -25445,13 +25882,13 @@
                                   ),
                                   (0, e.jsxs)(
                                     "div",
-                                    tl(
+                                    al(
                                       { className: "version-block" },
                                       {
                                         children: [
                                           (0, e.jsxs)(
                                             "div",
-                                            tl(
+                                            al(
                                               { className: "version-title" },
                                               {
                                                 children: [
@@ -25461,7 +25898,7 @@
                                                   }),
                                                   (0, e.jsx)(
                                                     "span",
-                                                    tl(
+                                                    al(
                                                       { className: "date" },
                                                       { children: "09/06/2023" }
                                                     )
@@ -25472,7 +25909,7 @@
                                           ),
                                           (0, e.jsxs)(
                                             "ul",
-                                            tl(
+                                            al(
                                               { className: "features" },
                                               {
                                                 children: [
@@ -25494,13 +25931,13 @@
                                   ),
                                   (0, e.jsxs)(
                                     "div",
-                                    tl(
+                                    al(
                                       { className: "version-block" },
                                       {
                                         children: [
                                           (0, e.jsxs)(
                                             "div",
-                                            tl(
+                                            al(
                                               { className: "version-title" },
                                               {
                                                 children: [
@@ -25510,7 +25947,7 @@
                                                   }),
                                                   (0, e.jsx)(
                                                     "span",
-                                                    tl(
+                                                    al(
                                                       { className: "date" },
                                                       { children: "09/06/2023" }
                                                     )
@@ -25521,7 +25958,7 @@
                                           ),
                                           (0, e.jsxs)(
                                             "ul",
-                                            tl(
+                                            al(
                                               { className: "features" },
                                               {
                                                 children: [
@@ -25547,13 +25984,13 @@
                                   ),
                                   (0, e.jsxs)(
                                     "div",
-                                    tl(
+                                    al(
                                       { className: "version-block" },
                                       {
                                         children: [
                                           (0, e.jsxs)(
                                             "div",
-                                            tl(
+                                            al(
                                               { className: "version-title" },
                                               {
                                                 children: [
@@ -25563,7 +26000,7 @@
                                                   }),
                                                   (0, e.jsx)(
                                                     "span",
-                                                    tl(
+                                                    al(
                                                       { className: "date" },
                                                       { children: "08/06/2023" }
                                                     )
@@ -25574,7 +26011,7 @@
                                           ),
                                           (0, e.jsxs)(
                                             "ul",
-                                            tl(
+                                            al(
                                               { className: "features" },
                                               {
                                                 children: [
@@ -25604,13 +26041,13 @@
                                   ),
                                   (0, e.jsxs)(
                                     "div",
-                                    tl(
+                                    al(
                                       { className: "version-block" },
                                       {
                                         children: [
                                           (0, e.jsxs)(
                                             "div",
-                                            tl(
+                                            al(
                                               { className: "version-title" },
                                               {
                                                 children: [
@@ -25620,7 +26057,7 @@
                                                   }),
                                                   (0, e.jsx)(
                                                     "span",
-                                                    tl(
+                                                    al(
                                                       { className: "date" },
                                                       { children: "03/06/2023" }
                                                     )
@@ -25631,7 +26068,7 @@
                                           ),
                                           (0, e.jsxs)(
                                             "ul",
-                                            tl(
+                                            al(
                                               { className: "features" },
                                               {
                                                 children: [
@@ -25661,13 +26098,13 @@
                                   ),
                                   (0, e.jsxs)(
                                     "div",
-                                    tl(
+                                    al(
                                       { className: "version-block" },
                                       {
                                         children: [
                                           (0, e.jsxs)(
                                             "div",
-                                            tl(
+                                            al(
                                               { className: "version-title" },
                                               {
                                                 children: [
@@ -25677,7 +26114,7 @@
                                                   }),
                                                   (0, e.jsx)(
                                                     "span",
-                                                    tl(
+                                                    al(
                                                       { className: "date" },
                                                       { children: "02/06/2023" }
                                                     )
@@ -25688,7 +26125,7 @@
                                           ),
                                           (0, e.jsxs)(
                                             "ul",
-                                            tl(
+                                            al(
                                               { className: "features" },
                                               {
                                                 children: [
@@ -25721,9 +26158,9 @@
             )
           );
         },
-        il = function () {
+        sl = function () {
           return (
-            (il =
+            (sl =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -25731,22 +26168,24 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            il.apply(this, arguments)
+            sl.apply(this, arguments)
           );
         },
-        al = function (e, n, t) {
+        ll = function (e, n, t) {
           if (t || 2 === arguments.length)
             for (var r, i = 0, a = n.length; i < a; i++)
               (!r && i in n) ||
                 (r || (r = Array.prototype.slice.call(n, 0, i)), (r[i] = n[i]));
           return e.concat(r || Array.prototype.slice.call(n));
         },
-        ol = function (n) {
+        cl = function (n) {
           var t = n.buildings,
-            r = n.isQHold,
-            i = N(_a),
-            a = N(Bo).addToQueueUnavailable,
-            o = t.list
+            i = n.isQHold,
+            a = N(_a),
+            o = N(Bo),
+            s = o.addToQueueUnavailable,
+            l = o.unsafeBulkBuilding,
+            c = t.list
               .filter(function (e) {
                 return e.isUnlocked && Object.values(mo).includes(e.category);
               })
@@ -25756,413 +26195,473 @@
                   e
                 );
               }, {});
-          return (0, e.jsx)("div", {
-            children: Object.entries(o).map(function (n) {
-              var t = n[0],
-                o = n[1];
-              return (0, e.jsx)(
-                Fa,
-                il(
-                  {
-                    isCollapsable: !0,
-                    id: "space-buildings-".concat(t),
-                    label: (0, e.jsx)(
-                      io,
-                      il(
-                        {
-                          id: "space:building:".concat(t),
-                          className: "label-wrap",
-                        },
-                        { children: "".concat(t, " Buildings") }
-                      )
-                    ),
-                    className: "buildings-wrap",
-                    contentClassName: "flex",
-                  },
-                  {
-                    children: o.map(function (n) {
-                      var o;
-                      return (0, e.jsx)(
+          return (
+            (0, r.useEffect)(function () {
+              var e = function (e) {
+                l &&
+                  (e.ctrlKey
+                    ? Ao.setBulk.send(1e100)
+                    : e.shiftKey && Ao.setBulk.send(5));
+              };
+              document.addEventListener("keydown", e);
+              var n = function (e) {
+                l &&
+                  (console.log("released", e.ctrlKey, e.key),
+                  ("Control" !== e.key && "Shift" !== e.key) ||
+                    Ao.setBulk.send(1));
+              };
+              return (
+                document.addEventListener("keyup", n),
+                function () {
+                  document.removeEventListener("keydown", e),
+                    document.removeEventListener("keyup", n),
+                    Ao.setBulk.send(1);
+                }
+              );
+            }, []),
+            (0, e.jsx)("div", {
+              children: Object.entries(c).map(function (n) {
+                var t = n[0],
+                  r = n[1];
+                return (0, e.jsx)(
+                  Fa,
+                  sl(
+                    {
+                      isCollapsable: !0,
+                      id: "space-buildings-".concat(t),
+                      label: (0, e.jsx)(
                         io,
-                        il(
+                        sl(
                           {
-                            id: "space:building:".concat(t, ":").concat(n.id),
-                            className: "building-wrap",
+                            id: "space:building:".concat(t),
+                            className: "label-wrap",
                           },
-                          {
-                            children: (0, e.jsxs)(
-                              _o,
-                              il(
-                                {
-                                  label: n.name,
-                                  isAvailable: n.isAvailable,
-                                  isBlocked: n.isBlocked,
-                                  progress: n.progress,
-                                  className: "feature-item ".concat(
-                                    i &&
-                                      n.cost.find(function (e) {
-                                        return e.id === i;
-                                      })
-                                      ? "usage-highlight"
-                                      : ""
-                                  ),
-                                  onClick: function () {
-                                    var e;
-                                    r || (!n.isAvailable && a)
-                                      ? Fo.addToQueue.send({
-                                          scope: et.BUILDING,
-                                          id: n.id,
+                          { children: "".concat(t, " Buildings") }
+                        )
+                      ),
+                      className: "buildings-wrap",
+                      contentClassName: "flex",
+                    },
+                    {
+                      children: r.map(function (n) {
+                        var r;
+                        return (0, e.jsx)(
+                          io,
+                          sl(
+                            {
+                              id: "space:building:".concat(t, ":").concat(n.id),
+                              className: "building-wrap",
+                            },
+                            {
+                              children: (0, e.jsxs)(
+                                Oo,
+                                sl(
+                                  {
+                                    label: n.name,
+                                    isAvailable: n.isAvailable,
+                                    isBlocked: n.isBlocked,
+                                    progress: n.progress,
+                                    className: "feature-item ".concat(
+                                      a &&
+                                        n.cost.find(function (e) {
+                                          return e.id === a;
                                         })
-                                      : ((e = n.id),
-                                        Co.doBuild.send({ id: e }));
-                                  },
-                                  level: n.activeAmount || 0,
-                                  maxLevel: n.level,
-                                  isLevelControllable: !0,
-                                  onChangeAmount: function (e) {
-                                    var t, r;
-                                    console.log("amount: ", e),
-                                      (t = n.id),
-                                      (r = e),
-                                      Co.setBuildingAmount.send({
-                                        id: t,
-                                        amount: r,
-                                      });
-                                  },
-                                  onMouseEnter: function () {
-                                    Mo(
-                                      n.cost.filter(function (e) {
-                                        return !e.isAvailable;
-                                      })
+                                        ? "usage-highlight"
+                                        : ""
                                     ),
-                                      Uo(
-                                        al(
-                                          al(
-                                            [],
-                                            n.gainMult.filter(function (e) {
-                                              return e.amountValue > 1;
-                                            }),
+                                    onClick: function () {
+                                      var e;
+                                      i || (!n.isAvailable && s)
+                                        ? Uo.addToQueue.send({
+                                            scope: et.BUILDING,
+                                            id: n.id,
+                                          })
+                                        : ((e = n.id),
+                                          Ao.doBuild.send({ id: e }));
+                                    },
+                                    level: n.activeAmount || 0,
+                                    maxLevel: n.level,
+                                    isLevelControllable: !0,
+                                    onChangeAmount: function (e) {
+                                      var t, r;
+                                      console.log("amount: ", e),
+                                        (t = n.id),
+                                        (r = e),
+                                        Ao.setBuildingAmount.send({
+                                          id: t,
+                                          amount: r,
+                                        });
+                                    },
+                                    onMouseEnter: function () {
+                                      Lo(
+                                        n.cost.filter(function (e) {
+                                          return !e.isAvailable;
+                                        })
+                                      ),
+                                        Do(
+                                          ll(
+                                            ll(
+                                              [],
+                                              n.gainMult.filter(function (e) {
+                                                return e.amountValue > 1;
+                                              }),
+                                              !0
+                                            ),
+                                            n.gain,
                                             !0
-                                          ),
-                                          n.gain,
-                                          !0
+                                          )
+                                        ),
+                                        Mo(
+                                          ll(
+                                            ll(
+                                              [],
+                                              n.gainMult.filter(function (e) {
+                                                return e.amountValue < 1;
+                                              }),
+                                              !0
+                                            ),
+                                            n.consume,
+                                            !0
+                                          )
+                                        );
+                                    },
+                                    onMouseLeave: function () {
+                                      Lo(null), Do(null), Mo(null);
+                                    },
+                                  },
+                                  {
+                                    children: [
+                                      (0, e.jsxs)(
+                                        "p",
+                                        sl(
+                                          { className: "title" },
+                                          {
+                                            children: [
+                                              n.name,
+                                              n.bulk > 1
+                                                ? "(+".concat(n.bulk, ")")
+                                                : "",
+                                            ],
+                                          }
                                         )
                                       ),
-                                      Do(
-                                        al(
-                                          al(
-                                            [],
-                                            n.gainMult.filter(function (e) {
-                                              return e.amountValue < 1;
-                                            }),
-                                            !0
-                                          ),
-                                          n.consume,
-                                          !0
+                                      (0, e.jsx)(
+                                        "p",
+                                        sl(
+                                          { className: "description" },
+                                          { children: n.description }
                                         )
-                                      );
-                                  },
-                                  onMouseLeave: function () {
-                                    Mo(null), Uo(null), Do(null);
-                                  },
-                                },
-                                {
-                                  children: [
-                                    (0, e.jsx)(
-                                      "p",
-                                      il(
-                                        { className: "title" },
-                                        { children: n.name }
-                                      )
-                                    ),
-                                    (0, e.jsx)(
-                                      "p",
-                                      il(
-                                        { className: "description" },
-                                        { children: n.description }
-                                      )
-                                    ),
-                                    n.efficiency.isDropped
-                                      ? (0, e.jsxs)(
-                                          "p",
-                                          il(
-                                            { className: "eff-dropped" },
-                                            {
-                                              children: [
-                                                "Efficiency: ",
-                                                co(
-                                                  100 * n.efficiency.efficiency
-                                                ),
-                                                "%",
-                                                (0, e.jsxs)(
-                                                  "span",
-                                                  il(
-                                                    {
-                                                      className:
-                                                        "missing-resource",
-                                                    },
-                                                    {
-                                                      children: [
-                                                        "Missing ",
-                                                        null ===
-                                                          (o =
-                                                            n.efficiency
-                                                              .missingResource) ||
-                                                        void 0 === o
-                                                          ? void 0
-                                                          : o.name,
-                                                      ],
-                                                    }
-                                                  )
-                                                ),
-                                              ],
-                                            }
+                                      ),
+                                      n.efficiency.isDropped
+                                        ? (0, e.jsxs)(
+                                            "p",
+                                            sl(
+                                              { className: "eff-dropped" },
+                                              {
+                                                children: [
+                                                  "Efficiency: ",
+                                                  co(
+                                                    100 *
+                                                      n.efficiency.efficiency
+                                                  ),
+                                                  "%",
+                                                  (0, e.jsxs)(
+                                                    "span",
+                                                    sl(
+                                                      {
+                                                        className:
+                                                          "missing-resource",
+                                                      },
+                                                      {
+                                                        children: [
+                                                          "Missing ",
+                                                          null ===
+                                                            (r =
+                                                              n.efficiency
+                                                                .missingResource) ||
+                                                          void 0 === r
+                                                            ? void 0
+                                                            : r.name,
+                                                        ],
+                                                      }
+                                                    )
+                                                  ),
+                                                ],
+                                              }
+                                            )
                                           )
-                                        )
-                                      : (0, e.jsx)(e.Fragment, {}),
-                                    n.cost.length
-                                      ? (0, e.jsxs)(
-                                          "div",
-                                          il(
-                                            { className: "costs wrap" },
-                                            {
-                                              children: [
-                                                (0, e.jsx)("span", {
-                                                  children: "Cost",
-                                                }),
-                                                n.cost.map(function (n) {
-                                                  return (0,
-                                                  e.jsx)(Io, { cost: n });
-                                                }),
-                                              ],
-                                            }
+                                        : (0, e.jsx)(e.Fragment, {}),
+                                      n.cost.length
+                                        ? (0, e.jsxs)(
+                                            "div",
+                                            sl(
+                                              { className: "costs wrap" },
+                                              {
+                                                children: [
+                                                  (0, e.jsx)("span", {
+                                                    children: "Cost",
+                                                  }),
+                                                  n.cost.map(function (n) {
+                                                    return (0,
+                                                    e.jsx)(Ro, { cost: n });
+                                                  }),
+                                                ],
+                                              }
+                                            )
                                           )
-                                        )
-                                      : (0, e.jsx)(e.Fragment, {}),
-                                    n.consume.length
-                                      ? (0, e.jsxs)(
-                                          "div",
-                                          il(
-                                            { className: "costs wrap" },
-                                            {
-                                              children: [
-                                                (0, e.jsx)("span", {
-                                                  children: "Consume",
-                                                }),
-                                                n.consume.map(function (n) {
-                                                  return (0,
-                                                  e.jsx)(Lo, { gain: n });
-                                                }),
-                                              ],
-                                            }
+                                        : (0, e.jsx)(e.Fragment, {}),
+                                      n.consume.length
+                                        ? (0, e.jsxs)(
+                                            "div",
+                                            sl(
+                                              { className: "costs wrap" },
+                                              {
+                                                children: [
+                                                  (0, e.jsx)("span", {
+                                                    children: "Consume",
+                                                  }),
+                                                  n.consume.map(function (n) {
+                                                    return (0,
+                                                    e.jsx)(Po, { gain: n });
+                                                  }),
+                                                ],
+                                              }
+                                            )
                                           )
-                                        )
-                                      : (0, e.jsx)(e.Fragment, {}),
-                                    n.gain.length
-                                      ? (0, e.jsxs)(
-                                          "div",
-                                          il(
-                                            { className: "gain wrap" },
-                                            {
-                                              children: [
-                                                (0, e.jsx)("span", {
-                                                  children: "Produce",
-                                                }),
-                                                n.gain.map(function (n) {
-                                                  return (0,
-                                                  e.jsx)(Lo, { gain: n });
-                                                }),
-                                              ],
-                                            }
+                                        : (0, e.jsx)(e.Fragment, {}),
+                                      n.gain.length
+                                        ? (0, e.jsxs)(
+                                            "div",
+                                            sl(
+                                              { className: "gain wrap" },
+                                              {
+                                                children: [
+                                                  (0, e.jsx)("span", {
+                                                    children: "Produce",
+                                                  }),
+                                                  n.gain.map(function (n) {
+                                                    return (0,
+                                                    e.jsx)(Po, { gain: n });
+                                                  }),
+                                                ],
+                                              }
+                                            )
                                           )
-                                        )
-                                      : (0, e.jsx)(e.Fragment, {}),
-                                    n.gainMult.length
-                                      ? (0, e.jsxs)(
-                                          "div",
-                                          il(
-                                            { className: "gain wrap" },
-                                            {
-                                              children: [
-                                                (0, e.jsx)("span", {
-                                                  children: "Income Bonuses",
-                                                }),
-                                                n.gainMult.map(function (n) {
-                                                  return (0,
-                                                  e.jsx)(Lo, { gain: n });
-                                                }),
-                                              ],
-                                            }
+                                        : (0, e.jsx)(e.Fragment, {}),
+                                      n.gainMult.length
+                                        ? (0, e.jsxs)(
+                                            "div",
+                                            sl(
+                                              { className: "gain wrap" },
+                                              {
+                                                children: [
+                                                  (0, e.jsx)("span", {
+                                                    children: "Income Bonuses",
+                                                  }),
+                                                  n.gainMult.map(function (n) {
+                                                    return (0,
+                                                    e.jsx)(Po, { gain: n });
+                                                  }),
+                                                ],
+                                              }
+                                            )
                                           )
-                                        )
-                                      : (0, e.jsx)(e.Fragment, {}),
-                                    n.craftingMult && 1 !== n.craftingMult
-                                      ? (0, e.jsxs)(
-                                          "div",
-                                          il(
-                                            { className: "gain wrap" },
-                                            {
-                                              children: [
-                                                (0, e.jsx)("span", {
-                                                  children:
-                                                    "Crafting Multiplier",
-                                                }),
-                                                (0, e.jsx)(
-                                                  "div",
-                                                  il(
-                                                    { className: "gain-block" },
-                                                    {
-                                                      children: (0, e.jsxs)(
-                                                        "p",
-                                                        il(
-                                                          {
-                                                            className:
-                                                              "requirement",
-                                                          },
-                                                          {
-                                                            children: [
-                                                              "All craftable: x",
-                                                              co(
-                                                                n.craftingMult
-                                                              ),
-                                                            ],
-                                                          }
-                                                        )
-                                                      ),
-                                                    }
-                                                  )
-                                                ),
-                                              ],
-                                            }
+                                        : (0, e.jsx)(e.Fragment, {}),
+                                      n.craftingMult && 1 !== n.craftingMult
+                                        ? (0, e.jsxs)(
+                                            "div",
+                                            sl(
+                                              { className: "gain wrap" },
+                                              {
+                                                children: [
+                                                  (0, e.jsx)("span", {
+                                                    children:
+                                                      "Crafting Multiplier",
+                                                  }),
+                                                  (0, e.jsx)(
+                                                    "div",
+                                                    sl(
+                                                      {
+                                                        className: "gain-block",
+                                                      },
+                                                      {
+                                                        children: (0, e.jsxs)(
+                                                          "p",
+                                                          sl(
+                                                            {
+                                                              className:
+                                                                "requirement",
+                                                            },
+                                                            {
+                                                              children: [
+                                                                "All craftable: x",
+                                                                co(
+                                                                  n.craftingMult
+                                                                ),
+                                                              ],
+                                                            }
+                                                          )
+                                                        ),
+                                                      }
+                                                    )
+                                                  ),
+                                                ],
+                                              }
+                                            )
                                           )
-                                        )
-                                      : (0, e.jsx)(e.Fragment, {}),
-                                    n.maxColonists
-                                      ? (0, e.jsxs)(
-                                          "div",
-                                          il(
-                                            { className: "gain wrap" },
-                                            {
-                                              children: [
-                                                (0, e.jsx)("span", {
-                                                  children: "Max Population",
-                                                }),
-                                                (0, e.jsx)(
-                                                  "div",
-                                                  il(
-                                                    { className: "gain-block" },
-                                                    {
-                                                      children: (0, e.jsxs)(
-                                                        "p",
-                                                        il(
-                                                          {
-                                                            className:
-                                                              "requirement",
-                                                          },
-                                                          {
-                                                            children: [
-                                                              "Colonists: ",
-                                                              co(
-                                                                n.maxColonists
-                                                              ),
-                                                            ],
-                                                          }
-                                                        )
-                                                      ),
-                                                    }
-                                                  )
-                                                ),
-                                              ],
-                                            }
+                                        : (0, e.jsx)(e.Fragment, {}),
+                                      n.maxColonists
+                                        ? (0, e.jsxs)(
+                                            "div",
+                                            sl(
+                                              { className: "gain wrap" },
+                                              {
+                                                children: [
+                                                  (0, e.jsx)("span", {
+                                                    children: "Max Population",
+                                                  }),
+                                                  (0, e.jsx)(
+                                                    "div",
+                                                    sl(
+                                                      {
+                                                        className: "gain-block",
+                                                      },
+                                                      {
+                                                        children: (0, e.jsxs)(
+                                                          "p",
+                                                          sl(
+                                                            {
+                                                              className:
+                                                                "requirement",
+                                                            },
+                                                            {
+                                                              children: [
+                                                                "Colonists: ",
+                                                                co(
+                                                                  n.maxColonists
+                                                                ),
+                                                              ],
+                                                            }
+                                                          )
+                                                        ),
+                                                      }
+                                                    )
+                                                  ),
+                                                ],
+                                              }
+                                            )
                                           )
-                                        )
-                                      : (0, e.jsx)(e.Fragment, {}),
-                                    n.max.length
-                                      ? (0, e.jsxs)(
-                                          "div",
-                                          il(
-                                            { className: "store wrap" },
-                                            {
-                                              children: [
-                                                (0, e.jsx)("span", {
-                                                  children: "Storage",
-                                                }),
-                                                n.max.map(function (n) {
-                                                  return (0,
-                                                  e.jsx)(Lo, { gain: n });
-                                                }),
-                                              ],
-                                            }
+                                        : (0, e.jsx)(e.Fragment, {}),
+                                      n.max.length
+                                        ? (0, e.jsxs)(
+                                            "div",
+                                            sl(
+                                              { className: "store wrap" },
+                                              {
+                                                children: [
+                                                  (0, e.jsx)("span", {
+                                                    children: "Storage",
+                                                  }),
+                                                  n.max.map(function (n) {
+                                                    return (0,
+                                                    e.jsx)(Po, { gain: n });
+                                                  }),
+                                                ],
+                                              }
+                                            )
                                           )
-                                        )
-                                      : (0, e.jsx)(e.Fragment, {}),
-                                    n.consumeEffect.length
-                                      ? (0, e.jsxs)(
-                                          "div",
-                                          il(
-                                            { className: "costs wrap" },
-                                            {
-                                              children: [
-                                                (0, e.jsx)("span", {
-                                                  children: "Negative Effect",
-                                                }),
-                                                n.consumeEffect.map(function (
-                                                  n
-                                                ) {
-                                                  return (0, e.jsx)(Lo, {
-                                                    gain: n,
-                                                  });
-                                                }),
-                                              ],
-                                            }
+                                        : (0, e.jsx)(e.Fragment, {}),
+                                      n.consumeEffect.length
+                                        ? (0, e.jsxs)(
+                                            "div",
+                                            sl(
+                                              { className: "costs wrap" },
+                                              {
+                                                children: [
+                                                  (0, e.jsx)("span", {
+                                                    children: "Negative Effect",
+                                                  }),
+                                                  n.consumeEffect.map(function (
+                                                    n
+                                                  ) {
+                                                    return (0, e.jsx)(Po, {
+                                                      gain: n,
+                                                    });
+                                                  }),
+                                                ],
+                                              }
+                                            )
                                           )
-                                        )
-                                      : (0, e.jsx)(e.Fragment, {}),
-                                    n.gainEffect.length
-                                      ? (0, e.jsxs)(
-                                          "div",
-                                          il(
-                                            { className: "gain wrap" },
-                                            {
-                                              children: [
-                                                (0, e.jsx)("span", {
-                                                  children: "Positive Effect",
-                                                }),
-                                                n.gainEffect.map(function (n) {
-                                                  return (0,
-                                                  e.jsx)(Lo, { gain: n });
-                                                }),
-                                              ],
-                                            }
+                                        : (0, e.jsx)(e.Fragment, {}),
+                                      n.gainEffect.length
+                                        ? (0, e.jsxs)(
+                                            "div",
+                                            sl(
+                                              { className: "gain wrap" },
+                                              {
+                                                children: [
+                                                  (0, e.jsx)("span", {
+                                                    children: "Positive Effect",
+                                                  }),
+                                                  n.gainEffect.map(function (
+                                                    n
+                                                  ) {
+                                                    return (0, e.jsx)(Po, {
+                                                      gain: n,
+                                                    });
+                                                  }),
+                                                ],
+                                              }
+                                            )
                                           )
-                                        )
-                                      : (0, e.jsx)(e.Fragment, {}),
-                                    (0, e.jsx)("p", {
-                                      children:
-                                        "Hold Q while clicking to add item into queue",
-                                    }),
-                                  ],
-                                }
-                              )
-                            ),
-                          }
-                        )
-                      );
-                    }),
-                  }
-                )
-              );
-            }),
-          });
+                                        : (0, e.jsx)(e.Fragment, {}),
+                                      n.effMult.length
+                                        ? (0, e.jsxs)(
+                                            "div",
+                                            sl(
+                                              { className: "gain wrap" },
+                                              {
+                                                children: [
+                                                  (0, e.jsx)("span", {
+                                                    children:
+                                                      "Effect Multiplier",
+                                                  }),
+                                                  n.effMult.map(function (n) {
+                                                    return (0,
+                                                    e.jsx)(Po, { gain: n });
+                                                  }),
+                                                ],
+                                              }
+                                            )
+                                          )
+                                        : (0, e.jsx)(e.Fragment, {}),
+                                      (0, e.jsx)("p", {
+                                        children:
+                                          "Hold Q while clicking to add item into queue",
+                                      }),
+                                    ],
+                                  }
+                                )
+                              ),
+                            }
+                          )
+                        );
+                      }),
+                    }
+                  )
+                );
+              }),
+            })
+          );
         },
-        sl = function () {
-          var n = N(So),
+        ul = function () {
+          var n = N(Co),
             t = N(La("q"));
           return (0, e.jsx)(e.Fragment, {
-            children: (0, e.jsx)(ol, { buildings: n.buildings, isQHold: t }),
+            children: (0, e.jsx)(cl, { buildings: n.buildings, isQHold: t }),
           });
         },
-        ll = {
+        dl = {
           doCreate: kn("[spaceship-constructor] create-new", function (e) {
             return e;
           }),
@@ -26233,9 +26732,9 @@
             }
           ),
         },
-        cl = function () {
+        pl = function () {
           return (
-            (cl =
+            (pl =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -26243,10 +26742,10 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            cl.apply(this, arguments)
+            pl.apply(this, arguments)
           );
         },
-        ul = function (n) {
+        fl = function (n) {
           var t,
             r,
             i,
@@ -26258,23 +26757,23 @@
             u = n.spaceship;
           return (0, e.jsxs)(
             "div",
-            cl(
+            pl(
               { className: "editor-wrap columns" },
               {
                 children: [
                   (0, e.jsxs)(
                     "div",
-                    cl(
+                    pl(
                       { className: "loader-column column" },
                       {
                         children: [
                           (0, e.jsx)(
                             "div",
-                            cl(
+                            pl(
                               {
                                 className: "select-item primary",
                                 onClick: function () {
-                                  ll.doCreate.send();
+                                  dl.doCreate.send();
                                 },
                               },
                               { children: "+ Create New" }
@@ -26285,37 +26784,51 @@
                               var t;
                               return (0, e.jsxs)(
                                 "div",
-                                cl(
+                                pl(
                                   {
-                                    className: "select-item ".concat(
-                                      (null === (t = u.shipConstructor) ||
-                                      void 0 === t
-                                        ? void 0
-                                        : t.uuid) === n.uuid
-                                        ? "selected"
-                                        : ""
-                                    ),
+                                    className: "select-item "
+                                      .concat(
+                                        (null === (t = u.shipConstructor) ||
+                                        void 0 === t
+                                          ? void 0
+                                          : t.uuid) === n.uuid
+                                          ? "selected"
+                                          : "",
+                                        " "
+                                      )
+                                      .concat(
+                                        n.isAllPartsUnlocked ? "" : "red"
+                                      ),
                                     onClick: function () {
-                                      return (
-                                        (e = n.uuid),
-                                        void ll.doEdit.send({ uuid: e })
-                                      );
                                       var e;
+                                      n.isAllPartsUnlocked &&
+                                        ((e = n.uuid),
+                                        dl.doEdit.send({ uuid: e }));
                                     },
                                   },
                                   {
                                     children: [
-                                      n.name,
+                                      (0, e.jsx)(
+                                        "span",
+                                        pl(
+                                          {
+                                            className: "".concat(
+                                              n.isAllPartsUnlocked ? "" : "red"
+                                            ),
+                                          },
+                                          { children: n.name }
+                                        )
+                                      ),
                                       (0, e.jsx)(
                                         Ta,
-                                        cl(
+                                        pl(
                                           {
                                             placement: "right",
                                             content:
                                               n.amountPurchased > 0
                                                 ? (0, e.jsx)(
                                                     "div",
-                                                    cl(
+                                                    pl(
                                                       {
                                                         className:
                                                           "description-hint",
@@ -26328,7 +26841,7 @@
                                                   )
                                                 : (0, e.jsx)(
                                                     "div",
-                                                    cl(
+                                                    pl(
                                                       {
                                                         className:
                                                           "description-hint",
@@ -26343,7 +26856,7 @@
                                           {
                                             children: (0, e.jsx)(
                                               "span",
-                                              cl(
+                                              pl(
                                                 {
                                                   className:
                                                     "delete-model ".concat(
@@ -26354,7 +26867,7 @@
                                                   onClick: function () {
                                                     return (
                                                       (e = n.uuid),
-                                                      void ll.doDeleteModel.send(
+                                                      void dl.doDeleteModel.send(
                                                         e
                                                       )
                                                     );
@@ -26379,7 +26892,7 @@
                   ),
                   (0, e.jsx)(
                     "div",
-                    cl(
+                    pl(
                       { className: "editor-totals column" },
                       {
                         children: u.shipConstructor
@@ -26387,7 +26900,7 @@
                               children: [
                                 (0, e.jsx)(
                                   "div",
-                                  cl(
+                                  pl(
                                     { className: "editor-row" },
                                     {
                                       children: (0, e.jsx)("input", {
@@ -26399,7 +26912,7 @@
                                         onChange: function (e) {
                                           return (
                                             (n = e.target.value),
-                                            void ll.doSetName.send(n)
+                                            void dl.doSetName.send(n)
                                           );
                                           var n;
                                         },
@@ -26409,15 +26922,15 @@
                                 ),
                                 (0, e.jsx)(
                                   "div",
-                                  cl(
+                                  pl(
                                     { className: "editor-row" },
                                     {
                                       children: (0, e.jsx)(
                                         "button",
-                                        cl(
+                                        pl(
                                           {
                                             onClick: function () {
-                                              ll.doSave.send();
+                                              dl.doSave.send();
                                             },
                                           },
                                           { children: "Save" }
@@ -26434,7 +26947,7 @@
                                 )
                                   ? (0, e.jsx)(
                                       "p",
-                                      cl(
+                                      pl(
                                         { className: "validation-error" },
                                         {
                                           children:
@@ -26448,14 +26961,14 @@
                                   : null,
                                 (0, e.jsx)(
                                   "div",
-                                  cl(
+                                  pl(
                                     { className: "ship-stats-wrap" },
                                     {
                                       children: (0, e.jsxs)(as(), {
                                         children: [
                                           (0, e.jsx)(
                                             Fa,
-                                            cl(
+                                            pl(
                                               {
                                                 id: "stats",
                                                 label: "Ship Stats",
@@ -26478,14 +26991,14 @@
                                                   var t = n[0],
                                                     r = n[1];
                                                   return (0,
-                                                  e.jsxs)("div", cl({ className: "row" }, { children: [(0, e.jsx)("p", cl({ className: "label" }, { children: t })), (0, e.jsx)("p", cl({ className: "value" }, { children: co(r) }))] }));
+                                                  e.jsxs)("div", pl({ className: "row" }, { children: [(0, e.jsx)("p", pl({ className: "label" }, { children: t })), (0, e.jsx)("p", pl({ className: "value" }, { children: co(r) }))] }));
                                                 }),
                                               }
                                             )
                                           ),
                                           (0, e.jsx)(
                                             Fa,
-                                            cl(
+                                            pl(
                                               {
                                                 id: "stats",
                                                 label: "Ship Costs",
@@ -26506,7 +27019,7 @@
                                                     : l.costs) || []
                                                 ).map(function (n) {
                                                   return (0,
-                                                  e.jsx)(Io, { cost: n });
+                                                  e.jsx)(Ro, { cost: n });
                                                 }),
                                               }
                                             )
@@ -26524,7 +27037,7 @@
                   ),
                   (0, e.jsx)(
                     "div",
-                    cl(
+                    pl(
                       { className: "editor-column column" },
                       {
                         children: (0, e.jsx)(as(), {
@@ -26554,7 +27067,7 @@
                                     })) || [];
                             return (0, e.jsxs)(
                               Fa,
-                              cl(
+                              pl(
                                 {
                                   id: "part-".concat(c.category),
                                   label: c.category,
@@ -26564,19 +27077,19 @@
                                   children: [
                                     (0, e.jsxs)(
                                       "div",
-                                      cl(
+                                      pl(
                                         { className: "slot-container" },
                                         {
                                           children: [
                                             (0, e.jsxs)(
                                               "select",
-                                              cl(
+                                              pl(
                                                 {
                                                   className:
                                                     "details-selection",
                                                   onChange: function (e) {
                                                     return (function (e, n) {
-                                                      ll.doSetId.send({
+                                                      dl.doSetId.send({
                                                         key: e,
                                                         id: n,
                                                       });
@@ -26588,11 +27101,11 @@
                                                     d.map(function (n) {
                                                       var t;
                                                       return (0,
-                                                      e.jsx)("option", cl({ value: n.id, selected: n.id === (null === (t = c.data) || void 0 === t ? void 0 : t.id) }, { children: n.name }));
+                                                      e.jsx)("option", pl({ value: n.id, selected: n.id === (null === (t = c.data) || void 0 === t ? void 0 : t.id) }, { children: n.name }));
                                                     }),
                                                     (0, e.jsx)(
                                                       "option",
-                                                      cl(
+                                                      pl(
                                                         {
                                                           value: "none",
                                                           selected: !(null ===
@@ -26617,7 +27130,7 @@
                                                   : a.level) || 0,
                                               onChange: function (e) {
                                                 return (function (e, n) {
-                                                  ll.doSetLevel.send({
+                                                  dl.doSetLevel.send({
                                                     key: e,
                                                     level: n,
                                                   });
@@ -26634,7 +27147,7 @@
                                     c.data
                                       ? (0, e.jsxs)(
                                           "div",
-                                          cl(
+                                          pl(
                                             { className: "stats-wrap" },
                                             {
                                               children: [
@@ -26646,7 +27159,7 @@
                                                 )
                                                   ? (0, e.jsxs)(
                                                       "div",
-                                                      cl(
+                                                      pl(
                                                         {
                                                           className:
                                                             "costs wrap",
@@ -26663,7 +27176,7 @@
                                                               : s.cost.map(
                                                                   function (n) {
                                                                     return (0,
-                                                                    e.jsx)(Io, {
+                                                                    e.jsx)(Ro, {
                                                                       cost: n,
                                                                       showBars:
                                                                         !1,
@@ -26677,7 +27190,7 @@
                                                   : null,
                                                 (0, e.jsxs)(
                                                   "div",
-                                                  cl(
+                                                  pl(
                                                     { className: "gain wrap" },
                                                     {
                                                       children: [
@@ -26687,7 +27200,7 @@
                                                         c.data.gain.map(
                                                           function (n) {
                                                             return (0, e.jsx)(
-                                                              Lo,
+                                                              Po,
                                                               { gain: n }
                                                             );
                                                           }
@@ -26695,7 +27208,7 @@
                                                         c.data.gainMult.map(
                                                           function (n) {
                                                             return (0, e.jsx)(
-                                                              Lo,
+                                                              Po,
                                                               { gain: n }
                                                             );
                                                           }
@@ -26703,7 +27216,7 @@
                                                         c.data.consume.map(
                                                           function (n) {
                                                             return (0, e.jsx)(
-                                                              Lo,
+                                                              Po,
                                                               { gain: n }
                                                             );
                                                           }
@@ -26731,15 +27244,15 @@
             )
           );
         },
-        dl = function () {
+        hl = function () {
           var n = N(Ya);
           return (0, e.jsx)(e.Fragment, {
-            children: (0, e.jsx)(ul, { spaceship: n.spaceship }),
+            children: (0, e.jsx)(fl, { spaceship: n.spaceship }),
           });
         },
-        pl = function () {
+        ml = function () {
           return (
-            (pl =
+            (ml =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -26747,10 +27260,10 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            pl.apply(this, arguments)
+            ml.apply(this, arguments)
           );
         },
-        fl = function (n) {
+        gl = function (n) {
           var t = n.ship,
             i = (0, r.useState)(!1),
             a = i[0],
@@ -26760,11 +27273,11 @@
               children: [
                 (0, e.jsx)(
                   "p",
-                  pl({ className: "title" }, { children: t.name })
+                  ml({ className: "title" }, { children: t.name })
                 ),
                 (0, e.jsx)(
                   "div",
-                  pl(
+                  ml(
                     { className: "ship-totals" },
                     {
                       children: Object.entries(t.stats.stats || {}).map(
@@ -26773,17 +27286,17 @@
                             r = n[1];
                           return (0, e.jsxs)(
                             "div",
-                            pl(
+                            ml(
                               { className: "row" },
                               {
                                 children: [
                                   (0, e.jsx)(
                                     "p",
-                                    pl({ className: "label" }, { children: t })
+                                    ml({ className: "label" }, { children: t })
                                   ),
                                   (0, e.jsx)(
                                     "p",
-                                    pl(
+                                    ml(
                                       { className: "value" },
                                       { children: co(r) }
                                     )
@@ -26803,38 +27316,50 @@
               ? null
               : (0, e.jsx)(
                   "div",
-                  pl({ className: "description-hint" }, { children: l })
+                  ml({ className: "description-hint" }, { children: l })
                 );
           return (0, e.jsxs)(
             "div",
-            pl(
+            ml(
               { className: "spaceship-card" },
               {
                 children: [
                   (0, e.jsxs)(
                     "div",
-                    pl(
+                    ml(
                       { className: "spaceship-inner-wrap" },
                       {
                         children: [
                           (0, e.jsx)(
                             Ta,
-                            pl(
+                            ml(
                               { content: c, placement: "right" },
                               {
                                 children: (0, e.jsxs)(
                                   "div",
-                                  pl(
+                                  ml(
                                     { className: "title-wrap" },
                                     {
                                       children: [
-                                        (0, e.jsx)("p", { children: t.name }),
+                                        (0, e.jsx)("p", {
+                                          children: (0, e.jsx)(
+                                            "span",
+                                            ml(
+                                              {
+                                                className: t.isValid
+                                                  ? ""
+                                                  : "red",
+                                              },
+                                              { children: t.name }
+                                            )
+                                          ),
+                                        }),
                                         (0, e.jsx)("p", {
                                           children: Math.round(t.amount),
                                         }),
                                         (0, e.jsx)(
                                           "span",
-                                          pl(
+                                          ml(
                                             {
                                               className: "info-tooltip",
                                               onClick: function (e) {
@@ -26846,7 +27371,7 @@
                                             {
                                               children: (0, e.jsx)(
                                                 "span",
-                                                pl(
+                                                ml(
                                                   {
                                                     className:
                                                       "info-tooltip-inner",
@@ -26865,26 +27390,26 @@
                             )
                           ),
                           (0, e.jsxs)(
-                            _o,
-                            pl(
+                            Oo,
+                            ml(
                               {
                                 label: "Build",
                                 progress: t.progress,
-                                isAvailable: t.isAvailable,
+                                isAvailable: t.isAvailable && t.isValid,
                                 isBlocked: t.isBlocked,
                                 onMouseEnter: function () {
-                                  return Mo(
+                                  return Lo(
                                     t.stats.costs.filter(function (e) {
                                       return !e.isAvailable;
                                     })
                                   );
                                 },
                                 onMouseLeave: function () {
-                                  return Mo(null);
+                                  return Lo(null);
                                 },
                                 onClick: function () {
                                   return (
-                                    (e = t.id), void ll.doBuildShip.send(e)
+                                    (e = t.id), void dl.doBuildShip.send(e)
                                   );
                                   var e;
                                 },
@@ -26893,14 +27418,14 @@
                                 children: [
                                   (0, e.jsx)(
                                     "p",
-                                    pl(
+                                    ml(
                                       { className: "title" },
                                       { children: "Costs:" }
                                     )
                                   ),
                                   (0, e.jsx)(e.Fragment, {
                                     children: t.stats.costs.map(function (n) {
-                                      return (0, e.jsx)(Io, { cost: n });
+                                      return (0, e.jsx)(Ro, { cost: n });
                                     }),
                                   }),
                                 ],
@@ -26909,11 +27434,11 @@
                           ),
                           (0, e.jsx)(
                             "button",
-                            pl(
+                            ml(
                               {
                                 onClick: function () {
                                   return (
-                                    (e = t.id), void ll.doDestroyShip.send(e)
+                                    (e = t.id), void dl.doDestroyShip.send(e)
                                   );
                                   var e;
                                 },
@@ -26928,8 +27453,8 @@
                   ),
                   a && s
                     ? (0, e.jsx)(
-                        To,
-                        pl(
+                        us,
+                        ml(
                           {
                             isVisible: a,
                             onClose: function () {
@@ -26945,27 +27470,27 @@
             )
           );
         },
-        hl = function (n) {
+        vl = function (n) {
           var t = n.hangar;
           return (0, e.jsx)(
             "div",
-            pl(
+            ml(
               { className: "hangar-wrap" },
               {
                 children: t.ships.map(function (n) {
-                  return (0, e.jsx)(fl, { ship: n });
+                  return (0, e.jsx)(gl, { ship: n });
                 }),
               }
             )
           );
         },
-        ml = function () {
+        bl = function () {
           var n = N(Ya);
-          return (0, e.jsx)(hl, { hangar: n.hangar });
+          return (0, e.jsx)(vl, { hangar: n.hangar });
         },
-        gl = function () {
+        xl = function () {
           return (
-            (gl =
+            (xl =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -26973,10 +27498,10 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            gl.apply(this, arguments)
+            xl.apply(this, arguments)
           );
         },
-        vl = function (n) {
+        yl = function (n) {
           var t,
             r,
             i,
@@ -27004,23 +27529,23 @@
             l = [o, s];
           return (0, e.jsxs)(
             "div",
-            gl(
+            xl(
               { className: "editor-wrap columns" },
               {
                 children: [
                   (0, e.jsxs)(
                     "div",
-                    gl(
+                    xl(
                       { className: "loader-column column" },
                       {
                         children: [
                           (0, e.jsx)(
                             "div",
-                            gl(
+                            xl(
                               {
                                 className: "select-item primary",
                                 onClick: function () {
-                                  ll.doCreateFleet.send();
+                                  dl.doCreateFleet.send();
                                 },
                               },
                               { children: "+ Create New" }
@@ -27031,7 +27556,7 @@
                               var t;
                               return (0, e.jsxs)(
                                 "div",
-                                gl(
+                                xl(
                                   {
                                     className: "select-item "
                                       .concat(
@@ -27047,7 +27572,7 @@
                                     onClick: function () {
                                       return (
                                         (e = n.uuid),
-                                        void ll.doEditFleet.send({ uuid: e })
+                                        void dl.doEditFleet.send({ uuid: e })
                                       );
                                       var e;
                                     },
@@ -27057,13 +27582,13 @@
                                       n.name,
                                       (0, e.jsx)(
                                         "span",
-                                        gl(
+                                        xl(
                                           {
                                             className: "delete-model",
                                             onClick: function () {
                                               return (
                                                 (e = n.uuid),
-                                                void ll.doDeleteFleet.send(e)
+                                                void dl.doDeleteFleet.send(e)
                                               );
                                               var e;
                                             },
@@ -27083,7 +27608,7 @@
                   ),
                   (0, e.jsx)(
                     "div",
-                    gl(
+                    xl(
                       { className: "editor-totals column" },
                       {
                         children: a.editing
@@ -27091,7 +27616,7 @@
                               children: [
                                 (0, e.jsx)(
                                   "div",
-                                  gl(
+                                  xl(
                                     { className: "editor-row" },
                                     {
                                       children: (0, e.jsx)("input", {
@@ -27103,7 +27628,7 @@
                                         onChange: function (e) {
                                           return (
                                             (n = e.target.value),
-                                            void ll.doSetFleetName.send(n)
+                                            void dl.doSetFleetName.send(n)
                                           );
                                           var n;
                                         },
@@ -27113,15 +27638,15 @@
                                 ),
                                 (0, e.jsx)(
                                   "div",
-                                  gl(
+                                  xl(
                                     { className: "editor-row" },
                                     {
                                       children: (0, e.jsx)(
                                         "button",
-                                        gl(
+                                        xl(
                                           {
                                             onClick: function () {
-                                              ll.doSaveFleet.send();
+                                              dl.doSaveFleet.send();
                                             },
                                           },
                                           { children: "Save" }
@@ -27138,14 +27663,14 @@
                   ),
                   (0, e.jsx)(
                     "div",
-                    gl(
+                    xl(
                       { className: "editor-column column fleets" },
                       {
                         children: a.editing
                           ? l.map(function (n, t) {
                               return (0, e.jsx)(
                                 Fa,
-                                gl(
+                                xl(
                                   {
                                     id: "line-".concat(t),
                                     label: "Line ".concat(t + 1),
@@ -27154,7 +27679,7 @@
                                   {
                                     children: (0, e.jsx)(
                                       "div",
-                                      gl(
+                                      xl(
                                         { className: "line-wrap" },
                                         {
                                           children:
@@ -27164,7 +27689,7 @@
                                                   var r;
                                                   return (0, e.jsxs)(
                                                     "div",
-                                                    gl(
+                                                    xl(
                                                       {
                                                         className:
                                                           "slot-container  ".concat(
@@ -27177,7 +27702,7 @@
                                                         children: [
                                                           (0, e.jsx)(
                                                             "div",
-                                                            gl(
+                                                            xl(
                                                               {
                                                                 className:
                                                                   "heading-wrap",
@@ -27189,7 +27714,7 @@
                                                                     ? (0,
                                                                       e.jsx)(
                                                                         Ta,
-                                                                        gl(
+                                                                        xl(
                                                                           {
                                                                             placement:
                                                                               "right",
@@ -27197,7 +27722,7 @@
                                                                               (0,
                                                                               e.jsxs)(
                                                                                 "div",
-                                                                                gl(
+                                                                                xl(
                                                                                   {
                                                                                     className:
                                                                                       "description-hint",
@@ -27208,7 +27733,7 @@
                                                                                         (0,
                                                                                         e.jsx)(
                                                                                           "p",
-                                                                                          gl(
+                                                                                          xl(
                                                                                             {
                                                                                               className:
                                                                                                 "title",
@@ -27222,7 +27747,7 @@
                                                                                         (0,
                                                                                         e.jsx)(
                                                                                           "div",
-                                                                                          gl(
+                                                                                          xl(
                                                                                             {
                                                                                               className:
                                                                                                 "ship-totals",
@@ -27243,7 +27768,7 @@
                                                                                                     return (0,
                                                                                                     e.jsxs)(
                                                                                                       "div",
-                                                                                                      gl(
+                                                                                                      xl(
                                                                                                         {
                                                                                                           className:
                                                                                                             "row",
@@ -27254,7 +27779,7 @@
                                                                                                               (0,
                                                                                                               e.jsx)(
                                                                                                                 "p",
-                                                                                                                gl(
+                                                                                                                xl(
                                                                                                                   {
                                                                                                                     className:
                                                                                                                       "label",
@@ -27268,7 +27793,7 @@
                                                                                                               (0,
                                                                                                               e.jsx)(
                                                                                                                 "p",
-                                                                                                                gl(
+                                                                                                                xl(
                                                                                                                   {
                                                                                                                     className:
                                                                                                                       "value",
@@ -27326,7 +27851,7 @@
                                                           ),
                                                           (0, e.jsx)(
                                                             "div",
-                                                            gl(
+                                                            xl(
                                                               {
                                                                 className:
                                                                   "selection",
@@ -27335,7 +27860,7 @@
                                                                 children: (0,
                                                                 e.jsxs)(
                                                                   "select",
-                                                                  gl(
+                                                                  xl(
                                                                     {
                                                                       className:
                                                                         "details-selection",
@@ -27348,7 +27873,7 @@
                                                                             n,
                                                                             t
                                                                           ) {
-                                                                            ll.doSetFleetId.send(
+                                                                            dl.doSetFleetId.send(
                                                                               {
                                                                                 modelId:
                                                                                   e,
@@ -27395,7 +27920,7 @@
                                                                                     return (0,
                                                                                     e.jsx)(
                                                                                       "option",
-                                                                                      gl(
+                                                                                      xl(
                                                                                         {
                                                                                           value:
                                                                                             t.id,
@@ -27414,7 +27939,7 @@
                                                                           (0,
                                                                           e.jsx)(
                                                                             "option",
-                                                                            gl(
+                                                                            xl(
                                                                               {
                                                                                 value:
                                                                                   "none",
@@ -27448,7 +27973,7 @@
                             })
                           : (0, e.jsx)(
                               "h3",
-                              gl(
+                              xl(
                                 { className: "select-fleet" },
                                 { children: "Select or create fleet" }
                               )
@@ -27461,10 +27986,10 @@
             )
           );
         },
-        bl = function () {
+        wl = function () {
           var n = N(Ya);
           return (0, e.jsx)(e.Fragment, {
-            children: (0, e.jsx)(vl, { fleet: n.fleet }),
+            children: (0, e.jsx)(yl, { fleet: n.fleet }),
           });
         };
       !(function (e) {
@@ -27473,7 +27998,7 @@
           (e.WEAPONS = "Weapons"),
           (e.POWER_SUPPLY = "Power Supply"),
           (e.ENGINE = "Engine");
-      })(Qs || (Qs = {})),
+      })(Zs || (Zs = {})),
         (function (e) {
           (e.DURABILITY = "Durability"),
             (e.SHIELD_CAP = "Shield Capacity"),
@@ -27485,15 +28010,15 @@
             (e.SPEED = "Speed"),
             (e.POWER = "Power"),
             (e.FUEL_CONSUMPTION = "Fuel Consumption");
-        })(Ks || (Ks = {})),
+        })(Js || (Js = {})),
         (function (e) {
           (e.ACTUAL_DURABILITY = "Actual Durability"),
             (e.ACTUAL_SHIELD = "Actual Shield"),
             (e.ACTUAL_RECHARGE = "Actual Recharge");
-        })($s || ($s = {}));
-      var xl = function () {
+        })(el || (el = {}));
+      var jl = function () {
           return (
-            (xl =
+            (jl =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -27501,60 +28026,60 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            xl.apply(this, arguments)
+            jl.apply(this, arguments)
           );
         },
-        yl = function (n) {
+        Nl = function (n) {
           var t = n.isEnemy,
             r = n.position,
             i = n.unit;
           return (0, e.jsxs)(
             "div",
-            xl(
-              { className: "space-unit", style: xl({}, r) },
+            jl(
+              { className: "space-unit", style: jl({}, r) },
               {
                 children: [
                   (0, e.jsx)(
                     "p",
-                    xl({ className: "name-cont" }, { children: i.name })
+                    jl({ className: "name-cont" }, { children: i.name })
                   ),
                   (0, e.jsx)(
                     Ta,
-                    xl(
+                    jl(
                       {
                         placement: "right",
                         content: (0, e.jsxs)(
                           "div",
-                          xl(
+                          jl(
                             { className: "description-hint" },
                             {
                               children: [
                                 (0, e.jsxs)("p", {
                                   children: [
                                     "Shield: ",
-                                    co(i.stats[$s.ACTUAL_SHIELD]),
+                                    co(i.stats[el.ACTUAL_SHIELD]),
                                     "/",
-                                    co(i.stats[Ks.SHIELD_CAP]),
+                                    co(i.stats[Js.SHIELD_CAP]),
                                   ],
                                 }),
                                 (0, e.jsxs)("p", {
                                   children: [
                                     "Durability: ",
-                                    co(i.stats[$s.ACTUAL_DURABILITY]),
+                                    co(i.stats[el.ACTUAL_DURABILITY]),
                                     "/",
-                                    co(i.stats[Ks.DURABILITY]),
+                                    co(i.stats[Js.DURABILITY]),
                                   ],
                                 }),
                                 (0, e.jsxs)("p", {
                                   children: [
                                     "Damage: ",
-                                    co(i.stats[Ks.DAMAGE]),
+                                    co(i.stats[Js.DAMAGE]),
                                   ],
                                 }),
                                 (0, e.jsxs)("p", {
                                   children: [
                                     "Weapon cooldown: ",
-                                    co(i.stats[Ks.WEAPON_COOLDOWN]),
+                                    co(i.stats[Js.WEAPON_COOLDOWN]),
                                   ],
                                 }),
                               ],
@@ -27565,21 +28090,21 @@
                       {
                         children: (0, e.jsxs)(
                           "div",
-                          xl(
+                          jl(
                             { className: "bars-container" },
                             {
                               children: [
                                 (0, e.jsx)(
                                   "div",
-                                  xl(
+                                  jl(
                                     { className: "shield-bar bar-outer" },
                                     {
                                       children: (0, e.jsx)("div", {
                                         className: "bar-inner",
                                         style: {
                                           width: "".concat(
-                                            (100 * i.stats[$s.ACTUAL_SHIELD]) /
-                                              i.stats[Ks.SHIELD_CAP],
+                                            (100 * i.stats[el.ACTUAL_SHIELD]) /
+                                              i.stats[Js.SHIELD_CAP],
                                             "%"
                                           ),
                                         },
@@ -27589,7 +28114,7 @@
                                 ),
                                 (0, e.jsx)(
                                   "div",
-                                  xl(
+                                  jl(
                                     { className: "durability-bar bar-outer" },
                                     {
                                       children: (0, e.jsx)("div", {
@@ -27597,8 +28122,8 @@
                                         style: {
                                           width: "".concat(
                                             (100 *
-                                              i.stats[$s.ACTUAL_DURABILITY]) /
-                                              i.stats[Ks.DURABILITY],
+                                              i.stats[el.ACTUAL_DURABILITY]) /
+                                              i.stats[Js.DURABILITY],
                                             "%"
                                           ),
                                         },
@@ -27608,7 +28133,7 @@
                                 ),
                                 (0, e.jsx)(
                                   "div",
-                                  xl(
+                                  jl(
                                     { className: "recharge-bar bar-outer" },
                                     {
                                       children: (0, e.jsx)("div", {
@@ -27616,8 +28141,8 @@
                                         style: {
                                           width: "".concat(
                                             (100 *
-                                              i.stats[$s.ACTUAL_RECHARGE]) /
-                                              i.stats[Ks.WEAPON_COOLDOWN],
+                                              i.stats[el.ACTUAL_RECHARGE]) /
+                                              i.stats[Js.WEAPON_COOLDOWN],
                                             "%"
                                           ),
                                         },
@@ -27640,7 +28165,7 @@
             )
           );
         },
-        wl = function (n) {
+        kl = function (n) {
           var t = n.battle,
             i = (0, r.useRef)(null),
             a = (0, r.useState)(0),
@@ -27671,17 +28196,17 @@
           };
           return (0, e.jsxs)(
             "div",
-            xl(
+            jl(
               { className: "fight-space", ref: i },
               {
                 children: [
                   t.fight.enemy.map(function (n) {
                     return (0,
-                    e.jsx)(yl, { isEnemy: !0, position: d(n.x, n.y, 25, 20), unit: n });
+                    e.jsx)(Nl, { isEnemy: !0, position: d(n.x, n.y, 25, 20), unit: n });
                   }),
                   t.fight.me.map(function (n) {
                     return (0,
-                    e.jsx)(yl, { position: d(n.x, n.y, 25, 20), unit: n });
+                    e.jsx)(Nl, { position: d(n.x, n.y, 25, 20), unit: n });
                   }),
                   t.fight.bullets.map(function (n) {
                     return (0,
@@ -27692,9 +28217,9 @@
             )
           );
         },
-        jl = function () {
+        El = function () {
           return (
-            (jl =
+            (El =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -27702,10 +28227,10 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            jl.apply(this, arguments)
+            El.apply(this, arguments)
           );
         },
-        Nl = function (n) {
+        Sl = function (n) {
           var t = n.battle,
             i = window.innerWidth <= 860,
             a = (0, r.useState)(!1),
@@ -27713,7 +28238,7 @@
             s = a[1];
           return (0, e.jsxs)(
             "div",
-            jl(
+            El(
               { className: "top-pane" },
               {
                 children: [
@@ -27727,12 +28252,12 @@
                       }),
                       (0, e.jsxs)(
                         "select",
-                        jl(
+                        El(
                           {
                             onChange: function (e) {
                               return (
                                 (n = e.target.value),
-                                void ll.doSetBattleFleet.send(n)
+                                void dl.doSetBattleFleet.send(n)
                               );
                               var n;
                             },
@@ -27745,11 +28270,11 @@
                                 })
                                 .map(function (n) {
                                   return (0,
-                                  e.jsx)("option", jl({ value: n.uuid, selected: n.isEditing }, { children: n.name }));
+                                  e.jsx)("option", El({ value: n.uuid, selected: n.isEditing }, { children: n.name }));
                                 }),
                               (0, e.jsx)(
                                 "option",
-                                jl(
+                                El(
                                   { selected: !t.battlefield.selectedFleetId },
                                   { children: "None" }
                                 )
@@ -27770,7 +28295,7 @@
                             onChange: function (e) {
                               return (
                                 (n = +e.target.value),
-                                void ll.doSetBattleLevel.send(n)
+                                void dl.doSetBattleLevel.send(n)
                               );
                               var n;
                             },
@@ -27779,7 +28304,7 @@
                           t.battlefield.maxLevel,
                           (0, e.jsxs)(
                             "p",
-                            jl(
+                            El(
                               { className: "no-margin" },
                               {
                                 children: [
@@ -27800,7 +28325,7 @@
                             type: "checkbox",
                             checked: t.battlefield.isAutofight,
                             onChange: function () {
-                              ll.doToggleAutoFight.send(
+                              dl.doToggleAutoFight.send(
                                 !t.battlefield.isAutofight
                               );
                             },
@@ -27814,7 +28339,7 @@
                             type: "checkbox",
                             checked: t.battlefield.isAutoprogres,
                             onChange: function () {
-                              ll.doToggleAutoAdvance.send(
+                              dl.doToggleAutoAdvance.send(
                                 !t.battlefield.isAutoprogres
                               );
                             },
@@ -27828,12 +28353,12 @@
                     children: [
                       (0, e.jsx)(
                         Ta,
-                        jl(
+                        El(
                           {
                             placement: "right",
                             content: (0, e.jsxs)(
                               "div",
-                              jl(
+                              El(
                                 { className: "description-hint" },
                                 {
                                   children: [
@@ -27866,7 +28391,7 @@
                           {
                             children: (0, e.jsxs)(
                               "div",
-                              jl(
+                              El(
                                 { className: "pilot-container" },
                                 {
                                   children: [
@@ -27878,13 +28403,13 @@
                                     }),
                                     (0, e.jsxs)(
                                       "div",
-                                      jl(
+                                      El(
                                         { className: "bars-container wide" },
                                         {
                                           children: [
                                             (0, e.jsx)(
                                               "div",
-                                              jl(
+                                              El(
                                                 {
                                                   className: "bar-outer pilot",
                                                 },
@@ -27904,7 +28429,7 @@
                                             ),
                                             (0, e.jsx)(
                                               "span",
-                                              jl(
+                                              El(
                                                 {
                                                   className: "info-tooltip",
                                                   onClick: function (e) {
@@ -27916,7 +28441,7 @@
                                                 {
                                                   children: (0, e.jsx)(
                                                     "span",
-                                                    jl(
+                                                    El(
                                                       {
                                                         className:
                                                           "info-tooltip-inner",
@@ -27940,8 +28465,8 @@
                       ),
                       o && i
                         ? (0, e.jsx)(
-                            To,
-                            jl(
+                            us,
+                            El(
                               {
                                 isVisible: o,
                                 onClose: function () {
@@ -27951,7 +28476,7 @@
                               {
                                 children: (0, e.jsxs)(
                                   "div",
-                                  jl(
+                                  El(
                                     { className: "description-hint" },
                                     {
                                       children: [
@@ -27989,10 +28514,10 @@
                   (0, e.jsx)("div", {
                     children: (0, e.jsx)(
                       "button",
-                      jl(
+                      El(
                         {
                           onClick: function () {
-                            return !1, void ll.doToggleFight.send(false);
+                            return !1, void dl.doToggleFight.send(false);
                           },
                         },
                         { children: "Stop" }
@@ -28004,14 +28529,14 @@
             )
           );
         },
-        kl = function (n) {
+        Cl = function (n) {
           var t = n.battle;
           return t.battlefield.selectedFleetId
             ? t.battlefield.isFighting
               ? t.battlefield.travelProgress < 1
                 ? (0, e.jsxs)(
                     "div",
-                    jl(
+                    El(
                       { className: "battle-centered" },
                       {
                         children: [
@@ -28029,7 +28554,7 @@
                           }),
                           (0, e.jsx)(
                             "div",
-                            jl(
+                            El(
                               { className: "travel-bar" },
                               {
                                 children: (0, e.jsx)("div", {
@@ -28049,11 +28574,11 @@
                     )
                   )
                 : t.fight.inProgress
-                ? (0, e.jsx)(wl, { battle: t })
+                ? (0, e.jsx)(kl, { battle: t })
                 : (0, e.jsx)(e.Fragment, {})
               : (0, e.jsxs)(
                   "div",
-                  jl(
+                  El(
                     { className: "battle-centered" },
                     {
                       children: [
@@ -28071,10 +28596,10 @@
                         }),
                         (0, e.jsx)(
                           "button",
-                          jl(
+                          El(
                             {
                               onClick: function () {
-                                return !0, void ll.doToggleFight.send(true);
+                                return !0, void dl.doToggleFight.send(true);
                               },
                             },
                             { children: "Start Fight" }
@@ -28086,7 +28611,7 @@
                 )
             : (0, e.jsx)(
                 "div",
-                jl(
+                El(
                   { className: "battle-centered" },
                   {
                     children: (0, e.jsx)("h4", {
@@ -28096,20 +28621,20 @@
                 )
               );
         },
-        El = function (n) {
+        Al = function (n) {
           var t = n.battle;
           return (0, e.jsxs)(
             "div",
-            jl(
+            El(
               { className: "battle-wrap" },
               {
                 children: [
-                  (0, e.jsx)(Nl, { battle: t }),
+                  (0, e.jsx)(Sl, { battle: t }),
                   (0, e.jsx)(
                     "div",
-                    jl(
+                    El(
                       { className: "battle-content" },
-                      { children: (0, e.jsx)(kl, { battle: t }) }
+                      { children: (0, e.jsx)(Cl, { battle: t }) }
                     )
                   ),
                 ],
@@ -28117,13 +28642,13 @@
             )
           );
         },
-        Sl = function () {
+        Tl = function () {
           var n = N(Ya);
-          return (0, e.jsx)(El, { battle: n.battle });
+          return (0, e.jsx)(Al, { battle: n.battle });
         },
-        Cl = function () {
+        Ol = function () {
           return (
-            (Cl =
+            (Ol =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -28131,25 +28656,25 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            Cl.apply(this, arguments)
+            Ol.apply(this, arguments)
           );
         },
-        Al = function (n) {
+        _l = function (n) {
           var t = n.page;
           return "spaceBuildings" === t
-            ? (0, e.jsx)(sl, {})
+            ? (0, e.jsx)(ul, {})
             : "spaceshipConstructor" === t
-            ? (0, e.jsx)(dl, {})
+            ? (0, e.jsx)(hl, {})
             : "spaceshipHangar" === t
-            ? (0, e.jsx)(ml, {})
-            : "spaceshipFleet" === t
             ? (0, e.jsx)(bl, {})
+            : "spaceshipFleet" === t
+            ? (0, e.jsx)(wl, {})
             : "spaceBattle" === t
-            ? (0, e.jsx)(Sl, {})
+            ? (0, e.jsx)(Tl, {})
             : (0, e.jsx)("p", { children: "None" });
         },
-        Tl = function () {
-          var n = As("space-page", "spaceBuildings"),
+        Rl = function () {
+          var n = _s("space-page", "spaceBuildings"),
             t = n[0],
             r = n[1],
             i = N(Va),
@@ -28158,19 +28683,19 @@
             s = N(Ka);
           return (0, e.jsxs)(
             "div",
-            Cl(
+            Ol(
               { className: "fit-height" },
               {
                 children: [
                   (0, e.jsxs)(
                     "div",
-                    Cl(
+                    Ol(
                       { className: "submenu" },
                       {
                         children: [
                           (0, e.jsx)(
                             "div",
-                            Cl(
+                            Ol(
                               {
                                 className: "submenu-item ".concat(
                                   "spaceBuildings" === t ? "selected" : ""
@@ -28185,7 +28710,7 @@
                           i
                             ? (0, e.jsx)(
                                 "div",
-                                Cl(
+                                Ol(
                                   {
                                     className: "submenu-item ".concat(
                                       "spaceshipConstructor" === t
@@ -28203,7 +28728,7 @@
                           a
                             ? (0, e.jsx)(
                                 "div",
-                                Cl(
+                                Ol(
                                   {
                                     className: "submenu-item ".concat(
                                       "spaceshipHangar" === t ? "selected" : ""
@@ -28219,7 +28744,7 @@
                           o
                             ? (0, e.jsx)(
                                 "div",
-                                Cl(
+                                Ol(
                                   {
                                     className: "submenu-item ".concat(
                                       "spaceshipFleet" === t ? "selected" : ""
@@ -28235,7 +28760,7 @@
                           s
                             ? (0, e.jsx)(
                                 "div",
-                                Cl(
+                                Ol(
                                   {
                                     className: "submenu-item ".concat(
                                       "spaceBattle" === t ? "selected" : ""
@@ -28254,15 +28779,15 @@
                   ),
                   (0, e.jsx)(
                     "div",
-                    Cl(
+                    Ol(
                       { className: "inner-scrollable planet" },
                       {
                         children: (0, e.jsx)(as(), {
                           children: (0, e.jsx)(
                             "div",
-                            Cl(
+                            Ol(
                               { className: "inner" },
-                              { children: (0, e.jsx)(Al, { page: t }) }
+                              { children: (0, e.jsx)(_l, { page: t }) }
                             )
                           ),
                         }),
@@ -28274,7 +28799,7 @@
             )
           );
         },
-        Ol = {
+        Il = {
           doTKUpgrade: kn("[transmit-knowledge] do upgrade", function (e) {
             return e;
           }),
@@ -28290,8 +28815,20 @@
               return e;
             }
           ),
+          doColonizeSetSearchLevel: kn(
+            "[colonize-planet] set search level",
+            function (e) {
+              return e;
+            }
+          ),
           doColonizeSetStarFilter: kn(
             "[colonize-planet] set star filter",
+            function (e) {
+              return e;
+            }
+          ),
+          doColonizeSetHarshness: kn(
+            "[colonize-planet] set harshness filter",
             function (e) {
               return e;
             }
@@ -28309,9 +28846,9 @@
             return e;
           }),
         },
-        _l = function () {
+        Pl = function () {
           return (
-            (_l =
+            (Pl =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -28319,13 +28856,13 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            _l.apply(this, arguments)
+            Pl.apply(this, arguments)
           );
         },
-        Rl = function (n) {
+        Ll = function (n) {
           var t = n.state,
             r = function (e, n) {
-              Ol.doTKUpgrade.send({ id: e, amount: n });
+              Il.doTKUpgrade.send({ id: e, amount: n });
             },
             i = t.upgrades
               .filter(function (e) {
@@ -28339,7 +28876,7 @@
               }, {});
           return (0, e.jsx)(
             Fa,
-            _l(
+            Pl(
               {
                 id: "transmit-knowledge-upgrades",
                 label: "Transmit Knowledge Upgrades: ".concat(
@@ -28354,7 +28891,7 @@
                     i = n[1];
                   return (0, e.jsx)(
                     Fa,
-                    _l(
+                    Pl(
                       {
                         isCollapsable: !0,
                         id: "kp-upgrades-".concat(t),
@@ -28369,8 +28906,8 @@
                           })
                           .map(function (n) {
                             return (0, e.jsxs)(
-                              _o,
-                              _l(
+                              Oo,
+                              Pl(
                                 {
                                   label: n.name,
                                   isAvailable: n.isAvailable,
@@ -28387,28 +28924,28 @@
                                   level: n.level,
                                   maxLevel: n.maxLevel,
                                   onMouseEnter: function () {
-                                    return Mo(
+                                    return Lo(
                                       n.cost.filter(function (e) {
                                         return !e.isAvailable;
                                       })
                                     );
                                   },
                                   onMouseLeave: function () {
-                                    return Mo(null);
+                                    return Lo(null);
                                   },
                                 },
                                 {
                                   children: [
                                     (0, e.jsx)(
                                       "p",
-                                      _l(
+                                      Pl(
                                         { className: "title" },
                                         { children: n.name }
                                       )
                                     ),
                                     (0, e.jsx)(
                                       "p",
-                                      _l(
+                                      Pl(
                                         { className: "description" },
                                         { children: n.description }
                                       )
@@ -28416,7 +28953,7 @@
                                     n.cost.length
                                       ? (0, e.jsxs)(
                                           "div",
-                                          _l(
+                                          Pl(
                                             { className: "costs wrap" },
                                             {
                                               children: [
@@ -28425,7 +28962,7 @@
                                                 }),
                                                 n.cost.map(function (n) {
                                                   return (0,
-                                                  e.jsx)(Io, { cost: n });
+                                                  e.jsx)(Ro, { cost: n });
                                                 }),
                                               ],
                                             }
@@ -28434,14 +28971,14 @@
                                       : (0, e.jsx)(e.Fragment, {}),
                                     (0, e.jsx)(
                                       "p",
-                                      _l(
+                                      Pl(
                                         { className: "note" },
                                         { children: "Hold Shift to purchase 5" }
                                       )
                                     ),
                                     (0, e.jsx)(
                                       "p",
-                                      _l(
+                                      Pl(
                                         { className: "note" },
                                         {
                                           children: "Hold Ctrl to purchase max",
@@ -28461,11 +28998,11 @@
             )
           );
         },
-        Il = function (n) {
+        Ml = function (n) {
           var t = n.transmit;
           return (0, e.jsx)(
             Fa,
-            _l(
+            Pl(
               {
                 id: "do-transmit",
                 label: "Transmit knowledge",
@@ -28484,7 +29021,7 @@
                             "You will earn ",
                             (0, e.jsx)(
                               "span",
-                              _l(
+                              Pl(
                                 { className: "bold" },
                                 { children: t.prestige.potentialGain }
                               )
@@ -28494,11 +29031,11 @@
                         }),
                         (0, e.jsx)(
                           "button",
-                          _l(
+                          Pl(
                             {
                               onClick: function () {
                                 confirm("Are you sure?") &&
-                                  (Ol.doTKPrestige.send({}), Ts());
+                                  (Il.doTKPrestige.send({}), Rs());
                               },
                             },
                             {
@@ -28511,7 +29048,7 @@
                     })
                   : (0, e.jsx)(
                       "div",
-                      _l(
+                      Pl(
                         { className: "unavail-explanation" },
                         {
                           children: (0, e.jsx)("p", {
@@ -28525,18 +29062,18 @@
             )
           );
         },
-        Pl = function () {
+        Dl = function () {
           var n = N(Ja);
           return (0, e.jsxs)(e.Fragment, {
             children: [
-              (0, e.jsx)(Il, { transmit: n }),
-              (0, e.jsx)(Rl, { state: n }),
+              (0, e.jsx)(Ml, { transmit: n }),
+              (0, e.jsx)(Ll, { state: n }),
             ],
           });
         },
-        Ll = function () {
+        Ul = function () {
           return (
-            (Ll =
+            (Ul =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -28544,16 +29081,16 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            Ll.apply(this, arguments)
+            Ul.apply(this, arguments)
           );
         },
-        Ml = function (n) {
+        Fl = function (n) {
           var t,
             r = n.state;
           return r.isPrestigeAvailable
             ? (0, e.jsxs)(
                 Fa,
-                Ll(
+                Ul(
                   {
                     id: "planets-available",
                     label: "Colonize Planets",
@@ -28563,7 +29100,7 @@
                     children: [
                       (0, e.jsxs)(
                         "div",
-                        Ll(
+                        Ul(
                           { className: "desc-wrap" },
                           {
                             children: [
@@ -28599,13 +29136,13 @@
                       ),
                       (0, e.jsx)(
                         "div",
-                        Ll(
+                        Ul(
                           { className: "list-wrap planets-wrap" },
                           {
                             children: r.available.map(function (n, t) {
                               return (0, e.jsxs)(
-                                _o,
-                                Ll(
+                                Oo,
+                                Ul(
                                   {
                                     label: (0, e.jsxs)(e.Fragment, {
                                       children: [
@@ -28626,44 +29163,44 @@
                                           confirm(
                                             "When you colonize new planet you aren't awarded any KP, but you gain XP instead. In case you select too hard planet you can abondon it in \"Settings\" tab, and you'll be landed to default planet. Are you sure?"
                                           ) &&
-                                          (Ol.doColonizePrestige.send({
+                                          (Il.doColonizePrestige.send({
                                             id: e,
                                           }),
-                                          Ts())
+                                          Rs())
                                         )
                                       );
                                       var e;
                                     },
                                     onMouseEnter: function () {
-                                      return Mo(
+                                      return Lo(
                                         n.cost.filter(function (e) {
                                           return !e.isAvailable;
                                         })
                                       );
                                     },
                                     onMouseLeave: function () {
-                                      return Mo(null);
+                                      return Lo(null);
                                     },
                                   },
                                   {
                                     children: [
                                       (0, e.jsx)(
                                         "p",
-                                        Ll(
+                                        Ul(
                                           { className: "title" },
                                           { children: n.name }
                                         )
                                       ),
                                       (0, e.jsx)(
                                         "p",
-                                        Ll(
+                                        Ul(
                                           { className: "description" },
                                           { children: n.description }
                                         )
                                       ),
                                       (0, e.jsxs)(
                                         "p",
-                                        Ll(
+                                        Ul(
                                           { className: "att" },
                                           {
                                             children: [
@@ -28675,7 +29212,7 @@
                                       ),
                                       (0, e.jsxs)(
                                         "p",
-                                        Ll(
+                                        Ul(
                                           { className: "att" },
                                           {
                                             children: [
@@ -28687,7 +29224,7 @@
                                       ),
                                       (0, e.jsxs)(
                                         "p",
-                                        Ll(
+                                        Ul(
                                           { className: "att" },
                                           {
                                             children: [
@@ -28699,7 +29236,7 @@
                                       ),
                                       (0, e.jsx)(
                                         "div",
-                                        Ll(
+                                        Ul(
                                           { className: "star-modifs" },
                                           {
                                             children: n.starModif.map(function (
@@ -28707,7 +29244,7 @@
                                             ) {
                                               return (0, e.jsx)(
                                                 "p",
-                                                Ll(
+                                                Ul(
                                                   { className: "star-effect" },
                                                   { children: n }
                                                 )
@@ -28719,7 +29256,7 @@
                                       n.cost.length
                                         ? (0, e.jsxs)(
                                             "div",
-                                            Ll(
+                                            Ul(
                                               { className: "costs wrap" },
                                               {
                                                 children: [
@@ -28728,12 +29265,12 @@
                                                   }),
                                                   n.cost.map(function (n) {
                                                     return (0,
-                                                    e.jsx)(Io, { cost: n });
+                                                    e.jsx)(Ro, { cost: n });
                                                   }),
                                                   n.consume.length
                                                     ? (0, e.jsxs)(
                                                         "div",
-                                                        Ll(
+                                                        Ul(
                                                           {
                                                             className:
                                                               "costs wrap",
@@ -28750,7 +29287,7 @@
                                                               n.consume.map(
                                                                 function (n) {
                                                                   return (0,
-                                                                  e.jsx)(Lo, {
+                                                                  e.jsx)(Po, {
                                                                     gain: n,
                                                                   });
                                                                 }
@@ -28766,7 +29303,7 @@
                                                   n.gain.length
                                                     ? (0, e.jsxs)(
                                                         "div",
-                                                        Ll(
+                                                        Ul(
                                                           {
                                                             className:
                                                               "gain wrap",
@@ -28783,7 +29320,7 @@
                                                               n.gain.map(
                                                                 function (n) {
                                                                   return (0,
-                                                                  e.jsx)(Lo, {
+                                                                  e.jsx)(Po, {
                                                                     gain: n,
                                                                   });
                                                                 }
@@ -28799,7 +29336,7 @@
                                                   n.max.length
                                                     ? (0, e.jsxs)(
                                                         "div",
-                                                        Ll(
+                                                        Ul(
                                                           {
                                                             className:
                                                               "store wrap",
@@ -28816,7 +29353,7 @@
                                                               n.max.map(
                                                                 function (n) {
                                                                   return (0,
-                                                                  e.jsx)(Lo, {
+                                                                  e.jsx)(Po, {
                                                                     gain: n,
                                                                   });
                                                                 }
@@ -28832,7 +29369,7 @@
                                                   n.gainMult.length
                                                     ? (0, e.jsxs)(
                                                         "div",
-                                                        Ll(
+                                                        Ul(
                                                           {
                                                             className:
                                                               "gain wrap",
@@ -28849,7 +29386,7 @@
                                                               n.gainMult.map(
                                                                 function (n) {
                                                                   return (0,
-                                                                  e.jsx)(Lo, {
+                                                                  e.jsx)(Po, {
                                                                     className:
                                                                       n.amountValue <
                                                                       1
@@ -28870,7 +29407,7 @@
                                                   n.maxMult.length
                                                     ? (0, e.jsxs)(
                                                         "div",
-                                                        Ll(
+                                                        Ul(
                                                           {
                                                             className:
                                                               "store wrap",
@@ -28887,7 +29424,7 @@
                                                               n.maxMult.map(
                                                                 function (n) {
                                                                   return (0,
-                                                                  e.jsx)(Lo, {
+                                                                  e.jsx)(Po, {
                                                                     className:
                                                                       n.amountValue <
                                                                       1
@@ -28908,7 +29445,7 @@
                                                   n.effectMult.length
                                                     ? (0, e.jsxs)(
                                                         "div",
-                                                        Ll(
+                                                        Ul(
                                                           {
                                                             className:
                                                               "gain wrap",
@@ -28925,7 +29462,7 @@
                                                               n.effectMult.map(
                                                                 function (n) {
                                                                   return (0,
-                                                                  e.jsx)(Lo, {
+                                                                  e.jsx)(Po, {
                                                                     className:
                                                                       n.amountValue <
                                                                       1
@@ -28945,7 +29482,7 @@
                                                       ),
                                                   (0, e.jsx)(
                                                     "div",
-                                                    Ll(
+                                                    Ul(
                                                       {
                                                         className: "store wrap",
                                                       },
@@ -28964,7 +29501,7 @@
                                                   ),
                                                   (0, e.jsx)(
                                                     "div",
-                                                    Ll(
+                                                    Ul(
                                                       {
                                                         className: "store wrap",
                                                       },
@@ -28998,84 +29535,258 @@
                       ),
                       (0, e.jsxs)(
                         "div",
-                        Ll(
+                        Ul(
                           { className: "search-wrap" },
                           {
                             children: [
                               r.search.filter.isAvailable
                                 ? (0, e.jsxs)(
                                     "div",
-                                    Ll(
+                                    Ul(
                                       { className: "search-filter" },
                                       {
                                         children: [
-                                          (0, e.jsxs)("div", {
-                                            children: [
-                                              (0, e.jsx)("p", {
-                                                children:
-                                                  "Select search for specific modifier. This will increase search cost",
-                                              }),
-                                              (0, e.jsxs)(
-                                                "select",
-                                                Ll(
-                                                  {
-                                                    onChange: function (e) {
-                                                      return (
-                                                        (n = e.target.value),
-                                                        console.log(
-                                                          "setting filter option: ",
-                                                          n
-                                                        ),
-                                                        void Ol.doColonizeSetSearchFilter.send(
-                                                          { id: n }
-                                                        )
-                                                      );
-                                                      var n;
-                                                    },
-                                                  },
-                                                  {
+                                          (0, e.jsxs)(
+                                            "div",
+                                            Ul(
+                                              {
+                                                className: "search-inner flex",
+                                              },
+                                              {
+                                                children: [
+                                                  (0, e.jsxs)("div", {
                                                     children: [
-                                                      r.search.filter.modifiersAvailable.map(
-                                                        function (n) {
-                                                          return (0, e.jsx)(
-                                                            "option",
-                                                            Ll(
-                                                              {
-                                                                value: n.id,
-                                                                selected:
-                                                                  n.name ===
-                                                                  r.search
-                                                                    .filter
-                                                                    .modifierName,
-                                                              },
-                                                              {
-                                                                children:
-                                                                  n.name,
-                                                              }
-                                                            )
-                                                          );
-                                                        }
-                                                      ),
+                                                      (0, e.jsx)("p", {
+                                                        children:
+                                                          "Select search for specific modifier(s). This will increase search cost",
+                                                      }),
                                                       (0, e.jsx)(
-                                                        "option",
-                                                        Ll(
+                                                        "div",
+                                                        Ul(
                                                           {
-                                                            selected:
-                                                              !r.search.filter
-                                                                .modifierName ||
-                                                              "None" ===
-                                                                r.search.filter
-                                                                  .modifierName,
+                                                            className:
+                                                              "search-flex-wrap flex",
                                                           },
-                                                          { children: "None" }
+                                                          {
+                                                            children:
+                                                              r.search.filter.modifiersSelected.map(
+                                                                function (
+                                                                  n,
+                                                                  t
+                                                                ) {
+                                                                  return (0,
+                                                                  e.jsxs)(
+                                                                    "div",
+                                                                    Ul(
+                                                                      {
+                                                                        className:
+                                                                          "search-item",
+                                                                      },
+                                                                      {
+                                                                        children:
+                                                                          [
+                                                                            (0,
+                                                                            e.jsxs)(
+                                                                              "select",
+                                                                              Ul(
+                                                                                {
+                                                                                  onChange:
+                                                                                    function (
+                                                                                      e
+                                                                                    ) {
+                                                                                      return (function (
+                                                                                        e,
+                                                                                        n
+                                                                                      ) {
+                                                                                        console.log(
+                                                                                          "setting filter option: ",
+                                                                                          e,
+                                                                                          n
+                                                                                        ),
+                                                                                          Il.doColonizeSetSearchFilter.send(
+                                                                                            {
+                                                                                              index:
+                                                                                                e,
+                                                                                              id: n,
+                                                                                            }
+                                                                                          );
+                                                                                      })(
+                                                                                        t,
+                                                                                        e
+                                                                                          .target
+                                                                                          .value
+                                                                                      );
+                                                                                    },
+                                                                                },
+                                                                                {
+                                                                                  children:
+                                                                                    [
+                                                                                      r.search.filter.modifiersAvailable
+                                                                                        .filter(
+                                                                                          function (
+                                                                                            e
+                                                                                          ) {
+                                                                                            return (
+                                                                                              e.catUsedIndex <
+                                                                                                0 ||
+                                                                                              e.catUsedIndex ===
+                                                                                                t
+                                                                                            );
+                                                                                          }
+                                                                                        )
+                                                                                        .map(
+                                                                                          function (
+                                                                                            t
+                                                                                          ) {
+                                                                                            return (0,
+                                                                                            e.jsx)(
+                                                                                              "option",
+                                                                                              Ul(
+                                                                                                {
+                                                                                                  value:
+                                                                                                    t.id,
+                                                                                                  selected:
+                                                                                                    t.name ===
+                                                                                                    n.name,
+                                                                                                },
+                                                                                                {
+                                                                                                  children:
+                                                                                                    t.name,
+                                                                                                }
+                                                                                              )
+                                                                                            );
+                                                                                          }
+                                                                                        ),
+                                                                                      (0,
+                                                                                      e.jsx)(
+                                                                                        "option",
+                                                                                        Ul(
+                                                                                          {
+                                                                                            selected:
+                                                                                              !n.name ||
+                                                                                              "None" ===
+                                                                                                n.name,
+                                                                                          },
+                                                                                          {
+                                                                                            children:
+                                                                                              "None",
+                                                                                          }
+                                                                                        )
+                                                                                      ),
+                                                                                    ],
+                                                                                }
+                                                                              )
+                                                                            ),
+                                                                            (0,
+                                                                            e.jsxs)(
+                                                                              "div",
+                                                                              Ul(
+                                                                                {
+                                                                                  className:
+                                                                                    "select-level",
+                                                                                },
+                                                                                {
+                                                                                  children:
+                                                                                    [
+                                                                                      (0,
+                                                                                      e.jsx)(
+                                                                                        "span",
+                                                                                        Ul(
+                                                                                          {
+                                                                                            className:
+                                                                                              "sm-lab",
+                                                                                          },
+                                                                                          {
+                                                                                            children:
+                                                                                              "Level",
+                                                                                          }
+                                                                                        )
+                                                                                      ),
+                                                                                      (0,
+                                                                                      e.jsx)(
+                                                                                        "input",
+                                                                                        {
+                                                                                          type: "text",
+                                                                                          value:
+                                                                                            n.level,
+                                                                                          onChange:
+                                                                                            function (
+                                                                                              e
+                                                                                            ) {
+                                                                                              return (function (
+                                                                                                e,
+                                                                                                n
+                                                                                              ) {
+                                                                                                console.log(
+                                                                                                  "setting filter level: ",
+                                                                                                  e,
+                                                                                                  n
+                                                                                                ),
+                                                                                                  Il.doColonizeSetSearchLevel.send(
+                                                                                                    {
+                                                                                                      index:
+                                                                                                        e,
+                                                                                                      level:
+                                                                                                        n,
+                                                                                                    }
+                                                                                                  );
+                                                                                              })(
+                                                                                                t,
+                                                                                                e
+                                                                                                  .target
+                                                                                                  .value
+                                                                                              );
+                                                                                            },
+                                                                                        }
+                                                                                      ),
+                                                                                    ],
+                                                                                }
+                                                                              )
+                                                                            ),
+                                                                          ],
+                                                                      }
+                                                                    )
+                                                                  );
+                                                                }
+                                                              ),
+                                                          }
                                                         )
                                                       ),
                                                     ],
-                                                  }
-                                                )
-                                              ),
-                                            ],
-                                          }),
+                                                  }),
+                                                  r.search.isHarshnessAvailable
+                                                    ? (0, e.jsxs)("div", {
+                                                        children: [
+                                                          (0, e.jsx)("p", {
+                                                            children:
+                                                              "Select desired dificulty",
+                                                          }),
+                                                          (0, e.jsx)("input", {
+                                                            type: "number",
+                                                            value:
+                                                              r.search
+                                                                .harshnessFilter,
+                                                            onChange: function (
+                                                              e
+                                                            ) {
+                                                              return (
+                                                                (n =
+                                                                  +e.target
+                                                                    .value),
+                                                                void Il.doColonizeSetHarshness.send(
+                                                                  n
+                                                                )
+                                                              );
+                                                              var n;
+                                                            },
+                                                          }),
+                                                        ],
+                                                      })
+                                                    : null,
+                                                ],
+                                              }
+                                            )
+                                          ),
                                           (null === (t = r.search.starsList) ||
                                           void 0 === t
                                             ? void 0
@@ -29087,7 +29798,7 @@
                                                   }),
                                                   (0, e.jsxs)(
                                                     "select",
-                                                    Ll(
+                                                    Ul(
                                                       {
                                                         onChange: function (e) {
                                                           return (
@@ -29097,7 +29808,7 @@
                                                               "setting star option: ",
                                                               n
                                                             ),
-                                                            void Ol.doColonizeSetStarFilter.send(
+                                                            void Il.doColonizeSetStarFilter.send(
                                                               { id: n }
                                                             )
                                                           );
@@ -29110,7 +29821,7 @@
                                                             function (n) {
                                                               return (0, e.jsx)(
                                                                 "option",
-                                                                Ll(
+                                                                Ul(
                                                                   {
                                                                     value: n.id,
                                                                     selected:
@@ -29128,7 +29839,7 @@
                                                           ),
                                                           (0, e.jsx)(
                                                             "option",
-                                                            Ll(
+                                                            Ul(
                                                               {
                                                                 selected:
                                                                   !r.search
@@ -29157,7 +29868,7 @@
                                 : null,
                               (0, e.jsxs)(
                                 "div",
-                                Ll(
+                                Ul(
                                   { className: "disasters-selector" },
                                   {
                                     children: [
@@ -29167,12 +29878,12 @@
                                       }),
                                       (0, e.jsxs)(
                                         "select",
-                                        Ll(
+                                        Ul(
                                           {
                                             onChange: function (e) {
                                               return (
                                                 (n = +e.target.value),
-                                                void Ol.doColonizeSetDisasters.send(
+                                                void Il.doColonizeSetDisasters.send(
                                                   { level: n }
                                                 )
                                               );
@@ -29183,7 +29894,7 @@
                                             children: [
                                               (0, e.jsx)(
                                                 "option",
-                                                Ll(
+                                                Ul(
                                                   {
                                                     value: 0,
                                                     selected:
@@ -29195,7 +29906,7 @@
                                               ),
                                               (0, e.jsx)(
                                                 "option",
-                                                Ll(
+                                                Ul(
                                                   {
                                                     value: 1,
                                                     selected:
@@ -29207,7 +29918,7 @@
                                               ),
                                               (0, e.jsx)(
                                                 "option",
-                                                Ll(
+                                                Ul(
                                                   {
                                                     value: 2,
                                                     selected:
@@ -29219,7 +29930,7 @@
                                               ),
                                               (0, e.jsx)(
                                                 "option",
-                                                Ll(
+                                                Ul(
                                                   {
                                                     value: 3,
                                                     selected:
@@ -29238,8 +29949,8 @@
                                 )
                               ),
                               (0, e.jsxs)(
-                                _o,
-                                Ll(
+                                Oo,
+                                Ul(
                                   {
                                     label: "Search New Planets",
                                     isAvailable: r.search.isAvailable,
@@ -29247,31 +29958,31 @@
                                     progress: r.search.progress,
                                     className: "feature-item search-item",
                                     onClick: function () {
-                                      Ol.doColonizeSearch.send({});
+                                      Il.doColonizeSearch.send({});
                                     },
                                     onMouseEnter: function () {
-                                      return Mo(
+                                      return Lo(
                                         r.search.cost.filter(function (e) {
                                           return !e.isAvailable;
                                         })
                                       );
                                     },
                                     onMouseLeave: function () {
-                                      return Mo(null);
+                                      return Lo(null);
                                     },
                                   },
                                   {
                                     children: [
                                       (0, e.jsx)(
                                         "p",
-                                        Ll(
+                                        Ul(
                                           { className: "title" },
                                           { children: "Search New Planets" }
                                         )
                                       ),
                                       (0, e.jsx)(
                                         "p",
-                                        Ll(
+                                        Ul(
                                           { className: "description" },
                                           {
                                             children:
@@ -29282,7 +29993,7 @@
                                       r.search.cost.length
                                         ? (0, e.jsxs)(
                                             "div",
-                                            Ll(
+                                            Ul(
                                               { className: "costs wrap" },
                                               {
                                                 children: [
@@ -29292,7 +30003,7 @@
                                                   r.search.cost.map(function (
                                                     n
                                                   ) {
-                                                    return (0, e.jsx)(Io, {
+                                                    return (0, e.jsx)(Ro, {
                                                       cost: n,
                                                     });
                                                   }),
@@ -29315,7 +30026,7 @@
               )
             : (0, e.jsx)(
                 Fa,
-                Ll(
+                Ul(
                   {
                     className: "",
                     id: "colonize-unavailable",
@@ -29324,7 +30035,7 @@
                   {
                     children: (0, e.jsxs)(
                       "div",
-                      Ll(
+                      Ul(
                         { className: "description-wrap" },
                         {
                           children: [
@@ -29349,11 +30060,11 @@
                 )
               );
         },
-        Dl = function (n) {
+        Bl = function (n) {
           var t = n.colonize;
           return (0, e.jsxs)(
             Fa,
-            Ll(
+            Ul(
               {
                 isCollapsable: !0,
                 id: "current-planet",
@@ -29364,7 +30075,7 @@
                 children: [
                   (0, e.jsxs)(
                     "div",
-                    Ll(
+                    Ul(
                       { className: "planet-column" },
                       {
                         children: [
@@ -29376,7 +30087,7 @@
                           }),
                           (0, e.jsxs)(
                             "p",
-                            Ll(
+                            Ul(
                               { className: "att" },
                               {
                                 children: [
@@ -29388,7 +30099,7 @@
                           ),
                           (0, e.jsxs)(
                             "p",
-                            Ll(
+                            Ul(
                               { className: "att" },
                               {
                                 children: [
@@ -29400,7 +30111,7 @@
                           ),
                           (0, e.jsxs)(
                             "p",
-                            Ll(
+                            Ul(
                               { className: "att" },
                               {
                                 children: [
@@ -29412,7 +30123,7 @@
                           ),
                           (0, e.jsxs)(
                             "p",
-                            Ll(
+                            Ul(
                               { className: "att" },
                               {
                                 children: ["Star class: ", t.current.starClass],
@@ -29421,19 +30132,19 @@
                           ),
                           (0, e.jsx)(
                             "div",
-                            Ll(
+                            Ul(
                               { className: "star-modifs" },
                               {
                                 children: t.current.starModif.map(function (n) {
                                   return (0,
-                                  e.jsx)("p", Ll({ className: "star-effect" }, { children: n }));
+                                  e.jsx)("p", Ul({ className: "star-effect" }, { children: n }));
                                 }),
                               }
                             )
                           ),
                           (0, e.jsxs)(
                             "p",
-                            Ll(
+                            Ul(
                               { className: "att" },
                               {
                                 children: [
@@ -29449,14 +30160,14 @@
                   ),
                   (0, e.jsxs)(
                     "div",
-                    Ll(
+                    Ul(
                       { className: "planet-column" },
                       {
                         children: [
                           t.current.consume.length
                             ? (0, e.jsxs)(
                                 "div",
-                                Ll(
+                                Ul(
                                   { className: "costs wrap" },
                                   {
                                     children: [
@@ -29464,7 +30175,7 @@
                                         children: "Consume",
                                       }),
                                       t.current.consume.map(function (n) {
-                                        return (0, e.jsx)(Lo, { gain: n });
+                                        return (0, e.jsx)(Po, { gain: n });
                                       }),
                                     ],
                                   }
@@ -29474,7 +30185,7 @@
                           t.current.gain.length
                             ? (0, e.jsxs)(
                                 "div",
-                                Ll(
+                                Ul(
                                   { className: "gain wrap" },
                                   {
                                     children: [
@@ -29482,7 +30193,7 @@
                                         children: "Produce",
                                       }),
                                       t.current.gain.map(function (n) {
-                                        return (0, e.jsx)(Lo, { gain: n });
+                                        return (0, e.jsx)(Po, { gain: n });
                                       }),
                                     ],
                                   }
@@ -29492,7 +30203,7 @@
                           t.current.gainMult.length
                             ? (0, e.jsxs)(
                                 "div",
-                                Ll(
+                                Ul(
                                   { className: "gain wrap" },
                                   {
                                     children: [
@@ -29501,7 +30212,7 @@
                                       }),
                                       t.current.gainMult.map(function (n) {
                                         return (0,
-                                        e.jsx)(Lo, { className: n.amountValue < 1 ? "red" : "", gain: n });
+                                        e.jsx)(Po, { className: n.amountValue < 1 ? "red" : "", gain: n });
                                       }),
                                     ],
                                   }
@@ -29514,14 +30225,14 @@
                   ),
                   (0, e.jsxs)(
                     "div",
-                    Ll(
+                    Ul(
                       { className: "planet-column" },
                       {
                         children: [
                           t.current.max.length
                             ? (0, e.jsxs)(
                                 "div",
-                                Ll(
+                                Ul(
                                   { className: "store wrap" },
                                   {
                                     children: [
@@ -29529,7 +30240,7 @@
                                         children: "Storage",
                                       }),
                                       t.current.max.map(function (n) {
-                                        return (0, e.jsx)(Lo, { gain: n });
+                                        return (0, e.jsx)(Po, { gain: n });
                                       }),
                                     ],
                                   }
@@ -29539,7 +30250,7 @@
                           t.current.maxMult.length
                             ? (0, e.jsxs)(
                                 "div",
-                                Ll(
+                                Ul(
                                   { className: "store wrap" },
                                   {
                                     children: [
@@ -29548,7 +30259,7 @@
                                       }),
                                       t.current.maxMult.map(function (n) {
                                         return (0,
-                                        e.jsx)(Lo, { className: n.amountValue < 1 ? "red" : "", gain: n });
+                                        e.jsx)(Po, { className: n.amountValue < 1 ? "red" : "", gain: n });
                                       }),
                                     ],
                                   }
@@ -29558,7 +30269,7 @@
                           t.current.effectMult.length
                             ? (0, e.jsxs)(
                                 "div",
-                                Ll(
+                                Ul(
                                   { className: "effects wrap" },
                                   {
                                     children: [
@@ -29567,7 +30278,7 @@
                                       }),
                                       t.current.effectMult.map(function (n) {
                                         return (0,
-                                        e.jsx)(Lo, { className: n.amountValue < 1 ? "red" : "", gain: n });
+                                        e.jsx)(Po, { className: n.amountValue < 1 ? "red" : "", gain: n });
                                       }),
                                     ],
                                   }
@@ -29583,11 +30294,11 @@
             )
           );
         },
-        Ul = function (n) {
+        zl = function (n) {
           var t = n.upgrades;
           return (0, e.jsx)(
             Fa,
-            Ll(
+            Ul(
               {
                 isCollapsable: !0,
                 id: "xp-upgrades",
@@ -29602,8 +30313,8 @@
                   })
                   .map(function (n) {
                     return (0, e.jsxs)(
-                      _o,
-                      Ll(
+                      Oo,
+                      Ul(
                         {
                           label: n.name,
                           isAvailable: n.isAvailable,
@@ -29612,32 +30323,32 @@
                           className: "feature-item",
                           onClick: function () {
                             return (
-                              (e = n.id), void Ol.doXPUpgrade.send({ id: e })
+                              (e = n.id), void Il.doXPUpgrade.send({ id: e })
                             );
                             var e;
                           },
                           level: n.level,
                           maxLevel: n.maxLevel,
                           onMouseEnter: function () {
-                            return Mo(
+                            return Lo(
                               n.cost.filter(function (e) {
                                 return !e.isAvailable;
                               })
                             );
                           },
                           onMouseLeave: function () {
-                            return Mo(null);
+                            return Lo(null);
                           },
                         },
                         {
                           children: [
                             (0, e.jsx)(
                               "p",
-                              Ll({ className: "title" }, { children: n.name })
+                              Ul({ className: "title" }, { children: n.name })
                             ),
                             (0, e.jsx)(
                               "p",
-                              Ll(
+                              Ul(
                                 { className: "description" },
                                 { children: n.description }
                               )
@@ -29645,7 +30356,7 @@
                             n.cost.length
                               ? (0, e.jsxs)(
                                   "div",
-                                  Ll(
+                                  Ul(
                                     { className: "costs wrap" },
                                     {
                                       children: [
@@ -29653,7 +30364,7 @@
                                           children: "Cost",
                                         }),
                                         n.cost.map(function (n) {
-                                          return (0, e.jsx)(Io, { cost: n });
+                                          return (0, e.jsx)(Ro, { cost: n });
                                         }),
                                       ],
                                     }
@@ -29669,7 +30380,7 @@
             )
           );
         },
-        Fl = function (n) {
+        Hl = function (n) {
           var t = n.upgrades;
           return t.filter(function (e) {
             return e.isUnlocked && e.isLostTech;
@@ -29677,7 +30388,7 @@
             ? null
             : (0, e.jsx)(
                 Fa,
-                Ll(
+                Ul(
                   {
                     isCollapsable: !0,
                     id: "lost-tech-upgrades",
@@ -29692,8 +30403,8 @@
                       })
                       .map(function (n) {
                         return (0, e.jsxs)(
-                          _o,
-                          Ll(
+                          Oo,
+                          Ul(
                             {
                               label: n.name,
                               isAvailable: n.isAvailable,
@@ -29703,35 +30414,35 @@
                               onClick: function () {
                                 return (
                                   (e = n.id),
-                                  void Ol.doXPUpgrade.send({ id: e })
+                                  void Il.doXPUpgrade.send({ id: e })
                                 );
                                 var e;
                               },
                               level: n.level,
                               maxLevel: n.maxLevel,
                               onMouseEnter: function () {
-                                return Mo(
+                                return Lo(
                                   n.cost.filter(function (e) {
                                     return !e.isAvailable;
                                   })
                                 );
                               },
                               onMouseLeave: function () {
-                                return Mo(null);
+                                return Lo(null);
                               },
                             },
                             {
                               children: [
                                 (0, e.jsx)(
                                   "p",
-                                  Ll(
+                                  Ul(
                                     { className: "title" },
                                     { children: n.name }
                                   )
                                 ),
                                 (0, e.jsx)(
                                   "p",
-                                  Ll(
+                                  Ul(
                                     { className: "description" },
                                     { children: n.description }
                                   )
@@ -29739,7 +30450,7 @@
                                 n.cost.length
                                   ? (0, e.jsxs)(
                                       "div",
-                                      Ll(
+                                      Ul(
                                         { className: "costs wrap" },
                                         {
                                           children: [
@@ -29748,7 +30459,7 @@
                                             }),
                                             n.cost.map(function (n) {
                                               return (0,
-                                              e.jsx)(Io, { cost: n });
+                                              e.jsx)(Ro, { cost: n });
                                             }),
                                           ],
                                         }
@@ -29764,20 +30475,20 @@
                 )
               );
         },
-        zl = function () {
+        Gl = function () {
           var n = N(eo);
           return (0, e.jsxs)(e.Fragment, {
             children: [
-              (0, e.jsx)(Ml, { state: n }),
-              (0, e.jsx)(Dl, { colonize: n }),
-              (0, e.jsx)(Ul, { upgrades: n.upgrades }),
-              (0, e.jsx)(Fl, { upgrades: n.upgrades }),
+              (0, e.jsx)(Fl, { state: n }),
+              (0, e.jsx)(Bl, { colonize: n }),
+              (0, e.jsx)(zl, { upgrades: n.upgrades }),
+              (0, e.jsx)(Hl, { upgrades: n.upgrades }),
             ],
           });
         },
-        Bl = function () {
+        Wl = function () {
           return (
-            (Bl =
+            (Wl =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -29785,37 +30496,37 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            Bl.apply(this, arguments)
+            Wl.apply(this, arguments)
           );
         },
-        Hl = function (n) {
+        Yl = function (n) {
           var t = n.page;
           return "transmitKnowledge" === t
-            ? (0, e.jsx)(Pl, {})
+            ? (0, e.jsx)(Dl, {})
             : "colonize" === t
-            ? (0, e.jsx)(zl, {})
+            ? (0, e.jsx)(Gl, {})
             : (0, e.jsx)("p", { children: "None" });
         },
-        Gl = function () {
-          var n = As("prestige-page", "transmitKnowledge"),
+        Xl = function () {
+          var n = _s("prestige-page", "transmitKnowledge"),
             t = n[0],
             r = n[1],
             i = N(Za);
           return (0, e.jsxs)(
             "div",
-            Bl(
+            Wl(
               { className: "fit-height" },
               {
                 children: [
                   (0, e.jsxs)(
                     "div",
-                    Bl(
+                    Wl(
                       { className: "submenu" },
                       {
                         children: [
                           (0, e.jsx)(
                             io,
-                            Bl(
+                            Wl(
                               {
                                 id: "prestige:transmit-knowledge",
                                 className: "submenu-item-wrap",
@@ -29823,7 +30534,7 @@
                               {
                                 children: (0, e.jsx)(
                                   "div",
-                                  Bl(
+                                  Wl(
                                     {
                                       className: "submenu-item ".concat(
                                         "transmitKnowledge" === t
@@ -29843,7 +30554,7 @@
                           i
                             ? (0, e.jsx)(
                                 io,
-                                Bl(
+                                Wl(
                                   {
                                     id: "prestige:colonize",
                                     className: "submenu-item-wrap",
@@ -29851,7 +30562,7 @@
                                   {
                                     children: (0, e.jsx)(
                                       "div",
-                                      Bl(
+                                      Wl(
                                         {
                                           className: "submenu-item ".concat(
                                             "colonize" === t ? "selected" : ""
@@ -29873,15 +30584,15 @@
                   ),
                   (0, e.jsx)(
                     "div",
-                    Bl(
+                    Wl(
                       { className: "inner-scrollable planet" },
                       {
                         children: (0, e.jsx)(as(), {
                           children: (0, e.jsx)(
                             "div",
-                            Bl(
+                            Wl(
                               { className: "inner" },
-                              { children: (0, e.jsx)(Hl, { page: t }) }
+                              { children: (0, e.jsx)(Yl, { page: t }) }
                             )
                           ),
                         }),
@@ -29893,12 +30604,12 @@
             )
           );
         },
-        Wl = function (e) {
+        Vl = function (e) {
           return e.game.statistics;
         },
-        Yl = function () {
+        ql = function () {
           return (
-            (Yl =
+            (ql =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -29906,14 +30617,14 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            Yl.apply(this, arguments)
+            ql.apply(this, arguments)
           );
         },
-        Xl = function (n) {
+        Ql = function (n) {
           var t = n.stats;
           return (0, e.jsx)(
             Fa,
-            Yl(
+            ql(
               {
                 id: "stats",
                 label: "General Statistics",
@@ -29924,20 +30635,20 @@
                   children: [
                     (0, e.jsxs)(
                       "div",
-                      Yl(
+                      ql(
                         { className: "stat-item" },
                         {
                           children: [
                             (0, e.jsx)(
                               "p",
-                              Yl(
+                              ql(
                                 { className: "label" },
                                 { children: "Time In Game" }
                               )
                             ),
                             (0, e.jsx)(
                               "p",
-                              Yl(
+                              ql(
                                 { className: "value" },
                                 { children: lo(t.timeInGame) }
                               )
@@ -29951,13 +30662,13 @@
                           children: [
                             (0, e.jsxs)(
                               "div",
-                              Yl(
+                              ql(
                                 { className: "stat-item" },
                                 {
                                   children: [
                                     (0, e.jsx)(
                                       "p",
-                                      Yl(
+                                      ql(
                                         { className: "label" },
                                         {
                                           children:
@@ -29967,7 +30678,7 @@
                                     ),
                                     (0, e.jsx)(
                                       "p",
-                                      Yl(
+                                      ql(
                                         { className: "value" },
                                         { children: t.numPrestiges }
                                       )
@@ -29978,20 +30689,20 @@
                             ),
                             (0, e.jsxs)(
                               "div",
-                              Yl(
+                              ql(
                                 { className: "stat-item" },
                                 {
                                   children: [
                                     (0, e.jsx)(
                                       "p",
-                                      Yl(
+                                      ql(
                                         { className: "label" },
                                         { children: "Time This Prestige" }
                                       )
                                     ),
                                     (0, e.jsx)(
                                       "p",
-                                      Yl(
+                                      ql(
                                         { className: "value" },
                                         { children: lo(t.timeThisPrestige) }
                                       )
@@ -30002,20 +30713,20 @@
                             ),
                             (0, e.jsxs)(
                               "div",
-                              Yl(
+                              ql(
                                 { className: "stat-item" },
                                 {
                                   children: [
                                     (0, e.jsx)(
                                       "p",
-                                      Yl(
+                                      ql(
                                         { className: "label" },
                                         { children: "Total KP Gain (All time)" }
                                       )
                                     ),
                                     (0, e.jsx)(
                                       "p",
-                                      Yl(
+                                      ql(
                                         { className: "value" },
                                         { children: Math.round(t.kpTotal || 0) }
                                       )
@@ -30026,13 +30737,13 @@
                             ),
                             (0, e.jsxs)(
                               "div",
-                              Yl(
+                              ql(
                                 { className: "stat-item" },
                                 {
                                   children: [
                                     (0, e.jsx)(
                                       "p",
-                                      Yl(
+                                      ql(
                                         { className: "label" },
                                         {
                                           children:
@@ -30042,13 +30753,61 @@
                                     ),
                                     (0, e.jsx)(
                                       "p",
-                                      Yl(
+                                      ql(
                                         { className: "value" },
                                         {
                                           children: Math.round(
                                             t.kpMaxGain || 0
                                           ),
                                         }
+                                      )
+                                    ),
+                                  ],
+                                }
+                              )
+                            ),
+                            (0, e.jsxs)(
+                              "div",
+                              ql(
+                                { className: "stat-item" },
+                                {
+                                  children: [
+                                    (0, e.jsx)(
+                                      "p",
+                                      ql(
+                                        { className: "label" },
+                                        { children: "Current KP/hour" }
+                                      )
+                                    ),
+                                    (0, e.jsx)(
+                                      "p",
+                                      ql(
+                                        { className: "value" },
+                                        { children: co(t.kpPerHour || 0) }
+                                      )
+                                    ),
+                                  ],
+                                }
+                              )
+                            ),
+                            (0, e.jsxs)(
+                              "div",
+                              ql(
+                                { className: "stat-item" },
+                                {
+                                  children: [
+                                    (0, e.jsx)(
+                                      "p",
+                                      ql(
+                                        { className: "label" },
+                                        { children: "Max KP/hour" }
+                                      )
+                                    ),
+                                    (0, e.jsx)(
+                                      "p",
+                                      ql(
+                                        { className: "value" },
+                                        { children: co(t.maxKpPerHour || 0) }
                                       )
                                     ),
                                   ],
@@ -30063,20 +30822,20 @@
                           children: [
                             (0, e.jsxs)(
                               "div",
-                              Yl(
+                              ql(
                                 { className: "stat-item" },
                                 {
                                   children: [
                                     (0, e.jsx)(
                                       "p",
-                                      Yl(
+                                      ql(
                                         { className: "label" },
                                         { children: "Colonize Prestiges" }
                                       )
                                     ),
                                     (0, e.jsx)(
                                       "p",
-                                      Yl(
+                                      ql(
                                         { className: "value" },
                                         { children: t.numColonized }
                                       )
@@ -30087,20 +30846,20 @@
                             ),
                             (0, e.jsxs)(
                               "div",
-                              Yl(
+                              ql(
                                 { className: "stat-item" },
                                 {
                                   children: [
                                     (0, e.jsx)(
                                       "p",
-                                      Yl(
+                                      ql(
                                         { className: "label" },
                                         { children: "Time This Planet" }
                                       )
                                     ),
                                     (0, e.jsx)(
                                       "p",
-                                      Yl(
+                                      ql(
                                         { className: "value" },
                                         { children: lo(t.timeThisPlanet) }
                                       )
@@ -30111,20 +30870,20 @@
                             ),
                             (0, e.jsxs)(
                               "div",
-                              Yl(
+                              ql(
                                 { className: "stat-item" },
                                 {
                                   children: [
                                     (0, e.jsx)(
                                       "p",
-                                      Yl(
+                                      ql(
                                         { className: "label" },
                                         { children: "Total XP Gain (All time)" }
                                       )
                                     ),
                                     (0, e.jsx)(
                                       "p",
-                                      Yl(
+                                      ql(
                                         { className: "value" },
                                         { children: co(t.xpTotal || 0) }
                                       )
@@ -30135,13 +30894,13 @@
                             ),
                             (0, e.jsxs)(
                               "div",
-                              Yl(
+                              ql(
                                 { className: "stat-item" },
                                 {
                                   children: [
                                     (0, e.jsx)(
                                       "p",
-                                      Yl(
+                                      ql(
                                         { className: "label" },
                                         {
                                           children:
@@ -30151,9 +30910,57 @@
                                     ),
                                     (0, e.jsx)(
                                       "p",
-                                      Yl(
+                                      ql(
                                         { className: "value" },
                                         { children: co(+t.xpMaxGain || 0) }
+                                      )
+                                    ),
+                                  ],
+                                }
+                              )
+                            ),
+                            (0, e.jsxs)(
+                              "div",
+                              ql(
+                                { className: "stat-item" },
+                                {
+                                  children: [
+                                    (0, e.jsx)(
+                                      "p",
+                                      ql(
+                                        { className: "label" },
+                                        { children: "Current XP/hour" }
+                                      )
+                                    ),
+                                    (0, e.jsx)(
+                                      "p",
+                                      ql(
+                                        { className: "value" },
+                                        { children: co(t.xpPerHour || 0) }
+                                      )
+                                    ),
+                                  ],
+                                }
+                              )
+                            ),
+                            (0, e.jsxs)(
+                              "div",
+                              ql(
+                                { className: "stat-item" },
+                                {
+                                  children: [
+                                    (0, e.jsx)(
+                                      "p",
+                                      ql(
+                                        { className: "label" },
+                                        { children: "Max XP/hour" }
+                                      )
+                                    ),
+                                    (0, e.jsx)(
+                                      "p",
+                                      ql(
+                                        { className: "value" },
+                                        { children: co(t.maxXpPerHour || 0) }
                                       )
                                     ),
                                   ],
@@ -30165,20 +30972,20 @@
                       : null,
                     (0, e.jsxs)(
                       "div",
-                      Yl(
+                      ql(
                         { className: "stat-item" },
                         {
                           children: [
                             (0, e.jsx)(
                               "p",
-                              Yl(
+                              ql(
                                 { className: "label" },
                                 { children: "Maximum Colonists" }
                               )
                             ),
                             (0, e.jsx)(
                               "p",
-                              Yl(
+                              ql(
                                 { className: "value" },
                                 { children: t.maxColonists }
                               )
@@ -30189,20 +30996,20 @@
                     ),
                     (0, e.jsxs)(
                       "div",
-                      Yl(
+                      ql(
                         { className: "stat-item" },
                         {
                           children: [
                             (0, e.jsx)(
                               "p",
-                              Yl(
+                              ql(
                                 { className: "label" },
                                 { children: "Maximum Happiness" }
                               )
                             ),
                             (0, e.jsxs)(
                               "p",
-                              Yl(
+                              ql(
                                 { className: "value" },
                                 { children: [t.maxHappiness, "%"] }
                               )
@@ -30213,20 +31020,68 @@
                     ),
                     (0, e.jsxs)(
                       "div",
-                      Yl(
+                      ql(
                         { className: "stat-item" },
                         {
                           children: [
                             (0, e.jsx)(
                               "p",
-                              Yl(
+                              ql(
+                                { className: "label" },
+                                { children: "Colonists Died" }
+                              )
+                            ),
+                            (0, e.jsx)(
+                              "p",
+                              ql(
+                                { className: "value" },
+                                { children: t.diedThisPrestige }
+                              )
+                            ),
+                          ],
+                        }
+                      )
+                    ),
+                    (0, e.jsxs)(
+                      "div",
+                      ql(
+                        { className: "stat-item" },
+                        {
+                          children: [
+                            (0, e.jsx)(
+                              "p",
+                              ql(
+                                { className: "label" },
+                                { children: "Max. Dead colonists" }
+                              )
+                            ),
+                            (0, e.jsx)(
+                              "p",
+                              ql(
+                                { className: "value" },
+                                { children: t.maxDiedColonists }
+                              )
+                            ),
+                          ],
+                        }
+                      )
+                    ),
+                    (0, e.jsxs)(
+                      "div",
+                      ql(
+                        { className: "stat-item" },
+                        {
+                          children: [
+                            (0, e.jsx)(
+                              "p",
+                              ql(
                                 { className: "label" },
                                 { children: "Exotic Matter Collected" }
                               )
                             ),
                             (0, e.jsx)(
                               "p",
-                              Yl(
+                              ql(
                                 { className: "value" },
                                 { children: co(+t.exoticCollected || 0) }
                               )
@@ -30241,26 +31096,26 @@
             )
           );
         },
-        Vl = function () {
-          var n = As("statistics-page", "General"),
+        Kl = function () {
+          var n = _s("statistics-page", "General"),
             t = n[0],
             r = n[1],
-            i = N(Wl);
+            i = N(Vl);
           return (0, e.jsxs)(
             "div",
-            Yl(
+            ql(
               { className: "fit-height" },
               {
                 children: [
                   (0, e.jsx)(
                     "div",
-                    Yl(
+                    ql(
                       { className: "submenu" },
                       {
                         children: Object.values(["General"]).map(function (n) {
                           return (0, e.jsx)(
                             io,
-                            Yl(
+                            ql(
                               {
                                 id: "stats:General",
                                 className: "submenu-wrap",
@@ -30268,7 +31123,7 @@
                               {
                                 children: (0, e.jsx)(
                                   "div",
-                                  Yl(
+                                  ql(
                                     {
                                       className: "submenu-item ".concat(
                                         t === n ? "selected" : ""
@@ -30289,15 +31144,15 @@
                   ),
                   (0, e.jsx)(
                     "div",
-                    Yl(
+                    ql(
                       { className: "inner-scrollable stats" },
                       {
                         children: (0, e.jsx)(as(), {
                           children: (0, e.jsx)(
                             "div",
-                            Yl(
+                            ql(
                               { className: "inner" },
-                              { children: (0, e.jsx)(Xl, { stats: i }) }
+                              { children: (0, e.jsx)(Ql, { stats: i }) }
                             )
                           ),
                         }),
@@ -30309,9 +31164,9 @@
             )
           );
         },
-        ql = function () {
+        $l = function () {
           return (
-            (ql =
+            ($l =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -30319,23 +31174,23 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            ql.apply(this, arguments)
+            $l.apply(this, arguments)
           );
         },
-        Ql = function (e, n, t) {
+        Zl = function (e, n, t) {
           if (t || 2 === arguments.length)
             for (var r, i = 0, a = n.length; i < a; i++)
               (!r && i in n) ||
                 (r || (r = Array.prototype.slice.call(n, 0, i)), (r[i] = n[i]));
           return e.concat(r || Array.prototype.slice.call(n));
         },
-        Kl = function (n) {
+        Jl = function (n) {
           var t = n.presets,
             i = (0, r.useState)(void 0),
             a = i[0],
             o = i[1],
-            s = N(Ko),
-            l = N(ps),
+            s = N(Qo),
+            l = N(hs),
             c = function (e, n, t) {
               var r, i;
               if (a) {
@@ -30347,9 +31202,9 @@
                     ? i
                     : -1;
                 if (!(s < 0)) {
-                  var l = Ql([], a.jobs, !0);
-                  l[s] = ql(ql({}, l[s]), (((r = {})[n] = t), r));
-                  var c = ql(ql({}, a), { jobs: l });
+                  var l = Zl([], a.jobs, !0);
+                  l[s] = $l($l({}, l[s]), (((r = {})[n] = t), r));
+                  var c = $l($l({}, a), { jobs: l });
                   o(c);
                 }
               }
@@ -30365,28 +31220,28 @@
                     ? i
                     : -1;
                 if (!(s < 0)) {
-                  var l = Ql([], a.crafting, !0);
-                  l[s] = ql(ql({}, l[s]), (((r = {})[n] = t), r));
-                  var c = ql(ql({}, a), { crafting: l });
+                  var l = Zl([], a.crafting, !0);
+                  l[s] = $l($l({}, l[s]), (((r = {})[n] = t), r));
+                  var c = $l($l({}, a), { crafting: l });
                   o(c);
                 }
               }
             };
           return (0, e.jsxs)(
             "div",
-            ql(
+            $l(
               { className: "editor-wrap columns" },
               {
                 children: [
                   (0, e.jsxs)(
                     "div",
-                    ql(
+                    $l(
                       { className: "loader-column column" },
                       {
                         children: [
                           (0, e.jsx)(
                             "div",
-                            ql(
+                            $l(
                               {
                                 className: "select-item primary",
                                 onClick: function () {
@@ -30425,7 +31280,7 @@
                             children: t.list.map(function (n) {
                               return (0, e.jsxs)(
                                 "div",
-                                ql(
+                                $l(
                                   {
                                     className: "select-item ".concat(
                                       (null == a ? void 0 : a.uuid) === n.uuid
@@ -30449,13 +31304,13 @@
                                       n.name,
                                       (0, e.jsx)(
                                         "span",
-                                        ql(
+                                        $l(
                                           {
                                             className: "delete-preset",
                                             onClick: function () {
                                               return (
                                                 (e = n.uuid),
-                                                void bs.deletePreset.send(e)
+                                                void ws.deletePreset.send(e)
                                               );
                                               var e;
                                             },
@@ -30475,7 +31330,7 @@
                   ),
                   (0, e.jsx)(
                     "div",
-                    ql(
+                    $l(
                       { className: "editor-column column" },
                       {
                         children: a
@@ -30483,19 +31338,19 @@
                               children: [
                                 (0, e.jsxs)(
                                   "div",
-                                  ql(
+                                  $l(
                                     { className: "main" },
                                     {
                                       children: [
                                         (0, e.jsxs)(
                                           "div",
-                                          ql(
+                                          $l(
                                             { className: "row" },
                                             {
                                               children: [
                                                 (0, e.jsx)(
                                                   "p",
-                                                  ql(
+                                                  $l(
                                                     { className: "label" },
                                                     { children: "Name" }
                                                   )
@@ -30506,7 +31361,7 @@
                                                     null == a ? void 0 : a.name,
                                                   onChange: function (e) {
                                                     o(
-                                                      ql(ql({}, a), {
+                                                      $l($l({}, a), {
                                                         name: e.target.value,
                                                       })
                                                     );
@@ -30518,17 +31373,17 @@
                                         ),
                                         (0, e.jsxs)(
                                           "div",
-                                          ql(
+                                          $l(
                                             { className: "row buttons" },
                                             {
                                               children: [
                                                 (0, e.jsx)(
                                                   "button",
-                                                  ql(
+                                                  $l(
                                                     {
                                                       onClick: function () {
                                                         if (a) {
-                                                          var e = ql({}, a);
+                                                          var e = $l({}, a);
                                                           (e.jobs = e.jobs.map(
                                                             function (e) {
                                                               var n,
@@ -30555,8 +31410,8 @@
                                                                   void 0 !== t
                                                                     ? t
                                                                     : 0;
-                                                              return ql(
-                                                                ql({}, e),
+                                                              return $l(
+                                                                $l({}, e),
                                                                 {
                                                                   isValueAmount:
                                                                     !0,
@@ -30593,8 +31448,8 @@
                                                                         t
                                                                         ? t
                                                                         : 0;
-                                                                  return ql(
-                                                                    ql({}, e),
+                                                                  return $l(
+                                                                    $l({}, e),
                                                                     {
                                                                       isValueAmount:
                                                                         !0,
@@ -30615,11 +31470,11 @@
                                                 ),
                                                 (0, e.jsx)(
                                                   "button",
-                                                  ql(
+                                                  $l(
                                                     {
                                                       onClick: function () {
                                                         if (a) {
-                                                          var e = ql({}, a);
+                                                          var e = $l({}, a);
                                                           (e.jobs = e.jobs.map(
                                                             function (e) {
                                                               var n,
@@ -30646,8 +31501,8 @@
                                                                   void 0 !== t
                                                                     ? t
                                                                     : 0;
-                                                              return ql(
-                                                                ql({}, e),
+                                                              return $l(
+                                                                $l({}, e),
                                                                 {
                                                                   isValueAmount:
                                                                     !1,
@@ -30686,8 +31541,8 @@
                                                                         t
                                                                         ? t
                                                                         : 0;
-                                                                  return ql(
-                                                                    ql({}, e),
+                                                                  return $l(
+                                                                    $l({}, e),
                                                                     {
                                                                       isValueAmount:
                                                                         !1,
@@ -30719,19 +31574,19 @@
                                 ),
                                 (0, e.jsx)(
                                   "div",
-                                  ql(
+                                  $l(
                                     { className: "details" },
                                     {
                                       children: (0, e.jsx)(as(), {
                                         children: (0, e.jsxs)(
                                           "div",
-                                          ql(
+                                          $l(
                                             { className: "jobs" },
                                             {
                                               children: [
                                                 (0, e.jsx)(
                                                   Fa,
-                                                  ql(
+                                                  $l(
                                                     {
                                                       id: "preset-jobs",
                                                       label: "Jobs",
@@ -30744,7 +31599,7 @@
                                                         function (n) {
                                                           return (0, e.jsxs)(
                                                             "div",
-                                                            ql(
+                                                            $l(
                                                               {
                                                                 className:
                                                                   "row job-container",
@@ -30753,7 +31608,7 @@
                                                                 children: [
                                                                   (0, e.jsx)(
                                                                     "p",
-                                                                    ql(
+                                                                    $l(
                                                                       {
                                                                         className:
                                                                           "title",
@@ -30766,7 +31621,7 @@
                                                                   ),
                                                                   (0, e.jsx)(
                                                                     "div",
-                                                                    ql(
+                                                                    $l(
                                                                       {
                                                                         className:
                                                                           "toggle-mode",
@@ -30776,7 +31631,7 @@
                                                                           (0,
                                                                           e.jsx)(
                                                                             "div",
-                                                                            ql(
+                                                                            $l(
                                                                               {
                                                                                 className:
                                                                                   "value set-percentage",
@@ -30818,7 +31673,7 @@
                                                                   ),
                                                                   (0, e.jsx)(
                                                                     "div",
-                                                                    ql(
+                                                                    $l(
                                                                       {
                                                                         className:
                                                                           "values",
@@ -30828,7 +31683,7 @@
                                                                           (0,
                                                                           e.jsxs)(
                                                                             "div",
-                                                                            ql(
+                                                                            $l(
                                                                               {
                                                                                 className:
                                                                                   "value",
@@ -30882,7 +31737,7 @@
                                                                     : (0,
                                                                       e.jsxs)(
                                                                         "div",
-                                                                        ql(
+                                                                        $l(
                                                                           {
                                                                             className:
                                                                               "additional flex",
@@ -30893,7 +31748,7 @@
                                                                                 (0,
                                                                                 e.jsxs)(
                                                                                   "div",
-                                                                                  ql(
+                                                                                  $l(
                                                                                     {
                                                                                       className:
                                                                                         "value",
@@ -30937,7 +31792,7 @@
                                                                                 (0,
                                                                                 e.jsxs)(
                                                                                   "div",
-                                                                                  ql(
+                                                                                  $l(
                                                                                     {
                                                                                       className:
                                                                                         "value",
@@ -30993,7 +31848,7 @@
                                                 ),
                                                 (0, e.jsx)(
                                                   Fa,
-                                                  ql(
+                                                  $l(
                                                     {
                                                       id: "preset-crafting",
                                                       label: "Craftsmen",
@@ -31006,7 +31861,7 @@
                                                         function (n) {
                                                           return (0, e.jsxs)(
                                                             "div",
-                                                            ql(
+                                                            $l(
                                                               {
                                                                 className:
                                                                   "row job-container",
@@ -31015,7 +31870,7 @@
                                                                 children: [
                                                                   (0, e.jsx)(
                                                                     "p",
-                                                                    ql(
+                                                                    $l(
                                                                       {
                                                                         className:
                                                                           "title",
@@ -31028,7 +31883,7 @@
                                                                   ),
                                                                   (0, e.jsx)(
                                                                     "div",
-                                                                    ql(
+                                                                    $l(
                                                                       {
                                                                         className:
                                                                           "toggle-mode",
@@ -31038,7 +31893,7 @@
                                                                           (0,
                                                                           e.jsx)(
                                                                             "div",
-                                                                            ql(
+                                                                            $l(
                                                                               {
                                                                                 className:
                                                                                   "value set-percentage",
@@ -31080,7 +31935,7 @@
                                                                   ),
                                                                   (0, e.jsx)(
                                                                     "div",
-                                                                    ql(
+                                                                    $l(
                                                                       {
                                                                         className:
                                                                           "values",
@@ -31090,7 +31945,7 @@
                                                                           (0,
                                                                           e.jsxs)(
                                                                             "div",
-                                                                            ql(
+                                                                            $l(
                                                                               {
                                                                                 className:
                                                                                   "value",
@@ -31144,7 +31999,7 @@
                                                                     : (0,
                                                                       e.jsxs)(
                                                                         "div",
-                                                                        ql(
+                                                                        $l(
                                                                           {
                                                                             className:
                                                                               "additional flex",
@@ -31155,7 +32010,7 @@
                                                                                 (0,
                                                                                 e.jsxs)(
                                                                                   "div",
-                                                                                  ql(
+                                                                                  $l(
                                                                                     {
                                                                                       className:
                                                                                         "value",
@@ -31199,7 +32054,7 @@
                                                                                 (0,
                                                                                 e.jsxs)(
                                                                                   "div",
-                                                                                  ql(
+                                                                                  $l(
                                                                                     {
                                                                                       className:
                                                                                         "value",
@@ -31263,15 +32118,15 @@
                                 ),
                                 (0, e.jsx)(
                                   "div",
-                                  ql(
+                                  $l(
                                     { className: "save-area" },
                                     {
                                       children: (0, e.jsx)(
                                         "button",
-                                        ql(
+                                        $l(
                                           {
                                             onClick: function () {
-                                              bs.saveJobsPreset.send(a);
+                                              ws.saveJobsPreset.send(a);
                                             },
                                           },
                                           { children: "Save" }
@@ -31291,19 +32146,19 @@
             )
           );
         },
-        $l = function () {
+        ec = function () {
           var n = N(jo);
           return (0, e.jsx)(
             "div",
-            ql(
+            $l(
               { className: "presets-wrap" },
-              { children: (0, e.jsx)(Kl, { presets: n }) }
+              { children: (0, e.jsx)(Jl, { presets: n }) }
             )
           );
         },
-        Zl = function () {
+        nc = function () {
           return (
-            (Zl =
+            (nc =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -31311,59 +32166,623 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            Zl.apply(this, arguments)
+            nc.apply(this, arguments)
           );
         },
-        Jl = function (n) {
-          return "jobs" === n.page
-            ? (0, e.jsx)($l, {})
-            : (0, e.jsx)("p", { children: "None" });
+        tc = function (e, n, t) {
+          if (t || 2 === arguments.length)
+            for (var r, i = 0, a = n.length; i < a; i++)
+              (!r && i in n) ||
+                (r || (r = Array.prototype.slice.call(n, 0, i)), (r[i] = n[i]));
+          return e.concat(r || Array.prototype.slice.call(n));
         },
-        ec = function () {
-          var n = N(yo),
-            t = As("presets-page", "jobs"),
-            r = t[0],
-            i = t[1];
+        rc = function (n) {
+          var t = n.presets,
+            i = (0, r.useState)(void 0),
+            a = i[0],
+            o = i[1],
+            s = N(Ga);
           return (0, e.jsxs)(
             "div",
-            Zl(
-              { className: "fit-height" },
+            nc(
+              { className: "editor-wrap columns" },
               {
                 children: [
-                  (0, e.jsx)(
+                  (0, e.jsxs)(
                     "div",
-                    Zl(
-                      { className: "submenu" },
+                    nc(
+                      { className: "loader-column column" },
                       {
-                        children: n.jobs.isUnlocked
-                          ? (0, e.jsx)(
-                              "div",
-                              Zl(
-                                {
-                                  className: "submenu-item ".concat(
-                                    "jobs" === r ? "selected" : ""
-                                  ),
-                                  onClick: function () {
-                                    return i("jobs");
-                                  },
+                        children: [
+                          (0, e.jsx)(
+                            "div",
+                            nc(
+                              {
+                                className: "select-item primary",
+                                onClick: function () {
+                                  var e = {
+                                    name: "",
+                                    uuid: "",
+                                    laws: t.newPreset.laws.map(function (e) {
+                                      return {
+                                        id: e.id,
+                                        name: e.name,
+                                        description: e.description,
+                                        options: tc([], e.options, !0).map(
+                                          function (e, n) {
+                                            return nc(nc({}, e), {
+                                              isSelected: 0 === n,
+                                            });
+                                          }
+                                        ),
+                                      };
+                                    }),
+                                  };
+                                  o(e);
                                 },
-                                { children: "Jobs Presets" }
-                              )
+                              },
+                              { children: "+ Create New" }
                             )
-                          : null,
+                          ),
+                          (0, e.jsx)(as(), {
+                            children: t.list.map(function (n) {
+                              return (0, e.jsxs)(
+                                "div",
+                                nc(
+                                  {
+                                    className: "select-item ".concat(
+                                      (null == a ? void 0 : a.uuid) === n.uuid
+                                        ? "selected"
+                                        : ""
+                                    ),
+                                    onClick: function () {
+                                      return (
+                                        (e = n.uuid),
+                                        void o(
+                                          t.list.find(function (n) {
+                                            return n.uuid === e;
+                                          })
+                                        )
+                                      );
+                                      var e;
+                                    },
+                                  },
+                                  {
+                                    children: [
+                                      n.name,
+                                      (0, e.jsx)(
+                                        "span",
+                                        nc(
+                                          {
+                                            className: "delete-preset",
+                                            onClick: function () {
+                                              return (
+                                                (e = n.uuid),
+                                                void ws.deleteLawsPreset.send(e)
+                                              );
+                                              var e;
+                                            },
+                                          },
+                                          { children: "X" }
+                                        )
+                                      ),
+                                    ],
+                                  }
+                                )
+                              );
+                            }),
+                          }),
+                        ],
                       }
                     )
                   ),
                   (0, e.jsx)(
                     "div",
-                    Zl(
+                    nc(
+                      { className: "editor-column column" },
+                      {
+                        children: a
+                          ? (0, e.jsxs)(e.Fragment, {
+                              children: [
+                                (0, e.jsxs)(
+                                  "div",
+                                  nc(
+                                    { className: "main" },
+                                    {
+                                      children: [
+                                        (0, e.jsxs)(
+                                          "div",
+                                          nc(
+                                            { className: "row" },
+                                            {
+                                              children: [
+                                                (0, e.jsx)(
+                                                  "p",
+                                                  nc(
+                                                    { className: "label" },
+                                                    { children: "Name" }
+                                                  )
+                                                ),
+                                                (0, e.jsx)("input", {
+                                                  type: "text",
+                                                  value:
+                                                    null == a ? void 0 : a.name,
+                                                  onChange: function (e) {
+                                                    o(
+                                                      nc(nc({}, a), {
+                                                        name: e.target.value,
+                                                      })
+                                                    );
+                                                  },
+                                                }),
+                                              ],
+                                            }
+                                          )
+                                        ),
+                                        (0, e.jsx)(
+                                          "div",
+                                          nc(
+                                            { className: "row buttons" },
+                                            {
+                                              children: (0, e.jsx)(
+                                                "button",
+                                                nc(
+                                                  {
+                                                    onClick: function () {
+                                                      if (a) {
+                                                        var e = nc({}, a);
+                                                        (e.laws = e.laws.map(
+                                                          function (e) {
+                                                            var n,
+                                                              t,
+                                                              r =
+                                                                null !==
+                                                                  (t =
+                                                                    null ===
+                                                                      (n =
+                                                                        s.laws.find(
+                                                                          function (
+                                                                            n
+                                                                          ) {
+                                                                            return (
+                                                                              n.id ===
+                                                                              e.id
+                                                                            );
+                                                                          }
+                                                                        )) ||
+                                                                    void 0 === n
+                                                                      ? void 0
+                                                                      : n.options.findIndex(
+                                                                          function (
+                                                                            e
+                                                                          ) {
+                                                                            return e.isSelected;
+                                                                          }
+                                                                        )) &&
+                                                                void 0 !== t
+                                                                  ? t
+                                                                  : 0;
+                                                            return nc(
+                                                              nc({}, e),
+                                                              {
+                                                                options: tc(
+                                                                  [],
+                                                                  e.options.map(
+                                                                    function (
+                                                                      e,
+                                                                      n
+                                                                    ) {
+                                                                      return nc(
+                                                                        nc(
+                                                                          {},
+                                                                          e
+                                                                        ),
+                                                                        {
+                                                                          isSelected:
+                                                                            n ===
+                                                                            r,
+                                                                        }
+                                                                      );
+                                                                    }
+                                                                  ),
+                                                                  !0
+                                                                ),
+                                                              }
+                                                            );
+                                                          }
+                                                        )),
+                                                          o(e);
+                                                      }
+                                                    },
+                                                  },
+                                                  {
+                                                    children:
+                                                      "Load current laws",
+                                                  }
+                                                )
+                                              ),
+                                            }
+                                          )
+                                        ),
+                                      ],
+                                    }
+                                  )
+                                ),
+                                (0, e.jsx)(
+                                  "div",
+                                  nc(
+                                    { className: "details" },
+                                    {
+                                      children: (0, e.jsx)(as(), {
+                                        children: (0, e.jsx)(
+                                          "div",
+                                          nc(
+                                            { className: "laws" },
+                                            {
+                                              children: (0, e.jsx)(
+                                                Fa,
+                                                nc(
+                                                  {
+                                                    id: "preset-laws",
+                                                    label: "Laws",
+                                                    className:
+                                                      "laws-distribution",
+                                                    isCollapsable: !0,
+                                                  },
+                                                  {
+                                                    children: a.laws.map(
+                                                      function (n) {
+                                                        return (0, e.jsxs)(
+                                                          "div",
+                                                          nc(
+                                                            {
+                                                              className:
+                                                                "laws-list laws-container",
+                                                            },
+                                                            {
+                                                              children: [
+                                                                (0, e.jsx)(
+                                                                  "p",
+                                                                  nc(
+                                                                    {
+                                                                      className:
+                                                                        "title",
+                                                                    },
+                                                                    {
+                                                                      children:
+                                                                        n.name,
+                                                                    }
+                                                                  )
+                                                                ),
+                                                                (0, e.jsx)(
+                                                                  "p",
+                                                                  nc(
+                                                                    {
+                                                                      className:
+                                                                        "description",
+                                                                    },
+                                                                    {
+                                                                      children:
+                                                                        n.description,
+                                                                    }
+                                                                  )
+                                                                ),
+                                                                (0, e.jsx)(
+                                                                  "div",
+                                                                  nc(
+                                                                    {
+                                                                      className:
+                                                                        "toggle-options",
+                                                                    },
+                                                                    {
+                                                                      children:
+                                                                        n.options.map(
+                                                                          function (
+                                                                            t,
+                                                                            r
+                                                                          ) {
+                                                                            return (0,
+                                                                            e.jsx)(
+                                                                              Ta,
+                                                                              nc(
+                                                                                {
+                                                                                  placement:
+                                                                                    "right",
+                                                                                  duration: 0,
+                                                                                  content:
+                                                                                    (0,
+                                                                                    e.jsx)(
+                                                                                      "div",
+                                                                                      nc(
+                                                                                        {
+                                                                                          className:
+                                                                                            "description-hint",
+                                                                                        },
+                                                                                        {
+                                                                                          children:
+                                                                                            t.description,
+                                                                                        }
+                                                                                      )
+                                                                                    ),
+                                                                                },
+                                                                                {
+                                                                                  children:
+                                                                                    (0,
+                                                                                    e.jsx)(
+                                                                                      "div",
+                                                                                      nc(
+                                                                                        {
+                                                                                          className:
+                                                                                            "option ".concat(
+                                                                                              t.isSelected
+                                                                                                ? "selected"
+                                                                                                : ""
+                                                                                            ),
+                                                                                          onClick:
+                                                                                            function () {
+                                                                                              return (function (
+                                                                                                e,
+                                                                                                n
+                                                                                              ) {
+                                                                                                var t;
+                                                                                                if (
+                                                                                                  a
+                                                                                                ) {
+                                                                                                  var r =
+                                                                                                    null !==
+                                                                                                      (t =
+                                                                                                        a.laws.findIndex(
+                                                                                                          function (
+                                                                                                            n
+                                                                                                          ) {
+                                                                                                            return (
+                                                                                                              n.id ===
+                                                                                                              e
+                                                                                                            );
+                                                                                                          }
+                                                                                                        )) &&
+                                                                                                    void 0 !==
+                                                                                                      t
+                                                                                                      ? t
+                                                                                                      : -1;
+                                                                                                  if (
+                                                                                                    !(
+                                                                                                      r <
+                                                                                                      0
+                                                                                                    )
+                                                                                                  ) {
+                                                                                                    var i =
+                                                                                                      tc(
+                                                                                                        [],
+                                                                                                        a.laws,
+                                                                                                        !0
+                                                                                                      );
+                                                                                                    i[
+                                                                                                      r
+                                                                                                    ].options =
+                                                                                                      i[
+                                                                                                        r
+                                                                                                      ].options.map(
+                                                                                                        function (
+                                                                                                          e,
+                                                                                                          t
+                                                                                                        ) {
+                                                                                                          return nc(
+                                                                                                            nc(
+                                                                                                              {},
+                                                                                                              e
+                                                                                                            ),
+                                                                                                            {
+                                                                                                              isSelected:
+                                                                                                                n ===
+                                                                                                                t,
+                                                                                                            }
+                                                                                                          );
+                                                                                                        }
+                                                                                                      );
+                                                                                                    var s =
+                                                                                                      nc(
+                                                                                                        nc(
+                                                                                                          {},
+                                                                                                          a
+                                                                                                        ),
+                                                                                                        {
+                                                                                                          laws: i,
+                                                                                                        }
+                                                                                                      );
+                                                                                                    o(
+                                                                                                      s
+                                                                                                    );
+                                                                                                  }
+                                                                                                }
+                                                                                              })(
+                                                                                                n.id,
+                                                                                                r
+                                                                                              );
+                                                                                            },
+                                                                                        },
+                                                                                        {
+                                                                                          children:
+                                                                                            (0,
+                                                                                            e.jsx)(
+                                                                                              "p",
+                                                                                              {
+                                                                                                children:
+                                                                                                  t.name,
+                                                                                              }
+                                                                                            ),
+                                                                                        }
+                                                                                      )
+                                                                                    ),
+                                                                                }
+                                                                              )
+                                                                            );
+                                                                          }
+                                                                        ),
+                                                                    }
+                                                                  )
+                                                                ),
+                                                              ],
+                                                            }
+                                                          )
+                                                        );
+                                                      }
+                                                    ),
+                                                  }
+                                                )
+                                              ),
+                                            }
+                                          )
+                                        ),
+                                      }),
+                                    }
+                                  )
+                                ),
+                                (0, e.jsx)(
+                                  "div",
+                                  nc(
+                                    { className: "save-area" },
+                                    {
+                                      children: (0, e.jsx)(
+                                        "button",
+                                        nc(
+                                          {
+                                            onClick: function () {
+                                              ws.saveLawsPreset.send(
+                                                nc(nc({}, a), {
+                                                  laws:
+                                                    null == a
+                                                      ? void 0
+                                                      : a.laws.map(function (
+                                                          e
+                                                        ) {
+                                                          return {
+                                                            id: e.id,
+                                                            optionId: Math.max(
+                                                              0,
+                                                              e.options.findIndex(
+                                                                function (e) {
+                                                                  return e.isSelected;
+                                                                }
+                                                              )
+                                                            ),
+                                                          };
+                                                        }),
+                                                })
+                                              );
+                                            },
+                                          },
+                                          { children: "Save" }
+                                        )
+                                      ),
+                                    }
+                                  )
+                                ),
+                              ],
+                            })
+                          : null,
+                      }
+                    )
+                  ),
+                ],
+              }
+            )
+          );
+        },
+        ic = function () {
+          var n = N(No);
+          return (0, e.jsx)(
+            "div",
+            nc(
+              { className: "presets-wrap" },
+              { children: (0, e.jsx)(rc, { presets: n }) }
+            )
+          );
+        },
+        ac = function () {
+          return (
+            (ac =
+              Object.assign ||
+              function (e) {
+                for (var n, t = 1, r = arguments.length; t < r; t++)
+                  for (var i in (n = arguments[t]))
+                    Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
+                return e;
+              }),
+            ac.apply(this, arguments)
+          );
+        },
+        oc = function (n) {
+          var t = n.page;
+          return "jobs" === t
+            ? (0, e.jsx)(ec, {})
+            : "laws" === t
+            ? (0, e.jsx)(ic, {})
+            : (0, e.jsx)("p", { children: "None" });
+        },
+        sc = function () {
+          var n = N(yo),
+            t = _s("presets-page", "jobs"),
+            r = t[0],
+            i = t[1];
+          return (0, e.jsxs)(
+            "div",
+            ac(
+              { className: "fit-height" },
+              {
+                children: [
+                  (0, e.jsxs)(
+                    "div",
+                    ac(
+                      { className: "submenu" },
+                      {
+                        children: [
+                          n.jobs.isUnlocked
+                            ? (0, e.jsx)(
+                                "div",
+                                ac(
+                                  {
+                                    className: "submenu-item ".concat(
+                                      "jobs" === r ? "selected" : ""
+                                    ),
+                                    onClick: function () {
+                                      return i("jobs");
+                                    },
+                                  },
+                                  { children: "Jobs Presets" }
+                                )
+                              )
+                            : null,
+                          n.laws.isUnlocked
+                            ? (0, e.jsx)(
+                                "div",
+                                ac(
+                                  {
+                                    className: "submenu-item ".concat(
+                                      "laws" === r ? "selected" : ""
+                                    ),
+                                    onClick: function () {
+                                      return i("laws");
+                                    },
+                                  },
+                                  { children: "Laws Presets" }
+                                )
+                              )
+                            : null,
+                        ],
+                      }
+                    )
+                  ),
+                  (0, e.jsx)(
+                    "div",
+                    ac(
                       { className: "inner-scrollable planet" },
                       {
                         children: (0, e.jsx)(
                           "div",
-                          Zl(
+                          ac(
                             { className: "inner" },
-                            { children: (0, e.jsx)(Jl, { page: r }) }
+                            { children: (0, e.jsx)(oc, { page: r }) }
                           )
                         ),
                       }
@@ -31374,46 +32793,46 @@
             )
           );
         },
-        nc = function () {
+        lc = function () {
           var n = N(ar);
           return n === ht.PLANET
-            ? (0, e.jsx)(Ds, {})
+            ? (0, e.jsx)(Bs, {})
             : n === ht.SCIENCE
-            ? (0, e.jsx)(Gs, {})
+            ? (0, e.jsx)(Xs, {})
             : n === ht.SPACE
-            ? (0, e.jsx)(Tl, {})
+            ? (0, e.jsx)(Rl, {})
             : n === ht.SETTINGS
-            ? (0, e.jsx)(qs, {})
+            ? (0, e.jsx)($s, {})
             : n === ht.LAWS
-            ? (0, e.jsx)(nl, {})
+            ? (0, e.jsx)(il, {})
             : n === ht.PRESTIGE
-            ? (0, e.jsx)(Gl, {})
+            ? (0, e.jsx)(Xl, {})
             : n === ht.PRESETS
-            ? (0, e.jsx)(ec, {})
+            ? (0, e.jsx)(sc, {})
             : n === ht.ABOUT
-            ? (0, e.jsx)(rl, {})
+            ? (0, e.jsx)(ol, {})
             : n === ht.STATISTICS
-            ? (0, e.jsx)(Vl, {})
+            ? (0, e.jsx)(Kl, {})
             : (0, e.jsx)("h2", { children: "Empty and cold here" });
         },
-        tc = t(8397),
-        rc = {};
-      (rc.styleTagTransform = tr()),
-        (rc.setAttributes = Zt()),
-        (rc.insert = Kt().bind(null, "head")),
-        (rc.domAPI = qt()),
-        (rc.insertStyleElement = er()),
-        Xt()(tc.Z, rc),
-        tc.Z && tc.Z.locals && tc.Z.locals;
-      var ic = t(904),
-        ac = t.n(ic),
-        oc = { "aria-busy": !0, role: "status" },
-        sc = function (e) {
+        cc = t(8397),
+        uc = {};
+      (uc.styleTagTransform = tr()),
+        (uc.setAttributes = Zt()),
+        (uc.insert = Kt().bind(null, "head")),
+        (uc.domAPI = qt()),
+        (uc.insertStyleElement = er()),
+        Xt()(cc.Z, uc),
+        cc.Z && cc.Z.locals && cc.Z.locals;
+      var dc = t(904),
+        pc = t.n(dc),
+        fc = { "aria-busy": !0, role: "status" },
+        hc = function (e) {
           return { display: e ? "flex" : "none" };
         },
-        lc = function () {
+        mc = function () {
           return (
-            (lc =
+            (mc =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -31421,10 +32840,10 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            lc.apply(this, arguments)
+            mc.apply(this, arguments)
           );
         };
-      const cc = function (e) {
+      const gc = function (e) {
         var n = e.wrapperStyle,
           t = void 0 === n ? {} : n,
           i = e.visible,
@@ -31444,9 +32863,9 @@
           b = void 0 === v ? "circles-with-bar-loading" : v;
         return r.createElement(
           "div",
-          lc(
-            { style: lc(lc({}, sc(a)), t), className: s, "aria-label": b },
-            oc,
+          mc(
+            { style: mc(mc({}, hc(a)), t), className: s, "aria-label": b },
+            fc,
             { "data-testid": "circles-with-bar-wrapper" }
           ),
           r.createElement(
@@ -31578,9 +32997,9 @@
           )
         );
       };
-      var uc = t(6774),
-        dc = t.n(uc);
-      const pc = function (e) {
+      var vc = t(6774),
+        bc = t.n(vc);
+      const xc = function (e) {
           function n(e, r, l, c, p) {
             for (
               var f,
@@ -31599,27 +33018,27 @@
                 D = 0,
                 U = 0,
                 F = 0,
-                z = l.length,
-                B = z - 1,
+                B = l.length,
+                z = B - 1,
                 H = "",
                 G = "",
                 W = "",
                 Y = "";
-              M < z;
+              M < B;
 
             ) {
               if (
                 ((h = l.charCodeAt(M)),
-                M === B &&
+                M === z &&
                   0 !== N + E + k + j &&
                   (0 !== N && (h = 47 === N ? 10 : 47),
                   (E = k = j = 0),
-                  z++,
-                  B++),
+                  B++,
+                  z++),
                 0 === N + E + k + j)
               ) {
                 if (
-                  M === B &&
+                  M === z &&
                   (0 < D && (H = H.replace(d, "")), 0 < H.trim().length)
                 ) {
                   switch (h) {
@@ -31638,7 +33057,7 @@
                   case 123:
                     for (
                       f = (H = H.trim()).charCodeAt(0), m = 1, F = ++M;
-                      M < z;
+                      M < B;
 
                     ) {
                       switch ((h = l.charCodeAt(M))) {
@@ -31653,7 +33072,7 @@
                             case 42:
                             case 47:
                               e: {
-                                for (P = M + 1; P < B; ++P)
+                                for (P = M + 1; P < z; ++P)
                                   switch (l.charCodeAt(P)) {
                                     case 47:
                                       if (
@@ -31681,7 +33100,7 @@
                           h++;
                         case 34:
                         case 39:
-                          for (; M++ < B && l.charCodeAt(M) !== h; );
+                          for (; M++ < z && l.charCodeAt(M) !== h; );
                       }
                       if (0 === m) break;
                       M++;
@@ -32243,7 +33662,7 @@
             c
           );
         },
-        fc = {
+        yc = {
           animationIterationCount: 1,
           borderImageOutset: 1,
           borderImageSlice: 1,
@@ -32290,16 +33709,16 @@
           strokeOpacity: 1,
           strokeWidth: 1,
         };
-      var hc =
+      var wc =
         /^((children|dangerouslySetInnerHTML|key|ref|autoFocus|defaultValue|defaultChecked|innerHTML|suppressContentEditableWarning|suppressHydrationWarning|valueLink|abbr|accept|acceptCharset|accessKey|action|allow|allowUserMedia|allowPaymentRequest|allowFullScreen|allowTransparency|alt|async|autoComplete|autoPlay|capture|cellPadding|cellSpacing|challenge|charSet|checked|cite|classID|className|cols|colSpan|content|contentEditable|contextMenu|controls|controlsList|coords|crossOrigin|data|dateTime|decoding|default|defer|dir|disabled|disablePictureInPicture|download|draggable|encType|enterKeyHint|form|formAction|formEncType|formMethod|formNoValidate|formTarget|frameBorder|headers|height|hidden|high|href|hrefLang|htmlFor|httpEquiv|id|inputMode|integrity|is|keyParams|keyType|kind|label|lang|list|loading|loop|low|marginHeight|marginWidth|max|maxLength|media|mediaGroup|method|min|minLength|multiple|muted|name|nonce|noValidate|open|optimum|pattern|placeholder|playsInline|poster|preload|profile|radioGroup|readOnly|referrerPolicy|rel|required|reversed|role|rows|rowSpan|sandbox|scope|scoped|scrolling|seamless|selected|shape|size|sizes|slot|span|spellCheck|src|srcDoc|srcLang|srcSet|start|step|style|summary|tabIndex|target|title|translate|type|useMap|value|width|wmode|wrap|about|datatype|inlist|prefix|property|resource|typeof|vocab|autoCapitalize|autoCorrect|autoSave|color|incremental|fallback|inert|itemProp|itemScope|itemType|itemID|itemRef|on|option|results|security|unselectable|accentHeight|accumulate|additive|alignmentBaseline|allowReorder|alphabetic|amplitude|arabicForm|ascent|attributeName|attributeType|autoReverse|azimuth|baseFrequency|baselineShift|baseProfile|bbox|begin|bias|by|calcMode|capHeight|clip|clipPathUnits|clipPath|clipRule|colorInterpolation|colorInterpolationFilters|colorProfile|colorRendering|contentScriptType|contentStyleType|cursor|cx|cy|d|decelerate|descent|diffuseConstant|direction|display|divisor|dominantBaseline|dur|dx|dy|edgeMode|elevation|enableBackground|end|exponent|externalResourcesRequired|fill|fillOpacity|fillRule|filter|filterRes|filterUnits|floodColor|floodOpacity|focusable|fontFamily|fontSize|fontSizeAdjust|fontStretch|fontStyle|fontVariant|fontWeight|format|from|fr|fx|fy|g1|g2|glyphName|glyphOrientationHorizontal|glyphOrientationVertical|glyphRef|gradientTransform|gradientUnits|hanging|horizAdvX|horizOriginX|ideographic|imageRendering|in|in2|intercept|k|k1|k2|k3|k4|kernelMatrix|kernelUnitLength|kerning|keyPoints|keySplines|keyTimes|lengthAdjust|letterSpacing|lightingColor|limitingConeAngle|local|markerEnd|markerMid|markerStart|markerHeight|markerUnits|markerWidth|mask|maskContentUnits|maskUnits|mathematical|mode|numOctaves|offset|opacity|operator|order|orient|orientation|origin|overflow|overlinePosition|overlineThickness|panose1|paintOrder|pathLength|patternContentUnits|patternTransform|patternUnits|pointerEvents|points|pointsAtX|pointsAtY|pointsAtZ|preserveAlpha|preserveAspectRatio|primitiveUnits|r|radius|refX|refY|renderingIntent|repeatCount|repeatDur|requiredExtensions|requiredFeatures|restart|result|rotate|rx|ry|scale|seed|shapeRendering|slope|spacing|specularConstant|specularExponent|speed|spreadMethod|startOffset|stdDeviation|stemh|stemv|stitchTiles|stopColor|stopOpacity|strikethroughPosition|strikethroughThickness|string|stroke|strokeDasharray|strokeDashoffset|strokeLinecap|strokeLinejoin|strokeMiterlimit|strokeOpacity|strokeWidth|surfaceScale|systemLanguage|tableValues|targetX|targetY|textAnchor|textDecoration|textRendering|textLength|to|transform|u1|u2|underlinePosition|underlineThickness|unicode|unicodeBidi|unicodeRange|unitsPerEm|vAlphabetic|vHanging|vIdeographic|vMathematical|values|vectorEffect|version|vertAdvY|vertOriginX|vertOriginY|viewBox|viewTarget|visibility|widths|wordSpacing|writingMode|x|xHeight|x1|x2|xChannelSelector|xlinkActuate|xlinkArcrole|xlinkHref|xlinkRole|xlinkShow|xlinkTitle|xlinkType|xmlBase|xmlns|xmlnsXlink|xmlLang|xmlSpace|y|y1|y2|yChannelSelector|z|zoomAndPan|for|class|autofocus)|(([Dd][Aa][Tt][Aa]|[Aa][Rr][Ii][Aa]|x)-.*))$/;
-      const mc = (function (e) {
+      const jc = (function (e) {
         var n = Object.create(null);
         return function (e) {
           return (
             void 0 === n[e] &&
               (n[e] =
                 ((t = e),
-                hc.test(t) ||
+                wc.test(t) ||
                   (111 === t.charCodeAt(0) &&
                     110 === t.charCodeAt(1) &&
                     t.charCodeAt(2) < 91))),
@@ -32308,8 +33727,8 @@
           var t;
         };
       })();
-      function gc() {
-        return (gc =
+      function Nc() {
+        return (Nc =
           Object.assign ||
           function (e) {
             for (var n = 1; n < arguments.length; n++) {
@@ -32320,12 +33739,12 @@
             return e;
           }).apply(this, arguments);
       }
-      var vc = function (e, n) {
+      var kc = function (e, n) {
           for (var t = [e[0]], r = 0, i = n.length; r < i; r += 1)
             t.push(n[r], e[r + 1]);
           return t;
         },
-        bc = function (e) {
+        Ec = function (e) {
           return (
             null !== e &&
             "object" == typeof e &&
@@ -32334,24 +33753,24 @@
             !(0, f.typeOf)(e)
           );
         },
-        xc = Object.freeze([]),
-        yc = Object.freeze({});
-      function wc(e) {
+        Sc = Object.freeze([]),
+        Cc = Object.freeze({});
+      function Ac(e) {
         return "function" == typeof e;
       }
-      function jc(e) {
+      function Tc(e) {
         return e.displayName || e.name || "Component";
       }
-      function Nc(e) {
+      function Oc(e) {
         return e && "string" == typeof e.styledComponentId;
       }
-      var kc =
+      var _c =
           ("undefined" != typeof process &&
             void 0 !== process.env &&
             (process.env.REACT_APP_SC_ATTR || process.env.SC_ATTR)) ||
           "data-styled",
-        Ec = "undefined" != typeof window && "HTMLElement" in window,
-        Sc = Boolean(
+        Rc = "undefined" != typeof window && "HTMLElement" in window,
+        Ic = Boolean(
           "boolean" == typeof SC_DISABLE_SPEEDY
             ? SC_DISABLE_SPEEDY
             : "undefined" != typeof process &&
@@ -32365,7 +33784,7 @@
                     "false" !== process.env.SC_DISABLE_SPEEDY &&
                     process.env.SC_DISABLE_SPEEDY)
         );
-      function Cc(e) {
+      function Pc(e) {
         for (
           var n = arguments.length, t = new Array(n > 1 ? n - 1 : 0), r = 1;
           r < n;
@@ -32379,7 +33798,7 @@
             (t.length > 0 ? " Args: " + t.join(", ") : "")
         );
       }
-      var Ac = (function () {
+      var Lc = (function () {
           function e(e) {
             (this.groupSizes = new Uint32Array(512)),
               (this.length = 512),
@@ -32394,7 +33813,7 @@
             (n.insertRules = function (e, n) {
               if (e >= this.groupSizes.length) {
                 for (var t = this.groupSizes, r = t.length, i = r; e >= i; )
-                  (i <<= 1) < 0 && Cc(16, "" + e);
+                  (i <<= 1) < 0 && Pc(16, "" + e);
                 (this.groupSizes = new Uint32Array(i)),
                   this.groupSizes.set(t),
                   (this.length = i);
@@ -32433,30 +33852,30 @@
             e
           );
         })(),
-        Tc = new Map(),
-        Oc = new Map(),
-        _c = 1,
-        Rc = function (e) {
-          if (Tc.has(e)) return Tc.get(e);
-          for (; Oc.has(_c); ) _c++;
-          var n = _c++;
-          return Tc.set(e, n), Oc.set(n, e), n;
+        Mc = new Map(),
+        Dc = new Map(),
+        Uc = 1,
+        Fc = function (e) {
+          if (Mc.has(e)) return Mc.get(e);
+          for (; Dc.has(Uc); ) Uc++;
+          var n = Uc++;
+          return Mc.set(e, n), Dc.set(n, e), n;
         },
-        Ic = function (e) {
-          return Oc.get(e);
+        Bc = function (e) {
+          return Dc.get(e);
         },
-        Pc = function (e, n) {
-          n >= _c && (_c = n + 1), Tc.set(e, n), Oc.set(n, e);
+        zc = function (e, n) {
+          n >= Uc && (Uc = n + 1), Mc.set(e, n), Dc.set(n, e);
         },
-        Lc = "style[" + kc + '][data-styled-version="5.3.11"]',
-        Mc = new RegExp(
-          "^" + kc + '\\.g(\\d+)\\[id="([\\w\\d-]+)"\\].*?"([^"]*)'
+        Hc = "style[" + _c + '][data-styled-version="5.3.11"]',
+        Gc = new RegExp(
+          "^" + _c + '\\.g(\\d+)\\[id="([\\w\\d-]+)"\\].*?"([^"]*)'
         ),
-        Dc = function (e, n, t) {
+        Wc = function (e, n, t) {
           for (var r, i = t.split(","), a = 0, o = i.length; a < o; a++)
             (r = i[a]) && e.registerName(n, r);
         },
-        Uc = function (e, n) {
+        Yc = function (e, n) {
           for (
             var t = (n.textContent || "").split("/*!sc*/\n"),
               r = [],
@@ -32467,39 +33886,39 @@
           ) {
             var o = t[i].trim();
             if (o) {
-              var s = o.match(Mc);
+              var s = o.match(Gc);
               if (s) {
                 var l = 0 | parseInt(s[1], 10),
                   c = s[2];
                 0 !== l &&
-                  (Pc(c, l), Dc(e, c, s[3]), e.getTag().insertRules(l, r)),
+                  (zc(c, l), Wc(e, c, s[3]), e.getTag().insertRules(l, r)),
                   (r.length = 0);
               } else r.push(o);
             }
           }
         },
-        Fc = function () {
+        Xc = function () {
           return t.nc;
         },
-        zc = function (e) {
+        Vc = function (e) {
           var n = document.head,
             t = e || n,
             r = document.createElement("style"),
             i = (function (e) {
               for (var n = e.childNodes, t = n.length; t >= 0; t--) {
                 var r = n[t];
-                if (r && 1 === r.nodeType && r.hasAttribute(kc)) return r;
+                if (r && 1 === r.nodeType && r.hasAttribute(_c)) return r;
               }
             })(t),
             a = void 0 !== i ? i.nextSibling : null;
-          r.setAttribute(kc, "active"),
+          r.setAttribute(_c, "active"),
             r.setAttribute("data-styled-version", "5.3.11");
-          var o = Fc();
+          var o = Xc();
           return o && r.setAttribute("nonce", o), t.insertBefore(r, a), r;
         },
-        Bc = (function () {
+        qc = (function () {
           function e(e) {
-            var n = (this.element = zc(e));
+            var n = (this.element = Vc(e));
             n.appendChild(document.createTextNode("")),
               (this.sheet = (function (e) {
                 if (e.sheet) return e.sheet;
@@ -32511,7 +33930,7 @@
                   var i = n[t];
                   if (i.ownerNode === e) return i;
                 }
-                Cc(17);
+                Pc(17);
               })(n)),
               (this.length = 0);
           }
@@ -32536,9 +33955,9 @@
             e
           );
         })(),
-        Hc = (function () {
+        Qc = (function () {
           function e(e) {
-            var n = (this.element = zc(e));
+            var n = (this.element = Vc(e));
             (this.nodes = n.childNodes), (this.length = 0);
           }
           var n = e.prototype;
@@ -32562,7 +33981,7 @@
             e
           );
         })(),
-        Gc = (function () {
+        Kc = (function () {
           function e(e) {
             (this.rules = []), (this.length = 0);
           }
@@ -32583,35 +34002,35 @@
             e
           );
         })(),
-        Wc = Ec,
-        Yc = { isServer: !Ec, useCSSOMInjection: !Sc },
-        Xc = (function () {
+        $c = Rc,
+        Zc = { isServer: !Rc, useCSSOMInjection: !Ic },
+        Jc = (function () {
           function e(e, n, t) {
-            void 0 === e && (e = yc),
+            void 0 === e && (e = Cc),
               void 0 === n && (n = {}),
-              (this.options = gc({}, Yc, {}, e)),
+              (this.options = Nc({}, Zc, {}, e)),
               (this.gs = n),
               (this.names = new Map(t)),
               (this.server = !!e.isServer),
               !this.server &&
-                Ec &&
-                Wc &&
-                ((Wc = !1),
+                Rc &&
+                $c &&
+                (($c = !1),
                 (function (e) {
                   for (
-                    var n = document.querySelectorAll(Lc), t = 0, r = n.length;
+                    var n = document.querySelectorAll(Hc), t = 0, r = n.length;
                     t < r;
                     t++
                   ) {
                     var i = n[t];
                     i &&
-                      "active" !== i.getAttribute(kc) &&
-                      (Uc(e, i), i.parentNode && i.parentNode.removeChild(i));
+                      "active" !== i.getAttribute(_c) &&
+                      (Yc(e, i), i.parentNode && i.parentNode.removeChild(i));
                   }
                 })(this));
           }
           e.registerId = function (e) {
-            return Rc(e);
+            return Fc(e);
           };
           var n = e.prototype;
           return (
@@ -32619,7 +34038,7 @@
               return (
                 void 0 === t && (t = !0),
                 new e(
-                  gc({}, this.options, {}, n),
+                  Nc({}, this.options, {}, n),
                   this.gs,
                   (t && this.names) || void 0
                 )
@@ -32635,8 +34054,8 @@
                   ((t = (n = this.options).isServer),
                   (r = n.useCSSOMInjection),
                   (i = n.target),
-                  (e = t ? new Gc(i) : r ? new Bc(i) : new Hc(i)),
-                  new Ac(e)))
+                  (e = t ? new Kc(i) : r ? new qc(i) : new Qc(i)),
+                  new Lc(e)))
               );
               var e, n, t, r, i;
             }),
@@ -32644,20 +34063,20 @@
               return this.names.has(e) && this.names.get(e).has(n);
             }),
             (n.registerName = function (e, n) {
-              if ((Rc(e), this.names.has(e))) this.names.get(e).add(n);
+              if ((Fc(e), this.names.has(e))) this.names.get(e).add(n);
               else {
                 var t = new Set();
                 t.add(n), this.names.set(e, t);
               }
             }),
             (n.insertRules = function (e, n, t) {
-              this.registerName(e, n), this.getTag().insertRules(Rc(e), t);
+              this.registerName(e, n), this.getTag().insertRules(Fc(e), t);
             }),
             (n.clearNames = function (e) {
               this.names.has(e) && this.names.get(e).clear();
             }),
             (n.clearRules = function (e) {
-              this.getTag().clearGroup(Rc(e)), this.clearNames(e);
+              this.getTag().clearGroup(Fc(e)), this.clearNames(e);
             }),
             (n.clearTag = function () {
               this.tag = void 0;
@@ -32669,12 +34088,12 @@
                   i < t;
                   i++
                 ) {
-                  var a = Ic(i);
+                  var a = Bc(i);
                   if (void 0 !== a) {
                     var o = e.names.get(a),
                       s = n.getGroup(i);
                     if (o && s && o.size) {
-                      var l = kc + ".g" + i + '[id="' + a + '"]',
+                      var l = _c + ".g" + i + '[id="' + a + '"]',
                         c = "";
                       void 0 !== o &&
                         o.forEach(function (e) {
@@ -32690,40 +34109,40 @@
             e
           );
         })(),
-        Vc = /(a)(d)/gi,
-        qc = function (e) {
+        eu = /(a)(d)/gi,
+        nu = function (e) {
           return String.fromCharCode(e + (e > 25 ? 39 : 97));
         };
-      function Qc(e) {
+      function tu(e) {
         var n,
           t = "";
-        for (n = Math.abs(e); n > 52; n = (n / 52) | 0) t = qc(n % 52) + t;
-        return (qc(n % 52) + t).replace(Vc, "$1-$2");
+        for (n = Math.abs(e); n > 52; n = (n / 52) | 0) t = nu(n % 52) + t;
+        return (nu(n % 52) + t).replace(eu, "$1-$2");
       }
-      var Kc = function (e, n) {
+      var ru = function (e, n) {
           for (var t = n.length; t; ) e = (33 * e) ^ n.charCodeAt(--t);
           return e;
         },
-        $c = function (e) {
-          return Kc(5381, e);
+        iu = function (e) {
+          return ru(5381, e);
         };
-      function Zc(e) {
+      function au(e) {
         for (var n = 0; n < e.length; n += 1) {
           var t = e[n];
-          if (wc(t) && !Nc(t)) return !1;
+          if (Ac(t) && !Oc(t)) return !1;
         }
         return !0;
       }
-      var Jc = $c("5.3.11"),
-        eu = (function () {
+      var ou = iu("5.3.11"),
+        su = (function () {
           function e(e, n, t) {
             (this.rules = e),
               (this.staticRulesId = ""),
-              (this.isStatic = (void 0 === t || t.isStatic) && Zc(e)),
+              (this.isStatic = (void 0 === t || t.isStatic) && au(e)),
               (this.componentId = n),
-              (this.baseHash = Kc(Jc, n)),
+              (this.baseHash = ru(ou, n)),
               (this.baseStyle = t),
-              Xc.registerId(n);
+              Jc.registerId(n);
           }
           return (
             (e.prototype.generateAndInjectStyles = function (e, n, t) {
@@ -32737,8 +34156,8 @@
                 if (this.staticRulesId && n.hasNameForId(r, this.staticRulesId))
                   i.push(this.staticRulesId);
                 else {
-                  var a = vu(this.rules, e, n, t).join(""),
-                    o = Qc(Kc(this.baseHash, a) >>> 0);
+                  var a = ku(this.rules, e, n, t).join(""),
+                    o = tu(ru(this.baseHash, a) >>> 0);
                   if (!n.hasNameForId(r, o)) {
                     var s = t(a, "." + o, void 0, r);
                     n.insertRules(r, o, s);
@@ -32748,7 +34167,7 @@
               else {
                 for (
                   var l = this.rules.length,
-                    c = Kc(this.baseHash, t.hash),
+                    c = ru(this.baseHash, t.hash),
                     u = "",
                     d = 0;
                   d < l;
@@ -32757,13 +34176,13 @@
                   var p = this.rules[d];
                   if ("string" == typeof p) u += p;
                   else if (p) {
-                    var f = vu(p, e, n, t),
+                    var f = ku(p, e, n, t),
                       h = Array.isArray(f) ? f.join("") : f;
-                    (c = Kc(c, h + d)), (u += h);
+                    (c = ru(c, h + d)), (u += h);
                   }
                 }
                 if (u) {
-                  var m = Qc(c >>> 0);
+                  var m = tu(c >>> 0);
                   if (!n.hasNameForId(r, m)) {
                     var g = t(u, "." + m, void 0, r);
                     n.insertRules(r, m, g);
@@ -32776,19 +34195,19 @@
             e
           );
         })(),
-        nu = /^\s*\/\/.*$/gm,
-        tu = [":", "[", ".", "#"];
-      function ru(e) {
+        lu = /^\s*\/\/.*$/gm,
+        cu = [":", "[", ".", "#"];
+      function uu(e) {
         var n,
           t,
           r,
           i,
-          a = void 0 === e ? yc : e,
+          a = void 0 === e ? Cc : e,
           o = a.options,
-          s = void 0 === o ? yc : o,
+          s = void 0 === o ? Cc : o,
           l = a.plugins,
-          c = void 0 === l ? xc : l,
-          u = new pc(s),
+          c = void 0 === l ? Sc : l,
+          u = new xc(s),
           d = [],
           p = (function (e) {
             function n(n) {
@@ -32821,13 +34240,13 @@
             d.push(e);
           }),
           f = function (e, r, a) {
-            return (0 === r && -1 !== tu.indexOf(a[t.length])) || a.match(i)
+            return (0 === r && -1 !== cu.indexOf(a[t.length])) || a.match(i)
               ? e
               : "." + n;
           };
         function h(e, a, o, s) {
           void 0 === s && (s = "&");
-          var l = e.replace(nu, ""),
+          var l = e.replace(lu, ""),
             c = a && o ? o + " " + a + " { " + l + " }" : l;
           return (
             (n = s),
@@ -32858,25 +34277,25 @@
           (h.hash = c.length
             ? c
                 .reduce(function (e, n) {
-                  return n.name || Cc(15), Kc(e, n.name);
+                  return n.name || Pc(15), ru(e, n.name);
                 }, 5381)
                 .toString()
             : ""),
           h
         );
       }
-      var iu = r.createContext(),
-        au = (iu.Consumer, r.createContext()),
-        ou = (au.Consumer, new Xc()),
-        su = ru();
-      function lu() {
-        return (0, r.useContext)(iu) || ou;
+      var du = r.createContext(),
+        pu = (du.Consumer, r.createContext()),
+        fu = (pu.Consumer, new Jc()),
+        hu = uu();
+      function mu() {
+        return (0, r.useContext)(du) || fu;
       }
-      function cu(e) {
+      function gu(e) {
         var n = (0, r.useState)(e.stylisPlugins),
           t = n[0],
           i = n[1],
-          a = lu(),
+          a = mu(),
           o = (0, r.useMemo)(
             function () {
               var n = a;
@@ -32894,7 +34313,7 @@
           ),
           s = (0, r.useMemo)(
             function () {
-              return ru({
+              return uu({
                 options: { prefix: !e.disableVendorPrefixes },
                 plugins: t,
               });
@@ -32904,28 +34323,28 @@
         return (
           (0, r.useEffect)(
             function () {
-              dc()(t, e.stylisPlugins) || i(e.stylisPlugins);
+              bc()(t, e.stylisPlugins) || i(e.stylisPlugins);
             },
             [e.stylisPlugins]
           ),
           r.createElement(
-            iu.Provider,
+            du.Provider,
             { value: o },
-            r.createElement(au.Provider, { value: s }, e.children)
+            r.createElement(pu.Provider, { value: s }, e.children)
           )
         );
       }
-      var uu = (function () {
+      var vu = (function () {
           function e(e, n) {
             var t = this;
             (this.inject = function (e, n) {
-              void 0 === n && (n = su);
+              void 0 === n && (n = hu);
               var r = t.name + n.hash;
               e.hasNameForId(t.id, r) ||
                 e.insertRules(t.id, r, n(t.rules, r, "@keyframes"));
             }),
               (this.toString = function () {
-                return Cc(12, String(t.name));
+                return Pc(12, String(t.name));
               }),
               (this.name = e),
               (this.id = "sc-keyframes-" + e),
@@ -32933,58 +34352,58 @@
           }
           return (
             (e.prototype.getName = function (e) {
-              return void 0 === e && (e = su), this.name + e.hash;
+              return void 0 === e && (e = hu), this.name + e.hash;
             }),
             e
           );
         })(),
-        du = /([A-Z])/,
-        pu = /([A-Z])/g,
-        fu = /^ms-/,
-        hu = function (e) {
+        bu = /([A-Z])/,
+        xu = /([A-Z])/g,
+        yu = /^ms-/,
+        wu = function (e) {
           return "-" + e.toLowerCase();
         };
-      function mu(e) {
-        return du.test(e) ? e.replace(pu, hu).replace(fu, "-ms-") : e;
+      function ju(e) {
+        return bu.test(e) ? e.replace(xu, wu).replace(yu, "-ms-") : e;
       }
-      var gu = function (e) {
+      var Nu = function (e) {
         return null == e || !1 === e || "" === e;
       };
-      function vu(e, n, t, r) {
+      function ku(e, n, t, r) {
         if (Array.isArray(e)) {
           for (var i, a = [], o = 0, s = e.length; o < s; o += 1)
-            "" !== (i = vu(e[o], n, t, r)) &&
+            "" !== (i = ku(e[o], n, t, r)) &&
               (Array.isArray(i) ? a.push.apply(a, i) : a.push(i));
           return a;
         }
-        return gu(e)
+        return Nu(e)
           ? ""
-          : Nc(e)
+          : Oc(e)
           ? "." + e.styledComponentId
-          : wc(e)
+          : Ac(e)
           ? "function" != typeof (l = e) ||
             (l.prototype && l.prototype.isReactComponent) ||
             !n
             ? e
-            : vu(e(n), n, t, r)
-          : e instanceof uu
+            : ku(e(n), n, t, r)
+          : e instanceof vu
           ? t
             ? (e.inject(t, r), e.getName(r))
             : e
-          : bc(e)
+          : Ec(e)
           ? (function e(n, t) {
               var r,
                 i,
                 a = [];
               for (var o in n)
                 n.hasOwnProperty(o) &&
-                  !gu(n[o]) &&
-                  ((Array.isArray(n[o]) && n[o].isCss) || wc(n[o])
-                    ? a.push(mu(o) + ":", n[o], ";")
-                    : bc(n[o])
+                  !Nu(n[o]) &&
+                  ((Array.isArray(n[o]) && n[o].isCss) || Ac(n[o])
+                    ? a.push(ju(o) + ":", n[o], ";")
+                    : Ec(n[o])
                     ? a.push.apply(a, e(n[o], o))
                     : a.push(
-                        mu(o) +
+                        ju(o) +
                           ": " +
                           ((r = o),
                           (null == (i = n[o]) ||
@@ -32993,7 +34412,7 @@
                             ? ""
                             : "number" != typeof i ||
                               0 === i ||
-                              r in fc ||
+                              r in yc ||
                               r.startsWith("--")
                             ? String(i).trim()
                             : i + "px") + ";")
@@ -33003,48 +34422,48 @@
           : e.toString();
         var l;
       }
-      var bu = function (e) {
+      var Eu = function (e) {
         return Array.isArray(e) && (e.isCss = !0), e;
       };
-      function xu(e) {
+      function Su(e) {
         for (
           var n = arguments.length, t = new Array(n > 1 ? n - 1 : 0), r = 1;
           r < n;
           r++
         )
           t[r - 1] = arguments[r];
-        return wc(e) || bc(e)
-          ? bu(vu(vc(xc, [e].concat(t))))
+        return Ac(e) || Ec(e)
+          ? Eu(ku(kc(Sc, [e].concat(t))))
           : 0 === t.length && 1 === e.length && "string" == typeof e[0]
           ? e
-          : bu(vu(vc(e, t)));
+          : Eu(ku(kc(e, t)));
       }
       new Set();
-      var yu = /[!"#$%&'()*+,./:;<=>?@[\\\]^`{|}~-]+/g,
-        wu = /(^-|-$)/g;
-      function ju(e) {
-        return e.replace(yu, "-").replace(wu, "");
+      var Cu = /[!"#$%&'()*+,./:;<=>?@[\\\]^`{|}~-]+/g,
+        Au = /(^-|-$)/g;
+      function Tu(e) {
+        return e.replace(Cu, "-").replace(Au, "");
       }
-      var Nu = function (e) {
-        return Qc($c(e) >>> 0);
+      var Ou = function (e) {
+        return tu(iu(e) >>> 0);
       };
-      function ku(e) {
+      function _u(e) {
         return "string" == typeof e && !0;
       }
-      var Eu = function (e) {
+      var Ru = function (e) {
           return (
             "function" == typeof e ||
             ("object" == typeof e && null !== e && !Array.isArray(e))
           );
         },
-        Su = function (e) {
+        Iu = function (e) {
           return "__proto__" !== e && "constructor" !== e && "prototype" !== e;
         };
-      function Cu(e, n, t) {
+      function Pu(e, n, t) {
         var r = e[t];
-        Eu(n) && Eu(r) ? Au(r, n) : (e[t] = n);
+        Ru(n) && Ru(r) ? Lu(r, n) : (e[t] = n);
       }
-      function Au(e) {
+      function Lu(e) {
         for (
           var n = arguments.length, t = new Array(n > 1 ? n - 1 : 0), r = 1;
           r < n;
@@ -33053,25 +34472,25 @@
           t[r - 1] = arguments[r];
         for (var i = 0, a = t; i < a.length; i++) {
           var o = a[i];
-          if (Eu(o)) for (var s in o) Su(s) && Cu(e, o[s], s);
+          if (Ru(o)) for (var s in o) Iu(s) && Pu(e, o[s], s);
         }
         return e;
       }
-      var Tu = r.createContext();
-      Tu.Consumer;
-      var Ou = {};
-      function _u(e, n, t) {
-        var i = Nc(e),
-          a = !ku(e),
+      var Mu = r.createContext();
+      Mu.Consumer;
+      var Du = {};
+      function Uu(e, n, t) {
+        var i = Oc(e),
+          a = !_u(e),
           o = n.attrs,
-          s = void 0 === o ? xc : o,
+          s = void 0 === o ? Sc : o,
           l = n.componentId,
           c =
             void 0 === l
               ? (function (e, n) {
-                  var t = "string" != typeof e ? "sc" : ju(e);
-                  Ou[t] = (Ou[t] || 0) + 1;
-                  var r = t + "-" + Nu("5.3.11" + t + Ou[t]);
+                  var t = "string" != typeof e ? "sc" : Tu(e);
+                  Du[t] = (Du[t] || 0) + 1;
+                  var r = t + "-" + Ou("5.3.11" + t + Du[t]);
                   return n ? n + "-" + r : r;
                 })(n.displayName, n.parentComponentId)
               : l,
@@ -33079,12 +34498,12 @@
           d =
             void 0 === u
               ? (function (e) {
-                  return ku(e) ? "styled." + e : "Styled(" + jc(e) + ")";
+                  return _u(e) ? "styled." + e : "Styled(" + Tc(e) + ")";
                 })(e)
               : u,
           f =
             n.displayName && n.componentId
-              ? ju(n.displayName) + "-" + n.componentId
+              ? Tu(n.displayName) + "-" + n.componentId
               : n.componentId || c,
           h =
             i && e.attrs
@@ -33101,7 +34520,7 @@
               }
             : e.shouldForwardProp);
         var g,
-          v = new eu(t, f, i ? e.componentStyle : void 0),
+          v = new su(t, f, i ? e.componentStyle : void 0),
           b = v.isStatic && 0 === s.length,
           x = function (e, n) {
             return (function (e, n, t, i) {
@@ -33113,8 +34532,8 @@
                 u = e.styledComponentId,
                 d = e.target,
                 p = (function (e, n, t) {
-                  void 0 === e && (e = yc);
-                  var r = gc({}, n, { theme: e }),
+                  void 0 === e && (e = Cc);
+                  var r = Nc({}, n, { theme: e }),
                     i = {};
                   return (
                     t.forEach(function (e) {
@@ -33122,7 +34541,7 @@
                         t,
                         a,
                         o = e;
-                      for (n in (wc(o) && (o = o(r)), o))
+                      for (n in (Ac(o) && (o = o(r)), o))
                         r[n] = i[n] =
                           "className" === n
                             ? ((t = i[n]),
@@ -33135,37 +34554,37 @@
                 })(
                   (function (e, n, t) {
                     return (
-                      void 0 === t && (t = yc),
+                      void 0 === t && (t = Cc),
                       (e.theme !== t.theme && e.theme) || n || t.theme
                     );
-                  })(n, (0, r.useContext)(Tu), s) || yc,
+                  })(n, (0, r.useContext)(Mu), s) || Cc,
                   n,
                   a
                 ),
                 f = p[0],
                 h = p[1],
                 m = (function (e, n, t, i) {
-                  var a = lu(),
-                    o = (0, r.useContext)(au) || su;
+                  var a = mu(),
+                    o = (0, r.useContext)(pu) || hu;
                   return n
-                    ? e.generateAndInjectStyles(yc, a, o)
+                    ? e.generateAndInjectStyles(Cc, a, o)
                     : e.generateAndInjectStyles(t, a, o);
                 })(o, i, f),
                 g = t,
                 v = h.$as || n.$as || h.as || n.as || d,
-                b = ku(v),
-                x = h !== n ? gc({}, n, {}, h) : n,
+                b = _u(v),
+                x = h !== n ? Nc({}, n, {}, h) : n,
                 y = {};
               for (var w in x)
                 "$" !== w[0] &&
                   "as" !== w &&
                   ("forwardedAs" === w
                     ? (y.as = x[w])
-                    : (c ? c(w, mc, v) : !b || mc(w)) && (y[w] = x[w]));
+                    : (c ? c(w, jc, v) : !b || jc(w)) && (y[w] = x[w]));
               return (
                 n.style &&
                   h.style !== n.style &&
-                  (y.style = gc({}, n.style, {}, h.style)),
+                  (y.style = Nc({}, n.style, {}, h.style)),
                 (y.className = Array.prototype
                   .concat(l, u, m !== u ? m : null, n.className, h.className)
                   .filter(Boolean)
@@ -33183,7 +34602,7 @@
           (g.shouldForwardProp = m),
           (g.foldedComponentIds = i
             ? Array.prototype.concat(e.foldedComponentIds, e.styledComponentId)
-            : xc),
+            : Sc),
           (g.styledComponentId = f),
           (g.target = i ? e.target : e),
           (g.withComponent = function (e) {
@@ -33198,15 +34617,15 @@
                   (t = a[r]), n.indexOf(t) >= 0 || (i[t] = e[t]);
                 return i;
               })(n, ["componentId"]),
-              a = r && r + "-" + (ku(e) ? e : ju(jc(e)));
-            return _u(e, gc({}, i, { attrs: h, componentId: a }), t);
+              a = r && r + "-" + (_u(e) ? e : Tu(Tc(e)));
+            return Uu(e, Nc({}, i, { attrs: h, componentId: a }), t);
           }),
           Object.defineProperty(g, "defaultProps", {
             get: function () {
               return this._foldedDefaultProps;
             },
             set: function (n) {
-              this._foldedDefaultProps = i ? Au({}, e.defaultProps, n) : n;
+              this._foldedDefaultProps = i ? Lu({}, e.defaultProps, n) : n;
             },
           }),
           Object.defineProperty(g, "toString", {
@@ -33228,41 +34647,41 @@
           g
         );
       }
-      var Ru,
-        Iu = function (e) {
+      var Fu,
+        Bu = function (e) {
           return (function e(n, t, r) {
-            if ((void 0 === r && (r = yc), !(0, f.isValidElementType)(t)))
-              return Cc(1, String(t));
+            if ((void 0 === r && (r = Cc), !(0, f.isValidElementType)(t)))
+              return Pc(1, String(t));
             var i = function () {
-              return n(t, r, xu.apply(void 0, arguments));
+              return n(t, r, Su.apply(void 0, arguments));
             };
             return (
               (i.withConfig = function (i) {
-                return e(n, t, gc({}, r, {}, i));
+                return e(n, t, Nc({}, r, {}, i));
               }),
               (i.attrs = function (i) {
                 return e(
                   n,
                   t,
-                  gc({}, r, {
+                  Nc({}, r, {
                     attrs: Array.prototype.concat(r.attrs, i).filter(Boolean),
                   })
                 );
               }),
               i
             );
-          })(_u, e);
+          })(Uu, e);
         };
-      function Pu(e) {
+      function zu(e) {
         for (
           var n = arguments.length, t = new Array(n > 1 ? n - 1 : 0), r = 1;
           r < n;
           r++
         )
           t[r - 1] = arguments[r];
-        var i = xu.apply(void 0, [e].concat(t)).join(""),
-          a = Nu(i);
-        return new uu(a, i);
+        var i = Su.apply(void 0, [e].concat(t)).join(""),
+          a = Ou(i);
+        return new vu(a, i);
       }
       [
         "a",
@@ -33402,24 +34821,24 @@
         "textPath",
         "tspan",
       ].forEach(function (e) {
-        Iu[e] = Iu(e);
+        Bu[e] = Bu(e);
       }),
-        (Ru = function (e, n) {
+        (Fu = function (e, n) {
           (this.rules = e),
             (this.componentId = n),
-            (this.isStatic = Zc(e)),
-            Xc.registerId(this.componentId + 1);
+            (this.isStatic = au(e)),
+            Jc.registerId(this.componentId + 1);
         }.prototype),
-        (Ru.createStyles = function (e, n, t, r) {
-          var i = r(vu(this.rules, n, t, r).join(""), ""),
+        (Fu.createStyles = function (e, n, t, r) {
+          var i = r(ku(this.rules, n, t, r).join(""), ""),
             a = this.componentId + e;
           t.insertRules(a, a, i);
         }),
-        (Ru.removeStyles = function (e, n) {
+        (Fu.removeStyles = function (e, n) {
           n.clearRules(this.componentId + e);
         }),
-        (Ru.renderStyles = function (e, n, t, r) {
-          e > 2 && Xc.registerId(this.componentId + e),
+        (Fu.renderStyles = function (e, n, t, r) {
+          e > 2 && Jc.registerId(this.componentId + e),
             this.removeStyles(e, t),
             this.createStyles(e, n, t, r);
         }),
@@ -33429,12 +34848,12 @@
             (this._emitSheetCSS = function () {
               var n = e.instance.toString();
               if (!n) return "";
-              var t = Fc();
+              var t = Xc();
               return (
                 "<style " +
                 [
                   t && 'nonce="' + t + '"',
-                  kc + '="true"',
+                  _c + '="true"',
                   'data-styled-version="5.3.11"',
                 ]
                   .filter(Boolean)
@@ -33445,43 +34864,43 @@
               );
             }),
               (this.getStyleTags = function () {
-                return e.sealed ? Cc(2) : e._emitSheetCSS();
+                return e.sealed ? Pc(2) : e._emitSheetCSS();
               }),
               (this.getStyleElement = function () {
                 var n;
-                if (e.sealed) return Cc(2);
+                if (e.sealed) return Pc(2);
                 var t =
-                    (((n = {})[kc] = ""),
+                    (((n = {})[_c] = ""),
                     (n["data-styled-version"] = "5.3.11"),
                     (n.dangerouslySetInnerHTML = {
                       __html: e.instance.toString(),
                     }),
                     n),
-                  i = Fc();
+                  i = Xc();
                 return (
                   i && (t.nonce = i),
-                  [r.createElement("style", gc({}, t, { key: "sc-0-0" }))]
+                  [r.createElement("style", Nc({}, t, { key: "sc-0-0" }))]
                 );
               }),
               (this.seal = function () {
                 e.sealed = !0;
               }),
-              (this.instance = new Xc({ isServer: !0 })),
+              (this.instance = new Jc({ isServer: !0 })),
               (this.sealed = !1);
           }.prototype;
           (e.collectStyles = function (e) {
             return this.sealed
-              ? Cc(2)
-              : r.createElement(cu, { sheet: this.instance }, e);
+              ? Pc(2)
+              : r.createElement(gu, { sheet: this.instance }, e);
           }),
             (e.interleaveWithNodeStream = function (e) {
-              return Cc(3);
+              return Pc(3);
             });
         })();
-      const Lu = Iu;
-      var Mu,
-        Du,
-        Uu = function (e, n) {
+      const Hu = Bu;
+      var Gu,
+        Wu,
+        Yu = function (e, n) {
           return (
             Object.defineProperty
               ? Object.defineProperty(e, "raw", { value: n })
@@ -33489,10 +34908,10 @@
             e
           );
         },
-        Fu = 242.776657104492,
-        zu = Pu(
-          Mu ||
-            (Mu = Uu(
+        Xu = 242.776657104492,
+        Vu = zu(
+          Gu ||
+            (Gu = Yu(
               [
                 "\n  12.5% {\n    stroke-dasharray: ",
                 "px, ",
@@ -33518,19 +34937,19 @@
                 "px;\n  }\n",
               ]
             )),
-          0.14 * Fu,
-          Fu,
-          0.11 * Fu,
-          0.35 * Fu,
-          Fu,
-          0.35 * Fu,
-          0.01 * Fu,
-          Fu,
-          0.99 * Fu
+          0.14 * Xu,
+          Xu,
+          0.11 * Xu,
+          0.35 * Xu,
+          Xu,
+          0.35 * Xu,
+          0.01 * Xu,
+          Xu,
+          0.99 * Xu
         );
-      Lu.path(
-        Du ||
-          (Du = Uu(
+      Hu.path(
+        Wu ||
+          (Wu = Yu(
             [
               "\n  stroke-dasharray: ",
               "px, ",
@@ -33546,17 +34965,17 @@
               "s linear infinite;\n",
             ]
           )),
-        0.01 * Fu,
-        Fu,
-        zu,
+        0.01 * Xu,
+        Xu,
+        Vu,
         1.6
       );
-      var Bu,
-        Hu,
-        Gu,
-        Wu,
-        Yu,
-        Xu = function (e, n) {
+      var qu,
+        Qu,
+        Ku,
+        $u,
+        Zu,
+        Ju = function (e, n) {
           return (
             Object.defineProperty
               ? Object.defineProperty(e, "raw", { value: n })
@@ -33564,16 +34983,16 @@
             e
           );
         },
-        Vu = Pu(
-          Bu ||
-            (Bu = Xu(
+        ed = zu(
+          qu ||
+            (qu = Ju(
               ["\n to {\n    transform: rotate(360deg);\n  }\n"],
               ["\n to {\n    transform: rotate(360deg);\n  }\n"]
             ))
         );
-      Lu.svg(
-        Hu ||
-          (Hu = Xu(
+      Hu.svg(
+        Qu ||
+          (Qu = Ju(
             [
               "\n  animation: ",
               " 0.75s steps(12, end) infinite;\n  animation-duration: ",
@@ -33585,28 +35004,28 @@
               "s;\n",
             ]
           )),
-        Vu,
-        ((Wu = "speed"),
-        (Yu = "0.75"),
+        ed,
+        (($u = "speed"),
+        (Zu = "0.75"),
         function () {
           var e =
             arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : {};
-          if (void 0 !== e[Wu]) return e[Wu];
-          if (Wu && Wu.indexOf(".") > 0) {
+          if (void 0 !== e[$u]) return e[$u];
+          if ($u && $u.indexOf(".") > 0) {
             for (
-              var n = Wu.split("."), t = n.length, r = e[n[0]], i = 1;
+              var n = $u.split("."), t = n.length, r = e[n[0]], i = 1;
               null != r && i < t;
 
             )
               (r = r[n[i]]), (i += 1);
             if (void 0 !== r) return r;
           }
-          return Yu;
+          return Zu;
         })
       ),
-        Lu.polyline(
-          Gu ||
-            (Gu = Xu(
+        Hu.polyline(
+          Ku ||
+            (Ku = Ju(
               [
                 "\n  stroke-width: ",
                 "px;\n  stroke-linecap: round;\n\n  &:nth-child(12n + 0) {\n    stroke-opacity: 0.08;\n  }\n\n  &:nth-child(12n + 1) {\n    stroke-opacity: 0.17;\n  }\n\n  &:nth-child(12n + 2) {\n    stroke-opacity: 0.25;\n  }\n\n  &:nth-child(12n + 3) {\n    stroke-opacity: 0.33;\n  }\n\n  &:nth-child(12n + 4) {\n    stroke-opacity: 0.42;\n  }\n\n  &:nth-child(12n + 5) {\n    stroke-opacity: 0.5;\n  }\n\n  &:nth-child(12n + 6) {\n    stroke-opacity: 0.58;\n  }\n\n  &:nth-child(12n + 7) {\n    stroke-opacity: 0.66;\n  }\n\n  &:nth-child(12n + 8) {\n    stroke-opacity: 0.75;\n  }\n\n  &:nth-child(12n + 9) {\n    stroke-opacity: 0.83;\n  }\n\n  &:nth-child(12n + 11) {\n    stroke-opacity: 0.92;\n  }\n",
@@ -33620,10 +35039,10 @@
             return e.width;
           }
         );
-      var qu,
-        Qu,
-        Ku,
-        $u = function (e, n) {
+      var nd,
+        td,
+        rd,
+        id = function (e, n) {
           return (
             Object.defineProperty
               ? Object.defineProperty(e, "raw", { value: n })
@@ -33631,16 +35050,16 @@
             e
           );
         },
-        Zu = Pu(
-          qu ||
-            (qu = $u(
+        ad = zu(
+          nd ||
+            (nd = id(
               ["\n to {\n    stroke-dashoffset: 136;\n  }\n"],
               ["\n to {\n    stroke-dashoffset: 136;\n  }\n"]
             ))
         );
-      Lu.polygon(
-        Qu ||
-          (Qu = $u(
+      Hu.polygon(
+        td ||
+          (td = id(
             [
               "\n  stroke-dasharray: 17;\n  animation: ",
               " 2.5s cubic-bezier(0.35, 0.04, 0.63, 0.95) infinite;\n",
@@ -33650,19 +35069,19 @@
               " 2.5s cubic-bezier(0.35, 0.04, 0.63, 0.95) infinite;\n",
             ]
           )),
-        Zu
+        ad
       ),
-        Lu.svg(
-          Ku ||
-            (Ku = $u(
+        Hu.svg(
+          rd ||
+            (rd = id(
               ["\n  transform-origin: 50% 65%;\n"],
               ["\n  transform-origin: 50% 65%;\n"]
             ))
         );
-      var Ju,
-        ed = function () {
+      var od,
+        sd = function () {
           return (
-            (ed =
+            (sd =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -33670,10 +35089,10 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            ed.apply(this, arguments)
+            sd.apply(this, arguments)
           );
         },
-        nd = [
+        ld = [
           "As a general rule of thumb, a person can survive without water for about 3 days. So, keep your water supply stable otherwise your colony will die",
           "You have to setup basic food and water supply before you can meet first colonists",
           "The International Space Station completes one full orbit around the Earth every 90 minutes. As a result, its crew observes the sunrise every 90 minutes. Each day, the people on board the ISS witness 16 sunrises and 16 sunsets.",
@@ -33714,37 +35133,37 @@
           "The human body is composed of trillions of cells, but only about 10% of those cells are actually human. Other 90% belongs to viruses, fungi, and other microscopic organisms, collectively known as the human microbiota.",
           "The human brain is one of the most energy-demanding organs in the body, consuming about 20% of the body's total energy.",
         ],
-        td = function () {
+        cd = function () {
           var n = (0, r.useState)(-1),
             t = n[0],
             i = n[1];
           return (
-            t < 0 && i(Math.floor(Math.random() * nd.length)),
+            t < 0 && i(Math.floor(Math.random() * ld.length)),
             (0, e.jsxs)(
               "div",
-              ed(
+              sd(
                 { className: "preloader" },
                 {
                   children: [
                     (0, e.jsx)(
                       "div",
-                      ed(
+                      sd(
                         { className: "logo-container" },
-                        { children: (0, e.jsx)("img", { src: ac() }) }
+                        { children: (0, e.jsx)("img", { src: pc() }) }
                       )
                     ),
                     (0, e.jsx)(
                       "div",
-                      ed(
+                      sd(
                         { className: "loading-container" },
                         {
                           children: (0, e.jsxs)(
                             "div",
-                            ed(
+                            sd(
                               { className: "loading-inner loading-text" },
                               {
                                 children: [
-                                  (0, e.jsx)(cc, {
+                                  (0, e.jsx)(gc, {
                                     height: "50",
                                     width: "50",
                                     color: "#fff",
@@ -33768,23 +35187,23 @@
                     ),
                     (0, e.jsx)(
                       "div",
-                      ed(
+                      sd(
                         { className: "loading-container" },
                         {
                           children: (0, e.jsxs)(
                             "div",
-                            ed(
+                            sd(
                               { className: "did-you-knew" },
                               {
                                 children: [
                                   (0, e.jsx)(
                                     "span",
-                                    ed(
+                                    sd(
                                       { className: "title" },
                                       { children: "Did you know?" }
                                     )
                                   ),
-                                  (0, e.jsx)("span", { children: nd[t] }),
+                                  (0, e.jsx)("span", { children: ld[t] }),
                                 ],
                               }
                             )
@@ -33798,12 +35217,12 @@
             )
           );
         },
-        rd = function (e) {
+        ud = function (e) {
           return e.game.queueItems;
         },
-        id = function () {
+        dd = function () {
           return (
-            (id =
+            (dd =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -33811,10 +35230,10 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            id.apply(this, arguments)
+            dd.apply(this, arguments)
           );
         },
-        ad = function (n) {
+        pd = function (n) {
           var t = n.queue,
             i = (0, r.useState)(""),
             a = i[0],
@@ -33823,11 +35242,11 @@
             l = s[0],
             c = s[1],
             u = function (e, n) {
-              Fo.moveQueue.send({ index: e, by: n });
+              Uo.moveQueue.send({ index: e, by: n });
             };
           return (0, e.jsxs)(
             "div",
-            id(
+            dd(
               { className: "queueWrap" },
               {
                 children: [
@@ -33836,24 +35255,24 @@
                   }),
                   (0, e.jsx)(
                     "div",
-                    id(
+                    dd(
                       { className: "add-to-queue" },
                       {
                         children: t.selection.isAvailable
                           ? (0, e.jsxs)(
                               "div",
-                              id(
+                              dd(
                                 { className: "selection-area" },
                                 {
                                   children: [
                                     (0, e.jsx)(
                                       "div",
-                                      id(
+                                      dd(
                                         { className: "select-scope" },
                                         {
                                           children: (0, e.jsxs)(
                                             "select",
-                                            id(
+                                            dd(
                                               {
                                                 onChange: function (e) {
                                                   return o(e.target.value);
@@ -33863,7 +35282,7 @@
                                                 children: [
                                                   (0, e.jsx)(
                                                     "option",
-                                                    id(
+                                                    dd(
                                                       { value: "" },
                                                       { children: "None" }
                                                     )
@@ -33872,7 +35291,7 @@
                                                     function (n) {
                                                       return (0, e.jsx)(
                                                         "option",
-                                                        id(
+                                                        dd(
                                                           {
                                                             value: n,
                                                             selected: a === n,
@@ -33891,13 +35310,13 @@
                                     ),
                                     (0, e.jsx)(
                                       "div",
-                                      id(
+                                      dd(
                                         { className: "select-item" },
                                         {
                                           children: a
                                             ? (0, e.jsxs)(
                                                 "select",
-                                                id(
+                                                dd(
                                                   {
                                                     onChange: function (e) {
                                                       return c(e.target.value);
@@ -33907,7 +35326,7 @@
                                                     children: [
                                                       (0, e.jsx)(
                                                         "option",
-                                                        id(
+                                                        dd(
                                                           { value: "" },
                                                           { children: "None" }
                                                         )
@@ -33916,7 +35335,7 @@
                                                         t.selection.choices[a]
                                                       ).map(function (n) {
                                                         return (0,
-                                                        e.jsx)("option", id({ value: n.id, selected: l === n.id }, { children: n.name }));
+                                                        e.jsx)("option", dd({ value: n.id, selected: l === n.id }, { children: n.name }));
                                                       }),
                                                     ],
                                                   }
@@ -33930,20 +35349,20 @@
                                     ),
                                     (0, e.jsx)(
                                       "div",
-                                      id(
+                                      dd(
                                         { className: "add-block" },
                                         {
                                           children:
                                             a && l
                                               ? (0, e.jsx)(
                                                   "button",
-                                                  id(
+                                                  dd(
                                                     {
                                                       className: "add-to-queue",
                                                       onClick: function () {
                                                         l &&
                                                           a &&
-                                                          Fo.addToQueue.send({
+                                                          Uo.addToQueue.send({
                                                             scope: a,
                                                             id: l,
                                                           });
@@ -33966,21 +35385,21 @@
                   ),
                   (0, e.jsxs)(
                     "div",
-                    id(
+                    dd(
                       { className: "queue-list" },
                       {
                         children: [
                           (0, e.jsx)(
                             "div",
-                            id(
+                            dd(
                               { className: "queue-utils" },
                               {
                                 children: (0, e.jsx)(
                                   "span",
-                                  id(
+                                  dd(
                                     {
                                       onClick: function () {
-                                        Fo.sortByEta.send();
+                                        Uo.sortByEta.send();
                                       },
                                       className: "clickable-highlight",
                                     },
@@ -33993,7 +35412,7 @@
                           t.queue.map(function (n, t) {
                             return (0, e.jsxs)(
                               "div",
-                              id(
+                              dd(
                                 { className: "queue-item" },
                                 {
                                   children: [
@@ -34005,14 +35424,14 @@
                                     }),
                                     (0, e.jsxs)(
                                       "div",
-                                      id(
+                                      dd(
                                         { className: "move-controls" },
                                         {
                                           children: [
                                             n.isUpAvailable
                                               ? (0, e.jsx)(
                                                   "span",
-                                                  id(
+                                                  dd(
                                                     {
                                                       className: "move up",
                                                       onClick: function () {
@@ -34031,7 +35450,7 @@
                                             n.isDownAvailable
                                               ? (0, e.jsx)(
                                                   "span",
-                                                  id(
+                                                  dd(
                                                     {
                                                       className: "move down",
                                                       onClick: function () {
@@ -34048,13 +35467,13 @@
                                     ),
                                     (0, e.jsx)(
                                       "span",
-                                      id(
+                                      dd(
                                         {
                                           className: "close",
                                           onClick: function () {
                                             return (function (e) {
                                               e >= 0 &&
-                                                Fo.deleteFromQueue.send({
+                                                Uo.deleteFromQueue.send({
                                                   index: e,
                                                 });
                                             })(t);
@@ -34077,14 +35496,14 @@
             )
           );
         },
-        od = function () {
-          var n = N(rd);
-          return (0, e.jsx)(ad, { queue: n });
+        fd = function () {
+          var n = N(ud);
+          return (0, e.jsx)(pd, { queue: n });
         },
-        sd = function (e) {
+        hd = function (e) {
           return e.game.eventLogs;
         },
-        ld = {
+        md = {
           clear: kn("[event-logs] clear", function (e) {
             return e;
           }),
@@ -34092,9 +35511,9 @@
             return e;
           }),
         },
-        cd = function () {
+        gd = function () {
           return (
-            (cd =
+            (gd =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -34102,20 +35521,20 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            cd.apply(this, arguments)
+            gd.apply(this, arguments)
           );
         },
-        ud = function (n) {
+        vd = function (n) {
           var t = n.events;
           return (0, e.jsxs)(
             "div",
-            cd(
+            gd(
               { className: "events-wrapper" },
               {
                 children: [
                   (0, e.jsx)(
                     Fa,
-                    cd(
+                    gd(
                       {
                         id: "events-filters",
                         label: "Events Filters",
@@ -34132,12 +35551,12 @@
                             i = n[1];
                           return (0, e.jsx)(
                             "div",
-                            cd(
+                            gd(
                               { className: "filter-entry" },
                               {
                                 children: (0, e.jsxs)(
                                   "label",
-                                  cd(
+                                  gd(
                                     { htmlFor: "filter-".concat(t) },
                                     {
                                       children: [
@@ -34147,7 +35566,7 @@
                                           checked: i,
                                           onChange: function () {
                                             return (function (e, n) {
-                                              ld.setFilter.send({
+                                              md.setFilter.send({
                                                 scope: e,
                                                 flag: n,
                                               });
@@ -34168,20 +35587,20 @@
                   ),
                   t.events.map(function (n) {
                     return (0,
-                    e.jsxs)("div", cd({ className: "event-item ".concat(n.scope) }, { children: [(0, e.jsx)("span", cd({ className: "time" }, { children: n.date })), (0, e.jsxs)("span", cd({ className: "line" }, { children: [n.time, " ", n.message] }))] }));
+                    e.jsxs)("div", gd({ className: "event-item ".concat(n.scope) }, { children: [(0, e.jsx)("span", gd({ className: "time" }, { children: n.date })), (0, e.jsxs)("span", gd({ className: "line" }, { children: [n.time, " ", n.message] }))] }));
                   }),
                 ],
               }
             )
           );
         },
-        dd = function () {
-          var n = N(sd);
-          return (0, e.jsx)(ud, { events: n });
+        bd = function () {
+          var n = N(hd);
+          return (0, e.jsx)(vd, { events: n });
         },
-        pd = function () {
+        xd = function () {
           return (
-            (pd =
+            (xd =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -34189,44 +35608,44 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            pd.apply(this, arguments)
+            xd.apply(this, arguments)
           );
         },
-        fd = function (n) {
+        yd = function (n) {
           var t = n.events;
           return (0, e.jsx)(
             "div",
-            pd(
+            xd(
               { className: "events-wrapper" },
               {
                 children: t.events.map(function (n) {
                   return (0, e.jsx)(
                     "div",
-                    pd(
+                    xd(
                       { className: "ongoing-event-item-wrap" },
                       {
                         children: (0, e.jsx)(
                           Ta,
-                          pd(
+                          xd(
                             {
                               duration: 0,
                               placement: "left",
                               content: (0, e.jsxs)(
                                 "div",
-                                pd(
+                                xd(
                                   { className: "description-hint" },
                                   {
                                     children: [
                                       (0, e.jsx)(
                                         "p",
-                                        pd(
+                                        xd(
                                           { className: "title" },
                                           { children: n.name }
                                         )
                                       ),
                                       (0, e.jsx)(
                                         "p",
-                                        pd(
+                                        xd(
                                           { className: "description" },
                                           { children: n.description }
                                         )
@@ -34234,7 +35653,7 @@
                                       n.consume.length
                                         ? (0, e.jsxs)(
                                             "div",
-                                            pd(
+                                            xd(
                                               { className: "costs wrap" },
                                               {
                                                 children: [
@@ -34243,7 +35662,7 @@
                                                   }),
                                                   n.consume.map(function (n) {
                                                     return (0,
-                                                    e.jsx)(Lo, { gain: n });
+                                                    e.jsx)(Po, { gain: n });
                                                   }),
                                                 ],
                                               }
@@ -34253,7 +35672,7 @@
                                       n.gain.length
                                         ? (0, e.jsxs)(
                                             "div",
-                                            pd(
+                                            xd(
                                               { className: "gain wrap" },
                                               {
                                                 children: [
@@ -34262,7 +35681,7 @@
                                                   }),
                                                   n.gain.map(function (n) {
                                                     return (0,
-                                                    e.jsx)(Lo, { gain: n });
+                                                    e.jsx)(Po, { gain: n });
                                                   }),
                                                 ],
                                               }
@@ -34272,7 +35691,7 @@
                                       n.gainMult.length
                                         ? (0, e.jsxs)(
                                             "div",
-                                            pd(
+                                            xd(
                                               { className: "gain wrap" },
                                               {
                                                 children: [
@@ -34282,7 +35701,7 @@
                                                   }),
                                                   n.gainMult.map(function (n) {
                                                     return (0,
-                                                    e.jsx)(Lo, { gain: n });
+                                                    e.jsx)(Po, { gain: n });
                                                   }),
                                                 ],
                                               }
@@ -34292,7 +35711,7 @@
                                       n.max.length
                                         ? (0, e.jsxs)(
                                             "div",
-                                            pd(
+                                            xd(
                                               { className: "store wrap" },
                                               {
                                                 children: [
@@ -34301,7 +35720,7 @@
                                                   }),
                                                   n.max.map(function (n) {
                                                     return (0,
-                                                    e.jsx)(Lo, { gain: n });
+                                                    e.jsx)(Po, { gain: n });
                                                   }),
                                                 ],
                                               }
@@ -34311,7 +35730,7 @@
                                       n.maxMult.length
                                         ? (0, e.jsxs)(
                                             "div",
-                                            pd(
+                                            xd(
                                               { className: "gain wrap" },
                                               {
                                                 children: [
@@ -34321,7 +35740,7 @@
                                                   }),
                                                   n.maxMult.map(function (n) {
                                                     return (0,
-                                                    e.jsx)(Lo, { gain: n });
+                                                    e.jsx)(Po, { gain: n });
                                                   }),
                                                 ],
                                               }
@@ -34331,7 +35750,7 @@
                                       n.consumeEffect.length
                                         ? (0, e.jsxs)(
                                             "div",
-                                            pd(
+                                            xd(
                                               { className: "costs wrap" },
                                               {
                                                 children: [
@@ -34341,7 +35760,7 @@
                                                   n.consumeEffect.map(function (
                                                     n
                                                   ) {
-                                                    return (0, e.jsx)(Lo, {
+                                                    return (0, e.jsx)(Po, {
                                                       gain: n,
                                                     });
                                                   }),
@@ -34353,7 +35772,7 @@
                                       n.gainEffect.length
                                         ? (0, e.jsxs)(
                                             "div",
-                                            pd(
+                                            xd(
                                               { className: "gain wrap" },
                                               {
                                                 children: [
@@ -34363,7 +35782,7 @@
                                                   n.gainEffect.map(function (
                                                     n
                                                   ) {
-                                                    return (0, e.jsx)(Lo, {
+                                                    return (0, e.jsx)(Po, {
                                                       gain: n,
                                                     });
                                                   }),
@@ -34375,7 +35794,7 @@
                                       n.effectMult.length
                                         ? (0, e.jsxs)(
                                             "div",
-                                            pd(
+                                            xd(
                                               { className: "gain wrap" },
                                               {
                                                 children: [
@@ -34386,7 +35805,7 @@
                                                   n.effectMult.map(function (
                                                     n
                                                   ) {
-                                                    return (0, e.jsx)(Lo, {
+                                                    return (0, e.jsx)(Po, {
                                                       gain: n,
                                                     });
                                                   }),
@@ -34398,7 +35817,7 @@
                                       n.addEffects.length
                                         ? (0, e.jsxs)(
                                             "div",
-                                            pd(
+                                            xd(
                                               { className: "gain wrap" },
                                               {
                                                 children: [
@@ -34411,7 +35830,7 @@
                                                   ) {
                                                     return (0, e.jsx)(
                                                       "div",
-                                                      pd(
+                                                      xd(
                                                         {
                                                           className:
                                                             "gain-block",
@@ -34419,7 +35838,7 @@
                                                         {
                                                           children: (0, e.jsx)(
                                                             "p",
-                                                            pd(
+                                                            xd(
                                                               {
                                                                 className:
                                                                   "requirement",
@@ -34444,7 +35863,7 @@
                             {
                               children: (0, e.jsxs)(
                                 "div",
-                                pd(
+                                xd(
                                   { className: "event-inner flex" },
                                   {
                                     children: [
@@ -34467,13 +35886,13 @@
             )
           );
         },
-        hd = function () {
+        wd = function () {
           var n = N(oo);
-          return (0, e.jsx)(fd, { events: n });
+          return (0, e.jsx)(yd, { events: n });
         },
-        md = function () {
+        jd = function () {
           return (
-            (md =
+            (jd =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -34481,32 +35900,32 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            md.apply(this, arguments)
+            jd.apply(this, arguments)
           );
         },
-        gd = function (n) {
+        Nd = function (n) {
           switch (n.tab) {
             case "Queue":
-              return (0, e.jsx)(od, {});
+              return (0, e.jsx)(fd, {});
             case "Events":
-              return (0, e.jsx)(dd, {});
+              return (0, e.jsx)(bd, {});
             case "Ongoing":
-              return (0, e.jsx)(hd, {});
+              return (0, e.jsx)(wd, {});
             default:
               return (0, e.jsx)("p", { children: "Not implemented" });
           }
         },
-        vd = function () {
-          var n = As("right-panel", !0),
+        kd = function () {
+          var n = _s("right-panel", !0),
             t = n[0],
             r = n[1],
-            i = As("right-panel-tab", "Queue"),
+            i = _s("right-panel-tab", "Queue"),
             a = i[0],
             o = i[1],
             s = N(so);
           return (0, e.jsxs)(
             "div",
-            md(
+            jd(
               {
                 className: "right-panel ".concat(t ? "expanded" : "collapsed"),
               },
@@ -34514,7 +35933,7 @@
                 children: [
                   (0, e.jsx)(
                     "span",
-                    md(
+                    jd(
                       {
                         className: "expand-collapse-panel",
                         onClick: function () {
@@ -34526,13 +35945,13 @@
                   ),
                   (0, e.jsxs)(
                     "div",
-                    md(
+                    jd(
                       { className: "submenu" },
                       {
                         children: [
                           (0, e.jsx)(
                             "div",
-                            md(
+                            jd(
                               {
                                 className: "submenu-item ".concat(
                                   "Queue" === a ? "selected" : ""
@@ -34546,7 +35965,7 @@
                           ),
                           (0, e.jsx)(
                             "div",
-                            md(
+                            jd(
                               {
                                 className: "submenu-item ".concat(
                                   "Events" === a ? "selected" : ""
@@ -34560,7 +35979,7 @@
                           ),
                           (0, e.jsxs)(
                             "div",
-                            md(
+                            jd(
                               {
                                 className: "submenu-item ".concat(
                                   "Ongoing" === a ? "selected" : ""
@@ -34583,15 +36002,15 @@
                   ),
                   (0, e.jsx)(
                     "div",
-                    md(
+                    jd(
                       { className: "inner-scrollable planet" },
                       {
                         children: (0, e.jsx)(as(), {
                           children: (0, e.jsx)(
                             "div",
-                            md(
+                            jd(
                               { className: "inner" },
-                              { children: (0, e.jsx)(gd, { tab: a }) }
+                              { children: (0, e.jsx)(Nd, { tab: a }) }
                             )
                           ),
                         }),
@@ -34603,12 +36022,12 @@
             )
           );
         },
-        bd = function (e) {
+        Ed = function (e) {
           return e.game.searchData;
         },
-        xd = function () {
+        Sd = function () {
           return (
-            (xd =
+            (Sd =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -34616,7 +36035,7 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            xd.apply(this, arguments)
+            Sd.apply(this, arguments)
           );
         };
       !(function (e) {
@@ -34626,8 +36045,8 @@
           (e.LAW = "law"),
           (e.JOB = "job"),
           (e.CRAFTSMAN = "craftsman");
-      })(Ju || (Ju = {}));
-      var yd = {
+      })(od || (od = {}));
+      var Cd = {
           buildings: [],
           upgrades: [],
           space: [],
@@ -34637,17 +36056,17 @@
           resources: [],
           totalCount: 0,
         },
-        wd =
-          (xd({}, yd),
-          xd({}, yd),
-          xd({}, yd),
-          xd({}, yd),
-          xd({}, yd),
-          xd({}, yd),
-          xd({}, yd),
+        Ad =
+          (Sd({}, Cd),
+          Sd({}, Cd),
+          Sd({}, Cd),
+          Sd({}, Cd),
+          Sd({}, Cd),
+          Sd({}, Cd),
+          Sd({}, Cd),
           function () {
             return (
-              (wd =
+              (Ad =
                 Object.assign ||
                 function (e) {
                   for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -34656,10 +36075,10 @@
                         (e[i] = n[i]);
                   return e;
                 }),
-              wd.apply(this, arguments)
+              Ad.apply(this, arguments)
             );
           }),
-        jd = function (n) {
+        Td = function (n) {
           var t,
             i,
             a,
@@ -34727,36 +36146,36 @@
                 ? null === (e = u.results) || void 0 === e
                   ? void 0
                   : e[p]
-                : wd({}, yd);
+                : Ad({}, Cd);
             },
             [p, u.query]
           );
           return (0, e.jsxs)(
             "div",
-            wd(
+            Ad(
               { className: "modal" },
               {
                 children: [
                   (0, e.jsxs)(
                     "div",
-                    wd(
+                    Ad(
                       { className: "modal-header" },
                       {
                         children: [
                           (0, e.jsx)(
                             "p",
-                            wd(
+                            Ad(
                               { className: "modal-title" },
                               { children: u.query }
                             )
                           ),
                           (0, e.jsx)(
                             "span",
-                            wd(
+                            Ad(
                               {
                                 className: "close",
                                 onClick: function () {
-                                  cs.closeSearch.send();
+                                  ds.closeSearch.send();
                                 },
                               },
                               { children: "X" }
@@ -34768,19 +36187,19 @@
                   ),
                   (0, e.jsxs)(
                     "div",
-                    wd(
+                    Ad(
                       { className: "modal-content" },
                       {
                         children: [
                           (0, e.jsx)(
                             "div",
-                            wd(
+                            Ad(
                               { className: "tabs submenu" },
                               {
                                 children: h.map(function (n) {
                                   return (0, e.jsxs)(
                                     "div",
-                                    wd(
+                                    Ad(
                                       {
                                         className: "submenu-item ".concat(
                                           p === n.id ? "selected" : ""
@@ -34798,7 +36217,7 @@
                           ),
                           (0, e.jsx)(
                             "div",
-                            wd(
+                            Ad(
                               { className: "search-content" },
                               {
                                 children: (0, e.jsxs)(as(), {
@@ -34812,7 +36231,7 @@
                                     )
                                       ? (0, e.jsx)(
                                           Fa,
-                                          wd(
+                                          Ad(
                                             {
                                               id: "search-upgrades",
                                               label: "Upgrades",
@@ -34827,7 +36246,7 @@
                                                     ) {
                                                       return (0, e.jsxs)(
                                                         "div",
-                                                        wd(
+                                                        Ad(
                                                           {
                                                             className:
                                                               "search-item",
@@ -34836,7 +36255,7 @@
                                                             children: [
                                                               (0, e.jsx)(
                                                                 "p",
-                                                                wd(
+                                                                Ad(
                                                                   {
                                                                     className:
                                                                       "name",
@@ -34850,7 +36269,7 @@
                                                               ),
                                                               (0, e.jsx)(
                                                                 "p",
-                                                                wd(
+                                                                Ad(
                                                                   {
                                                                     className:
                                                                       "effect",
@@ -34880,7 +36299,7 @@
                                     )
                                       ? (0, e.jsx)(
                                           Fa,
-                                          wd(
+                                          Ad(
                                             {
                                               id: "search-buildings",
                                               label: "Buildings",
@@ -34895,7 +36314,7 @@
                                                     ) {
                                                       return (0, e.jsxs)(
                                                         "div",
-                                                        wd(
+                                                        Ad(
                                                           {
                                                             className:
                                                               "search-item",
@@ -34904,7 +36323,7 @@
                                                             children: [
                                                               (0, e.jsx)(
                                                                 "p",
-                                                                wd(
+                                                                Ad(
                                                                   {
                                                                     className:
                                                                       "name",
@@ -34918,7 +36337,7 @@
                                                               ),
                                                               (0, e.jsx)(
                                                                 "p",
-                                                                wd(
+                                                                Ad(
                                                                   {
                                                                     className:
                                                                       "effect",
@@ -34947,7 +36366,7 @@
                                     )
                                       ? (0, e.jsx)(
                                           Fa,
-                                          wd(
+                                          Ad(
                                             {
                                               id: "search-space",
                                               label: "Space Buildings",
@@ -34959,7 +36378,7 @@
                                                   ? void 0
                                                   : m.space.map(function (n) {
                                                       return (0,
-                                                      e.jsxs)("div", wd({ className: "search-item" }, { children: [(0, e.jsx)("p", wd({ className: "name" }, { children: n.data.name })), (0, e.jsx)("p", wd({ className: "effect" }, { children: n.effectString }))] }));
+                                                      e.jsxs)("div", Ad({ className: "search-item" }, { children: [(0, e.jsx)("p", Ad({ className: "name" }, { children: n.data.name })), (0, e.jsx)("p", Ad({ className: "effect" }, { children: n.effectString }))] }));
                                                     }),
                                             }
                                           )
@@ -34974,7 +36393,7 @@
                                     )
                                       ? (0, e.jsx)(
                                           Fa,
-                                          wd(
+                                          Ad(
                                             {
                                               id: "search-jobs",
                                               label: "Jobs",
@@ -34986,7 +36405,7 @@
                                                   ? void 0
                                                   : m.job.map(function (n) {
                                                       return (0,
-                                                      e.jsxs)("div", wd({ className: "search-item" }, { children: [(0, e.jsx)("p", wd({ className: "name" }, { children: n.data.name })), (0, e.jsx)("p", wd({ className: "effect" }, { children: n.effectString }))] }));
+                                                      e.jsxs)("div", Ad({ className: "search-item" }, { children: [(0, e.jsx)("p", Ad({ className: "name" }, { children: n.data.name })), (0, e.jsx)("p", Ad({ className: "effect" }, { children: n.effectString }))] }));
                                                     }),
                                             }
                                           )
@@ -35001,7 +36420,7 @@
                                     )
                                       ? (0, e.jsx)(
                                           Fa,
-                                          wd(
+                                          Ad(
                                             {
                                               id: "search-craftman",
                                               label: "Crafting",
@@ -35016,7 +36435,7 @@
                                                     ) {
                                                       return (0, e.jsxs)(
                                                         "div",
-                                                        wd(
+                                                        Ad(
                                                           {
                                                             className:
                                                               "search-item",
@@ -35025,7 +36444,7 @@
                                                             children: [
                                                               (0, e.jsx)(
                                                                 "p",
-                                                                wd(
+                                                                Ad(
                                                                   {
                                                                     className:
                                                                       "name",
@@ -35039,7 +36458,7 @@
                                                               ),
                                                               (0, e.jsx)(
                                                                 "p",
-                                                                wd(
+                                                                Ad(
                                                                   {
                                                                     className:
                                                                       "effect",
@@ -35068,7 +36487,7 @@
                                     )
                                       ? (0, e.jsx)(
                                           Fa,
-                                          wd(
+                                          Ad(
                                             {
                                               id: "search-laws",
                                               label: "Laws",
@@ -35084,7 +36503,7 @@
                                                           function (t, r) {
                                                             return (0, e.jsxs)(
                                                               "div",
-                                                              wd(
+                                                              Ad(
                                                                 {
                                                                   className:
                                                                     "search-item",
@@ -35093,7 +36512,7 @@
                                                                   children: [
                                                                     (0, e.jsxs)(
                                                                       "p",
-                                                                      wd(
+                                                                      Ad(
                                                                         {
                                                                           className:
                                                                             "name",
@@ -35117,7 +36536,7 @@
                                                                     ),
                                                                     (0, e.jsx)(
                                                                       "p",
-                                                                      wd(
+                                                                      Ad(
                                                                         {
                                                                           className:
                                                                             "effect",
@@ -35153,7 +36572,7 @@
                                     )
                                       ? (0, e.jsx)(
                                           Fa,
-                                          wd(
+                                          Ad(
                                             {
                                               id: "search-resource",
                                               label: "Resources",
@@ -35168,7 +36587,7 @@
                                                     ) {
                                                       return (0, e.jsxs)(
                                                         "div",
-                                                        wd(
+                                                        Ad(
                                                           {
                                                             className:
                                                               "search-item",
@@ -35177,7 +36596,7 @@
                                                             children: [
                                                               (0, e.jsx)(
                                                                 "p",
-                                                                wd(
+                                                                Ad(
                                                                   {
                                                                     className:
                                                                       "name",
@@ -35190,7 +36609,7 @@
                                                               ),
                                                               (0, e.jsx)(
                                                                 "p",
-                                                                wd(
+                                                                Ad(
                                                                   {
                                                                     className:
                                                                       "effect",
@@ -35224,21 +36643,21 @@
             )
           );
         },
-        Nd = function () {
-          var n = N(bd);
+        Od = function () {
+          var n = N(Ed);
           return (0, e.jsx)(
             "div",
-            wd(
+            Ad(
               {
                 className: "modal-wrap ".concat(n.query ? "opened" : "closed"),
               },
-              { children: n.query ? (0, e.jsx)(jd, { search: n }) : null }
+              { children: n.query ? (0, e.jsx)(Td, { search: n }) : null }
             )
           );
         },
-        kd = function () {
+        _d = function () {
           return (
-            (kd =
+            (_d =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -35246,16 +36665,16 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            kd.apply(this, arguments)
+            _d.apply(this, arguments)
           );
         },
-        Ed = function () {
+        Rd = function () {
           var n = (0, r.useState)(!1),
             t = n[0],
             i = n[1],
             a = N(Pa),
-            o = N(Ho),
-            s = N(Go);
+            o = N(zo),
+            s = N(Ho);
           return (
             (0, r.useEffect)(
               function () {
@@ -35270,7 +36689,7 @@
             ),
             (0, e.jsxs)(
               "div",
-              kd(
+              _d(
                 {
                   className: "page "
                     .concat(s, "-theme ")
@@ -35278,22 +36697,22 @@
                 },
                 {
                   children: [
-                    a ? (0, e.jsx)(td, {}) : null,
-                    (0, e.jsx)(Eo, {}),
+                    a ? (0, e.jsx)(cd, {}) : null,
+                    (0, e.jsx)(So, {}),
                     (0, e.jsxs)(
                       "div",
-                      kd(
+                      _d(
                         { className: "game" },
                         {
                           children: [
                             (0, e.jsx)(
                               "div",
-                              kd(
+                              _d(
                                 { className: "show-hide-resources" },
                                 {
                                   children: (0, e.jsx)(
                                     "span",
-                                    kd(
+                                    _d(
                                       {
                                         className: "show-hide popup-link",
                                         onClick: function () {
@@ -35312,33 +36731,33 @@
                             ),
                             (0, e.jsx)(
                               "div",
-                              kd(
+                              _d(
                                 { className: "sidebar" },
-                                { children: (0, e.jsx)(vs, { isHidden: t }) }
+                                { children: (0, e.jsx)(ys, { isHidden: t }) }
                               )
                             ),
                             (0, e.jsx)(
                               "div",
-                              kd(
+                              _d(
                                 { className: "content" },
-                                { children: (0, e.jsx)(nc, {}) }
+                                { children: (0, e.jsx)(lc, {}) }
                               )
                             ),
-                            (0, e.jsx)(vd, {}),
+                            (0, e.jsx)(kd, {}),
                           ],
                         }
                       )
                     ),
-                    (0, e.jsx)(Nd, {}),
+                    (0, e.jsx)(Od, {}),
                   ],
                 }
               )
             )
           );
         },
-        Sd = function () {
+        Id = function () {
           return (
-            (Sd =
+            (Id =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -35346,14 +36765,14 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            Sd.apply(this, arguments)
+            Id.apply(this, arguments)
           );
         };
       Gt(),
         (0, n.s)(document.getElementById("root")).render(
           (0, e.jsx)(function () {
             return (0,
-            e.jsx)(u, Sd({ store: Ut }, { children: (0, e.jsx)(Ed, {}) }));
+            e.jsx)(u, Id({ store: Ut }, { children: (0, e.jsx)(Rd, {}) }));
           }, {})
         );
     })();
