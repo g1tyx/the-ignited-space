@@ -2328,7 +2328,7 @@ var cnItems = {
     //更新日志标题
     "v0.2.9 Regular Update": "v0.2.9 常规更新",
     "v0.2.8d Small Update": "v0.2.8d 小型更新",
-    "v0.2.8c Small Update": "v0.2.8c 小型更新",
+    "v0.2.8с Small Update": "v0.2.8c 小型更新",
     "v0.2.8b Hotfix Update": "v0.2.8b 热更新",
     "v0.2.8a Tiny Update": "v0.2.8a 微型更新",
     "v0.2.8 Regular Update": "v0.2.8 常规更新",
