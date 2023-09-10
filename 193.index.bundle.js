@@ -4889,7 +4889,7 @@
                 id: o.REPAIR_DRILL,
                 name: "Repair Drill",
                 description:
-                  "Allows drilling harder materials. Also improves stone output",
+                  "Allows drilling harder materials. Also improves stone output from Drilling actions",
                 unlockCondition: function (e) {
                   return !0;
                 },
@@ -29099,7 +29099,12 @@
                     return {
                       A:
                         2500 *
-                        Math.pow(2, t.currentSearchFilters.length) *
+                        Math.pow(
+                          2,
+                          t.currentSearchFilters.filter(function (e) {
+                            return !!e;
+                          }).length
+                        ) *
                         (t.currentStarFilter ? 2 : 1),
                       B: 1,
                       type: i.EXPONENTIAL,

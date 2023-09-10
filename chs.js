@@ -156,7 +156,7 @@ var cnItems = {
     
     //升级
     "Repair Drill": "修理钻头",
-    "Allows drilling harder materials. Also improves stone output": "允许开采更硬的材料。提高石材产量",
+    "Allows drilling harder materials. Also improves stone output from Drilling actions": "允许开采更硬的材料。提高无人机开采石头的产量",
     "Repair Charging Cable": "修理充电线路",
     "Improves power output": "提高电力输出",
     "Repair Manipulators": "修理机械手",
@@ -1372,144 +1372,81 @@ var cnItems = {
     "D": "D",
 
     //行星词条手动显示
-    "Wet Small": "潮湿 小型",
-
-    "Wet Small Ore Poor": "潮湿 小型 矿物贫瘠",
-    "Wet Small Ore Poor Cold": "潮湿 小型 矿物贫瘠 寒冷",
-    "Wet Small Ore Poor Hot": "潮湿 小型 矿物贫瘠 炎热",
-
-    "Wet Small Ore Rich": "潮湿 小型 矿物丰富",
-    "Wet Small Ore Rich Cold": "潮湿 小型 矿物丰富 寒冷",
-    "Wet Small Ore Rich Hot": "潮湿 小型 矿物丰富 炎热",
-
-    "Wet Small Peaty": "潮湿 小型 泥质",
-    "Wet Small Peaty Cold": "潮湿 小型 泥质 寒冷",
-    "Wet Small Peaty Hot": "潮湿 小型 泥质 炎热",
-
-    "Wet Small Cold": "潮湿 小型 寒冷",
-    "Wet Small Hot": "潮湿 小型 炎热",
-
-    "Wet Big": "潮湿 大型",
-
-    "Wet Big Ore Poor": "潮湿 大型 矿物贫瘠",
-    "Wet Big Ore Poor Cold": "潮湿 大型 矿物贫瘠 寒冷",
-    "Wet Big Ore Poor Hot": "潮湿 大型 矿物贫瘠 炎热",
-
-    "Wet Big Ore Rich": "潮湿 大型 矿物丰富",
-    "Wet Big Ore Rich Cold": "潮湿 大型 矿物丰富 寒冷",
-    "Wet Big Ore Rich Hot": "潮湿 大型 矿物丰富 炎热",
-
-    "Wet Big Peaty": "潮湿 大型 泥质",
-    "Wet Big Peaty Cold": "潮湿 大型 泥质 寒冷",
-    "Wet Big Peaty Hot": "潮湿 大型 泥质 炎热",
-
-    "Wet Big Cold": "潮湿 大型 寒冷",
-    "Wet Big Hot": "潮湿 大型 炎热",
-
+    "Ore Poor": " 矿物贫瘠",
+    "Ore Rich": " 矿物丰富",
+    "Peaty": " 泥质",
+    "Semiconductors Poor": " 硅贫瘠",
+    "Small": "小型",
+    "Small Ore Poor": "小型 矿物贫瘠",
+    "Small Ore Rich": "小型 矿物丰富",
+    "Small Peaty": "小型 泥质",
+    "Small Semiconductors Poor": "小型 硅贫瘠",
+    "Big": "大型",
+    "Big Ore Poor": "大型 矿物贫瘠",
+    "Big Ore Rich": "大型 矿物丰富",
+    "Big Peaty": "大型 泥质",
+    "Big Semiconductors Poor": "大型 硅贫瘠",
+    "Wet": "潮湿",
     "Wet Ore Poor": "潮湿 矿物贫瘠",
-    "Wet Ore Poor Cold": "潮湿 矿物贫瘠 寒冷",
-    "Wet Ore Poor Hot": "潮湿 矿物贫瘠 炎热",
-
     "Wet Ore Rich": "潮湿 矿物丰富",
-    "Wet Ore Rich Cold": "潮湿 矿物丰富 寒冷",
-    "Wet Ore Rich Hot": "潮湿 矿物丰富 炎热",
-
     "Wet Peaty": "潮湿 泥质",
-    "Wet Peaty Cold": "潮湿 泥质 寒冷",
-    "Wet Peaty Hot": "潮湿 泥质 炎热",
-
-    "Wet Cold": "潮湿 寒冷",
-    "Wet Hot": "潮湿 炎热",
-    
-    "Dry Small": "干燥 小型",
-
-    "Dry Small Ore Poor": "干燥 小型 矿物贫瘠",
-    "Dry Small Ore Poor Cold": "干燥 小型 矿物贫瘠 寒冷",
-    "Dry Small Ore Poor Hot": "干燥 小型 矿物贫瘠 炎热",
-
-    "Dry Small Ore Rich": "干燥 小型 矿物丰富",
-    "Dry Small Ore Rich Cold": "干燥 小型 矿物丰富 寒冷",
-    "Dry Small Ore Rich Hot": "干燥 小型 矿物丰富 炎热",
-
-    "Dry Small Peaty": "干燥 小型 泥质",
-    "Dry Small Peaty Cold": "干燥 小型 泥质 寒冷",
-    "Dry Small Peaty Hot": "干燥 小型 泥质 炎热",
-
-    "Dry Small Cold": "干燥 小型 寒冷",
-    "Dry Small Hot": "干燥 小型 炎热",
-
-    "Dry Big": "干燥 大型",
-    "Dry Big Ore Poor": "干燥 大型 矿物贫瘠",
-    "Dry Big Ore Poor Cold": "干燥 大型 矿物贫瘠 寒冷",
-    "Dry Big Ore Poor Hot": "干燥 大型 矿物贫瘠 炎热",
-
-    "Dry Big Ore Rich": "干燥 大型 矿物丰富",
-    "Dry Big Ore Rich Cold": "干燥 大型 矿物丰富 寒冷",
-    "Dry Big Ore Rich Hot": "干燥 大型 矿物丰富 炎热",
-
-    "Dry Big Peaty": "干燥 大型 泥质",
-    "Dry Big Peaty Cold": "干燥 大型 泥质 寒冷",
-    "Dry Big Peaty Hot": "干燥 大型 泥质 炎热",
-
-    "Dry Big Cold": "干燥 大型 寒冷",
-    "Dry Big Hot": "干燥 大型 炎热",
-
+    "Wet Semiconductors Poor": "潮湿 硅贫瘠",
+    "Wet Small": "潮湿 小型",
+    "Wet Small Ore Poor": "潮湿 小型 矿物贫瘠",
+    "Wet Small Ore Rich": "潮湿 小型 矿物丰富",
+    "Wet Small Peaty": "潮湿 小型 泥质",
+    "Wet Small Semiconductors Poor": "潮湿 小型 硅贫瘠",
+    "Wet Big": "潮湿 大型",
+    "Wet Big Ore Poor": "潮湿 大型 矿物贫瘠",
+    "Wet Big Ore Rich": "潮湿 大型 矿物丰富",
+    "Wet Big Peaty": "潮湿 大型 泥质",
+    "Wet Big Semiconductors Poor": "潮湿 大型 硅贫瘠",
     "Dry": "干燥",
     "Dry Ore Poor": "干燥 矿物贫瘠",
-    "Dry Ore Poor Cold": "干燥 矿物贫瘠 寒冷",
-    "Dry Ore Poor Hot": "干燥 矿物贫瘠 炎热",
-
     "Dry Ore Rich": "干燥 矿物丰富",
-    "Dry Ore Rich Cold": "干燥 矿物丰富 寒冷",
-    "Dry Ore Rich Hot": "干燥 矿物丰富 炎热",
-
     "Dry Peaty": "干燥 泥质",
-    "Dry Peaty Cold": "干燥 泥质 寒冷",
-    "Dry Peaty Hot": "干燥 泥质 炎热",
-
-    "Dry Cold": "干燥 寒冷",
-    "Dry Hot": "干燥 炎热",
-
-    "Small Ore Poor": "小型 矿物贫瘠",
-    "Small Ore Poor Cold": "小型 矿物贫瘠 寒冷",
-    "Small Ore Poor Hot": "小型 矿物贫瘠 炎热",
-
-    "Small Ore Rich": "小型 矿物丰富",
-    "Small Ore Rich Cold": "小型 矿物丰富 寒冷",
-    "Small Ore Rich Hot": "小型 矿物丰富 炎热",
-
-    "Small Peaty": "小型 泥质",
-    "Small Peaty Cold": "小型 泥质 寒冷",
-    "Small Peaty Hot": "小型 泥质 炎热",
-
-    "Small Cold": "小型 寒冷",
-    "Small Hot": "小型 炎热",
-
-    "Big Ore Poor": "大型 矿物贫瘠",
-    "Big Ore Poor Cold": "大型 矿物贫瘠 寒冷",
-    "Big Ore Poor Hot": "大型 矿物贫瘠 炎热",
-
-    "Big Ore Rich": "大型 矿物丰富",
-    "Big Ore Rich Cold": "大型 矿物丰富 寒冷",
-    "Big Ore Rich Hot": "大型 矿物丰富 炎热",
-
-    "Big Peaty": "大型 泥质",
-    "Big Peaty Cold": "大型 泥质 寒冷",
-    "Big Peaty Hot": "大型 泥质 炎热",
-
-    "Big Cold": "大型 寒冷",
-    "Big Hot": "小型 炎热",
-
-    "Ore Poor Cold": "矿物贫瘠 寒冷",
-    "Ore Poor Hot": "矿物贫瘠 炎热",
-
-    "Ore Rich Cold": "矿物丰富 寒冷",
-    "Ore Rich Hot": "矿物丰富 炎热",
-
-    "Peaty Cold": "泥质 寒冷",
-    "Peaty Hot": "泥质 炎热",
-
-
+    "Dry Semiconductors Poor": "干燥 硅贫瘠",
+    "Dry Small": "干燥 小型",
+    "Dry Small Ore Poor": "干燥 小型 矿物贫瘠",
+    "Dry Small Ore Rich": "干燥 小型 矿物丰富",
+    "Dry Small Peaty": "干燥 小型 泥质",
+    "Dry Small Semiconductors Poor": "干燥 小型 硅贫瘠",
+    "Dry Big": "干燥 大型",
+    "Dry Big Ore Poor": "干燥 大型 矿物贫瘠",
+    "Dry Big Ore Rich": "干燥 大型 矿物丰富",
+    "Dry Big Peaty": "干燥 大型 泥质",
+    "Dry Big Semiconductors Poor": "干燥 大型 硅贫瘠",
+    "Oceanic": "海洋",
+    "Oceanic Ore Poor": "海洋 矿物贫瘠",
+    "Oceanic Ore Rich": "海洋 矿物丰富",
+    "Oceanic Peaty": "海洋 泥质",
+    "Oceanic Semiconductors Poor": "海洋 硅贫瘠",
+    "Oceanic Small": "海洋 小型",
+    "Oceanic Small Ore Poor": "海洋 小型 矿物贫瘠",
+    "Oceanic Small Ore Rich": "海洋 小型 矿物丰富",
+    "Oceanic Small Peaty": "海洋 小型 泥质",
+    "Oceanic Small Semiconductors Poor": "海洋 小型 硅贫瘠",
+    "Oceanic Big": "海洋 大型",
+    "Oceanic Big Ore Poor": "海洋 大型 矿物贫瘠",
+    "Oceanic Big Ore Rich": "海洋 大型 矿物丰富",
+    "Oceanic Big Peaty": "海洋 大型 泥质",
+    "Oceanic Big Semiconductors Poor": "海洋 大型 硅贫瘠",
+    "Acid": "酸性",
+    "Acid Ore Poor": "酸性 矿物贫瘠",
+    "Acid Ore Rich": "酸性 矿物丰富",
+    "Acid Peaty": "酸性 泥质",
+    "Acid Semiconductors Poor": "酸性 硅贫瘠",
+    "Acid Small": "酸性 小型",
+    "Acid Small Ore Poor": "酸性 小型 矿物贫瘠",
+    "Acid Small Ore Rich": "酸性 小型 矿物丰富",
+    "Acid Small Peaty": "酸性 小型 泥质",
+    "Acid Small Semiconductors Poor": "酸性 小型 硅贫瘠",
+    "Acid Big": "酸性 大型",
+    "Acid Big Ore Poor": "酸性 大型 矿物贫瘠",
+    "Acid Big Ore Rich": "酸性 大型 矿物丰富",
+    "Acid Big Peaty": "酸性 大型 泥质",
+    "Acid Big Semiconductors Poor": "酸性 大型 硅贫瘠",
+    
     //
     "Breakdown:": "  明细：",
 
@@ -2510,6 +2447,10 @@ var cnPostfix = {
     "": "",
     "": "",
     "": "",
+    " Cold": " 寒冷",
+    " Hot": " 炎热",
+    " Frozen": " 冰封",
+    " Overheated": " 过热",
 }
 
 //需排除的，正则匹配
