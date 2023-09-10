@@ -103,6 +103,9 @@ var cnItems = {
     "Volcanic": "火山",
     "Inactive": "低磁性",
     "Calm": "平静",
+
+    "Normal": "正常",
+    "Warm": "温暖",
     
     //无人机操作
     "Charge": "充电",
@@ -2437,20 +2440,16 @@ var cnPostfix = {
     "": "",
     "": "",
     "": "",
+
+    "Slightly Warm": "微暖",
+    "Slightly Cold": "微冷",
+    "Very Cold": "严寒",
+    "Extremely Cold": "极寒",
+    "Very Hot": "酷暑",
     " Cold": " 寒冷",
     " Hot": " 炎热",
     " Frozen": " 冰封",
     " Overheated": " 过热",
-
-    "Very Hot": "酷暑",
-    "Hot": "炎热",
-    "Warm": "温暖",
-    "Slightly Warm": "微暖",
-    "Normal": "正常",
-    "Slightly Cold": "微冷",
-    "Cold": "寒冷",
-    "Very Cold": "严寒",
-    "Extremely Cold": "极寒",
 }
 
 //需排除的，正则匹配
