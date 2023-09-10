@@ -1326,7 +1326,7 @@ var cnItems = {
     "Military Base": "军事基地",
     "Learn how to use your artificial": "建造巨大的军事基地，极大地增强人民对于安保的信心。解锁新建筑",
     "Museum Of Evolution": "进化博物馆",
-    "Unlocks new building focused ar studying of various pre-historical creatures and their path to nowadays": "您的研究者可以在这种博物馆里研究史前生物，和它们是如何进化至今的。解锁新建筑。",
+    "Unlocks new building focused ar studying of various pre-historical creatures and their path to nowadays": "您的研究者可以在这种博物馆里研究史前生物，和它们是如何进化至今的。解锁新建筑",
 
     //
     "Brown Dwarf": "棕矮星",
@@ -1460,16 +1460,6 @@ var cnItems = {
     "New planet colonization": "殖民新星球",
     "Star": "恒星",
 
-
-    "Very Hot": "酷暑",
-    "Hot": "炎热",
-    "Warm": "温暖",
-    "Slightly Warm": "微暖",
-    "Normal": "正常",
-    "Slightly Cold": "微冷",
-    "Cold": "寒冷",
-    "Very Cold": "严寒",
-    "Extremely Cold": "极寒",
     "Spring": "春天",
     "Summer": "夏天",
     "Autumn": "秋天",
@@ -2451,6 +2441,16 @@ var cnPostfix = {
     " Hot": " 炎热",
     " Frozen": " 冰封",
     " Overheated": " 过热",
+
+    "Very Hot": "酷暑",
+    "Hot": "炎热",
+    "Warm": "温暖",
+    "Slightly Warm": "微暖",
+    "Normal": "正常",
+    "Slightly Cold": "微冷",
+    "Cold": "寒冷",
+    "Very Cold": "严寒",
+    "Extremely Cold": "极寒",
 }
 
 //需排除的，正则匹配
