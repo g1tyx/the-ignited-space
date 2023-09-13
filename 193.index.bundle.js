@@ -1893,9 +1893,9 @@
                       E = !1;
                     if (u < 1) {
                       var d = n.resources.getResourceCap(c);
-                      d && d < l && (E = !0),
+                      d < l && (E = !0),
                         (p =
-                          (d && d < l) ||
+                          d < l ||
                           (n.resources.getResourceBalance(c) < 0 &&
                             l - (r[c] || 0) > 0)
                             ? 1e300
@@ -15239,7 +15239,7 @@
                     amount: 0,
                     balance: 0,
                     max: 1,
-                    hasCapacityLimit: !0,
+                    hasCapacityLimit: e.hasCapacityLimit,
                     potentialEfficiency: 1,
                   };
                 }));
@@ -15808,7 +15808,11 @@
                 var t = this.resourcesStatus.findIndex(function (t) {
                   return t.id === e;
                 });
-                return t < 0 ? 0 : this.resourcesStatus[t].max;
+                return t < 0
+                  ? 0
+                  : this.resourcesStatus[t].hasCapacityLimit
+                  ? this.resourcesStatus[t].max
+                  : 1e300;
               }),
               (e.prototype.assertEnought = function (e, t, n) {
                 var i = [];
@@ -25565,7 +25569,9 @@
                 t || (t = { id: e.uuid, amount: 0 });
                 var n = FI.getInstance().space.spaceship.calculateStats(e),
                   i = { stats: DA(DA({}, yA.stats), n.stats), costs: n.costs },
-                  r = jI.space.spaceship.checkDetailsUnlocked(e);
+                  r =
+                    jI.space.spaceship.checkDetailsUnlocked(e) &&
+                    i.stats.Power > 0;
                 return {
                   id: t.id,
                   amount: t.amount,
@@ -26656,7 +26662,14 @@
               var t = e.call(this) || this;
               return (
                 (t.upgrades = []),
+                (t.bulkBuy = 1),
                 (t.numPrestiged = 0),
+                t.workDispatcher.on(
+                  "[transmit-knowledge] set bulk",
+                  function (e) {
+                    console.log("set bulk", e), (t.bulkBuy = e);
+                  }
+                ),
                 t.workDispatcher.on(
                   "[transmit-knowledge] do prestige",
                   function (e) {
@@ -26666,7 +26679,7 @@
                 t.workDispatcher.on(
                   "[transmit-knowledge] do upgrade",
                   function (e) {
-                    console.log("do prestige", e), t.doUpgrade(e.id, e.amount);
+                    console.log("do prestige", e), t.doUpgrade(e.id);
                   }
                 ),
                 t
@@ -26690,7 +26703,7 @@
               (t.prototype.dataToUI = function () {
                 var e = this,
                   t = mg.map(function (t) {
-                    return e.processToUI(t);
+                    return e.processToUI(t, e.bulkBuy);
                   });
                 return (
                   this.isPrestigeAvailable() &&
@@ -26721,37 +26734,53 @@
                     : t.level) || 0
                 );
               }),
-              (t.prototype.processToUI = function (e) {
-                var t = this.upgrades.find(function (t) {
+              (t.prototype.processToUI = function (e, t) {
+                void 0 === t && (t = 1);
+                var n = this.upgrades.find(function (t) {
                   return t.id === e.id;
                 });
-                t || ((t = { id: e.id, level: 0 }), this.upgrades.push(t));
-                var n = k.calcBatchAll(
+                n || ((n = { id: e.id, level: 0 }), this.upgrades.push(n));
+                var i = k.calcBatchAll(
                     e.getCost,
                     FI.getInstance(),
-                    t.level,
+                    n.level,
                     FI.getInstance().resources.getBatchObject()
                   ),
-                  i = n.reduce(function (e, t) {
+                  r = i.reduce(function (e, t) {
                     return Math.min(e, t.max);
-                  }, 1e300);
-                return {
-                  id: e.id,
-                  name: e.name,
-                  description: e.description,
-                  isUnlocked: e.unlockCondition(jI),
-                  isAvailable: i >= 1,
-                  cost: FI.getInstance().resources.assertEnought(
-                    n,
+                  }, 1e300),
+                  o = Math.min(
+                    t,
+                    Math.floor(r),
+                    e.maxLevel ? e.maxLevel - n.level : 1e300
+                  );
+                return (
+                  (i = k.calcBatchAll(
+                    e.getCost,
+                    FI.getInstance(),
+                    n.level,
                     FI.getInstance().resources.getBatchObject(),
-                    FI.getInstance().resources.getBatchBalanceObject()
-                  ),
-                  progress: i < 1 ? (100 * i).toPrecision(3) : "100",
-                  isMaxedOut: !!e.maxLevel && e.maxLevel <= t.level,
-                  maxLevel: e.maxLevel,
-                  level: t.level,
-                  category: e.category,
-                };
+                    Math.max(1, o)
+                  )),
+                  {
+                    id: e.id,
+                    name: e.name,
+                    description: e.description,
+                    isUnlocked: e.unlockCondition(jI),
+                    isAvailable: r >= 1,
+                    cost: FI.getInstance().resources.assertEnought(
+                      i,
+                      FI.getInstance().resources.getBatchObject(),
+                      FI.getInstance().resources.getBatchBalanceObject()
+                    ),
+                    progress: r < 1 ? (100 * r).toPrecision(3) : "100",
+                    isMaxedOut: !!e.maxLevel && e.maxLevel <= n.level,
+                    maxLevel: e.maxLevel,
+                    level: n.level,
+                    category: e.category,
+                    bulk: o,
+                  }
+                );
               }),
               (t.prototype.getEffectGain = function (e) {
                 var t = mg.filter(function (t) {
@@ -26965,43 +26994,42 @@
                   n
                 );
               }),
-              (t.prototype.doUpgrade = function (e, t) {
-                void 0 === t && (t = 1);
-                var n = mg.find(function (t) {
+              (t.prototype.doUpgrade = function (e) {
+                var t = mg.find(function (t) {
                   return t.id === e;
                 });
-                if (n) {
-                  var i = this.upgrades.findIndex(function (t) {
+                if (t) {
+                  var n = this.upgrades.findIndex(function (t) {
                     return t.id === e;
                   });
-                  if (i < 0)
-                    (i = this.upgrades.length),
+                  if (n < 0)
+                    (n = this.upgrades.length),
                       this.upgrades.push({ id: e, level: 0 });
-                  else if (n.maxLevel && this.upgrades[i].level >= n.maxLevel)
+                  else if (t.maxLevel && this.upgrades[n].level >= t.maxLevel)
                     return;
-                  var r = k
+                  var i = k
                     .calcBatchAll(
-                      n.getCost,
+                      t.getCost,
                       FI.getInstance(),
-                      this.upgrades[i].level,
+                      this.upgrades[n].level,
                       FI.getInstance().resources.getBatchObject(),
-                      t
+                      this.bulkBuy
                     )
                     .reduce(function (e, t) {
                       return Math.min(e, Math.floor(t.max));
                     }, 1e300);
-                  if (!(r < 1)) {
-                    var o = Math.min(Math.floor(r), t),
-                      a = k.calcBatchAll(
-                        n.getCost,
+                  if (!(i < 1)) {
+                    var r = Math.min(Math.floor(i), this.bulkBuy),
+                      o = k.calcBatchAll(
+                        t.getCost,
                         FI.getInstance(),
-                        this.upgrades[i].level,
+                        this.upgrades[n].level,
                         FI.getInstance().resources.getBatchObject(),
-                        o
+                        r
                       );
-                    (this.upgrades[i].level += o),
-                      console.log("costs: ", a),
-                      FI.getInstance().resources.subtractResourceBatch(a),
+                    (this.upgrades[n].level += r),
+                      console.log("costs: ", o),
+                      FI.getInstance().resources.subtractResourceBatch(o),
                       jI.resources.reassertBalances(),
                       jI.regenerateCache();
                   }
@@ -27076,8 +27104,9 @@
                     )),
                     jI.resources.addResource(l.KNOWLEDGE_POINT, e + n),
                     jI.resources.addResource(l.COLONIZE_XP, t),
-                    (jI.statistics.stats.maxXpPerHour =
-                      (3600 * e) / jI.statistics.stats.timeThisPlanet),
+                    (jI.statistics.stats.maxKpPerHour =
+                      (3600 * e) /
+                      (jI.statistics.stats.timeThisPrestige + 0.001)),
                     (jI.statistics.stats.timeThisPrestige = 0),
                     jI.statistics.reset(),
                     this.numPrestiged++,
@@ -27667,7 +27696,7 @@
                   return { A: 1, B: 1, type: i.EXPONENTIAL };
                 }),
                 Wf),
-              maxLevel: 3,
+              maxLevel: 1,
             },
             {
               id: I.STARCHART_MASTER,
@@ -28621,13 +28650,17 @@
               (t.prototype.doGenerate = function (e) {
                 var t = this,
                   n = {},
-                  i = nN.reduce(function (e, t) {
-                    return (
-                      e[t.category] || (e[t.category] = [t]),
-                      e[t.category].push(t),
-                      e
-                    );
-                  }, {}),
+                  i = nN
+                    .filter(function (e) {
+                      return e.unlockCondition(jI);
+                    })
+                    .reduce(function (e, t) {
+                      return (
+                        e[t.category] || (e[t.category] = [t]),
+                        e[t.category].push(t),
+                        e
+                      );
+                    }, {}),
                   r = {},
                   o = nN
                     .filter(function (e) {
@@ -33043,6 +33076,11 @@
                 (this.expeditionsState.isInProgress = !1),
                   (this.expeditionsState.progress = 0),
                   (this.expeditionsState.lastLooted = {}),
+                  (this.expeditionsState.runningX = 0),
+                  (this.expeditionsState.runningY = 0),
+                  (this.expeditionsState.currentMax = 0),
+                  (this.expeditionsState.currentX = 0),
+                  (this.expeditionsState.currentY = 0),
                   this.generateMap();
               }),
               t

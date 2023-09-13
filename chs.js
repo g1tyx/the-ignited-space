@@ -1773,6 +1773,13 @@ var cnItems = {
     "Reddit Community": "加入 Reddit 社区",
 
     //更新日志正文
+    //v0.2.9a
+    "Fixed issue when resources balances were not updated properly in some cases": "修复了部分情况下资源量不会正确刷新的bug",
+    "Fixed bug when expedition was not reset properly on prestige": "修复了重置时不会刷新探险状态的bug",
+    "Fixed bug when locked planet modifiers were available for selection": "修复了未解锁的星球词条能被搜索到的bug",
+    "Fixed bug when some stats were mixed up": "修复了统计数据错误的bug",
+    "Fixed prevented mobile tooltip from showing": "修复了移动端鼠标提示无法使用的bug",
+    "Added display for some of new stats": "增加了新的统计数据",
     //v0.2.9
     "Added new late game content/rebalanced a bit existing": "增加了新的后期游戏内容，并重新平衡了部分现有内容",
     "Added setting to enable bulk building": "增加了一个选项，可以选择是否允许批量建筑。默认处于关闭状态",
@@ -2177,6 +2184,9 @@ var cnItems = {
     "Exotic Matter Collected": "已收集的特殊物质",
     "Colonists Died": "当前轮殖民者死亡数",
     "Max. Dead colonists": "历史最高殖民者死亡数",
+    "Max Research Cap reached": "历史最高研究上限",
+    "Fights Won": "战斗胜利次数",
+    "Fights Lost": "战斗失败次数",
     "General": "总体",
     "Empty and cold here": "这里空旷且寒冷",
 
@@ -2256,6 +2266,7 @@ var cnItems = {
     "Pause": "暂停",
 
     //更新日志标题
+    "v0.2.9a Hotfix Update": "v0.2.9a 热更新",
     "v0.2.9 Regular Update": "v0.2.9 常规更新",
     "v0.2.8d Small Update": "v0.2.8d 小型更新",
     "v0.2.8с Small Update": "v0.2.8c 小型更新",
