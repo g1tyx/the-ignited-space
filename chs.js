@@ -1204,9 +1204,9 @@ var cnItems = {
     "Safe & Harmless": "安全无害",
     "Fuel Purification Stations running as normally": "核燃料纯化站以正常的方式工作",
     "Intensive Bacteria Usage": "密集使用细菌",
-    "Use fuel purification bacteria more aggressively. Boosts power generation by thermonuclear power plants even further, but produces a lot of annoying smell. Doesnt hurt anyone, but reduce aesthetics": "激进地使用核燃料纯化站。核燃料纯化站对热核发电站的加成提升 2%，但会排放恶臭的气味。这不会伤害任何人，但会降低美观",
+    "Use fuel purification bacteria more aggressively. Boosts power generation by thermonuclear power plants even further, but produces a lot of annoying smell. Doesnt hurt anyone, but reduce aesthetics": "激进地使用核燃料纯化站。核燃料纯化站对热核发电站的加成增加 2%，但会排放恶臭的气味。这不会伤害任何人，但会降低美观",
     "Uncontrolled Bacteria Usage": "无限使用细菌",
-    "Use fuel purification bacteria is pretty much unlimited. Dramatically reduce aesthetics. How your people even bear it?": "毫无顾忌地使用核燃料纯化站。核燃料纯化站对热核发电站的加成提升 4%，但会大幅降低美观。……这个味道谁受得了啊？",
+    "Use fuel purification bacteria is pretty much unlimited. Dramatically reduce aesthetics. How your people even bear it?": "毫无顾忌地使用核燃料纯化站。核燃料纯化站对热核发电站的加成增加 4%，但会大幅降低美观。……这个味道谁受得了啊？",
     "Annihilation Purifiers": "纯化器湮灭反应规范",
     "Control usage of extremely dangerous power of annihilation in your DM purifiers": "您可以规范是否将极度危险的湮灭反应用于强化暗物质纯化器",
     "Safe Power Source": "安全能量来源",
@@ -2394,6 +2394,7 @@ var cnPrefix = {
     "Law Food Chemical Processing: ": "食品加工政策：",
     "Law Furnace Metal Processing: ": "金属加工政策：",
     "Law Education: ": "教育政策：",
+    "Law Waste Disposal Rules: ": "废料处理政策：",
 
     //
     "Shield: ": "护盾：",
