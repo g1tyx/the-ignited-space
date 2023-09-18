@@ -2462,6 +2462,8 @@ var cnPostfix = {
     " Hot": " 炎热",
     " Frozen": " 冰封",
     " Overheated": " 过热",
+
+    "Breakdown:": "  明细：",
 }
 
 //需排除的，正则匹配
