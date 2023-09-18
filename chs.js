@@ -1684,6 +1684,7 @@ var cnItems = {
     "Load presets": "载入预设",
     "Choose here": "在此选择",
     "Apply Preset": "应用预设",
+    "Happiness Breakdown:": "幸福度明细：",
     "Happiness:": "幸福度：",
     "Happiness affects your colonists productivity. Has no effect on machinery production.": "幸福度会影响殖民者的生产力，不影响建筑物的生产力。",
     "Jobs": "工作",
@@ -2462,8 +2463,6 @@ var cnPostfix = {
     " Hot": " 炎热",
     " Frozen": " 冰封",
     " Overheated": " 过热",
-
-    "Breakdown:": "  明细：",
 }
 
 //需排除的，正则匹配
