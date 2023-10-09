@@ -2749,7 +2749,6 @@ var cnRegReplace = new Map([
     [/^Upgrade finish: High Energy Press, lvl (\d+). Spent: (.+) Research,(.+) Computer,(.+) Graphene\n(.*);$/, '升级完成：高能压缩 等级 $1，消耗：$2 研究，$3 电脑，$4 石墨烯'],
     [/^Upgrade finish: Conducting Bacteria, lvl (\d+). Spent: (.+) Research,(.+) Biomass,(.+) Magneto\n(.*);$/, '升级完成：导电细菌 等级 $1，消耗：$2 研究，$3 生物质，$4 磁电机'],
     [/^Upgrade finish: Organic Processing Bacteria, lvl (\d+). Spent: (.+) Research,(.+) Biomass,(.+) Magneto\n(.*);$/, '升级完成：有机物处理细菌 等级 $1，消耗：$2 研究，$3 生物质，$4 磁电机'],
-   
     [/^Upgrade finish: Gravitone Detectors, lvl (\d+). Spent: (.+) Research,(.+) Computer,(.+) Magneto\n(.*);$/, '升级完成：引力子探测器 等级 $1，消耗：$2 研究，$3 电脑，$4 磁电机，$5'],
     [/^Upgrade finish: Quantum Teleportation, lvl (\d+). Spent: (.+) Research,(.+) Computer,(.+) Graphene\n(.*);$/, '升级完成：量子传送 等级 $1，消耗：$2 研究，$3 电脑，$4 石墨烯，$5'],
     [/^Upgrade finish: Quantum Encryption, lvl (\d+). Spent: (.+) Research,(.+) Computer,(.+) Magneto\n(.*);$/, '升级完成：量子加密 等级 $1，消耗：$2 研究，$3 电脑，$4 磁电机，$5'],
