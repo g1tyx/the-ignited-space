@@ -1802,7 +1802,7 @@ var cnItems = {
     "Biology God": "生物学之神",
     "What can go wrong if we can fix problems on DNA level?!": "每个核苷酸的位置，都在我们掌握。",
     "Have 20К biomass income": "生物质产量达到 20K",    
-    "Electronics": "电子学新手",
+    "Electronics": "电子学",
     "We are so accustomed to computers on Earth. We cannot imagine civilized life without electronics.": "我们如此习惯于地球上的计算机，根本无法想象离开它们的文明会变成什么样。",
     "Have 20 semiconductor income": "半导体产量达到 20",
     "Electronics Master": "电子学专家",
