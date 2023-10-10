@@ -1855,7 +1855,7 @@ var cnItems = {
     "Oxygen II": "氧气 II",
     "Without enough supply of oxygen, a great civilization is a great dead civilization.": "没有足够的氧气供应，伟大的文明也不过是伟大的废墟。",
     "Have at least 200 oxygen income": "氧气产量达到 200",
-    "Tropic Forest Plants now also boost oxygen gain": "热带植物群系也将提升氧气产量",
+    "Tropic Forest Plants now also boost oxygen gain": "热带森林植物也将提升氧气产量",
     "Desert Walker": "沙漠行者",
     "If you don't see water on the surface, perhaps it's worth digging.": "如果地面上没有水，或许挖挖看会有收获。",
     "Have at least 500 population on planet with water multiplier < 0.25": "在水产量低于 0.25 倍的星球上达到 500 人口",
