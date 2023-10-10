@@ -2513,15 +2513,9 @@ var cnItems = {
     "Show Resources": "显示资源",
     "Hide resources": "隐藏资源",
 
-<<<<<<< Updated upstream
     "Achievements Overview": "成就总览 ",
     "Achievements Complete": "已完成成就：",
     "Hidden Achievements": "隐藏成就：",
-=======
-    "Achievements Overview": "成就总览：",
-    "Achievements Complete": "已完成成就：",
-    "Hidden Achievements": "隐藏成就",
->>>>>>> Stashed changes
     "Achievements": "成就",
     "Requirements": "要求",
     "Produce": "生产",
