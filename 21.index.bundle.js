@@ -1592,7 +1592,7 @@
           X = function (e) {
             var t = 1;
             return (
-              Ph.achievements.getAchievementComplete("speedRun1") &&
+              _h.achievements.getAchievementComplete("speedRun1") &&
                 (t *= 0.95),
               t
             );
@@ -1760,7 +1760,7 @@
               x.find(function (t) {
                 return t.id === e;
               });
-            return t ? (t.unlockCondition(Ph) ? t.name : "???") : e;
+            return t ? (t.unlockCondition(_h) ? t.name : "???") : e;
           },
           H = function (e) {
             return Object.entries(e).map(function (e) {
@@ -2767,11 +2767,11 @@
                   this.actions.push(t));
                 var n = W.calcBatchAll(
                     e.getCost,
-                    Sh.getInstance(),
+                    Mh.getInstance(),
                     0,
-                    Sh.getInstance().resources.getBatchObject()
+                    Mh.getInstance().resources.getBatchObject()
                   ),
-                  i = W.calcBatch(e.getGain, Sh.getInstance(), 0),
+                  i = W.calcBatch(e.getGain, Mh.getInstance(), 0),
                   o = n.reduce(function (e, t) {
                     return Math.min(e, Math.floor(t.max));
                   }, 1e300),
@@ -2781,10 +2781,10 @@
                   a = n.reduce(function (e, t) {
                     return Math.max(e, t.eta);
                   }, 0),
-                  c = e.unlockCondition(Ph);
+                  c = e.unlockCondition(_h);
                 return (
                   c &&
-                    Ph.newNotifications.registerNotification(
+                    _h.newNotifications.registerNotification(
                       "planet:landing-zone:actions:".concat(e.id)
                     ),
                   {
@@ -2792,11 +2792,11 @@
                     name: e.name,
                     description: e.description,
                     isUnlocked: c,
-                    isAvailable: e.availableCondition(Ph) && o >= 1,
-                    cost: Sh.getInstance().resources.assertEnought(
+                    isAvailable: e.availableCondition(_h) && o >= 1,
+                    cost: Mh.getInstance().resources.assertEnought(
                       n,
-                      Sh.getInstance().resources.getBatchObject(),
-                      Sh.getInstance().resources.getBatchBalanceObject()
+                      Mh.getInstance().resources.getBatchObject(),
+                      Mh.getInstance().resources.getBatchBalanceObject()
                     ),
                     gain: i.map(function (e) {
                       return Jp(Jp({}, e), {
@@ -2832,9 +2832,9 @@
                   else if (this.actions[n].cooldown > 0) return;
                   var i = W.calcBatchAll(
                     t.getCost,
-                    Sh.getInstance(),
+                    Mh.getInstance(),
                     0,
-                    Sh.getInstance().resources.getBatchObject()
+                    Mh.getInstance().resources.getBatchObject()
                   );
                   i.reduce(function (e, t) {
                     return Math.min(e, Math.floor(t.max));
@@ -2842,9 +2842,9 @@
                     ((this.actions[n].cooldown = 1.5),
                     this.actions[n].performed++,
                     console.log("costs: ", i),
-                    Sh.getInstance().resources.subtractResourceBatch(i),
-                    Ph.resources.reassertBalances(),
-                    Ph.regenerateCache());
+                    Mh.getInstance().resources.subtractResourceBatch(i),
+                    _h.resources.reassertBalances(),
+                    _h.regenerateCache());
                 }
               }),
               (t.prototype.getActionPerformed = function (e) {
@@ -2869,19 +2869,19 @@
                       return t.id === e.id;
                     });
                     if (!i) return;
-                    var o = W.calcBatch(i.getGain, Sh.getInstance(), 0),
+                    var o = W.calcBatch(i.getGain, Mh.getInstance(), 0),
                       r = W.calcBatchAll(
                         i.getCost,
-                        Sh.getInstance(),
+                        Mh.getInstance(),
                         0,
-                        Sh.getInstance().resources.getBatchObject()
+                        Mh.getInstance().resources.getBatchObject()
                       );
-                    Sh.getInstance().eventLog.registerAction(i.name, r, o),
+                    Mh.getInstance().eventLog.registerAction(i.name, r, o),
                       o.forEach(function (e) {
-                        Ph.resources.addResource(e.id, e.amount);
+                        _h.resources.addResource(e.id, e.amount);
                       }),
-                      Ph.resources.reassertBalances(),
-                      Ph.regenerateCache();
+                      _h.resources.reassertBalances(),
+                      _h.regenerateCache();
                   }
                 });
               }),
@@ -9021,9 +9021,9 @@
                     i || ((i = { id: n.id, level: 0 }), e.upgrades.push(i));
                     var o = W.calcBatchAll(
                         n.getCost,
-                        Sh.getInstance(),
+                        Mh.getInstance(),
                         i.level,
-                        Sh.getInstance().resources.getBatchObject()
+                        Mh.getInstance().resources.getBatchObject()
                       ),
                       r =
                         (o.reduce(function (e, t) {
@@ -9038,16 +9038,16 @@
                     return (
                       t.isUnlocked &&
                         i.level <= 0 &&
-                        Ph.newNotifications.registerNotification(
+                        _h.newNotifications.registerNotification(
                           "planet:landing-zone:upgrades:".concat(n.id)
                         ),
                       od(od({}, t), {
                         etaNum: r,
                         isAvailable: a >= 1,
-                        cost: Sh.getInstance().resources.assertEnought(
+                        cost: Mh.getInstance().resources.assertEnought(
                           o,
-                          Sh.getInstance().resources.getBatchObject(),
-                          Sh.getInstance().resources.getBatchBalanceObject()
+                          Mh.getInstance().resources.getBatchObject(),
+                          Mh.getInstance().resources.getBatchBalanceObject()
                         ),
                         progress: a < 1 ? (100 * a).toPrecision(3) : "100",
                       })
@@ -9077,9 +9077,9 @@
                 i || ((i = { id: e.id, level: 0 }), this.upgrades.push(i));
                 var o = W.calcBatchAll(
                     e.getCost,
-                    Sh.getInstance(),
+                    Mh.getInstance(),
                     i.level + t,
-                    Sh.getInstance().resources.getBatchObject()
+                    Mh.getInstance().resources.getBatchObject()
                   ),
                   r = o.reduce(function (e, t) {
                     return e && !t.isBlocked;
@@ -9088,42 +9088,42 @@
                     return Math.max(e, t.eta);
                   }, 0),
                   c = e.getCapacityEffect
-                    ? W.calcBatch(e.getCapacityEffect, Sh.getInstance(), 0)
+                    ? W.calcBatch(e.getCapacityEffect, Mh.getInstance(), 0)
                     : [],
                   s = e.getCapacityMultiplier
                     ? W.calcBatch(
                         e.getCapacityMultiplier,
-                        Sh.getInstance(),
+                        Mh.getInstance(),
                         i.level + 1
                       )
                     : [],
                   l = e.getCapacityMultiplier
-                    ? W.calcBatch(e.getCapacityMultiplier, Sh.getInstance(), 1)
+                    ? W.calcBatch(e.getCapacityMultiplier, Mh.getInstance(), 1)
                     : [],
                   p = e.getGain
-                    ? W.calcBatch(e.getGain, Sh.getInstance(), 0)
+                    ? W.calcBatch(e.getGain, Mh.getInstance(), 0)
                     : [],
                   d = e.getGainMultiplier
                     ? W.calcBatch(
                         e.getGainMultiplier,
-                        Sh.getInstance(),
+                        Mh.getInstance(),
                         i.level + 1
                       )
                     : [],
                   E = e.getGainMultiplier
-                    ? W.calcBatch(e.getGainMultiplier, Sh.getInstance(), 1)
+                    ? W.calcBatch(e.getGainMultiplier, Mh.getInstance(), 1)
                     : [],
                   g = e.getCraftingMultiplier
-                    ? W.calculate(Ph, e.getCraftingMultiplier, 1)
+                    ? W.calculate(_h, e.getCraftingMultiplier, 1)
                     : 1,
                   f = o.reduce(function (e, t) {
                     return Math.min(e, t.max);
                   }, 1e300),
-                  A = e.unlockCondition(Ph);
+                  A = e.unlockCondition(_h);
                 return (
                   A &&
                     i.level <= 0 &&
-                    Ph.newNotifications.registerNotification(
+                    _h.newNotifications.registerNotification(
                       "planet:landing-zone:upgrades:".concat(e.id)
                     ),
                   {
@@ -9132,10 +9132,10 @@
                     description: e.description,
                     isUnlocked: A,
                     isAvailable: f >= 1,
-                    cost: Sh.getInstance().resources.assertEnought(
+                    cost: Mh.getInstance().resources.assertEnought(
                       o,
-                      Sh.getInstance().resources.getBatchObject(),
-                      Sh.getInstance().resources.getBatchBalanceObject()
+                      Mh.getInstance().resources.getBatchObject(),
+                      Mh.getInstance().resources.getBatchBalanceObject()
                     ),
                     max: c.map(function (e) {
                       return od(od({}, e), {
@@ -9203,9 +9203,9 @@
                     return;
                   var i = W.calcBatchAll(
                     t.getCost,
-                    Sh.getInstance(),
+                    Mh.getInstance(),
                     this.upgrades[n].level,
-                    Sh.getInstance().resources.getBatchObject()
+                    Mh.getInstance().resources.getBatchObject()
                   );
                   if (
                     !(
@@ -9217,15 +9217,15 @@
                     return (
                       this.upgrades[n].level++,
                       console.log("costs: ", i),
-                      Sh.getInstance().resources.subtractResourceBatch(i),
-                      Ph.resources.reassertBalances(),
-                      Ph.regenerateCache(),
-                      Sh.getInstance().eventLog.registerUpgrade(
+                      Mh.getInstance().resources.subtractResourceBatch(i),
+                      _h.resources.reassertBalances(),
+                      _h.regenerateCache(),
+                      Mh.getInstance().eventLog.registerUpgrade(
                         t.name,
                         i,
                         this.upgrades[n].level
                       ),
-                      Sh.getInstance().queuedItems.checkUnregisterUpgrade(
+                      Mh.getInstance().queuedItems.checkUnregisterUpgrade(
                         e,
                         this.upgrades[n].level,
                         t.maxLevel
@@ -9248,7 +9248,7 @@
                       return e.id === i.id;
                     });
                     if (o && o.getGain) {
-                      var r = W.calculate(Ph, o.getGain[e], 0, i.level);
+                      var r = W.calculate(_h, o.getGain[e], 0, i.level);
                       n.push({
                         label: "Upgrade: ".concat(o.name),
                         value: r,
@@ -9275,7 +9275,7 @@
                     });
                     if (o && o.getGainMultiplier) {
                       var r = W.calculate(
-                        Ph,
+                        _h,
                         o.getGainMultiplier[e],
                         i.level,
                         1
@@ -9304,7 +9304,7 @@
                     });
                     if (i && i.getCraftingMultiplier) {
                       var o = W.calculate(
-                          Ph,
+                          _h,
                           i.getCraftingMultiplier,
                           n.level,
                           1
@@ -9337,7 +9337,7 @@
                     });
                     if (o && o.getCapacityEffect) {
                       var r = W.calculate(
-                        Ph,
+                        _h,
                         o.getCapacityEffect[e],
                         0,
                         i.level
@@ -9369,7 +9369,7 @@
                     });
                     if (o && o.getCapacityMultiplier) {
                       var r = W.calculate(
-                        Ph,
+                        _h,
                         o.getCapacityMultiplier[e],
                         i.level,
                         1
@@ -9472,11 +9472,13 @@
             );
           },
           pd = function (e) {
-            return Math.pow(
-              0.5,
-              e.landingZone.landingZoneUpgrades.getUpgradeLevel(
-                r.BULLETPROOF_POLYMERS
-              )
+            return (
+              Math.pow(
+                0.5,
+                e.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                  r.BULLETPROOF_POLYMERS
+                )
+              ) * (e.achievements.getAchievementComplete("biomass2") ? 0.5 : 1)
             );
           },
           dd = function (e) {
@@ -10006,13 +10008,13 @@
                       15 *
                       Math.pow(
                         1.1,
-                        Ph.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                        _h.landingZone.landingZoneUpgrades.getUpgradeLevel(
                           r.CONTROLLABLE_THERMONUCLEAR_REACTIONS
                         )
                       ) *
                       Math.pow(
                         1.05,
-                        Ph.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                        _h.landingZone.landingZoneUpgrades.getUpgradeLevel(
                           r.NEUTRINO_COOLERS
                         )
                       ) *
@@ -10218,7 +10220,7 @@
                     A:
                       75 *
                       sd(e) *
-                      (e.achievements.getAchievementComplete("desertWalker2")
+                      (e.achievements.getAchievementComplete("desertWalker")
                         ? 0.5
                         : 1),
                     B: 1 + 0.5 * cd(e) * ud(e),
@@ -10230,7 +10232,7 @@
                     A:
                       12 *
                       sd(e) *
-                      (e.achievements.getAchievementComplete("desertWalker2")
+                      (e.achievements.getAchievementComplete("desertWalker")
                         ? 0.5
                         : 1),
                     B: 1 + 0.5 * cd(e),
@@ -10242,7 +10244,7 @@
                     A:
                       120 *
                       sd(e) *
-                      (e.achievements.getAchievementComplete("desertWalker2")
+                      (e.achievements.getAchievementComplete("desertWalker")
                         ? 0.5
                         : 1),
                     B: 1 + 0.5 * cd(e),
@@ -10254,7 +10256,7 @@
                     A:
                       85 *
                       sd(e) *
-                      (e.achievements.getAchievementComplete("desertWalker2")
+                      (e.achievements.getAchievementComplete("desertWalker")
                         ? 0.5
                         : 1),
                     B: 1 + 0.5 * cd(e),
@@ -12520,7 +12522,13 @@
                         e.landingZone.landingZoneUpgrades.getUpgradeLevel(
                           r.STRANGE_MATTER_DETECTORS
                         )
-                      ),
+                      ) *
+                      (e.achievements.getAchievementComplete("telescope")
+                        ? 1.25
+                        : 1) *
+                      (e.achievements.getAchievementComplete("telescope2")
+                        ? 1.25
+                        : 1),
                     B: 0,
                     type: i.LINEAR,
                   };
@@ -12548,7 +12556,7 @@
                       15 *
                       ld(e) *
                       sd(e) *
-                      (e.achievements.getAchievementComplete("desertWalker2")
+                      (e.achievements.getAchievementComplete("desertWalker")
                         ? 0.5
                         : 1),
                     B: 1 + 0.5 * cd(e),
@@ -12560,7 +12568,7 @@
                     A:
                       25 *
                       sd(e) *
-                      (e.achievements.getAchievementComplete("desertWalker2")
+                      (e.achievements.getAchievementComplete("desertWalker")
                         ? 0.5
                         : 1),
                     B: 1 + 0.5 * cd(e),
@@ -12573,7 +12581,7 @@
                       150 *
                       pd(e) *
                       sd(e) *
-                      (e.achievements.getAchievementComplete("desertWalker2")
+                      (e.achievements.getAchievementComplete("desertWalker")
                         ? 0.5
                         : 1),
                     B: 1 + 0.5 * cd(e),
@@ -12586,7 +12594,7 @@
                       250 *
                       Ed(e) *
                       sd(e) *
-                      (e.achievements.getAchievementComplete("desertWalker2")
+                      (e.achievements.getAchievementComplete("desertWalker")
                         ? 0.5
                         : 1),
                     B: 1 + 0.5 * cd(e),
@@ -13375,7 +13383,7 @@
                       25 *
                       Math.pow(
                         0.8,
-                        Ph.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                        _h.landingZone.landingZoneUpgrades.getUpgradeLevel(
                           r.EFFICIENT_COLLIDERS
                         )
                       ),
@@ -14946,10 +14954,10 @@
                         id: "population",
                         label: "Population",
                         value:
-                          (2 === Ph.laws.getLawSelected(G.COMFORT) ? 1 : 0) *
-                          Ph.colony.colonists *
+                          (2 === _h.laws.getLawSelected(G.COMFORT) ? 1 : 0) *
+                          _h.colony.colonists *
                           0.05 *
-                          Ph.colony.getSupplyUsageMultiplier(),
+                          _h.colony.getSupplyUsageMultiplier(),
                         category: "Population",
                       },
                     ],
@@ -14976,9 +14984,9 @@
                         label: "Population",
                         value:
                           0.005 *
-                          Ph.colony.colonists *
-                          Ph.colony.getSupplyUsageMultiplier() *
-                          Math.pow(3, Ph.laws.getLawSelected(G.COMFORT)),
+                          _h.colony.colonists *
+                          _h.colony.getSupplyUsageMultiplier() *
+                          Math.pow(3, _h.laws.getLawSelected(G.COMFORT)),
                         category: "Population",
                       },
                     ],
@@ -15005,8 +15013,8 @@
                         label: "Population",
                         value:
                           0.1 *
-                          Ph.colony.colonists *
-                          Ph.colony.getSupplyUsageMultiplier(),
+                          _h.colony.colonists *
+                          _h.colony.getSupplyUsageMultiplier(),
                         category: "Buildings",
                       },
                     ],
@@ -15207,19 +15215,19 @@
                       : n.isCraftable;
                 (t = C[e].income.linear).push.apply(
                   t,
-                  Ph.landingZone.landingZoneBuildings.getResourceBeingProduced(
+                  _h.landingZone.landingZoneBuildings.getResourceBeingProduced(
                     e
                   )
                 ),
                   (l = C[e].income.multiplier).push.apply(
                     l,
-                    Ph.landingZone.landingZoneBuildings.getResourceMultiplier(e)
+                    _h.landingZone.landingZoneBuildings.getResourceMultiplier(e)
                   ),
                   null === (i = C[e].income.consumption) ||
                     void 0 === i ||
                     i.push.apply(
                       i,
-                      Ph.landingZone.landingZoneBuildings.getResourceBeingConsumed(
+                      _h.landingZone.landingZoneBuildings.getResourceBeingConsumed(
                         e
                       )
                     ),
@@ -15227,7 +15235,7 @@
                     void 0 === o ||
                     o.push.apply(
                       o,
-                      Ph.landingZone.landingZoneBuildings.getResourceBeingStored(
+                      _h.landingZone.landingZoneBuildings.getResourceBeingStored(
                         e
                       )
                     ),
@@ -15235,183 +15243,183 @@
                     void 0 === r ||
                     r.push.apply(
                       r,
-                      Ph.landingZone.landingZoneBuildings.getStorageMultiplier(
+                      _h.landingZone.landingZoneBuildings.getStorageMultiplier(
                         e
                       )
                     ),
                   (v = C[e].income.linear).push.apply(
                     v,
-                    Ph.landingZone.landingZoneUpgrades.getGain(e)
+                    _h.landingZone.landingZoneUpgrades.getGain(e)
                   ),
                   (S = C[e].income.multiplier).push.apply(
                     S,
-                    Ph.landingZone.landingZoneUpgrades.getGainMultiplier(e)
+                    _h.landingZone.landingZoneUpgrades.getGainMultiplier(e)
                   ),
                   null === (a = C[e].max.linear) ||
                     void 0 === a ||
                     a.push.apply(
                       a,
-                      Ph.landingZone.landingZoneUpgrades.getCapacity(e)
+                      _h.landingZone.landingZoneUpgrades.getCapacity(e)
                     ),
                   null === (c = C[e].max.multiplier) ||
                     void 0 === c ||
                     c.push.apply(
                       c,
-                      Ph.landingZone.landingZoneUpgrades.getCapacityMult(e)
+                      _h.landingZone.landingZoneUpgrades.getCapacityMult(e)
                     ),
                   (P = C[e].income.linear).push.apply(
                     P,
-                    Ph.achievements.getResourceBeingProduced(e)
+                    _h.achievements.getResourceBeingProduced(e)
                   ),
                   (B = C[e].income.multiplier).push.apply(
                     B,
-                    Ph.achievements.getResourceMultiplier(e)
+                    _h.achievements.getResourceMultiplier(e)
                   ),
                   null === (s = C[e].max.linear) ||
                     void 0 === s ||
-                    s.push.apply(s, Ph.achievements.getResourceBeingStored(e)),
+                    s.push.apply(s, _h.achievements.getResourceBeingStored(e)),
                   null === (u = C[e].max.multiplier) ||
                     void 0 === u ||
                     u.push.apply(
                       u,
-                      Ph.achievements.getResourceStorageMultiplier(e)
+                      _h.achievements.getResourceStorageMultiplier(e)
                     ),
                   F &&
                     ((M = C[e].income.multiplier).push.apply(
                       M,
-                      Ph.landingZone.landingZoneBuildings.getCraftingMultiplier()
+                      _h.landingZone.landingZoneBuildings.getCraftingMultiplier()
                     ),
                     (_ = C[e].income.multiplier).push.apply(
                       _,
-                      Ph.landingZone.landingZoneUpgrades.getCraftingMultiplier()
+                      _h.landingZone.landingZoneUpgrades.getCraftingMultiplier()
                     ),
                     null === (p = C[e].max.multiplier) ||
                       void 0 === p ||
                       p.push.apply(
                         p,
-                        Ph.environment.ongoingEffects.getCraftingMultiplier()
+                        _h.environment.ongoingEffects.getCraftingMultiplier()
                       ),
                     (U = C[e].income.multiplier).push.apply(
                       U,
-                      Ph.laws.getCraftingMultiplier()
+                      _h.laws.getCraftingMultiplier()
                     ),
                     (b = C[e].income.multiplier).push.apply(
                       b,
-                      Ph.achievements.getCraftingMultiplier()
+                      _h.achievements.getCraftingMultiplier()
                     ),
                     (G = C[e].income.multiplier).push.apply(
                       G,
-                      Ph.colony.colonyJobs.getCraftingMultiplier()
+                      _h.colony.colonyJobs.getCraftingMultiplier()
                     )),
                   (D = C[e].income.linear).push.apply(
                     D,
-                    Ph.colony.colonyJobs.getResourceBeingProduced(e)
+                    _h.colony.colonyJobs.getResourceBeingProduced(e)
                   ),
                   null === (d = C[e].income.consumption) ||
                     void 0 === d ||
                     d.push.apply(
                       d,
-                      Ph.colony.colonyJobs.getResourceBeingConsumed(e)
+                      _h.colony.colonyJobs.getResourceBeingConsumed(e)
                     ),
                   null === (E = C[e].income.multiplier) ||
                     void 0 === E ||
                     E.push.apply(
                       E,
-                      Ph.colony.colonyJobs.getResourceBeingMultiplied(e)
+                      _h.colony.colonyJobs.getResourceBeingMultiplied(e)
                     ),
                   (X = C[e].income.linear).push.apply(
                     X,
-                    Ph.crafting.craftingJobs.getResourceBeingProduced(e)
+                    _h.crafting.craftingJobs.getResourceBeingProduced(e)
                   ),
                   null === (g = C[e].income.consumption) ||
                     void 0 === g ||
                     g.push.apply(
                       g,
-                      Ph.crafting.craftingJobs.getResourceBeingConsumed(e)
+                      _h.crafting.craftingJobs.getResourceBeingConsumed(e)
                     ),
                   (x = C[e].income.linear).push.apply(
                     x,
-                    Ph.laws.getResourceBeingProduced(e)
+                    _h.laws.getResourceBeingProduced(e)
                   ),
                   (k = C[e].income.multiplier).push.apply(
                     k,
-                    Ph.laws.getResourceMultiplier(e)
+                    _h.laws.getResourceMultiplier(e)
                   ),
                   null === (f = C[e].income.consumption) ||
                     void 0 === f ||
-                    f.push.apply(f, Ph.laws.getResourceBeingConsumed(e)),
+                    f.push.apply(f, _h.laws.getResourceBeingConsumed(e)),
                   null === (A = C[e].max.linear) ||
                     void 0 === A ||
-                    A.push.apply(A, Ph.laws.getResourceBeingStored(e)),
+                    A.push.apply(A, _h.laws.getResourceBeingStored(e)),
                   (H = C[e].income.linear).push.apply(
                     H,
-                    Ph.prestige.transmitKnowledge.getResourceBeingProduced(e)
+                    _h.prestige.transmitKnowledge.getResourceBeingProduced(e)
                   ),
                   (Y = C[e].income.multiplier).push.apply(
                     Y,
-                    Ph.prestige.transmitKnowledge.getResourceMultiplier(e)
+                    _h.prestige.transmitKnowledge.getResourceMultiplier(e)
                   ),
                   null === (m = C[e].max.linear) ||
                     void 0 === m ||
                     m.push.apply(
                       m,
-                      Ph.prestige.transmitKnowledge.getResourceBeingStored(e)
+                      _h.prestige.transmitKnowledge.getResourceBeingStored(e)
                     ),
                   null === (N = C[e].max.multiplier) ||
                     void 0 === N ||
                     N.push.apply(
                       N,
-                      Ph.prestige.transmitKnowledge.getCapacityMult(e)
+                      _h.prestige.transmitKnowledge.getCapacityMult(e)
                     ),
                   null === (h = C[e].income.multiplier) ||
                     void 0 === h ||
                     h.push.apply(
                       h,
-                      Ph.prestige.colonizePlanet.getResourceMultiplier(e)
+                      _h.prestige.colonizePlanet.getResourceMultiplier(e)
                     ),
                   null === (I = C[e].max.multiplier) ||
                     void 0 === I ||
                     I.push.apply(
                       I,
-                      Ph.prestige.colonizePlanet.getCapacityMultiplier(e)
+                      _h.prestige.colonizePlanet.getCapacityMultiplier(e)
                     ),
                   null === (R = C[e].income.multiplier) ||
                     void 0 === R ||
                     R.push.apply(
                       R,
-                      Ph.environment.climate.getResourceMultiplier(e)
+                      _h.environment.climate.getResourceMultiplier(e)
                     ),
                   null === (T = C[e].income.multiplier) ||
                     void 0 === T ||
                     T.push.apply(
                       T,
-                      Ph.prestige.colonizePlanet.getResourceUpgradeMultiplier(e)
+                      _h.prestige.colonizePlanet.getResourceUpgradeMultiplier(e)
                     ),
                   null === (y = C[e].max.multiplier) ||
                     void 0 === y ||
                     y.push.apply(
                       y,
-                      Ph.resourceEffect.getResourceCapMultiplier(e)
+                      _h.resourceEffect.getResourceCapMultiplier(e)
                     ),
                   (W = C[e].income.linear).push.apply(
                     W,
-                    Ph.environment.ongoingEffects.getResourceBeingProduced(e)
+                    _h.environment.ongoingEffects.getResourceBeingProduced(e)
                   ),
                   (Z = C[e].income.multiplier).push.apply(
                     Z,
-                    Ph.environment.ongoingEffects.getResourceMultiplier(e)
+                    _h.environment.ongoingEffects.getResourceMultiplier(e)
                   ),
                   null === (O = C[e].income.consumption) ||
                     void 0 === O ||
                     O.push.apply(
                       O,
-                      Ph.environment.ongoingEffects.getResourceBeingConsumed(e)
+                      _h.environment.ongoingEffects.getResourceBeingConsumed(e)
                     ),
                   null === (L = C[e].max.multiplier) ||
                     void 0 === L ||
                     L.push.apply(
                       L,
-                      Ph.environment.ongoingEffects.getResourceStoreMultiplier(
+                      _h.environment.ongoingEffects.getResourceStoreMultiplier(
                         e
                       )
                     );
@@ -15611,13 +15619,13 @@
               }),
               (e.prototype.saveBalances = function () {
                 var t = this;
-                Ph.colony.colonyEffects.getBreakdowns();
+                _h.colony.colonyEffects.getBreakdowns();
                 var n = yd(),
                   i = {},
                   o = {};
                 w.forEach(function (r) {
                   var a, c, s, u, p, d, E, g, f, A, m, N, h;
-                  if (r.unlockCondition(Ph)) {
+                  if (r.unlockCondition(_h)) {
                     (i[r.id] = {
                       max: { income: [], multiplier: [], consumption: [] },
                       income: { income: [], multiplier: [], consumption: [] },
@@ -15864,13 +15872,13 @@
               }),
               (e.prototype.resetEfficiency = function () {
                 (e.lackEfficiencyResources = {}),
-                  Ph.landingZone.landingZoneBuildings.resetEfficiency(),
-                  Ph.crafting.craftingJobs.resetEfficiency();
+                  _h.landingZone.landingZoneBuildings.resetEfficiency(),
+                  _h.crafting.craftingJobs.resetEfficiency();
               }),
               (e.prototype.assertBalances = function (t) {
                 var n;
                 void 0 === t && (t = !1),
-                  Ph.colony.colonyEffects.getBreakdowns();
+                  _h.colony.colonyEffects.getBreakdowns();
                 var i = yd(),
                   o = {};
                 for (var r in i) {
@@ -15923,8 +15931,8 @@
                 );
               }),
               (e.prototype.applyEfficiencies = function () {
-                Ph.landingZone.landingZoneBuildings.adaptEfficiency(),
-                  Ph.crafting.craftingJobs.adaptEfficiency();
+                _h.landingZone.landingZoneBuildings.adaptEfficiency(),
+                  _h.crafting.craftingJobs.adaptEfficiency();
               }),
               (e.prototype.assertAndApplyBalances = function () {
                 var t = this.assertBalances(),
@@ -15949,8 +15957,8 @@
                 this.resetEfficiency(),
                   this.assertAndApplyBalances(),
                   this.saveBalances(),
-                  (Ph.statistics.stats.maxResearchCapReached = Math.max(
-                    Ph.statistics.stats.maxResearchCapReached,
+                  (_h.statistics.stats.maxResearchCapReached = Math.max(
+                    _h.statistics.stats.maxResearchCapReached,
                     this.getResourceCap(l.RESEARCH)
                   ));
               }),
@@ -15974,7 +15982,7 @@
                   this.resourcesStatus.forEach(function (e) {
                     n.addResource(e.id, e.balance * t),
                       [l.ANTIMATTER, l.DARK_MATTER].includes(e.id) &&
-                        (Ph.statistics.stats.exoticCollected += e.balance * t);
+                        (_h.statistics.stats.exoticCollected += e.balance * t);
                   });
               }),
               (e.prototype.getResource = function (e) {
@@ -16080,7 +16088,7 @@
                       name: t.name,
                       amount: F((null == o ? void 0 : o.amount) || 0),
                       balance: F((null == o ? void 0 : o.balance) || 0),
-                      isUnlocked: t.unlockCondition(Ph),
+                      isUnlocked: t.unlockCondition(_h),
                       max: F((null == o ? void 0 : o.max) || 0),
                       toFullPercentage: (o && o.max > 0
                         ? o.amount / o.max
@@ -16110,7 +16118,7 @@
                       isCapped:
                         !!o &&
                         o.max > 0 &&
-                        o.max <= o.amount + 2 * Ph.dT * o.balance,
+                        o.max <= o.amount + 2 * _h.dT * o.balance,
                     };
                   }),
                 };
@@ -16239,9 +16247,9 @@
                         t.buildings.push(o));
                       var r = W.calcBatchAll(
                           i.getCost,
-                          Sh.getInstance(),
+                          Mh.getInstance(),
                           o.level,
-                          Sh.getInstance().resources.getBatchObject()
+                          Mh.getInstance().resources.getBatchObject()
                         ),
                         a =
                           (r.reduce(function (e, t) {
@@ -16257,14 +16265,14 @@
                       return (
                         (r = W.calcBatchAll(
                           i.getCost,
-                          Sh.getInstance(),
+                          Mh.getInstance(),
                           o.level,
-                          Sh.getInstance().resources.getBatchObject(),
+                          Mh.getInstance().resources.getBatchObject(),
                           Math.max(1, s)
                         )),
                         n.isUnlocked &&
                           o.level <= 0 &&
-                          Ph.newNotifications.registerNotification(
+                          _h.newNotifications.registerNotification(
                             ""
                               .concat(t.getPreffix(i), ":building:")
                               .concat(i.category, ":")
@@ -16274,10 +16282,10 @@
                           bulk: s,
                           etaNum: a,
                           isAvailable: c >= 1,
-                          cost: Sh.getInstance().resources.assertEnought(
+                          cost: Mh.getInstance().resources.assertEnought(
                             r,
-                            Sh.getInstance().resources.getBatchObject(),
-                            Sh.getInstance().resources.getBatchBalanceObject()
+                            Mh.getInstance().resources.getBatchObject(),
+                            Mh.getInstance().resources.getBatchBalanceObject()
                           ),
                           progress: c < 1 ? (100 * c).toPrecision(3) : "100",
                         })
@@ -16320,7 +16328,7 @@
               (t.prototype.getAllCostReduction = function () {
                 return Math.pow(
                   0.95,
-                  Sh.getInstance().prestige.colonizePlanet.getUpgradeLevel(
+                  Mh.getInstance().prestige.colonizePlanet.getUpgradeLevel(
                     N.BUILDING_PRICES
                   )
                 );
@@ -16341,9 +16349,9 @@
                   this.buildings.push(i));
                 var o = W.calcBatchAll(
                     e.getCost,
-                    Sh.getInstance(),
+                    Mh.getInstance(),
                     i.level + t,
-                    Sh.getInstance().resources.getBatchObject()
+                    Mh.getInstance().resources.getBatchObject()
                   ),
                   r = o.reduce(function (e, t) {
                     return Math.min(e, t.max);
@@ -16356,45 +16364,45 @@
                   }, 0),
                   s = W.calcBatchAll(
                     e.getConsumption,
-                    Sh.getInstance(),
+                    Mh.getInstance(),
                     0,
-                    Sh.getInstance().resources.getBatchObject()
+                    Mh.getInstance().resources.getBatchObject()
                   ),
-                  u = W.calcBatch(e.getGain, Sh.getInstance(), 0),
+                  u = W.calcBatch(e.getGain, Mh.getInstance(), 0),
                   l = e.getStorage
-                    ? W.calcBatch(e.getStorage, Sh.getInstance(), 0)
+                    ? W.calcBatch(e.getStorage, Mh.getInstance(), 0)
                     : [],
                   p = e.getGainMultiplier
-                    ? W.calcBatch(e.getGainMultiplier, Sh.getInstance(), 1)
+                    ? W.calcBatch(e.getGainMultiplier, Mh.getInstance(), 1)
                     : [],
                   d = e.getStorageMultiplier
-                    ? W.calcBatch(e.getStorageMultiplier, Sh.getInstance(), 1)
+                    ? W.calcBatch(e.getStorageMultiplier, Mh.getInstance(), 1)
                     : [],
                   E = e.getEffectConsumption
                     ? W.calcBatchAll(
                         e.getEffectConsumption,
-                        Sh.getInstance(),
+                        Mh.getInstance(),
                         0,
-                        Sh.getInstance().resources.getBatchObject()
+                        Mh.getInstance().resources.getBatchObject()
                       )
                     : [],
                   g = e.getEffectGain
-                    ? W.calcBatch(e.getEffectGain, Sh.getInstance(), 0)
+                    ? W.calcBatch(e.getEffectGain, Mh.getInstance(), 0)
                     : [],
                   f = e.getEffectMultiplier
-                    ? W.calcBatch(e.getEffectMultiplier, Sh.getInstance(), 1)
+                    ? W.calcBatch(e.getEffectMultiplier, Mh.getInstance(), 1)
                     : [],
-                  A = e.unlockCondition(Ph),
+                  A = e.unlockCondition(_h),
                   m = e.getCraftingMultiplier
-                    ? W.calculate(Ph, e.getCraftingMultiplier, 1)
+                    ? W.calculate(_h, e.getCraftingMultiplier, 1)
                     : 1,
                   N = e.getMaxColonists
-                    ? W.calculate(Ph, e.getMaxColonists, 1)
+                    ? W.calculate(_h, e.getMaxColonists, 1)
                     : 0;
                 return (
                   A &&
                     i.level <= 0 &&
-                    Ph.newNotifications.registerNotification(
+                    _h.newNotifications.registerNotification(
                       ""
                         .concat(this.getPreffix(e), ":building:")
                         .concat(e.category, ":")
@@ -16406,10 +16414,10 @@
                     description: e.description,
                     isUnlocked: A,
                     isAvailable: r >= 1,
-                    cost: Sh.getInstance().resources.assertEnought(
+                    cost: Mh.getInstance().resources.assertEnought(
                       o,
-                      Sh.getInstance().resources.getBatchObject(),
-                      Sh.getInstance().resources.getBatchBalanceObject()
+                      Mh.getInstance().resources.getBatchObject(),
+                      Mh.getInstance().resources.getBatchBalanceObject()
                     ),
                     progress: r < 1 ? (100 * r).toPrecision(3) : "100",
                     consume: s
@@ -16520,8 +16528,8 @@
                     t,
                     this.buildings[n].level
                   )),
-                  Ph.resources.reassertBalances(),
-                  Ph.regenerateCache());
+                  _h.resources.reassertBalances(),
+                  _h.regenerateCache());
               }),
               (t.prototype.doBuild = function (e) {
                 var t = Td.find(function (t) {
@@ -16542,9 +16550,9 @@
                     }));
                   var i = W.calcBatchAll(
                       t.getCost,
-                      Sh.getInstance(),
+                      Mh.getInstance(),
                       this.buildings[n].level,
-                      Sh.getInstance().resources.getBatchObject()
+                      Mh.getInstance().resources.getBatchObject()
                     ),
                     o = i.reduce(function (e, t) {
                       return Math.min(e, Math.floor(t.max));
@@ -16554,19 +16562,19 @@
                     return (
                       (i = W.calcBatchAll(
                         t.getCost,
-                        Sh.getInstance(),
+                        Mh.getInstance(),
                         this.buildings[n].level,
-                        Sh.getInstance().resources.getBatchObject(),
+                        Mh.getInstance().resources.getBatchObject(),
                         r
                       )),
                       (this.buildings[n].level += r),
-                      (t.getMaxColonists && Ph.settings.disableResidental) ||
+                      (t.getMaxColonists && _h.settings.disableResidental) ||
                         (this.buildings[n].activeAmount += r),
                       console.log("costs: ", i),
-                      Sh.getInstance().resources.subtractResourceBatch(i),
-                      Ph.resources.reassertBalances(),
-                      Ph.regenerateCache(),
-                      Sh.getInstance().eventLog.registerBuilding(
+                      Mh.getInstance().resources.subtractResourceBatch(i),
+                      _h.resources.reassertBalances(),
+                      _h.regenerateCache(),
+                      Mh.getInstance().eventLog.registerBuilding(
                         t.name,
                         i,
                         this.buildings[n].level
@@ -16597,7 +16605,7 @@
                         : o[e])
                     ) {
                       var a =
-                        W.calculate(Ph, r.getEffectGain[e], 0, i.activeAmount) *
+                        W.calculate(_h, r.getEffectGain[e], 0, i.activeAmount) *
                         i.efficiency;
                       n.push({
                         label: "Building: ".concat(r.name),
@@ -16633,7 +16641,7 @@
                     ) {
                       var a =
                           W.calculate(
-                            Ph,
+                            _h,
                             r.getEffectMultiplier[e],
                             i.activeAmount,
                             1
@@ -16674,7 +16682,7 @@
                     ) {
                       var a =
                         W.calculate(
-                          Ph,
+                          _h,
                           r.getEffectConsumption[e],
                           0,
                           i.activeAmount
@@ -16702,7 +16710,7 @@
                     });
                     if (o) {
                       var r =
-                        W.calculate(Ph, o.getGain[e], 0, i.activeAmount) *
+                        W.calculate(_h, o.getGain[e], 0, i.activeAmount) *
                         i.efficiency;
                       n.push({
                         label: "Building: ".concat(o.name),
@@ -16727,7 +16735,7 @@
                     });
                     if (i && i.getCraftingMultiplier) {
                       var o = W.calculate(
-                          Ph,
+                          _h,
                           i.getCraftingMultiplier,
                           n.activeAmount,
                           1
@@ -16766,7 +16774,7 @@
                         : o[e])
                     ) {
                       var a = W.calculate(
-                          Ph,
+                          _h,
                           r.getGainMultiplier[e],
                           i.activeAmount,
                           1
@@ -16797,7 +16805,7 @@
                     if (o) {
                       var r =
                         W.calculate(
-                          Ph,
+                          _h,
                           o.getConsumption[e],
                           0,
                           i.activeAmount
@@ -16825,7 +16833,7 @@
                     });
                     if (o) {
                       var r =
-                        W.calculate(Ph, o.getStorage[e], 0, i.activeAmount) *
+                        W.calculate(_h, o.getStorage[e], 0, i.activeAmount) *
                         i.efficiency;
                       n.push({
                         label: "Building: ".concat(o.name),
@@ -16860,7 +16868,7 @@
                         : o[e])
                     ) {
                       var a = W.calculate(
-                          Ph,
+                          _h,
                           r.getStorageMultiplier[e],
                           i.activeAmount,
                           1
@@ -16890,7 +16898,7 @@
                     });
                     if (i && i.getMaxColonists) {
                       var o =
-                        W.calculate(Ph, i.getMaxColonists, 0, n.activeAmount) *
+                        W.calculate(_h, i.getMaxColonists, 0, n.activeAmount) *
                         n.efficiency;
                       t.push({
                         label: "Building: ".concat(i.name),
@@ -16916,7 +16924,7 @@
                     if (i && i.getHappinessBonus) {
                       var o =
                         W.calculate(
-                          Ph,
+                          _h,
                           i.getHappinessBonus,
                           0,
                           n.activeAmount
@@ -16962,7 +16970,7 @@
                     (e.buildings[o].efficiencyToUI = 1),
                       c.forEach(function (n) {
                         W.calculate(
-                          Ph,
+                          _h,
                           r.getConsumption[n],
                           0,
                           i.activeAmount
@@ -17140,7 +17148,7 @@
                     return t.id === e.id && t.isReached;
                   });
                 }).forEach(function (e) {
-                  e.unlockCondition(Ph) &&
+                  e.unlockCondition(_h) &&
                     t.milestonesState.push({ id: e.id, isReached: !0 });
                 });
               }),
@@ -17624,42 +17632,42 @@
                 var n = e.getConsumption
                     ? W.calcBatchAll(
                         e.getConsumption,
-                        Sh.getInstance(),
+                        Mh.getInstance(),
                         0,
-                        Sh.getInstance().resources.getBatchObject()
+                        Mh.getInstance().resources.getBatchObject()
                       )
                     : [],
                   i = e.getGain
-                    ? W.calcBatch(e.getGain, Sh.getInstance(), 0)
+                    ? W.calcBatch(e.getGain, Mh.getInstance(), 0)
                     : [],
                   o = e.getMultiplier
-                    ? W.calcBatch(e.getMultiplier, Sh.getInstance(), 0)
+                    ? W.calcBatch(e.getMultiplier, Mh.getInstance(), 0)
                     : [],
                   a = e.getEffectConsumption
                     ? W.calcBatchAll(
                         e.getEffectConsumption,
-                        Sh.getInstance(),
+                        Mh.getInstance(),
                         0,
-                        Sh.getInstance().resources.getBatchObject()
+                        Mh.getInstance().resources.getBatchObject()
                       )
                     : [],
                   c = e.getEffectGain
-                    ? W.calcBatch(e.getEffectGain, Sh.getInstance(), 0)
+                    ? W.calcBatch(e.getEffectGain, Mh.getInstance(), 0)
                     : [],
                   s = e.getCraftingMultiplier
-                    ? W.calculate(Ph, e.getCraftingMultiplier, 1)
+                    ? W.calculate(_h, e.getCraftingMultiplier, 1)
                     : 1,
-                  u = e.unlockCondition(Ph);
+                  u = e.unlockCondition(_h);
                 return (
                   u &&
-                    Ph.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                    _h.landingZone.landingZoneUpgrades.getUpgradeLevel(
                       r.DOCKING_MODULE
                     ) > 0 &&
                     (t.amount > 0 &&
-                      Ph.newNotifications.setViewed(
+                      _h.newNotifications.setViewed(
                         "planet:colony:jobs:".concat(e.id)
                       ),
-                    Ph.newNotifications.registerNotification(
+                    _h.newNotifications.registerNotification(
                       "planet:colony:jobs:".concat(e.id)
                     )),
                   {
@@ -17751,8 +17759,8 @@
                     Math.max(t, 0),
                     this.jobs[n].amount + i
                   )),
-                  Ph.resources.reassertBalances(),
-                  Ph.regenerateCache();
+                  _h.resources.reassertBalances(),
+                  _h.regenerateCache();
               }),
               (t.prototype.addAmount = function (e, t) {
                 t = Math.floor(t);
@@ -17773,8 +17781,8 @@
                     Math.max(i, 0),
                     this.jobs[n].amount + this.freeWorkers
                   )),
-                  Ph.resources.reassertBalances(),
-                  Ph.regenerateCache();
+                  _h.resources.reassertBalances(),
+                  _h.regenerateCache();
               }),
               (t.prototype.setLabour = function (e, t) {
                 t = Math.floor(t);
@@ -17794,8 +17802,8 @@
                     Math.max(t, 0),
                     this.jobs[n].labour + this.freeLabour
                   )),
-                  Ph.resources.reassertBalances(),
-                  Ph.regenerateCache();
+                  _h.resources.reassertBalances(),
+                  _h.regenerateCache();
               }),
               (t.prototype.addLabour = function (e, t) {
                 t = Math.floor(t);
@@ -17822,8 +17830,8 @@
                     this.jobs[n].labour,
                     this.freeLabour
                   ),
-                  Ph.resources.reassertBalances(),
-                  Ph.regenerateCache();
+                  _h.resources.reassertBalances(),
+                  _h.regenerateCache();
               }),
               (t.prototype.getEffectGain = function (e) {
                 var t = xd.filter(function (t) {
@@ -17847,7 +17855,7 @@
                     ) {
                       var a =
                         W.calculate(
-                          Ph,
+                          _h,
                           r.getEffectGain[e],
                           0,
                           i.amount + (i.labour || 0)
@@ -17886,7 +17894,7 @@
                     ) {
                       var a =
                         W.calculate(
-                          Ph,
+                          _h,
                           r.getEffectMultiplier[e],
                           i.amount + (i.labour || 0),
                           1
@@ -17926,7 +17934,7 @@
                     ) {
                       var a =
                         W.calculate(
-                          Ph,
+                          _h,
                           r.getEffectConsumption[e],
                           0,
                           i.amount + (i.labour || 0)
@@ -17947,7 +17955,7 @@
                     return t.getGain && !!t.getGain[e];
                   }),
                   n = [],
-                  i = Ph.colony.getColonistsHappiness();
+                  i = _h.colony.getColonistsHappiness();
                 return (
                   this.jobs.forEach(function (o) {
                     var r,
@@ -17960,7 +17968,7 @@
                     ) {
                       var c =
                         W.calculate(
-                          Ph,
+                          _h,
                           a.getGain[e],
                           0,
                           o.amount + (o.labour || 0)
@@ -17997,7 +18005,7 @@
                     ) {
                       var a =
                         W.calculate(
-                          Ph,
+                          _h,
                           r.getConsumption[e],
                           0,
                           i.amount + (i.labour || 0)
@@ -18032,7 +18040,7 @@
                     ) {
                       var a =
                         W.calculate(
-                          Ph,
+                          _h,
                           r.getMultiplier[e],
                           0,
                           i.amount + (i.labour || 0)
@@ -18060,7 +18068,7 @@
                     });
                     if (i && i.getCraftingMultiplier) {
                       var o = W.calculate(
-                          Ph,
+                          _h,
                           i.getCraftingMultiplier,
                           n.amount,
                           1
@@ -18106,13 +18114,13 @@
                 });
               }),
               (t.prototype.process = function (e) {
-                var t = Ph.colony.colonists - this.getBusyWorkers();
+                var t = _h.colony.colonists - this.getBusyWorkers();
                 if (t < 0) {
                   for (var n = this.jobs.length - 1; n >= 0; n--) {
                     var i = Math.min(this.jobs[n].amount, -t);
                     if (((this.jobs[n].amount -= i), (t += i) >= 0)) break;
                   }
-                  Ph.resources.reassertBalances(), Ph.regenerateCache();
+                  _h.resources.reassertBalances(), _h.regenerateCache();
                 }
                 this.freeWorkers = t;
                 var o = this.getFreeLabour();
@@ -18125,7 +18133,7 @@
                     !((o += i) >= 0));
                     n--
                   );
-                  Ph.resources.reassertBalances(), Ph.regenerateCache();
+                  _h.resources.reassertBalances(), _h.regenerateCache();
                 }
                 this.freeLabour = o;
               }),
@@ -18232,13 +18240,13 @@
                 return (
                   Math.pow(
                     0.98,
-                    Ph.landingZone.landingZoneBuildings.getBuildingActiveLevel(
+                    _h.landingZone.landingZoneBuildings.getBuildingActiveLevel(
                       a.ADMINISTRATIVE_CENTER
                     )
                   ) *
                   Math.pow(
                     0.9,
-                    Ph.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                    _h.landingZone.landingZoneUpgrades.getUpgradeLevel(
                       r.GORMONE_DELIVERY_NANOBOTS
                     )
                   )
@@ -18251,7 +18259,7 @@
                   });
                 if (null == n ? void 0 : n.getConsumption) {
                   var i =
-                    n.getConsumption(Ph) * this.assertConsumptionMitigation();
+                    n.getConsumption(_h) * this.assertConsumptionMitigation();
                   t.push({
                     label: "Population",
                     value: i,
@@ -18271,7 +18279,7 @@
                   return t.id === e;
                 });
                 return (
-                  !!t && (this.happinessEffects[e] >= t.getMaximum(Ph) || 0)
+                  !!t && (this.happinessEffects[e] >= t.getMaximum(_h) || 0)
                 );
               }),
               (t.prototype.isAllMaxed = function () {
@@ -18376,11 +18384,11 @@
                     for (var h in N)
                       (n = N[h].linear).push.apply(
                         n,
-                        Ph.landingZone.landingZoneBuildings.getEffectGain(h)
+                        _h.landingZone.landingZoneBuildings.getEffectGain(h)
                       ),
                         (i = N[h].multiplier).push.apply(
                           i,
-                          Ph.landingZone.landingZoneBuildings.getEffectMultiplier(
+                          _h.landingZone.landingZoneBuildings.getEffectMultiplier(
                             h
                           )
                         ),
@@ -18388,54 +18396,54 @@
                           void 0 === p ||
                           p.push.apply(
                             p,
-                            Ph.landingZone.landingZoneBuildings.getEffectBeingConsumed(
+                            _h.landingZone.landingZoneBuildings.getEffectBeingConsumed(
                               h
                             )
                           ),
                         (o = N[h].linear).push.apply(
                           o,
-                          Ph.colony.colonyJobs.getEffectGain(h)
+                          _h.colony.colonyJobs.getEffectGain(h)
                         ),
                         (r = N[h].multiplier).push.apply(
                           r,
-                          Ph.colony.colonyJobs.getEffectMultiplier(h)
+                          _h.colony.colonyJobs.getEffectMultiplier(h)
                         ),
                         null === (d = N[h].consumption) ||
                           void 0 === d ||
                           d.push.apply(
                             d,
-                            Ph.colony.colonyJobs.getEffectBeingConsumed(h)
+                            _h.colony.colonyJobs.getEffectBeingConsumed(h)
                           ),
                         null === (E = N[h].consumption) ||
                           void 0 === E ||
                           E.push.apply(
                             E,
-                            Ph.crafting.craftingJobs.getEffectBeingConsumed(h)
+                            _h.crafting.craftingJobs.getEffectBeingConsumed(h)
                           ),
                         null === (g = N[h].consumption) ||
                           void 0 === g ||
                           g.push.apply(
                             g,
-                            Ph.colony.colonyEffects.getEffectBeingConsumed(h)
+                            _h.colony.colonyEffects.getEffectBeingConsumed(h)
                           ),
                         (a = N[h].linear).push.apply(
                           a,
-                          Ph.laws.getEffectGain(h)
+                          _h.laws.getEffectGain(h)
                         ),
                         (c = N[h].multiplier).push.apply(
                           c,
-                          Ph.laws.getEffectMultiplier(h)
+                          _h.laws.getEffectMultiplier(h)
                         ),
                         null === (f = N[h].consumption) ||
                           void 0 === f ||
-                          f.push.apply(f, Ph.laws.getEffectBeingConsumed(h)),
+                          f.push.apply(f, _h.laws.getEffectBeingConsumed(h)),
                         (s = N[h].multiplier).push.apply(
                           s,
-                          Ph.prestige.colonizePlanet.getEffectMultiplier(h)
+                          _h.prestige.colonizePlanet.getEffectMultiplier(h)
                         ),
                         (u = N[h].multiplier).push.apply(
                           u,
-                          Ph.environment.ongoingEffects.getHappinessMultiplier(
+                          _h.environment.ongoingEffects.getHappinessMultiplier(
                             h
                           )
                         ),
@@ -18443,21 +18451,21 @@
                           void 0 === A ||
                           A.push.apply(
                             A,
-                            Ph.environment.ongoingEffects.getHappinessBonus(h)
+                            _h.environment.ongoingEffects.getHappinessBonus(h)
                           ),
                         (l = N[h].multiplier).push.apply(
                           l,
-                          Ph.achievements.getEffectMultiplier(h)
+                          _h.achievements.getEffectMultiplier(h)
                         ),
                         null === (m = N[h].linear) ||
                           void 0 === m ||
-                          m.push.apply(m, Ph.achievements.getEffectGain(h));
+                          m.push.apply(m, _h.achievements.getEffectGain(h));
                     return N;
                   })(),
                   n = {};
                 x.forEach(function (i) {
                   var o, r, a, c, s, u, l;
-                  if (i.unlockCondition(Ph)) {
+                  if (i.unlockCondition(_h)) {
                     n[i.id] = { income: [], multiplier: [], consumption: [] };
                     var p =
                         null === (o = t[i.id].linear) || void 0 === o
@@ -18508,16 +18516,16 @@
                                 return e + t.value;
                               }, 0)) || 0;
                     (e.happinessEffects[i.id] = Math.min(
-                      i.getMaximum(Ph),
+                      i.getMaximum(_h),
                       e.applyMinimumToEffect(p * d - E, i.minimum)
                     )),
                       (e.happinessEffectsWOEvents[i.id] = Math.min(
-                        i.getMaximum(Ph),
+                        i.getMaximum(_h),
                         e.applyMinimumToEffect(g * f - A, i.minimum)
                       )),
                       (e.happinessEffectsExcess[i.id] = Math.max(
                         0,
-                        p * d - E - i.getMaximum(Ph)
+                        p * d - E - i.getMaximum(_h)
                       )),
                       (n[i.id].income = t[i.id].linear
                         .filter(function (e) {
@@ -18557,14 +18565,14 @@
                   (this.happinessBreakdowns = n);
               }),
               (t.prototype.processToUI = function (e) {
-                e.getConsumption && e.getConsumption(Ph);
+                e.getConsumption && e.getConsumption(_h);
                 var t,
                   n,
                   i,
-                  o = e.unlockCondition(Ph);
+                  o = e.unlockCondition(_h);
                 return (
                   o &&
-                    Ph.newNotifications.registerNotification(
+                    _h.newNotifications.registerNotification(
                       "planet:colony:effects:".concat(e.id)
                     ),
                   {
@@ -19010,13 +19018,13 @@
               }),
               (t.prototype.getUnlocked = function () {
                 return (
-                  Ph.prestige.colonizePlanet.getUpgradeLevel(N.OVERSEER) > 0
+                  _h.prestige.colonizePlanet.getUpgradeLevel(N.OVERSEER) > 0
                 );
               }),
               (t.prototype.shouldTrigger = function (e) {
                 return (
                   !!this.getUnlocked() &&
-                  Math.abs(Ph.environment.climate.getDays() % 5) < 0.2 * e
+                  Math.abs(_h.environment.climate.getDays() % 5) < 0.2 * e
                 );
               }),
               (t.prototype.assignCrafting = function (e) {
@@ -19036,8 +19044,8 @@
                           return null == i ? void 0 : i[e];
                         }).length
                           ? "continue"
-                          : (Ph.colony.colonyJobs.addLabour(_.ARTISAN, 1),
-                            Ph.crafting.craftingJobs.addAmount(t[n].id, 1),
+                          : (_h.colony.colonyJobs.addLabour(_.ARTISAN, 1),
+                            _h.crafting.craftingJobs.addAmount(t[n].id, 1),
                             console.log(
                               "Assigned labour as crafter: ".concat(t[n].id)
                             ),
@@ -19055,7 +19063,7 @@
               (t.prototype.assignJobs = function (e) {
                 var t = xd.filter(function (t) {
                   return (
-                    t.unlockCondition(Ph) &&
+                    t.unlockCondition(_h) &&
                     e.filter(function (e) {
                       var n;
                       return null === (n = t.getGain) || void 0 === n
@@ -19072,7 +19080,7 @@
                           return null == i ? void 0 : i[e];
                         }).length
                           ? "continue"
-                          : (Ph.colony.colonyJobs.addLabour(t[n].id, 1),
+                          : (_h.colony.colonyJobs.addLabour(t[n].id, 1),
                             console.log(
                               "Overseer: Assigned labour as ".concat(t[n].name)
                             ),
@@ -19090,7 +19098,7 @@
               (t.prototype.assignToHapp = function (e) {
                 var t = xd.filter(function (t) {
                   return (
-                    t.unlockCondition(Ph) &&
+                    t.unlockCondition(_h) &&
                     e.filter(function (e) {
                       var n;
                       return null === (n = t.getEffectGain) || void 0 === n
@@ -19107,7 +19115,7 @@
                           return null == i ? void 0 : i[e];
                         }).length
                           ? "continue"
-                          : (Ph.colony.colonyJobs.addLabour(t[n].id, 1),
+                          : (_h.colony.colonyJobs.addLabour(t[n].id, 1),
                             console.log(
                               "Overseer: Assigned labour as ".concat(t[n].name)
                             ),
@@ -19132,41 +19140,41 @@
                 var t;
                 if (
                   this.shouldTrigger(e) &&
-                  !(Ph.colony.colonyJobs.freeLabour <= 0)
+                  !(_h.colony.colonyJobs.freeLabour <= 0)
                 ) {
                   if (
-                    Ph.resources.getBalance(l.NUTRITION) < 0 &&
+                    _h.resources.getBalance(l.NUTRITION) < 0 &&
                     (null ===
                       (t = xd.find(function (e) {
                         return e.id === _.FARMER;
                       })) || void 0 === t
                       ? void 0
-                      : t.unlockCondition(Ph))
+                      : t.unlockCondition(_h))
                   )
                     return (
-                      Ph.colony.colonyJobs.addLabour(_.FARMER, 1),
-                      Ph.resources.reassertBalances(),
-                      void Ph.regenerateCache()
+                      _h.colony.colonyJobs.addLabour(_.FARMER, 1),
+                      _h.resources.reassertBalances(),
+                      void _h.regenerateCache()
                     );
-                  var n = Ph.resources.resourcesStatus.filter(function (e) {
+                  var n = _h.resources.resourcesStatus.filter(function (e) {
                       return (
                         ((null == e ? void 0 : e.balance) || 0) < 0 ||
-                        (Ph.resources.getResourceEfficiency(e.id) || 0) < 1
+                        (_h.resources.getResourceEfficiency(e.id) || 0) < 1
                       );
                     }),
                     i = n.map(function (e) {
                       return e.id;
                     }),
                     o = Object.keys(
-                      Ph.colony.colonyEffects.happinessEffects
+                      _h.colony.colonyEffects.happinessEffects
                     ).filter(function (e) {
-                      return !Ph.colony.colonyEffects.happinessEffectsExcess[e];
+                      return !_h.colony.colonyEffects.happinessEffectsExcess[e];
                     });
                   return (
                     console.log("Overseer LCK: ", n, i),
                     (i.length || o.length) && this.processChanges(e, i, o)
-                      ? (Ph.resources.reassertBalances(),
-                        void Ph.regenerateCache())
+                      ? (_h.resources.reassertBalances(),
+                        void _h.regenerateCache())
                       : void 0
                   );
                 }
@@ -19245,7 +19253,7 @@
                   colonists: this.colonists || 0,
                   maxColonists: this.maxColonists,
                   isUnlocked:
-                    Ph.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                    _h.landingZone.landingZoneUpgrades.getUpgradeLevel(
                       r.DOCKING_MODULE
                     ) > 0,
                   jobs: this.colonyJobs.dataToUI(),
@@ -19254,7 +19262,7 @@
               }),
               (t.prototype.getMaxColonists = function () {
                 return Math.round(
-                  Ph.landingZone.landingZoneBuildings
+                  _h.landingZone.landingZoneBuildings
                     .getColonistsCap()
                     .reduce(function (e, t) {
                       return e + t.value;
@@ -19279,32 +19287,32 @@
                     ? (console.log("missing supply. Colonist is leaving"),
                       Math.random() < (0.05 * e) / 0.1 &&
                         (this.colonists--,
-                        Ph.eventLog.colonistDied(F(this.colonists)),
-                        Ph.statistics.stats.diedThisPrestige++,
-                        (Ph.statistics.stats.maxDiedColonists = Math.max(
-                          Ph.statistics.stats.maxDiedColonists,
-                          Ph.statistics.stats.diedThisPrestige
+                        _h.eventLog.colonistDied(F(this.colonists)),
+                        _h.statistics.stats.diedThisPrestige++,
+                        (_h.statistics.stats.maxDiedColonists = Math.max(
+                          _h.statistics.stats.maxDiedColonists,
+                          _h.statistics.stats.diedThisPrestige
                         )),
-                        Ph.resources.reassertBalances(),
-                        Ph.regenerateCache()))
+                        _h.resources.reassertBalances(),
+                        _h.regenerateCache()))
                     : this.colonists > this.maxColonists &&
                       (console.log("missing supply. Colonist is leaving"),
                       Math.random() < (0.5 * e) / 0.1 &&
                         (this.colonists--,
-                        Ph.statistics.stats.diedThisPrestige++,
-                        (Ph.statistics.stats.maxDiedColonists = Math.max(
-                          Ph.statistics.stats.maxDiedColonists,
-                          Ph.statistics.stats.diedThisPrestige
+                        _h.statistics.stats.diedThisPrestige++,
+                        (_h.statistics.stats.maxDiedColonists = Math.max(
+                          _h.statistics.stats.maxDiedColonists,
+                          _h.statistics.stats.diedThisPrestige
                         )),
-                        Ph.eventLog.colonistDied(F(this.colonists)),
-                        Ph.resources.reassertBalances(),
-                        Ph.regenerateCache())),
+                        _h.eventLog.colonistDied(F(this.colonists)),
+                        _h.resources.reassertBalances(),
+                        _h.regenerateCache())),
                   this.colonists < this.maxColonists &&
                     Math.random() < (0.025 * e) / 0.1 &&
                     (this.colonists++,
-                    Ph.eventLog.colonistArrived(F(this.colonists)),
-                    Ph.resources.reassertBalances(),
-                    Ph.regenerateCache(),
+                    _h.eventLog.colonistArrived(F(this.colonists)),
+                    _h.resources.reassertBalances(),
+                    _h.regenerateCache(),
                     this.overseer.getUnlocked() &&
                       this.colonyJobs.addAmount(_.LABOUR, 1)),
                   this.colonyEffects.process(e),
@@ -19320,7 +19328,7 @@
               (t.prototype.getSupplyUsageMultiplier = function () {
                 var e = 1;
                 return (
-                  Ph.achievements.getAchievementComplete("speedRun0") &&
+                  _h.achievements.getAchievementComplete("speedRun0") &&
                     (e *= 0.9),
                   e
                 );
@@ -19357,7 +19365,7 @@
                 ll),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(B.EXOFARMING) >
+                  _h.science.scienceResearches.getResearchLevel(B.EXOFARMING) >
                   0
                 );
               },
@@ -19375,7 +19383,7 @@
                 pl),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(B.EXOFARMING) >
+                  _h.science.scienceResearches.getResearchLevel(B.EXOFARMING) >
                   0
                 );
               },
@@ -19393,7 +19401,7 @@
                 dl),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(B.EXOFARMING) >
+                  _h.science.scienceResearches.getResearchLevel(B.EXOFARMING) >
                   0
                 );
               },
@@ -19411,7 +19419,7 @@
                 El),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(B.MINERALOGY) >
+                  _h.science.scienceResearches.getResearchLevel(B.MINERALOGY) >
                   0
                 );
               },
@@ -19428,7 +19436,7 @@
                 gl),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(B.METEOROLOGY) >
+                  _h.science.scienceResearches.getResearchLevel(B.METEOROLOGY) >
                   0
                 );
               },
@@ -19446,7 +19454,7 @@
                 fl),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(B.EXOBIOLOGY) >
+                  _h.science.scienceResearches.getResearchLevel(B.EXOBIOLOGY) >
                   0
                 );
               },
@@ -19464,7 +19472,7 @@
                 Al),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(B.MINERALOGY) >
+                  _h.science.scienceResearches.getResearchLevel(B.MINERALOGY) >
                   0
                 );
               },
@@ -19482,7 +19490,7 @@
                 ml),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(B.EXOFORESTRY) >
+                  _h.science.scienceResearches.getResearchLevel(B.EXOFORESTRY) >
                   0
                 );
               },
@@ -19500,7 +19508,7 @@
                 Nl),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.FLORA_RESEARCH
                   ) > 0
                 );
@@ -19519,7 +19527,7 @@
                 hl),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(B.METALLURGY) >
+                  _h.science.scienceResearches.getResearchLevel(B.METALLURGY) >
                   0
                 );
               },
@@ -19536,7 +19544,7 @@
                 Il),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(B.METEOROLOGY) >
+                  _h.science.scienceResearches.getResearchLevel(B.METEOROLOGY) >
                   0
                 );
               },
@@ -19554,7 +19562,7 @@
                 Rl),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.CIVIL_SERVICE
                   ) > 0
                 );
@@ -19572,9 +19580,9 @@
                 Tl),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(B.CHEMISTRY) >
+                  _h.science.scienceResearches.getResearchLevel(B.CHEMISTRY) >
                     0 &&
-                  Ph.science.scienceResearches.getResearchLevel(B.METALLURGY) >
+                  _h.science.scienceResearches.getResearchLevel(B.METALLURGY) >
                     0
                 );
               },
@@ -19591,7 +19599,7 @@
                 yl),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(B.SOCIOLOGY) > 0
+                  _h.science.scienceResearches.getResearchLevel(B.SOCIOLOGY) > 0
                 );
               },
             },
@@ -19608,7 +19616,7 @@
                 Ol),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.MATERIAL_KNOWLEDGE
                   ) > 0
                 );
@@ -19626,7 +19634,7 @@
                 Ll),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.MATERIAL_KNOWLEDGE
                   ) > 0
                 );
@@ -19645,7 +19653,7 @@
                 Cl),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.ELECTRICITY_STUDY
                   ) > 0
                 );
@@ -19663,7 +19671,7 @@
                 vl),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.CODEX_OF_LAW
                   ) > 0
                 );
@@ -19682,7 +19690,7 @@
                 Sl),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(B.ELECTRONICS) >
+                  _h.science.scienceResearches.getResearchLevel(B.ELECTRONICS) >
                   0
                 );
               },
@@ -19700,7 +19708,7 @@
                 Pl),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.ELECTRICITY_STUDY
                   ) > 0
                 );
@@ -19719,7 +19727,7 @@
                 Bl),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.ORGANIC_CHEMISTRY
                   ) > 0
                 );
@@ -19738,10 +19746,10 @@
                 Ml),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.ORGANIC_CHEMISTRY
                   ) > 0 &&
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.HIGH_GRAVITY_PHYSICS
                   ) > 0
                 );
@@ -19760,7 +19768,7 @@
                 _l),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.ADVANCED_ANATOMY
                   ) > 0
                 );
@@ -19779,7 +19787,7 @@
                 Ul),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.ADVANCED_BIOLOGY
                   ) > 0
                 );
@@ -19798,7 +19806,7 @@
                 bl),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.HIGH_GRAVITY_PHYSICS
                   ) > 0
                 );
@@ -19817,7 +19825,7 @@
                 Gl),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.QUANTUM_PHYSICS
                   ) > 0
                 );
@@ -19836,7 +19844,7 @@
                 wl),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.QUANTUM_PHYSICS
                   ) > 0
                 );
@@ -19855,7 +19863,7 @@
                 Dl),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.GRAVITY_THEORY
                   ) > 0
                 );
@@ -19874,7 +19882,7 @@
                 Xl),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.GRAVITY_THEORY
                   ) > 0
                 );
@@ -19893,10 +19901,10 @@
                 xl),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.NANO_PHYSICS
                   ) > 0 &&
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.ADVANCED_BIOLOGY
                   ) > 0
                 );
@@ -19915,7 +19923,7 @@
                 kl),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.QUANTUM_PHYSICS
                   ) > 0
                 );
@@ -19934,7 +19942,7 @@
                 Hl),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.RELATIVITY_PHYSICS
                   ) > 0
                 );
@@ -19953,7 +19961,7 @@
                 Yl),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.PHOTOCHEMISTRY
                   ) > 0
                 );
@@ -19972,7 +19980,7 @@
                 Wl),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.HIGH_ENERGY_PHYSICS
                   ) > 0
                 );
@@ -19991,7 +19999,7 @@
                 Zl),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.PHOTO_LITHOGRAPHY
                   ) > 0
                 );
@@ -20010,7 +20018,7 @@
                 Fl),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.PHOTO_LITHOGRAPHY
                   ) > 0
                 );
@@ -20029,7 +20037,7 @@
                 jl),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.THERMONUCLEAR_SYNTHESIS
                   ) > 0
                 );
@@ -20048,7 +20056,7 @@
                 Vl),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.ADVANCED_POLYMERIZATION
                   ) > 0
                 );
@@ -20067,7 +20075,7 @@
                 Kl),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.SUPER_CONDUCTIVITY
                   ) > 0
                 );
@@ -20086,10 +20094,10 @@
                 ql),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.SUPER_CONDUCTIVITY
                   ) > 0 &&
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.MOLECULAR_PHYSICS
                   ) > 0
                 );
@@ -20107,7 +20115,7 @@
                 zl),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.MAGNETODYNAMICS
                   ) > 0
                 );
@@ -20125,7 +20133,7 @@
                 Ql),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.SPACESHIP_BUILDINGS
                   ) > 0
                 );
@@ -20144,7 +20152,7 @@
                 Jl),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.ADVANCED_COMPOSITES
                   ) > 0
                 );
@@ -20163,7 +20171,7 @@
                 $l),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.SPACESHIP_BUILDINGS
                   ) > 0
                 );
@@ -20182,7 +20190,7 @@
                 ep),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.ADVANCED_THERMODYNAMICS
                   ) > 0
                 );
@@ -20201,7 +20209,7 @@
                 tp),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.PARTICLE_PHYSICS
                   ) > 0
                 );
@@ -20219,7 +20227,7 @@
                 np),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.PARTICLE_PHYSICS
                   ) > 0
                 );
@@ -20238,7 +20246,7 @@
                 ip),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.LOW_TEMP_PHYSICS
                   ) > 0
                 );
@@ -20257,7 +20265,7 @@
                 op),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.ADVANCED_SPACE_CONSTRUCTION
                   ) > 0
                 );
@@ -20276,7 +20284,7 @@
                 rp),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.SPACE_ORGANICS
                   ) > 0
                 );
@@ -20295,7 +20303,7 @@
                 ap),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.QUARK_PHYSICS
                   ) > 0
                 );
@@ -20314,7 +20322,7 @@
                 cp),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(B.CRYOGENICS) >
+                  _h.science.scienceResearches.getResearchLevel(B.CRYOGENICS) >
                   0
                 );
               },
@@ -20332,7 +20340,7 @@
                 sp),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.ADVANCED_SUPERCONDUCTIVITY
                   ) > 0
                 );
@@ -20351,7 +20359,7 @@
                 up),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.QUANTUM_MAGNETICS
                   ) > 0
                 );
@@ -20370,7 +20378,7 @@
                 lp),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.QUANTUM_MAGNETICS_DETECTION
                   ) > 0
                 );
@@ -20389,7 +20397,7 @@
                 pp),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.ADVANCED_NUCLEAR_RESEARCH
                   ) > 0
                 );
@@ -20408,7 +20416,7 @@
                 dp),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.QUARK_GLUON_PLASMA_STUDY
                   ) > 0
                 );
@@ -20427,7 +20435,7 @@
                 Ep),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.HIGH_DENSITY_STUDY
                   ) > 0
                 );
@@ -20446,7 +20454,7 @@
                 gp),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.NANO_BIOLOGY
                   ) > 0
                 );
@@ -20465,7 +20473,7 @@
                 fp),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.ORGANIC_NANOCONSTRUCTION
                   ) > 0
                 );
@@ -20484,7 +20492,7 @@
                 Ap),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.ORGANIC_BASED_COMPUTATION
                   ) > 0
                 );
@@ -20502,7 +20510,7 @@
                 mp),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.SYNTHETIC_ORGANISMS
                   ) > 0
                 );
@@ -20521,7 +20529,7 @@
                 Np),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.GRAVITONE_STUDY
                   ) > 0
                 );
@@ -20540,7 +20548,7 @@
                 hp),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.ANDROID_CONSTRUCTION
                   ) > 0
                 );
@@ -20559,7 +20567,7 @@
                 Ip),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.QUANTUM_STATE_STUDY
                   ) > 0
                 );
@@ -20578,7 +20586,7 @@
                 Rp),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.DARK_MATTER_STUDY
                   ) > 0
                 );
@@ -20597,7 +20605,7 @@
                 Tp),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.DEGENERATE_MATTER
                   ) > 0
                 );
@@ -20616,7 +20624,7 @@
                 yp),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.ADVANCED_ORGANISMS_GENERATION
                   ) > 0
                 );
@@ -20635,7 +20643,7 @@
                 Op),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.EXPANDED_PARTICLE_THEORY
                   ) > 0
                 );
@@ -20654,7 +20662,7 @@
                 Lp),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.EXOTIC_MATTER_STUDY
                   ) > 0
                 );
@@ -20673,7 +20681,7 @@
                 Cp),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.ANTIMATTER_STUDY
                   ) > 0
                 );
@@ -20692,7 +20700,7 @@
                 vp),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.ANTIMATTER_USAGE
                   ) > 0
                 );
@@ -20711,7 +20719,7 @@
                 Sp),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.EXOTIC_BIOCHEMISTRY
                   ) > 0
                 );
@@ -20730,7 +20738,7 @@
                 Pp),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.ADVANCED_SYNTHETIC_BIOLOGY
                   ) > 0
                 );
@@ -20749,7 +20757,7 @@
                 Bp),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.DEGENERATE_MATTER
                   ) > 0
                 );
@@ -20768,7 +20776,7 @@
                 Mp),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.ADVANCED_BOSE_EINSTEIN
                   ) > 0
                 );
@@ -20787,7 +20795,7 @@
                 _p),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.DEGENERATE_ATOMS
                   ) > 0
                 );
@@ -20806,7 +20814,7 @@
                 Up),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.ATOM_BIOLOGY
                   ) > 0
                 );
@@ -20825,7 +20833,7 @@
                 bp),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.QUANTUM_BIOCHEMISTRY
                   ) > 0
                 );
@@ -20844,7 +20852,7 @@
                 Gp),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.QUANTUM_BIOLOGY
                   ) > 0
                 );
@@ -20863,7 +20871,7 @@
                 wp),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.ANNIHILATION_STUDY
                   ) > 0
                 );
@@ -20882,7 +20890,7 @@
                 Dp),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.CONTROLLED_ANNIHILATION
                   ) > 0
                 );
@@ -20901,7 +20909,7 @@
                 Xp),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.QUARK_TRANSFORMATION
                   ) > 0
                 );
@@ -20920,7 +20928,7 @@
                 xp),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.STRANGE_MATTER_STUDY
                   ) > 0
                 );
@@ -20939,7 +20947,7 @@
                 kp),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.STRANGE_MATTER_TRANSMUTATIONS
                   ) > 0
                 );
@@ -20958,7 +20966,7 @@
                 Hp),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.HYPERSPACE_TECH
                   ) > 0
                 );
@@ -20977,7 +20985,7 @@
                 Yp),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.FIELD_THEORY
                   ) > 0
                 );
@@ -20996,7 +21004,7 @@
                 Wp),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.QUANTUM_COMPUTATION
                   ) > 0
                 );
@@ -21014,7 +21022,7 @@
                 Zp),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.QUANTUM_ENHANCED_MATERIAL
                   ) > 0
                 );
@@ -21033,7 +21041,7 @@
                 Fp),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.ADVANCED_QUANTUM_COMPUTATION
                   ) > 0
                 );
@@ -21052,7 +21060,7 @@
                 jp),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.EXOTIC_MATTER_ENGINEERING
                   ) > 0
                 );
@@ -21071,7 +21079,7 @@
                 Vp),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.ADVANCED_STRANGE_MATTER
                   ) > 0
                 );
@@ -21090,7 +21098,7 @@
                 Kp),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.QUANTUM_ENGINEERING
                   ) > 0
                 );
@@ -21109,7 +21117,7 @@
                 qp),
               unlockCondition: function (e) {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(
+                  _h.science.scienceResearches.getResearchLevel(
                     B.ADVANCED_QUANTUM_ENGINEERING
                   ) > 0
                 );
@@ -21199,9 +21207,9 @@
                 t || ((t = { id: e.id, amount: 0 }), this.researches.push(t));
                 var n = W.calcBatchAll(
                     e.getCost,
-                    Sh.getInstance(),
+                    Mh.getInstance(),
                     t.amount,
-                    Sh.getInstance().resources.getBatchObject()
+                    Mh.getInstance().resources.getBatchObject()
                   ),
                   i = n.reduce(function (e, t) {
                     return Math.min(e, t.max);
@@ -21212,14 +21220,14 @@
                   a = n.reduce(function (e, t) {
                     return Math.max(e, t.eta);
                   }, 0),
-                  c = e.unlockCondition(Ph);
+                  c = e.unlockCondition(_h);
                 return (
                   c &&
                     0 === t.amount &&
-                    Ph.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                    _h.landingZone.landingZoneUpgrades.getUpgradeLevel(
                       r.RESEARCH_MODULE
                     ) > 0 &&
-                    Ph.newNotifications.registerNotification(
+                    _h.newNotifications.registerNotification(
                       "science:researches:".concat(e.id)
                     ),
                   {
@@ -21228,10 +21236,10 @@
                     description: e.description,
                     isUnlocked: c,
                     isAvailable: i >= 1,
-                    cost: Sh.getInstance().resources.assertEnought(
+                    cost: Mh.getInstance().resources.assertEnought(
                       n,
-                      Sh.getInstance().resources.getBatchObject(),
-                      Sh.getInstance().resources.getBatchBalanceObject()
+                      Mh.getInstance().resources.getBatchObject(),
+                      Mh.getInstance().resources.getBatchBalanceObject()
                     ),
                     progress: i < 1 ? (100 * i).toPrecision(3) : "100",
                     isResearched: t.amount > 0,
@@ -21256,9 +21264,9 @@
                   if (n) {
                     var i = W.calcBatchAll(
                       n.getCost,
-                      Sh.getInstance(),
+                      Mh.getInstance(),
                       this.researches[t].amount,
-                      Sh.getInstance().resources.getBatchObject()
+                      Mh.getInstance().resources.getBatchObject()
                     );
                     if (
                       !(
@@ -21268,10 +21276,10 @@
                       )
                     )
                       return (
-                        Sh.getInstance().resources.subtractResourceBatch(i),
+                        Mh.getInstance().resources.subtractResourceBatch(i),
                         this.researches[t].amount++,
-                        Ph.resources.reassertBalances(),
-                        Ph.regenerateCache(),
+                        _h.resources.reassertBalances(),
+                        _h.regenerateCache(),
                         !0
                       );
                   }
@@ -21339,7 +21347,7 @@
                 return {
                   research: this.scienceResearches.dataToUI(),
                   isUnlocked:
-                    Ph.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                    _h.landingZone.landingZoneUpgrades.getUpgradeLevel(
                       r.RESEARCH_MODULE
                     ) > 0,
                 };
@@ -21466,22 +21474,22 @@
                 var i = e.getConsumption
                     ? W.calcBatchAll(
                         e.getConsumption,
-                        Sh.getInstance(),
+                        Mh.getInstance(),
                         0,
-                        Sh.getInstance().resources.getBatchObject()
+                        Mh.getInstance().resources.getBatchObject()
                       )
                     : [],
                   o = e.getGain
-                    ? W.calcBatch(e.getGain, Sh.getInstance(), 0)
+                    ? W.calcBatch(e.getGain, Mh.getInstance(), 0)
                     : [],
-                  r = n.unlockCondition(Ph);
+                  r = n.unlockCondition(_h);
                 return (
                   r &&
                     (t.amount > 0 &&
-                      Ph.newNotifications.setViewed(
+                      _h.newNotifications.setViewed(
                         "planet:crafting:jobs:".concat(e.id)
                       ),
-                    Ph.newNotifications.registerNotification(
+                    _h.newNotifications.registerNotification(
                       "planet:crafting:jobs:".concat(e.id)
                     )),
                   {
@@ -21529,13 +21537,13 @@
                 if (i < t) {
                   var o = t - i,
                     r =
-                      (Ph.colony.colonyJobs.freeLabour,
-                      Ph.colony.colonyJobs.freeWorkers,
-                      Ph.colony.colonyJobs.getWorkersAmount(_.ARTISAN),
-                      Math.max(o, 0) - Ph.colony.colonyJobs.freeWorkers),
+                      (_h.colony.colonyJobs.freeLabour,
+                      _h.colony.colonyJobs.freeWorkers,
+                      _h.colony.colonyJobs.getWorkersAmount(_.ARTISAN),
+                      Math.max(o, 0) - _h.colony.colonyJobs.freeWorkers),
                     a = 0;
                   r > 0 &&
-                    ((a = Math.max(-r, -Ph.colony.colonyJobs.freeLabour)),
+                    ((a = Math.max(-r, -_h.colony.colonyJobs.freeLabour)),
                     console.log("ADD: Get from labour", r, a),
                     console.log(
                       "ADD: New amount is " +
@@ -21543,16 +21551,16 @@
                         ". Allowed by crafters is " +
                         i
                     ));
-                  var c = Math.min(Ph.colony.colonyJobs.freeWorkers - a, o);
-                  Ph.colony.colonyJobs.setAmount(
+                  var c = Math.min(_h.colony.colonyJobs.freeWorkers - a, o);
+                  _h.colony.colonyJobs.setAmount(
                     _.ARTISAN,
-                    Ph.colony.colonyJobs.getWorkersAmount(_.ARTISAN) + c
+                    _h.colony.colonyJobs.getWorkersAmount(_.ARTISAN) + c
                   ),
                     (i += c);
                 }
                 (this.crafters[n].amount = Math.min(Math.max(t, 0), i)),
-                  Ph.resources.reassertBalances(),
-                  Ph.regenerateCache();
+                  _h.resources.reassertBalances(),
+                  _h.regenerateCache();
               }),
               (t.prototype.addAmount = function (e, t) {
                 t = Math.floor(t);
@@ -21569,16 +21577,16 @@
                   );
                 if (o < i) {
                   var r = i - o,
-                    a = Math.min(Ph.colony.colonyJobs.freeWorkers, r);
-                  Ph.colony.colonyJobs.setAmount(
+                    a = Math.min(_h.colony.colonyJobs.freeWorkers, r);
+                  _h.colony.colonyJobs.setAmount(
                     _.ARTISAN,
-                    Ph.colony.colonyJobs.getWorkersAmount(_.ARTISAN) + a
+                    _h.colony.colonyJobs.getWorkersAmount(_.ARTISAN) + a
                   ),
                     (o += a);
                 }
                 (this.crafters[n].amount = Math.min(Math.max(i, 0), o)),
-                  Ph.resources.reassertBalances(),
-                  Ph.regenerateCache();
+                  _h.resources.reassertBalances(),
+                  _h.regenerateCache();
               }),
               (t.prototype.getResourceBeingProduced = function (e) {
                 var t = this,
@@ -21597,7 +21605,7 @@
                       (null === (r = a.getGain) || void 0 === r ? void 0 : r[e])
                     ) {
                       var c =
-                        W.calculate(Ph, a.getGain[e], 0, o.amount) *
+                        W.calculate(_h, a.getGain[e], 0, o.amount) *
                         o.efficiency *
                         t.getTotalCraftingBonus();
                       i.push({
@@ -21635,7 +21643,7 @@
                         : o[e])
                     ) {
                       var a =
-                        W.calculate(Ph, r.getConsumption[e], 0, i.amount) *
+                        W.calculate(_h, r.getConsumption[e], 0, i.amount) *
                         i.efficiency;
                       n.push({
                         label: "Crafting: ".concat(k(r.id)),
@@ -21671,7 +21679,7 @@
                     ) {
                       var a =
                         W.calculate(
-                          Ph,
+                          _h,
                           r.getEffectConsumption[e],
                           0,
                           i.amount
@@ -21715,13 +21723,13 @@
                 });
               }),
               (t.prototype.process = function (e) {
-                var t = Ph.crafting.slots - this.getBusyWorkers();
+                var t = _h.crafting.slots - this.getBusyWorkers();
                 if (t < 0) {
                   for (var n = this.crafters.length - 1; n >= 0; n--) {
                     var i = Math.min(this.crafters[n].amount, -t);
                     if (((this.crafters[n].amount -= i), (t += i) >= 0)) break;
                   }
-                  Ph.resources.reassertBalances(), Ph.regenerateCache();
+                  _h.resources.reassertBalances(), _h.regenerateCache();
                 }
                 this.craftingSlots = t;
               }),
@@ -21786,7 +21794,7 @@
                 return {
                   maxSlots: this.slots || 0,
                   isUnlocked:
-                    Ph.science.scienceResearches.getResearchLevel(
+                    _h.science.scienceResearches.getResearchLevel(
                       B.METALLURGY
                     ) > 0,
                   jobs: this.craftingJobs.dataToUI(),
@@ -21799,13 +21807,13 @@
                 return (
                   (n +=
                     (null ===
-                      (e = Ph.colony.colonyJobs.jobs.find(function (e) {
+                      (e = _h.colony.colonyJobs.jobs.find(function (e) {
                         return e.id === _.ARTISAN;
                       })) || void 0 === e
                       ? void 0
                       : e.amount) || 0) +
                   ((null ===
-                    (t = Ph.colony.colonyJobs.jobs.find(function (e) {
+                    (t = _h.colony.colonyJobs.jobs.find(function (e) {
                       return e.id === _.ARTISAN;
                     })) || void 0 === t
                     ? void 0
@@ -22938,26 +22946,26 @@
                 var t = 0;
                 switch (e.type) {
                   case zp.RESOURCE:
-                    t = Ph.resources.getResource(e.target);
+                    t = _h.resources.getResource(e.target);
                     break;
                   case zp.UPGRADE:
-                    t = Ph.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                    t = _h.landingZone.landingZoneUpgrades.getUpgradeLevel(
                       e.target
                     );
                     break;
                   case zp.RESEARCH:
-                    t = Ph.science.scienceResearches.getResearchLevel(e.target);
+                    t = _h.science.scienceResearches.getResearchLevel(e.target);
                     break;
                   case zp.BUILDING:
-                    t = Ph.landingZone.landingZoneBuildings.getBuildingLevel(
+                    t = _h.landingZone.landingZoneBuildings.getBuildingLevel(
                       e.target
                     );
                     break;
                   case zp.POPULATION:
-                    t = Ph.colony.colonists;
+                    t = _h.colony.colonists;
                     break;
                   case zp.KP_UPGRADE:
-                    t = Ph.prestige.transmitKnowledge.getUpgradeLevel(e.target);
+                    t = _h.prestige.transmitKnowledge.getUpgradeLevel(e.target);
                 }
                 return t;
               }),
@@ -24205,7 +24213,7 @@
                     return e.processToUI(t);
                   }),
                   isUnlocked:
-                    Ph.science.scienceResearches.getResearchLevel(
+                    _h.science.scienceResearches.getResearchLevel(
                       B.CODEX_OF_LAW
                     ) > 0,
                 };
@@ -24234,7 +24242,7 @@
                     name: e.name,
                     description: e.description,
                     gain: e.getGain
-                      ? W.getValue(e.getGain, Sh.getInstance())
+                      ? W.getValue(e.getGain, Mh.getInstance())
                           .filter(function (e) {
                             return e.amount;
                           })
@@ -24246,7 +24254,7 @@
                           })
                       : [],
                     max: e.getStorage
-                      ? W.getValue(e.getStorage, Sh.getInstance())
+                      ? W.getValue(e.getStorage, Mh.getInstance())
                           .filter(function (e) {
                             return e.amount;
                           })
@@ -24258,7 +24266,7 @@
                           })
                       : [],
                     consume: e.getConsumption
-                      ? W.getValue(e.getConsumption, Sh.getInstance())
+                      ? W.getValue(e.getConsumption, Mh.getInstance())
                           .filter(function (e) {
                             return e.amount;
                           })
@@ -24270,7 +24278,7 @@
                           })
                       : [],
                     consumeEffect: e.getEffectConsumption
-                      ? W.getValue(e.getEffectConsumption, Sh.getInstance())
+                      ? W.getValue(e.getEffectConsumption, Mh.getInstance())
                           .filter(function (e) {
                             return e.amount;
                           })
@@ -24282,7 +24290,7 @@
                           })
                       : [],
                     gainEffect: e.getEffectGain
-                      ? W.getValue(e.getEffectGain, Sh.getInstance())
+                      ? W.getValue(e.getEffectGain, Mh.getInstance())
                           .filter(function (e) {
                             return e.amount;
                           })
@@ -24294,7 +24302,7 @@
                           })
                       : [],
                     gainMult: e.getGainMultiplier
-                      ? W.getValue(e.getGainMultiplier, Sh.getInstance())
+                      ? W.getValue(e.getGainMultiplier, Mh.getInstance())
                           .filter(function (e) {
                             return e.amount;
                           })
@@ -24309,10 +24317,10 @@
                   };
                   n.push(o);
                 });
-                var i = e.unlockCondition(Ph);
+                var i = e.unlockCondition(_h);
                 return (
                   i &&
-                    Ph.newNotifications.registerNotification(
+                    _h.newNotifications.registerNotification(
                       "laws:orders:".concat(e.category, ":").concat(e.id)
                     ),
                   {
@@ -24351,7 +24359,7 @@
                           ? void 0
                           : r[e])
                       ) {
-                        var s = c.getEffectGain[e](Sh.getInstance());
+                        var s = c.getEffectGain[e](Mh.getInstance());
                         i.push({
                           label: "Law ".concat(a.name, ": ").concat(c.name),
                           value: s,
@@ -24390,7 +24398,7 @@
                           ? void 0
                           : r[e])
                       ) {
-                        var s = c.getEffectMultiplier[e](Sh.getInstance());
+                        var s = c.getEffectMultiplier[e](Mh.getInstance());
                         i.push({
                           label: "Law ".concat(a.name, ": ").concat(c.name),
                           value: s,
@@ -24429,7 +24437,7 @@
                           ? void 0
                           : r[e])
                       ) {
-                        var s = c.getEffectConsumption[e](Sh.getInstance());
+                        var s = c.getEffectConsumption[e](Mh.getInstance());
                         i.push({
                           label: "Law ".concat(a.name, ": ").concat(c.name),
                           value: s,
@@ -24467,7 +24475,7 @@
                           ? void 0
                           : r[e])
                       ) {
-                        var s = c.getGain[e](Sh.getInstance());
+                        var s = c.getGain[e](Mh.getInstance());
                         i.push({
                           label: "Law ".concat(a.name, ": ").concat(c.name),
                           value: s,
@@ -24494,7 +24502,7 @@
                     if (o) {
                       var r = o.options[e.getLawSelected(o.id)];
                       if (o && r.getCraftingBonus) {
-                        var a = r.getCraftingBonus(Sh.getInstance());
+                        var a = r.getCraftingBonus(Mh.getInstance());
                         n.push({
                           label: "Law ".concat(o.name, ": ").concat(r.name),
                           value: a,
@@ -24533,7 +24541,7 @@
                           ? void 0
                           : r[e])
                       ) {
-                        var s = c.getGainMultiplier[e](Sh.getInstance());
+                        var s = c.getGainMultiplier[e](Mh.getInstance());
                         i.push({
                           label: "Law ".concat(a.name, ": ").concat(c.name),
                           value: s,
@@ -24571,7 +24579,7 @@
                           ? void 0
                           : r[e])
                       ) {
-                        var s = c.getConsumption[e](Sh.getInstance());
+                        var s = c.getConsumption[e](Mh.getInstance());
                         i.push({
                           label: "Law ".concat(a.name, ": ").concat(c.name),
                           value: s,
@@ -24609,7 +24617,7 @@
                           ? void 0
                           : r[e])
                       ) {
-                        var s = c.getStorage[e](Sh.getInstance());
+                        var s = c.getStorage[e](Mh.getInstance());
                         i.push({
                           label: "Law ".concat(a.name, ": ").concat(c.name),
                           value: s,
@@ -24636,7 +24644,7 @@
                     if (o) {
                       var r = o.options[e.getLawSelected(o.id)];
                       if (o && r.getMaxColonists) {
-                        var a = r.getMaxColonists(Sh.getInstance());
+                        var a = r.getMaxColonists(Mh.getInstance());
                         n.push({
                           label: "Law ".concat(o.name, ": ").concat(r.name),
                           value: a,
@@ -24656,13 +24664,13 @@
                 n < 0
                   ? this.lawsStatuses.push({ id: e, selectedOptionId: t })
                   : (this.lawsStatuses[n].selectedOptionId = t),
-                  Sh.getInstance().resources.reassertBalances(),
-                  Ph.regenerateCache();
+                  Mh.getInstance().resources.reassertBalances(),
+                  _h.regenerateCache();
                 var i = _g.find(function (t) {
                   return t.id === e;
                 });
                 i &&
-                  Sh.getInstance().eventLog.registerLaw(
+                  Mh.getInstance().eventLog.registerLaw(
                     i.name,
                     i.options[t].name
                   );
@@ -25566,7 +25574,7 @@
                   return t.uuid === e;
                 });
                 if (t > -1) {
-                  if (Ph.space.hangar.getAmountById(e) > 0) return;
+                  if (_h.space.hangar.getAmountById(e) > 0) return;
                   this.models.splice(t, 1);
                 }
               }),
@@ -25606,28 +25614,28 @@
                     Object.entries(o.bonusGain).forEach(function (t) {
                       var i = t[0],
                         o = t[1],
-                        r = W.calculate(Sh.getInstance(), o, 0, e.level);
+                        r = W.calculate(Mh.getInstance(), o, 0, e.level);
                       n[i].income += r;
                     }),
                       Object.entries(o.bonusConsume).forEach(function (t) {
                         var i = t[0],
                           o = t[1],
-                          r = W.calculate(Sh.getInstance(), o, 0, e.level);
+                          r = W.calculate(Mh.getInstance(), o, 0, e.level);
                         n[i].consume += r;
                       }),
                       Object.entries(o.bonusMultiplier).forEach(function (t) {
                         var i = t[0],
                           o = t[1],
-                          r = W.calculate(Sh.getInstance(), o, e.level, 1);
+                          r = W.calculate(Mh.getInstance(), o, e.level, 1);
                         n[i].multiplier *= r;
                       });
                     var r = W.calcBatchAll(
                       o.cost,
-                      Sh.getInstance(),
+                      Mh.getInstance(),
                       e.level,
-                      Sh.getInstance().resources.getBatchObject()
+                      Mh.getInstance().resources.getBatchObject()
                     );
-                    i = W.calcSum(Sh.getInstance(), i, r);
+                    i = W.calcSum(Mh.getInstance(), i, r);
                   }
                 });
                 var o = {};
@@ -25647,10 +25655,10 @@
                   }, 0),
                   {
                     stats: o,
-                    costs: Sh.getInstance().resources.assertEnought(
+                    costs: Mh.getInstance().resources.assertEnought(
                       i,
-                      Sh.getInstance().resources.getBatchObject(),
-                      Sh.getInstance().resources.getBatchBalanceObject()
+                      Mh.getInstance().resources.getBatchObject(),
+                      Mh.getInstance().resources.getBatchBalanceObject()
                     ),
                     costsOriginal: i,
                     progress: c < 1 ? (100 * c).toPrecision(3) : "100",
@@ -25718,7 +25726,7 @@
                     : e.uuid);
                   if (
                     !i &&
-                    Ph.space.hangar.getAmountById(
+                    _h.space.hangar.getAmountById(
                       null === (t = this.editing) || void 0 === t
                         ? void 0
                         : t.uuid
@@ -25792,9 +25800,9 @@
                       if (o) {
                         var r = W.calcBatchAll(
                             o.cost,
-                            Sh.getInstance(),
+                            Mh.getInstance(),
                             i.level,
-                            Sh.getInstance().resources.getBatchObject()
+                            Mh.getInstance().resources.getBatchObject()
                           ),
                           a = {
                             category: o.category,
@@ -25802,14 +25810,14 @@
                               id: i.id,
                               name: o.name,
                               level: i.level,
-                              cost: Sh.getInstance().resources.assertEnought(
+                              cost: Mh.getInstance().resources.assertEnought(
                                 r,
-                                Sh.getInstance().resources.getBatchObject(),
-                                Sh.getInstance().resources.getBatchBalanceObject()
+                                Mh.getInstance().resources.getBatchObject(),
+                                Mh.getInstance().resources.getBatchBalanceObject()
                               ),
                               gain: W.calcBatch(
                                 o.bonusGain,
-                                Sh.getInstance(),
+                                Mh.getInstance(),
                                 0,
                                 i.level
                               ).map(function (e) {
@@ -25820,7 +25828,7 @@
                               }),
                               gainMult: W.calcBatch(
                                 o.bonusMultiplier,
-                                Sh.getInstance(),
+                                Mh.getInstance(),
                                 i.level,
                                 1
                               ).map(function (e) {
@@ -25831,7 +25839,7 @@
                               }),
                               consume: W.calcBatch(
                                 o.bonusConsume,
-                                Sh.getInstance(),
+                                Mh.getInstance(),
                                 0,
                                 i.level
                               ).map(function (e) {
@@ -25851,7 +25859,7 @@
               }),
               (t.prototype.checkDetailsUnlocked = function (e) {
                 var t = kA.filter(function (e) {
-                    return e.unlockCondition(Ph);
+                    return e.unlockCondition(_h);
                   }),
                   n = function (n) {
                     var i = e.parts[n];
@@ -25878,7 +25886,7 @@
                   o = { stats: WA(WA({}, UA.stats), i.stats), costs: i.costs };
                 return {
                   isUnlocked:
-                    Ph.science.scienceResearches.getResearchLevel(
+                    _h.science.scienceResearches.getResearchLevel(
                       B.ADVANCED_SPACE_CONSTRUCTION
                     ) > 0,
                   list: this.models.map(function (e) {
@@ -25891,7 +25899,7 @@
                         (null === (t = n.editing) || void 0 === t
                           ? void 0
                           : t.uuid),
-                      amountPurchased: Ph.space.hangar.getAmountById(e.uuid),
+                      amountPurchased: _h.space.hangar.getAmountById(e.uuid),
                       isAllPartsUnlocked: n.checkDetailsUnlocked(e),
                     };
                   }),
@@ -25908,7 +25916,7 @@
                         parts: this.processShipPartsToUI(this.editing),
                         availableParts: kA
                           .filter(function (e) {
-                            return e.unlockCondition(Sh.getInstance());
+                            return e.unlockCondition(Mh.getInstance());
                           })
                           .map(function (e) {
                             return {
@@ -26004,14 +26012,14 @@
                 return this.hangar;
               }),
               (t.prototype.destroyShip = function (e) {
-                var t = Sh.getInstance().space.spaceship.models.find(function (
+                var t = Mh.getInstance().space.spaceship.models.find(function (
                   t
                 ) {
                   return t.uuid === e;
                 });
                 if (t) {
                   var n =
-                      Sh.getInstance().space.spaceship.calculateStats(
+                      Mh.getInstance().space.spaceship.calculateStats(
                         t
                       ).costsOriginal,
                     i = this.hangar.findIndex(function (t) {
@@ -26020,22 +26028,22 @@
                   i > -1 &&
                     (this.hangar[i].amount--,
                     n.forEach(function (e) {
-                      Sh.getInstance().resources.addResource(
+                      Mh.getInstance().resources.addResource(
                         e.id,
                         0.8 * e.amount
                       );
                     }),
-                    Ph.resources.reassertBalances());
+                    _h.resources.reassertBalances());
                 } else console.error("Model ".concat(e, " not found"));
               }),
               (t.prototype.buildShip = function (e) {
-                var t = Sh.getInstance().space.spaceship.models.find(function (
+                var t = Mh.getInstance().space.spaceship.models.find(function (
                   t
                 ) {
                   return t.uuid === e;
                 });
-                if (t && Ph.space.spaceship.checkDetailsUnlocked(t)) {
-                  var n = Sh.getInstance().space.spaceship.calculateStats(t),
+                if (t && _h.space.spaceship.checkDetailsUnlocked(t)) {
+                  var n = Mh.getInstance().space.spaceship.calculateStats(t),
                     i = n.costsOriginal,
                     o = n.isAvailable,
                     r = n.stats;
@@ -26043,8 +26051,8 @@
                     var a = this.hangar.findIndex(function (t) {
                       return t.id === e;
                     });
-                    Sh.getInstance().resources.subtractResourceBatch(i),
-                      Ph.resources.reassertBalances(),
+                    Mh.getInstance().resources.subtractResourceBatch(i),
+                      _h.resources.reassertBalances(),
                       a > -1
                         ? this.hangar[a].amount++
                         : this.hangar.push({ id: e, amount: 1 });
@@ -26056,10 +26064,10 @@
                   return t.id === e.uuid;
                 });
                 t || (t = { id: e.uuid, amount: 0 });
-                var n = Sh.getInstance().space.spaceship.calculateStats(e),
+                var n = Mh.getInstance().space.spaceship.calculateStats(e),
                   i = { stats: VA(VA({}, UA.stats), n.stats), costs: n.costs },
                   o =
-                    Ph.space.spaceship.checkDetailsUnlocked(e) &&
+                    _h.space.spaceship.checkDetailsUnlocked(e) &&
                     i.stats.Power > 0;
                 return {
                   id: t.id,
@@ -26087,10 +26095,10 @@
                 var e = this;
                 return {
                   isUnlocked:
-                    Ph.space.spaceship.models.filter(function (e) {
-                      return Ph.space.spaceship.checkDetailsUnlocked(e);
+                    _h.space.spaceship.models.filter(function (e) {
+                      return _h.space.spaceship.checkDetailsUnlocked(e);
                     }).length > 0,
-                  ships: Sh.getInstance().space.spaceship.models.map(function (
+                  ships: Mh.getInstance().space.spaceship.models.map(function (
                     t
                   ) {
                     return e.processToUI(t);
@@ -26229,7 +26237,7 @@
                       (n[e.shipId] || (n[e.shipId] = 0),
                       n[e.shipId]++,
                       n[e.shipId] >
-                        Sh.getInstance().space.hangar.getAmountById(e.shipId) &&
+                        Mh.getInstance().space.hangar.getAmountById(e.shipId) &&
                         t.push(e));
                   }),
                   t
@@ -26248,7 +26256,7 @@
                     this.editing.slots[r].shipId = void 0;
                   else {
                     var a = this.getModelUsed(e);
-                    Ph.space.hangar.getAmountById(e) <= a ||
+                    _h.space.hangar.getAmountById(e) <= a ||
                       (r < 0
                         ? null === (o = this.editing) ||
                           void 0 === o ||
@@ -26322,7 +26330,7 @@
                                       return e.line === i && e.column === r;
                                     });
                             if (!c || !c.shipId) return t.push(a), "continue";
-                            var s = Ph.space.spaceship.getModelWithStats(
+                            var s = _h.space.spaceship.getModelWithStats(
                               c.shipId
                             );
                             if (!s) return t.push(a), "continue";
@@ -26353,8 +26361,8 @@
                   t = this;
                 return {
                   isUnlocked:
-                    Ph.space.spaceship.models.filter(function (e) {
-                      return Ph.space.spaceship.checkDetailsUnlocked(e);
+                    _h.space.spaceship.models.filter(function (e) {
+                      return _h.space.spaceship.checkDetailsUnlocked(e);
                     }).length > 0,
                   list: this.fleets.map(function (e) {
                     var n;
@@ -26376,7 +26384,7 @@
                             : e.uuid,
                         name: this.editing.name,
                         slots: this.slotsToUI(),
-                        options: Ph.space.hangar.hangar.map(function (e) {
+                        options: _h.space.hangar.hangar.map(function (e) {
                           var n;
                           return {
                             id: e.id,
@@ -26384,7 +26392,7 @@
                             used: t.getModelUsed(e.id),
                             name:
                               (null ===
-                                (n = Ph.space.spaceship.models.find(function (
+                                (n = _h.space.spaceship.models.find(function (
                                   t
                                 ) {
                                   return t.uuid === e.id;
@@ -26496,8 +26504,8 @@
               }),
               (t.prototype.initializeFight = function (e) {
                 var t = this,
-                  n = Ph.space.fleet.fleets.find(function (e) {
-                    return e.uuid === Ph.space.battlefield.state.fleetUsed;
+                  n = _h.space.fleet.fleets.find(function (e) {
+                    return e.uuid === _h.space.battlefield.state.fleetUsed;
                   });
                 n &&
                   ((this.state.me = n.slots
@@ -26505,7 +26513,7 @@
                       return !!e.shipId;
                     })
                     .map(function (e) {
-                      var n = Ph.space.spaceship.getModelWithStats(e.shipId);
+                      var n = _h.space.spaceship.getModelWithStats(e.shipId);
                       if (!n)
                         throw new Error("Cant calculate model " + e.shipId);
                       return {
@@ -26653,7 +26661,7 @@
                         null !==
                           (n =
                             null ===
-                              (t = Ph.space.spaceship.models.find(function (t) {
+                              (t = _h.space.spaceship.models.find(function (t) {
                                 return t.uuid === e.modelId;
                               })) || void 0 === t
                               ? void 0
@@ -26817,7 +26825,7 @@
               (t.prototype.calcUsedFleetStats = function () {
                 var e = this;
                 if (this.state.fleetUsed) {
-                  var t = Ph.space.fleet.fleets.find(function (t) {
+                  var t = _h.space.fleet.fleets.find(function (t) {
                     return t.uuid === e.state.fleetUsed;
                   });
                   if (t) {
@@ -26826,7 +26834,7 @@
                     return (
                       t.slots.forEach(function (e) {
                         if (e.shipId) {
-                          var t = Ph.space.spaceship.getModelWithStats(
+                          var t = _h.space.spaceship.getModelWithStats(
                             e.shipId
                           );
                           if (t) {
@@ -26856,12 +26864,12 @@
               }),
               (t.prototype.dataToUI = function () {
                 var e = this,
-                  t = Ph.space.fleet.fleets.find(function (t) {
+                  t = _h.space.fleet.fleets.find(function (t) {
                     return t.uuid === e.state.fleetUsed;
                   }),
                   n = this.getFromCache();
                 return {
-                  isUnlocked: Ph.space.fleet.fleets.length > 0,
+                  isUnlocked: _h.space.fleet.fleets.length > 0,
                   battlefield: {
                     level: this.state.level,
                     maxLevel: this.state.maxLevel,
@@ -26885,17 +26893,17 @@
                         ((null == n ? void 0 : n.speed) || 1e-50)
                     ),
                   },
-                  fleetSelectable: Ph.space.fleet.fleets.map(function (t) {
+                  fleetSelectable: _h.space.fleet.fleets.map(function (t) {
                     return {
                       uuid: t.uuid,
                       name: t.name,
                       isEditing: e.state.fleetUsed === t.uuid,
-                      isInvalid: Ph.space.fleet.getInvalidSlots(t).length > 0,
+                      isInvalid: _h.space.fleet.getInvalidSlots(t).length > 0,
                     };
                   }),
                   fight: this.fight.dataToUI(),
                   pilot: rm(rm({}, this.state.pilot), {
-                    bonus: "x".concat(F(bA(Ph))),
+                    bonus: "x".concat(F(bA(_h))),
                   }),
                 };
               }),
@@ -26913,21 +26921,21 @@
                   t = this;
                 if (this.state.fleetUsed)
                   if (
-                    Ph.space.fleet.getInvalidSlots(
-                      Ph.space.fleet.fleets.find(function (e) {
+                    _h.space.fleet.getInvalidSlots(
+                      _h.space.fleet.fleets.find(function (e) {
                         return e.uuid === t.state.fleetUsed;
                       })
                     ).length > 0
                   )
                     this.state.fleetUsed = void 0;
                   else {
-                    var n = Ph.resources.getResource(l.FUEL),
+                    var n = _h.resources.getResource(l.FUEL),
                       i =
                         (null === (e = this.getFromCache()) || void 0 === e
                           ? void 0
                           : e.fuelConsumption) || 0;
                     n + i > 0 &&
-                      (Ph.resources.subtractResource(l.FUEL, -i),
+                      (_h.resources.subtractResource(l.FUEL, -i),
                       (this.state.isFighting = !0),
                       this.resetTravel());
                   }
@@ -26936,15 +26944,15 @@
                 var e =
                     0.05 +
                     0.01 *
-                      Ph.landingZone.landingZoneBuildings.getBuildingLevel(
+                      _h.landingZone.landingZoneBuildings.getBuildingLevel(
                         a.ANTIMATTER_STUDY_CENTER
                       ),
                   t = Math.random();
                 if ((console.log("Check: ", e, t), t < e)) {
                   var n = 0.1 + 0.01 * this.state.level;
-                  Ph.resources.addResource(l.ANOMALITIES, n),
-                    Ph.resources.reassertBalances(),
-                    Ph.eventLog.registerGain("Anomalies", F(n));
+                  _h.resources.addResource(l.ANOMALITIES, n),
+                    _h.resources.reassertBalances(),
+                    _h.eventLog.registerGain("Anomalies", F(n));
                 }
               }),
               (t.prototype.process = function (e) {
@@ -26968,7 +26976,7 @@
                   if (!this.fight.state.inProgress)
                     return void this.fight.initializeFight(this.state.level);
                   this.fight.isBattleWon()
-                    ? (Ph.statistics.stats.fightsWon++,
+                    ? (_h.statistics.stats.fightsWon++,
                       this.fight.finalizeFight(),
                       (this.state.pilot.xp +=
                         2 *
@@ -26976,11 +26984,11 @@
                         Math.pow(1.2, this.state.level) *
                         Math.pow(
                           1.3,
-                          Ph.prestige.colonizePlanet.getUpgradeLevel(N.PILOT_XP)
+                          _h.prestige.colonizePlanet.getUpgradeLevel(N.PILOT_XP)
                         ) *
                         Math.pow(
                           1.03,
-                          Ph.landingZone.landingZoneBuildings.getBuildingActiveLevel(
+                          _h.landingZone.landingZoneBuildings.getBuildingActiveLevel(
                             a.FLIGHT_SIMULATOR
                           )
                         )),
@@ -26988,7 +26996,7 @@
                         this.state.maxLevel,
                         this.state.level + 1
                       )),
-                      Ph.science.scienceResearches.getResearchLevel(
+                      _h.science.scienceResearches.getResearchLevel(
                         B.EXOTIC_MATTER_STUDY
                       ) > 0 && this.awardAnomaly(),
                       this.stopFight(),
@@ -26999,7 +27007,7 @@
                           this.state.maxLevel
                         )))
                     : this.fight.isBattleLost()
-                    ? (Ph.statistics.stats.fightsLost++,
+                    ? (_h.statistics.stats.fightsLost++,
                       this.fight.finalizeFight(),
                       (this.state.level = Math.max(0, this.state.level - 1)))
                     : this.fight.process(e);
@@ -27091,7 +27099,7 @@
               (t.prototype.dataToUI = function () {
                 return {
                   isUnlocked:
-                    Ph.science.scienceResearches.getResearchLevel(
+                    _h.science.scienceResearches.getResearchLevel(
                       B.ROCKET_SCIENCE
                     ) > 0,
                   spaceship: this.spaceship.dataToUI(),
@@ -27196,14 +27204,14 @@
                   });
                 return (
                   this.isPrestigeAvailable() &&
-                    Ph.newNotifications.registerNotification(
+                    _h.newNotifications.registerNotification(
                       "prestige:transmit-knowledge"
                     ),
                   {
                     upgrades: t,
                     isUnlocked:
                       this.numPrestiged > 0 || this.isPrestigeAvailable(),
-                    kp: F(Ph.resources.getResource(l.KNOWLEDGE_POINT)),
+                    kp: F(_h.resources.getResource(l.KNOWLEDGE_POINT)),
                     prestige: {
                       isAvailable: this.isPrestigeAvailable(),
                       description: "",
@@ -27231,9 +27239,9 @@
                 n || ((n = { id: e.id, level: 0 }), this.upgrades.push(n));
                 var i = W.calcBatchAll(
                     e.getCost,
-                    Sh.getInstance(),
+                    Mh.getInstance(),
                     n.level,
-                    Sh.getInstance().resources.getBatchObject()
+                    Mh.getInstance().resources.getBatchObject()
                   ),
                   o = i.reduce(function (e, t) {
                     return Math.min(e, t.max);
@@ -27246,21 +27254,21 @@
                 return (
                   (i = W.calcBatchAll(
                     e.getCost,
-                    Sh.getInstance(),
+                    Mh.getInstance(),
                     n.level,
-                    Sh.getInstance().resources.getBatchObject(),
+                    Mh.getInstance().resources.getBatchObject(),
                     Math.max(1, r)
                   )),
                   {
                     id: e.id,
                     name: e.name,
                     description: e.description,
-                    isUnlocked: e.unlockCondition(Ph),
+                    isUnlocked: e.unlockCondition(_h),
                     isAvailable: o >= 1,
-                    cost: Sh.getInstance().resources.assertEnought(
+                    cost: Mh.getInstance().resources.assertEnought(
                       i,
-                      Sh.getInstance().resources.getBatchObject(),
-                      Sh.getInstance().resources.getBatchBalanceObject()
+                      Mh.getInstance().resources.getBatchObject(),
+                      Mh.getInstance().resources.getBatchBalanceObject()
                     ),
                     progress: o < 1 ? (100 * o).toPrecision(3) : "100",
                     isMaxedOut: !!e.maxLevel && e.maxLevel <= n.level,
@@ -27291,7 +27299,7 @@
                         ? void 0
                         : o[e])
                     ) {
-                      var a = W.calculate(Ph, r.getEffectGain[e], 0, i.level);
+                      var a = W.calculate(_h, r.getEffectGain[e], 0, i.level);
                       n.push({
                         label: "Knowledge: ".concat(r.name),
                         value: a,
@@ -27325,7 +27333,7 @@
                         : o[e])
                     ) {
                       var a = W.calculate(
-                        Ph,
+                        _h,
                         r.getEffectMultiplier[e],
                         i.level,
                         1
@@ -27360,7 +27368,7 @@
                       r &&
                       (null === (o = r.getGain) || void 0 === o ? void 0 : o[e])
                     ) {
-                      var a = W.calculate(Ph, r.getGain[e], 0, i.level);
+                      var a = W.calculate(_h, r.getGain[e], 0, i.level);
                       n.push({
                         label: "Knowledge: ".concat(r.name),
                         value: a,
@@ -27393,7 +27401,7 @@
                         : o[e])
                     ) {
                       var a = W.calculate(
-                        Ph,
+                        _h,
                         r.getGainMultiplier[e],
                         0,
                         i.level
@@ -27432,7 +27440,7 @@
                         : o[e])
                     ) {
                       var c = W.calculate(
-                        Ph,
+                        _h,
                         null === (r = a.getCapacityEffect) || void 0 === r
                           ? void 0
                           : r[e],
@@ -27466,7 +27474,7 @@
                     });
                     if (o && o.getCapacityMultiplier) {
                       var r = W.calculate(
-                        Ph,
+                        _h,
                         o.getCapacityMultiplier[e],
                         0,
                         i.level
@@ -27498,9 +27506,9 @@
                     return;
                   var i = W.calcBatchAll(
                     t.getCost,
-                    Sh.getInstance(),
+                    Mh.getInstance(),
                     this.upgrades[n].level,
-                    Sh.getInstance().resources.getBatchObject(),
+                    Mh.getInstance().resources.getBatchObject(),
                     this.bulkBuy
                   ).reduce(function (e, t) {
                     return Math.min(e, Math.floor(t.max));
@@ -27513,97 +27521,97 @@
                       ),
                       r = W.calcBatchAll(
                         t.getCost,
-                        Sh.getInstance(),
+                        Mh.getInstance(),
                         this.upgrades[n].level,
-                        Sh.getInstance().resources.getBatchObject(),
+                        Mh.getInstance().resources.getBatchObject(),
                         o
                       );
                     (this.upgrades[n].level += o),
                       console.log("costs: ", r),
-                      Sh.getInstance().resources.subtractResourceBatch(r),
-                      Ph.resources.reassertBalances(),
-                      Ph.regenerateCache();
+                      Mh.getInstance().resources.subtractResourceBatch(r),
+                      _h.resources.reassertBalances(),
+                      _h.regenerateCache();
                   }
                 }
               }),
               (t.prototype.isPrestigeAvailable = function () {
                 return (
-                  Ph.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                  _h.landingZone.landingZoneUpgrades.getUpgradeLevel(
                     r.GREAT_RADIO_TRANSMITTER
-                  ) > 0 && Ph.colony.colonists > 50
+                  ) > 0 && _h.colony.colonists > 50
                 );
               }),
               (t.prototype.getPrestigeGain = function () {
                 var e =
-                  Sh.getInstance().prestige.colonizePlanet.processPlanetToUI(
-                    Sh.getInstance().prestige.colonizePlanet.current
+                  Mh.getInstance().prestige.colonizePlanet.processPlanetToUI(
+                    Mh.getInstance().prestige.colonizePlanet.current
                   );
                 return (
-                  Math.max(Ph.colony.colonists - 50, 0) *
-                  Sh.getInstance().prestige.colonizePlanet.getCurrentXPBonus() *
+                  Math.max(_h.colony.colonists - 50, 0) *
+                  Mh.getInstance().prestige.colonizePlanet.getCurrentXPBonus() *
                   Math.pow(
                     1.5,
-                    Sh.getInstance().landingZone.landingZoneUpgrades.getUpgradeLevel(
+                    Mh.getInstance().landingZone.landingZoneUpgrades.getUpgradeLevel(
                       r.QUANTUM_ENCRYPTION
                     )
                   ) *
                   Math.pow(
                     1.5,
-                    Sh.getInstance().landingZone.landingZoneUpgrades.getUpgradeLevel(
+                    Mh.getInstance().landingZone.landingZoneUpgrades.getUpgradeLevel(
                       r.HUGE_GAMMA_TRANSMITTER
                     )
                   ) *
                   e.xpGain *
                   (1 +
                     0.5 *
-                      Sh.getInstance().landingZone.landingZoneBuildings.getBuildingActiveLevel(
+                      Mh.getInstance().landingZone.landingZoneBuildings.getBuildingActiveLevel(
                         a.NEUTRON_CORE
                       )) *
                   (1 +
                     0.75 *
-                      Sh.getInstance().prestige.colonizePlanet.getUpgradeLevel(
+                      Mh.getInstance().prestige.colonizePlanet.getUpgradeLevel(
                         N.BROADCASTING_TRANSMITTER
                       ) *
-                      Sh.getInstance().colony.getColonistsHappiness()) *
-                  Sh.getInstance().space.battlefield.getKPBonus()
+                      Mh.getInstance().colony.getColonistsHappiness()) *
+                  Mh.getInstance().space.battlefield.getKPBonus()
                 );
               }),
               (t.prototype.doPrestige = function () {
                 if (this.isPrestigeAvailable()) {
                   var e = this.getPrestigeGain(),
-                    t = Ph.resources.getResource(l.COLONIZE_XP) || 0,
-                    n = Ph.resources.getResource(l.KNOWLEDGE_POINT) || 0;
-                  Ph.eventLog.registerPrestige(
+                    t = _h.resources.getResource(l.COLONIZE_XP) || 0,
+                    n = _h.resources.getResource(l.KNOWLEDGE_POINT) || 0;
+                  _h.eventLog.registerPrestige(
                     "Transmit knowledge",
                     "".concat(F(e), " KP")
                   ),
-                    Ph.landingZone.reset(),
-                    Ph.colony.reset(),
-                    Ph.crafting.reset(),
-                    Ph.science.reset(),
-                    Ph.laws.reset(),
-                    Ph.resources.reset(),
-                    Ph.space.reset(),
-                    Ph.queuedItems.reset(),
-                    Ph.environment.reset(),
-                    Ph.expeditionV2.reset(),
-                    (Ph.statistics.stats.kpTotal =
-                      (Ph.statistics.stats.kpTotal || 0) + e),
-                    (Ph.statistics.stats.kpMaxGain = Math.max(
-                      Ph.statistics.stats.kpMaxGain || 0,
+                    _h.landingZone.reset(),
+                    _h.colony.reset(),
+                    _h.crafting.reset(),
+                    _h.science.reset(),
+                    _h.laws.reset(),
+                    _h.resources.reset(),
+                    _h.space.reset(),
+                    _h.queuedItems.reset(),
+                    _h.environment.reset(),
+                    _h.expeditionV2.reset(),
+                    (_h.statistics.stats.kpTotal =
+                      (_h.statistics.stats.kpTotal || 0) + e),
+                    (_h.statistics.stats.kpMaxGain = Math.max(
+                      _h.statistics.stats.kpMaxGain || 0,
                       e
                     )),
-                    Ph.resources.addResource(l.KNOWLEDGE_POINT, e + n),
-                    Ph.resources.addResource(l.COLONIZE_XP, t),
-                    (Ph.statistics.stats.maxKpPerHour =
+                    _h.resources.addResource(l.KNOWLEDGE_POINT, e + n),
+                    _h.resources.addResource(l.COLONIZE_XP, t),
+                    (_h.statistics.stats.maxKpPerHour =
                       (3600 * e) /
-                      (Ph.statistics.stats.timeThisPrestige + 0.001)),
-                    (Ph.statistics.stats.timeThisPrestige = 0),
-                    Ph.statistics.reset(),
-                    Ph.achievements.resetFailedOnKP(),
+                      (_h.statistics.stats.timeThisPrestige + 0.001)),
+                    (_h.statistics.stats.timeThisPrestige = 0),
+                    _h.statistics.reset(),
+                    _h.achievements.resetFailedOnKP(),
                     this.numPrestiged++,
-                    Ph.resources.reassertBalances(),
-                    Ph.regenerateCache();
+                    _h.resources.reassertBalances(),
+                    _h.regenerateCache();
                 }
               }),
               (t.prototype.process = function (e) {}),
@@ -28867,7 +28875,7 @@
                   "[colonize-planet] set harshness filter",
                   function (e) {
                     console.log("do harshness filter", e);
-                    var n = Ph.prestige.colonizePlanet.getUpgradeLevel(
+                    var n = _h.prestige.colonizePlanet.getUpgradeLevel(
                       N.HARSHNESS
                     );
                     (!e || e < 0) && (e = 0),
@@ -28981,18 +28989,18 @@
                     return;
                   var i = W.calcBatchAll(
                     t.getCost,
-                    Sh.getInstance(),
+                    Mh.getInstance(),
                     this.upgrades[n].level,
-                    Sh.getInstance().resources.getBatchObject()
+                    Mh.getInstance().resources.getBatchObject()
                   );
                   i.reduce(function (e, t) {
                     return Math.min(e, Math.floor(t.max));
                   }, 1e300) < 1 ||
                     (this.upgrades[n].level++,
                     console.log("costs: ", i),
-                    Sh.getInstance().resources.subtractResourceBatch(i),
-                    Ph.resources.reassertBalances(),
-                    Ph.regenerateCache());
+                    Mh.getInstance().resources.subtractResourceBatch(i),
+                    _h.resources.reassertBalances(),
+                    _h.regenerateCache());
                 }
               }),
               (t.prototype.processUpgradeToUI = function (e) {
@@ -29003,9 +29011,9 @@
                 n || ((n = { id: e.id, level: 0 }), this.upgrades.push(n));
                 var i = W.calcBatchAll(
                     e.getCost,
-                    Sh.getInstance(),
+                    Mh.getInstance(),
                     n.level,
-                    Sh.getInstance().resources.getBatchObject()
+                    Mh.getInstance().resources.getBatchObject()
                   ),
                   o = i.reduce(function (e, t) {
                     return Math.min(e, t.max);
@@ -29014,12 +29022,12 @@
                   id: e.id,
                   name: e.name,
                   description: e.description,
-                  isUnlocked: e.unlockCondition(Ph),
+                  isUnlocked: e.unlockCondition(_h),
                   isAvailable: o >= 1,
-                  cost: Sh.getInstance().resources.assertEnought(
+                  cost: Mh.getInstance().resources.assertEnought(
                     i,
-                    Sh.getInstance().resources.getBatchObject(),
-                    Sh.getInstance().resources.getBatchBalanceObject()
+                    Mh.getInstance().resources.getBatchObject(),
+                    Mh.getInstance().resources.getBatchBalanceObject()
                   ),
                   progress: o < 1 ? (100 * o).toPrecision(3) : "100",
                   isMaxedOut: !!e.maxLevel && e.maxLevel <= n.level,
@@ -29035,7 +29043,7 @@
                     return t.processPlanetToUI(e, !1);
                   });
                 this.isPrestigeAvailable() &&
-                  Ph.newNotifications.registerNotification("prestige:colonize");
+                  _h.newNotifications.registerNotification("prestige:colonize");
                 var i = gm.map(function (e) {
                     return t.processUpgradeToUI(e);
                   }),
@@ -29070,18 +29078,18 @@
                   isUnlocked:
                     this.numPrestiged > 0 || this.isPrestigeAvailable(),
                   isPrestigeAvailable: this.isPrestigeAvailable(),
-                  currentXP: Ph.resources.getResource(l.COLONIZE_XP),
+                  currentXP: _h.resources.getResource(l.COLONIZE_XP),
                   search: {
                     isAvailable: c >= 1,
-                    cost: Sh.getInstance().resources.assertEnought(
+                    cost: Mh.getInstance().resources.assertEnought(
                       a,
-                      Sh.getInstance().resources.getBatchObject(),
-                      Sh.getInstance().resources.getBatchBalanceObject()
+                      Mh.getInstance().resources.getBatchObject(),
+                      Mh.getInstance().resources.getBatchBalanceObject()
                     ),
                     progress: c < 1 ? (100 * c).toPrecision(3) : "100",
                     filter: {
                       isAvailable:
-                        Ph.science.scienceResearches.getResearchLevel(
+                        _h.science.scienceResearches.getResearchLevel(
                           B.EXOPLANET_SCIENCE
                         ) > 0,
                       modifiersSelected: this.currentSearchFilters.map(
@@ -29111,7 +29119,7 @@
                       modifiersAvailable: Nm(
                         [],
                         Em.filter(function (e) {
-                          return e.unlockCondition(Ph);
+                          return e.unlockCondition(_h);
                         }).map(function (e) {
                           return {
                             id: e.id,
@@ -29127,7 +29135,7 @@
                     disastersLevel: this.disastersLevel,
                     starsList: fm
                       .filter(function (e) {
-                        return e.unlockCondition(Ph);
+                        return e.unlockCondition(_h);
                       })
                       .map(function (e) {
                         return { id: e.type, name: e.name };
@@ -29137,7 +29145,7 @@
                         ? e
                         : "None",
                     isHarshnessAvailable:
-                      Ph.prestige.colonizePlanet.getUpgradeLevel(N.HARSHNESS) >
+                      _h.prestige.colonizePlanet.getUpgradeLevel(N.HARSHNESS) >
                       0,
                     harshnessFilter: this.harshnessLevel,
                   },
@@ -29148,11 +29156,11 @@
                     gainBattleMult: r.battleXPGain > 1 ? F(r.battleXPGain) : "",
                     potentialBonus: F(
                       this.getXpBonus(
-                        Ph.resources.getResource(l.COLONIZE_XP) + r.xpGain
+                        _h.resources.getResource(l.COLONIZE_XP) + r.xpGain
                       )
                     ),
                     currentBonus: F(
-                      this.getXpBonus(Ph.resources.getResource(l.COLONIZE_XP))
+                      this.getXpBonus(_h.resources.getResource(l.COLONIZE_XP))
                     ),
                   },
                   upgrades: i,
@@ -29160,17 +29168,17 @@
               }),
               (t.prototype.isPrestigeAvailable = function () {
                 return (
-                  Ph.landingZone.landingZoneBuildings.getBuildingActiveLevel(
+                  _h.landingZone.landingZoneBuildings.getBuildingActiveLevel(
                     a.SPACESHIP_STATION
                   ) > 0
                 );
               }),
               (t.prototype.getMaxFilters = function () {
-                return Ph.science.scienceResearches.getResearchLevel(
+                return _h.science.scienceResearches.getResearchLevel(
                   B.EXOPLANET_SCIENCE
                 ) > 0
                   ? 1 +
-                      Ph.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                      _h.landingZone.landingZoneUpgrades.getUpgradeLevel(
                         r.TRANSIT_EVENTS_STUDY
                       )
                   : 0;
@@ -29188,7 +29196,7 @@
                     Math.min(
                       +t,
                       2 +
-                        Ph.prestige.colonizePlanet.getUpgradeLevel(N.HARSHNESS)
+                        _h.prestige.colonizePlanet.getUpgradeLevel(N.HARSHNESS)
                     )
                   );
                 }
@@ -29209,13 +29217,13 @@
                     console.log("newFilters: ", this.currentSearchFilters));
               }),
               (t.prototype.setStarFilter = function (e) {
-                Ph.science.scienceResearches.getResearchLevel(
+                _h.science.scienceResearches.getResearchLevel(
                   B.EXOPLANET_SCIENCE
                 ) > 0 &&
                   (e &&
                   "None" !== e &&
                   fm.find(function (t) {
-                    return t.type === e && t.unlockCondition(Ph);
+                    return t.type === e && t.unlockCondition(_h);
                   })
                     ? (this.currentStarFilter = e)
                     : (this.currentStarFilter = void 0));
@@ -29224,7 +29232,7 @@
                 var t = this,
                   n = {},
                   i = Em.filter(function (e) {
-                    return e.unlockCondition(Ph);
+                    return e.unlockCondition(_h);
                   }).reduce(function (e, t) {
                     return (
                       e[t.category] || (e[t.category] = [t]),
@@ -29234,7 +29242,7 @@
                   }, {}),
                   o = {},
                   r = Em.filter(function (e) {
-                    return e.unlockCondition(Ph);
+                    return e.unlockCondition(_h);
                   }).reduce(function (t, n) {
                     var i, r;
                     return (
@@ -29298,7 +29306,7 @@
                   }
                 });
                 var a = fm.filter(function (e) {
-                    return e.unlockCondition(Ph);
+                    return e.unlockCondition(_h);
                   }),
                   c = a[Math.floor(Math.random() * a.length)].type;
                 this.currentStarFilter &&
@@ -29338,11 +29346,11 @@
                     return Math.min(e, t.max);
                   }, 1e300) < 1 ||
                     ((this.available = []),
-                    Sh.getInstance().resources.subtractResourceBatch(t),
+                    Mh.getInstance().resources.subtractResourceBatch(t),
                     Array.from({
                       length:
                         3 +
-                        Ph.prestige.colonizePlanet.getUpgradeLevel(
+                        _h.prestige.colonizePlanet.getUpgradeLevel(
                           N.STARCHART_MASTER
                         ),
                     }).forEach(function () {
@@ -29377,7 +29385,7 @@
                       ? void 0
                       : o[e])
                   ) {
-                    var a = W.calculate(Ph, r.getGainMultiplier[e], t.level, 1);
+                    var a = W.calculate(_h, r.getGainMultiplier[e], t.level, 1);
                     a &&
                       i.push({
                         label: "Planet modifier: ".concat(r.name),
@@ -29392,7 +29400,7 @@
                     return e.type === o;
                   });
                 if (r && r.getGainMultiplier && r.getGainMultiplier[e]) {
-                  var a = W.calculate(Ph, r.getGainMultiplier[e], 1, 1);
+                  var a = W.calculate(_h, r.getGainMultiplier[e], 1, 1);
                   a &&
                     i.push({
                       label: "Star modifier: ".concat(r.name),
@@ -29431,7 +29439,7 @@
                       : o[e])
                   ) {
                     var a = W.calculate(
-                      Ph,
+                      _h,
                       r.getEffectMultiplier[e],
                       t.level,
                       1
@@ -29450,7 +29458,7 @@
                     return e.type === o;
                   });
                 if (r && r.getEffectMultiplier && r.getEffectMultiplier[e]) {
-                  var a = W.calculate(Ph, r.getEffectMultiplier[e], 1, 1);
+                  var a = W.calculate(_h, r.getEffectMultiplier[e], 1, 1);
                   a &&
                     i.push({
                       label: "Star modifier: ".concat(r.name),
@@ -29490,7 +29498,7 @@
                         : o[e])
                     ) {
                       var a = W.calculate(
-                        Ph,
+                        _h,
                         r.getCapacityMultiplier[e],
                         t.level,
                         1
@@ -29519,7 +29527,7 @@
                   });
                   if (i && i.buildingPriceModifier) {
                     var o = W.calculate(
-                      Ph,
+                      _h,
                       i.buildingPriceModifier,
                       e.level,
                       1
@@ -29532,7 +29540,7 @@
                     return e.type === i;
                   });
                 if (o && o.buildingPriceModifier) {
-                  var r = o.buildingPriceModifier(Ph);
+                  var r = o.buildingPriceModifier(_h);
                   n *= r;
                 }
                 return n;
@@ -29569,7 +29577,7 @@
                       p.getGainMultiplier &&
                         W.calcBatch(
                           p.getGainMultiplier,
-                          Sh.getInstance(),
+                          Mh.getInstance(),
                           u.level
                         ).forEach(function (e) {
                           var t;
@@ -29582,7 +29590,7 @@
                       p.getEffectMultiplier &&
                         W.calcBatch(
                           p.getEffectMultiplier,
-                          Sh.getInstance(),
+                          Mh.getInstance(),
                           u.level
                         ).forEach(function (e) {
                           var t;
@@ -29595,7 +29603,7 @@
                       p.getCapacityMultiplier &&
                         W.calcBatch(
                           p.getCapacityMultiplier,
-                          Sh.getInstance(),
+                          Mh.getInstance(),
                           u.level
                         ).forEach(function (e) {
                           var t;
@@ -29607,7 +29615,7 @@
                         }),
                       p.buildingPriceModifier &&
                         (r *= W.calculate(
-                          Sh.getInstance(),
+                          Mh.getInstance(),
                           p.buildingPriceModifier,
                           u.level
                         )),
@@ -29630,7 +29638,7 @@
                     (p.getGainMultiplier &&
                       W.calcBatch(
                         p.getGainMultiplier,
-                        Sh.getInstance(),
+                        Mh.getInstance(),
                         1
                       ).forEach(function (e) {
                         var t;
@@ -29643,7 +29651,7 @@
                     p.getEffectMultiplier &&
                       W.calcBatch(
                         p.getEffectMultiplier,
-                        Sh.getInstance(),
+                        Mh.getInstance(),
                         1
                       ).forEach(function (e) {
                         var t;
@@ -29654,7 +29662,7 @@
                           : (o[e.id] = e);
                       }),
                     p.buildingPriceModifier &&
-                      (r *= p.buildingPriceModifier(Sh.getInstance())),
+                      (r *= p.buildingPriceModifier(Mh.getInstance())),
                     (c *= p.xpMultiplier)),
                   t && console.log("ATTR_AS: ", c);
                 var d = this.getColonizeCost(),
@@ -29677,10 +29685,10 @@
                       });
                     }),
                     max: [],
-                    cost: Sh.getInstance().resources.assertEnought(
+                    cost: Mh.getInstance().resources.assertEnought(
                       d,
-                      Sh.getInstance().resources.getBatchObject(),
-                      Sh.getInstance().resources.getBatchBalanceObject()
+                      Mh.getInstance().resources.getBatchObject(),
+                      Mh.getInstance().resources.getBatchBalanceObject()
                     ),
                     isAvailable: E >= 1,
                     progress: E < 1 ? (100 * E).toPrecision(3) : "100",
@@ -29717,7 +29725,7 @@
                 return 1 + 0.3 * Math.pow(e, 0.4);
               }),
               (t.prototype.getCurrentXPBonus = function () {
-                return this.getXpBonus(Ph.resources.getResource(l.COLONIZE_XP));
+                return this.getXpBonus(_h.resources.getResource(l.COLONIZE_XP));
               }),
               (t.prototype.getColonizeCost = function () {
                 var e;
@@ -29726,9 +29734,9 @@
                     return { A: 1e3, B: 1, type: i.EXPONENTIAL };
                   }),
                   e),
-                  Sh.getInstance(),
+                  Mh.getInstance(),
                   1,
-                  Sh.getInstance().resources.getBatchObject()
+                  Mh.getInstance().resources.getBatchObject()
                 );
               }),
               (t.prototype.getSearchCost = function () {
@@ -29751,9 +29759,9 @@
                     };
                   }),
                   e),
-                  Sh.getInstance(),
+                  Mh.getInstance(),
                   1,
-                  Sh.getInstance().resources.getBatchObject()
+                  Mh.getInstance().resources.getBatchObject()
                 );
               }),
               (t.prototype.getCurrentXPGainBreakdown = function (e) {
@@ -29762,17 +29770,17 @@
                       .xpGain *
                     Math.pow(
                       1.5,
-                      Ph.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                      _h.landingZone.landingZoneUpgrades.getUpgradeLevel(
                         r.QUANTUM_ENCRYPTION
                       )
                     ) *
                     Math.pow(
                       1.5,
-                      Sh.getInstance().landingZone.landingZoneUpgrades.getUpgradeLevel(
+                      Mh.getInstance().landingZone.landingZoneUpgrades.getUpgradeLevel(
                         r.HUGE_GAMMA_TRANSMITTER
                       )
                     ),
-                  n = Ph.space.battlefield.getXPBonus();
+                  n = _h.space.battlefield.getXPBonus();
                 return { baseXpGain: t, battleXPGain: n, xpGain: t * n };
               }),
               (t.prototype.doColonize = function (e, t) {
@@ -29786,37 +29794,37 @@
                   if (!this.isPrestigeAvailable()) return;
                   i = this.getCurrentXPGainBreakdown().xpGain;
                 }
-                var o = Ph.resources.getResource(l.KNOWLEDGE_POINT),
-                  r = Ph.resources.getResource(l.COLONIZE_XP);
-                (Ph.statistics.stats.xpTotal =
-                  (Ph.statistics.stats.xpTotal || 0) + i),
-                  (Ph.statistics.stats.xpMaxGain = Math.max(
-                    Ph.statistics.stats.xpMaxGain || 0,
+                var o = _h.resources.getResource(l.KNOWLEDGE_POINT),
+                  r = _h.resources.getResource(l.COLONIZE_XP);
+                (_h.statistics.stats.xpTotal =
+                  (_h.statistics.stats.xpTotal || 0) + i),
+                  (_h.statistics.stats.xpMaxGain = Math.max(
+                    _h.statistics.stats.xpMaxGain || 0,
                     i
                   )),
-                  Ph.eventLog.registerPrestige(
+                  _h.eventLog.registerPrestige(
                     "New planet colonization",
                     "".concat(F(i), " XP")
                   ),
-                  Ph.landingZone.reset(),
-                  Ph.colony.reset(),
-                  Ph.crafting.reset(),
-                  Ph.science.reset(),
-                  Ph.laws.reset(),
-                  Ph.resources.reset(),
-                  Ph.space.reset(),
-                  Ph.queuedItems.reset(),
-                  Ph.environment.reset(),
-                  Ph.expeditionV2.reset(),
-                  Ph.resources.addResource(l.COLONIZE_XP, r + i),
-                  Ph.resources.addResource(l.KNOWLEDGE_POINT, o),
+                  _h.landingZone.reset(),
+                  _h.colony.reset(),
+                  _h.crafting.reset(),
+                  _h.science.reset(),
+                  _h.laws.reset(),
+                  _h.resources.reset(),
+                  _h.space.reset(),
+                  _h.queuedItems.reset(),
+                  _h.environment.reset(),
+                  _h.expeditionV2.reset(),
+                  _h.resources.addResource(l.COLONIZE_XP, r + i),
+                  _h.resources.addResource(l.KNOWLEDGE_POINT, o),
                   this.numPrestiged++,
-                  (Ph.statistics.stats.maxXpPerHour =
-                    (3600 * i) / Ph.statistics.stats.timeThisPlanet),
-                  (Ph.statistics.stats.timeThisPlanet = 0),
-                  (Ph.statistics.stats.timeThisPrestige = 0),
-                  Ph.statistics.reset(),
-                  Ph.achievements.resetFailedOnXP(),
+                  (_h.statistics.stats.maxXpPerHour =
+                    (3600 * i) / _h.statistics.stats.timeThisPlanet),
+                  (_h.statistics.stats.timeThisPlanet = 0),
+                  (_h.statistics.stats.timeThisPrestige = 0),
+                  _h.statistics.reset(),
+                  _h.achievements.resetFailedOnXP(),
                   (this.current = t
                     ? {
                         name: "Default",
@@ -29832,8 +29840,8 @@
                     ((this.current.yearLength = 365),
                     (this.current.eccentricity = 0)),
                   (this.available = []),
-                  Ph.resources.reassertBalances(),
-                  Ph.regenerateCache();
+                  _h.resources.reassertBalances(),
+                  _h.regenerateCache();
               }),
               t
             );
@@ -30025,7 +30033,7 @@
               }),
               (t.prototype.isExpeditionUnlocked = function () {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(B.GEOGRAPHY) > 0
+                  _h.science.scienceResearches.getResearchLevel(B.GEOGRAPHY) > 0
                 );
               }),
               (t.prototype.startExpedition = function () {
@@ -30055,7 +30063,7 @@
                 }
                 for (
                   var n = w.filter(function (e) {
-                      return e.unlockCondition(Ph) && e.valuability < 1e6;
+                      return e.unlockCondition(_h) && e.valuability < 1e6;
                     }),
                     i = {},
                     o = 0;
@@ -30075,13 +30083,13 @@
                 return (
                   Math.pow(
                     1.05,
-                    Ph.landingZone.landingZoneBuildings.getBuildingActiveLevel(
+                    _h.landingZone.landingZoneBuildings.getBuildingActiveLevel(
                       a.EXPEDITION_CENTER
                     )
                   ) *
                   Math.pow(
                     1.3,
-                    Ph.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                    _h.landingZone.landingZoneUpgrades.getUpgradeLevel(
                       r.ENERGY_SAVING_EXPEDITION_DRONES
                     )
                   )
@@ -30092,8 +30100,8 @@
                   (this.expeditionsState.progress = 0);
                 var e = this.getLoot();
                 for (var t in ((this.expeditionsState.lastLooted = e), e))
-                  Ph.resources.addResource(t, e[t] || 0);
-                Ph.eventLog.registerExpeditionArrived(H(e), "");
+                  _h.resources.addResource(t, e[t] || 0);
+                _h.eventLog.registerExpeditionArrived(H(e), "");
               }),
               (t.prototype.getExpeditionDuration = function () {
                 switch (this.expeditionsState.currentMode) {
@@ -30296,9 +30304,9 @@
               }),
               (t.prototype.importData = function (e) {
                 var t = e || {
-                  timeInGame: Ph.timeInGame,
-                  timeThisPlanet: Ph.timeInGame,
-                  timeThisPrestige: Ph.timeInPrestige,
+                  timeInGame: _h.timeInGame,
+                  timeThisPlanet: _h.timeInGame,
+                  timeThisPrestige: _h.timeInPrestige,
                   maxColonists: 0,
                   maxHappiness: 0,
                   exoticCollected: 0,
@@ -30313,14 +30321,14 @@
               (t.prototype.dataToUI = function () {
                 return Bm(Bm({}, this.stats), {
                   maxHappiness: Math.round(100 * this.stats.maxHappiness),
-                  numPrestiges: Ph.prestige.transmitKnowledge.numPrestiged,
-                  numColonized: Ph.prestige.colonizePlanet.numPrestiged,
+                  numPrestiges: _h.prestige.transmitKnowledge.numPrestiged,
+                  numColonized: _h.prestige.colonizePlanet.numPrestiged,
                   kpPerHour:
-                    (3600 * Ph.prestige.transmitKnowledge.getPrestigeGain()) /
+                    (3600 * _h.prestige.transmitKnowledge.getPrestigeGain()) /
                     (0.01 + this.stats.timeThisPrestige),
                   xpPerHour:
                     (3600 *
-                      Ph.prestige.colonizePlanet.getCurrentXPGainBreakdown()
+                      _h.prestige.colonizePlanet.getCurrentXPGainBreakdown()
                         .xpGain) /
                     (0.01 + this.stats.timeThisPlanet),
                 });
@@ -30331,11 +30339,11 @@
                   (this.stats.timeInGame += e),
                   (this.stats.maxHappiness = Math.max(
                     this.stats.maxHappiness,
-                    Ph.colony.getColonistsHappiness()
+                    _h.colony.getColonistsHappiness()
                   )),
                   (this.stats.maxColonists = Math.max(
                     this.stats.maxColonists,
-                    Ph.colony.colonists
+                    _h.colony.colonists
                   ));
               }),
               (t.prototype.reset = function () {
@@ -30534,10 +30542,10 @@
                 };
               }),
               (t.prototype.getDays = function () {
-                return 0.2 * Ph.statistics.stats.timeThisPrestige;
+                return 0.2 * _h.statistics.stats.timeThisPrestige;
               }),
               (t.prototype.getSeasonId = function () {
-                var e = Ph.prestige.colonizePlanet.current.yearLength,
+                var e = _h.prestige.colonizePlanet.current.yearLength,
                   t = this.getDays() % e;
                 return Math.floor((4 * t) / e);
               }),
@@ -30586,7 +30594,7 @@
               }),
               (t.prototype.process = function (e) {
                 var t = this.getDays(),
-                  n = Ph.prestige.colonizePlanet.current.yearLength;
+                  n = _h.prestige.colonizePlanet.current.yearLength;
                 (this.climateState.year = 1 + Math.floor(t / n)),
                   (this.climateState.day = 1 + (this.getDays() % n)),
                   (this.climateState.season = this.getSeasonId());
@@ -30594,7 +30602,7 @@
                   var i = Math.floor((16 * this.climateState.day) / n),
                     o =
                       1 -
-                      Ph.prestige.colonizePlanet.current.eccentricity *
+                      _h.prestige.colonizePlanet.current.eccentricity *
                         Math.sin((6.28 * i) / 16),
                     r = 0;
                   sN[r].distanceCondition < o;
@@ -30608,8 +30616,8 @@
                       .concat(sN[r].id)
                   ),
                   (this.climateState.temperature = sN[r].id),
-                  Ph.resources.reassertBalances(),
-                  Ph.regenerateCache());
+                  _h.resources.reassertBalances(),
+                  _h.regenerateCache());
               }),
               t
             );
@@ -30744,10 +30752,13 @@
           XN,
           xN,
           kN,
-          HN = function (e) {
+          HN,
+          YN,
+          WN,
+          ZN = function (e) {
             return Math.sqrt(e.x * e.x + e.y * e.y);
           },
-          YN = [
+          FN = [
             {
               id: "meteor-shower",
               name: "Meteor Shower",
@@ -31583,7 +31594,7 @@
                 return 0.005;
               },
               duration: function (e, t) {
-                return 250 * HN(t);
+                return 250 * ZN(t);
               },
               maxLevel: function (e) {
                 return 2;
@@ -31622,7 +31633,7 @@
                 return 0.005;
               },
               duration: function (e, t) {
-                return 250 * HN(t);
+                return 250 * ZN(t);
               },
               maxLevel: function (e) {
                 return 2;
@@ -31664,7 +31675,7 @@
                 return 0.005;
               },
               duration: function (e, t) {
-                return 250 * HN(t);
+                return 250 * ZN(t);
               },
               maxLevel: function (e) {
                 return 2;
@@ -31712,7 +31723,7 @@
                 return 0.005;
               },
               duration: function (e, t) {
-                return 250 * HN(t);
+                return 250 * ZN(t);
               },
               maxLevel: function (e) {
                 return 2;
@@ -31751,7 +31762,7 @@
                 return t && [Um.PLAINS, Um.HILLS].includes(t.type) ? 0.015 : 0;
               },
               duration: function (e, t) {
-                return 250 * HN(t);
+                return 250 * ZN(t);
               },
               maxLevel: function (e) {
                 return 2;
@@ -31803,7 +31814,7 @@
                   : 0;
               },
               duration: function (e, t) {
-                return 250 * HN(t);
+                return 250 * ZN(t);
               },
               maxLevel: function (e) {
                 return 2;
@@ -31849,7 +31860,7 @@
                   : 0;
               },
               duration: function (e, t) {
-                return 250 * HN(t);
+                return 250 * ZN(t);
               },
               maxLevel: function (e) {
                 return 2;
@@ -31898,7 +31909,7 @@
                   : 0;
               },
               duration: function (e, t) {
-                return 250 * HN(t);
+                return 250 * ZN(t);
               },
               maxLevel: function (e) {
                 return 2;
@@ -31937,7 +31948,7 @@
                 return 0.005;
               },
               duration: function (e, t) {
-                return 250 * HN(t);
+                return 250 * ZN(t);
               },
               maxLevel: function (e) {
                 return 2;
@@ -31985,7 +31996,7 @@
                 return 0.005;
               },
               duration: function (e, t) {
-                return 250 * HN(t);
+                return 250 * ZN(t);
               },
               maxLevel: function (e) {
                 return 2;
@@ -32022,7 +32033,7 @@
               },
             },
           ],
-          WN = (function () {
+          jN = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -32056,9 +32067,9 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          ZN = function () {
+          VN = function () {
             return (
-              (ZN =
+              (VN =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -32067,16 +32078,16 @@
                         (e[o] = t[o]);
                   return e;
                 }),
-              ZN.apply(this, arguments)
+              VN.apply(this, arguments)
             );
           },
-          FN = (function (e) {
+          KN = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (t.state = []), t;
             }
             return (
-              WN(t, e),
+              jN(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -32097,49 +32108,49 @@
               }),
               (t.prototype.process = function (e) {
                 var t = 0;
-                Math.abs(Ph.environment.climate.getDays() % 1) < 0.2 * e &&
+                Math.abs(_h.environment.climate.getDays() % 1) < 0.2 * e &&
                   this.selectEventToTrigger(),
                   (this.state = this.state.filter(function (e) {
-                    if (e.endAt < Ph.statistics.stats.timeThisPrestige) {
-                      var n = YN.find(function (t) {
+                    if (e.endAt < _h.statistics.stats.timeThisPrestige) {
+                      var n = FN.find(function (t) {
                         return t.id === e.id;
                       });
                       return (
                         t++,
                         n &&
                           n.getSecondaryEffect &&
-                          n.getSecondaryEffect(Ph, e.level),
+                          n.getSecondaryEffect(_h, e.level),
                         !1
                       );
                     }
                     return !0;
                   })),
-                  t && Ph.resources.reassertBalances();
+                  t && _h.resources.reassertBalances();
               }),
               (t.prototype.selectEventToTrigger = function () {
                 var e = this;
-                YN.filter(function (t) {
+                FN.filter(function (t) {
                   return !e.state.find(function (e) {
                     return e.id === t.id;
                   });
                 }).forEach(function (t) {
-                  var n = t.autoTriggerChance(Ph);
+                  var n = t.autoTriggerChance(_h);
                   Math.random() < n && e.triggerEvent(t);
                 });
               }),
               (t.prototype.triggerEvent = function (e) {
-                var t = e.maxLevel(Ph),
+                var t = e.maxLevel(_h),
                   n = 0;
-                e.minLevel && (n = e.minLevel(Ph));
-                var i = e.duration(Ph),
+                e.minLevel && (n = e.minLevel(_h));
+                var i = e.duration(_h),
                   o = n + Math.random() * (t - n);
                 console.log("triggered: ", e.id, o, t),
                   this.pushToState(
                     {
                       id: e.id,
                       level: o,
-                      startAt: Ph.statistics.stats.timeThisPrestige,
-                      endAt: Ph.statistics.stats.timeThisPrestige + i,
+                      startAt: _h.statistics.stats.timeThisPrestige,
+                      endAt: _h.statistics.stats.timeThisPrestige + i,
                     },
                     e
                   );
@@ -32147,18 +32158,18 @@
               (t.prototype.pushToState = function (e, t) {
                 if (
                   (t ||
-                    (t = YN.find(function (t) {
+                    (t = FN.find(function (t) {
                       return t.id === e.id;
                     })),
                   !t)
                 )
                   throw new Error("Invalid Event Passed: ".concat(e.id));
                 this.state.push(e),
-                  t.onStartEvent && t.onStartEvent(Ph, e.level),
-                  Ph.resources.reassertBalances();
+                  t.onStartEvent && t.onStartEvent(_h, e.level),
+                  _h.resources.reassertBalances();
               }),
               (t.prototype.getResourceBeingProduced = function (e) {
-                var t = YN.filter(function (t) {
+                var t = FN.filter(function (t) {
                     return t.getGain && !!t.getGain[e];
                   }),
                   n = [];
@@ -32168,7 +32179,7 @@
                       return e.id === i.id;
                     });
                     if (o && o.getGain) {
-                      var r = W.calculate(Ph, o.getGain[e], 0, i.level);
+                      var r = W.calculate(_h, o.getGain[e], 0, i.level);
                       n.push({
                         label: "Event: ".concat(o.name),
                         value: r,
@@ -32181,7 +32192,7 @@
                 );
               }),
               (t.prototype.getCraftingMultiplier = function () {
-                var e = YN.filter(function (e) {
+                var e = FN.filter(function (e) {
                     return !!e.getCraftingMultiplier;
                   }),
                   t = [];
@@ -32192,7 +32203,7 @@
                     });
                     if (i && i.getCraftingMultiplier) {
                       var o = W.calculate(
-                          Ph,
+                          _h,
                           i.getCraftingMultiplier,
                           n.level,
                           1
@@ -32211,7 +32222,7 @@
                 );
               }),
               (t.prototype.getResourceMultiplier = function (e) {
-                var t = YN.filter(function (t) {
+                var t = FN.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getGainMultiplier) || void 0 === n
                       ? void 0
@@ -32231,7 +32242,7 @@
                         : o[e])
                     ) {
                       var a = W.calculate(
-                          Ph,
+                          _h,
                           r.getGainMultiplier[e],
                           i.level,
                           1
@@ -32250,7 +32261,7 @@
                 );
               }),
               (t.prototype.getResourceBeingConsumed = function (e) {
-                var t = YN.filter(function (t) {
+                var t = FN.filter(function (t) {
                     return t.getConsumption && !!t.getConsumption[e];
                   }),
                   n = [];
@@ -32260,7 +32271,7 @@
                       return e.id === i.id;
                     });
                     if (o && o.getConsumption) {
-                      var r = W.calculate(Ph, o.getConsumption[e], 0, i.level);
+                      var r = W.calculate(_h, o.getConsumption[e], 0, i.level);
                       n.push({
                         label: "Event: ".concat(o.name),
                         value: r,
@@ -32273,7 +32284,7 @@
                 );
               }),
               (t.prototype.getResourceStoreMultiplier = function (e) {
-                var t = YN.filter(function (t) {
+                var t = FN.filter(function (t) {
                     return (
                       t.getStorageMultiplier && !!t.getStorageMultiplier[e]
                     );
@@ -32286,7 +32297,7 @@
                     });
                     if (o && o.getStorageMultiplier) {
                       var r = W.calculate(
-                        Ph,
+                        _h,
                         o.getStorageMultiplier[e],
                         i.level,
                         1
@@ -32303,7 +32314,7 @@
                 );
               }),
               (t.prototype.getHappinessMultiplier = function (e) {
-                var t = YN.filter(function (t) {
+                var t = FN.filter(function (t) {
                     return (
                       !!t.getEffectMultiplier && !!t.getEffectMultiplier[e]
                     );
@@ -32316,7 +32327,7 @@
                     });
                     if (o && o.getEffectMultiplier) {
                       var r = W.calculate(
-                        Ph,
+                        _h,
                         o.getEffectMultiplier[e],
                         i.level,
                         1
@@ -32333,7 +32344,7 @@
                 );
               }),
               (t.prototype.getHappinessBonus = function (e) {
-                var t = YN.filter(function (t) {
+                var t = FN.filter(function (t) {
                     return !!t.getEffectGain && !!t.getEffectGain[e];
                   }),
                   n = [];
@@ -32343,7 +32354,7 @@
                       return e.id === i.id;
                     });
                     if (o && o.getEffectGain) {
-                      var r = W.calculate(Ph, o.getEffectGain[e], 0, i.level);
+                      var r = W.calculate(_h, o.getEffectGain[e], 0, i.level);
                       n.push({
                         label: "Event: ".concat(o.name),
                         value: r,
@@ -32359,45 +32370,45 @@
                 this.state = [];
               }),
               (t.prototype.processEventToUI = function (e) {
-                var t = YN.find(function (t) {
+                var t = FN.find(function (t) {
                   return t.id === e.id;
                 });
                 if (!t) throw new Error("Event not found");
                 var n = W.calcBatch(
                     t.getConsumption || {},
-                    Sh.getInstance(),
+                    Mh.getInstance(),
                     0,
                     e.level
                   ),
-                  i = W.calcBatch(t.getGain || {}, Sh.getInstance(), e.level),
+                  i = W.calcBatch(t.getGain || {}, Mh.getInstance(), e.level),
                   o = W.calcBatch(
                     t.getStorageMultiplier || {},
-                    Sh.getInstance(),
+                    Mh.getInstance(),
                     e.level
                   ),
                   r = W.calcBatch(
                     t.getGainMultiplier || {},
-                    Sh.getInstance(),
+                    Mh.getInstance(),
                     e.level
                   ),
                   a = W.calcBatch(
                     t.getEffectConsumption || {},
-                    Sh.getInstance(),
+                    Mh.getInstance(),
                     0,
                     e.level
                   ),
                   c = W.calcBatch(
                     t.getEffectGain || {},
-                    Sh.getInstance(),
+                    Mh.getInstance(),
                     0,
                     e.level
                   ),
                   s = W.calcBatch(
                     t.getEffectMultiplier || {},
-                    Sh.getInstance(),
+                    Mh.getInstance(),
                     e.level
                   ),
-                  u = Ph.statistics.stats.timeThisPrestige,
+                  u = _h.statistics.stats.timeThisPrestige,
                   l = e.endAt - e.startAt,
                   p = e.endAt - u;
                 return {
@@ -32405,44 +32416,44 @@
                   name: t.name,
                   description: t.description,
                   gain: i.map(function (e) {
-                    return ZN(ZN({}, e), {
+                    return VN(VN({}, e), {
                       amountValue: e.amount,
                       amount: F(e.amount),
                     });
                   }),
                   gainMult: r.map(function (e) {
-                    return ZN(ZN({}, e), {
+                    return VN(VN({}, e), {
                       amountValue: e.amount,
                       amount: "x".concat(F(e.amount)),
                     });
                   }),
                   consume: n.map(function (e) {
-                    return ZN(ZN({}, e), {
+                    return VN(VN({}, e), {
                       amountValue: e.amount,
                       amount: F(e.amount),
                     });
                   }),
                   max: [],
                   maxMult: o.map(function (e) {
-                    return ZN(ZN({}, e), {
+                    return VN(VN({}, e), {
                       amountValue: e.amount,
                       amount: "x".concat(F(e.amount)),
                     });
                   }),
                   consumeEffect: a.map(function (e) {
-                    return ZN(ZN({}, e), {
+                    return VN(VN({}, e), {
                       amountValue: e.amount,
                       amount: F(e.amount),
                     });
                   }),
                   gainEffect: c.map(function (e) {
-                    return ZN(ZN({}, e), {
+                    return VN(VN({}, e), {
                       amountValue: e.amount,
                       amount: F(e.amount),
                     });
                   }),
                   effectMult: s.map(function (e) {
-                    return ZN(ZN({}, e), {
+                    return VN(VN({}, e), {
                       amountValue: e.amount,
                       amount: "x".concat(F(e.amount)),
                     });
@@ -32450,15 +32461,15 @@
                   progress: "".concat(
                     100 * Math.min(1, (u - e.startAt) / (l || 1e-4))
                   ),
-                  addEffects: t.getEffects ? t.getEffects(Ph, e.level) : [],
+                  addEffects: t.getEffects ? t.getEffects(_h, e.level) : [],
                   etaNum: p,
                 };
               }),
               t
             );
           })(P),
-          jN = FN.getInstance(),
-          VN = (function () {
+          qN = KN.getInstance(),
+          zN = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -32492,18 +32503,18 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          KN = (function (e) {
+          QN = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
                 (t.climate = pN),
                 (t.bankedTime = EN),
-                (t.ongoingEffects = jN),
+                (t.ongoingEffects = qN),
                 t
               );
             }
             return (
-              VN(t, e),
+              zN(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -32539,7 +32550,7 @@
               t
             );
           })(P).getInstance(),
-          qN = (function () {
+          JN = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -32573,9 +32584,9 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          zN = function () {
+          $N = function () {
             return (
-              (zN =
+              ($N =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -32584,10 +32595,10 @@
                         (e[o] = t[o]);
                   return e;
                 }),
-              zN.apply(this, arguments)
+              $N.apply(this, arguments)
             );
           },
-          QN = (function (e) {
+          eh = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -32610,7 +32621,7 @@
               );
             }
             return (
-              qN(t, e),
+              JN(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -32629,7 +32640,7 @@
                     return;
                   if (e === p.UPGRADE) {
                     var i =
-                        Ph.landingZone.landingZoneUpgrades.getUpgradeLevel(t),
+                        _h.landingZone.landingZoneUpgrades.getUpgradeLevel(t),
                       o =
                         (null ===
                           (n = nd.find(function (e) {
@@ -32669,7 +32680,7 @@
                     return e.concat(i || Array.prototype.slice.call(t));
                   })([], this.queue, !0).map(function (e, n) {
                     var i;
-                    return zN(zN({}, e), {
+                    return $N($N({}, e), {
                       eta:
                         (null === (i = t[n].meta) || void 0 === i
                           ? void 0
@@ -32707,7 +32718,7 @@
                         }
                         return n;
                       })(e, ["eta"]);
-                      return zN({}, t);
+                      return $N({}, t);
                     });
                 this.queue = i;
               }),
@@ -32716,8 +32727,8 @@
               }),
               (t.prototype.moveItem = function (e, t) {
                 var n = this.queue[e + t];
-                (this.queue[e + t] = zN({}, this.queue[e])),
-                  (this.queue[e] = zN({}, n));
+                (this.queue[e + t] = $N({}, this.queue[e])),
+                  (this.queue[e] = $N({}, n));
               }),
               (t.prototype.importData = function (e) {
                 this.queue = (null == e ? void 0 : e.queue) || [];
@@ -32735,7 +32746,7 @@
                       return t.id === e.id;
                     });
                     return i
-                      ? Ph.landingZone.landingZoneBuildings.processToUI(i, n)
+                      ? _h.landingZone.landingZoneBuildings.processToUI(i, n)
                       : void console.error(
                           "Building ".concat(e.id, " was not found")
                         );
@@ -32744,7 +32755,7 @@
                       return t.id === e.id;
                     });
                     return o
-                      ? Ph.science.scienceResearches.processToUI(o)
+                      ? _h.science.scienceResearches.processToUI(o)
                       : void console.error(
                           "Research ".concat(e.id, " was not found")
                         );
@@ -32753,7 +32764,7 @@
                       return t.id === e.id;
                     });
                     return r
-                      ? Ph.landingZone.landingZoneUpgrades.processToUI(r, n)
+                      ? _h.landingZone.landingZoneUpgrades.processToUI(r, n)
                       : void console.error(
                           "Upgrade ".concat(e.id, " was not found")
                         );
@@ -32794,7 +32805,7 @@
                       choices:
                         ((e = {}),
                         (e[p.BUILDING] = Td.filter(function (e) {
-                          return e.unlockCondition(Ph);
+                          return e.unlockCondition(_h);
                         })
                           .map(function (e) {
                             return { id: e.id, name: e.name };
@@ -32805,10 +32816,10 @@
                         (e[p.UPGRADE] = nd
                           .filter(function (e) {
                             return (
-                              e.unlockCondition(Ph) &&
+                              e.unlockCondition(_h) &&
                               (!e.maxLevel ||
                                 e.maxLevel >
-                                  Ph.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                                  _h.landingZone.landingZoneUpgrades.getUpgradeLevel(
                                     e.id
                                   ))
                             );
@@ -32822,8 +32833,8 @@
                         (e[p.RESEARCH] = eE
                           .filter(function (e) {
                             return (
-                              e.unlockCondition(Ph) &&
-                              Ph.science.scienceResearches.getResearchLevel(
+                              e.unlockCondition(_h) &&
+                              _h.science.scienceResearches.getResearchLevel(
                                 e.id
                               ) < 1
                             );
@@ -32879,7 +32890,7 @@
                     if (t.scope === p.UPGRADE) {
                       var n = t.id,
                         i =
-                          Ph.landingZone.landingZoneUpgrades.getUpgradeLevel(n),
+                          _h.landingZone.landingZoneUpgrades.getUpgradeLevel(n),
                         o = nd.find(function (e) {
                           return e.id === n;
                         });
@@ -32887,23 +32898,23 @@
                       return o.maxLevel && o.maxLevel <= i
                         ? void this.queue.shift()
                         : void (
-                            Ph.landingZone.landingZoneUpgrades.doUpgrade(n) &&
+                            _h.landingZone.landingZoneUpgrades.doUpgrade(n) &&
                             this.queue.shift()
                           );
                     }
                     if (t.scope === p.RESEARCH)
                       return (
                         (r = t.id),
-                        (i = Ph.science.scienceResearches.getResearchLevel(r)) >
+                        (i = _h.science.scienceResearches.getResearchLevel(r)) >
                           0 && this.queue.shift(),
                         void (
-                          Ph.science.scienceResearches.doResearch(r) &&
+                          _h.science.scienceResearches.doResearch(r) &&
                           this.queue.shift()
                         )
                       );
                   } else {
                     var r = t.id;
-                    Ph.landingZone.landingZoneBuildings.doBuild(r) &&
+                    _h.landingZone.landingZoneBuildings.doBuild(r) &&
                       this.queue.shift();
                   }
                 }
@@ -32911,10 +32922,10 @@
               t
             );
           })(P),
-          JN = QN.getInstance(),
-          $N = n(381),
-          eh = n.n($N),
-          th = (function () {
+          th = eh.getInstance(),
+          nh = n(381),
+          ih = n.n(nh),
+          oh = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -32948,7 +32959,7 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          nh = (function (e) {
+          rh = (function (e) {
             function t() {
               var t,
                 n = e.call(this) || this;
@@ -32976,7 +32987,7 @@
               );
             }
             return (
-              th(t, e),
+              oh(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -32984,8 +32995,8 @@
                 this.events.unshift({
                   scope: e,
                   time: new Date(),
-                  year: Math.floor(Ph.environment.climate.climateState.year),
-                  day: Math.floor(Ph.environment.climate.climateState.day),
+                  year: Math.floor(_h.environment.climate.climateState.year),
+                  day: Math.floor(_h.environment.climate.climateState.day),
                   message: t,
                 });
               }),
@@ -33110,7 +33121,7 @@
                     .map(function (e) {
                       return {
                         date: "[".concat(
-                          eh()(e.time).format("MMM D, Y HH:mm:ss"),
+                          ih()(e.time).format("MMM D, Y HH:mm:ss"),
                           "]"
                         ),
                         time: "Year ".concat(e.year, ", Day ").concat(e.day),
@@ -33150,8 +33161,8 @@
               t
             );
           })(P),
-          ih = nh.getInstance(),
-          oh = (function () {
+          ah = rh.getInstance(),
+          ch = (function () {
             function e() {}
             return (
               (e.getInstance = function () {
@@ -33161,12 +33172,12 @@
                 var n = [];
                 if (
                   e === l.RESEARCH &&
-                  Ph.resources.getResource(l.ANOMALITIES) > 0
+                  _h.resources.getResource(l.ANOMALITIES) > 0
                 ) {
                   var i =
                     1 +
                     0.01 *
-                      (null != t ? t : Ph.resources.getResource(l.ANOMALITIES));
+                      (null != t ? t : _h.resources.getResource(l.ANOMALITIES));
                   n.push({
                     label: "Resource: Anomaly",
                     value: i,
@@ -33179,7 +33190,7 @@
               e
             );
           })().getInstance(),
-          rh = [
+          sh = [
             {
               type: Um.DESERT,
               name: "Desert",
@@ -33260,7 +33271,7 @@
               color: "#78a747",
             },
           ],
-          ah = (function () {
+          uh = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -33294,7 +33305,7 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          ch = (function (e) {
+          lh = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -33335,7 +33346,7 @@
               );
             }
             return (
-              ah(t, e),
+              uh(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -33359,7 +33370,7 @@
               (t.prototype.dataToUI = function () {
                 var e, t, n, i, o;
                 this.isExpeditionUnlocked() &&
-                  Ph.newNotifications.registerNotification(
+                  _h.newNotifications.registerNotification(
                     "planet:expeditions"
                   );
                 var r = this.expeditionsState.currentMax
@@ -33437,11 +33448,11 @@
                 for (var e = -10; e <= 10; e++) {
                   this.expeditionsState.map.cells.push([]);
                   for (var t = -10; t <= 10; t++) {
-                    var n = Math.floor(Math.random() * rh.length);
+                    var n = Math.floor(Math.random() * sh.length);
                     this.expeditionsState.map.cells[10 + e].push({
                       x: t,
                       y: e,
-                      type: rh[n].type,
+                      type: sh[n].type,
                       radiusMultiplier: Math.pow(e * e + t * t, 0.75),
                     });
                   }
@@ -33454,14 +33465,14 @@
                   o =
                     1 +
                     0.04 *
-                      Ph.prestige.transmitKnowledge.getUpgradeLevel(
+                      _h.prestige.transmitKnowledge.getUpgradeLevel(
                         g.EXPEDITION_MASTERITY
                       ),
                   r = function (r) {
                     var a = w.find(function (e) {
                       return e.id === r;
                     });
-                    if (!(null == a ? void 0 : a.unlockCondition(Ph)))
+                    if (!(null == a ? void 0 : a.unlockCondition(_h)))
                       return "continue";
                     i[r] = {
                       chance: Math.min(n * e[r], 1),
@@ -33479,13 +33490,13 @@
                 return (
                   5 +
                   0.2 *
-                    Ph.landingZone.landingZoneBuildings.getBuildingActiveLevel(
+                    _h.landingZone.landingZoneBuildings.getBuildingActiveLevel(
                       a.GPS_SATELITE
                     )
                 );
               }),
               (t.prototype.processCell = function (e) {
-                var t = rh.find(function (t) {
+                var t = sh.find(function (t) {
                   return t.type === e.type;
                 });
                 if (!t) throw new Error("Cell type not found");
@@ -33530,7 +33541,7 @@
               }),
               (t.prototype.isExpeditionUnlocked = function () {
                 return (
-                  Ph.science.scienceResearches.getResearchLevel(B.GEOGRAPHY) > 0
+                  _h.science.scienceResearches.getResearchLevel(B.GEOGRAPHY) > 0
                 );
               }),
               (t.prototype.startExpedition = function () {
@@ -33586,19 +33597,19 @@
                 return (
                   Math.pow(
                     1.05,
-                    Ph.landingZone.landingZoneBuildings.getBuildingActiveLevel(
+                    _h.landingZone.landingZoneBuildings.getBuildingActiveLevel(
                       a.EXPEDITION_CENTER
                     )
                   ) *
                   Math.pow(
                     1.3,
-                    Ph.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                    _h.landingZone.landingZoneUpgrades.getUpgradeLevel(
                       r.ENERGY_SAVING_EXPEDITION_DRONES
                     )
                   ) *
                   (1 +
                     0.04 *
-                      Ph.prestige.transmitKnowledge.getUpgradeLevel(
+                      _h.prestige.transmitKnowledge.getUpgradeLevel(
                         g.EXPEDITION_MASTERITY
                       ))
                 );
@@ -33614,12 +33625,12 @@
                 if (!t) throw new Error("Cell not found");
                 for (var n in (t.specialEvent &&
                   (console.log("special event trigger: ", t.specialEvent),
-                  Ph.environment.ongoingEffects.pushToState({
+                  _h.environment.ongoingEffects.pushToState({
                     id: t.specialEvent.id,
                     level: t.specialEvent.level,
-                    startAt: Ph.statistics.stats.timeThisPrestige,
+                    startAt: _h.statistics.stats.timeThisPrestige,
                     endAt:
-                      Ph.statistics.stats.timeThisPrestige +
+                      _h.statistics.stats.timeThisPrestige +
                       t.specialEvent.duration,
                   }),
                   (this.expeditionsState.map.cells[
@@ -33631,8 +33642,8 @@
                 (this.expeditionsState.lastLooted = e),
                 (this.expeditionsState.currentMax = 0),
                 e))
-                  Ph.resources.addResource(n, e[n] || 0);
-                Ph.eventLog.registerExpeditionArrived(H(e), ""),
+                  _h.resources.addResource(n, e[n] || 0);
+                _h.eventLog.registerExpeditionArrived(H(e), ""),
                   this.expeditionsState.numExpeditions++;
               }),
               (t.prototype.getExpeditionDuration = function (e, t) {
@@ -33640,8 +33651,8 @@
                 return 100 * Math.pow(n, 2);
               }),
               (t.prototype.getSpecialLootForCell = function (e) {
-                for (var t = YN, n = 0; n < t.length; n++) {
-                  var i = t[n].expeditionChance(Ph, e);
+                for (var t = FN, n = 0; n < t.length; n++) {
+                  var i = t[n].expeditionChance(_h, e);
                   if (Math.random() < i) return t[n];
                 }
                 return null;
@@ -33663,10 +33674,10 @@
                     ) {
                       var i = this.getSpecialLootForCell(n);
                       if (i) {
-                        var o = i.maxLevel(Ph),
+                        var o = i.maxLevel(_h),
                           r = 0;
-                        i.minLevel && (r = i.minLevel(Ph));
-                        var a = i.duration(Ph, n),
+                        i.minLevel && (r = i.minLevel(_h));
+                        var a = i.duration(_h, n),
                           c = r + Math.random() * (o - r);
                         (this.expeditionsState.map.cells[e][t].specialEvent = {
                           id: i.id,
@@ -33716,8 +33727,8 @@
               t
             );
           })(P),
-          sh = ch.getInstance(),
-          uh = (function () {
+          ph = lh.getInstance(),
+          dh = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -33751,7 +33762,7 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          lh = (function (e) {
+          Eh = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -33765,12 +33776,12 @@
               );
             }
             return (
-              uh(t, e),
+              dh(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
               (t.prototype.getResourceCostReq = function (e) {
-                var t = Ph.landingZone.landingZoneBuildings
+                var t = _h.landingZone.landingZoneBuildings
                     .dataFromCache()
                     .filter(function (t) {
                       return t.cost.find(function (t) {
@@ -33783,7 +33794,7 @@
                   i = t.filter(function (e) {
                     return Object.values(s).includes(e.category);
                   }),
-                  o = Ph.landingZone.landingZoneUpgrades
+                  o = _h.landingZone.landingZoneUpgrades
                     .dataFromCache()
                     .filter(function (t) {
                       return t.cost.find(function (t) {
@@ -33838,7 +33849,7 @@
                 };
               }),
               (t.prototype.getResourceConsReq = function (e) {
-                var t = Ph.landingZone.landingZoneBuildings
+                var t = _h.landingZone.landingZoneBuildings
                     .dataFromCache()
                     .filter(function (t) {
                       return t.consume.find(function (t) {
@@ -33853,10 +33864,10 @@
                   }),
                   o = xd
                     .filter(function (e) {
-                      return e.unlockCondition(Ph);
+                      return e.unlockCondition(_h);
                     })
                     .map(function (e) {
-                      return Ph.colony.colonyJobs.processToUI(e);
+                      return _h.colony.colonyJobs.processToUI(e);
                     })
                     .filter(function (t) {
                       return t.consume.find(function (t) {
@@ -33867,17 +33878,17 @@
                     var t = w.find(function (t) {
                       return t.id === e.id;
                     });
-                    return !(!t || !t.unlockCondition(Ph));
+                    return !(!t || !t.unlockCondition(_h));
                   })
                     .map(function (e) {
-                      return Ph.crafting.craftingJobs.processToUI(e);
+                      return _h.crafting.craftingJobs.processToUI(e);
                     })
                     .filter(function (t) {
                       return t.consume.find(function (t) {
                         return t.id === e;
                       });
                     }),
-                  a = Ph.landingZone.landingZoneUpgrades
+                  a = _h.landingZone.landingZoneUpgrades
                     .dataFromCache()
                     .filter(function (t) {
                       return t.consume.find(function (t) {
@@ -33957,7 +33968,7 @@
                 };
               }),
               (t.prototype.getProducedBy = function (e) {
-                var t = Ph.landingZone.landingZoneBuildings
+                var t = _h.landingZone.landingZoneBuildings
                     .dataFromCache()
                     .filter(function (t) {
                       return t.gain.find(function (t) {
@@ -33972,10 +33983,10 @@
                   }),
                   o = xd
                     .filter(function (e) {
-                      return e.unlockCondition(Ph);
+                      return e.unlockCondition(_h);
                     })
                     .map(function (e) {
-                      return Ph.colony.colonyJobs.processToUI(e);
+                      return _h.colony.colonyJobs.processToUI(e);
                     })
                     .filter(function (t) {
                       return t.gain.find(function (t) {
@@ -33986,17 +33997,17 @@
                     var n = w.find(function (t) {
                       return t.id === e;
                     });
-                    return !(!n || !n.unlockCondition(Ph));
+                    return !(!n || !n.unlockCondition(_h));
                   })
                     .map(function (e) {
-                      return Ph.crafting.craftingJobs.processToUI(e);
+                      return _h.crafting.craftingJobs.processToUI(e);
                     })
                     .filter(function (t) {
                       return t.gain.find(function (t) {
                         return t.id === e;
                       });
                     }),
-                  a = Ph.landingZone.landingZoneUpgrades
+                  a = _h.landingZone.landingZoneUpgrades
                     .dataFromCache()
                     .filter(function (t) {
                       return t.gain.find(function (t) {
@@ -34084,7 +34095,7 @@
                       })) || void 0 === t
                       ? void 0
                       : t.isCraftable,
-                  i = Ph.landingZone.landingZoneBuildings
+                  i = _h.landingZone.landingZoneBuildings
                     .dataFromCache()
                     .filter(function (t) {
                       return (
@@ -34102,10 +34113,10 @@
                   }),
                   a = xd
                     .filter(function (e) {
-                      return e.unlockCondition(Ph);
+                      return e.unlockCondition(_h);
                     })
                     .map(function (e) {
-                      return Ph.colony.colonyJobs.processToUI(e);
+                      return _h.colony.colonyJobs.processToUI(e);
                     })
                     .filter(function (t) {
                       return t.multiplier.find(function (t) {
@@ -34114,10 +34125,10 @@
                     }),
                   u = _g
                     .filter(function (e) {
-                      return e.unlockCondition(Ph);
+                      return e.unlockCondition(_h);
                     })
                     .map(function (t) {
-                      var n = Ph.laws.processToUI(t),
+                      var n = _h.laws.processToUI(t),
                         i = [],
                         o = [];
                       return (
@@ -34142,7 +34153,7 @@
                     .filter(function (e) {
                       return e.optionIds.length;
                     }),
-                  l = Ph.landingZone.landingZoneUpgrades
+                  l = _h.landingZone.landingZoneUpgrades
                     .dataFromCache()
                     .filter(function (t) {
                       return (
@@ -34213,7 +34224,7 @@
                 };
               }),
               (t.prototype.getDebuffedBy = function (e) {
-                var t = Ph.landingZone.landingZoneBuildings
+                var t = _h.landingZone.landingZoneBuildings
                     .dataFromCache()
                     .filter(function (t) {
                       return t.gainMult.find(function (t) {
@@ -34228,10 +34239,10 @@
                   }),
                   o = xd
                     .filter(function (e) {
-                      return e.unlockCondition(Ph);
+                      return e.unlockCondition(_h);
                     })
                     .map(function (e) {
-                      return Ph.colony.colonyJobs.processToUI(e);
+                      return _h.colony.colonyJobs.processToUI(e);
                     })
                     .filter(function (t) {
                       return t.multiplier.find(function (t) {
@@ -34240,10 +34251,10 @@
                     }),
                   r = _g
                     .filter(function (e) {
-                      return e.unlockCondition(Ph);
+                      return e.unlockCondition(_h);
                     })
                     .map(function (t) {
-                      var n = Ph.laws.processToUI(t),
+                      var n = _h.laws.processToUI(t),
                         i = [],
                         o = [];
                       return (
@@ -34268,7 +34279,7 @@
                     .filter(function (e) {
                       return e.optionIds.length;
                     }),
-                  a = Ph.landingZone.landingZoneUpgrades
+                  a = _h.landingZone.landingZoneUpgrades
                     .dataFromCache()
                     .filter(function (t) {
                       return t.gainMult.find(function (t) {
@@ -34336,7 +34347,7 @@
                 };
               }),
               (t.prototype.getCap = function (e) {
-                var t = Ph.landingZone.landingZoneBuildings
+                var t = _h.landingZone.landingZoneBuildings
                     .dataFromCache()
                     .filter(function (t) {
                       return t.max.find(function (t) {
@@ -34349,7 +34360,7 @@
                   i = t.filter(function (e) {
                     return Object.values(s).includes(e.category);
                   }),
-                  o = Ph.landingZone.landingZoneUpgrades
+                  o = _h.landingZone.landingZoneUpgrades
                     .dataFromCache()
                     .filter(function (t) {
                       return t.max.find(function (t) {
@@ -34404,14 +34415,14 @@
                 };
               }),
               (t.prototype.getCapBoostedBy = function (e) {
-                var t = Ph.landingZone.landingZoneUpgrades
+                var t = _h.landingZone.landingZoneUpgrades
                     .dataFromCache()
                     .filter(function (t) {
                       return t.maxMult.find(function (t) {
                         return t.id === e && t.amountValue > 1;
                       });
                     }),
-                  n = Ph.resourceEffect
+                  n = _h.resourceEffect
                     .getResourceCapMultiplier(e, 1)
                     .map(function (e) {
                       return {
@@ -34469,8 +34480,8 @@
               t
             );
           })(P),
-          ph = lh.getInstance(),
-          dh = (function () {
+          gh = Eh.getInstance(),
+          fh = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -34504,9 +34515,9 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          Eh = function () {
+          Ah = function () {
             return (
-              (Eh =
+              (Ah =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -34515,10 +34526,10 @@
                         (e[o] = t[o]);
                   return e;
                 }),
-              Eh.apply(this, arguments)
+              Ah.apply(this, arguments)
             );
           },
-          gh = (function (e) {
+          mh = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -34536,7 +34547,7 @@
               );
             }
             return (
-              dh(t, e),
+              fh(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -34557,7 +34568,7 @@
                       i = xd.find(function (t) {
                         return t.id === e.id;
                       });
-                    return Eh(Eh({}, e), {
+                    return Ah(Ah({}, e), {
                       name:
                         null !== (t = null == i ? void 0 : i.name) &&
                         void 0 !== t
@@ -34565,14 +34576,14 @@
                           : "",
                       isUnlocked:
                         null !==
-                          (n = null == i ? void 0 : i.unlockCondition(Ph)) &&
+                          (n = null == i ? void 0 : i.unlockCondition(_h)) &&
                         void 0 !== n &&
                         n,
                     });
                   }),
                   crafting: e.crafting.map(function (e) {
                     var t, n;
-                    return Eh(Eh({}, e), {
+                    return Ah(Ah({}, e), {
                       name: k(e.id),
                       isUnlocked:
                         null !==
@@ -34582,7 +34593,7 @@
                                 return t.id === e.id;
                               })) || void 0 === t
                               ? void 0
-                              : t.unlockCondition(Ph)) &&
+                              : t.unlockCondition(_h)) &&
                         void 0 !== n &&
                         n,
                     });
@@ -34596,21 +34607,21 @@
                   });
                 return {
                   isUnlocked:
-                    Ph.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                    _h.landingZone.landingZoneUpgrades.getUpgradeLevel(
                       r.DOCKING_MODULE
                     ) > 0,
                   list: t,
                   newPreset: {
                     jobs: xd
                       .filter(function (e) {
-                        return e.unlockCondition(Ph);
+                        return e.unlockCondition(_h);
                       })
                       .map(function (e) {
                         return { id: e.id, name: e.name };
                       }),
                     crafting: w
                       .filter(function (e) {
-                        return e.unlockCondition(Ph) && e.isCraftable;
+                        return e.unlockCondition(_h) && e.isCraftable;
                       })
                       .map(function (e) {
                         return { id: e.id, name: e.name };
@@ -34626,7 +34637,7 @@
               }),
               (t.prototype.savePreset = function (e) {
                 var t = !e.uuid,
-                  n = Eh({}, e);
+                  n = Ah({}, e);
                 if (
                   (n.uuid || (n.uuid = HA.Z()),
                   n.name || (n.name = "Preset ".concat(Date())),
@@ -34681,12 +34692,12 @@
                     })),
                     t)
                   )
-                    this.list.push(Eh({}, n));
+                    this.list.push(Ah({}, n));
                   else {
                     var a = this.list.findIndex(function (e) {
                       return e.uuid === n.uuid;
                     });
-                    a > -1 && (this.list[a] = Eh({}, n));
+                    a > -1 && (this.list[a] = Ah({}, n));
                   }
                   return !0;
                 }
@@ -34724,7 +34735,7 @@
                     return e.id !== _.ARTISAN;
                   }),
                   p = s.crafting,
-                  d = Ph.colony.colonists,
+                  d = _h.colony.colonists,
                   E = u.reduce(function (e, t) {
                     return e + a(t);
                   }, 0),
@@ -34817,7 +34828,7 @@
                           return e.id === _.LABOUR;
                         })) || void 0 === n
                         ? void 0
-                        : n.unlockCondition(Ph)
+                        : n.unlockCondition(_h)
                     ) {
                       var y = c(
                           u.find(function (e) {
@@ -34858,16 +34869,16 @@
                   m,
                   I
                 ),
-                Ph.crafting.craftingJobs.reset(),
-                Ph.colony.colonyJobs.reset(),
-                (Ph.colony.colonyJobs.freeWorkers = d),
+                _h.crafting.craftingJobs.reset(),
+                _h.colony.colonyJobs.reset(),
+                (_h.colony.colonyJobs.freeWorkers = d),
                 f))
-                  Ph.colony.colonyJobs.setAmount(
+                  _h.colony.colonyJobs.setAmount(
                     L,
                     null !== (o = f[L]) && void 0 !== o ? o : 0
                   );
                 for (var C in A)
-                  Ph.crafting.craftingJobs.setAmount(
+                  _h.crafting.craftingJobs.setAmount(
                     C,
                     null !== (r = A[C]) && void 0 !== r ? r : 0
                   );
@@ -34875,8 +34886,8 @@
               t
             );
           })(P),
-          fh = gh.getInstance(),
-          Ah = (function () {
+          Nh = mh.getInstance(),
+          hh = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -34910,9 +34921,9 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          mh = function () {
+          Ih = function () {
             return (
-              (mh =
+              (Ih =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -34921,10 +34932,10 @@
                         (e[o] = t[o]);
                   return e;
                 }),
-              mh.apply(this, arguments)
+              Ih.apply(this, arguments)
             );
           },
-          Nh = (function (e) {
+          Rh = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -34942,7 +34953,7 @@
               );
             }
             return (
-              Ah(t, e),
+              hh(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -34984,14 +34995,14 @@
                   });
                 return {
                   isUnlocked:
-                    Ph.science.scienceResearches.getResearchLevel(
+                    _h.science.scienceResearches.getResearchLevel(
                       B.CODEX_OF_LAW
                     ) > 0,
                   list: t,
                   newPreset: {
                     laws: _g
                       .filter(function (e) {
-                        return e.unlockCondition(Sh.getInstance());
+                        return e.unlockCondition(Mh.getInstance());
                       })
                       .map(function (e) {
                         return {
@@ -35018,7 +35029,7 @@
               }),
               (t.prototype.savePreset = function (e) {
                 var t = !e.uuid,
-                  n = mh({}, e);
+                  n = Ih({}, e);
                 if (
                   (n.uuid || (n.uuid = HA.Z()),
                   n.name || (n.name = "Preset ".concat(Date())),
@@ -35038,12 +35049,12 @@
                     })([], e.laws, !0)),
                     t)
                   )
-                    this.list.push(mh({}, n));
+                    this.list.push(Ih({}, n));
                   else {
                     var i = this.list.findIndex(function (e) {
                       return e.uuid === n.uuid;
                     });
-                    i > -1 && (this.list[i] = mh({}, n));
+                    i > -1 && (this.list[i] = Ih({}, n));
                   }
                   return !0;
                 }
@@ -35059,14 +35070,14 @@
                     return t.id === e.id;
                   });
                   t &&
-                    t.unlockCondition(Sh.getInstance()) &&
-                    Ph.laws.selectLawOption(e.id, e.optionId);
+                    t.unlockCondition(Mh.getInstance()) &&
+                    _h.laws.selectLawOption(e.id, e.optionId);
                 });
               }),
               t
             );
           })(P).getInstance(),
-          hh = (function () {
+          Th = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -35100,13 +35111,13 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          Ih = (function (e) {
+          yh = (function (e) {
             function t() {
               var t = e.call(this) || this;
-              return (t.jobsPresets = fh), (t.lawsPresets = Nh), t;
+              return (t.jobsPresets = Nh), (t.lawsPresets = Rh), t;
             }
             return (
-              hh(t, e),
+              Th(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -35132,13 +35143,13 @@
               t
             );
           })(P),
-          Rh = Ih.getInstance();
+          Oh = yh.getInstance();
         !(function (e) {
           (e[(e.PENDING = 0)] = "PENDING"),
             (e[(e.COMLETE = 1)] = "COMLETE"),
             (e[(e.FAILED = 2)] = "FAILED");
         })(IN || (IN = {}));
-        var Th = [
+        var Lh = [
             {
               id: "starting",
               name: "Humble Starting",
@@ -35494,6 +35505,97 @@
               },
             },
             {
+              id: "biologist0",
+              name: "Biologist",
+              description: "What does life made of?",
+              requirementsDesc: ["Have 20 biomass income"],
+              getCompleteCondition: function (e) {
+                return !(e.resources.getBalance(l.BIOMASS) < 20);
+              },
+              bonusesDesc: [],
+              getGainMultiplier:
+                ((UN = {}),
+                (UN[l.BIOMASS] = function (e) {
+                  return 1.05;
+                }),
+                UN),
+              isHidden: !1,
+              unlockCondition: function (e) {
+                return (
+                  e.science.scienceResearches.getResearchLevel(B.METALLURGY) > 0
+                );
+              },
+            },
+            {
+              id: "biomass1",
+              name: "Biology Master",
+              description: "Lets make these bacteria work for us.",
+              requirementsDesc: ["Have 200 biomass income"],
+              getCompleteCondition: function (e) {
+                return !(e.resources.getBalance(l.BIOMASS) < 200);
+              },
+              bonusesDesc: [],
+              getGainMultiplier:
+                ((bN = {}),
+                (bN[l.RUBBER] = function (e) {
+                  return 1.1;
+                }),
+                (bN[l.PLASTICS] = function (e) {
+                  return 1.1;
+                }),
+                (bN[l.GRAPHENE] = function (e) {
+                  return 1.1;
+                }),
+                bN),
+              isHidden: !1,
+              unlockCondition: function (e) {
+                return (
+                  e.science.scienceResearches.getResearchLevel(B.METALLURGY) > 0
+                );
+              },
+            },
+            {
+              id: "biomass2",
+              name: "Biology Professional",
+              description: "We can construct our own life",
+              requirementsDesc: ["Have 2К biomass income"],
+              getCompleteCondition: function (e) {
+                return !(e.resources.getBalance(l.BIOMASS) < 2e3);
+              },
+              bonusesDesc: [
+                "Rubber and Plastics prices are reduced by whole 50%",
+              ],
+              isHidden: !1,
+              unlockCondition: function (e) {
+                return (
+                  e.science.scienceResearches.getResearchLevel(B.METALLURGY) > 0
+                );
+              },
+            },
+            {
+              id: "biomass3",
+              name: "Biology God",
+              description:
+                "What can go wrong if we can fix problems on DNA level?!",
+              requirementsDesc: ["Have 20К biomass income"],
+              getCompleteCondition: function (e) {
+                return !(e.resources.getBalance(l.BIOMASS) < 2e4);
+              },
+              bonusesDesc: [],
+              getEffectMultiplier:
+                ((GN = {}),
+                (GN[U.HEALTHCARE] = function (e) {
+                  return 1.05;
+                }),
+                GN),
+              isHidden: !1,
+              unlockCondition: function (e) {
+                return (
+                  e.science.scienceResearches.getResearchLevel(B.METALLURGY) > 0
+                );
+              },
+            },
+            {
               id: "electronics0",
               name: "Electronics",
               description:
@@ -35504,17 +35606,17 @@
               },
               bonusesDesc: [],
               getGainMultiplier:
-                ((UN = {}),
-                (UN[l.SEMICONDUCTOR] = function (e) {
+                ((wN = {}),
+                (wN[l.SEMICONDUCTOR] = function (e) {
                   return 1.1;
                 }),
-                (UN[l.COMPUTER] = function (e) {
+                (wN[l.COMPUTER] = function (e) {
                   return 1.1;
                 }),
-                (UN[l.MAGNETO] = function (e) {
+                (wN[l.MAGNETO] = function (e) {
                   return 1.1;
                 }),
-                UN),
+                wN),
               isHidden: !1,
               unlockCondition: function (e) {
                 return (
@@ -35534,17 +35636,17 @@
               },
               bonusesDesc: [],
               getGainMultiplier:
-                ((bN = {}),
-                (bN[l.SEMICONDUCTOR] = function (e) {
+                ((DN = {}),
+                (DN[l.SEMICONDUCTOR] = function (e) {
                   return 1.1;
                 }),
-                (bN[l.COMPUTER] = function (e) {
+                (DN[l.COMPUTER] = function (e) {
                   return 1.1;
                 }),
-                (bN[l.MAGNETO] = function (e) {
+                (DN[l.MAGNETO] = function (e) {
                   return 1.1;
                 }),
-                bN),
+                DN),
               isHidden: !1,
               unlockCondition: function (e) {
                 return (
@@ -35564,17 +35666,17 @@
               },
               bonusesDesc: [],
               getGainMultiplier:
-                ((GN = {}),
-                (GN[l.SEMICONDUCTOR] = function (e) {
+                ((XN = {}),
+                (XN[l.SEMICONDUCTOR] = function (e) {
                   return 1.1;
                 }),
-                (GN[l.COMPUTER] = function (e) {
+                (XN[l.COMPUTER] = function (e) {
                   return 1.1;
                 }),
-                (GN[l.MAGNETO] = function (e) {
+                (XN[l.MAGNETO] = function (e) {
                   return 1.1;
                 }),
-                GN),
+                XN),
               isHidden: !1,
               unlockCondition: function (e) {
                 return (
@@ -35594,17 +35696,17 @@
               },
               bonusesDesc: [],
               getGainMultiplier:
-                ((wN = {}),
-                (wN[l.SEMICONDUCTOR] = function (e) {
+                ((xN = {}),
+                (xN[l.SEMICONDUCTOR] = function (e) {
                   return 1.1;
                 }),
-                (wN[l.COMPUTER] = function (e) {
+                (xN[l.COMPUTER] = function (e) {
                   return 1.1;
                 }),
-                (wN[l.MAGNETO] = function (e) {
+                (xN[l.MAGNETO] = function (e) {
                   return 1.1;
                 }),
-                wN),
+                xN),
               isHidden: !1,
               unlockCondition: function (e) {
                 return (
@@ -35726,6 +35828,52 @@
               },
             },
             {
+              id: "telescope",
+              name: "Universe Investigation",
+              description:
+                "Well, we cant beat speed of light. But we can make light bring us information at the speed of light!",
+              requirementsDesc: ["Have 50 or more Telescopes"],
+              getCompleteCondition: function (e) {
+                return !(
+                  e.landingZone.landingZoneBuildings.getBuildingLevel(
+                    a.SPACE_TELESCOPE
+                  ) < 50
+                );
+              },
+              bonusesDesc: ["Space Telesopes are 25% more efficient"],
+              isHidden: !0,
+              unlockCondition: function (e) {
+                return (
+                  e.landingZone.landingZoneBuildings.getBuildingLevel(
+                    a.SPACE_TELESCOPE
+                  ) > 0
+                );
+              },
+            },
+            {
+              id: "telescope2",
+              name: "Bing Bang and Beyond",
+              description:
+                "The larger telescopes we have - the more we observe!",
+              requirementsDesc: ["Have 75 or more Telescopes"],
+              getCompleteCondition: function (e) {
+                return !(
+                  e.landingZone.landingZoneBuildings.getBuildingLevel(
+                    a.SPACE_TELESCOPE
+                  ) < 75
+                );
+              },
+              bonusesDesc: ["Space Telesopes are 25% more efficient"],
+              isHidden: !0,
+              unlockCondition: function (e) {
+                return (
+                  e.landingZone.landingZoneBuildings.getBuildingLevel(
+                    a.SPACE_TELESCOPE
+                  ) > 0
+                );
+              },
+            },
+            {
               id: "ageOfBatteries",
               name: "Fully Charged",
               description:
@@ -35736,11 +35884,11 @@
               },
               bonusesDesc: [],
               getCapacityMultiplier:
-                ((DN = {}),
-                (DN[l.POWER] = function (e) {
+                ((kN = {}),
+                (kN[l.POWER] = function (e) {
                   return 1.1;
                 }),
-                DN),
+                kN),
               isHidden: !0,
               unlockCondition: function (e) {
                 return !0;
@@ -35757,11 +35905,11 @@
               },
               bonusesDesc: [],
               getCapacityMultiplier:
-                ((XN = {}),
-                (XN[l.POWER] = function (e) {
+                ((HN = {}),
+                (HN[l.POWER] = function (e) {
                   return 1.1;
                 }),
-                XN),
+                HN),
               isHidden: !0,
               unlockCondition: function (e) {
                 return !0;
@@ -35841,35 +35989,34 @@
                 return !(!o || o > 0.25);
               },
               getFailureCondition: function (e) {
-                var t,
-                  n,
-                  i,
-                  o =
-                    null ===
-                      (i =
-                        null ===
-                          (n =
-                            null ===
-                              (t = e.prestige.colonizePlanet.currentCached) ||
-                            void 0 === t
-                              ? void 0
-                              : t.gainMult) || void 0 === n
-                          ? void 0
-                          : n.find(function (e) {
-                              return e.id === l.WATER;
-                            })) || void 0 === i
-                      ? void 0
-                      : i.amountValue;
+                var t, n, i;
+                if (!e.prestige.colonizePlanet.currentCached) return !1;
+                var o =
+                  null ===
+                    (i =
+                      null ===
+                        (n =
+                          null ===
+                            (t = e.prestige.colonizePlanet.currentCached) ||
+                          void 0 === t
+                            ? void 0
+                            : t.gainMult) || void 0 === n
+                        ? void 0
+                        : n.find(function (e) {
+                            return e.id === l.WATER;
+                          })) || void 0 === i
+                    ? void 0
+                    : i.amountValue;
                 return !o || o > 0.25;
               },
               bonusesDesc: [],
               isHidden: !1,
               getGainMultiplier:
-                ((xN = {}),
-                (xN[l.WATER] = function (e) {
+                ((YN = {}),
+                (YN[l.WATER] = function (e) {
                   return 1.25;
                 }),
-                xN),
+                YN),
               unlockCondition: function (e) {
                 return e.statistics.stats.xpTotal > 0;
               },
@@ -35882,14 +36029,14 @@
                 "Now you know how to obtain water even in the driest places.",
               requirementsDesc: [
                 "Have at least 500 population on planet with water multiplier < 0.1",
-                "Reach Spaceship Station on planet with water multiplier < 0.1",
+                "Reach Spaceship Station lvl 20 on planet with water multiplier < 0.1",
               ],
               getCompleteCondition: function (e) {
                 var t, n, i;
                 if (
                   e.landingZone.landingZoneBuildings.getBuildingLevel(
                     a.SPACESHIP_STATION
-                  ) <= 0
+                  ) < 20
                 )
                   return !1;
                 if (e.colony.colonists < 500) return !1;
@@ -35912,25 +36059,24 @@
                 return !(!o || o > 0.1);
               },
               getFailureCondition: function (e) {
-                var t,
-                  n,
-                  i,
-                  o =
-                    null ===
-                      (i =
-                        null ===
-                          (n =
-                            null ===
-                              (t = e.prestige.colonizePlanet.currentCached) ||
-                            void 0 === t
-                              ? void 0
-                              : t.gainMult) || void 0 === n
-                          ? void 0
-                          : n.find(function (e) {
-                              return e.id === l.WATER;
-                            })) || void 0 === i
-                      ? void 0
-                      : i.amountValue;
+                var t, n, i;
+                if (!e.prestige.colonizePlanet.currentCached) return !1;
+                var o =
+                  null ===
+                    (i =
+                      null ===
+                        (n =
+                          null ===
+                            (t = e.prestige.colonizePlanet.currentCached) ||
+                          void 0 === t
+                            ? void 0
+                            : t.gainMult) || void 0 === n
+                        ? void 0
+                        : n.find(function (e) {
+                            return e.id === l.WATER;
+                          })) || void 0 === i
+                    ? void 0
+                    : i.amountValue;
                 return !o || o > 0.1;
               },
               bonusesDesc: [
@@ -35949,14 +36095,14 @@
                 "Don't know if a tardigrade would survive here, but you have thrived!",
               requirementsDesc: [
                 "Have at least 500 population on planet with water multiplier < 0.02",
-                "Reach Spaceship Station on planet with water multiplier < 0.02",
+                "Reach Spaceship Station lvl 40 on planet with water multiplier < 0.02",
               ],
               getCompleteCondition: function (e) {
                 var t, n, i;
                 if (
                   e.landingZone.landingZoneBuildings.getBuildingLevel(
                     a.SPACESHIP_STATION
-                  ) <= 0
+                  ) < 40
                 )
                   return !1;
                 if (e.colony.colonists < 500) return !1;
@@ -35979,30 +36125,27 @@
                 return !(!o || o > 0.02);
               },
               getFailureCondition: function (e) {
-                var t,
-                  n,
-                  i,
-                  o =
-                    null ===
-                      (i =
-                        null ===
-                          (n =
-                            null ===
-                              (t = e.prestige.colonizePlanet.currentCached) ||
-                            void 0 === t
-                              ? void 0
-                              : t.gainMult) || void 0 === n
-                          ? void 0
-                          : n.find(function (e) {
-                              return e.id === l.WATER;
-                            })) || void 0 === i
-                      ? void 0
-                      : i.amountValue;
+                var t, n, i;
+                if (!e.prestige.colonizePlanet.currentCached) return !1;
+                var o =
+                  null ===
+                    (i =
+                      null ===
+                        (n =
+                          null ===
+                            (t = e.prestige.colonizePlanet.currentCached) ||
+                          void 0 === t
+                            ? void 0
+                            : t.gainMult) || void 0 === n
+                        ? void 0
+                        : n.find(function (e) {
+                            return e.id === l.WATER;
+                          })) || void 0 === i
+                    ? void 0
+                    : i.amountValue;
                 return !o || o > 0.02;
               },
-              bonusesDesc: [
-                "解锁新建筑，可以提高水泵的产量",
-              ],
+              bonusesDesc: ["Unlocks new building that increase water gain"],
               isHidden: !1,
               unlockCondition: function (e) {
                 return e.statistics.stats.xpTotal > 0;
@@ -36046,35 +36189,34 @@
                 return !(!o || o > 0.25);
               },
               getFailureCondition: function (e) {
-                var t,
-                  n,
-                  i,
-                  o =
-                    null ===
-                      (i =
-                        null ===
-                          (n =
-                            null ===
-                              (t = e.prestige.colonizePlanet.currentCached) ||
-                            void 0 === t
-                              ? void 0
-                              : t.gainMult) || void 0 === n
-                          ? void 0
-                          : n.find(function (e) {
-                              return e.id === l.POWER;
-                            })) || void 0 === i
-                      ? void 0
-                      : i.amountValue;
+                var t, n, i;
+                if (!e.prestige.colonizePlanet.currentCached) return !1;
+                var o =
+                  null ===
+                    (i =
+                      null ===
+                        (n =
+                          null ===
+                            (t = e.prestige.colonizePlanet.currentCached) ||
+                          void 0 === t
+                            ? void 0
+                            : t.gainMult) || void 0 === n
+                        ? void 0
+                        : n.find(function (e) {
+                            return e.id === l.POWER;
+                          })) || void 0 === i
+                    ? void 0
+                    : i.amountValue;
                 return !o || o > 0.25;
               },
               bonusesDesc: [],
               isHidden: !1,
               getGainMultiplier:
-                ((kN = {}),
-                (kN[l.POWER] = function (e) {
+                ((WN = {}),
+                (WN[l.POWER] = function (e) {
                   return 1.1;
                 }),
-                kN),
+                WN),
               unlockCondition: function (e) {
                 return e.statistics.stats.xpTotal > 0;
               },
@@ -36087,14 +36229,14 @@
                 "This is what life in perpetual twilight looks like.",
               requirementsDesc: [
                 "Have at least 500 population on planet with power multiplier < 0.1",
-                "Reach Spaceship Station on planet with power multiplier < 0.1",
+                "Reach Spaceship Station lvl 20 on planet with power multiplier < 0.1",
               ],
               getCompleteCondition: function (e) {
                 var t, n, i;
                 if (
                   e.landingZone.landingZoneBuildings.getBuildingLevel(
                     a.SPACESHIP_STATION
-                  ) <= 0
+                  ) < 20
                 )
                   return !1;
                 if (e.colony.colonists < 500) return !1;
@@ -36117,25 +36259,24 @@
                 return !(!o || o > 0.1);
               },
               getFailureCondition: function (e) {
-                var t,
-                  n,
-                  i,
-                  o =
-                    null ===
-                      (i =
-                        null ===
-                          (n =
-                            null ===
-                              (t = e.prestige.colonizePlanet.currentCached) ||
-                            void 0 === t
-                              ? void 0
-                              : t.gainMult) || void 0 === n
-                          ? void 0
-                          : n.find(function (e) {
-                              return e.id === l.POWER;
-                            })) || void 0 === i
-                      ? void 0
-                      : i.amountValue;
+                var t, n, i;
+                if (!e.prestige.colonizePlanet.currentCached) return !1;
+                var o =
+                  null ===
+                    (i =
+                      null ===
+                        (n =
+                          null ===
+                            (t = e.prestige.colonizePlanet.currentCached) ||
+                          void 0 === t
+                            ? void 0
+                            : t.gainMult) || void 0 === n
+                        ? void 0
+                        : n.find(function (e) {
+                            return e.id === l.POWER;
+                          })) || void 0 === i
+                    ? void 0
+                    : i.amountValue;
                 return !o || o > 0.1;
               },
               bonusesDesc: ['Unlock new job - "Energist" '],
@@ -36151,14 +36292,14 @@
               description: "Dark and cold. Can anything live here at all?",
               requirementsDesc: [
                 "Have at least 500 population on planet with power multiplier < 0.02",
-                "Reach Spaceship Station on planet with power multiplier < 0.02",
+                "Reach Spaceship Station lvl 40 on planet with power multiplier < 0.02",
               ],
               getCompleteCondition: function (e) {
                 var t, n, i;
                 if (
                   e.landingZone.landingZoneBuildings.getBuildingLevel(
                     a.SPACESHIP_STATION
-                  ) <= 0
+                  ) < 40
                 )
                   return !1;
                 if (e.colony.colonists < 500) return !1;
@@ -36181,25 +36322,24 @@
                 return !(!o || o > 0.02);
               },
               getFailureCondition: function (e) {
-                var t,
-                  n,
-                  i,
-                  o =
-                    null ===
-                      (i =
-                        null ===
-                          (n =
-                            null ===
-                              (t = e.prestige.colonizePlanet.currentCached) ||
-                            void 0 === t
-                              ? void 0
-                              : t.gainMult) || void 0 === n
-                          ? void 0
-                          : n.find(function (e) {
-                              return e.id === l.POWER;
-                            })) || void 0 === i
-                      ? void 0
-                      : i.amountValue;
+                var t, n, i;
+                if (!e.prestige.colonizePlanet.currentCached) return !1;
+                var o =
+                  null ===
+                    (i =
+                      null ===
+                        (n =
+                          null ===
+                            (t = e.prestige.colonizePlanet.currentCached) ||
+                          void 0 === t
+                            ? void 0
+                            : t.gainMult) || void 0 === n
+                        ? void 0
+                        : n.find(function (e) {
+                            return e.id === l.POWER;
+                          })) || void 0 === i
+                    ? void 0
+                    : i.amountValue;
                 return !o || o > 0.02;
               },
               bonusesDesc: [
@@ -36237,12 +36377,13 @@
                 return !(!n || n < 2);
               },
               getFailureCondition: function (e) {
-                var t,
-                  n =
-                    null === (t = e.prestige.colonizePlanet.currentCached) ||
-                    void 0 === t
-                      ? void 0
-                      : t.buildingPriceMultipliers;
+                var t;
+                if (!e.prestige.colonizePlanet.currentCached) return !1;
+                var n =
+                  null === (t = e.prestige.colonizePlanet.currentCached) ||
+                  void 0 === t
+                    ? void 0
+                    : t.buildingPriceMultipliers;
                 return !n || n < 2;
               },
               bonusesDesc: ["Reduce all building prices by 10%"],
@@ -36259,14 +36400,14 @@
                 "Even the toughest working conditions won't stop us from building skyscrapers.",
               requirementsDesc: [
                 "Have at least 500 population on planet with building price multiplier greater than 5",
-                "Reach Spaceship Station on planet with building price multiplier greater than 5",
+                "Reach Spaceship Station lvl 20 on planet with building price multiplier greater than 5",
               ],
               getCompleteCondition: function (e) {
                 var t;
                 if (
                   e.landingZone.landingZoneBuildings.getBuildingLevel(
                     a.SPACESHIP_STATION
-                  ) <= 0
+                  ) < 20
                 )
                   return !1;
                 if (e.colony.colonists < 500) return !1;
@@ -36278,12 +36419,13 @@
                 return !(!n || n < 5);
               },
               getFailureCondition: function (e) {
-                var t,
-                  n =
-                    null === (t = e.prestige.colonizePlanet.currentCached) ||
-                    void 0 === t
-                      ? void 0
-                      : t.buildingPriceMultipliers;
+                var t;
+                if (!e.prestige.colonizePlanet.currentCached) return !1;
+                var n =
+                  null === (t = e.prestige.colonizePlanet.currentCached) ||
+                  void 0 === t
+                    ? void 0
+                    : t.buildingPriceMultipliers;
                 return !n || n < 5;
               },
               bonusesDesc: [],
@@ -36303,14 +36445,14 @@
                 "We will never stop construction of our future — even if every brick seems an overwhelming burden.",
               requirementsDesc: [
                 "Have at least 500 population on planet with building price multiplier greater than 20",
-                "Reach Spaceship Station on planet with building price multiplier greater than 20",
+                "Reach Spaceship Station lvl 40 on planet with building price multiplier greater than 20",
               ],
               getCompleteCondition: function (e) {
                 var t;
                 if (
                   e.landingZone.landingZoneBuildings.getBuildingLevel(
                     a.SPACESHIP_STATION
-                  ) <= 0
+                  ) < 40
                 )
                   return !1;
                 if (e.colony.colonists < 500) return !1;
@@ -36322,12 +36464,13 @@
                 return !(!n || n < 20);
               },
               getFailureCondition: function (e) {
-                var t,
-                  n =
-                    null === (t = e.prestige.colonizePlanet.currentCached) ||
-                    void 0 === t
-                      ? void 0
-                      : t.buildingPriceMultipliers;
+                var t;
+                if (!e.prestige.colonizePlanet.currentCached) return !1;
+                var n =
+                  null === (t = e.prestige.colonizePlanet.currentCached) ||
+                  void 0 === t
+                    ? void 0
+                    : t.buildingPriceMultipliers;
                 return !n || n < 20;
               },
               bonusesDesc: ["Reduce all building prices by 25%"],
@@ -36363,12 +36506,13 @@
                 return !(!n || n < 50);
               },
               getFailureCondition: function (e) {
-                var t,
-                  n =
-                    null === (t = e.prestige.colonizePlanet.currentCached) ||
-                    void 0 === t
-                      ? void 0
-                      : t.buildingPriceMultipliers;
+                var t;
+                if (!e.prestige.colonizePlanet.currentCached) return !1;
+                var n =
+                  null === (t = e.prestige.colonizePlanet.currentCached) ||
+                  void 0 === t
+                    ? void 0
+                    : t.buildingPriceMultipliers;
                 return !n || n < 50;
               },
               bonusesDesc: [],
@@ -36382,7 +36526,7 @@
               resetFailureOnXPPrestige: !0,
             },
           ],
-          yh = (function () {
+          Ch = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -36416,9 +36560,9 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          Oh = function () {
+          vh = function () {
             return (
-              (Oh =
+              (vh =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -36427,16 +36571,16 @@
                         (e[o] = t[o]);
                   return e;
                 }),
-              Oh.apply(this, arguments)
+              vh.apply(this, arguments)
             );
           },
-          Lh = (function (e) {
+          Sh = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (t.achievementsState = []), t;
             }
             return (
-              yh(t, e),
+              Ch(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -36449,11 +36593,11 @@
               (t.prototype.dataToUI = function () {
                 var e = this;
                 return {
-                  totalAmount: Th.length,
+                  totalAmount: Lh.length,
                   amountCompleted: this.achievementsState.filter(function (e) {
                     return e.statusId === IN.COMLETE;
                   }).length,
-                  amountHidden: Th.filter(function (e) {
+                  amountHidden: Lh.filter(function (e) {
                     return e.isHidden;
                   }).length,
                   hiddenComplete: this.achievementsState
@@ -36461,11 +36605,11 @@
                       return e.statusId === IN.COMLETE;
                     })
                     .filter(function (e) {
-                      return !!Th.find(function (t) {
+                      return !!Lh.find(function (t) {
                         return t.id === e.id && t.isHidden;
                       });
                     }).length,
-                  list: Th.filter(function (t) {
+                  list: Lh.filter(function (t) {
                     return e.isUnlocked(t);
                   }).map(function (t) {
                     return e.currentAchievementToUI(t);
@@ -36474,7 +36618,7 @@
               }),
               (t.prototype.isUnlocked = function (e) {
                 return (
-                  e.unlockCondition(Ph) ||
+                  e.unlockCondition(_h) ||
                   this.achievementsState.find(function (t) {
                     return t.id === e.id;
                   })
@@ -36492,7 +36636,7 @@
                     }),
                     (t = this.achievementsState.length - 1)),
                   this.achievementsState[t].statusId === IN.COMLETE &&
-                    Ph.newNotifications.registerNotification(
+                    _h.newNotifications.registerNotification(
                       "progress:achievements:".concat(e.id)
                     ),
                   {
@@ -36507,79 +36651,79 @@
                       this.achievementsState[t].statusId === IN.COMLETE,
                     status: this.achievementsState[t].statusId,
                     gain: e.getGain
-                      ? W.getValue(e.getGain, Sh.getInstance())
+                      ? W.getValue(e.getGain, Mh.getInstance())
                           .filter(function (e) {
                             return e.amount;
                           })
                           .map(function (e) {
-                            return Oh(Oh({}, e), {
+                            return vh(vh({}, e), {
                               amountValue: e.amount,
                               amount: F(e.amount),
                             });
                           })
                       : [],
                     max: e.getCapacityEffect
-                      ? W.getValue(e.getCapacityEffect, Sh.getInstance())
+                      ? W.getValue(e.getCapacityEffect, Mh.getInstance())
                           .filter(function (e) {
                             return e.amount;
                           })
                           .map(function (e) {
-                            return Oh(Oh({}, e), {
+                            return vh(vh({}, e), {
                               amountValue: e.amount,
                               amount: F(e.amount),
                             });
                           })
                       : [],
                     gainEffect: e.getEffect
-                      ? W.getValue(e.getEffect, Sh.getInstance())
+                      ? W.getValue(e.getEffect, Mh.getInstance())
                           .filter(function (e) {
                             return e.amount;
                           })
                           .map(function (e) {
-                            return Oh(Oh({}, e), {
+                            return vh(vh({}, e), {
                               amountValue: e.amount,
                               amount: F(e.amount),
                             });
                           })
                       : [],
                     gainMult: e.getGainMultiplier
-                      ? W.getValue(e.getGainMultiplier, Sh.getInstance())
+                      ? W.getValue(e.getGainMultiplier, Mh.getInstance())
                           .filter(function (e) {
                             return e.amount;
                           })
                           .map(function (e) {
-                            return Oh(Oh({}, e), {
+                            return vh(vh({}, e), {
                               amountValue: e.amount,
                               amount: "x".concat(F(e.amount)),
                             });
                           })
                       : [],
                     maxMult: e.getCapacityMultiplier
-                      ? W.getValue(e.getCapacityMultiplier, Sh.getInstance())
+                      ? W.getValue(e.getCapacityMultiplier, Mh.getInstance())
                           .filter(function (e) {
                             return e.amount;
                           })
                           .map(function (e) {
-                            return Oh(Oh({}, e), {
+                            return vh(vh({}, e), {
                               amountValue: e.amount,
                               amount: "x".concat(F(e.amount)),
                             });
                           })
                       : [],
                     effectMult: e.getEffectMultiplier
-                      ? W.getValue(e.getEffectMultiplier, Sh.getInstance())
+                      ? W.getValue(e.getEffectMultiplier, Mh.getInstance())
                           .filter(function (e) {
                             return e.amount;
                           })
                           .map(function (e) {
-                            return Oh(Oh({}, e), {
+                            return vh(vh({}, e), {
                               amountValue: e.amount,
                               amount: "x".concat(F(e.amount)),
                             });
                           })
                       : [],
                     craftingMult: e.getCraftingMultiplier
-                      ? e.getCraftingMultiplier(Ph)
+                      ? e.getCraftingMultiplier(_h)
                       : 1,
                   }
                 );
@@ -36588,19 +36732,19 @@
                 var e = this;
                 this.achievementsState.forEach(function (t, n) {
                   if (t.statusId === IN.PENDING) {
-                    var i = Th.find(function (e) {
+                    var i = Lh.find(function (e) {
                       return e.id === t.id;
                     });
                     if (i)
-                      return i.getCompleteCondition(Ph)
+                      return i.getCompleteCondition(_h)
                         ? ((e.achievementsState[n].statusId = IN.COMLETE),
                           (e.achievementsState[n].completeAt =
-                            Ph.statistics.stats.timeInGame),
-                          Ph.resources.reassertBalances(),
-                          void Ph.regenerateCache())
+                            _h.statistics.stats.timeInGame),
+                          _h.resources.reassertBalances(),
+                          void _h.regenerateCache())
                         : void (
                             i.getFailureCondition &&
-                            i.getFailureCondition(Ph) &&
+                            i.getFailureCondition(_h) &&
                             (e.achievementsState[n].statusId = IN.FAILED)
                           );
                   }
@@ -36618,12 +36762,12 @@
                 );
               }),
               (t.prototype.process = function (e) {
-                Ph.statistics.stats.timeInGame % 1 < e &&
+                _h.statistics.stats.timeInGame % 1 < e &&
                   (console.log("checkAchievementState", this.achievementsState),
                   this.checkAchievementsStatus());
               }),
               (t.prototype.getEffectGain = function (e) {
-                var t = Th.filter(function (t) {
+                var t = Lh.filter(function (t) {
                     var n;
                     return (
                       t.getEffect &&
@@ -36640,7 +36784,7 @@
                         return e.id === i.id;
                       });
                       if (o && o.getEffect) {
-                        var r = o.getEffect[e](Sh.getInstance());
+                        var r = o.getEffect[e](Mh.getInstance());
                         n.push({
                           label: "Achievement ".concat(o.name),
                           value: r,
@@ -36654,7 +36798,7 @@
                 );
               }),
               (t.prototype.getEffectMultiplier = function (e) {
-                var t = Th.filter(function (t) {
+                var t = Lh.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getEffectMultiplier) ||
                     void 0 === n
@@ -36669,7 +36813,7 @@
                         return e.id === i.id;
                       });
                       if (o && o.getEffectMultiplier) {
-                        var r = o.getEffectMultiplier[e](Sh.getInstance());
+                        var r = o.getEffectMultiplier[e](Mh.getInstance());
                         n.push({
                           label: "Achievement "
                             .concat(o.name, ": ")
@@ -36685,7 +36829,7 @@
                 );
               }),
               (t.prototype.getResourceBeingProduced = function (e) {
-                var t = Th.filter(function (t) {
+                var t = Lh.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getGain) || void 0 === n
                       ? void 0
@@ -36705,7 +36849,7 @@
                           ? void 0
                           : o[e])
                       ) {
-                        var a = r.getGain[e](Sh.getInstance());
+                        var a = r.getGain[e](Mh.getInstance());
                         n.push({
                           label: "Achievement "
                             .concat(r.name, ": ")
@@ -36721,7 +36865,7 @@
                 );
               }),
               (t.prototype.getCraftingMultiplier = function () {
-                var e = Th.filter(function (e) {
+                var e = Lh.filter(function (e) {
                     return !!e.getCraftingMultiplier;
                   }),
                   t = [];
@@ -36732,7 +36876,7 @@
                         return e.id === n.id;
                       });
                       if (i && i.getCraftingMultiplier) {
-                        var o = i.getCraftingMultiplier(Sh.getInstance());
+                        var o = i.getCraftingMultiplier(Mh.getInstance());
                         t.push({
                           label: "Achievement "
                             .concat(i.name, ": ")
@@ -36748,7 +36892,7 @@
                 );
               }),
               (t.prototype.getResourceMultiplier = function (e) {
-                var t = Th.filter(function (t) {
+                var t = Lh.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getGainMultiplier) || void 0 === n
                       ? void 0
@@ -36768,7 +36912,7 @@
                           ? void 0
                           : o[e])
                       ) {
-                        var a = r.getGainMultiplier[e](Sh.getInstance());
+                        var a = r.getGainMultiplier[e](Mh.getInstance());
                         n.push({
                           label: "Achievement "
                             .concat(r.name, ": ")
@@ -36784,7 +36928,7 @@
                 );
               }),
               (t.prototype.getResourceBeingStored = function (e) {
-                var t = Th.filter(function (t) {
+                var t = Lh.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getCapacityEffect) || void 0 === n
                       ? void 0
@@ -36804,7 +36948,7 @@
                           ? void 0
                           : o[e])
                       ) {
-                        var a = r.getCapacityEffect[e](Sh.getInstance());
+                        var a = r.getCapacityEffect[e](Mh.getInstance());
                         n.push({
                           label: "Achievement "
                             .concat(r.name, ": ")
@@ -36820,7 +36964,7 @@
                 );
               }),
               (t.prototype.getResourceStorageMultiplier = function (e) {
-                var t = Th.filter(function (t) {
+                var t = Lh.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getCapacityMultiplier) ||
                     void 0 === n
@@ -36841,7 +36985,7 @@
                           ? void 0
                           : o[e])
                       ) {
-                        var a = r.getCapacityMultiplier[e](Sh.getInstance());
+                        var a = r.getCapacityMultiplier[e](Mh.getInstance());
                         n.push({
                           label: "Achievement "
                             .concat(r.name, ": ")
@@ -36857,13 +37001,13 @@
                 );
               }),
               (t.prototype.resetFailedOnKP = function () {
-                var e = Th.filter(function (e) {
+                var e = Lh.filter(function (e) {
                   return e.resetFailureOnKPPrestige;
                 });
                 this.reset(e);
               }),
               (t.prototype.resetFailedOnXP = function () {
-                var e = Th.filter(function (e) {
+                var e = Lh.filter(function (e) {
                   return e.resetFailureOnXPPrestige;
                 });
                 this.reset(e);
@@ -36877,15 +37021,15 @@
                     : e.find(function (e) {
                         return e.id === t.id;
                       })
-                    ? Oh(Oh({}, t), { statusId: IN.PENDING })
+                    ? vh(vh({}, t), { statusId: IN.PENDING })
                     : t;
                 });
               }),
               t
             );
           })(P),
-          Ch = Lh.getInstance(),
-          vh = (function () {
+          Ph = Sh.getInstance(),
+          Bh = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -36919,7 +37063,7 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          Sh = (function (e) {
+          Mh = (function (e) {
             function t() {
               var t = this,
                 n = Date.now();
@@ -36947,20 +37091,20 @@
                 (t.science = rE),
                 (t.crafting = dE),
                 (t.goals = Mg),
-                (t.achievements = Ch),
+                (t.achievements = Ph),
                 (t.laws = wg),
                 (t.space = um),
                 (t.expedition = Lm),
                 (t.newNotifications = Sm),
                 (t.prestige = Tm),
                 (t.statistics = _m),
-                (t.environment = KN),
-                (t.queuedItems = JN),
-                (t.eventLog = ih),
-                (t.resourceEffect = oh),
-                (t.expeditionV2 = sh),
-                (t.searchData = ph),
-                (t.presets = Rh),
+                (t.environment = QN),
+                (t.queuedItems = th),
+                (t.eventLog = ah),
+                (t.resourceEffect = ch),
+                (t.expeditionV2 = ph),
+                (t.searchData = gh),
+                (t.presets = Oh),
                 setInterval(function () {
                   t.isLoading
                     ? console.warn("Game is loading... Skip")
@@ -37030,7 +37174,7 @@
               );
             }
             return (
-              vh(t, e),
+              Bh(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -37172,11 +37316,11 @@
               t
             );
           })(P),
-          Ph = Sh.getInstance();
+          _h = Mh.getInstance();
         self.addEventListener("message", function (e) {
           var t = e.data;
           console.log("send to worker: ", t),
-            Ph.workDispatcher.handleInput(t.type, t.payload);
+            _h.workDispatcher.handleInput(t.type, t.payload);
         });
       },
     },

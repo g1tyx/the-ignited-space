@@ -23805,6 +23805,55 @@
                                                 children: [
                                                   (0, e.jsx)("h3", {
                                                     children:
+                                                      "v0.2.10b Tiny Update",
+                                                  }),
+                                                  (0, e.jsx)(
+                                                    "span",
+                                                    cl(
+                                                      { className: "date" },
+                                                      { children: "09/10/2023" }
+                                                    )
+                                                  ),
+                                                ],
+                                              }
+                                            )
+                                          ),
+                                          (0, e.jsxs)(
+                                            "ul",
+                                            cl(
+                                              { className: "features" },
+                                              {
+                                                children: [
+                                                  (0, e.jsx)("li", {
+                                                    children:
+                                                      "Added few more achievements",
+                                                  }),
+                                                  (0, e.jsx)("li", {
+                                                    children:
+                                                      "Fixed some achievements related bugs",
+                                                  }),
+                                                ],
+                                              }
+                                            )
+                                          ),
+                                        ],
+                                      }
+                                    )
+                                  ),
+                                  (0, e.jsxs)(
+                                    "div",
+                                    cl(
+                                      { className: "version-block" },
+                                      {
+                                        children: [
+                                          (0, e.jsxs)(
+                                            "div",
+                                            cl(
+                                              { className: "version-title" },
+                                              {
+                                                children: [
+                                                  (0, e.jsx)("h3", {
+                                                    children:
                                                       "v0.2.10a Bugfixes Update",
                                                   }),
                                                   (0, e.jsx)(
