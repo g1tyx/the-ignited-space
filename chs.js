@@ -1784,7 +1784,7 @@ var cnItems = {
     "No Time For Resque III": "马不停蹄 III",
     "There's no point in searching for a new home if we perish before reaching it.": "如果我们在抵达新家之前就已灰飞烟灭，那寻找它的意义又是什么？",
     "Reach 10 colonists within 3 minutes of run": "在开局 3 分钟内达到 10 人口",
-    "Unlock new law, increasing colonists happiness": "解锁一个新的政策，它可以提高幸福度",
+    "Unlock new law, increasing colonists happiness": "解锁一个新政策，可以提高幸福度",
     "Thermonuclear Superpower": "热核大国",
     "Here it is—the true source of the mightiest stars. Thermonuclear reactions!": "恒星的力量已经在我们手中。热核反应！",
     "Have 100 or more Thermonuclear Power Plants": "拥有至少 100 座热核发电站",
