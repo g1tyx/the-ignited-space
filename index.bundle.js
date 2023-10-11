@@ -29663,7 +29663,7 @@
                                               className: "feature-item",
                                               onClick: function () {
                                                 return (
-                                                  (e = t),
+                                                  (e = n.index),
                                                   void (
                                                     confirm(
                                                       "When you colonize new planet you aren't awarded any KP, but you gain XP instead. In case you select too hard planet you can abondon it in \"Settings\" tab, and you'll be landed to default planet. Are you sure?"
