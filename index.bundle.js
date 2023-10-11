@@ -77,7 +77,7 @@
           e.id,
           "\nbody {\n    padding: 0;\n    margin: 0;\n}\n\nbody * {\n    box-sizing: border-box;\n    font-family: 'Abel', sans-serif;;\n}\n\nbutton, input {\n    border: 1px solid #777;\n    border-radius: 5px;\n    padding: 10px;\n}\n\ninput {\n    padding: 5px;\n}\n\ninput[type=\"file\"] {\n    display: none;\n}\n\nbutton {\n    cursor: pointer;\n    padding: 8px 12px;\n}\n\nbutton.secondary {\n    background: rgb(35, 68, 92);\n}\n\nbutton.med {\n    min-width: 80px;\n}\n\nbutton.big {\n    min-width: 130px;\n}\n\nbutton.danger {\n    background: rgb(223,53,54);\n}\n\n.page {\n    height: 100vh;\n}\n\n.game {\n    display: flex;\n}\n\n.game .content {\n    flex: 1;\n    padding-left: 20px;\n    padding-right: 20px;\n    font-size: 14px;\n    height: calc(100vh - 160px);\n    /*overflow-y: auto;*/\n}\n\n.game .right-panel {\n    position: relative;\n    height: calc(100vh - 160px);\n}\n\n.game .right-panel.expanded {\n    width: 320px;\n    padding: 0 16px;\n}\n\n.game .right-panel.collapsed {\n    width: 0;\n}\n\n.game .right-panel.collapsed .submenu {\n    display: none;\n}\n\n.game .right-panel .expand-collapse-panel {\n    position: absolute;\n    display: flex;\n    width: 32px;\n    height: 32px;\n    font-size: 20px;\n    left: 0px;\n    top: 0px;\n    justify-content: center;\n    align-items: center;\n    cursor: pointer;\n    border-radius: 4px;\n}\n\n.game .right-panel .submenu {\n    margin-left: 48px;\n}\n\n.game .right-panel.collapsed .expand-collapse-panel {\n    left: -48px;\n}\n\n.game .right-panel .add-to-queue select,\n.game .right-panel .add-to-queue button\n{\n    margin: 5px 0;\n    width: 140px;\n}\n\n.game .right-panel .queue-item {\n    display: flex;\n    justify-content: space-between;\n    padding: 5px 0;\n    align-items: center;\n    font-size: 12px;\n}\n\n.game .right-panel .queue-item .move-controls {\n    width: 30px;\n    display: flex;\n    justify-content: space-between;\n}\n\n.game .right-panel .queue-item .move-controls .move {\n    cursor: pointer;\n    padding: 5px;\n}\n\n.game .right-panel .queue-item p {\n    margin: 5px 0;\n    width: 140px;\n    text-overflow: ellipsis;\n}\n\n.game .right-panel .event-item {\n    font-size: 12px;\n}\n\n.game .right-panel .event-item.colonist-arrived .line,\n.game .right-panel .event-item.expedition-arrived .line{\n    color: #90fd70;\n}\n\n.game .right-panel .event-item.colonist-died .line {\n    color: #ff6767;\n}\n\n.game .right-panel .event-item .time {\n    color: #9799f9;\n}\n.game .right-panel .event-item .line {\n    display: inline-block;\n    margin-left: 8px;\n}\n\n.game .right-panel .filters .feature-list {\n    display: flex;\n    flex-wrap: wrap;\n}\n\n.game .right-panel .filters .feature-list .filter-entry{\n    width: 130px;\n}\n\n\n.game .sidebar {\n    height: calc(100vh - 160px);\n}\n\n.header {\n    height: 140px;\n}\n\n.header .top {\n    padding: 16px;\n    display: flex;\n    justify-content: space-between;\n}\n\n.header .top h1 {\n    margin: 0 0 20px;\n}\n\n.header .menu ul {\n    list-style: none;\n    display: flex;\n    padding: 0;\n    margin: 0 0 8px;\n}\n\n.header .menu ul li .menu-inner {\n    padding: 8px 16px;\n    cursor: pointer;\n}\n\n.flex {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n}\n\n.sidebar {\n    padding: 0;\n    margin: 0;\n}\n\n.resources-sidebar .resource-item {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    padding: 5px 8px;\n    font-size: 14px;\n}\n\n.resources-sidebar .resource-item p {\n    margin: 0;\n    position: relative;\n    min-width: 60px;\n}\n\n\n.resources-sidebar .resource-item .resource {\n    width: 85px;\n}\n\n.features-block {\n    border: 1px solid #222;\n    padding: 12px;\n    border-radius: 4px;\n    margin-bottom: 8px;\n}\n\n.features-block .features-title {\n    margin-bottom: 16px;\n    font-size: 16px;\n    display: flex;\n    justify-content: space-between;\n}\n\n.feature-list.flex {\n    flex-wrap: wrap;\n    justify-content: flex-start;\n}\n\n.buildings-wrap .chips-wrap .chip {\n    width: 270px;\n}\n\n.chips-wrap .chip {\n    width: 200px;\n    height: 40px;\n    padding: 8px;\n    border: 1px solid #234;\n    border-radius: 4px;\n    position: relative;\n    margin: 5px 20px;\n    font-size: 15px;\n    position: relative;\n    background-color: #222222;\n}\n\n.chips-wrap .chip .bg {\n    position: absolute;\n    height: 100%;\n    top: 0;\n    left: 0;\n    background-color: #172334;\n    border-radius: 4px;\n}\n\n.animated .chips-wrap .chip .bg {\n    transition-property: width;\n    transition-duration: 0.2s;\n    transition-delay: 0s;\n    transition-timing-function: linear;\n}\n\n.chips-wrap.building-unlock .chip .bg {\n    background-color: #376384;\n}\n\n.chips-wrap.resource-unlock .chip .bg {\n    background-color: #377334;\n}\n\n.chips-wrap.special .chip .bg {\n    background-color: #775374;\n}\n\n\n.chips-wrap .chip .chip-content {\n    position: absolute;\n    height: 100%;\n    width: 100%;\n    top: 0;\n    left: 0;\n    display: flex;\n    align-items: center;\n}\n\n.chips-wrap .chip .chip-content .stick-left {\n    flex: 1;\n    padding-left: 5px;\n    cursor: pointer;\n}\n\n.chips-wrap .chip .name-label {\n    text-overflow: ellipsis;\n    max-width: calc(100% - 30px);\n    white-space: nowrap;\n    overflow: hidden;\n    display: inline-block;\n    user-select: none;\n}\n\n.chips-wrap.disabled .chip {\n    color: #999;\n    cursor: not-allowed;\n    border-color: #444;\n}\n\nbody .chips-wrap.warning .chip {\n    border-color: rgba(244, 202, 44, 0.3);\n}\n\nbody .chips-wrap.warning .chip:after {\n    background-image: url(" +
             m +
-            ");\n    background-size: 25px 25px;\n    display: block;\n    position: absolute;\n    width: 25px;\n    height: 25px;\n    z-index: 3;\n    content: '';\n    top: -10px;\n    right: -10px;\n}\n\n.chips-wrap.usage-highlight .chip {\n    border-color: #eeaa44;\n}\n\n.chips-wrap.disabled.blocked.soft-lock .chip {\n    color: #ff5757;\n    cursor: not-allowed;\n}\n\n.chips-wrap.disabled.soft-lock .chip {\n    color: #ffa767;\n    cursor: not-allowed;\n}\n\n.chips-wrap.enabled .chip .chip-content .stick-left:hover {\n    filter: brightness(140%);\n}\n\n.chips-wrap .chip .stick-right {\n    position: absolute;\n    right: 8px;\n    top: 2px;\n    display: flex;\n    align-items: center;\n}\n\n.chips-wrap .chip .level-label {\n    padding: 5px;\n    font-size: 12px;\n    border-radius: 8px;\n}\n\n.chips-wrap .chip .controls {\n    display: block;\n    font-size: 18px;\n    padding: 3px 2px;\n}\n\n.chips-wrap .chip .controls .control {\n    display: block;\n    width: 24px;\n    height: 24px;\n    text-align: center;\n    cursor: pointer;\n}\n.chips-wrap .chip .controls.disabled .control {\n    display: block;\n    width: 24px;\n    height: 24px;\n    text-align: center;\n    cursor: not-allowed;\n}\n\n.chips-wrap .chip .controls:not(.disabled) .control:hover {\n    border-radius: 50%;\n}\n\n.description-hint {\n    padding: 16px;\n    border-radius: 4px;\n}\n\n.description-hint .description {\n    font-size: 13px;\n}\n\n.description-hint .wrap {\n    padding: 8px 0;\n}\n\n.cost-block {\n    width: 160px;\n    padding-bottom: 4px;\n}\n\n.cost-block p.requirement,\n.gain-block p.requirement{\n    font-size: 13px;\n    padding-bottom: 2px;\n    margin-bottom: 2px;\n    margin-top: 4px;\n    display: flex;\n    justify-content: space-between;\n}\n\n.gain-block p.requirement.green {\n    color: #90fd70;\n}\n\n.gain-block p.requirement.red {\n    color: #ff6767;\n}\n\n.cost-block .requirement.missing {\n    color: #ff6767;\n}\n\n.cost-block .progressBar {\n    width: 100%;\n    position: relative;\n    height: 3px;\n    background: #333;\n}\n\n.cost-block .progressBar .filling {\n    background: #575989;\n    height: 100%;\n    position: absolute;\n    top: 0px;\n    left: 0px;\n}\n\n.submenu {\n    display: flex;\n    justify-content: flex-start;\n}\n\n.submenu .submenu-item {\n    padding: 8px 16px;\n    cursor: pointer;\n}\n\n.jobs .feature-list {\n    display: flex;\n    flex-wrap: wrap;\n}\n\n.job-card {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    width: 380px;\n    padding: 8px;\n    margin: 8px;\n    border-radius: 4px;\n}\n\n.job-card .job-labour {\n    width: 40px;\n    padding-left: 5px;\n}\n\n.job-card .title {\n    width: 160px;\n}\n.job-card .set-amount {\n    display: flex;\n    align-items: center;\n}\n\n\n.job-card .set-amount button {\n    width: 30px;\n    height: 30px;\n    border-radius: 4px;\n    padding: 4px;\n    cursor: pointer;\n    margin: 0 4px;\n}\n\n.job-card .set-amount input {\n    width: 80px;\n    height: 30px;\n    border-radius: 4px;\n}\n\n.resources-sidebar {\n    height: calc(100% - 40px);\n    display: flex;\n    flex-direction: column;\n}\n\n.resources-sidebar .main-resources-wrap {\n    max-height: calc(100vh - 550px);\n}\n\n.resources-sidebar .main-resources-wrap .main-resources {\n    height: 100%;\n}\n\n.resources-sidebar .bottom-block {\n    position: absolute;\n    bottom: 12px\n}\n\n.resources-sidebar .secondary-resources {\n    display: flex;\n    flex: 1;\n    min-height: 0px;\n}\n\n.resources-sidebar .secondary-resources .secondary-wrap {\n    width: 100%;\n}\n\n.resources-sidebar .secondary-resources .container-scrollable {\n    height: calc(100% - 50px);\n}\n\n.heading-pre-menu {\n    display: flex;\n}\n\n.heading-pre-menu .env-wrap {\n    margin-left: 40px;\n    display: flex;\n}\n.heading-pre-menu .env-wrap p {\n    margin: 5px 0;\n}\n\n.heading-pre-menu .env-wrap .time-wrap {\n    margin-left: 20px;\n}\n\n.heading-pre-menu .env-wrap .use-mult {\n    display: flex;\n}\n\n.heading-pre-menu .env-wrap .use-mult .item {\n    margin-right: 10px;\n    text-decoration: underline;\n    cursor: pointer;\n}\n\n.heading-pre-menu .env-wrap .use-mult .item.selected {\n    color: #ee7744;\n}\n\n.inner .editor-wrap.columns {\n    height: calc(100vh - 220px);\n}\n\n.inner .editor-wrap.columns .ship-stats-wrap {\n    height: calc(100vh - 340px);\n}\n\n.small-note {\n    font-size: 12px;\n    font-style: italic;\n}\n\n@media screen and (max-height: 850px) {\n\n   /* .resources-sidebar .main-resources {\n        height: calc(100vh - 550px);\n    }*/\n\n    .resources-sidebar .secondary-resources .container-scrollable {\n        height: 150px;\n    }\n\n}\n\n.hint-caps p {\n    display: flex;\n    justify-content: space-between;\n    font-size: 12px;\n    margin: 4px;\n}\n\n.break-down .block {\n    padding-left: 12px;\n    padding-bottom: 12px;\n}\n\n.break-down .block p {\n    display: flex;\n    justify-content: space-between;\n    font-size: 12px;\n    margin: 4px;\n}\n\n.break-down .block p span:first-child {\n    margin-right: 20px;\n}\n\n.fit-height {\n    height: 100%;\n}\n\n.inner-scrollable.planet,\n.inner-scrollable.science {\n    height: calc(100% - 35px);\n}\n\n.inner-scrollable.laws {\n    height: calc(100% - 95px);\n}\n.inner-scrollable.achievements-list-wrap {\n    height: calc(100% - 215px);\n}\n\n\n.inner {}\n\n.goal-paper {\n    width: 320px;\n    height: 100px;\n    padding: 4px;\n}\n\n.goal-paper .goal-container p {\n    font-size: 12px;\n    margin: 5px;\n}\n\n.goal-paper .goal-container .goal-req {\n    display: flex;\n    justify-content: space-between;\n}\n\n.goal-req.complete span{\n    color: #45cd45;\n}\n\n.goal-paper.features-block .features-title {\n    margin-bottom: 8px;\n}\n\n.settings .set-row {\n    display: flex;\n    padding: 4px;\n}\n\n.settings .set-row .label {\n    width: 30%;\n}\n\n.settings .set-row .val textarea {\n    height: 100px;\n    width: 300px;\n    margin: 5px 0px;\n    display: block;\n}\n\n.happiness .factor-wrap {\n    margin-right: 25px;\n    padding-right: 15px;\n}\n\n.overview.population .line {\n    display: flex;\n    flex-wrap: wrap;\n}\n\n.overview.population .line p{\n    width: 150px;\n}\n\n.overview.happiness .feature-list .line {\n    display: flex;\n    flex-wrap: wrap;\n}\n\n.law-description .title {\n    font-weight: bold;\n}\n\n.laws-list .law-box {\n    padding: 10px;\n}\n\n.laws-list .law-box .law-options {\n    display: flex;\n}\n\n.laws-list .law-box .law-options .option-box {\n    padding: 4px 12px;\n    cursor: pointer;\n    margin: 0 10px;\n}\n\n.law-option-inner p {\n    margin: 0;\n}\n\n.version-panes {\n    display: flex;\n}\n\n.version-title {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n}\n\n.version-panes .about {\n    margin: 0 30px;\n    max-width: 300px;\n}\n\n.goal-paper.features-block .features-title span {\n    color: #ee7744;\n}\n\n.goal-paper.features-block {\n    border-color: #233444;\n}\n\n.transmit-wrap .bold {\n    color: #ee7744;\n    font-weight: bold;\n}\n\n.popup-link {\n    color: #ee7744;\n    cursor: pointer;\n}\n\n.expeditions-wrap .chips-wrap .chip {\n    width: 340px;\n    margin-left: 10px;\n    margin-top: 10px;\n}\n\n.notification-container {\n    position: relative;\n}\n\n.notification-container.label-wrap {\n    padding-right: 18px;\n}\n\n.notification-container span.new-label {\n    position: absolute;\n    display: block;\n    top: 0;\n    right: 0;\n    width: 15px;\n    height: 15px;\n    border-radius: 50%;\n    background-color: #ee7744;\n}\n\n.animated .notification-container span.new-label {\n    animation: blinkingBackground 2s infinite;\n}\n\n@keyframes blinkingBackground{\n    0%\t\t{ background-color: #ee7744;}\n    25%\t\t{ background-color: #fd5020;}\n    50%\t\t{ background-color: #ef0a1a;}\n    75%\t\t{ background-color: #fd5020;}\n    100%\t        { background-color: #ee7744;}\n}\n\n.notification-container.action-wrap span.new-label,\n.notification-container.building-wrap span.new-label,\n.notification-container.upgrade-wrap span.new-label,\n.notification-container.science-wrap span.new-label {\n    right: 10px;\n}\n\n.notification-container span.new-label::after{\n    content: '!';\n    color: #fff;\n    padding-left: 6px;\n    display: block;\n    margin-top: -3px;\n}\n\n.buildings-cat-label {\n    padding-right: 20px;\n}\n\n.science-wrap {\n    width: 238px;\n}\n\n.expeditions-mode {\n    display: flex;\n    justify-content: space-around;\n}\n\n.expeditions-mode span {\n    font-size: 14px;\n}\n\n.expeditions-mode .mode {\n    text-decoration: underline;\n    margin-top: 0px;\n    font-size: 14px;\n    cursor: pointer;\n}\n\n.expeditions-mode .mode.selected {\n    color: #ee7744;\n}\n\n.change-log {\n    height: calc(100vh - 160px);\n}\n\n.research-body .feature-list{\n    height: calc(100vh - 330px);\n}\n\n.search-wrap .chips-wrap .chip {\n    margin-left: 0;\n}\n\n.search-filter {\n    margin-top: 12px;\n    margin-bottom: 8px;\n}\n.search-filter p {\n    font-size: 16px;\n}\n\n.list-wrap.planets-wrap {\n    width: 220px;\n}\n\n\n@media screen and (min-width: 1900px){\n\n/*    body .game .sidebar {\n        height: auto;\n    }*/\n\n    body .game .content {\n        font-size: 16px;\n    }\n\n    body .chips-wrap .chip {\n        width: 250px;\n        font-size: 17px;\n    }\n\n    body .buildings-wrap .chips-wrap .chip {\n        width: 300px;\n    }\n\n    body .chips-wrap .chip .level-label {\n        font-size: 14px;\n    }\n\n    body .chips-wrap .chip .controls {\n        display: block;\n        font-size: 20px;\n        padding: 3px 2px;\n    }\n\n    body .chips-wrap .chip .controls.disabled .control {\n        width: 28px;\n        height: 28px;\n    }\n\n    body .resources-sidebar .resource-item {\n        font-size: 16px;\n    }\n\n    body .features-block .features-title .collapse-expand {\n        font-size: 15px;\n    }\n\n    body .header .menu-item .menu-inner {\n        font-size: 17px;\n    }\n\n    body .features-block .features-title {\n        font-size: 17px;\n    }\n}\n\n@media screen and (max-width: 1280px){\n    .header {\n        height: 160px;\n    }\n\n    .header .menu ul {\n        flex-wrap: wrap;\n    }\n}\n\n.show-hide-resources {\n    display: none;\n}\n\n.info-tooltip {\n    display: none;\n}\n\n.statistics-list .stat-item {\n    padding: 4px 8px;\n    display: flex;\n}\n\n.achievements-progress .stat-item {\n    padding: 4px 8px;\n    display: flex;\n}\n.achievements-progress .stat-item .name {\n    width: 180px;\n}\n\n\n.statistics-list .stat-item p {\n    margin: 0;\n}\n\n.statistics-list .stat-item .label {\n    width: 40%;\n}\n\n.preloader {\n    position: fixed;\n    z-index: 1;\n    top: 0;\n    height: 100vh;\n    width: 100vw;\n    background-color: #09010f;\n    z-index: 5;\n}\n\n.preloader .logo-container {\n    height: min(100vh - 400px, 500px);\n    margin: calc(max(50px, 100vh - 800px)) auto auto;\n    width: 100%;\n    text-align: center;\n}\n\n.preloader .logo-container img {\n    object-fit: contain;\n    margin: auto;\n    height: 100%;\n}\n\n.preloader .loading-container {\n    display: flex;\n    justify-content: center;\n    margin-top: 40px;\n}\n\n.preloader .loading-container .loading-inner {\n    display: flex;\n    align-items: center;\n    width: 150px;\n    justify-content: space-between;\n}\n.preloader .loading-container .loading-inner * {\n    color: #fff;\n}\n\n\n.preloader .loading-container .loading-text {\n    font-weight: bold;\n    font-size: 24px;\n    color: #fff;\n}\n\n.preloader .loading-container .did-you-knew {\n    text-align: center;\n    padding: 0 20px;\n    color: #fff;\n}\n\n.preloader .loading-container .did-you-knew * {\n    color: #fff;\n}\n\n.preloader .loading-container .did-you-knew .title {\n    font-size: 18px;\n    font-weight: bold;\n    display: block;\n    margin-bottom: 10px;\n    color: #fff;\n}\n\n.eff-dropped {\n    color: #ee7744;\n    font-style: italic;\n    font-size: 12px;\n}\n\n.eff-dropped .missing-resource {\n    display: block;\n}\n\n.editor-wrap.columns {\n    display: flex;\n    justify-content: space-between;\n}\n.editor-wrap.columns .column {\n    padding: 20px;\n}\n\n.loader-column {\n    width: 240px;\n    height: calc(100% - 40px);\n    border: 1px solid #222;\n}\n\n.loader-column .select-item {\n    padding: 5px 10px;\n    cursor: pointer;\n    display: flex;\n    justify-content: space-between;\n}\n\n.loader-column .select-item.invalid {\n    color: #ff6767;\n}\n\n.loader-column .select-item .delete-model.disabled {\n    cursor: default;\n    color: #999999;\n}\n\n.loader-column .select-item:hover {\n    color: #ee7744;\n}\n\n.loader-column .select-item.selected {\n    font-weight: bold;\n    cursor: default;\n}\n\n.editor-wrap {\n    height: calc(100vh - 200px);\n}\n\n.editor-column {\n    flex: 1;\n    height: calc(100vh - 240px);\n}\n\n.editor-column .slot-container.invalid .heading-wrap p {\n    color: #ff6767;\n}\n\n.editor-column .slot-container select {\n    margin-right: 10px;\n    width: 140px;\n}\n\n.editor-totals .editor-row {\n    margin: 8px 0;\n}\n\n.editor-totals .editor-row button {\n    width: 140px;\n}\n\n.editor-totals .stats .row {\n    display: flex;\n    justify-content: space-between;\n}\n\n.editor-totals .stats .row p {\n    margin: 0;\n    padding: 5px 5px;\n}\n\n.editor-totals .validation-error {\n    margin-bottom: 16px;\n    margin-top: 8px;\n    color: #fd3030;\n}\n\n.slot-container-outer .stats-wrap {\n    display: flex;\n}\n\n.slot-container-outer .stats-wrap > div {\n    margin: 0 10px;\n}\n\n.ship-totals .row {\n    display: flex;\n    justify-content: space-between;\n}\n\n.ship-totals .row p {\n    margin: 0;\n    padding: 5px 5px;\n    font-size: 13px;\n}\n\n.hangar-wrap {\n    display: flex;\n    flex-wrap: wrap;\n}\n\n.spaceship-inner-wrap .title-wrap {\n    display: flex;\n    justify-content: space-between;\n}\n\n.spaceship-card {\n    width: 300px;\n    padding: 20px;\n    border: 1px solid #222222;\n    border-radius: 4px;\n    margin: 10px;\n}\n\n.spaceship-inner-wrap .chips-wrap .chip {\n    margin: 5px 0px;\n    width: 260px;\n}\n.spaceship-inner-wrap .button {\n    width: 260px;\n}\n\n.editor-column.fleets .line-wrap {\n    display: flex;\n    flex-wrap: wrap;\n}\n\n.editor-column.fleets .line-wrap .slot-container {\n    padding: 10px;\n    border: 1px solid #222;\n    margin: 10px;\n    width: 200px;\n}\n\n.battle-wrap .top-pane {\n    display: flex;\n    justify-content: space-between;\n    padding: 10px;\n    border: 1px solid #222;\n}\n\n.battle-content .battle-centered {\n    margin-top: calc(max(10vh, 30px));\n    text-align: center;\n}\n\n.travel-bar {\n    width: 50%;\n    position: relative;\n    height: 12px;\n    margin: auto;\n}\n\n.travel-bar .travel-bar-inner {\n    position: absolute;\n    top: 0;\n    left: 0;\n    height: 10px;\n}\n\n.animated .travel-bar .travel-bar-inner {\n    transition-property: width;\n    transition-duration: 0.2s;\n}\n\n.fight-space {\n    position: relative;\n    width: 100%;\n    height: calc(100vh - 310px);\n    border: 1px solid #222;\n}\n\n.fight-space .bullet {\n    width: 4px;\n    height: 4px;\n    border-radius: 50%;\n    position: absolute;\n}\n\n.animated .fight-space .bullet {\n    transition-property: left, top;\n    transition-duration: 0.2s;\n    transition-delay: 0s;\n    transition-timing-function: linear;\n}\n\n.fight-space .bullet.side-0 {\n    background-color: #77dddd;\n}\n\n.fight-space .bullet.side-1 {\n    background-color: #dd7777;\n}\n\n.fight-space .space-unit {\n    position: absolute;\n}\n\n.fight-space .space-unit .name-cont {\n    font-size: 12px;\n    margin: 0;\n}\n\n.fight-space .space-unit .image-container {\n    width: 40px;\n    height: 40px;\n}\n\n.fight-space .space-unit .image-container.enemy {\n    background-image: url(" +
+            ");\n    background-size: 25px 25px;\n    display: block;\n    position: absolute;\n    width: 25px;\n    height: 25px;\n    z-index: 3;\n    content: '';\n    top: -10px;\n    right: -10px;\n}\n\n.chips-wrap.usage-highlight .chip {\n    border-color: #eeaa44;\n}\n\n.chips-wrap.disabled.blocked.soft-lock .chip {\n    color: #ff5757;\n    cursor: not-allowed;\n}\n\n.chips-wrap.disabled.soft-lock .chip {\n    color: #ffa767;\n    cursor: not-allowed;\n}\n\n.chips-wrap.enabled .chip .chip-content .stick-left:hover {\n    filter: brightness(140%);\n}\n\n.chips-wrap .chip .stick-right {\n    position: absolute;\n    right: 8px;\n    top: 2px;\n    display: flex;\n    align-items: center;\n}\n\n.chips-wrap .chip .level-label {\n    padding: 5px;\n    font-size: 12px;\n    border-radius: 8px;\n}\n\n.chips-wrap .chip .controls {\n    display: block;\n    font-size: 18px;\n    padding: 3px 2px;\n}\n\n.chips-wrap .chip .controls .control {\n    display: block;\n    width: 24px;\n    height: 24px;\n    text-align: center;\n    cursor: pointer;\n}\n.chips-wrap .chip .controls.disabled .control {\n    display: block;\n    width: 24px;\n    height: 24px;\n    text-align: center;\n    cursor: not-allowed;\n}\n\n.chips-wrap .chip .controls:not(.disabled) .control:hover {\n    border-radius: 50%;\n}\n\n.description-hint {\n    padding: 16px;\n    border-radius: 4px;\n}\n\n.description-hint .description {\n    font-size: 13px;\n}\n\n.description-hint .wrap {\n    padding: 8px 0;\n}\n\n.cost-block {\n    width: 160px;\n    padding-bottom: 4px;\n}\n\n.cost-block p.requirement,\n.gain-block p.requirement{\n    font-size: 13px;\n    padding-bottom: 2px;\n    margin-bottom: 2px;\n    margin-top: 4px;\n    display: flex;\n    justify-content: space-between;\n}\n\n.gain-block p.requirement.green {\n    color: #90fd70;\n}\n\n.gain-block p.requirement.red {\n    color: #ff6767;\n}\n\n.cost-block .requirement.missing {\n    color: #ff6767;\n}\n\n.cost-block .progressBar {\n    width: 100%;\n    position: relative;\n    height: 3px;\n    background: #333;\n}\n\n.cost-block .progressBar .filling {\n    background: #575989;\n    height: 100%;\n    position: absolute;\n    top: 0px;\n    left: 0px;\n}\n\n.submenu {\n    display: flex;\n    justify-content: flex-start;\n}\n\n.submenu .submenu-item {\n    padding: 8px 16px;\n    cursor: pointer;\n}\n\n.jobs .feature-list {\n    display: flex;\n    flex-wrap: wrap;\n}\n\n.job-card {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    width: 380px;\n    padding: 8px;\n    margin: 8px;\n    border-radius: 4px;\n}\n\n.job-card .job-labour {\n    width: 40px;\n    padding-left: 5px;\n}\n\n.job-card .title {\n    width: 160px;\n}\n.job-card .set-amount {\n    display: flex;\n    align-items: center;\n}\n\n\n.job-card .set-amount button {\n    width: 30px;\n    height: 30px;\n    border-radius: 4px;\n    padding: 4px;\n    cursor: pointer;\n    margin: 0 4px;\n}\n\n.job-card .set-amount input {\n    width: 80px;\n    height: 30px;\n    border-radius: 4px;\n}\n\n.resources-sidebar {\n    height: calc(100% - 40px);\n    display: flex;\n    flex-direction: column;\n}\n\n.resources-sidebar .main-resources-wrap {\n    max-height: calc(100vh - 550px);\n}\n\n.resources-sidebar .main-resources-wrap .main-resources {\n    height: 100%;\n}\n\n.resources-sidebar .bottom-block {\n    position: absolute;\n    bottom: 12px\n}\n\n.resources-sidebar .secondary-resources {\n    display: flex;\n    flex: 1;\n    min-height: 0px;\n}\n\n.resources-sidebar .secondary-resources .secondary-wrap {\n    width: 100%;\n}\n\n.resources-sidebar .secondary-resources .container-scrollable {\n    height: calc(100% - 50px);\n}\n\n.heading-pre-menu {\n    display: flex;\n}\n\n.heading-pre-menu .env-wrap {\n    margin-left: 40px;\n    display: flex;\n}\n.heading-pre-menu .env-wrap p {\n    margin: 5px 0;\n}\n\n.heading-pre-menu .env-wrap .time-wrap {\n    margin-left: 20px;\n}\n\n.heading-pre-menu .env-wrap .use-mult {\n    display: flex;\n}\n\n.heading-pre-menu .env-wrap .use-mult .item {\n    margin-right: 10px;\n    text-decoration: underline;\n    cursor: pointer;\n}\n\n.heading-pre-menu .env-wrap .use-mult .item.selected {\n    color: #ee7744;\n}\n\n.inner .editor-wrap.columns {\n    height: calc(100vh - 220px);\n}\n\n.inner .editor-wrap.columns .ship-stats-wrap {\n    height: calc(100vh - 340px);\n}\n\n.small-note {\n    font-size: 12px;\n    font-style: italic;\n}\n\n@media screen and (max-height: 850px) {\n\n   /* .resources-sidebar .main-resources {\n        height: calc(100vh - 550px);\n    }*/\n\n    .resources-sidebar .secondary-resources .container-scrollable {\n        height: 150px;\n    }\n\n}\n\n.hint-caps p {\n    display: flex;\n    justify-content: space-between;\n    font-size: 12px;\n    margin: 4px;\n}\n\n.break-down .block {\n    padding-left: 12px;\n    padding-bottom: 12px;\n}\n\n.break-down .block p {\n    display: flex;\n    justify-content: space-between;\n    font-size: 12px;\n    margin: 4px;\n}\n\n.break-down .block p span:first-child {\n    margin-right: 20px;\n}\n\n.fit-height {\n    height: 100%;\n}\n\n.inner-scrollable.planet,\n.inner-scrollable.science {\n    height: calc(100% - 35px);\n}\n\n.inner-scrollable.laws {\n    height: calc(100% - 95px);\n}\n.inner-scrollable.achievements-list-wrap {\n    height: calc(100% - 215px);\n}\n\n\n.inner {}\n\n.goal-paper {\n    width: 320px;\n    height: 100px;\n    padding: 4px;\n}\n\n.goal-paper .goal-container p {\n    font-size: 12px;\n    margin: 5px;\n}\n\n.goal-paper .goal-container .goal-req {\n    display: flex;\n    justify-content: space-between;\n}\n\n.goal-req.complete span{\n    color: #45cd45;\n}\n\n.goal-paper.features-block .features-title {\n    margin-bottom: 8px;\n}\n\n.settings .set-row {\n    display: flex;\n    padding: 4px;\n}\n\n.settings .set-row .label {\n    width: 30%;\n}\n\n.settings .set-row .val textarea {\n    height: 100px;\n    width: 300px;\n    margin: 5px 0px;\n    display: block;\n}\n\n.happiness .factor-wrap {\n    margin-right: 25px;\n    padding-right: 15px;\n}\n\n.overview.population .line {\n    display: flex;\n    flex-wrap: wrap;\n}\n\n.overview.population .line p{\n    width: 150px;\n}\n\n.overview.happiness .feature-list .line {\n    display: flex;\n    flex-wrap: wrap;\n}\n\n.law-description .title {\n    font-weight: bold;\n}\n\n.laws-list .law-box {\n    padding: 10px;\n}\n\n.laws-list .law-box .law-options {\n    display: flex;\n}\n\n.laws-list .law-box .law-options .option-box {\n    padding: 4px 12px;\n    cursor: pointer;\n    margin: 0 10px;\n}\n\n.law-option-inner p {\n    margin: 0;\n}\n\n.version-panes {\n    display: flex;\n}\n\n.version-title {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n}\n\n.version-panes .about {\n    margin: 0 30px;\n    max-width: 300px;\n}\n\n.goal-paper.features-block .features-title span {\n    color: #ee7744;\n}\n\n.goal-paper.features-block {\n    border-color: #233444;\n}\n\n.transmit-wrap .bold {\n    color: #ee7744;\n    font-weight: bold;\n}\n\n.popup-link {\n    color: #ee7744;\n    cursor: pointer;\n}\n\n.expeditions-wrap .chips-wrap .chip {\n    width: 340px;\n    margin-left: 10px;\n    margin-top: 10px;\n}\n\n.notification-container {\n    position: relative;\n}\n\n.notification-container.label-wrap {\n    padding-right: 18px;\n}\n\n.notification-container span.new-label {\n    position: absolute;\n    display: block;\n    top: 0;\n    right: 0;\n    width: 15px;\n    height: 15px;\n    border-radius: 50%;\n    background-color: #ee7744;\n}\n\n.animated .notification-container span.new-label {\n    animation: blinkingBackground 2s infinite;\n}\n\n@keyframes blinkingBackground{\n    0%\t\t{ background-color: #ee7744;}\n    25%\t\t{ background-color: #fd5020;}\n    50%\t\t{ background-color: #ef0a1a;}\n    75%\t\t{ background-color: #fd5020;}\n    100%\t        { background-color: #ee7744;}\n}\n\n.notification-container.action-wrap span.new-label,\n.notification-container.building-wrap span.new-label,\n.notification-container.upgrade-wrap span.new-label,\n.notification-container.science-wrap span.new-label {\n    right: 10px;\n}\n\n.notification-container span.new-label::after{\n    content: '!';\n    color: #fff;\n    padding-left: 6px;\n    display: block;\n    margin-top: -3px;\n}\n\n.buildings-cat-label {\n    padding-right: 20px;\n}\n\n.science-wrap {\n    width: 238px;\n}\n\n.expeditions-mode {\n    display: flex;\n    justify-content: space-around;\n}\n\n.expeditions-mode span {\n    font-size: 14px;\n}\n\n.expeditions-mode .mode {\n    text-decoration: underline;\n    margin-top: 0px;\n    font-size: 14px;\n    cursor: pointer;\n}\n\n.expeditions-mode .mode.selected {\n    color: #ee7744;\n}\n\n.change-log {\n    height: calc(100vh - 160px);\n}\n\n.research-body .feature-list{\n    height: calc(100vh - 330px);\n}\n\n.search-wrap .chips-wrap .chip {\n    margin-left: 0;\n}\n\n.search-filter {\n    margin-top: 12px;\n    margin-bottom: 8px;\n}\n.search-filter p {\n    font-size: 16px;\n}\n\n.list-wrap.planets-wrap {\n    width: 280px;\n}\n\n.list-wrap.planets-wrap .planet-selection {\n    display: flex;\n    justify-content: space-between;\n}\n\n\n\n@media screen and (min-width: 1900px){\n\n/*    body .game .sidebar {\n        height: auto;\n    }*/\n\n    body .game .content {\n        font-size: 16px;\n    }\n\n    body .chips-wrap .chip {\n        width: 250px;\n        font-size: 17px;\n    }\n\n    body .buildings-wrap .chips-wrap .chip {\n        width: 300px;\n    }\n\n    body .chips-wrap .chip .level-label {\n        font-size: 14px;\n    }\n\n    body .chips-wrap .chip .controls {\n        display: block;\n        font-size: 20px;\n        padding: 3px 2px;\n    }\n\n    body .chips-wrap .chip .controls.disabled .control {\n        width: 28px;\n        height: 28px;\n    }\n\n    body .resources-sidebar .resource-item {\n        font-size: 16px;\n    }\n\n    body .features-block .features-title .collapse-expand {\n        font-size: 15px;\n    }\n\n    body .header .menu-item .menu-inner {\n        font-size: 17px;\n    }\n\n    body .features-block .features-title {\n        font-size: 17px;\n    }\n}\n\n@media screen and (max-width: 1280px){\n    .header {\n        height: 160px;\n    }\n\n    .header .menu ul {\n        flex-wrap: wrap;\n    }\n}\n\n.show-hide-resources {\n    display: none;\n}\n\n.info-tooltip {\n    display: none;\n}\n\n.statistics-list .stat-item {\n    padding: 4px 8px;\n    display: flex;\n}\n\n.achievements-progress .stat-item {\n    padding: 4px 8px;\n    display: flex;\n}\n.achievements-progress .stat-item .name {\n    width: 180px;\n}\n\n\n.statistics-list .stat-item p {\n    margin: 0;\n}\n\n.statistics-list .stat-item .label {\n    width: 40%;\n}\n\n.preloader {\n    position: fixed;\n    z-index: 1;\n    top: 0;\n    height: 100vh;\n    width: 100vw;\n    background-color: #09010f;\n    z-index: 5;\n}\n\n.preloader .logo-container {\n    height: min(100vh - 400px, 500px);\n    margin: calc(max(50px, 100vh - 800px)) auto auto;\n    width: 100%;\n    text-align: center;\n}\n\n.preloader .logo-container img {\n    object-fit: contain;\n    margin: auto;\n    height: 100%;\n}\n\n.preloader .loading-container {\n    display: flex;\n    justify-content: center;\n    margin-top: 40px;\n}\n\n.preloader .loading-container .loading-inner {\n    display: flex;\n    align-items: center;\n    width: 150px;\n    justify-content: space-between;\n}\n.preloader .loading-container .loading-inner * {\n    color: #fff;\n}\n\n\n.preloader .loading-container .loading-text {\n    font-weight: bold;\n    font-size: 24px;\n    color: #fff;\n}\n\n.preloader .loading-container .did-you-knew {\n    text-align: center;\n    padding: 0 20px;\n    color: #fff;\n}\n\n.preloader .loading-container .did-you-knew * {\n    color: #fff;\n}\n\n.preloader .loading-container .did-you-knew .title {\n    font-size: 18px;\n    font-weight: bold;\n    display: block;\n    margin-bottom: 10px;\n    color: #fff;\n}\n\n.eff-dropped {\n    color: #ee7744;\n    font-style: italic;\n    font-size: 12px;\n}\n\n.eff-dropped .missing-resource {\n    display: block;\n}\n\n.editor-wrap.columns {\n    display: flex;\n    justify-content: space-between;\n}\n.editor-wrap.columns .column {\n    padding: 20px;\n}\n\n.loader-column {\n    width: 240px;\n    height: calc(100% - 40px);\n    border: 1px solid #222;\n}\n\n.loader-column .select-item {\n    padding: 5px 10px;\n    cursor: pointer;\n    display: flex;\n    justify-content: space-between;\n}\n\n.loader-column .select-item.invalid {\n    color: #ff6767;\n}\n\n.loader-column .select-item .delete-model.disabled {\n    cursor: default;\n    color: #999999;\n}\n\n.loader-column .select-item:hover {\n    color: #ee7744;\n}\n\n.loader-column .select-item.selected {\n    font-weight: bold;\n    cursor: default;\n}\n\n.editor-wrap {\n    height: calc(100vh - 200px);\n}\n\n.editor-column {\n    flex: 1;\n    height: calc(100vh - 240px);\n}\n\n.editor-column .slot-container.invalid .heading-wrap p {\n    color: #ff6767;\n}\n\n.editor-column .slot-container select {\n    margin-right: 10px;\n    width: 140px;\n}\n\n.editor-totals .editor-row {\n    margin: 8px 0;\n}\n\n.editor-totals .editor-row button {\n    width: 140px;\n}\n\n.editor-totals .stats .row {\n    display: flex;\n    justify-content: space-between;\n}\n\n.editor-totals .stats .row p {\n    margin: 0;\n    padding: 5px 5px;\n}\n\n.editor-totals .validation-error {\n    margin-bottom: 16px;\n    margin-top: 8px;\n    color: #fd3030;\n}\n\n.slot-container-outer .stats-wrap {\n    display: flex;\n}\n\n.slot-container-outer .stats-wrap > div {\n    margin: 0 10px;\n}\n\n.ship-totals .row {\n    display: flex;\n    justify-content: space-between;\n}\n\n.ship-totals .row p {\n    margin: 0;\n    padding: 5px 5px;\n    font-size: 13px;\n}\n\n.hangar-wrap {\n    display: flex;\n    flex-wrap: wrap;\n}\n\n.spaceship-inner-wrap .title-wrap {\n    display: flex;\n    justify-content: space-between;\n}\n\n.spaceship-card {\n    width: 300px;\n    padding: 20px;\n    border: 1px solid #222222;\n    border-radius: 4px;\n    margin: 10px;\n}\n\n.spaceship-inner-wrap .chips-wrap .chip {\n    margin: 5px 0px;\n    width: 260px;\n}\n.spaceship-inner-wrap .button {\n    width: 260px;\n}\n\n.editor-column.fleets .line-wrap {\n    display: flex;\n    flex-wrap: wrap;\n}\n\n.editor-column.fleets .line-wrap .slot-container {\n    padding: 10px;\n    border: 1px solid #222;\n    margin: 10px;\n    width: 200px;\n}\n\n.battle-wrap .top-pane {\n    display: flex;\n    justify-content: space-between;\n    padding: 10px;\n    border: 1px solid #222;\n}\n\n.battle-content .battle-centered {\n    margin-top: calc(max(10vh, 30px));\n    text-align: center;\n}\n\n.travel-bar {\n    width: 50%;\n    position: relative;\n    height: 12px;\n    margin: auto;\n}\n\n.travel-bar .travel-bar-inner {\n    position: absolute;\n    top: 0;\n    left: 0;\n    height: 10px;\n}\n\n.animated .travel-bar .travel-bar-inner {\n    transition-property: width;\n    transition-duration: 0.2s;\n}\n\n.fight-space {\n    position: relative;\n    width: 100%;\n    height: calc(100vh - 310px);\n    border: 1px solid #222;\n}\n\n.fight-space .bullet {\n    width: 4px;\n    height: 4px;\n    border-radius: 50%;\n    position: absolute;\n}\n\n.animated .fight-space .bullet {\n    transition-property: left, top;\n    transition-duration: 0.2s;\n    transition-delay: 0s;\n    transition-timing-function: linear;\n}\n\n.fight-space .bullet.side-0 {\n    background-color: #77dddd;\n}\n\n.fight-space .bullet.side-1 {\n    background-color: #dd7777;\n}\n\n.fight-space .space-unit {\n    position: absolute;\n}\n\n.fight-space .space-unit .name-cont {\n    font-size: 12px;\n    margin: 0;\n}\n\n.fight-space .space-unit .image-container {\n    width: 40px;\n    height: 40px;\n}\n\n.fight-space .space-unit .image-container.enemy {\n    background-image: url(" +
             g +
             ");\n    background-size: contain;\n    transform: rotate(180deg);\n}\n\n.fight-space .space-unit .image-container.my {\n    background-image: url(" +
             v +
@@ -271,7 +271,7 @@
           b = t ? Symbol.for("react.fundamental") : 60117,
           x = t ? Symbol.for("react.responder") : 60118,
           y = t ? Symbol.for("react.scope") : 60119;
-        function w(e) {
+        function j(e) {
           if ("object" == typeof e && null !== e) {
             var n = e.$$typeof;
             switch (n) {
@@ -301,8 +301,8 @@
             }
           }
         }
-        function j(e) {
-          return w(e) === d;
+        function w(e) {
+          return j(e) === d;
         }
         (n.AsyncMode = u),
           (n.ConcurrentMode = d),
@@ -318,41 +318,41 @@
           (n.StrictMode = s),
           (n.Suspense = f),
           (n.isAsyncMode = function (e) {
-            return j(e) || w(e) === u;
+            return w(e) || j(e) === u;
           }),
-          (n.isConcurrentMode = j),
+          (n.isConcurrentMode = w),
           (n.isContextConsumer = function (e) {
-            return w(e) === c;
+            return j(e) === c;
           }),
           (n.isContextProvider = function (e) {
-            return w(e) === l;
+            return j(e) === l;
           }),
           (n.isElement = function (e) {
             return "object" == typeof e && null !== e && e.$$typeof === r;
           }),
           (n.isForwardRef = function (e) {
-            return w(e) === p;
+            return j(e) === p;
           }),
           (n.isFragment = function (e) {
-            return w(e) === a;
+            return j(e) === a;
           }),
           (n.isLazy = function (e) {
-            return w(e) === g;
+            return j(e) === g;
           }),
           (n.isMemo = function (e) {
-            return w(e) === m;
+            return j(e) === m;
           }),
           (n.isPortal = function (e) {
-            return w(e) === i;
+            return j(e) === i;
           }),
           (n.isProfiler = function (e) {
-            return w(e) === o;
+            return j(e) === o;
           }),
           (n.isStrictMode = function (e) {
-            return w(e) === s;
+            return j(e) === s;
           }),
           (n.isSuspense = function (e) {
-            return w(e) === f;
+            return j(e) === f;
           }),
           (n.isValidElementType = function (e) {
             return (
@@ -377,7 +377,7 @@
                   e.$$typeof === v))
             );
           }),
-          (n.typeOf = w);
+          (n.typeOf = j);
       },
       1296: (e, n, t) => {
         "use strict";
@@ -447,7 +447,7 @@
         var y = function (e) {
             (this.element = e), (this.handlers = {});
           },
-          w = { isEmpty: { configurable: !0 } };
+          j = { isEmpty: { configurable: !0 } };
         (y.prototype.bind = function (e, n) {
           void 0 === this.handlers[e] && (this.handlers[e] = []),
             this.handlers[e].push(n),
@@ -465,14 +465,14 @@
           (y.prototype.unbindAll = function () {
             for (var e in this.handlers) this.unbind(e);
           }),
-          (w.isEmpty.get = function () {
+          (j.isEmpty.get = function () {
             var e = this;
             return Object.keys(this.handlers).every(function (n) {
               return 0 === e.handlers[n].length;
             });
           }),
-          Object.defineProperties(y.prototype, w);
-        var j = function () {
+          Object.defineProperties(y.prototype, j);
+        var w = function () {
           this.eventElements = [];
         };
         function N(e) {
@@ -533,28 +533,28 @@
         function E(e) {
           return parseInt(e, 10) || 0;
         }
-        (j.prototype.eventElement = function (e) {
+        (w.prototype.eventElement = function (e) {
           var n = this.eventElements.filter(function (n) {
             return n.element === e;
           })[0];
           return n || ((n = new y(e)), this.eventElements.push(n)), n;
         }),
-          (j.prototype.bind = function (e, n, t) {
+          (w.prototype.bind = function (e, n, t) {
             this.eventElement(e).bind(n, t);
           }),
-          (j.prototype.unbind = function (e, n, t) {
+          (w.prototype.unbind = function (e, n, t) {
             var r = this.eventElement(e);
             r.unbind(n, t),
               r.isEmpty &&
                 this.eventElements.splice(this.eventElements.indexOf(r), 1);
           }),
-          (j.prototype.unbindAll = function () {
+          (w.prototype.unbindAll = function () {
             this.eventElements.forEach(function (e) {
               return e.unbindAll();
             }),
               (this.eventElements = []);
           }),
-          (j.prototype.once = function (e, n, t) {
+          (w.prototype.once = function (e, n, t) {
             var r = this.eventElement(e),
               i = function (e) {
                 r.unbind(n, i), t(e);
@@ -1179,7 +1179,7 @@
               (this.negativeScrollAdjustment = this.isNegativeScroll
                 ? e.scrollWidth - e.clientWidth
                 : 0),
-              (this.event = new j()),
+              (this.event = new w()),
               (this.ownerDocument = e.ownerDocument || document),
               (this.scrollbarXRail = a(d("x"))),
               e.appendChild(this.scrollbarXRail),
@@ -1574,8 +1574,8 @@
             g[e] = new m(e, 1, !1, e.toLowerCase(), null, !0, !0);
           });
         var y = r.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED,
-          w = Symbol.for("react.element"),
-          j = Symbol.for("react.portal"),
+          j = Symbol.for("react.element"),
+          w = Symbol.for("react.portal"),
           N = Symbol.for("react.fragment"),
           k = Symbol.for("react.strict_mode"),
           E = Symbol.for("react.profiler"),
@@ -1601,7 +1601,7 @@
         }
         var M,
           D = Object.assign;
-        function U(e) {
+        function F(e) {
           if (void 0 === M)
             try {
               throw Error();
@@ -1611,10 +1611,10 @@
             }
           return "\n" + M + e;
         }
-        var F = !1;
+        var U = !1;
         function B(e, n) {
-          if (!e || F) return "";
-          F = !0;
+          if (!e || U) return "";
+          U = !0;
           var t = Error.prepareStackTrace;
           Error.prepareStackTrace = void 0;
           try {
@@ -1681,20 +1681,20 @@
                 }
             }
           } finally {
-            (F = !1), (Error.prepareStackTrace = t);
+            (U = !1), (Error.prepareStackTrace = t);
           }
-          return (e = e ? e.displayName || e.name : "") ? U(e) : "";
+          return (e = e ? e.displayName || e.name : "") ? F(e) : "";
         }
         function z(e) {
           switch (e.tag) {
             case 5:
-              return U(e.type);
+              return F(e.type);
             case 16:
-              return U("Lazy");
+              return F("Lazy");
             case 13:
-              return U("Suspense");
+              return F("Suspense");
             case 19:
-              return U("SuspenseList");
+              return F("SuspenseList");
             case 0:
             case 2:
             case 15:
@@ -1714,7 +1714,7 @@
           switch (e) {
             case N:
               return "Fragment";
-            case j:
+            case w:
               return "Portal";
             case E:
               return "Profiler";
@@ -2199,21 +2199,21 @@
           }
         }
         var ye = null;
-        function we(e) {
+        function je(e) {
           return (
             (e = e.target || e.srcElement || window).correspondingUseElement &&
               (e = e.correspondingUseElement),
             3 === e.nodeType ? e.parentNode : e
           );
         }
-        var je = null,
+        var we = null,
           Ne = null,
           ke = null;
         function Ee(e) {
           if ((e = gi(e))) {
-            if ("function" != typeof je) throw Error(a(280));
+            if ("function" != typeof we) throw Error(a(280));
             var n = e.stateNode;
-            n && ((n = bi(n)), je(e.stateNode, e.type, n));
+            n && ((n = bi(n)), we(e.stateNode, e.type, n));
           }
         }
         function Se(e) {
@@ -2299,8 +2299,8 @@
         }
         var Me = !1,
           De = null,
-          Ue = !1,
-          Fe = null,
+          Fe = !1,
+          Ue = null,
           Be = {
             onError: function (e) {
               (Me = !0), (De = e);
@@ -2568,8 +2568,8 @@
               : 4
             : 1;
         }
-        var wn,
-          jn,
+        var jn,
+          wn,
           Nn,
           kn,
           En,
@@ -2617,7 +2617,7 @@
                 nativeEvent: a,
                 targetContainers: [i],
               }),
-              null !== n && null !== (n = gi(n)) && jn(n),
+              null !== n && null !== (n = gi(n)) && wn(n),
               e)
             : ((e.eventSystemFlags |= r),
               (n = e.targetContainers),
@@ -2646,27 +2646,27 @@
           }
           e.blockedOn = null;
         }
-        function Un(e) {
+        function Fn(e) {
           if (null !== e.blockedOn) return !1;
           for (var n = e.targetContainers; 0 < n.length; ) {
             var t = qn(e.domEventName, e.eventSystemFlags, n[0], e.nativeEvent);
             if (null !== t)
-              return null !== (n = gi(t)) && jn(n), (e.blockedOn = t), !1;
+              return null !== (n = gi(t)) && wn(n), (e.blockedOn = t), !1;
             var r = new (t = e.nativeEvent).constructor(t.type, t);
             (ye = r), t.target.dispatchEvent(r), (ye = null), n.shift();
           }
           return !0;
         }
-        function Fn(e, n, t) {
-          Un(e) && t.delete(n);
+        function Un(e, n, t) {
+          Fn(e) && t.delete(n);
         }
         function Bn() {
           (Sn = !1),
-            null !== An && Un(An) && (An = null),
-            null !== Tn && Un(Tn) && (Tn = null),
-            null !== On && Un(On) && (On = null),
-            _n.forEach(Fn),
-            Rn.forEach(Fn);
+            null !== An && Fn(An) && (An = null),
+            null !== Tn && Fn(Tn) && (Tn = null),
+            null !== On && Fn(On) && (On = null),
+            _n.forEach(Un),
+            Rn.forEach(Un);
         }
         function zn(e, n) {
           e.blockedOn === n &&
@@ -2751,7 +2751,7 @@
             for (; null !== i; ) {
               var a = gi(i);
               if (
-                (null !== a && wn(a),
+                (null !== a && jn(a),
                 null === (a = qn(e, n, t, r)) && Hr(e, n, r, Vn, t),
                 a === i)
               )
@@ -2763,7 +2763,7 @@
         }
         var Vn = null;
         function qn(e, n, t, r) {
-          if (((Vn = null), null !== (e = mi((e = we(r))))))
+          if (((Vn = null), null !== (e = mi((e = je(r))))))
             if (null === (n = He(e))) e = null;
             else if (13 === (t = n.tag)) {
               if (null !== (e = Ge(n))) return e;
@@ -3066,20 +3066,20 @@
             145: "ScrollLock",
             224: "Meta",
           },
-          wt = {
+          jt = {
             Alt: "altKey",
             Control: "ctrlKey",
             Meta: "metaKey",
             Shift: "shiftKey",
           };
-        function jt(e) {
+        function wt(e) {
           var n = this.nativeEvent;
           return n.getModifierState
             ? n.getModifierState(e)
-            : !!(e = wt[e]) && !!n[e];
+            : !!(e = jt[e]) && !!n[e];
         }
         function Nt() {
-          return jt;
+          return wt;
         }
         var kt = D({}, ct, {
             key: function (e) {
@@ -3177,7 +3177,7 @@
           Lt = u && (!Rt || (It && 8 < It && 11 >= It)),
           Mt = String.fromCharCode(32),
           Dt = !1;
-        function Ut(e, n) {
+        function Ft(e, n) {
           switch (e) {
             case "keyup":
               return -1 !== _t.indexOf(n.keyCode);
@@ -3191,7 +3191,7 @@
               return !1;
           }
         }
-        function Ft(e) {
+        function Ut(e) {
           return "object" == typeof (e = e.detail) && "data" in e
             ? e.data
             : null;
@@ -3255,7 +3255,7 @@
         function er(e) {
           if ("value" === e.propertyName && Vt(Yt)) {
             var n = [];
-            Gt(n, Yt, e, we(e)), _e(Xt, n);
+            Gt(n, Yt, e, je(e)), _e(Xt, n);
           }
         }
         function nr(e, n, t) {
@@ -3468,19 +3468,19 @@
             animationstart: xr("Animation", "AnimationStart"),
             transitionend: xr("Transition", "TransitionEnd"),
           },
-          wr = {},
-          jr = {};
+          jr = {},
+          wr = {};
         function Nr(e) {
-          if (wr[e]) return wr[e];
+          if (jr[e]) return jr[e];
           if (!yr[e]) return e;
           var n,
             t = yr[e];
           for (n in t)
-            if (t.hasOwnProperty(n) && n in jr) return (wr[e] = t[n]);
+            if (t.hasOwnProperty(n) && n in wr) return (jr[e] = t[n]);
           return e;
         }
         u &&
-          ((jr = document.createElement("div").style),
+          ((wr = document.createElement("div").style),
           "AnimationEvent" in window ||
             (delete yr.animationend.animation,
             delete yr.animationiteration.animation,
@@ -3563,7 +3563,7 @@
               if ((ze.apply(this, arguments), Me)) {
                 if (!Me) throw Error(a(198));
                 var u = De;
-                (Me = !1), (De = null), Ue || ((Ue = !0), (Fe = u));
+                (Me = !1), (De = null), Fe || ((Fe = !0), (Ue = u));
               }
             })(r, n, void 0, e),
             (e.currentTarget = null);
@@ -3598,7 +3598,7 @@
                 }
             }
           }
-          if (Ue) throw ((e = Fe), (Ue = !1), (Fe = null), e);
+          if (Fe) throw ((e = Ue), (Fe = !1), (Ue = null), e);
         }
         function Dr(e, n) {
           var t = n[pi];
@@ -3606,20 +3606,20 @@
           var r = e + "__bubble";
           t.has(r) || (zr(n, e, 2, !1), t.add(r));
         }
-        function Ur(e, n, t) {
+        function Fr(e, n, t) {
           var r = 0;
           n && (r |= 4), zr(t, e, r, n);
         }
-        var Fr = "_reactListening" + Math.random().toString(36).slice(2);
+        var Ur = "_reactListening" + Math.random().toString(36).slice(2);
         function Br(e) {
-          if (!e[Fr]) {
-            (e[Fr] = !0),
+          if (!e[Ur]) {
+            (e[Ur] = !0),
               s.forEach(function (n) {
                 "selectionchange" !== n &&
-                  (Pr.has(n) || Ur(n, !1, e), Ur(n, !0, e));
+                  (Pr.has(n) || Fr(n, !1, e), Fr(n, !0, e));
               });
             var n = 9 === e.nodeType ? e : e.ownerDocument;
-            null === n || n[Fr] || ((n[Fr] = !0), Ur("selectionchange", !1, n));
+            null === n || n[Ur] || ((n[Ur] = !0), Fr("selectionchange", !1, n));
           }
         }
         function zr(e, n, t, r) {
@@ -3679,7 +3679,7 @@
             }
           _e(function () {
             var r = a,
-              i = we(t),
+              i = je(t),
               s = [];
             e: {
               var o = Ar.get(e);
@@ -3915,7 +3915,7 @@
                 }
               else
                 Bt
-                  ? Ut(e, t) && (x = "onCompositionEnd")
+                  ? Ft(e, t) && (x = "onCompositionEnd")
                   : "keydown" === e &&
                     229 === t.keyCode &&
                     (x = "onCompositionStart");
@@ -3929,12 +3929,12 @@
                 0 < (v = Wr(r, x)).length &&
                   ((x = new bt(x, e, null, t, i)),
                   s.push({ event: x, listeners: v }),
-                  (b || null !== (b = Ft(t))) && (x.data = b))),
+                  (b || null !== (b = Ut(t))) && (x.data = b))),
                 (b = Pt
                   ? (function (e, n) {
                       switch (e) {
                         case "compositionend":
-                          return Ft(n);
+                          return Ut(n);
                         case "keypress":
                           return 32 !== n.which ? null : ((Dt = !0), Mt);
                         case "textInput":
@@ -3945,7 +3945,7 @@
                     })(e, t)
                   : (function (e, n) {
                       if (Bt)
-                        return "compositionend" === e || (!Rt && Ut(e, n))
+                        return "compositionend" === e || (!Rt && Ft(e, n))
                           ? ((e = Jn()), (Zn = $n = Kn = null), (Bt = !1), e)
                           : null;
                       switch (e) {
@@ -4131,18 +4131,18 @@
         }
         var xi = [],
           yi = -1;
-        function wi(e) {
+        function ji(e) {
           return { current: e };
         }
-        function ji(e) {
+        function wi(e) {
           0 > yi || ((e.current = xi[yi]), (xi[yi] = null), yi--);
         }
         function Ni(e, n) {
           yi++, (xi[yi] = e.current), (e.current = n);
         }
         var ki = {},
-          Ei = wi(ki),
-          Si = wi(!1),
+          Ei = ji(ki),
+          Si = ji(!1),
           Ci = ki;
         function Ai(e, n) {
           var t = e.type.contextTypes;
@@ -4165,7 +4165,7 @@
           return null != e.childContextTypes;
         }
         function Oi() {
-          ji(Si), ji(Ei);
+          wi(Si), wi(Ei);
         }
         function _i(e, n, t) {
           if (Ei.current !== ki) throw Error(a(168));
@@ -4199,19 +4199,19 @@
           t
             ? ((e = Ri(e, n, Ci)),
               (r.__reactInternalMemoizedMergedChildContext = e),
-              ji(Si),
-              ji(Ei),
+              wi(Si),
+              wi(Ei),
               Ni(Ei, e))
-            : ji(Si),
+            : wi(Si),
             Ni(Si, t);
         }
         var Li = null,
           Mi = !1,
           Di = !1;
-        function Ui(e) {
+        function Fi(e) {
           null === Li ? (Li = [e]) : Li.push(e);
         }
-        function Fi() {
+        function Ui() {
           if (!Di && null !== Li) {
             Di = !0;
             var e = 0,
@@ -4226,7 +4226,7 @@
               }
               (Li = null), (Mi = !1);
             } catch (n) {
-              throw (null !== Li && (Li = Li.slice(e + 1)), Ve(Je, Fi), n);
+              throw (null !== Li && (Li = Li.slice(e + 1)), Ve(Je, Ui), n);
             } finally {
               (xn = n), (Di = !1);
             }
@@ -4242,7 +4242,7 @@
           }
           return n;
         }
-        var Hi = wi(null),
+        var Hi = ji(null),
           Gi = null,
           Wi = null,
           Yi = null;
@@ -4251,7 +4251,7 @@
         }
         function Vi(e) {
           var n = Hi.current;
-          ji(Hi), (e._currentValue = n);
+          wi(Hi), (e._currentValue = n);
         }
         function qi(e, n, t) {
           for (; null !== e; ) {
@@ -4599,15 +4599,15 @@
           ba = [],
           xa = 0,
           ya = null,
-          wa = 1,
-          ja = "";
+          ja = 1,
+          wa = "";
         function Na(e, n) {
           (ha[ma++] = va), (ha[ma++] = ga), (ga = e), (va = n);
         }
         function ka(e, n, t) {
-          (ba[xa++] = wa), (ba[xa++] = ja), (ba[xa++] = ya), (ya = e);
-          var r = wa;
-          e = ja;
+          (ba[xa++] = ja), (ba[xa++] = wa), (ba[xa++] = ya), (ya = e);
+          var r = ja;
+          e = wa;
           var i = 32 - on(r) - 1;
           (r &= ~(1 << i)), (t += 1);
           var a = 32 - on(n) + i;
@@ -4616,9 +4616,9 @@
             (a = (r & ((1 << s) - 1)).toString(32)),
               (r >>= s),
               (i -= s),
-              (wa = (1 << (32 - on(n) + i)) | (t << i) | r),
-              (ja = a + e);
-          } else (wa = (1 << a) | (t << i) | r), (ja = e);
+              (ja = (1 << (32 - on(n) + i)) | (t << i) | r),
+              (wa = a + e);
+          } else (ja = (1 << a) | (t << i) | r), (wa = e);
         }
         function Ea(e) {
           null !== e.return && (Na(e, 1), ka(e, 1, 0));
@@ -4629,9 +4629,9 @@
           for (; e === ya; )
             (ya = ba[--xa]),
               (ba[xa] = null),
-              (ja = ba[--xa]),
-              (ba[xa] = null),
               (wa = ba[--xa]),
+              (ba[xa] = null),
+              (ja = ba[--xa]),
               (ba[xa] = null);
         }
         var Ca = null,
@@ -4669,7 +4669,7 @@
             case 13:
               return (
                 null !== (n = 8 !== n.nodeType ? null : n) &&
-                ((t = null !== ya ? { id: wa, overflow: ja } : null),
+                ((t = null !== ya ? { id: ja, overflow: wa } : null),
                 (e.memoizedState = {
                   dehydrated: n,
                   treeContext: t,
@@ -4761,10 +4761,10 @@
         function Da() {
           (Aa = Ca = null), (Ta = !1);
         }
-        function Ua(e) {
+        function Fa(e) {
           null === Oa ? (Oa = [e]) : Oa.push(e);
         }
-        function Fa(e, n, t) {
+        function Ua(e, n, t) {
           if (
             null !== (e = t.ref) &&
             "function" != typeof e &&
@@ -4831,7 +4831,7 @@
             return e;
           }
           function i(e, n) {
-            return ((e = wc(e, n)).index = 0), (e.sibling = null), e;
+            return ((e = jc(e, n)).index = 0), (e.sibling = null), e;
           }
           function s(n, t, r) {
             return (
@@ -4863,8 +4863,8 @@
                     null !== a &&
                     a.$$typeof === R &&
                     za(a) === n.type))
-              ? (((r = i(n, t.props)).ref = Fa(e, n, t)), (r.return = e), r)
-              : (((r = jc(t.type, t.key, t.props, null, e.mode, r)).ref = Fa(
+              ? (((r = i(n, t.props)).ref = Ua(e, n, t)), (r.return = e), r)
+              : (((r = wc(t.type, t.key, t.props, null, e.mode, r)).ref = Ua(
                   e,
                   n,
                   t
@@ -4890,9 +4890,9 @@
               return ((n = Ec("" + n, e.mode, t)).return = e), n;
             if ("object" == typeof n && null !== n) {
               switch (n.$$typeof) {
-                case w:
+                case j:
                   return (
-                    ((t = jc(n.type, n.key, n.props, null, e.mode, t)).ref = Fa(
+                    ((t = wc(n.type, n.key, n.props, null, e.mode, t)).ref = Ua(
                       e,
                       null,
                       n
@@ -4900,7 +4900,7 @@
                     (t.return = e),
                     t
                   );
-                case j:
+                case w:
                   return ((n = Sc(n, e.mode, t)).return = e), n;
                 case R:
                   return p(e, (0, n._init)(n._payload), t);
@@ -4917,9 +4917,9 @@
               return null !== i ? null : l(e, n, "" + t, r);
             if ("object" == typeof t && null !== t) {
               switch (t.$$typeof) {
-                case w:
-                  return t.key === i ? c(e, n, t, r) : null;
                 case j:
+                  return t.key === i ? c(e, n, t, r) : null;
+                case w:
                   return t.key === i ? u(e, n, t, r) : null;
                 case R:
                   return f(e, n, (i = t._init)(t._payload), r);
@@ -4934,14 +4934,14 @@
               return l(n, (e = e.get(t) || null), "" + r, i);
             if ("object" == typeof r && null !== r) {
               switch (r.$$typeof) {
-                case w:
+                case j:
                   return c(
                     n,
                     (e = e.get(null === r.key ? t : r.key) || null),
                     r,
                     i
                   );
-                case j:
+                case w:
                   return u(
                     n,
                     (e = e.get(null === r.key ? t : r.key) || null),
@@ -5058,7 +5058,7 @@
               "object" == typeof s && null !== s)
             ) {
               switch (s.$$typeof) {
-                case w:
+                case j:
                   e: {
                     for (var c = s.key, u = a; null !== u; ) {
                       if (u.key === c) {
@@ -5077,7 +5077,7 @@
                             za(c) === u.type)
                         ) {
                           t(r, u.sibling),
-                            ((a = i(u, s.props)).ref = Fa(r, u, s)),
+                            ((a = i(u, s.props)).ref = Ua(r, u, s)),
                             (a.return = r),
                             (r = a);
                           break e;
@@ -5091,19 +5091,19 @@
                       ? (((a = Nc(s.props.children, r.mode, l, s.key)).return =
                           r),
                         (r = a))
-                      : (((l = jc(
+                      : (((l = wc(
                           s.type,
                           s.key,
                           s.props,
                           null,
                           r.mode,
                           l
-                        )).ref = Fa(r, a, s)),
+                        )).ref = Ua(r, a, s)),
                         (l.return = r),
                         (r = l));
                   }
                   return o(r);
-                case j:
+                case w:
                   e: {
                     for (u = s.key; null !== a; ) {
                       if (a.key === u) {
@@ -5144,9 +5144,9 @@
         var Ga = Ha(!0),
           Wa = Ha(!1),
           Ya = {},
-          Xa = wi(Ya),
-          Va = wi(Ya),
-          qa = wi(Ya);
+          Xa = ji(Ya),
+          Va = ji(Ya),
+          qa = ji(Ya);
         function Qa(e) {
           if (e === Ya) throw Error(a(174));
           return e;
@@ -5163,10 +5163,10 @@
                 (e = e.tagName)
               );
           }
-          ji(Xa), Ni(Xa, n);
+          wi(Xa), Ni(Xa, n);
         }
         function $a() {
-          ji(Xa), ji(Va), ji(qa);
+          wi(Xa), wi(Va), wi(qa);
         }
         function Za(e) {
           Qa(qa.current);
@@ -5175,9 +5175,9 @@
           n !== t && (Ni(Va, e), Ni(Xa, t));
         }
         function Ja(e) {
-          Va.current === e && (ji(Xa), ji(Va));
+          Va.current === e && (wi(Xa), wi(Va));
         }
-        var es = wi(0);
+        var es = ji(0);
         function ns(e) {
           for (var n = e; null !== n; ) {
             if (13 === n.tag) {
@@ -5300,7 +5300,7 @@
         function ys(e, n) {
           return "function" == typeof n ? n(e) : n;
         }
-        function ws(e) {
+        function js(e) {
           var n = xs(),
             t = n.queue;
           if (null === t) throw Error(a(311));
@@ -5362,7 +5362,7 @@
           } else null === i && (t.lanes = 0);
           return [n.memoizedState, t.dispatch];
         }
-        function js(e) {
+        function ws(e) {
           var n = xs(),
             t = n.queue;
           if (null === t) throw Error(a(311));
@@ -5498,7 +5498,7 @@
         function Ds(e, n) {
           return Is(4, 4, e, n);
         }
-        function Us(e, n) {
+        function Fs(e, n) {
           return "function" == typeof n
             ? ((e = e()),
               n(e),
@@ -5513,10 +5513,10 @@
               })
             : void 0;
         }
-        function Fs(e, n, t) {
+        function Us(e, n, t) {
           return (
             (t = null != t ? t.concat([e]) : null),
-            Is(4, 4, Us.bind(null, n, e), t)
+            Is(4, 4, Fs.bind(null, n, e), t)
           );
         }
         function Bs() {}
@@ -5648,7 +5648,7 @@
             useImperativeHandle: function (e, n, t) {
               return (
                 (t = null != t ? t.concat([e]) : null),
-                Rs(4194308, 4, Us.bind(null, n, e), t)
+                Rs(4194308, 4, Fs.bind(null, n, e), t)
               );
             },
             useLayoutEffect: function (e, n) {
@@ -5741,12 +5741,12 @@
               var e = bs(),
                 n = vl.identifierPrefix;
               if (Ta) {
-                var t = ja;
+                var t = wa;
                 (n =
                   ":" +
                   n +
                   "R" +
-                  (t = (wa & ~(1 << (32 - on(wa) - 1))).toString(32) + t)),
+                  (t = (ja & ~(1 << (32 - on(ja) - 1))).toString(32) + t)),
                   0 < (t = ps++) && (n += "H" + t.toString(32)),
                   (n += ":");
               } else n = ":" + n + "r" + (t = fs++).toString(32) + ":";
@@ -5759,50 +5759,7 @@
             useCallback: zs,
             useContext: Ki,
             useEffect: Ls,
-            useImperativeHandle: Fs,
-            useInsertionEffect: Ms,
-            useLayoutEffect: Ds,
-            useMemo: Hs,
-            useReducer: ws,
-            useRef: _s,
-            useState: function () {
-              return ws(ys);
-            },
-            useDebugValue: Bs,
-            useDeferredValue: function (e) {
-              var n = ws(ys),
-                t = n[0],
-                r = n[1];
-              return (
-                Ls(
-                  function () {
-                    var n = as.transition;
-                    as.transition = {};
-                    try {
-                      r(e);
-                    } finally {
-                      as.transition = n;
-                    }
-                  },
-                  [e]
-                ),
-                t
-              );
-            },
-            useTransition: function () {
-              return [ws(ys)[0], xs().memoizedState];
-            },
-            useMutableSource: Ns,
-            useSyncExternalStore: ks,
-            useId: Ws,
-            unstable_isNewReconciler: !1,
-          },
-          eo = {
-            readContext: Ki,
-            useCallback: zs,
-            useContext: Ki,
-            useEffect: Ls,
-            useImperativeHandle: Fs,
+            useImperativeHandle: Us,
             useInsertionEffect: Ms,
             useLayoutEffect: Ds,
             useMemo: Hs,
@@ -5834,6 +5791,49 @@
             },
             useTransition: function () {
               return [js(ys)[0], xs().memoizedState];
+            },
+            useMutableSource: Ns,
+            useSyncExternalStore: ks,
+            useId: Ws,
+            unstable_isNewReconciler: !1,
+          },
+          eo = {
+            readContext: Ki,
+            useCallback: zs,
+            useContext: Ki,
+            useEffect: Ls,
+            useImperativeHandle: Us,
+            useInsertionEffect: Ms,
+            useLayoutEffect: Ds,
+            useMemo: Hs,
+            useReducer: ws,
+            useRef: _s,
+            useState: function () {
+              return ws(ys);
+            },
+            useDebugValue: Bs,
+            useDeferredValue: function (e) {
+              var n = ws(ys),
+                t = n[0],
+                r = n[1];
+              return (
+                Ls(
+                  function () {
+                    var n = as.transition;
+                    as.transition = {};
+                    try {
+                      r(e);
+                    } finally {
+                      as.transition = n;
+                    }
+                  },
+                  [e]
+                ),
+                t
+              );
+            },
+            useTransition: function () {
+              return [ws(ys)[0], xs().memoizedState];
             },
             useMutableSource: Ns,
             useSyncExternalStore: ks,
@@ -6002,8 +6002,8 @@
               return (
                 (r = n.stateNode),
                 $a(),
-                ji(Si),
-                ji(Ei),
+                wi(Si),
+                wi(Ei),
                 rs(),
                 r.pendingContext &&
                   ((r.context = r.pendingContext), (r.pendingContext = null)),
@@ -6246,7 +6246,7 @@
               return ho(n), null;
             case 13:
               if (
-                (ji(es),
+                (wi(es),
                 (r = n.memoizedState),
                 Ta && null !== Aa && 0 != (1 & n.mode) && 0 == (128 & n.flags))
               ) {
@@ -6279,7 +6279,7 @@
                       ((n.child.flags |= 8192),
                       0 != (1 & n.mode) &&
                         (null === e || 0 != (1 & es.current)
-                          ? 0 === jl && (jl = 3)
+                          ? 0 === wl && (wl = 3)
                           : rc())),
                     null !== n.updateQueue && (n.flags |= 4),
                     ho(n),
@@ -6292,11 +6292,11 @@
             case 10:
               return Vi(n.type._context), ho(n), null;
             case 19:
-              if ((ji(es), null === (s = n.memoizedState))) return ho(n), null;
+              if ((wi(es), null === (s = n.memoizedState))) return ho(n), null;
               if (((r = 0 != (128 & n.flags)), null === (l = s.rendering)))
                 if (r) fo(s, !1);
                 else {
-                  if (0 !== jl || (null !== e && 0 != (128 & e.flags)))
+                  if (0 !== wl || (null !== e && 0 != (128 & e.flags)))
                     for (e = n.child; null !== e; ) {
                       if (null !== (l = ns(e))) {
                         for (
@@ -6518,7 +6518,7 @@
               : ((n.updateQueue = e.updateQueue),
                 (n.flags &= -2053),
                 (e.lanes &= ~i),
-                Fo(e, n, i))
+                Uo(e, n, i))
           );
         }
         function yo(e, n, t, r, i) {
@@ -6529,10 +6529,10 @@
               void 0 !== a.defaultProps ||
               null !== t.compare ||
               void 0 !== t.defaultProps
-              ? (((e = jc(t.type, null, r, n, n.mode, i)).ref = n.ref),
+              ? (((e = wc(t.type, null, r, n, n.mode, i)).ref = n.ref),
                 (e.return = n),
                 (n.child = e))
-              : ((n.tag = 15), (n.type = a), wo(e, n, a, r, i));
+              : ((n.tag = 15), (n.type = a), jo(e, n, a, r, i));
           }
           if (((a = e.child), 0 == (e.lanes & i))) {
             var s = a.memoizedProps;
@@ -6540,31 +6540,31 @@
               (t = null !== (t = t.compare) ? t : sr)(s, r) &&
               e.ref === n.ref
             )
-              return Fo(e, n, i);
+              return Uo(e, n, i);
           }
           return (
             (n.flags |= 1),
-            ((e = wc(a, r)).ref = n.ref),
+            ((e = jc(a, r)).ref = n.ref),
             (e.return = n),
             (n.child = e)
           );
         }
-        function wo(e, n, t, r, i) {
+        function jo(e, n, t, r, i) {
           if (null !== e && sr(e.memoizedProps, r) && e.ref === n.ref) {
             if (((vo = !1), 0 == (e.lanes & i)))
-              return (n.lanes = e.lanes), Fo(e, n, i);
+              return (n.lanes = e.lanes), Uo(e, n, i);
             0 != (131072 & e.flags) && (vo = !0);
           }
           return ko(e, n, t, r, i);
         }
-        function jo(e, n, t) {
+        function wo(e, n, t) {
           var r = n.pendingProps,
             i = r.children,
             a = null !== e ? e.memoizedState : null;
           if ("hidden" === r.mode)
             if (0 == (1 & n.mode))
               (n.memoizedState = { baseLanes: 0, cachePool: null }),
-                Ni(wl, yl),
+                Ni(jl, yl),
                 (yl |= t);
             else {
               if (0 == (1073741824 & t))
@@ -6573,20 +6573,20 @@
                   (n.lanes = n.childLanes = 1073741824),
                   (n.memoizedState = { baseLanes: e, cachePool: null }),
                   (n.updateQueue = null),
-                  Ni(wl, yl),
+                  Ni(jl, yl),
                   (yl |= e),
                   null
                 );
               (n.memoizedState = { baseLanes: 0, cachePool: null }),
                 (r = null !== a ? a.baseLanes : t),
-                Ni(wl, yl),
+                Ni(jl, yl),
                 (yl |= r);
             }
           else
             null !== a
               ? ((r = a.baseLanes | t), (n.memoizedState = null))
               : (r = t),
-              Ni(wl, yl),
+              Ni(jl, yl),
               (yl |= r);
           return bo(e, n, i, t), n.child;
         }
@@ -6607,7 +6607,7 @@
               : ((n.updateQueue = e.updateQueue),
                 (n.flags &= -2053),
                 (e.lanes &= ~i),
-                Fo(e, n, i))
+                Uo(e, n, i))
           );
         }
         function Eo(e, n, t, r, i) {
@@ -6731,7 +6731,7 @@
         function So(e, n, t, r, i, a) {
           No(e, n);
           var s = 0 != (128 & n.flags);
-          if (!r && !s) return i && Pi(n, t, !1), Fo(e, n, a);
+          if (!r && !s) return i && Pi(n, t, !1), Uo(e, n, a);
           (r = n.stateNode), (go.current = n);
           var o =
             s && "function" != typeof t.getDerivedStateFromError
@@ -6756,7 +6756,7 @@
             Ka(e, n.containerInfo);
         }
         function Ao(e, n, t, r, i) {
-          return Da(), Ua(i), (n.flags |= 256), bo(e, n, t, r), n.child;
+          return Da(), Fa(i), (n.flags |= 256), bo(e, n, t, r), n.child;
         }
         var To = { dehydrated: null, treeContext: null, retryLane: 0 };
         function Oo(e) {
@@ -6887,11 +6887,11 @@
                     (Ta = !0),
                     (Oa = null),
                     null !== t &&
-                      ((ba[xa++] = wa),
-                      (ba[xa++] = ja),
+                      ((ba[xa++] = ja),
+                      (ba[xa++] = wa),
                       (ba[xa++] = ya),
-                      (wa = t.id),
-                      (ja = t.overflow),
+                      (ja = t.id),
+                      (wa = t.overflow),
                       (ya = n)),
                     ((n = Ro(n, n.pendingProps.children)).flags |= 4096));
               return n;
@@ -6937,7 +6937,7 @@
           var i = e.child;
           return (
             (e = i.sibling),
-            (t = wc(i, { mode: "visible", children: t })),
+            (t = jc(i, { mode: "visible", children: t })),
             0 == (1 & n.mode) && (t.lanes = r),
             (t.return = n),
             (t.sibling = null),
@@ -6957,8 +6957,8 @@
               ? (((t = n.child).childLanes = 0),
                 (t.pendingProps = o),
                 (n.deletions = null))
-              : ((t = wc(e, o)).subtreeFlags = 14680064 & e.subtreeFlags),
-            null !== s ? (r = wc(s, r)) : ((r = Nc(r, a, i, null)).flags |= 2),
+              : ((t = jc(e, o)).subtreeFlags = 14680064 & e.subtreeFlags),
+            null !== s ? (r = jc(s, r)) : ((r = Nc(r, a, i, null)).flags |= 2),
             (r.return = n),
             (t.return = n),
             (t.sibling = r),
@@ -6968,7 +6968,7 @@
         }
         function Lo(e, n, t, r) {
           return (
-            null !== r && Ua(r),
+            null !== r && Fa(r),
             Ga(n, e.child, null, t),
             ((e = Ro(n, n.pendingProps.children)).flags |= 2),
             (n.memoizedState = null),
@@ -6998,7 +6998,7 @@
               (a.tail = t),
               (a.tailMode = i));
         }
-        function Uo(e, n, t) {
+        function Fo(e, n, t) {
           var r = n.pendingProps,
             i = r.revealOrder,
             a = r.tail;
@@ -7052,7 +7052,7 @@
             }
           return n.child;
         }
-        function Fo(e, n, t) {
+        function Uo(e, n, t) {
           if (
             (null !== e && (n.dependencies = e.dependencies),
             (kl |= n.lanes),
@@ -7062,12 +7062,12 @@
           if (null !== e && n.child !== e.child) throw Error(a(153));
           if (null !== n.child) {
             for (
-              t = wc((e = n.child), e.pendingProps), n.child = t, t.return = n;
+              t = jc((e = n.child), e.pendingProps), n.child = t, t.return = n;
               null !== e.sibling;
 
             )
               (e = e.sibling),
-                ((t = t.sibling = wc(e, e.pendingProps)).return = n);
+                ((t = t.sibling = jc(e, e.pendingProps)).return = n);
             t.sibling = null;
           }
           return n.child;
@@ -7084,8 +7084,8 @@
             case 3:
               return (
                 $a(),
-                ji(Si),
-                ji(Ei),
+                wi(Si),
+                wi(Ei),
                 rs(),
                 0 != (65536 & (e = n.flags)) && 0 == (128 & e)
                   ? ((n.flags = (-65537 & e) | 128), n)
@@ -7095,7 +7095,7 @@
               return Ja(n), null;
             case 13:
               if (
-                (ji(es),
+                (wi(es),
                 null !== (e = n.memoizedState) && null !== e.dehydrated)
               ) {
                 if (null === n.alternate) throw Error(a(340));
@@ -7105,7 +7105,7 @@
                 ? ((n.flags = (-65537 & e) | 128), n)
                 : null;
             case 19:
-              return ji(es), null;
+              return wi(es), null;
             case 4:
               return $a(), null;
             case 10:
@@ -7675,8 +7675,8 @@
           bl = null,
           xl = 0,
           yl = 0,
-          wl = wi(0),
-          jl = 0,
+          jl = ji(0),
+          wl = 0,
           Nl = null,
           kl = 0,
           El = 0,
@@ -7692,11 +7692,11 @@
           Ll = null,
           Ml = 0,
           Dl = 0,
-          Ul = null,
-          Fl = -1,
+          Fl = null,
+          Ul = -1,
           Bl = 0;
         function zl() {
-          return 0 != (6 & gl) ? $e() : -1 !== Fl ? Fl : (Fl = $e());
+          return 0 != (6 & gl) ? $e() : -1 !== Ul ? Ul : (Ul = $e());
         }
         function Hl(e) {
           return 0 == (1 & e.mode)
@@ -7712,19 +7712,19 @@
             : (e = void 0 === (e = window.event) ? 16 : Qn(e.type));
         }
         function Gl(e, n, t) {
-          if (50 < Dl) throw ((Dl = 0), (Ul = null), Error(a(185)));
+          if (50 < Dl) throw ((Dl = 0), (Fl = null), Error(a(185)));
           var r = Wl(e, n);
           return null === r
             ? null
             : (vn(r, n, t),
               (0 != (2 & gl) && r === vl) ||
                 (r === vl &&
-                  (0 == (2 & gl) && (El |= n), 4 === jl && Ql(r, xl)),
+                  (0 == (2 & gl) && (El |= n), 4 === wl && Ql(r, xl)),
                 Yl(r, t),
                 1 === n &&
                   0 === gl &&
                   0 == (1 & e.mode) &&
-                  ((Ol = $e() + 500), Mi && Fi())),
+                  ((Ol = $e() + 500), Mi && Ui())),
               r);
         }
         function Wl(e, n) {
@@ -7766,11 +7766,11 @@
             if ((null != t && qe(t), 1 === n))
               0 === e.tag
                 ? (function (e) {
-                    (Mi = !0), Ui(e);
+                    (Mi = !0), Fi(e);
                   })(Kl.bind(null, e))
-                : Ui(Kl.bind(null, e)),
+                : Fi(Kl.bind(null, e)),
                 ri(function () {
-                  0 === gl && Fi();
+                  0 === gl && Ui();
                 }),
                 (t = null);
             else {
@@ -7794,7 +7794,7 @@
           }
         }
         function Xl(e, n) {
-          if (((Fl = -1), (Bl = 0), 0 != (6 & gl))) throw Error(a(327));
+          if (((Ul = -1), (Bl = 0), 0 != (6 & gl))) throw Error(a(327));
           var t = e.callbackNode;
           if (uc() && e.callbackNode !== t) return null;
           var r = fn(e, e === vl ? xl : 0);
@@ -7815,7 +7815,7 @@
             Xi(),
               (fl.current = s),
               (gl = i),
-              null !== bl ? (n = 0) : ((vl = null), (xl = 0), (n = jl));
+              null !== bl ? (n = 0) : ((vl = null), (xl = 0), (n = wl));
           }
           if (0 !== n) {
             if (
@@ -7974,7 +7974,7 @@
           try {
             return e(n);
           } finally {
-            0 === (gl = t) && ((Ol = $e() + 500), Mi && Fi());
+            0 === (gl = t) && ((Ol = $e() + 500), Mi && Ui());
           }
         }
         function Zl(e) {
@@ -7986,11 +7986,11 @@
           try {
             if (((ml.transition = null), (xn = 1), e)) return e();
           } finally {
-            (xn = r), (ml.transition = t), 0 == (6 & (gl = n)) && Fi();
+            (xn = r), (ml.transition = t), 0 == (6 & (gl = n)) && Ui();
           }
         }
         function Jl() {
-          (yl = wl.current), ji(wl);
+          (yl = jl.current), wi(jl);
         }
         function ec(e, n) {
           (e.finishedWork = null), (e.finishedLanes = 0);
@@ -8003,7 +8003,7 @@
                   null != (r = r.type.childContextTypes) && Oi();
                   break;
                 case 3:
-                  $a(), ji(Si), ji(Ei), rs();
+                  $a(), wi(Si), wi(Ei), rs();
                   break;
                 case 5:
                   Ja(r);
@@ -8013,7 +8013,7 @@
                   break;
                 case 13:
                 case 19:
-                  ji(es);
+                  wi(es);
                   break;
                 case 10:
                   Vi(r.type._context);
@@ -8026,9 +8026,9 @@
             }
           if (
             ((vl = e),
-            (bl = e = wc(e.current, null)),
+            (bl = e = jc(e.current, null)),
             (xl = yl = n),
-            (jl = 0),
+            (wl = 0),
             (Nl = null),
             (Sl = El = kl = 0),
             (Al = Cl = null),
@@ -8068,7 +8068,7 @@
                 (hl.current = null),
                 null === t || null === t.return)
               ) {
-                (jl = 1), (Nl = n), (bl = null);
+                (wl = 1), (Nl = n), (bl = null);
                 break;
               }
               e: {
@@ -8117,12 +8117,12 @@
                   if (null !== v) {
                     0 == (65536 & v.flags) && (v.flags |= 256),
                       po(v, o, l, 0, n),
-                      Ua(c);
+                      Fa(c);
                     break e;
                   }
                 }
                 (s = c),
-                  4 !== jl && (jl = 2),
+                  4 !== wl && (wl = 2),
                   null === Cl ? (Cl = [s]) : Cl.push(s),
                   (c = no(c, l)),
                   (l = o);
@@ -8168,7 +8168,7 @@
           return (fl.current = $s), null === e ? $s : e;
         }
         function rc() {
-          (0 !== jl && 3 !== jl && 2 !== jl) || (jl = 4),
+          (0 !== wl && 3 !== wl && 2 !== wl) || (wl = 4),
             null === vl ||
               (0 == (268435455 & kl) && 0 == (268435455 & El)) ||
               Ql(vl, xl);
@@ -8186,7 +8186,7 @@
             }
           if ((Xi(), (gl = t), (fl.current = r), null !== bl))
             throw Error(a(261));
-          return (vl = null), (xl = 0), jl;
+          return (vl = null), (xl = 0), wl;
         }
         function ac() {
           for (; null !== bl; ) oc(bl);
@@ -8209,13 +8209,13 @@
             } else {
               if (null !== (t = Bo(t, n)))
                 return (t.flags &= 32767), void (bl = t);
-              if (null === e) return (jl = 6), void (bl = null);
+              if (null === e) return (wl = 6), void (bl = null);
               (e.flags |= 32768), (e.subtreeFlags = 0), (e.deletions = null);
             }
             if (null !== (n = n.sibling)) return void (bl = n);
             bl = n = e;
           } while (null !== n);
-          0 === jl && (jl = 5);
+          0 === wl && (wl = 5);
         }
         function cc(e, n) {
           var t = xn,
@@ -8381,8 +8381,8 @@
                                     var y = n.stateNode.containerInfo;
                                     if (1 === y.nodeType) y.textContent = "";
                                     else if (9 === y.nodeType) {
-                                      var w = y.body;
-                                      null != w && (w.textContent = "");
+                                      var j = y.body;
+                                      null != j && (j.textContent = "");
                                     }
                                     break;
                                   default:
@@ -8511,7 +8511,7 @@
                                       Wo = t;
                                       for (var y = t.child; null !== y; ) {
                                         for (t = Wo = y; null !== Wo; ) {
-                                          var w = (r = Wo).child;
+                                          var j = (r = Wo).child;
                                           switch (r.tag) {
                                             case 0:
                                             case 11:
@@ -8521,16 +8521,16 @@
                                               break;
                                             case 1:
                                               Yo(r, r.return);
-                                              var j = r.stateNode;
+                                              var w = r.stateNode;
                                               if (
                                                 "function" ==
-                                                typeof j.componentWillUnmount
+                                                typeof w.componentWillUnmount
                                               ) {
                                                 var N = r.return;
                                                 try {
-                                                  (j.props = r.memoizedProps),
-                                                    (j.state = r.memoizedState),
-                                                    j.componentWillUnmount();
+                                                  (w.props = r.memoizedProps),
+                                                    (w.state = r.memoizedState),
+                                                    w.componentWillUnmount();
                                                 } catch (e) {
                                                   pc(r, N, e);
                                                 }
@@ -8545,8 +8545,8 @@
                                                 continue;
                                               }
                                           }
-                                          null !== w
-                                            ? ((w.return = r), (Wo = w))
+                                          null !== j
+                                            ? ((j.return = r), (Wo = j))
                                             : cl(t);
                                         }
                                         y = y.sibling;
@@ -8611,11 +8611,11 @@
                 if (_l) throw ((_l = !1), (e = Rl), (Rl = null), e);
                 0 != (1 & Ml) && 0 !== e.tag && uc(),
                   0 != (1 & (s = e.pendingLanes))
-                    ? e === Ul
+                    ? e === Fl
                       ? Dl++
-                      : ((Dl = 0), (Ul = e))
+                      : ((Dl = 0), (Fl = e))
                     : (Dl = 0),
-                  Fi();
+                  Ui();
               })(e, n, t);
           } finally {
             (ml.transition = r), (xn = t);
@@ -8723,9 +8723,9 @@
                         Wo = null;
                         break e;
                       }
-                      var w = l.sibling;
-                      if (null !== w) {
-                        (w.return = l.return), (Wo = w);
+                      var j = l.sibling;
+                      if (null !== j) {
+                        (j.return = l.return), (Wo = j);
                         break e;
                       }
                       Wo = l.return;
@@ -8733,7 +8733,7 @@
                 }
                 if (
                   ((gl = i),
-                  Fi(),
+                  Ui(),
                   sn && "function" == typeof sn.onPostCommitFiberRoot)
                 )
                   try {
@@ -8784,8 +8784,8 @@
             (e.pingedLanes |= e.suspendedLanes & t),
             vl === e &&
               (xl & t) === t &&
-              (4 === jl ||
-              (3 === jl && (130023424 & xl) === xl && 500 > $e() - Tl)
+              (4 === wl ||
+              (3 === wl && (130023424 & xl) === xl && 500 > $e() - Tl)
                 ? ec(e, 0)
                 : (Sl |= t)),
             Yl(e, n);
@@ -8852,7 +8852,7 @@
         function yc(e) {
           return !(!(e = e.prototype) || !e.isReactComponent);
         }
-        function wc(e, n) {
+        function jc(e, n) {
           var t = e.alternate;
           return (
             null === t
@@ -8885,7 +8885,7 @@
             t
           );
         }
-        function jc(e, n, t, r, i, s) {
+        function wc(e, n, t, r, i, s) {
           var o = 2;
           if (((r = e), "function" == typeof e)) yc(e) && (o = 1);
           else if ("string" == typeof e) o = 5;
@@ -9017,7 +9017,7 @@
               ? arguments[3]
               : null;
           return {
-            $$typeof: j,
+            $$typeof: w,
             key: null == r ? null : "" + r,
             children: e,
             containerInfo: n,
@@ -9124,14 +9124,14 @@
                             : 0 != (t & n.child.childLanes)
                             ? _o(e, n, t)
                             : (Ni(es, 1 & es.current),
-                              null !== (e = Fo(e, n, t)) ? e.sibling : null);
+                              null !== (e = Uo(e, n, t)) ? e.sibling : null);
                         Ni(es, 1 & es.current);
                         break;
                       case 19:
                         if (
                           ((r = 0 != (t & n.childLanes)), 0 != (128 & e.flags))
                         ) {
-                          if (r) return Uo(e, n, t);
+                          if (r) return Fo(e, n, t);
                           n.flags |= 128;
                         }
                         if (
@@ -9146,9 +9146,9 @@
                         return null;
                       case 22:
                       case 23:
-                        return (n.lanes = 0), jo(e, n, t);
+                        return (n.lanes = 0), wo(e, n, t);
                     }
-                    return Fo(e, n, t);
+                    return Uo(e, n, t);
                   })(e, n, t)
                 );
               vo = 0 != (131072 & e.flags);
@@ -9278,7 +9278,7 @@
                     (t.flags = (-3 & t.flags) | 4096), (t = t.sibling);
                 } else {
                   if ((Da(), r === i)) {
-                    n = Fo(e, n, t);
+                    n = Uo(e, n, t);
                     break e;
                   }
                   bo(e, n, r, t);
@@ -9336,7 +9336,7 @@
                 )
                   if (ar(s.value, o)) {
                     if (s.children === i.children && !Si.current) {
-                      n = Fo(e, n, t);
+                      n = Uo(e, n, t);
                       break e;
                     }
                   } else
@@ -9412,7 +9412,7 @@
                 yo(e, n, r, (i = zi(r.type, i)), t)
               );
             case 15:
-              return wo(e, n, n.type, n.pendingProps, t);
+              return jo(e, n, n.type, n.pendingProps, t);
             case 17:
               return (
                 (r = n.type),
@@ -9428,9 +9428,9 @@
                 So(null, n, r, !0, e, t)
               );
             case 19:
-              return Uo(e, n, t);
+              return Fo(e, n, t);
             case 22:
-              return jo(e, n, t);
+              return wo(e, n, t);
           }
           throw Error(a(156, n.tag));
         };
@@ -9443,10 +9443,10 @@
         function Dc(e) {
           this._internalRoot = e;
         }
-        function Uc(e) {
+        function Fc(e) {
           this._internalRoot = e;
         }
-        function Fc(e) {
+        function Uc(e) {
           return !(
             !e ||
             (1 !== e.nodeType && 9 !== e.nodeType && 11 !== e.nodeType)
@@ -9515,13 +9515,13 @@
             })(t, n, e, i, r);
           return Ic(s);
         }
-        (Uc.prototype.render = Dc.prototype.render =
+        (Fc.prototype.render = Dc.prototype.render =
           function (e) {
             var n = this._internalRoot;
             if (null === n) throw Error(a(409));
             Rc(e, n, null, null);
           }),
-          (Uc.prototype.unmount = Dc.prototype.unmount =
+          (Fc.prototype.unmount = Dc.prototype.unmount =
             function () {
               var e = this._internalRoot;
               if (null !== e) {
@@ -9533,7 +9533,7 @@
                   (n[di] = null);
               }
             }),
-          (Uc.prototype.unstable_scheduleHydration = function (e) {
+          (Fc.prototype.unstable_scheduleHydration = function (e) {
             if (e) {
               var n = kn();
               e = { blockedOn: null, target: e, priority: n };
@@ -9545,7 +9545,7 @@
               In.splice(t, 0, e), 0 === t && Dn(e);
             }
           }),
-          (wn = function (e) {
+          (jn = function (e) {
             switch (e.tag) {
               case 3:
                 var n = e.stateNode;
@@ -9554,7 +9554,7 @@
                   0 !== t &&
                     (bn(n, 1 | t),
                     Yl(n, $e()),
-                    0 == (6 & gl) && ((Ol = $e() + 500), Fi()));
+                    0 == (6 & gl) && ((Ol = $e() + 500), Ui()));
                 }
                 break;
               case 13:
@@ -9565,7 +9565,7 @@
                   Lc(e, 1);
             }
           }),
-          (jn = function (e) {
+          (wn = function (e) {
             13 === e.tag && (Gl(e, 134217728, zl()), Lc(e, 134217728));
           }),
           (Nn = function (e) {
@@ -9586,7 +9586,7 @@
               xn = t;
             }
           }),
-          (je = function (e, n, t) {
+          (we = function (e, n, t) {
             switch (n) {
               case "input":
                 if ((Z(e, t), (n = t.name), "radio" === t.type && null != n)) {
@@ -9670,11 +9670,11 @@
               2 < arguments.length && void 0 !== arguments[2]
                 ? arguments[2]
                 : null;
-            if (!Fc(n)) throw Error(a(200));
+            if (!Uc(n)) throw Error(a(200));
             return Tc(e, n, null, t);
           }),
           (n.createRoot = function (e, n) {
-            if (!Fc(e)) throw Error(a(299));
+            if (!Uc(e)) throw Error(a(299));
             var t = !1,
               r = "",
               i = Mc;
@@ -9707,7 +9707,7 @@
             return Hc(null, e, n, !0, t);
           }),
           (n.hydrateRoot = function (e, n, t) {
-            if (!Fc(e)) throw Error(a(405));
+            if (!Uc(e)) throw Error(a(405));
             var r = (null != t && t.hydratedSources) || null,
               i = !1,
               s = "",
@@ -9727,7 +9727,7 @@
                   null == n.mutableSourceEagerHydrationData
                     ? (n.mutableSourceEagerHydrationData = [t, i])
                     : n.mutableSourceEagerHydrationData.push(t, i);
-            return new Uc(n);
+            return new Fc(n);
           }),
           (n.render = function (e, n, t) {
             if (!Bc(n)) throw Error(a(200));
@@ -10245,8 +10245,8 @@
           (b.prototype = v.prototype);
         var y = (x.prototype = new b());
         (y.constructor = x), m(y, v.prototype), (y.isPureReactComponent = !0);
-        var w = Array.isArray,
-          j = Object.prototype.hasOwnProperty,
+        var j = Array.isArray,
+          w = Object.prototype.hasOwnProperty,
           N = { current: null },
           k = { key: !0, ref: !0, __self: !0, __source: !0 };
         function E(e, n, r) {
@@ -10258,7 +10258,7 @@
             for (i in (void 0 !== n.ref && (o = n.ref),
             void 0 !== n.key && (s = "" + n.key),
             n))
-              j.call(n, i) && !k.hasOwnProperty(i) && (a[i] = n[i]);
+              w.call(n, i) && !k.hasOwnProperty(i) && (a[i] = n[i]);
           var l = arguments.length - 2;
           if (1 === l) a.children = r;
           else if (1 < l) {
@@ -10315,7 +10315,7 @@
             return (
               (s = s((l = e))),
               (e = "" === a ? "." + A(l, 0) : a),
-              w(s)
+              j(s)
                 ? ((i = ""),
                   null != e && (i = e.replace(C, "$&/") + "/"),
                   T(s, n, i, "", function (e) {
@@ -10343,7 +10343,7 @@
                   n.push(s)),
               1
             );
-          if (((l = 0), (a = "" === a ? "." : a + ":"), w(e)))
+          if (((l = 0), (a = "" === a ? "." : a + ":"), j(e)))
             for (var c = 0; c < e.length; c++) {
               var u = a + A((o = e[c]), c);
               l += T(o, n, i, u, s);
@@ -10470,7 +10470,7 @@
               )
                 var l = e.type.defaultProps;
               for (c in n)
-                j.call(n, c) &&
+                w.call(n, c) &&
                   !k.hasOwnProperty(c) &&
                   (i[c] = void 0 === n[c] && void 0 !== l ? l[c] : n[c]);
             }
@@ -10672,15 +10672,15 @@
             n = r(u);
           }
         }
-        function w(e) {
+        function j(e) {
           if (((g = !1), y(e), !m))
-            if (null !== r(c)) (m = !0), I(j);
+            if (null !== r(c)) (m = !0), I(w);
             else {
               var n = r(u);
-              null !== n && P(w, n.startTime - e);
+              null !== n && P(j, n.startTime - e);
             }
         }
-        function j(e, t) {
+        function w(e, t) {
           (m = !1), g && ((g = !1), b(S), (S = -1)), (h = !0);
           var a = f;
           try {
@@ -10704,7 +10704,7 @@
             if (null !== p) var l = !0;
             else {
               var d = r(u);
-              null !== d && P(w, d.startTime - t), (l = !1);
+              null !== d && P(j, d.startTime - t), (l = !1);
             }
             return l;
           } finally {
@@ -10769,7 +10769,7 @@
             e.callback = null;
           }),
           (n.unstable_continueExecution = function () {
-            m || h || ((m = !0), I(j));
+            m || h || ((m = !0), I(w));
           }),
           (n.unstable_forceFrameRate = function (e) {
             0 > e || 125 < e
@@ -10864,8 +10864,8 @@
                   t(u, e),
                   null === r(c) &&
                     e === r(u) &&
-                    (g ? (b(S), (S = -1)) : (g = !0), P(w, a - s)))
-                : ((e.sortIndex = o), t(c, e), m || h || ((m = !0), I(j))),
+                    (g ? (b(S), (S = -1)) : (g = !0), P(j, a - s)))
+                : ((e.sortIndex = o), t(c, e), m || h || ((m = !0), I(w))),
               e
             );
           }),
@@ -11319,7 +11319,7 @@
         y = function (e, n) {
           return e === n;
         };
-      function w(e) {
+      function j(e) {
         void 0 === e && (e = i);
         var n =
           e === i
@@ -11399,8 +11399,8 @@
           return (0, r.useDebugValue)(a), a;
         };
       }
-      var j,
-        N = w(),
+      var w,
+        N = j(),
         k = t(3935);
       function E(e, n, t) {
         return (
@@ -11455,7 +11455,7 @@
           " for the full message or use the non-minified dev environment for full errors. "
         );
       }
-      (j = k.unstable_batchedUpdates), (a = j);
+      (w = k.unstable_batchedUpdates), (a = w);
       var T =
           ("function" == typeof Symbol && Symbol.observable) || "@@observable",
         O = function () {
@@ -11527,8 +11527,8 @@
         },
         M = L("CANCEL_PROMISE"),
         D = L("CHANNEL_END"),
-        U = L("IO"),
-        F = L("MATCH"),
+        F = L("IO"),
+        U = L("MATCH"),
         B = L("MULTICAST"),
         z = L("SAGA_ACTION"),
         H = L("SELF_CANCELLATION"),
@@ -11659,7 +11659,7 @@
         ye = function (e) {
           return be(e) || xe(e);
         };
-      function we(e, n) {
+      function je(e, n) {
         var t,
           r = Object.keys(e),
           i = r.length,
@@ -11686,7 +11686,7 @@
           o
         );
       }
-      function je(e) {
+      function we(e) {
         return { name: e.name || "anonymous", location: Ne(e) };
       }
       function Ne(e) {
@@ -11749,7 +11749,7 @@
         Te = function (e, n) {
           var t;
           return (
-            ((t = {})[U] = !0),
+            ((t = {})[F] = !0),
             (t.combinator = !1),
             (t.type = e),
             (t.payload = n),
@@ -11816,8 +11816,8 @@
           e
         );
       };
-      var Ue = [],
-        Fe = 0;
+      var Fe = [],
+        Ue = 0;
       function Be(e) {
         try {
           Ge(), e();
@@ -11826,7 +11826,7 @@
         }
       }
       function ze(e) {
-        Ue.push(e), Fe || (Ge(), Ye());
+        Fe.push(e), Ue || (Ge(), Ye());
       }
       function He(e) {
         try {
@@ -11836,14 +11836,14 @@
         }
       }
       function Ge() {
-        Fe++;
+        Ue++;
       }
       function We() {
-        Fe--;
+        Ue--;
       }
       function Ye() {
         var e;
-        for (We(); !Fe && void 0 !== (e = Ue.shift()); ) Be(e);
+        for (We(); !Ue && void 0 !== (e = Fe.shift()); ) Be(e);
       }
       var Xe = function (e) {
           return function (n) {
@@ -11954,14 +11954,14 @@
                 else
                   for (var i = (t = r), s = 0, o = i.length; s < o; s++) {
                     var l = i[s];
-                    l[F](e) && (l.cancel(), l(e));
+                    l[U](e) && (l.cancel(), l(e));
                   }
             }),
             (e.take = function (e, t) {
               void 0 === t && (t = Ke),
                 n
                   ? e(Ze)
-                  : ((e[F] = t),
+                  : ((e[U] = t),
                     i(),
                     r.push(e),
                     (e.cancel = de(function () {
@@ -12032,7 +12032,7 @@
             a = an,
             s = Object.keys(n);
           if (0 !== s.length) {
-            var o = we(n, t);
+            var o = je(n, t);
             s.forEach(function (e) {
               i(n[e], a, o[e], e);
             });
@@ -12073,7 +12073,7 @@
           try {
             var l = a.apply(i, s);
             if (Z(l)) return void tn(l, t);
-            if (J(l)) return void bn(e, l, o.context, an, je(a), !1, t);
+            if (J(l)) return void bn(e, l, o.context, an, we(a), !1, t);
             t(l);
           } catch (e) {
             t(e, !0);
@@ -12118,7 +12118,7 @@
               }
             })({ context: i, fn: a, args: s }),
             u = (function (e, n) {
-              return e.isSagaIterator ? { name: e.meta.name } : je(n);
+              return e.isSagaIterator ? { name: e.meta.name } : we(n);
             })(c, a);
           He(function () {
             var n = bn(e, c, l.context, an, u, o, void 0);
@@ -12144,7 +12144,7 @@
             };
           if ($(n)) {
             if (0 === n.length) return void t([]);
-            var s = we(n, t);
+            var s = je(n, t);
             n.forEach(function (e, n) {
               a(e, s[n]);
             });
@@ -12360,7 +12360,7 @@
             ? tn(n, r)
             : J(n)
             ? bn(e, n, c.context, t, i, !1, r)
-            : n && n[U]
+            : n && n[F]
             ? (0, ln[n.type])(e, n.payload, r, u)
             : r(n);
         });
@@ -12484,7 +12484,7 @@
           finalizeRunEffect: m,
         };
         return He(function () {
-          var e = bn(x, g, o, v, je(n), !0, void 0);
+          var e = bn(x, g, o, v, we(n), !0, void 0);
           return l && l.effectResolved(v, e), e;
         });
       }
@@ -12539,7 +12539,7 @@
           c
         );
       };
-      var wn = function (e, n) {
+      var jn = function (e, n) {
           return {
             type: e,
             make: function (t) {
@@ -12547,7 +12547,7 @@
             },
           };
         },
-        jn = function (e) {
+        wn = function (e) {
           for (
             var n = arguments.length, t = new Array(n > 1 ? n - 1 : 0), r = 1;
             r < n;
@@ -12587,11 +12587,11 @@
             (this.upgrades = { list: [] }),
             (this.buildings = { list: [] });
         };
-      const Sn = jn(new En());
+      const Sn = wn(new En());
       var Cn = function () {
         this.resources = [];
       };
-      const An = jn(new Cn());
+      const An = wn(new Cn());
       var Tn = function () {
         (this.isUnlocked = !1),
           (this.colonists = 0),
@@ -12599,17 +12599,17 @@
           (this.jobs = { list: [], freeWorkers: 0 }),
           (this.effects = { happiness: 0, buff: 0, effects: [] });
       };
-      const On = jn(new Tn());
+      const On = wn(new Tn());
       var _n = function () {
         (this.isUnlocked = !1),
           (this.maxSlots = 0),
           (this.jobs = { list: [], craftingSlots: 0 });
       };
-      const Rn = jn(new _n());
+      const Rn = wn(new _n());
       var In = function () {
         (this.research = { list: [] }), (this.isUnlocked = !1);
       };
-      const Pn = jn(new In());
+      const Pn = wn(new In());
       var Ln = function () {
         (this.index = 0),
           (this.current = {
@@ -12619,7 +12619,7 @@
             popup: "",
           });
       };
-      const Mn = jn(new Ln());
+      const Mn = wn(new Ln());
       var Dn = function () {
         (this.list = []),
           (this.totalAmount = 0),
@@ -12627,11 +12627,11 @@
           (this.amountHidden = 0),
           (this.hiddenComplete = 0);
       };
-      const Un = jn(new Dn());
-      var Fn = function () {
+      const Fn = wn(new Dn());
+      var Un = function () {
         (this.isUnlocked = !1), (this.laws = []);
       };
-      const Bn = jn(new Fn());
+      const Bn = wn(new Un());
       var zn = function () {
         (this.isUnlocked = !0),
           (this.spaceship = { isUnlocked: !1, list: [] }),
@@ -12657,7 +12657,7 @@
             pilot: { xp: 0, maxXp: 10, level: 0, bonus: "" },
           });
       };
-      const Hn = jn(new zn());
+      const Hn = wn(new zn());
       var Gn = function () {
         (this.isUnlocked = !1),
           (this.isInProgress = !1),
@@ -12676,7 +12676,7 @@
           (this.potentialEta = ""),
           (this.viewRadius = 5);
       };
-      const Wn = jn(new Gn());
+      const Wn = wn(new Gn());
       var Yn = function () {
         (this.isUnlocked = !1),
           (this.transmitKnowledge = {
@@ -12687,6 +12687,7 @@
           }),
           (this.colonizePlanet = {
             current: {
+              index: -1,
               name: "Default",
               description: "",
               cost: [],
@@ -12739,11 +12740,11 @@
             upgrades: [],
           });
       };
-      const Xn = jn(new Yn());
+      const Xn = wn(new Yn());
       var Vn = function () {
         this.new = {};
       };
-      const qn = jn(new Vn());
+      const qn = wn(new Vn());
       var Qn = function () {
         (this.timeInGame = 0),
           (this.timeThisPlanet = 0),
@@ -12767,7 +12768,7 @@
           (this.fightsLost = 0),
           (this.fightsWon = 0);
       };
-      const Kn = jn(new Qn());
+      const Kn = wn(new Qn());
       var $n = function () {
         (this.climate = {
           year: 0,
@@ -12778,14 +12779,14 @@
           (this.bankedTime = { multiplier: 1, amountLeft: 0 }),
           (this.events = { amount: 0, events: [] });
       };
-      const Zn = jn(new $n());
+      const Zn = wn(new $n());
       var Jn = function () {
         (this.slots = 0),
           (this.maxSlots = 0),
           (this.queue = []),
           (this.selection = { isAvailable: !1, scopes: [], choices: {} });
       };
-      const et = jn(new Jn());
+      const et = wn(new Jn());
       var nt, tt, rt, it;
       !(function (e) {
         (e.STONE = "stone"),
@@ -12862,9 +12863,9 @@
           e)),
           (this.events = []);
       };
-      const st = jn(new at());
+      const st = wn(new at());
       var ot = function () {};
-      const lt = jn(new ot());
+      const lt = wn(new ot());
       var ct = function () {
         (this.isUnlocked = !1),
           (this.jobs = {
@@ -12874,9 +12875,9 @@
           }),
           (this.laws = { isUnlocked: !1, list: [], newPreset: { laws: [] } });
       };
-      const ut = jn(new ct());
+      const ut = wn(new ct());
       var dt = {
-          setUI: wn("[game] update ui", function (e) {
+          setUI: jn("[game] update ui", function (e) {
             return e;
           }),
           purchaseMax: kn("[game] purchase max", function (e) {
@@ -12920,7 +12921,7 @@
             pt.apply(this, arguments)
           );
         },
-        ft = jn(
+        ft = wn(
           new (function () {
             (this.landingZone = new En()),
               (this.colony = new Tn()),
@@ -12929,7 +12930,7 @@
               (this.crafting = new _n()),
               (this.goals = new Ln()),
               (this.achievements = new Dn()),
-              (this.laws = new Fn()),
+              (this.laws = new Un()),
               (this.space = new zn()),
               (this.prestige = new Yn()),
               (this.expeditions = new Gn()),
@@ -12994,7 +12995,7 @@
             science: Pn,
             colony: On,
             goals: Mn,
-            achievements: Un,
+            achievements: Fn,
             laws: Bn,
             space: Hn,
             expeditions: Wn,
@@ -13002,7 +13003,7 @@
             newNotifications: qn,
             statistics: Kn,
             environment: Zn,
-            settings: jn({}),
+            settings: wn({}),
             queueItems: et,
             eventLogs: st,
             searchData: lt,
@@ -13014,7 +13015,7 @@
       var gt,
         vt,
         bt = {
-          changePage: wn("[nav] change page", function (e) {
+          changePage: jn("[nav] change page", function (e) {
             return e;
           }),
         };
@@ -13047,7 +13048,7 @@
           xt.apply(this, arguments)
         );
       };
-      const yt = jn(
+      const yt = wn(
         new (function () {
           this.page = gt.PLANET;
         })(),
@@ -13056,32 +13057,32 @@
           return xt(xt({}, e), { page: t, subPage: null });
         })
       );
-      var wt = {
-          setCollapsed: wn("[ui] set collapsed", function (e) {
+      var jt = {
+          setCollapsed: jn("[ui] set collapsed", function (e) {
             return e;
           }),
-          setMissingHighlight: wn("[ui] highlight missing", function (e) {
+          setMissingHighlight: jn("[ui] highlight missing", function (e) {
             return e;
           }),
-          setUsageHighlight: wn("[ui] highlight usage", function (e) {
+          setUsageHighlight: jn("[ui] highlight usage", function (e) {
             return e;
           }),
-          setProduceHighlight: wn("[ui] highlight produce", function (e) {
+          setProduceHighlight: jn("[ui] highlight produce", function (e) {
             return e;
           }),
-          setConsumeHighlight: wn("[ui] highlight consume", function (e) {
+          setConsumeHighlight: jn("[ui] highlight consume", function (e) {
             return e;
           }),
-          stopLoading: wn("[ui] stop loading", function (e) {
+          stopLoading: jn("[ui] stop loading", function (e) {
             return e;
           }),
-          setKeyIsHold: wn("[ui] key is hold", function (e) {
+          setKeyIsHold: jn("[ui] key is hold", function (e) {
             return e;
           }),
         },
-        jt = function () {
+        wt = function () {
           return (
-            (jt =
+            (wt =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -13089,10 +13090,10 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            jt.apply(this, arguments)
+            wt.apply(this, arguments)
           );
         };
-      const Nt = jn(
+      const Nt = wn(
         new (function () {
           (this.collapsedStatus = {}),
             (this.missingResourcesHighlight = {}),
@@ -13101,43 +13102,43 @@
             (this.keys = {}),
             (this.isLoading = !0);
         })(),
-        Nn(wt.setCollapsed, function (e, n) {
+        Nn(jt.setCollapsed, function (e, n) {
           var t,
             r = n.payload;
-          return jt(jt({}, e), {
-            collapsedStatus: jt(
-              jt({}, e.collapsedStatus),
+          return wt(wt({}, e), {
+            collapsedStatus: wt(
+              wt({}, e.collapsedStatus),
               ((t = {}), (t[r.id] = r.status), t)
             ),
           });
         }),
-        Nn(wt.setMissingHighlight, function (e, n) {
+        Nn(jt.setMissingHighlight, function (e, n) {
           var t = n.payload;
-          return jt(jt({}, e), { missingResourcesHighlight: t });
+          return wt(wt({}, e), { missingResourcesHighlight: t });
         }),
-        Nn(wt.setUsageHighlight, function (e, n) {
+        Nn(jt.setUsageHighlight, function (e, n) {
           var t = n.payload;
-          return jt(jt({}, e), { usageHighlight: t });
+          return wt(wt({}, e), { usageHighlight: t });
         }),
-        Nn(wt.setProduceHighlight, function (e, n) {
+        Nn(jt.setProduceHighlight, function (e, n) {
           var t = n.payload;
-          return jt(jt({}, e), { producingResourcesHighlight: t });
+          return wt(wt({}, e), { producingResourcesHighlight: t });
         }),
-        Nn(wt.setConsumeHighlight, function (e, n) {
+        Nn(jt.setConsumeHighlight, function (e, n) {
           var t = n.payload;
-          return jt(jt({}, e), { consumingResourcesHighlight: t });
+          return wt(wt({}, e), { consumingResourcesHighlight: t });
         }),
-        Nn(wt.stopLoading, function (e, n) {
-          return n.payload, jt(jt({}, e), { isLoading: !1 });
+        Nn(jt.stopLoading, function (e, n) {
+          return n.payload, wt(wt({}, e), { isLoading: !1 });
         }),
-        Nn(wt.setKeyIsHold, function (e, n) {
+        Nn(jt.setKeyIsHold, function (e, n) {
           var t,
             r = n.payload;
           return (
             r.key.toLowerCase(),
-            jt(jt({}, e), {
-              keys: jt(
-                jt({}, e.keys),
+            wt(wt({}, e), {
+              keys: wt(
+                wt({}, e.keys),
                 ((t = {}), (t[r.key] = !!r.isHold || void 0), t)
               ),
             })
@@ -13145,13 +13146,13 @@
         })
       );
       var kt = {
-          postNotificationMessage: wn(
+          postNotificationMessage: jn(
             "[notification] post message",
             function (e) {
               return e;
             }
           ),
-          delNotification: wn("[notification] delete message", function (e) {
+          delNotification: jn("[notification] delete message", function (e) {
             return e;
           }),
         },
@@ -13177,7 +13178,7 @@
         },
         Ct = I({
           navigation: yt,
-          notifications: jn(
+          notifications: wn(
             new (function () {
               this.messages = [];
             })(),
@@ -13425,7 +13426,7 @@
           };
         }
       };
-      const Ut = (function () {
+      const Ft = (function () {
         function e() {}
         return (
           (e.exportGameString = function (e) {
@@ -13551,7 +13552,7 @@
                   return (
                     e.sent(),
                     console.log("---LOADED---", i),
-                    [4, _e(wt.stopLoading.make())]
+                    [4, _e(jt.stopLoading.make())]
                   );
                 case 4:
                   return e.sent(), [2];
@@ -13631,7 +13632,7 @@
           e
         );
       })();
-      var Ft = yn(),
+      var Ut = yn(),
         Bt = (function e(n, t, r) {
           var i;
           if (
@@ -13747,7 +13748,7 @@
                 );
               };
             };
-          })(Ft)
+          })(Ut)
         );
       function zt() {
         return "undefined" != typeof window;
@@ -13796,7 +13797,7 @@
           Gt() && !1 === e.debug && r.setAttribute("data-debug", "false"),
           document.head.appendChild(r);
       }
-      Ft.run(Ut.run);
+      Ut.run(Ft.run);
       var Xt = function (e, n) {
           var t, r;
           if (zt())
@@ -13897,10 +13898,10 @@
               .join(" ")
           : navigator.userAgent;
       }
-      function wr() {
+      function jr() {
         return !/^((?!chrome|android).)*safari/i.test(yr());
       }
-      function jr(e, n, t) {
+      function wr(e, n, t) {
         void 0 === n && (n = !1), void 0 === t && (t = !1);
         var r = e.getBoundingClientRect(),
           i = 1,
@@ -13910,7 +13911,7 @@
           ((i = (e.offsetWidth > 0 && xr(r.width) / e.offsetWidth) || 1),
           (a = (e.offsetHeight > 0 && xr(r.height) / e.offsetHeight) || 1));
         var s = (hr(e) ? fr(e) : window).visualViewport,
-          o = !wr() && t,
+          o = !jr() && t,
           l = (r.left + (o && s ? s.offsetLeft : 0)) / i,
           c = (r.top + (o && s ? s.offsetTop : 0)) / a,
           u = r.width / i,
@@ -13938,7 +13939,7 @@
           .documentElement;
       }
       function Sr(e) {
-        return jr(Er(e)).left + Nr(e).scrollLeft;
+        return wr(Er(e)).left + Nr(e).scrollLeft;
       }
       function Cr(e) {
         return fr(e).getComputedStyle(e);
@@ -13964,7 +13965,7 @@
               return 1 !== t || 1 !== r;
             })(n),
           o = Er(n),
-          l = jr(e, s, t),
+          l = wr(e, s, t),
           c = { scrollLeft: 0, scrollTop: 0 },
           u = { x: 0, y: 0 };
         return (
@@ -13975,7 +13976,7 @@
                   ? { scrollLeft: (i = r).scrollLeft, scrollTop: i.scrollTop }
                   : Nr(r)),
             mr(n)
-              ? (((u = jr(n, !0)).x += n.clientLeft), (u.y += n.clientTop))
+              ? (((u = wr(n, !0)).x += n.clientLeft), (u.y += n.clientTop))
               : o && (u.x = Sr(o))),
           {
             x: l.left + c.scrollLeft - u.x,
@@ -13986,7 +13987,7 @@
         );
       }
       function Or(e) {
-        var n = jr(e),
+        var n = wr(e),
           t = e.offsetWidth,
           r = e.offsetHeight;
         return (
@@ -14066,11 +14067,11 @@
               n;
       }
       var Dr = "top",
-        Ur = "bottom",
-        Fr = "right",
+        Fr = "bottom",
+        Ur = "right",
         Br = "left",
         zr = "auto",
-        Hr = [Dr, Ur, Fr, Br],
+        Hr = [Dr, Fr, Ur, Br],
         Gr = "start",
         Wr = "end",
         Yr = "viewport",
@@ -14332,10 +14333,10 @@
           case Dr:
             n = { x: o, y: t.y - r.height };
             break;
-          case Ur:
+          case Fr:
             n = { x: o, y: t.y + t.height };
             break;
-          case Fr:
+          case Ur:
             n = { x: t.x + t.width, y: l };
             break;
           case Br:
@@ -14380,29 +14381,29 @@
           b = s.hasOwnProperty("y"),
           x = Br,
           y = Dr,
-          w = window;
+          j = window;
         if (c) {
-          var j = Mr(t),
+          var w = Mr(t),
             N = "clientHeight",
             k = "clientWidth";
-          j === fr(t) &&
-            "static" !== Cr((j = Er(t))).position &&
+          w === fr(t) &&
+            "static" !== Cr((w = Er(t))).position &&
             "absolute" === o &&
             ((N = "scrollHeight"), (k = "scrollWidth")),
-            (j = j),
-            (i === Dr || ((i === Br || i === Fr) && a === Wr)) &&
-              ((y = Ur),
+            (w = w),
+            (i === Dr || ((i === Br || i === Ur) && a === Wr)) &&
+              ((y = Fr),
               (m -=
-                (d && j === w && w.visualViewport
-                  ? w.visualViewport.height
-                  : j[N]) - r.height),
+                (d && w === j && j.visualViewport
+                  ? j.visualViewport.height
+                  : w[N]) - r.height),
               (m *= l ? 1 : -1)),
-            (i !== Br && ((i !== Dr && i !== Ur) || a !== Wr)) ||
-              ((x = Fr),
+            (i !== Br && ((i !== Dr && i !== Fr) || a !== Wr)) ||
+              ((x = Ur),
               (f -=
-                (d && j === w && w.visualViewport
-                  ? w.visualViewport.width
-                  : j[k]) - r.width),
+                (d && w === j && j.visualViewport
+                  ? j.visualViewport.width
+                  : w[k]) - r.width),
               (f *= l ? 1 : -1));
         }
         var E,
@@ -14426,7 +14427,7 @@
                 (((E = {})[y] = b ? "0" : ""),
                 (E[x] = v ? "0" : ""),
                 (E.transform =
-                  (w.devicePixelRatio || 1) <= 1
+                  (j.devicePixelRatio || 1) <= 1
                     ? "translate(" + f + "px, " + m + "px)"
                     : "translate3d(" + f + "px, " + m + "px, 0)"),
                 E)
@@ -14578,7 +14579,7 @@
                     return (
                       (s = s || 0),
                       (o = (o || 0) * i),
-                      [Br, Fr].indexOf(r) >= 0 ? { x: o, y: s } : { x: s, y: o }
+                      [Br, Ur].indexOf(r) >= 0 ? { x: o, y: s } : { x: s, y: o }
                     );
                   })(t, n.rects, a)),
                   e
@@ -14638,7 +14639,7 @@
                   l = 0;
                 if (i) {
                   (a = i.width), (s = i.height);
-                  var c = wr();
+                  var c = jr();
                   (c || (!c && "fixed" === n)) &&
                     ((o = i.offsetLeft), (l = i.offsetTop));
                 }
@@ -14647,7 +14648,7 @@
             )
           : hr(n)
           ? (function (e, n) {
-              var t = jr(e, !1, "fixed" === n);
+              var t = wr(e, !1, "fixed" === n);
               return (
                 (t.top = t.top + e.clientTop),
                 (t.left = t.left + e.clientLeft),
@@ -14717,7 +14718,7 @@
           b = p === Xr ? "reference" : Xr,
           x = e.rects.popper,
           y = e.elements[h ? b : p],
-          w = (function (e, n, t, r) {
+          j = (function (e, n, t, r) {
             var i =
                 "clippingParents" === n
                   ? (function (e) {
@@ -14754,33 +14755,33 @@
               o
             );
           })(hr(y) ? y : y.contextElement || Er(e.elements.popper), l, u, s),
-          j = jr(e.elements.reference),
+          w = wr(e.elements.reference),
           N = ai({
-            reference: j,
+            reference: w,
             element: x,
             strategy: "absolute",
             placement: i,
           }),
           k = gi(Object.assign({}, x, N)),
-          E = p === Xr ? k : j,
+          E = p === Xr ? k : w,
           S = {
-            top: w.top - E.top + v.top,
-            bottom: E.bottom - w.bottom + v.bottom,
-            left: w.left - E.left + v.left,
-            right: E.right - w.right + v.right,
+            top: j.top - E.top + v.top,
+            bottom: E.bottom - j.bottom + v.bottom,
+            left: j.left - E.left + v.left,
+            right: E.right - j.right + v.right,
           },
           C = e.modifiersData.offset;
         if (p === Xr && C) {
           var A = C[i];
           Object.keys(S).forEach(function (e) {
-            var n = [Fr, Ur].indexOf(e) >= 0 ? 1 : -1,
-              t = [Dr, Ur].indexOf(e) >= 0 ? "y" : "x";
+            var n = [Ur, Fr].indexOf(e) >= 0 ? 1 : -1,
+              t = [Dr, Fr].indexOf(e) >= 0 ? "y" : "x";
             S[e] += A[t] * n;
           });
         }
         return S;
       }
-      const wi = {
+      const ji = {
         name: "flip",
         enabled: !0,
         phase: "main",
@@ -14864,8 +14865,8 @@
                   );
                 }, []),
                 y = n.rects.reference,
-                w = n.rects.popper,
-                j = new Map(),
+                j = n.rects.popper,
+                w = new Map(),
                 N = !0,
                 k = x[0],
                 E = 0;
@@ -14875,7 +14876,7 @@
               var S = x[E],
                 C = ti(S),
                 A = ri(S) === Gr,
-                T = [Dr, Ur].indexOf(C) >= 0,
+                T = [Dr, Fr].indexOf(C) >= 0,
                 O = T ? "width" : "height",
                 _ = yi(n, {
                   placement: S,
@@ -14884,8 +14885,8 @@
                   altBoundary: p,
                   padding: c,
                 }),
-                R = T ? (A ? Fr : Br) : A ? Ur : Dr;
-              y[O] > w[O] && (R = pi(R));
+                R = T ? (A ? Ur : Br) : A ? Fr : Dr;
+              y[O] > j[O] && (R = pi(R));
               var I = pi(R),
                 P = [];
               if (
@@ -14898,13 +14899,13 @@
                 (k = S), (N = !1);
                 break;
               }
-              j.set(S, P);
+              w.set(S, P);
             }
             if (N)
               for (
                 var L = function (e) {
                     var n = x.find(function (n) {
-                      var t = j.get(n);
+                      var t = w.get(n);
                       if (t)
                         return t.slice(0, e).every(function (e) {
                           return e;
@@ -14925,7 +14926,7 @@
         requiresIfExists: ["offset"],
         data: { _skip: !1 },
       };
-      function ji(e, n, t) {
+      function wi(e, n, t) {
         return vr(e, br(n, t));
       }
       const Ni = {
@@ -14958,8 +14959,8 @@
               b = ri(n.placement),
               x = !b,
               y = ii(v),
-              w = "x" === y ? "y" : "x",
-              j = n.modifiersData.popperOffsets,
+              j = "x" === y ? "y" : "x",
+              w = n.modifiersData.popperOffsets,
               N = n.rects.reference,
               k = n.rects.popper,
               E =
@@ -14974,32 +14975,32 @@
                 ? n.modifiersData.offset[n.placement]
                 : null,
               A = { x: 0, y: 0 };
-            if (j) {
+            if (w) {
               if (a) {
                 var T,
                   O = "y" === y ? Dr : Br,
-                  _ = "y" === y ? Ur : Fr,
+                  _ = "y" === y ? Fr : Ur,
                   R = "y" === y ? "height" : "width",
-                  I = j[y],
+                  I = w[y],
                   P = I + g[O],
                   L = I - g[_],
                   M = f ? -k[R] / 2 : 0,
                   D = b === Gr ? N[R] : k[R],
-                  U = b === Gr ? -k[R] : -N[R],
-                  F = n.elements.arrow,
-                  B = f && F ? Or(F) : { width: 0, height: 0 },
+                  F = b === Gr ? -k[R] : -N[R],
+                  U = n.elements.arrow,
+                  B = f && U ? Or(U) : { width: 0, height: 0 },
                   z = n.modifiersData["arrow#persistent"]
                     ? n.modifiersData["arrow#persistent"].padding
                     : { top: 0, right: 0, bottom: 0, left: 0 },
                   H = z[O],
                   G = z[_],
-                  W = ji(0, N[R], B[R]),
+                  W = wi(0, N[R], B[R]),
                   Y = x
                     ? N[R] / 2 - M - W - H - S.mainAxis
                     : D - W - H - S.mainAxis,
                   X = x
                     ? -N[R] / 2 + M + W + G + S.mainAxis
-                    : U + W + G + S.mainAxis,
+                    : F + W + G + S.mainAxis,
                   V = n.elements.arrow && Mr(n.elements.arrow),
                   q = V
                     ? "y" === y
@@ -15008,29 +15009,29 @@
                     : 0,
                   Q = null != (T = null == C ? void 0 : C[y]) ? T : 0,
                   K = I + X - Q,
-                  $ = ji(f ? br(P, I + Y - Q - q) : P, I, f ? vr(L, K) : L);
-                (j[y] = $), (A[y] = $ - I);
+                  $ = wi(f ? br(P, I + Y - Q - q) : P, I, f ? vr(L, K) : L);
+                (w[y] = $), (A[y] = $ - I);
               }
               if (o) {
                 var Z,
                   J = "x" === y ? Dr : Br,
-                  ee = "x" === y ? Ur : Fr,
-                  ne = j[w],
-                  te = "y" === w ? "height" : "width",
+                  ee = "x" === y ? Fr : Ur,
+                  ne = w[j],
+                  te = "y" === j ? "height" : "width",
                   re = ne + g[J],
                   ie = ne - g[ee],
                   ae = -1 !== [Dr, Br].indexOf(v),
-                  se = null != (Z = null == C ? void 0 : C[w]) ? Z : 0,
+                  se = null != (Z = null == C ? void 0 : C[j]) ? Z : 0,
                   oe = ae ? re : ne - N[te] - k[te] - se + S.altAxis,
                   le = ae ? ne + N[te] + k[te] - se - S.altAxis : ie,
                   ce =
                     f && ae
                       ? (function (e, n, t) {
-                          var r = ji(e, n, t);
+                          var r = wi(e, n, t);
                           return r > t ? t : r;
                         })(oe, ne, le)
-                      : ji(f ? oe : re, ne, f ? le : ie);
-                (j[w] = ce), (A[w] = ce - ne);
+                      : wi(f ? oe : re, ne, f ? le : ie);
+                (w[j] = ce), (A[j] = ce - ne);
               }
               n.modifiersData[r] = A;
             }
@@ -15050,7 +15051,7 @@
               s = t.modifiersData.popperOffsets,
               o = ti(t.placement),
               l = ii(o),
-              c = [Br, Fr].indexOf(o) >= 0 ? "height" : "width";
+              c = [Br, Ur].indexOf(o) >= 0 ? "height" : "width";
             if (a && s) {
               var u = (function (e, n) {
                   return bi(
@@ -15069,7 +15070,7 @@
                 })(i.padding, t),
                 d = Or(a),
                 p = "y" === l ? Dr : Br,
-                f = "y" === l ? Ur : Fr,
+                f = "y" === l ? Fr : Ur,
                 h =
                   t.rects.reference[c] +
                   t.rects.reference[l] -
@@ -15085,11 +15086,11 @@
                 b = h / 2 - m / 2,
                 x = u[p],
                 y = v - d[c] - u[f],
-                w = v / 2 - d[c] / 2 + b,
-                j = ji(x, w, y),
+                j = v / 2 - d[c] / 2 + b,
+                w = wi(x, j, y),
                 N = l;
               t.modifiersData[r] =
-                (((n = {})[N] = j), (n.centerOffset = j - w), n);
+                (((n = {})[N] = w), (n.centerOffset = w - j), n);
             }
           },
           effect: function (e) {
@@ -15117,7 +15118,7 @@
         );
       }
       function Si(e) {
-        return [Dr, Fr, Ur, Br].some(function (n) {
+        return [Dr, Ur, Fr, Br].some(function (n) {
           return e[n] >= 0;
         });
       }
@@ -15143,7 +15144,7 @@
             li,
             ci,
             ui,
-            wi,
+            ji,
             Ni,
             ki,
             {
@@ -15216,10 +15217,10 @@
       function Di(e) {
         return [].concat(e);
       }
-      function Ui(e, n) {
+      function Fi(e, n) {
         -1 === e.indexOf(n) && e.push(n);
       }
-      function Fi(e) {
+      function Ui(e) {
         return [].slice.call(e);
       }
       function Bi(e) {
@@ -15415,7 +15416,7 @@
       }
       function sa(e) {
         var n = e.firstElementChild,
-          t = Fi(n.children);
+          t = Ui(n.children);
         return {
           box: n,
           content: t.find(function (e) {
@@ -15532,7 +15533,7 @@
                     : r.triggerTarget && e.removeAttribute("aria-expanded"),
                   L(),
                   R(),
-                  j && j(t, r),
+                  w && w(t, r),
                   x.popperInstance &&
                     ($(),
                     J().forEach(function (e) {
@@ -15564,10 +15565,10 @@
               ) {
                 if (
                   ((x.state.isVisible = !0),
-                  C() && (w.style.visibility = "visible"),
+                  C() && (j.style.visibility = "visible"),
                   R(),
                   B(),
-                  x.state.isMounted || (w.style.transition = "none"),
+                  x.state.isMounted || (j.style.transition = "none"),
                   C())
                 ) {
                   var a = O();
@@ -15579,8 +15580,8 @@
                   if (x.state.isVisible && !h) {
                     if (
                       ((h = !0),
-                      w.offsetHeight,
-                      (w.style.transition = x.props.moveTransition),
+                      j.offsetHeight,
+                      (j.style.transition = x.props.moveTransition),
                       C() && x.props.animation)
                     ) {
                       var n = O(),
@@ -15590,7 +15591,7 @@
                     }
                     P(),
                       L(),
-                      Ui(ua, x),
+                      Fi(ua, x),
                       null == (e = x.popperInstance) || e.forceUpdate(),
                       I("onMount", [x]),
                       x.props.animation &&
@@ -15607,7 +15608,7 @@
                   (s =
                     (x.props.interactive && l === Ri) || "parent" === l
                       ? c.parentNode
-                      : Li(l, [c])).contains(w) || s.appendChild(w),
+                      : Li(l, [c])).contains(j) || s.appendChild(j),
                   (x.state.isMounted = !0),
                   $();
               }
@@ -15626,7 +15627,7 @@
                   (x.state.isShown = !1),
                   (h = !1),
                   (d = !1),
-                  C() && (w.style.visibility = "hidden"),
+                  C() && (j.style.visibility = "hidden"),
                   M(),
                   z(),
                   R(!0),
@@ -15644,8 +15645,8 @@
                       (function (e, n) {
                         H(e, function () {
                           !x.state.isVisible &&
-                            w.parentNode &&
-                            w.parentNode.contains(w) &&
+                            j.parentNode &&
+                            j.parentNode.contains(j) &&
                             n();
                         });
                       })(r, x.unmount)
@@ -15653,7 +15654,7 @@
               }
             },
             hideWithInteractivity: function (e) {
-              T().addEventListener("mousemove", g), Ui(ca, g), g(e);
+              T().addEventListener("mousemove", g), Fi(ca, g), g(e);
             },
             enable: function () {
               x.state.isEnabled = !0;
@@ -15668,7 +15669,7 @@
                   J().forEach(function (e) {
                     e._tippy.unmount();
                   }),
-                  w.parentNode && w.parentNode.removeChild(w),
+                  j.parentNode && j.parentNode.removeChild(j),
                   (ua = ua.filter(function (e) {
                     return e !== x;
                   })),
@@ -15687,13 +15688,13 @@
           };
         if (!u.render) return x;
         var y = u.render(x),
-          w = y.popper,
-          j = y.onUpdate;
-        w.setAttribute("data-tippy-root", ""),
-          (w.id = "tippy-" + x.id),
-          (x.popper = w),
+          j = y.popper,
+          w = y.onUpdate;
+        j.setAttribute("data-tippy-root", ""),
+          (j.id = "tippy-" + x.id),
+          (x.popper = j),
           (e._tippy = x),
-          (w._tippy = x);
+          (j._tippy = x);
         var N = b.map(function (e) {
             return e.fn(x);
           }),
@@ -15704,10 +15705,10 @@
           R(),
           I("onCreate", [x]),
           u.showOnCreate && ee(),
-          w.addEventListener("mouseenter", function () {
+          j.addEventListener("mouseenter", function () {
             x.props.interactive && x.state.isVisible && x.clearDelayTimeouts();
           }),
-          w.addEventListener("mouseleave", function () {
+          j.addEventListener("mouseleave", function () {
             x.props.interactive &&
               x.props.trigger.indexOf("mouseenter") >= 0 &&
               T().addEventListener("mousemove", g);
@@ -15739,7 +15740,7 @@
             : document;
         }
         function O() {
-          return sa(w);
+          return sa(j);
         }
         function _(e) {
           return (x.state.isMounted && !x.state.isVisible) ||
@@ -15750,8 +15751,8 @@
         }
         function R(e) {
           void 0 === e && (e = !1),
-            (w.style.pointerEvents = x.props.interactive && !e ? "" : "none"),
-            (w.style.zIndex = "" + x.props.zIndex);
+            (j.style.pointerEvents = x.props.interactive && !e ? "" : "none"),
+            (j.style.zIndex = "" + x.props.zIndex);
         }
         function I(e, n, t) {
           var r;
@@ -15765,7 +15766,7 @@
           var n = x.props.aria;
           if (n.content) {
             var t = "aria-" + n.content,
-              r = w.id;
+              r = j.id;
             Di(x.props.triggerTarget || e).forEach(function (e) {
               var n = e.getAttribute(t);
               if (x.state.isVisible) e.setAttribute(t, n ? n + " " + r : r);
@@ -15797,7 +15798,7 @@
         function D(n) {
           if (!Vi.isTouch || (!f && "mousedown" !== n.type)) {
             var t = (n.composedPath && n.composedPath()[0]) || n.target;
-            if (!x.props.interactive || !Xi(w, t)) {
+            if (!x.props.interactive || !Xi(j, t)) {
               if (
                 Di(x.props.triggerTarget || e).some(function (e) {
                   return Xi(e, t);
@@ -15818,25 +15819,25 @@
             }
           }
         }
-        function U() {
+        function F() {
           f = !0;
         }
-        function F() {
+        function U() {
           f = !1;
         }
         function B() {
           var e = T();
           e.addEventListener("mousedown", D, !0),
             e.addEventListener("touchend", D, _i),
-            e.addEventListener("touchstart", F, _i),
-            e.addEventListener("touchmove", U, _i);
+            e.addEventListener("touchstart", U, _i),
+            e.addEventListener("touchmove", F, _i);
         }
         function z() {
           var e = T();
           e.removeEventListener("mousedown", D, !0),
             e.removeEventListener("touchend", D, _i),
-            e.removeEventListener("touchstart", F, _i),
-            e.removeEventListener("touchmove", U, _i);
+            e.removeEventListener("touchstart", U, _i),
+            e.removeEventListener("touchmove", F, _i);
         }
         function H(e, n) {
           var t = O().box;
@@ -15909,10 +15910,10 @@
         }
         function V(e) {
           var n = e.target,
-            t = A().contains(n) || w.contains(n);
+            t = A().contains(n) || j.contains(n);
           if ("mousemove" !== e.type || !t) {
             var r = J()
-              .concat(w)
+              .concat(j)
               .map(function (e) {
                 var n,
                   t = null == (n = e._tippy.popperInstance) ? void 0 : n.state;
@@ -15957,7 +15958,7 @@
           (x.props.trigger.indexOf("focusin") < 0 && e.target !== A()) ||
             (x.props.interactive &&
               e.relatedTarget &&
-              w.contains(e.relatedTarget)) ||
+              j.contains(e.relatedTarget)) ||
             ne(e);
         }
         function K(e) {
@@ -15971,7 +15972,7 @@
             i = n.offset,
             a = n.getReferenceClientRect,
             s = n.moveTransition,
-            l = C() ? sa(w).arrow : null,
+            l = C() ? sa(j).arrow : null,
             c = a
               ? {
                   getBoundingClientRect: a,
@@ -16015,7 +16016,7 @@
             u.push.apply(u, (null == t ? void 0 : t.modifiers) || []),
             (x.popperInstance = Ci(
               c,
-              w,
+              j,
               Object.assign({}, t, {
                 placement: r,
                 onFirstUpdate: o,
@@ -16028,7 +16029,7 @@
             (x.popperInstance.destroy(), (x.popperInstance = null));
         }
         function J() {
-          return Fi(w.querySelectorAll("[data-tippy-root]"));
+          return Ui(j.querySelectorAll("[data-tippy-root]"));
         }
         function ee(e) {
           x.clearDelayTimeouts(), e && I("onTrigger", [x, e]), B();
@@ -16082,10 +16083,10 @@
             : (function (e) {
                 return Pi(e, "NodeList");
               })(r)
-            ? Fi(r)
+            ? Ui(r)
             : Array.isArray(r)
             ? r
-            : Fi(document.querySelectorAll(r))).reduce(function (e, n) {
+            : Ui(document.querySelectorAll(r))).reduce(function (e, n) {
             var t = n && da(n, i);
             return t && e.push(t), e;
           }, []);
@@ -16255,10 +16256,10 @@
                 t = a[n - 1] || e;
               x.show(t);
             });
-          var w = x.setProps;
+          var j = x.setProps;
           return (
             (x.setProps = function (e) {
-              (o = e.overrides || o), w(e);
+              (o = e.overrides || o), j(e);
             }),
             (x.setInstances = function (e) {
               p(!0),
@@ -16314,7 +16315,7 @@
         }
         return !1;
       }
-      function wa(e) {
+      function ja(e) {
         var n = [];
         return (
           e.forEach(function (e) {
@@ -16325,11 +16326,11 @@
           n
         );
       }
-      function ja(e, n) {
+      function wa(e, n) {
         var t, r;
         return Object.assign({}, n, {
           popperOptions: Object.assign({}, e.popperOptions, n.popperOptions, {
-            modifiers: wa(
+            modifiers: ja(
               [].concat(
                 (null == (t = e.popperOptions) ? void 0 : t.modifiers) || [],
                 (null == (r = n.popperOptions) ? void 0 : r.modifiers) || []
@@ -16405,10 +16406,10 @@
             b = g[1],
             x = (0, r.useState)({}),
             y = x[0],
-            w = x[1],
-            j = (0, r.useState)(),
-            N = j[0],
-            E = j[1],
+            j = x[1],
+            w = (0, r.useState)(),
+            N = w[0],
+            E = w[1],
             S = ka(function () {
               return { container: xa(), renders: 1 };
             }),
@@ -16472,7 +16473,7 @@
               var e;
               if (1 !== S.renders) {
                 var n = S.instance;
-                n.setProps(ja(n.props, A)),
+                n.setProps(wa(n.props, A)),
                   null == (e = n.popperInstance) || e.forceUpdate(),
                   u ? n.disable() : n.enable(),
                   h && (a ? n.show() : n.hide()),
@@ -16515,7 +16516,7 @@
                                 (null == r ? void 0 : r.isReferenceHidden) &&
                               y.escaped ===
                                 (null == r ? void 0 : r.hasPopperEscaped)) ||
-                              w({
+                              j({
                                 placement: t.placement,
                                 referenceHidden:
                                   null == r ? void 0 : r.isReferenceHidden,
@@ -16617,7 +16618,7 @@
                     var r = t.props,
                       i = (r.content, ga(r, ["content"]));
                     n.setProps(
-                      ja(n.props, Object.assign({}, i, { overrides: o }))
+                      wa(n.props, Object.assign({}, i, { overrides: o }))
                     ),
                       n.setInstances(
                         e.map(function (e) {
@@ -16720,9 +16721,9 @@
             return null !== (t = n.ui.uiState.keys[e]) && void 0 !== t && t;
           };
         },
-        Ua = function () {
+        Fa = function () {
           return (
-            (Ua =
+            (Fa =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -16730,21 +16731,21 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            Ua.apply(this, arguments)
+            Fa.apply(this, arguments)
           );
         },
-        Fa = function (n) {
+        Ua = function (n) {
           var t = n.content,
             r = n.children;
           return t
             ? (0, e.jsx)(
                 _a,
-                Ua(
+                Fa(
                   {
                     duration: 20,
                     content: (0, e.jsx)(
                       "div",
-                      Ua({ className: "description-hint" }, { children: t })
+                      Fa({ className: "description-hint" }, { children: t })
                     ),
                     placement: "right",
                   },
@@ -16768,18 +16769,18 @@
             ? null
             : (0, e.jsxs)(
                 "div",
-                Ua(
+                Fa(
                   { className: "".concat(a, " features-block") },
                   {
                     children: [
                       (0, e.jsx)(
-                        Fa,
-                        Ua(
+                        Ua,
+                        Fa(
                           { content: o },
                           {
                             children: (0, e.jsxs)(
                               "div",
-                              Ua(
+                              Fa(
                                 { className: "features-title" },
                                 {
                                   children: [
@@ -16787,7 +16788,7 @@
                                     l
                                       ? (0, e.jsx)(
                                           "span",
-                                          Ua(
+                                          Fa(
                                             {
                                               className: "collapse-expand",
                                               onClick: u,
@@ -16811,7 +16812,7 @@
                         ? null
                         : (0, e.jsx)(
                             "div",
-                            Ua(
+                            Fa(
                               { className: "feature-list ".concat(s || "") },
                               { children: r }
                             )
@@ -16854,7 +16855,7 @@
             isCollapsable: c,
             isCollapsed: u,
             toggleCollapsed: function () {
-              d(wt.setCollapsed.make({ id: t, status: !u }));
+              d(jt.setCollapsed.make({ id: t, status: !u }));
             },
           });
         },
@@ -17165,8 +17166,8 @@
         bs,
         xs,
         ys,
-        ws,
-        js = {
+        js,
+        ws = {
           setMultiplier: kn("[banked-time] set multiplier", function (e) {
             return e;
           }),
@@ -17187,7 +17188,7 @@
         ks = function () {
           var n = N(ds),
             t = function (e) {
-              js.setMultiplier.send(e);
+              ws.setMultiplier.send(e);
             };
           return (0, e.jsxs)(
             "div",
@@ -18008,7 +18009,7 @@
             (e.SPECIAL = "special-unlock"),
             (e.RESOURCE = "resource-unlock"),
             (e.UPGRADE = "upgrade");
-        })(ws || (ws = {}));
+        })(js || (js = {}));
       var Ps = function () {
           return (
             (Ps =
@@ -18099,10 +18100,10 @@
             b = (n.isAllowMulti, (0, r.useState)(!1)),
             x = b[0],
             y = b[1],
-            w = window.innerWidth <= 860,
-            j = Oa(),
-            N = j[0],
-            k = j[1],
+            j = window.innerWidth <= 860,
+            w = Oa(),
+            N = w[0],
+            k = w[1],
             E = ["chips-wrap"];
           i && E.push(i),
             o && E.push("blocked"),
@@ -18128,7 +18129,7 @@
             C = (0, e.jsxs)(e.Fragment, {
               children: [
                 (0, e.jsx)(_a, { singleton: N, duration: 20 }),
-                c && !w
+                c && !j
                   ? (0, e.jsx)(
                       _a,
                       Ms(
@@ -18143,7 +18144,7 @@
                             )
                           ),
                           inlinePositioning: !1,
-                          placement: w ? "auto" : null != g ? g : "right",
+                          placement: j ? "auto" : null != g ? g : "right",
                         },
                         { children: S }
                       )
@@ -18394,7 +18395,7 @@
                 }
               )
             );
-          return w
+          return j
             ? (0, e.jsxs)(e.Fragment, {
                 children: [
                   A,
@@ -18416,9 +18417,9 @@
               })
             : A;
         },
-        Us = function () {
+        Fs = function () {
           return (
-            (Us =
+            (Fs =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -18426,22 +18427,22 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            Us.apply(this, arguments)
+            Fs.apply(this, arguments)
           );
         },
-        Fs = function (n) {
+        Us = function (n) {
           var t = n.cost,
             r = n.showBars,
             i = void 0 === r || r;
           return (0, e.jsxs)(
             "div",
-            Us(
+            Fs(
               { className: "cost-block" },
               {
                 children: [
                   (0, e.jsxs)(
                     "p",
-                    Us(
+                    Fs(
                       {
                         className: cr()({
                           requirement: !0,
@@ -18456,7 +18457,7 @@
                           !t.isAvailable && i
                             ? (0, e.jsx)(
                                 "span",
-                                Us(
+                                Fs(
                                   {
                                     className: "".concat(
                                       "Never" === t.eta ? "red" : ""
@@ -18467,7 +18468,7 @@
                               )
                             : (0, e.jsx)(
                                 "span",
-                                Us(
+                                Fs(
                                   { className: "greenish" },
                                   {
                                     children: t.percentageOf
@@ -18483,7 +18484,7 @@
                   i
                     ? (0, e.jsx)(
                         "div",
-                        Us(
+                        Fs(
                           { className: "progressBar" },
                           {
                             children: (0, e.jsx)("div", {
@@ -18545,7 +18546,7 @@
             e.forEach(function (e) {
               return (n[e.id] = e.eta);
             }),
-            Bt.dispatch(wt.setMissingHighlight.make(n));
+            Bt.dispatch(jt.setMissingHighlight.make(n));
         },
         Gs = function (e) {
           var n = {};
@@ -18553,7 +18554,7 @@
             e.forEach(function (e) {
               return (n[e.id] = !0);
             }),
-            Bt.dispatch(wt.setConsumeHighlight.make(n));
+            Bt.dispatch(jt.setConsumeHighlight.make(n));
         },
         Ws = function (e) {
           var n = {};
@@ -18561,7 +18562,7 @@
             e.forEach(function (e) {
               return (n[e.id] = !0);
             }),
-            Bt.dispatch(wt.setProduceHighlight.make(n));
+            Bt.dispatch(jt.setProduceHighlight.make(n));
         },
         Ys = {
           addToQueue: kn("[queue] add", function (e) {
@@ -18709,7 +18710,7 @@
                                             children: "Consume",
                                           }),
                                           n.cost.map(function (n) {
-                                            return (0, e.jsx)(Fs, { cost: n });
+                                            return (0, e.jsx)(Us, { cost: n });
                                           }),
                                         ],
                                       }
@@ -18865,7 +18866,7 @@
                                               }),
                                               n.cost.map(function (n) {
                                                 return (0,
-                                                e.jsx)(Fs, { cost: n });
+                                                e.jsx)(Us, { cost: n });
                                               }),
                                             ],
                                           }
@@ -19217,7 +19218,7 @@
                                                   }),
                                                   n.cost.map(function (n) {
                                                     return (0,
-                                                    e.jsx)(Fs, { cost: n });
+                                                    e.jsx)(Us, { cost: n });
                                                   }),
                                                 ],
                                               }
@@ -19645,12 +19646,12 @@
             v = g[0],
             b = g[1],
             y = (0, r.useState)(!1),
-            w = y[0],
-            j = y[1],
+            j = y[0],
+            w = y[1],
             N = window.innerWidth <= 860,
             k = x(),
             E = function (e) {
-              k(wt.setUsageHighlight.make(e));
+              k(jt.setUsageHighlight.make(e));
             },
             S = function (e) {
               return e > 0 ? " boosted" : e < 0 ? " decreased" : "";
@@ -19710,7 +19711,7 @@
                       {
                         duration: 20,
                         placement: "right",
-                        content: (0, e.jsx)(wo, {
+                        content: (0, e.jsx)(jo, {
                           isDetailMode: m || N,
                           name: d.name,
                           breakdown:
@@ -19752,7 +19753,7 @@
                                       onClick: function (e) {
                                         e.preventDefault(),
                                           e.stopPropagation(),
-                                          j(!0);
+                                          w(!0);
                                       },
                                     },
                                     {
@@ -19778,13 +19779,13 @@
                         Ls,
                         go(
                           {
-                            isVisible: w,
+                            isVisible: j,
                             onClose: function () {
-                              return j(!1);
+                              return w(!1);
                             },
                           },
                           {
-                            children: (0, e.jsx)(wo, {
+                            children: (0, e.jsx)(jo, {
                               isDetailMode: !0,
                               name: d.name,
                               breakdown:
@@ -19804,7 +19805,7 @@
                       {
                         placement: "right",
                         duration: 20,
-                        content: (0, e.jsx)(jo, {
+                        content: (0, e.jsx)(wo, {
                           isDetailMode: m || N,
                           name: d.name,
                           breakdown:
@@ -19875,7 +19876,7 @@
                             },
                           },
                           {
-                            children: (0, e.jsx)(jo, {
+                            children: (0, e.jsx)(wo, {
                               isDetailMode: !0,
                               name: d.name,
                               breakdown:
@@ -19911,7 +19912,7 @@
             yo.apply(this, arguments)
           );
         },
-        wo = function (n) {
+        jo = function (n) {
           var t = n.name,
             r = n.breakdown,
             i = n.toEmpty,
@@ -19955,7 +19956,7 @@
             )
           );
         },
-        jo = function (n) {
+        wo = function (n) {
           var t = n.breakdown,
             r = n.name,
             i = n.isDetailMode;
@@ -20031,7 +20032,7 @@
             m = f[1],
             g = x(),
             v = function (e, n) {
-              g(wt.setKeyIsHold.make({ key: e, isHold: n }));
+              g(jt.setKeyIsHold.make({ key: e, isHold: n }));
             };
           (0, r.useEffect)(function () {
             var e = function (e) {
@@ -21006,7 +21007,7 @@
                                 })
                                 .map(function (n) {
                                   return (0,
-                                  e.jsx)(_a, So({ placement: "right", duration: 20, content: (0, e.jsx)(jo, { isDetailMode: !0, name: n.name, breakdown: n.breakdown }) }, { children: (0, e.jsx)(us, So({ id: "planet:colony:effects:".concat(n.id), className: "factor-wrap" }, { children: (0, e.jsxs)("p", So({ className: "factor ".concat(n.excess > 0 ? "excess" : "").concat(((t = n.breakdown.buffDirection || 0), t > 0 ? " boosted" : t < 0 ? " decreased" : "")) }, { children: [n.name, ": ", n.amount, " ", n.excess > 0 ? "(".concat(ms(n.excess), ")") : ""] })) })) }));
+                                  e.jsx)(_a, So({ placement: "right", duration: 20, content: (0, e.jsx)(wo, { isDetailMode: !0, name: n.name, breakdown: n.breakdown }) }, { children: (0, e.jsx)(us, So({ id: "planet:colony:effects:".concat(n.id), className: "factor-wrap" }, { children: (0, e.jsxs)("p", So({ className: "factor ".concat(n.excess > 0 ? "excess" : "").concat(((t = n.breakdown.buffDirection || 0), t > 0 ? " boosted" : t < 0 ? " decreased" : "")) }, { children: [n.name, ": ", n.amount, " ", n.excess > 0 ? "(".concat(ms(n.excess), ")") : ""] })) })) }));
                                   var t;
                                 }),
                             }
@@ -21598,10 +21599,10 @@
         localStorage.removeItem("cache");
       }
       var Do,
-        Uo,
-        Fo = function () {
+        Fo,
+        Uo = function () {
           return (
-            (Fo =
+            (Uo =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -21609,7 +21610,7 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            Fo.apply(this, arguments)
+            Uo.apply(this, arguments)
           );
         },
         Bo = r.memo(
@@ -21622,19 +21623,19 @@
               console.log("re-rendering: ", t.map.regenerateUUID),
               (0, e.jsxs)(
                 "div",
-                Fo(
+                Uo(
                   { className: "expeditions-wrap" },
                   {
                     children: [
                       (0, e.jsxs)(
                         "div",
-                        Fo(
+                        Uo(
                           { className: "explanation" },
                           {
                             children: [
                               (0, e.jsx)(
                                 "p",
-                                Fo(
+                                Uo(
                                   { className: "desc" },
                                   {
                                     children:
@@ -21644,7 +21645,7 @@
                               ),
                               (0, e.jsxs)(
                                 "p",
-                                Fo(
+                                Uo(
                                   { className: "desc" },
                                   {
                                     children: [
@@ -21662,25 +21663,25 @@
                       (0, e.jsx)(Ga(), {
                         children: (0, e.jsx)(
                           "div",
-                          Fo(
+                          Uo(
                             { className: "expeditions-map" },
                             {
                               children: t.map.cells.map(function (n) {
                                 return (0, e.jsx)(
                                   "div",
-                                  Fo(
+                                  Uo(
                                     { className: "map-row" },
                                     {
                                       children: n.map(function (n) {
                                         var i;
                                         return (0, e.jsx)(
                                           _a,
-                                          Fo(
+                                          Uo(
                                             {
                                               duration: 0,
                                               content: (0, e.jsxs)(
                                                 "div",
-                                                Fo(
+                                                Uo(
                                                   {
                                                     className:
                                                       "description-hint",
@@ -21689,7 +21690,7 @@
                                                     children: [
                                                       (0, e.jsx)(
                                                         "p",
-                                                        Fo(
+                                                        Uo(
                                                           {
                                                             className: "title",
                                                           },
@@ -21698,7 +21699,7 @@
                                                       ),
                                                       (0, e.jsx)(
                                                         "p",
-                                                        Fo(
+                                                        Uo(
                                                           {
                                                             className:
                                                               "description",
@@ -21711,7 +21712,7 @@
                                                       ),
                                                       (0, e.jsxs)(
                                                         "div",
-                                                        Fo(
+                                                        Uo(
                                                           { className: "loot" },
                                                           {
                                                             children: [
@@ -21725,7 +21726,7 @@
                                                                 return (0,
                                                                 e.jsxs)(
                                                                   "div",
-                                                                  Fo(
+                                                                  Uo(
                                                                     {
                                                                       className:
                                                                         "loot-line",
@@ -21736,7 +21737,7 @@
                                                                           (0,
                                                                           e.jsx)(
                                                                             "p",
-                                                                            Fo(
+                                                                            Uo(
                                                                               {
                                                                                 className:
                                                                                   "name",
@@ -21752,7 +21753,7 @@
                                                                           (0,
                                                                           e.jsxs)(
                                                                             "p",
-                                                                            Fo(
+                                                                            Uo(
                                                                               {
                                                                                 className:
                                                                                   "chance",
@@ -21772,7 +21773,7 @@
                                                                           (0,
                                                                           e.jsxs)(
                                                                             "p",
-                                                                            Fo(
+                                                                            Uo(
                                                                               {
                                                                                 className:
                                                                                   "amounts",
@@ -21798,7 +21799,7 @@
                                                               }),
                                                               (0, e.jsxs)(
                                                                 "div",
-                                                                Fo(
+                                                                Uo(
                                                                   {
                                                                     className:
                                                                       "loot-line",
@@ -21808,7 +21809,7 @@
                                                                       (0,
                                                                       e.jsx)(
                                                                         "p",
-                                                                        Fo(
+                                                                        Uo(
                                                                           {
                                                                             className:
                                                                               "name",
@@ -21822,7 +21823,7 @@
                                                                       (0,
                                                                       e.jsxs)(
                                                                         "p",
-                                                                        Fo(
+                                                                        Uo(
                                                                           {
                                                                             className:
                                                                               "chance",
@@ -21844,7 +21845,7 @@
                                                                       (0,
                                                                       e.jsxs)(
                                                                         "p",
-                                                                        Fo(
+                                                                        Uo(
                                                                           {
                                                                             className:
                                                                               "amounts",
@@ -21868,7 +21869,7 @@
                                                               ),
                                                               (0, e.jsxs)(
                                                                 "div",
-                                                                Fo(
+                                                                Uo(
                                                                   {
                                                                     className:
                                                                       "loot-line",
@@ -21878,7 +21879,7 @@
                                                                       (0,
                                                                       e.jsx)(
                                                                         "p",
-                                                                        Fo(
+                                                                        Uo(
                                                                           {
                                                                             className:
                                                                               "name",
@@ -21892,7 +21893,7 @@
                                                                       (0,
                                                                       e.jsx)(
                                                                         "p",
-                                                                        Fo(
+                                                                        Uo(
                                                                           {
                                                                             className:
                                                                               "special",
@@ -21919,7 +21920,7 @@
                                                       ),
                                                       (0, e.jsx)(
                                                         "p",
-                                                        Fo(
+                                                        Uo(
                                                           { className: "eta" },
                                                           {
                                                             children: hs(
@@ -22350,7 +22351,7 @@
                                                           n
                                                         ) {
                                                           return (0, e.jsx)(
-                                                            Fs,
+                                                            Us,
                                                             { cost: n }
                                                           );
                                                         }),
@@ -23120,7 +23121,7 @@
             (e.FUEL_TRANSMUTATION = "fuel-transmutation"),
             (e.COMFORT = "comfort"),
             (e.VENTILATION = "ventilation");
-        })(Uo || (Uo = {}));
+        })(Fo || (Fo = {}));
       var tl,
         rl,
         il,
@@ -23791,6 +23792,67 @@
                             {
                               children: (0, e.jsxs)(Ga(), {
                                 children: [
+                                  (0, e.jsxs)(
+                                    "div",
+                                    cl(
+                                      { className: "version-block" },
+                                      {
+                                        children: [
+                                          (0, e.jsxs)(
+                                            "div",
+                                            cl(
+                                              { className: "version-title" },
+                                              {
+                                                children: [
+                                                  (0, e.jsx)("h3", {
+                                                    children:
+                                                      "v0.2.10c Small Update",
+                                                  }),
+                                                  (0, e.jsx)(
+                                                    "span",
+                                                    cl(
+                                                      { className: "date" },
+                                                      { children: "10/10/2023" }
+                                                    )
+                                                  ),
+                                                ],
+                                              }
+                                            )
+                                          ),
+                                          (0, e.jsxs)(
+                                            "ul",
+                                            cl(
+                                              { className: "features" },
+                                              {
+                                                children: [
+                                                  (0, e.jsx)("li", {
+                                                    children:
+                                                      "Queue now shows expanded stats",
+                                                  }),
+                                                  (0, e.jsx)("li", {
+                                                    children:
+                                                      "Added new early game KP upgrades",
+                                                  }),
+                                                  (0, e.jsx)("li", {
+                                                    children:
+                                                      "Added XP upgrade allowing to remember planet after search",
+                                                  }),
+                                                  (0, e.jsx)("li", {
+                                                    children:
+                                                      "Planets available are now sorted by XP multiplier",
+                                                  }),
+                                                  (0, e.jsx)("li", {
+                                                    children:
+                                                      "Fixed some bugs and typos",
+                                                  }),
+                                                ],
+                                              }
+                                            )
+                                          ),
+                                        ],
+                                      }
+                                    )
+                                  ),
                                   (0, e.jsxs)(
                                     "div",
                                     cl(
@@ -26794,7 +26856,7 @@
                                                   }),
                                                   n.cost.map(function (n) {
                                                     return (0,
-                                                    e.jsx)(Fs, { cost: n });
+                                                    e.jsx)(Us, { cost: n });
                                                   }),
                                                 ],
                                               }
@@ -27410,7 +27472,7 @@
                                                     : l.costs) || []
                                                 ).map(function (n) {
                                                   return (0,
-                                                  e.jsx)(Fs, { cost: n });
+                                                  e.jsx)(Us, { cost: n });
                                                 }),
                                               }
                                             )
@@ -27567,7 +27629,7 @@
                                                               : o.cost.map(
                                                                   function (n) {
                                                                     return (0,
-                                                                    e.jsx)(Fs, {
+                                                                    e.jsx)(Us, {
                                                                       cost: n,
                                                                       showBars:
                                                                         !1,
@@ -27816,7 +27878,7 @@
                                   ),
                                   (0, e.jsx)(e.Fragment, {
                                     children: t.stats.costs.map(function (n) {
-                                      return (0, e.jsx)(Fs, { cost: n });
+                                      return (0, e.jsx)(Us, { cost: n });
                                     }),
                                   }),
                                 ],
@@ -27861,7 +27923,7 @@
             )
           );
         },
-        wl = function (n) {
+        jl = function (n) {
           var t = n.hangar;
           return (0, e.jsx)(
             "div",
@@ -27875,9 +27937,9 @@
             )
           );
         },
-        jl = function () {
+        wl = function () {
           var n = N($a);
-          return (0, e.jsx)(wl, { hangar: n.hangar });
+          return (0, e.jsx)(jl, { hangar: n.hangar });
         },
         Nl = function () {
           return (
@@ -29058,7 +29120,7 @@
             : "spaceshipConstructor" === t
             ? (0, e.jsx)(bl, {})
             : "spaceshipHangar" === t
-            ? (0, e.jsx)(jl, {})
+            ? (0, e.jsx)(wl, {})
             : "spaceshipFleet" === t
             ? (0, e.jsx)(El, {})
             : "spaceBattle" === t
@@ -29191,7 +29253,7 @@
             )
           );
         },
-        Ul = {
+        Fl = {
           doTKUpgrade: kn("[transmit-knowledge] do upgrade", function (e) {
             return e;
           }),
@@ -29237,13 +29299,19 @@
           doColonizePrestige: kn("[colonize-planet] do prestige", function (e) {
             return e;
           }),
+          doRememberPlanet: kn(
+            "[colonize-planet] toggle remember",
+            function (e) {
+              return e;
+            }
+          ),
           doXPUpgrade: kn("[colonize-planet] do upgrade", function (e) {
             return e;
           }),
         },
-        Fl = function () {
+        Ul = function () {
           return (
-            (Fl =
+            (Ul =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -29251,7 +29319,7 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            Fl.apply(this, arguments)
+            Ul.apply(this, arguments)
           );
         },
         Bl = function (n) {
@@ -29270,27 +29338,27 @@
             (0, r.useEffect)(function () {
               var e = function (e) {
                 e.ctrlKey
-                  ? Ul.setBulk.send(1e100)
-                  : e.shiftKey && Ul.setBulk.send(5);
+                  ? Fl.setBulk.send(1e100)
+                  : e.shiftKey && Fl.setBulk.send(5);
               };
               document.addEventListener("keydown", e);
               var n = function (e) {
                 console.log("released", e.ctrlKey, e.key),
                   ("Control" !== e.key && "Shift" !== e.key) ||
-                    Ul.setBulk.send(1);
+                    Fl.setBulk.send(1);
               };
               return (
                 document.addEventListener("keyup", n),
                 function () {
                   document.removeEventListener("keydown", e),
                     document.removeEventListener("keyup", n),
-                    Ul.setBulk.send(1);
+                    Fl.setBulk.send(1);
                 }
               );
             }, []),
             (0, e.jsx)(
               za,
-              Fl(
+              Ul(
                 {
                   id: "transmit-knowledge-upgrades",
                   label: "Transmit Knowledge Upgrades: ".concat(
@@ -29305,7 +29373,7 @@
                       r = n[1];
                     return (0, e.jsx)(
                       za,
-                      Fl(
+                      Ul(
                         {
                           isCollapsable: !0,
                           id: "kp-upgrades-".concat(t),
@@ -29321,7 +29389,7 @@
                             .map(function (n) {
                               return (0, e.jsxs)(
                                 Ds,
-                                Fl(
+                                Ul(
                                   {
                                     label: n.name,
                                     isAvailable: n.isAvailable,
@@ -29331,7 +29399,7 @@
                                     onClick: function (e) {
                                       var t;
                                       (t = n.id),
-                                        Ul.doTKUpgrade.send({ id: t });
+                                        Fl.doTKUpgrade.send({ id: t });
                                     },
                                     level: n.level,
                                     maxLevel: n.maxLevel,
@@ -29350,7 +29418,7 @@
                                     children: [
                                       (0, e.jsxs)(
                                         "p",
-                                        Fl(
+                                        Ul(
                                           { className: "title" },
                                           {
                                             children: [
@@ -29367,7 +29435,7 @@
                                       ),
                                       (0, e.jsx)(
                                         "p",
-                                        Fl(
+                                        Ul(
                                           { className: "description" },
                                           { children: n.description }
                                         )
@@ -29375,7 +29443,7 @@
                                       n.cost.length
                                         ? (0, e.jsxs)(
                                             "div",
-                                            Fl(
+                                            Ul(
                                               { className: "costs wrap" },
                                               {
                                                 children: [
@@ -29384,7 +29452,7 @@
                                                   }),
                                                   n.cost.map(function (n) {
                                                     return (0,
-                                                    e.jsx)(Fs, { cost: n });
+                                                    e.jsx)(Us, { cost: n });
                                                   }),
                                                 ],
                                               }
@@ -29393,7 +29461,7 @@
                                         : (0, e.jsx)(e.Fragment, {}),
                                       (0, e.jsx)(
                                         "p",
-                                        Fl(
+                                        Ul(
                                           { className: "note" },
                                           {
                                             children:
@@ -29403,7 +29471,7 @@
                                       ),
                                       (0, e.jsx)(
                                         "p",
-                                        Fl(
+                                        Ul(
                                           { className: "note" },
                                           {
                                             children:
@@ -29429,7 +29497,7 @@
           var t = n.transmit;
           return (0, e.jsx)(
             za,
-            Fl(
+            Ul(
               {
                 id: "do-transmit",
                 label: "Transmit knowledge",
@@ -29448,7 +29516,7 @@
                             "You will earn ",
                             (0, e.jsx)(
                               "span",
-                              Fl(
+                              Ul(
                                 { className: "bold" },
                                 { children: t.prestige.potentialGain }
                               )
@@ -29458,11 +29526,11 @@
                         }),
                         (0, e.jsx)(
                           "button",
-                          Fl(
+                          Ul(
                             {
                               onClick: function () {
                                 confirm("Are you sure?") &&
-                                  (Ul.doTKPrestige.send({}), Mo());
+                                  (Fl.doTKPrestige.send({}), Mo());
                               },
                             },
                             {
@@ -29475,7 +29543,7 @@
                     })
                   : (0, e.jsx)(
                       "div",
-                      Fl(
+                      Ul(
                         { className: "unavail-explanation" },
                         {
                           children: (0, e.jsx)("p", {
@@ -29566,455 +29634,572 @@
                         Gl(
                           { className: "list-wrap planets-wrap" },
                           {
-                            children: r.available.map(function (n, t) {
-                              return (0, e.jsxs)(
-                                Ds,
-                                Gl(
-                                  {
-                                    label: (0, e.jsxs)(e.Fragment, {
+                            children: r.available
+                              .sort(function (e, n) {
+                                return n.xpGain - e.xpGain;
+                              })
+                              .map(function (n, t) {
+                                return (0, e.jsxs)(
+                                  "div",
+                                  Gl(
+                                    { className: "planet-selection" },
+                                    {
                                       children: [
-                                        n.name,
-                                        " (x",
-                                        ms(n.xpGain),
-                                        ")",
-                                      ],
-                                    }),
-                                    isAvailable: n.isAvailable,
-                                    isBlocked: !1,
-                                    progress: n.progress,
-                                    className: "feature-item",
-                                    onClick: function () {
-                                      return (
-                                        (e = t),
-                                        void (
-                                          confirm(
-                                            "When you colonize new planet you aren't awarded any KP, but you gain XP instead. In case you select too hard planet you can abondon it in \"Settings\" tab, and you'll be landed to default planet. Are you sure?"
-                                          ) &&
-                                          (Ul.doColonizePrestige.send({
-                                            id: e,
-                                          }),
-                                          Mo())
-                                        )
-                                      );
-                                      var e;
-                                    },
-                                    onMouseEnter: function () {
-                                      return Hs(
-                                        n.cost.filter(function (e) {
-                                          return !e.isAvailable;
-                                        })
-                                      );
-                                    },
-                                    onMouseLeave: function () {
-                                      return Hs(null);
-                                    },
-                                  },
-                                  {
-                                    children: [
-                                      (0, e.jsx)(
-                                        "p",
-                                        Gl(
-                                          { className: "title" },
-                                          { children: n.name }
-                                        )
-                                      ),
-                                      (0, e.jsx)(
-                                        "p",
-                                        Gl(
-                                          { className: "description" },
-                                          { children: n.description }
-                                        )
-                                      ),
-                                      (0, e.jsxs)(
-                                        "p",
-                                        Gl(
-                                          { className: "att" },
-                                          {
-                                            children: [
-                                              "Days per year: ",
-                                              n.daysPerYear,
-                                            ],
-                                          }
-                                        )
-                                      ),
-                                      (0, e.jsxs)(
-                                        "p",
-                                        Gl(
-                                          { className: "att" },
-                                          {
-                                            children: [
-                                              "Seasons: ",
-                                              n.climateChange,
-                                            ],
-                                          }
-                                        )
-                                      ),
-                                      (0, e.jsxs)(
-                                        "p",
-                                        Gl(
-                                          { className: "att" },
-                                          {
-                                            children: [
-                                              "Star class: ",
-                                              n.starClass,
-                                            ],
-                                          }
-                                        )
-                                      ),
-                                      (0, e.jsx)(
-                                        "div",
-                                        Gl(
-                                          { className: "star-modifs" },
-                                          {
-                                            children: n.starModif.map(function (
-                                              n
-                                            ) {
-                                              return (0, e.jsx)(
-                                                "p",
-                                                Gl(
-                                                  { className: "star-effect" },
-                                                  { children: n }
-                                                )
-                                              );
-                                            }),
-                                          }
-                                        )
-                                      ),
-                                      n.cost.length
-                                        ? (0, e.jsxs)(
-                                            "div",
-                                            Gl(
-                                              { className: "costs wrap" },
-                                              {
+                                        (0, e.jsxs)(
+                                          Ds,
+                                          Gl(
+                                            {
+                                              label: (0, e.jsxs)(e.Fragment, {
                                                 children: [
-                                                  (0, e.jsx)("span", {
-                                                    children: "Cost",
-                                                  }),
-                                                  n.cost.map(function (n) {
-                                                    return (0,
-                                                    e.jsx)(Fs, { cost: n });
-                                                  }),
-                                                  n.consume.length
-                                                    ? (0, e.jsxs)(
-                                                        "div",
-                                                        Gl(
-                                                          {
-                                                            className:
-                                                              "costs wrap",
-                                                          },
-                                                          {
-                                                            children: [
-                                                              (0, e.jsx)(
-                                                                "span",
-                                                                {
-                                                                  children:
-                                                                    "Consume",
-                                                                }
-                                                              ),
-                                                              n.consume.map(
-                                                                function (n) {
-                                                                  return (0,
-                                                                  e.jsx)(zs, {
-                                                                    gain: n,
-                                                                  });
-                                                                }
-                                                              ),
-                                                            ],
-                                                          }
-                                                        )
-                                                      )
-                                                    : (0, e.jsx)(
-                                                        e.Fragment,
-                                                        {}
-                                                      ),
-                                                  n.gain.length
-                                                    ? (0, e.jsxs)(
-                                                        "div",
-                                                        Gl(
-                                                          {
-                                                            className:
-                                                              "gain wrap",
-                                                          },
-                                                          {
-                                                            children: [
-                                                              (0, e.jsx)(
-                                                                "span",
-                                                                {
-                                                                  children:
-                                                                    "Produce",
-                                                                }
-                                                              ),
-                                                              n.gain.map(
-                                                                function (n) {
-                                                                  return (0,
-                                                                  e.jsx)(zs, {
-                                                                    gain: n,
-                                                                  });
-                                                                }
-                                                              ),
-                                                            ],
-                                                          }
-                                                        )
-                                                      )
-                                                    : (0, e.jsx)(
-                                                        e.Fragment,
-                                                        {}
-                                                      ),
-                                                  n.max.length
-                                                    ? (0, e.jsxs)(
-                                                        "div",
-                                                        Gl(
-                                                          {
-                                                            className:
-                                                              "store wrap",
-                                                          },
-                                                          {
-                                                            children: [
-                                                              (0, e.jsx)(
-                                                                "span",
-                                                                {
-                                                                  children:
-                                                                    "Storage",
-                                                                }
-                                                              ),
-                                                              n.max.map(
-                                                                function (n) {
-                                                                  return (0,
-                                                                  e.jsx)(zs, {
-                                                                    gain: n,
-                                                                  });
-                                                                }
-                                                              ),
-                                                            ],
-                                                          }
-                                                        )
-                                                      )
-                                                    : (0, e.jsx)(
-                                                        e.Fragment,
-                                                        {}
-                                                      ),
-                                                  n.gainMult.length
-                                                    ? (0, e.jsxs)(
-                                                        "div",
-                                                        Gl(
-                                                          {
-                                                            className:
-                                                              "gain wrap",
-                                                          },
-                                                          {
-                                                            children: [
-                                                              (0, e.jsx)(
-                                                                "span",
-                                                                {
-                                                                  children:
-                                                                    "Income Multipliers",
-                                                                }
-                                                              ),
-                                                              n.gainMult.map(
-                                                                function (n) {
-                                                                  return (0,
-                                                                  e.jsx)(zs, {
-                                                                    className:
-                                                                      n.amountValue <
-                                                                      1
-                                                                        ? "red"
-                                                                        : "green",
-                                                                    gain: n,
-                                                                  });
-                                                                }
-                                                              ),
-                                                            ],
-                                                          }
-                                                        )
-                                                      )
-                                                    : (0, e.jsx)(
-                                                        e.Fragment,
-                                                        {}
-                                                      ),
-                                                  n.maxMult.length
-                                                    ? (0, e.jsxs)(
-                                                        "div",
-                                                        Gl(
-                                                          {
-                                                            className:
-                                                              "store wrap",
-                                                          },
-                                                          {
-                                                            children: [
-                                                              (0, e.jsx)(
-                                                                "span",
-                                                                {
-                                                                  children:
-                                                                    "Storage Multipliers",
-                                                                }
-                                                              ),
-                                                              n.maxMult.map(
-                                                                function (n) {
-                                                                  return (0,
-                                                                  e.jsx)(zs, {
-                                                                    className:
-                                                                      n.amountValue <
-                                                                      1
-                                                                        ? "red"
-                                                                        : "green",
-                                                                    gain: n,
-                                                                  });
-                                                                }
-                                                              ),
-                                                            ],
-                                                          }
-                                                        )
-                                                      )
-                                                    : (0, e.jsx)(
-                                                        e.Fragment,
-                                                        {}
-                                                      ),
-                                                  n.effectMult.length
-                                                    ? (0, e.jsxs)(
-                                                        "div",
-                                                        Gl(
-                                                          {
-                                                            className:
-                                                              "gain wrap",
-                                                          },
-                                                          {
-                                                            children: [
-                                                              (0, e.jsx)(
-                                                                "span",
-                                                                {
-                                                                  children:
-                                                                    "Effects",
-                                                                }
-                                                              ),
-                                                              n.effectMult.map(
-                                                                function (n) {
-                                                                  return (0,
-                                                                  e.jsx)(zs, {
-                                                                    className:
-                                                                      n.amountValue <
-                                                                      1
-                                                                        ? "red"
-                                                                        : "green",
-                                                                    gain: n,
-                                                                  });
-                                                                }
-                                                              ),
-                                                            ],
-                                                          }
-                                                        )
-                                                      )
-                                                    : (0, e.jsx)(
-                                                        e.Fragment,
-                                                        {}
-                                                      ),
-                                                  n.buildingPriceMultipliers &&
-                                                  1 !==
-                                                    n.buildingPriceMultipliers
-                                                    ? (0, e.jsxs)(
-                                                        "div",
-                                                        Gl(
-                                                          {
-                                                            className:
-                                                              "gain wrap",
-                                                          },
-                                                          {
-                                                            children: [
-                                                              (0, e.jsx)(
-                                                                "span",
-                                                                {
-                                                                  children:
-                                                                    "Other",
-                                                                }
-                                                              ),
-                                                              (0, e.jsx)(
-                                                                "div",
-                                                                Gl(
-                                                                  {
-                                                                    className:
-                                                                      "gain-block",
-                                                                  },
-                                                                  {
-                                                                    children:
-                                                                      (0,
-                                                                      e.jsxs)(
-                                                                        "p",
-                                                                        Gl(
-                                                                          {
-                                                                            className:
-                                                                              "requirement",
-                                                                          },
-                                                                          {
-                                                                            children:
-                                                                              [
-                                                                                "Building Price: x",
-                                                                                ms(
-                                                                                  n.buildingPriceMultipliers
-                                                                                ),
-                                                                              ],
-                                                                          }
-                                                                        )
-                                                                      ),
-                                                                  }
-                                                                )
-                                                              ),
-                                                            ],
-                                                          }
-                                                        )
-                                                      )
-                                                    : (0, e.jsx)(
-                                                        e.Fragment,
-                                                        {}
-                                                      ),
-                                                  (0, e.jsx)(
-                                                    "div",
-                                                    Gl(
-                                                      {
-                                                        className: "store wrap",
-                                                      },
-                                                      {
-                                                        children: (0, e.jsxs)(
-                                                          "span",
-                                                          {
-                                                            children: [
-                                                              "XP Gain: x",
-                                                              ms(n.xpGain),
-                                                            ],
-                                                          }
-                                                        ),
-                                                      }
-                                                    )
-                                                  ),
-                                                  (0, e.jsx)(
-                                                    "div",
-                                                    Gl(
-                                                      {
-                                                        className: "store wrap",
-                                                      },
-                                                      {
-                                                        children: (0, e.jsxs)(
-                                                          "span",
-                                                          {
-                                                            children: [
-                                                              "Weather: x",
-                                                              ms(
-                                                                n.climateHarshness
-                                                              ),
-                                                            ],
-                                                          }
-                                                        ),
-                                                      }
-                                                    )
-                                                  ),
+                                                  n.name,
+                                                  " (x",
+                                                  ms(n.xpGain),
+                                                  ")",
                                                 ],
-                                              }
-                                            )
+                                              }),
+                                              isAvailable: n.isAvailable,
+                                              isBlocked: !1,
+                                              progress: n.progress,
+                                              className: "feature-item",
+                                              onClick: function () {
+                                                return (
+                                                  (e = t),
+                                                  void (
+                                                    confirm(
+                                                      "When you colonize new planet you aren't awarded any KP, but you gain XP instead. In case you select too hard planet you can abondon it in \"Settings\" tab, and you'll be landed to default planet. Are you sure?"
+                                                    ) &&
+                                                    (Fl.doColonizePrestige.send(
+                                                      { id: e }
+                                                    ),
+                                                    Mo())
+                                                  )
+                                                );
+                                                var e;
+                                              },
+                                              onMouseEnter: function () {
+                                                return Hs(
+                                                  n.cost.filter(function (e) {
+                                                    return !e.isAvailable;
+                                                  })
+                                                );
+                                              },
+                                              onMouseLeave: function () {
+                                                return Hs(null);
+                                              },
+                                            },
+                                            {
+                                              children: [
+                                                (0, e.jsx)(
+                                                  "p",
+                                                  Gl(
+                                                    { className: "title" },
+                                                    { children: n.name }
+                                                  )
+                                                ),
+                                                (0, e.jsx)(
+                                                  "p",
+                                                  Gl(
+                                                    {
+                                                      className: "description",
+                                                    },
+                                                    { children: n.description }
+                                                  )
+                                                ),
+                                                (0, e.jsxs)(
+                                                  "p",
+                                                  Gl(
+                                                    { className: "att" },
+                                                    {
+                                                      children: [
+                                                        "Days per year: ",
+                                                        n.daysPerYear,
+                                                      ],
+                                                    }
+                                                  )
+                                                ),
+                                                (0, e.jsxs)(
+                                                  "p",
+                                                  Gl(
+                                                    { className: "att" },
+                                                    {
+                                                      children: [
+                                                        "Seasons: ",
+                                                        n.climateChange,
+                                                      ],
+                                                    }
+                                                  )
+                                                ),
+                                                (0, e.jsxs)(
+                                                  "p",
+                                                  Gl(
+                                                    { className: "att" },
+                                                    {
+                                                      children: [
+                                                        "Star class: ",
+                                                        n.starClass,
+                                                      ],
+                                                    }
+                                                  )
+                                                ),
+                                                (0, e.jsx)(
+                                                  "div",
+                                                  Gl(
+                                                    {
+                                                      className: "star-modifs",
+                                                    },
+                                                    {
+                                                      children: n.starModif.map(
+                                                        function (n) {
+                                                          return (0, e.jsx)(
+                                                            "p",
+                                                            Gl(
+                                                              {
+                                                                className:
+                                                                  "star-effect",
+                                                              },
+                                                              { children: n }
+                                                            )
+                                                          );
+                                                        }
+                                                      ),
+                                                    }
+                                                  )
+                                                ),
+                                                n.cost.length
+                                                  ? (0, e.jsxs)(
+                                                      "div",
+                                                      Gl(
+                                                        {
+                                                          className:
+                                                            "costs wrap",
+                                                        },
+                                                        {
+                                                          children: [
+                                                            (0, e.jsx)("span", {
+                                                              children: "Cost",
+                                                            }),
+                                                            n.cost.map(
+                                                              function (n) {
+                                                                return (0,
+                                                                e.jsx)(Us, {
+                                                                  cost: n,
+                                                                });
+                                                              }
+                                                            ),
+                                                            n.consume.length
+                                                              ? (0, e.jsxs)(
+                                                                  "div",
+                                                                  Gl(
+                                                                    {
+                                                                      className:
+                                                                        "costs wrap",
+                                                                    },
+                                                                    {
+                                                                      children:
+                                                                        [
+                                                                          (0,
+                                                                          e.jsx)(
+                                                                            "span",
+                                                                            {
+                                                                              children:
+                                                                                "Consume",
+                                                                            }
+                                                                          ),
+                                                                          n.consume.map(
+                                                                            function (
+                                                                              n
+                                                                            ) {
+                                                                              return (0,
+                                                                              e.jsx)(
+                                                                                zs,
+                                                                                {
+                                                                                  gain: n,
+                                                                                }
+                                                                              );
+                                                                            }
+                                                                          ),
+                                                                        ],
+                                                                    }
+                                                                  )
+                                                                )
+                                                              : (0, e.jsx)(
+                                                                  e.Fragment,
+                                                                  {}
+                                                                ),
+                                                            n.gain.length
+                                                              ? (0, e.jsxs)(
+                                                                  "div",
+                                                                  Gl(
+                                                                    {
+                                                                      className:
+                                                                        "gain wrap",
+                                                                    },
+                                                                    {
+                                                                      children:
+                                                                        [
+                                                                          (0,
+                                                                          e.jsx)(
+                                                                            "span",
+                                                                            {
+                                                                              children:
+                                                                                "Produce",
+                                                                            }
+                                                                          ),
+                                                                          n.gain.map(
+                                                                            function (
+                                                                              n
+                                                                            ) {
+                                                                              return (0,
+                                                                              e.jsx)(
+                                                                                zs,
+                                                                                {
+                                                                                  gain: n,
+                                                                                }
+                                                                              );
+                                                                            }
+                                                                          ),
+                                                                        ],
+                                                                    }
+                                                                  )
+                                                                )
+                                                              : (0, e.jsx)(
+                                                                  e.Fragment,
+                                                                  {}
+                                                                ),
+                                                            n.max.length
+                                                              ? (0, e.jsxs)(
+                                                                  "div",
+                                                                  Gl(
+                                                                    {
+                                                                      className:
+                                                                        "store wrap",
+                                                                    },
+                                                                    {
+                                                                      children:
+                                                                        [
+                                                                          (0,
+                                                                          e.jsx)(
+                                                                            "span",
+                                                                            {
+                                                                              children:
+                                                                                "Storage",
+                                                                            }
+                                                                          ),
+                                                                          n.max.map(
+                                                                            function (
+                                                                              n
+                                                                            ) {
+                                                                              return (0,
+                                                                              e.jsx)(
+                                                                                zs,
+                                                                                {
+                                                                                  gain: n,
+                                                                                }
+                                                                              );
+                                                                            }
+                                                                          ),
+                                                                        ],
+                                                                    }
+                                                                  )
+                                                                )
+                                                              : (0, e.jsx)(
+                                                                  e.Fragment,
+                                                                  {}
+                                                                ),
+                                                            n.gainMult.length
+                                                              ? (0, e.jsxs)(
+                                                                  "div",
+                                                                  Gl(
+                                                                    {
+                                                                      className:
+                                                                        "gain wrap",
+                                                                    },
+                                                                    {
+                                                                      children:
+                                                                        [
+                                                                          (0,
+                                                                          e.jsx)(
+                                                                            "span",
+                                                                            {
+                                                                              children:
+                                                                                "Income Multipliers",
+                                                                            }
+                                                                          ),
+                                                                          n.gainMult.map(
+                                                                            function (
+                                                                              n
+                                                                            ) {
+                                                                              return (0,
+                                                                              e.jsx)(
+                                                                                zs,
+                                                                                {
+                                                                                  className:
+                                                                                    n.amountValue <
+                                                                                    1
+                                                                                      ? "red"
+                                                                                      : "green",
+                                                                                  gain: n,
+                                                                                }
+                                                                              );
+                                                                            }
+                                                                          ),
+                                                                        ],
+                                                                    }
+                                                                  )
+                                                                )
+                                                              : (0, e.jsx)(
+                                                                  e.Fragment,
+                                                                  {}
+                                                                ),
+                                                            n.maxMult.length
+                                                              ? (0, e.jsxs)(
+                                                                  "div",
+                                                                  Gl(
+                                                                    {
+                                                                      className:
+                                                                        "store wrap",
+                                                                    },
+                                                                    {
+                                                                      children:
+                                                                        [
+                                                                          (0,
+                                                                          e.jsx)(
+                                                                            "span",
+                                                                            {
+                                                                              children:
+                                                                                "Storage Multipliers",
+                                                                            }
+                                                                          ),
+                                                                          n.maxMult.map(
+                                                                            function (
+                                                                              n
+                                                                            ) {
+                                                                              return (0,
+                                                                              e.jsx)(
+                                                                                zs,
+                                                                                {
+                                                                                  className:
+                                                                                    n.amountValue <
+                                                                                    1
+                                                                                      ? "red"
+                                                                                      : "green",
+                                                                                  gain: n,
+                                                                                }
+                                                                              );
+                                                                            }
+                                                                          ),
+                                                                        ],
+                                                                    }
+                                                                  )
+                                                                )
+                                                              : (0, e.jsx)(
+                                                                  e.Fragment,
+                                                                  {}
+                                                                ),
+                                                            n.effectMult.length
+                                                              ? (0, e.jsxs)(
+                                                                  "div",
+                                                                  Gl(
+                                                                    {
+                                                                      className:
+                                                                        "gain wrap",
+                                                                    },
+                                                                    {
+                                                                      children:
+                                                                        [
+                                                                          (0,
+                                                                          e.jsx)(
+                                                                            "span",
+                                                                            {
+                                                                              children:
+                                                                                "Effects",
+                                                                            }
+                                                                          ),
+                                                                          n.effectMult.map(
+                                                                            function (
+                                                                              n
+                                                                            ) {
+                                                                              return (0,
+                                                                              e.jsx)(
+                                                                                zs,
+                                                                                {
+                                                                                  className:
+                                                                                    n.amountValue <
+                                                                                    1
+                                                                                      ? "red"
+                                                                                      : "green",
+                                                                                  gain: n,
+                                                                                }
+                                                                              );
+                                                                            }
+                                                                          ),
+                                                                        ],
+                                                                    }
+                                                                  )
+                                                                )
+                                                              : (0, e.jsx)(
+                                                                  e.Fragment,
+                                                                  {}
+                                                                ),
+                                                            n.buildingPriceMultipliers &&
+                                                            1 !==
+                                                              n.buildingPriceMultipliers
+                                                              ? (0, e.jsxs)(
+                                                                  "div",
+                                                                  Gl(
+                                                                    {
+                                                                      className:
+                                                                        "gain wrap",
+                                                                    },
+                                                                    {
+                                                                      children:
+                                                                        [
+                                                                          (0,
+                                                                          e.jsx)(
+                                                                            "span",
+                                                                            {
+                                                                              children:
+                                                                                "Other",
+                                                                            }
+                                                                          ),
+                                                                          (0,
+                                                                          e.jsx)(
+                                                                            "div",
+                                                                            Gl(
+                                                                              {
+                                                                                className:
+                                                                                  "gain-block",
+                                                                              },
+                                                                              {
+                                                                                children:
+                                                                                  (0,
+                                                                                  e.jsxs)(
+                                                                                    "p",
+                                                                                    Gl(
+                                                                                      {
+                                                                                        className:
+                                                                                          "requirement",
+                                                                                      },
+                                                                                      {
+                                                                                        children:
+                                                                                          [
+                                                                                            "Building Price: x",
+                                                                                            ms(
+                                                                                              n.buildingPriceMultipliers
+                                                                                            ),
+                                                                                          ],
+                                                                                      }
+                                                                                    )
+                                                                                  ),
+                                                                              }
+                                                                            )
+                                                                          ),
+                                                                        ],
+                                                                    }
+                                                                  )
+                                                                )
+                                                              : (0, e.jsx)(
+                                                                  e.Fragment,
+                                                                  {}
+                                                                ),
+                                                            (0, e.jsx)(
+                                                              "div",
+                                                              Gl(
+                                                                {
+                                                                  className:
+                                                                    "store wrap",
+                                                                },
+                                                                {
+                                                                  children: (0,
+                                                                  e.jsxs)(
+                                                                    "span",
+                                                                    {
+                                                                      children:
+                                                                        [
+                                                                          "XP Gain: x",
+                                                                          ms(
+                                                                            n.xpGain
+                                                                          ),
+                                                                        ],
+                                                                    }
+                                                                  ),
+                                                                }
+                                                              )
+                                                            ),
+                                                            (0, e.jsx)(
+                                                              "div",
+                                                              Gl(
+                                                                {
+                                                                  className:
+                                                                    "store wrap",
+                                                                },
+                                                                {
+                                                                  children: (0,
+                                                                  e.jsxs)(
+                                                                    "span",
+                                                                    {
+                                                                      children:
+                                                                        [
+                                                                          "Weather: x",
+                                                                          ms(
+                                                                            n.climateHarshness
+                                                                          ),
+                                                                        ],
+                                                                    }
+                                                                  ),
+                                                                }
+                                                              )
+                                                            ),
+                                                          ],
+                                                        }
+                                                      )
+                                                    )
+                                                  : (0, e.jsx)(e.Fragment, {}),
+                                              ],
+                                            }
                                           )
-                                        : (0, e.jsx)(e.Fragment, {}),
-                                    ],
-                                  }
-                                )
-                              );
-                            }),
+                                        ),
+                                        (0, e.jsx)(
+                                          "div",
+                                          Gl(
+                                            { className: "remember-forget" },
+                                            {
+                                              children:
+                                                n.isRememberAvailable ||
+                                                n.isForgetAvailable
+                                                  ? (0, e.jsx)(
+                                                      "p",
+                                                      Gl(
+                                                        {
+                                                          className:
+                                                            "clickable-highlight remember-action",
+                                                          onClick: function () {
+                                                            return (function (
+                                                              e
+                                                            ) {
+                                                              Fl.doRememberPlanet.send(
+                                                                e
+                                                              );
+                                                            })(n.index);
+                                                          },
+                                                        },
+                                                        {
+                                                          children:
+                                                            n.isRememberAvailable
+                                                              ? "Remember"
+                                                              : "Forget",
+                                                        }
+                                                      )
+                                                    )
+                                                  : null,
+                                            }
+                                          )
+                                        ),
+                                      ],
+                                    }
+                                  )
+                                );
+                              }),
                           }
                         )
                       ),
@@ -30088,7 +30273,7 @@
                                                                                           e,
                                                                                           n
                                                                                         ),
-                                                                                          Ul.doColonizeSetSearchFilter.send(
+                                                                                          Fl.doColonizeSetSearchFilter.send(
                                                                                             {
                                                                                               index:
                                                                                                 e,
@@ -30207,7 +30392,7 @@
                                                                                                   e,
                                                                                                   n
                                                                                                 ),
-                                                                                                  Ul.doColonizeSetSearchLevel.send(
+                                                                                                  Fl.doColonizeSetSearchLevel.send(
                                                                                                     {
                                                                                                       index:
                                                                                                         e,
@@ -30258,7 +30443,7 @@
                                                                 (n =
                                                                   +e.target
                                                                     .value),
-                                                                void Ul.doColonizeSetHarshness.send(
+                                                                void Fl.doColonizeSetHarshness.send(
                                                                   n
                                                                 )
                                                               );
@@ -30293,7 +30478,7 @@
                                                               "setting star option: ",
                                                               n
                                                             ),
-                                                            void Ul.doColonizeSetStarFilter.send(
+                                                            void Fl.doColonizeSetStarFilter.send(
                                                               { id: n }
                                                             )
                                                           );
@@ -30368,7 +30553,7 @@
                                             onChange: function (e) {
                                               return (
                                                 (n = +e.target.value),
-                                                void Ul.doColonizeSetDisasters.send(
+                                                void Fl.doColonizeSetDisasters.send(
                                                   { level: n }
                                                 )
                                               );
@@ -30443,7 +30628,7 @@
                                     progress: r.search.progress,
                                     className: "feature-item search-item",
                                     onClick: function () {
-                                      Ul.doColonizeSearch.send({});
+                                      Fl.doColonizeSearch.send({});
                                     },
                                     onMouseEnter: function () {
                                       return Hs(
@@ -30488,7 +30673,7 @@
                                                   r.search.cost.map(function (
                                                     n
                                                   ) {
-                                                    return (0, e.jsx)(Fs, {
+                                                    return (0, e.jsx)(Us, {
                                                       cost: n,
                                                     });
                                                   }),
@@ -30808,7 +30993,7 @@
                           className: "feature-item",
                           onClick: function () {
                             return (
-                              (e = n.id), void Ul.doXPUpgrade.send({ id: e })
+                              (e = n.id), void Fl.doXPUpgrade.send({ id: e })
                             );
                             var e;
                           },
@@ -30849,7 +31034,7 @@
                                           children: "Cost",
                                         }),
                                         n.cost.map(function (n) {
-                                          return (0, e.jsx)(Fs, { cost: n });
+                                          return (0, e.jsx)(Us, { cost: n });
                                         }),
                                       ],
                                     }
@@ -30899,7 +31084,7 @@
                               onClick: function () {
                                 return (
                                   (e = n.id),
-                                  void Ul.doXPUpgrade.send({ id: e })
+                                  void Fl.doXPUpgrade.send({ id: e })
                                 );
                                 var e;
                               },
@@ -30944,7 +31129,7 @@
                                             }),
                                             n.cost.map(function (n) {
                                               return (0,
-                                              e.jsx)(Fs, { cost: n });
+                                              e.jsx)(Us, { cost: n });
                                             }),
                                           ],
                                         }
@@ -32233,10 +32418,6 @@
                                                           e.Fragment,
                                                           {}
                                                         ),
-                                                    (0, e.jsx)("p", {
-                                                      children:
-                                                        "Hold Q while clicking to add item into queue",
-                                                    }),
                                                   ],
                                                 }
                                               )
@@ -33988,15 +34169,15 @@
             ? (0, e.jsx)(lc, {})
             : (0, e.jsx)("h2", { children: "Empty and cold here" });
         },
-        wc = t(8397),
-        jc = {};
-      (jc.styleTagTransform = ir()),
-        (jc.setAttributes = er()),
-        (jc.insert = Zt().bind(null, "head")),
-        (jc.domAPI = Kt()),
-        (jc.insertStyleElement = tr()),
-        qt()(wc.Z, jc),
-        wc.Z && wc.Z.locals && wc.Z.locals;
+        jc = t(8397),
+        wc = {};
+      (wc.styleTagTransform = ir()),
+        (wc.setAttributes = er()),
+        (wc.insert = Zt().bind(null, "head")),
+        (wc.domAPI = Kt()),
+        (wc.insertStyleElement = tr()),
+        qt()(jc.Z, wc),
+        jc.Z && jc.Z.locals && jc.Z.locals;
       var Nc = t(904),
         kc = t.n(Nc),
         Ec = { "aria-busy": !0, role: "status" },
@@ -34180,7 +34361,7 @@
                 m,
                 g,
                 y,
-                j = 0,
+                w = 0,
                 N = 0,
                 k = 0,
                 E = 0,
@@ -34189,8 +34370,8 @@
                 P = (m = f = 0),
                 M = 0,
                 D = 0,
-                U = 0,
                 F = 0,
+                U = 0,
                 B = l.length,
                 z = B - 1,
                 H = "",
@@ -34203,12 +34384,12 @@
               if (
                 ((h = l.charCodeAt(M)),
                 M === z &&
-                  0 !== N + E + k + j &&
+                  0 !== N + E + k + w &&
                   (0 !== N && (h = 47 === N ? 10 : 47),
-                  (E = k = j = 0),
+                  (E = k = w = 0),
                   B++,
                   z++),
-                0 === N + E + k + j)
+                0 === N + E + k + w)
               ) {
                 if (
                   M === z &&
@@ -34229,7 +34410,7 @@
                 switch (h) {
                   case 123:
                     for (
-                      f = (H = H.trim()).charCodeAt(0), m = 1, F = ++M;
+                      f = (H = H.trim()).charCodeAt(0), m = 1, U = ++M;
                       M < B;
 
                     ) {
@@ -34279,7 +34460,7 @@
                       M++;
                     }
                     if (
-                      ((m = l.substring(F, M)),
+                      ((m = l.substring(U, M)),
                       0 === f &&
                         (f = (H = H.replace(u, "").trim()).charCodeAt(0)),
                       64 === f)
@@ -34297,18 +34478,18 @@
                           D = _;
                       }
                       if (
-                        ((F = (m = n(r, D, m, h, p + 1)).length),
+                        ((U = (m = n(r, D, m, h, p + 1)).length),
                         0 < I &&
-                          ((y = o(3, m, (D = t(_, H, U)), r, A, C, F, h, p, c)),
+                          ((y = o(3, m, (D = t(_, H, F)), r, A, C, U, h, p, c)),
                           (H = D.join("")),
                           void 0 !== y &&
-                            0 === (F = (m = y.trim()).length) &&
+                            0 === (U = (m = y.trim()).length) &&
                             ((h = 0), (m = ""))),
-                        0 < F)
+                        0 < U)
                       )
                         switch (h) {
                           case 115:
-                            H = H.replace(w, s);
+                            H = H.replace(j, s);
                           case 100:
                           case 109:
                           case 45:
@@ -34325,9 +34506,9 @@
                             (m = H + m), 112 === c && ((G += m), (m = ""));
                         }
                       else m = "";
-                    } else m = n(r, t(r, H, U), m, c, p + 1);
+                    } else m = n(r, t(r, H, F), m, c, p + 1);
                     (W += m),
-                      (m = U = D = P = f = 0),
+                      (m = F = D = P = f = 0),
                       (H = ""),
                       (h = l.charCodeAt(++M));
                     break;
@@ -34335,17 +34516,17 @@
                   case 59:
                     if (
                       1 <
-                      (F = (H = (0 < D ? H.replace(d, "") : H).trim()).length)
+                      (U = (H = (0 < D ? H.replace(d, "") : H).trim()).length)
                     )
                       switch (
                         (0 === P &&
                           ((f = H.charCodeAt(0)),
                           45 === f || (96 < f && 123 > f)) &&
-                          (F = (H = H.replace(" ", ":")).length),
+                          (U = (H = H.replace(" ", ":")).length),
                         0 < I &&
                           void 0 !==
                             (y = o(1, H, r, e, A, C, G.length, c, p, c)) &&
-                          0 === (F = (H = y.trim()).length) &&
+                          0 === (U = (H = y.trim()).length) &&
                           (H = "\0\0"),
                         (f = H.charCodeAt(0)),
                         (h = H.charCodeAt(1)),
@@ -34359,10 +34540,10 @@
                             break;
                           }
                         default:
-                          58 !== H.charCodeAt(F - 1) &&
+                          58 !== H.charCodeAt(U - 1) &&
                             (G += i(H, f, h, H.charCodeAt(2)));
                       }
-                    (U = D = P = f = 0), (H = ""), (h = l.charCodeAt(++M));
+                    (F = D = P = f = 0), (H = ""), (h = l.charCodeAt(++M));
                 }
               }
               switch (h) {
@@ -34380,7 +34561,7 @@
                   break;
                 case 59:
                 case 125:
-                  if (0 === N + E + k + j) {
+                  if (0 === N + E + k + w) {
                     C++;
                     break;
                   }
@@ -34388,7 +34569,7 @@
                   switch ((C++, (g = l.charAt(M)), h)) {
                     case 9:
                     case 32:
-                      if (0 === E + j + N)
+                      if (0 === E + w + N)
                         switch (S) {
                           case 44:
                           case 58:
@@ -34410,10 +34591,10 @@
                       g = "\\v";
                       break;
                     case 38:
-                      0 === E + N + j && ((D = U = 1), (g = "\f" + g));
+                      0 === E + N + w && ((D = F = 1), (g = "\f" + g));
                       break;
                     case 108:
-                      if (0 === E + N + j + T && 0 < P)
+                      if (0 === E + N + w + T && 0 < P)
                         switch (M - P) {
                           case 2:
                             112 === S && 58 === l.charCodeAt(M - 3) && (T = S);
@@ -34422,34 +34603,34 @@
                         }
                       break;
                     case 58:
-                      0 === E + N + j && (P = M);
+                      0 === E + N + w && (P = M);
                       break;
                     case 44:
-                      0 === N + k + E + j && ((D = 1), (g += "\r"));
+                      0 === N + k + E + w && ((D = 1), (g += "\r"));
                       break;
                     case 34:
                     case 39:
                       0 === N && (E = E === h ? 0 : 0 === E ? h : E);
                       break;
                     case 91:
-                      0 === E + N + k && j++;
+                      0 === E + N + k && w++;
                       break;
                     case 93:
-                      0 === E + N + k && j--;
+                      0 === E + N + k && w--;
                       break;
                     case 41:
-                      0 === E + N + j && k--;
+                      0 === E + N + w && k--;
                       break;
                     case 40:
-                      0 === E + N + j &&
+                      0 === E + N + w &&
                         (0 === f && (2 * S + 3 * R == 533 || (f = 1)), k++);
                       break;
                     case 64:
-                      0 === N + k + E + j + P + m && (m = 1);
+                      0 === N + k + E + w + P + m && (m = 1);
                       break;
                     case 42:
                     case 47:
-                      if (!(0 < E + j + k))
+                      if (!(0 < E + w + k))
                         switch (N) {
                           case 0:
                             switch (2 * h + 3 * l.charCodeAt(M + 1)) {
@@ -34457,15 +34638,15 @@
                                 N = 47;
                                 break;
                               case 220:
-                                (F = M), (N = 42);
+                                (U = M), (N = 42);
                             }
                             break;
                           case 42:
                             47 === h &&
                               42 === S &&
-                              F + 2 !== M &&
-                              (33 === l.charCodeAt(F + 2) &&
-                                (G += l.substring(F, M + 1)),
+                              U + 2 !== M &&
+                              (33 === l.charCodeAt(U + 2) &&
+                                (G += l.substring(U, M + 1)),
                               (g = ""),
                               (N = 0));
                         }
@@ -34474,11 +34655,11 @@
               }
               (R = S), (S = h), M++;
             }
-            if (0 < (F = G.length)) {
+            if (0 < (U = G.length)) {
               if (
                 ((D = r),
                 0 < I &&
-                  void 0 !== (y = o(2, G, D, e, A, C, F, c, p, c)) &&
+                  void 0 !== (y = o(2, G, D, e, A, C, U, c, p, c)) &&
                   0 === (G = y).length)
               )
                 return Y + G + W;
@@ -34745,7 +34926,7 @@
           function s(e, n) {
             var t = i(n, n.charCodeAt(0), n.charCodeAt(1), n.charCodeAt(2));
             return t !== n + ";"
-              ? t.replace(j, " or ($1)").substring(4)
+              ? t.replace(w, " or ($1)").substring(4)
               : "(" + n + ")";
           }
           function o(e, n, t, r, i, a, s, o, l, u) {
@@ -34800,8 +34981,8 @@
             b = /::(place)/g,
             x = /:(read-only)/g,
             y = /[svh]\w+-[tblr]{2}/,
-            w = /\(\s*(.*)\s*\)/g,
-            j = /([\s\S]*?);/g,
+            j = /\(\s*(.*)\s*\)/g,
+            w = /([\s\S]*?);/g,
             N = /-self|flex-/g,
             k = /[^]*?(:[rp][el]a[\w-]+)[^]*/,
             E = /stretch|:\s*\w+\-(?:conte|avail)/,
@@ -34926,8 +35107,8 @@
             !(0, f.typeOf)(e)
           );
         },
-        Uc = Object.freeze([]),
-        Fc = Object.freeze({});
+        Fc = Object.freeze([]),
+        Uc = Object.freeze({});
       function Bc(e) {
         return "function" == typeof e;
       }
@@ -35179,7 +35360,7 @@
         uu = { isServer: !Wc, useCSSOMInjection: !Yc },
         du = (function () {
           function e(e, n, t) {
-            void 0 === e && (e = Fc),
+            void 0 === e && (e = Uc),
               void 0 === n && (n = {}),
               (this.options = Lc({}, uu, {}, e)),
               (this.gs = n),
@@ -35369,17 +35550,17 @@
           );
         })(),
         yu = /^\s*\/\/.*$/gm,
-        wu = [":", "[", ".", "#"];
-      function ju(e) {
+        ju = [":", "[", ".", "#"];
+      function wu(e) {
         var n,
           t,
           r,
           i,
-          a = void 0 === e ? Fc : e,
+          a = void 0 === e ? Uc : e,
           s = a.options,
-          o = void 0 === s ? Fc : s,
+          o = void 0 === s ? Uc : s,
           l = a.plugins,
-          c = void 0 === l ? Uc : l,
+          c = void 0 === l ? Fc : l,
           u = new _c(o),
           d = [],
           p = (function (e) {
@@ -35413,7 +35594,7 @@
             d.push(e);
           }),
           f = function (e, r, a) {
-            return (0 === r && -1 !== wu.indexOf(a[t.length])) || a.match(i)
+            return (0 === r && -1 !== ju.indexOf(a[t.length])) || a.match(i)
               ? e
               : "." + n;
           };
@@ -35460,7 +35641,7 @@
       var Nu = r.createContext(),
         ku = (Nu.Consumer, r.createContext()),
         Eu = (ku.Consumer, new du()),
-        Su = ju();
+        Su = wu();
       function Cu() {
         return (0, r.useContext)(Nu) || Eu;
       }
@@ -35486,7 +35667,7 @@
           ),
           o = (0, r.useMemo)(
             function () {
-              return ju({
+              return wu({
                 options: { prefix: !e.disableVendorPrefixes },
                 plugins: t,
               });
@@ -35598,7 +35779,7 @@
       var Du = function (e) {
         return Array.isArray(e) && (e.isCss = !0), e;
       };
-      function Uu(e) {
+      function Fu(e) {
         for (
           var n = arguments.length, t = new Array(n > 1 ? n - 1 : 0), r = 1;
           r < n;
@@ -35606,16 +35787,16 @@
         )
           t[r - 1] = arguments[r];
         return Bc(e) || Dc(e)
-          ? Du(Mu(Mc(Uc, [e].concat(t))))
+          ? Du(Mu(Mc(Fc, [e].concat(t))))
           : 0 === t.length && 1 === e.length && "string" == typeof e[0]
           ? e
           : Du(Mu(Mc(e, t)));
       }
       new Set();
-      var Fu = /[!"#$%&'()*+,./:;<=>?@[\\\]^`{|}~-]+/g,
+      var Uu = /[!"#$%&'()*+,./:;<=>?@[\\\]^`{|}~-]+/g,
         Bu = /(^-|-$)/g;
       function zu(e) {
-        return e.replace(Fu, "-").replace(Bu, "");
+        return e.replace(Uu, "-").replace(Bu, "");
       }
       var Hu = function (e) {
         return hu(gu(e) >>> 0);
@@ -35656,7 +35837,7 @@
         var i = Hc(e),
           a = !Gu(e),
           s = n.attrs,
-          o = void 0 === s ? Uc : s,
+          o = void 0 === s ? Fc : s,
           l = n.componentId,
           c =
             void 0 === l
@@ -35705,7 +35886,7 @@
                 u = e.styledComponentId,
                 d = e.target,
                 p = (function (e, n, t) {
-                  void 0 === e && (e = Fc);
+                  void 0 === e && (e = Uc);
                   var r = Lc({}, n, { theme: e }),
                     i = {};
                   return (
@@ -35727,10 +35908,10 @@
                 })(
                   (function (e, n, t) {
                     return (
-                      void 0 === t && (t = Fc),
+                      void 0 === t && (t = Uc),
                       (e.theme !== t.theme && e.theme) || n || t.theme
                     );
-                  })(n, (0, r.useContext)(qu), o) || Fc,
+                  })(n, (0, r.useContext)(qu), o) || Uc,
                   n,
                   a
                 ),
@@ -35740,7 +35921,7 @@
                   var a = Cu(),
                     s = (0, r.useContext)(ku) || Su;
                   return n
-                    ? e.generateAndInjectStyles(Fc, a, s)
+                    ? e.generateAndInjectStyles(Uc, a, s)
                     : e.generateAndInjectStyles(t, a, s);
                 })(s, i, f),
                 g = t,
@@ -35748,12 +35929,12 @@
                 b = Gu(v),
                 x = h !== n ? Lc({}, n, {}, h) : n,
                 y = {};
-              for (var w in x)
-                "$" !== w[0] &&
-                  "as" !== w &&
-                  ("forwardedAs" === w
-                    ? (y.as = x[w])
-                    : (c ? c(w, Pc, v) : !b || Pc(w)) && (y[w] = x[w]));
+              for (var j in x)
+                "$" !== j[0] &&
+                  "as" !== j &&
+                  ("forwardedAs" === j
+                    ? (y.as = x[j])
+                    : (c ? c(j, Pc, v) : !b || Pc(j)) && (y[j] = x[j]));
               return (
                 n.style &&
                   h.style !== n.style &&
@@ -35775,7 +35956,7 @@
           (g.shouldForwardProp = m),
           (g.foldedComponentIds = i
             ? Array.prototype.concat(e.foldedComponentIds, e.styledComponentId)
-            : Uc),
+            : Fc),
           (g.styledComponentId = f),
           (g.target = i ? e.target : e),
           (g.withComponent = function (e) {
@@ -35823,10 +36004,10 @@
       var $u,
         Zu = function (e) {
           return (function e(n, t, r) {
-            if ((void 0 === r && (r = Fc), !(0, f.isValidElementType)(t)))
+            if ((void 0 === r && (r = Uc), !(0, f.isValidElementType)(t)))
               return Xc(1, String(t));
             var i = function () {
-              return n(t, r, Uu.apply(void 0, arguments));
+              return n(t, r, Fu.apply(void 0, arguments));
             };
             return (
               (i.withConfig = function (i) {
@@ -35852,7 +36033,7 @@
           r++
         )
           t[r - 1] = arguments[r];
-        var i = Uu.apply(void 0, [e].concat(t)).join(""),
+        var i = Fu.apply(void 0, [e].concat(t)).join(""),
           a = Hu(i);
         return new Tu(a, i);
       }
@@ -36306,7 +36487,7 @@
           "The human body is composed of trillions of cells, but only about 10% of those cells are actually human. Other 90% belongs to viruses, fungi, and other microscopic organisms, collectively known as the human microbiota.",
           "The human brain is one of the most energy-demanding organs in the body, consuming about 20% of the body's total energy.",
         ],
-        wd = function () {
+        jd = function () {
           var n = (0, r.useState)(-1),
             t = n[0],
             i = n[1];
@@ -36390,7 +36571,7 @@
             )
           );
         },
-        jd = function (e) {
+        wd = function (e) {
           return e.game.queueItems;
         },
         Nd = function () {
@@ -36583,79 +36764,472 @@
                             )
                           ),
                           t.queue.map(function (n, t) {
-                            return (0, e.jsxs)(
-                              "div",
+                            var r, i, a, s;
+                            return (0, e.jsx)(
+                              _a,
                               Nd(
-                                { className: "queue-item" },
                                 {
-                                  children: [
-                                    (0, e.jsxs)("p", {
-                                      children: [n.scope, " : ", n.meta.name],
-                                    }),
-                                    (0, e.jsx)("span", {
-                                      children: hs(n.meta.etaNum),
-                                    }),
-                                    (0, e.jsxs)(
-                                      "div",
-                                      Nd(
-                                        { className: "move-controls" },
-                                        {
-                                          children: [
-                                            n.isUpAvailable
-                                              ? (0, e.jsx)(
-                                                  "span",
-                                                  Nd(
-                                                    {
-                                                      className: "move up",
-                                                      onClick: function () {
-                                                        return u(t, -1);
-                                                      },
-                                                    },
-                                                    {
-                                                      children: (0, e.jsx)(
-                                                        e.Fragment,
-                                                        { children: "↑" }
+                                  duration: 0,
+                                  placement: "left",
+                                  content: (0, e.jsxs)(
+                                    "div",
+                                    Nd(
+                                      { className: "description-hint" },
+                                      {
+                                        children: [
+                                          (0, e.jsx)(
+                                            "p",
+                                            Nd(
+                                              { className: "title" },
+                                              { children: n.meta.name }
+                                            )
+                                          ),
+                                          (0, e.jsx)(
+                                            "p",
+                                            Nd(
+                                              { className: "description" },
+                                              { children: n.meta.description }
+                                            )
+                                          ),
+                                          n.meta.cost.length
+                                            ? (0, e.jsxs)(
+                                                "div",
+                                                Nd(
+                                                  { className: "costs wrap" },
+                                                  {
+                                                    children: [
+                                                      (0, e.jsx)("span", {
+                                                        children: "Cost",
+                                                      }),
+                                                      n.meta.cost.map(function (
+                                                        n
+                                                      ) {
+                                                        return (0, e.jsx)(Us, {
+                                                          cost: n,
+                                                        });
+                                                      }),
+                                                    ],
+                                                  }
+                                                )
+                                              )
+                                            : (0, e.jsx)(e.Fragment, {}),
+                                          "consume" in n.meta &&
+                                          n.meta.consume.length
+                                            ? (0, e.jsxs)(
+                                                "div",
+                                                Nd(
+                                                  { className: "costs wrap" },
+                                                  {
+                                                    children: [
+                                                      (0, e.jsx)("span", {
+                                                        children: "Consume",
+                                                      }),
+                                                      n.meta.consume.map(
+                                                        function (n) {
+                                                          return (0, e.jsx)(
+                                                            zs,
+                                                            { gain: n }
+                                                          );
+                                                        }
                                                       ),
-                                                    }
-                                                  )
+                                                    ],
+                                                  }
                                                 )
-                                              : null,
-                                            n.isDownAvailable
-                                              ? (0, e.jsx)(
-                                                  "span",
-                                                  Nd(
-                                                    {
-                                                      className: "move down",
-                                                      onClick: function () {
-                                                        return u(t, 1);
-                                                      },
-                                                    },
-                                                    { children: "↓" }
-                                                  )
+                                              )
+                                            : (0, e.jsx)(e.Fragment, {}),
+                                          "gain" in n.meta && n.meta.gain.length
+                                            ? (0, e.jsxs)(
+                                                "div",
+                                                Nd(
+                                                  { className: "gain wrap" },
+                                                  {
+                                                    children: [
+                                                      (0, e.jsx)("span", {
+                                                        children: "Produce",
+                                                      }),
+                                                      n.meta.gain.map(function (
+                                                        n
+                                                      ) {
+                                                        return (0, e.jsx)(zs, {
+                                                          gain: n,
+                                                        });
+                                                      }),
+                                                    ],
+                                                  }
                                                 )
-                                              : null,
-                                          ],
-                                        }
-                                      )
-                                    ),
-                                    (0, e.jsx)(
-                                      "span",
-                                      Nd(
-                                        {
-                                          className: "close",
-                                          onClick: function () {
-                                            return (function (e) {
-                                              e >= 0 &&
-                                                Ys.deleteFromQueue.send({
-                                                  index: e,
-                                                });
-                                            })(t);
-                                          },
-                                        },
-                                        { children: "X" }
-                                      )
-                                    ),
-                                  ],
+                                              )
+                                            : (0, e.jsx)(e.Fragment, {}),
+                                          "gainMult" in n.meta &&
+                                          n.meta.gainMult.length
+                                            ? (0, e.jsxs)(
+                                                "div",
+                                                Nd(
+                                                  { className: "gain wrap" },
+                                                  {
+                                                    children: [
+                                                      (0, e.jsx)("span", {
+                                                        children:
+                                                          "Income Bonuses",
+                                                      }),
+                                                      n.meta.gainMult.map(
+                                                        function (n) {
+                                                          return (0, e.jsx)(
+                                                            zs,
+                                                            { gain: n }
+                                                          );
+                                                        }
+                                                      ),
+                                                    ],
+                                                  }
+                                                )
+                                              )
+                                            : (0, e.jsx)(e.Fragment, {}),
+                                          "craftingMult" in n.meta &&
+                                          n.meta.craftingMult &&
+                                          1 !== n.meta.craftingMult
+                                            ? (0, e.jsxs)(
+                                                "div",
+                                                Nd(
+                                                  { className: "gain wrap" },
+                                                  {
+                                                    children: [
+                                                      (0, e.jsx)("span", {
+                                                        children:
+                                                          "Crafting Multiplier",
+                                                      }),
+                                                      (0, e.jsx)(
+                                                        "div",
+                                                        Nd(
+                                                          {
+                                                            className:
+                                                              "gain-block",
+                                                          },
+                                                          {
+                                                            children: (0,
+                                                            e.jsxs)(
+                                                              "p",
+                                                              Nd(
+                                                                {
+                                                                  className:
+                                                                    "requirement",
+                                                                },
+                                                                {
+                                                                  children: [
+                                                                    "All craftable: x",
+                                                                    ms(
+                                                                      n.meta
+                                                                        .craftingMult
+                                                                    ),
+                                                                  ],
+                                                                }
+                                                              )
+                                                            ),
+                                                          }
+                                                        )
+                                                      ),
+                                                    ],
+                                                  }
+                                                )
+                                              )
+                                            : (0, e.jsx)(e.Fragment, {}),
+                                          "maxColonists" in n.meta &&
+                                          n.meta.maxColonists
+                                            ? (0, e.jsxs)(
+                                                "div",
+                                                Nd(
+                                                  { className: "gain wrap" },
+                                                  {
+                                                    children: [
+                                                      (0, e.jsx)("span", {
+                                                        children:
+                                                          "Max Population",
+                                                      }),
+                                                      (0, e.jsx)(
+                                                        "div",
+                                                        Nd(
+                                                          {
+                                                            className:
+                                                              "gain-block",
+                                                          },
+                                                          {
+                                                            children: (0,
+                                                            e.jsxs)(
+                                                              "p",
+                                                              Nd(
+                                                                {
+                                                                  className:
+                                                                    "requirement",
+                                                                },
+                                                                {
+                                                                  children: [
+                                                                    "Colonists: ",
+                                                                    ms(
+                                                                      n.meta
+                                                                        .maxColonists
+                                                                    ),
+                                                                  ],
+                                                                }
+                                                              )
+                                                            ),
+                                                          }
+                                                        )
+                                                      ),
+                                                    ],
+                                                  }
+                                                )
+                                              )
+                                            : (0, e.jsx)(e.Fragment, {}),
+                                          "max" in n.meta &&
+                                          (null ===
+                                            (i =
+                                              null === (r = n.meta) ||
+                                              void 0 === r
+                                                ? void 0
+                                                : r.max) || void 0 === i
+                                            ? void 0
+                                            : i.length)
+                                            ? (0, e.jsxs)(
+                                                "div",
+                                                Nd(
+                                                  { className: "store wrap" },
+                                                  {
+                                                    children: [
+                                                      (0, e.jsx)("span", {
+                                                        children: "Storage",
+                                                      }),
+                                                      null ===
+                                                        (s =
+                                                          null ===
+                                                            (a = n.meta) ||
+                                                          void 0 === a
+                                                            ? void 0
+                                                            : a.max) ||
+                                                      void 0 === s
+                                                        ? void 0
+                                                        : s.map(function (n) {
+                                                            return (0,
+                                                            e.jsx)(zs, { gain: n });
+                                                          }),
+                                                    ],
+                                                  }
+                                                )
+                                              )
+                                            : (0, e.jsx)(e.Fragment, {}),
+                                          "storeMult" in n.meta &&
+                                          n.meta.storeMult.length
+                                            ? (0, e.jsxs)(
+                                                "div",
+                                                Nd(
+                                                  { className: "gain wrap" },
+                                                  {
+                                                    children: [
+                                                      (0, e.jsx)("span", {
+                                                        children:
+                                                          "Storage Multiplier",
+                                                      }),
+                                                      n.meta.storeMult.map(
+                                                        function (n) {
+                                                          return (0, e.jsx)(
+                                                            zs,
+                                                            { gain: n }
+                                                          );
+                                                        }
+                                                      ),
+                                                    ],
+                                                  }
+                                                )
+                                              )
+                                            : (0, e.jsx)(e.Fragment, {}),
+                                          "maxMult" in n.meta &&
+                                          n.meta.maxMult.length
+                                            ? (0, e.jsxs)(
+                                                "div",
+                                                Nd(
+                                                  { className: "gain wrap" },
+                                                  {
+                                                    children: [
+                                                      (0, e.jsx)("span", {
+                                                        children:
+                                                          "Storage Multiplier",
+                                                      }),
+                                                      n.meta.maxMult.map(
+                                                        function (n) {
+                                                          return (0, e.jsx)(
+                                                            zs,
+                                                            { gain: n }
+                                                          );
+                                                        }
+                                                      ),
+                                                    ],
+                                                  }
+                                                )
+                                              )
+                                            : (0, e.jsx)(e.Fragment, {}),
+                                          "consumeEffect" in n.meta &&
+                                          n.meta.consumeEffect.length
+                                            ? (0, e.jsxs)(
+                                                "div",
+                                                Nd(
+                                                  { className: "costs wrap" },
+                                                  {
+                                                    children: [
+                                                      (0, e.jsx)("span", {
+                                                        children:
+                                                          "Negative Effect",
+                                                      }),
+                                                      n.meta.consumeEffect.map(
+                                                        function (n) {
+                                                          return (0, e.jsx)(
+                                                            zs,
+                                                            { gain: n }
+                                                          );
+                                                        }
+                                                      ),
+                                                    ],
+                                                  }
+                                                )
+                                              )
+                                            : (0, e.jsx)(e.Fragment, {}),
+                                          "gainEffect" in n.meta &&
+                                          n.meta.gainEffect.length
+                                            ? (0, e.jsxs)(
+                                                "div",
+                                                Nd(
+                                                  { className: "gain wrap" },
+                                                  {
+                                                    children: [
+                                                      (0, e.jsx)("span", {
+                                                        children:
+                                                          "Positive Effect",
+                                                      }),
+                                                      n.meta.gainEffect.map(
+                                                        function (n) {
+                                                          return (0, e.jsx)(
+                                                            zs,
+                                                            { gain: n }
+                                                          );
+                                                        }
+                                                      ),
+                                                    ],
+                                                  }
+                                                )
+                                              )
+                                            : (0, e.jsx)(e.Fragment, {}),
+                                          "effMult" in n.meta &&
+                                          n.meta.effMult.length
+                                            ? (0, e.jsxs)(
+                                                "div",
+                                                Nd(
+                                                  { className: "gain wrap" },
+                                                  {
+                                                    children: [
+                                                      (0, e.jsx)("span", {
+                                                        children:
+                                                          "Effect Multiplier",
+                                                      }),
+                                                      n.meta.effMult.map(
+                                                        function (n) {
+                                                          return (0, e.jsx)(
+                                                            zs,
+                                                            { gain: n }
+                                                          );
+                                                        }
+                                                      ),
+                                                    ],
+                                                  }
+                                                )
+                                              )
+                                            : (0, e.jsx)(e.Fragment, {}),
+                                        ],
+                                      }
+                                    )
+                                  ),
+                                },
+                                {
+                                  children: (0, e.jsxs)(
+                                    "div",
+                                    Nd(
+                                      { className: "queue-item" },
+                                      {
+                                        children: [
+                                          (0, e.jsxs)("p", {
+                                            children: [
+                                              n.scope,
+                                              " : ",
+                                              n.meta.name,
+                                            ],
+                                          }),
+                                          (0, e.jsx)("span", {
+                                            children: hs(n.meta.etaNum),
+                                          }),
+                                          (0, e.jsxs)(
+                                            "div",
+                                            Nd(
+                                              { className: "move-controls" },
+                                              {
+                                                children: [
+                                                  n.isUpAvailable
+                                                    ? (0, e.jsx)(
+                                                        "span",
+                                                        Nd(
+                                                          {
+                                                            className:
+                                                              "move up",
+                                                            onClick:
+                                                              function () {
+                                                                return u(t, -1);
+                                                              },
+                                                          },
+                                                          {
+                                                            children: (0,
+                                                            e.jsx)(e.Fragment, {
+                                                              children: "↑",
+                                                            }),
+                                                          }
+                                                        )
+                                                      )
+                                                    : null,
+                                                  n.isDownAvailable
+                                                    ? (0, e.jsx)(
+                                                        "span",
+                                                        Nd(
+                                                          {
+                                                            className:
+                                                              "move down",
+                                                            onClick:
+                                                              function () {
+                                                                return u(t, 1);
+                                                              },
+                                                          },
+                                                          { children: "↓" }
+                                                        )
+                                                      )
+                                                    : null,
+                                                ],
+                                              }
+                                            )
+                                          ),
+                                          (0, e.jsx)(
+                                            "span",
+                                            Nd(
+                                              {
+                                                className: "close",
+                                                onClick: function () {
+                                                  return (function (e) {
+                                                    e >= 0 &&
+                                                      Ys.deleteFromQueue.send({
+                                                        index: e,
+                                                      });
+                                                  })(t);
+                                                },
+                                              },
+                                              { children: "X" }
+                                            )
+                                          ),
+                                        ],
+                                      }
+                                    )
+                                  ),
                                 }
                               )
                             );
@@ -36670,7 +37244,7 @@
           );
         },
         Ed = function () {
-          var n = N(jd);
+          var n = N(wd);
           return (0, e.jsx)(kd, { queue: n });
         },
         Sd = function (e) {
@@ -37198,9 +37772,9 @@
         Dd = function (e) {
           return e.game.searchData;
         },
-        Ud = function () {
+        Fd = function () {
           return (
-            (Ud =
+            (Fd =
               Object.assign ||
               function (e) {
                 for (var n, t = 1, r = arguments.length; t < r; t++)
@@ -37208,7 +37782,7 @@
                     Object.prototype.hasOwnProperty.call(n, i) && (e[i] = n[i]);
                 return e;
               }),
-            Ud.apply(this, arguments)
+            Fd.apply(this, arguments)
           );
         };
       !(function (e) {
@@ -37219,7 +37793,7 @@
           (e.JOB = "job"),
           (e.CRAFTSMAN = "craftsman");
       })(bd || (bd = {}));
-      var Fd = {
+      var Ud = {
           buildings: [],
           upgrades: [],
           space: [],
@@ -37230,13 +37804,13 @@
           totalCount: 0,
         },
         Bd =
-          (Ud({}, Fd),
-          Ud({}, Fd),
-          Ud({}, Fd),
-          Ud({}, Fd),
-          Ud({}, Fd),
-          Ud({}, Fd),
-          Ud({}, Fd),
+          (Fd({}, Ud),
+          Fd({}, Ud),
+          Fd({}, Ud),
+          Fd({}, Ud),
+          Fd({}, Ud),
+          Fd({}, Ud),
+          Fd({}, Ud),
           function () {
             return (
               (Bd =
@@ -37319,7 +37893,7 @@
                 ? null === (e = u.results) || void 0 === e
                   ? void 0
                   : e[p]
-                : Bd({}, Fd);
+                : Bd({}, Ud);
             },
             [p, u.query]
           );
@@ -37870,7 +38444,7 @@
                 },
                 {
                   children: [
-                    a ? (0, e.jsx)(wd, {}) : null,
+                    a ? (0, e.jsx)(jd, {}) : null,
                     (0, e.jsx)(_s, {}),
                     (0, e.jsxs)(
                       "div",

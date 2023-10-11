@@ -760,6 +760,11 @@
               (e.SCIENCE_MASTERITY = "Science Masterity"),
               (e.EXOTIC_MASTERITY = "Exotic Masterity"),
               (e.EXPEDITION_MASTERITY = "Expedition Masterity"),
+              (e.NOVICE_STORAGE = "Packing"),
+              (e.NOVICE_INDUSTRY = "Industrialization"),
+              (e.NOVICE_SMELTING = "Thermal Proof Stone"),
+              (e.VIRUSOLOGY = "Virusology"),
+              (e.METEOROLOGIST = "Meteorologist"),
               (e.POWER_CAPACITY = "Power Capacity"),
               (e.MATERIALS_CAPACITY = "Materials Capacity"),
               (e.LIQUIDS_CAPACITY = "Liquids Capacity"),
@@ -773,6 +778,7 @@
           })(g || (g = {})),
           (function (e) {
             (e.START = "Start"),
+              (e.NOVICE = "Novice"),
               (e.MASTERITIES = "Production"),
               (e.CAPACITY = "Capacity"),
               (e.COLONY = "Colony");
@@ -821,6 +827,7 @@
               (e.OVERSEER = "overseer"),
               (e.BROADCASTING_TRANSMITTER = "broadcasting-transmitter"),
               (e.TECHNOLOGY_HUB = "technology_hub"),
+              (e.PLANET_MEMORY = "planet_memory"),
               (e.FOUNTAIN = "fountain"),
               (e.BROADCAST_TOWER = "broadcast_tower"),
               (e.GPS_TRACKING = "gps_tracking"),
@@ -1592,7 +1599,7 @@
           X = function (e) {
             var t = 1;
             return (
-              _h.achievements.getAchievementComplete("speedRun1") &&
+              xh.achievements.getAchievementComplete("speedRun1") &&
                 (t *= 0.95),
               t
             );
@@ -1760,7 +1767,7 @@
               x.find(function (t) {
                 return t.id === e;
               });
-            return t ? (t.unlockCondition(_h) ? t.name : "???") : e;
+            return t ? (t.unlockCondition(xh) ? t.name : "???") : e;
           },
           H = function (e) {
             return Object.entries(e).map(function (e) {
@@ -2033,8 +2040,8 @@
         var j,
           V,
           K,
-          q,
           z,
+          q,
           Q,
           J,
           $,
@@ -2087,8 +2094,8 @@
           je,
           Ve,
           Ke,
-          qe,
           ze,
+          qe,
           Qe,
           Je,
           $e,
@@ -2141,8 +2148,8 @@
           jt,
           Vt,
           Kt,
-          qt,
           zt,
+          qt,
           Qt,
           Jt,
           $t,
@@ -2194,8 +2201,8 @@
           jn,
           Vn,
           Kn,
-          qn,
           zn,
+          qn,
           Qn,
           Jn,
           $n,
@@ -2248,8 +2255,8 @@
           ji,
           Vi,
           Ki,
-          qi,
           zi,
+          qi,
           Qi,
           Ji,
           $i,
@@ -2301,8 +2308,8 @@
           jo,
           Vo,
           Ko,
-          qo,
           zo,
+          qo,
           Qo,
           Jo,
           $o,
@@ -2355,8 +2362,8 @@
           jr,
           Vr,
           Kr,
-          qr,
           zr,
+          qr,
           Qr,
           Jr,
           $r,
@@ -2409,8 +2416,8 @@
           ja,
           Va,
           Ka,
-          qa,
           za,
+          qa,
           Qa,
           Ja,
           $a,
@@ -2463,8 +2470,8 @@
           jc,
           Vc,
           Kc,
-          qc,
           zc,
+          qc,
           Qc,
           Jc,
           $c,
@@ -2517,8 +2524,8 @@
           js,
           Vs,
           Ks,
-          qs,
           zs,
+          qs,
           Qs,
           Js,
           $s,
@@ -2571,8 +2578,8 @@
           ju,
           Vu,
           Ku,
-          qu,
           zu,
+          qu,
           Qu,
           Ju,
           $u,
@@ -2625,8 +2632,8 @@
           jl,
           Vl,
           Kl,
-          ql,
           zl,
+          ql,
           Ql,
           Jl,
           $l,
@@ -2679,9 +2686,10 @@
           jp,
           Vp,
           Kp,
-          qp,
           zp,
-          Qp =
+          qp,
+          Qp,
+          Jp =
             ((j = function (e, t) {
               return (
                 (j =
@@ -2714,9 +2722,9 @@
                     ? Object.create(t)
                     : ((n.prototype = t.prototype), new n()));
             }),
-          Jp = function () {
+          $p = function () {
             return (
-              (Jp =
+              ($p =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -2725,10 +2733,10 @@
                         (e[o] = t[o]);
                   return e;
                 }),
-              Jp.apply(this, arguments)
+              $p.apply(this, arguments)
             );
           },
-          $p = (function (e) {
+          ed = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -2740,7 +2748,7 @@
               );
             }
             return (
-              Qp(t, e),
+              Jp(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -2767,11 +2775,11 @@
                   this.actions.push(t));
                 var n = W.calcBatchAll(
                     e.getCost,
-                    Mh.getInstance(),
+                    Xh.getInstance(),
                     0,
-                    Mh.getInstance().resources.getBatchObject()
+                    Xh.getInstance().resources.getBatchObject()
                   ),
-                  i = W.calcBatch(e.getGain, Mh.getInstance(), 0),
+                  i = W.calcBatch(e.getGain, Xh.getInstance(), 0),
                   o = n.reduce(function (e, t) {
                     return Math.min(e, Math.floor(t.max));
                   }, 1e300),
@@ -2781,10 +2789,10 @@
                   a = n.reduce(function (e, t) {
                     return Math.max(e, t.eta);
                   }, 0),
-                  c = e.unlockCondition(_h);
+                  c = e.unlockCondition(xh);
                 return (
                   c &&
-                    _h.newNotifications.registerNotification(
+                    xh.newNotifications.registerNotification(
                       "planet:landing-zone:actions:".concat(e.id)
                     ),
                   {
@@ -2792,14 +2800,14 @@
                     name: e.name,
                     description: e.description,
                     isUnlocked: c,
-                    isAvailable: e.availableCondition(_h) && o >= 1,
-                    cost: Mh.getInstance().resources.assertEnought(
+                    isAvailable: e.availableCondition(xh) && o >= 1,
+                    cost: Xh.getInstance().resources.assertEnought(
                       n,
-                      Mh.getInstance().resources.getBatchObject(),
-                      Mh.getInstance().resources.getBatchBalanceObject()
+                      Xh.getInstance().resources.getBatchObject(),
+                      Xh.getInstance().resources.getBatchBalanceObject()
                     ),
                     gain: i.map(function (e) {
-                      return Jp(Jp({}, e), {
+                      return $p($p({}, e), {
                         amountValue: e.amount,
                         amount: F(e.amount),
                       });
@@ -2832,9 +2840,9 @@
                   else if (this.actions[n].cooldown > 0) return;
                   var i = W.calcBatchAll(
                     t.getCost,
-                    Mh.getInstance(),
+                    Xh.getInstance(),
                     0,
-                    Mh.getInstance().resources.getBatchObject()
+                    Xh.getInstance().resources.getBatchObject()
                   );
                   i.reduce(function (e, t) {
                     return Math.min(e, Math.floor(t.max));
@@ -2842,9 +2850,9 @@
                     ((this.actions[n].cooldown = 1.5),
                     this.actions[n].performed++,
                     console.log("costs: ", i),
-                    Mh.getInstance().resources.subtractResourceBatch(i),
-                    _h.resources.reassertBalances(),
-                    _h.regenerateCache());
+                    Xh.getInstance().resources.subtractResourceBatch(i),
+                    xh.resources.reassertBalances(),
+                    xh.regenerateCache());
                 }
               }),
               (t.prototype.getActionPerformed = function (e) {
@@ -2869,19 +2877,19 @@
                       return t.id === e.id;
                     });
                     if (!i) return;
-                    var o = W.calcBatch(i.getGain, Mh.getInstance(), 0),
+                    var o = W.calcBatch(i.getGain, Xh.getInstance(), 0),
                       r = W.calcBatchAll(
                         i.getCost,
-                        Mh.getInstance(),
+                        Xh.getInstance(),
                         0,
-                        Mh.getInstance().resources.getBatchObject()
+                        Xh.getInstance().resources.getBatchObject()
                       );
-                    Mh.getInstance().eventLog.registerAction(i.name, r, o),
+                    Xh.getInstance().eventLog.registerAction(i.name, r, o),
                       o.forEach(function (e) {
-                        _h.resources.addResource(e.id, e.amount);
+                        xh.resources.addResource(e.id, e.amount);
                       }),
-                      _h.resources.reassertBalances(),
-                      _h.regenerateCache();
+                      xh.resources.reassertBalances(),
+                      xh.regenerateCache();
                   }
                 });
               }),
@@ -2891,8 +2899,8 @@
               t
             );
           })(P),
-          ed = $p.getInstance(),
-          td = [
+          td = ed.getInstance(),
+          nd = [
             {
               id: r.GRAVITONE_DETECTORS,
               name: "Gravitone Detectors",
@@ -2962,17 +2970,17 @@
                 );
               },
               getCost:
-                ((q = {}),
-                (q[l.RESEARCH] = function (e) {
+                ((z = {}),
+                (z[l.RESEARCH] = function (e) {
                   return { A: 225e3, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (q[l.COMPUTER] = function (e) {
+                (z[l.COMPUTER] = function (e) {
                   return { A: 75e3, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (q[l.MAGNETO] = function (e) {
+                (z[l.MAGNETO] = function (e) {
                   return { A: 1500, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                q),
+                z),
               getGainMultiplier: {},
               getCapacityMultiplier: {},
               maxLevel: 1,
@@ -2990,17 +2998,17 @@
                 );
               },
               getCost:
-                ((z = {}),
-                (z[l.RESEARCH] = function (e) {
+                ((q = {}),
+                (q[l.RESEARCH] = function (e) {
                   return { A: 215e3, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (z[l.COMPUTER] = function (e) {
+                (q[l.COMPUTER] = function (e) {
                   return { A: 4e4, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (z[l.GRAPHENE] = function (e) {
+                (q[l.GRAPHENE] = function (e) {
                   return { A: 12500, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                z),
+                q),
               getGainMultiplier: {},
               getCapacityMultiplier: {},
               getCraftingMultiplier: function (e) {
@@ -4242,29 +4250,29 @@
                 );
               },
               getCost:
-                ((qe = {}),
-                (qe[l.RESEARCH] = function (e) {
+                ((ze = {}),
+                (ze[l.RESEARCH] = function (e) {
                   return { A: 2e6, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (qe[l.MAGNETO] = function (e) {
+                (ze[l.MAGNETO] = function (e) {
                   return { A: 157500, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (qe[l.POWER] = function (e) {
+                (ze[l.POWER] = function (e) {
                   return { A: 1e6, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                qe),
-              getGainMultiplier:
-                ((ze = {}),
-                (ze[l.SEMICONDUCTOR] = function (e) {
-                  return { A: 1, B: 1.2, type: i.EXPONENTIAL };
-                }),
-                (ze[l.COMPUTER] = function (e) {
-                  return { A: 1, B: 1.2, type: i.EXPONENTIAL };
-                }),
-                (ze[l.MAGNETO] = function (e) {
-                  return { A: 1, B: 1.2, type: i.EXPONENTIAL };
-                }),
                 ze),
+              getGainMultiplier:
+                ((qe = {}),
+                (qe[l.SEMICONDUCTOR] = function (e) {
+                  return { A: 1, B: 1.2, type: i.EXPONENTIAL };
+                }),
+                (qe[l.COMPUTER] = function (e) {
+                  return { A: 1, B: 1.2, type: i.EXPONENTIAL };
+                }),
+                (qe[l.MAGNETO] = function (e) {
+                  return { A: 1, B: 1.2, type: i.EXPONENTIAL };
+                }),
+                qe),
               getCapacityMultiplier: {},
               maxLevel: 5,
             },
@@ -4893,7 +4901,7 @@
               maxLevel: 5,
             },
           ],
-          nd = (function (e, t, n) {
+          id = (function (e, t, n) {
             if (n || 2 === arguments.length)
               for (var i, o = 0, r = t.length; o < r; o++)
                 (!i && o in t) ||
@@ -5449,11 +5457,11 @@
                   }),
                   Kt),
                 getCapacityEffect:
-                  ((qt = {}),
-                  (qt[l.POWER] = function (e) {
+                  ((zt = {}),
+                  (zt[l.POWER] = function (e) {
                     return { A: 40, B: 0, type: i.LINEAR };
                   }),
-                  qt),
+                  zt),
                 maxLevel: 1,
                 unlockType: u.BUILDING,
               },
@@ -5473,17 +5481,17 @@
                   );
                 },
                 getCost:
-                  ((zt = {}),
-                  (zt[l.POWER] = function (e) {
+                  ((qt = {}),
+                  (qt[l.POWER] = function (e) {
                     return { A: 275, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (zt[l.WATER] = function (e) {
+                  (qt[l.WATER] = function (e) {
                     return { A: 40, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (zt[l.ORE] = function (e) {
+                  (qt[l.ORE] = function (e) {
                     return { A: 275, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  zt),
+                  qt),
                 getGain:
                   ((Qt = {}),
                   (Qt[l.NUTRITION] = function (e) {
@@ -6508,17 +6516,17 @@
                   );
                 },
                 getCost:
-                  ((qn = {}),
-                  (qn[l.PLATE] = function (e) {
+                  ((zn = {}),
+                  (zn[l.PLATE] = function (e) {
                     return { A: 5, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (qn[l.RESEARCH] = function (e) {
+                  (zn[l.RESEARCH] = function (e) {
                     return { A: 450, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (qn[l.POWER] = function (e) {
+                  (zn[l.POWER] = function (e) {
                     return { A: 845, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  qn),
+                  zn),
                 getGain: {},
                 getGainMultiplier: {},
                 getCapacityMultiplier: {},
@@ -6538,17 +6546,17 @@
                   );
                 },
                 getCost:
-                  ((zn = {}),
-                  (zn[l.IRON] = function (e) {
+                  ((qn = {}),
+                  (qn[l.IRON] = function (e) {
                     return { A: 300, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (zn[l.RESEARCH] = function (e) {
+                  (qn[l.RESEARCH] = function (e) {
                     return { A: 500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (zn[l.POWER] = function (e) {
+                  (qn[l.POWER] = function (e) {
                     return { A: 845, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  zn),
+                  qn),
                 getGain: {},
                 getGainMultiplier:
                   ((Qn = {}),
@@ -7707,14 +7715,14 @@
                   );
                 },
                 getCost:
-                  ((qi = {}),
-                  (qi[l.RESEARCH] = function (e) {
+                  ((zi = {}),
+                  (zi[l.RESEARCH] = function (e) {
                     return { A: 33500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (qi[l.PLATINUM] = function (e) {
+                  (zi[l.PLATINUM] = function (e) {
                     return { A: 1e3, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  qi),
+                  zi),
                 getGainMultiplier: {},
                 maxLevel: 3,
               },
@@ -7731,14 +7739,14 @@
                   );
                 },
                 getCost:
-                  ((zi = {}),
-                  (zi[l.RESEARCH] = function (e) {
+                  ((qi = {}),
+                  (qi[l.RESEARCH] = function (e) {
                     return { A: 33500, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (zi[l.PLATINUM] = function (e) {
+                  (qi[l.PLATINUM] = function (e) {
                     return { A: 1e3, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  zi),
+                  qi),
                 getGainMultiplier: {},
                 maxLevel: 3,
               },
@@ -8828,17 +8836,17 @@
                   );
                 },
                 getCost:
-                  ((qo = {}),
-                  (qo[l.RESEARCH] = function (e) {
+                  ((zo = {}),
+                  (zo[l.RESEARCH] = function (e) {
                     return { A: 135e3, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (qo[l.COMPUTER] = function (e) {
+                  (zo[l.COMPUTER] = function (e) {
                     return { A: 15e3, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (qo[l.GRAPHENE] = function (e) {
+                  (zo[l.GRAPHENE] = function (e) {
                     return { A: 4800, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  qo),
+                  zo),
                 getGainMultiplier: {},
                 getCapacityMultiplier: {},
                 getCraftingMultiplier: function (e) {
@@ -8859,17 +8867,17 @@
                   );
                 },
                 getCost:
-                  ((zo = {}),
-                  (zo[l.RESEARCH] = function (e) {
+                  ((qo = {}),
+                  (qo[l.RESEARCH] = function (e) {
                     return { A: 1e5, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (zo[l.BIOMASS] = function (e) {
+                  (qo[l.BIOMASS] = function (e) {
                     return { A: 1e5, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  (zo[l.MAGNETO] = function (e) {
+                  (qo[l.MAGNETO] = function (e) {
                     return { A: 100, B: 1.5, type: i.EXPONENTIAL };
                   }),
-                  zo),
+                  qo),
                 getGainMultiplier:
                   ((Qo = {}),
                   (Qo[l.POWER] = function (e) {
@@ -8924,10 +8932,10 @@
                 maxLevel: 5,
               },
             ],
-            td,
+            nd,
             !0
           ),
-          id = (function () {
+          od = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -8961,9 +8969,9 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          od = function () {
+          rd = function () {
             return (
-              (od =
+              (rd =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -8972,10 +8980,10 @@
                         (e[o] = t[o]);
                   return e;
                 }),
-              od.apply(this, arguments)
+              rd.apply(this, arguments)
             );
           },
-          rd = (function (e) {
+          ad = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -8988,7 +8996,7 @@
               );
             }
             return (
-              id(t, e),
+              od(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -9000,7 +9008,7 @@
               }),
               (t.prototype.regenerateCache = function () {
                 var e = this;
-                this.cachedUpgrades = nd.map(function (t) {
+                this.cachedUpgrades = id.map(function (t) {
                   return e.processToUI(t);
                 });
               }),
@@ -9011,7 +9019,7 @@
                     return e.isUnlocked && !e.isMaxedOut;
                   })
                   .map(function (t) {
-                    var n = nd.find(function (e) {
+                    var n = id.find(function (e) {
                       return e.id === t.id;
                     });
                     if (!n) return t;
@@ -9021,9 +9029,9 @@
                     i || ((i = { id: n.id, level: 0 }), e.upgrades.push(i));
                     var o = W.calcBatchAll(
                         n.getCost,
-                        Mh.getInstance(),
+                        Xh.getInstance(),
                         i.level,
-                        Mh.getInstance().resources.getBatchObject()
+                        Xh.getInstance().resources.getBatchObject()
                       ),
                       r =
                         (o.reduce(function (e, t) {
@@ -9038,16 +9046,16 @@
                     return (
                       t.isUnlocked &&
                         i.level <= 0 &&
-                        _h.newNotifications.registerNotification(
+                        xh.newNotifications.registerNotification(
                           "planet:landing-zone:upgrades:".concat(n.id)
                         ),
-                      od(od({}, t), {
+                      rd(rd({}, t), {
                         etaNum: r,
                         isAvailable: a >= 1,
-                        cost: Mh.getInstance().resources.assertEnought(
+                        cost: Xh.getInstance().resources.assertEnought(
                           o,
-                          Mh.getInstance().resources.getBatchObject(),
-                          Mh.getInstance().resources.getBatchBalanceObject()
+                          Xh.getInstance().resources.getBatchObject(),
+                          Xh.getInstance().resources.getBatchBalanceObject()
                         ),
                         progress: a < 1 ? (100 * a).toPrecision(3) : "100",
                       })
@@ -9077,9 +9085,9 @@
                 i || ((i = { id: e.id, level: 0 }), this.upgrades.push(i));
                 var o = W.calcBatchAll(
                     e.getCost,
-                    Mh.getInstance(),
+                    Xh.getInstance(),
                     i.level + t,
-                    Mh.getInstance().resources.getBatchObject()
+                    Xh.getInstance().resources.getBatchObject()
                   ),
                   r = o.reduce(function (e, t) {
                     return e && !t.isBlocked;
@@ -9088,42 +9096,42 @@
                     return Math.max(e, t.eta);
                   }, 0),
                   c = e.getCapacityEffect
-                    ? W.calcBatch(e.getCapacityEffect, Mh.getInstance(), 0)
+                    ? W.calcBatch(e.getCapacityEffect, Xh.getInstance(), 0)
                     : [],
                   s = e.getCapacityMultiplier
                     ? W.calcBatch(
                         e.getCapacityMultiplier,
-                        Mh.getInstance(),
+                        Xh.getInstance(),
                         i.level + 1
                       )
                     : [],
                   l = e.getCapacityMultiplier
-                    ? W.calcBatch(e.getCapacityMultiplier, Mh.getInstance(), 1)
+                    ? W.calcBatch(e.getCapacityMultiplier, Xh.getInstance(), 1)
                     : [],
                   p = e.getGain
-                    ? W.calcBatch(e.getGain, Mh.getInstance(), 0)
+                    ? W.calcBatch(e.getGain, Xh.getInstance(), 0)
                     : [],
                   d = e.getGainMultiplier
                     ? W.calcBatch(
                         e.getGainMultiplier,
-                        Mh.getInstance(),
+                        Xh.getInstance(),
                         i.level + 1
                       )
                     : [],
                   E = e.getGainMultiplier
-                    ? W.calcBatch(e.getGainMultiplier, Mh.getInstance(), 1)
+                    ? W.calcBatch(e.getGainMultiplier, Xh.getInstance(), 1)
                     : [],
                   g = e.getCraftingMultiplier
-                    ? W.calculate(_h, e.getCraftingMultiplier, 1)
+                    ? W.calculate(xh, e.getCraftingMultiplier, 1)
                     : 1,
                   f = o.reduce(function (e, t) {
                     return Math.min(e, t.max);
                   }, 1e300),
-                  A = e.unlockCondition(_h);
+                  A = e.unlockCondition(xh);
                 return (
                   A &&
                     i.level <= 0 &&
-                    _h.newNotifications.registerNotification(
+                    xh.newNotifications.registerNotification(
                       "planet:landing-zone:upgrades:".concat(e.id)
                     ),
                   {
@@ -9132,44 +9140,44 @@
                     description: e.description,
                     isUnlocked: A,
                     isAvailable: f >= 1,
-                    cost: Mh.getInstance().resources.assertEnought(
+                    cost: Xh.getInstance().resources.assertEnought(
                       o,
-                      Mh.getInstance().resources.getBatchObject(),
-                      Mh.getInstance().resources.getBatchBalanceObject()
+                      Xh.getInstance().resources.getBatchObject(),
+                      Xh.getInstance().resources.getBatchBalanceObject()
                     ),
                     max: c.map(function (e) {
-                      return od(od({}, e), {
+                      return rd(rd({}, e), {
                         amountValue: e.amount,
                         amount: F(e.amount),
                       });
                     }),
                     maxMult: s.map(function (e) {
-                      return od(od({}, e), {
+                      return rd(rd({}, e), {
                         amountValue: e.amount,
                         amount: "x".concat(F(e.amount)),
                       });
                     }),
                     maxMultPerOne: l.map(function (e) {
-                      return od(od({}, e), {
+                      return rd(rd({}, e), {
                         amountValue: e.amount,
                         amount: "x".concat(F(e.amount)),
                       });
                     }),
                     consume: [],
                     gain: p.map(function (e) {
-                      return od(od({}, e), {
+                      return rd(rd({}, e), {
                         amountValue: e.amount,
                         amount: F(e.amount),
                       });
                     }),
                     gainMult: d.map(function (e) {
-                      return od(od({}, e), {
+                      return rd(rd({}, e), {
                         amountValue: e.amount,
                         amount: "x".concat(F(e.amount)),
                       });
                     }),
                     gainMultPerOne: E.map(function (e) {
-                      return od(od({}, e), {
+                      return rd(rd({}, e), {
                         amountValue: e.amount,
                         amount: "x".concat(F(e.amount)),
                       });
@@ -9189,7 +9197,7 @@
                 );
               }),
               (t.prototype.doUpgrade = function (e) {
-                var t = nd.find(function (t) {
+                var t = id.find(function (t) {
                   return t.id === e;
                 });
                 if (t) {
@@ -9203,9 +9211,9 @@
                     return;
                   var i = W.calcBatchAll(
                     t.getCost,
-                    Mh.getInstance(),
+                    Xh.getInstance(),
                     this.upgrades[n].level,
-                    Mh.getInstance().resources.getBatchObject()
+                    Xh.getInstance().resources.getBatchObject()
                   );
                   if (
                     !(
@@ -9217,15 +9225,15 @@
                     return (
                       this.upgrades[n].level++,
                       console.log("costs: ", i),
-                      Mh.getInstance().resources.subtractResourceBatch(i),
-                      _h.resources.reassertBalances(),
-                      _h.regenerateCache(),
-                      Mh.getInstance().eventLog.registerUpgrade(
+                      Xh.getInstance().resources.subtractResourceBatch(i),
+                      xh.resources.reassertBalances(),
+                      xh.regenerateCache(),
+                      Xh.getInstance().eventLog.registerUpgrade(
                         t.name,
                         i,
                         this.upgrades[n].level
                       ),
-                      Mh.getInstance().queuedItems.checkUnregisterUpgrade(
+                      Xh.getInstance().queuedItems.checkUnregisterUpgrade(
                         e,
                         this.upgrades[n].level,
                         t.maxLevel
@@ -9235,7 +9243,7 @@
                 }
               }),
               (t.prototype.getGain = function (e) {
-                var t = nd.filter(function (t) {
+                var t = id.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getGain) || void 0 === n
                       ? void 0
@@ -9248,7 +9256,7 @@
                       return e.id === i.id;
                     });
                     if (o && o.getGain) {
-                      var r = W.calculate(_h, o.getGain[e], 0, i.level);
+                      var r = W.calculate(xh, o.getGain[e], 0, i.level);
                       n.push({
                         label: "Upgrade: ".concat(o.name),
                         value: r,
@@ -9261,7 +9269,7 @@
                 );
               }),
               (t.prototype.getGainMultiplier = function (e) {
-                var t = nd.filter(function (t) {
+                var t = id.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getGainMultiplier) || void 0 === n
                       ? void 0
@@ -9275,7 +9283,7 @@
                     });
                     if (o && o.getGainMultiplier) {
                       var r = W.calculate(
-                        _h,
+                        xh,
                         o.getGainMultiplier[e],
                         i.level,
                         1
@@ -9293,7 +9301,7 @@
                 );
               }),
               (t.prototype.getCraftingMultiplier = function () {
-                var e = nd.filter(function (e) {
+                var e = id.filter(function (e) {
                     return !!e.getCraftingMultiplier;
                   }),
                   t = [];
@@ -9304,7 +9312,7 @@
                     });
                     if (i && i.getCraftingMultiplier) {
                       var o = W.calculate(
-                          _h,
+                          xh,
                           i.getCraftingMultiplier,
                           n.level,
                           1
@@ -9323,7 +9331,7 @@
                 );
               }),
               (t.prototype.getCapacity = function (e) {
-                var t = nd.filter(function (t) {
+                var t = id.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getCapacityEffect) || void 0 === n
                       ? void 0
@@ -9337,7 +9345,7 @@
                     });
                     if (o && o.getCapacityEffect) {
                       var r = W.calculate(
-                        _h,
+                        xh,
                         o.getCapacityEffect[e],
                         0,
                         i.level
@@ -9354,7 +9362,7 @@
                 );
               }),
               (t.prototype.getCapacityMult = function (e) {
-                var t = nd.filter(function (t) {
+                var t = id.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getCapacityMultiplier) ||
                     void 0 === n
@@ -9369,7 +9377,7 @@
                     });
                     if (o && o.getCapacityMultiplier) {
                       var r = W.calculate(
-                        _h,
+                        xh,
                         o.getCapacityMultiplier[e],
                         i.level,
                         1
@@ -9393,8 +9401,8 @@
               t
             );
           })(P),
-          ad = rd.getInstance(),
-          cd = function (e) {
+          cd = ad.getInstance(),
+          sd = function (e) {
             return (
               Math.pow(
                 0.9,
@@ -9420,7 +9428,7 @@
               )
             );
           },
-          sd = function (e) {
+          ud = function (e) {
             return (
               Math.pow(
                 0.95,
@@ -9443,13 +9451,13 @@
               (e.achievements.getAchievementComplete("builder3") ? 0.75 : 1)
             );
           },
-          ud = function (e) {
+          ld = function (e) {
             return Math.pow(
               0.8,
               e.landingZone.landingZoneUpgrades.getUpgradeLevel(r.ENERGY_SAVING)
             );
           },
-          ld = function (e) {
+          pd = function (e) {
             return (
               Math.pow(
                 0.8,
@@ -9471,7 +9479,7 @@
               )
             );
           },
-          pd = function (e) {
+          dd = function (e) {
             return (
               Math.pow(
                 0.5,
@@ -9481,7 +9489,7 @@
               ) * (e.achievements.getAchievementComplete("biomass2") ? 0.5 : 1)
             );
           },
-          dd = function (e) {
+          Ed = function (e) {
             return Math.pow(
               0.8,
               e.landingZone.landingZoneUpgrades.getUpgradeLevel(
@@ -9489,7 +9497,7 @@
               )
             );
           },
-          Ed = function (e) {
+          gd = function (e) {
             return (
               Math.pow(
                 0.7,
@@ -9505,7 +9513,7 @@
               )
             );
           },
-          gd = function (e) {
+          fd = function (e) {
             return Math.pow(
               0.7,
               e.landingZone.landingZoneUpgrades.getUpgradeLevel(
@@ -9513,7 +9521,7 @@
               )
             );
           },
-          fd = function (e) {
+          Ad = function (e) {
             return Math.pow(
               0.7,
               e.landingZone.landingZoneUpgrades.getUpgradeLevel(
@@ -9521,7 +9529,7 @@
               )
             );
           },
-          Ad = function (e) {
+          md = function (e) {
             switch (e.laws.getLawSelected(G.RESEARCH_GRANTS)) {
               case 0:
                 return 1;
@@ -9532,7 +9540,7 @@
             }
             return 1;
           },
-          md = function (e) {
+          Nd = function (e) {
             switch (e.laws.getLawSelected(G.AGRESSIVE_BACTERIA_USAGE)) {
               case 0:
                 return 1;
@@ -9543,7 +9551,7 @@
             }
             return 1;
           },
-          Nd = function (e) {
+          hd = function (e) {
             switch (e.laws.getLawSelected(G.AGRESSIVE_BACTERIA_USAGE)) {
               case 0:
               case 1:
@@ -9553,7 +9561,7 @@
             }
             return 1;
           },
-          hd = function (e) {
+          Id = function (e) {
             switch (e.laws.getLawSelected(G.AGRESSIVE_BACTERIA_USAGE)) {
               case 0:
                 return 1;
@@ -9564,7 +9572,7 @@
             }
             return 1;
           },
-          Id = function (e) {
+          Rd = function (e) {
             switch (e.laws.getLawSelected(G.COAL_BURNING)) {
               case 0:
                 return 1;
@@ -9575,7 +9583,7 @@
             }
             return 1;
           },
-          Rd = function (e) {
+          Td = function (e) {
             switch (e.laws.getLawSelected(G.COAL_BURNING)) {
               case 0:
                 return 0;
@@ -9586,7 +9594,7 @@
             }
             return 0;
           },
-          Td = [
+          yd = [
             {
               id: a.QUARRY,
               name: "Quarry",
@@ -9603,15 +9611,31 @@
                 ((tr = {}),
                 (tr[l.ORE] = function (e) {
                   return {
-                    A: 1 * sd(e),
-                    B: 1 + 0.3 * cd(e),
+                    A:
+                      1 *
+                      ud(e) *
+                      Math.pow(
+                        0.8,
+                        e.prestige.transmitKnowledge.getUpgradeLevel(
+                          g.NOVICE_INDUSTRY
+                        )
+                      ),
+                    B: 1 + 0.3 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (tr[l.STONE] = function (e) {
                   return {
-                    A: 2.5 * sd(e),
-                    B: 1 + 0.3 * cd(e),
+                    A:
+                      2.5 *
+                      ud(e) *
+                      Math.pow(
+                        0.8,
+                        e.prestige.transmitKnowledge.getUpgradeLevel(
+                          g.NOVICE_INDUSTRY
+                        )
+                      ),
+                    B: 1 + 0.3 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
@@ -9660,15 +9684,31 @@
                 ((or = {}),
                 (or[l.ORE] = function (e) {
                   return {
-                    A: 5 * sd(e),
-                    B: 1 + 0.3 * cd(e),
+                    A:
+                      5 *
+                      ud(e) *
+                      Math.pow(
+                        0.8,
+                        e.prestige.transmitKnowledge.getUpgradeLevel(
+                          g.NOVICE_INDUSTRY
+                        )
+                      ),
+                    B: 1 + 0.3 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (or[l.STONE] = function (e) {
                   return {
-                    A: 4.5 * sd(e),
-                    B: 1 + 0.3 * cd(e),
+                    A:
+                      4.5 *
+                      ud(e) *
+                      Math.pow(
+                        0.8,
+                        e.prestige.transmitKnowledge.getUpgradeLevel(
+                          g.NOVICE_INDUSTRY
+                        )
+                      ),
+                    B: 1 + 0.3 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
@@ -9717,15 +9757,31 @@
                 ((cr = {}),
                 (cr[l.BIOMASS] = function (e) {
                   return {
-                    A: 3 * sd(e),
-                    B: 1 + 0.3 * cd(e),
+                    A:
+                      3 *
+                      ud(e) *
+                      Math.pow(
+                        0.8,
+                        e.prestige.transmitKnowledge.getUpgradeLevel(
+                          g.NOVICE_INDUSTRY
+                        )
+                      ),
+                    B: 1 + 0.3 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (cr[l.STONE] = function (e) {
                   return {
-                    A: 4.5 * sd(e),
-                    B: 1 + 0.3 * cd(e),
+                    A:
+                      4.5 *
+                      ud(e) *
+                      Math.pow(
+                        0.8,
+                        e.prestige.transmitKnowledge.getUpgradeLevel(
+                          g.NOVICE_INDUSTRY
+                        )
+                      ),
+                    B: 1 + 0.3 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
@@ -9741,7 +9797,7 @@
                           e.landingZone.landingZoneUpgrades.getUpgradeLevel(
                             r.BACTERIA_SELECTION
                           )) *
-                      md(e),
+                      Nd(e),
                     B: 0,
                     type: i.LINEAR,
                   };
@@ -9791,19 +9847,19 @@
               getEffectConsumption:
                 ((lr = {}),
                 (lr[U.HEALTHCARE] = function (e) {
-                  return { A: 2 * Nd(e), B: 0, type: i.LINEAR };
+                  return { A: 2 * hd(e), B: 0, type: i.LINEAR };
                 }),
                 lr),
               getGainMultiplier:
                 ((pr = {}),
                 (pr[l.RUBBER] = function (e) {
-                  return { A: 1, B: hd(e), type: i.EXPONENTIAL };
+                  return { A: 1, B: Id(e), type: i.EXPONENTIAL };
                 }),
                 (pr[l.PLASTICS] = function (e) {
-                  return { A: 1, B: hd(e), type: i.EXPONENTIAL };
+                  return { A: 1, B: Id(e), type: i.EXPONENTIAL };
                 }),
                 (pr[l.GRAPHENE] = function (e) {
-                  return { A: 1, B: hd(e), type: i.EXPONENTIAL };
+                  return { A: 1, B: Id(e), type: i.EXPONENTIAL };
                 }),
                 pr),
               getStorage: {},
@@ -9824,15 +9880,15 @@
                 ((dr = {}),
                 (dr[l.ORE] = function (e) {
                   return {
-                    A: 4 * sd(e),
-                    B: 1 + 0.3 * cd(e),
+                    A: 4 * ud(e),
+                    B: 1 + 0.3 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (dr[l.STONE] = function (e) {
                   return {
-                    A: 5 * sd(e),
-                    B: 1 + 0.3 * cd(e),
+                    A: 5 * ud(e),
+                    B: 1 + 0.3 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
@@ -9865,7 +9921,7 @@
                   };
                 }),
                 (Er[l.WOOD] = function (e) {
-                  return { A: Rd(e), B: 0, type: i.LINEAR };
+                  return { A: Td(e), B: 0, type: i.LINEAR };
                 }),
                 Er),
               getGain:
@@ -9899,7 +9955,7 @@
                           e.landingZone.landingZoneUpgrades.getUpgradeLevel(
                             r.HEAT_INSULATING_CAMERAS
                           )) *
-                      Id(e) *
+                      Rd(e) *
                       (e.achievements.getAchievementComplete("energetic")
                         ? 1.05
                         : 1) *
@@ -9950,9 +10006,9 @@
                           r.NUCLEAR_SYNTHESIS_CONTROL
                         )
                       ) *
-                      fd(e) *
-                      sd(e),
-                    B: 1 + 0.3 * cd(e),
+                      Ad(e) *
+                      ud(e),
+                    B: 1 + 0.3 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
@@ -9960,15 +10016,15 @@
                   return {
                     A:
                       15e3 *
-                      Ed(e) *
+                      gd(e) *
                       Math.pow(
                         0.5,
                         e.landingZone.landingZoneUpgrades.getUpgradeLevel(
                           r.NUCLEAR_SYNTHESIS_CONTROL
                         )
                       ) *
-                      sd(e),
-                    B: 1 + 0.3 * cd(e),
+                      ud(e),
+                    B: 1 + 0.3 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
@@ -10008,13 +10064,13 @@
                       15 *
                       Math.pow(
                         1.1,
-                        _h.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                        xh.landingZone.landingZoneUpgrades.getUpgradeLevel(
                           r.CONTROLLABLE_THERMONUCLEAR_REACTIONS
                         )
                       ) *
                       Math.pow(
                         1.05,
-                        _h.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                        xh.landingZone.landingZoneUpgrades.getUpgradeLevel(
                           r.NEUTRINO_COOLERS
                         )
                       ) *
@@ -10054,15 +10110,15 @@
                 ((hr = {}),
                 (hr[l.ORE] = function (e) {
                   return {
-                    A: 10 * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 10 * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (hr[l.STONE] = function (e) {
                   return {
-                    A: 10 * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 10 * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
@@ -10072,19 +10128,69 @@
               getStorage:
                 ((Ir = {}),
                 (Ir[l.STONE] = function (e) {
-                  return { A: 10, B: 0, type: i.LINEAR };
+                  return {
+                    A:
+                      10 *
+                      (1 +
+                        0.2 *
+                          e.prestige.transmitKnowledge.getUpgradeLevel(
+                            g.NOVICE_STORAGE
+                          )),
+                    B: 0,
+                    type: i.LINEAR,
+                  };
                 }),
                 (Ir[l.ORE] = function (e) {
-                  return { A: 10, B: 0, type: i.LINEAR };
+                  return {
+                    A:
+                      10 *
+                      (1 +
+                        0.2 *
+                          e.prestige.transmitKnowledge.getUpgradeLevel(
+                            g.NOVICE_STORAGE
+                          )),
+                    B: 0,
+                    type: i.LINEAR,
+                  };
                 }),
                 (Ir[l.BIOMASS] = function (e) {
-                  return { A: 10, B: 0, type: i.LINEAR };
+                  return {
+                    A:
+                      10 *
+                      (1 +
+                        0.2 *
+                          e.prestige.transmitKnowledge.getUpgradeLevel(
+                            g.NOVICE_STORAGE
+                          )),
+                    B: 0,
+                    type: i.LINEAR,
+                  };
                 }),
                 (Ir[l.IRON] = function (e) {
-                  return { A: 3, B: 0, type: i.LINEAR };
+                  return {
+                    A:
+                      3 *
+                      (1 +
+                        0.2 *
+                          e.prestige.transmitKnowledge.getUpgradeLevel(
+                            g.NOVICE_STORAGE
+                          )),
+                    B: 0,
+                    type: i.LINEAR,
+                  };
                 }),
                 (Ir[l.WOOD] = function (e) {
-                  return { A: 10, B: 0, type: i.LINEAR };
+                  return {
+                    A:
+                      10 *
+                      (1 +
+                        0.2 *
+                          e.prestige.transmitKnowledge.getUpgradeLevel(
+                            g.NOVICE_STORAGE
+                          )),
+                    B: 0,
+                    type: i.LINEAR,
+                  };
                 }),
                 Ir),
             },
@@ -10104,22 +10210,22 @@
                 ((Rr = {}),
                 (Rr[l.POWER] = function (e) {
                   return {
-                    A: 30 * sd(e),
-                    B: 1 + 0.75 * cd(e) * ud(e),
+                    A: 30 * ud(e),
+                    B: 1 + 0.75 * sd(e) * ld(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (Rr[l.ORE] = function (e) {
                   return {
-                    A: 50 * sd(e),
-                    B: 1 + 0.75 * cd(e),
+                    A: 50 * ud(e),
+                    B: 1 + 0.75 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (Rr[l.STONE] = function (e) {
                   return {
-                    A: 50 * sd(e),
-                    B: 1 + 0.75 * cd(e),
+                    A: 50 * ud(e),
+                    B: 1 + 0.75 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
@@ -10134,19 +10240,69 @@
               getStorage:
                 ((yr = {}),
                 (yr[l.STONE] = function (e) {
-                  return { A: 50, B: 0, type: i.LINEAR };
+                  return {
+                    A:
+                      50 *
+                      (1 +
+                        0.2 *
+                          e.prestige.transmitKnowledge.getUpgradeLevel(
+                            g.NOVICE_STORAGE
+                          )),
+                    B: 0,
+                    type: i.LINEAR,
+                  };
                 }),
                 (yr[l.ORE] = function (e) {
-                  return { A: 50, B: 0, type: i.LINEAR };
+                  return {
+                    A:
+                      50 *
+                      (1 +
+                        0.2 *
+                          e.prestige.transmitKnowledge.getUpgradeLevel(
+                            g.NOVICE_STORAGE
+                          )),
+                    B: 0,
+                    type: i.LINEAR,
+                  };
                 }),
                 (yr[l.BIOMASS] = function (e) {
-                  return { A: 50, B: 0, type: i.LINEAR };
+                  return {
+                    A:
+                      50 *
+                      (1 +
+                        0.2 *
+                          e.prestige.transmitKnowledge.getUpgradeLevel(
+                            g.NOVICE_STORAGE
+                          )),
+                    B: 0,
+                    type: i.LINEAR,
+                  };
                 }),
                 (yr[l.IRON] = function (e) {
-                  return { A: 15, B: 0, type: i.LINEAR };
+                  return {
+                    A:
+                      15 *
+                      (1 +
+                        0.2 *
+                          e.prestige.transmitKnowledge.getUpgradeLevel(
+                            g.NOVICE_STORAGE
+                          )),
+                    B: 0,
+                    type: i.LINEAR,
+                  };
                 }),
                 (yr[l.WOOD] = function (e) {
-                  return { A: 50, B: 0, type: i.LINEAR };
+                  return {
+                    A:
+                      50 *
+                      (1 +
+                        0.2 *
+                          e.prestige.transmitKnowledge.getUpgradeLevel(
+                            g.NOVICE_STORAGE
+                          )),
+                    B: 0,
+                    type: i.LINEAR,
+                  };
                 }),
                 yr),
             },
@@ -10166,22 +10322,22 @@
                 ((Or = {}),
                 (Or[l.POWER] = function (e) {
                   return {
-                    A: 50 * sd(e),
-                    B: 1 + 0.5 * cd(e) * ud(e),
+                    A: 50 * ud(e),
+                    B: 1 + 0.5 * sd(e) * ld(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (Or[l.ORE] = function (e) {
                   return {
-                    A: 150 * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 150 * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (Or[l.STONE] = function (e) {
                   return {
-                    A: 150 * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 150 * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
@@ -10219,11 +10375,11 @@
                   return {
                     A:
                       75 *
-                      sd(e) *
+                      ud(e) *
                       (e.achievements.getAchievementComplete("desertWalker")
                         ? 0.5
                         : 1),
-                    B: 1 + 0.5 * cd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e) * ld(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
@@ -10231,11 +10387,11 @@
                   return {
                     A:
                       12 *
-                      sd(e) *
+                      ud(e) *
                       (e.achievements.getAchievementComplete("desertWalker")
                         ? 0.5
                         : 1),
-                    B: 1 + 0.5 * cd(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
@@ -10243,11 +10399,11 @@
                   return {
                     A:
                       120 *
-                      sd(e) *
+                      ud(e) *
                       (e.achievements.getAchievementComplete("desertWalker")
                         ? 0.5
                         : 1),
-                    B: 1 + 0.5 * cd(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
@@ -10255,11 +10411,11 @@
                   return {
                     A:
                       85 *
-                      sd(e) *
+                      ud(e) *
                       (e.achievements.getAchievementComplete("desertWalker")
                         ? 0.5
                         : 1),
-                    B: 1 + 0.5 * cd(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
@@ -10329,29 +10485,29 @@
                 ((_r = {}),
                 (_r[l.POWER] = function (e) {
                   return {
-                    A: 125 * sd(e),
-                    B: 1 + 0.5 * cd(e) * ud(e),
+                    A: 125 * ud(e),
+                    B: 1 + 0.5 * sd(e) * ld(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (_r[l.OXYGEN] = function (e) {
                   return {
-                    A: 45 * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 45 * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (_r[l.STONE] = function (e) {
                   return {
-                    A: 300 * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 300 * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (_r[l.ORE] = function (e) {
                   return {
-                    A: 250 * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 250 * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
@@ -10381,22 +10537,22 @@
                 ((br = {}),
                 (br[l.POWER] = function (e) {
                   return {
-                    A: 70 * sd(e),
-                    B: 1 + 0.5 * cd(e) * ud(e),
+                    A: 70 * ud(e),
+                    B: 1 + 0.5 * sd(e) * ld(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (br[l.ORE] = function (e) {
                   return {
-                    A: 180 * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 180 * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (br[l.STONE] = function (e) {
                   return {
-                    A: 180 * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 180 * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
@@ -10431,22 +10587,22 @@
                 ((Dr = {}),
                 (Dr[l.POWER] = function (e) {
                   return {
-                    A: 20 * sd(e),
-                    B: 1 + 0.5 * cd(e) * ud(e),
+                    A: 20 * ud(e),
+                    B: 1 + 0.5 * sd(e) * ld(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (Dr[l.ORE] = function (e) {
                   return {
-                    A: 180 * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 180 * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (Dr[l.WATER] = function (e) {
                   return {
-                    A: 5 * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 5 * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
@@ -10476,22 +10632,22 @@
                 ((xr = {}),
                 (xr[l.POWER] = function (e) {
                   return {
-                    A: 120 * sd(e),
-                    B: 1 + 0.5 * cd(e) * ud(e),
+                    A: 120 * ud(e),
+                    B: 1 + 0.5 * sd(e) * ld(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (xr[l.STONE] = function (e) {
                   return {
-                    A: 180 * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 180 * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (xr[l.ORE] = function (e) {
                   return {
-                    A: 80 * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 80 * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
@@ -10527,22 +10683,22 @@
                 ((kr = {}),
                 (kr[l.POWER] = function (e) {
                   return {
-                    A: 80 * sd(e),
-                    B: 1 + 0.5 * cd(e) * ud(e),
+                    A: 80 * ud(e),
+                    B: 1 + 0.5 * sd(e) * ld(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (kr[l.STONE] = function (e) {
                   return {
-                    A: 180 * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 180 * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (kr[l.ORE] = function (e) {
                   return {
-                    A: 125 * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 125 * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
@@ -10556,7 +10712,7 @@
                       e.landingZone.landingZoneUpgrades.getUpgradeLevel(
                         r.PARTICLE_SCATTERERS
                       ) *
-                      Ad(e),
+                      md(e),
                     B: 0,
                     type: i.LINEAR,
                   };
@@ -10568,7 +10724,11 @@
                 (Yr[l.RESEARCH] = function (e) {
                   return {
                     A:
-                      25 *
+                      (25 +
+                        5 *
+                          e.prestige.transmitKnowledge.getUpgradeLevel(
+                            g.METEOROLOGIST
+                          )) *
                       (1 +
                         39 *
                           e.landingZone.landingZoneUpgrades.getUpgradeLevel(
@@ -10603,15 +10763,15 @@
                 ((Zr = {}),
                 (Zr[l.STONE] = function (e) {
                   return {
-                    A: 820 * sd(e),
-                    B: 1 + 0.4 * cd(e),
+                    A: 820 * ud(e),
+                    B: 1 + 0.4 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (Zr[l.ORE] = function (e) {
                   return {
-                    A: 480 * sd(e),
-                    B: 1 + 0.4 * cd(e),
+                    A: 480 * ud(e),
+                    B: 1 + 0.4 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
@@ -10643,22 +10803,22 @@
                 ((jr = {}),
                 (jr[l.POWER] = function (e) {
                   return {
-                    A: 250 * sd(e),
-                    B: 1 + 0.5 * cd(e) * ud(e),
+                    A: 250 * ud(e),
+                    B: 1 + 0.5 * sd(e) * ld(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (jr[l.STONE] = function (e) {
                   return {
-                    A: 820 * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 820 * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (jr[l.ORE] = function (e) {
                   return {
-                    A: 680 * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 680 * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
@@ -10693,8 +10853,8 @@
                 }),
                 Kr),
               getEffectGain:
-                ((qr = {}),
-                (qr[U.HEALTHCARE] = function (e) {
+                ((zr = {}),
+                (zr[U.HEALTHCARE] = function (e) {
                   return {
                     A:
                       10 *
@@ -10715,7 +10875,7 @@
                     type: i.LINEAR,
                   };
                 }),
-                qr),
+                zr),
             },
             {
               id: a.PARK,
@@ -10733,29 +10893,29 @@
                 );
               },
               getCost:
-                ((zr = {}),
-                (zr[l.POWER] = function (e) {
+                ((qr = {}),
+                (qr[l.POWER] = function (e) {
                   return {
-                    A: 150 * sd(e),
-                    B: 1 + 0.5 * cd(e) * ud(e),
+                    A: 150 * ud(e),
+                    B: 1 + 0.5 * sd(e) * ld(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                (zr[l.STONE] = function (e) {
+                (qr[l.STONE] = function (e) {
                   return {
-                    A: 120 * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 120 * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                (zr[l.WOOD] = function (e) {
+                (qr[l.WOOD] = function (e) {
                   return {
-                    A: 80 * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 80 * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                zr),
+                qr),
               getConsumption:
                 ((Qr = {}),
                 (Qr[l.WATER] = function (e) {
@@ -10814,22 +10974,22 @@
                 (($r = {}),
                 ($r[l.POWER] = function (e) {
                   return {
-                    A: 120 * sd(e),
-                    B: 1 + 0.5 * cd(e) * ud(e),
+                    A: 120 * ud(e),
+                    B: 1 + 0.5 * sd(e) * ld(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 ($r[l.STONE] = function (e) {
                   return {
-                    A: 1275 * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 1275 * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 ($r[l.ORE] = function (e) {
                   return {
-                    A: 725 * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 725 * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
@@ -10837,7 +10997,7 @@
               getConsumption:
                 ((ea = {}),
                 (ea[l.POWER] = function (e) {
-                  return { A: 0.75 * Ad(e), B: 0, type: i.LINEAR };
+                  return { A: 0.75 * md(e), B: 0, type: i.LINEAR };
                 }),
                 (ea[l.BIOMASS] = function (e) {
                   return {
@@ -10911,15 +11071,15 @@
                 ((ia = {}),
                 (ia[l.WOOD] = function (e) {
                   return {
-                    A: 20 * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 20 * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (ia[l.STONE] = function (e) {
                   return {
-                    A: 2.5 * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 2.5 * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
@@ -11003,15 +11163,15 @@
                 ((sa = {}),
                 (sa[l.BRICK] = function (e) {
                   return {
-                    A: 10 * sd(e) * Ed(e),
-                    B: 1 + 0.4 * cd(e),
+                    A: 10 * ud(e) * gd(e),
+                    B: 1 + 0.4 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (sa[l.BEAM] = function (e) {
                   return {
-                    A: 10 * sd(e),
-                    B: 1 + 0.4 * cd(e),
+                    A: 10 * ud(e),
+                    B: 1 + 0.4 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
@@ -11050,29 +11210,29 @@
                 ((pa = {}),
                 (pa[l.BRICK] = function (e) {
                   return {
-                    A: 40 * sd(e) * Ed(e),
-                    B: 1 + 0.4 * cd(e),
+                    A: 40 * ud(e) * gd(e),
+                    B: 1 + 0.4 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (pa[l.PLATE] = function (e) {
                   return {
-                    A: 30 * sd(e),
-                    B: 1 + 0.4 * cd(e),
+                    A: 30 * ud(e),
+                    B: 1 + 0.4 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (pa[l.WIRE] = function (e) {
                   return {
-                    A: 30 * sd(e),
-                    B: 1 + 0.4 * cd(e),
+                    A: 30 * ud(e),
+                    B: 1 + 0.4 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (pa[l.COMPUTER] = function (e) {
                   return {
-                    A: 15 * sd(e),
-                    B: 1 + 0.4 * cd(e),
+                    A: 15 * ud(e),
+                    B: 1 + 0.4 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
@@ -11119,15 +11279,31 @@
                 ((ga = {}),
                 (ga[l.ORE] = function (e) {
                   return {
-                    A: 600 * sd(e),
-                    B: 1 + 0.4 * cd(e),
+                    A:
+                      600 *
+                      ud(e) *
+                      Math.pow(
+                        0.8,
+                        e.prestige.transmitKnowledge.getUpgradeLevel(
+                          g.NOVICE_SMELTING
+                        )
+                      ),
+                    B: 1 + 0.4 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (ga[l.STONE] = function (e) {
                   return {
-                    A: 1250 * sd(e),
-                    B: 1 + 0.4 * cd(e),
+                    A:
+                      1250 *
+                      ud(e) *
+                      Math.pow(
+                        0.8,
+                        e.prestige.transmitKnowledge.getUpgradeLevel(
+                          g.NOVICE_SMELTING
+                        )
+                      ),
+                    B: 1 + 0.4 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
@@ -11184,22 +11360,22 @@
                 ((ma = {}),
                 (ma[l.BEAM] = function (e) {
                   return {
-                    A: 2 * sd(e),
-                    B: 1 + 0.25 * cd(e),
+                    A: 2 * ud(e),
+                    B: 1 + 0.25 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (ma[l.BRICK] = function (e) {
                   return {
-                    A: 4 * Ed(e) * sd(e),
-                    B: 1 + 0.25 * cd(e),
+                    A: 4 * gd(e) * ud(e),
+                    B: 1 + 0.25 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (ma[l.PLATE] = function (e) {
                   return {
-                    A: 1 * fd(e) * sd(e),
-                    B: 1 + 0.25 * cd(e),
+                    A: 1 * Ad(e) * ud(e),
+                    B: 1 + 0.25 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
@@ -11230,15 +11406,15 @@
                 ((ha = {}),
                 (ha[l.BEAM] = function (e) {
                   return {
-                    A: 2 * sd(e),
-                    B: 1 + 0.25 * cd(e),
+                    A: 2 * ud(e),
+                    B: 1 + 0.25 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (ha[l.BRICK] = function (e) {
                   return {
-                    A: 4 * Ed(e) * sd(e),
-                    B: 1 + 0.25 * cd(e),
+                    A: 4 * gd(e) * ud(e),
+                    B: 1 + 0.25 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
@@ -11389,22 +11565,22 @@
                 ((Ra = {}),
                 (Ra[l.POWER] = function (e) {
                   return {
-                    A: 30 * sd(e),
-                    B: 1 + 0.25 * cd(e) * ud(e),
+                    A: 30 * ud(e),
+                    B: 1 + 0.25 * sd(e) * ld(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (Ra[l.PLATE] = function (e) {
                   return {
-                    A: 2 * fd(e) * sd(e),
-                    B: 1 + 0.25 * cd(e),
+                    A: 2 * Ad(e) * ud(e),
+                    B: 1 + 0.25 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (Ra[l.BRICK] = function (e) {
                   return {
-                    A: 5 * Ed(e) * sd(e),
-                    B: 1 + 0.25 * cd(e),
+                    A: 5 * gd(e) * ud(e),
+                    B: 1 + 0.25 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
@@ -11437,22 +11613,22 @@
                 ((ya = {}),
                 (ya[l.POWER] = function (e) {
                   return {
-                    A: 80 * sd(e),
-                    B: 1 + 0.5 * cd(e) * ud(e),
+                    A: 80 * ud(e),
+                    B: 1 + 0.5 * sd(e) * ld(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (ya[l.BRICK] = function (e) {
                   return {
-                    A: 10 * Ed(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 10 * gd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (ya[l.BEAM] = function (e) {
                   return {
-                    A: 8 * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 8 * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
@@ -11485,29 +11661,29 @@
                 ((La = {}),
                 (La[l.POWER] = function (e) {
                   return {
-                    A: 380 * sd(e),
-                    B: 1 + 0.5 * cd(e) * ud(e),
+                    A: 380 * ud(e),
+                    B: 1 + 0.5 * sd(e) * ld(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (La[l.BRICK] = function (e) {
                   return {
-                    A: 10 * Ed(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 10 * gd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (La[l.BEAM] = function (e) {
                   return {
-                    A: 8 * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 8 * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (La[l.PLATE] = function (e) {
                   return {
-                    A: 5 * fd(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 5 * Ad(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
@@ -11544,29 +11720,29 @@
                 ((Sa = {}),
                 (Sa[l.POWER] = function (e) {
                   return {
-                    A: 800 * sd(e),
-                    B: 1 + 0.5 * cd(e) * ud(e),
+                    A: 800 * ud(e),
+                    B: 1 + 0.5 * sd(e) * ld(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (Sa[l.BRICK] = function (e) {
                   return {
-                    A: 55 * Ed(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 55 * gd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (Sa[l.BEAM] = function (e) {
                   return {
-                    A: 50 * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 50 * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (Sa[l.PLATE] = function (e) {
                   return {
-                    A: 12 * fd(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 12 * Ad(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
@@ -11574,7 +11750,7 @@
               getConsumption:
                 ((Pa = {}),
                 (Pa[l.POWER] = function (e) {
-                  return { A: 1 * Ad(e), B: 0, type: i.LINEAR };
+                  return { A: 1 * md(e), B: 0, type: i.LINEAR };
                 }),
                 Pa),
               getGain: {},
@@ -11607,29 +11783,29 @@
                 ((_a = {}),
                 (_a[l.PLATINUM] = function (e) {
                   return {
-                    A: 20 * gd(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 20 * fd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (_a[l.BRICK] = function (e) {
                   return {
-                    A: 100 * Ed(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 100 * gd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (_a[l.BEAM] = function (e) {
                   return {
-                    A: 25 * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 25 * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (_a[l.PLATE] = function (e) {
                   return {
-                    A: 5 * fd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 5 * Ad(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
@@ -11666,22 +11842,22 @@
                 ((Ga = {}),
                 (Ga[l.BRICK] = function (e) {
                   return {
-                    A: 30 * Ed(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 30 * gd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (Ga[l.BEAM] = function (e) {
                   return {
-                    A: 75 * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 75 * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (Ga[l.PLATE] = function (e) {
                   return {
-                    A: 5 * fd(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 5 * Ad(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
@@ -11751,22 +11927,22 @@
                 ((Xa = {}),
                 (Xa[l.POWER] = function (e) {
                   return {
-                    A: 5 * sd(e),
-                    B: 1 + 0.1 * cd(e) * ud(e),
+                    A: 5 * ud(e),
+                    B: 1 + 0.1 * sd(e) * ld(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (Xa[l.PLATE] = function (e) {
                   return {
-                    A: 5 * fd(e) * sd(e),
-                    B: 1 + 0.1 * cd(e),
+                    A: 5 * Ad(e) * ud(e),
+                    B: 1 + 0.1 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (Xa[l.RUBBER] = function (e) {
                   return {
-                    A: 5 * pd(e) * sd(e),
-                    B: 1 + 0.1 * cd(e),
+                    A: 5 * dd(e) * ud(e),
+                    B: 1 + 0.1 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
@@ -11791,22 +11967,22 @@
                 ((xa = {}),
                 (xa[l.PLATE] = function (e) {
                   return {
-                    A: 6 * fd(e) * sd(e),
-                    B: 1 + 0.3 * cd(e),
+                    A: 6 * Ad(e) * ud(e),
+                    B: 1 + 0.3 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (xa[l.WIRE] = function (e) {
                   return {
-                    A: 10 * dd(e) * sd(e),
-                    B: 1 + 0.3 * cd(e),
+                    A: 10 * Ed(e) * ud(e),
+                    B: 1 + 0.3 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (xa[l.SEMICONDUCTOR] = function (e) {
                   return {
-                    A: 10 * sd(e),
-                    B: 1 + 0.3 * cd(e),
+                    A: 10 * ud(e),
+                    B: 1 + 0.3 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
@@ -11855,15 +12031,15 @@
                 ((Ha = {}),
                 (Ha[l.BEAM] = function (e) {
                   return {
-                    A: 50 * sd(e),
-                    B: 1 + 0.3 * cd(e),
+                    A: 50 * ud(e),
+                    B: 1 + 0.3 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (Ha[l.STONE] = function (e) {
                   return {
-                    A: 1e3 * sd(e),
-                    B: 1 + 0.3 * cd(e),
+                    A: 1e3 * ud(e),
+                    B: 1 + 0.3 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
@@ -11895,29 +12071,29 @@
                 ((Wa = {}),
                 (Wa[l.POWER] = function (e) {
                   return {
-                    A: 1e3 * sd(e),
-                    B: 1 + 0.5 * cd(e) * ud(e),
+                    A: 1e3 * ud(e),
+                    B: 1 + 0.5 * sd(e) * ld(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (Wa[l.BRICK] = function (e) {
                   return {
-                    A: 125 * Ed(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 125 * gd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (Wa[l.COMPUTER] = function (e) {
                   return {
-                    A: 20 * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 20 * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (Wa[l.WIRE] = function (e) {
                   return {
-                    A: 75 * dd(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 75 * Ed(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
@@ -11925,7 +12101,7 @@
               getConsumption:
                 ((Za = {}),
                 (Za[l.POWER] = function (e) {
-                  return { A: 2 * Ad(e), B: 0, type: i.LINEAR };
+                  return { A: 2 * md(e), B: 0, type: i.LINEAR };
                 }),
                 Za),
               getGain: {},
@@ -11959,22 +12135,22 @@
                 ((Va = {}),
                 (Va[l.POWER] = function (e) {
                   return {
-                    A: 1280 * sd(e),
-                    B: 1 + 0.5 * cd(e) * ud(e),
+                    A: 1280 * ud(e),
+                    B: 1 + 0.5 * sd(e) * ld(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (Va[l.BRICK] = function (e) {
                   return {
-                    A: 180 * Ed(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 180 * gd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (Va[l.WIRE] = function (e) {
                   return {
-                    A: 50 * dd(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 50 * Ed(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
@@ -12005,38 +12181,38 @@
                 );
               },
               getCost:
-                ((qa = {}),
-                (qa[l.BRICK] = function (e) {
+                ((za = {}),
+                (za[l.BRICK] = function (e) {
                   return {
-                    A: 750 * Ed(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 750 * gd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                (qa[l.BEAM] = function (e) {
+                (za[l.BEAM] = function (e) {
                   return {
-                    A: 500 * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 500 * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                (qa[l.PLATINUM] = function (e) {
+                (za[l.PLATINUM] = function (e) {
                   return {
-                    A: 500 * gd(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 500 * fd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                qa),
+                za),
               getConsumption: {},
               getGain: {},
               getStorage: {},
               getEffectGain:
-                ((za = {}),
-                (za[U.RELIGION] = function (e) {
+                ((qa = {}),
+                (qa[U.RELIGION] = function (e) {
                   return { A: 10, B: 0, type: i.LINEAR };
                 }),
-                za),
+                qa),
             },
             {
               id: a.PANDEMIC_RESEARCH_CENTER,
@@ -12055,29 +12231,29 @@
                 ((Qa = {}),
                 (Qa[l.POWER] = function (e) {
                   return {
-                    A: 3280 * sd(e),
-                    B: 1 + 0.5 * cd(e) * ud(e),
+                    A: 3280 * ud(e),
+                    B: 1 + 0.5 * sd(e) * ld(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (Qa[l.BRICK] = function (e) {
                   return {
-                    A: 180 * Ed(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 180 * gd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (Qa[l.PLASTICS] = function (e) {
                   return {
-                    A: 150 * pd(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 150 * dd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (Qa[l.RUBBER] = function (e) {
                   return {
-                    A: 150 * pd(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 150 * dd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
@@ -12089,7 +12265,20 @@
                 }),
                 Ja),
               getGain: {},
-              getStorage: {},
+              getStorage:
+                (($a = {}),
+                ($a[l.RESEARCH] = function (e) {
+                  return {
+                    A:
+                      50 *
+                      e.prestige.transmitKnowledge.getUpgradeLevel(
+                        g.VIRUSOLOGY
+                      ),
+                    B: 0,
+                    type: i.LINEAR,
+                  };
+                }),
+                $a),
             },
             {
               id: a.ADMINISTRATIVE_CENTER,
@@ -12105,42 +12294,42 @@
                 );
               },
               getCost:
-                (($a = {}),
-                ($a[l.POWER] = function (e) {
-                  return {
-                    A: 3280 * sd(e),
-                    B: 1 + 0.5 * cd(e) * ud(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                ($a[l.BRICK] = function (e) {
-                  return {
-                    A: 180 * Ed(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                ($a[l.BEAM] = function (e) {
-                  return {
-                    A: 150 * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                ($a[l.PLASTICS] = function (e) {
-                  return {
-                    A: 150 * pd(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                $a),
-              getConsumption:
                 ((ec = {}),
                 (ec[l.POWER] = function (e) {
-                  return { A: 2, B: 0, type: i.LINEAR };
+                  return {
+                    A: 3280 * ud(e),
+                    B: 1 + 0.5 * sd(e) * ld(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (ec[l.BRICK] = function (e) {
+                  return {
+                    A: 180 * gd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (ec[l.BEAM] = function (e) {
+                  return {
+                    A: 150 * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (ec[l.PLASTICS] = function (e) {
+                  return {
+                    A: 150 * dd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 ec),
+              getConsumption:
+                ((tc = {}),
+                (tc[l.POWER] = function (e) {
+                  return { A: 2, B: 0, type: i.LINEAR };
+                }),
+                tc),
               getGain: {},
               getStorage: {},
             },
@@ -12157,40 +12346,40 @@
                 );
               },
               getCost:
-                ((tc = {}),
-                (tc[l.BRICK] = function (e) {
-                  return {
-                    A: 30 * Ed(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (tc[l.SEMICONDUCTOR] = function (e) {
-                  return {
-                    A: 15 * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (tc[l.WIRE] = function (e) {
-                  return {
-                    A: 5 * dd(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                tc),
-              getConsumption:
                 ((nc = {}),
-                (nc[l.POWER] = function (e) {
-                  return { A: 1, B: 0, type: i.LINEAR };
+                (nc[l.BRICK] = function (e) {
+                  return {
+                    A: 30 * gd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (nc[l.SEMICONDUCTOR] = function (e) {
+                  return {
+                    A: 15 * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (nc[l.WIRE] = function (e) {
+                  return {
+                    A: 5 * Ed(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 nc),
+              getConsumption:
+                ((ic = {}),
+                (ic[l.POWER] = function (e) {
+                  return { A: 1, B: 0, type: i.LINEAR };
+                }),
+                ic),
               getGain: {},
               getStorage: {},
               getGainMultiplier:
-                ((ic = {}),
-                (ic[l.WIRE] = function (e) {
+                ((oc = {}),
+                (oc[l.WIRE] = function (e) {
                   return {
                     A: 1,
                     B:
@@ -12202,7 +12391,7 @@
                     type: i.EXPONENTIAL,
                   };
                 }),
-                (ic[l.COMPUTER] = function (e) {
+                (oc[l.COMPUTER] = function (e) {
                   return {
                     A: 1,
                     B:
@@ -12214,7 +12403,7 @@
                     type: i.EXPONENTIAL,
                   };
                 }),
-                (ic[l.SEMICONDUCTOR] = function (e) {
+                (oc[l.SEMICONDUCTOR] = function (e) {
                   return {
                     A: 1,
                     B:
@@ -12226,7 +12415,7 @@
                     type: i.EXPONENTIAL,
                   };
                 }),
-                ic),
+                oc),
             },
             {
               id: a.SOLAR_SATELLITE,
@@ -12242,33 +12431,33 @@
                 );
               },
               getCost:
-                ((oc = {}),
-                (oc[l.ROCKET_ENGINE] = function (e) {
+                ((rc = {}),
+                (rc[l.ROCKET_ENGINE] = function (e) {
                   return {
-                    A: 1 * ld(e) * sd(e),
-                    B: 1 + 0.3 * cd(e),
+                    A: 1 * pd(e) * ud(e),
+                    B: 1 + 0.3 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                (oc[l.WIRE] = function (e) {
+                (rc[l.WIRE] = function (e) {
                   return {
-                    A: 5 * dd(e) * sd(e),
-                    B: 1 + 0.3 * cd(e),
+                    A: 5 * Ed(e) * ud(e),
+                    B: 1 + 0.3 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                (oc[l.SEMICONDUCTOR] = function (e) {
+                (rc[l.SEMICONDUCTOR] = function (e) {
                   return {
-                    A: 5 * sd(e),
-                    B: 1 + 0.3 * cd(e),
+                    A: 5 * ud(e),
+                    B: 1 + 0.3 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                oc),
+                rc),
               getConsumption: {},
               getGain:
-                ((rc = {}),
-                (rc[l.POWER] = function (e) {
+                ((ac = {}),
+                (ac[l.POWER] = function (e) {
                   return {
                     A:
                       1.5 *
@@ -12282,13 +12471,13 @@
                     type: i.LINEAR,
                   };
                 }),
-                rc),
+                ac),
               getStorage:
-                ((ac = {}),
-                (ac[l.POWER] = function (e) {
+                ((cc = {}),
+                (cc[l.POWER] = function (e) {
                   return { A: 25, B: 0, type: i.LINEAR };
                 }),
-                ac),
+                cc),
             },
             {
               id: a.GPS_SATELITE,
@@ -12304,40 +12493,40 @@
                 );
               },
               getCost:
-                ((cc = {}),
-                (cc[l.ROCKET_ENGINE] = function (e) {
-                  return {
-                    A: 1 * ld(e) * sd(e),
-                    B: 1 + 0.3 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (cc[l.WIRE] = function (e) {
-                  return {
-                    A: 10 * dd(e) * sd(e),
-                    B: 1 + 0.3 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (cc[l.COMPUTER] = function (e) {
-                  return {
-                    A: 5 * sd(e),
-                    B: 1 + 0.3 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                cc),
-              getConsumption:
                 ((sc = {}),
-                (sc[l.POWER] = function (e) {
-                  return { A: 5, B: 0, type: i.LINEAR };
+                (sc[l.ROCKET_ENGINE] = function (e) {
+                  return {
+                    A: 1 * pd(e) * ud(e),
+                    B: 1 + 0.3 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (sc[l.WIRE] = function (e) {
+                  return {
+                    A: 10 * Ed(e) * ud(e),
+                    B: 1 + 0.3 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (sc[l.COMPUTER] = function (e) {
+                  return {
+                    A: 5 * ud(e),
+                    B: 1 + 0.3 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 sc),
+              getConsumption:
+                ((uc = {}),
+                (uc[l.POWER] = function (e) {
+                  return { A: 5, B: 0, type: i.LINEAR };
+                }),
+                uc),
               getGain: {},
               getStorage: {},
               getEffectGain:
-                ((uc = {}),
-                (uc[U.SECURITY] = function (e) {
+                ((lc = {}),
+                (lc[U.SECURITY] = function (e) {
                   return {
                     A:
                       2 *
@@ -12346,7 +12535,7 @@
                     type: i.LINEAR,
                   };
                 }),
-                uc),
+                lc),
             },
             {
               id: a.ORBITAL_TOURISM_CENTER,
@@ -12362,40 +12551,40 @@
                 );
               },
               getCost:
-                ((lc = {}),
-                (lc[l.ROCKET_ENGINE] = function (e) {
-                  return {
-                    A: 5 * ld(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (lc[l.COMPUTER] = function (e) {
-                  return {
-                    A: 25 * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (lc[l.RUBBER] = function (e) {
-                  return {
-                    A: 150 * pd(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                lc),
-              getConsumption:
                 ((pc = {}),
-                (pc[l.POWER] = function (e) {
-                  return { A: 5, B: 0, type: i.LINEAR };
+                (pc[l.ROCKET_ENGINE] = function (e) {
+                  return {
+                    A: 5 * pd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (pc[l.COMPUTER] = function (e) {
+                  return {
+                    A: 25 * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (pc[l.RUBBER] = function (e) {
+                  return {
+                    A: 150 * dd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 pc),
+              getConsumption:
+                ((dc = {}),
+                (dc[l.POWER] = function (e) {
+                  return { A: 5, B: 0, type: i.LINEAR };
+                }),
+                dc),
               getGain: {},
               getStorage: {},
               getEffectGain:
-                ((dc = {}),
-                (dc[U.AESTHETICS] = function (e) {
+                ((Ec = {}),
+                (Ec[U.AESTHETICS] = function (e) {
                   return {
                     A:
                       8 *
@@ -12413,7 +12602,7 @@
                     type: i.LINEAR,
                   };
                 }),
-                (dc[U.ENTERTAINMENT] = function (e) {
+                (Ec[U.ENTERTAINMENT] = function (e) {
                   return {
                     A:
                       8 *
@@ -12431,7 +12620,7 @@
                     type: i.LINEAR,
                   };
                 }),
-                dc),
+                Ec),
             },
             {
               id: a.SPACE_TELESCOPE,
@@ -12445,39 +12634,39 @@
                 );
               },
               getCost:
-                ((Ec = {}),
-                (Ec[l.ROCKET_ENGINE] = function (e) {
-                  return {
-                    A: 1 * ld(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Ec[l.PLASTICS] = function (e) {
-                  return {
-                    A: 25 * pd(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Ec[l.RUBBER] = function (e) {
-                  return {
-                    A: 50 * pd(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                Ec),
-              getConsumption:
                 ((gc = {}),
-                (gc[l.POWER] = function (e) {
-                  return { A: 2, B: 0, type: i.LINEAR };
+                (gc[l.ROCKET_ENGINE] = function (e) {
+                  return {
+                    A: 1 * pd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (gc[l.PLASTICS] = function (e) {
+                  return {
+                    A: 25 * dd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (gc[l.RUBBER] = function (e) {
+                  return {
+                    A: 50 * dd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 gc),
+              getConsumption:
+                ((fc = {}),
+                (fc[l.POWER] = function (e) {
+                  return { A: 2, B: 0, type: i.LINEAR };
+                }),
+                fc),
               getGain: {},
               getStorage:
-                ((fc = {}),
-                (fc[l.RESEARCH] = function (e) {
+                ((Ac = {}),
+                (Ac[l.RESEARCH] = function (e) {
                   return {
                     A:
                       200 *
@@ -12533,7 +12722,7 @@
                     type: i.LINEAR,
                   };
                 }),
-                fc),
+                Ac),
               getEffectGain: {},
             },
             {
@@ -12549,71 +12738,71 @@
                 );
               },
               getCost:
-                ((Ac = {}),
-                (Ac[l.ROCKET_ENGINE] = function (e) {
+                ((mc = {}),
+                (mc[l.ROCKET_ENGINE] = function (e) {
                   return {
                     A:
                       15 *
-                      ld(e) *
-                      sd(e) *
+                      pd(e) *
+                      ud(e) *
                       (e.achievements.getAchievementComplete("desertWalker")
                         ? 0.5
                         : 1),
-                    B: 1 + 0.5 * cd(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                (Ac[l.COMPUTER] = function (e) {
+                (mc[l.COMPUTER] = function (e) {
                   return {
                     A:
                       25 *
-                      sd(e) *
+                      ud(e) *
                       (e.achievements.getAchievementComplete("desertWalker")
                         ? 0.5
                         : 1),
-                    B: 1 + 0.5 * cd(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                (Ac[l.RUBBER] = function (e) {
+                (mc[l.RUBBER] = function (e) {
                   return {
                     A:
                       150 *
-                      pd(e) *
-                      sd(e) *
+                      dd(e) *
+                      ud(e) *
                       (e.achievements.getAchievementComplete("desertWalker")
                         ? 0.5
                         : 1),
-                    B: 1 + 0.5 * cd(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                (Ac[l.BRICK] = function (e) {
+                (mc[l.BRICK] = function (e) {
                   return {
                     A:
                       250 *
-                      Ed(e) *
-                      sd(e) *
+                      gd(e) *
+                      ud(e) *
                       (e.achievements.getAchievementComplete("desertWalker")
                         ? 0.5
                         : 1),
-                    B: 1 + 0.5 * cd(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                Ac),
+                mc),
               getConsumption:
-                ((mc = {}),
-                (mc[l.POWER] = function (e) {
+                ((Nc = {}),
+                (Nc[l.POWER] = function (e) {
                   return { A: 5, B: 0, type: i.LINEAR };
                 }),
-                mc),
+                Nc),
               getGain:
-                ((Nc = {}),
-                (Nc[l.WATER] = function (e) {
+                ((hc = {}),
+                (hc[l.WATER] = function (e) {
                   return { A: 0.3, B: 0, type: i.LINEAR };
                 }),
-                Nc),
+                hc),
               getStorage: {},
               getEffectGain: {},
             },
@@ -12631,49 +12820,49 @@
                 );
               },
               getCost:
-                ((hc = {}),
-                (hc[l.ROCKET_ENGINE] = function (e) {
-                  return {
-                    A: 25 * ld(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (hc[l.SEMICONDUCTOR] = function (e) {
-                  return {
-                    A: 125 * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (hc[l.PLASTICS] = function (e) {
-                  return {
-                    A: 150 * pd(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (hc[l.PLATINUM] = function (e) {
-                  return {
-                    A: 250 * gd(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                hc),
-              getConsumption:
                 ((Ic = {}),
-                (Ic[l.POWER] = function (e) {
-                  return { A: 2, B: 0, type: i.LINEAR };
+                (Ic[l.ROCKET_ENGINE] = function (e) {
+                  return {
+                    A: 25 * pd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Ic[l.SEMICONDUCTOR] = function (e) {
+                  return {
+                    A: 125 * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Ic[l.PLASTICS] = function (e) {
+                  return {
+                    A: 150 * dd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Ic[l.PLATINUM] = function (e) {
+                  return {
+                    A: 250 * fd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 Ic),
-              getGain: {},
-              getGainMultiplier:
+              getConsumption:
                 ((Rc = {}),
-                (Rc[l.FUEL] = function (e) {
-                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
+                (Rc[l.POWER] = function (e) {
+                  return { A: 2, B: 0, type: i.LINEAR };
                 }),
                 Rc),
+              getGain: {},
+              getGainMultiplier:
+                ((Tc = {}),
+                (Tc[l.FUEL] = function (e) {
+                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
+                }),
+                Tc),
               getStorage: {},
               getEffectGain: {},
             },
@@ -12694,42 +12883,42 @@
                 );
               },
               getCost:
-                ((Tc = {}),
-                (Tc[l.ROCKET_ENGINE] = function (e) {
-                  return {
-                    A: 20 * ld(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Tc[l.COMPUTER] = function (e) {
-                  return {
-                    A: 50 * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Tc[l.PLATINUM] = function (e) {
-                  return {
-                    A: 225 * gd(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Tc[l.WIRE] = function (e) {
-                  return {
-                    A: 75 * dd(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                Tc),
-              getConsumption:
                 ((yc = {}),
-                (yc[l.POWER] = function (e) {
-                  return { A: 3, B: 0, type: i.LINEAR };
+                (yc[l.ROCKET_ENGINE] = function (e) {
+                  return {
+                    A: 20 * pd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (yc[l.COMPUTER] = function (e) {
+                  return {
+                    A: 50 * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (yc[l.PLATINUM] = function (e) {
+                  return {
+                    A: 225 * fd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (yc[l.WIRE] = function (e) {
+                  return {
+                    A: 75 * Ed(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 yc),
+              getConsumption:
+                ((Oc = {}),
+                (Oc[l.POWER] = function (e) {
+                  return { A: 3, B: 0, type: i.LINEAR };
+                }),
+                Oc),
               getGain: {},
               getStorage: {},
               getGainMultiplier: {},
@@ -12751,49 +12940,49 @@
                 );
               },
               getCost:
-                ((Oc = {}),
-                (Oc[l.BRICK] = function (e) {
-                  return {
-                    A: 1e3 * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Oc[l.RUBBER] = function (e) {
-                  return {
-                    A: 400 * pd(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Oc[l.PLATE] = function (e) {
-                  return {
-                    A: 500 * fd(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                Oc),
-              getConsumption:
                 ((Lc = {}),
-                (Lc[l.POWER] = function (e) {
-                  return { A: 0.5, B: 0, type: i.LINEAR };
+                (Lc[l.BRICK] = function (e) {
+                  return {
+                    A: 1e3 * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
-                (Lc[l.WATER] = function (e) {
-                  return { A: 0.2, B: 0, type: i.LINEAR };
+                (Lc[l.RUBBER] = function (e) {
+                  return {
+                    A: 400 * dd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
-                (Lc[l.NUTRITION] = function (e) {
-                  return { A: 0.2, B: 0, type: i.LINEAR };
+                (Lc[l.PLATE] = function (e) {
+                  return {
+                    A: 500 * Ad(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 Lc),
+              getConsumption:
+                ((Cc = {}),
+                (Cc[l.POWER] = function (e) {
+                  return { A: 0.5, B: 0, type: i.LINEAR };
+                }),
+                (Cc[l.WATER] = function (e) {
+                  return { A: 0.2, B: 0, type: i.LINEAR };
+                }),
+                (Cc[l.NUTRITION] = function (e) {
+                  return { A: 0.2, B: 0, type: i.LINEAR };
+                }),
+                Cc),
               getGain: {},
               getStorage: {},
               getEffectGain:
-                ((Cc = {}),
-                (Cc[U.ENTERTAINMENT] = function (e) {
+                ((vc = {}),
+                (vc[U.ENTERTAINMENT] = function (e) {
                   return { A: 10, B: 0, type: i.LINEAR };
                 }),
-                Cc),
+                vc),
             },
             {
               id: a.MUSEUM_OF_EVOLUTION,
@@ -12815,42 +13004,42 @@
                 );
               },
               getCost:
-                ((vc = {}),
-                (vc[l.BRICK] = function (e) {
-                  return {
-                    A: 5e6 * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (vc[l.PLASTICS] = function (e) {
-                  return {
-                    A: 4e5 * pd(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (vc[l.GRAPHENE] = function (e) {
-                  return {
-                    A: 15e4 * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                vc),
-              getConsumption:
                 ((Sc = {}),
-                (Sc[l.POWER] = function (e) {
-                  return { A: 200, B: 0, type: i.LINEAR };
+                (Sc[l.BRICK] = function (e) {
+                  return {
+                    A: 5e6 * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
-                (Sc[l.BIOMASS] = function (e) {
-                  return { A: 40, B: 0, type: i.LINEAR };
+                (Sc[l.PLASTICS] = function (e) {
+                  return {
+                    A: 4e5 * dd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Sc[l.GRAPHENE] = function (e) {
+                  return {
+                    A: 15e4 * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 Sc),
+              getConsumption:
+                ((Pc = {}),
+                (Pc[l.POWER] = function (e) {
+                  return { A: 200, B: 0, type: i.LINEAR };
+                }),
+                (Pc[l.BIOMASS] = function (e) {
+                  return { A: 40, B: 0, type: i.LINEAR };
+                }),
+                Pc),
               getGain: {},
               getStorage:
-                ((Pc = {}),
-                (Pc[l.RESEARCH] = function (e) {
+                ((Bc = {}),
+                (Bc[l.RESEARCH] = function (e) {
                   return {
                     A:
                       100 *
@@ -12861,7 +13050,7 @@
                     type: i.LINEAR,
                   };
                 }),
-                Pc),
+                Bc),
               getEffectGain: {},
             },
             {
@@ -12878,37 +13067,37 @@
                 );
               },
               getCost:
-                ((Bc = {}),
-                (Bc[l.ROCKET_ENGINE] = function (e) {
-                  return {
-                    A: 40 * ld(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Bc[l.STONE] = function (e) {
-                  return {
-                    A: 1250 * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                Bc),
-              getConsumption:
                 ((Mc = {}),
-                (Mc[l.POWER] = function (e) {
-                  return { A: 5, B: 0, type: i.LINEAR };
+                (Mc[l.ROCKET_ENGINE] = function (e) {
+                  return {
+                    A: 40 * pd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
-                (Mc[l.ORE] = function (e) {
-                  return { A: 10, B: 0, type: i.LINEAR };
+                (Mc[l.STONE] = function (e) {
+                  return {
+                    A: 1250 * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 Mc),
-              getGain:
+              getConsumption:
                 ((_c = {}),
-                (_c[l.IRON] = function (e) {
-                  return { A: 0.05, B: 0, type: i.LINEAR };
+                (_c[l.POWER] = function (e) {
+                  return { A: 5, B: 0, type: i.LINEAR };
+                }),
+                (_c[l.ORE] = function (e) {
+                  return { A: 10, B: 0, type: i.LINEAR };
                 }),
                 _c),
+              getGain:
+                ((Uc = {}),
+                (Uc[l.IRON] = function (e) {
+                  return { A: 0.05, B: 0, type: i.LINEAR };
+                }),
+                Uc),
               getStorage: {},
             },
             {
@@ -12925,34 +13114,34 @@
                 );
               },
               getCost:
-                ((Uc = {}),
-                (Uc[l.ROCKET_ENGINE] = function (e) {
-                  return {
-                    A: 50 * ld(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Uc[l.PLATE] = function (e) {
-                  return {
-                    A: 3250 * fd(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                Uc),
-              getConsumption:
                 ((bc = {}),
-                (bc[l.POWER] = function (e) {
-                  return { A: 8, B: 0, type: i.LINEAR };
+                (bc[l.ROCKET_ENGINE] = function (e) {
+                  return {
+                    A: 50 * pd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (bc[l.PLATE] = function (e) {
+                  return {
+                    A: 3250 * Ad(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 bc),
-              getGain:
+              getConsumption:
                 ((Gc = {}),
-                (Gc[l.PLATINUM] = function (e) {
-                  return { A: 0.1, B: 0, type: i.LINEAR };
+                (Gc[l.POWER] = function (e) {
+                  return { A: 8, B: 0, type: i.LINEAR };
                 }),
                 Gc),
+              getGain:
+                ((wc = {}),
+                (wc[l.PLATINUM] = function (e) {
+                  return { A: 0.1, B: 0, type: i.LINEAR };
+                }),
+                wc),
               getStorage: {},
             },
             {
@@ -12969,34 +13158,34 @@
                 );
               },
               getCost:
-                ((wc = {}),
-                (wc[l.ROCKET_ENGINE] = function (e) {
+                ((Dc = {}),
+                (Dc[l.ROCKET_ENGINE] = function (e) {
                   return {
-                    A: 30 * ld(e) * sd(e),
-                    B: 1 + 0.25 * cd(e),
+                    A: 30 * pd(e) * ud(e),
+                    B: 1 + 0.25 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                (wc[l.PLATE] = function (e) {
+                (Dc[l.PLATE] = function (e) {
                   return {
-                    A: 200 * fd(e) * sd(e),
-                    B: 1 + 0.25 * cd(e),
+                    A: 200 * Ad(e) * ud(e),
+                    B: 1 + 0.25 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                (wc[l.WIRE] = function (e) {
+                (Dc[l.WIRE] = function (e) {
                   return {
-                    A: 200 * dd(e) * sd(e),
-                    B: 1 + 0.25 * cd(e),
+                    A: 200 * Ed(e) * ud(e),
+                    B: 1 + 0.25 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                wc),
+                Dc),
               getConsumption: {},
               getGain: {},
               getStorage:
-                ((Dc = {}),
-                (Dc[l.STONE] = function (e) {
+                ((Xc = {}),
+                (Xc[l.STONE] = function (e) {
                   return {
                     A:
                       125 *
@@ -13014,7 +13203,7 @@
                     type: i.LINEAR,
                   };
                 }),
-                (Dc[l.ORE] = function (e) {
+                (Xc[l.ORE] = function (e) {
                   return {
                     A:
                       125 *
@@ -13032,7 +13221,7 @@
                     type: i.LINEAR,
                   };
                 }),
-                (Dc[l.BIOMASS] = function (e) {
+                (Xc[l.BIOMASS] = function (e) {
                   return {
                     A:
                       125 *
@@ -13050,7 +13239,7 @@
                     type: i.LINEAR,
                   };
                 }),
-                (Dc[l.IRON] = function (e) {
+                (Xc[l.IRON] = function (e) {
                   return {
                     A:
                       50 *
@@ -13068,7 +13257,7 @@
                     type: i.LINEAR,
                   };
                 }),
-                (Dc[l.WOOD] = function (e) {
+                (Xc[l.WOOD] = function (e) {
                   return {
                     A:
                       125 *
@@ -13086,7 +13275,7 @@
                     type: i.LINEAR,
                   };
                 }),
-                (Dc[l.PLATINUM] = function (e) {
+                (Xc[l.PLATINUM] = function (e) {
                   return {
                     A:
                       25 *
@@ -13104,7 +13293,7 @@
                     type: i.LINEAR,
                   };
                 }),
-                Dc),
+                Xc),
             },
             {
               id: a.PLUTO_MONUMENT,
@@ -13120,38 +13309,38 @@
                 );
               },
               getCost:
-                ((Xc = {}),
-                (Xc[l.ROCKET_ENGINE] = function (e) {
+                ((xc = {}),
+                (xc[l.ROCKET_ENGINE] = function (e) {
                   return {
-                    A: 40 * ld(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 40 * pd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                (Xc[l.PLATE] = function (e) {
+                (xc[l.PLATE] = function (e) {
                   return {
-                    A: 800 * fd(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 800 * Ad(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                (Xc[l.PLATINUM] = function (e) {
+                (xc[l.PLATINUM] = function (e) {
                   return {
-                    A: 1200 * gd(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 1200 * fd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                Xc),
+                xc),
               getConsumption: {},
               getGain: {},
               getStorage: {},
               getEffectGain:
-                ((xc = {}),
-                (xc[U.RELIGION] = function (e) {
+                ((kc = {}),
+                (kc[U.RELIGION] = function (e) {
                   return { A: 15, B: 0, type: i.LINEAR };
                 }),
-                xc),
+                kc),
             },
             {
               id: a.FLORA_PLANT,
@@ -13167,41 +13356,41 @@
                 );
               },
               getCost:
-                ((kc = {}),
-                (kc[l.ROCKET_ENGINE] = function (e) {
-                  return {
-                    A: 100 * ld(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (kc[l.PLATE] = function (e) {
-                  return {
-                    A: 1250 * fd(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (kc[l.BEAM] = function (e) {
-                  return {
-                    A: 1250 * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                kc),
-              getConsumption:
                 ((Hc = {}),
-                (Hc[l.POWER] = function (e) {
-                  return { A: 5, B: 0, type: i.LINEAR };
+                (Hc[l.ROCKET_ENGINE] = function (e) {
+                  return {
+                    A: 100 * pd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Hc[l.PLATE] = function (e) {
+                  return {
+                    A: 1250 * Ad(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Hc[l.BEAM] = function (e) {
+                  return {
+                    A: 1250 * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 Hc),
-              getGain:
+              getConsumption:
                 ((Yc = {}),
-                (Yc[l.BIOMASS] = function (e) {
-                  return { A: 0.6, B: 0, type: i.LINEAR };
+                (Yc[l.POWER] = function (e) {
+                  return { A: 5, B: 0, type: i.LINEAR };
                 }),
                 Yc),
+              getGain:
+                ((Wc = {}),
+                (Wc[l.BIOMASS] = function (e) {
+                  return { A: 0.6, B: 0, type: i.LINEAR };
+                }),
+                Wc),
               getStorage: {},
             },
             {
@@ -13218,37 +13407,37 @@
                 );
               },
               getCost:
-                ((Wc = {}),
-                (Wc[l.ROCKET_ENGINE] = function (e) {
-                  return {
-                    A: 90 * ld(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Wc[l.BIOMASS] = function (e) {
-                  return {
-                    A: 5e3 * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                Wc),
-              getConsumption:
                 ((Zc = {}),
-                (Zc[l.BIOMASS] = function (e) {
-                  return { A: 0.5, B: 0, type: i.LINEAR };
+                (Zc[l.ROCKET_ENGINE] = function (e) {
+                  return {
+                    A: 90 * pd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
-                (Zc[l.WATER] = function (e) {
-                  return { A: 0.3, B: 0, type: i.LINEAR };
+                (Zc[l.BIOMASS] = function (e) {
+                  return {
+                    A: 5e3 * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 Zc),
-              getGainMultiplier:
+              getConsumption:
                 ((Fc = {}),
-                (Fc[l.WOOD] = function (e) {
+                (Fc[l.BIOMASS] = function (e) {
+                  return { A: 0.5, B: 0, type: i.LINEAR };
+                }),
+                (Fc[l.WATER] = function (e) {
+                  return { A: 0.3, B: 0, type: i.LINEAR };
+                }),
+                Fc),
+              getGainMultiplier:
+                ((jc = {}),
+                (jc[l.WOOD] = function (e) {
                   return { A: 1, B: 1.03, type: i.EXPONENTIAL };
                 }),
-                (Fc[l.OXYGEN] = function (e) {
+                (jc[l.OXYGEN] = function (e) {
                   return {
                     A: 1,
                     B: e.achievements.getAchievementComplete("ventilation2")
@@ -13257,7 +13446,7 @@
                     type: i.EXPONENTIAL,
                   };
                 }),
-                Fc),
+                jc),
               getGain: {},
               getStorage: {},
             },
@@ -13275,35 +13464,35 @@
                 );
               },
               getCost:
-                ((jc = {}),
-                (jc[l.ROCKET_ENGINE] = function (e) {
-                  return {
-                    A: 100 * ld(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (jc[l.FUEL] = function (e) {
-                  return {
-                    A: 500 * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                jc),
-              getConsumption:
                 ((Vc = {}),
-                (Vc[l.POWER] = function (e) {
-                  return { A: 2, B: 0, type: i.LINEAR };
+                (Vc[l.ROCKET_ENGINE] = function (e) {
+                  return {
+                    A: 100 * pd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 (Vc[l.FUEL] = function (e) {
+                  return {
+                    A: 500 * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                Vc),
+              getConsumption:
+                ((Kc = {}),
+                (Kc[l.POWER] = function (e) {
+                  return { A: 2, B: 0, type: i.LINEAR };
+                }),
+                (Kc[l.FUEL] = function (e) {
                   return {
                     A: 30 * e.laws.getLawSelected(G.ORGANIC_TRANSMUTATION),
                     B: 0,
                     type: i.LINEAR,
                   };
                 }),
-                (Vc[l.STRANGE_MATTER] = function (e) {
+                (Kc[l.STRANGE_MATTER] = function (e) {
                   return {
                     A:
                       e.laws.getLawSelected(G.ORGANIC_TRANSMUTATION) > 1
@@ -13313,28 +13502,28 @@
                     type: i.LINEAR,
                   };
                 }),
-                Vc),
-              getGainMultiplier:
-                ((Kc = {}),
-                (Kc[l.PLASTICS] = function (e) {
-                  return {
-                    A: 1,
-                    B:
-                      1.05 +
-                      0.005 * e.laws.getLawSelected(G.ORGANIC_TRANSMUTATION),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Kc[l.RUBBER] = function (e) {
-                  return {
-                    A: 1,
-                    B:
-                      1.05 +
-                      0.005 * e.laws.getLawSelected(G.ORGANIC_TRANSMUTATION),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
                 Kc),
+              getGainMultiplier:
+                ((zc = {}),
+                (zc[l.PLASTICS] = function (e) {
+                  return {
+                    A: 1,
+                    B:
+                      1.05 +
+                      0.005 * e.laws.getLawSelected(G.ORGANIC_TRANSMUTATION),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (zc[l.RUBBER] = function (e) {
+                  return {
+                    A: 1,
+                    B:
+                      1.05 +
+                      0.005 * e.laws.getLawSelected(G.ORGANIC_TRANSMUTATION),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                zc),
               getGain: {},
               getStorage: {},
             },
@@ -13355,35 +13544,35 @@
                 ((qc = {}),
                 (qc[l.ROCKET_ENGINE] = function (e) {
                   return {
-                    A: 100 * ld(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 100 * pd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (qc[l.PLATE] = function (e) {
                   return {
-                    A: 2500 * fd(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 2500 * Ad(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 (qc[l.WIRE] = function (e) {
                   return {
-                    A: 2500 * dd(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 2500 * Ed(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
                 qc),
               getConsumption:
-                ((zc = {}),
-                (zc[l.POWER] = function (e) {
+                ((Qc = {}),
+                (Qc[l.POWER] = function (e) {
                   return {
                     A:
                       25 *
                       Math.pow(
                         0.8,
-                        _h.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                        xh.landingZone.landingZoneUpgrades.getUpgradeLevel(
                           r.EFFICIENT_COLLIDERS
                         )
                       ),
@@ -13391,41 +13580,41 @@
                     type: i.LINEAR,
                   };
                 }),
-                zc),
-              getGainMultiplier:
-                ((Qc = {}),
-                (Qc[l.RESEARCH] = function (e) {
-                  return { A: 1, B: 1.15, type: i.EXPONENTIAL };
-                }),
-                (Qc[l.ANTIMATTER] = function (e) {
-                  return {
-                    A: 1,
-                    B:
-                      1 +
-                      0.01 * e.laws.getLawSelected(G.EXOTIC_MATTER_EXPERIMENTS),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Qc[l.DARK_MATTER] = function (e) {
-                  return {
-                    A: 1,
-                    B:
-                      1 +
-                      0.01 * e.laws.getLawSelected(G.EXOTIC_MATTER_EXPERIMENTS),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
                 Qc),
-              getGain: {},
-              getStorage:
+              getGainMultiplier:
                 ((Jc = {}),
                 (Jc[l.RESEARCH] = function (e) {
-                  return { A: 2250, B: 0, type: i.LINEAR };
+                  return { A: 1, B: 1.15, type: i.EXPONENTIAL };
+                }),
+                (Jc[l.ANTIMATTER] = function (e) {
+                  return {
+                    A: 1,
+                    B:
+                      1 +
+                      0.01 * e.laws.getLawSelected(G.EXOTIC_MATTER_EXPERIMENTS),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Jc[l.DARK_MATTER] = function (e) {
+                  return {
+                    A: 1,
+                    B:
+                      1 +
+                      0.01 * e.laws.getLawSelected(G.EXOTIC_MATTER_EXPERIMENTS),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 Jc),
-              getEffectConsumption:
+              getGain: {},
+              getStorage:
                 (($c = {}),
-                ($c[U.SECURITY] = function (e) {
+                ($c[l.RESEARCH] = function (e) {
+                  return { A: 2250, B: 0, type: i.LINEAR };
+                }),
+                $c),
+              getEffectConsumption:
+                ((es = {}),
+                (es[U.SECURITY] = function (e) {
                   return {
                     A:
                       2 === e.laws.getLawSelected(G.EXOTIC_MATTER_EXPERIMENTS)
@@ -13435,14 +13624,14 @@
                     type: i.LINEAR,
                   };
                 }),
-                ($c[U.HEALTHCARE] = function (e) {
+                (es[U.HEALTHCARE] = function (e) {
                   return {
                     A: 2 * e.laws.getLawSelected(G.EXOTIC_MATTER_EXPERIMENTS),
                     B: 0,
                     type: i.LINEAR,
                   };
                 }),
-                $c),
+                es),
               getCraftingMultiplier: function (e) {
                 return {
                   A: 1,
@@ -13467,35 +13656,35 @@
                 );
               },
               getCost:
-                ((es = {}),
-                (es[l.ROCKET_ENGINE] = function (e) {
-                  return {
-                    A: 120 * ld(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (es[l.PLATE] = function (e) {
-                  return {
-                    A: 2500 * fd(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (es[l.WIRE] = function (e) {
-                  return {
-                    A: 2500 * dd(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                es),
-              getConsumption:
                 ((ts = {}),
-                (ts[l.POWER] = function (e) {
-                  return { A: 10, B: 0, type: i.LINEAR };
+                (ts[l.ROCKET_ENGINE] = function (e) {
+                  return {
+                    A: 120 * pd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (ts[l.PLATE] = function (e) {
+                  return {
+                    A: 2500 * Ad(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (ts[l.WIRE] = function (e) {
+                  return {
+                    A: 2500 * Ed(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 ts),
+              getConsumption:
+                ((ns = {}),
+                (ns[l.POWER] = function (e) {
+                  return { A: 10, B: 0, type: i.LINEAR };
+                }),
+                ns),
               getGain: {},
               getStorage: {},
               getEffectGain: {},
@@ -13513,41 +13702,41 @@
                 );
               },
               getCost:
-                ((ns = {}),
-                (ns[l.ROCKET_ENGINE] = function (e) {
-                  return {
-                    A: 240 * ld(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (ns[l.PLATE] = function (e) {
-                  return {
-                    A: 5500 * fd(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (ns[l.WIRE] = function (e) {
-                  return {
-                    A: 4500 * dd(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                ns),
-              getConsumption:
                 ((is = {}),
-                (is[l.POWER] = function (e) {
-                  return { A: 10, B: 0, type: i.LINEAR };
+                (is[l.ROCKET_ENGINE] = function (e) {
+                  return {
+                    A: 240 * pd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (is[l.PLATE] = function (e) {
+                  return {
+                    A: 5500 * Ad(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (is[l.WIRE] = function (e) {
+                  return {
+                    A: 4500 * Ed(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 is),
-              getGainMultiplier:
+              getConsumption:
                 ((os = {}),
-                (os[l.ROCKET_ENGINE] = function (e) {
-                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
+                (os[l.POWER] = function (e) {
+                  return { A: 10, B: 0, type: i.LINEAR };
                 }),
                 os),
+              getGainMultiplier:
+                ((rs = {}),
+                (rs[l.ROCKET_ENGINE] = function (e) {
+                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
+                }),
+                rs),
               getGain: {},
               getStorage: {},
               getEffectGain: {},
@@ -13565,35 +13754,35 @@
                 );
               },
               getCost:
-                ((rs = {}),
-                (rs[l.ROCKET_ENGINE] = function (e) {
-                  return {
-                    A: 240 * ld(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (rs[l.MAGNETO] = function (e) {
-                  return {
-                    A: 1 * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (rs[l.RUBBER] = function (e) {
-                  return {
-                    A: 200 * pd(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                rs),
-              getConsumption:
                 ((as = {}),
-                (as[l.POWER] = function (e) {
-                  return { A: 4, B: 0, type: i.LINEAR };
+                (as[l.ROCKET_ENGINE] = function (e) {
+                  return {
+                    A: 240 * pd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (as[l.MAGNETO] = function (e) {
+                  return {
+                    A: 1 * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (as[l.RUBBER] = function (e) {
+                  return {
+                    A: 200 * dd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 as),
+              getConsumption:
+                ((cs = {}),
+                (cs[l.POWER] = function (e) {
+                  return { A: 4, B: 0, type: i.LINEAR };
+                }),
+                cs),
               getMaxColonists: function (e) {
                 return {
                   A:
@@ -13623,40 +13812,40 @@
                 );
               },
               getCost:
-                ((cs = {}),
-                (cs[l.ROCKET_ENGINE] = function (e) {
-                  return {
-                    A: 420 * ld(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (cs[l.MAGNETO] = function (e) {
-                  return {
-                    A: 4 * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (cs[l.PLASTICS] = function (e) {
-                  return {
-                    A: 2400 * pd(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                cs),
-              getConsumption:
                 ((ss = {}),
-                (ss[l.POWER] = function (e) {
-                  return { A: 5, B: 0, type: i.LINEAR };
+                (ss[l.ROCKET_ENGINE] = function (e) {
+                  return {
+                    A: 420 * pd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (ss[l.MAGNETO] = function (e) {
+                  return {
+                    A: 4 * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (ss[l.PLASTICS] = function (e) {
+                  return {
+                    A: 2400 * dd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 ss),
+              getConsumption:
+                ((us = {}),
+                (us[l.POWER] = function (e) {
+                  return { A: 5, B: 0, type: i.LINEAR };
+                }),
+                us),
               getGain: {},
               getStorage: {},
               getEffectGain:
-                ((us = {}),
-                (us[U.HEALTHCARE] = function (e) {
+                ((ls = {}),
+                (ls[U.HEALTHCARE] = function (e) {
                   return {
                     A: e.landingZone.landingZoneUpgrades.getUpgradeLevel(
                       r.ORBITAL_CLINIC
@@ -13667,19 +13856,19 @@
                     type: i.LINEAR,
                   };
                 }),
-                (us[U.RELIGION] = function (e) {
+                (ls[U.RELIGION] = function (e) {
                   return { A: 5, B: 0, type: i.LINEAR };
                 }),
-                (us[U.ENTERTAINMENT] = function (e) {
+                (ls[U.ENTERTAINMENT] = function (e) {
                   return { A: 5, B: 0, type: i.LINEAR };
                 }),
-                (us[U.SECURITY] = function (e) {
+                (ls[U.SECURITY] = function (e) {
                   return { A: 5, B: 0, type: i.LINEAR };
                 }),
-                (us[U.AESTHETICS] = function (e) {
+                (ls[U.AESTHETICS] = function (e) {
                   return { A: 5, B: 0, type: i.LINEAR };
                 }),
-                us),
+                ls),
             },
             {
               id: a.FLIGHT_SIMULATOR,
@@ -13698,38 +13887,38 @@
                 );
               },
               getCost:
-                ((ls = {}),
-                (ls[l.ROCKET_ENGINE] = function (e) {
-                  return {
-                    A: 24e3 * ld(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (ls[l.MAGNETO] = function (e) {
-                  return {
-                    A: 1e3 * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (ls[l.PLASTICS] = function (e) {
-                  return {
-                    A: 2e4 * pd(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                ls),
-              getConsumption:
                 ((ps = {}),
-                (ps[l.POWER] = function (e) {
-                  return { A: 100, B: 0, type: i.LINEAR };
+                (ps[l.ROCKET_ENGINE] = function (e) {
+                  return {
+                    A: 24e3 * pd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
-                (ps[l.FUEL] = function (e) {
-                  return { A: 50, B: 0, type: i.LINEAR };
+                (ps[l.MAGNETO] = function (e) {
+                  return {
+                    A: 1e3 * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (ps[l.PLASTICS] = function (e) {
+                  return {
+                    A: 2e4 * dd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 ps),
+              getConsumption:
+                ((ds = {}),
+                (ds[l.POWER] = function (e) {
+                  return { A: 100, B: 0, type: i.LINEAR };
+                }),
+                (ds[l.FUEL] = function (e) {
+                  return { A: 50, B: 0, type: i.LINEAR };
+                }),
+                ds),
               getGain: {},
               getStorage: {},
               getEffectGain: {},
@@ -13748,44 +13937,44 @@
                 );
               },
               getCost:
-                ((ds = {}),
-                (ds[l.ROCKET_ENGINE] = function (e) {
-                  return {
-                    A: 2420 * ld(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (ds[l.MAGNETO] = function (e) {
-                  return {
-                    A: 400 * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (ds[l.BRICK] = function (e) {
-                  return {
-                    A: 32400 * pd(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                ds),
-              getConsumption:
                 ((Es = {}),
-                (Es[l.POWER] = function (e) {
-                  return { A: 50, B: 0, type: i.LINEAR };
+                (Es[l.ROCKET_ENGINE] = function (e) {
+                  return {
+                    A: 2420 * pd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
-                (Es[l.STONE] = function (e) {
-                  return { A: 20, B: 0, type: i.LINEAR };
+                (Es[l.MAGNETO] = function (e) {
+                  return {
+                    A: 400 * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Es[l.BRICK] = function (e) {
+                  return {
+                    A: 32400 * gd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 Es),
-              getGain:
+              getConsumption:
                 ((gs = {}),
-                (gs[l.DARK_MATTER] = function (e) {
-                  return { A: 0.01, B: 0, type: i.LINEAR };
+                (gs[l.POWER] = function (e) {
+                  return { A: 50, B: 0, type: i.LINEAR };
+                }),
+                (gs[l.STONE] = function (e) {
+                  return { A: 20, B: 0, type: i.LINEAR };
                 }),
                 gs),
+              getGain:
+                ((fs = {}),
+                (fs[l.DARK_MATTER] = function (e) {
+                  return { A: 0.01, B: 0, type: i.LINEAR };
+                }),
+                fs),
               getStorage: {},
               getEffectGain: {},
             },
@@ -13802,42 +13991,42 @@
                 );
               },
               getCost:
-                ((fs = {}),
-                (fs[l.ROCKET_ENGINE] = function (e) {
-                  return {
-                    A: 1420 * ld(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (fs[l.BRICK] = function (e) {
-                  return {
-                    A: 2e4 * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (fs[l.PLATE] = function (e) {
-                  return {
-                    A: 12400 * pd(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                fs),
-              getConsumption:
                 ((As = {}),
-                (As[l.POWER] = function (e) {
-                  return { A: 20, B: 0, type: i.LINEAR };
+                (As[l.ROCKET_ENGINE] = function (e) {
+                  return {
+                    A: 1420 * pd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (As[l.BRICK] = function (e) {
+                  return {
+                    A: 2e4 * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (As[l.PLATE] = function (e) {
+                  return {
+                    A: 12400 * Ad(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 As),
-              getGain: {},
-              getStorage:
+              getConsumption:
                 ((ms = {}),
-                (ms[l.DARK_MATTER] = function (e) {
-                  return { A: 100, B: 0, type: i.LINEAR };
+                (ms[l.POWER] = function (e) {
+                  return { A: 20, B: 0, type: i.LINEAR };
                 }),
                 ms),
+              getGain: {},
+              getStorage:
+                ((Ns = {}),
+                (Ns[l.DARK_MATTER] = function (e) {
+                  return { A: 100, B: 0, type: i.LINEAR };
+                }),
+                Ns),
               getEffectGain: {},
             },
             {
@@ -13854,47 +14043,47 @@
                 );
               },
               getCost:
-                ((Ns = {}),
-                (Ns[l.ROCKET_ENGINE] = function (e) {
-                  return {
-                    A: 1e5 * ld(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Ns[l.MAGNETO] = function (e) {
-                  return {
-                    A: 12e4 * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Ns[l.DM_BLOCK] = function (e) {
-                  return {
-                    A: 50 * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                Ns),
-              getConsumption:
                 ((hs = {}),
-                (hs[l.POWER] = function (e) {
-                  return { A: 250, B: 0, type: i.LINEAR };
-                }),
-                (hs[l.DARK_MATTER] = function (e) {
-                  return { A: 0.2, B: 0, type: i.LINEAR };
+                (hs[l.ROCKET_ENGINE] = function (e) {
+                  return {
+                    A: 1e5 * pd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 (hs[l.MAGNETO] = function (e) {
-                  return { A: 1, B: 0, type: i.LINEAR };
+                  return {
+                    A: 12e4 * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (hs[l.DM_BLOCK] = function (e) {
+                  return {
+                    A: 50 * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 hs),
-              getGain:
+              getConsumption:
                 ((Is = {}),
-                (Is[l.ANTIMATTER] = function (e) {
+                (Is[l.POWER] = function (e) {
+                  return { A: 250, B: 0, type: i.LINEAR };
+                }),
+                (Is[l.DARK_MATTER] = function (e) {
+                  return { A: 0.2, B: 0, type: i.LINEAR };
+                }),
+                (Is[l.MAGNETO] = function (e) {
+                  return { A: 1, B: 0, type: i.LINEAR };
+                }),
+                Is),
+              getGain:
+                ((Rs = {}),
+                (Rs[l.ANTIMATTER] = function (e) {
                   return { A: 0.004, B: 0, type: i.LINEAR };
                 }),
-                (Is[l.STRANGE_MATTER] = function (e) {
+                (Rs[l.STRANGE_MATTER] = function (e) {
                   return {
                     A:
                       e.landingZone.landingZoneUpgrades.getUpgradeLevel(
@@ -13906,7 +14095,7 @@
                     type: i.LINEAR,
                   };
                 }),
-                Is),
+                Rs),
               getStorage: {},
               getEffectGain: {},
             },
@@ -13924,42 +14113,42 @@
                 );
               },
               getCost:
-                ((Rs = {}),
-                (Rs[l.ROCKET_ENGINE] = function (e) {
-                  return {
-                    A: 4e4 * ld(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Rs[l.PLATE] = function (e) {
-                  return {
-                    A: 1e7 * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Rs[l.DM_BLOCK] = function (e) {
-                  return {
-                    A: 250 * pd(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                Rs),
-              getConsumption:
                 ((Ts = {}),
-                (Ts[l.POWER] = function (e) {
-                  return { A: 400, B: 0, type: i.LINEAR };
+                (Ts[l.ROCKET_ENGINE] = function (e) {
+                  return {
+                    A: 4e4 * pd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Ts[l.PLATE] = function (e) {
+                  return {
+                    A: 1e7 * Ad(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Ts[l.DM_BLOCK] = function (e) {
+                  return {
+                    A: 250 * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 Ts),
-              getGain: {},
-              getStorage:
+              getConsumption:
                 ((ys = {}),
-                (ys[l.ANTIMATTER] = function (e) {
-                  return { A: 50, B: 0, type: i.LINEAR };
+                (ys[l.POWER] = function (e) {
+                  return { A: 400, B: 0, type: i.LINEAR };
                 }),
                 ys),
+              getGain: {},
+              getStorage:
+                ((Os = {}),
+                (Os[l.ANTIMATTER] = function (e) {
+                  return { A: 50, B: 0, type: i.LINEAR };
+                }),
+                Os),
               getEffectGain: {},
             },
             {
@@ -13976,39 +14165,39 @@
                 );
               },
               getCost:
-                ((Os = {}),
-                (Os[l.ROCKET_ENGINE] = function (e) {
-                  return {
-                    A: 4e3 * ld(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Os[l.PLATE] = function (e) {
-                  return {
-                    A: 1e5 * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Os[l.DM_BLOCK] = function (e) {
-                  return {
-                    A: 20 * pd(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                Os),
-              getConsumption:
                 ((Ls = {}),
-                (Ls[l.POWER] = function (e) {
-                  return { A: 500, B: 0, type: i.LINEAR };
+                (Ls[l.ROCKET_ENGINE] = function (e) {
+                  return {
+                    A: 4e3 * pd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Ls[l.PLATE] = function (e) {
+                  return {
+                    A: 1e5 * Ad(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Ls[l.DM_BLOCK] = function (e) {
+                  return {
+                    A: 20 * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 Ls),
+              getConsumption:
+                ((Cs = {}),
+                (Cs[l.POWER] = function (e) {
+                  return { A: 500, B: 0, type: i.LINEAR };
+                }),
+                Cs),
               getGain: {},
               getStorage:
-                ((Cs = {}),
-                (Cs[l.RESEARCH] = function (e) {
+                ((vs = {}),
+                (vs[l.RESEARCH] = function (e) {
                   return {
                     A:
                       1e4 *
@@ -14021,7 +14210,7 @@
                     type: i.LINEAR,
                   };
                 }),
-                Cs),
+                vs),
               getEffectGain: {},
             },
             {
@@ -14041,56 +14230,56 @@
                 );
               },
               getCost:
-                ((vs = {}),
-                (vs[l.ROCKET_ENGINE] = function (e) {
-                  return {
-                    A: 24e3 * ld(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (vs[l.MAGNETO] = function (e) {
-                  return {
-                    A: 1e3 * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (vs[l.PRESSED_BLOCK] = function (e) {
-                  return {
-                    A: 50 * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                vs),
-              getConsumption:
                 ((Ss = {}),
-                (Ss[l.POWER] = function (e) {
-                  return { A: 4e3, B: 0, type: i.LINEAR };
+                (Ss[l.ROCKET_ENGINE] = function (e) {
+                  return {
+                    A: 24e3 * pd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Ss[l.MAGNETO] = function (e) {
+                  return {
+                    A: 1e3 * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Ss[l.PRESSED_BLOCK] = function (e) {
+                  return {
+                    A: 50 * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 Ss),
-              getGain: {},
-              getGainMultiplier:
+              getConsumption:
                 ((Ps = {}),
-                (Ps[l.PRESSED_BLOCK] = function (e) {
-                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
-                }),
-                (Ps[l.DM_BLOCK] = function (e) {
-                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
+                (Ps[l.POWER] = function (e) {
+                  return { A: 4e3, B: 0, type: i.LINEAR };
                 }),
                 Ps),
+              getGain: {},
+              getGainMultiplier:
+                ((Bs = {}),
+                (Bs[l.PRESSED_BLOCK] = function (e) {
+                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
+                }),
+                (Bs[l.DM_BLOCK] = function (e) {
+                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
+                }),
+                Bs),
               getStorage: {},
               getEffectGain: {},
               getEffectConsumption:
-                ((Bs = {}),
-                (Bs[U.AESTHETICS] = function (e) {
+                ((Ms = {}),
+                (Ms[U.AESTHETICS] = function (e) {
                   return { A: 40, B: 0, type: i.LINEAR };
                 }),
-                (Bs[U.SECURITY] = function (e) {
+                (Ms[U.SECURITY] = function (e) {
                   return { A: 40, B: 0, type: i.LINEAR };
                 }),
-                Bs),
+                Ms),
             },
             {
               id: a.MAGNETIC_PRESS,
@@ -14106,35 +14295,35 @@
                 );
               },
               getCost:
-                ((Ms = {}),
-                (Ms[l.ROCKET_ENGINE] = function (e) {
-                  return {
-                    A: 1e3 * ld(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Ms[l.PRESSED_BLOCK] = function (e) {
-                  return {
-                    A: 20 * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Ms[l.MAGNETO] = function (e) {
-                  return {
-                    A: 500 * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                Ms),
-              getConsumption:
                 ((_s = {}),
-                (_s[l.POWER] = function (e) {
-                  return { A: 2500, B: 0, type: i.LINEAR };
+                (_s[l.ROCKET_ENGINE] = function (e) {
+                  return {
+                    A: 1e3 * pd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (_s[l.PRESSED_BLOCK] = function (e) {
+                  return {
+                    A: 20 * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (_s[l.MAGNETO] = function (e) {
+                  return {
+                    A: 500 * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 _s),
+              getConsumption:
+                ((Us = {}),
+                (Us[l.POWER] = function (e) {
+                  return { A: 2500, B: 0, type: i.LINEAR };
+                }),
+                Us),
               getGain: {},
               getStorage: {},
               getEffectGain: {},
@@ -14152,22 +14341,22 @@
                 };
               },
               getEffectConsumption:
-                ((Us = {}),
-                (Us[U.RELIGION] = function (e) {
+                ((bs = {}),
+                (bs[U.RELIGION] = function (e) {
                   return {
                     A: 15 * e.laws.getLawSelected(G.CARGO_LIFTS),
                     B: 0,
                     type: i.LINEAR,
                   };
                 }),
-                (Us[U.AESTHETICS] = function (e) {
+                (bs[U.AESTHETICS] = function (e) {
                   return {
                     A: 15 * e.laws.getLawSelected(G.CARGO_LIFTS),
                     B: 0,
                     type: i.LINEAR,
                   };
                 }),
-                Us),
+                bs),
             },
             {
               id: a.FUEL_PURIFICATION_STATION,
@@ -14183,44 +14372,44 @@
                 );
               },
               getCost:
-                ((bs = {}),
-                (bs[l.PRESSED_BLOCK] = function (e) {
-                  return {
-                    A: 5 * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (bs[l.PLATE] = function (e) {
-                  return {
-                    A: 2e6 * fd(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (bs[l.COMPUTER] = function (e) {
-                  return {
-                    A: 25e3 * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                bs),
-              getConsumption:
                 ((Gs = {}),
-                (Gs[l.BIOMASS] = function (e) {
-                  return { A: 20, B: 0, type: i.LINEAR };
+                (Gs[l.PRESSED_BLOCK] = function (e) {
+                  return {
+                    A: 5 * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
-                (Gs[l.WOOD] = function (e) {
-                  return { A: 20, B: 0, type: i.LINEAR };
+                (Gs[l.PLATE] = function (e) {
+                  return {
+                    A: 2e6 * Ad(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Gs[l.COMPUTER] = function (e) {
+                  return {
+                    A: 25e3 * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 Gs),
+              getConsumption:
+                ((ws = {}),
+                (ws[l.BIOMASS] = function (e) {
+                  return { A: 20, B: 0, type: i.LINEAR };
+                }),
+                (ws[l.WOOD] = function (e) {
+                  return { A: 20, B: 0, type: i.LINEAR };
+                }),
+                ws),
               getGain: {},
               getStorage: {},
               getEffectGain: {},
               getEffectConsumption:
-                ((ws = {}),
-                (ws[U.AESTHETICS] = function (e) {
+                ((Ds = {}),
+                (Ds[U.AESTHETICS] = function (e) {
                   return {
                     A:
                       10 *
@@ -14232,7 +14421,7 @@
                     type: i.LINEAR,
                   };
                 }),
-                ws),
+                Ds),
             },
             {
               id: a.EXOTIC_MATTER_FACTORY,
@@ -14248,35 +14437,35 @@
                 );
               },
               getCost:
-                ((Ds = {}),
-                (Ds[l.PRESSED_BLOCK] = function (e) {
-                  return {
-                    A: 40 * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Ds[l.ANTIMATTER] = function (e) {
-                  return {
-                    A: 50 * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Ds[l.MAGNETO] = function (e) {
-                  return {
-                    A: 25e3 * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                Ds),
-              getConsumption:
                 ((Xs = {}),
-                (Xs[l.POWER] = function (e) {
-                  return { A: 200, B: 0, type: i.LINEAR };
+                (Xs[l.PRESSED_BLOCK] = function (e) {
+                  return {
+                    A: 40 * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 (Xs[l.ANTIMATTER] = function (e) {
+                  return {
+                    A: 50 * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Xs[l.MAGNETO] = function (e) {
+                  return {
+                    A: 25e3 * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                Xs),
+              getConsumption:
+                ((xs = {}),
+                (xs[l.POWER] = function (e) {
+                  return { A: 200, B: 0, type: i.LINEAR };
+                }),
+                (xs[l.ANTIMATTER] = function (e) {
                   return {
                     A:
                       0.05 *
@@ -14285,28 +14474,28 @@
                     type: i.LINEAR,
                   };
                 }),
-                Xs),
+                xs),
               getEffectConsumption:
-                ((xs = {}),
-                (xs[U.RELIGION] = function (e) {
+                ((ks = {}),
+                (ks[U.RELIGION] = function (e) {
                   return {
                     A: e.laws.getLawSelected(G.ANNIHILATION_POWER) > 0 ? 24 : 0,
                     B: 0,
                     type: i.LINEAR,
                   };
                 }),
-                (xs[U.SECURITY] = function (e) {
+                (ks[U.SECURITY] = function (e) {
                   return {
                     A: e.laws.getLawSelected(G.ANNIHILATION_POWER) > 1 ? 24 : 0,
                     B: 0,
                     type: i.LINEAR,
                   };
                 }),
-                xs),
+                ks),
               getGain: {},
               getGainMultiplier:
-                ((ks = {}),
-                (ks[l.DARK_MATTER] = function (e) {
+                ((Hs = {}),
+                (Hs[l.DARK_MATTER] = function (e) {
                   return {
                     A: 1,
                     B:
@@ -14314,7 +14503,7 @@
                     type: i.EXPONENTIAL,
                   };
                 }),
-                ks),
+                Hs),
               getStorage: {},
               getEffectGain: {},
             },
@@ -14332,51 +14521,51 @@
                 );
               },
               getCost:
-                ((Hs = {}),
-                (Hs[l.PRESSED_BLOCK] = function (e) {
-                  return {
-                    A: 2500 * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Hs[l.COMPUTER] = function (e) {
-                  return {
-                    A: 5e5 * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Hs[l.FUEL] = function (e) {
-                  return {
-                    A: 275e4 * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                Hs),
-              getConsumption:
                 ((Ys = {}),
-                (Ys[l.POWER] = function (e) {
-                  return { A: 750, B: 0, type: i.LINEAR };
+                (Ys[l.PRESSED_BLOCK] = function (e) {
+                  return {
+                    A: 2500 * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
-                (Ys[l.WATER] = function (e) {
-                  return { A: 20, B: 0, type: i.LINEAR };
+                (Ys[l.COMPUTER] = function (e) {
+                  return {
+                    A: 5e5 * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
-                (Ys[l.STONE] = function (e) {
-                  return { A: 20, B: 0, type: i.LINEAR };
-                }),
-                (Ys[l.ORE] = function (e) {
-                  return { A: 20, B: 0, type: i.LINEAR };
+                (Ys[l.FUEL] = function (e) {
+                  return {
+                    A: 275e4 * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 Ys),
-              getGain: {},
-              getGainMultiplier:
+              getConsumption:
                 ((Ws = {}),
-                (Ws[l.BIOMASS] = function (e) {
-                  return { A: 1, B: 1.03, type: i.EXPONENTIAL };
+                (Ws[l.POWER] = function (e) {
+                  return { A: 750, B: 0, type: i.LINEAR };
+                }),
+                (Ws[l.WATER] = function (e) {
+                  return { A: 20, B: 0, type: i.LINEAR };
+                }),
+                (Ws[l.STONE] = function (e) {
+                  return { A: 20, B: 0, type: i.LINEAR };
+                }),
+                (Ws[l.ORE] = function (e) {
+                  return { A: 20, B: 0, type: i.LINEAR };
                 }),
                 Ws),
+              getGain: {},
+              getGainMultiplier:
+                ((Zs = {}),
+                (Zs[l.BIOMASS] = function (e) {
+                  return { A: 1, B: 1.03, type: i.EXPONENTIAL };
+                }),
+                Zs),
               getStorage: {},
               getEffectGain: {},
             },
@@ -14394,58 +14583,58 @@
                 );
               },
               getCost:
-                ((Zs = {}),
-                (Zs[l.PRESSED_BLOCK] = function (e) {
-                  return {
-                    A: 5e4 * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Zs[l.MAGNETO] = function (e) {
-                  return {
-                    A: 5e8 * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Zs[l.DM_BLOCK] = function (e) {
-                  return {
-                    A: 4e4 * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                Zs),
-              getConsumption:
                 ((Fs = {}),
-                (Fs[l.POWER] = function (e) {
-                  return { A: 2500, B: 0, type: i.LINEAR };
+                (Fs[l.PRESSED_BLOCK] = function (e) {
+                  return {
+                    A: 5e4 * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
-                (Fs[l.BIOMASS] = function (e) {
-                  return { A: 200, B: 0, type: i.LINEAR };
+                (Fs[l.MAGNETO] = function (e) {
+                  return {
+                    A: 5e8 * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Fs[l.DM_BLOCK] = function (e) {
+                  return {
+                    A: 4e4 * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 Fs),
-              getGain: {},
-              getGainMultiplier:
+              getConsumption:
                 ((js = {}),
-                (js[l.ANTIMATTER] = function (e) {
-                  return { A: 1, B: 1.03, type: i.EXPONENTIAL };
+                (js[l.POWER] = function (e) {
+                  return { A: 2500, B: 0, type: i.LINEAR };
                 }),
-                (js[l.DARK_MATTER] = function (e) {
-                  return { A: 1, B: 1.03, type: i.EXPONENTIAL };
+                (js[l.BIOMASS] = function (e) {
+                  return { A: 200, B: 0, type: i.LINEAR };
                 }),
                 js),
-              getStorage: {},
-              getEffectConsumption:
+              getGain: {},
+              getGainMultiplier:
                 ((Vs = {}),
-                (Vs[U.HEALTHCARE] = function (e) {
-                  return { A: 6, B: 0, type: i.LINEAR };
+                (Vs[l.ANTIMATTER] = function (e) {
+                  return { A: 1, B: 1.03, type: i.EXPONENTIAL };
                 }),
-                (Vs[U.SECURITY] = function (e) {
-                  return { A: 18, B: 0, type: i.LINEAR };
+                (Vs[l.DARK_MATTER] = function (e) {
+                  return { A: 1, B: 1.03, type: i.EXPONENTIAL };
                 }),
                 Vs),
+              getStorage: {},
+              getEffectConsumption:
+                ((Ks = {}),
+                (Ks[U.HEALTHCARE] = function (e) {
+                  return { A: 6, B: 0, type: i.LINEAR };
+                }),
+                (Ks[U.SECURITY] = function (e) {
+                  return { A: 18, B: 0, type: i.LINEAR };
+                }),
+                Ks),
             },
             {
               id: a.BIG_DATA_CENTER,
@@ -14461,29 +14650,29 @@
                 );
               },
               getCost:
-                ((Ks = {}),
-                (Ks[l.COMPUTER] = function (e) {
+                ((zs = {}),
+                (zs[l.COMPUTER] = function (e) {
                   return {
-                    A: 1e5 * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 1e5 * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                (Ks[l.PRESSED_BLOCK] = function (e) {
+                (zs[l.PRESSED_BLOCK] = function (e) {
                   return {
-                    A: 24e3 * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 24e3 * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                (Ks[l.AI_CORE] = function (e) {
+                (zs[l.AI_CORE] = function (e) {
                   return {
-                    A: 200 * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 200 * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                Ks),
+                zs),
               getConsumption:
                 ((qs = {}),
                 (qs[l.POWER] = function (e) {
@@ -14492,102 +14681,102 @@
                 qs),
               getGain: {},
               getGainMultiplier:
-                ((zs = {}),
-                (zs[l.SEMICONDUCTOR] = function (e) {
-                  return {
-                    A: 1,
-                    B:
-                      1.03 +
-                      0.01 *
-                        e.landingZone.landingZoneUpgrades.getUpgradeLevel(
-                          r.PICOMETRE_TRANSISTORS
-                        ),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (zs[l.COMPUTER] = function (e) {
-                  return {
-                    A: 1,
-                    B:
-                      1.03 +
-                      0.01 *
-                        e.landingZone.landingZoneUpgrades.getUpgradeLevel(
-                          r.PICOMETRE_TRANSISTORS
-                        ),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (zs[l.MAGNETO] = function (e) {
-                  return {
-                    A: 1,
-                    B:
-                      1.03 +
-                      0.01 *
-                        e.landingZone.landingZoneUpgrades.getUpgradeLevel(
-                          r.PICOMETRE_TRANSISTORS
-                        ),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (zs[l.GRAPHENE] = function (e) {
-                  return {
-                    A: 1,
-                    B:
-                      1.03 +
-                      0.01 *
-                        e.landingZone.landingZoneUpgrades.getUpgradeLevel(
-                          r.PICOMETRE_TRANSISTORS
-                        ),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (zs[l.DM_BLOCK] = function (e) {
-                  return {
-                    A: 1,
-                    B:
-                      1.03 +
-                      0.01 *
-                        e.landingZone.landingZoneUpgrades.getUpgradeLevel(
-                          r.PICOMETRE_TRANSISTORS
-                        ),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (zs[l.PRESSED_BLOCK] = function (e) {
-                  return {
-                    A: 1,
-                    B:
-                      1.03 +
-                      0.01 *
-                        e.landingZone.landingZoneUpgrades.getUpgradeLevel(
-                          r.PICOMETRE_TRANSISTORS
-                        ),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (zs[l.AI_CORE] = function (e) {
-                  return {
-                    A: 1,
-                    B:
-                      1.03 +
-                      0.01 *
-                        e.landingZone.landingZoneUpgrades.getUpgradeLevel(
-                          r.PICOMETRE_TRANSISTORS
-                        ),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                zs),
-              getStorage: {},
-              getEffectConsumption:
                 ((Qs = {}),
-                (Qs[U.RELIGION] = function (e) {
-                  return { A: 12, B: 0, type: i.LINEAR };
+                (Qs[l.SEMICONDUCTOR] = function (e) {
+                  return {
+                    A: 1,
+                    B:
+                      1.03 +
+                      0.01 *
+                        e.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                          r.PICOMETRE_TRANSISTORS
+                        ),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
-                (Qs[U.AESTHETICS] = function (e) {
-                  return { A: 12, B: 0, type: i.LINEAR };
+                (Qs[l.COMPUTER] = function (e) {
+                  return {
+                    A: 1,
+                    B:
+                      1.03 +
+                      0.01 *
+                        e.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                          r.PICOMETRE_TRANSISTORS
+                        ),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Qs[l.MAGNETO] = function (e) {
+                  return {
+                    A: 1,
+                    B:
+                      1.03 +
+                      0.01 *
+                        e.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                          r.PICOMETRE_TRANSISTORS
+                        ),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Qs[l.GRAPHENE] = function (e) {
+                  return {
+                    A: 1,
+                    B:
+                      1.03 +
+                      0.01 *
+                        e.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                          r.PICOMETRE_TRANSISTORS
+                        ),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Qs[l.DM_BLOCK] = function (e) {
+                  return {
+                    A: 1,
+                    B:
+                      1.03 +
+                      0.01 *
+                        e.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                          r.PICOMETRE_TRANSISTORS
+                        ),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Qs[l.PRESSED_BLOCK] = function (e) {
+                  return {
+                    A: 1,
+                    B:
+                      1.03 +
+                      0.01 *
+                        e.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                          r.PICOMETRE_TRANSISTORS
+                        ),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (Qs[l.AI_CORE] = function (e) {
+                  return {
+                    A: 1,
+                    B:
+                      1.03 +
+                      0.01 *
+                        e.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                          r.PICOMETRE_TRANSISTORS
+                        ),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 Qs),
+              getStorage: {},
+              getEffectConsumption:
+                ((Js = {}),
+                (Js[U.RELIGION] = function (e) {
+                  return { A: 12, B: 0, type: i.LINEAR };
+                }),
+                (Js[U.AESTHETICS] = function (e) {
+                  return { A: 12, B: 0, type: i.LINEAR };
+                }),
+                Js),
             },
             {
               id: a.STRANGE_MATTER_VESSEL,
@@ -14603,55 +14792,55 @@
                 );
               },
               getCost:
-                ((Js = {}),
-                (Js[l.ROCKET_ENGINE] = function (e) {
-                  return {
-                    A: 1e7 * ld(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Js[l.PRESSED_BLOCK] = function (e) {
-                  return {
-                    A: 2e5 * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (Js[l.MAGNETO] = function (e) {
-                  return {
-                    A: 5e8 * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                Js),
-              getConsumption:
                 (($s = {}),
-                ($s[l.POWER] = function (e) {
-                  return { A: 2e4, B: 0, type: i.LINEAR };
+                ($s[l.ROCKET_ENGINE] = function (e) {
+                  return {
+                    A: 1e7 * pd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                ($s[l.PRESSED_BLOCK] = function (e) {
+                  return {
+                    A: 2e5 * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                ($s[l.MAGNETO] = function (e) {
+                  return {
+                    A: 5e8 * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 $s),
-              getGain: {},
-              getStorage:
+              getConsumption:
                 ((eu = {}),
-                (eu[l.STRANGE_MATTER] = function (e) {
-                  return { A: 50, B: 0, type: i.LINEAR };
+                (eu[l.POWER] = function (e) {
+                  return { A: 2e4, B: 0, type: i.LINEAR };
                 }),
                 eu),
-              getEffectGain: {},
-              getEffectConsumption:
+              getGain: {},
+              getStorage:
                 ((tu = {}),
-                (tu[U.RELIGION] = function (e) {
-                  return { A: 25, B: 0, type: i.LINEAR };
-                }),
-                (tu[U.SECURITY] = function (e) {
-                  return { A: 50, B: 0, type: i.LINEAR };
-                }),
-                (tu[U.HEALTHCARE] = function (e) {
+                (tu[l.STRANGE_MATTER] = function (e) {
                   return { A: 50, B: 0, type: i.LINEAR };
                 }),
                 tu),
+              getEffectGain: {},
+              getEffectConsumption:
+                ((nu = {}),
+                (nu[U.RELIGION] = function (e) {
+                  return { A: 25, B: 0, type: i.LINEAR };
+                }),
+                (nu[U.SECURITY] = function (e) {
+                  return { A: 50, B: 0, type: i.LINEAR };
+                }),
+                (nu[U.HEALTHCARE] = function (e) {
+                  return { A: 50, B: 0, type: i.LINEAR };
+                }),
+                nu),
             },
             {
               id: a.NEUTRON_CORE,
@@ -14667,25 +14856,25 @@
                 );
               },
               getCost:
-                ((nu = {}),
-                (nu[l.ROCKET_ENGINE] = function (e) {
+                ((iu = {}),
+                (iu[l.ROCKET_ENGINE] = function (e) {
                   return {
-                    A: 1e7 * ld(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 1e7 * pd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                (nu[l.PRESSED_BLOCK] = function (e) {
+                (iu[l.PRESSED_BLOCK] = function (e) {
                   return {
-                    A: 4e5 * sd(e),
-                    B: 1 + 0.5 * cd(e),
+                    A: 4e5 * ud(e),
+                    B: 1 + 0.5 * sd(e),
                     type: i.EXPONENTIAL,
                   };
                 }),
-                (nu[l.STRANGE_MATTER] = function (e) {
-                  return { A: 100, B: 1 + 0.5 * cd(e), type: i.EXPONENTIAL };
+                (iu[l.STRANGE_MATTER] = function (e) {
+                  return { A: 100, B: 1 + 0.5 * sd(e), type: i.EXPONENTIAL };
                 }),
-                nu),
+                iu),
               getConsumption: {},
               getGain: {},
               getStorage: {},
@@ -14705,37 +14894,37 @@
                 );
               },
               getCost:
-                ((iu = {}),
-                (iu[l.ROCKET_ENGINE] = function (e) {
-                  return {
-                    A: 5e7 * ld(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (iu[l.PRESSED_BLOCK] = function (e) {
-                  return {
-                    A: 4e6 * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (iu[l.STRANGE_MATTER] = function (e) {
-                  return { A: 250, B: 1 + 0.5 * cd(e), type: i.EXPONENTIAL };
-                }),
-                iu),
-              getConsumption:
                 ((ou = {}),
-                (ou[l.ANTIMATTER_FUEL] = function (e) {
-                  return { A: 0.5, B: 0, type: i.LINEAR };
+                (ou[l.ROCKET_ENGINE] = function (e) {
+                  return {
+                    A: 5e7 * pd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (ou[l.PRESSED_BLOCK] = function (e) {
+                  return {
+                    A: 4e6 * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (ou[l.STRANGE_MATTER] = function (e) {
+                  return { A: 250, B: 1 + 0.5 * sd(e), type: i.EXPONENTIAL };
                 }),
                 ou),
-              getGain:
+              getConsumption:
                 ((ru = {}),
-                (ru[l.POWER] = function (e) {
-                  return { A: 1e4, B: 0, type: i.LINEAR };
+                (ru[l.ANTIMATTER_FUEL] = function (e) {
+                  return { A: 0.5, B: 0, type: i.LINEAR };
                 }),
                 ru),
+              getGain:
+                ((au = {}),
+                (au[l.POWER] = function (e) {
+                  return { A: 1e4, B: 0, type: i.LINEAR };
+                }),
+                au),
               getStorage: {},
               getEffectGain: {},
             },
@@ -14755,53 +14944,53 @@
                 );
               },
               getCost:
-                ((au = {}),
-                (au[l.BRICK] = function (e) {
-                  return {
-                    A: 24e4 * Ed(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (au[l.MAGNETO] = function (e) {
-                  return {
-                    A: 1e4 * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (au[l.BEAM] = function (e) {
-                  return {
-                    A: 2e5 * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                au),
-              getConsumption:
                 ((cu = {}),
-                (cu[l.POWER] = function (e) {
-                  return { A: 400, B: 0, type: i.LINEAR };
+                (cu[l.BRICK] = function (e) {
+                  return {
+                    A: 24e4 * gd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
-                (cu[l.WATER] = function (e) {
-                  return { A: 10, B: 0, type: i.LINEAR };
+                (cu[l.MAGNETO] = function (e) {
+                  return {
+                    A: 1e4 * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (cu[l.BEAM] = function (e) {
+                  return {
+                    A: 2e5 * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 cu),
+              getConsumption:
+                ((su = {}),
+                (su[l.POWER] = function (e) {
+                  return { A: 400, B: 0, type: i.LINEAR };
+                }),
+                (su[l.WATER] = function (e) {
+                  return { A: 10, B: 0, type: i.LINEAR };
+                }),
+                su),
               getGain: {},
               getStorage: {},
               getGainMultiplier:
-                ((su = {}),
-                (su[l.MAGNETO] = function (e) {
+                ((uu = {}),
+                (uu[l.MAGNETO] = function (e) {
                   return { A: 1, B: 0.92, type: i.EXPONENTIAL };
                 }),
-                su),
+                uu),
               getEffectGain: {},
               getEffectMultiplier:
-                ((uu = {}),
-                (uu[U.AESTHETICS] = function (e) {
+                ((lu = {}),
+                (lu[U.AESTHETICS] = function (e) {
                   return { A: 1, B: 1.02, type: i.EXPONENTIAL };
                 }),
-                uu),
+                lu),
             },
             {
               id: a.MILITARY_BASE,
@@ -14818,52 +15007,52 @@
                 );
               },
               getCost:
-                ((lu = {}),
-                (lu[l.PLATE] = function (e) {
-                  return {
-                    A: 24e4 * Ed(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (lu[l.MAGNETO] = function (e) {
-                  return {
-                    A: 1e4 * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                (lu[l.RUBBER] = function (e) {
-                  return {
-                    A: 2e4 * pd(e) * sd(e),
-                    B: 1 + 0.5 * cd(e),
-                    type: i.EXPONENTIAL,
-                  };
-                }),
-                lu),
-              getConsumption:
                 ((pu = {}),
-                (pu[l.POWER] = function (e) {
-                  return { A: 400, B: 0, type: i.LINEAR };
+                (pu[l.PLATE] = function (e) {
+                  return {
+                    A: 24e4 * Ad(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (pu[l.MAGNETO] = function (e) {
+                  return {
+                    A: 1e4 * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
+                }),
+                (pu[l.RUBBER] = function (e) {
+                  return {
+                    A: 2e4 * dd(e) * ud(e),
+                    B: 1 + 0.5 * sd(e),
+                    type: i.EXPONENTIAL,
+                  };
                 }),
                 pu),
+              getConsumption:
+                ((du = {}),
+                (du[l.POWER] = function (e) {
+                  return { A: 400, B: 0, type: i.LINEAR };
+                }),
+                du),
               getGain: {},
               getStorage: {},
               getGainMultiplier:
-                ((du = {}),
-                (du[l.FUEL] = function (e) {
+                ((Eu = {}),
+                (Eu[l.FUEL] = function (e) {
                   return { A: 1, B: 0.92, type: i.EXPONENTIAL };
                 }),
-                du),
+                Eu),
               getEffectGain:
-                ((Eu = {}),
-                (Eu[U.SECURITY] = function (e) {
+                ((gu = {}),
+                (gu[U.SECURITY] = function (e) {
                   return { A: 30, B: 0, type: i.LINEAR };
                 }),
-                Eu),
+                gu),
             },
           ],
-          yd = function (e) {
+          Od = function (e) {
             var t,
               n,
               i,
@@ -14954,10 +15143,10 @@
                         id: "population",
                         label: "Population",
                         value:
-                          (2 === _h.laws.getLawSelected(G.COMFORT) ? 1 : 0) *
-                          _h.colony.colonists *
+                          (2 === xh.laws.getLawSelected(G.COMFORT) ? 1 : 0) *
+                          xh.colony.colonists *
                           0.05 *
-                          _h.colony.getSupplyUsageMultiplier(),
+                          xh.colony.getSupplyUsageMultiplier(),
                         category: "Population",
                       },
                     ],
@@ -14984,9 +15173,9 @@
                         label: "Population",
                         value:
                           0.005 *
-                          _h.colony.colonists *
-                          _h.colony.getSupplyUsageMultiplier() *
-                          Math.pow(3, _h.laws.getLawSelected(G.COMFORT)),
+                          xh.colony.colonists *
+                          xh.colony.getSupplyUsageMultiplier() *
+                          Math.pow(3, xh.laws.getLawSelected(G.COMFORT)),
                         category: "Population",
                       },
                     ],
@@ -15013,8 +15202,8 @@
                         label: "Population",
                         value:
                           0.1 *
-                          _h.colony.colonists *
-                          _h.colony.getSupplyUsageMultiplier(),
+                          xh.colony.colonists *
+                          xh.colony.getSupplyUsageMultiplier(),
                         category: "Buildings",
                       },
                     ],
@@ -15215,19 +15404,19 @@
                       : n.isCraftable;
                 (t = C[e].income.linear).push.apply(
                   t,
-                  _h.landingZone.landingZoneBuildings.getResourceBeingProduced(
+                  xh.landingZone.landingZoneBuildings.getResourceBeingProduced(
                     e
                   )
                 ),
                   (l = C[e].income.multiplier).push.apply(
                     l,
-                    _h.landingZone.landingZoneBuildings.getResourceMultiplier(e)
+                    xh.landingZone.landingZoneBuildings.getResourceMultiplier(e)
                   ),
                   null === (i = C[e].income.consumption) ||
                     void 0 === i ||
                     i.push.apply(
                       i,
-                      _h.landingZone.landingZoneBuildings.getResourceBeingConsumed(
+                      xh.landingZone.landingZoneBuildings.getResourceBeingConsumed(
                         e
                       )
                     ),
@@ -15235,7 +15424,7 @@
                     void 0 === o ||
                     o.push.apply(
                       o,
-                      _h.landingZone.landingZoneBuildings.getResourceBeingStored(
+                      xh.landingZone.landingZoneBuildings.getResourceBeingStored(
                         e
                       )
                     ),
@@ -15243,183 +15432,183 @@
                     void 0 === r ||
                     r.push.apply(
                       r,
-                      _h.landingZone.landingZoneBuildings.getStorageMultiplier(
+                      xh.landingZone.landingZoneBuildings.getStorageMultiplier(
                         e
                       )
                     ),
                   (v = C[e].income.linear).push.apply(
                     v,
-                    _h.landingZone.landingZoneUpgrades.getGain(e)
+                    xh.landingZone.landingZoneUpgrades.getGain(e)
                   ),
                   (S = C[e].income.multiplier).push.apply(
                     S,
-                    _h.landingZone.landingZoneUpgrades.getGainMultiplier(e)
+                    xh.landingZone.landingZoneUpgrades.getGainMultiplier(e)
                   ),
                   null === (a = C[e].max.linear) ||
                     void 0 === a ||
                     a.push.apply(
                       a,
-                      _h.landingZone.landingZoneUpgrades.getCapacity(e)
+                      xh.landingZone.landingZoneUpgrades.getCapacity(e)
                     ),
                   null === (c = C[e].max.multiplier) ||
                     void 0 === c ||
                     c.push.apply(
                       c,
-                      _h.landingZone.landingZoneUpgrades.getCapacityMult(e)
+                      xh.landingZone.landingZoneUpgrades.getCapacityMult(e)
                     ),
                   (P = C[e].income.linear).push.apply(
                     P,
-                    _h.achievements.getResourceBeingProduced(e)
+                    xh.achievements.getResourceBeingProduced(e)
                   ),
                   (B = C[e].income.multiplier).push.apply(
                     B,
-                    _h.achievements.getResourceMultiplier(e)
+                    xh.achievements.getResourceMultiplier(e)
                   ),
                   null === (s = C[e].max.linear) ||
                     void 0 === s ||
-                    s.push.apply(s, _h.achievements.getResourceBeingStored(e)),
+                    s.push.apply(s, xh.achievements.getResourceBeingStored(e)),
                   null === (u = C[e].max.multiplier) ||
                     void 0 === u ||
                     u.push.apply(
                       u,
-                      _h.achievements.getResourceStorageMultiplier(e)
+                      xh.achievements.getResourceStorageMultiplier(e)
                     ),
                   F &&
                     ((M = C[e].income.multiplier).push.apply(
                       M,
-                      _h.landingZone.landingZoneBuildings.getCraftingMultiplier()
+                      xh.landingZone.landingZoneBuildings.getCraftingMultiplier()
                     ),
                     (_ = C[e].income.multiplier).push.apply(
                       _,
-                      _h.landingZone.landingZoneUpgrades.getCraftingMultiplier()
+                      xh.landingZone.landingZoneUpgrades.getCraftingMultiplier()
                     ),
                     null === (p = C[e].max.multiplier) ||
                       void 0 === p ||
                       p.push.apply(
                         p,
-                        _h.environment.ongoingEffects.getCraftingMultiplier()
+                        xh.environment.ongoingEffects.getCraftingMultiplier()
                       ),
                     (U = C[e].income.multiplier).push.apply(
                       U,
-                      _h.laws.getCraftingMultiplier()
+                      xh.laws.getCraftingMultiplier()
                     ),
                     (b = C[e].income.multiplier).push.apply(
                       b,
-                      _h.achievements.getCraftingMultiplier()
+                      xh.achievements.getCraftingMultiplier()
                     ),
                     (G = C[e].income.multiplier).push.apply(
                       G,
-                      _h.colony.colonyJobs.getCraftingMultiplier()
+                      xh.colony.colonyJobs.getCraftingMultiplier()
                     )),
                   (D = C[e].income.linear).push.apply(
                     D,
-                    _h.colony.colonyJobs.getResourceBeingProduced(e)
+                    xh.colony.colonyJobs.getResourceBeingProduced(e)
                   ),
                   null === (d = C[e].income.consumption) ||
                     void 0 === d ||
                     d.push.apply(
                       d,
-                      _h.colony.colonyJobs.getResourceBeingConsumed(e)
+                      xh.colony.colonyJobs.getResourceBeingConsumed(e)
                     ),
                   null === (E = C[e].income.multiplier) ||
                     void 0 === E ||
                     E.push.apply(
                       E,
-                      _h.colony.colonyJobs.getResourceBeingMultiplied(e)
+                      xh.colony.colonyJobs.getResourceBeingMultiplied(e)
                     ),
                   (X = C[e].income.linear).push.apply(
                     X,
-                    _h.crafting.craftingJobs.getResourceBeingProduced(e)
+                    xh.crafting.craftingJobs.getResourceBeingProduced(e)
                   ),
                   null === (g = C[e].income.consumption) ||
                     void 0 === g ||
                     g.push.apply(
                       g,
-                      _h.crafting.craftingJobs.getResourceBeingConsumed(e)
+                      xh.crafting.craftingJobs.getResourceBeingConsumed(e)
                     ),
                   (x = C[e].income.linear).push.apply(
                     x,
-                    _h.laws.getResourceBeingProduced(e)
+                    xh.laws.getResourceBeingProduced(e)
                   ),
                   (k = C[e].income.multiplier).push.apply(
                     k,
-                    _h.laws.getResourceMultiplier(e)
+                    xh.laws.getResourceMultiplier(e)
                   ),
                   null === (f = C[e].income.consumption) ||
                     void 0 === f ||
-                    f.push.apply(f, _h.laws.getResourceBeingConsumed(e)),
+                    f.push.apply(f, xh.laws.getResourceBeingConsumed(e)),
                   null === (A = C[e].max.linear) ||
                     void 0 === A ||
-                    A.push.apply(A, _h.laws.getResourceBeingStored(e)),
+                    A.push.apply(A, xh.laws.getResourceBeingStored(e)),
                   (H = C[e].income.linear).push.apply(
                     H,
-                    _h.prestige.transmitKnowledge.getResourceBeingProduced(e)
+                    xh.prestige.transmitKnowledge.getResourceBeingProduced(e)
                   ),
                   (Y = C[e].income.multiplier).push.apply(
                     Y,
-                    _h.prestige.transmitKnowledge.getResourceMultiplier(e)
+                    xh.prestige.transmitKnowledge.getResourceMultiplier(e)
                   ),
                   null === (m = C[e].max.linear) ||
                     void 0 === m ||
                     m.push.apply(
                       m,
-                      _h.prestige.transmitKnowledge.getResourceBeingStored(e)
+                      xh.prestige.transmitKnowledge.getResourceBeingStored(e)
                     ),
                   null === (N = C[e].max.multiplier) ||
                     void 0 === N ||
                     N.push.apply(
                       N,
-                      _h.prestige.transmitKnowledge.getCapacityMult(e)
+                      xh.prestige.transmitKnowledge.getCapacityMult(e)
                     ),
                   null === (h = C[e].income.multiplier) ||
                     void 0 === h ||
                     h.push.apply(
                       h,
-                      _h.prestige.colonizePlanet.getResourceMultiplier(e)
+                      xh.prestige.colonizePlanet.getResourceMultiplier(e)
                     ),
                   null === (I = C[e].max.multiplier) ||
                     void 0 === I ||
                     I.push.apply(
                       I,
-                      _h.prestige.colonizePlanet.getCapacityMultiplier(e)
+                      xh.prestige.colonizePlanet.getCapacityMultiplier(e)
                     ),
                   null === (R = C[e].income.multiplier) ||
                     void 0 === R ||
                     R.push.apply(
                       R,
-                      _h.environment.climate.getResourceMultiplier(e)
+                      xh.environment.climate.getResourceMultiplier(e)
                     ),
                   null === (T = C[e].income.multiplier) ||
                     void 0 === T ||
                     T.push.apply(
                       T,
-                      _h.prestige.colonizePlanet.getResourceUpgradeMultiplier(e)
+                      xh.prestige.colonizePlanet.getResourceUpgradeMultiplier(e)
                     ),
                   null === (y = C[e].max.multiplier) ||
                     void 0 === y ||
                     y.push.apply(
                       y,
-                      _h.resourceEffect.getResourceCapMultiplier(e)
+                      xh.resourceEffect.getResourceCapMultiplier(e)
                     ),
                   (W = C[e].income.linear).push.apply(
                     W,
-                    _h.environment.ongoingEffects.getResourceBeingProduced(e)
+                    xh.environment.ongoingEffects.getResourceBeingProduced(e)
                   ),
                   (Z = C[e].income.multiplier).push.apply(
                     Z,
-                    _h.environment.ongoingEffects.getResourceMultiplier(e)
+                    xh.environment.ongoingEffects.getResourceMultiplier(e)
                   ),
                   null === (O = C[e].income.consumption) ||
                     void 0 === O ||
                     O.push.apply(
                       O,
-                      _h.environment.ongoingEffects.getResourceBeingConsumed(e)
+                      xh.environment.ongoingEffects.getResourceBeingConsumed(e)
                     ),
                   null === (L = C[e].max.multiplier) ||
                     void 0 === L ||
                     L.push.apply(
                       L,
-                      _h.environment.ongoingEffects.getResourceStoreMultiplier(
+                      xh.environment.ongoingEffects.getResourceStoreMultiplier(
                         e
                       )
                     );
@@ -15427,9 +15616,9 @@
             for (var S in C) v(S);
             return C;
           },
-          Od = function () {
+          Ld = function () {
             return (
-              (Od =
+              (Ld =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -15438,10 +15627,10 @@
                         (e[o] = t[o]);
                   return e;
                 }),
-              Od.apply(this, arguments)
+              Ld.apply(this, arguments)
             );
           },
-          Ld = (function () {
+          Cd = (function () {
             function e() {
               (this.cachedBreakdown = {}),
                 (this.cachedShortenedBreakdown = {}),
@@ -15466,7 +15655,7 @@
                     return (
                       e[t.category]
                         ? (e[t.category].value += t.value)
-                        : (e[t.category] = Od({}, t)),
+                        : (e[t.category] = Ld({}, t)),
                       e
                     );
                   }, {}),
@@ -15474,7 +15663,7 @@
                     return (
                       e[t.category]
                         ? (e[t.category].value *= t.value)
-                        : (e[t.category] = Od({}, t)),
+                        : (e[t.category] = Ld({}, t)),
                       e
                     );
                   }, {}),
@@ -15485,20 +15674,20 @@
                           return (
                             e[t.category]
                               ? (e[t.category].value += t.value)
-                              : (e[t.category] = Od({}, t)),
+                              : (e[t.category] = Ld({}, t)),
                             e
                           );
                         }, {});
                 return {
                   linear: Object.values(n).map(function (e) {
-                    return Od(Od({}, e), { label: e.category });
+                    return Ld(Ld({}, e), { label: e.category });
                   }),
                   multiplier: Object.values(i).map(function (e) {
-                    return Od(Od({}, e), { label: e.category });
+                    return Ld(Ld({}, e), { label: e.category });
                   }),
                   consumption: o
                     ? Object.values(o).map(function (e) {
-                        return Od(Od({}, e), { label: e.category });
+                        return Ld(Ld({}, e), { label: e.category });
                       })
                     : void 0,
                 };
@@ -15619,13 +15808,13 @@
               }),
               (e.prototype.saveBalances = function () {
                 var t = this;
-                _h.colony.colonyEffects.getBreakdowns();
-                var n = yd(),
+                xh.colony.colonyEffects.getBreakdowns();
+                var n = Od(),
                   i = {},
                   o = {};
                 w.forEach(function (r) {
                   var a, c, s, u, p, d, E, g, f, A, m, N, h;
-                  if (r.unlockCondition(_h)) {
+                  if (r.unlockCondition(xh)) {
                     (i[r.id] = {
                       max: { income: [], multiplier: [], consumption: [] },
                       income: { income: [], multiplier: [], consumption: [] },
@@ -15650,7 +15839,7 @@
                         return t.value - e.value;
                       })
                       .map(function (e) {
-                        return Od(Od({}, e), {
+                        return Ld(Ld({}, e), {
                           value: "+".concat(F(e.value, 4)),
                         });
                       })),
@@ -15659,7 +15848,7 @@
                           return e.value;
                         })
                         .map(function (e) {
-                          return Od(Od({}, e), {
+                          return Ld(Ld({}, e), {
                             value: "+".concat(F(e.value, 4)),
                           });
                         })),
@@ -15671,7 +15860,7 @@
                           return t.value - e.value;
                         })
                         .map(function (e) {
-                          return Od(Od({}, e), {
+                          return Ld(Ld({}, e), {
                             value: "x".concat(F(e.value, 4)),
                           });
                         })),
@@ -15680,7 +15869,7 @@
                           return 1 !== e.value;
                         })
                         .map(function (e) {
-                          return Od(Od({}, e), {
+                          return Ld(Ld({}, e), {
                             value: "x".concat(F(e.value, 4)),
                           });
                         })),
@@ -15728,7 +15917,7 @@
                             return t.value - e.value;
                           })
                           .map(function (e) {
-                            return Od(Od({}, e), {
+                            return Ld(Ld({}, e), {
                               value: "+".concat(F(e.value, 4)),
                             });
                           })),
@@ -15739,7 +15928,7 @@
                             return e.value;
                           })
                           .map(function (e) {
-                            return Od(Od({}, e), {
+                            return Ld(Ld({}, e), {
                               value: "+".concat(F(e.value, 4)),
                             });
                           })),
@@ -15753,7 +15942,7 @@
                             return t.value - e.value;
                           })
                           .map(function (e) {
-                            return Od(Od({}, e), {
+                            return Ld(Ld({}, e), {
                               value: "x".concat(F(e.value, 4)),
                             });
                           })),
@@ -15764,7 +15953,7 @@
                             return 1 !== e.value;
                           })
                           .map(function (e) {
-                            return Od(Od({}, e), {
+                            return Ld(Ld({}, e), {
                               value: "x".concat(F(e.value, 4)),
                             });
                           })),
@@ -15778,7 +15967,7 @@
                             return t.value - e.value;
                           })
                           .map(function (e) {
-                            return Od(Od({}, e), {
+                            return Ld(Ld({}, e), {
                               value: "-".concat(F(e.value, 4)),
                             });
                           })),
@@ -15792,7 +15981,7 @@
                                   return e.value;
                                 })
                                 .map(function (e) {
-                                  return Od(Od({}, e), {
+                                  return Ld(Ld({}, e), {
                                     value: "-".concat(F(e.value, 4)),
                                   });
                                 }));
@@ -15872,14 +16061,14 @@
               }),
               (e.prototype.resetEfficiency = function () {
                 (e.lackEfficiencyResources = {}),
-                  _h.landingZone.landingZoneBuildings.resetEfficiency(),
-                  _h.crafting.craftingJobs.resetEfficiency();
+                  xh.landingZone.landingZoneBuildings.resetEfficiency(),
+                  xh.crafting.craftingJobs.resetEfficiency();
               }),
               (e.prototype.assertBalances = function (t) {
                 var n;
                 void 0 === t && (t = !1),
-                  _h.colony.colonyEffects.getBreakdowns();
-                var i = yd(),
+                  xh.colony.colonyEffects.getBreakdowns();
+                var i = Od(),
                   o = {};
                 for (var r in i) {
                   var a = i[r].income.linear.reduce(function (e, t) {
@@ -15925,14 +16114,14 @@
                     ? (e.lackEfficiencyResources[i] *= t[i])
                     : (e.lackEfficiencyResources[i] = t[i]);
                 }
-                e.lackEfficiencyResourcesCached = Od(
+                e.lackEfficiencyResourcesCached = Ld(
                   {},
                   e.lackEfficiencyResources
                 );
               }),
               (e.prototype.applyEfficiencies = function () {
-                _h.landingZone.landingZoneBuildings.adaptEfficiency(),
-                  _h.crafting.craftingJobs.adaptEfficiency();
+                xh.landingZone.landingZoneBuildings.adaptEfficiency(),
+                  xh.crafting.craftingJobs.adaptEfficiency();
               }),
               (e.prototype.assertAndApplyBalances = function () {
                 var t = this.assertBalances(),
@@ -15957,8 +16146,8 @@
                 this.resetEfficiency(),
                   this.assertAndApplyBalances(),
                   this.saveBalances(),
-                  (_h.statistics.stats.maxResearchCapReached = Math.max(
-                    _h.statistics.stats.maxResearchCapReached,
+                  (xh.statistics.stats.maxResearchCapReached = Math.max(
+                    xh.statistics.stats.maxResearchCapReached,
                     this.getResourceCap(l.RESEARCH)
                   ));
               }),
@@ -15982,7 +16171,7 @@
                   this.resourcesStatus.forEach(function (e) {
                     n.addResource(e.id, e.balance * t),
                       [l.ANTIMATTER, l.DARK_MATTER].includes(e.id) &&
-                        (_h.statistics.stats.exoticCollected += e.balance * t);
+                        (xh.statistics.stats.exoticCollected += e.balance * t);
                   });
               }),
               (e.prototype.getResource = function (e) {
@@ -16088,7 +16277,7 @@
                       name: t.name,
                       amount: F((null == o ? void 0 : o.amount) || 0),
                       balance: F((null == o ? void 0 : o.balance) || 0),
-                      isUnlocked: t.unlockCondition(_h),
+                      isUnlocked: t.unlockCondition(xh),
                       max: F((null == o ? void 0 : o.max) || 0),
                       toFullPercentage: (o && o.max > 0
                         ? o.amount / o.max
@@ -16118,7 +16307,7 @@
                       isCapped:
                         !!o &&
                         o.max > 0 &&
-                        o.max <= o.amount + 2 * _h.dT * o.balance,
+                        o.max <= o.amount + 2 * xh.dT * o.balance,
                     };
                   }),
                 };
@@ -16131,8 +16320,8 @@
               e
             );
           })(),
-          Cd = Ld.getInstance(),
-          vd = (function () {
+          vd = Cd.getInstance(),
+          Sd = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -16166,9 +16355,9 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          Sd = function () {
+          Pd = function () {
             return (
-              (Sd =
+              (Pd =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -16177,10 +16366,10 @@
                         (e[o] = t[o]);
                   return e;
                 }),
-              Sd.apply(this, arguments)
+              Pd.apply(this, arguments)
             );
           },
-          Pd = (function (e) {
+          Bd = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -16204,10 +16393,10 @@
               );
             }
             return (
-              vd(t, e),
+              Sd(t, e),
               (t.prototype.regenerateCache = function () {
                 var e = this;
-                this.cachedBuildings = Td.map(function (t) {
+                this.cachedBuildings = yd.map(function (t) {
                   return e.processToUI(t);
                 });
               }),
@@ -16229,7 +16418,7 @@
                       return e.isUnlocked;
                     })
                     .map(function (n) {
-                      var i = Td.find(function (e) {
+                      var i = yd.find(function (e) {
                         return e.id === n.id;
                       });
                       if (!i) return n;
@@ -16247,9 +16436,9 @@
                         t.buildings.push(o));
                       var r = W.calcBatchAll(
                           i.getCost,
-                          Mh.getInstance(),
+                          Xh.getInstance(),
                           o.level,
-                          Mh.getInstance().resources.getBatchObject()
+                          Xh.getInstance().resources.getBatchObject()
                         ),
                         a =
                           (r.reduce(function (e, t) {
@@ -16265,27 +16454,27 @@
                       return (
                         (r = W.calcBatchAll(
                           i.getCost,
-                          Mh.getInstance(),
+                          Xh.getInstance(),
                           o.level,
-                          Mh.getInstance().resources.getBatchObject(),
+                          Xh.getInstance().resources.getBatchObject(),
                           Math.max(1, s)
                         )),
                         n.isUnlocked &&
                           o.level <= 0 &&
-                          _h.newNotifications.registerNotification(
+                          xh.newNotifications.registerNotification(
                             ""
                               .concat(t.getPreffix(i), ":building:")
                               .concat(i.category, ":")
                               .concat(i.id)
                           ),
-                        Sd(Sd({}, n), {
+                        Pd(Pd({}, n), {
                           bulk: s,
                           etaNum: a,
                           isAvailable: c >= 1,
-                          cost: Mh.getInstance().resources.assertEnought(
+                          cost: Xh.getInstance().resources.assertEnought(
                             r,
-                            Mh.getInstance().resources.getBatchObject(),
-                            Mh.getInstance().resources.getBatchBalanceObject()
+                            Xh.getInstance().resources.getBatchObject(),
+                            Xh.getInstance().resources.getBatchBalanceObject()
                           ),
                           progress: c < 1 ? (100 * c).toPrecision(3) : "100",
                         })
@@ -16328,7 +16517,7 @@
               (t.prototype.getAllCostReduction = function () {
                 return Math.pow(
                   0.95,
-                  Mh.getInstance().prestige.colonizePlanet.getUpgradeLevel(
+                  Xh.getInstance().prestige.colonizePlanet.getUpgradeLevel(
                     N.BUILDING_PRICES
                   )
                 );
@@ -16349,9 +16538,9 @@
                   this.buildings.push(i));
                 var o = W.calcBatchAll(
                     e.getCost,
-                    Mh.getInstance(),
+                    Xh.getInstance(),
                     i.level + t,
-                    Mh.getInstance().resources.getBatchObject()
+                    Xh.getInstance().resources.getBatchObject()
                   ),
                   r = o.reduce(function (e, t) {
                     return Math.min(e, t.max);
@@ -16364,45 +16553,45 @@
                   }, 0),
                   s = W.calcBatchAll(
                     e.getConsumption,
-                    Mh.getInstance(),
+                    Xh.getInstance(),
                     0,
-                    Mh.getInstance().resources.getBatchObject()
+                    Xh.getInstance().resources.getBatchObject()
                   ),
-                  u = W.calcBatch(e.getGain, Mh.getInstance(), 0),
+                  u = W.calcBatch(e.getGain, Xh.getInstance(), 0),
                   l = e.getStorage
-                    ? W.calcBatch(e.getStorage, Mh.getInstance(), 0)
+                    ? W.calcBatch(e.getStorage, Xh.getInstance(), 0)
                     : [],
                   p = e.getGainMultiplier
-                    ? W.calcBatch(e.getGainMultiplier, Mh.getInstance(), 1)
+                    ? W.calcBatch(e.getGainMultiplier, Xh.getInstance(), 1)
                     : [],
                   d = e.getStorageMultiplier
-                    ? W.calcBatch(e.getStorageMultiplier, Mh.getInstance(), 1)
+                    ? W.calcBatch(e.getStorageMultiplier, Xh.getInstance(), 1)
                     : [],
                   E = e.getEffectConsumption
                     ? W.calcBatchAll(
                         e.getEffectConsumption,
-                        Mh.getInstance(),
+                        Xh.getInstance(),
                         0,
-                        Mh.getInstance().resources.getBatchObject()
+                        Xh.getInstance().resources.getBatchObject()
                       )
                     : [],
                   g = e.getEffectGain
-                    ? W.calcBatch(e.getEffectGain, Mh.getInstance(), 0)
+                    ? W.calcBatch(e.getEffectGain, Xh.getInstance(), 0)
                     : [],
                   f = e.getEffectMultiplier
-                    ? W.calcBatch(e.getEffectMultiplier, Mh.getInstance(), 1)
+                    ? W.calcBatch(e.getEffectMultiplier, Xh.getInstance(), 1)
                     : [],
-                  A = e.unlockCondition(_h),
+                  A = e.unlockCondition(xh),
                   m = e.getCraftingMultiplier
-                    ? W.calculate(_h, e.getCraftingMultiplier, 1)
+                    ? W.calculate(xh, e.getCraftingMultiplier, 1)
                     : 1,
                   N = e.getMaxColonists
-                    ? W.calculate(_h, e.getMaxColonists, 1)
+                    ? W.calculate(xh, e.getMaxColonists, 1)
                     : 0;
                 return (
                   A &&
                     i.level <= 0 &&
-                    _h.newNotifications.registerNotification(
+                    xh.newNotifications.registerNotification(
                       ""
                         .concat(this.getPreffix(e), ":building:")
                         .concat(e.category, ":")
@@ -16414,10 +16603,10 @@
                     description: e.description,
                     isUnlocked: A,
                     isAvailable: r >= 1,
-                    cost: Mh.getInstance().resources.assertEnought(
+                    cost: Xh.getInstance().resources.assertEnought(
                       o,
-                      Mh.getInstance().resources.getBatchObject(),
-                      Mh.getInstance().resources.getBatchBalanceObject()
+                      Xh.getInstance().resources.getBatchObject(),
+                      Xh.getInstance().resources.getBatchBalanceObject()
                     ),
                     progress: r < 1 ? (100 * r).toPrecision(3) : "100",
                     consume: s
@@ -16425,7 +16614,7 @@
                         return e.amount;
                       })
                       .map(function (e) {
-                        return Sd(Sd({}, e), {
+                        return Pd(Pd({}, e), {
                           amountValue: e.amount,
                           amount: F(e.amount),
                         });
@@ -16435,7 +16624,7 @@
                         return e.amount;
                       })
                       .map(function (e) {
-                        return Sd(Sd({}, e), {
+                        return Pd(Pd({}, e), {
                           amountValue: e.amount,
                           amount: F(e.amount),
                         });
@@ -16445,7 +16634,7 @@
                         return e.amount && 1 !== e.amount;
                       })
                       .map(function (e) {
-                        return Sd(Sd({}, e), {
+                        return Pd(Pd({}, e), {
                           amountValue: e.amount,
                           amount: "x".concat(F(e.amount)),
                         });
@@ -16455,7 +16644,7 @@
                         return e.amount && 1 !== e.amount;
                       })
                       .map(function (e) {
-                        return Sd(Sd({}, e), {
+                        return Pd(Pd({}, e), {
                           amountValue: e.amount,
                           amount: "x".concat(F(e.amount)),
                         });
@@ -16465,7 +16654,7 @@
                         return e.amount && 1 !== e.amount;
                       })
                       .map(function (e) {
-                        return Sd(Sd({}, e), {
+                        return Pd(Pd({}, e), {
                           amountValue: e.amount,
                           amount: "x".concat(F(e.amount, 4)),
                         });
@@ -16473,7 +16662,7 @@
                     consumeEffect: E.filter(function (e) {
                       return e.amount;
                     }).map(function (e) {
-                      return Sd(Sd({}, e), {
+                      return Pd(Pd({}, e), {
                         amountValue: e.amount,
                         amount: F(e.amount),
                       });
@@ -16483,7 +16672,7 @@
                         return e.amount;
                       })
                       .map(function (e) {
-                        return Sd(Sd({}, e), {
+                        return Pd(Pd({}, e), {
                           amountValue: e.amount,
                           amount: F(e.amount),
                         });
@@ -16493,7 +16682,7 @@
                         return e.amount;
                       })
                       .map(function (e) {
-                        return Sd(Sd({}, e), {
+                        return Pd(Pd({}, e), {
                           amountValue: e.amount,
                           amount: F(e.amount),
                         });
@@ -16528,11 +16717,11 @@
                     t,
                     this.buildings[n].level
                   )),
-                  _h.resources.reassertBalances(),
-                  _h.regenerateCache());
+                  xh.resources.reassertBalances(),
+                  xh.regenerateCache());
               }),
               (t.prototype.doBuild = function (e) {
-                var t = Td.find(function (t) {
+                var t = yd.find(function (t) {
                   return t.id === e;
                 });
                 if (t) {
@@ -16550,9 +16739,9 @@
                     }));
                   var i = W.calcBatchAll(
                       t.getCost,
-                      Mh.getInstance(),
+                      Xh.getInstance(),
                       this.buildings[n].level,
-                      Mh.getInstance().resources.getBatchObject()
+                      Xh.getInstance().resources.getBatchObject()
                     ),
                     o = i.reduce(function (e, t) {
                       return Math.min(e, Math.floor(t.max));
@@ -16562,19 +16751,19 @@
                     return (
                       (i = W.calcBatchAll(
                         t.getCost,
-                        Mh.getInstance(),
+                        Xh.getInstance(),
                         this.buildings[n].level,
-                        Mh.getInstance().resources.getBatchObject(),
+                        Xh.getInstance().resources.getBatchObject(),
                         r
                       )),
                       (this.buildings[n].level += r),
-                      (t.getMaxColonists && _h.settings.disableResidental) ||
+                      (t.getMaxColonists && xh.settings.disableResidental) ||
                         (this.buildings[n].activeAmount += r),
                       console.log("costs: ", i),
-                      Mh.getInstance().resources.subtractResourceBatch(i),
-                      _h.resources.reassertBalances(),
-                      _h.regenerateCache(),
-                      Mh.getInstance().eventLog.registerBuilding(
+                      Xh.getInstance().resources.subtractResourceBatch(i),
+                      xh.resources.reassertBalances(),
+                      xh.regenerateCache(),
+                      Xh.getInstance().eventLog.registerBuilding(
                         t.name,
                         i,
                         this.buildings[n].level
@@ -16585,7 +16774,7 @@
                 }
               }),
               (t.prototype.getEffectGain = function (e) {
-                var t = Td.filter(function (t) {
+                var t = yd.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getEffectGain) || void 0 === n
                       ? void 0
@@ -16605,7 +16794,7 @@
                         : o[e])
                     ) {
                       var a =
-                        W.calculate(_h, r.getEffectGain[e], 0, i.activeAmount) *
+                        W.calculate(xh, r.getEffectGain[e], 0, i.activeAmount) *
                         i.efficiency;
                       n.push({
                         label: "Building: ".concat(r.name),
@@ -16619,7 +16808,7 @@
                 );
               }),
               (t.prototype.getEffectMultiplier = function (e) {
-                var t = Td.filter(function (t) {
+                var t = yd.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getEffectMultiplier) ||
                     void 0 === n
@@ -16641,7 +16830,7 @@
                     ) {
                       var a =
                           W.calculate(
-                            _h,
+                            xh,
                             r.getEffectMultiplier[e],
                             i.activeAmount,
                             1
@@ -16660,7 +16849,7 @@
                 );
               }),
               (t.prototype.getEffectBeingConsumed = function (e) {
-                var t = Td.filter(function (t) {
+                var t = yd.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getEffectConsumption) ||
                     void 0 === n
@@ -16682,7 +16871,7 @@
                     ) {
                       var a =
                         W.calculate(
-                          _h,
+                          xh,
                           r.getEffectConsumption[e],
                           0,
                           i.activeAmount
@@ -16699,7 +16888,7 @@
                 );
               }),
               (t.prototype.getResourceBeingProduced = function (e) {
-                var t = Td.filter(function (t) {
+                var t = yd.filter(function (t) {
                     return !!t.getGain[e];
                   }),
                   n = [];
@@ -16710,7 +16899,7 @@
                     });
                     if (o) {
                       var r =
-                        W.calculate(_h, o.getGain[e], 0, i.activeAmount) *
+                        W.calculate(xh, o.getGain[e], 0, i.activeAmount) *
                         i.efficiency;
                       n.push({
                         label: "Building: ".concat(o.name),
@@ -16724,7 +16913,7 @@
                 );
               }),
               (t.prototype.getCraftingMultiplier = function () {
-                var e = Td.filter(function (e) {
+                var e = yd.filter(function (e) {
                     return !!e.getCraftingMultiplier;
                   }),
                   t = [];
@@ -16735,7 +16924,7 @@
                     });
                     if (i && i.getCraftingMultiplier) {
                       var o = W.calculate(
-                          _h,
+                          xh,
                           i.getCraftingMultiplier,
                           n.activeAmount,
                           1
@@ -16754,7 +16943,7 @@
                 );
               }),
               (t.prototype.getResourceMultiplier = function (e) {
-                var t = Td.filter(function (t) {
+                var t = yd.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getGainMultiplier) || void 0 === n
                       ? void 0
@@ -16774,7 +16963,7 @@
                         : o[e])
                     ) {
                       var a = W.calculate(
-                          _h,
+                          xh,
                           r.getGainMultiplier[e],
                           i.activeAmount,
                           1
@@ -16793,7 +16982,7 @@
                 );
               }),
               (t.prototype.getResourceBeingConsumed = function (e) {
-                var t = Td.filter(function (t) {
+                var t = yd.filter(function (t) {
                     return !!t.getConsumption[e];
                   }),
                   n = [];
@@ -16805,7 +16994,7 @@
                     if (o) {
                       var r =
                         W.calculate(
-                          _h,
+                          xh,
                           o.getConsumption[e],
                           0,
                           i.activeAmount
@@ -16822,7 +17011,7 @@
                 );
               }),
               (t.prototype.getResourceBeingStored = function (e) {
-                var t = Td.filter(function (t) {
+                var t = yd.filter(function (t) {
                     return !!t.getStorage[e];
                   }),
                   n = [];
@@ -16833,7 +17022,7 @@
                     });
                     if (o) {
                       var r =
-                        W.calculate(_h, o.getStorage[e], 0, i.activeAmount) *
+                        W.calculate(xh, o.getStorage[e], 0, i.activeAmount) *
                         i.efficiency;
                       n.push({
                         label: "Building: ".concat(o.name),
@@ -16847,7 +17036,7 @@
                 );
               }),
               (t.prototype.getStorageMultiplier = function (e) {
-                var t = Td.filter(function (t) {
+                var t = yd.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getStorageMultiplier) ||
                     void 0 === n
@@ -16868,7 +17057,7 @@
                         : o[e])
                     ) {
                       var a = W.calculate(
-                          _h,
+                          xh,
                           r.getStorageMultiplier[e],
                           i.activeAmount,
                           1
@@ -16887,7 +17076,7 @@
                 );
               }),
               (t.prototype.getColonistsCap = function () {
-                var e = Td.filter(function (e) {
+                var e = yd.filter(function (e) {
                     return !!e.getMaxColonists;
                   }),
                   t = [];
@@ -16898,7 +17087,7 @@
                     });
                     if (i && i.getMaxColonists) {
                       var o =
-                        W.calculate(_h, i.getMaxColonists, 0, n.activeAmount) *
+                        W.calculate(xh, i.getMaxColonists, 0, n.activeAmount) *
                         n.efficiency;
                       t.push({
                         label: "Building: ".concat(i.name),
@@ -16912,7 +17101,7 @@
                 );
               }),
               (t.prototype.getHappinessBonus = function () {
-                var e = Td.filter(function (e) {
+                var e = yd.filter(function (e) {
                     return !!e.getHappinessBonus;
                   }),
                   t = [];
@@ -16924,7 +17113,7 @@
                     if (i && i.getHappinessBonus) {
                       var o =
                         W.calculate(
-                          _h,
+                          xh,
                           i.getHappinessBonus,
                           0,
                           n.activeAmount
@@ -16956,10 +17145,10 @@
               }),
               (t.prototype.adaptEfficiency = function () {
                 var e = this,
-                  t = Ld.lackEfficiencyResources,
+                  t = Cd.lackEfficiencyResources,
                   n = Object.keys(t);
                 this.buildings.forEach(function (i, o) {
-                  var r = Td.find(function (e) {
+                  var r = yd.find(function (e) {
                     return e.id === i.id;
                   });
                   if (r) {
@@ -16970,7 +17159,7 @@
                     (e.buildings[o].efficiencyToUI = 1),
                       c.forEach(function (n) {
                         W.calculate(
-                          _h,
+                          xh,
                           r.getConsumption[n],
                           0,
                           i.activeAmount
@@ -16994,8 +17183,8 @@
               t
             );
           })(P),
-          Bd = Pd.getInstance(),
-          Md = (function () {
+          Md = Bd.getInstance(),
+          _d = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -17029,18 +17218,18 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          _d = (function (e) {
+          Ud = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
-                (t.landingZoneActions = ed),
-                (t.landingZoneUpgrades = ad),
-                (t.landingZoneBuildings = Bd),
+                (t.landingZoneActions = td),
+                (t.landingZoneUpgrades = cd),
+                (t.landingZoneBuildings = Md),
                 t
               );
             }
             return (
-              Md(t, e),
+              _d(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -17082,8 +17271,8 @@
               t
             );
           })(P).getInstance(),
-          Ud = [],
-          bd = (function () {
+          bd = [],
+          Gd = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -17117,13 +17306,13 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          Gd = (function (e) {
+          wd = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (t.milestonesState = []), t;
             }
             return (
-              bd(t, e),
+              Gd(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -17143,30 +17332,30 @@
               }),
               (t.prototype.process = function (e) {
                 var t = this;
-                Ud.filter(function (e) {
+                bd.filter(function (e) {
                   return !t.milestonesState.find(function (t) {
                     return t.id === e.id && t.isReached;
                   });
                 }).forEach(function (e) {
-                  e.unlockCondition(_h) &&
+                  e.unlockCondition(xh) &&
                     t.milestonesState.push({ id: e.id, isReached: !0 });
                 });
               }),
               t
             );
           })(P).getInstance(),
-          wd = function (e) {
+          Dd = function (e) {
             return e.colony.getColonistsHappiness();
           },
-          Dd = function (e) {
+          Xd = function (e) {
             return 1 === e.laws.getLawSelected(G.MASSMEDIA) ? 1.1 : 1;
           },
-          Xd = function (e) {
+          xd = function (e) {
             var t = e.laws.getLawSelected(G.CLEAR_CUTTING),
               n = 1;
             return 1 === t && (n *= 1.2), 2 === t && (n *= 0.8), n;
           },
-          xd = [
+          kd = [
             {
               id: _.QUARRYMAN,
               unlockCondition: function (e) {
@@ -17175,11 +17364,11 @@
               name: "Quarryman",
               description: "Works at the quarry to mine stone",
               getGain:
-                ((gu = {}),
-                (gu[l.STONE] = function (e) {
-                  return { A: 0.5 * wd(e) * Dd(e), B: 0, type: i.LINEAR };
+                ((fu = {}),
+                (fu[l.STONE] = function (e) {
+                  return { A: 0.5 * Dd(e) * Xd(e), B: 0, type: i.LINEAR };
                 }),
-                gu),
+                fu),
             },
             {
               id: _.MINER,
@@ -17189,23 +17378,23 @@
               name: "Miner",
               description: "Works at the mine to gather ore",
               getGain:
-                ((fu = {}),
-                (fu[l.ORE] = function (e) {
-                  return { A: 0.5 * wd(e) * Dd(e), B: 0, type: i.LINEAR };
+                ((Au = {}),
+                (Au[l.ORE] = function (e) {
+                  return { A: 0.5 * Dd(e) * Xd(e), B: 0, type: i.LINEAR };
                 }),
-                (fu[l.PLATINUM] = function (e) {
+                (Au[l.PLATINUM] = function (e) {
                   return {
                     A:
                       (e.landingZone.landingZoneUpgrades.getUpgradeLevel(
                         r.PLATINUM_MINING
                       )
                         ? 0.01
-                        : 0) * wd(e),
+                        : 0) * Dd(e),
                     B: 0,
                     type: i.LINEAR,
                   };
                 }),
-                fu),
+                Au),
             },
             {
               id: _.SCIENTIST,
@@ -17219,13 +17408,13 @@
               name: "Researcher",
               description: "Works at the lab to generate research",
               getGain:
-                ((Au = {}),
-                (Au[l.RESEARCH] = function (e) {
+                ((mu = {}),
+                (mu[l.RESEARCH] = function (e) {
                   return {
                     A:
                       0.04 *
-                      wd(e) *
                       Dd(e) *
+                      Xd(e) *
                       (1 +
                         0.02 *
                           e.laws.getLawSelected(G.RESEARCH_GRANTS) *
@@ -17248,7 +17437,7 @@
                     type: i.LINEAR,
                   };
                 }),
-                Au),
+                mu),
             },
             {
               id: _.FARMER,
@@ -17261,8 +17450,8 @@
               description:
                 "Tills the soil and plants crops to generate nutrition",
               getGain:
-                ((mu = {}),
-                (mu[l.NUTRITION] = function (e) {
+                ((Nu = {}),
+                (Nu[l.NUTRITION] = function (e) {
                   return {
                     A:
                       (0.15 +
@@ -17270,16 +17459,16 @@
                           e.landingZone.landingZoneUpgrades.getUpgradeLevel(
                             r.FERTILIZING
                           )) *
-                      wd(e) *
-                      Dd(e),
+                      Dd(e) *
+                      Xd(e),
                     B: 0,
                     type: i.LINEAR,
                   };
                 }),
-                mu),
+                Nu),
               getConsumption:
-                ((Nu = {}),
-                (Nu[l.BIOMASS] = function (e) {
+                ((hu = {}),
+                (hu[l.BIOMASS] = function (e) {
                   return {
                     A:
                       0.1 *
@@ -17290,7 +17479,7 @@
                     type: i.LINEAR,
                   };
                 }),
-                Nu),
+                hu),
             },
             {
               id: _.FORESTER,
@@ -17303,18 +17492,18 @@
               name: "Forester",
               description: "Maintains forests, plants and cuts wood",
               getGain:
-                ((hu = {}),
-                (hu[l.WOOD] = function (e) {
+                ((Iu = {}),
+                (Iu[l.WOOD] = function (e) {
                   return {
-                    A: 0.05 * wd(e) * Xd(e) * Dd(e),
+                    A: 0.05 * Dd(e) * xd(e) * Xd(e),
                     B: 0,
                     type: i.LINEAR,
                   };
                 }),
-                hu),
+                Iu),
               getConsumption:
-                ((Iu = {}),
-                (Iu[l.BIOMASS] = function (e) {
+                ((Ru = {}),
+                (Ru[l.BIOMASS] = function (e) {
                   return {
                     A:
                       0.1 *
@@ -17325,10 +17514,10 @@
                     type: i.LINEAR,
                   };
                 }),
-                Iu),
+                Ru),
               getEffectGain:
-                ((Ru = {}),
-                (Ru[U.AESTHETICS] = function (e) {
+                ((Tu = {}),
+                (Tu[U.AESTHETICS] = function (e) {
                   return {
                     A:
                       1 *
@@ -17337,10 +17526,10 @@
                     type: i.LINEAR,
                   };
                 }),
-                Ru),
+                Tu),
               getEffectConsumption:
-                ((Tu = {}),
-                (Tu[U.AESTHETICS] = function (e) {
+                ((yu = {}),
+                (yu[U.AESTHETICS] = function (e) {
                   return {
                     A:
                       1.5 *
@@ -17349,7 +17538,7 @@
                     type: i.LINEAR,
                   };
                 }),
-                Tu),
+                yu),
             },
             {
               id: _.ENERGIST,
@@ -17365,11 +17554,11 @@
                 "Repairs and optimizes power grid. Improves power generation, but increase maintenance of structures, which have negative effect on crafting efficiency",
               getGain: {},
               getMultiplier:
-                ((yu = {}),
-                (yu[l.POWER] = function (e) {
+                ((Ou = {}),
+                (Ou[l.POWER] = function (e) {
                   return { A: 0.02, B: 1, type: i.LINEAR };
                 }),
-                yu),
+                Ou),
               getCraftingMultiplier: function (e) {
                 return {
                   A: 1,
@@ -17397,8 +17586,8 @@
               description: "Patrols the colony and provides security",
               getGain: {},
               getConsumption:
-                ((Ou = {}),
-                (Ou[l.NUTRITION] = function (e) {
+                ((Lu = {}),
+                (Lu[l.NUTRITION] = function (e) {
                   return {
                     A:
                       1 === e.laws.getLawSelected(G.SECURITY_DOTATIONS)
@@ -17408,7 +17597,7 @@
                     type: i.LINEAR,
                   };
                 }),
-                (Ou[l.WATER] = function (e) {
+                (Lu[l.WATER] = function (e) {
                   return {
                     A:
                       1 === e.laws.getLawSelected(G.SECURITY_DOTATIONS)
@@ -17418,10 +17607,10 @@
                     type: i.LINEAR,
                   };
                 }),
-                Ou),
+                Lu),
               getEffectGain:
-                ((Lu = {}),
-                (Lu[U.SECURITY] = function (e) {
+                ((Cu = {}),
+                (Cu[U.SECURITY] = function (e) {
                   return {
                     A:
                       4 *
@@ -17436,13 +17625,13 @@
                           (1 === e.laws.getLawSelected(G.SECURITY_DOTATIONS)
                             ? 1
                             : 0)) *
-                      Dd(e) *
+                      Xd(e) *
                       (1 === e.laws.getLawSelected(G.LIGHTNING_MODE) ? 1.1 : 1),
                     B: 0,
                     type: i.LINEAR,
                   };
                 }),
-                Lu),
+                Cu),
             },
             {
               id: _.CLEANER,
@@ -17460,17 +17649,17 @@
               description: "Keeps things clean and shiny. Provides aesthetics",
               getGain: {},
               getConsumption:
-                ((Cu = {}),
-                (Cu[l.NUTRITION] = function (e) {
+                ((vu = {}),
+                (vu[l.NUTRITION] = function (e) {
                   return { A: 1, B: 0, type: i.LINEAR };
                 }),
-                (Cu[l.WATER] = function (e) {
+                (vu[l.WATER] = function (e) {
                   return { A: 0.1, B: 0, type: i.LINEAR };
                 }),
-                Cu),
+                vu),
               getEffectGain:
-                ((vu = {}),
-                (vu[U.AESTHETICS] = function (e) {
+                ((Su = {}),
+                (Su[U.AESTHETICS] = function (e) {
                   return {
                     A:
                       6 +
@@ -17482,7 +17671,7 @@
                     type: i.LINEAR,
                   };
                 }),
-                vu),
+                Su),
             },
             {
               id: _.LABOUR,
@@ -17511,7 +17700,7 @@
               getConsumption: {},
             },
           ],
-          kd = (function () {
+          Hd = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -17545,9 +17734,9 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          Hd = function () {
+          Yd = function () {
             return (
-              (Hd =
+              (Yd =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -17556,10 +17745,10 @@
                         (e[o] = t[o]);
                   return e;
                 }),
-              Hd.apply(this, arguments)
+              Yd.apply(this, arguments)
             );
           },
-          Yd = (function (e) {
+          Wd = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -17573,7 +17762,7 @@
               );
             }
             return (
-              kd(t, e),
+              Hd(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -17586,7 +17775,7 @@
               (t.prototype.dataToUI = function () {
                 var e = this;
                 return {
-                  list: xd.map(function (t) {
+                  list: kd.map(function (t) {
                     return e.processToUI(t);
                   }),
                   freeWorkers: this.freeWorkers,
@@ -17632,42 +17821,42 @@
                 var n = e.getConsumption
                     ? W.calcBatchAll(
                         e.getConsumption,
-                        Mh.getInstance(),
+                        Xh.getInstance(),
                         0,
-                        Mh.getInstance().resources.getBatchObject()
+                        Xh.getInstance().resources.getBatchObject()
                       )
                     : [],
                   i = e.getGain
-                    ? W.calcBatch(e.getGain, Mh.getInstance(), 0)
+                    ? W.calcBatch(e.getGain, Xh.getInstance(), 0)
                     : [],
                   o = e.getMultiplier
-                    ? W.calcBatch(e.getMultiplier, Mh.getInstance(), 0)
+                    ? W.calcBatch(e.getMultiplier, Xh.getInstance(), 0)
                     : [],
                   a = e.getEffectConsumption
                     ? W.calcBatchAll(
                         e.getEffectConsumption,
-                        Mh.getInstance(),
+                        Xh.getInstance(),
                         0,
-                        Mh.getInstance().resources.getBatchObject()
+                        Xh.getInstance().resources.getBatchObject()
                       )
                     : [],
                   c = e.getEffectGain
-                    ? W.calcBatch(e.getEffectGain, Mh.getInstance(), 0)
+                    ? W.calcBatch(e.getEffectGain, Xh.getInstance(), 0)
                     : [],
                   s = e.getCraftingMultiplier
-                    ? W.calculate(_h, e.getCraftingMultiplier, 1)
+                    ? W.calculate(xh, e.getCraftingMultiplier, 1)
                     : 1,
-                  u = e.unlockCondition(_h);
+                  u = e.unlockCondition(xh);
                 return (
                   u &&
-                    _h.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                    xh.landingZone.landingZoneUpgrades.getUpgradeLevel(
                       r.DOCKING_MODULE
                     ) > 0 &&
                     (t.amount > 0 &&
-                      _h.newNotifications.setViewed(
+                      xh.newNotifications.setViewed(
                         "planet:colony:jobs:".concat(e.id)
                       ),
-                    _h.newNotifications.registerNotification(
+                    xh.newNotifications.registerNotification(
                       "planet:colony:jobs:".concat(e.id)
                     )),
                   {
@@ -17680,7 +17869,7 @@
                         return e.amount;
                       })
                       .map(function (e) {
-                        return Hd(Hd({}, e), {
+                        return Yd(Yd({}, e), {
                           amountValue: e.amount,
                           amount: F(e.amount),
                         });
@@ -17690,7 +17879,7 @@
                         return e.amount;
                       })
                       .map(function (e) {
-                        return Hd(Hd({}, e), {
+                        return Yd(Yd({}, e), {
                           amountValue: e.amount,
                           amount: F(e.amount),
                         });
@@ -17700,7 +17889,7 @@
                         return e.amount;
                       })
                       .map(function (e) {
-                        return Hd(Hd({}, e), {
+                        return Yd(Yd({}, e), {
                           amountValue: e.amount,
                           amount: F(e.amount),
                         });
@@ -17710,7 +17899,7 @@
                         return e.amount;
                       })
                       .map(function (e) {
-                        return Hd(Hd({}, e), {
+                        return Yd(Yd({}, e), {
                           amountValue: e.amount,
                           amount: F(e.amount),
                         });
@@ -17720,7 +17909,7 @@
                         return e.amount;
                       })
                       .map(function (e) {
-                        return Hd(Hd({}, e), {
+                        return Yd(Yd({}, e), {
                           amountValue: e.amount,
                           amount: "x".concat(F(e.amount)),
                         });
@@ -17759,8 +17948,8 @@
                     Math.max(t, 0),
                     this.jobs[n].amount + i
                   )),
-                  _h.resources.reassertBalances(),
-                  _h.regenerateCache();
+                  xh.resources.reassertBalances(),
+                  xh.regenerateCache();
               }),
               (t.prototype.addAmount = function (e, t) {
                 t = Math.floor(t);
@@ -17781,8 +17970,8 @@
                     Math.max(i, 0),
                     this.jobs[n].amount + this.freeWorkers
                   )),
-                  _h.resources.reassertBalances(),
-                  _h.regenerateCache();
+                  xh.resources.reassertBalances(),
+                  xh.regenerateCache();
               }),
               (t.prototype.setLabour = function (e, t) {
                 t = Math.floor(t);
@@ -17802,8 +17991,8 @@
                     Math.max(t, 0),
                     this.jobs[n].labour + this.freeLabour
                   )),
-                  _h.resources.reassertBalances(),
-                  _h.regenerateCache();
+                  xh.resources.reassertBalances(),
+                  xh.regenerateCache();
               }),
               (t.prototype.addLabour = function (e, t) {
                 t = Math.floor(t);
@@ -17830,11 +18019,11 @@
                     this.jobs[n].labour,
                     this.freeLabour
                   ),
-                  _h.resources.reassertBalances(),
-                  _h.regenerateCache();
+                  xh.resources.reassertBalances(),
+                  xh.regenerateCache();
               }),
               (t.prototype.getEffectGain = function (e) {
-                var t = xd.filter(function (t) {
+                var t = kd.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getEffectGain) || void 0 === n
                       ? void 0
@@ -17855,7 +18044,7 @@
                     ) {
                       var a =
                         W.calculate(
-                          _h,
+                          xh,
                           r.getEffectGain[e],
                           0,
                           i.amount + (i.labour || 0)
@@ -17872,7 +18061,7 @@
                 );
               }),
               (t.prototype.getEffectMultiplier = function (e) {
-                var t = xd.filter(function (t) {
+                var t = kd.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getEffectMultiplier) ||
                     void 0 === n
@@ -17894,7 +18083,7 @@
                     ) {
                       var a =
                         W.calculate(
-                          _h,
+                          xh,
                           r.getEffectMultiplier[e],
                           i.amount + (i.labour || 0),
                           1
@@ -17912,7 +18101,7 @@
                 );
               }),
               (t.prototype.getEffectBeingConsumed = function (e) {
-                var t = xd.filter(function (t) {
+                var t = kd.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getEffectConsumption) ||
                     void 0 === n
@@ -17934,7 +18123,7 @@
                     ) {
                       var a =
                         W.calculate(
-                          _h,
+                          xh,
                           r.getEffectConsumption[e],
                           0,
                           i.amount + (i.labour || 0)
@@ -17951,11 +18140,11 @@
                 );
               }),
               (t.prototype.getResourceBeingProduced = function (e) {
-                var t = xd.filter(function (t) {
+                var t = kd.filter(function (t) {
                     return t.getGain && !!t.getGain[e];
                   }),
                   n = [],
-                  i = _h.colony.getColonistsHappiness();
+                  i = xh.colony.getColonistsHappiness();
                 return (
                   this.jobs.forEach(function (o) {
                     var r,
@@ -17968,7 +18157,7 @@
                     ) {
                       var c =
                         W.calculate(
-                          _h,
+                          xh,
                           a.getGain[e],
                           0,
                           o.amount + (o.labour || 0)
@@ -17987,7 +18176,7 @@
                 );
               }),
               (t.prototype.getResourceBeingConsumed = function (e) {
-                var t = xd.filter(function (t) {
+                var t = kd.filter(function (t) {
                     return t.getConsumption && !!t.getConsumption[e];
                   }),
                   n = [];
@@ -18005,7 +18194,7 @@
                     ) {
                       var a =
                         W.calculate(
-                          _h,
+                          xh,
                           r.getConsumption[e],
                           0,
                           i.amount + (i.labour || 0)
@@ -18022,7 +18211,7 @@
                 );
               }),
               (t.prototype.getResourceBeingMultiplied = function (e) {
-                var t = xd.filter(function (t) {
+                var t = kd.filter(function (t) {
                     return t.getMultiplier && !!t.getMultiplier[e];
                   }),
                   n = [];
@@ -18040,7 +18229,7 @@
                     ) {
                       var a =
                         W.calculate(
-                          _h,
+                          xh,
                           r.getMultiplier[e],
                           0,
                           i.amount + (i.labour || 0)
@@ -18057,7 +18246,7 @@
                 );
               }),
               (t.prototype.getCraftingMultiplier = function () {
-                var e = xd.filter(function (e) {
+                var e = kd.filter(function (e) {
                     return !!e.getCraftingMultiplier;
                   }),
                   t = [];
@@ -18068,7 +18257,7 @@
                     });
                     if (i && i.getCraftingMultiplier) {
                       var o = W.calculate(
-                          _h,
+                          xh,
                           i.getCraftingMultiplier,
                           n.amount,
                           1
@@ -18094,10 +18283,10 @@
               }),
               (t.prototype.adaptEfficiency = function () {
                 var e = this,
-                  t = Ld.lackEfficiencyResources,
+                  t = Cd.lackEfficiencyResources,
                   n = Object.keys(t);
                 this.jobs.forEach(function (i, o) {
-                  var r = xd.find(function (e) {
+                  var r = kd.find(function (e) {
                     return e.id === i.id;
                   });
                   if (r && r.getConsumption) {
@@ -18114,13 +18303,13 @@
                 });
               }),
               (t.prototype.process = function (e) {
-                var t = _h.colony.colonists - this.getBusyWorkers();
+                var t = xh.colony.colonists - this.getBusyWorkers();
                 if (t < 0) {
                   for (var n = this.jobs.length - 1; n >= 0; n--) {
                     var i = Math.min(this.jobs[n].amount, -t);
                     if (((this.jobs[n].amount -= i), (t += i) >= 0)) break;
                   }
-                  _h.resources.reassertBalances(), _h.regenerateCache();
+                  xh.resources.reassertBalances(), xh.regenerateCache();
                 }
                 this.freeWorkers = t;
                 var o = this.getFreeLabour();
@@ -18133,7 +18322,7 @@
                     !((o += i) >= 0));
                     n--
                   );
-                  _h.resources.reassertBalances(), _h.regenerateCache();
+                  xh.resources.reassertBalances(), xh.regenerateCache();
                 }
                 this.freeLabour = o;
               }),
@@ -18143,8 +18332,8 @@
               t
             );
           })(P),
-          Wd = Yd.getInstance(),
-          Zd = (function () {
+          Zd = Wd.getInstance(),
+          Fd = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -18178,9 +18367,9 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          Fd = function () {
+          jd = function () {
             return (
-              (Fd =
+              (jd =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -18189,10 +18378,10 @@
                         (e[o] = t[o]);
                   return e;
                 }),
-              Fd.apply(this, arguments)
+              jd.apply(this, arguments)
             );
           },
-          jd = (function (e) {
+          Vd = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -18204,7 +18393,7 @@
               );
             }
             return (
-              Zd(t, e),
+              Fd(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -18240,13 +18429,13 @@
                 return (
                   Math.pow(
                     0.98,
-                    _h.landingZone.landingZoneBuildings.getBuildingActiveLevel(
+                    xh.landingZone.landingZoneBuildings.getBuildingActiveLevel(
                       a.ADMINISTRATIVE_CENTER
                     )
                   ) *
                   Math.pow(
                     0.9,
-                    _h.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                    xh.landingZone.landingZoneUpgrades.getUpgradeLevel(
                       r.GORMONE_DELIVERY_NANOBOTS
                     )
                   )
@@ -18259,7 +18448,7 @@
                   });
                 if (null == n ? void 0 : n.getConsumption) {
                   var i =
-                    n.getConsumption(_h) * this.assertConsumptionMitigation();
+                    n.getConsumption(xh) * this.assertConsumptionMitigation();
                   t.push({
                     label: "Population",
                     value: i,
@@ -18279,7 +18468,7 @@
                   return t.id === e;
                 });
                 return (
-                  !!t && (this.happinessEffects[e] >= t.getMaximum(_h) || 0)
+                  !!t && (this.happinessEffects[e] >= t.getMaximum(xh) || 0)
                 );
               }),
               (t.prototype.isAllMaxed = function () {
@@ -18384,11 +18573,11 @@
                     for (var h in N)
                       (n = N[h].linear).push.apply(
                         n,
-                        _h.landingZone.landingZoneBuildings.getEffectGain(h)
+                        xh.landingZone.landingZoneBuildings.getEffectGain(h)
                       ),
                         (i = N[h].multiplier).push.apply(
                           i,
-                          _h.landingZone.landingZoneBuildings.getEffectMultiplier(
+                          xh.landingZone.landingZoneBuildings.getEffectMultiplier(
                             h
                           )
                         ),
@@ -18396,54 +18585,54 @@
                           void 0 === p ||
                           p.push.apply(
                             p,
-                            _h.landingZone.landingZoneBuildings.getEffectBeingConsumed(
+                            xh.landingZone.landingZoneBuildings.getEffectBeingConsumed(
                               h
                             )
                           ),
                         (o = N[h].linear).push.apply(
                           o,
-                          _h.colony.colonyJobs.getEffectGain(h)
+                          xh.colony.colonyJobs.getEffectGain(h)
                         ),
                         (r = N[h].multiplier).push.apply(
                           r,
-                          _h.colony.colonyJobs.getEffectMultiplier(h)
+                          xh.colony.colonyJobs.getEffectMultiplier(h)
                         ),
                         null === (d = N[h].consumption) ||
                           void 0 === d ||
                           d.push.apply(
                             d,
-                            _h.colony.colonyJobs.getEffectBeingConsumed(h)
+                            xh.colony.colonyJobs.getEffectBeingConsumed(h)
                           ),
                         null === (E = N[h].consumption) ||
                           void 0 === E ||
                           E.push.apply(
                             E,
-                            _h.crafting.craftingJobs.getEffectBeingConsumed(h)
+                            xh.crafting.craftingJobs.getEffectBeingConsumed(h)
                           ),
                         null === (g = N[h].consumption) ||
                           void 0 === g ||
                           g.push.apply(
                             g,
-                            _h.colony.colonyEffects.getEffectBeingConsumed(h)
+                            xh.colony.colonyEffects.getEffectBeingConsumed(h)
                           ),
                         (a = N[h].linear).push.apply(
                           a,
-                          _h.laws.getEffectGain(h)
+                          xh.laws.getEffectGain(h)
                         ),
                         (c = N[h].multiplier).push.apply(
                           c,
-                          _h.laws.getEffectMultiplier(h)
+                          xh.laws.getEffectMultiplier(h)
                         ),
                         null === (f = N[h].consumption) ||
                           void 0 === f ||
-                          f.push.apply(f, _h.laws.getEffectBeingConsumed(h)),
+                          f.push.apply(f, xh.laws.getEffectBeingConsumed(h)),
                         (s = N[h].multiplier).push.apply(
                           s,
-                          _h.prestige.colonizePlanet.getEffectMultiplier(h)
+                          xh.prestige.colonizePlanet.getEffectMultiplier(h)
                         ),
                         (u = N[h].multiplier).push.apply(
                           u,
-                          _h.environment.ongoingEffects.getHappinessMultiplier(
+                          xh.environment.ongoingEffects.getHappinessMultiplier(
                             h
                           )
                         ),
@@ -18451,21 +18640,21 @@
                           void 0 === A ||
                           A.push.apply(
                             A,
-                            _h.environment.ongoingEffects.getHappinessBonus(h)
+                            xh.environment.ongoingEffects.getHappinessBonus(h)
                           ),
                         (l = N[h].multiplier).push.apply(
                           l,
-                          _h.achievements.getEffectMultiplier(h)
+                          xh.achievements.getEffectMultiplier(h)
                         ),
                         null === (m = N[h].linear) ||
                           void 0 === m ||
-                          m.push.apply(m, _h.achievements.getEffectGain(h));
+                          m.push.apply(m, xh.achievements.getEffectGain(h));
                     return N;
                   })(),
                   n = {};
                 x.forEach(function (i) {
                   var o, r, a, c, s, u, l;
-                  if (i.unlockCondition(_h)) {
+                  if (i.unlockCondition(xh)) {
                     n[i.id] = { income: [], multiplier: [], consumption: [] };
                     var p =
                         null === (o = t[i.id].linear) || void 0 === o
@@ -18516,23 +18705,23 @@
                                 return e + t.value;
                               }, 0)) || 0;
                     (e.happinessEffects[i.id] = Math.min(
-                      i.getMaximum(_h),
+                      i.getMaximum(xh),
                       e.applyMinimumToEffect(p * d - E, i.minimum)
                     )),
                       (e.happinessEffectsWOEvents[i.id] = Math.min(
-                        i.getMaximum(_h),
+                        i.getMaximum(xh),
                         e.applyMinimumToEffect(g * f - A, i.minimum)
                       )),
                       (e.happinessEffectsExcess[i.id] = Math.max(
                         0,
-                        p * d - E - i.getMaximum(_h)
+                        p * d - E - i.getMaximum(xh)
                       )),
                       (n[i.id].income = t[i.id].linear
                         .filter(function (e) {
                           return e.value;
                         })
                         .map(function (e) {
-                          return Fd(Fd({}, e), {
+                          return jd(jd({}, e), {
                             value: "+".concat(e.value.toPrecision(4)),
                           });
                         })),
@@ -18541,7 +18730,7 @@
                           return 1 !== e.value;
                         })
                         .map(function (e) {
-                          return Fd(Fd({}, e), {
+                          return jd(jd({}, e), {
                             value: "x".concat(e.value.toPrecision(4)),
                           });
                         })),
@@ -18550,7 +18739,7 @@
                           return e.value;
                         })
                         .map(function (e) {
-                          return Fd(Fd({}, e), {
+                          return jd(jd({}, e), {
                             value: "-".concat(e.value.toPrecision(4)),
                           });
                         })),
@@ -18565,14 +18754,14 @@
                   (this.happinessBreakdowns = n);
               }),
               (t.prototype.processToUI = function (e) {
-                e.getConsumption && e.getConsumption(_h);
+                e.getConsumption && e.getConsumption(xh);
                 var t,
                   n,
                   i,
-                  o = e.unlockCondition(_h);
+                  o = e.unlockCondition(xh);
                 return (
                   o &&
-                    _h.newNotifications.registerNotification(
+                    xh.newNotifications.registerNotification(
                       "planet:colony:effects:".concat(e.id)
                     ),
                   {
@@ -18608,224 +18797,224 @@
               t
             );
           })(P),
-          Vd = jd.getInstance(),
-          Kd = [
+          Kd = Vd.getInstance(),
+          zd = [
             {
               id: l.BEAM,
               complexity: 100,
               getConsumption:
-                ((Su = {}),
-                (Su[l.WOOD] = function (e) {
+                ((Pu = {}),
+                (Pu[l.WOOD] = function (e) {
                   return { A: 0.25, B: 0, type: i.LINEAR };
                 }),
-                Su),
-              getGain:
-                ((Pu = {}),
-                (Pu[l.BEAM] = function (e) {
-                  return { A: 0.01 * wd(e) * Dd(e), B: 0, type: i.LINEAR };
-                }),
                 Pu),
+              getGain:
+                ((Bu = {}),
+                (Bu[l.BEAM] = function (e) {
+                  return { A: 0.01 * Dd(e) * Xd(e), B: 0, type: i.LINEAR };
+                }),
+                Bu),
             },
             {
               id: l.BRICK,
               complexity: 100,
               getConsumption:
-                ((Bu = {}),
-                (Bu[l.STONE] = function (e) {
+                ((Mu = {}),
+                (Mu[l.STONE] = function (e) {
                   return { A: 0.75, B: 0, type: i.LINEAR };
                 }),
-                Bu),
-              getGain:
-                ((Mu = {}),
-                (Mu[l.BRICK] = function (e) {
-                  return { A: 0.01 * wd(e) * Dd(e), B: 0, type: i.LINEAR };
-                }),
                 Mu),
+              getGain:
+                ((_u = {}),
+                (_u[l.BRICK] = function (e) {
+                  return { A: 0.01 * Dd(e) * Xd(e), B: 0, type: i.LINEAR };
+                }),
+                _u),
             },
             {
               id: l.PLATE,
               complexity: 100,
               getConsumption:
-                ((_u = {}),
-                (_u[l.IRON] = function (e) {
+                ((Uu = {}),
+                (Uu[l.IRON] = function (e) {
                   return { A: 0.1, B: 0, type: i.LINEAR };
                 }),
-                (_u[l.WOOD] = function (e) {
+                (Uu[l.WOOD] = function (e) {
                   return {
                     A: 0.2 * e.laws.getLawSelected(G.FURNACE_SMELTING),
                     B: 0,
                     type: i.LINEAR,
                   };
-                }),
-                _u),
-              getGain:
-                ((Uu = {}),
-                (Uu[l.PLATE] = function (e) {
-                  return { A: 0.002 * wd(e) * Dd(e), B: 0, type: i.LINEAR };
                 }),
                 Uu),
-              getEffectConsumption:
+              getGain:
                 ((bu = {}),
-                (bu[U.HEALTHCARE] = function (e) {
-                  return {
-                    A: 2 === e.laws.getLawSelected(G.FURNACE_SMELTING) ? 1 : 0,
-                    B: 0,
-                    type: i.LINEAR,
-                  };
-                }),
-                (bu[U.AESTHETICS] = function (e) {
-                  return {
-                    A: 2 === e.laws.getLawSelected(G.FURNACE_SMELTING) ? 1 : 0,
-                    B: 0,
-                    type: i.LINEAR,
-                  };
+                (bu[l.PLATE] = function (e) {
+                  return { A: 0.002 * Dd(e) * Xd(e), B: 0, type: i.LINEAR };
                 }),
                 bu),
-            },
-            {
-              id: l.WIRE,
-              complexity: 100,
-              getConsumption:
+              getEffectConsumption:
                 ((Gu = {}),
-                (Gu[l.IRON] = function (e) {
-                  return { A: 0.1, B: 0, type: i.LINEAR };
-                }),
-                (Gu[l.WOOD] = function (e) {
+                (Gu[U.HEALTHCARE] = function (e) {
                   return {
-                    A: 0.2 * e.laws.getLawSelected(G.FURNACE_SMELTING),
+                    A: 2 === e.laws.getLawSelected(G.FURNACE_SMELTING) ? 1 : 0,
+                    B: 0,
+                    type: i.LINEAR,
+                  };
+                }),
+                (Gu[U.AESTHETICS] = function (e) {
+                  return {
+                    A: 2 === e.laws.getLawSelected(G.FURNACE_SMELTING) ? 1 : 0,
                     B: 0,
                     type: i.LINEAR,
                   };
                 }),
                 Gu),
-              getGain:
+            },
+            {
+              id: l.WIRE,
+              complexity: 100,
+              getConsumption:
                 ((wu = {}),
-                (wu[l.WIRE] = function (e) {
-                  return { A: 0.002 * wd(e) * Dd(e), B: 0, type: i.LINEAR };
+                (wu[l.IRON] = function (e) {
+                  return { A: 0.1, B: 0, type: i.LINEAR };
+                }),
+                (wu[l.WOOD] = function (e) {
+                  return {
+                    A: 0.2 * e.laws.getLawSelected(G.FURNACE_SMELTING),
+                    B: 0,
+                    type: i.LINEAR,
+                  };
                 }),
                 wu),
-              getEffectConsumption:
+              getGain:
                 ((Du = {}),
-                (Du[U.HEALTHCARE] = function (e) {
-                  return {
-                    A: 2 === e.laws.getLawSelected(G.FURNACE_SMELTING) ? 1 : 0,
-                    B: 0,
-                    type: i.LINEAR,
-                  };
-                }),
-                (Du[U.AESTHETICS] = function (e) {
-                  return {
-                    A: 2 === e.laws.getLawSelected(G.FURNACE_SMELTING) ? 1 : 0,
-                    B: 0,
-                    type: i.LINEAR,
-                  };
+                (Du[l.WIRE] = function (e) {
+                  return { A: 0.002 * Dd(e) * Xd(e), B: 0, type: i.LINEAR };
                 }),
                 Du),
+              getEffectConsumption:
+                ((Xu = {}),
+                (Xu[U.HEALTHCARE] = function (e) {
+                  return {
+                    A: 2 === e.laws.getLawSelected(G.FURNACE_SMELTING) ? 1 : 0,
+                    B: 0,
+                    type: i.LINEAR,
+                  };
+                }),
+                (Xu[U.AESTHETICS] = function (e) {
+                  return {
+                    A: 2 === e.laws.getLawSelected(G.FURNACE_SMELTING) ? 1 : 0,
+                    B: 0,
+                    type: i.LINEAR,
+                  };
+                }),
+                Xu),
             },
             {
               id: l.FUEL,
               complexity: 250,
               getConsumption:
-                ((Xu = {}),
-                (Xu[l.BIOMASS] = function (e) {
+                ((xu = {}),
+                (xu[l.BIOMASS] = function (e) {
                   return { A: 0.5, B: 0, type: i.LINEAR };
                 }),
-                (Xu[l.WATER] = function (e) {
+                (xu[l.WATER] = function (e) {
                   return { A: 0.1, B: 0, type: i.LINEAR };
                 }),
-                Xu),
-              getGain:
-                ((xu = {}),
-                (xu[l.FUEL] = function (e) {
-                  return { A: 0.002 * wd(e) * Dd(e), B: 0, type: i.LINEAR };
-                }),
                 xu),
-              getEffectConsumption:
+              getGain:
                 ((ku = {}),
-                (ku[U.HEALTHCARE] = function (e) {
+                (ku[l.FUEL] = function (e) {
+                  return { A: 0.002 * Dd(e) * Xd(e), B: 0, type: i.LINEAR };
+                }),
+                ku),
+              getEffectConsumption:
+                ((Hu = {}),
+                (Hu[U.HEALTHCARE] = function (e) {
                   return {
                     A: 1 * e.laws.getLawSelected(G.FUEL_PROCESSING),
                     B: 0,
                     type: i.LINEAR,
                   };
                 }),
-                ku),
+                Hu),
             },
             {
               id: l.RUBBER,
               complexity: 100,
               getConsumption:
-                ((Hu = {}),
-                (Hu[l.BIOMASS] = function (e) {
+                ((Yu = {}),
+                (Yu[l.BIOMASS] = function (e) {
                   return { A: 1, B: 0, type: i.LINEAR };
                 }),
-                (Hu[l.POWER] = function (e) {
+                (Yu[l.POWER] = function (e) {
                   return { A: 0.1, B: 0, type: i.LINEAR };
                 }),
-                Hu),
-              getGain:
-                ((Yu = {}),
-                (Yu[l.RUBBER] = function (e) {
-                  return { A: 0.008 * wd(e) * Dd(e), B: 0, type: i.LINEAR };
-                }),
                 Yu),
+              getGain:
+                ((Wu = {}),
+                (Wu[l.RUBBER] = function (e) {
+                  return { A: 0.008 * Dd(e) * Xd(e), B: 0, type: i.LINEAR };
+                }),
+                Wu),
             },
             {
               id: l.PLASTICS,
               complexity: 100,
               getConsumption:
-                ((Wu = {}),
-                (Wu[l.BIOMASS] = function (e) {
+                ((Zu = {}),
+                (Zu[l.BIOMASS] = function (e) {
                   return { A: 1, B: 0, type: i.LINEAR };
                 }),
-                (Wu[l.POWER] = function (e) {
+                (Zu[l.POWER] = function (e) {
                   return { A: 0.1, B: 0, type: i.LINEAR };
                 }),
-                Wu),
-              getGain:
-                ((Zu = {}),
-                (Zu[l.PLASTICS] = function (e) {
-                  return { A: 0.008 * wd(e) * Dd(e), B: 0, type: i.LINEAR };
-                }),
                 Zu),
+              getGain:
+                ((Fu = {}),
+                (Fu[l.PLASTICS] = function (e) {
+                  return { A: 0.008 * Dd(e) * Xd(e), B: 0, type: i.LINEAR };
+                }),
+                Fu),
             },
             {
               id: l.SEMICONDUCTOR,
               complexity: 100,
               getConsumption:
-                ((Fu = {}),
-                (Fu[l.IRON] = function (e) {
+                ((ju = {}),
+                (ju[l.IRON] = function (e) {
                   return { A: 0.02, B: 0, type: i.LINEAR };
                 }),
-                (Fu[l.STONE] = function (e) {
+                (ju[l.STONE] = function (e) {
                   return { A: 1, B: 0, type: i.LINEAR };
                 }),
-                Fu),
-              getGain:
-                ((ju = {}),
-                (ju[l.SEMICONDUCTOR] = function (e) {
-                  return { A: 0.004 * wd(e) * Dd(e), B: 0, type: i.LINEAR };
-                }),
                 ju),
+              getGain:
+                ((Vu = {}),
+                (Vu[l.SEMICONDUCTOR] = function (e) {
+                  return { A: 0.004 * Dd(e) * Xd(e), B: 0, type: i.LINEAR };
+                }),
+                Vu),
             },
             {
               id: l.COMPUTER,
               complexity: 250,
               getConsumption:
-                ((Vu = {}),
-                (Vu[l.SEMICONDUCTOR] = function (e) {
-                  return { A: 0.1, B: 0, type: i.LINEAR };
-                }),
-                (Vu[l.PLASTICS] = function (e) {
-                  return { A: 0.1, B: 0, type: i.LINEAR };
-                }),
-                Vu),
-              getGain:
                 ((Ku = {}),
-                (Ku[l.COMPUTER] = function (e) {
-                  return { A: 0.004 * wd(e) * Dd(e), B: 0, type: i.LINEAR };
+                (Ku[l.SEMICONDUCTOR] = function (e) {
+                  return { A: 0.1, B: 0, type: i.LINEAR };
+                }),
+                (Ku[l.PLASTICS] = function (e) {
+                  return { A: 0.1, B: 0, type: i.LINEAR };
                 }),
                 Ku),
+              getGain:
+                ((zu = {}),
+                (zu[l.COMPUTER] = function (e) {
+                  return { A: 0.004 * Dd(e) * Xd(e), B: 0, type: i.LINEAR };
+                }),
+                zu),
             },
             {
               id: l.ROCKET_ENGINE,
@@ -18840,137 +19029,137 @@
                 }),
                 qu),
               getGain:
-                ((zu = {}),
-                (zu[l.ROCKET_ENGINE] = function (e) {
-                  return { A: 0.002 * wd(e) * Dd(e), B: 0, type: i.LINEAR };
+                ((Qu = {}),
+                (Qu[l.ROCKET_ENGINE] = function (e) {
+                  return { A: 0.002 * Dd(e) * Xd(e), B: 0, type: i.LINEAR };
                 }),
-                zu),
+                Qu),
             },
             {
               id: l.GRAPHENE,
               complexity: 750,
               getConsumption:
-                ((Qu = {}),
-                (Qu[l.BIOMASS] = function (e) {
+                ((Ju = {}),
+                (Ju[l.BIOMASS] = function (e) {
                   return { A: 1.5, B: 0, type: i.LINEAR };
                 }),
-                (Qu[l.WATER] = function (e) {
+                (Ju[l.WATER] = function (e) {
                   return { A: 0.2, B: 0, type: i.LINEAR };
                 }),
-                Qu),
-              getGain:
-                ((Ju = {}),
-                (Ju[l.GRAPHENE] = function (e) {
-                  return { A: 0.001 * wd(e) * Dd(e), B: 0, type: i.LINEAR };
-                }),
                 Ju),
+              getGain:
+                (($u = {}),
+                ($u[l.GRAPHENE] = function (e) {
+                  return { A: 0.001 * Dd(e) * Xd(e), B: 0, type: i.LINEAR };
+                }),
+                $u),
             },
             {
               id: l.MAGNETO,
               complexity: 2250,
               getConsumption:
-                (($u = {}),
-                ($u[l.WIRE] = function (e) {
-                  return { A: 0.5, B: 0, type: i.LINEAR };
-                }),
-                ($u[l.SEMICONDUCTOR] = function (e) {
-                  return { A: 0.5, B: 0, type: i.LINEAR };
-                }),
-                $u),
-              getGain:
                 ((el = {}),
-                (el[l.MAGNETO] = function (e) {
-                  return { A: 4e-4 * wd(e) * Dd(e), B: 0, type: i.LINEAR };
+                (el[l.WIRE] = function (e) {
+                  return { A: 0.5, B: 0, type: i.LINEAR };
+                }),
+                (el[l.SEMICONDUCTOR] = function (e) {
+                  return { A: 0.5, B: 0, type: i.LINEAR };
                 }),
                 el),
+              getGain:
+                ((tl = {}),
+                (tl[l.MAGNETO] = function (e) {
+                  return { A: 4e-4 * Dd(e) * Xd(e), B: 0, type: i.LINEAR };
+                }),
+                tl),
             },
             {
               id: l.DM_BLOCK,
               complexity: 16384,
               getConsumption:
-                ((tl = {}),
-                (tl[l.DARK_MATTER] = function (e) {
+                ((nl = {}),
+                (nl[l.DARK_MATTER] = function (e) {
                   return { A: 2, B: 0, type: i.LINEAR };
                 }),
-                (tl[l.BRICK] = function (e) {
+                (nl[l.BRICK] = function (e) {
                   return { A: 100, B: 0, type: i.LINEAR };
                 }),
-                (tl[l.POWER] = function (e) {
+                (nl[l.POWER] = function (e) {
                   return { A: 100, B: 0, type: i.LINEAR };
-                }),
-                tl),
-              getGain:
-                ((nl = {}),
-                (nl[l.DM_BLOCK] = function (e) {
-                  return { A: 19e-5 * wd(e) * Dd(e), B: 0, type: i.LINEAR };
                 }),
                 nl),
+              getGain:
+                ((il = {}),
+                (il[l.DM_BLOCK] = function (e) {
+                  return { A: 19e-5 * Dd(e) * Xd(e), B: 0, type: i.LINEAR };
+                }),
+                il),
             },
             {
               id: l.PRESSED_BLOCK,
               complexity: 16384,
               getConsumption:
-                ((il = {}),
-                (il[l.POWER] = function (e) {
+                ((ol = {}),
+                (ol[l.POWER] = function (e) {
                   return { A: 500, B: 0, type: i.LINEAR };
                 }),
-                (il[l.BRICK] = function (e) {
+                (ol[l.BRICK] = function (e) {
                   return { A: 100, B: 0, type: i.LINEAR };
                 }),
-                (il[l.BEAM] = function (e) {
+                (ol[l.BEAM] = function (e) {
                   return { A: 100, B: 0, type: i.LINEAR };
-                }),
-                il),
-              getGain:
-                ((ol = {}),
-                (ol[l.PRESSED_BLOCK] = function (e) {
-                  return { A: 14e-5 * wd(e) * Dd(e), B: 0, type: i.LINEAR };
                 }),
                 ol),
+              getGain:
+                ((rl = {}),
+                (rl[l.PRESSED_BLOCK] = function (e) {
+                  return { A: 14e-5 * Dd(e) * Xd(e), B: 0, type: i.LINEAR };
+                }),
+                rl),
             },
             {
               id: l.AI_CORE,
               complexity: 1e5,
               getConsumption:
-                ((rl = {}),
-                (rl[l.POWER] = function (e) {
+                ((al = {}),
+                (al[l.POWER] = function (e) {
                   return { A: 500, B: 0, type: i.LINEAR };
                 }),
-                (rl[l.COMPUTER] = function (e) {
+                (al[l.COMPUTER] = function (e) {
                   return { A: 100, B: 0, type: i.LINEAR };
                 }),
-                (rl[l.MAGNETO] = function (e) {
+                (al[l.MAGNETO] = function (e) {
                   return { A: 100, B: 0, type: i.LINEAR };
                 }),
-                (rl[l.ANTIMATTER] = function (e) {
+                (al[l.ANTIMATTER] = function (e) {
                   return { A: 1, B: 0, type: i.LINEAR };
                 }),
-                rl),
-              getGain:
-                ((al = {}),
-                (al[l.AI_CORE] = function (e) {
-                  return { A: 6e-5 * wd(e) * Dd(e), B: 0, type: i.LINEAR };
-                }),
                 al),
+              getGain:
+                ((cl = {}),
+                (cl[l.AI_CORE] = function (e) {
+                  return { A: 6e-5 * Dd(e) * Xd(e), B: 0, type: i.LINEAR };
+                }),
+                cl),
             },
             {
               id: l.ANTIMATTER_FUEL,
               complexity: 8e5,
               getConsumption:
-                ((cl = {}),
-                (cl[l.ANTIMATTER] = function (e) {
+                ((sl = {}),
+                (sl[l.ANTIMATTER] = function (e) {
                   return { A: 5, B: 0, type: i.LINEAR };
                 }),
-                (cl[l.FUEL] = function (e) {
+                (sl[l.FUEL] = function (e) {
                   return { A: 1e3, B: 0, type: i.LINEAR };
                 }),
-                cl),
-              getGain:
-                ((sl = {}),
-                (sl[l.ANTIMATTER_FUEL] = function (e) {
-                  return { A: 5e-5 * wd(e) * Dd(e), B: 0, type: i.LINEAR };
-                }),
                 sl),
+              getGain:
+                ((ul = {}),
+                (ul[l.ANTIMATTER_FUEL] = function (e) {
+                  return { A: 5e-5 * Dd(e) * Xd(e), B: 0, type: i.LINEAR };
+                }),
+                ul),
             },
           ],
           qd = (function () {
@@ -19007,7 +19196,7 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          zd = (function (e) {
+          Qd = (function (e) {
             function t() {
               return (null !== e && e.apply(this, arguments)) || this;
             }
@@ -19018,17 +19207,17 @@
               }),
               (t.prototype.getUnlocked = function () {
                 return (
-                  _h.prestige.colonizePlanet.getUpgradeLevel(N.OVERSEER) > 0
+                  xh.prestige.colonizePlanet.getUpgradeLevel(N.OVERSEER) > 0
                 );
               }),
               (t.prototype.shouldTrigger = function (e) {
                 return (
                   !!this.getUnlocked() &&
-                  Math.abs(_h.environment.climate.getDays() % 5) < 0.2 * e
+                  Math.abs(xh.environment.climate.getDays() % 5) < 0.2 * e
                 );
               }),
               (t.prototype.assignCrafting = function (e) {
-                var t = Kd.filter(function (t) {
+                var t = zd.filter(function (t) {
                   return e.filter(function (e) {
                     var n;
                     return null === (n = t.getGain) || void 0 === n
@@ -19044,8 +19233,8 @@
                           return null == i ? void 0 : i[e];
                         }).length
                           ? "continue"
-                          : (_h.colony.colonyJobs.addLabour(_.ARTISAN, 1),
-                            _h.crafting.craftingJobs.addAmount(t[n].id, 1),
+                          : (xh.colony.colonyJobs.addLabour(_.ARTISAN, 1),
+                            xh.crafting.craftingJobs.addAmount(t[n].id, 1),
                             console.log(
                               "Assigned labour as crafter: ".concat(t[n].id)
                             ),
@@ -19061,9 +19250,9 @@
                 return !1;
               }),
               (t.prototype.assignJobs = function (e) {
-                var t = xd.filter(function (t) {
+                var t = kd.filter(function (t) {
                   return (
-                    t.unlockCondition(_h) &&
+                    t.unlockCondition(xh) &&
                     e.filter(function (e) {
                       var n;
                       return null === (n = t.getGain) || void 0 === n
@@ -19080,7 +19269,7 @@
                           return null == i ? void 0 : i[e];
                         }).length
                           ? "continue"
-                          : (_h.colony.colonyJobs.addLabour(t[n].id, 1),
+                          : (xh.colony.colonyJobs.addLabour(t[n].id, 1),
                             console.log(
                               "Overseer: Assigned labour as ".concat(t[n].name)
                             ),
@@ -19096,9 +19285,9 @@
                 return !1;
               }),
               (t.prototype.assignToHapp = function (e) {
-                var t = xd.filter(function (t) {
+                var t = kd.filter(function (t) {
                   return (
-                    t.unlockCondition(_h) &&
+                    t.unlockCondition(xh) &&
                     e.filter(function (e) {
                       var n;
                       return null === (n = t.getEffectGain) || void 0 === n
@@ -19115,7 +19304,7 @@
                           return null == i ? void 0 : i[e];
                         }).length
                           ? "continue"
-                          : (_h.colony.colonyJobs.addLabour(t[n].id, 1),
+                          : (xh.colony.colonyJobs.addLabour(t[n].id, 1),
                             console.log(
                               "Overseer: Assigned labour as ".concat(t[n].name)
                             ),
@@ -19140,41 +19329,41 @@
                 var t;
                 if (
                   this.shouldTrigger(e) &&
-                  !(_h.colony.colonyJobs.freeLabour <= 0)
+                  !(xh.colony.colonyJobs.freeLabour <= 0)
                 ) {
                   if (
-                    _h.resources.getBalance(l.NUTRITION) < 0 &&
+                    xh.resources.getBalance(l.NUTRITION) < 0 &&
                     (null ===
-                      (t = xd.find(function (e) {
+                      (t = kd.find(function (e) {
                         return e.id === _.FARMER;
                       })) || void 0 === t
                       ? void 0
-                      : t.unlockCondition(_h))
+                      : t.unlockCondition(xh))
                   )
                     return (
-                      _h.colony.colonyJobs.addLabour(_.FARMER, 1),
-                      _h.resources.reassertBalances(),
-                      void _h.regenerateCache()
+                      xh.colony.colonyJobs.addLabour(_.FARMER, 1),
+                      xh.resources.reassertBalances(),
+                      void xh.regenerateCache()
                     );
-                  var n = _h.resources.resourcesStatus.filter(function (e) {
+                  var n = xh.resources.resourcesStatus.filter(function (e) {
                       return (
                         ((null == e ? void 0 : e.balance) || 0) < 0 ||
-                        (_h.resources.getResourceEfficiency(e.id) || 0) < 1
+                        (xh.resources.getResourceEfficiency(e.id) || 0) < 1
                       );
                     }),
                     i = n.map(function (e) {
                       return e.id;
                     }),
                     o = Object.keys(
-                      _h.colony.colonyEffects.happinessEffects
+                      xh.colony.colonyEffects.happinessEffects
                     ).filter(function (e) {
-                      return !_h.colony.colonyEffects.happinessEffectsExcess[e];
+                      return !xh.colony.colonyEffects.happinessEffectsExcess[e];
                     });
                   return (
                     console.log("Overseer LCK: ", n, i),
                     (i.length || o.length) && this.processChanges(e, i, o)
-                      ? (_h.resources.reassertBalances(),
-                        void _h.regenerateCache())
+                      ? (xh.resources.reassertBalances(),
+                        void xh.regenerateCache())
                       : void 0
                   );
                 }
@@ -19182,8 +19371,8 @@
               t
             );
           })(P),
-          Qd = zd.getInstance(),
-          Jd = (function () {
+          Jd = Qd.getInstance(),
+          $d = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -19217,20 +19406,20 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          $d = (function (e) {
+          eE = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
                 (t.colonists = 0),
                 (t.maxColonists = 0),
-                (t.colonyJobs = Wd),
-                (t.colonyEffects = Vd),
-                (t.overseer = Qd),
+                (t.colonyJobs = Zd),
+                (t.colonyEffects = Kd),
+                (t.overseer = Jd),
                 t
               );
             }
             return (
-              Jd(t, e),
+              $d(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -19253,7 +19442,7 @@
                   colonists: this.colonists || 0,
                   maxColonists: this.maxColonists,
                   isUnlocked:
-                    _h.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                    xh.landingZone.landingZoneUpgrades.getUpgradeLevel(
                       r.DOCKING_MODULE
                     ) > 0,
                   jobs: this.colonyJobs.dataToUI(),
@@ -19262,7 +19451,7 @@
               }),
               (t.prototype.getMaxColonists = function () {
                 return Math.round(
-                  _h.landingZone.landingZoneBuildings
+                  xh.landingZone.landingZoneBuildings
                     .getColonistsCap()
                     .reduce(function (e, t) {
                       return e + t.value;
@@ -19275,10 +19464,10 @@
               (t.prototype.missingSupply = function () {
                 return (
                   !!this.colonists &&
-                  ((null != Ld.lackEfficiencyResources[l.NUTRITION] &&
-                    (Ld.lackEfficiencyResources[l.NUTRITION] || 0) < 1) ||
-                    (null != Ld.lackEfficiencyResources[l.WATER] &&
-                      (Ld.lackEfficiencyResources[l.WATER] || 0) < 1))
+                  ((null != Cd.lackEfficiencyResources[l.NUTRITION] &&
+                    (Cd.lackEfficiencyResources[l.NUTRITION] || 0) < 1) ||
+                    (null != Cd.lackEfficiencyResources[l.WATER] &&
+                      (Cd.lackEfficiencyResources[l.WATER] || 0) < 1))
                 );
               }),
               (t.prototype.process = function (e) {
@@ -19287,32 +19476,32 @@
                     ? (console.log("missing supply. Colonist is leaving"),
                       Math.random() < (0.05 * e) / 0.1 &&
                         (this.colonists--,
-                        _h.eventLog.colonistDied(F(this.colonists)),
-                        _h.statistics.stats.diedThisPrestige++,
-                        (_h.statistics.stats.maxDiedColonists = Math.max(
-                          _h.statistics.stats.maxDiedColonists,
-                          _h.statistics.stats.diedThisPrestige
+                        xh.eventLog.colonistDied(F(this.colonists)),
+                        xh.statistics.stats.diedThisPrestige++,
+                        (xh.statistics.stats.maxDiedColonists = Math.max(
+                          xh.statistics.stats.maxDiedColonists,
+                          xh.statistics.stats.diedThisPrestige
                         )),
-                        _h.resources.reassertBalances(),
-                        _h.regenerateCache()))
+                        xh.resources.reassertBalances(),
+                        xh.regenerateCache()))
                     : this.colonists > this.maxColonists &&
                       (console.log("missing supply. Colonist is leaving"),
                       Math.random() < (0.5 * e) / 0.1 &&
                         (this.colonists--,
-                        _h.statistics.stats.diedThisPrestige++,
-                        (_h.statistics.stats.maxDiedColonists = Math.max(
-                          _h.statistics.stats.maxDiedColonists,
-                          _h.statistics.stats.diedThisPrestige
+                        xh.statistics.stats.diedThisPrestige++,
+                        (xh.statistics.stats.maxDiedColonists = Math.max(
+                          xh.statistics.stats.maxDiedColonists,
+                          xh.statistics.stats.diedThisPrestige
                         )),
-                        _h.eventLog.colonistDied(F(this.colonists)),
-                        _h.resources.reassertBalances(),
-                        _h.regenerateCache())),
+                        xh.eventLog.colonistDied(F(this.colonists)),
+                        xh.resources.reassertBalances(),
+                        xh.regenerateCache())),
                   this.colonists < this.maxColonists &&
                     Math.random() < (0.025 * e) / 0.1 &&
                     (this.colonists++,
-                    _h.eventLog.colonistArrived(F(this.colonists)),
-                    _h.resources.reassertBalances(),
-                    _h.regenerateCache(),
+                    xh.eventLog.colonistArrived(F(this.colonists)),
+                    xh.resources.reassertBalances(),
+                    xh.regenerateCache(),
                     this.overseer.getUnlocked() &&
                       this.colonyJobs.addAmount(_.LABOUR, 1)),
                   this.colonyEffects.process(e),
@@ -19328,7 +19517,7 @@
               (t.prototype.getSupplyUsageMultiplier = function () {
                 var e = 1;
                 return (
-                  _h.achievements.getAchievementComplete("speedRun0") &&
+                  xh.achievements.getAchievementComplete("speedRun0") &&
                     (e *= 0.9),
                   e
                 );
@@ -19336,18 +19525,18 @@
               t
             );
           })(P).getInstance(),
-          eE = [
+          tE = [
             {
               id: B.EXOFARMING,
               name: "Exo Farming",
               description:
                 "Learn how to work with soil on a foreign planet. Allows employing farmers",
               getCost:
-                ((ul = {}),
-                (ul[l.RESEARCH] = function (e) {
+                ((ll = {}),
+                (ll[l.RESEARCH] = function (e) {
                   return { A: 25, B: 0, type: i.LINEAR };
                 }),
-                ul),
+                ll),
               unlockCondition: function (e) {
                 return !0;
               },
@@ -19358,14 +19547,14 @@
               description:
                 "Learn more about the atmosphere and its weather patterns. Unlocks new upgrades and buildings",
               getCost:
-                ((ll = {}),
-                (ll[l.RESEARCH] = function (e) {
+                ((pl = {}),
+                (pl[l.RESEARCH] = function (e) {
                   return { A: 75, B: 0, type: i.LINEAR };
                 }),
-                ll),
+                pl),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(B.EXOFARMING) >
+                  xh.science.scienceResearches.getResearchLevel(B.EXOFARMING) >
                   0
                 );
               },
@@ -19376,14 +19565,14 @@
               description:
                 "Learn more about minerals available at your new home",
               getCost:
-                ((pl = {}),
-                (pl[l.RESEARCH] = function (e) {
+                ((dl = {}),
+                (dl[l.RESEARCH] = function (e) {
                   return { A: 125, B: 0, type: i.LINEAR };
                 }),
-                pl),
+                dl),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(B.EXOFARMING) >
+                  xh.science.scienceResearches.getResearchLevel(B.EXOFARMING) >
                   0
                 );
               },
@@ -19394,14 +19583,14 @@
               description:
                 "Unlock new ways of providing services to your growing colony",
               getCost:
-                ((dl = {}),
-                (dl[l.RESEARCH] = function (e) {
+                ((El = {}),
+                (El[l.RESEARCH] = function (e) {
                   return { A: 225, B: 0, type: i.LINEAR };
                 }),
-                dl),
+                El),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(B.EXOFARMING) >
+                  xh.science.scienceResearches.getResearchLevel(B.EXOFARMING) >
                   0
                 );
               },
@@ -19412,14 +19601,14 @@
               description:
                 "Learn about engineering specific to high gravity conditions",
               getCost:
-                ((El = {}),
-                (El[l.RESEARCH] = function (e) {
+                ((gl = {}),
+                (gl[l.RESEARCH] = function (e) {
                   return { A: 200, B: 0, type: i.LINEAR };
                 }),
-                El),
+                gl),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(B.MINERALOGY) >
+                  xh.science.scienceResearches.getResearchLevel(B.MINERALOGY) >
                   0
                 );
               },
@@ -19429,14 +19618,14 @@
               name: "Exo Biology",
               description: "Learn more about local organisms",
               getCost:
-                ((gl = {}),
-                (gl[l.RESEARCH] = function (e) {
+                ((fl = {}),
+                (fl[l.RESEARCH] = function (e) {
                   return { A: 225, B: 0, type: i.LINEAR };
                 }),
-                gl),
+                fl),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(B.METEOROLOGY) >
+                  xh.science.scienceResearches.getResearchLevel(B.METEOROLOGY) >
                   0
                 );
               },
@@ -19447,14 +19636,14 @@
               description:
                 "Learn how to grow something bigger in this empty terrain",
               getCost:
-                ((fl = {}),
-                (fl[l.RESEARCH] = function (e) {
+                ((Al = {}),
+                (Al[l.RESEARCH] = function (e) {
                   return { A: 375, B: 0, type: i.LINEAR };
                 }),
-                fl),
+                Al),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(B.EXOBIOLOGY) >
+                  xh.science.scienceResearches.getResearchLevel(B.EXOBIOLOGY) >
                   0
                 );
               },
@@ -19465,14 +19654,14 @@
               description:
                 "Learn how to work with exotic ores. Unlocks crafting and artisan job",
               getCost:
-                ((Al = {}),
-                (Al[l.RESEARCH] = function (e) {
+                ((ml = {}),
+                (ml[l.RESEARCH] = function (e) {
                   return { A: 420, B: 0, type: i.LINEAR };
                 }),
-                Al),
+                ml),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(B.MINERALOGY) >
+                  xh.science.scienceResearches.getResearchLevel(B.MINERALOGY) >
                   0
                 );
               },
@@ -19483,14 +19672,14 @@
               description:
                 "Advanced flora researches unlocks new tools to boost agriculture",
               getCost:
-                ((ml = {}),
-                (ml[l.RESEARCH] = function (e) {
+                ((Nl = {}),
+                (Nl[l.RESEARCH] = function (e) {
                   return { A: 425, B: 0, type: i.LINEAR };
                 }),
-                ml),
+                Nl),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(B.EXOFORESTRY) >
+                  xh.science.scienceResearches.getResearchLevel(B.EXOFORESTRY) >
                   0
                 );
               },
@@ -19501,14 +19690,14 @@
               description:
                 "Study the material interactions of elements in this foreign environment. Unlocks new materials and upgrades",
               getCost:
-                ((Nl = {}),
-                (Nl[l.RESEARCH] = function (e) {
+                ((hl = {}),
+                (hl[l.RESEARCH] = function (e) {
                   return { A: 575, B: 0, type: i.LINEAR };
                 }),
-                Nl),
+                hl),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.FLORA_RESEARCH
                   ) > 0
                 );
@@ -19520,14 +19709,14 @@
               description:
                 "Further research precious minerals available at your new habitat",
               getCost:
-                ((hl = {}),
-                (hl[l.RESEARCH] = function (e) {
+                ((Il = {}),
+                (Il[l.RESEARCH] = function (e) {
                   return { A: 550, B: 0, type: i.LINEAR };
                 }),
-                hl),
+                Il),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(B.METALLURGY) >
+                  xh.science.scienceResearches.getResearchLevel(B.METALLURGY) >
                   0
                 );
               },
@@ -19537,14 +19726,14 @@
               name: "Geography",
               description: "Geography knowledge unlocks expeditions",
               getCost:
-                ((Il = {}),
-                (Il[l.RESEARCH] = function (e) {
+                ((Rl = {}),
+                (Rl[l.RESEARCH] = function (e) {
                   return { A: 500, B: 0, type: i.LINEAR };
                 }),
-                Il),
+                Rl),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(B.METEOROLOGY) >
+                  xh.science.scienceResearches.getResearchLevel(B.METEOROLOGY) >
                   0
                 );
               },
@@ -19555,14 +19744,14 @@
               description:
                 "Unlocks new ways to make your little society happier and more efficient",
               getCost:
-                ((Rl = {}),
-                (Rl[l.RESEARCH] = function (e) {
+                ((Tl = {}),
+                (Tl[l.RESEARCH] = function (e) {
                   return { A: 550, B: 0, type: i.LINEAR };
                 }),
-                Rl),
+                Tl),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.CIVIL_SERVICE
                   ) > 0
                 );
@@ -19573,16 +19762,16 @@
               name: "Material Knowledge",
               description: "Further advances crafting and metal processing",
               getCost:
-                ((Tl = {}),
-                (Tl[l.RESEARCH] = function (e) {
+                ((yl = {}),
+                (yl[l.RESEARCH] = function (e) {
                   return { A: 825, B: 0, type: i.LINEAR };
                 }),
-                Tl),
+                yl),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(B.CHEMISTRY) >
+                  xh.science.scienceResearches.getResearchLevel(B.CHEMISTRY) >
                     0 &&
-                  _h.science.scienceResearches.getResearchLevel(B.METALLURGY) >
+                  xh.science.scienceResearches.getResearchLevel(B.METALLURGY) >
                     0
                 );
               },
@@ -19592,14 +19781,14 @@
               name: "Law",
               description: "Unlocks new aspects of your colony development",
               getCost:
-                ((yl = {}),
-                (yl[l.RESEARCH] = function (e) {
+                ((Ol = {}),
+                (Ol[l.RESEARCH] = function (e) {
                   return { A: 1050, B: 0, type: i.LINEAR };
                 }),
-                yl),
+                Ol),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(B.SOCIOLOGY) > 0
+                  xh.science.scienceResearches.getResearchLevel(B.SOCIOLOGY) > 0
                 );
               },
             },
@@ -19609,14 +19798,14 @@
               description:
                 "Improves knowledge about conductivity of various materials",
               getCost:
-                ((Ol = {}),
-                (Ol[l.RESEARCH] = function (e) {
+                ((Ll = {}),
+                (Ll[l.RESEARCH] = function (e) {
                   return { A: 1375, B: 0, type: i.LINEAR };
                 }),
-                Ol),
+                Ll),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.MATERIAL_KNOWLEDGE
                   ) > 0
                 );
@@ -19627,14 +19816,14 @@
               name: "Organic Chemistry",
               description: "Learn about new uses for biomass",
               getCost:
-                ((Ll = {}),
-                (Ll[l.RESEARCH] = function (e) {
+                ((Cl = {}),
+                (Cl[l.RESEARCH] = function (e) {
                   return { A: 1025, B: 0, type: i.LINEAR };
                 }),
-                Ll),
+                Cl),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.MATERIAL_KNOWLEDGE
                   ) > 0
                 );
@@ -19646,14 +19835,14 @@
               description:
                 "Learn how to produce electronics and incorporate it",
               getCost:
-                ((Cl = {}),
-                (Cl[l.RESEARCH] = function (e) {
+                ((vl = {}),
+                (vl[l.RESEARCH] = function (e) {
                   return { A: 2e3, B: 0, type: i.LINEAR };
                 }),
-                Cl),
+                vl),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.ELECTRICITY_STUDY
                   ) > 0
                 );
@@ -19664,14 +19853,14 @@
               name: "Civil Service",
               description: "Unlock new civil service jobs and buildings",
               getCost:
-                ((vl = {}),
-                (vl[l.RESEARCH] = function (e) {
+                ((Sl = {}),
+                (Sl[l.RESEARCH] = function (e) {
                   return { A: 2e3, B: 0, type: i.LINEAR };
                 }),
-                vl),
+                Sl),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.CODEX_OF_LAW
                   ) > 0
                 );
@@ -19683,14 +19872,14 @@
               description:
                 "Unlock new powerful tools that will help you boost your colony development",
               getCost:
-                ((Sl = {}),
-                (Sl[l.RESEARCH] = function (e) {
+                ((Pl = {}),
+                (Pl[l.RESEARCH] = function (e) {
                   return { A: 4e3, B: 0, type: i.LINEAR };
                 }),
-                Sl),
+                Pl),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(B.ELECTRONICS) >
+                  xh.science.scienceResearches.getResearchLevel(B.ELECTRONICS) >
                   0
                 );
               },
@@ -19701,14 +19890,14 @@
               description:
                 "Learn more about surviving and creating in high gravity conditions",
               getCost:
-                ((Pl = {}),
-                (Pl[l.RESEARCH] = function (e) {
+                ((Bl = {}),
+                (Bl[l.RESEARCH] = function (e) {
                   return { A: 4e3, B: 0, type: i.LINEAR };
                 }),
-                Pl),
+                Bl),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.ELECTRICITY_STUDY
                   ) > 0
                 );
@@ -19720,14 +19909,14 @@
               description:
                 "Further research human body can make maintaining larger colony much easier",
               getCost:
-                ((Bl = {}),
-                (Bl[l.RESEARCH] = function (e) {
+                ((Ml = {}),
+                (Ml[l.RESEARCH] = function (e) {
                   return { A: 2600, B: 0, type: i.LINEAR };
                 }),
-                Bl),
+                Ml),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.ORGANIC_CHEMISTRY
                   ) > 0
                 );
@@ -19739,17 +19928,17 @@
               description:
                 "Literally. There is too little space on our planet, isn't it?",
               getCost:
-                ((Ml = {}),
-                (Ml[l.RESEARCH] = function (e) {
+                ((_l = {}),
+                (_l[l.RESEARCH] = function (e) {
                   return { A: 5600, B: 0, type: i.LINEAR };
                 }),
-                Ml),
+                _l),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.ORGANIC_CHEMISTRY
                   ) > 0 &&
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.HIGH_GRAVITY_PHYSICS
                   ) > 0
                 );
@@ -19761,14 +19950,14 @@
               description:
                 "Further advance biology knowledge. Create new methods of boosting nutritional value and unlock new research",
               getCost:
-                ((_l = {}),
-                (_l[l.RESEARCH] = function (e) {
+                ((Ul = {}),
+                (Ul[l.RESEARCH] = function (e) {
                   return { A: 4250, B: 0, type: i.LINEAR };
                 }),
-                _l),
+                Ul),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.ADVANCED_ANATOMY
                   ) > 0
                 );
@@ -19780,14 +19969,14 @@
               description:
                 "Learn more about impact of radiation on living organisms. Unlocks piloted missions",
               getCost:
-                ((Ul = {}),
-                (Ul[l.RESEARCH] = function (e) {
+                ((bl = {}),
+                (bl[l.RESEARCH] = function (e) {
                   return { A: 5900, B: 0, type: i.LINEAR };
                 }),
-                Ul),
+                bl),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.ADVANCED_BIOLOGY
                   ) > 0
                 );
@@ -19799,14 +19988,14 @@
               description:
                 "Better understanding of quantum physics can significantly boost the productivity of your civilization",
               getCost:
-                ((bl = {}),
-                (bl[l.RESEARCH] = function (e) {
+                ((Gl = {}),
+                (Gl[l.RESEARCH] = function (e) {
                   return { A: 6215, B: 0, type: i.LINEAR };
                 }),
-                bl),
+                Gl),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.HIGH_GRAVITY_PHYSICS
                   ) > 0
                 );
@@ -19818,14 +20007,14 @@
               description:
                 "Better understanding of gravitational forces on flying objects will help with rocket launches. Allows you to send missions to other planets",
               getCost:
-                ((Gl = {}),
-                (Gl[l.RESEARCH] = function (e) {
+                ((wl = {}),
+                (wl[l.RESEARCH] = function (e) {
                   return { A: 8750, B: 0, type: i.LINEAR };
                 }),
-                Gl),
+                wl),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.QUANTUM_PHYSICS
                   ) > 0
                 );
@@ -19837,14 +20026,14 @@
               description:
                 "Further research into nanotechnology can increase your civilization productivity even more",
               getCost:
-                ((wl = {}),
-                (wl[l.RESEARCH] = function (e) {
+                ((Dl = {}),
+                (Dl[l.RESEARCH] = function (e) {
                   return { A: 8750, B: 0, type: i.LINEAR };
                 }),
-                wl),
+                Dl),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.QUANTUM_PHYSICS
                   ) > 0
                 );
@@ -19856,14 +20045,14 @@
               description:
                 "Allows to further advance your understanding of celestial bodies through new scientific telescopes",
               getCost:
-                ((Dl = {}),
-                (Dl[l.RESEARCH] = function (e) {
+                ((Xl = {}),
+                (Xl[l.RESEARCH] = function (e) {
                   return { A: 9500, B: 0, type: i.LINEAR };
                 }),
-                Dl),
+                Xl),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.GRAVITY_THEORY
                   ) > 0
                 );
@@ -19875,14 +20064,14 @@
               description:
                 "Learn more about spacetime continuum. Unlocks new tech and further traveling",
               getCost:
-                ((Xl = {}),
-                (Xl[l.RESEARCH] = function (e) {
+                ((xl = {}),
+                (xl[l.RESEARCH] = function (e) {
                   return { A: 11500, B: 0, type: i.LINEAR };
                 }),
-                Xl),
+                xl),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.GRAVITY_THEORY
                   ) > 0
                 );
@@ -19894,17 +20083,17 @@
               description:
                 "Push further your genetics knowledge to learn how species can be modified",
               getCost:
-                ((xl = {}),
-                (xl[l.RESEARCH] = function (e) {
+                ((kl = {}),
+                (kl[l.RESEARCH] = function (e) {
                   return { A: 13500, B: 0, type: i.LINEAR };
                 }),
-                xl),
+                kl),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.NANO_PHYSICS
                   ) > 0 &&
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.ADVANCED_BIOLOGY
                   ) > 0
                 );
@@ -19916,14 +20105,14 @@
               description:
                 "Learn more about ionizing radiation impact on chemical reactions. Unlocks new upgrades",
               getCost:
-                ((kl = {}),
-                (kl[l.RESEARCH] = function (e) {
+                ((Hl = {}),
+                (Hl[l.RESEARCH] = function (e) {
                   return { A: 11e3, B: 0, type: i.LINEAR };
                 }),
-                kl),
+                Hl),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.QUANTUM_PHYSICS
                   ) > 0
                 );
@@ -19935,14 +20124,14 @@
               description:
                 "We are so miserable comparing to bright far stars and supernova explosions. Learn how to deal with more energy to expand your capabilities even more. Unlocks further flights and more important researches",
               getCost:
-                ((Hl = {}),
-                (Hl[l.RESEARCH] = function (e) {
+                ((Yl = {}),
+                (Yl[l.RESEARCH] = function (e) {
                   return { A: 17e3, B: 0, type: i.LINEAR };
                 }),
-                Hl),
+                Yl),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.RELATIVITY_PHYSICS
                   ) > 0
                 );
@@ -19954,14 +20143,14 @@
               description:
                 "Use your advances in quantum physics and material knowledge to boost production of tiny things. Unlocks new upgrades",
               getCost:
-                ((Yl = {}),
-                (Yl[l.RESEARCH] = function (e) {
+                ((Wl = {}),
+                (Wl[l.RESEARCH] = function (e) {
                   return { A: 17200, B: 0, type: i.LINEAR };
                 }),
-                Yl),
+                Wl),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.PHOTOCHEMISTRY
                   ) > 0
                 );
@@ -19973,14 +20162,14 @@
               description:
                 "Learn more about high temperature physics to unlock new source of power",
               getCost:
-                ((Wl = {}),
-                (Wl[l.RESEARCH] = function (e) {
+                ((Zl = {}),
+                (Zl[l.RESEARCH] = function (e) {
                   return { A: 23500, B: 0, type: i.LINEAR };
                 }),
-                Wl),
+                Zl),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.HIGH_ENERGY_PHYSICS
                   ) > 0
                 );
@@ -19992,14 +20181,14 @@
               description:
                 "Utilize a highly ionized environment to generate sophisticated, radiation- and temperature-hardened polymers. Unlocking new upgrades",
               getCost:
-                ((Zl = {}),
-                (Zl[l.RESEARCH] = function (e) {
+                ((Fl = {}),
+                (Fl[l.RESEARCH] = function (e) {
                   return { A: 24500, B: 0, type: i.LINEAR };
                 }),
-                Zl),
+                Fl),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.PHOTO_LITHOGRAPHY
                   ) > 0
                 );
@@ -20011,14 +20200,14 @@
               description:
                 "Learn how to generate more sophisticated compounds to boost your development",
               getCost:
-                ((Fl = {}),
-                (Fl[l.RESEARCH] = function (e) {
+                ((jl = {}),
+                (jl[l.RESEARCH] = function (e) {
                   return { A: 25500, B: 0, type: i.LINEAR };
                 }),
-                Fl),
+                jl),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.PHOTO_LITHOGRAPHY
                   ) > 0
                 );
@@ -20030,14 +20219,14 @@
               description:
                 "Low temperatures causes some materials become incredibly good conductors. Learn more about this phenomena and how you can use it.",
               getCost:
-                ((jl = {}),
-                (jl[l.RESEARCH] = function (e) {
+                ((Vl = {}),
+                (Vl[l.RESEARCH] = function (e) {
                   return { A: 31125, B: 0, type: i.LINEAR };
                 }),
-                jl),
+                Vl),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.THERMONUCLEAR_SYNTHESIS
                   ) > 0
                 );
@@ -20049,14 +20238,14 @@
               description:
                 "Learn how to combine metal with plastic to create extremely heat- and hit-hardened materials. Unlocking new upgrades and resources",
               getCost:
-                ((Vl = {}),
-                (Vl[l.RESEARCH] = function (e) {
+                ((Kl = {}),
+                (Kl[l.RESEARCH] = function (e) {
                   return { A: 33100, B: 0, type: i.LINEAR };
                 }),
-                Vl),
+                Kl),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.ADVANCED_POLYMERIZATION
                   ) > 0
                 );
@@ -20068,14 +20257,14 @@
               description:
                 "Running extremely strong current unlocks opportunity to generate huge magnetic field. Learn more about how to maintain and use it",
               getCost:
-                ((Kl = {}),
-                (Kl[l.RESEARCH] = function (e) {
+                ((zl = {}),
+                (zl[l.RESEARCH] = function (e) {
                   return { A: 36500, B: 0, type: i.LINEAR };
                 }),
-                Kl),
+                zl),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.SUPER_CONDUCTIVITY
                   ) > 0
                 );
@@ -20094,10 +20283,10 @@
                 ql),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.SUPER_CONDUCTIVITY
                   ) > 0 &&
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.MOLECULAR_PHYSICS
                   ) > 0
                 );
@@ -20108,14 +20297,14 @@
               name: "Particle Physics",
               description: "Learn more about elementary particles",
               getCost:
-                ((zl = {}),
-                (zl[l.RESEARCH] = function (e) {
+                ((Ql = {}),
+                (Ql[l.RESEARCH] = function (e) {
                   return { A: 54500, B: 0, type: i.LINEAR };
                 }),
-                zl),
+                Ql),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.MAGNETODYNAMICS
                   ) > 0
                 );
@@ -20126,14 +20315,14 @@
               name: "Advanced Space Construction",
               description: "Learn more about building in space",
               getCost:
-                ((Ql = {}),
-                (Ql[l.RESEARCH] = function (e) {
+                ((Jl = {}),
+                (Jl[l.RESEARCH] = function (e) {
                   return { A: 57500, B: 0, type: i.LINEAR };
                 }),
-                Ql),
+                Jl),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.SPACESHIP_BUILDINGS
                   ) > 0
                 );
@@ -20145,14 +20334,14 @@
               description:
                 "Advance your knowledge about high temperature environments",
               getCost:
-                ((Jl = {}),
-                (Jl[l.RESEARCH] = function (e) {
+                (($l = {}),
+                ($l[l.RESEARCH] = function (e) {
                   return { A: 57500, B: 0, type: i.LINEAR };
                 }),
-                Jl),
+                $l),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.ADVANCED_COMPOSITES
                   ) > 0
                 );
@@ -20164,14 +20353,14 @@
               description:
                 "Learn more about exoplanets. Unlocks new option to search planets.",
               getCost:
-                (($l = {}),
-                ($l[l.RESEARCH] = function (e) {
+                ((ep = {}),
+                (ep[l.RESEARCH] = function (e) {
                   return { A: 59500, B: 0, type: i.LINEAR };
                 }),
-                $l),
+                ep),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.SPACESHIP_BUILDINGS
                   ) > 0
                 );
@@ -20183,14 +20372,14 @@
               description:
                 "Low temperatures can significantly reduce molecule decay rates. Learn how to use it to generate more sophisticated organics",
               getCost:
-                ((ep = {}),
-                (ep[l.RESEARCH] = function (e) {
+                ((tp = {}),
+                (tp[l.RESEARCH] = function (e) {
                   return { A: 71500, B: 0, type: i.LINEAR };
                 }),
-                ep),
+                tp),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.ADVANCED_THERMODYNAMICS
                   ) > 0
                 );
@@ -20202,14 +20391,14 @@
               description:
                 "Neutrinos are particles that interacts with other matter very weakly. Learn how to use it for your civilization development",
               getCost:
-                ((tp = {}),
-                (tp[l.RESEARCH] = function (e) {
+                ((np = {}),
+                (np[l.RESEARCH] = function (e) {
                   return { A: 73500, B: 0, type: i.LINEAR };
                 }),
-                tp),
+                np),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.PARTICLE_PHYSICS
                   ) > 0
                 );
@@ -20220,14 +20409,14 @@
               name: "Quark Physics",
               description: "Learn more about what matter is made of",
               getCost:
-                ((np = {}),
-                (np[l.RESEARCH] = function (e) {
+                ((ip = {}),
+                (ip[l.RESEARCH] = function (e) {
                   return { A: 74500, B: 0, type: i.LINEAR };
                 }),
-                np),
+                ip),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.PARTICLE_PHYSICS
                   ) > 0
                 );
@@ -20239,14 +20428,14 @@
               description:
                 "Learn more about properties of materials at extremely low temperatures",
               getCost:
-                ((ip = {}),
-                (ip[l.RESEARCH] = function (e) {
+                ((op = {}),
+                (op[l.RESEARCH] = function (e) {
                   return { A: 93500, B: 0, type: i.LINEAR };
                 }),
-                ip),
+                op),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.LOW_TEMP_PHYSICS
                   ) > 0
                 );
@@ -20258,14 +20447,14 @@
               description:
                 "Learn more about specific of your colonists and other organisms living in space.",
               getCost:
-                ((op = {}),
-                (op[l.RESEARCH] = function (e) {
+                ((rp = {}),
+                (rp[l.RESEARCH] = function (e) {
                   return { A: 91500, B: 0, type: i.LINEAR };
                 }),
-                op),
+                rp),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.ADVANCED_SPACE_CONSTRUCTION
                   ) > 0
                 );
@@ -20277,14 +20466,14 @@
               description:
                 "Use your previous researches in biology, nanophysics and photochemistry to investigate organisms and viruses creation",
               getCost:
-                ((rp = {}),
-                (rp[l.RESEARCH] = function (e) {
+                ((ap = {}),
+                (ap[l.RESEARCH] = function (e) {
                   return { A: 121500, B: 0, type: i.LINEAR };
                 }),
-                rp),
+                ap),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.SPACE_ORGANICS
                   ) > 0
                 );
@@ -20296,14 +20485,14 @@
               description:
                 "Using your knowledge about what protons and neutrons consists of you can learn more about nuclear manipulations",
               getCost:
-                ((ap = {}),
-                (ap[l.RESEARCH] = function (e) {
+                ((cp = {}),
+                (cp[l.RESEARCH] = function (e) {
                   return { A: 124500, B: 0, type: i.LINEAR };
                 }),
-                ap),
+                cp),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.QUARK_PHYSICS
                   ) > 0
                 );
@@ -20315,14 +20504,14 @@
               description:
                 "Use your knowledge about material properties in extremely low temperatures to understand better super-conductivity phenomena",
               getCost:
-                ((cp = {}),
-                (cp[l.RESEARCH] = function (e) {
+                ((sp = {}),
+                (sp[l.RESEARCH] = function (e) {
                   return { A: 132500, B: 0, type: i.LINEAR };
                 }),
-                cp),
+                sp),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(B.CRYOGENICS) >
+                  xh.science.scienceResearches.getResearchLevel(B.CRYOGENICS) >
                   0
                 );
               },
@@ -20333,14 +20522,14 @@
               description:
                 "Run more experiments about quantum effects under very powerful magnetic fields",
               getCost:
-                ((sp = {}),
-                (sp[l.RESEARCH] = function (e) {
+                ((up = {}),
+                (up[l.RESEARCH] = function (e) {
                   return { A: 169e3, B: 0, type: i.LINEAR };
                 }),
-                sp),
+                up),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.ADVANCED_SUPERCONDUCTIVITY
                   ) > 0
                 );
@@ -20352,14 +20541,14 @@
               description:
                 "Learn how to use quantum magnetic effects to build more sensitive detectors",
               getCost:
-                ((up = {}),
-                (up[l.RESEARCH] = function (e) {
+                ((lp = {}),
+                (lp[l.RESEARCH] = function (e) {
                   return { A: 225e3, B: 0, type: i.LINEAR };
                 }),
-                up),
+                lp),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.QUANTUM_MAGNETICS
                   ) > 0
                 );
@@ -20371,14 +20560,14 @@
               description:
                 "Learn how to manipulate with quantum state of matter to use quantum mechanics on practise",
               getCost:
-                ((lp = {}),
-                (lp[l.RESEARCH] = function (e) {
+                ((pp = {}),
+                (pp[l.RESEARCH] = function (e) {
                   return { A: 265e3, B: 0, type: i.LINEAR };
                 }),
-                lp),
+                pp),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.QUANTUM_MAGNETICS_DETECTION
                   ) > 0
                 );
@@ -20390,14 +20579,14 @@
               description:
                 "Learn more about quark-gluon plasma that appears under extreme high temperature/pressure conditions",
               getCost:
-                ((pp = {}),
-                (pp[l.RESEARCH] = function (e) {
+                ((dp = {}),
+                (dp[l.RESEARCH] = function (e) {
                   return { A: 146500, B: 0, type: i.LINEAR };
                 }),
-                pp),
+                dp),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.ADVANCED_NUCLEAR_RESEARCH
                   ) > 0
                 );
@@ -20409,14 +20598,14 @@
               description:
                 "Run some experiments over extremely pressed matter to learn more about high density physics",
               getCost:
-                ((dp = {}),
-                (dp[l.RESEARCH] = function (e) {
+                ((Ep = {}),
+                (Ep[l.RESEARCH] = function (e) {
                   return { A: 205500, B: 0, type: i.LINEAR };
                 }),
-                dp),
+                Ep),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.QUARK_GLUON_PLASMA_STUDY
                   ) > 0
                 );
@@ -20428,14 +20617,14 @@
               description:
                 "Learn more about gravity waves and graviton particles",
               getCost:
-                ((Ep = {}),
-                (Ep[l.RESEARCH] = function (e) {
+                ((gp = {}),
+                (gp[l.RESEARCH] = function (e) {
                   return { A: 275500, B: 0, type: i.LINEAR };
                 }),
-                Ep),
+                gp),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.HIGH_DENSITY_STUDY
                   ) > 0
                 );
@@ -20447,14 +20636,14 @@
               description:
                 "Learn how to create organic-friendly nanobots that can be embedded into any living organism",
               getCost:
-                ((gp = {}),
-                (gp[l.RESEARCH] = function (e) {
+                ((fp = {}),
+                (fp[l.RESEARCH] = function (e) {
                   return { A: 147500, B: 0, type: i.LINEAR };
                 }),
-                gp),
+                fp),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.NANO_BIOLOGY
                   ) > 0
                 );
@@ -20466,14 +20655,14 @@
               description:
                 "Improve your knowledge about organics synthesis to create synthetic neurons that can be more efficient than standard transistors in some cases",
               getCost:
-                ((fp = {}),
-                (fp[l.RESEARCH] = function (e) {
+                ((Ap = {}),
+                (Ap[l.RESEARCH] = function (e) {
                   return { A: 177500, B: 0, type: i.LINEAR };
                 }),
-                fp),
+                Ap),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.ORGANIC_NANOCONSTRUCTION
                   ) > 0
                 );
@@ -20485,14 +20674,14 @@
               description:
                 "Learn how to create exotic bacteria from scratch and make them working for you",
               getCost:
-                ((Ap = {}),
-                (Ap[l.RESEARCH] = function (e) {
+                ((mp = {}),
+                (mp[l.RESEARCH] = function (e) {
                   return { A: 215e3, B: 0, type: i.LINEAR };
                 }),
-                Ap),
+                mp),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.ORGANIC_BASED_COMPUTATION
                   ) > 0
                 );
@@ -20503,14 +20692,14 @@
               name: "Android Construction",
               description: "Allows you creating human-like androids",
               getCost:
-                ((mp = {}),
-                (mp[l.RESEARCH] = function (e) {
+                ((Np = {}),
+                (Np[l.RESEARCH] = function (e) {
                   return { A: 295e3, B: 0, type: i.LINEAR };
                 }),
-                mp),
+                Np),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.SYNTHETIC_ORGANISMS
                   ) > 0
                 );
@@ -20522,14 +20711,14 @@
               description:
                 "Learn more about dark matter. Provides you technologies to catch trace amount of dark matter by specific structure in the space and use it in your technological processes",
               getCost:
-                ((Np = {}),
-                (Np[l.RESEARCH] = function (e) {
+                ((hp = {}),
+                (hp[l.RESEARCH] = function (e) {
                   return { A: 325e3, B: 0, type: i.LINEAR };
                 }),
-                Np),
+                hp),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.GRAVITONE_STUDY
                   ) > 0
                 );
@@ -20541,14 +20730,14 @@
               description:
                 "Improve your mastery in synthetic organisms creation",
               getCost:
-                ((hp = {}),
-                (hp[l.RESEARCH] = function (e) {
+                ((Ip = {}),
+                (Ip[l.RESEARCH] = function (e) {
                   return { A: 385e3, B: 0, type: i.LINEAR };
                 }),
-                hp),
+                Ip),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.ANDROID_CONSTRUCTION
                   ) > 0
                 );
@@ -20560,14 +20749,14 @@
               description:
                 "Learn more about degenerate matter state, and ways to use it in your production cycles",
               getCost:
-                ((Ip = {}),
-                (Ip[l.RESEARCH] = function (e) {
+                ((Rp = {}),
+                (Rp[l.RESEARCH] = function (e) {
                   return { A: 425e3, B: 0, type: i.LINEAR };
                 }),
-                Ip),
+                Rp),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.QUANTUM_STATE_STUDY
                   ) > 0
                 );
@@ -20579,14 +20768,14 @@
               description:
                 "Invest your research efforts into understanding more particle physics",
               getCost:
-                ((Rp = {}),
-                (Rp[l.RESEARCH] = function (e) {
+                ((Tp = {}),
+                (Tp[l.RESEARCH] = function (e) {
                   return { A: 485e3, B: 0, type: i.LINEAR };
                 }),
-                Rp),
+                Tp),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.DARK_MATTER_STUDY
                   ) > 0
                 );
@@ -20598,14 +20787,14 @@
               description:
                 "Learn more about specific matter state under extremely low temperatures",
               getCost:
-                ((Tp = {}),
-                (Tp[l.RESEARCH] = function (e) {
+                ((yp = {}),
+                (yp[l.RESEARCH] = function (e) {
                   return { A: 545e3, B: 0, type: i.LINEAR };
                 }),
-                Tp),
+                yp),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.DEGENERATE_MATTER
                   ) > 0
                 );
@@ -20617,14 +20806,14 @@
               description:
                 "Embed artificial mitochondria into your bacteria cells to find new use for your micro-flora",
               getCost:
-                ((yp = {}),
-                (yp[l.RESEARCH] = function (e) {
+                ((Op = {}),
+                (Op[l.RESEARCH] = function (e) {
                   return { A: 645e3, B: 0, type: i.LINEAR };
                 }),
-                yp),
+                Op),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.ADVANCED_ORGANISMS_GENERATION
                   ) > 0
                 );
@@ -20636,14 +20825,14 @@
               description:
                 "Learn more about exotic matter and ways to control its behaviour.",
               getCost:
-                ((Op = {}),
-                (Op[l.RESEARCH] = function (e) {
+                ((Lp = {}),
+                (Lp[l.RESEARCH] = function (e) {
                   return { A: 7e5, B: 0, type: i.LINEAR };
                 }),
-                Op),
+                Lp),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.EXPANDED_PARTICLE_THEORY
                   ) > 0
                 );
@@ -20655,14 +20844,14 @@
               description:
                 "Finally you found a way to control antimatter. Unlock dangerous but extremely useful power of antimatter.",
               getCost:
-                ((Lp = {}),
-                (Lp[l.RESEARCH] = function (e) {
+                ((Cp = {}),
+                (Cp[l.RESEARCH] = function (e) {
                   return { A: 95e4, B: 0, type: i.LINEAR };
                 }),
-                Lp),
+                Cp),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.EXOTIC_MATTER_STUDY
                   ) > 0
                 );
@@ -20674,14 +20863,14 @@
               description:
                 "Invent new, more secure ways to handle antimatter. Unlocks significant boosts to your civilization economy.",
               getCost:
-                ((Cp = {}),
-                (Cp[l.RESEARCH] = function (e) {
+                ((vp = {}),
+                (vp[l.RESEARCH] = function (e) {
                   return { A: 13e5, B: 0, type: i.LINEAR };
                 }),
-                Cp),
+                vp),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.ANTIMATTER_STUDY
                   ) > 0
                 );
@@ -20693,14 +20882,14 @@
               description:
                 "Learn more about matter & antimatter interaction to unleash immense amounts of power.",
               getCost:
-                ((vp = {}),
-                (vp[l.RESEARCH] = function (e) {
+                ((Sp = {}),
+                (Sp[l.RESEARCH] = function (e) {
                   return { A: 2e6, B: 0, type: i.LINEAR };
                 }),
-                vp),
+                Sp),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.ANTIMATTER_USAGE
                   ) > 0
                 );
@@ -20712,14 +20901,14 @@
               description:
                 "Further improve your understanding of biochemistry to be capable of multicellular organisms engineering",
               getCost:
-                ((Sp = {}),
-                (Sp[l.RESEARCH] = function (e) {
+                ((Pp = {}),
+                (Pp[l.RESEARCH] = function (e) {
                   return { A: 8e5, B: 0, type: i.LINEAR };
                 }),
-                Sp),
+                Pp),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.EXOTIC_BIOCHEMISTRY
                   ) > 0
                 );
@@ -20731,14 +20920,14 @@
               description:
                 'Improve your knowledge of biochemistry to "teach" your synthetic bacteria to process even chemically-steady atoms',
               getCost:
-                ((Pp = {}),
-                (Pp[l.RESEARCH] = function (e) {
+                ((Bp = {}),
+                (Bp[l.RESEARCH] = function (e) {
                   return { A: 15e5, B: 0, type: i.LINEAR };
                 }),
-                Pp),
+                Bp),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.ADVANCED_SYNTHETIC_BIOLOGY
                   ) > 0
                 );
@@ -20750,14 +20939,14 @@
               description:
                 "Further advance your understanding of bose-einstein condensate and its usage",
               getCost:
-                ((Bp = {}),
-                (Bp[l.RESEARCH] = function (e) {
+                ((Mp = {}),
+                (Mp[l.RESEARCH] = function (e) {
                   return { A: 8e5, B: 0, type: i.LINEAR };
                 }),
-                Bp),
+                Mp),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.DEGENERATE_MATTER
                   ) > 0
                 );
@@ -20769,14 +20958,14 @@
               description:
                 "Learn about ways to create higher temperature condensates, and put even whole atoms in degenerate state",
               getCost:
-                ((Mp = {}),
-                (Mp[l.RESEARCH] = function (e) {
+                ((_p = {}),
+                (_p[l.RESEARCH] = function (e) {
                   return { A: 14e5, B: 0, type: i.LINEAR };
                 }),
-                Mp),
+                _p),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.ADVANCED_BOSE_EINSTEIN
                   ) > 0
                 );
@@ -20788,14 +20977,14 @@
               description:
                 "Finally all your previous efforts in understanding degenerate state of matter in low temperatures and extreme gravity allows you creation of compact high-gravity objects and modify space-time state",
               getCost:
-                ((_p = {}),
-                (_p[l.RESEARCH] = function (e) {
+                ((Up = {}),
+                (Up[l.RESEARCH] = function (e) {
                   return { A: 2e6, B: 0, type: i.LINEAR };
                 }),
-                _p),
+                Up),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.DEGENERATE_ATOMS
                   ) > 0
                 );
@@ -20807,14 +20996,14 @@
               description:
                 "Previous advances in biology study now can take you to new level - learn how to make organics that able to manipulate with quantum state of matter",
               getCost:
-                ((Up = {}),
-                (Up[l.RESEARCH] = function (e) {
+                ((bp = {}),
+                (bp[l.RESEARCH] = function (e) {
                   return { A: 3e6, B: 0, type: i.LINEAR };
                 }),
-                Up),
+                bp),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.ATOM_BIOLOGY
                   ) > 0
                 );
@@ -20826,14 +21015,14 @@
               description:
                 "Learn how to embed quantum effects into your synthetic organisms for further advances in organics processing and medicine",
               getCost:
-                ((bp = {}),
-                (bp[l.RESEARCH] = function (e) {
+                ((Gp = {}),
+                (Gp[l.RESEARCH] = function (e) {
                   return { A: 5e6, B: 0, type: i.LINEAR };
                 }),
-                bp),
+                Gp),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.QUANTUM_BIOCHEMISTRY
                   ) > 0
                 );
@@ -20845,14 +21034,14 @@
               description:
                 "What about bacteria manipulating high energies and exotic matter?",
               getCost:
-                ((Gp = {}),
-                (Gp[l.RESEARCH] = function (e) {
+                ((wp = {}),
+                (wp[l.RESEARCH] = function (e) {
                   return { A: 1e7, B: 0, type: i.LINEAR };
                 }),
-                Gp),
+                wp),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.QUANTUM_BIOLOGY
                   ) > 0
                 );
@@ -20864,14 +21053,14 @@
               description:
                 "Finally all your experiments led you to the point when you can unleash dangerous power of annihilation. Learn how to make it more controlled",
               getCost:
-                ((wp = {}),
-                (wp[l.RESEARCH] = function (e) {
+                ((Dp = {}),
+                (Dp[l.RESEARCH] = function (e) {
                   return { A: 3e6, B: 0, type: i.LINEAR };
                 }),
-                wp),
+                Dp),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.ANNIHILATION_STUDY
                   ) > 0
                 );
@@ -20883,14 +21072,14 @@
               description:
                 "Take more control over quarks by manipulating their type",
               getCost:
-                ((Dp = {}),
-                (Dp[l.RESEARCH] = function (e) {
+                ((Xp = {}),
+                (Xp[l.RESEARCH] = function (e) {
                   return { A: 45e5, B: 0, type: i.LINEAR };
                 }),
-                Dp),
+                Xp),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.CONTROLLED_ANNIHILATION
                   ) > 0
                 );
@@ -20902,14 +21091,14 @@
               description:
                 "Previous experiments with fundamental proved existence of so-called strange matter. Learn more about it and how it can be used",
               getCost:
-                ((Xp = {}),
-                (Xp[l.RESEARCH] = function (e) {
+                ((xp = {}),
+                (xp[l.RESEARCH] = function (e) {
                   return { A: 65e5, B: 0, type: i.LINEAR };
                 }),
-                Xp),
+                xp),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.QUARK_TRANSFORMATION
                   ) > 0
                 );
@@ -20921,14 +21110,14 @@
               description:
                 "Investigate more about strange matter characteristics to learn how to transmute and re-engineer matter on elementary particle level",
               getCost:
-                ((xp = {}),
-                (xp[l.RESEARCH] = function (e) {
+                ((kp = {}),
+                (kp[l.RESEARCH] = function (e) {
                   return { A: 9e6, B: 0, type: i.LINEAR };
                 }),
-                xp),
+                kp),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.STRANGE_MATTER_STUDY
                   ) > 0
                 );
@@ -20940,14 +21129,14 @@
               description:
                 "Learn how to use exotic matter to further boost your civilization",
               getCost:
-                ((kp = {}),
-                (kp[l.RESEARCH] = function (e) {
+                ((Hp = {}),
+                (Hp[l.RESEARCH] = function (e) {
                   return { A: 13e6, B: 0, type: i.LINEAR };
                 }),
-                kp),
+                Hp),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.STRANGE_MATTER_TRANSMUTATIONS
                   ) > 0
                 );
@@ -20959,14 +21148,14 @@
               description:
                 "Expand your understanding of particle and energy interactions even further",
               getCost:
-                ((Hp = {}),
-                (Hp[l.RESEARCH] = function (e) {
+                ((Yp = {}),
+                (Yp[l.RESEARCH] = function (e) {
                   return { A: 3e6, B: 0, type: i.LINEAR };
                 }),
-                Hp),
+                Yp),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.HYPERSPACE_TECH
                   ) > 0
                 );
@@ -20978,14 +21167,14 @@
               description:
                 "Previous investigations in quantum field finally maid it possible to implement quantum computers",
               getCost:
-                ((Yp = {}),
-                (Yp[l.RESEARCH] = function (e) {
+                ((Wp = {}),
+                (Wp[l.RESEARCH] = function (e) {
                   return { A: 45e5, B: 0, type: i.LINEAR };
                 }),
-                Yp),
+                Wp),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.FIELD_THEORY
                   ) > 0
                 );
@@ -20997,14 +21186,14 @@
               description:
                 "Learn how to use fast and robust computations in materials engineering",
               getCost:
-                ((Wp = {}),
-                (Wp[l.RESEARCH] = function (e) {
+                ((Zp = {}),
+                (Zp[l.RESEARCH] = function (e) {
                   return { A: 65e5, B: 0, type: i.LINEAR };
                 }),
-                Wp),
+                Zp),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.QUANTUM_COMPUTATION
                   ) > 0
                 );
@@ -21015,14 +21204,14 @@
               name: "Advanced Quantum Computation",
               description: "Improve further concepts of quantum computation",
               getCost:
-                ((Zp = {}),
-                (Zp[l.RESEARCH] = function (e) {
+                ((Fp = {}),
+                (Fp[l.RESEARCH] = function (e) {
                   return { A: 9e6, B: 0, type: i.LINEAR };
                 }),
-                Zp),
+                Fp),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.QUANTUM_ENHANCED_MATERIAL
                   ) > 0
                 );
@@ -21034,14 +21223,14 @@
               description:
                 "Improve your knowledge about massive manipulations over quantum state",
               getCost:
-                ((Fp = {}),
-                (Fp[l.RESEARCH] = function (e) {
+                ((jp = {}),
+                (jp[l.RESEARCH] = function (e) {
                   return { A: 125e5, B: 0, type: i.LINEAR };
                 }),
-                Fp),
+                jp),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.ADVANCED_QUANTUM_COMPUTATION
                   ) > 0
                 );
@@ -21053,14 +21242,14 @@
               description:
                 'Dig even deeper into understanding of so-called "Strangelets"',
               getCost:
-                ((jp = {}),
-                (jp[l.RESEARCH] = function (e) {
+                ((Vp = {}),
+                (Vp[l.RESEARCH] = function (e) {
                   return { A: 175e5, B: 0, type: i.LINEAR };
                 }),
-                jp),
+                Vp),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.EXOTIC_MATTER_ENGINEERING
                   ) > 0
                 );
@@ -21072,14 +21261,14 @@
               description:
                 "Learn how to use strange matter to make antimatter reactions even more controllable",
               getCost:
-                ((Vp = {}),
-                (Vp[l.RESEARCH] = function (e) {
+                ((Kp = {}),
+                (Kp[l.RESEARCH] = function (e) {
                   return { A: 25e6, B: 0, type: i.LINEAR };
                 }),
-                Vp),
+                Kp),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.ADVANCED_STRANGE_MATTER
                   ) > 0
                 );
@@ -21091,14 +21280,14 @@
               description:
                 "Learn more about manipulations over quantum state of particles and its usage",
               getCost:
-                ((Kp = {}),
-                (Kp[l.RESEARCH] = function (e) {
+                ((zp = {}),
+                (zp[l.RESEARCH] = function (e) {
                   return { A: 17e6, B: 0, type: i.LINEAR };
                 }),
-                Kp),
+                zp),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.QUANTUM_ENGINEERING
                   ) > 0
                 );
@@ -21117,14 +21306,14 @@
                 qp),
               unlockCondition: function (e) {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(
+                  xh.science.scienceResearches.getResearchLevel(
                     B.ADVANCED_QUANTUM_ENGINEERING
                   ) > 0
                 );
               },
             },
           ],
-          tE = (function () {
+          nE = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -21158,7 +21347,7 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          nE = (function (e) {
+          iE = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -21171,7 +21360,7 @@
               );
             }
             return (
-              tE(t, e),
+              nE(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -21184,7 +21373,7 @@
               (t.prototype.dataToUI = function () {
                 var e = this;
                 return {
-                  list: eE.map(function (t) {
+                  list: tE.map(function (t) {
                     return e.processToUI(t);
                   }),
                 };
@@ -21207,9 +21396,9 @@
                 t || ((t = { id: e.id, amount: 0 }), this.researches.push(t));
                 var n = W.calcBatchAll(
                     e.getCost,
-                    Mh.getInstance(),
+                    Xh.getInstance(),
                     t.amount,
-                    Mh.getInstance().resources.getBatchObject()
+                    Xh.getInstance().resources.getBatchObject()
                   ),
                   i = n.reduce(function (e, t) {
                     return Math.min(e, t.max);
@@ -21220,14 +21409,14 @@
                   a = n.reduce(function (e, t) {
                     return Math.max(e, t.eta);
                   }, 0),
-                  c = e.unlockCondition(_h);
+                  c = e.unlockCondition(xh);
                 return (
                   c &&
                     0 === t.amount &&
-                    _h.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                    xh.landingZone.landingZoneUpgrades.getUpgradeLevel(
                       r.RESEARCH_MODULE
                     ) > 0 &&
-                    _h.newNotifications.registerNotification(
+                    xh.newNotifications.registerNotification(
                       "science:researches:".concat(e.id)
                     ),
                   {
@@ -21236,10 +21425,10 @@
                     description: e.description,
                     isUnlocked: c,
                     isAvailable: i >= 1,
-                    cost: Mh.getInstance().resources.assertEnought(
+                    cost: Xh.getInstance().resources.assertEnought(
                       n,
-                      Mh.getInstance().resources.getBatchObject(),
-                      Mh.getInstance().resources.getBatchBalanceObject()
+                      Xh.getInstance().resources.getBatchObject(),
+                      Xh.getInstance().resources.getBatchBalanceObject()
                     ),
                     progress: i < 1 ? (100 * i).toPrecision(3) : "100",
                     isResearched: t.amount > 0,
@@ -21258,15 +21447,15 @@
                     this.researches.push({ id: e, amount: 0 })),
                   !(this.researches[t].amount > 0))
                 ) {
-                  var n = eE.find(function (t) {
+                  var n = tE.find(function (t) {
                     return t.id === e;
                   });
                   if (n) {
                     var i = W.calcBatchAll(
                       n.getCost,
-                      Mh.getInstance(),
+                      Xh.getInstance(),
                       this.researches[t].amount,
-                      Mh.getInstance().resources.getBatchObject()
+                      Xh.getInstance().resources.getBatchObject()
                     );
                     if (
                       !(
@@ -21276,10 +21465,10 @@
                       )
                     )
                       return (
-                        Mh.getInstance().resources.subtractResourceBatch(i),
+                        Xh.getInstance().resources.subtractResourceBatch(i),
                         this.researches[t].amount++,
-                        _h.resources.reassertBalances(),
-                        _h.regenerateCache(),
+                        xh.resources.reassertBalances(),
+                        xh.regenerateCache(),
                         !0
                       );
                   }
@@ -21292,8 +21481,8 @@
               t
             );
           })(P),
-          iE = nE.getInstance(),
-          oE = (function () {
+          oE = iE.getInstance(),
+          rE = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -21327,13 +21516,13 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          rE = (function (e) {
+          aE = (function (e) {
             function t() {
               var t = e.call(this) || this;
-              return (t.scienceResearches = iE), t;
+              return (t.scienceResearches = oE), t;
             }
             return (
-              oE(t, e),
+              rE(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -21347,7 +21536,7 @@
                 return {
                   research: this.scienceResearches.dataToUI(),
                   isUnlocked:
-                    _h.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                    xh.landingZone.landingZoneUpgrades.getUpgradeLevel(
                       r.RESEARCH_MODULE
                     ) > 0,
                 };
@@ -21361,7 +21550,7 @@
               t
             );
           })(P).getInstance(),
-          aE = (function () {
+          cE = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -21395,9 +21584,9 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          cE = function () {
+          sE = function () {
             return (
-              (cE =
+              (sE =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -21406,10 +21595,10 @@
                         (e[o] = t[o]);
                   return e;
                 }),
-              cE.apply(this, arguments)
+              sE.apply(this, arguments)
             );
           },
-          sE = (function (e) {
+          uE = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -21422,7 +21611,7 @@
               );
             }
             return (
-              aE(t, e),
+              cE(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -21435,7 +21624,7 @@
               (t.prototype.dataToUI = function () {
                 var e = this;
                 return {
-                  list: Kd.map(function (t) {
+                  list: zd.map(function (t) {
                     return e.processToUI(t);
                   }),
                   craftingSlots: this.craftingSlots,
@@ -21474,22 +21663,22 @@
                 var i = e.getConsumption
                     ? W.calcBatchAll(
                         e.getConsumption,
-                        Mh.getInstance(),
+                        Xh.getInstance(),
                         0,
-                        Mh.getInstance().resources.getBatchObject()
+                        Xh.getInstance().resources.getBatchObject()
                       )
                     : [],
                   o = e.getGain
-                    ? W.calcBatch(e.getGain, Mh.getInstance(), 0)
+                    ? W.calcBatch(e.getGain, Xh.getInstance(), 0)
                     : [],
-                  r = n.unlockCondition(_h);
+                  r = n.unlockCondition(xh);
                 return (
                   r &&
                     (t.amount > 0 &&
-                      _h.newNotifications.setViewed(
+                      xh.newNotifications.setViewed(
                         "planet:crafting:jobs:".concat(e.id)
                       ),
-                    _h.newNotifications.registerNotification(
+                    xh.newNotifications.registerNotification(
                       "planet:crafting:jobs:".concat(e.id)
                     )),
                   {
@@ -21501,7 +21690,7 @@
                         return e.amount;
                       })
                       .map(function (e) {
-                        return cE(cE({}, e), {
+                        return sE(sE({}, e), {
                           amountValue: e.amount,
                           amount: F(e.amount),
                         });
@@ -21511,7 +21700,7 @@
                         return e.amount;
                       })
                       .map(function (e) {
-                        return cE(cE({}, e), {
+                        return sE(sE({}, e), {
                           amountValue: e.amount,
                           amount: F(e.amount),
                         });
@@ -21537,13 +21726,13 @@
                 if (i < t) {
                   var o = t - i,
                     r =
-                      (_h.colony.colonyJobs.freeLabour,
-                      _h.colony.colonyJobs.freeWorkers,
-                      _h.colony.colonyJobs.getWorkersAmount(_.ARTISAN),
-                      Math.max(o, 0) - _h.colony.colonyJobs.freeWorkers),
+                      (xh.colony.colonyJobs.freeLabour,
+                      xh.colony.colonyJobs.freeWorkers,
+                      xh.colony.colonyJobs.getWorkersAmount(_.ARTISAN),
+                      Math.max(o, 0) - xh.colony.colonyJobs.freeWorkers),
                     a = 0;
                   r > 0 &&
-                    ((a = Math.max(-r, -_h.colony.colonyJobs.freeLabour)),
+                    ((a = Math.max(-r, -xh.colony.colonyJobs.freeLabour)),
                     console.log("ADD: Get from labour", r, a),
                     console.log(
                       "ADD: New amount is " +
@@ -21551,16 +21740,16 @@
                         ". Allowed by crafters is " +
                         i
                     ));
-                  var c = Math.min(_h.colony.colonyJobs.freeWorkers - a, o);
-                  _h.colony.colonyJobs.setAmount(
+                  var c = Math.min(xh.colony.colonyJobs.freeWorkers - a, o);
+                  xh.colony.colonyJobs.setAmount(
                     _.ARTISAN,
-                    _h.colony.colonyJobs.getWorkersAmount(_.ARTISAN) + c
+                    xh.colony.colonyJobs.getWorkersAmount(_.ARTISAN) + c
                   ),
                     (i += c);
                 }
                 (this.crafters[n].amount = Math.min(Math.max(t, 0), i)),
-                  _h.resources.reassertBalances(),
-                  _h.regenerateCache();
+                  xh.resources.reassertBalances(),
+                  xh.regenerateCache();
               }),
               (t.prototype.addAmount = function (e, t) {
                 t = Math.floor(t);
@@ -21577,20 +21766,20 @@
                   );
                 if (o < i) {
                   var r = i - o,
-                    a = Math.min(_h.colony.colonyJobs.freeWorkers, r);
-                  _h.colony.colonyJobs.setAmount(
+                    a = Math.min(xh.colony.colonyJobs.freeWorkers, r);
+                  xh.colony.colonyJobs.setAmount(
                     _.ARTISAN,
-                    _h.colony.colonyJobs.getWorkersAmount(_.ARTISAN) + a
+                    xh.colony.colonyJobs.getWorkersAmount(_.ARTISAN) + a
                   ),
                     (o += a);
                 }
                 (this.crafters[n].amount = Math.min(Math.max(i, 0), o)),
-                  _h.resources.reassertBalances(),
-                  _h.regenerateCache();
+                  xh.resources.reassertBalances(),
+                  xh.regenerateCache();
               }),
               (t.prototype.getResourceBeingProduced = function (e) {
                 var t = this,
-                  n = Kd.filter(function (t) {
+                  n = zd.filter(function (t) {
                     return t.getGain && !!t.getGain[e];
                   }),
                   i = [];
@@ -21605,7 +21794,7 @@
                       (null === (r = a.getGain) || void 0 === r ? void 0 : r[e])
                     ) {
                       var c =
-                        W.calculate(_h, a.getGain[e], 0, o.amount) *
+                        W.calculate(xh, a.getGain[e], 0, o.amount) *
                         o.efficiency *
                         t.getTotalCraftingBonus();
                       i.push({
@@ -21626,7 +21815,7 @@
                   })
                 )
                   throw new Error("Invalid resource");
-                var t = Kd.filter(function (t) {
+                var t = zd.filter(function (t) {
                     return t.getConsumption && !!t.getConsumption[e];
                   }),
                   n = [];
@@ -21643,7 +21832,7 @@
                         : o[e])
                     ) {
                       var a =
-                        W.calculate(_h, r.getConsumption[e], 0, i.amount) *
+                        W.calculate(xh, r.getConsumption[e], 0, i.amount) *
                         i.efficiency;
                       n.push({
                         label: "Crafting: ".concat(k(r.id)),
@@ -21657,7 +21846,7 @@
                 );
               }),
               (t.prototype.getEffectBeingConsumed = function (e) {
-                var t = Kd.filter(function (t) {
+                var t = zd.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getEffectConsumption) ||
                     void 0 === n
@@ -21679,7 +21868,7 @@
                     ) {
                       var a =
                         W.calculate(
-                          _h,
+                          xh,
                           r.getEffectConsumption[e],
                           0,
                           i.amount
@@ -21703,10 +21892,10 @@
               }),
               (t.prototype.adaptEfficiency = function () {
                 var e = this,
-                  t = Ld.lackEfficiencyResources,
+                  t = Cd.lackEfficiencyResources,
                   n = Object.keys(t);
                 this.crafters.forEach(function (i, o) {
-                  var r = Kd.find(function (e) {
+                  var r = zd.find(function (e) {
                     return e.id === i.id;
                   });
                   if (r && r.getConsumption) {
@@ -21723,13 +21912,13 @@
                 });
               }),
               (t.prototype.process = function (e) {
-                var t = _h.crafting.slots - this.getBusyWorkers();
+                var t = xh.crafting.slots - this.getBusyWorkers();
                 if (t < 0) {
                   for (var n = this.crafters.length - 1; n >= 0; n--) {
                     var i = Math.min(this.crafters[n].amount, -t);
                     if (((this.crafters[n].amount -= i), (t += i) >= 0)) break;
                   }
-                  _h.resources.reassertBalances(), _h.regenerateCache();
+                  xh.resources.reassertBalances(), xh.regenerateCache();
                 }
                 this.craftingSlots = t;
               }),
@@ -21739,8 +21928,8 @@
               t
             );
           })(P),
-          uE = sE.getInstance(),
-          lE = (function () {
+          lE = uE.getInstance(),
+          pE = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -21774,13 +21963,13 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          pE = (function (e) {
+          dE = (function (e) {
             function t() {
               var t = e.call(this) || this;
-              return (t.slots = -1), (t.craftingJobs = uE), t;
+              return (t.slots = -1), (t.craftingJobs = lE), t;
             }
             return (
-              lE(t, e),
+              pE(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -21794,7 +21983,7 @@
                 return {
                   maxSlots: this.slots || 0,
                   isUnlocked:
-                    _h.science.scienceResearches.getResearchLevel(
+                    xh.science.scienceResearches.getResearchLevel(
                       B.METALLURGY
                     ) > 0,
                   jobs: this.craftingJobs.dataToUI(),
@@ -21807,13 +21996,13 @@
                 return (
                   (n +=
                     (null ===
-                      (e = _h.colony.colonyJobs.jobs.find(function (e) {
+                      (e = xh.colony.colonyJobs.jobs.find(function (e) {
                         return e.id === _.ARTISAN;
                       })) || void 0 === e
                       ? void 0
                       : e.amount) || 0) +
                   ((null ===
-                    (t = _h.colony.colonyJobs.jobs.find(function (e) {
+                    (t = xh.colony.colonyJobs.jobs.find(function (e) {
                       return e.id === _.ARTISAN;
                     })) || void 0 === t
                     ? void 0
@@ -21830,7 +22019,7 @@
               t
             );
           })(P),
-          dE = pE.getInstance();
+          EE = dE.getInstance();
         !(function (e) {
           (e.RESOURCE = "resource"),
             (e.UPGRADE = "upgrade"),
@@ -21838,9 +22027,8 @@
             (e.RESEARCH = "research"),
             (e.POPULATION = "population"),
             (e.KP_UPGRADE = "kp_upgrade");
-        })(zp || (zp = {}));
-        var EE,
-          gE,
+        })(Qp || (Qp = {}));
+        var gE,
           fE,
           AE,
           mE,
@@ -21875,8 +22063,8 @@
           jE,
           VE,
           KE,
-          qE,
           zE,
+          qE,
           QE,
           JE,
           $E,
@@ -21907,12 +22095,18 @@
           Og,
           Lg,
           Cg,
-          vg = [
+          vg,
+          Sg,
+          Pg,
+          Bg,
+          Mg,
+          _g,
+          Ug = [
             {
               id: "start",
               description: "Power up",
               requirements: [
-                { type: zp.RESOURCE, target: l.POWER, amount: 10 },
+                { type: Qp.RESOURCE, target: l.POWER, amount: 10 },
               ],
               popupHint:
                 "<p>Your home planet has experienced a catastrophe. Your scientists miscalculated, and the Sun began turning into a red giant much faster. It significantly increased in size and has already completely engulfed Mercury. The scorching solar rays are mercilessly drying up Earth, leaving humanity very little time to find a new home.\n</p><p>\n        While the remnants of human civilization seek temporary refuge on Jupiter's moons, the international space association has focused all available resources on searching for exoplanets suitable for life. Humanity has launched thousands of unmanned expeditions to various exoplanets to explore their suitability for life and prepare them for the settlement of the first humans.\n        </p><p>\n        Your task, as the leader of one of these expeditions, is to prepare one of the exoplanets for human colonization. Unfortunately, your spacecraft suffered damage during landing.\n        </p><p>\n        Your primary goal now is to repair the main infrastructure of the spacecraft using unmanned drones.\n        </p><p>\n        First and foremost, you should start by recharging the batteries of the main equipment of the spacecraft.</p>",
@@ -21920,7 +22114,7 @@
             {
               id: "start2",
               description: "Drill some stone",
-              requirements: [{ type: zp.RESOURCE, target: l.STONE, amount: 1 }],
+              requirements: [{ type: Qp.RESOURCE, target: l.STONE, amount: 1 }],
               popupHint:
                 "<p>Now that you've powered your drone, it's time to use it to extract minerals necessary for both spacecraft repairs and further infrastructure development on the planet.\n        </p><p>\n        Your drone is equipped with a special drill for mineral and ore extraction. Unfortunately, it is seriously damaged, but it can still perform its function. Additionally, keep in mind that nearly all actions require electrical power to execute. Fortunately, the solar panels on the spacecraft are intact, and all you need to do is occasionally command the drone to recharge to replenish its power.\n        </p><p>\n        Give the command to your drone to extract some stone.</p>",
             },
@@ -21928,7 +22122,7 @@
               id: "repairFacilities",
               description: "Repair facilities",
               requirements: [
-                { type: zp.UPGRADE, target: r.REPAIR_DRILL, amount: 4 },
+                { type: Qp.UPGRADE, target: r.REPAIR_DRILL, amount: 4 },
               ],
               popupHint:
                 "<p>The journey has begun - you have a small amount of stone containing the necessary minerals. However, to achieve the ultimate goal of creating a new home for humanity, you will need a colossal amount of minerals and valuable resources to be extracted and processed.\n    </p><p>\n        The drill has suffered significant damage during the harsh landing and can provide a very limited amount of raw materials. Fortunately, your engineers foresaw the possibility of equipment self-repair for such cases. All you need is to have a sufficient amount of resources and issue the command for repairs.\n    </p><p>\n        Repair the drill 4 times. During this process, repeat the charging and resource extraction as needed. Each subsequent repair is more complex and requires more resources. However, each successive repair makes resource extraction faster.</p>",
@@ -21936,7 +22130,7 @@
             {
               id: "drillOre",
               description: "Drill ore",
-              requirements: [{ type: zp.RESOURCE, target: l.ORE, amount: 1 }],
+              requirements: [{ type: Qp.RESOURCE, target: l.ORE, amount: 1 }],
               popupHint:
                 "<p>Now that you've repaired the drill, you can begin extracting more complex and harder rock - metal ore. It's more challenging to obtain, but it's extremely necessary for further infrastructure preparation for the future settlement.</p>\n\n    <p>Extract 1 unit of ore.</p>",
             },
@@ -21944,8 +22138,8 @@
               id: "furtherRepair",
               description: "Further facilities repair",
               requirements: [
-                { type: zp.UPGRADE, target: r.REPAIR_DRILL, amount: 5 },
-                { type: zp.UPGRADE, target: r.REPAIR_CABLE, amount: 5 },
+                { type: Qp.UPGRADE, target: r.REPAIR_DRILL, amount: 5 },
+                { type: Qp.UPGRADE, target: r.REPAIR_CABLE, amount: 5 },
               ],
               popupHint:
                 "<p>Excellent! You now have ore that can be used for further development.</p>\n\n        <p>However, before continuing with the extraction of the next crucial resources, you need to ensure the continued repair of essential tools. It appears that your charging cable was also damaged, and its repair may increase the charging speed, significantly accelerating your further progress.</p>\n\n        <p>Repair the cable 5 times, and the drill one more time.</p>",
@@ -21954,8 +22148,8 @@
               id: "biomass",
               description: "Collect some organics",
               requirements: [
-                { type: zp.UPGRADE, target: r.REPAIR_MANIPULATORS, amount: 3 },
-                { type: zp.RESOURCE, target: l.BIOMASS, amount: 6 },
+                { type: Qp.UPGRADE, target: r.REPAIR_MANIPULATORS, amount: 3 },
+                { type: Qp.RESOURCE, target: l.BIOMASS, amount: 6 },
               ],
               popupHint:
                 "<p>Now, you are ready to start extracting another valuable resource - biomass. Unfortunately, it's quite challenging to find on this planet. The biosphere here is significantly poorer than what you're accustomed to on Earth.</p>\n\n<p>But wait! It looks like there's some suspicious white substance in those crevices, very similar to the products of the activity of elementary bacteria. It's worth trying to repair the manipulators to attempt to unfold the rocks and access this substance.</p>\n\n<p>Repair the manipulators 3 times and extract 6 units of biomass.</p>",
@@ -21964,13 +22158,13 @@
               id: "autonomousPowerSupply",
               description: "Autonomous power supply",
               requirements: [
-                { type: zp.UPGRADE, target: r.COMBUSTION, amount: 1 },
+                { type: Qp.UPGRADE, target: r.COMBUSTION, amount: 1 },
                 {
-                  type: zp.BUILDING,
+                  type: Qp.BUILDING,
                   target: a.THERMOELECTRIC_STATION,
                   amount: 1,
                 },
-                { type: zp.BUILDING, target: a.BACTERIA_INCUBATOR, amount: 1 },
+                { type: Qp.BUILDING, target: a.BACTERIA_INCUBATOR, amount: 1 },
               ],
               popupHint:
                 "<p>Constant clicking isn't that interesting, is it?</p>\n\n<p>It's time to automate the production of the most essential resource. As we've already mentioned, power is one of the most crucial resources. It's needed for almost everything. So, let's start studying the technology that will allow us to automate its production using biomass combustion.\n</p><p>\nIt's not that simple in an oxygen-depleted atmosphere. Learn the combustion technology, and after that, build one thermoelectric power plant and one bacteria incubator.\n</p><p>\nNote: If you don't have enough resources to build or upgrade a building right now, it will be automatically added to the queue. If you want to add an upgrade or building to the queue instead of building it immediately, press the Q key when clicking.</p>",
@@ -21980,11 +22174,11 @@
               description: "Storage facilities",
               requirements: [
                 {
-                  type: zp.UPGRADE,
+                  type: Qp.UPGRADE,
                   target: r.REPAIR_STORAGE_MODULE,
                   amount: 1,
                 },
-                { type: zp.BUILDING, target: a.STORAGE, amount: 1 },
+                { type: Qp.BUILDING, target: a.STORAGE, amount: 1 },
               ],
               popupHint:
                 "<p>One less problem, but there's no reason to stop. We've only just begun for our colony.</p>\n\n<p>Unfortunately, most resources require specific conditions for storage. Therefore, we need to take care of storage facilities. Repair the storage module and build a storage section.</p>",
@@ -21994,11 +22188,11 @@
               description: "Boost power supply",
               requirements: [
                 {
-                  type: zp.BUILDING,
+                  type: Qp.BUILDING,
                   target: a.THERMOELECTRIC_STATION,
                   amount: 3,
                 },
-                { type: zp.BUILDING, target: a.BACTERIA_INCUBATOR, amount: 2 },
+                { type: Qp.BUILDING, target: a.BACTERIA_INCUBATOR, amount: 2 },
               ],
               popupHint:
                 "<p>All resources can be extracted automatically without active clicking. But before we continue with automation of production, we must secure a stable source of electrical power.</p>\n\n<p>Build two more thermoelectric power stations and one bacteria incubator to ensure an adequate supply of biomass</p>",
@@ -22007,8 +22201,8 @@
               id: "stoneProduction",
               description: "Stone production",
               requirements: [
-                { type: zp.UPGRADE, target: r.AUTO_QUARRYING, amount: 1 },
-                { type: zp.BUILDING, target: a.QUARRY, amount: 1 },
+                { type: Qp.UPGRADE, target: r.AUTO_QUARRYING, amount: 1 },
+                { type: Qp.BUILDING, target: a.QUARRY, amount: 1 },
               ],
               popupHint:
                 "<p>Finally, we've repaired the core systems and provided ourselves with electrical power. Now we can repair and even build new machines that will automatically extract stone and ore for us.</p>\n\n<p>Let's start with stone. Figure out how to construct machines for automated stone cutting from basic tools and build a stone quarry.</p>",
@@ -22017,9 +22211,9 @@
               id: "oreProduction",
               description: "Ore production",
               requirements: [
-                { type: zp.UPGRADE, target: r.REPAIR_MACHINERY, amount: 1 },
-                { type: zp.UPGRADE, target: r.AUTO_MINERS, amount: 1 },
-                { type: zp.BUILDING, target: a.MINE, amount: 1 },
+                { type: Qp.UPGRADE, target: r.REPAIR_MACHINERY, amount: 1 },
+                { type: Qp.UPGRADE, target: r.AUTO_MINERS, amount: 1 },
+                { type: Qp.BUILDING, target: a.MINE, amount: 1 },
               ],
               popupHint:
                 "<p>Congratulations! You've finally automated the production of stone. Rest assured, you can do the same with ore mining. However, extracting harder rock requires more careful maintenance of the mining machinery.</p>\n\n<p>You'll need to repair and lubricate some mechanisms properly before you can use them to produce a strong enough drill capable of automatically mining ore.</p>\n\n<p>Repair the machinery once, learn how to use them for ore mining, and build an ore mine.</p>",
@@ -22028,8 +22222,8 @@
               id: "powerCaps",
               description: "Power capacity",
               requirements: [
-                { type: zp.UPGRADE, target: r.REPAIR_MANIPULATORS, amount: 5 },
-                { type: zp.UPGRADE, target: r.REPAIR_BATTERY, amount: 2 },
+                { type: Qp.UPGRADE, target: r.REPAIR_MANIPULATORS, amount: 5 },
+                { type: Qp.UPGRADE, target: r.REPAIR_BATTERY, amount: 2 },
               ],
               popupHint:
                 "<p>Hooray! Everything is working perfect! You might be tired by now, but unfortunately, we're only halfway to accepting our first settlers. In the future, we'll need to consistently provide ourselves with electrical power. We need to ensure that we can store a sufficient amount of electricity that we generate in case of system failures or peak loads.</p>\n\n<p>Fortunately, the ship's battery hasn't been too heavily damaged and can be repaired. However, this requires a lot of resources and careful work. Also, remember that the resources needed for repairs need to be stored somewhere. You may have to build several more resource storage sections.</p>\n\n<p>Repair the manipulators 5 times and the battery twice.</p>",
@@ -22039,11 +22233,11 @@
               description: "Organics utilization",
               requirements: [
                 {
-                  type: zp.BUILDING,
+                  type: Qp.BUILDING,
                   target: a.THERMOELECTRIC_STATION,
                   amount: 5,
                 },
-                { type: zp.BUILDING, target: a.BACTERIA_INCUBATOR, amount: 5 },
+                { type: Qp.BUILDING, target: a.BACTERIA_INCUBATOR, amount: 5 },
               ],
               popupHint:
                 "<p>Now that we can store plenty of electrical energy, we just need to continue generating it abundantly.</p>\n\n<p>Have 5 thermoelectric power plants and 5 bacteria incubators.</p>",
@@ -22052,8 +22246,8 @@
               id: "economyBoost",
               description: "Economy Boost",
               requirements: [
-                { type: zp.BUILDING, target: a.QUARRY, amount: 5 },
-                { type: zp.BUILDING, target: a.MINE, amount: 5 },
+                { type: Qp.BUILDING, target: a.QUARRY, amount: 5 },
+                { type: Qp.BUILDING, target: a.MINE, amount: 5 },
               ],
               popupHint:
                 "<p>In the future, we will need a large quantity of resources. Our quarries and mines are a good source of basic resources for construction. We need to continually expand our capabilities.</p>\n<p>Have at least 5 stone quarries and 5 ore mines. But don't forget to pay attention to your power production.</p>",
@@ -22062,7 +22256,7 @@
               id: "moreStorage",
               description: "More Storage",
               requirements: [
-                { type: zp.BUILDING, target: a.STORAGE, amount: 4 },
+                { type: Qp.BUILDING, target: a.STORAGE, amount: 4 },
               ],
               popupHint:
                 "<p>Before moving on to the next stage in the development of our future settlement, we must ensure that we have a place to store our hard-earned resources.</p>\n<p>Have at 4 storage section</p>",
@@ -22072,12 +22266,12 @@
               description: "Breath In",
               requirements: [
                 {
-                  type: zp.BUILDING,
+                  type: Qp.BUILDING,
                   target: a.THERMOELECTRIC_STATION,
                   amount: 10,
                 },
-                { type: zp.UPGRADE, target: r.BIO_TECH, amount: 1 },
-                { type: zp.UPGRADE, target: r.BACTERIA_SELECTION, amount: 1 },
+                { type: Qp.UPGRADE, target: r.BIO_TECH, amount: 1 },
+                { type: Qp.UPGRADE, target: r.BACTERIA_SELECTION, amount: 1 },
               ],
               popupHint:
                 "<p>Our future inhabitants need something to breathe. As you know, oxygen wasn't always present on planet Earth—it was produced by cyanobacteria. Of course, we don't have millions of years to wait for your bacteria to evolve and learn to produce oxygen on their own. But we can expedite this process by selecting bacteria that synthesize oxygen and creating the most favorable conditions for their reproduction.\n</p><p>\nHowever, creating the necessary conditions in your incubators requires maintaining the required temperature regime, which will increase electricity consumption.\n</p><p>\nBuild 10 thermal power plants, improve biotechnology once, and upgrade bacteria selection once.</p>",
@@ -22086,9 +22280,9 @@
               id: "basicNeeds",
               description: "Basic habitability requirements",
               requirements: [
-                { type: zp.BUILDING, target: a.OXYGEN_COLLECTOR, amount: 1 },
-                { type: zp.BUILDING, target: a.WATER_PUMP, amount: 1 },
-                { type: zp.BUILDING, target: a.WATER_STORAGE, amount: 1 },
+                { type: Qp.BUILDING, target: a.OXYGEN_COLLECTOR, amount: 1 },
+                { type: Qp.BUILDING, target: a.WATER_PUMP, amount: 1 },
+                { type: Qp.BUILDING, target: a.WATER_STORAGE, amount: 1 },
               ],
               popupHint:
                 "<p>Oxygen isn't just used for breathing; it can also enhance certain technologies. But let's get back to that later.\n</p><p>\nThe next thing our future settlers need is water. Without drinking water, our settlement won't survive.\n</p><p>\nBuild 1 oxygen compressor, 1 water pump and 1 water storage.</p>",
@@ -22097,8 +22291,8 @@
               id: "finalPreparation",
               description: "Final preparation",
               requirements: [
-                { type: zp.UPGRADE, target: r.ELECTROLITES, amount: 1 },
-                { type: zp.UPGRADE, target: r.SUPPLY_MODULE, amount: 1 },
+                { type: Qp.UPGRADE, target: r.ELECTROLITES, amount: 1 },
+                { type: Qp.UPGRADE, target: r.SUPPLY_MODULE, amount: 1 },
               ],
               popupHint:
                 "<p>There's not much left now - we have oxygen, we have water, and we have the basic resources needed for the settlement to thrive. The last thing to take care of is food.\n</p><p>\nUnfortunately, effective food production requires people, and we don't have them yet. However, there is a module on the ship that produces a small amount of food. It won't be enough to sustain the entire settlement, but if we repair it, it can provide food for the first settlers.\n\n</p><p>\nIt's worth noting that food production requires a stable power supply. To ensure this, we should think about devices for its storage. Research how to produce electrolytes using the water you already have and salts, which are necessary for batteries.\n</p><p>\nUpgrade electrolytes, build the necessary number of batteries, and repair the supply module.</p>",
@@ -22107,8 +22301,8 @@
               id: "firstColonists",
               description: "First colonists",
               requirements: [
-                { type: zp.UPGRADE, target: r.DOCKING_MODULE, amount: 1 },
-                { type: zp.BUILDING, target: a.LIVING_CABIN, amount: 1 },
+                { type: Qp.UPGRADE, target: r.DOCKING_MODULE, amount: 1 },
+                { type: Qp.BUILDING, target: a.LIVING_CABIN, amount: 1 },
               ],
               popupHint:
                 "<p>We have everything except one thing - settlers. Let's welcome them!\n</p><p>\nTo do this, we need to repair the docking module so that people can reach our ship. In addition, they need housing. Once you repair the docking module, residents will automatically appear as long as there is available housing. However, remember that they consume food and water. So, make sure you can provide for the new settlers before building new housing. Additionally, in the settings, you can disable automatic settlement of residents. This will prevent accidental overpopulation, but you'll have to manually enable new settlements.\n</p><p>\n\nRepair the docking module and build one residential module.</p>",
@@ -22117,8 +22311,8 @@
               id: "research",
               description: "Scientific basics",
               requirements: [
-                { type: zp.UPGRADE, target: r.RESEARCH_MODULE, amount: 1 },
-                { type: zp.RESEARCH, target: B.EXOFARMING, amount: 1 },
+                { type: Qp.UPGRADE, target: r.RESEARCH_MODULE, amount: 1 },
+                { type: Qp.RESEARCH, target: B.EXOFARMING, amount: 1 },
               ],
               popupHint:
                 "<p>The arrival of colonists opens up many new possibilities for you. Now you have a new tab in the Planets menu - Colony. Here, you can assign tasks to your colonists. Later, you will have access to many new job positions for your settlers.\n        </p><p>\n        One of the primary tasks performed by colonists is scientific research. Human beings carry out scientific achievements, and machines are merely tools. But your people need these tools. So, repair the research module, assign a few of your colonists the role of researchers. This will open a new tab in the menu - Scientific Research. It grants access to new upgrades, buildings, resources, and technologies.\n        </p><p>\n        Repair the research module and research exo-farming.</p>",
@@ -22127,7 +22321,7 @@
               id: "population",
               description: "Population",
               requirements: [
-                { type: zp.POPULATION, target: B.METEOROLOGY, amount: 10 },
+                { type: Qp.POPULATION, target: B.METEOROLOGY, amount: 10 },
               ],
               popupHint:
                 "<p>Congratulations! You have successfully completed the initial stages of creating your settlement. You have proven yourself to be a talented expedition leader, welcomed your first settlers, and taken the first steps towards building a new civilization.</p>\n<p>If you're unsure about what to do next, follow the objectives displayed in the top right corner of the screen. Continue conducting new research, improving your technologies, and remember that your settlement requires a steady supply of water, food, and electricity to operate its basic life support systems. In the future, you will unlock more and more technologies, resources, and opportunities. However, as your settlement grows, it will also demand more resources and services over time. So, manage your civilization wisely and make humanity great again!</p>",
@@ -22136,42 +22330,42 @@
               id: "healthcare",
               description: "Healthcare",
               requirements: [
-                { type: zp.RESEARCH, target: B.CIVIL_SERVICE, amount: 1 },
-                { type: zp.RESEARCH, target: B.EXOBIOLOGY, amount: 1 },
-                { type: zp.BUILDING, target: a.CLINIC, amount: 1 },
+                { type: Qp.RESEARCH, target: B.CIVIL_SERVICE, amount: 1 },
+                { type: Qp.RESEARCH, target: B.EXOBIOLOGY, amount: 1 },
+                { type: Qp.BUILDING, target: a.CLINIC, amount: 1 },
               ],
             },
             {
               id: "crafting",
               description: "Crafting",
               requirements: [
-                { type: zp.RESEARCH, target: B.METALLURGY, amount: 1 },
-                { type: zp.RESOURCE, target: l.BEAM, amount: 20 },
-                { type: zp.RESOURCE, target: l.BRICK, amount: 20 },
+                { type: Qp.RESEARCH, target: B.METALLURGY, amount: 1 },
+                { type: Qp.RESOURCE, target: l.BEAM, amount: 20 },
+                { type: Qp.RESOURCE, target: l.BRICK, amount: 20 },
               ],
             },
             {
               id: "civilized",
               description: "Civilized life",
               requirements: [
-                { type: zp.RESEARCH, target: B.SOCIOLOGY, amount: 1 },
-                { type: zp.RESEARCH, target: B.CODEX_OF_LAW, amount: 1 },
+                { type: Qp.RESEARCH, target: B.SOCIOLOGY, amount: 1 },
+                { type: Qp.RESEARCH, target: B.CODEX_OF_LAW, amount: 1 },
               ],
             },
             {
               id: "population",
               description: "Population",
               requirements: [
-                { type: zp.POPULATION, target: B.METEOROLOGY, amount: 70 },
+                { type: Qp.POPULATION, target: B.METEOROLOGY, amount: 70 },
               ],
             },
             {
               id: "advanced",
               description: "Advanced Science",
               requirements: [
-                { type: zp.RESEARCH, target: B.ELECTRICITY_STUDY, amount: 1 },
+                { type: Qp.RESEARCH, target: B.ELECTRICITY_STUDY, amount: 1 },
                 {
-                  type: zp.RESEARCH,
+                  type: Qp.RESEARCH,
                   target: B.HIGH_GRAVITY_PHYSICS,
                   amount: 1,
                 },
@@ -22181,9 +22375,9 @@
               id: "infoera",
               description: "Knowledge",
               requirements: [
-                { type: zp.RESEARCH, target: B.QUANTUM_PHYSICS, amount: 1 },
+                { type: Qp.RESEARCH, target: B.QUANTUM_PHYSICS, amount: 1 },
                 {
-                  type: zp.UPGRADE,
+                  type: Qp.UPGRADE,
                   target: r.GREAT_RADIO_TRANSMITTER,
                   amount: 1,
                 },
@@ -22193,16 +22387,16 @@
               id: "knowledge",
               description: "Knowledge of Ancestors",
               requirements: [
-                { type: zp.RESOURCE, target: l.KNOWLEDGE_POINT, amount: 20 },
-                { type: zp.KP_UPGRADE, target: g.RESEARCH_CAPACITY, amount: 2 },
+                { type: Qp.RESOURCE, target: l.KNOWLEDGE_POINT, amount: 20 },
+                { type: Qp.KP_UPGRADE, target: g.RESEARCH_CAPACITY, amount: 2 },
               ],
             },
             {
               id: "science2",
               description: "Advanced Science",
               requirements: [
-                { type: zp.RESEARCH, target: B.HIGH_ENERGY_PHYSICS, amount: 1 },
-                { type: zp.RESEARCH, target: B.PHOTO_LITHOGRAPHY, amount: 1 },
+                { type: Qp.RESEARCH, target: B.HIGH_ENERGY_PHYSICS, amount: 1 },
+                { type: Qp.RESEARCH, target: B.PHOTO_LITHOGRAPHY, amount: 1 },
               ],
             },
             {
@@ -22210,11 +22404,11 @@
               description: "Keep Expansion",
               requirements: [
                 {
-                  type: zp.RESEARCH,
+                  type: Qp.RESEARCH,
                   target: B.THERMONUCLEAR_SYNTHESIS,
                   amount: 1,
                 },
-                { type: zp.RESEARCH, target: B.MOLECULAR_PHYSICS, amount: 1 },
+                { type: Qp.RESEARCH, target: B.MOLECULAR_PHYSICS, amount: 1 },
               ],
               hint: 'If you feel it\'s too difficult to reach this point - you can keep performing "Transmit Knowledge"',
             },
@@ -22222,16 +22416,16 @@
               id: "superpower",
               description: "Energy Superpower",
               requirements: [
-                { type: zp.RESEARCH, target: B.SUPER_CONDUCTIVITY, amount: 1 },
-                { type: zp.UPGRADE, target: r.COLD_SYNTHESIS, amount: 1 },
+                { type: Qp.RESEARCH, target: B.SUPER_CONDUCTIVITY, amount: 1 },
+                { type: Qp.UPGRADE, target: r.COLD_SYNTHESIS, amount: 1 },
               ],
             },
             {
               id: "prepareColonize",
               description: "Prepare to leave",
               requirements: [
-                { type: zp.RESEARCH, target: B.SPACESHIP_BUILDINGS, amount: 1 },
-                { type: zp.BUILDING, target: a.SPACESHIP_STATION, amount: 1 },
+                { type: Qp.RESEARCH, target: B.SPACESHIP_BUILDINGS, amount: 1 },
+                { type: Qp.BUILDING, target: a.SPACESHIP_STATION, amount: 1 },
               ],
               hint: 'Keep unlocking new researches until you unlock "Spaceship Building"',
             },
@@ -22239,12 +22433,12 @@
               id: "colonize",
               description: "New Horizons",
               requirements: [
-                { type: zp.RESOURCE, target: l.COLONIZE_XP, amount: 1 },
+                { type: Qp.RESOURCE, target: l.COLONIZE_XP, amount: 1 },
               ],
               hint: "When you colonize new planet you get XP for finishing current one. XP provides some multiplicative bonus to your KP gain when transmit knowledge. Your KP and Transmit Knowledge upgrades persist",
             },
           ],
-          Sg = [
+          bg = [
             {
               id: g.DRONE_MASTERITY,
               name: "Drone Mastery",
@@ -22254,11 +22448,11 @@
                 return !0;
               },
               getCost:
-                ((EE = {}),
-                (EE[l.KNOWLEDGE_POINT] = function (e) {
+                ((gE = {}),
+                (gE[l.KNOWLEDGE_POINT] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                EE),
+                gE),
               category: f.START,
               maxLevel: 10,
             },
@@ -22271,19 +22465,109 @@
                 return !0;
               },
               getCost:
-                ((gE = {}),
-                (gE[l.KNOWLEDGE_POINT] = function (e) {
+                ((fE = {}),
+                (fE[l.KNOWLEDGE_POINT] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                gE),
+                fE),
               getGain:
-                ((fE = {}),
-                (fE[l.POWER] = function (e) {
+                ((AE = {}),
+                (AE[l.POWER] = function (e) {
                   return { A: 0.03, B: 0, type: i.LINEAR };
                 }),
-                fE),
+                AE),
               category: f.START,
               maxLevel: 10,
+            },
+            {
+              id: g.NOVICE_STORAGE,
+              name: "Packing",
+              description:
+                "Now you know how to stack things in optimal way. Every point boosts Storage Section and Storage Hub by 20%",
+              unlockCondition: function (e) {
+                return !0;
+              },
+              getCost:
+                ((mE = {}),
+                (mE[l.KNOWLEDGE_POINT] = function (e) {
+                  return { A: 10, B: 2, type: i.EXPONENTIAL };
+                }),
+                mE),
+              getGainMultiplier: {},
+              category: f.NOVICE,
+              maxLevel: 5,
+            },
+            {
+              id: g.NOVICE_INDUSTRY,
+              name: "Industrialization",
+              description:
+                "We need mooore ooore. Every point reduces early game industry facilities (Quarry, Mine and Incubator) prices by 20%",
+              unlockCondition: function (e) {
+                return !0;
+              },
+              getCost:
+                ((NE = {}),
+                (NE[l.KNOWLEDGE_POINT] = function (e) {
+                  return { A: 10, B: 2, type: i.EXPONENTIAL };
+                }),
+                NE),
+              getGainMultiplier: {},
+              category: f.NOVICE,
+              maxLevel: 3,
+            },
+            {
+              id: g.NOVICE_SMELTING,
+              name: "Thermal proof materials",
+              description:
+                "New thermal proof materials now allow you to spend less of stone and ore to build Smelters. Every point reduces Smelter prices by 20%",
+              unlockCondition: function (e) {
+                return !0;
+              },
+              getCost:
+                ((hE = {}),
+                (hE[l.KNOWLEDGE_POINT] = function (e) {
+                  return { A: 10, B: 2, type: i.EXPONENTIAL };
+                }),
+                hE),
+              getGainMultiplier: {},
+              category: f.NOVICE,
+              maxLevel: 3,
+            },
+            {
+              id: g.METEOROLOGIST,
+              name: "Meteorologist",
+              description:
+                "Now you are an expert of weather forecasts. Every point increase Meteorology Station research capacity by 5 points",
+              unlockCondition: function (e) {
+                return !0;
+              },
+              getCost:
+                ((IE = {}),
+                (IE[l.KNOWLEDGE_POINT] = function (e) {
+                  return { A: 10, B: 2, type: i.EXPONENTIAL };
+                }),
+                IE),
+              getGainMultiplier: {},
+              category: f.NOVICE,
+              maxLevel: 5,
+            },
+            {
+              id: g.VIRUSOLOGY,
+              name: "Virusology",
+              description:
+                "Learning more about viruses can help advance your scientific development. Every point increase Pandemic Center research capacity by 50 points",
+              unlockCondition: function (e) {
+                return !0;
+              },
+              getCost:
+                ((RE = {}),
+                (RE[l.KNOWLEDGE_POINT] = function (e) {
+                  return { A: 10, B: 2, type: i.EXPONENTIAL };
+                }),
+                RE),
+              getGainMultiplier: {},
+              category: f.NOVICE,
+              maxLevel: 5,
             },
             {
               id: g.POWER_MASTERITY,
@@ -22294,17 +22578,17 @@
                 return !0;
               },
               getCost:
-                ((AE = {}),
-                (AE[l.KNOWLEDGE_POINT] = function (e) {
+                ((TE = {}),
+                (TE[l.KNOWLEDGE_POINT] = function (e) {
                   return { A: 3, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                AE),
+                TE),
               getGainMultiplier:
-                ((mE = {}),
-                (mE[l.POWER] = function (e) {
+                ((yE = {}),
+                (yE[l.POWER] = function (e) {
                   return { A: 0.04, B: 1, type: i.LINEAR };
                 }),
-                mE),
+                yE),
               category: f.MASTERITIES,
               maxLevel: 0,
             },
@@ -22317,26 +22601,26 @@
                 return !0;
               },
               getCost:
-                ((NE = {}),
-                (NE[l.KNOWLEDGE_POINT] = function (e) {
+                ((OE = {}),
+                (OE[l.KNOWLEDGE_POINT] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                NE),
+                OE),
               getGainMultiplier:
-                ((hE = {}),
-                (hE[l.STONE] = function (e) {
+                ((LE = {}),
+                (LE[l.STONE] = function (e) {
                   return { A: 0.04, B: 1, type: i.LINEAR };
                 }),
-                (hE[l.ORE] = function (e) {
+                (LE[l.ORE] = function (e) {
                   return { A: 0.04, B: 1, type: i.LINEAR };
                 }),
-                (hE[l.IRON] = function (e) {
+                (LE[l.IRON] = function (e) {
                   return { A: 0.04, B: 1, type: i.LINEAR };
                 }),
-                (hE[l.PLATINUM] = function (e) {
+                (LE[l.PLATINUM] = function (e) {
                   return { A: 0.04, B: 1, type: i.LINEAR };
                 }),
-                hE),
+                LE),
               category: f.MASTERITIES,
               maxLevel: 0,
             },
@@ -22349,23 +22633,23 @@
                 return !0;
               },
               getCost:
-                ((IE = {}),
-                (IE[l.KNOWLEDGE_POINT] = function (e) {
+                ((CE = {}),
+                (CE[l.KNOWLEDGE_POINT] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                IE),
+                CE),
               getGainMultiplier:
-                ((RE = {}),
-                (RE[l.NUTRITION] = function (e) {
+                ((vE = {}),
+                (vE[l.NUTRITION] = function (e) {
                   return { A: 0.04, B: 1, type: i.LINEAR };
                 }),
-                (RE[l.BIOMASS] = function (e) {
+                (vE[l.BIOMASS] = function (e) {
                   return { A: 0.04, B: 1, type: i.LINEAR };
                 }),
-                (RE[l.WOOD] = function (e) {
+                (vE[l.WOOD] = function (e) {
                   return { A: 0.04, B: 1, type: i.LINEAR };
                 }),
-                RE),
+                vE),
               category: f.MASTERITIES,
               maxLevel: 0,
             },
@@ -22378,20 +22662,20 @@
                 return !0;
               },
               getCost:
-                ((TE = {}),
-                (TE[l.KNOWLEDGE_POINT] = function (e) {
+                ((SE = {}),
+                (SE[l.KNOWLEDGE_POINT] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                TE),
+                SE),
               getGainMultiplier:
-                ((yE = {}),
-                (yE[l.OXYGEN] = function (e) {
+                ((PE = {}),
+                (PE[l.OXYGEN] = function (e) {
                   return { A: 0.04, B: 1, type: i.LINEAR };
                 }),
-                (yE[l.WATER] = function (e) {
+                (PE[l.WATER] = function (e) {
                   return { A: 0.04, B: 1, type: i.LINEAR };
                 }),
-                yE),
+                PE),
               category: f.MASTERITIES,
               maxLevel: 0,
             },
@@ -22404,23 +22688,23 @@
                 return !0;
               },
               getCost:
-                ((OE = {}),
-                (OE[l.KNOWLEDGE_POINT] = function (e) {
+                ((BE = {}),
+                (BE[l.KNOWLEDGE_POINT] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                OE),
+                BE),
               getGainMultiplier:
-                ((LE = {}),
-                (LE[l.BEAM] = function (e) {
+                ((ME = {}),
+                (ME[l.BEAM] = function (e) {
                   return { A: 0.04, B: 1, type: i.LINEAR };
                 }),
-                (LE[l.BRICK] = function (e) {
+                (ME[l.BRICK] = function (e) {
                   return { A: 0.04, B: 1, type: i.LINEAR };
                 }),
-                (LE[l.PLATE] = function (e) {
+                (ME[l.PLATE] = function (e) {
                   return { A: 0.04, B: 1, type: i.LINEAR };
                 }),
-                LE),
+                ME),
               category: f.MASTERITIES,
               maxLevel: 0,
             },
@@ -22433,26 +22717,26 @@
                 return !0;
               },
               getCost:
-                ((CE = {}),
-                (CE[l.KNOWLEDGE_POINT] = function (e) {
+                ((_E = {}),
+                (_E[l.KNOWLEDGE_POINT] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                CE),
+                _E),
               getGainMultiplier:
-                ((vE = {}),
-                (vE[l.WIRE] = function (e) {
+                ((UE = {}),
+                (UE[l.WIRE] = function (e) {
                   return { A: 0.04, B: 1, type: i.LINEAR };
                 }),
-                (vE[l.COMPUTER] = function (e) {
+                (UE[l.COMPUTER] = function (e) {
                   return { A: 0.04, B: 1, type: i.LINEAR };
                 }),
-                (vE[l.SEMICONDUCTOR] = function (e) {
+                (UE[l.SEMICONDUCTOR] = function (e) {
                   return { A: 0.04, B: 1, type: i.LINEAR };
                 }),
-                (vE[l.MAGNETO] = function (e) {
+                (UE[l.MAGNETO] = function (e) {
                   return { A: 0.04, B: 1, type: i.LINEAR };
                 }),
-                vE),
+                UE),
               category: f.MASTERITIES,
               maxLevel: 0,
             },
@@ -22465,20 +22749,20 @@
                 return !0;
               },
               getCost:
-                ((SE = {}),
-                (SE[l.KNOWLEDGE_POINT] = function (e) {
+                ((bE = {}),
+                (bE[l.KNOWLEDGE_POINT] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                SE),
+                bE),
               getGainMultiplier:
-                ((PE = {}),
-                (PE[l.FUEL] = function (e) {
+                ((GE = {}),
+                (GE[l.FUEL] = function (e) {
                   return { A: 0.04, B: 1, type: i.LINEAR };
                 }),
-                (PE[l.ROCKET_ENGINE] = function (e) {
+                (GE[l.ROCKET_ENGINE] = function (e) {
                   return { A: 0.04, B: 1, type: i.LINEAR };
                 }),
-                PE),
+                GE),
               category: f.MASTERITIES,
               maxLevel: 0,
             },
@@ -22491,23 +22775,23 @@
                 return !0;
               },
               getCost:
-                ((BE = {}),
-                (BE[l.KNOWLEDGE_POINT] = function (e) {
+                ((wE = {}),
+                (wE[l.KNOWLEDGE_POINT] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                BE),
+                wE),
               getGainMultiplier:
-                ((ME = {}),
-                (ME[l.PLASTICS] = function (e) {
+                ((DE = {}),
+                (DE[l.PLASTICS] = function (e) {
                   return { A: 0.04, B: 1, type: i.LINEAR };
                 }),
-                (ME[l.RUBBER] = function (e) {
+                (DE[l.RUBBER] = function (e) {
                   return { A: 0.04, B: 1, type: i.LINEAR };
                 }),
-                (ME[l.GRAPHENE] = function (e) {
+                (DE[l.GRAPHENE] = function (e) {
                   return { A: 0.04, B: 1, type: i.LINEAR };
                 }),
-                ME),
+                DE),
               category: f.MASTERITIES,
               maxLevel: 0,
             },
@@ -22520,17 +22804,17 @@
                 return !0;
               },
               getCost:
-                ((_E = {}),
-                (_E[l.KNOWLEDGE_POINT] = function (e) {
+                ((XE = {}),
+                (XE[l.KNOWLEDGE_POINT] = function (e) {
                   return { A: 3, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                _E),
+                XE),
               getGainMultiplier:
-                ((UE = {}),
-                (UE[l.RESEARCH] = function (e) {
+                ((xE = {}),
+                (xE[l.RESEARCH] = function (e) {
                   return { A: 0.04, B: 1, type: i.LINEAR };
                 }),
-                UE),
+                xE),
               category: f.MASTERITIES,
               maxLevel: 0,
             },
@@ -22543,20 +22827,20 @@
                 return e.statistics.stats.exoticCollected > 0;
               },
               getCost:
-                ((bE = {}),
-                (bE[l.KNOWLEDGE_POINT] = function (e) {
+                ((kE = {}),
+                (kE[l.KNOWLEDGE_POINT] = function (e) {
                   return { A: 10, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                bE),
+                kE),
               getGainMultiplier:
-                ((GE = {}),
-                (GE[l.DARK_MATTER] = function (e) {
+                ((HE = {}),
+                (HE[l.DARK_MATTER] = function (e) {
                   return { A: 0.04, B: 1, type: i.LINEAR };
                 }),
-                (GE[l.ANTIMATTER] = function (e) {
+                (HE[l.ANTIMATTER] = function (e) {
                   return { A: 0.04, B: 1, type: i.LINEAR };
                 }),
-                GE),
+                HE),
               category: f.MASTERITIES,
               maxLevel: 0,
             },
@@ -22569,11 +22853,11 @@
                 return !0;
               },
               getCost:
-                ((wE = {}),
-                (wE[l.KNOWLEDGE_POINT] = function (e) {
+                ((YE = {}),
+                (YE[l.KNOWLEDGE_POINT] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                wE),
+                YE),
               getGainMultiplier: {},
               category: f.MASTERITIES,
               maxLevel: 0,
@@ -22587,17 +22871,17 @@
                 return !0;
               },
               getCost:
-                ((DE = {}),
-                (DE[l.KNOWLEDGE_POINT] = function (e) {
+                ((WE = {}),
+                (WE[l.KNOWLEDGE_POINT] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                DE),
+                WE),
               getCapacityMultiplier:
-                ((XE = {}),
-                (XE[l.POWER] = function (e) {
+                ((ZE = {}),
+                (ZE[l.POWER] = function (e) {
                   return { A: 0.04, B: 1, type: i.LINEAR };
                 }),
-                XE),
+                ZE),
               category: f.CAPACITY,
               maxLevel: 0,
             },
@@ -22610,32 +22894,32 @@
                 return !0;
               },
               getCost:
-                ((xE = {}),
-                (xE[l.KNOWLEDGE_POINT] = function (e) {
+                ((FE = {}),
+                (FE[l.KNOWLEDGE_POINT] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                xE),
+                FE),
               getCapacityMultiplier:
-                ((kE = {}),
-                (kE[l.STONE] = function (e) {
+                ((jE = {}),
+                (jE[l.STONE] = function (e) {
                   return { A: 0.04, B: 1, type: i.LINEAR };
                 }),
-                (kE[l.IRON] = function (e) {
+                (jE[l.IRON] = function (e) {
                   return { A: 0.04, B: 1, type: i.LINEAR };
                 }),
-                (kE[l.WOOD] = function (e) {
+                (jE[l.WOOD] = function (e) {
                   return { A: 0.04, B: 1, type: i.LINEAR };
                 }),
-                (kE[l.ORE] = function (e) {
+                (jE[l.ORE] = function (e) {
                   return { A: 0.04, B: 1, type: i.LINEAR };
                 }),
-                (kE[l.PLATINUM] = function (e) {
+                (jE[l.PLATINUM] = function (e) {
                   return { A: 0.04, B: 1, type: i.LINEAR };
                 }),
-                (kE[l.BIOMASS] = function (e) {
+                (jE[l.BIOMASS] = function (e) {
                   return { A: 0.04, B: 1, type: i.LINEAR };
                 }),
-                kE),
+                jE),
               category: f.CAPACITY,
               maxLevel: 0,
             },
@@ -22648,20 +22932,20 @@
                 return !0;
               },
               getCost:
-                ((HE = {}),
-                (HE[l.KNOWLEDGE_POINT] = function (e) {
+                ((VE = {}),
+                (VE[l.KNOWLEDGE_POINT] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                HE),
+                VE),
               getCapacityMultiplier:
-                ((YE = {}),
-                (YE[l.OXYGEN] = function (e) {
+                ((KE = {}),
+                (KE[l.OXYGEN] = function (e) {
                   return { A: 0.04, B: 1, type: i.LINEAR };
                 }),
-                (YE[l.WATER] = function (e) {
+                (KE[l.WATER] = function (e) {
                   return { A: 0.04, B: 1, type: i.LINEAR };
                 }),
-                YE),
+                KE),
               category: f.CAPACITY,
               maxLevel: 0,
             },
@@ -22674,17 +22958,17 @@
                 return !0;
               },
               getCost:
-                ((WE = {}),
-                (WE[l.KNOWLEDGE_POINT] = function (e) {
+                ((zE = {}),
+                (zE[l.KNOWLEDGE_POINT] = function (e) {
                   return { A: 2, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                WE),
+                zE),
               getCapacityMultiplier:
-                ((ZE = {}),
-                (ZE[l.RESEARCH] = function (e) {
+                ((qE = {}),
+                (qE[l.RESEARCH] = function (e) {
                   return { A: 0.04, B: 1, type: i.LINEAR };
                 }),
-                ZE),
+                qE),
               category: f.CAPACITY,
               maxLevel: 0,
             },
@@ -22697,20 +22981,20 @@
                 return e.statistics.stats.exoticCollected > 0;
               },
               getCost:
-                ((FE = {}),
-                (FE[l.KNOWLEDGE_POINT] = function (e) {
+                ((QE = {}),
+                (QE[l.KNOWLEDGE_POINT] = function (e) {
                   return { A: 10, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                FE),
+                QE),
               getCapacityMultiplier:
-                ((jE = {}),
-                (jE[l.DARK_MATTER] = function (e) {
+                ((JE = {}),
+                (JE[l.DARK_MATTER] = function (e) {
                   return { A: 0.04, B: 1, type: i.LINEAR };
                 }),
-                (jE[l.ANTIMATTER] = function (e) {
+                (JE[l.ANTIMATTER] = function (e) {
                   return { A: 0.04, B: 1, type: i.LINEAR };
                 }),
-                jE),
+                JE),
               category: f.CAPACITY,
               maxLevel: 0,
             },
@@ -22723,11 +23007,11 @@
                 return !0;
               },
               getCost:
-                ((VE = {}),
-                (VE[l.KNOWLEDGE_POINT] = function (e) {
+                (($E = {}),
+                ($E[l.KNOWLEDGE_POINT] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                VE),
+                $E),
               getCapacityMultiplier: {},
               category: f.COLONY,
               maxLevel: 0,
@@ -22741,11 +23025,11 @@
                 return !0;
               },
               getCost:
-                ((KE = {}),
-                (KE[l.KNOWLEDGE_POINT] = function (e) {
+                ((eg = {}),
+                (eg[l.KNOWLEDGE_POINT] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                KE),
+                eg),
               getCapacityMultiplier: {},
               category: f.COLONY,
               maxLevel: 0,
@@ -22759,11 +23043,11 @@
                 return !0;
               },
               getCost:
-                ((qE = {}),
-                (qE[l.KNOWLEDGE_POINT] = function (e) {
+                ((tg = {}),
+                (tg[l.KNOWLEDGE_POINT] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                qE),
+                tg),
               getCapacityMultiplier: {},
               category: f.COLONY,
               maxLevel: 0,
@@ -22777,11 +23061,11 @@
                 return !0;
               },
               getCost:
-                ((zE = {}),
-                (zE[l.KNOWLEDGE_POINT] = function (e) {
+                ((ng = {}),
+                (ng[l.KNOWLEDGE_POINT] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                zE),
+                ng),
               getCapacityMultiplier: {},
               category: f.COLONY,
               maxLevel: 0,
@@ -22795,17 +23079,17 @@
                 return !0;
               },
               getCost:
-                ((QE = {}),
-                (QE[l.KNOWLEDGE_POINT] = function (e) {
+                ((ig = {}),
+                (ig[l.KNOWLEDGE_POINT] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                QE),
+                ig),
               getCapacityMultiplier: {},
               category: f.COLONY,
               maxLevel: 0,
             },
           ],
-          Pg = (function () {
+          Gg = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -22839,7 +23123,7 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          Bg = (function (e) {
+          wg = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -22853,7 +23137,7 @@
               );
             }
             return (
-              Pg(t, e),
+              Gg(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -22871,7 +23155,7 @@
               }),
               (t.prototype.getCurrentGoalDB = function () {
                 var e;
-                return null !== (e = vg[this.currentGoalIdx]) && void 0 !== e
+                return null !== (e = Ug[this.currentGoalIdx]) && void 0 !== e
                   ? e
                   : {
                       id: "complete",
@@ -22887,7 +23171,7 @@
                   r,
                   a = "";
                 switch (e.type) {
-                  case zp.RESOURCE:
+                  case Qp.RESOURCE:
                     a =
                       "Resource: " +
                       (null ===
@@ -22897,44 +23181,44 @@
                         ? void 0
                         : t.name);
                     break;
-                  case zp.UPGRADE:
+                  case Qp.UPGRADE:
                     a =
                       "Upgrade: " +
                       (null ===
-                        (n = nd.find(function (t) {
+                        (n = id.find(function (t) {
                           return t.id === e.target;
                         })) || void 0 === n
                         ? void 0
                         : n.name);
                     break;
-                  case zp.RESEARCH:
+                  case Qp.RESEARCH:
                     a =
                       "Research: " +
                       (null ===
-                        (i = eE.find(function (t) {
+                        (i = tE.find(function (t) {
                           return t.id === e.target;
                         })) || void 0 === i
                         ? void 0
                         : i.name);
                     break;
-                  case zp.BUILDING:
+                  case Qp.BUILDING:
                     a =
                       "Building: " +
                       (null ===
-                        (o = Td.find(function (t) {
+                        (o = yd.find(function (t) {
                           return t.id === e.target;
                         })) || void 0 === o
                         ? void 0
                         : o.name);
                     break;
-                  case zp.POPULATION:
+                  case Qp.POPULATION:
                     a = "Population";
                     break;
-                  case zp.KP_UPGRADE:
+                  case Qp.KP_UPGRADE:
                     a =
                       "Knowledge Upgrade: " +
                       (null ===
-                        (r = Sg.find(function (t) {
+                        (r = bg.find(function (t) {
                           return t.id === e.target;
                         })) || void 0 === r
                         ? void 0
@@ -22945,27 +23229,27 @@
               (t.prototype.getRequirementAmount = function (e) {
                 var t = 0;
                 switch (e.type) {
-                  case zp.RESOURCE:
-                    t = _h.resources.getResource(e.target);
+                  case Qp.RESOURCE:
+                    t = xh.resources.getResource(e.target);
                     break;
-                  case zp.UPGRADE:
-                    t = _h.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                  case Qp.UPGRADE:
+                    t = xh.landingZone.landingZoneUpgrades.getUpgradeLevel(
                       e.target
                     );
                     break;
-                  case zp.RESEARCH:
-                    t = _h.science.scienceResearches.getResearchLevel(e.target);
+                  case Qp.RESEARCH:
+                    t = xh.science.scienceResearches.getResearchLevel(e.target);
                     break;
-                  case zp.BUILDING:
-                    t = _h.landingZone.landingZoneBuildings.getBuildingLevel(
+                  case Qp.BUILDING:
+                    t = xh.landingZone.landingZoneBuildings.getBuildingLevel(
                       e.target
                     );
                     break;
-                  case zp.POPULATION:
-                    t = _h.colony.colonists;
+                  case Qp.POPULATION:
+                    t = xh.colony.colonists;
                     break;
-                  case zp.KP_UPGRADE:
-                    t = _h.prestige.transmitKnowledge.getUpgradeLevel(e.target);
+                  case Qp.KP_UPGRADE:
+                    t = xh.prestige.transmitKnowledge.getUpgradeLevel(e.target);
                 }
                 return t;
               }),
@@ -23023,10 +23307,10 @@
                   (t.requirements.forEach(function (t) {
                     e.getRequirementAmount(t) < t.amount && (n = !1);
                   }),
-                  n && this.currentGoalIdx < vg.length)
+                  n && this.currentGoalIdx < Ug.length)
                 )
                   return this.setGoalComplete(t.id), void this.currentGoalIdx++;
-                !n && this.currentGoalIdx < vg.length && this.setNextGoal(t.id);
+                !n && this.currentGoalIdx < Ug.length && this.setNextGoal(t.id);
               }),
               (t.prototype.currentGoalToUI = function () {
                 var e = this,
@@ -23057,8 +23341,8 @@
               t
             );
           })(P),
-          Mg = Bg.getInstance(),
-          _g = [
+          Dg = wg.getInstance(),
+          Xg = [
             {
               id: G.WATER_FILTERING,
               name: "Water Filtering Control",
@@ -23137,46 +23421,46 @@
                   description:
                     "Your people consuming x3 water but all happiness aspects are boosted by 3%",
                   getEffectMultiplier:
-                    ((JE = {}),
-                    (JE[U.ENTERTAINMENT] = function (e) {
+                    ((og = {}),
+                    (og[U.ENTERTAINMENT] = function (e) {
                       return 1.03;
                     }),
-                    (JE[U.AESTHETICS] = function (e) {
+                    (og[U.AESTHETICS] = function (e) {
                       return 1.03;
                     }),
-                    (JE[U.HEALTHCARE] = function (e) {
+                    (og[U.HEALTHCARE] = function (e) {
                       return 1.03;
                     }),
-                    (JE[U.SECURITY] = function (e) {
+                    (og[U.SECURITY] = function (e) {
                       return 1.03;
                     }),
-                    (JE[U.RELIGION] = function (e) {
+                    (og[U.RELIGION] = function (e) {
                       return 1.03;
                     }),
-                    JE),
+                    og),
                 },
                 {
                   name: "In Safe, Warm and Comfort",
                   description:
                     "Your people consuming x9 water and start consuming additional oxygen but all happiness aspects are boosted by 5%",
                   getEffectMultiplier:
-                    (($E = {}),
-                    ($E[U.ENTERTAINMENT] = function (e) {
+                    ((rg = {}),
+                    (rg[U.ENTERTAINMENT] = function (e) {
                       return 1.05;
                     }),
-                    ($E[U.AESTHETICS] = function (e) {
+                    (rg[U.AESTHETICS] = function (e) {
                       return 1.05;
                     }),
-                    ($E[U.HEALTHCARE] = function (e) {
+                    (rg[U.HEALTHCARE] = function (e) {
                       return 1.05;
                     }),
-                    ($E[U.SECURITY] = function (e) {
+                    (rg[U.SECURITY] = function (e) {
                       return 1.05;
                     }),
-                    ($E[U.RELIGION] = function (e) {
+                    (rg[U.RELIGION] = function (e) {
                       return 1.05;
                     }),
-                    $E),
+                    rg),
                 },
               ],
             },
@@ -23206,11 +23490,11 @@
                   description:
                     "Learning basic knowledge is mandatory. Entertainment drops by 10% but crafting efficiency increase by 3%",
                   getEffectMultiplier:
-                    ((eg = {}),
-                    (eg[U.ENTERTAINMENT] = function (e) {
+                    ((ag = {}),
+                    (ag[U.ENTERTAINMENT] = function (e) {
                       return 0.9;
                     }),
-                    eg),
+                    ag),
                   getCraftingBonus: function (e) {
                     return 1.03;
                   },
@@ -23220,11 +23504,11 @@
                   description:
                     "Parents are obliged to provide children with the opportunity to receive school education. Entertainment drops by 25% but crafting efficiency increase by 6%",
                   getEffectMultiplier:
-                    ((tg = {}),
-                    (tg[U.ENTERTAINMENT] = function (e) {
+                    ((cg = {}),
+                    (cg[U.ENTERTAINMENT] = function (e) {
                       return 0.75;
                     }),
-                    tg),
+                    cg),
                   getCraftingBonus: function (e) {
                     return 1.06;
                   },
@@ -23234,11 +23518,11 @@
                   description:
                     "Educated professionals are the key to success. Entertainment drops by 45% but crafting efficiency increase by 10%",
                   getEffectMultiplier:
-                    ((ng = {}),
-                    (ng[U.ENTERTAINMENT] = function (e) {
+                    ((sg = {}),
+                    (sg[U.ENTERTAINMENT] = function (e) {
                       return 0.55;
                     }),
-                    ng),
+                    sg),
                   getCraftingBonus: function (e) {
                     return 1.1;
                   },
@@ -23248,11 +23532,11 @@
                   description:
                     "Every citizen is required to regularly take part in professional development courses. Entertainment drops by 65% but crafting efficiency increase by 15%",
                   getEffectMultiplier:
-                    ((ig = {}),
-                    (ig[U.ENTERTAINMENT] = function (e) {
+                    ((ug = {}),
+                    (ug[U.ENTERTAINMENT] = function (e) {
                       return 0.35;
                     }),
-                    ig),
+                    ug),
                   getCraftingBonus: function (e) {
                     return 1.15;
                   },
@@ -23285,11 +23569,11 @@
                   description:
                     "Industries must limit their waste output. Crafting efficiency is reduced by 10%, but aesthetics increase by 10%",
                   getEffectMultiplier:
-                    ((og = {}),
-                    (og[U.AESTHETICS] = function (e) {
+                    ((lg = {}),
+                    (lg[U.AESTHETICS] = function (e) {
                       return 1.1;
                     }),
-                    og),
+                    lg),
                   getCraftingBonus: function (e) {
                     return 0.9;
                   },
@@ -23299,11 +23583,11 @@
                   description:
                     "Crafting efficiency significantly decreases, but aesthetics increase by 25%",
                   getEffectMultiplier:
-                    ((rg = {}),
-                    (rg[U.AESTHETICS] = function (e) {
+                    ((pg = {}),
+                    (pg[U.AESTHETICS] = function (e) {
                       return 1.25;
                     }),
-                    rg),
+                    pg),
                   getCraftingBonus: function (e) {
                     return 0.75;
                   },
@@ -23313,11 +23597,11 @@
                   description:
                     "You apply small penalties only in case your people complain. Crafting efficiency increases by 5%, but aesthetics decrease by 15%",
                   getEffectMultiplier:
-                    ((ag = {}),
-                    (ag[U.AESTHETICS] = function (e) {
+                    ((dg = {}),
+                    (dg[U.AESTHETICS] = function (e) {
                       return 0.85;
                     }),
-                    ag),
+                    dg),
                   getCraftingBonus: function (e) {
                     return 1.05;
                   },
@@ -23327,11 +23611,11 @@
                   description:
                     "Crafting efficiency increases by 10%, but aesthetics decrease by 30%",
                   getEffectMultiplier:
-                    ((cg = {}),
-                    (cg[U.AESTHETICS] = function (e) {
+                    ((Eg = {}),
+                    (Eg[U.AESTHETICS] = function (e) {
                       return 0.7;
                     }),
-                    cg),
+                    Eg),
                   getCraftingBonus: function (e) {
                     return 1.1;
                   },
@@ -23341,11 +23625,11 @@
                   description:
                     "Crafting efficiency increases by 20%, but aesthetics decrease by 70%",
                   getEffectMultiplier:
-                    ((sg = {}),
-                    (sg[U.AESTHETICS] = function (e) {
+                    ((gg = {}),
+                    (gg[U.AESTHETICS] = function (e) {
                       return 0.3;
                     }),
-                    sg),
+                    gg),
                   getCraftingBonus: function (e) {
                     return 1.2;
                   },
@@ -23463,17 +23747,17 @@
                   description:
                     "Improves healthcare service, but decrease religious one",
                   getEffectGain:
-                    ((ug = {}),
-                    (ug[U.HEALTHCARE] = function (e) {
+                    ((fg = {}),
+                    (fg[U.HEALTHCARE] = function (e) {
                       return 20;
                     }),
-                    ug),
+                    fg),
                   getEffectConsumption:
-                    ((lg = {}),
-                    (lg[U.RELIGION] = function (e) {
+                    ((Ag = {}),
+                    (Ag[U.RELIGION] = function (e) {
                       return 20;
                     }),
-                    lg),
+                    Ag),
                 },
               ],
             },
@@ -23536,31 +23820,31 @@
                   description:
                     "Colonists are encouraged to gather every sunday for a speech. Provides 10% boost to religion gain, 15% penalty to entertainment",
                   getEffectMultiplier:
-                    ((pg = {}),
-                    (pg[U.RELIGION] = function (e) {
+                    ((mg = {}),
+                    (mg[U.RELIGION] = function (e) {
                       return 1.1;
                     }),
-                    (pg[U.ENTERTAINMENT] = function (e) {
+                    (mg[U.ENTERTAINMENT] = function (e) {
                       return 0.85;
                     }),
-                    pg),
+                    mg),
                 },
                 {
                   name: "Keepers of Order",
                   description:
                     "Local priests are granted rights to enforce order... as they see fit. Provides 5% boost to religion and security gain, 15% penalty to entertainment",
                   getEffectMultiplier:
-                    ((dg = {}),
-                    (dg[U.RELIGION] = function (e) {
+                    ((Ng = {}),
+                    (Ng[U.RELIGION] = function (e) {
                       return 1.05;
                     }),
-                    (dg[U.SECURITY] = function (e) {
+                    (Ng[U.SECURITY] = function (e) {
                       return 1.05;
                     }),
-                    (dg[U.ENTERTAINMENT] = function (e) {
+                    (Ng[U.ENTERTAINMENT] = function (e) {
                       return 0.85;
                     }),
-                    dg),
+                    Ng),
                 },
               ],
             },
@@ -23652,28 +23936,28 @@
                   description:
                     "Allow using a minor amount of wood for metal processing. Plates and wires craftsmen are 10% more efficient, but consume 0.2 wood each",
                   getGainMultiplier:
-                    ((Eg = {}),
-                    (Eg[l.PLATE] = function (e) {
+                    ((hg = {}),
+                    (hg[l.PLATE] = function (e) {
                       return 1.1;
                     }),
-                    (Eg[l.WIRE] = function (e) {
+                    (hg[l.WIRE] = function (e) {
                       return 1.1;
                     }),
-                    Eg),
+                    hg),
                 },
                 {
                   name: "Unregulated Metal Processing",
                   description:
                     "Why would the one take care of environment if need so much materials? Plates and wires craftsmen are 20% more efficient, but consume 0.4 wood each and provide 1 penalty to healthcare and aesthetics",
                   getGainMultiplier:
-                    ((gg = {}),
-                    (gg[l.PLATE] = function (e) {
+                    ((Ig = {}),
+                    (Ig[l.PLATE] = function (e) {
                       return 1.2;
                     }),
-                    (gg[l.WIRE] = function (e) {
+                    (Ig[l.WIRE] = function (e) {
                       return 1.2;
                     }),
-                    gg),
+                    Ig),
                 },
               ],
             },
@@ -23702,34 +23986,34 @@
                   description:
                     "Process food to increase shelf life and nutritional value at the cost of its quality. Provides 10% bonus to nutrition production, but decrease healthcare by 10%",
                   getGainMultiplier:
-                    ((fg = {}),
-                    (fg[l.NUTRITION] = function (e) {
+                    ((Rg = {}),
+                    (Rg[l.NUTRITION] = function (e) {
                       return 1.1;
                     }),
-                    fg),
+                    Rg),
                   getEffectMultiplier:
-                    ((Ag = {}),
-                    (Ag[U.HEALTHCARE] = function (e) {
+                    ((Tg = {}),
+                    (Tg[U.HEALTHCARE] = function (e) {
                       return 0.9;
                     }),
-                    Ag),
+                    Tg),
                 },
                 {
                   name: "Healthy Food",
                   description:
                     "Use vitamins-saving technologies during food processing. Provides 5% bonus to healthcare, but decrease food production by 30%",
                   getGainMultiplier:
-                    ((mg = {}),
-                    (mg[l.NUTRITION] = function (e) {
+                    ((yg = {}),
+                    (yg[l.NUTRITION] = function (e) {
                       return 0.7;
                     }),
-                    mg),
+                    yg),
                   getEffectMultiplier:
-                    ((Ng = {}),
-                    (Ng[U.HEALTHCARE] = function (e) {
+                    ((Og = {}),
+                    (Og[U.HEALTHCARE] = function (e) {
                       return 1.05;
                     }),
-                    Ng),
+                    Og),
                 },
               ],
             },
@@ -23784,22 +24068,22 @@
                   description:
                     "Indicators of harmful emissions may vary within permissible limits. Each fuel craftsman incurs 1 health penalty, but has 15% higher efficiency",
                   getGainMultiplier:
-                    ((hg = {}),
-                    (hg[l.FUEL] = function (e) {
+                    ((Lg = {}),
+                    (Lg[l.FUEL] = function (e) {
                       return 1.15;
                     }),
-                    hg),
+                    Lg),
                 },
                 {
                   name: "No Control",
                   description:
                     "Each fuel craftsman incurs 2 health penalties, but has 25% higher efficiency",
                   getGainMultiplier:
-                    ((Ig = {}),
-                    (Ig[l.FUEL] = function (e) {
+                    ((Cg = {}),
+                    (Cg[l.FUEL] = function (e) {
                       return 1.25;
                     }),
-                    Ig),
+                    Cg),
                 },
               ],
             },
@@ -23828,28 +24112,28 @@
                   description:
                     "Consumes a small amount of power but enhances security. +10% to law enforcement effectiveness, -5% power production",
                   getGainMultiplier:
-                    ((Rg = {}),
-                    (Rg[l.POWER] = function (e) {
+                    ((vg = {}),
+                    (vg[l.POWER] = function (e) {
                       return 0.95;
                     }),
-                    Rg),
+                    vg),
                 },
                 {
                   name: "Colorful Lights",
                   description:
                     "Consumes a significant amount of electricity but enhances aesthetics. +20 aesthetics and its maximum value, -10% power production",
                   getEffectGain:
-                    ((Tg = {}),
-                    (Tg[U.AESTHETICS] = function (e) {
+                    ((Sg = {}),
+                    (Sg[U.AESTHETICS] = function (e) {
                       return 20;
                     }),
-                    Tg),
+                    Sg),
                   getGainMultiplier:
-                    ((yg = {}),
-                    (yg[l.POWER] = function (e) {
+                    ((Pg = {}),
+                    (Pg[l.POWER] = function (e) {
                       return 0.9;
                     }),
-                    yg),
+                    Pg),
                 },
               ],
             },
@@ -24135,7 +24419,7 @@
               ],
             },
           ],
-          Ug = (function () {
+          xg = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -24169,9 +24453,9 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          bg = function () {
+          kg = function () {
             return (
-              (bg =
+              (kg =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -24180,10 +24464,10 @@
                         (e[o] = t[o]);
                   return e;
                 }),
-              bg.apply(this, arguments)
+              kg.apply(this, arguments)
             );
           },
-          Gg = (function (e) {
+          Hg = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -24196,7 +24480,7 @@
               );
             }
             return (
-              Ug(t, e),
+              xg(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -24209,11 +24493,11 @@
               (t.prototype.dataToUI = function () {
                 var e = this;
                 return {
-                  laws: _g.map(function (t) {
+                  laws: Xg.map(function (t) {
                     return e.processToUI(t);
                   }),
                   isUnlocked:
-                    _h.science.scienceResearches.getResearchLevel(
+                    xh.science.scienceResearches.getResearchLevel(
                       B.CODEX_OF_LAW
                     ) > 0,
                 };
@@ -24242,72 +24526,72 @@
                     name: e.name,
                     description: e.description,
                     gain: e.getGain
-                      ? W.getValue(e.getGain, Mh.getInstance())
+                      ? W.getValue(e.getGain, Xh.getInstance())
                           .filter(function (e) {
                             return e.amount;
                           })
                           .map(function (e) {
-                            return bg(bg({}, e), {
+                            return kg(kg({}, e), {
                               amountValue: e.amount,
                               amount: F(e.amount),
                             });
                           })
                       : [],
                     max: e.getStorage
-                      ? W.getValue(e.getStorage, Mh.getInstance())
+                      ? W.getValue(e.getStorage, Xh.getInstance())
                           .filter(function (e) {
                             return e.amount;
                           })
                           .map(function (e) {
-                            return bg(bg({}, e), {
+                            return kg(kg({}, e), {
                               amountValue: e.amount,
                               amount: F(e.amount),
                             });
                           })
                       : [],
                     consume: e.getConsumption
-                      ? W.getValue(e.getConsumption, Mh.getInstance())
+                      ? W.getValue(e.getConsumption, Xh.getInstance())
                           .filter(function (e) {
                             return e.amount;
                           })
                           .map(function (e) {
-                            return bg(bg({}, e), {
+                            return kg(kg({}, e), {
                               amountValue: e.amount,
                               amount: F(e.amount),
                             });
                           })
                       : [],
                     consumeEffect: e.getEffectConsumption
-                      ? W.getValue(e.getEffectConsumption, Mh.getInstance())
+                      ? W.getValue(e.getEffectConsumption, Xh.getInstance())
                           .filter(function (e) {
                             return e.amount;
                           })
                           .map(function (e) {
-                            return bg(bg({}, e), {
+                            return kg(kg({}, e), {
                               amountValue: e.amount,
                               amount: F(e.amount),
                             });
                           })
                       : [],
                     gainEffect: e.getEffectGain
-                      ? W.getValue(e.getEffectGain, Mh.getInstance())
+                      ? W.getValue(e.getEffectGain, Xh.getInstance())
                           .filter(function (e) {
                             return e.amount;
                           })
                           .map(function (e) {
-                            return bg(bg({}, e), {
+                            return kg(kg({}, e), {
                               amountValue: e.amount,
                               amount: F(e.amount),
                             });
                           })
                       : [],
                     gainMult: e.getGainMultiplier
-                      ? W.getValue(e.getGainMultiplier, Mh.getInstance())
+                      ? W.getValue(e.getGainMultiplier, Xh.getInstance())
                           .filter(function (e) {
                             return e.amount;
                           })
                           .map(function (e) {
-                            return bg(bg({}, e), {
+                            return kg(kg({}, e), {
                               amountValue: e.amount,
                               amount: "x".concat(F(e.amount)),
                             });
@@ -24317,10 +24601,10 @@
                   };
                   n.push(o);
                 });
-                var i = e.unlockCondition(_h);
+                var i = e.unlockCondition(xh);
                 return (
                   i &&
-                    _h.newNotifications.registerNotification(
+                    xh.newNotifications.registerNotification(
                       "laws:orders:".concat(e.category, ":").concat(e.id)
                     ),
                   {
@@ -24336,7 +24620,7 @@
               }),
               (t.prototype.getEffectGain = function (e) {
                 var t = this,
-                  n = _g.filter(function (n) {
+                  n = Xg.filter(function (n) {
                     var i;
                     return !!(null ===
                       (i = n.options[t.getLawSelected(n.id)].getEffectGain) ||
@@ -24359,7 +24643,7 @@
                           ? void 0
                           : r[e])
                       ) {
-                        var s = c.getEffectGain[e](Mh.getInstance());
+                        var s = c.getEffectGain[e](Xh.getInstance());
                         i.push({
                           label: "Law ".concat(a.name, ": ").concat(c.name),
                           value: s,
@@ -24374,7 +24658,7 @@
               }),
               (t.prototype.getEffectMultiplier = function (e) {
                 var t = this,
-                  n = _g.filter(function (n) {
+                  n = Xg.filter(function (n) {
                     var i;
                     return !!(null ===
                       (i =
@@ -24398,7 +24682,7 @@
                           ? void 0
                           : r[e])
                       ) {
-                        var s = c.getEffectMultiplier[e](Mh.getInstance());
+                        var s = c.getEffectMultiplier[e](Xh.getInstance());
                         i.push({
                           label: "Law ".concat(a.name, ": ").concat(c.name),
                           value: s,
@@ -24413,7 +24697,7 @@
               }),
               (t.prototype.getEffectBeingConsumed = function (e) {
                 var t = this,
-                  n = _g.filter(function (n) {
+                  n = Xg.filter(function (n) {
                     var i;
                     return !!(null ===
                       (i =
@@ -24437,7 +24721,7 @@
                           ? void 0
                           : r[e])
                       ) {
-                        var s = c.getEffectConsumption[e](Mh.getInstance());
+                        var s = c.getEffectConsumption[e](Xh.getInstance());
                         i.push({
                           label: "Law ".concat(a.name, ": ").concat(c.name),
                           value: s,
@@ -24452,7 +24736,7 @@
               }),
               (t.prototype.getResourceBeingProduced = function (e) {
                 var t = this,
-                  n = _g.filter(function (n) {
+                  n = Xg.filter(function (n) {
                     var i;
                     return !!(null ===
                       (i = n.options[t.getLawSelected(n.id)].getGain) ||
@@ -24475,7 +24759,7 @@
                           ? void 0
                           : r[e])
                       ) {
-                        var s = c.getGain[e](Mh.getInstance());
+                        var s = c.getGain[e](Xh.getInstance());
                         i.push({
                           label: "Law ".concat(a.name, ": ").concat(c.name),
                           value: s,
@@ -24490,7 +24774,7 @@
               }),
               (t.prototype.getCraftingMultiplier = function () {
                 var e = this,
-                  t = _g.filter(function (t) {
+                  t = Xg.filter(function (t) {
                     return !!t.options[e.getLawSelected(t.id)].getCraftingBonus;
                   }),
                   n = [];
@@ -24502,7 +24786,7 @@
                     if (o) {
                       var r = o.options[e.getLawSelected(o.id)];
                       if (o && r.getCraftingBonus) {
-                        var a = r.getCraftingBonus(Mh.getInstance());
+                        var a = r.getCraftingBonus(Xh.getInstance());
                         n.push({
                           label: "Law ".concat(o.name, ": ").concat(r.name),
                           value: a,
@@ -24517,7 +24801,7 @@
               }),
               (t.prototype.getResourceMultiplier = function (e) {
                 var t = this,
-                  n = _g.filter(function (n) {
+                  n = Xg.filter(function (n) {
                     var i;
                     return !!(null ===
                       (i =
@@ -24541,7 +24825,7 @@
                           ? void 0
                           : r[e])
                       ) {
-                        var s = c.getGainMultiplier[e](Mh.getInstance());
+                        var s = c.getGainMultiplier[e](Xh.getInstance());
                         i.push({
                           label: "Law ".concat(a.name, ": ").concat(c.name),
                           value: s,
@@ -24556,7 +24840,7 @@
               }),
               (t.prototype.getResourceBeingConsumed = function (e) {
                 var t = this,
-                  n = _g.filter(function (n) {
+                  n = Xg.filter(function (n) {
                     var i;
                     return !!(null ===
                       (i = n.options[t.getLawSelected(n.id)].getConsumption) ||
@@ -24579,7 +24863,7 @@
                           ? void 0
                           : r[e])
                       ) {
-                        var s = c.getConsumption[e](Mh.getInstance());
+                        var s = c.getConsumption[e](Xh.getInstance());
                         i.push({
                           label: "Law ".concat(a.name, ": ").concat(c.name),
                           value: s,
@@ -24594,7 +24878,7 @@
               }),
               (t.prototype.getResourceBeingStored = function (e) {
                 var t = this,
-                  n = _g.filter(function (n) {
+                  n = Xg.filter(function (n) {
                     var i;
                     return !!(null ===
                       (i = n.options[t.getLawSelected(n.id)].getStorage) ||
@@ -24617,7 +24901,7 @@
                           ? void 0
                           : r[e])
                       ) {
-                        var s = c.getStorage[e](Mh.getInstance());
+                        var s = c.getStorage[e](Xh.getInstance());
                         i.push({
                           label: "Law ".concat(a.name, ": ").concat(c.name),
                           value: s,
@@ -24632,7 +24916,7 @@
               }),
               (t.prototype.getColonistsCap = function () {
                 var e = this,
-                  t = _g.filter(function (t) {
+                  t = Xg.filter(function (t) {
                     return !!t.options[e.getLawSelected(t.id)].getMaxColonists;
                   }),
                   n = [];
@@ -24644,7 +24928,7 @@
                     if (o) {
                       var r = o.options[e.getLawSelected(o.id)];
                       if (o && r.getMaxColonists) {
-                        var a = r.getMaxColonists(Mh.getInstance());
+                        var a = r.getMaxColonists(Xh.getInstance());
                         n.push({
                           label: "Law ".concat(o.name, ": ").concat(r.name),
                           value: a,
@@ -24664,13 +24948,13 @@
                 n < 0
                   ? this.lawsStatuses.push({ id: e, selectedOptionId: t })
                   : (this.lawsStatuses[n].selectedOptionId = t),
-                  Mh.getInstance().resources.reassertBalances(),
-                  _h.regenerateCache();
-                var i = _g.find(function (t) {
+                  Xh.getInstance().resources.reassertBalances(),
+                  xh.regenerateCache();
+                var i = Xg.find(function (t) {
                   return t.id === e;
                 });
                 i &&
-                  Mh.getInstance().eventLog.registerLaw(
+                  Xh.getInstance().eventLog.registerLaw(
                     i.name,
                     i.options[t].name
                   );
@@ -24682,14 +24966,14 @@
               t
             );
           })(P),
-          wg = Gg.getInstance();
+          Yg = Hg.getInstance();
         !(function (e) {
           (e.HEAD = "Head"),
             (e.CORPUS = "Corpus"),
             (e.WEAPONS = "Weapons"),
             (e.POWER_SUPPLY = "Power Supply"),
             (e.ENGINE = "Engine");
-        })(Og || (Og = {})),
+        })(Bg || (Bg = {})),
           (function (e) {
             (e.DURABILITY = "Durability"),
               (e.SHIELD_CAP = "Shield Capacity"),
@@ -24701,26 +24985,20 @@
               (e.SPEED = "Speed"),
               (e.POWER = "Power"),
               (e.FUEL_CONSUMPTION = "Fuel Consumption");
-          })(Lg || (Lg = {})),
+          })(Mg || (Mg = {})),
           (function (e) {
             (e.ACTUAL_DURABILITY = "Actual Durability"),
               (e.ACTUAL_SHIELD = "Actual Shield"),
               (e.ACTUAL_RECHARGE = "Actual Recharge");
-          })(Cg || (Cg = {}));
-        var Dg,
-          Xg,
-          xg,
-          kg,
-          Hg,
-          Yg,
-          Wg,
+          })(_g || (_g = {}));
+        var Wg,
           Zg,
           Fg,
           jg,
           Vg,
           Kg,
-          qg,
           zg,
+          qg,
           Qg,
           Jg,
           $g,
@@ -24772,8 +25050,8 @@
           jf,
           Vf,
           Kf,
-          qf,
           zf,
+          qf,
           Qf,
           Jf,
           $f,
@@ -24808,9 +25086,16 @@
           SA,
           PA,
           BA,
-          MA = function () {
+          MA,
+          _A,
+          UA,
+          bA,
+          GA,
+          wA,
+          DA,
+          XA = function () {
             return (
-              (MA =
+              (XA =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -24819,30 +25104,30 @@
                         (e[o] = t[o]);
                   return e;
                 }),
-              MA.apply(this, arguments)
+              XA.apply(this, arguments)
             );
           },
-          _A = { income: 0, consume: 0, multiplier: 1 },
-          UA = {
+          xA = { income: 0, consume: 0, multiplier: 1 },
+          kA = {
             stats:
-              ((Dg = {}),
-              (Dg[Lg.SPEED] = 0),
-              (Dg[Lg.POWER] = 0),
-              (Dg[Lg.DAMAGE] = 0),
-              (Dg[Lg.DURABILITY] = 0),
-              (Dg[Lg.SHIELD_CAP] = 0),
-              (Dg[Lg.SHIELD_MITIGATION] = 0),
-              (Dg[Lg.SHIELD_REGEN] = 0),
-              (Dg[Lg.HULL_REPAIR] = 0),
-              (Dg[Lg.WEAPON_COOLDOWN] = 0),
-              (Dg[Lg.FUEL_CONSUMPTION] = 0),
-              Dg),
+              ((Wg = {}),
+              (Wg[Mg.SPEED] = 0),
+              (Wg[Mg.POWER] = 0),
+              (Wg[Mg.DAMAGE] = 0),
+              (Wg[Mg.DURABILITY] = 0),
+              (Wg[Mg.SHIELD_CAP] = 0),
+              (Wg[Mg.SHIELD_MITIGATION] = 0),
+              (Wg[Mg.SHIELD_REGEN] = 0),
+              (Wg[Mg.HULL_REPAIR] = 0),
+              (Wg[Mg.WEAPON_COOLDOWN] = 0),
+              (Wg[Mg.FUEL_CONSUMPTION] = 0),
+              Wg),
             costs: [],
           },
-          bA = function (e) {
+          HA = function (e) {
             return Math.pow(1.05, e.space.battlefield.state.pilot.level);
           },
-          GA = function (e) {
+          YA = function (e) {
             return (
               Math.pow(
                 0.5,
@@ -24858,7 +25143,7 @@
               )
             );
           },
-          wA = function (e) {
+          WA = function (e) {
             return (
               Math.pow(
                 1.3,
@@ -24884,7 +25169,7 @@
               )
             );
           },
-          DA = function (e) {
+          ZA = function (e) {
             return (
               Math.pow(
                 1.2,
@@ -24904,7 +25189,7 @@
               )
             );
           },
-          XA = function (e) {
+          FA = function (e) {
             return (
               Math.pow(
                 0.8,
@@ -24920,7 +25205,7 @@
               )
             );
           },
-          xA = function (e) {
+          jA = function (e) {
             return (
               Math.pow(
                 1.2,
@@ -24936,39 +25221,39 @@
               )
             );
           },
-          kA = [
+          VA = [
             {
               name: "Regular",
               id: "regular",
               bonusConsume:
-                ((Xg = {}),
-                (Xg[Lg.POWER] = function (e) {
+                ((Zg = {}),
+                (Zg[Mg.POWER] = function (e) {
                   return { A: 1, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                Xg),
+                Zg),
               bonusGain: {},
               bonusMultiplier:
-                ((xg = {}),
-                (xg[Lg.SPEED] = function (e) {
+                ((Fg = {}),
+                (Fg[Mg.SPEED] = function (e) {
                   return { A: 0.01, B: 1, type: i.LINEAR };
                 }),
-                (xg[Lg.WEAPON_COOLDOWN] = function (e) {
+                (Fg[Mg.WEAPON_COOLDOWN] = function (e) {
                   return { A: 0.9, B: 0, type: i.LINEAR };
                 }),
-                xg),
-              category: Og.HEAD,
+                Fg),
+              category: Bg.HEAD,
               cost:
-                ((kg = {}),
-                (kg[l.WIRE] = function (e) {
-                  return { A: 5e3 * XA(e), B: 1.5, type: i.EXPONENTIAL };
+                ((jg = {}),
+                (jg[l.WIRE] = function (e) {
+                  return { A: 5e3 * FA(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (kg[l.COMPUTER] = function (e) {
-                  return { A: 400 * XA(e), B: 1.5, type: i.EXPONENTIAL };
+                (jg[l.COMPUTER] = function (e) {
+                  return { A: 400 * FA(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (kg[l.RUBBER] = function (e) {
-                  return { A: 1e3 * XA(e), B: 1.5, type: i.EXPONENTIAL };
+                (jg[l.RUBBER] = function (e) {
+                  return { A: 1e3 * FA(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                kg),
+                jg),
               unlockCondition: function (e) {
                 return !0;
               },
@@ -24977,31 +25262,31 @@
               name: "Transport Spaceship Head",
               id: "transport",
               bonusConsume:
-                ((Hg = {}),
-                (Hg[Lg.POWER] = function (e) {
+                ((Vg = {}),
+                (Vg[Mg.POWER] = function (e) {
                   return { A: 1, B: 1.05, type: i.EXPONENTIAL };
                 }),
-                Hg),
+                Vg),
               bonusGain: {},
               bonusMultiplier:
-                ((Yg = {}),
-                (Yg[Lg.SPEED] = function (e) {
+                ((Kg = {}),
+                (Kg[Mg.SPEED] = function (e) {
                   return { A: 0.03, B: 1, type: i.LINEAR };
                 }),
-                (Yg[Lg.FUEL_CONSUMPTION] = function (e) {
+                (Kg[Mg.FUEL_CONSUMPTION] = function (e) {
                   return { A: 0, B: 0.8, type: i.LINEAR };
                 }),
-                Yg),
-              category: Og.HEAD,
+                Kg),
+              category: Bg.HEAD,
               cost:
-                ((Wg = {}),
-                (Wg[l.WIRE] = function (e) {
-                  return { A: 1e4 * XA(e), B: 1.5, type: i.EXPONENTIAL };
+                ((zg = {}),
+                (zg[l.WIRE] = function (e) {
+                  return { A: 1e4 * FA(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (Wg[l.COMPUTER] = function (e) {
-                  return { A: 1e3 * XA(e), B: 1.5, type: i.EXPONENTIAL };
+                (zg[l.COMPUTER] = function (e) {
+                  return { A: 1e3 * FA(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                Wg),
+                zg),
               unlockCondition: function (e) {
                 return !0;
               },
@@ -25010,28 +25295,28 @@
               name: "Plated Corpus",
               id: "plated",
               bonusConsume:
-                ((Zg = {}),
-                (Zg[Lg.POWER] = function (e) {
+                ((qg = {}),
+                (qg[Mg.POWER] = function (e) {
                   return { A: 1, B: 1.05, type: i.EXPONENTIAL };
                 }),
-                Zg),
+                qg),
               bonusGain:
-                ((Fg = {}),
-                (Fg[Lg.DURABILITY] = function (e) {
-                  return { A: 200 * bA(e) * wA(e), B: 0, type: i.LINEAR };
+                ((Qg = {}),
+                (Qg[Mg.DURABILITY] = function (e) {
+                  return { A: 200 * HA(e) * WA(e), B: 0, type: i.LINEAR };
                 }),
-                Fg),
+                Qg),
               bonusMultiplier: {},
-              category: Og.CORPUS,
+              category: Bg.CORPUS,
               cost:
-                ((jg = {}),
-                (jg[l.PLATE] = function (e) {
-                  return { A: 1e4 * XA(e), B: 1.5, type: i.EXPONENTIAL };
+                ((Jg = {}),
+                (Jg[l.PLATE] = function (e) {
+                  return { A: 1e4 * FA(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (jg[l.WIRE] = function (e) {
-                  return { A: 1e3 * XA(e), B: 1.5, type: i.EXPONENTIAL };
+                (Jg[l.WIRE] = function (e) {
+                  return { A: 1e3 * FA(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                jg),
+                Jg),
               unlockCondition: function (e) {
                 return !0;
               },
@@ -25040,31 +25325,31 @@
               name: "Graphene Corpus",
               id: "graphene",
               bonusConsume:
-                ((Vg = {}),
-                (Vg[Lg.POWER] = function (e) {
+                (($g = {}),
+                ($g[Mg.POWER] = function (e) {
                   return { A: 2, B: 1.05, type: i.EXPONENTIAL };
                 }),
-                Vg),
+                $g),
               bonusGain:
-                ((Kg = {}),
-                (Kg[Lg.DURABILITY] = function (e) {
-                  return { A: 280 * bA(e) * wA(e), B: 0, type: i.LINEAR };
+                ((ef = {}),
+                (ef[Mg.DURABILITY] = function (e) {
+                  return { A: 280 * HA(e) * WA(e), B: 0, type: i.LINEAR };
                 }),
-                Kg),
+                ef),
               bonusMultiplier: {},
-              category: Og.CORPUS,
+              category: Bg.CORPUS,
               cost:
-                ((qg = {}),
-                (qg[l.PLATE] = function (e) {
-                  return { A: 8e3 * XA(e), B: 1.5, type: i.EXPONENTIAL };
+                ((tf = {}),
+                (tf[l.PLATE] = function (e) {
+                  return { A: 8e3 * FA(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (qg[l.WIRE] = function (e) {
-                  return { A: 1e3 * XA(e), B: 1.5, type: i.EXPONENTIAL };
+                (tf[l.WIRE] = function (e) {
+                  return { A: 1e3 * FA(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (qg[l.GRAPHENE] = function (e) {
-                  return { A: 400 * XA(e), B: 1.5, type: i.EXPONENTIAL };
+                (tf[l.GRAPHENE] = function (e) {
+                  return { A: 400 * FA(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                qg),
+                tf),
               unlockCondition: function (e) {
                 return !0;
               },
@@ -25073,34 +25358,34 @@
               name: "Rocket Launcher",
               id: "rls",
               bonusConsume:
-                ((zg = {}),
-                (zg[Lg.POWER] = function (e) {
+                ((nf = {}),
+                (nf[Mg.POWER] = function (e) {
                   return { A: 1.5, B: 1.05, type: i.EXPONENTIAL };
                 }),
-                (zg[Lg.FUEL_CONSUMPTION] = function (e) {
-                  return { A: 2 * GA(e), B: 1.05, type: i.EXPONENTIAL };
+                (nf[Mg.FUEL_CONSUMPTION] = function (e) {
+                  return { A: 2 * YA(e), B: 1.05, type: i.EXPONENTIAL };
                 }),
-                zg),
+                nf),
               bonusGain:
-                ((Qg = {}),
-                (Qg[Lg.DAMAGE] = function (e) {
-                  return { A: 9 * bA(e) * DA(e), B: 0, type: i.LINEAR };
+                ((of = {}),
+                (of[Mg.DAMAGE] = function (e) {
+                  return { A: 9 * HA(e) * ZA(e), B: 0, type: i.LINEAR };
                 }),
-                Qg),
+                of),
               bonusMultiplier: {},
-              category: Og.WEAPONS,
+              category: Bg.WEAPONS,
               cost:
-                ((Jg = {}),
-                (Jg[l.WIRE] = function (e) {
-                  return { A: 1e3 * XA(e), B: 1.5, type: i.EXPONENTIAL };
+                ((rf = {}),
+                (rf[l.WIRE] = function (e) {
+                  return { A: 1e3 * FA(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (Jg[l.PLATE] = function (e) {
-                  return { A: 1e3 * XA(e), B: 1.5, type: i.EXPONENTIAL };
+                (rf[l.PLATE] = function (e) {
+                  return { A: 1e3 * FA(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (Jg[l.FUEL] = function (e) {
-                  return { A: 2e3 * XA(e), B: 1.5, type: i.EXPONENTIAL };
+                (rf[l.FUEL] = function (e) {
+                  return { A: 2e3 * FA(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                Jg),
+                rf),
               unlockCondition: function (e) {
                 return !0;
               },
@@ -25109,39 +25394,39 @@
               name: "MRLS",
               id: "mrls",
               bonusConsume:
-                (($g = {}),
-                ($g[Lg.POWER] = function (e) {
+                ((af = {}),
+                (af[Mg.POWER] = function (e) {
                   return { A: 3, B: 1.05, type: i.EXPONENTIAL };
                 }),
-                ($g[Lg.FUEL_CONSUMPTION] = function (e) {
-                  return { A: 3 * GA(e), B: 1.05, type: i.EXPONENTIAL };
+                (af[Mg.FUEL_CONSUMPTION] = function (e) {
+                  return { A: 3 * YA(e), B: 1.05, type: i.EXPONENTIAL };
                 }),
-                $g),
+                af),
               bonusGain:
-                ((ef = {}),
-                (ef[Lg.DAMAGE] = function (e) {
-                  return { A: 4 * bA(e) * DA(e), B: 0, type: i.LINEAR };
+                ((cf = {}),
+                (cf[Mg.DAMAGE] = function (e) {
+                  return { A: 4 * HA(e) * ZA(e), B: 0, type: i.LINEAR };
                 }),
-                ef),
+                cf),
               bonusMultiplier:
-                ((tf = {}),
-                (tf[Lg.WEAPON_COOLDOWN] = function (e) {
+                ((sf = {}),
+                (sf[Mg.WEAPON_COOLDOWN] = function (e) {
                   return { A: 0, B: 0.75, type: i.LINEAR };
                 }),
-                tf),
-              category: Og.WEAPONS,
+                sf),
+              category: Bg.WEAPONS,
               cost:
-                ((nf = {}),
-                (nf[l.WIRE] = function (e) {
-                  return { A: 5e3 * XA(e), B: 1.5, type: i.EXPONENTIAL };
+                ((uf = {}),
+                (uf[l.WIRE] = function (e) {
+                  return { A: 5e3 * FA(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (nf[l.PLATE] = function (e) {
-                  return { A: 5e3 * XA(e), B: 1.5, type: i.EXPONENTIAL };
+                (uf[l.PLATE] = function (e) {
+                  return { A: 5e3 * FA(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (nf[l.FUEL] = function (e) {
-                  return { A: 5e3 * XA(e), B: 1.5, type: i.EXPONENTIAL };
+                (uf[l.FUEL] = function (e) {
+                  return { A: 5e3 * FA(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                nf),
+                uf),
               unlockCondition: function (e) {
                 return !0;
               },
@@ -25150,34 +25435,34 @@
               name: "Quark-Gluon Canon",
               id: "quark-gluon-canon",
               bonusConsume:
-                ((of = {}),
-                (of[Lg.POWER] = function (e) {
+                ((lf = {}),
+                (lf[Mg.POWER] = function (e) {
                   return { A: 8, B: 1.05, type: i.EXPONENTIAL };
                 }),
-                (of[Lg.FUEL_CONSUMPTION] = function (e) {
-                  return { A: 12 * GA(e), B: 1.05, type: i.EXPONENTIAL };
+                (lf[Mg.FUEL_CONSUMPTION] = function (e) {
+                  return { A: 12 * YA(e), B: 1.05, type: i.EXPONENTIAL };
                 }),
-                of),
+                lf),
               bonusGain:
-                ((rf = {}),
-                (rf[Lg.DAMAGE] = function (e) {
-                  return { A: 19 * bA(e) * DA(e), B: 0, type: i.LINEAR };
+                ((pf = {}),
+                (pf[Mg.DAMAGE] = function (e) {
+                  return { A: 19 * HA(e) * ZA(e), B: 0, type: i.LINEAR };
                 }),
-                rf),
+                pf),
               bonusMultiplier: {},
-              category: Og.WEAPONS,
+              category: Bg.WEAPONS,
               cost:
-                ((af = {}),
-                (af[l.WIRE] = function (e) {
-                  return { A: 9e3 * XA(e), B: 1.5, type: i.EXPONENTIAL };
+                ((df = {}),
+                (df[l.WIRE] = function (e) {
+                  return { A: 9e3 * FA(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (af[l.COMPUTER] = function (e) {
-                  return { A: 300 * XA(e), B: 1.5, type: i.EXPONENTIAL };
+                (df[l.COMPUTER] = function (e) {
+                  return { A: 300 * FA(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (af[l.FUEL] = function (e) {
-                  return { A: 9e3 * XA(e), B: 1.5, type: i.EXPONENTIAL };
+                (df[l.FUEL] = function (e) {
+                  return { A: 9e3 * FA(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                af),
+                df),
               unlockCondition: function (e) {
                 return (
                   e.landingZone.landingZoneUpgrades.getUpgradeLevel(
@@ -25190,22 +25475,22 @@
               name: "Positron Canon",
               id: "positron-canon",
               bonusConsume:
-                ((cf = {}),
-                (cf[Lg.POWER] = function (e) {
+                ((Ef = {}),
+                (Ef[Mg.POWER] = function (e) {
                   return { A: 18, B: 1.05, type: i.EXPONENTIAL };
                 }),
-                (cf[Lg.FUEL_CONSUMPTION] = function (e) {
-                  return { A: 30 * GA(e), B: 1.05, type: i.EXPONENTIAL };
+                (Ef[Mg.FUEL_CONSUMPTION] = function (e) {
+                  return { A: 30 * YA(e), B: 1.05, type: i.EXPONENTIAL };
                 }),
-                cf),
+                Ef),
               bonusGain:
-                ((sf = {}),
-                (sf[Lg.DAMAGE] = function (e) {
+                ((gf = {}),
+                (gf[Mg.DAMAGE] = function (e) {
                   return {
                     A:
                       45 *
-                      bA(e) *
-                      DA(e) *
+                      HA(e) *
+                      ZA(e) *
                       Math.pow(
                         1.2,
                         e.landingZone.landingZoneUpgrades.getUpgradeLevel(
@@ -25216,21 +25501,21 @@
                     type: i.LINEAR,
                   };
                 }),
-                sf),
+                gf),
               bonusMultiplier: {},
-              category: Og.WEAPONS,
+              category: Bg.WEAPONS,
               cost:
-                ((uf = {}),
-                (uf[l.WIRE] = function (e) {
-                  return { A: 3e4 * XA(e), B: 1.5, type: i.EXPONENTIAL };
+                ((ff = {}),
+                (ff[l.WIRE] = function (e) {
+                  return { A: 3e4 * FA(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (uf[l.COMPUTER] = function (e) {
-                  return { A: 900 * XA(e), B: 1.5, type: i.EXPONENTIAL };
+                (ff[l.COMPUTER] = function (e) {
+                  return { A: 900 * FA(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (uf[l.FUEL] = function (e) {
-                  return { A: 3e4 * XA(e), B: 1.5, type: i.EXPONENTIAL };
+                (ff[l.FUEL] = function (e) {
+                  return { A: 3e4 * FA(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                uf),
+                ff),
               unlockCondition: function (e) {
                 return (
                   e.landingZone.landingZoneUpgrades.getUpgradeLevel(
@@ -25243,40 +25528,40 @@
               name: "Magnetic Shield",
               id: "shield",
               bonusConsume:
-                ((lf = {}),
-                (lf[Lg.POWER] = function (e) {
+                ((Af = {}),
+                (Af[Mg.POWER] = function (e) {
                   return { A: 6, B: 1.05, type: i.EXPONENTIAL };
                 }),
-                (lf[Lg.FUEL_CONSUMPTION] = function (e) {
-                  return { A: 5 * GA(e), B: 1.05, type: i.EXPONENTIAL };
+                (Af[Mg.FUEL_CONSUMPTION] = function (e) {
+                  return { A: 5 * YA(e), B: 1.05, type: i.EXPONENTIAL };
                 }),
-                lf),
+                Af),
               bonusGain:
-                ((pf = {}),
-                (pf[Lg.SHIELD_CAP] = function (e) {
-                  return { A: 80 * bA(e), B: 0, type: i.LINEAR };
+                ((mf = {}),
+                (mf[Mg.SHIELD_CAP] = function (e) {
+                  return { A: 80 * HA(e), B: 0, type: i.LINEAR };
                 }),
-                (pf[Lg.SHIELD_REGEN] = function (e) {
-                  return { A: 3 * bA(e), B: 0, type: i.LINEAR };
+                (mf[Mg.SHIELD_REGEN] = function (e) {
+                  return { A: 3 * HA(e), B: 0, type: i.LINEAR };
                 }),
-                (pf[Lg.SHIELD_MITIGATION] = function (e) {
+                (mf[Mg.SHIELD_MITIGATION] = function (e) {
                   return { A: 0, B: 0.2, type: i.LINEAR };
                 }),
-                pf),
+                mf),
               bonusMultiplier: {},
-              category: Og.WEAPONS,
+              category: Bg.WEAPONS,
               cost:
-                ((df = {}),
-                (df[l.WIRE] = function (e) {
-                  return { A: 9e3 * XA(e), B: 1.5, type: i.EXPONENTIAL };
+                ((Nf = {}),
+                (Nf[l.WIRE] = function (e) {
+                  return { A: 9e3 * FA(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (df[l.COMPUTER] = function (e) {
-                  return { A: 500 * XA(e), B: 1.5, type: i.EXPONENTIAL };
+                (Nf[l.COMPUTER] = function (e) {
+                  return { A: 500 * FA(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (df[l.MAGNETO] = function (e) {
-                  return { A: 100 * XA(e), B: 1.5, type: i.EXPONENTIAL };
+                (Nf[l.MAGNETO] = function (e) {
+                  return { A: 100 * FA(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                df),
+                Nf),
               unlockCondition: function (e) {
                 return (
                   e.landingZone.landingZoneUpgrades.getUpgradeLevel(
@@ -25289,28 +25574,28 @@
               name: "Solar Panels",
               id: "solar",
               bonusConsume:
-                ((Ef = {}),
-                (Ef[Lg.FUEL_CONSUMPTION] = function (e) {
-                  return { A: 0.5 * GA(e), B: 1.05, type: i.EXPONENTIAL };
+                ((hf = {}),
+                (hf[Mg.FUEL_CONSUMPTION] = function (e) {
+                  return { A: 0.5 * YA(e), B: 1.05, type: i.EXPONENTIAL };
                 }),
-                Ef),
+                hf),
               bonusGain:
-                ((gf = {}),
-                (gf[Lg.POWER] = function (e) {
-                  return { A: 4 * xA(e), B: 0, type: i.LINEAR };
+                ((If = {}),
+                (If[Mg.POWER] = function (e) {
+                  return { A: 4 * jA(e), B: 0, type: i.LINEAR };
                 }),
-                gf),
+                If),
               bonusMultiplier: {},
-              category: Og.POWER_SUPPLY,
+              category: Bg.POWER_SUPPLY,
               cost:
-                ((ff = {}),
-                (ff[l.WIRE] = function (e) {
-                  return { A: 2e3 * XA(e), B: 1.5, type: i.EXPONENTIAL };
+                ((Rf = {}),
+                (Rf[l.WIRE] = function (e) {
+                  return { A: 2e3 * FA(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (ff[l.SEMICONDUCTOR] = function (e) {
-                  return { A: 2e3 * XA(e), B: 1.5, type: i.EXPONENTIAL };
+                (Rf[l.SEMICONDUCTOR] = function (e) {
+                  return { A: 2e3 * FA(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                ff),
+                Rf),
               unlockCondition: function (e) {
                 return !0;
               },
@@ -25319,28 +25604,28 @@
               name: "Thermonuclear Power Plant",
               id: "thermonuclear",
               bonusConsume:
-                ((Af = {}),
-                (Af[Lg.FUEL_CONSUMPTION] = function (e) {
-                  return { A: 3.5 * GA(e), B: 1.05, type: i.EXPONENTIAL };
+                ((Tf = {}),
+                (Tf[Mg.FUEL_CONSUMPTION] = function (e) {
+                  return { A: 3.5 * YA(e), B: 1.05, type: i.EXPONENTIAL };
                 }),
-                Af),
+                Tf),
               bonusGain:
-                ((mf = {}),
-                (mf[Lg.POWER] = function (e) {
-                  return { A: 10 * xA(e), B: 0, type: i.LINEAR };
+                ((yf = {}),
+                (yf[Mg.POWER] = function (e) {
+                  return { A: 10 * jA(e), B: 0, type: i.LINEAR };
                 }),
-                mf),
+                yf),
               bonusMultiplier: {},
-              category: Og.POWER_SUPPLY,
+              category: Bg.POWER_SUPPLY,
               cost:
-                ((Nf = {}),
-                (Nf[l.PLATE] = function (e) {
-                  return { A: 9e3 * XA(e), B: 1.5, type: i.EXPONENTIAL };
+                ((Of = {}),
+                (Of[l.PLATE] = function (e) {
+                  return { A: 9e3 * FA(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (Nf[l.WIRE] = function (e) {
-                  return { A: 5e3 * XA(e), B: 1.5, type: i.EXPONENTIAL };
+                (Of[l.WIRE] = function (e) {
+                  return { A: 5e3 * FA(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                Nf),
+                Of),
               unlockCondition: function (e) {
                 return !0;
               },
@@ -25349,31 +25634,31 @@
               name: "Reactive Engine",
               id: "reactive",
               bonusConsume:
-                ((hf = {}),
-                (hf[Lg.FUEL_CONSUMPTION] = function (e) {
-                  return { A: 4 * GA(e), B: 1, type: i.EXPONENTIAL };
+                ((Lf = {}),
+                (Lf[Mg.FUEL_CONSUMPTION] = function (e) {
+                  return { A: 4 * YA(e), B: 1, type: i.EXPONENTIAL };
                 }),
-                (hf[Lg.POWER] = function (e) {
+                (Lf[Mg.POWER] = function (e) {
                   return { A: 2, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                hf),
+                Lf),
               bonusGain:
-                ((If = {}),
-                (If[Lg.SPEED] = function (e) {
+                ((Cf = {}),
+                (Cf[Mg.SPEED] = function (e) {
                   return { A: 0.05, B: 1, type: i.LINEAR };
                 }),
-                If),
+                Cf),
               bonusMultiplier: {},
-              category: Og.ENGINE,
+              category: Bg.ENGINE,
               cost:
-                ((Rf = {}),
-                (Rf[l.PLATE] = function (e) {
-                  return { A: 14e3 * XA(e), B: 1.5, type: i.EXPONENTIAL };
+                ((vf = {}),
+                (vf[l.PLATE] = function (e) {
+                  return { A: 14e3 * FA(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (Rf[l.WIRE] = function (e) {
-                  return { A: 7e3 * XA(e), B: 1.5, type: i.EXPONENTIAL };
+                (vf[l.WIRE] = function (e) {
+                  return { A: 7e3 * FA(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                Rf),
+                vf),
               unlockCondition: function (e) {
                 return !0;
               },
@@ -25382,31 +25667,31 @@
               name: "Hyperspace Engine",
               id: "hyperspace",
               bonusConsume:
-                ((Tf = {}),
-                (Tf[Lg.FUEL_CONSUMPTION] = function (e) {
-                  return { A: 40 * GA(e), B: 1, type: i.EXPONENTIAL };
+                ((Sf = {}),
+                (Sf[Mg.FUEL_CONSUMPTION] = function (e) {
+                  return { A: 40 * YA(e), B: 1, type: i.EXPONENTIAL };
                 }),
-                (Tf[Lg.POWER] = function (e) {
+                (Sf[Mg.POWER] = function (e) {
                   return { A: 5, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                Tf),
+                Sf),
               bonusGain:
-                ((yf = {}),
-                (yf[Lg.SPEED] = function (e) {
+                ((Pf = {}),
+                (Pf[Mg.SPEED] = function (e) {
                   return { A: 0.1, B: 1, type: i.LINEAR };
                 }),
-                yf),
+                Pf),
               bonusMultiplier: {},
-              category: Og.ENGINE,
+              category: Bg.ENGINE,
               cost:
-                ((Of = {}),
-                (Of[l.PLATE] = function (e) {
-                  return { A: 54e3 * XA(e), B: 1.5, type: i.EXPONENTIAL };
+                ((Bf = {}),
+                (Bf[l.PLATE] = function (e) {
+                  return { A: 54e3 * FA(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (Of[l.WIRE] = function (e) {
-                  return { A: 15e3 * XA(e), B: 1.5, type: i.EXPONENTIAL };
+                (Bf[l.WIRE] = function (e) {
+                  return { A: 15e3 * FA(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                Of),
+                Bf),
               unlockCondition: function (e) {
                 return (
                   e.landingZone.landingZoneUpgrades.getUpgradeLevel(
@@ -25416,8 +25701,8 @@
               },
             },
           ],
-          HA = n(8721),
-          YA = (function () {
+          KA = n(8721),
+          zA = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -25451,9 +25736,9 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          WA = function () {
+          qA = function () {
             return (
-              (WA =
+              (qA =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -25462,10 +25747,10 @@
                         (e[o] = t[o]);
                   return e;
                 }),
-              WA.apply(this, arguments)
+              qA.apply(this, arguments)
             );
           },
-          ZA = (function (e) {
+          QA = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -25484,7 +25769,7 @@
                       ? {
                           name: n.name,
                           uuid: n.uuid,
-                          parts: WA({}, JSON.parse(JSON.stringify(n.parts))),
+                          parts: qA({}, JSON.parse(JSON.stringify(n.parts))),
                         }
                       : { name: "Unknown", uuid: "", parts: {} };
                   }
@@ -25517,20 +25802,20 @@
                       var i = void 0;
                       switch (e.key) {
                         case "head":
-                          i = Og.HEAD;
+                          i = Bg.HEAD;
                           break;
                         case "weapon1":
                         case "weapon2":
-                          i = Og.WEAPONS;
+                          i = Bg.WEAPONS;
                           break;
                         case "corpus":
-                          i = Og.CORPUS;
+                          i = Bg.CORPUS;
                           break;
                         case "power":
-                          i = Og.POWER_SUPPLY;
+                          i = Bg.POWER_SUPPLY;
                           break;
                         case "engine":
-                          i = Og.ENGINE;
+                          i = Bg.ENGINE;
                       }
                       t.editing.parts[e.key] = {
                         id: e.id,
@@ -25565,7 +25850,7 @@
               );
             }
             return (
-              YA(t, e),
+              zA(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -25574,7 +25859,7 @@
                   return t.uuid === e;
                 });
                 if (t > -1) {
-                  if (_h.space.hangar.getAmountById(e) > 0) return;
+                  if (xh.space.hangar.getAmountById(e) > 0) return;
                   this.models.splice(t, 1);
                 }
               }),
@@ -25583,59 +25868,59 @@
                   n = (function () {
                     var e;
                     return (
-                      ((e = {})[Lg.SPEED] = {
+                      ((e = {})[Mg.SPEED] = {
                         income: 1,
                         consume: 0,
                         multiplier: 1,
                       }),
-                      (e[Lg.POWER] = MA({}, _A)),
-                      (e[Lg.DAMAGE] = MA({}, _A)),
-                      (e[Lg.DURABILITY] = MA({}, _A)),
-                      (e[Lg.SHIELD_CAP] = MA({}, _A)),
-                      (e[Lg.SHIELD_MITIGATION] = MA({}, _A)),
-                      (e[Lg.SHIELD_REGEN] = MA({}, _A)),
-                      (e[Lg.HULL_REPAIR] = MA({}, _A)),
-                      (e[Lg.WEAPON_COOLDOWN] = {
+                      (e[Mg.POWER] = XA({}, xA)),
+                      (e[Mg.DAMAGE] = XA({}, xA)),
+                      (e[Mg.DURABILITY] = XA({}, xA)),
+                      (e[Mg.SHIELD_CAP] = XA({}, xA)),
+                      (e[Mg.SHIELD_MITIGATION] = XA({}, xA)),
+                      (e[Mg.SHIELD_REGEN] = XA({}, xA)),
+                      (e[Mg.HULL_REPAIR] = XA({}, xA)),
+                      (e[Mg.WEAPON_COOLDOWN] = {
                         income: 3,
                         consume: 0,
                         multiplier: 1,
                       }),
-                      (e[Lg.FUEL_CONSUMPTION] = MA({}, _A)),
+                      (e[Mg.FUEL_CONSUMPTION] = XA({}, xA)),
                       e
                     );
                   })(),
                   i = [];
                 t.forEach(function (e) {
                   var t = e.id,
-                    o = kA.find(function (e) {
+                    o = VA.find(function (e) {
                       return e.id === t;
                     });
                   if (o) {
                     Object.entries(o.bonusGain).forEach(function (t) {
                       var i = t[0],
                         o = t[1],
-                        r = W.calculate(Mh.getInstance(), o, 0, e.level);
+                        r = W.calculate(Xh.getInstance(), o, 0, e.level);
                       n[i].income += r;
                     }),
                       Object.entries(o.bonusConsume).forEach(function (t) {
                         var i = t[0],
                           o = t[1],
-                          r = W.calculate(Mh.getInstance(), o, 0, e.level);
+                          r = W.calculate(Xh.getInstance(), o, 0, e.level);
                         n[i].consume += r;
                       }),
                       Object.entries(o.bonusMultiplier).forEach(function (t) {
                         var i = t[0],
                           o = t[1],
-                          r = W.calculate(Mh.getInstance(), o, e.level, 1);
+                          r = W.calculate(Xh.getInstance(), o, e.level, 1);
                         n[i].multiplier *= r;
                       });
                     var r = W.calcBatchAll(
                       o.cost,
-                      Mh.getInstance(),
+                      Xh.getInstance(),
                       e.level,
-                      Mh.getInstance().resources.getBatchObject()
+                      Xh.getInstance().resources.getBatchObject()
                     );
-                    i = W.calcSum(Mh.getInstance(), i, r);
+                    i = W.calcSum(Xh.getInstance(), i, r);
                   }
                 });
                 var o = {};
@@ -25655,10 +25940,10 @@
                   }, 0),
                   {
                     stats: o,
-                    costs: Mh.getInstance().resources.assertEnought(
+                    costs: Xh.getInstance().resources.assertEnought(
                       i,
-                      Mh.getInstance().resources.getBatchObject(),
-                      Mh.getInstance().resources.getBatchBalanceObject()
+                      Xh.getInstance().resources.getBatchObject(),
+                      Xh.getInstance().resources.getBatchBalanceObject()
                     ),
                     costsOriginal: i,
                     progress: c < 1 ? (100 * c).toPrecision(3) : "100",
@@ -25673,7 +25958,7 @@
                 });
                 if (t) {
                   var n = this.calculateStats(t);
-                  return WA(WA({}, t), n);
+                  return qA(qA({}, t), n);
                 }
               }),
               (t.prototype.validateBeforeSave = function (e) {
@@ -25710,7 +25995,7 @@
                     reason: "Power source should be selected",
                   };
                 var r = this.calculateStats(e).stats;
-                return !r[Lg.POWER] || r[Lg.POWER] < 0
+                return !r[Mg.POWER] || r[Mg.POWER] < 0
                   ? { result: !1, reason: "Power supply is not enough" }
                   : (null == e ? void 0 : e.name)
                   ? { result: !0 }
@@ -25726,7 +26011,7 @@
                     : e.uuid);
                   if (
                     !i &&
-                    _h.space.hangar.getAmountById(
+                    xh.space.hangar.getAmountById(
                       null === (t = this.editing) || void 0 === t
                         ? void 0
                         : t.uuid
@@ -25755,9 +26040,9 @@
                       console.error(r), void (this.validationError = r.reason)
                     );
                   if (((this.validationError = void 0), i)) {
-                    var a = HA.Z();
+                    var a = KA.Z();
                     return (
-                      this.models.push(WA(WA({}, this.editing), { uuid: a })),
+                      this.models.push(qA(qA({}, this.editing), { uuid: a })),
                       void (this.editing.uuid = a)
                     );
                   }
@@ -25770,7 +26055,7 @@
                         : t.uuid)
                     );
                   });
-                  (this.models[c] = WA({}, this.editing)),
+                  (this.models[c] = qA({}, this.editing)),
                     (this.editing = null);
                 }
               }),
@@ -25782,27 +26067,27 @@
               }),
               (t.prototype.processShipPartsToUI = function (e) {
                 var t = {
-                  head: { category: Og.HEAD },
-                  weapon1: { category: Og.WEAPONS },
-                  weapon2: { category: Og.WEAPONS },
-                  corpus: { category: Og.CORPUS },
-                  engine: { category: Og.ENGINE },
-                  power: { category: Og.POWER_SUPPLY },
+                  head: { category: Bg.HEAD },
+                  weapon1: { category: Bg.WEAPONS },
+                  weapon2: { category: Bg.WEAPONS },
+                  corpus: { category: Bg.CORPUS },
+                  engine: { category: Bg.ENGINE },
+                  power: { category: Bg.POWER_SUPPLY },
                 };
                 return (
                   Object.entries(e.parts).forEach(function (e) {
                     var n = e[0],
                       i = e[1];
                     if (i) {
-                      var o = kA.find(function (e) {
+                      var o = VA.find(function (e) {
                         return e.id === i.id;
                       });
                       if (o) {
                         var r = W.calcBatchAll(
                             o.cost,
-                            Mh.getInstance(),
+                            Xh.getInstance(),
                             i.level,
-                            Mh.getInstance().resources.getBatchObject()
+                            Xh.getInstance().resources.getBatchObject()
                           ),
                           a = {
                             category: o.category,
@@ -25810,40 +26095,40 @@
                               id: i.id,
                               name: o.name,
                               level: i.level,
-                              cost: Mh.getInstance().resources.assertEnought(
+                              cost: Xh.getInstance().resources.assertEnought(
                                 r,
-                                Mh.getInstance().resources.getBatchObject(),
-                                Mh.getInstance().resources.getBatchBalanceObject()
+                                Xh.getInstance().resources.getBatchObject(),
+                                Xh.getInstance().resources.getBatchBalanceObject()
                               ),
                               gain: W.calcBatch(
                                 o.bonusGain,
-                                Mh.getInstance(),
+                                Xh.getInstance(),
                                 0,
                                 i.level
                               ).map(function (e) {
-                                return WA(WA({}, e), {
+                                return qA(qA({}, e), {
                                   amountValue: e.amount,
                                   amount: "+".concat(F(e.amount)),
                                 });
                               }),
                               gainMult: W.calcBatch(
                                 o.bonusMultiplier,
-                                Mh.getInstance(),
+                                Xh.getInstance(),
                                 i.level,
                                 1
                               ).map(function (e) {
-                                return WA(WA({}, e), {
+                                return qA(qA({}, e), {
                                   amountValue: e.amount,
                                   amount: "x".concat(F(e.amount)),
                                 });
                               }),
                               consume: W.calcBatch(
                                 o.bonusConsume,
-                                Mh.getInstance(),
+                                Xh.getInstance(),
                                 0,
                                 i.level
                               ).map(function (e) {
-                                return WA(WA({}, e), {
+                                return qA(qA({}, e), {
                                   amountValue: e.amount,
                                   amount: "-".concat(F(e.amount)),
                                 });
@@ -25858,8 +26143,8 @@
                 );
               }),
               (t.prototype.checkDetailsUnlocked = function (e) {
-                var t = kA.filter(function (e) {
-                    return e.unlockCondition(_h);
+                var t = VA.filter(function (e) {
+                    return e.unlockCondition(xh);
                   }),
                   n = function (n) {
                     var i = e.parts[n];
@@ -25883,10 +26168,10 @@
                   i = this.editing
                     ? this.calculateStats(this.editing)
                     : { costs: [], stats: {} },
-                  o = { stats: WA(WA({}, UA.stats), i.stats), costs: i.costs };
+                  o = { stats: qA(qA({}, kA.stats), i.stats), costs: i.costs };
                 return {
                   isUnlocked:
-                    _h.science.scienceResearches.getResearchLevel(
+                    xh.science.scienceResearches.getResearchLevel(
                       B.ADVANCED_SPACE_CONSTRUCTION
                     ) > 0,
                   list: this.models.map(function (e) {
@@ -25899,7 +26184,7 @@
                         (null === (t = n.editing) || void 0 === t
                           ? void 0
                           : t.uuid),
-                      amountPurchased: _h.space.hangar.getAmountById(e.uuid),
+                      amountPurchased: xh.space.hangar.getAmountById(e.uuid),
                       isAllPartsUnlocked: n.checkDetailsUnlocked(e),
                     };
                   }),
@@ -25914,17 +26199,15 @@
                             ? void 0
                             : t.name) || "",
                         parts: this.processShipPartsToUI(this.editing),
-                        availableParts: kA
-                          .filter(function (e) {
-                            return e.unlockCondition(Mh.getInstance());
-                          })
-                          .map(function (e) {
-                            return {
-                              name: e.name,
-                              id: e.id,
-                              category: e.category,
-                            };
-                          }),
+                        availableParts: VA.filter(function (e) {
+                          return e.unlockCondition(Xh.getInstance());
+                        }).map(function (e) {
+                          return {
+                            name: e.name,
+                            id: e.id,
+                            category: e.category,
+                          };
+                        }),
                         totalStats: o,
                         validationError: this.validationError,
                       }
@@ -25937,8 +26220,8 @@
               t
             );
           })(P),
-          FA = ZA.getInstance(),
-          jA = (function () {
+          JA = QA.getInstance(),
+          $A = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -25972,9 +26255,9 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          VA = function () {
+          em = function () {
             return (
-              (VA =
+              (em =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -25983,10 +26266,10 @@
                         (e[o] = t[o]);
                   return e;
                 }),
-              VA.apply(this, arguments)
+              em.apply(this, arguments)
             );
           },
-          KA = (function (e) {
+          tm = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -26001,7 +26284,7 @@
               );
             }
             return (
-              jA(t, e),
+              $A(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -26012,14 +26295,14 @@
                 return this.hangar;
               }),
               (t.prototype.destroyShip = function (e) {
-                var t = Mh.getInstance().space.spaceship.models.find(function (
+                var t = Xh.getInstance().space.spaceship.models.find(function (
                   t
                 ) {
                   return t.uuid === e;
                 });
                 if (t) {
                   var n =
-                      Mh.getInstance().space.spaceship.calculateStats(
+                      Xh.getInstance().space.spaceship.calculateStats(
                         t
                       ).costsOriginal,
                     i = this.hangar.findIndex(function (t) {
@@ -26028,22 +26311,22 @@
                   i > -1 &&
                     (this.hangar[i].amount--,
                     n.forEach(function (e) {
-                      Mh.getInstance().resources.addResource(
+                      Xh.getInstance().resources.addResource(
                         e.id,
                         0.8 * e.amount
                       );
                     }),
-                    _h.resources.reassertBalances());
+                    xh.resources.reassertBalances());
                 } else console.error("Model ".concat(e, " not found"));
               }),
               (t.prototype.buildShip = function (e) {
-                var t = Mh.getInstance().space.spaceship.models.find(function (
+                var t = Xh.getInstance().space.spaceship.models.find(function (
                   t
                 ) {
                   return t.uuid === e;
                 });
-                if (t && _h.space.spaceship.checkDetailsUnlocked(t)) {
-                  var n = Mh.getInstance().space.spaceship.calculateStats(t),
+                if (t && xh.space.spaceship.checkDetailsUnlocked(t)) {
+                  var n = Xh.getInstance().space.spaceship.calculateStats(t),
                     i = n.costsOriginal,
                     o = n.isAvailable,
                     r = n.stats;
@@ -26051,8 +26334,8 @@
                     var a = this.hangar.findIndex(function (t) {
                       return t.id === e;
                     });
-                    Mh.getInstance().resources.subtractResourceBatch(i),
-                      _h.resources.reassertBalances(),
+                    Xh.getInstance().resources.subtractResourceBatch(i),
+                      xh.resources.reassertBalances(),
                       a > -1
                         ? this.hangar[a].amount++
                         : this.hangar.push({ id: e, amount: 1 });
@@ -26064,10 +26347,10 @@
                   return t.id === e.uuid;
                 });
                 t || (t = { id: e.uuid, amount: 0 });
-                var n = Mh.getInstance().space.spaceship.calculateStats(e),
-                  i = { stats: VA(VA({}, UA.stats), n.stats), costs: n.costs },
+                var n = Xh.getInstance().space.spaceship.calculateStats(e),
+                  i = { stats: em(em({}, kA.stats), n.stats), costs: n.costs },
                   o =
-                    _h.space.spaceship.checkDetailsUnlocked(e) &&
+                    xh.space.spaceship.checkDetailsUnlocked(e) &&
                     i.stats.Power > 0;
                 return {
                   id: t.id,
@@ -26095,10 +26378,10 @@
                 var e = this;
                 return {
                   isUnlocked:
-                    _h.space.spaceship.models.filter(function (e) {
-                      return _h.space.spaceship.checkDetailsUnlocked(e);
+                    xh.space.spaceship.models.filter(function (e) {
+                      return xh.space.spaceship.checkDetailsUnlocked(e);
                     }).length > 0,
-                  ships: Mh.getInstance().space.spaceship.models.map(function (
+                  ships: Xh.getInstance().space.spaceship.models.map(function (
                     t
                   ) {
                     return e.processToUI(t);
@@ -26111,8 +26394,8 @@
               t
             );
           })(P),
-          qA = KA.getInstance(),
-          zA = (function () {
+          nm = tm.getInstance(),
+          im = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -26146,9 +26429,9 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          QA = function () {
+          om = function () {
             return (
-              (QA =
+              (om =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -26157,10 +26440,10 @@
                         (e[o] = t[o]);
                   return e;
                 }),
-              QA.apply(this, arguments)
+              om.apply(this, arguments)
             );
           },
-          JA = (function (e) {
+          rm = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -26169,7 +26452,7 @@
                   "[spaceship-fleet] load-to-editor",
                   function (e) {
                     console.log("Load to editor", e),
-                      (t.editing = QA(
+                      (t.editing = om(
                         {},
                         t.fleets.find(function (t) {
                           return t.uuid === e.uuid;
@@ -26209,7 +26492,7 @@
               );
             }
             return (
-              zA(t, e),
+              im(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -26237,7 +26520,7 @@
                       (n[e.shipId] || (n[e.shipId] = 0),
                       n[e.shipId]++,
                       n[e.shipId] >
-                        Mh.getInstance().space.hangar.getAmountById(e.shipId) &&
+                        Xh.getInstance().space.hangar.getAmountById(e.shipId) &&
                         t.push(e));
                   }),
                   t
@@ -26256,7 +26539,7 @@
                     this.editing.slots[r].shipId = void 0;
                   else {
                     var a = this.getModelUsed(e);
-                    _h.space.hangar.getAmountById(e) <= a ||
+                    xh.space.hangar.getAmountById(e) <= a ||
                       (r < 0
                         ? null === (o = this.editing) ||
                           void 0 === o ||
@@ -26289,10 +26572,10 @@
                           : n.uuid)
                       );
                     });
-                    this.fleets[n] = QA({}, this.editing);
+                    this.fleets[n] = om({}, this.editing);
                   } else
                     this.fleets.push(
-                      QA(QA({}, this.editing), { uuid: HA.Z() })
+                      om(om({}, this.editing), { uuid: KA.Z() })
                     );
               }),
               (t.prototype.deleteFleet = function (e) {
@@ -26330,14 +26613,14 @@
                                       return e.line === i && e.column === r;
                                     });
                             if (!c || !c.shipId) return t.push(a), "continue";
-                            var s = _h.space.spaceship.getModelWithStats(
+                            var s = xh.space.spaceship.getModelWithStats(
                               c.shipId
                             );
                             if (!s) return t.push(a), "continue";
                             var u = s.stats,
                               l = s.name,
                               p = s.uuid;
-                            (a.stats = QA(QA({}, UA.stats), u)),
+                            (a.stats = om(om({}, kA.stats), u)),
                               (a.selectedName = l),
                               (a.selectedUUID = p),
                               t.push(a);
@@ -26361,8 +26644,8 @@
                   t = this;
                 return {
                   isUnlocked:
-                    _h.space.spaceship.models.filter(function (e) {
-                      return _h.space.spaceship.checkDetailsUnlocked(e);
+                    xh.space.spaceship.models.filter(function (e) {
+                      return xh.space.spaceship.checkDetailsUnlocked(e);
                     }).length > 0,
                   list: this.fleets.map(function (e) {
                     var n;
@@ -26384,7 +26667,7 @@
                             : e.uuid,
                         name: this.editing.name,
                         slots: this.slotsToUI(),
-                        options: _h.space.hangar.hangar.map(function (e) {
+                        options: xh.space.hangar.hangar.map(function (e) {
                           var n;
                           return {
                             id: e.id,
@@ -26392,7 +26675,7 @@
                             used: t.getModelUsed(e.id),
                             name:
                               (null ===
-                                (n = _h.space.spaceship.models.find(function (
+                                (n = xh.space.spaceship.models.find(function (
                                   t
                                 ) {
                                   return t.uuid === e.id;
@@ -26411,8 +26694,8 @@
               t
             );
           })(P),
-          $A = JA.getInstance(),
-          em = (function () {
+          am = rm.getInstance(),
+          cm = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -26446,9 +26729,9 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          tm = function () {
+          sm = function () {
             return (
-              (tm =
+              (sm =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -26457,10 +26740,10 @@
                         (e[o] = t[o]);
                   return e;
                 }),
-              tm.apply(this, arguments)
+              sm.apply(this, arguments)
             );
           },
-          nm = (function (e) {
+          um = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -26469,7 +26752,7 @@
               );
             }
             return (
-              em(t, e),
+              cm(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -26477,16 +26760,16 @@
                 for (var t, n = [], i = 0; i < 2; i++)
                   for (var o = 0; o < 5; o++) {
                     var r =
-                      (((t = {})[Lg.SPEED] = 2 + 0.1 * e),
-                      (t[Lg.POWER] = 1),
-                      (t[Lg.FUEL_CONSUMPTION] = 0),
-                      (t[Lg.WEAPON_COOLDOWN] = 3),
-                      (t[Lg.DAMAGE] = 4 * (e + 1) * Math.pow(1.4, e)),
-                      (t[Lg.HULL_REPAIR] = 0),
-                      (t[Lg.DURABILITY] = 45 * (e + 1) * Math.pow(1.4, e)),
-                      (t[Lg.SHIELD_REGEN] = 0.1 * Math.pow(1.4, e)),
-                      (t[Lg.SHIELD_MITIGATION] = 0.3),
-                      (t[Lg.SHIELD_CAP] = 20 * (e + 1) * Math.pow(1.4, e)),
+                      (((t = {})[Mg.SPEED] = 2 + 0.1 * e),
+                      (t[Mg.POWER] = 1),
+                      (t[Mg.FUEL_CONSUMPTION] = 0),
+                      (t[Mg.WEAPON_COOLDOWN] = 3),
+                      (t[Mg.DAMAGE] = 4 * (e + 1) * Math.pow(1.4, e)),
+                      (t[Mg.HULL_REPAIR] = 0),
+                      (t[Mg.DURABILITY] = 45 * (e + 1) * Math.pow(1.4, e)),
+                      (t[Mg.SHIELD_REGEN] = 0.1 * Math.pow(1.4, e)),
+                      (t[Mg.SHIELD_MITIGATION] = 0.3),
+                      (t[Mg.SHIELD_CAP] = 20 * (e + 1) * Math.pow(1.4, e)),
                       t);
                     n.push({ shipId: "Nomad", line: i, column: o, stats: r });
                   }
@@ -26494,18 +26777,18 @@
               }),
               (t.prototype.fullfillStatsBeforeBattle = function (e) {
                 var t;
-                return tm(
-                  tm({}, e),
-                  (((t = {})[Cg.ACTUAL_DURABILITY] = e.Durability),
-                  (t[Cg.ACTUAL_RECHARGE] = 0),
-                  (t[Cg.ACTUAL_SHIELD] = e[Lg.SHIELD_CAP]),
+                return sm(
+                  sm({}, e),
+                  (((t = {})[_g.ACTUAL_DURABILITY] = e.Durability),
+                  (t[_g.ACTUAL_RECHARGE] = 0),
+                  (t[_g.ACTUAL_SHIELD] = e[Mg.SHIELD_CAP]),
                   t)
                 );
               }),
               (t.prototype.initializeFight = function (e) {
                 var t = this,
-                  n = _h.space.fleet.fleets.find(function (e) {
-                    return e.uuid === _h.space.battlefield.state.fleetUsed;
+                  n = xh.space.fleet.fleets.find(function (e) {
+                    return e.uuid === xh.space.battlefield.state.fleetUsed;
                   });
                 n &&
                   ((this.state.me = n.slots
@@ -26513,7 +26796,7 @@
                       return !!e.shipId;
                     })
                     .map(function (e) {
-                      var n = _h.space.spaceship.getModelWithStats(e.shipId);
+                      var n = xh.space.spaceship.getModelWithStats(e.shipId);
                       if (!n)
                         throw new Error("Cant calculate model " + e.shipId);
                       return {
@@ -26523,7 +26806,7 @@
                         line: e.line,
                         side: 0,
                         stats: t.fullfillStatsBeforeBattle(
-                          tm(tm({}, UA.stats), n.stats)
+                          sm(sm({}, kA.stats), n.stats)
                         ),
                       };
                     })),
@@ -26535,7 +26818,7 @@
                       line: e.line,
                       side: 1,
                       stats: t.fullfillStatsBeforeBattle(
-                        tm(tm({}, UA.stats), e.stats)
+                        sm(sm({}, kA.stats), e.stats)
                       ),
                     };
                   })),
@@ -26554,9 +26837,9 @@
                 t.forEach(function (e, i) {
                   (e.line < t[n].line ||
                     (e.line === t[n].line &&
-                      e.stats[Lg.DAMAGE] / e.stats[Cg.ACTUAL_DURABILITY] >
-                        t[n].stats[Lg.DAMAGE] /
-                          t[n].stats[Cg.ACTUAL_DURABILITY])) &&
+                      e.stats[Mg.DAMAGE] / e.stats[_g.ACTUAL_DURABILITY] >
+                        t[n].stats[Mg.DAMAGE] /
+                          t[n].stats[_g.ACTUAL_DURABILITY])) &&
                     (n = i);
                 });
                 var i = {
@@ -26565,8 +26848,8 @@
                   side: e.side,
                   tx: t[n].x,
                   ty: t[n].y,
-                  dmg: e.stats[Lg.DAMAGE],
-                  uuid: HA.Z(),
+                  dmg: e.stats[Mg.DAMAGE],
+                  uuid: KA.Z(),
                 };
                 this.state.bullets.push(i);
               }),
@@ -26599,37 +26882,37 @@
                     var c = e.dmg,
                       s = Math.min(
                         c,
-                        r.stats[Cg.ACTUAL_SHIELD] /
-                          (1 - r.stats[Lg.SHIELD_MITIGATION])
+                        r.stats[_g.ACTUAL_SHIELD] /
+                          (1 - r.stats[Mg.SHIELD_MITIGATION])
                       );
-                    (r.stats[Cg.ACTUAL_SHIELD] -=
-                      c * (1 - r.stats[Lg.SHIELD_MITIGATION])),
+                    (r.stats[_g.ACTUAL_SHIELD] -=
+                      c * (1 - r.stats[Mg.SHIELD_MITIGATION])),
                       (c -= s),
-                      (r.stats[Cg.ACTUAL_DURABILITY] -= c),
-                      r.stats[Cg.ACTUAL_SHIELD] < 0 &&
-                        (r.stats[Cg.ACTUAL_SHIELD] = 0),
-                      r.stats[Cg.ACTUAL_DURABILITY] < 0 && i.splice(a, 1);
+                      (r.stats[_g.ACTUAL_DURABILITY] -= c),
+                      r.stats[_g.ACTUAL_SHIELD] < 0 &&
+                        (r.stats[_g.ACTUAL_SHIELD] = 0),
+                      r.stats[_g.ACTUAL_DURABILITY] < 0 && i.splice(a, 1);
                   }
                   return !0;
                 }
                 return !1;
               }),
               (t.prototype.processShip = function (e, t) {
-                e.stats[Cg.ACTUAL_DURABILITY] < e.stats[Lg.DURABILITY] &&
-                  e.stats[Lg.HULL_REPAIR] > 0 &&
-                  (e.stats[Cg.ACTUAL_DURABILITY] = Math.min(
-                    e.stats[Cg.ACTUAL_DURABILITY] + t * e.stats[Lg.HULL_REPAIR],
-                    e.stats[Lg.DURABILITY]
+                e.stats[_g.ACTUAL_DURABILITY] < e.stats[Mg.DURABILITY] &&
+                  e.stats[Mg.HULL_REPAIR] > 0 &&
+                  (e.stats[_g.ACTUAL_DURABILITY] = Math.min(
+                    e.stats[_g.ACTUAL_DURABILITY] + t * e.stats[Mg.HULL_REPAIR],
+                    e.stats[Mg.DURABILITY]
                   )),
-                  e.stats[Cg.ACTUAL_SHIELD] < e.stats[Lg.SHIELD_CAP] &&
-                    e.stats[Lg.SHIELD_REGEN] > 0 &&
-                    (e.stats[Cg.ACTUAL_SHIELD] = Math.min(
-                      e.stats[Cg.ACTUAL_SHIELD] + t * e.stats[Lg.SHIELD_REGEN],
-                      e.stats[Lg.SHIELD_CAP]
+                  e.stats[_g.ACTUAL_SHIELD] < e.stats[Mg.SHIELD_CAP] &&
+                    e.stats[Mg.SHIELD_REGEN] > 0 &&
+                    (e.stats[_g.ACTUAL_SHIELD] = Math.min(
+                      e.stats[_g.ACTUAL_SHIELD] + t * e.stats[Mg.SHIELD_REGEN],
+                      e.stats[Mg.SHIELD_CAP]
                     )),
-                  (e.stats[Cg.ACTUAL_RECHARGE] += t),
-                  e.stats[Cg.ACTUAL_RECHARGE] >= e.stats[Lg.WEAPON_COOLDOWN] &&
-                    ((e.stats[Cg.ACTUAL_RECHARGE] = 0),
+                  (e.stats[_g.ACTUAL_RECHARGE] += t),
+                  e.stats[_g.ACTUAL_RECHARGE] >= e.stats[Mg.WEAPON_COOLDOWN] &&
+                    ((e.stats[_g.ACTUAL_RECHARGE] = 0),
                     this.spaceshipAttack(e));
               }),
               (t.prototype.process = function (e) {
@@ -26656,12 +26939,12 @@
                   inProgress: this.state.inProgress,
                   me: this.state.me.map(function (e) {
                     var t, n;
-                    return tm(tm({}, e), {
+                    return sm(sm({}, e), {
                       name:
                         null !==
                           (n =
                             null ===
-                              (t = _h.space.spaceship.models.find(function (t) {
+                              (t = xh.space.spaceship.models.find(function (t) {
                                 return t.uuid === e.modelId;
                               })) || void 0 === t
                               ? void 0
@@ -26671,7 +26954,7 @@
                     });
                   }),
                   enemy: this.state.enemy.map(function (e) {
-                    return tm(tm({}, e), { name: e.modelId });
+                    return sm(sm({}, e), { name: e.modelId });
                   }),
                   bullets: this.state.bullets,
                 };
@@ -26679,8 +26962,8 @@
               t
             );
           })(P),
-          im = nm.getInstance(),
-          om = (function () {
+          lm = um.getInstance(),
+          pm = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -26714,9 +26997,9 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          rm = function () {
+          dm = function () {
             return (
-              (rm =
+              (dm =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -26725,10 +27008,10 @@
                         (e[o] = t[o]);
                   return e;
                 }),
-              rm.apply(this, arguments)
+              dm.apply(this, arguments)
             );
           },
-          am = (function (e) {
+          Em = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -26743,7 +27026,7 @@
                   pilot: { xp: 0, maxXp: 10, level: 0 },
                 }),
                 (t.statsCached = { speed: 0 }),
-                (t.fight = im),
+                (t.fight = lm),
                 t.workDispatcher.on(
                   "[space-battlefield] set fleet",
                   function (e) {
@@ -26800,7 +27083,7 @@
               );
             }
             return (
-              om(t, e),
+              pm(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -26825,7 +27108,7 @@
               (t.prototype.calcUsedFleetStats = function () {
                 var e = this;
                 if (this.state.fleetUsed) {
-                  var t = _h.space.fleet.fleets.find(function (t) {
+                  var t = xh.space.fleet.fleets.find(function (t) {
                     return t.uuid === e.state.fleetUsed;
                   });
                   if (t) {
@@ -26834,13 +27117,13 @@
                     return (
                       t.slots.forEach(function (e) {
                         if (e.shipId) {
-                          var t = _h.space.spaceship.getModelWithStats(
+                          var t = xh.space.spaceship.getModelWithStats(
                             e.shipId
                           );
                           if (t) {
                             var o = t.stats;
                             (n = Math.min(n, o.Speed || 1)),
-                              (i += o[Lg.FUEL_CONSUMPTION] || 0);
+                              (i += o[Mg.FUEL_CONSUMPTION] || 0);
                           }
                         }
                       }),
@@ -26864,12 +27147,12 @@
               }),
               (t.prototype.dataToUI = function () {
                 var e = this,
-                  t = _h.space.fleet.fleets.find(function (t) {
+                  t = xh.space.fleet.fleets.find(function (t) {
                     return t.uuid === e.state.fleetUsed;
                   }),
                   n = this.getFromCache();
                 return {
-                  isUnlocked: _h.space.fleet.fleets.length > 0,
+                  isUnlocked: xh.space.fleet.fleets.length > 0,
                   battlefield: {
                     level: this.state.level,
                     maxLevel: this.state.maxLevel,
@@ -26893,17 +27176,17 @@
                         ((null == n ? void 0 : n.speed) || 1e-50)
                     ),
                   },
-                  fleetSelectable: _h.space.fleet.fleets.map(function (t) {
+                  fleetSelectable: xh.space.fleet.fleets.map(function (t) {
                     return {
                       uuid: t.uuid,
                       name: t.name,
                       isEditing: e.state.fleetUsed === t.uuid,
-                      isInvalid: _h.space.fleet.getInvalidSlots(t).length > 0,
+                      isInvalid: xh.space.fleet.getInvalidSlots(t).length > 0,
                     };
                   }),
                   fight: this.fight.dataToUI(),
-                  pilot: rm(rm({}, this.state.pilot), {
-                    bonus: "x".concat(F(bA(_h))),
+                  pilot: dm(dm({}, this.state.pilot), {
+                    bonus: "x".concat(F(HA(xh))),
                   }),
                 };
               }),
@@ -26921,21 +27204,21 @@
                   t = this;
                 if (this.state.fleetUsed)
                   if (
-                    _h.space.fleet.getInvalidSlots(
-                      _h.space.fleet.fleets.find(function (e) {
+                    xh.space.fleet.getInvalidSlots(
+                      xh.space.fleet.fleets.find(function (e) {
                         return e.uuid === t.state.fleetUsed;
                       })
                     ).length > 0
                   )
                     this.state.fleetUsed = void 0;
                   else {
-                    var n = _h.resources.getResource(l.FUEL),
+                    var n = xh.resources.getResource(l.FUEL),
                       i =
                         (null === (e = this.getFromCache()) || void 0 === e
                           ? void 0
                           : e.fuelConsumption) || 0;
                     n + i > 0 &&
-                      (_h.resources.subtractResource(l.FUEL, -i),
+                      (xh.resources.subtractResource(l.FUEL, -i),
                       (this.state.isFighting = !0),
                       this.resetTravel());
                   }
@@ -26944,15 +27227,15 @@
                 var e =
                     0.05 +
                     0.01 *
-                      _h.landingZone.landingZoneBuildings.getBuildingLevel(
+                      xh.landingZone.landingZoneBuildings.getBuildingLevel(
                         a.ANTIMATTER_STUDY_CENTER
                       ),
                   t = Math.random();
                 if ((console.log("Check: ", e, t), t < e)) {
                   var n = 0.1 + 0.01 * this.state.level;
-                  _h.resources.addResource(l.ANOMALITIES, n),
-                    _h.resources.reassertBalances(),
-                    _h.eventLog.registerGain("Anomalies", F(n));
+                  xh.resources.addResource(l.ANOMALITIES, n),
+                    xh.resources.reassertBalances(),
+                    xh.eventLog.registerGain("Anomalies", F(n));
                 }
               }),
               (t.prototype.process = function (e) {
@@ -26976,7 +27259,7 @@
                   if (!this.fight.state.inProgress)
                     return void this.fight.initializeFight(this.state.level);
                   this.fight.isBattleWon()
-                    ? (_h.statistics.stats.fightsWon++,
+                    ? (xh.statistics.stats.fightsWon++,
                       this.fight.finalizeFight(),
                       (this.state.pilot.xp +=
                         2 *
@@ -26984,11 +27267,11 @@
                         Math.pow(1.2, this.state.level) *
                         Math.pow(
                           1.3,
-                          _h.prestige.colonizePlanet.getUpgradeLevel(N.PILOT_XP)
+                          xh.prestige.colonizePlanet.getUpgradeLevel(N.PILOT_XP)
                         ) *
                         Math.pow(
                           1.03,
-                          _h.landingZone.landingZoneBuildings.getBuildingActiveLevel(
+                          xh.landingZone.landingZoneBuildings.getBuildingActiveLevel(
                             a.FLIGHT_SIMULATOR
                           )
                         )),
@@ -26996,7 +27279,7 @@
                         this.state.maxLevel,
                         this.state.level + 1
                       )),
-                      _h.science.scienceResearches.getResearchLevel(
+                      xh.science.scienceResearches.getResearchLevel(
                         B.EXOTIC_MATTER_STUDY
                       ) > 0 && this.awardAnomaly(),
                       this.stopFight(),
@@ -27007,7 +27290,7 @@
                           this.state.maxLevel
                         )))
                     : this.fight.isBattleLost()
-                    ? (_h.statistics.stats.fightsLost++,
+                    ? (xh.statistics.stats.fightsLost++,
                       this.fight.finalizeFight(),
                       (this.state.level = Math.max(0, this.state.level - 1)))
                     : this.fight.process(e);
@@ -27029,8 +27312,8 @@
               t
             );
           })(P),
-          cm = am.getInstance(),
-          sm = (function () {
+          gm = Em.getInstance(),
+          fm = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -27064,19 +27347,19 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          um = (function (e) {
+          Am = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
-                (t.spaceship = FA),
-                (t.hangar = qA),
-                (t.fleet = $A),
-                (t.battlefield = cm),
+                (t.spaceship = JA),
+                (t.hangar = nm),
+                (t.fleet = am),
+                (t.battlefield = gm),
                 t
               );
             }
             return (
-              sm(t, e),
+              fm(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -27099,7 +27382,7 @@
               (t.prototype.dataToUI = function () {
                 return {
                   isUnlocked:
-                    _h.science.scienceResearches.getResearchLevel(
+                    xh.science.scienceResearches.getResearchLevel(
                       B.ROCKET_SCIENCE
                     ) > 0,
                   spaceship: this.spaceship.dataToUI(),
@@ -27120,7 +27403,7 @@
               t
             );
           })(P).getInstance(),
-          lm = (function () {
+          mm = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -27154,7 +27437,7 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          pm = (function (e) {
+          Nm = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -27183,7 +27466,7 @@
               );
             }
             return (
-              lm(t, e),
+              mm(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -27199,19 +27482,19 @@
               }),
               (t.prototype.dataToUI = function () {
                 var e = this,
-                  t = Sg.map(function (t) {
+                  t = bg.map(function (t) {
                     return e.processToUI(t, e.bulkBuy);
                   });
                 return (
                   this.isPrestigeAvailable() &&
-                    _h.newNotifications.registerNotification(
+                    xh.newNotifications.registerNotification(
                       "prestige:transmit-knowledge"
                     ),
                   {
                     upgrades: t,
                     isUnlocked:
                       this.numPrestiged > 0 || this.isPrestigeAvailable(),
-                    kp: F(_h.resources.getResource(l.KNOWLEDGE_POINT)),
+                    kp: F(xh.resources.getResource(l.KNOWLEDGE_POINT)),
                     prestige: {
                       isAvailable: this.isPrestigeAvailable(),
                       description: "",
@@ -27239,9 +27522,9 @@
                 n || ((n = { id: e.id, level: 0 }), this.upgrades.push(n));
                 var i = W.calcBatchAll(
                     e.getCost,
-                    Mh.getInstance(),
+                    Xh.getInstance(),
                     n.level,
-                    Mh.getInstance().resources.getBatchObject()
+                    Xh.getInstance().resources.getBatchObject()
                   ),
                   o = i.reduce(function (e, t) {
                     return Math.min(e, t.max);
@@ -27254,21 +27537,21 @@
                 return (
                   (i = W.calcBatchAll(
                     e.getCost,
-                    Mh.getInstance(),
+                    Xh.getInstance(),
                     n.level,
-                    Mh.getInstance().resources.getBatchObject(),
+                    Xh.getInstance().resources.getBatchObject(),
                     Math.max(1, r)
                   )),
                   {
                     id: e.id,
                     name: e.name,
                     description: e.description,
-                    isUnlocked: e.unlockCondition(_h),
+                    isUnlocked: e.unlockCondition(xh),
                     isAvailable: o >= 1,
-                    cost: Mh.getInstance().resources.assertEnought(
+                    cost: Xh.getInstance().resources.assertEnought(
                       i,
-                      Mh.getInstance().resources.getBatchObject(),
-                      Mh.getInstance().resources.getBatchBalanceObject()
+                      Xh.getInstance().resources.getBatchObject(),
+                      Xh.getInstance().resources.getBatchBalanceObject()
                     ),
                     progress: o < 1 ? (100 * o).toPrecision(3) : "100",
                     isMaxedOut: !!e.maxLevel && e.maxLevel <= n.level,
@@ -27280,7 +27563,7 @@
                 );
               }),
               (t.prototype.getEffectGain = function (e) {
-                var t = Sg.filter(function (t) {
+                var t = bg.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getEffectGain) || void 0 === n
                       ? void 0
@@ -27299,7 +27582,7 @@
                         ? void 0
                         : o[e])
                     ) {
-                      var a = W.calculate(_h, r.getEffectGain[e], 0, i.level);
+                      var a = W.calculate(xh, r.getEffectGain[e], 0, i.level);
                       n.push({
                         label: "Knowledge: ".concat(r.name),
                         value: a,
@@ -27312,7 +27595,7 @@
                 );
               }),
               (t.prototype.getEffectMultiplier = function (e) {
-                var t = Sg.filter(function (t) {
+                var t = bg.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getEffectMultiplier) ||
                     void 0 === n
@@ -27333,7 +27616,7 @@
                         : o[e])
                     ) {
                       var a = W.calculate(
-                        _h,
+                        xh,
                         r.getEffectMultiplier[e],
                         i.level,
                         1
@@ -27351,7 +27634,7 @@
                 );
               }),
               (t.prototype.getResourceBeingProduced = function (e) {
-                var t = Sg.filter(function (t) {
+                var t = bg.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getGain) || void 0 === n
                       ? void 0
@@ -27368,7 +27651,7 @@
                       r &&
                       (null === (o = r.getGain) || void 0 === o ? void 0 : o[e])
                     ) {
-                      var a = W.calculate(_h, r.getGain[e], 0, i.level);
+                      var a = W.calculate(xh, r.getGain[e], 0, i.level);
                       n.push({
                         label: "Knowledge: ".concat(r.name),
                         value: a,
@@ -27381,7 +27664,7 @@
                 );
               }),
               (t.prototype.getResourceMultiplier = function (e) {
-                var t = Sg.filter(function (t) {
+                var t = bg.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getGainMultiplier) || void 0 === n
                       ? void 0
@@ -27401,7 +27684,7 @@
                         : o[e])
                     ) {
                       var a = W.calculate(
-                        _h,
+                        xh,
                         r.getGainMultiplier[e],
                         0,
                         i.level
@@ -27419,7 +27702,7 @@
                 );
               }),
               (t.prototype.getResourceBeingStored = function (e) {
-                var t = Sg.filter(function (t) {
+                var t = bg.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getCapacityEffect) || void 0 === n
                       ? void 0
@@ -27440,7 +27723,7 @@
                         : o[e])
                     ) {
                       var c = W.calculate(
-                        _h,
+                        xh,
                         null === (r = a.getCapacityEffect) || void 0 === r
                           ? void 0
                           : r[e],
@@ -27459,7 +27742,7 @@
                 );
               }),
               (t.prototype.getCapacityMult = function (e) {
-                var t = Sg.filter(function (t) {
+                var t = bg.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getCapacityMultiplier) ||
                     void 0 === n
@@ -27474,7 +27757,7 @@
                     });
                     if (o && o.getCapacityMultiplier) {
                       var r = W.calculate(
-                        _h,
+                        xh,
                         o.getCapacityMultiplier[e],
                         0,
                         i.level
@@ -27492,7 +27775,7 @@
                 );
               }),
               (t.prototype.doUpgrade = function (e) {
-                var t = Sg.find(function (t) {
+                var t = bg.find(function (t) {
                   return t.id === e;
                 });
                 if (t) {
@@ -27506,9 +27789,9 @@
                     return;
                   var i = W.calcBatchAll(
                     t.getCost,
-                    Mh.getInstance(),
+                    Xh.getInstance(),
                     this.upgrades[n].level,
-                    Mh.getInstance().resources.getBatchObject(),
+                    Xh.getInstance().resources.getBatchObject(),
                     this.bulkBuy
                   ).reduce(function (e, t) {
                     return Math.min(e, Math.floor(t.max));
@@ -27521,128 +27804,129 @@
                       ),
                       r = W.calcBatchAll(
                         t.getCost,
-                        Mh.getInstance(),
+                        Xh.getInstance(),
                         this.upgrades[n].level,
-                        Mh.getInstance().resources.getBatchObject(),
+                        Xh.getInstance().resources.getBatchObject(),
                         o
                       );
                     (this.upgrades[n].level += o),
                       console.log("costs: ", r),
-                      Mh.getInstance().resources.subtractResourceBatch(r),
-                      _h.resources.reassertBalances(),
-                      _h.regenerateCache();
+                      Xh.getInstance().resources.subtractResourceBatch(r),
+                      xh.resources.reassertBalances(),
+                      xh.regenerateCache();
                   }
                 }
               }),
               (t.prototype.isPrestigeAvailable = function () {
                 return (
-                  _h.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                  xh.landingZone.landingZoneUpgrades.getUpgradeLevel(
                     r.GREAT_RADIO_TRANSMITTER
-                  ) > 0 && _h.colony.colonists > 50
+                  ) > 0 && xh.colony.colonists > 50
                 );
               }),
               (t.prototype.getPrestigeGain = function () {
                 var e =
-                  Mh.getInstance().prestige.colonizePlanet.processPlanetToUI(
-                    Mh.getInstance().prestige.colonizePlanet.current
+                  Xh.getInstance().prestige.colonizePlanet.processPlanetToUI(
+                    Xh.getInstance().prestige.colonizePlanet.current,
+                    -1
                   );
                 return (
-                  Math.max(_h.colony.colonists - 50, 0) *
-                  Mh.getInstance().prestige.colonizePlanet.getCurrentXPBonus() *
+                  Math.max(xh.colony.colonists - 50, 0) *
+                  Xh.getInstance().prestige.colonizePlanet.getCurrentXPBonus() *
                   Math.pow(
                     1.5,
-                    Mh.getInstance().landingZone.landingZoneUpgrades.getUpgradeLevel(
+                    Xh.getInstance().landingZone.landingZoneUpgrades.getUpgradeLevel(
                       r.QUANTUM_ENCRYPTION
                     )
                   ) *
                   Math.pow(
                     1.5,
-                    Mh.getInstance().landingZone.landingZoneUpgrades.getUpgradeLevel(
+                    Xh.getInstance().landingZone.landingZoneUpgrades.getUpgradeLevel(
                       r.HUGE_GAMMA_TRANSMITTER
                     )
                   ) *
                   e.xpGain *
                   (1 +
                     0.5 *
-                      Mh.getInstance().landingZone.landingZoneBuildings.getBuildingActiveLevel(
+                      Xh.getInstance().landingZone.landingZoneBuildings.getBuildingActiveLevel(
                         a.NEUTRON_CORE
                       )) *
                   (1 +
                     0.75 *
-                      Mh.getInstance().prestige.colonizePlanet.getUpgradeLevel(
+                      Xh.getInstance().prestige.colonizePlanet.getUpgradeLevel(
                         N.BROADCASTING_TRANSMITTER
                       ) *
-                      Mh.getInstance().colony.getColonistsHappiness()) *
-                  Mh.getInstance().space.battlefield.getKPBonus()
+                      Xh.getInstance().colony.getColonistsHappiness()) *
+                  Xh.getInstance().space.battlefield.getKPBonus()
                 );
               }),
               (t.prototype.doPrestige = function () {
                 if (this.isPrestigeAvailable()) {
                   var e = this.getPrestigeGain(),
-                    t = _h.resources.getResource(l.COLONIZE_XP) || 0,
-                    n = _h.resources.getResource(l.KNOWLEDGE_POINT) || 0;
-                  _h.eventLog.registerPrestige(
+                    t = xh.resources.getResource(l.COLONIZE_XP) || 0,
+                    n = xh.resources.getResource(l.KNOWLEDGE_POINT) || 0;
+                  xh.eventLog.registerPrestige(
                     "Transmit knowledge",
                     "".concat(F(e), " KP")
                   ),
-                    _h.landingZone.reset(),
-                    _h.colony.reset(),
-                    _h.crafting.reset(),
-                    _h.science.reset(),
-                    _h.laws.reset(),
-                    _h.resources.reset(),
-                    _h.space.reset(),
-                    _h.queuedItems.reset(),
-                    _h.environment.reset(),
-                    _h.expeditionV2.reset(),
-                    (_h.statistics.stats.kpTotal =
-                      (_h.statistics.stats.kpTotal || 0) + e),
-                    (_h.statistics.stats.kpMaxGain = Math.max(
-                      _h.statistics.stats.kpMaxGain || 0,
+                    xh.landingZone.reset(),
+                    xh.colony.reset(),
+                    xh.crafting.reset(),
+                    xh.science.reset(),
+                    xh.laws.reset(),
+                    xh.resources.reset(),
+                    xh.space.reset(),
+                    xh.queuedItems.reset(),
+                    xh.environment.reset(),
+                    xh.expeditionV2.reset(),
+                    (xh.statistics.stats.kpTotal =
+                      (xh.statistics.stats.kpTotal || 0) + e),
+                    (xh.statistics.stats.kpMaxGain = Math.max(
+                      xh.statistics.stats.kpMaxGain || 0,
                       e
                     )),
-                    _h.resources.addResource(l.KNOWLEDGE_POINT, e + n),
-                    _h.resources.addResource(l.COLONIZE_XP, t),
-                    (_h.statistics.stats.maxKpPerHour =
+                    xh.resources.addResource(l.KNOWLEDGE_POINT, e + n),
+                    xh.resources.addResource(l.COLONIZE_XP, t),
+                    (xh.statistics.stats.maxKpPerHour =
                       (3600 * e) /
-                      (_h.statistics.stats.timeThisPrestige + 0.001)),
-                    (_h.statistics.stats.timeThisPrestige = 0),
-                    _h.statistics.reset(),
-                    _h.achievements.resetFailedOnKP(),
+                      (xh.statistics.stats.timeThisPrestige + 0.001)),
+                    (xh.statistics.stats.timeThisPrestige = 0),
+                    xh.statistics.reset(),
+                    xh.achievements.resetFailedOnKP(),
                     this.numPrestiged++,
-                    _h.resources.reassertBalances(),
-                    _h.regenerateCache();
+                    xh.resources.reassertBalances(),
+                    xh.regenerateCache();
                 }
               }),
               (t.prototype.process = function (e) {}),
               t
             );
           })(P),
-          dm = pm.getInstance(),
-          Em = [
+          hm = Nm.getInstance(),
+          Im = [
             {
               id: m.COLD,
               category: A.TEMPERATURE,
               name: "Cold",
               complexityModifier: 1.15,
               getGainMultiplier:
-                ((Lf = {}),
-                (Lf[l.POWER] = function (e) {
+                ((Mf = {}),
+                (Mf[l.POWER] = function (e) {
                   return { A: 1, B: 0.9, type: i.EXPONENTIAL };
                 }),
-                (Lf[l.NUTRITION] = function (e) {
+                (Mf[l.NUTRITION] = function (e) {
                   return { A: 1, B: 0.9, type: i.EXPONENTIAL };
                 }),
-                (Lf[l.BIOMASS] = function (e) {
+                (Mf[l.BIOMASS] = function (e) {
                   return { A: 1, B: 0.9, type: i.EXPONENTIAL };
                 }),
-                (Lf[l.WATER] = function (e) {
+                (Mf[l.WATER] = function (e) {
                   return { A: 1, B: 1.05, type: i.EXPONENTIAL };
                 }),
-                (Lf[l.OXYGEN] = function (e) {
+                (Mf[l.OXYGEN] = function (e) {
                   return { A: 1, B: 1.05, type: i.EXPONENTIAL };
                 }),
-                Lf),
+                Mf),
               unlockCondition: function (e) {
                 return !0;
               },
@@ -27653,17 +27937,17 @@
               name: "Hot",
               complexityModifier: 0.92,
               getGainMultiplier:
-                ((Cf = {}),
-                (Cf[l.POWER] = function (e) {
+                ((_f = {}),
+                (_f[l.POWER] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                (Cf[l.WATER] = function (e) {
+                (_f[l.WATER] = function (e) {
                   return { A: 1, B: 0.95, type: i.EXPONENTIAL };
                 }),
-                (Cf[l.OXYGEN] = function (e) {
+                (_f[l.OXYGEN] = function (e) {
                   return { A: 1, B: 0.95, type: i.EXPONENTIAL };
                 }),
-                Cf),
+                _f),
               unlockCondition: function (e) {
                 return !0;
               },
@@ -27674,23 +27958,23 @@
               name: "Frozen",
               complexityModifier: 1.4,
               getGainMultiplier:
-                ((vf = {}),
-                (vf[l.POWER] = function (e) {
+                ((Uf = {}),
+                (Uf[l.POWER] = function (e) {
                   return { A: 1, B: 0.75, type: i.EXPONENTIAL };
                 }),
-                (vf[l.NUTRITION] = function (e) {
+                (Uf[l.NUTRITION] = function (e) {
                   return { A: 1, B: 0.75, type: i.EXPONENTIAL };
                 }),
-                (vf[l.BIOMASS] = function (e) {
+                (Uf[l.BIOMASS] = function (e) {
                   return { A: 1, B: 0.75, type: i.EXPONENTIAL };
                 }),
-                (vf[l.WOOD] = function (e) {
+                (Uf[l.WOOD] = function (e) {
                   return { A: 1, B: 0.75, type: i.EXPONENTIAL };
                 }),
-                (vf[l.FUEL] = function (e) {
+                (Uf[l.FUEL] = function (e) {
                   return { A: 1, B: 0.75, type: i.EXPONENTIAL };
                 }),
-                vf),
+                Uf),
               unlockCondition: function (e) {
                 return (
                   e.prestige.colonizePlanet.getUpgradeLevel(N.HARSHNESS) > 0
@@ -27703,29 +27987,29 @@
               name: "Overheated",
               complexityModifier: 1.4,
               getGainMultiplier:
-                ((Sf = {}),
-                (Sf[l.POWER] = function (e) {
+                ((bf = {}),
+                (bf[l.POWER] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                (Sf[l.WATER] = function (e) {
+                (bf[l.WATER] = function (e) {
                   return { A: 1, B: 0.6, type: i.EXPONENTIAL };
                 }),
-                (Sf[l.OXYGEN] = function (e) {
+                (bf[l.OXYGEN] = function (e) {
                   return { A: 1, B: 0.6, type: i.EXPONENTIAL };
                 }),
-                (Sf[l.BIOMASS] = function (e) {
+                (bf[l.BIOMASS] = function (e) {
                   return { A: 1, B: 0.6, type: i.EXPONENTIAL };
                 }),
-                (Sf[l.WOOD] = function (e) {
+                (bf[l.WOOD] = function (e) {
                   return { A: 1, B: 0.6, type: i.EXPONENTIAL };
                 }),
-                (Sf[l.FUEL] = function (e) {
+                (bf[l.FUEL] = function (e) {
                   return { A: 1, B: 0.6, type: i.EXPONENTIAL };
                 }),
-                (Sf[l.ROCKET_ENGINE] = function (e) {
+                (bf[l.ROCKET_ENGINE] = function (e) {
                   return { A: 1, B: 0.6, type: i.EXPONENTIAL };
                 }),
-                Sf),
+                bf),
               unlockCondition: function (e) {
                 return (
                   e.prestige.colonizePlanet.getUpgradeLevel(N.HARSHNESS) > 0
@@ -27738,20 +28022,20 @@
               name: "Ore Poor",
               complexityModifier: 1.2,
               getGainMultiplier:
-                ((Pf = {}),
-                (Pf[l.ORE] = function (e) {
+                ((Gf = {}),
+                (Gf[l.ORE] = function (e) {
                   return { A: 1, B: 0.8, type: i.EXPONENTIAL };
                 }),
-                (Pf[l.STONE] = function (e) {
+                (Gf[l.STONE] = function (e) {
                   return { A: 1, B: 0.8, type: i.EXPONENTIAL };
                 }),
-                (Pf[l.PLATINUM] = function (e) {
+                (Gf[l.PLATINUM] = function (e) {
                   return { A: 1, B: 0.8, type: i.EXPONENTIAL };
                 }),
-                (Pf[l.IRON] = function (e) {
+                (Gf[l.IRON] = function (e) {
                   return { A: 1, B: 0.8, type: i.EXPONENTIAL };
                 }),
-                Pf),
+                Gf),
               unlockCondition: function (e) {
                 return !0;
               },
@@ -27762,123 +28046,6 @@
               name: "Ore Rich",
               complexityModifier: 0.85,
               getGainMultiplier:
-                ((Bf = {}),
-                (Bf[l.ORE] = function (e) {
-                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
-                }),
-                (Bf[l.STONE] = function (e) {
-                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
-                }),
-                (Bf[l.PLATINUM] = function (e) {
-                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
-                }),
-                (Bf[l.IRON] = function (e) {
-                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
-                }),
-                Bf),
-              unlockCondition: function (e) {
-                return !0;
-              },
-            },
-            {
-              id: m.SMALL,
-              category: A.SIZE,
-              name: "Small",
-              complexityModifier: 1.15,
-              getGainMultiplier:
-                ((Mf = {}),
-                (Mf[l.ORE] = function (e) {
-                  return { A: 1, B: 0.9, type: i.EXPONENTIAL };
-                }),
-                (Mf[l.STONE] = function (e) {
-                  return { A: 1, B: 0.9, type: i.EXPONENTIAL };
-                }),
-                (Mf[l.PLATINUM] = function (e) {
-                  return { A: 1, B: 0.9, type: i.EXPONENTIAL };
-                }),
-                (Mf[l.IRON] = function (e) {
-                  return { A: 1, B: 0.9, type: i.EXPONENTIAL };
-                }),
-                Mf),
-              getCapacityMultiplier:
-                ((_f = {}),
-                (_f[l.ORE] = function (e) {
-                  return { A: 1, B: 0.9, type: i.EXPONENTIAL };
-                }),
-                (_f[l.STONE] = function (e) {
-                  return { A: 1, B: 0.9, type: i.EXPONENTIAL };
-                }),
-                (_f[l.PLATINUM] = function (e) {
-                  return { A: 1, B: 0.9, type: i.EXPONENTIAL };
-                }),
-                (_f[l.IRON] = function (e) {
-                  return { A: 1, B: 0.9, type: i.EXPONENTIAL };
-                }),
-                _f),
-              unlockCondition: function (e) {
-                return !0;
-              },
-            },
-            {
-              id: m.LARGE,
-              category: A.SIZE,
-              name: "Big",
-              complexityModifier: 0.9,
-              getGainMultiplier:
-                ((Uf = {}),
-                (Uf[l.ORE] = function (e) {
-                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
-                }),
-                (Uf[l.STONE] = function (e) {
-                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
-                }),
-                (Uf[l.PLATINUM] = function (e) {
-                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
-                }),
-                (Uf[l.IRON] = function (e) {
-                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
-                }),
-                Uf),
-              getCapacityMultiplier:
-                ((bf = {}),
-                (bf[l.ORE] = function (e) {
-                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
-                }),
-                (bf[l.STONE] = function (e) {
-                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
-                }),
-                (bf[l.PLATINUM] = function (e) {
-                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
-                }),
-                (bf[l.IRON] = function (e) {
-                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
-                }),
-                bf),
-              unlockCondition: function (e) {
-                return !0;
-              },
-            },
-            {
-              id: m.SUPER_EARTH,
-              category: A.SIZE,
-              name: "Super Earth",
-              complexityModifier: 1.35,
-              getGainMultiplier:
-                ((Gf = {}),
-                (Gf[l.ORE] = function (e) {
-                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
-                }),
-                (Gf[l.STONE] = function (e) {
-                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
-                }),
-                (Gf[l.PLATINUM] = function (e) {
-                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
-                }),
-                (Gf[l.IRON] = function (e) {
-                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
-                }),
-                Gf),
-              getCapacityMultiplier:
                 ((wf = {}),
                 (wf[l.ORE] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
@@ -27893,6 +28060,123 @@
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
                 wf),
+              unlockCondition: function (e) {
+                return !0;
+              },
+            },
+            {
+              id: m.SMALL,
+              category: A.SIZE,
+              name: "Small",
+              complexityModifier: 1.15,
+              getGainMultiplier:
+                ((Df = {}),
+                (Df[l.ORE] = function (e) {
+                  return { A: 1, B: 0.9, type: i.EXPONENTIAL };
+                }),
+                (Df[l.STONE] = function (e) {
+                  return { A: 1, B: 0.9, type: i.EXPONENTIAL };
+                }),
+                (Df[l.PLATINUM] = function (e) {
+                  return { A: 1, B: 0.9, type: i.EXPONENTIAL };
+                }),
+                (Df[l.IRON] = function (e) {
+                  return { A: 1, B: 0.9, type: i.EXPONENTIAL };
+                }),
+                Df),
+              getCapacityMultiplier:
+                ((Xf = {}),
+                (Xf[l.ORE] = function (e) {
+                  return { A: 1, B: 0.9, type: i.EXPONENTIAL };
+                }),
+                (Xf[l.STONE] = function (e) {
+                  return { A: 1, B: 0.9, type: i.EXPONENTIAL };
+                }),
+                (Xf[l.PLATINUM] = function (e) {
+                  return { A: 1, B: 0.9, type: i.EXPONENTIAL };
+                }),
+                (Xf[l.IRON] = function (e) {
+                  return { A: 1, B: 0.9, type: i.EXPONENTIAL };
+                }),
+                Xf),
+              unlockCondition: function (e) {
+                return !0;
+              },
+            },
+            {
+              id: m.LARGE,
+              category: A.SIZE,
+              name: "Big",
+              complexityModifier: 0.9,
+              getGainMultiplier:
+                ((xf = {}),
+                (xf[l.ORE] = function (e) {
+                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
+                }),
+                (xf[l.STONE] = function (e) {
+                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
+                }),
+                (xf[l.PLATINUM] = function (e) {
+                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
+                }),
+                (xf[l.IRON] = function (e) {
+                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
+                }),
+                xf),
+              getCapacityMultiplier:
+                ((kf = {}),
+                (kf[l.ORE] = function (e) {
+                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
+                }),
+                (kf[l.STONE] = function (e) {
+                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
+                }),
+                (kf[l.PLATINUM] = function (e) {
+                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
+                }),
+                (kf[l.IRON] = function (e) {
+                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
+                }),
+                kf),
+              unlockCondition: function (e) {
+                return !0;
+              },
+            },
+            {
+              id: m.SUPER_EARTH,
+              category: A.SIZE,
+              name: "Super Earth",
+              complexityModifier: 1.35,
+              getGainMultiplier:
+                ((Hf = {}),
+                (Hf[l.ORE] = function (e) {
+                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
+                }),
+                (Hf[l.STONE] = function (e) {
+                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
+                }),
+                (Hf[l.PLATINUM] = function (e) {
+                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
+                }),
+                (Hf[l.IRON] = function (e) {
+                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
+                }),
+                Hf),
+              getCapacityMultiplier:
+                ((Yf = {}),
+                (Yf[l.ORE] = function (e) {
+                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
+                }),
+                (Yf[l.STONE] = function (e) {
+                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
+                }),
+                (Yf[l.PLATINUM] = function (e) {
+                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
+                }),
+                (Yf[l.IRON] = function (e) {
+                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
+                }),
+                Yf),
               buildingPriceModifier: function (e) {
                 return { A: 1, B: 1.4, type: i.EXPONENTIAL };
               },
@@ -27908,20 +28192,20 @@
               name: "Wet",
               complexityModifier: 0.9,
               getGainMultiplier:
-                ((Df = {}),
-                (Df[l.WATER] = function (e) {
+                ((Wf = {}),
+                (Wf[l.WATER] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                (Df[l.NUTRITION] = function (e) {
+                (Wf[l.NUTRITION] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                (Df[l.BIOMASS] = function (e) {
+                (Wf[l.BIOMASS] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                (Df[l.WOOD] = function (e) {
+                (Wf[l.WOOD] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                Df),
+                Wf),
               getCapacityMultiplier: {},
               unlockCondition: function (e) {
                 return !0;
@@ -27933,32 +28217,32 @@
               name: "Oceanic",
               complexityModifier: 1.35,
               getGainMultiplier:
-                ((Xf = {}),
-                (Xf[l.WATER] = function (e) {
+                ((Zf = {}),
+                (Zf[l.WATER] = function (e) {
                   return { A: 1, B: 1.2, type: i.EXPONENTIAL };
                 }),
-                (Xf[l.NUTRITION] = function (e) {
+                (Zf[l.NUTRITION] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                (Xf[l.BIOMASS] = function (e) {
+                (Zf[l.BIOMASS] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                (Xf[l.WOOD] = function (e) {
+                (Zf[l.WOOD] = function (e) {
                   return { A: 1, B: 0.5, type: i.EXPONENTIAL };
                 }),
-                (Xf[l.POWER] = function (e) {
+                (Zf[l.POWER] = function (e) {
                   return { A: 1, B: 0.75, type: i.EXPONENTIAL };
                 }),
-                (Xf[l.STONE] = function (e) {
+                (Zf[l.STONE] = function (e) {
                   return { A: 1, B: 0.5, type: i.EXPONENTIAL };
                 }),
-                (Xf[l.ORE] = function (e) {
+                (Zf[l.ORE] = function (e) {
                   return { A: 1, B: 0.5, type: i.EXPONENTIAL };
                 }),
-                (Xf[l.IRON] = function (e) {
+                (Zf[l.IRON] = function (e) {
                   return { A: 1, B: 0.5, type: i.EXPONENTIAL };
                 }),
-                Xf),
+                Zf),
               getCapacityMultiplier: {},
               unlockCondition: function (e) {
                 return (
@@ -27972,20 +28256,20 @@
               name: "Desert",
               complexityModifier: 1.35,
               getGainMultiplier:
-                ((xf = {}),
-                (xf[l.WATER] = function (e) {
+                ((Ff = {}),
+                (Ff[l.WATER] = function (e) {
                   return { A: 1, B: 0.75, type: i.EXPONENTIAL };
                 }),
-                (xf[l.NUTRITION] = function (e) {
+                (Ff[l.NUTRITION] = function (e) {
                   return { A: 1, B: 0.8, type: i.EXPONENTIAL };
                 }),
-                (xf[l.BIOMASS] = function (e) {
+                (Ff[l.BIOMASS] = function (e) {
                   return { A: 1, B: 0.8, type: i.EXPONENTIAL };
                 }),
-                (xf[l.WOOD] = function (e) {
+                (Ff[l.WOOD] = function (e) {
                   return { A: 1, B: 0.8, type: i.EXPONENTIAL };
                 }),
-                xf),
+                Ff),
               getCapacityMultiplier: {},
               unlockCondition: function (e) {
                 return (
@@ -27999,26 +28283,26 @@
               name: "Acid",
               complexityModifier: 1.4,
               getGainMultiplier:
-                ((kf = {}),
-                (kf[l.NUTRITION] = function (e) {
+                ((jf = {}),
+                (jf[l.NUTRITION] = function (e) {
                   return { A: 1, B: 0.6, type: i.EXPONENTIAL };
                 }),
-                (kf[l.BIOMASS] = function (e) {
+                (jf[l.BIOMASS] = function (e) {
                   return { A: 1, B: 0.6, type: i.EXPONENTIAL };
                 }),
-                (kf[l.WOOD] = function (e) {
+                (jf[l.WOOD] = function (e) {
                   return { A: 1, B: 0.6, type: i.EXPONENTIAL };
                 }),
-                (kf[l.IRON] = function (e) {
+                (jf[l.IRON] = function (e) {
                   return { A: 1, B: 0.6, type: i.EXPONENTIAL };
                 }),
-                (kf[l.WIRE] = function (e) {
+                (jf[l.WIRE] = function (e) {
                   return { A: 1, B: 0.6, type: i.EXPONENTIAL };
                 }),
-                (kf[l.PLATE] = function (e) {
+                (jf[l.PLATE] = function (e) {
                   return { A: 1, B: 0.6, type: i.EXPONENTIAL };
                 }),
-                kf),
+                jf),
               getCapacityMultiplier: {},
               unlockCondition: function (e) {
                 return (
@@ -28032,20 +28316,20 @@
               name: "Dry",
               complexityModifier: 1.15,
               getGainMultiplier:
-                ((Hf = {}),
-                (Hf[l.WATER] = function (e) {
+                ((Vf = {}),
+                (Vf[l.WATER] = function (e) {
                   return { A: 1, B: 0.9, type: i.EXPONENTIAL };
                 }),
-                (Hf[l.NUTRITION] = function (e) {
+                (Vf[l.NUTRITION] = function (e) {
                   return { A: 1, B: 0.9, type: i.EXPONENTIAL };
                 }),
-                (Hf[l.BIOMASS] = function (e) {
+                (Vf[l.BIOMASS] = function (e) {
                   return { A: 1, B: 0.9, type: i.EXPONENTIAL };
                 }),
-                (Hf[l.WOOD] = function (e) {
+                (Vf[l.WOOD] = function (e) {
                   return { A: 1, B: 0.9, type: i.EXPONENTIAL };
                 }),
-                Hf),
+                Vf),
               getCapacityMultiplier: {},
               unlockCondition: function (e) {
                 return !0;
@@ -28057,20 +28341,20 @@
               name: "Peaty",
               complexityModifier: 1.4,
               getGainMultiplier:
-                ((Yf = {}),
-                (Yf[l.BIOMASS] = function (e) {
+                ((Kf = {}),
+                (Kf[l.BIOMASS] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                (Yf[l.WOOD] = function (e) {
+                (Kf[l.WOOD] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                Yf),
+                Kf),
               getEffectMultiplier:
-                ((Wf = {}),
-                (Wf[U.SECURITY] = function (e) {
+                ((zf = {}),
+                (zf[U.SECURITY] = function (e) {
                   return { A: 1, B: 0.85, type: i.EXPONENTIAL };
                 }),
-                Wf),
+                zf),
               getCapacityMultiplier: {},
               unlockCondition: function (e) {
                 return !0;
@@ -28082,17 +28366,17 @@
               name: "Semiconductors Poor",
               complexityModifier: 1.4,
               getGainMultiplier:
-                ((Zf = {}),
-                (Zf[l.SEMICONDUCTOR] = function (e) {
+                ((qf = {}),
+                (qf[l.SEMICONDUCTOR] = function (e) {
                   return { A: 1, B: 0.5, type: i.EXPONENTIAL };
                 }),
-                (Zf[l.COMPUTER] = function (e) {
+                (qf[l.COMPUTER] = function (e) {
                   return { A: 1, B: 0.5, type: i.EXPONENTIAL };
                 }),
-                (Zf[l.MAGNETO] = function (e) {
+                (qf[l.MAGNETO] = function (e) {
                   return { A: 1, B: 0.5, type: i.EXPONENTIAL };
                 }),
-                Zf),
+                qf),
               getEffectMultiplier: {},
               getCapacityMultiplier: {},
               unlockCondition: function (e) {
@@ -28107,20 +28391,20 @@
               name: "Volcanic",
               complexityModifier: 1.4,
               getGainMultiplier:
-                ((Ff = {}),
-                (Ff[l.ORE] = function (e) {
+                ((Qf = {}),
+                (Qf[l.ORE] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                (Ff[l.IRON] = function (e) {
+                (Qf[l.IRON] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                Ff),
+                Qf),
               getEffectMultiplier:
-                ((jf = {}),
-                (jf[U.AESTHETICS] = function (e) {
+                ((Jf = {}),
+                (Jf[U.AESTHETICS] = function (e) {
                   return { A: 1, B: 0.82, type: i.EXPONENTIAL };
                 }),
-                jf),
+                Jf),
               getCapacityMultiplier: {},
               probabilityReduction: 0.5,
               unlockCondition: function (e) {
@@ -28133,20 +28417,20 @@
               name: "Inactive",
               complexityModifier: 1.4,
               getGainMultiplier:
-                ((Vf = {}),
-                (Vf[l.WOOD] = function (e) {
+                (($f = {}),
+                ($f[l.WOOD] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                (Vf[l.NUTRITION] = function (e) {
+                ($f[l.NUTRITION] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                Vf),
+                $f),
               getEffectMultiplier:
-                ((Kf = {}),
-                (Kf[U.HEALTHCARE] = function (e) {
+                ((eA = {}),
+                (eA[U.HEALTHCARE] = function (e) {
                   return { A: 1, B: 0.82, type: i.EXPONENTIAL };
                 }),
-                Kf),
+                eA),
               getCapacityMultiplier: {},
               probabilityReduction: 0.5,
               unlockCondition: function (e) {
@@ -28160,11 +28444,11 @@
               complexityModifier: 0.8,
               getGainMultiplier: {},
               getEffectMultiplier:
-                ((qf = {}),
-                (qf[U.HEALTHCARE] = function (e) {
+                ((tA = {}),
+                (tA[U.HEALTHCARE] = function (e) {
                   return { A: 1, B: 1.05, type: i.EXPONENTIAL };
                 }),
-                qf),
+                tA),
               getCapacityMultiplier: {},
               probabilityReduction: 0.5,
               unlockCondition: function (e) {
@@ -28172,7 +28456,7 @@
               },
             },
           ],
-          gm = [
+          Rm = [
             {
               id: N.PRODUCTIVITY,
               name: "Productivity",
@@ -28182,11 +28466,11 @@
                 return !0;
               },
               getCost:
-                ((zf = {}),
-                (zf[l.COLONIZE_XP] = function (e) {
+                ((nA = {}),
+                (nA[l.COLONIZE_XP] = function (e) {
                   return { A: 3, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                zf),
+                nA),
               maxLevel: 0,
             },
             {
@@ -28198,11 +28482,11 @@
                 return !0;
               },
               getCost:
-                ((Qf = {}),
-                (Qf[l.COLONIZE_XP] = function (e) {
+                ((iA = {}),
+                (iA[l.COLONIZE_XP] = function (e) {
                   return { A: 3, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                Qf),
+                iA),
               maxLevel: 0,
             },
             {
@@ -28214,11 +28498,11 @@
                 return !0;
               },
               getCost:
-                ((Jf = {}),
-                (Jf[l.COLONIZE_XP] = function (e) {
+                ((oA = {}),
+                (oA[l.COLONIZE_XP] = function (e) {
                   return { A: 3, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                Jf),
+                oA),
               maxLevel: 0,
             },
             {
@@ -28230,11 +28514,11 @@
                 return !0;
               },
               getCost:
-                (($f = {}),
-                ($f[l.COLONIZE_XP] = function (e) {
+                ((rA = {}),
+                (rA[l.COLONIZE_XP] = function (e) {
                   return { A: 3, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                $f),
+                rA),
               maxLevel: 0,
             },
             {
@@ -28246,11 +28530,11 @@
                 return !0;
               },
               getCost:
-                ((eA = {}),
-                (eA[l.COLONIZE_XP] = function (e) {
+                ((aA = {}),
+                (aA[l.COLONIZE_XP] = function (e) {
                   return { A: 3, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                eA),
+                aA),
               maxLevel: 0,
             },
             {
@@ -28262,11 +28546,11 @@
                 return !0;
               },
               getCost:
-                ((tA = {}),
-                (tA[l.COLONIZE_XP] = function (e) {
+                ((cA = {}),
+                (cA[l.COLONIZE_XP] = function (e) {
                   return { A: 1, B: 1, type: i.EXPONENTIAL };
                 }),
-                tA),
+                cA),
               maxLevel: 1,
             },
             {
@@ -28278,11 +28562,11 @@
                 return !0;
               },
               getCost:
-                ((nA = {}),
-                (nA[l.COLONIZE_XP] = function (e) {
+                ((sA = {}),
+                (sA[l.COLONIZE_XP] = function (e) {
                   return { A: 2, B: 3, type: i.EXPONENTIAL };
                 }),
-                nA),
+                sA),
               maxLevel: 5,
             },
             {
@@ -28294,11 +28578,11 @@
                 return !0;
               },
               getCost:
-                ((iA = {}),
-                (iA[l.COLONIZE_XP] = function (e) {
+                ((uA = {}),
+                (uA[l.COLONIZE_XP] = function (e) {
                   return { A: 30, B: 3, type: i.EXPONENTIAL };
                 }),
-                iA),
+                uA),
               maxLevel: 3,
             },
             {
@@ -28310,11 +28594,11 @@
                 return !0;
               },
               getCost:
-                ((oA = {}),
-                (oA[l.COLONIZE_XP] = function (e) {
+                ((lA = {}),
+                (lA[l.COLONIZE_XP] = function (e) {
                   return { A: 10, B: 3, type: i.EXPONENTIAL };
                 }),
-                oA),
+                lA),
               maxLevel: 10,
             },
             {
@@ -28326,11 +28610,11 @@
                 return !0;
               },
               getCost:
-                ((rA = {}),
-                (rA[l.COLONIZE_XP] = function (e) {
+                ((pA = {}),
+                (pA[l.COLONIZE_XP] = function (e) {
                   return { A: 30, B: 3, type: i.EXPONENTIAL };
                 }),
-                rA),
+                pA),
               maxLevel: 1,
             },
             {
@@ -28342,11 +28626,27 @@
                 return !0;
               },
               getCost:
-                ((aA = {}),
-                (aA[l.COLONIZE_XP] = function (e) {
+                ((dA = {}),
+                (dA[l.COLONIZE_XP] = function (e) {
                   return { A: 30, B: 3, type: i.EXPONENTIAL };
                 }),
-                aA),
+                dA),
+              maxLevel: 1,
+            },
+            {
+              id: N.PLANET_MEMORY,
+              name: "Planet Memory",
+              description:
+                "Why dont spend some space on our datacenters hard drive to remember our favorite planet? Unlock option to remember one planet upon search.",
+              unlockCondition: function (e) {
+                return !0;
+              },
+              getCost:
+                ((EA = {}),
+                (EA[l.COLONIZE_XP] = function (e) {
+                  return { A: 100, B: 3, type: i.EXPONENTIAL };
+                }),
+                EA),
               maxLevel: 1,
             },
             {
@@ -28361,11 +28661,11 @@
                 );
               },
               getCost:
-                ((cA = {}),
-                (cA[l.COLONIZE_XP] = function (e) {
+                ((gA = {}),
+                (gA[l.COLONIZE_XP] = function (e) {
                   return { A: 25, B: 3, type: i.EXPONENTIAL };
                 }),
-                cA),
+                gA),
               maxLevel: 1,
               isLostTech: !0,
             },
@@ -28381,11 +28681,11 @@
                 );
               },
               getCost:
-                ((sA = {}),
-                (sA[l.COLONIZE_XP] = function (e) {
+                ((fA = {}),
+                (fA[l.COLONIZE_XP] = function (e) {
                   return { A: 50, B: 3, type: i.EXPONENTIAL };
                 }),
-                sA),
+                fA),
               maxLevel: 1,
               isLostTech: !0,
             },
@@ -28401,11 +28701,11 @@
                 );
               },
               getCost:
-                ((uA = {}),
-                (uA[l.COLONIZE_XP] = function (e) {
+                ((AA = {}),
+                (AA[l.COLONIZE_XP] = function (e) {
                   return { A: 50, B: 3, type: i.EXPONENTIAL };
                 }),
-                uA),
+                AA),
               maxLevel: 3,
               isLostTech: !0,
             },
@@ -28421,11 +28721,11 @@
                 );
               },
               getCost:
-                ((lA = {}),
-                (lA[l.COLONIZE_XP] = function (e) {
+                ((mA = {}),
+                (mA[l.COLONIZE_XP] = function (e) {
                   return { A: 100, B: 3, type: i.EXPONENTIAL };
                 }),
-                lA),
+                mA),
               maxLevel: 1,
               isLostTech: !0,
             },
@@ -28441,11 +28741,11 @@
                 );
               },
               getCost:
-                ((pA = {}),
-                (pA[l.COLONIZE_XP] = function (e) {
+                ((NA = {}),
+                (NA[l.COLONIZE_XP] = function (e) {
                   return { A: 100, B: 3, type: i.EXPONENTIAL };
                 }),
-                pA),
+                NA),
               maxLevel: 5,
               isLostTech: !0,
             },
@@ -28461,11 +28761,11 @@
                 );
               },
               getCost:
-                ((dA = {}),
-                (dA[l.COLONIZE_XP] = function (e) {
+                ((hA = {}),
+                (hA[l.COLONIZE_XP] = function (e) {
                   return { A: 500, B: 3, type: i.EXPONENTIAL };
                 }),
-                dA),
+                hA),
               maxLevel: 1,
               isLostTech: !0,
             },
@@ -28481,11 +28781,11 @@
                 );
               },
               getCost:
-                ((EA = {}),
-                (EA[l.COLONIZE_XP] = function (e) {
+                ((IA = {}),
+                (IA[l.COLONIZE_XP] = function (e) {
                   return { A: 1e3, B: 3, type: i.EXPONENTIAL };
                 }),
-                EA),
+                IA),
               maxLevel: 1,
               isLostTech: !0,
             },
@@ -28501,11 +28801,11 @@
                 );
               },
               getCost:
-                ((gA = {}),
-                (gA[l.COLONIZE_XP] = function (e) {
+                ((RA = {}),
+                (RA[l.COLONIZE_XP] = function (e) {
                   return { A: 5e3, B: 3, type: i.EXPONENTIAL };
                 }),
-                gA),
+                RA),
               maxLevel: 1,
               isLostTech: !0,
             },
@@ -28520,11 +28820,11 @@
                 );
               },
               getCost:
-                ((fA = {}),
-                (fA[l.COLONIZE_XP] = function (e) {
+                ((TA = {}),
+                (TA[l.COLONIZE_XP] = function (e) {
                   return { A: 5e3, B: 3, type: i.EXPONENTIAL };
                 }),
-                fA),
+                TA),
               maxLevel: 1,
               isLostTech: !0,
             },
@@ -28540,16 +28840,16 @@
                 );
               },
               getCost:
-                ((AA = {}),
-                (AA[l.COLONIZE_XP] = function (e) {
+                ((yA = {}),
+                (yA[l.COLONIZE_XP] = function (e) {
                   return { A: 5e3, B: 3, type: i.EXPONENTIAL };
                 }),
-                AA),
+                yA),
               maxLevel: 1,
               isLostTech: !0,
             },
           ],
-          fm = [
+          Tm = [
             {
               type: h.B,
               name: "Brown Dwarf",
@@ -28565,29 +28865,29 @@
               ],
               xpMultiplier: 12,
               getEffectMultiplier:
-                ((mA = {}),
-                (mA[U.AESTHETICS] = function (e) {
+                ((OA = {}),
+                (OA[U.AESTHETICS] = function (e) {
                   return { A: 1, B: 0.1, type: i.EXPONENTIAL };
                 }),
-                (mA[U.RELIGION] = function (e) {
+                (OA[U.RELIGION] = function (e) {
                   return { A: 1, B: 0.1, type: i.EXPONENTIAL };
                 }),
-                mA),
+                OA),
               getGainMultiplier:
-                ((NA = {}),
-                (NA[l.POWER] = function (e) {
+                ((LA = {}),
+                (LA[l.POWER] = function (e) {
                   return { A: 1, B: 0.1, type: i.EXPONENTIAL };
                 }),
-                (NA[l.NUTRITION] = function (e) {
+                (LA[l.NUTRITION] = function (e) {
                   return { A: 1, B: 0.1, type: i.EXPONENTIAL };
                 }),
-                (NA[l.WOOD] = function (e) {
+                (LA[l.WOOD] = function (e) {
                   return { A: 1, B: 0.1, type: i.EXPONENTIAL };
                 }),
-                (NA[l.BIOMASS] = function (e) {
+                (LA[l.BIOMASS] = function (e) {
                   return { A: 1, B: 0.1, type: i.EXPONENTIAL };
                 }),
-                NA),
+                LA),
             },
             {
               type: h.M,
@@ -28604,23 +28904,23 @@
               ],
               xpMultiplier: 5,
               getEffectMultiplier:
-                ((hA = {}),
-                (hA[U.HEALTHCARE] = function (e) {
+                ((CA = {}),
+                (CA[U.HEALTHCARE] = function (e) {
                   return { A: 1, B: 0.2, type: i.EXPONENTIAL };
                 }),
-                (hA[U.RELIGION] = function (e) {
+                (CA[U.RELIGION] = function (e) {
                   return { A: 1, B: 0.2, type: i.EXPONENTIAL };
                 }),
-                hA),
+                CA),
               getGainMultiplier:
-                ((IA = {}),
-                (IA[l.POWER] = function (e) {
+                ((vA = {}),
+                (vA[l.POWER] = function (e) {
                   return { A: 1, B: 0.2, type: i.EXPONENTIAL };
                 }),
-                (IA[l.NUTRITION] = function (e) {
+                (vA[l.NUTRITION] = function (e) {
                   return { A: 1, B: 0.2, type: i.EXPONENTIAL };
                 }),
-                IA),
+                vA),
             },
             {
               type: h.K,
@@ -28637,23 +28937,23 @@
               ],
               xpMultiplier: 2.5,
               getEffectMultiplier:
-                ((RA = {}),
-                (RA[U.HEALTHCARE] = function (e) {
+                ((SA = {}),
+                (SA[U.HEALTHCARE] = function (e) {
                   return { A: 1, B: 0.5, type: i.EXPONENTIAL };
                 }),
-                (RA[U.RELIGION] = function (e) {
+                (SA[U.RELIGION] = function (e) {
                   return { A: 1, B: 0.5, type: i.EXPONENTIAL };
                 }),
-                RA),
+                SA),
               getGainMultiplier:
-                ((TA = {}),
-                (TA[l.POWER] = function (e) {
+                ((PA = {}),
+                (PA[l.POWER] = function (e) {
                   return { A: 1, B: 0.5, type: i.EXPONENTIAL };
                 }),
-                (TA[l.NUTRITION] = function (e) {
+                (PA[l.NUTRITION] = function (e) {
                   return { A: 1, B: 0.75, type: i.EXPONENTIAL };
                 }),
-                TA),
+                PA),
             },
             {
               type: h.G,
@@ -28680,14 +28980,14 @@
               ],
               xpMultiplier: 2.5,
               getEffectMultiplier:
-                ((yA = {}),
-                (yA[U.HEALTHCARE] = function (e) {
+                ((BA = {}),
+                (BA[U.HEALTHCARE] = function (e) {
                   return { A: 1, B: 0.5, type: i.EXPONENTIAL };
                 }),
-                (yA[U.SECURITY] = function (e) {
+                (BA[U.SECURITY] = function (e) {
                   return { A: 1, B: 0.5, type: i.EXPONENTIAL };
                 }),
-                yA),
+                BA),
               buildingPriceModifier: function (e) {
                 return 2;
               },
@@ -28707,26 +29007,26 @@
               ],
               xpMultiplier: 5,
               getEffectMultiplier:
-                ((OA = {}),
-                (OA[U.HEALTHCARE] = function (e) {
+                ((MA = {}),
+                (MA[U.HEALTHCARE] = function (e) {
                   return { A: 1, B: 0.2, type: i.EXPONENTIAL };
                 }),
-                (OA[U.SECURITY] = function (e) {
+                (MA[U.SECURITY] = function (e) {
                   return { A: 1, B: 0.2, type: i.EXPONENTIAL };
                 }),
-                OA),
+                MA),
               getGainMultiplier:
-                ((LA = {}),
-                (LA[l.BIOMASS] = function (e) {
+                ((_A = {}),
+                (_A[l.BIOMASS] = function (e) {
                   return { A: 1, B: 0.2, type: i.EXPONENTIAL };
                 }),
-                (LA[l.NUTRITION] = function (e) {
+                (_A[l.NUTRITION] = function (e) {
                   return { A: 1, B: 0.2, type: i.EXPONENTIAL };
                 }),
-                (LA[l.WOOD] = function (e) {
+                (_A[l.WOOD] = function (e) {
                   return { A: 1, B: 0.2, type: i.EXPONENTIAL };
                 }),
-                LA),
+                _A),
               buildingPriceModifier: function (e) {
                 return 4;
               },
@@ -28747,35 +29047,35 @@
               ],
               xpMultiplier: 15,
               getEffectMultiplier:
-                ((CA = {}),
-                (CA[U.HEALTHCARE] = function (e) {
+                ((UA = {}),
+                (UA[U.HEALTHCARE] = function (e) {
                   return { A: 1, B: 0.05, type: i.EXPONENTIAL };
                 }),
-                (CA[U.SECURITY] = function (e) {
+                (UA[U.SECURITY] = function (e) {
                   return { A: 1, B: 0.05, type: i.EXPONENTIAL };
                 }),
-                CA),
+                UA),
               getGainMultiplier:
-                ((vA = {}),
-                (vA[l.BIOMASS] = function (e) {
+                ((bA = {}),
+                (bA[l.BIOMASS] = function (e) {
                   return { A: 1, B: 0.1, type: i.EXPONENTIAL };
                 }),
-                (vA[l.NUTRITION] = function (e) {
+                (bA[l.NUTRITION] = function (e) {
                   return { A: 1, B: 0.1, type: i.EXPONENTIAL };
                 }),
-                (vA[l.WOOD] = function (e) {
+                (bA[l.WOOD] = function (e) {
                   return { A: 1, B: 0.1, type: i.EXPONENTIAL };
                 }),
-                (vA[l.POWER] = function (e) {
+                (bA[l.POWER] = function (e) {
                   return { A: 1, B: 0.2, type: i.EXPONENTIAL };
                 }),
-                vA),
+                bA),
               buildingPriceModifier: function (e) {
                 return 8;
               },
             },
           ],
-          Am = (function () {
+          ym = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -28809,9 +29109,9 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          mm = function () {
+          Om = function () {
             return (
-              (mm =
+              (Om =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -28820,10 +29120,10 @@
                         (e[o] = t[o]);
                   return e;
                 }),
-              mm.apply(this, arguments)
+              Om.apply(this, arguments)
             );
           },
-          Nm = function (e, t, n) {
+          Lm = function (e, t, n) {
             if (n || 2 === arguments.length)
               for (var i, o = 0, r = t.length; o < r; o++)
                 (!i && o in t) ||
@@ -28831,7 +29131,7 @@
                   (i[o] = t[o]));
             return e.concat(i || Array.prototype.slice.call(t));
           },
-          hm = (function (e) {
+          Cm = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -28851,6 +29151,23 @@
                 (t.disastersLevel = 0),
                 (t.harshnessLevel = 0),
                 (t.currentCached = null),
+                t.workDispatcher.on(
+                  "[colonize-planet] toggle remember",
+                  function (e) {
+                    console.log("toggle remembered", e);
+                    var n = t.available.findIndex(function (e) {
+                      return e.isRemembered;
+                    });
+                    t.available[e] &&
+                      (n === e
+                        ? (t.available[e].isRemembered = !1)
+                        : ((t.available = t.available.map(function (e) {
+                            return Om(Om({}, e), { isRemembered: !1 });
+                          })),
+                          (t.available[e].isRemembered =
+                            !t.available[e].isRemembered)));
+                  }
+                ),
                 t.workDispatcher.on(
                   "[colonize-planet] set search filter",
                   function (e) {
@@ -28875,7 +29192,7 @@
                   "[colonize-planet] set harshness filter",
                   function (e) {
                     console.log("do harshness filter", e);
-                    var n = _h.prestige.colonizePlanet.getUpgradeLevel(
+                    var n = xh.prestige.colonizePlanet.getUpgradeLevel(
                       N.HARSHNESS
                     );
                     (!e || e < 0) && (e = 0),
@@ -28921,7 +29238,7 @@
               );
             }
             return (
-              Am(t, e),
+              ym(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -28960,7 +29277,7 @@
                 );
               }),
               (t.prototype.getResourceUpgradeMultiplier = function (e) {
-                var t = gm.find(function (e) {
+                var t = Rm.find(function (e) {
                   return e.id === N.PRODUCTIVITY;
                 });
                 return t
@@ -28975,7 +29292,7 @@
                   : [];
               }),
               (t.prototype.doUpgrade = function (e) {
-                var t = gm.find(function (t) {
+                var t = Rm.find(function (t) {
                   return t.id === e;
                 });
                 if (t) {
@@ -28989,18 +29306,18 @@
                     return;
                   var i = W.calcBatchAll(
                     t.getCost,
-                    Mh.getInstance(),
+                    Xh.getInstance(),
                     this.upgrades[n].level,
-                    Mh.getInstance().resources.getBatchObject()
+                    Xh.getInstance().resources.getBatchObject()
                   );
                   i.reduce(function (e, t) {
                     return Math.min(e, Math.floor(t.max));
                   }, 1e300) < 1 ||
                     (this.upgrades[n].level++,
                     console.log("costs: ", i),
-                    Mh.getInstance().resources.subtractResourceBatch(i),
-                    _h.resources.reassertBalances(),
-                    _h.regenerateCache());
+                    Xh.getInstance().resources.subtractResourceBatch(i),
+                    xh.resources.reassertBalances(),
+                    xh.regenerateCache());
                 }
               }),
               (t.prototype.processUpgradeToUI = function (e) {
@@ -29011,9 +29328,9 @@
                 n || ((n = { id: e.id, level: 0 }), this.upgrades.push(n));
                 var i = W.calcBatchAll(
                     e.getCost,
-                    Mh.getInstance(),
+                    Xh.getInstance(),
                     n.level,
-                    Mh.getInstance().resources.getBatchObject()
+                    Xh.getInstance().resources.getBatchObject()
                   ),
                   o = i.reduce(function (e, t) {
                     return Math.min(e, t.max);
@@ -29022,12 +29339,12 @@
                   id: e.id,
                   name: e.name,
                   description: e.description,
-                  isUnlocked: e.unlockCondition(_h),
+                  isUnlocked: e.unlockCondition(xh),
                   isAvailable: o >= 1,
-                  cost: Mh.getInstance().resources.assertEnought(
+                  cost: Xh.getInstance().resources.assertEnought(
                     i,
-                    Mh.getInstance().resources.getBatchObject(),
-                    Mh.getInstance().resources.getBatchBalanceObject()
+                    Xh.getInstance().resources.getBatchObject(),
+                    Xh.getInstance().resources.getBatchBalanceObject()
                   ),
                   progress: o < 1 ? (100 * o).toPrecision(3) : "100",
                   isMaxedOut: !!e.maxLevel && e.maxLevel <= n.level,
@@ -29039,15 +29356,15 @@
               (t.prototype.dataToUI = function () {
                 var e,
                   t = this,
-                  n = this.available.map(function (e) {
-                    return t.processPlanetToUI(e, !1);
+                  n = this.available.map(function (e, n) {
+                    return t.processPlanetToUI(e, n, !1);
                   });
                 this.isPrestigeAvailable() &&
-                  _h.newNotifications.registerNotification("prestige:colonize");
-                var i = gm.map(function (e) {
+                  xh.newNotifications.registerNotification("prestige:colonize");
+                var i = Rm.map(function (e) {
                     return t.processUpgradeToUI(e);
                   }),
-                  o = this.processPlanetToUI(this.current);
+                  o = this.processPlanetToUI(this.current, -1);
                 this.currentCached = o;
                 for (
                   var r = this.getCurrentXPGainBreakdown(o),
@@ -29064,7 +29381,7 @@
                   return (
                     (e &&
                       (null ===
-                        (t = Em.find(function (t) {
+                        (t = Im.find(function (t) {
                           return t.id === e.modifierId;
                         })) || void 0 === t
                         ? void 0
@@ -29078,18 +29395,18 @@
                   isUnlocked:
                     this.numPrestiged > 0 || this.isPrestigeAvailable(),
                   isPrestigeAvailable: this.isPrestigeAvailable(),
-                  currentXP: _h.resources.getResource(l.COLONIZE_XP),
+                  currentXP: xh.resources.getResource(l.COLONIZE_XP),
                   search: {
                     isAvailable: c >= 1,
-                    cost: Mh.getInstance().resources.assertEnought(
+                    cost: Xh.getInstance().resources.assertEnought(
                       a,
-                      Mh.getInstance().resources.getBatchObject(),
-                      Mh.getInstance().resources.getBatchBalanceObject()
+                      Xh.getInstance().resources.getBatchObject(),
+                      Xh.getInstance().resources.getBatchBalanceObject()
                     ),
                     progress: c < 1 ? (100 * c).toPrecision(3) : "100",
                     filter: {
                       isAvailable:
-                        _h.science.scienceResearches.getResearchLevel(
+                        xh.science.scienceResearches.getResearchLevel(
                           B.EXOPLANET_SCIENCE
                         ) > 0,
                       modifiersSelected: this.currentSearchFilters.map(
@@ -29101,7 +29418,7 @@
                             name:
                               ((null == e ? void 0 : e.modifierId) &&
                                 (null ===
-                                  (n = Em.find(function (t) {
+                                  (n = Im.find(function (t) {
                                     return (
                                       t.id ===
                                       (null == e ? void 0 : e.modifierId)
@@ -29116,10 +29433,10 @@
                           };
                         }
                       ),
-                      modifiersAvailable: Nm(
+                      modifiersAvailable: Lm(
                         [],
-                        Em.filter(function (e) {
-                          return e.unlockCondition(_h);
+                        Im.filter(function (e) {
+                          return e.unlockCondition(xh);
                         }).map(function (e) {
                           return {
                             id: e.id,
@@ -29133,19 +29450,17 @@
                       ),
                     },
                     disastersLevel: this.disastersLevel,
-                    starsList: fm
-                      .filter(function (e) {
-                        return e.unlockCondition(_h);
-                      })
-                      .map(function (e) {
-                        return { id: e.type, name: e.name };
-                      }),
+                    starsList: Tm.filter(function (e) {
+                      return e.unlockCondition(xh);
+                    }).map(function (e) {
+                      return { id: e.type, name: e.name };
+                    }),
                     starSelected:
                       null !== (e = this.currentStarFilter) && void 0 !== e
                         ? e
                         : "None",
                     isHarshnessAvailable:
-                      _h.prestige.colonizePlanet.getUpgradeLevel(N.HARSHNESS) >
+                      xh.prestige.colonizePlanet.getUpgradeLevel(N.HARSHNESS) >
                       0,
                     harshnessFilter: this.harshnessLevel,
                   },
@@ -29156,11 +29471,11 @@
                     gainBattleMult: r.battleXPGain > 1 ? F(r.battleXPGain) : "",
                     potentialBonus: F(
                       this.getXpBonus(
-                        _h.resources.getResource(l.COLONIZE_XP) + r.xpGain
+                        xh.resources.getResource(l.COLONIZE_XP) + r.xpGain
                       )
                     ),
                     currentBonus: F(
-                      this.getXpBonus(_h.resources.getResource(l.COLONIZE_XP))
+                      this.getXpBonus(xh.resources.getResource(l.COLONIZE_XP))
                     ),
                   },
                   upgrades: i,
@@ -29168,17 +29483,17 @@
               }),
               (t.prototype.isPrestigeAvailable = function () {
                 return (
-                  _h.landingZone.landingZoneBuildings.getBuildingActiveLevel(
+                  xh.landingZone.landingZoneBuildings.getBuildingActiveLevel(
                     a.SPACESHIP_STATION
                   ) > 0
                 );
               }),
               (t.prototype.getMaxFilters = function () {
-                return _h.science.scienceResearches.getResearchLevel(
+                return xh.science.scienceResearches.getResearchLevel(
                   B.EXOPLANET_SCIENCE
                 ) > 0
                   ? 1 +
-                      _h.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                      xh.landingZone.landingZoneUpgrades.getUpgradeLevel(
                         r.TRANSIT_EVENTS_STUDY
                       )
                   : 0;
@@ -29196,7 +29511,7 @@
                     Math.min(
                       +t,
                       2 +
-                        _h.prestige.colonizePlanet.getUpgradeLevel(N.HARSHNESS)
+                        xh.prestige.colonizePlanet.getUpgradeLevel(N.HARSHNESS)
                     )
                   );
                 }
@@ -29217,13 +29532,13 @@
                     console.log("newFilters: ", this.currentSearchFilters));
               }),
               (t.prototype.setStarFilter = function (e) {
-                _h.science.scienceResearches.getResearchLevel(
+                xh.science.scienceResearches.getResearchLevel(
                   B.EXOPLANET_SCIENCE
                 ) > 0 &&
                   (e &&
                   "None" !== e &&
-                  fm.find(function (t) {
-                    return t.type === e && t.unlockCondition(_h);
+                  Tm.find(function (t) {
+                    return t.type === e && t.unlockCondition(xh);
                   })
                     ? (this.currentStarFilter = e)
                     : (this.currentStarFilter = void 0));
@@ -29231,8 +29546,8 @@
               (t.prototype.doGenerate = function (e) {
                 var t = this,
                   n = {},
-                  i = Em.filter(function (e) {
-                    return e.unlockCondition(_h);
+                  i = Im.filter(function (e) {
+                    return e.unlockCondition(xh);
                   }).reduce(function (e, t) {
                     return (
                       e[t.category] || (e[t.category] = [t]),
@@ -29241,8 +29556,8 @@
                     );
                   }, {}),
                   o = {},
-                  r = Em.filter(function (e) {
-                    return e.unlockCondition(_h);
+                  r = Im.filter(function (e) {
+                    return e.unlockCondition(xh);
                   }).reduce(function (t, n) {
                     var i, r;
                     return (
@@ -29305,8 +29620,8 @@
                         3 && console.log("Overseal: ", n[u]);
                   }
                 });
-                var a = fm.filter(function (e) {
-                    return e.unlockCondition(_h);
+                var a = Tm.filter(function (e) {
+                    return e.unlockCondition(xh);
                   }),
                   c = a[Math.floor(Math.random() * a.length)].type;
                 this.currentStarFilter &&
@@ -29345,12 +29660,15 @@
                   t.reduce(function (e, t) {
                     return Math.min(e, t.max);
                   }, 1e300) < 1 ||
-                    ((this.available = []),
-                    Mh.getInstance().resources.subtractResourceBatch(t),
+                    ((this.available = this.available.filter(function (e) {
+                      return e.isRemembered;
+                    })),
+                    Xh.getInstance().resources.subtractResourceBatch(t),
                     Array.from({
                       length:
-                        3 +
-                        _h.prestige.colonizePlanet.getUpgradeLevel(
+                        3 -
+                        this.available.length +
+                        xh.prestige.colonizePlanet.getUpgradeLevel(
                           N.STARCHART_MASTER
                         ),
                     }).forEach(function () {
@@ -29360,7 +29678,7 @@
               }),
               (t.prototype.getResourceMultiplier = function (e) {
                 var t = Object.values(this.current.modifiers),
-                  n = Em.filter(function (n) {
+                  n = Im.filter(function (n) {
                     var i;
                     return (
                       t
@@ -29385,7 +29703,7 @@
                       ? void 0
                       : o[e])
                   ) {
-                    var a = W.calculate(_h, r.getGainMultiplier[e], t.level, 1);
+                    var a = W.calculate(xh, r.getGainMultiplier[e], t.level, 1);
                     a &&
                       i.push({
                         label: "Planet modifier: ".concat(r.name),
@@ -29396,11 +29714,11 @@
                   }
                 }, 0);
                 var o = this.current.starClass,
-                  r = fm.find(function (e) {
+                  r = Tm.find(function (e) {
                     return e.type === o;
                   });
                 if (r && r.getGainMultiplier && r.getGainMultiplier[e]) {
-                  var a = W.calculate(_h, r.getGainMultiplier[e], 1, 1);
+                  var a = W.calculate(xh, r.getGainMultiplier[e], 1, 1);
                   a &&
                     i.push({
                       label: "Star modifier: ".concat(r.name),
@@ -29413,7 +29731,7 @@
               }),
               (t.prototype.getEffectMultiplier = function (e) {
                 var t = Object.values(this.current.modifiers),
-                  n = Em.filter(function (n) {
+                  n = Im.filter(function (n) {
                     var i;
                     return (
                       t
@@ -29439,7 +29757,7 @@
                       : o[e])
                   ) {
                     var a = W.calculate(
-                      _h,
+                      xh,
                       r.getEffectMultiplier[e],
                       t.level,
                       1
@@ -29454,11 +29772,11 @@
                   }
                 }, 0);
                 var o = this.current.starClass,
-                  r = fm.find(function (e) {
+                  r = Tm.find(function (e) {
                     return e.type === o;
                   });
                 if (r && r.getEffectMultiplier && r.getEffectMultiplier[e]) {
-                  var a = W.calculate(_h, r.getEffectMultiplier[e], 1, 1);
+                  var a = W.calculate(xh, r.getEffectMultiplier[e], 1, 1);
                   a &&
                     i.push({
                       label: "Star modifier: ".concat(r.name),
@@ -29471,7 +29789,7 @@
               }),
               (t.prototype.getCapacityMultiplier = function (e) {
                 var t = Object.values(this.current.modifiers),
-                  n = Em.filter(function (n) {
+                  n = Im.filter(function (n) {
                     var i;
                     return (
                       t
@@ -29498,7 +29816,7 @@
                         : o[e])
                     ) {
                       var a = W.calculate(
-                        _h,
+                        xh,
                         r.getCapacityMultiplier[e],
                         t.level,
                         1
@@ -29517,7 +29835,7 @@
               }),
               (t.prototype.getPriceMultiplier = function () {
                 var e = Object.values(this.current.modifiers),
-                  t = Em.filter(function (e) {
+                  t = Im.filter(function (e) {
                     return !!e.buildingPriceModifier;
                   }),
                   n = 1;
@@ -29527,7 +29845,7 @@
                   });
                   if (i && i.buildingPriceModifier) {
                     var o = W.calculate(
-                      _h,
+                      xh,
                       i.buildingPriceModifier,
                       e.level,
                       1
@@ -29536,11 +29854,11 @@
                   }
                 }, 0);
                 var i = this.current.starClass,
-                  o = fm.find(function (e) {
+                  o = Tm.find(function (e) {
                     return e.type === i;
                   });
                 if (o && o.buildingPriceModifier) {
-                  var r = o.buildingPriceModifier(_h);
+                  var r = o.buildingPriceModifier(xh);
                   n *= r;
                 }
                 return n;
@@ -29556,54 +29874,28 @@
                   ? "Big Season Changes"
                   : "Terrible";
               }),
-              (t.prototype.processPlanetToUI = function (e, t) {
-                void 0 === t && (t = !1),
-                  t && console.log("ATTR START_PLANET--- ");
-                var n = {},
-                  i = {},
+              (t.prototype.processPlanetToUI = function (e, t, n) {
+                void 0 === n && (n = !1),
+                  n && console.log("ATTR START_PLANET--- ");
+                var i = {},
                   o = {},
-                  r = 1,
-                  a = "",
-                  c = 1,
-                  s = function (s) {
-                    var u = e.modifiers[s];
+                  r = {},
+                  a = 1,
+                  c = "",
+                  s = 1,
+                  u = function (t) {
+                    var u = e.modifiers[t];
                     if (!u) return "continue";
                     var l = u.id,
-                      p = Em.find(function (e) {
+                      p = Im.find(function (e) {
                         return e.id === l;
                       });
                     if (!p) return "continue";
-                    (a = "".concat(p.name, " ").concat(a)),
+                    (c = "".concat(p.name, " ").concat(c)),
                       p.getGainMultiplier &&
                         W.calcBatch(
                           p.getGainMultiplier,
-                          Mh.getInstance(),
-                          u.level
-                        ).forEach(function (e) {
-                          var t;
-                          n[e.id]
-                            ? null === (t = n[e.id]) ||
-                              void 0 === t ||
-                              (t.amount *= e.amount)
-                            : (n[e.id] = e);
-                        }),
-                      p.getEffectMultiplier &&
-                        W.calcBatch(
-                          p.getEffectMultiplier,
-                          Mh.getInstance(),
-                          u.level
-                        ).forEach(function (e) {
-                          var t;
-                          o[e.id]
-                            ? null === (t = o[e.id]) ||
-                              void 0 === t ||
-                              (t.amount *= e.amount)
-                            : (o[e.id] = e);
-                        }),
-                      p.getCapacityMultiplier &&
-                        W.calcBatch(
-                          p.getCapacityMultiplier,
-                          Mh.getInstance(),
+                          Xh.getInstance(),
                           u.level
                         ).forEach(function (e) {
                           var t;
@@ -29613,111 +29905,145 @@
                               (t.amount *= e.amount)
                             : (i[e.id] = e);
                         }),
+                      p.getEffectMultiplier &&
+                        W.calcBatch(
+                          p.getEffectMultiplier,
+                          Xh.getInstance(),
+                          u.level
+                        ).forEach(function (e) {
+                          var t;
+                          r[e.id]
+                            ? null === (t = r[e.id]) ||
+                              void 0 === t ||
+                              (t.amount *= e.amount)
+                            : (r[e.id] = e);
+                        }),
+                      p.getCapacityMultiplier &&
+                        W.calcBatch(
+                          p.getCapacityMultiplier,
+                          Xh.getInstance(),
+                          u.level
+                        ).forEach(function (e) {
+                          var t;
+                          o[e.id]
+                            ? null === (t = o[e.id]) ||
+                              void 0 === t ||
+                              (t.amount *= e.amount)
+                            : (o[e.id] = e);
+                        }),
                       p.buildingPriceModifier &&
-                        (r *= W.calculate(
-                          Mh.getInstance(),
+                        (a *= W.calculate(
+                          Xh.getInstance(),
                           p.buildingPriceModifier,
                           u.level
                         )),
-                      (c *= Math.pow(p.complexityModifier, u.level)),
-                      t &&
+                      (s *= Math.pow(p.complexityModifier, u.level)),
+                      n &&
                         console.log(
                           "ATTR XP_AFTER: ".concat(p.id),
-                          c,
+                          s,
                           p.complexityModifier,
                           u.level
                         );
                   };
-                for (var u in e.modifiers) s(u);
-                var l = e.starClass || h.G,
-                  p = fm.find(function (e) {
-                    return e.type === l;
+                for (var l in e.modifiers) u(l);
+                var p = e.starClass || h.G,
+                  d = Tm.find(function (e) {
+                    return e.type === p;
                   });
-                t && console.log("ATTR_XP: ", c),
-                  p &&
-                    (p.getGainMultiplier &&
+                n && console.log("ATTR_XP: ", s),
+                  d &&
+                    (d.getGainMultiplier &&
                       W.calcBatch(
-                        p.getGainMultiplier,
-                        Mh.getInstance(),
+                        d.getGainMultiplier,
+                        Xh.getInstance(),
                         1
                       ).forEach(function (e) {
                         var t;
-                        n[e.id]
-                          ? null === (t = n[e.id]) ||
+                        i[e.id]
+                          ? null === (t = i[e.id]) ||
                             void 0 === t ||
                             (t.amount *= e.amount)
-                          : (n[e.id] = e);
+                          : (i[e.id] = e);
                       }),
-                    p.getEffectMultiplier &&
+                    d.getEffectMultiplier &&
                       W.calcBatch(
-                        p.getEffectMultiplier,
-                        Mh.getInstance(),
+                        d.getEffectMultiplier,
+                        Xh.getInstance(),
                         1
                       ).forEach(function (e) {
                         var t;
-                        o[e.id]
-                          ? null === (t = o[e.id]) ||
+                        r[e.id]
+                          ? null === (t = r[e.id]) ||
                             void 0 === t ||
                             (t.amount *= e.amount)
-                          : (o[e.id] = e);
+                          : (r[e.id] = e);
                       }),
-                    p.buildingPriceModifier &&
-                      (r *= p.buildingPriceModifier(Mh.getInstance())),
-                    (c *= p.xpMultiplier)),
-                  t && console.log("ATTR_AS: ", c);
-                var d = this.getColonizeCost(),
-                  E = d.reduce(function (e, t) {
+                    d.buildingPriceModifier &&
+                      (a *= d.buildingPriceModifier(Xh.getInstance())),
+                    (s *= d.xpMultiplier)),
+                  n && console.log("ATTR_AS: ", s);
+                var E = this.getColonizeCost(),
+                  g = E.reduce(function (e, t) {
                     return Math.min(e, t.max);
                   }, 1e300),
-                  g = 1 + Math.pow(e.eccentricity || 0, 2);
+                  f = 1 + Math.pow(e.eccentricity || 0, 2);
                 return (
-                  (c *= g),
-                  t && console.log("ATTR_AW: ", c),
-                  c > 4 && (c = 4 + Math.pow(c - 4, 0.6)),
-                  (c *= Math.pow(1.25, e.disastersLevel)),
+                  (s *= f),
+                  n && console.log("ATTR_AW: ", s),
+                  s > 4 && (s = 4 + Math.pow(s - 4, 0.6)),
+                  (s *= Math.pow(1.25, e.disastersLevel)),
                   {
                     name: e.name,
-                    description: a,
-                    gainMult: Object.values(n).map(function (e) {
-                      return mm(mm({}, e), {
+                    description: c,
+                    gainMult: Object.values(i).map(function (e) {
+                      return Om(Om({}, e), {
                         amountValue: e.amount,
                         amount: F(e.amount),
                       });
                     }),
                     max: [],
-                    cost: Mh.getInstance().resources.assertEnought(
-                      d,
-                      Mh.getInstance().resources.getBatchObject(),
-                      Mh.getInstance().resources.getBatchBalanceObject()
+                    cost: Xh.getInstance().resources.assertEnought(
+                      E,
+                      Xh.getInstance().resources.getBatchObject(),
+                      Xh.getInstance().resources.getBatchBalanceObject()
                     ),
-                    isAvailable: E >= 1,
-                    progress: E < 1 ? (100 * E).toPrecision(3) : "100",
+                    isAvailable: g >= 1,
+                    progress: g < 1 ? (100 * g).toPrecision(3) : "100",
                     consume: [],
                     consumeEffect: [],
-                    effectMult: Object.values(o).map(function (e) {
-                      return mm(mm({}, e), {
+                    effectMult: Object.values(r).map(function (e) {
+                      return Om(Om({}, e), {
                         amountValue: e.amount,
                         amount: F(e.amount),
                       });
                     }),
                     gainEffect: [],
                     gain: [],
-                    maxMult: Object.values(i).map(function (e) {
-                      return mm(mm({}, e), {
+                    maxMult: Object.values(o).map(function (e) {
+                      return Om(Om({}, e), {
                         amountValue: e.amount,
                         amount: F(e.amount),
                       });
                     }),
-                    xpGain: c,
+                    xpGain: s,
                     daysPerYear: F(e.yearLength || 365, 3),
                     climateChange: this.getClimateChangeText(
                       e.eccentricity || 0
                     ),
-                    climateHarshness: g,
+                    climateHarshness: f,
                     disastersLevel: e.disastersLevel,
-                    buildingPriceMultipliers: r,
-                    starClass: (null == p ? void 0 : p.name) || "G",
-                    starModif: (null == p ? void 0 : p.effects) || [],
+                    buildingPriceMultipliers: a,
+                    starClass: (null == d ? void 0 : d.name) || "G",
+                    starModif: (null == d ? void 0 : d.effects) || [],
+                    isRememberAvailable:
+                      this.getUpgradeLevel(N.PLANET_MEMORY) > 0 &&
+                      !e.isRemembered,
+                    isForgetAvailable:
+                      (this.getUpgradeLevel(N.PLANET_MEMORY) > 0 &&
+                        e.isRemembered) ||
+                      !1,
+                    index: t,
                   }
                 );
               }),
@@ -29725,7 +30051,7 @@
                 return 1 + 0.3 * Math.pow(e, 0.4);
               }),
               (t.prototype.getCurrentXPBonus = function () {
-                return this.getXpBonus(_h.resources.getResource(l.COLONIZE_XP));
+                return this.getXpBonus(xh.resources.getResource(l.COLONIZE_XP));
               }),
               (t.prototype.getColonizeCost = function () {
                 var e;
@@ -29734,9 +30060,9 @@
                     return { A: 1e3, B: 1, type: i.EXPONENTIAL };
                   }),
                   e),
-                  Mh.getInstance(),
+                  Xh.getInstance(),
                   1,
-                  Mh.getInstance().resources.getBatchObject()
+                  Xh.getInstance().resources.getBatchObject()
                 );
               }),
               (t.prototype.getSearchCost = function () {
@@ -29759,28 +30085,28 @@
                     };
                   }),
                   e),
-                  Mh.getInstance(),
+                  Xh.getInstance(),
                   1,
-                  Mh.getInstance().resources.getBatchObject()
+                  Xh.getInstance().resources.getBatchObject()
                 );
               }),
               (t.prototype.getCurrentXPGainBreakdown = function (e) {
                 var t =
-                    (null != e ? e : this.processPlanetToUI(this.current))
+                    (null != e ? e : this.processPlanetToUI(this.current, -1))
                       .xpGain *
                     Math.pow(
                       1.5,
-                      _h.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                      xh.landingZone.landingZoneUpgrades.getUpgradeLevel(
                         r.QUANTUM_ENCRYPTION
                       )
                     ) *
                     Math.pow(
                       1.5,
-                      Mh.getInstance().landingZone.landingZoneUpgrades.getUpgradeLevel(
+                      Xh.getInstance().landingZone.landingZoneUpgrades.getUpgradeLevel(
                         r.HUGE_GAMMA_TRANSMITTER
                       )
                     ),
-                  n = _h.space.battlefield.getXPBonus();
+                  n = xh.space.battlefield.getXPBonus();
                 return { baseXpGain: t, battleXPGain: n, xpGain: t * n };
               }),
               (t.prototype.doColonize = function (e, t) {
@@ -29794,37 +30120,37 @@
                   if (!this.isPrestigeAvailable()) return;
                   i = this.getCurrentXPGainBreakdown().xpGain;
                 }
-                var o = _h.resources.getResource(l.KNOWLEDGE_POINT),
-                  r = _h.resources.getResource(l.COLONIZE_XP);
-                (_h.statistics.stats.xpTotal =
-                  (_h.statistics.stats.xpTotal || 0) + i),
-                  (_h.statistics.stats.xpMaxGain = Math.max(
-                    _h.statistics.stats.xpMaxGain || 0,
+                var o = xh.resources.getResource(l.KNOWLEDGE_POINT),
+                  r = xh.resources.getResource(l.COLONIZE_XP);
+                (xh.statistics.stats.xpTotal =
+                  (xh.statistics.stats.xpTotal || 0) + i),
+                  (xh.statistics.stats.xpMaxGain = Math.max(
+                    xh.statistics.stats.xpMaxGain || 0,
                     i
                   )),
-                  _h.eventLog.registerPrestige(
+                  xh.eventLog.registerPrestige(
                     "New planet colonization",
                     "".concat(F(i), " XP")
                   ),
-                  _h.landingZone.reset(),
-                  _h.colony.reset(),
-                  _h.crafting.reset(),
-                  _h.science.reset(),
-                  _h.laws.reset(),
-                  _h.resources.reset(),
-                  _h.space.reset(),
-                  _h.queuedItems.reset(),
-                  _h.environment.reset(),
-                  _h.expeditionV2.reset(),
-                  _h.resources.addResource(l.COLONIZE_XP, r + i),
-                  _h.resources.addResource(l.KNOWLEDGE_POINT, o),
+                  xh.landingZone.reset(),
+                  xh.colony.reset(),
+                  xh.crafting.reset(),
+                  xh.science.reset(),
+                  xh.laws.reset(),
+                  xh.resources.reset(),
+                  xh.space.reset(),
+                  xh.queuedItems.reset(),
+                  xh.environment.reset(),
+                  xh.expeditionV2.reset(),
+                  xh.resources.addResource(l.COLONIZE_XP, r + i),
+                  xh.resources.addResource(l.KNOWLEDGE_POINT, o),
                   this.numPrestiged++,
-                  (_h.statistics.stats.maxXpPerHour =
-                    (3600 * i) / _h.statistics.stats.timeThisPlanet),
-                  (_h.statistics.stats.timeThisPlanet = 0),
-                  (_h.statistics.stats.timeThisPrestige = 0),
-                  _h.statistics.reset(),
-                  _h.achievements.resetFailedOnXP(),
+                  (xh.statistics.stats.maxXpPerHour =
+                    (3600 * i) / xh.statistics.stats.timeThisPlanet),
+                  (xh.statistics.stats.timeThisPlanet = 0),
+                  (xh.statistics.stats.timeThisPrestige = 0),
+                  xh.statistics.reset(),
+                  xh.achievements.resetFailedOnXP(),
                   (this.current = t
                     ? {
                         name: "Default",
@@ -29840,14 +30166,14 @@
                     ((this.current.yearLength = 365),
                     (this.current.eccentricity = 0)),
                   (this.available = []),
-                  _h.resources.reassertBalances(),
-                  _h.regenerateCache();
+                  xh.resources.reassertBalances(),
+                  xh.regenerateCache();
               }),
               t
             );
           })(P),
-          Im = hm.getInstance(),
-          Rm = (function () {
+          vm = Cm.getInstance(),
+          Sm = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -29881,13 +30207,13 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          Tm = (function (e) {
+          Pm = (function (e) {
             function t() {
               var t = e.call(this) || this;
-              return (t.transmitKnowledge = dm), (t.colonizePlanet = Im), t;
+              return (t.transmitKnowledge = hm), (t.colonizePlanet = vm), t;
             }
             return (
-              Rm(t, e),
+              Sm(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -29919,7 +30245,7 @@
               t
             );
           })(P).getInstance(),
-          ym = (function () {
+          Bm = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -29953,7 +30279,7 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          Om = (function (e) {
+          Mm = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -29986,7 +30312,7 @@
               );
             }
             return (
-              ym(t, e),
+              Bm(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -30033,7 +30359,7 @@
               }),
               (t.prototype.isExpeditionUnlocked = function () {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(B.GEOGRAPHY) > 0
+                  xh.science.scienceResearches.getResearchLevel(B.GEOGRAPHY) > 0
                 );
               }),
               (t.prototype.startExpedition = function () {
@@ -30063,7 +30389,7 @@
                 }
                 for (
                   var n = w.filter(function (e) {
-                      return e.unlockCondition(_h) && e.valuability < 1e6;
+                      return e.unlockCondition(xh) && e.valuability < 1e6;
                     }),
                     i = {},
                     o = 0;
@@ -30083,13 +30409,13 @@
                 return (
                   Math.pow(
                     1.05,
-                    _h.landingZone.landingZoneBuildings.getBuildingActiveLevel(
+                    xh.landingZone.landingZoneBuildings.getBuildingActiveLevel(
                       a.EXPEDITION_CENTER
                     )
                   ) *
                   Math.pow(
                     1.3,
-                    _h.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                    xh.landingZone.landingZoneUpgrades.getUpgradeLevel(
                       r.ENERGY_SAVING_EXPEDITION_DRONES
                     )
                   )
@@ -30100,8 +30426,8 @@
                   (this.expeditionsState.progress = 0);
                 var e = this.getLoot();
                 for (var t in ((this.expeditionsState.lastLooted = e), e))
-                  _h.resources.addResource(t, e[t] || 0);
-                _h.eventLog.registerExpeditionArrived(H(e), "");
+                  xh.resources.addResource(t, e[t] || 0);
+                xh.eventLog.registerExpeditionArrived(H(e), "");
               }),
               (t.prototype.getExpeditionDuration = function () {
                 switch (this.expeditionsState.currentMode) {
@@ -30132,8 +30458,8 @@
               t
             );
           })(P),
-          Lm = Om.getInstance(),
-          Cm = (function () {
+          _m = Mm.getInstance(),
+          Um = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -30167,7 +30493,7 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          vm = (function (e) {
+          bm = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -30184,7 +30510,7 @@
               );
             }
             return (
-              Cm(t, e),
+              Um(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -30224,8 +30550,8 @@
               t
             );
           })(P),
-          Sm = vm.getInstance(),
-          Pm = (function () {
+          Gm = bm.getInstance(),
+          wm = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -30259,9 +30585,9 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          Bm = function () {
+          Dm = function () {
             return (
-              (Bm =
+              (Dm =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -30270,10 +30596,10 @@
                         (e[o] = t[o]);
                   return e;
                 }),
-              Bm.apply(this, arguments)
+              Dm.apply(this, arguments)
             );
           },
-          Mm = {
+          Xm = {
             timeInGame: 0,
             timeThisPlanet: 0,
             timeThisPrestige: 0,
@@ -30292,26 +30618,26 @@
             maxXpPerHour: 0,
             maxResearchCapReached: 0,
           },
-          _m = (function (e) {
+          xm = (function (e) {
             function t() {
               var t = e.call(this) || this;
-              return (t.stats = Bm({}, Mm)), t;
+              return (t.stats = Dm({}, Xm)), t;
             }
             return (
-              Pm(t, e),
+              wm(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
               (t.prototype.importData = function (e) {
                 var t = e || {
-                  timeInGame: _h.timeInGame,
-                  timeThisPlanet: _h.timeInGame,
-                  timeThisPrestige: _h.timeInPrestige,
+                  timeInGame: xh.timeInGame,
+                  timeThisPlanet: xh.timeInGame,
+                  timeThisPrestige: xh.timeInPrestige,
                   maxColonists: 0,
                   maxHappiness: 0,
                   exoticCollected: 0,
                 };
-                (this.stats = Bm(Bm({}, Mm), t)),
+                (this.stats = Dm(Dm({}, Xm), t)),
                   this.stats.exoticCollected ||
                     (this.stats.exoticCollected = 0);
               }),
@@ -30319,16 +30645,16 @@
                 return this.stats;
               }),
               (t.prototype.dataToUI = function () {
-                return Bm(Bm({}, this.stats), {
+                return Dm(Dm({}, this.stats), {
                   maxHappiness: Math.round(100 * this.stats.maxHappiness),
-                  numPrestiges: _h.prestige.transmitKnowledge.numPrestiged,
-                  numColonized: _h.prestige.colonizePlanet.numPrestiged,
+                  numPrestiges: xh.prestige.transmitKnowledge.numPrestiged,
+                  numColonized: xh.prestige.colonizePlanet.numPrestiged,
                   kpPerHour:
-                    (3600 * _h.prestige.transmitKnowledge.getPrestigeGain()) /
+                    (3600 * xh.prestige.transmitKnowledge.getPrestigeGain()) /
                     (0.01 + this.stats.timeThisPrestige),
                   xpPerHour:
                     (3600 *
-                      _h.prestige.colonizePlanet.getCurrentXPGainBreakdown()
+                      xh.prestige.colonizePlanet.getCurrentXPGainBreakdown()
                         .xpGain) /
                     (0.01 + this.stats.timeThisPlanet),
                 });
@@ -30339,11 +30665,11 @@
                   (this.stats.timeInGame += e),
                   (this.stats.maxHappiness = Math.max(
                     this.stats.maxHappiness,
-                    _h.colony.getColonistsHappiness()
+                    xh.colony.getColonistsHappiness()
                   )),
                   (this.stats.maxColonists = Math.max(
                     this.stats.maxColonists,
-                    _h.colony.colonists
+                    xh.colony.colonists
                   ));
               }),
               (t.prototype.reset = function () {
@@ -30362,21 +30688,14 @@
             (e[(e.WARM = 6)] = "WARM"),
             (e[(e.HOT = 7)] = "HOT"),
             (e[(e.VERY_HOT = 8)] = "VERY_HOT");
-        })(SA || (SA = {})),
+        })(GA || (GA = {})),
           (function (e) {
             (e[(e.SPRING = 0)] = "SPRING"),
               (e[(e.SUMMER = 1)] = "SUMMER"),
               (e[(e.AUTUMN = 2)] = "AUTUMN"),
               (e[(e.WINTER = 3)] = "WINTER");
-          })(PA || (PA = {}));
-        var Um,
-          bm,
-          Gm,
-          wm,
-          Dm,
-          Xm,
-          xm,
-          km,
+          })(wA || (wA = {}));
+        var km,
           Hm,
           Ym,
           Wm,
@@ -30385,8 +30704,8 @@
           jm,
           Vm,
           Km,
-          qm,
           zm,
+          qm,
           Qm,
           Jm,
           $m,
@@ -30398,69 +30717,76 @@
           rN,
           aN,
           cN,
-          sN = [
+          sN,
+          uN,
+          lN,
+          pN,
+          dN,
+          EN,
+          gN,
+          fN = [
             {
-              id: SA.VERY_HOT,
+              id: GA.VERY_HOT,
               distanceCondition: 0.35,
               temperatureModifier: 1.75,
               name: "Very Hot",
             },
             {
-              id: SA.HOT,
+              id: GA.HOT,
               distanceCondition: 0.45,
               temperatureModifier: 1.5,
               name: "Hot",
             },
             {
-              id: SA.WARM,
+              id: GA.WARM,
               distanceCondition: 0.6,
               temperatureModifier: 1.3,
               name: "Warm",
             },
             {
-              id: SA.SLIGHTLY_WARM,
+              id: GA.SLIGHTLY_WARM,
               distanceCondition: 0.8,
               temperatureModifier: 1.1,
               name: "Slightly Warm",
             },
             {
-              id: SA.NORMAL,
+              id: GA.NORMAL,
               distanceCondition: 1.2,
               temperatureModifier: 1,
               name: "Normal",
             },
             {
-              id: SA.SLIGHTLY_COLD,
+              id: GA.SLIGHTLY_COLD,
               distanceCondition: 1.4,
               temperatureModifier: 0.9,
               name: "Slightly Cold",
             },
             {
-              id: SA.COLD,
+              id: GA.COLD,
               distanceCondition: 1.55,
               temperatureModifier: 0.75,
               name: "Cold",
             },
             {
-              id: SA.VERY_COLD,
+              id: GA.VERY_COLD,
               distanceCondition: 1.65,
               temperatureModifier: 0.66,
               name: "Very Cold",
             },
             {
-              id: SA.EXTREMELY_COLD,
+              id: GA.EXTREMELY_COLD,
               distanceCondition: 1.7,
               temperatureModifier: 0.62,
               name: "Extremely Cold",
             },
           ],
-          uN =
-            (((BA = {})[PA.SPRING] = "Spring"),
-            (BA[PA.SUMMER] = "Summer"),
-            (BA[PA.AUTUMN] = "Autumn"),
-            (BA[PA.WINTER] = "Winter"),
-            BA),
-          lN = (function () {
+          AN =
+            (((DA = {})[wA.SPRING] = "Spring"),
+            (DA[wA.SUMMER] = "Summer"),
+            (DA[wA.AUTUMN] = "Autumn"),
+            (DA[wA.WINTER] = "Winter"),
+            DA),
+          mN = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -30494,29 +30820,29 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          pN = (function (e) {
+          NN = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
                 (t.climateState = {
                   day: 0,
-                  season: PA.SPRING,
-                  temperature: SA.NORMAL,
+                  season: wA.SPRING,
+                  temperature: GA.NORMAL,
                   year: 0,
                 }),
                 t
               );
             }
             return (
-              lN(t, e),
+              mN(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
               (t.prototype.importData = function (e) {
                 this.climateState = e || {
                   day: 0,
-                  season: PA.SPRING,
-                  temperature: SA.NORMAL,
+                  season: wA.SPRING,
+                  temperature: GA.NORMAL,
                   year: 0,
                 };
               }),
@@ -30525,7 +30851,7 @@
               }),
               (t.prototype.dataToUI = function () {
                 var e = this,
-                  t = sN.find(function (t) {
+                  t = fN.find(function (t) {
                     return t.id === e.climateState.temperature;
                   });
                 if (!t)
@@ -30538,20 +30864,20 @@
                   temperature: t.name,
                   year: this.climateState.year,
                   day: this.climateState.day,
-                  season: uN[this.climateState.season],
+                  season: AN[this.climateState.season],
                 };
               }),
               (t.prototype.getDays = function () {
-                return 0.2 * _h.statistics.stats.timeThisPrestige;
+                return 0.2 * xh.statistics.stats.timeThisPrestige;
               }),
               (t.prototype.getSeasonId = function () {
-                var e = _h.prestige.colonizePlanet.current.yearLength,
+                var e = xh.prestige.colonizePlanet.current.yearLength,
                   t = this.getDays() % e;
                 return Math.floor((4 * t) / e);
               }),
               (t.prototype.getResourceMultiplier = function (e) {
                 var t = this,
-                  n = sN.find(function (e) {
+                  n = fN.find(function (e) {
                     return e.id === t.climateState.temperature;
                   });
                 if (!n)
@@ -30594,7 +30920,7 @@
               }),
               (t.prototype.process = function (e) {
                 var t = this.getDays(),
-                  n = _h.prestige.colonizePlanet.current.yearLength;
+                  n = xh.prestige.colonizePlanet.current.yearLength;
                 (this.climateState.year = 1 + Math.floor(t / n)),
                   (this.climateState.day = 1 + (this.getDays() % n)),
                   (this.climateState.season = this.getSeasonId());
@@ -30602,27 +30928,27 @@
                   var i = Math.floor((16 * this.climateState.day) / n),
                     o =
                       1 -
-                      _h.prestige.colonizePlanet.current.eccentricity *
+                      xh.prestige.colonizePlanet.current.eccentricity *
                         Math.sin((6.28 * i) / 16),
                     r = 0;
-                  sN[r].distanceCondition < o;
+                  fN[r].distanceCondition < o;
 
                 )
                   r++;
-                sN[r].id !== this.climateState.temperature &&
+                fN[r].id !== this.climateState.temperature &&
                   (console.log(
                     "Weather changed: "
                       .concat(this.climateState.temperature, " -> ")
-                      .concat(sN[r].id)
+                      .concat(fN[r].id)
                   ),
-                  (this.climateState.temperature = sN[r].id),
-                  _h.resources.reassertBalances(),
-                  _h.regenerateCache());
+                  (this.climateState.temperature = fN[r].id),
+                  xh.resources.reassertBalances(),
+                  xh.regenerateCache());
               }),
               t
             );
           })(P).getInstance(),
-          dN = (function () {
+          hN = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -30656,7 +30982,7 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          EN = (function (e) {
+          IN = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -30675,7 +31001,7 @@
               );
             }
             return (
-              dN(t, e),
+              hN(t, e),
               (t.prototype.setMultiplier = function (e) {
                 e < 0 && (e = 0),
                   e > 4 && (e = 4),
@@ -30724,15 +31050,8 @@
             (e.PLAINS = "Plains"),
             (e.HILLS = "Hills"),
             (e.MUD = "Muds");
-        })(Um || (Um = {}));
-        var gN,
-          fN,
-          AN,
-          mN,
-          NN,
-          hN,
-          IN,
-          RN,
+        })(km || (km = {}));
+        var RN,
           TN,
           yN,
           ON,
@@ -30755,10 +31074,17 @@
           HN,
           YN,
           WN,
-          ZN = function (e) {
+          ZN,
+          FN,
+          jN,
+          VN,
+          KN,
+          zN,
+          qN,
+          QN = function (e) {
             return Math.sqrt(e.x * e.x + e.y * e.y);
           },
-          FN = [
+          JN = [
             {
               id: "meteor-shower",
               name: "Meteor Shower",
@@ -30777,11 +31103,11 @@
                 return 3;
               },
               getGainMultiplier:
-                ((bm = {}),
-                (bm[l.RESEARCH] = function (e) {
+                ((Hm = {}),
+                (Hm[l.RESEARCH] = function (e) {
                   return { A: 1, B: 1.2, type: i.EXPONENTIAL };
                 }),
-                bm),
+                Hm),
               onStartEvent: function (e, t) {
                 e.eventLog.registerEvent(
                   d.EVENT,
@@ -30957,11 +31283,11 @@
                 return 1.5 * e.prestige.colonizePlanet.current.disastersLevel;
               },
               getEffectMultiplier:
-                ((Gm = {}),
-                (Gm[U.SECURITY] = function (e) {
+                ((Ym = {}),
+                (Ym[U.SECURITY] = function (e) {
                   return { A: 1, B: 0.8, type: i.EXPONENTIAL };
                 }),
-                Gm),
+                Ym),
               onStartEvent: function (e, t) {
                 e.eventLog.registerEvent(
                   d.EVENT,
@@ -30999,11 +31325,11 @@
                 return 1.5 * e.prestige.colonizePlanet.current.disastersLevel;
               },
               getEffectMultiplier:
-                ((wm = {}),
-                (wm[U.HEALTHCARE] = function (e) {
+                ((Wm = {}),
+                (Wm[U.HEALTHCARE] = function (e) {
                   return { A: 1, B: 0.8, type: i.EXPONENTIAL };
                 }),
-                wm),
+                Wm),
               onStartEvent: function (e, t) {
                 e.eventLog.registerEvent(
                   d.EVENT,
@@ -31042,15 +31368,15 @@
                 return 1.5 * e.prestige.colonizePlanet.current.disastersLevel;
               },
               getConsumption:
-                ((Dm = {}),
-                (Dm[l.NUTRITION] = function (e) {
+                ((Zm = {}),
+                (Zm[l.NUTRITION] = function (e) {
                   return {
                     A: 0.01 * e.resources.getResourceCap(l.NUTRITION),
                     B: 1.4,
                     type: i.EXPONENTIAL,
                   };
                 }),
-                Dm),
+                Zm),
               onStartEvent: function (e, t) {
                 e.eventLog.registerEvent(
                   d.DISASTER,
@@ -31089,17 +31415,17 @@
                 return 1.5 * e.prestige.colonizePlanet.current.disastersLevel;
               },
               getGainMultiplier:
-                ((Xm = {}),
-                (Xm[l.POWER] = function (e) {
+                ((Fm = {}),
+                (Fm[l.POWER] = function (e) {
                   return { A: 1, B: 0.8, type: i.EXPONENTIAL };
                 }),
-                Xm),
+                Fm),
               getEffectMultiplier:
-                ((xm = {}),
-                (xm[U.HEALTHCARE] = function (e) {
+                ((jm = {}),
+                (jm[U.HEALTHCARE] = function (e) {
                   return { A: 1, B: 0.9, type: i.EXPONENTIAL };
                 }),
-                xm),
+                jm),
               onStartEvent: function (e, t) {
                 e.eventLog.registerEvent(
                   d.DISASTER,
@@ -31138,11 +31464,11 @@
                 return 1.5 * e.prestige.colonizePlanet.current.disastersLevel;
               },
               getGainMultiplier:
-                ((km = {}),
-                (km[l.POWER] = function (e) {
+                ((Vm = {}),
+                (Vm[l.POWER] = function (e) {
                   return { A: 1, B: 0.8, type: i.EXPONENTIAL };
                 }),
-                km),
+                Vm),
               getCraftingMultiplier: function (e) {
                 return { A: 1, B: 0.5, type: i.EXPONENTIAL };
               },
@@ -31184,11 +31510,11 @@
                 return 1.5 * e.prestige.colonizePlanet.current.disastersLevel;
               },
               getEffectMultiplier:
-                ((Hm = {}),
-                (Hm[U.SECURITY] = function (e) {
+                ((Km = {}),
+                (Km[U.SECURITY] = function (e) {
                   return { A: 1, B: 0.8, type: i.EXPONENTIAL };
                 }),
-                Hm),
+                Km),
               getCraftingMultiplier: function (e) {
                 return { A: 1, B: 0.5, type: i.EXPONENTIAL };
               },
@@ -31248,23 +31574,23 @@
                 return 1.5 * e.prestige.colonizePlanet.current.disastersLevel;
               },
               getGainMultiplier:
-                ((Ym = {}),
-                (Ym[l.POWER] = function (e) {
+                ((zm = {}),
+                (zm[l.POWER] = function (e) {
                   return { A: 1, B: 0.9, type: i.EXPONENTIAL };
                 }),
-                (Ym[l.BIOMASS] = function (e) {
+                (zm[l.BIOMASS] = function (e) {
                   return { A: 1, B: 0.5, type: i.EXPONENTIAL };
                 }),
-                (Ym[l.WOOD] = function (e) {
+                (zm[l.WOOD] = function (e) {
                   return { A: 1, B: 0.5, type: i.EXPONENTIAL };
                 }),
-                Ym),
+                zm),
               getEffectMultiplier:
-                ((Wm = {}),
-                (Wm[U.HEALTHCARE] = function (e) {
+                ((qm = {}),
+                (qm[U.HEALTHCARE] = function (e) {
                   return { A: 1, B: 0.9, type: i.EXPONENTIAL };
                 }),
-                Wm),
+                qm),
               onStartEvent: function (e, t) {
                 e.eventLog.registerEvent(
                   d.DISASTER,
@@ -31293,11 +31619,11 @@
                 return 3;
               },
               getEffectMultiplier:
-                ((Zm = {}),
-                (Zm[U.AESTHETICS] = function (e) {
+                ((Qm = {}),
+                (Qm[U.AESTHETICS] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                Zm),
+                Qm),
               onStartEvent: function (e, t) {
                 e.eventLog.registerEvent(
                   d.EVENT,
@@ -31326,17 +31652,17 @@
                 return 3;
               },
               getGainMultiplier:
-                ((Fm = {}),
-                (Fm[l.NUTRITION] = function (e) {
+                ((Jm = {}),
+                (Jm[l.NUTRITION] = function (e) {
                   return { A: 1, B: 1.3, type: i.EXPONENTIAL };
                 }),
-                (Fm[l.WOOD] = function (e) {
+                (Jm[l.WOOD] = function (e) {
                   return { A: 1, B: 1.3, type: i.EXPONENTIAL };
                 }),
-                (Fm[l.BIOMASS] = function (e) {
+                (Jm[l.BIOMASS] = function (e) {
                   return { A: 1, B: 1.3, type: i.EXPONENTIAL };
                 }),
-                Fm),
+                Jm),
               onStartEvent: function (e, t) {
                 e.eventLog.registerEvent(
                   d.EVENT,
@@ -31365,20 +31691,20 @@
                 return 3;
               },
               getGainMultiplier:
-                ((jm = {}),
-                (jm[l.ORE] = function (e) {
+                (($m = {}),
+                ($m[l.ORE] = function (e) {
                   return { A: 1, B: 1.3, type: i.EXPONENTIAL };
                 }),
-                (jm[l.IRON] = function (e) {
+                ($m[l.IRON] = function (e) {
                   return { A: 1, B: 1.3, type: i.EXPONENTIAL };
                 }),
-                (jm[l.PLATE] = function (e) {
+                ($m[l.PLATE] = function (e) {
                   return { A: 1, B: 1.3, type: i.EXPONENTIAL };
                 }),
-                (jm[l.WIRE] = function (e) {
+                ($m[l.WIRE] = function (e) {
                   return { A: 1, B: 1.3, type: i.EXPONENTIAL };
                 }),
-                jm),
+                $m),
               onStartEvent: function (e, t) {
                 e.eventLog.registerEvent(
                   d.EVENT,
@@ -31409,11 +31735,11 @@
                 return 3;
               },
               getEffectMultiplier:
-                ((Vm = {}),
-                (Vm[U.ENTERTAINMENT] = function (e) {
+                ((eN = {}),
+                (eN[U.ENTERTAINMENT] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                Vm),
+                eN),
               onStartEvent: function (e, t) {
                 e.eventLog.registerEvent(
                   d.EVENT,
@@ -31447,11 +31773,11 @@
                 return 3;
               },
               getEffectMultiplier:
-                ((Km = {}),
-                (Km[U.RELIGION] = function (e) {
+                ((tN = {}),
+                (tN[U.RELIGION] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                Km),
+                tN),
               onStartEvent: function (e, t) {
                 e.eventLog.registerEvent(
                   d.EVENT,
@@ -31483,11 +31809,11 @@
                 return 3;
               },
               getGainMultiplier:
-                ((qm = {}),
-                (qm[l.WOOD] = function (e) {
+                ((nN = {}),
+                (nN[l.WOOD] = function (e) {
                   return { A: 1, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                qm),
+                nN),
               onStartEvent: function (e, t) {
                 e.eventLog.registerEvent(
                   d.EVENT,
@@ -31522,14 +31848,14 @@
                 return 3;
               },
               getGainMultiplier:
-                ((zm = {}),
-                (zm[l.ROCKET_ENGINE] = function (e) {
+                ((iN = {}),
+                (iN[l.ROCKET_ENGINE] = function (e) {
                   return { A: 1, B: 1.3, type: i.EXPONENTIAL };
                 }),
-                (zm[l.FUEL] = function (e) {
+                (iN[l.FUEL] = function (e) {
                   return { A: 1, B: 1.3, type: i.EXPONENTIAL };
                 }),
-                zm),
+                iN),
               onStartEvent: function (e, t) {
                 e.eventLog.registerEvent(
                   d.EVENT,
@@ -31561,14 +31887,14 @@
                 return 3;
               },
               getGainMultiplier:
-                ((Qm = {}),
-                (Qm[l.BEAM] = function (e) {
+                ((oN = {}),
+                (oN[l.BEAM] = function (e) {
                   return { A: 1, B: 1.3, type: i.EXPONENTIAL };
                 }),
-                (Qm[l.BRICK] = function (e) {
+                (oN[l.BRICK] = function (e) {
                   return { A: 1, B: 1.3, type: i.EXPONENTIAL };
                 }),
-                Qm),
+                oN),
               onStartEvent: function (e, t) {
                 e.eventLog.registerEvent(
                   d.EVENT,
@@ -31594,7 +31920,7 @@
                 return 0.005;
               },
               duration: function (e, t) {
-                return 250 * ZN(t);
+                return 250 * QN(t);
               },
               maxLevel: function (e) {
                 return 2;
@@ -31603,11 +31929,11 @@
                 return 1;
               },
               getGainMultiplier:
-                ((Jm = {}),
-                (Jm[l.WATER] = function (e) {
+                ((rN = {}),
+                (rN[l.WATER] = function (e) {
                   return { A: 1, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                Jm),
+                rN),
               onStartEvent: function (e, t) {
                 e.eventLog.registerEvent(
                   d.EVENT,
@@ -31633,7 +31959,7 @@
                 return 0.005;
               },
               duration: function (e, t) {
-                return 250 * ZN(t);
+                return 250 * QN(t);
               },
               maxLevel: function (e) {
                 return 2;
@@ -31642,17 +31968,17 @@
                 return 1;
               },
               getGainMultiplier:
-                (($m = {}),
-                ($m[l.BRICK] = function (e) {
+                ((aN = {}),
+                (aN[l.BRICK] = function (e) {
                   return { A: 1, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                ($m[l.BEAM] = function (e) {
+                (aN[l.BEAM] = function (e) {
                   return { A: 1, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                ($m[l.PLATE] = function (e) {
+                (aN[l.PLATE] = function (e) {
                   return { A: 1, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                $m),
+                aN),
               onStartEvent: function (e, t) {
                 e.eventLog.registerEvent(
                   d.EVENT,
@@ -31675,7 +32001,7 @@
                 return 0.005;
               },
               duration: function (e, t) {
-                return 250 * ZN(t);
+                return 250 * QN(t);
               },
               maxLevel: function (e) {
                 return 2;
@@ -31684,20 +32010,20 @@
                 return 1;
               },
               getGainMultiplier:
-                ((eN = {}),
-                (eN[l.WIRE] = function (e) {
+                ((cN = {}),
+                (cN[l.WIRE] = function (e) {
                   return { A: 1, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (eN[l.SEMICONDUCTOR] = function (e) {
+                (cN[l.SEMICONDUCTOR] = function (e) {
                   return { A: 1, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (eN[l.COMPUTER] = function (e) {
+                (cN[l.COMPUTER] = function (e) {
                   return { A: 1, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (eN[l.MAGNETO] = function (e) {
+                (cN[l.MAGNETO] = function (e) {
                   return { A: 1, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                eN),
+                cN),
               onStartEvent: function (e, t) {
                 e.eventLog.registerEvent(
                   d.EVENT,
@@ -31723,7 +32049,7 @@
                 return 0.005;
               },
               duration: function (e, t) {
-                return 250 * ZN(t);
+                return 250 * QN(t);
               },
               maxLevel: function (e) {
                 return 2;
@@ -31732,11 +32058,11 @@
                 return 1;
               },
               getStorageMultiplier:
-                ((tN = {}),
-                (tN[l.RESEARCH] = function (e) {
+                ((sN = {}),
+                (sN[l.RESEARCH] = function (e) {
                   return { A: 1, B: 1.03, type: i.EXPONENTIAL };
                 }),
-                tN),
+                sN),
               onStartEvent: function (e, t) {
                 e.eventLog.registerEvent(
                   d.EVENT,
@@ -31759,10 +32085,10 @@
                 return 0;
               },
               expeditionChance: function (e, t) {
-                return t && [Um.PLAINS, Um.HILLS].includes(t.type) ? 0.015 : 0;
+                return t && [km.PLAINS, km.HILLS].includes(t.type) ? 0.015 : 0;
               },
               duration: function (e, t) {
-                return 250 * ZN(t);
+                return 250 * QN(t);
               },
               maxLevel: function (e) {
                 return 2;
@@ -31771,17 +32097,17 @@
                 return 1;
               },
               getGainMultiplier:
-                ((nN = {}),
-                (nN[l.NUTRITION] = function (e) {
+                ((uN = {}),
+                (uN[l.NUTRITION] = function (e) {
                   return { A: 1, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (nN[l.BIOMASS] = function (e) {
+                (uN[l.BIOMASS] = function (e) {
                   return { A: 1, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (nN[l.WOOD] = function (e) {
+                (uN[l.WOOD] = function (e) {
                   return { A: 1, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                nN),
+                uN),
               onStartEvent: function (e, t) {
                 e.eventLog.registerEvent(
                   d.EVENT,
@@ -31809,12 +32135,12 @@
                   ? void 0
                   : n.unlockCondition(e)) &&
                   t &&
-                  [Um.PLAINS, Um.MUD].includes(t.type)
+                  [km.PLAINS, km.MUD].includes(t.type)
                   ? 0.01
                   : 0;
               },
               duration: function (e, t) {
-                return 250 * ZN(t);
+                return 250 * QN(t);
               },
               maxLevel: function (e) {
                 return 2;
@@ -31823,11 +32149,11 @@
                 return 1;
               },
               getGainMultiplier:
-                ((iN = {}),
-                (iN[l.FUEL] = function (e) {
+                ((lN = {}),
+                (lN[l.FUEL] = function (e) {
                   return { A: 1, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                iN),
+                lN),
               onStartEvent: function (e, t) {
                 e.eventLog.registerEvent(
                   d.EVENT,
@@ -31855,12 +32181,12 @@
                   ? void 0
                   : n.unlockCondition(e)) &&
                   t &&
-                  [Um.HILLS, Um.MOUNTAINS].includes(t.type)
+                  [km.HILLS, km.MOUNTAINS].includes(t.type)
                   ? 0.01
                   : 0;
               },
               duration: function (e, t) {
-                return 250 * ZN(t);
+                return 250 * QN(t);
               },
               maxLevel: function (e) {
                 return 2;
@@ -31869,11 +32195,11 @@
                 return 1;
               },
               getEffectGain:
-                ((oN = {}),
-                (oN[U.RELIGION] = function (e) {
+                ((pN = {}),
+                (pN[U.RELIGION] = function (e) {
                   return { A: 10, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                oN),
+                pN),
               onStartEvent: function (e, t) {
                 e.eventLog.registerEvent(
                   d.EVENT,
@@ -31904,12 +32230,12 @@
                   ? void 0
                   : n.unlockCondition(e)) &&
                   t &&
-                  [Um.HILLS, Um.MOUNTAINS].includes(t.type)
+                  [km.HILLS, km.MOUNTAINS].includes(t.type)
                   ? 0.01
                   : 0;
               },
               duration: function (e, t) {
-                return 250 * ZN(t);
+                return 250 * QN(t);
               },
               maxLevel: function (e) {
                 return 2;
@@ -31918,14 +32244,14 @@
                 return 1;
               },
               getEffectGain:
-                ((rN = {}),
-                (rN[U.AESTHETICS] = function (e) {
+                ((dN = {}),
+                (dN[U.AESTHETICS] = function (e) {
                   return { A: 5, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (rN[U.ENTERTAINMENT] = function (e) {
+                (dN[U.ENTERTAINMENT] = function (e) {
                   return { A: 5, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                rN),
+                dN),
               onStartEvent: function (e, t) {
                 e.eventLog.registerEvent(
                   d.EVENT,
@@ -31948,7 +32274,7 @@
                 return 0.005;
               },
               duration: function (e, t) {
-                return 250 * ZN(t);
+                return 250 * QN(t);
               },
               maxLevel: function (e) {
                 return 2;
@@ -31957,20 +32283,20 @@
                 return 1;
               },
               getGainMultiplier:
-                ((aN = {}),
-                (aN[l.WIRE] = function (e) {
+                ((EN = {}),
+                (EN[l.WIRE] = function (e) {
                   return { A: 1, B: 0.7, type: i.EXPONENTIAL };
                 }),
-                (aN[l.PLATE] = function (e) {
+                (EN[l.PLATE] = function (e) {
                   return { A: 1, B: 0.7, type: i.EXPONENTIAL };
                 }),
-                (aN[l.IRON] = function (e) {
+                (EN[l.IRON] = function (e) {
                   return { A: 1, B: 0.7, type: i.EXPONENTIAL };
                 }),
-                (aN[l.ROCKET_ENGINE] = function (e) {
+                (EN[l.ROCKET_ENGINE] = function (e) {
                   return { A: 1, B: 0.7, type: i.EXPONENTIAL };
                 }),
-                aN),
+                EN),
               onStartEvent: function (e, t) {
                 e.eventLog.registerEvent(
                   d.EVENT,
@@ -31996,7 +32322,7 @@
                 return 0.005;
               },
               duration: function (e, t) {
-                return 250 * ZN(t);
+                return 250 * QN(t);
               },
               maxLevel: function (e) {
                 return 2;
@@ -32005,20 +32331,20 @@
                 return 1;
               },
               getGainMultiplier:
-                ((cN = {}),
-                (cN[l.GRAPHENE] = function (e) {
+                ((gN = {}),
+                (gN[l.GRAPHENE] = function (e) {
                   return { A: 1, B: 0.8, type: i.EXPONENTIAL };
                 }),
-                (cN[l.PLASTICS] = function (e) {
+                (gN[l.PLASTICS] = function (e) {
                   return { A: 1, B: 0.8, type: i.EXPONENTIAL };
                 }),
-                (cN[l.RUBBER] = function (e) {
+                (gN[l.RUBBER] = function (e) {
                   return { A: 1, B: 0.8, type: i.EXPONENTIAL };
                 }),
-                (cN[l.BEAM] = function (e) {
+                (gN[l.BEAM] = function (e) {
                   return { A: 1, B: 0.8, type: i.EXPONENTIAL };
                 }),
-                cN),
+                gN),
               onStartEvent: function (e, t) {
                 e.eventLog.registerEvent(
                   d.EVENT,
@@ -32033,7 +32359,7 @@
               },
             },
           ],
-          jN = (function () {
+          $N = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -32067,9 +32393,9 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          VN = function () {
+          eh = function () {
             return (
-              (VN =
+              (eh =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -32078,16 +32404,16 @@
                         (e[o] = t[o]);
                   return e;
                 }),
-              VN.apply(this, arguments)
+              eh.apply(this, arguments)
             );
           },
-          KN = (function (e) {
+          th = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (t.state = []), t;
             }
             return (
-              jN(t, e),
+              $N(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -32108,49 +32434,49 @@
               }),
               (t.prototype.process = function (e) {
                 var t = 0;
-                Math.abs(_h.environment.climate.getDays() % 1) < 0.2 * e &&
+                Math.abs(xh.environment.climate.getDays() % 1) < 0.2 * e &&
                   this.selectEventToTrigger(),
                   (this.state = this.state.filter(function (e) {
-                    if (e.endAt < _h.statistics.stats.timeThisPrestige) {
-                      var n = FN.find(function (t) {
+                    if (e.endAt < xh.statistics.stats.timeThisPrestige) {
+                      var n = JN.find(function (t) {
                         return t.id === e.id;
                       });
                       return (
                         t++,
                         n &&
                           n.getSecondaryEffect &&
-                          n.getSecondaryEffect(_h, e.level),
+                          n.getSecondaryEffect(xh, e.level),
                         !1
                       );
                     }
                     return !0;
                   })),
-                  t && _h.resources.reassertBalances();
+                  t && xh.resources.reassertBalances();
               }),
               (t.prototype.selectEventToTrigger = function () {
                 var e = this;
-                FN.filter(function (t) {
+                JN.filter(function (t) {
                   return !e.state.find(function (e) {
                     return e.id === t.id;
                   });
                 }).forEach(function (t) {
-                  var n = t.autoTriggerChance(_h);
+                  var n = t.autoTriggerChance(xh);
                   Math.random() < n && e.triggerEvent(t);
                 });
               }),
               (t.prototype.triggerEvent = function (e) {
-                var t = e.maxLevel(_h),
+                var t = e.maxLevel(xh),
                   n = 0;
-                e.minLevel && (n = e.minLevel(_h));
-                var i = e.duration(_h),
+                e.minLevel && (n = e.minLevel(xh));
+                var i = e.duration(xh),
                   o = n + Math.random() * (t - n);
                 console.log("triggered: ", e.id, o, t),
                   this.pushToState(
                     {
                       id: e.id,
                       level: o,
-                      startAt: _h.statistics.stats.timeThisPrestige,
-                      endAt: _h.statistics.stats.timeThisPrestige + i,
+                      startAt: xh.statistics.stats.timeThisPrestige,
+                      endAt: xh.statistics.stats.timeThisPrestige + i,
                     },
                     e
                   );
@@ -32158,18 +32484,18 @@
               (t.prototype.pushToState = function (e, t) {
                 if (
                   (t ||
-                    (t = FN.find(function (t) {
+                    (t = JN.find(function (t) {
                       return t.id === e.id;
                     })),
                   !t)
                 )
                   throw new Error("Invalid Event Passed: ".concat(e.id));
                 this.state.push(e),
-                  t.onStartEvent && t.onStartEvent(_h, e.level),
-                  _h.resources.reassertBalances();
+                  t.onStartEvent && t.onStartEvent(xh, e.level),
+                  xh.resources.reassertBalances();
               }),
               (t.prototype.getResourceBeingProduced = function (e) {
-                var t = FN.filter(function (t) {
+                var t = JN.filter(function (t) {
                     return t.getGain && !!t.getGain[e];
                   }),
                   n = [];
@@ -32179,7 +32505,7 @@
                       return e.id === i.id;
                     });
                     if (o && o.getGain) {
-                      var r = W.calculate(_h, o.getGain[e], 0, i.level);
+                      var r = W.calculate(xh, o.getGain[e], 0, i.level);
                       n.push({
                         label: "Event: ".concat(o.name),
                         value: r,
@@ -32192,7 +32518,7 @@
                 );
               }),
               (t.prototype.getCraftingMultiplier = function () {
-                var e = FN.filter(function (e) {
+                var e = JN.filter(function (e) {
                     return !!e.getCraftingMultiplier;
                   }),
                   t = [];
@@ -32203,7 +32529,7 @@
                     });
                     if (i && i.getCraftingMultiplier) {
                       var o = W.calculate(
-                          _h,
+                          xh,
                           i.getCraftingMultiplier,
                           n.level,
                           1
@@ -32222,7 +32548,7 @@
                 );
               }),
               (t.prototype.getResourceMultiplier = function (e) {
-                var t = FN.filter(function (t) {
+                var t = JN.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getGainMultiplier) || void 0 === n
                       ? void 0
@@ -32242,7 +32568,7 @@
                         : o[e])
                     ) {
                       var a = W.calculate(
-                          _h,
+                          xh,
                           r.getGainMultiplier[e],
                           i.level,
                           1
@@ -32261,7 +32587,7 @@
                 );
               }),
               (t.prototype.getResourceBeingConsumed = function (e) {
-                var t = FN.filter(function (t) {
+                var t = JN.filter(function (t) {
                     return t.getConsumption && !!t.getConsumption[e];
                   }),
                   n = [];
@@ -32271,7 +32597,7 @@
                       return e.id === i.id;
                     });
                     if (o && o.getConsumption) {
-                      var r = W.calculate(_h, o.getConsumption[e], 0, i.level);
+                      var r = W.calculate(xh, o.getConsumption[e], 0, i.level);
                       n.push({
                         label: "Event: ".concat(o.name),
                         value: r,
@@ -32284,7 +32610,7 @@
                 );
               }),
               (t.prototype.getResourceStoreMultiplier = function (e) {
-                var t = FN.filter(function (t) {
+                var t = JN.filter(function (t) {
                     return (
                       t.getStorageMultiplier && !!t.getStorageMultiplier[e]
                     );
@@ -32297,7 +32623,7 @@
                     });
                     if (o && o.getStorageMultiplier) {
                       var r = W.calculate(
-                        _h,
+                        xh,
                         o.getStorageMultiplier[e],
                         i.level,
                         1
@@ -32314,7 +32640,7 @@
                 );
               }),
               (t.prototype.getHappinessMultiplier = function (e) {
-                var t = FN.filter(function (t) {
+                var t = JN.filter(function (t) {
                     return (
                       !!t.getEffectMultiplier && !!t.getEffectMultiplier[e]
                     );
@@ -32327,7 +32653,7 @@
                     });
                     if (o && o.getEffectMultiplier) {
                       var r = W.calculate(
-                        _h,
+                        xh,
                         o.getEffectMultiplier[e],
                         i.level,
                         1
@@ -32344,7 +32670,7 @@
                 );
               }),
               (t.prototype.getHappinessBonus = function (e) {
-                var t = FN.filter(function (t) {
+                var t = JN.filter(function (t) {
                     return !!t.getEffectGain && !!t.getEffectGain[e];
                   }),
                   n = [];
@@ -32354,7 +32680,7 @@
                       return e.id === i.id;
                     });
                     if (o && o.getEffectGain) {
-                      var r = W.calculate(_h, o.getEffectGain[e], 0, i.level);
+                      var r = W.calculate(xh, o.getEffectGain[e], 0, i.level);
                       n.push({
                         label: "Event: ".concat(o.name),
                         value: r,
@@ -32370,45 +32696,45 @@
                 this.state = [];
               }),
               (t.prototype.processEventToUI = function (e) {
-                var t = FN.find(function (t) {
+                var t = JN.find(function (t) {
                   return t.id === e.id;
                 });
                 if (!t) throw new Error("Event not found");
                 var n = W.calcBatch(
                     t.getConsumption || {},
-                    Mh.getInstance(),
+                    Xh.getInstance(),
                     0,
                     e.level
                   ),
-                  i = W.calcBatch(t.getGain || {}, Mh.getInstance(), e.level),
+                  i = W.calcBatch(t.getGain || {}, Xh.getInstance(), e.level),
                   o = W.calcBatch(
                     t.getStorageMultiplier || {},
-                    Mh.getInstance(),
+                    Xh.getInstance(),
                     e.level
                   ),
                   r = W.calcBatch(
                     t.getGainMultiplier || {},
-                    Mh.getInstance(),
+                    Xh.getInstance(),
                     e.level
                   ),
                   a = W.calcBatch(
                     t.getEffectConsumption || {},
-                    Mh.getInstance(),
+                    Xh.getInstance(),
                     0,
                     e.level
                   ),
                   c = W.calcBatch(
                     t.getEffectGain || {},
-                    Mh.getInstance(),
+                    Xh.getInstance(),
                     0,
                     e.level
                   ),
                   s = W.calcBatch(
                     t.getEffectMultiplier || {},
-                    Mh.getInstance(),
+                    Xh.getInstance(),
                     e.level
                   ),
-                  u = _h.statistics.stats.timeThisPrestige,
+                  u = xh.statistics.stats.timeThisPrestige,
                   l = e.endAt - e.startAt,
                   p = e.endAt - u;
                 return {
@@ -32416,44 +32742,44 @@
                   name: t.name,
                   description: t.description,
                   gain: i.map(function (e) {
-                    return VN(VN({}, e), {
+                    return eh(eh({}, e), {
                       amountValue: e.amount,
                       amount: F(e.amount),
                     });
                   }),
                   gainMult: r.map(function (e) {
-                    return VN(VN({}, e), {
+                    return eh(eh({}, e), {
                       amountValue: e.amount,
                       amount: "x".concat(F(e.amount)),
                     });
                   }),
                   consume: n.map(function (e) {
-                    return VN(VN({}, e), {
+                    return eh(eh({}, e), {
                       amountValue: e.amount,
                       amount: F(e.amount),
                     });
                   }),
                   max: [],
                   maxMult: o.map(function (e) {
-                    return VN(VN({}, e), {
+                    return eh(eh({}, e), {
                       amountValue: e.amount,
                       amount: "x".concat(F(e.amount)),
                     });
                   }),
                   consumeEffect: a.map(function (e) {
-                    return VN(VN({}, e), {
+                    return eh(eh({}, e), {
                       amountValue: e.amount,
                       amount: F(e.amount),
                     });
                   }),
                   gainEffect: c.map(function (e) {
-                    return VN(VN({}, e), {
+                    return eh(eh({}, e), {
                       amountValue: e.amount,
                       amount: F(e.amount),
                     });
                   }),
                   effectMult: s.map(function (e) {
-                    return VN(VN({}, e), {
+                    return eh(eh({}, e), {
                       amountValue: e.amount,
                       amount: "x".concat(F(e.amount)),
                     });
@@ -32461,15 +32787,15 @@
                   progress: "".concat(
                     100 * Math.min(1, (u - e.startAt) / (l || 1e-4))
                   ),
-                  addEffects: t.getEffects ? t.getEffects(_h, e.level) : [],
+                  addEffects: t.getEffects ? t.getEffects(xh, e.level) : [],
                   etaNum: p,
                 };
               }),
               t
             );
           })(P),
-          qN = KN.getInstance(),
-          zN = (function () {
+          nh = th.getInstance(),
+          ih = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -32503,18 +32829,18 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          QN = (function (e) {
+          oh = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
-                (t.climate = pN),
-                (t.bankedTime = EN),
-                (t.ongoingEffects = qN),
+                (t.climate = NN),
+                (t.bankedTime = IN),
+                (t.ongoingEffects = nh),
                 t
               );
             }
             return (
-              zN(t, e),
+              ih(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -32550,7 +32876,7 @@
               t
             );
           })(P).getInstance(),
-          JN = (function () {
+          rh = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -32584,9 +32910,9 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          $N = function () {
+          ah = function () {
             return (
-              ($N =
+              (ah =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -32595,10 +32921,10 @@
                         (e[o] = t[o]);
                   return e;
                 }),
-              $N.apply(this, arguments)
+              ah.apply(this, arguments)
             );
           },
-          eh = (function (e) {
+          ch = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -32621,7 +32947,7 @@
               );
             }
             return (
-              JN(t, e),
+              rh(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -32640,10 +32966,10 @@
                     return;
                   if (e === p.UPGRADE) {
                     var i =
-                        _h.landingZone.landingZoneUpgrades.getUpgradeLevel(t),
+                        xh.landingZone.landingZoneUpgrades.getUpgradeLevel(t),
                       o =
                         (null ===
-                          (n = nd.find(function (e) {
+                          (n = id.find(function (e) {
                             return e.id === t;
                           })) || void 0 === n
                           ? void 0
@@ -32680,7 +33006,7 @@
                     return e.concat(i || Array.prototype.slice.call(t));
                   })([], this.queue, !0).map(function (e, n) {
                     var i;
-                    return $N($N({}, e), {
+                    return ah(ah({}, e), {
                       eta:
                         (null === (i = t[n].meta) || void 0 === i
                           ? void 0
@@ -32718,7 +33044,7 @@
                         }
                         return n;
                       })(e, ["eta"]);
-                      return $N({}, t);
+                      return ah({}, t);
                     });
                 this.queue = i;
               }),
@@ -32727,8 +33053,8 @@
               }),
               (t.prototype.moveItem = function (e, t) {
                 var n = this.queue[e + t];
-                (this.queue[e + t] = $N({}, this.queue[e])),
-                  (this.queue[e] = $N({}, n));
+                (this.queue[e + t] = ah({}, this.queue[e])),
+                  (this.queue[e] = ah({}, n));
               }),
               (t.prototype.importData = function (e) {
                 this.queue = (null == e ? void 0 : e.queue) || [];
@@ -32742,29 +33068,29 @@
                 }).length;
                 switch (e.scope) {
                   case p.BUILDING:
-                    var i = Td.find(function (t) {
+                    var i = yd.find(function (t) {
                       return t.id === e.id;
                     });
                     return i
-                      ? _h.landingZone.landingZoneBuildings.processToUI(i, n)
+                      ? xh.landingZone.landingZoneBuildings.processToUI(i, n)
                       : void console.error(
                           "Building ".concat(e.id, " was not found")
                         );
                   case p.RESEARCH:
-                    var o = eE.find(function (t) {
+                    var o = tE.find(function (t) {
                       return t.id === e.id;
                     });
                     return o
-                      ? _h.science.scienceResearches.processToUI(o)
+                      ? xh.science.scienceResearches.processToUI(o)
                       : void console.error(
                           "Research ".concat(e.id, " was not found")
                         );
                   case p.UPGRADE:
-                    var r = nd.find(function (t) {
+                    var r = id.find(function (t) {
                       return t.id === e.id;
                     });
                     return r
-                      ? _h.landingZone.landingZoneUpgrades.processToUI(r, n)
+                      ? xh.landingZone.landingZoneUpgrades.processToUI(r, n)
                       : void console.error(
                           "Upgrade ".concat(e.id, " was not found")
                         );
@@ -32804,22 +33130,23 @@
                       scopes: Object.values(p),
                       choices:
                         ((e = {}),
-                        (e[p.BUILDING] = Td.filter(function (e) {
-                          return e.unlockCondition(_h);
-                        })
+                        (e[p.BUILDING] = yd
+                          .filter(function (e) {
+                            return e.unlockCondition(xh);
+                          })
                           .map(function (e) {
                             return { id: e.id, name: e.name };
                           })
                           .sort(function (e, t) {
                             return e.name > t.name ? 1 : -1;
                           })),
-                        (e[p.UPGRADE] = nd
+                        (e[p.UPGRADE] = id
                           .filter(function (e) {
                             return (
-                              e.unlockCondition(_h) &&
+                              e.unlockCondition(xh) &&
                               (!e.maxLevel ||
                                 e.maxLevel >
-                                  _h.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                                  xh.landingZone.landingZoneUpgrades.getUpgradeLevel(
                                     e.id
                                   ))
                             );
@@ -32830,11 +33157,11 @@
                           .sort(function (e, t) {
                             return e.name > t.name ? 1 : -1;
                           })),
-                        (e[p.RESEARCH] = eE
+                        (e[p.RESEARCH] = tE
                           .filter(function (e) {
                             return (
-                              e.unlockCondition(_h) &&
-                              _h.science.scienceResearches.getResearchLevel(
+                              e.unlockCondition(xh) &&
+                              xh.science.scienceResearches.getResearchLevel(
                                 e.id
                               ) < 1
                             );
@@ -32890,31 +33217,31 @@
                     if (t.scope === p.UPGRADE) {
                       var n = t.id,
                         i =
-                          _h.landingZone.landingZoneUpgrades.getUpgradeLevel(n),
-                        o = nd.find(function (e) {
+                          xh.landingZone.landingZoneUpgrades.getUpgradeLevel(n),
+                        o = id.find(function (e) {
                           return e.id === n;
                         });
                       if (!o) return;
                       return o.maxLevel && o.maxLevel <= i
                         ? void this.queue.shift()
                         : void (
-                            _h.landingZone.landingZoneUpgrades.doUpgrade(n) &&
+                            xh.landingZone.landingZoneUpgrades.doUpgrade(n) &&
                             this.queue.shift()
                           );
                     }
                     if (t.scope === p.RESEARCH)
                       return (
                         (r = t.id),
-                        (i = _h.science.scienceResearches.getResearchLevel(r)) >
+                        (i = xh.science.scienceResearches.getResearchLevel(r)) >
                           0 && this.queue.shift(),
                         void (
-                          _h.science.scienceResearches.doResearch(r) &&
+                          xh.science.scienceResearches.doResearch(r) &&
                           this.queue.shift()
                         )
                       );
                   } else {
                     var r = t.id;
-                    _h.landingZone.landingZoneBuildings.doBuild(r) &&
+                    xh.landingZone.landingZoneBuildings.doBuild(r) &&
                       this.queue.shift();
                   }
                 }
@@ -32922,10 +33249,10 @@
               t
             );
           })(P),
-          th = eh.getInstance(),
-          nh = n(381),
-          ih = n.n(nh),
-          oh = (function () {
+          sh = ch.getInstance(),
+          uh = n(381),
+          lh = n.n(uh),
+          ph = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -32959,7 +33286,7 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          rh = (function (e) {
+          dh = (function (e) {
             function t() {
               var t,
                 n = e.call(this) || this;
@@ -32987,7 +33314,7 @@
               );
             }
             return (
-              oh(t, e),
+              ph(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -32995,8 +33322,8 @@
                 this.events.unshift({
                   scope: e,
                   time: new Date(),
-                  year: Math.floor(_h.environment.climate.climateState.year),
-                  day: Math.floor(_h.environment.climate.climateState.day),
+                  year: Math.floor(xh.environment.climate.climateState.year),
+                  day: Math.floor(xh.environment.climate.climateState.day),
                   message: t,
                 });
               }),
@@ -33121,7 +33448,7 @@
                     .map(function (e) {
                       return {
                         date: "[".concat(
-                          ih()(e.time).format("MMM D, Y HH:mm:ss"),
+                          lh()(e.time).format("MMM D, Y HH:mm:ss"),
                           "]"
                         ),
                         time: "Year ".concat(e.year, ", Day ").concat(e.day),
@@ -33161,8 +33488,8 @@
               t
             );
           })(P),
-          ah = rh.getInstance(),
-          ch = (function () {
+          Eh = dh.getInstance(),
+          gh = (function () {
             function e() {}
             return (
               (e.getInstance = function () {
@@ -33172,12 +33499,12 @@
                 var n = [];
                 if (
                   e === l.RESEARCH &&
-                  _h.resources.getResource(l.ANOMALITIES) > 0
+                  xh.resources.getResource(l.ANOMALITIES) > 0
                 ) {
                   var i =
                     1 +
                     0.01 *
-                      (null != t ? t : _h.resources.getResource(l.ANOMALITIES));
+                      (null != t ? t : xh.resources.getResource(l.ANOMALITIES));
                   n.push({
                     label: "Resource: Anomaly",
                     value: i,
@@ -33190,88 +33517,88 @@
               e
             );
           })().getInstance(),
-          sh = [
+          fh = [
             {
-              type: Um.DESERT,
+              type: km.DESERT,
               name: "Desert",
               description: "Who knows what is hidden under this sand",
               lootChances:
-                ((gN = {}),
-                (gN[l.STONE] = 0.75),
-                (gN[l.BRICK] = 0.25),
-                (gN[l.PLATE] = 0.25),
-                (gN[l.SEMICONDUCTOR] = 0.15),
-                gN),
+                ((RN = {}),
+                (RN[l.STONE] = 0.75),
+                (RN[l.BRICK] = 0.25),
+                (RN[l.PLATE] = 0.25),
+                (RN[l.SEMICONDUCTOR] = 0.15),
+                RN),
               color: "#d8c767",
             },
             {
-              type: Um.MUD,
+              type: km.MUD,
               name: "Muds",
               description: "Wet and dangerous",
               lootChances:
-                ((fN = {}),
-                (fN[l.BIOMASS] = 0.75),
-                (fN[l.WOOD] = 0.5),
-                (fN[l.RUBBER] = 0.2),
-                (fN[l.PLASTICS] = 0.2),
-                fN),
+                ((TN = {}),
+                (TN[l.BIOMASS] = 0.75),
+                (TN[l.WOOD] = 0.5),
+                (TN[l.RUBBER] = 0.2),
+                (TN[l.PLASTICS] = 0.2),
+                TN),
               color: "#787747",
             },
             {
-              type: Um.MOUNTAINS,
+              type: km.MOUNTAINS,
               name: "Mountains",
               description:
                 "Its hard to climb, but maybe the high is worth the pain?",
               lootChances:
-                ((AN = {}),
-                (AN[l.ORE] = 0.75),
-                (AN[l.IRON] = 0.35),
-                (AN[l.WIRE] = 0.2),
-                (AN[l.PLATINUM] = 0.1),
-                AN),
+                ((yN = {}),
+                (yN[l.ORE] = 0.75),
+                (yN[l.IRON] = 0.35),
+                (yN[l.WIRE] = 0.2),
+                (yN[l.PLATINUM] = 0.1),
+                yN),
               color: "#aa9",
             },
             {
-              type: Um.HILLS,
+              type: km.HILLS,
               name: "Hills",
               description: "Could we find ancient settlement here?",
               lootChances:
-                ((mN = {}),
-                (mN[l.RESEARCH] = 0.75),
-                (mN[l.COMPUTER] = 0.2),
-                (mN[l.MAGNETO] = 0.2),
-                (mN[l.PLATINUM] = 0.2),
-                mN),
+                ((ON = {}),
+                (ON[l.RESEARCH] = 0.75),
+                (ON[l.COMPUTER] = 0.2),
+                (ON[l.MAGNETO] = 0.2),
+                (ON[l.PLATINUM] = 0.2),
+                ON),
               color: "#388757",
             },
             {
-              type: Um.TUNDRA,
+              type: km.TUNDRA,
               name: "Tundra",
               description: "Frozen and empty",
               lootChances:
-                ((NN = {}),
-                (NN[l.WATER] = 0.75),
-                (NN[l.OXYGEN] = 0.75),
-                (NN[l.FUEL] = 0.2),
-                (NN[l.GRAPHENE] = 0.2),
-                NN),
+                ((LN = {}),
+                (LN[l.WATER] = 0.75),
+                (LN[l.OXYGEN] = 0.75),
+                (LN[l.FUEL] = 0.2),
+                (LN[l.GRAPHENE] = 0.2),
+                LN),
               color: "#78a7d7",
             },
             {
-              type: Um.PLAINS,
+              type: km.PLAINS,
               name: "Plains",
               description: "Empty and windy",
               lootChances:
-                ((hN = {}),
-                (hN[l.NUTRITION] = 0.75),
-                (hN[l.WOOD] = 0.5),
-                (hN[l.BEAM] = 0.2),
-                (hN[l.PLATE] = 0.2),
-                hN),
+                ((CN = {}),
+                (CN[l.NUTRITION] = 0.75),
+                (CN[l.WOOD] = 0.5),
+                (CN[l.BEAM] = 0.2),
+                (CN[l.PLATE] = 0.2),
+                CN),
               color: "#78a747",
             },
           ],
-          uh = (function () {
+          Ah = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -33305,7 +33632,7 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          lh = (function (e) {
+          mh = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -33346,7 +33673,7 @@
               );
             }
             return (
-              uh(t, e),
+              Ah(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -33370,7 +33697,7 @@
               (t.prototype.dataToUI = function () {
                 var e, t, n, i, o;
                 this.isExpeditionUnlocked() &&
-                  _h.newNotifications.registerNotification(
+                  xh.newNotifications.registerNotification(
                     "planet:expeditions"
                   );
                 var r = this.expeditionsState.currentMax
@@ -33435,7 +33762,7 @@
               (t.prototype.generateCache = function () {
                 var e = this;
                 this.mapCache = {
-                  regenerateUUID: HA.Z(),
+                  regenerateUUID: KA.Z(),
                   cells: this.expeditionsState.map.cells.map(function (t) {
                     return t.map(function (t) {
                       return e.processCell(t);
@@ -33448,11 +33775,11 @@
                 for (var e = -10; e <= 10; e++) {
                   this.expeditionsState.map.cells.push([]);
                   for (var t = -10; t <= 10; t++) {
-                    var n = Math.floor(Math.random() * sh.length);
+                    var n = Math.floor(Math.random() * fh.length);
                     this.expeditionsState.map.cells[10 + e].push({
                       x: t,
                       y: e,
-                      type: sh[n].type,
+                      type: fh[n].type,
                       radiusMultiplier: Math.pow(e * e + t * t, 0.75),
                     });
                   }
@@ -33465,14 +33792,14 @@
                   o =
                     1 +
                     0.04 *
-                      _h.prestige.transmitKnowledge.getUpgradeLevel(
+                      xh.prestige.transmitKnowledge.getUpgradeLevel(
                         g.EXPEDITION_MASTERITY
                       ),
                   r = function (r) {
                     var a = w.find(function (e) {
                       return e.id === r;
                     });
-                    if (!(null == a ? void 0 : a.unlockCondition(_h)))
+                    if (!(null == a ? void 0 : a.unlockCondition(xh)))
                       return "continue";
                     i[r] = {
                       chance: Math.min(n * e[r], 1),
@@ -33490,13 +33817,13 @@
                 return (
                   5 +
                   0.2 *
-                    _h.landingZone.landingZoneBuildings.getBuildingActiveLevel(
+                    xh.landingZone.landingZoneBuildings.getBuildingActiveLevel(
                       a.GPS_SATELITE
                     )
                 );
               }),
               (t.prototype.processCell = function (e) {
-                var t = sh.find(function (t) {
+                var t = fh.find(function (t) {
                   return t.type === e.type;
                 });
                 if (!t) throw new Error("Cell type not found");
@@ -33541,7 +33868,7 @@
               }),
               (t.prototype.isExpeditionUnlocked = function () {
                 return (
-                  _h.science.scienceResearches.getResearchLevel(B.GEOGRAPHY) > 0
+                  xh.science.scienceResearches.getResearchLevel(B.GEOGRAPHY) > 0
                 );
               }),
               (t.prototype.startExpedition = function () {
@@ -33597,19 +33924,19 @@
                 return (
                   Math.pow(
                     1.05,
-                    _h.landingZone.landingZoneBuildings.getBuildingActiveLevel(
+                    xh.landingZone.landingZoneBuildings.getBuildingActiveLevel(
                       a.EXPEDITION_CENTER
                     )
                   ) *
                   Math.pow(
                     1.3,
-                    _h.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                    xh.landingZone.landingZoneUpgrades.getUpgradeLevel(
                       r.ENERGY_SAVING_EXPEDITION_DRONES
                     )
                   ) *
                   (1 +
                     0.04 *
-                      _h.prestige.transmitKnowledge.getUpgradeLevel(
+                      xh.prestige.transmitKnowledge.getUpgradeLevel(
                         g.EXPEDITION_MASTERITY
                       ))
                 );
@@ -33625,12 +33952,12 @@
                 if (!t) throw new Error("Cell not found");
                 for (var n in (t.specialEvent &&
                   (console.log("special event trigger: ", t.specialEvent),
-                  _h.environment.ongoingEffects.pushToState({
+                  xh.environment.ongoingEffects.pushToState({
                     id: t.specialEvent.id,
                     level: t.specialEvent.level,
-                    startAt: _h.statistics.stats.timeThisPrestige,
+                    startAt: xh.statistics.stats.timeThisPrestige,
                     endAt:
-                      _h.statistics.stats.timeThisPrestige +
+                      xh.statistics.stats.timeThisPrestige +
                       t.specialEvent.duration,
                   }),
                   (this.expeditionsState.map.cells[
@@ -33642,8 +33969,8 @@
                 (this.expeditionsState.lastLooted = e),
                 (this.expeditionsState.currentMax = 0),
                 e))
-                  _h.resources.addResource(n, e[n] || 0);
-                _h.eventLog.registerExpeditionArrived(H(e), ""),
+                  xh.resources.addResource(n, e[n] || 0);
+                xh.eventLog.registerExpeditionArrived(H(e), ""),
                   this.expeditionsState.numExpeditions++;
               }),
               (t.prototype.getExpeditionDuration = function (e, t) {
@@ -33651,8 +33978,8 @@
                 return 100 * Math.pow(n, 2);
               }),
               (t.prototype.getSpecialLootForCell = function (e) {
-                for (var t = FN, n = 0; n < t.length; n++) {
-                  var i = t[n].expeditionChance(_h, e);
+                for (var t = JN, n = 0; n < t.length; n++) {
+                  var i = t[n].expeditionChance(xh, e);
                   if (Math.random() < i) return t[n];
                 }
                 return null;
@@ -33674,10 +34001,10 @@
                     ) {
                       var i = this.getSpecialLootForCell(n);
                       if (i) {
-                        var o = i.maxLevel(_h),
+                        var o = i.maxLevel(xh),
                           r = 0;
-                        i.minLevel && (r = i.minLevel(_h));
-                        var a = i.duration(_h, n),
+                        i.minLevel && (r = i.minLevel(xh));
+                        var a = i.duration(xh, n),
                           c = r + Math.random() * (o - r);
                         (this.expeditionsState.map.cells[e][t].specialEvent = {
                           id: i.id,
@@ -33727,8 +34054,8 @@
               t
             );
           })(P),
-          ph = lh.getInstance(),
-          dh = (function () {
+          Nh = mh.getInstance(),
+          hh = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -33762,7 +34089,7 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          Eh = (function (e) {
+          Ih = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -33776,12 +34103,12 @@
               );
             }
             return (
-              dh(t, e),
+              hh(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
               (t.prototype.getResourceCostReq = function (e) {
-                var t = _h.landingZone.landingZoneBuildings
+                var t = xh.landingZone.landingZoneBuildings
                     .dataFromCache()
                     .filter(function (t) {
                       return t.cost.find(function (t) {
@@ -33794,7 +34121,7 @@
                   i = t.filter(function (e) {
                     return Object.values(s).includes(e.category);
                   }),
-                  o = _h.landingZone.landingZoneUpgrades
+                  o = xh.landingZone.landingZoneUpgrades
                     .dataFromCache()
                     .filter(function (t) {
                       return t.cost.find(function (t) {
@@ -33849,7 +34176,7 @@
                 };
               }),
               (t.prototype.getResourceConsReq = function (e) {
-                var t = _h.landingZone.landingZoneBuildings
+                var t = xh.landingZone.landingZoneBuildings
                     .dataFromCache()
                     .filter(function (t) {
                       return t.consume.find(function (t) {
@@ -33862,33 +34189,34 @@
                   i = t.filter(function (e) {
                     return Object.values(s).includes(e.category);
                   }),
-                  o = xd
+                  o = kd
                     .filter(function (e) {
-                      return e.unlockCondition(_h);
+                      return e.unlockCondition(xh);
                     })
                     .map(function (e) {
-                      return _h.colony.colonyJobs.processToUI(e);
+                      return xh.colony.colonyJobs.processToUI(e);
                     })
                     .filter(function (t) {
                       return t.consume.find(function (t) {
                         return t.id === e;
                       });
                     }),
-                  r = Kd.filter(function (e) {
-                    var t = w.find(function (t) {
-                      return t.id === e.id;
-                    });
-                    return !(!t || !t.unlockCondition(_h));
-                  })
+                  r = zd
+                    .filter(function (e) {
+                      var t = w.find(function (t) {
+                        return t.id === e.id;
+                      });
+                      return !(!t || !t.unlockCondition(xh));
+                    })
                     .map(function (e) {
-                      return _h.crafting.craftingJobs.processToUI(e);
+                      return xh.crafting.craftingJobs.processToUI(e);
                     })
                     .filter(function (t) {
                       return t.consume.find(function (t) {
                         return t.id === e;
                       });
                     }),
-                  a = _h.landingZone.landingZoneUpgrades
+                  a = xh.landingZone.landingZoneUpgrades
                     .dataFromCache()
                     .filter(function (t) {
                       return t.consume.find(function (t) {
@@ -33968,7 +34296,7 @@
                 };
               }),
               (t.prototype.getProducedBy = function (e) {
-                var t = _h.landingZone.landingZoneBuildings
+                var t = xh.landingZone.landingZoneBuildings
                     .dataFromCache()
                     .filter(function (t) {
                       return t.gain.find(function (t) {
@@ -33981,33 +34309,34 @@
                   i = t.filter(function (e) {
                     return Object.values(s).includes(e.category);
                   }),
-                  o = xd
+                  o = kd
                     .filter(function (e) {
-                      return e.unlockCondition(_h);
+                      return e.unlockCondition(xh);
                     })
                     .map(function (e) {
-                      return _h.colony.colonyJobs.processToUI(e);
+                      return xh.colony.colonyJobs.processToUI(e);
                     })
                     .filter(function (t) {
                       return t.gain.find(function (t) {
                         return t.id === e;
                       });
                     }),
-                  r = Kd.filter(function (t) {
-                    var n = w.find(function (t) {
-                      return t.id === e;
-                    });
-                    return !(!n || !n.unlockCondition(_h));
-                  })
+                  r = zd
+                    .filter(function (t) {
+                      var n = w.find(function (t) {
+                        return t.id === e;
+                      });
+                      return !(!n || !n.unlockCondition(xh));
+                    })
                     .map(function (e) {
-                      return _h.crafting.craftingJobs.processToUI(e);
+                      return xh.crafting.craftingJobs.processToUI(e);
                     })
                     .filter(function (t) {
                       return t.gain.find(function (t) {
                         return t.id === e;
                       });
                     }),
-                  a = _h.landingZone.landingZoneUpgrades
+                  a = xh.landingZone.landingZoneUpgrades
                     .dataFromCache()
                     .filter(function (t) {
                       return t.gain.find(function (t) {
@@ -34095,7 +34424,7 @@
                       })) || void 0 === t
                       ? void 0
                       : t.isCraftable,
-                  i = _h.landingZone.landingZoneBuildings
+                  i = xh.landingZone.landingZoneBuildings
                     .dataFromCache()
                     .filter(function (t) {
                       return (
@@ -34111,24 +34440,23 @@
                   r = i.filter(function (e) {
                     return Object.values(s).includes(e.category);
                   }),
-                  a = xd
+                  a = kd
                     .filter(function (e) {
-                      return e.unlockCondition(_h);
+                      return e.unlockCondition(xh);
                     })
                     .map(function (e) {
-                      return _h.colony.colonyJobs.processToUI(e);
+                      return xh.colony.colonyJobs.processToUI(e);
                     })
                     .filter(function (t) {
                       return t.multiplier.find(function (t) {
                         return t.id === e && t.amountValue > 1;
                       });
                     }),
-                  u = _g
-                    .filter(function (e) {
-                      return e.unlockCondition(_h);
-                    })
+                  u = Xg.filter(function (e) {
+                    return e.unlockCondition(xh);
+                  })
                     .map(function (t) {
-                      var n = _h.laws.processToUI(t),
+                      var n = xh.laws.processToUI(t),
                         i = [],
                         o = [];
                       return (
@@ -34153,7 +34481,7 @@
                     .filter(function (e) {
                       return e.optionIds.length;
                     }),
-                  l = _h.landingZone.landingZoneUpgrades
+                  l = xh.landingZone.landingZoneUpgrades
                     .dataFromCache()
                     .filter(function (t) {
                       return (
@@ -34224,7 +34552,7 @@
                 };
               }),
               (t.prototype.getDebuffedBy = function (e) {
-                var t = _h.landingZone.landingZoneBuildings
+                var t = xh.landingZone.landingZoneBuildings
                     .dataFromCache()
                     .filter(function (t) {
                       return t.gainMult.find(function (t) {
@@ -34237,24 +34565,23 @@
                   i = t.filter(function (e) {
                     return Object.values(s).includes(e.category);
                   }),
-                  o = xd
+                  o = kd
                     .filter(function (e) {
-                      return e.unlockCondition(_h);
+                      return e.unlockCondition(xh);
                     })
                     .map(function (e) {
-                      return _h.colony.colonyJobs.processToUI(e);
+                      return xh.colony.colonyJobs.processToUI(e);
                     })
                     .filter(function (t) {
                       return t.multiplier.find(function (t) {
                         return t.id === e && t.amountValue < 1;
                       });
                     }),
-                  r = _g
-                    .filter(function (e) {
-                      return e.unlockCondition(_h);
-                    })
+                  r = Xg.filter(function (e) {
+                    return e.unlockCondition(xh);
+                  })
                     .map(function (t) {
-                      var n = _h.laws.processToUI(t),
+                      var n = xh.laws.processToUI(t),
                         i = [],
                         o = [];
                       return (
@@ -34279,7 +34606,7 @@
                     .filter(function (e) {
                       return e.optionIds.length;
                     }),
-                  a = _h.landingZone.landingZoneUpgrades
+                  a = xh.landingZone.landingZoneUpgrades
                     .dataFromCache()
                     .filter(function (t) {
                       return t.gainMult.find(function (t) {
@@ -34347,7 +34674,7 @@
                 };
               }),
               (t.prototype.getCap = function (e) {
-                var t = _h.landingZone.landingZoneBuildings
+                var t = xh.landingZone.landingZoneBuildings
                     .dataFromCache()
                     .filter(function (t) {
                       return t.max.find(function (t) {
@@ -34360,7 +34687,7 @@
                   i = t.filter(function (e) {
                     return Object.values(s).includes(e.category);
                   }),
-                  o = _h.landingZone.landingZoneUpgrades
+                  o = xh.landingZone.landingZoneUpgrades
                     .dataFromCache()
                     .filter(function (t) {
                       return t.max.find(function (t) {
@@ -34415,14 +34742,14 @@
                 };
               }),
               (t.prototype.getCapBoostedBy = function (e) {
-                var t = _h.landingZone.landingZoneUpgrades
+                var t = xh.landingZone.landingZoneUpgrades
                     .dataFromCache()
                     .filter(function (t) {
                       return t.maxMult.find(function (t) {
                         return t.id === e && t.amountValue > 1;
                       });
                     }),
-                  n = _h.resourceEffect
+                  n = xh.resourceEffect
                     .getResourceCapMultiplier(e, 1)
                     .map(function (e) {
                       return {
@@ -34480,8 +34807,8 @@
               t
             );
           })(P),
-          gh = Eh.getInstance(),
-          fh = (function () {
+          Rh = Ih.getInstance(),
+          Th = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -34515,9 +34842,9 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          Ah = function () {
+          yh = function () {
             return (
-              (Ah =
+              (yh =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -34526,10 +34853,10 @@
                         (e[o] = t[o]);
                   return e;
                 }),
-              Ah.apply(this, arguments)
+              yh.apply(this, arguments)
             );
           },
-          mh = (function (e) {
+          Oh = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -34547,7 +34874,7 @@
               );
             }
             return (
-              fh(t, e),
+              Th(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -34565,10 +34892,10 @@
                   jobs: e.jobs.map(function (e) {
                     var t,
                       n,
-                      i = xd.find(function (t) {
+                      i = kd.find(function (t) {
                         return t.id === e.id;
                       });
-                    return Ah(Ah({}, e), {
+                    return yh(yh({}, e), {
                       name:
                         null !== (t = null == i ? void 0 : i.name) &&
                         void 0 !== t
@@ -34576,14 +34903,14 @@
                           : "",
                       isUnlocked:
                         null !==
-                          (n = null == i ? void 0 : i.unlockCondition(_h)) &&
+                          (n = null == i ? void 0 : i.unlockCondition(xh)) &&
                         void 0 !== n &&
                         n,
                     });
                   }),
                   crafting: e.crafting.map(function (e) {
                     var t, n;
-                    return Ah(Ah({}, e), {
+                    return yh(yh({}, e), {
                       name: k(e.id),
                       isUnlocked:
                         null !==
@@ -34593,7 +34920,7 @@
                                 return t.id === e.id;
                               })) || void 0 === t
                               ? void 0
-                              : t.unlockCondition(_h)) &&
+                              : t.unlockCondition(xh)) &&
                         void 0 !== n &&
                         n,
                     });
@@ -34607,21 +34934,21 @@
                   });
                 return {
                   isUnlocked:
-                    _h.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                    xh.landingZone.landingZoneUpgrades.getUpgradeLevel(
                       r.DOCKING_MODULE
                     ) > 0,
                   list: t,
                   newPreset: {
-                    jobs: xd
+                    jobs: kd
                       .filter(function (e) {
-                        return e.unlockCondition(_h);
+                        return e.unlockCondition(xh);
                       })
                       .map(function (e) {
                         return { id: e.id, name: e.name };
                       }),
                     crafting: w
                       .filter(function (e) {
-                        return e.unlockCondition(_h) && e.isCraftable;
+                        return e.unlockCondition(xh) && e.isCraftable;
                       })
                       .map(function (e) {
                         return { id: e.id, name: e.name };
@@ -34637,9 +34964,9 @@
               }),
               (t.prototype.savePreset = function (e) {
                 var t = !e.uuid,
-                  n = Ah({}, e);
+                  n = yh({}, e);
                 if (
-                  (n.uuid || (n.uuid = HA.Z()),
+                  (n.uuid || (n.uuid = KA.Z()),
                   n.name || (n.name = "Preset ".concat(Date())),
                   !t ||
                     !this.list.find(function (e) {
@@ -34692,12 +35019,12 @@
                     })),
                     t)
                   )
-                    this.list.push(Ah({}, n));
+                    this.list.push(yh({}, n));
                   else {
                     var a = this.list.findIndex(function (e) {
                       return e.uuid === n.uuid;
                     });
-                    a > -1 && (this.list[a] = Ah({}, n));
+                    a > -1 && (this.list[a] = yh({}, n));
                   }
                   return !0;
                 }
@@ -34735,7 +35062,7 @@
                     return e.id !== _.ARTISAN;
                   }),
                   p = s.crafting,
-                  d = _h.colony.colonists,
+                  d = xh.colony.colonists,
                   E = u.reduce(function (e, t) {
                     return e + a(t);
                   }, 0),
@@ -34824,11 +35151,11 @@
                   ) {
                     if (
                       null ===
-                        (n = xd.find(function (e) {
+                        (n = kd.find(function (e) {
                           return e.id === _.LABOUR;
                         })) || void 0 === n
                         ? void 0
-                        : n.unlockCondition(_h)
+                        : n.unlockCondition(xh)
                     ) {
                       var y = c(
                           u.find(function (e) {
@@ -34869,16 +35196,16 @@
                   m,
                   I
                 ),
-                _h.crafting.craftingJobs.reset(),
-                _h.colony.colonyJobs.reset(),
-                (_h.colony.colonyJobs.freeWorkers = d),
+                xh.crafting.craftingJobs.reset(),
+                xh.colony.colonyJobs.reset(),
+                (xh.colony.colonyJobs.freeWorkers = d),
                 f))
-                  _h.colony.colonyJobs.setAmount(
+                  xh.colony.colonyJobs.setAmount(
                     L,
                     null !== (o = f[L]) && void 0 !== o ? o : 0
                   );
                 for (var C in A)
-                  _h.crafting.craftingJobs.setAmount(
+                  xh.crafting.craftingJobs.setAmount(
                     C,
                     null !== (r = A[C]) && void 0 !== r ? r : 0
                   );
@@ -34886,8 +35213,8 @@
               t
             );
           })(P),
-          Nh = mh.getInstance(),
-          hh = (function () {
+          Lh = Oh.getInstance(),
+          Ch = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -34921,9 +35248,9 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          Ih = function () {
+          vh = function () {
             return (
-              (Ih =
+              (vh =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -34932,10 +35259,10 @@
                         (e[o] = t[o]);
                   return e;
                 }),
-              Ih.apply(this, arguments)
+              vh.apply(this, arguments)
             );
           },
-          Rh = (function (e) {
+          Sh = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -34953,7 +35280,7 @@
               );
             }
             return (
-              hh(t, e),
+              Ch(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -34968,7 +35295,7 @@
                   uuid: e.uuid,
                   name: e.name,
                   laws: e.laws.map(function (e) {
-                    var t = _g.find(function (t) {
+                    var t = Xg.find(function (t) {
                       return t.id === e.id;
                     });
                     if (!t) throw new Error("Law ".concat(e.id, " not found"));
@@ -34995,29 +35322,27 @@
                   });
                 return {
                   isUnlocked:
-                    _h.science.scienceResearches.getResearchLevel(
+                    xh.science.scienceResearches.getResearchLevel(
                       B.CODEX_OF_LAW
                     ) > 0,
                   list: t,
                   newPreset: {
-                    laws: _g
-                      .filter(function (e) {
-                        return e.unlockCondition(Mh.getInstance());
-                      })
-                      .map(function (e) {
-                        return {
-                          id: e.id,
-                          name: e.name,
-                          description: e.description,
-                          options: e.options.map(function (e, t) {
-                            return {
-                              id: t,
-                              name: e.name,
-                              description: e.description,
-                            };
-                          }),
-                        };
-                      }),
+                    laws: Xg.filter(function (e) {
+                      return e.unlockCondition(Xh.getInstance());
+                    }).map(function (e) {
+                      return {
+                        id: e.id,
+                        name: e.name,
+                        description: e.description,
+                        options: e.options.map(function (e, t) {
+                          return {
+                            id: t,
+                            name: e.name,
+                            description: e.description,
+                          };
+                        }),
+                      };
+                    }),
                   },
                 };
               }),
@@ -35029,9 +35354,9 @@
               }),
               (t.prototype.savePreset = function (e) {
                 var t = !e.uuid,
-                  n = Ih({}, e);
+                  n = vh({}, e);
                 if (
-                  (n.uuid || (n.uuid = HA.Z()),
+                  (n.uuid || (n.uuid = KA.Z()),
                   n.name || (n.name = "Preset ".concat(Date())),
                   !t ||
                     !this.list.find(function (e) {
@@ -35049,12 +35374,12 @@
                     })([], e.laws, !0)),
                     t)
                   )
-                    this.list.push(Ih({}, n));
+                    this.list.push(vh({}, n));
                   else {
                     var i = this.list.findIndex(function (e) {
                       return e.uuid === n.uuid;
                     });
-                    i > -1 && (this.list[i] = Ih({}, n));
+                    i > -1 && (this.list[i] = vh({}, n));
                   }
                   return !0;
                 }
@@ -35066,18 +35391,18 @@
                 });
                 if (!t) throw new Error("Preset ".concat(e, " not found"));
                 t.laws.forEach(function (e) {
-                  var t = _g.find(function (t) {
+                  var t = Xg.find(function (t) {
                     return t.id === e.id;
                   });
                   t &&
-                    t.unlockCondition(Mh.getInstance()) &&
-                    _h.laws.selectLawOption(e.id, e.optionId);
+                    t.unlockCondition(Xh.getInstance()) &&
+                    xh.laws.selectLawOption(e.id, e.optionId);
                 });
               }),
               t
             );
           })(P).getInstance(),
-          Th = (function () {
+          Ph = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -35111,13 +35436,13 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          yh = (function (e) {
+          Bh = (function (e) {
             function t() {
               var t = e.call(this) || this;
-              return (t.jobsPresets = Nh), (t.lawsPresets = Rh), t;
+              return (t.jobsPresets = Lh), (t.lawsPresets = Sh), t;
             }
             return (
-              Th(t, e),
+              Ph(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -35143,13 +35468,13 @@
               t
             );
           })(P),
-          Oh = yh.getInstance();
+          Mh = Bh.getInstance();
         !(function (e) {
           (e[(e.PENDING = 0)] = "PENDING"),
             (e[(e.COMLETE = 1)] = "COMLETE"),
             (e[(e.FAILED = 2)] = "FAILED");
-        })(IN || (IN = {}));
-        var Lh = [
+        })(vN || (vN = {}));
+        var _h = [
             {
               id: "starting",
               name: "Humble Starting",
@@ -35175,17 +35500,17 @@
               bonusesDesc: [],
               isHidden: !1,
               getGainMultiplier:
-                ((RN = {}),
-                (RN[l.STONE] = function (e) {
+                ((SN = {}),
+                (SN[l.STONE] = function (e) {
                   return 1.05;
                 }),
-                (RN[l.ORE] = function (e) {
+                (SN[l.ORE] = function (e) {
                   return 1.05;
                 }),
-                (RN[l.BIOMASS] = function (e) {
+                (SN[l.BIOMASS] = function (e) {
                   return 1.05;
                 }),
-                RN),
+                SN),
               unlockCondition: function (e) {
                 return !0;
               },
@@ -35243,11 +35568,11 @@
               },
               bonusesDesc: [],
               getCapacityMultiplier:
-                ((TN = {}),
-                (TN[l.POWER] = function (e) {
+                ((PN = {}),
+                (PN[l.POWER] = function (e) {
                   return 1.05;
                 }),
-                TN),
+                PN),
               isHidden: !0,
               unlockCondition: function (e) {
                 return !0;
@@ -35263,11 +35588,11 @@
               },
               bonusesDesc: [],
               getGainMultiplier:
-                ((yN = {}),
-                (yN[l.POWER] = function (e) {
+                ((BN = {}),
+                (BN[l.POWER] = function (e) {
                   return 1.05;
                 }),
-                yN),
+                BN),
               isHidden: !1,
               unlockCondition: function (e) {
                 return !0;
@@ -35283,11 +35608,11 @@
               },
               bonusesDesc: [],
               getGainMultiplier:
-                ((ON = {}),
-                (ON[l.POWER] = function (e) {
+                ((MN = {}),
+                (MN[l.POWER] = function (e) {
                   return 1.05;
                 }),
-                ON),
+                MN),
               isHidden: !1,
               unlockCondition: function (e) {
                 return !0;
@@ -35304,11 +35629,11 @@
               },
               bonusesDesc: [],
               getGainMultiplier:
-                ((LN = {}),
-                (LN[l.POWER] = function (e) {
+                ((_N = {}),
+                (_N[l.POWER] = function (e) {
                   return 1.05;
                 }),
-                LN),
+                _N),
               isHidden: !1,
               unlockCondition: function (e) {
                 return !0;
@@ -35325,11 +35650,11 @@
               },
               bonusesDesc: [],
               getGainMultiplier:
-                ((CN = {}),
-                (CN[l.POWER] = function (e) {
+                ((UN = {}),
+                (UN[l.POWER] = function (e) {
                   return 1.05;
                 }),
-                CN),
+                UN),
               isHidden: !1,
               unlockCondition: function (e) {
                 return !0;
@@ -35350,14 +35675,14 @@
               },
               bonusesDesc: [],
               getGainMultiplier:
-                ((vN = {}),
-                (vN[l.STONE] = function (e) {
+                ((bN = {}),
+                (bN[l.STONE] = function (e) {
                   return 1.05;
                 }),
-                (vN[l.ORE] = function (e) {
+                (bN[l.ORE] = function (e) {
                   return 1.05;
                 }),
-                vN),
+                bN),
               isHidden: !1,
               unlockCondition: function (e) {
                 return !0;
@@ -35378,14 +35703,14 @@
               },
               bonusesDesc: [],
               getGain:
-                ((SN = {}),
-                (SN[l.STONE] = function (e) {
+                ((GN = {}),
+                (GN[l.STONE] = function (e) {
                   return 0.2;
                 }),
-                (SN[l.ORE] = function (e) {
+                (GN[l.ORE] = function (e) {
                   return 0.2;
                 }),
-                SN),
+                GN),
               isHidden: !1,
               unlockCondition: function (e) {
                 return !0;
@@ -35401,17 +35726,17 @@
               },
               bonusesDesc: [],
               getGainMultiplier:
-                ((PN = {}),
-                (PN[l.IRON] = function (e) {
+                ((wN = {}),
+                (wN[l.IRON] = function (e) {
                   return 1.1;
                 }),
-                (PN[l.PLATE] = function (e) {
+                (wN[l.PLATE] = function (e) {
                   return 1.1;
                 }),
-                (PN[l.WIRE] = function (e) {
+                (wN[l.WIRE] = function (e) {
                   return 1.1;
                 }),
-                PN),
+                wN),
               isHidden: !1,
               unlockCondition: function (e) {
                 return (
@@ -35429,17 +35754,17 @@
               },
               bonusesDesc: [],
               getGainMultiplier:
-                ((BN = {}),
-                (BN[l.IRON] = function (e) {
+                ((DN = {}),
+                (DN[l.IRON] = function (e) {
                   return 1.1;
                 }),
-                (BN[l.PLATE] = function (e) {
+                (DN[l.PLATE] = function (e) {
                   return 1.1;
                 }),
-                (BN[l.WIRE] = function (e) {
+                (DN[l.WIRE] = function (e) {
                   return 1.1;
                 }),
-                BN),
+                DN),
               isHidden: !1,
               unlockCondition: function (e) {
                 return (
@@ -35457,17 +35782,17 @@
               },
               bonusesDesc: [],
               getGainMultiplier:
-                ((MN = {}),
-                (MN[l.IRON] = function (e) {
+                ((XN = {}),
+                (XN[l.IRON] = function (e) {
                   return 1.1;
                 }),
-                (MN[l.PLATE] = function (e) {
+                (XN[l.PLATE] = function (e) {
                   return 1.1;
                 }),
-                (MN[l.WIRE] = function (e) {
+                (XN[l.WIRE] = function (e) {
                   return 1.1;
                 }),
-                MN),
+                XN),
               isHidden: !1,
               unlockCondition: function (e) {
                 return (
@@ -35486,17 +35811,17 @@
               },
               bonusesDesc: [],
               getGainMultiplier:
-                ((_N = {}),
-                (_N[l.IRON] = function (e) {
+                ((xN = {}),
+                (xN[l.IRON] = function (e) {
                   return 1.1;
                 }),
-                (_N[l.PLATE] = function (e) {
+                (xN[l.PLATE] = function (e) {
                   return 1.1;
                 }),
-                (_N[l.WIRE] = function (e) {
+                (xN[l.WIRE] = function (e) {
                   return 1.1;
                 }),
-                _N),
+                xN),
               isHidden: !1,
               unlockCondition: function (e) {
                 return (
@@ -35514,11 +35839,11 @@
               },
               bonusesDesc: [],
               getGainMultiplier:
-                ((UN = {}),
-                (UN[l.BIOMASS] = function (e) {
+                ((kN = {}),
+                (kN[l.BIOMASS] = function (e) {
                   return 1.05;
                 }),
-                UN),
+                kN),
               isHidden: !1,
               unlockCondition: function (e) {
                 return (
@@ -35536,17 +35861,17 @@
               },
               bonusesDesc: [],
               getGainMultiplier:
-                ((bN = {}),
-                (bN[l.RUBBER] = function (e) {
+                ((HN = {}),
+                (HN[l.RUBBER] = function (e) {
                   return 1.1;
                 }),
-                (bN[l.PLASTICS] = function (e) {
+                (HN[l.PLASTICS] = function (e) {
                   return 1.1;
                 }),
-                (bN[l.GRAPHENE] = function (e) {
+                (HN[l.GRAPHENE] = function (e) {
                   return 1.1;
                 }),
-                bN),
+                HN),
               isHidden: !1,
               unlockCondition: function (e) {
                 return (
@@ -35563,7 +35888,7 @@
                 return !(e.resources.getBalance(l.BIOMASS) < 2e3);
               },
               bonusesDesc: [
-                "Rubber and Plastics prices are reduced by whole 50%",
+                "Building Rubber and Plastics prices are reduced by whole 50%",
               ],
               isHidden: !1,
               unlockCondition: function (e) {
@@ -35583,11 +35908,11 @@
               },
               bonusesDesc: [],
               getEffectMultiplier:
-                ((GN = {}),
-                (GN[U.HEALTHCARE] = function (e) {
+                ((YN = {}),
+                (YN[U.HEALTHCARE] = function (e) {
                   return 1.05;
                 }),
-                GN),
+                YN),
               isHidden: !1,
               unlockCondition: function (e) {
                 return (
@@ -35606,17 +35931,17 @@
               },
               bonusesDesc: [],
               getGainMultiplier:
-                ((wN = {}),
-                (wN[l.SEMICONDUCTOR] = function (e) {
+                ((WN = {}),
+                (WN[l.SEMICONDUCTOR] = function (e) {
                   return 1.1;
                 }),
-                (wN[l.COMPUTER] = function (e) {
+                (WN[l.COMPUTER] = function (e) {
                   return 1.1;
                 }),
-                (wN[l.MAGNETO] = function (e) {
+                (WN[l.MAGNETO] = function (e) {
                   return 1.1;
                 }),
-                wN),
+                WN),
               isHidden: !1,
               unlockCondition: function (e) {
                 return (
@@ -35636,17 +35961,17 @@
               },
               bonusesDesc: [],
               getGainMultiplier:
-                ((DN = {}),
-                (DN[l.SEMICONDUCTOR] = function (e) {
+                ((ZN = {}),
+                (ZN[l.SEMICONDUCTOR] = function (e) {
                   return 1.1;
                 }),
-                (DN[l.COMPUTER] = function (e) {
+                (ZN[l.COMPUTER] = function (e) {
                   return 1.1;
                 }),
-                (DN[l.MAGNETO] = function (e) {
+                (ZN[l.MAGNETO] = function (e) {
                   return 1.1;
                 }),
-                DN),
+                ZN),
               isHidden: !1,
               unlockCondition: function (e) {
                 return (
@@ -35666,17 +35991,17 @@
               },
               bonusesDesc: [],
               getGainMultiplier:
-                ((XN = {}),
-                (XN[l.SEMICONDUCTOR] = function (e) {
+                ((FN = {}),
+                (FN[l.SEMICONDUCTOR] = function (e) {
                   return 1.1;
                 }),
-                (XN[l.COMPUTER] = function (e) {
+                (FN[l.COMPUTER] = function (e) {
                   return 1.1;
                 }),
-                (XN[l.MAGNETO] = function (e) {
+                (FN[l.MAGNETO] = function (e) {
                   return 1.1;
                 }),
-                XN),
+                FN),
               isHidden: !1,
               unlockCondition: function (e) {
                 return (
@@ -35696,17 +36021,17 @@
               },
               bonusesDesc: [],
               getGainMultiplier:
-                ((xN = {}),
-                (xN[l.SEMICONDUCTOR] = function (e) {
+                ((jN = {}),
+                (jN[l.SEMICONDUCTOR] = function (e) {
                   return 1.1;
                 }),
-                (xN[l.COMPUTER] = function (e) {
+                (jN[l.COMPUTER] = function (e) {
                   return 1.1;
                 }),
-                (xN[l.MAGNETO] = function (e) {
+                (jN[l.MAGNETO] = function (e) {
                   return 1.1;
                 }),
-                xN),
+                jN),
               isHidden: !1,
               unlockCondition: function (e) {
                 return (
@@ -35884,11 +36209,11 @@
               },
               bonusesDesc: [],
               getCapacityMultiplier:
-                ((kN = {}),
-                (kN[l.POWER] = function (e) {
+                ((VN = {}),
+                (VN[l.POWER] = function (e) {
                   return 1.1;
                 }),
-                kN),
+                VN),
               isHidden: !0,
               unlockCondition: function (e) {
                 return !0;
@@ -35905,11 +36230,11 @@
               },
               bonusesDesc: [],
               getCapacityMultiplier:
-                ((HN = {}),
-                (HN[l.POWER] = function (e) {
+                ((KN = {}),
+                (KN[l.POWER] = function (e) {
                   return 1.1;
                 }),
-                HN),
+                KN),
               isHidden: !0,
               unlockCondition: function (e) {
                 return !0;
@@ -36012,11 +36337,11 @@
               bonusesDesc: [],
               isHidden: !1,
               getGainMultiplier:
-                ((YN = {}),
-                (YN[l.WATER] = function (e) {
+                ((zN = {}),
+                (zN[l.WATER] = function (e) {
                   return 1.25;
                 }),
-                YN),
+                zN),
               unlockCondition: function (e) {
                 return e.statistics.stats.xpTotal > 0;
               },
@@ -36212,11 +36537,11 @@
               bonusesDesc: [],
               isHidden: !1,
               getGainMultiplier:
-                ((WN = {}),
-                (WN[l.POWER] = function (e) {
+                ((qN = {}),
+                (qN[l.POWER] = function (e) {
                   return 1.1;
                 }),
-                WN),
+                qN),
               unlockCondition: function (e) {
                 return e.statistics.stats.xpTotal > 0;
               },
@@ -36487,14 +36812,14 @@
                 "They said no one could build a settlement here. We proved them wrong.",
               requirementsDesc: [
                 "Have at least 500 population on planet with building price multiplier greater than 50",
-                "Reach Spaceship Station on planet with building price multiplier greater than 50",
+                "Reach Spaceship Station lvl 50 on planet with building price multiplier greater than 50",
               ],
               getCompleteCondition: function (e) {
                 var t;
                 if (
                   e.landingZone.landingZoneBuildings.getBuildingLevel(
                     a.SPACESHIP_STATION
-                  ) <= 0
+                  ) < 50
                 )
                   return !1;
                 if (e.colony.colonists < 500) return !1;
@@ -36526,7 +36851,7 @@
               resetFailureOnXPPrestige: !0,
             },
           ],
-          Ch = (function () {
+          Uh = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -36560,9 +36885,9 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          vh = function () {
+          bh = function () {
             return (
-              (vh =
+              (bh =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -36571,16 +36896,16 @@
                         (e[o] = t[o]);
                   return e;
                 }),
-              vh.apply(this, arguments)
+              bh.apply(this, arguments)
             );
           },
-          Sh = (function (e) {
+          Gh = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (t.achievementsState = []), t;
             }
             return (
-              Ch(t, e),
+              Uh(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -36593,32 +36918,34 @@
               (t.prototype.dataToUI = function () {
                 var e = this;
                 return {
-                  totalAmount: Lh.length,
+                  totalAmount: _h.length,
                   amountCompleted: this.achievementsState.filter(function (e) {
-                    return e.statusId === IN.COMLETE;
+                    return e.statusId === vN.COMLETE;
                   }).length,
-                  amountHidden: Lh.filter(function (e) {
+                  amountHidden: _h.filter(function (e) {
                     return e.isHidden;
                   }).length,
                   hiddenComplete: this.achievementsState
                     .filter(function (e) {
-                      return e.statusId === IN.COMLETE;
+                      return e.statusId === vN.COMLETE;
                     })
                     .filter(function (e) {
-                      return !!Lh.find(function (t) {
+                      return !!_h.find(function (t) {
                         return t.id === e.id && t.isHidden;
                       });
                     }).length,
-                  list: Lh.filter(function (t) {
-                    return e.isUnlocked(t);
-                  }).map(function (t) {
-                    return e.currentAchievementToUI(t);
-                  }),
+                  list: _h
+                    .filter(function (t) {
+                      return e.isUnlocked(t);
+                    })
+                    .map(function (t) {
+                      return e.currentAchievementToUI(t);
+                    }),
                 };
               }),
               (t.prototype.isUnlocked = function (e) {
                 return (
-                  e.unlockCondition(_h) ||
+                  e.unlockCondition(xh) ||
                   this.achievementsState.find(function (t) {
                     return t.id === e.id;
                   })
@@ -36632,11 +36959,11 @@
                   t < 0 &&
                     (this.achievementsState.push({
                       id: e.id,
-                      statusId: IN.PENDING,
+                      statusId: vN.PENDING,
                     }),
                     (t = this.achievementsState.length - 1)),
-                  this.achievementsState[t].statusId === IN.COMLETE &&
-                    _h.newNotifications.registerNotification(
+                  this.achievementsState[t].statusId === vN.COMLETE &&
+                    xh.newNotifications.registerNotification(
                       "progress:achievements:".concat(e.id)
                     ),
                   {
@@ -36648,82 +36975,82 @@
                     isHidden: e.isHidden,
                     isVisible:
                       !e.isHidden ||
-                      this.achievementsState[t].statusId === IN.COMLETE,
+                      this.achievementsState[t].statusId === vN.COMLETE,
                     status: this.achievementsState[t].statusId,
                     gain: e.getGain
-                      ? W.getValue(e.getGain, Mh.getInstance())
+                      ? W.getValue(e.getGain, Xh.getInstance())
                           .filter(function (e) {
                             return e.amount;
                           })
                           .map(function (e) {
-                            return vh(vh({}, e), {
+                            return bh(bh({}, e), {
                               amountValue: e.amount,
                               amount: F(e.amount),
                             });
                           })
                       : [],
                     max: e.getCapacityEffect
-                      ? W.getValue(e.getCapacityEffect, Mh.getInstance())
+                      ? W.getValue(e.getCapacityEffect, Xh.getInstance())
                           .filter(function (e) {
                             return e.amount;
                           })
                           .map(function (e) {
-                            return vh(vh({}, e), {
+                            return bh(bh({}, e), {
                               amountValue: e.amount,
                               amount: F(e.amount),
                             });
                           })
                       : [],
                     gainEffect: e.getEffect
-                      ? W.getValue(e.getEffect, Mh.getInstance())
+                      ? W.getValue(e.getEffect, Xh.getInstance())
                           .filter(function (e) {
                             return e.amount;
                           })
                           .map(function (e) {
-                            return vh(vh({}, e), {
+                            return bh(bh({}, e), {
                               amountValue: e.amount,
                               amount: F(e.amount),
                             });
                           })
                       : [],
                     gainMult: e.getGainMultiplier
-                      ? W.getValue(e.getGainMultiplier, Mh.getInstance())
+                      ? W.getValue(e.getGainMultiplier, Xh.getInstance())
                           .filter(function (e) {
                             return e.amount;
                           })
                           .map(function (e) {
-                            return vh(vh({}, e), {
+                            return bh(bh({}, e), {
                               amountValue: e.amount,
                               amount: "x".concat(F(e.amount)),
                             });
                           })
                       : [],
                     maxMult: e.getCapacityMultiplier
-                      ? W.getValue(e.getCapacityMultiplier, Mh.getInstance())
+                      ? W.getValue(e.getCapacityMultiplier, Xh.getInstance())
                           .filter(function (e) {
                             return e.amount;
                           })
                           .map(function (e) {
-                            return vh(vh({}, e), {
+                            return bh(bh({}, e), {
                               amountValue: e.amount,
                               amount: "x".concat(F(e.amount)),
                             });
                           })
                       : [],
                     effectMult: e.getEffectMultiplier
-                      ? W.getValue(e.getEffectMultiplier, Mh.getInstance())
+                      ? W.getValue(e.getEffectMultiplier, Xh.getInstance())
                           .filter(function (e) {
                             return e.amount;
                           })
                           .map(function (e) {
-                            return vh(vh({}, e), {
+                            return bh(bh({}, e), {
                               amountValue: e.amount,
                               amount: "x".concat(F(e.amount)),
                             });
                           })
                       : [],
                     craftingMult: e.getCraftingMultiplier
-                      ? e.getCraftingMultiplier(_h)
+                      ? e.getCraftingMultiplier(xh)
                       : 1,
                   }
                 );
@@ -36731,21 +37058,21 @@
               (t.prototype.checkAchievementsStatus = function () {
                 var e = this;
                 this.achievementsState.forEach(function (t, n) {
-                  if (t.statusId === IN.PENDING) {
-                    var i = Lh.find(function (e) {
+                  if (t.statusId === vN.PENDING) {
+                    var i = _h.find(function (e) {
                       return e.id === t.id;
                     });
                     if (i)
-                      return i.getCompleteCondition(_h)
-                        ? ((e.achievementsState[n].statusId = IN.COMLETE),
+                      return i.getCompleteCondition(xh)
+                        ? ((e.achievementsState[n].statusId = vN.COMLETE),
                           (e.achievementsState[n].completeAt =
-                            _h.statistics.stats.timeInGame),
-                          _h.resources.reassertBalances(),
-                          void _h.regenerateCache())
+                            xh.statistics.stats.timeInGame),
+                          xh.resources.reassertBalances(),
+                          void xh.regenerateCache())
                         : void (
                             i.getFailureCondition &&
-                            i.getFailureCondition(_h) &&
-                            (e.achievementsState[n].statusId = IN.FAILED)
+                            i.getFailureCondition(xh) &&
+                            (e.achievementsState[n].statusId = vN.FAILED)
                           );
                   }
                 });
@@ -36758,16 +37085,16 @@
                       return t.id === e;
                     })) || void 0 === t
                     ? void 0
-                    : t.statusId) === IN.COMLETE || !1
+                    : t.statusId) === vN.COMLETE || !1
                 );
               }),
               (t.prototype.process = function (e) {
-                _h.statistics.stats.timeInGame % 1 < e &&
+                xh.statistics.stats.timeInGame % 1 < e &&
                   (console.log("checkAchievementState", this.achievementsState),
                   this.checkAchievementsStatus());
               }),
               (t.prototype.getEffectGain = function (e) {
-                var t = Lh.filter(function (t) {
+                var t = _h.filter(function (t) {
                     var n;
                     return (
                       t.getEffect &&
@@ -36779,12 +37106,12 @@
                   n = [];
                 return (
                   this.achievementsState.forEach(function (i) {
-                    if (i.statusId === IN.COMLETE) {
+                    if (i.statusId === vN.COMLETE) {
                       var o = t.find(function (e) {
                         return e.id === i.id;
                       });
                       if (o && o.getEffect) {
-                        var r = o.getEffect[e](Mh.getInstance());
+                        var r = o.getEffect[e](Xh.getInstance());
                         n.push({
                           label: "Achievement ".concat(o.name),
                           value: r,
@@ -36798,7 +37125,7 @@
                 );
               }),
               (t.prototype.getEffectMultiplier = function (e) {
-                var t = Lh.filter(function (t) {
+                var t = _h.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getEffectMultiplier) ||
                     void 0 === n
@@ -36808,12 +37135,12 @@
                   n = [];
                 return (
                   this.achievementsState.forEach(function (i) {
-                    if (i.statusId === IN.COMLETE) {
+                    if (i.statusId === vN.COMLETE) {
                       var o = t.find(function (e) {
                         return e.id === i.id;
                       });
                       if (o && o.getEffectMultiplier) {
-                        var r = o.getEffectMultiplier[e](Mh.getInstance());
+                        var r = o.getEffectMultiplier[e](Xh.getInstance());
                         n.push({
                           label: "Achievement "
                             .concat(o.name, ": ")
@@ -36829,7 +37156,7 @@
                 );
               }),
               (t.prototype.getResourceBeingProduced = function (e) {
-                var t = Lh.filter(function (t) {
+                var t = _h.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getGain) || void 0 === n
                       ? void 0
@@ -36839,7 +37166,7 @@
                 return (
                   this.achievementsState.forEach(function (i) {
                     var o;
-                    if (i.statusId === IN.COMLETE) {
+                    if (i.statusId === vN.COMLETE) {
                       var r = t.find(function (e) {
                         return e.id === i.id;
                       });
@@ -36849,7 +37176,7 @@
                           ? void 0
                           : o[e])
                       ) {
-                        var a = r.getGain[e](Mh.getInstance());
+                        var a = r.getGain[e](Xh.getInstance());
                         n.push({
                           label: "Achievement "
                             .concat(r.name, ": ")
@@ -36865,18 +37192,18 @@
                 );
               }),
               (t.prototype.getCraftingMultiplier = function () {
-                var e = Lh.filter(function (e) {
+                var e = _h.filter(function (e) {
                     return !!e.getCraftingMultiplier;
                   }),
                   t = [];
                 return (
                   this.achievementsState.forEach(function (n) {
-                    if (n.statusId === IN.COMLETE) {
+                    if (n.statusId === vN.COMLETE) {
                       var i = e.find(function (e) {
                         return e.id === n.id;
                       });
                       if (i && i.getCraftingMultiplier) {
-                        var o = i.getCraftingMultiplier(Mh.getInstance());
+                        var o = i.getCraftingMultiplier(Xh.getInstance());
                         t.push({
                           label: "Achievement "
                             .concat(i.name, ": ")
@@ -36892,7 +37219,7 @@
                 );
               }),
               (t.prototype.getResourceMultiplier = function (e) {
-                var t = Lh.filter(function (t) {
+                var t = _h.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getGainMultiplier) || void 0 === n
                       ? void 0
@@ -36902,7 +37229,7 @@
                 return (
                   this.achievementsState.forEach(function (i) {
                     var o;
-                    if (i.statusId === IN.COMLETE) {
+                    if (i.statusId === vN.COMLETE) {
                       var r = t.find(function (e) {
                         return e.id === i.id;
                       });
@@ -36912,7 +37239,7 @@
                           ? void 0
                           : o[e])
                       ) {
-                        var a = r.getGainMultiplier[e](Mh.getInstance());
+                        var a = r.getGainMultiplier[e](Xh.getInstance());
                         n.push({
                           label: "Achievement "
                             .concat(r.name, ": ")
@@ -36928,7 +37255,7 @@
                 );
               }),
               (t.prototype.getResourceBeingStored = function (e) {
-                var t = Lh.filter(function (t) {
+                var t = _h.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getCapacityEffect) || void 0 === n
                       ? void 0
@@ -36938,7 +37265,7 @@
                 return (
                   this.achievementsState.forEach(function (i) {
                     var o;
-                    if (i.statusId === IN.COMLETE) {
+                    if (i.statusId === vN.COMLETE) {
                       var r = t.find(function (e) {
                         return e.id === i.id;
                       });
@@ -36948,7 +37275,7 @@
                           ? void 0
                           : o[e])
                       ) {
-                        var a = r.getCapacityEffect[e](Mh.getInstance());
+                        var a = r.getCapacityEffect[e](Xh.getInstance());
                         n.push({
                           label: "Achievement "
                             .concat(r.name, ": ")
@@ -36964,7 +37291,7 @@
                 );
               }),
               (t.prototype.getResourceStorageMultiplier = function (e) {
-                var t = Lh.filter(function (t) {
+                var t = _h.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getCapacityMultiplier) ||
                     void 0 === n
@@ -36975,7 +37302,7 @@
                 return (
                   this.achievementsState.forEach(function (i) {
                     var o;
-                    if (i.statusId === IN.COMLETE) {
+                    if (i.statusId === vN.COMLETE) {
                       var r = t.find(function (e) {
                         return e.id === i.id;
                       });
@@ -36985,7 +37312,7 @@
                           ? void 0
                           : o[e])
                       ) {
-                        var a = r.getCapacityMultiplier[e](Mh.getInstance());
+                        var a = r.getCapacityMultiplier[e](Xh.getInstance());
                         n.push({
                           label: "Achievement "
                             .concat(r.name, ": ")
@@ -37001,13 +37328,13 @@
                 );
               }),
               (t.prototype.resetFailedOnKP = function () {
-                var e = Lh.filter(function (e) {
+                var e = _h.filter(function (e) {
                   return e.resetFailureOnKPPrestige;
                 });
                 this.reset(e);
               }),
               (t.prototype.resetFailedOnXP = function () {
-                var e = Lh.filter(function (e) {
+                var e = _h.filter(function (e) {
                   return e.resetFailureOnXPPrestige;
                 });
                 this.reset(e);
@@ -37016,20 +37343,20 @@
                 this.achievementsState = this.achievementsState.map(function (
                   t
                 ) {
-                  return t.statusId !== IN.FAILED
+                  return t.statusId !== vN.FAILED
                     ? t
                     : e.find(function (e) {
                         return e.id === t.id;
                       })
-                    ? vh(vh({}, t), { statusId: IN.PENDING })
+                    ? bh(bh({}, t), { statusId: vN.PENDING })
                     : t;
                 });
               }),
               t
             );
           })(P),
-          Ph = Sh.getInstance(),
-          Bh = (function () {
+          wh = Gh.getInstance(),
+          Dh = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -37063,7 +37390,7 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          Mh = (function (e) {
+          Xh = (function (e) {
             function t() {
               var t = this,
                 n = Date.now();
@@ -37084,27 +37411,27 @@
                 t.workDispatcher.on("initialize", function (e) {
                   console.log("Received payload", e);
                 }),
-                (t.resources = Cd),
-                (t.milestones = Gd),
-                (t.landingZone = _d),
-                (t.colony = $d),
-                (t.science = rE),
-                (t.crafting = dE),
-                (t.goals = Mg),
-                (t.achievements = Ph),
-                (t.laws = wg),
-                (t.space = um),
-                (t.expedition = Lm),
-                (t.newNotifications = Sm),
-                (t.prestige = Tm),
-                (t.statistics = _m),
-                (t.environment = QN),
-                (t.queuedItems = th),
-                (t.eventLog = ah),
-                (t.resourceEffect = ch),
-                (t.expeditionV2 = ph),
-                (t.searchData = gh),
-                (t.presets = Oh),
+                (t.resources = vd),
+                (t.milestones = wd),
+                (t.landingZone = Ud),
+                (t.colony = eE),
+                (t.science = aE),
+                (t.crafting = EE),
+                (t.goals = Dg),
+                (t.achievements = wh),
+                (t.laws = Yg),
+                (t.space = Am),
+                (t.expedition = _m),
+                (t.newNotifications = Gm),
+                (t.prestige = Pm),
+                (t.statistics = xm),
+                (t.environment = oh),
+                (t.queuedItems = sh),
+                (t.eventLog = Eh),
+                (t.resourceEffect = gh),
+                (t.expeditionV2 = Nh),
+                (t.searchData = Rh),
+                (t.presets = Mh),
                 setInterval(function () {
                   t.isLoading
                     ? console.warn("Game is loading... Skip")
@@ -37174,7 +37501,7 @@
               );
             }
             return (
-              Bh(t, e),
+              Dh(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -37316,11 +37643,11 @@
               t
             );
           })(P),
-          _h = Mh.getInstance();
+          xh = Xh.getInstance();
         self.addEventListener("message", function (e) {
           var t = e.data;
           console.log("send to worker: ", t),
-            _h.workDispatcher.handleInput(t.type, t.payload);
+            xh.workDispatcher.handleInput(t.type, t.payload);
         });
       },
     },
