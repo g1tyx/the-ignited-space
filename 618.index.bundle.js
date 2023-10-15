@@ -10450,7 +10450,7 @@
                   if (Math.abs(fT.environment.climate.getDays() % 5) > 0.2 * e)
                     return !1;
                   var t =
-                      1e3 *
+                      100 *
                       Math.pow(
                         4,
                         gT
@@ -32570,7 +32570,7 @@
               id: m.AUTOUPGRADER,
               name: "Auto-upgrade",
               description:
-                "You can enable bot that automatically doing upgrades for you. Level 1 upgrades up to 100 research cost, but each level multiplies this limit by 4 (Need to be turned on in settings)",
+                "You can enable bot that automatically doing upgrades for you. Level 1 upgrades up to 400 research cost, but each level multiplies this limit by 4 (Need to be turned on in settings)",
               unlockCondition: function (e) {
                 return !0;
               },
@@ -42355,8 +42355,8 @@
             },
             {
               id: "fighter4",
-              name: "Gladiator",
-              description: "Unleash the power!",
+              name: "Hero",
+              description: "We are unstoppable!",
               requirementsDesc: ["Win level 50 in space fights"],
               getCompleteCondition: function (e) {
                 return !(e.space.battlefield.state.maxLevel < 50);

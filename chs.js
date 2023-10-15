@@ -1589,7 +1589,7 @@ var cnItems = {
     "Technology Market": "科技市场",
     "You may miss something important about your civilization development. But maybe there was someone who faced same problems and ready to share his knowledge with you? Unlock xp upgrades providing access to new buildings and upgrades.": "您可能遗失了一些对于发展至关重要的科技，但或许有其他人遇到了类似的发展瓶颈，能不能借鉴一下他们的解决办法呢？解锁一类全新的经验升级，它们将解锁新的建筑和升级，",
     "Auto-upgrade": "自动升级",
-    "You can enable bot that automatically doing upgrades for you. Level 1 upgrades up to 100 research cost, but each level multiplies this limit by 4 (Need to be turned on in settings)": "您可以使用机器人来自动帮您完成升级。1 级可以自动升级 100 研究上限以内的研究，每级使该上限变为上一级的 4 倍（需要在设置中启用）",
+    "You can enable bot that automatically doing upgrades for you. Level 1 upgrades up to 100 research cost, but each level multiplies this limit by 4 (Need to be turned on in settings)": "您可以使用机器人来自动帮您完成升级。1 级可以自动升级 400 研究上限以内的研究，每级使该上限变为上一级的 4 倍（需要在设置中启用）",
     "Planet Memory": "星球记忆",
     "Why dont spend some space on our datacenters hard drive to remember our favorite planet? Unlock option to remember one planet upon search.": "何不在数据中心的硬盘上划出一块区域来存储您最喜欢的行星呢？解锁固定已找到行星的选项",
     "Relics": "遗物",
@@ -2206,8 +2206,8 @@ var cnItems = {
     "Unleash the power!": "释放力量！",
     "Win level 40 in space fights": "在飞船战斗中通过 40 关",
     "Increase spaceships durability of ships by 25%": "飞船耐久度提升 25%",
-    "Gladiator": "角斗士",
-    "Unleash the power!": "释放力量！",
+    "Hero": "英雄",
+    "We are unstoppable!": "我们不可阻挡！",
     "Win level 50 in space fights": "在飞船战斗中通过 50 关",
     "Increase spaceships durability of ships by 25%": "飞船耐久度提升 25%",
     "Village": "村庄",
@@ -2220,7 +2220,7 @@ var cnItems = {
     "We are thousands!": "像我这么猛的，还有 999 个。",
     "Have 1000 colonists": "人口达到 1000",
     "City": "城市",
-    "Nothing will stop us when our path is illuminated by the dream of becoming great": "我们必将伟大，我们不可阻挡！",
+    "Nothing will stop us when our path is illuminated by the dream of becoming great": "我们终将伟大，我们必将伟大！",
     "Have 2500 colonists": "人口达到 2500",
     
     //资源提示
