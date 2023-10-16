@@ -357,7 +357,7 @@ var cnItems = {
     "Graphene Synthesis": "石墨烯合成",
     "Learn how to obtain graphene from biomass": "了解如何将生物质合成为石墨烯",
     "Graphene Sensors": "石墨烯传感器",
-    "Put extra-sensitive sensors to your telescopes to boost their efficiency by 50%": "向您的太空望远镜中加入高度敏感的传感器。使太空望远镜的研究上限提升 50%",
+    "Put extra-sensitive sensors to your telescopes to boost their efficiency by 50%": "向您的太空望远镜中加入极度灵敏的传感器。使太空望远镜的研究上限提升 50%",
     "Graphene Membranes": "石墨烯薄膜",
     "Use graphene membranes inside your batteries to boost power capacity by 10%": "在电池内部使用石墨烯制成的薄膜。电力上限提升 10%",
     "Graphene Drills": "石墨烯钻头",
