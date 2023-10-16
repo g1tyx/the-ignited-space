@@ -2166,7 +2166,7 @@ var cnItems = {
     "We will never stop construction of our future — even if every brick seems an overwhelming burden.": "我们不会停止建造，即使砖块重若千钧。",
     "Have at least 500 population on planet with building price multiplier greater than 20": "在建筑价格至少为 20 倍的星球上达到 500 人口",
     "Reach Spaceship Station lvl 40 on planet with building price multiplier greater than 20": "在建筑价格至少为 20 倍的星球上建造 40 座宇宙飞船站",
-    "Reduce all building prices by 25%": "所有建筑价格降低 25%",
+    "Reduce all building prices by 20%": "所有建筑价格降低 20%",
     "Builder IV": "建筑师 IV",
     "They said no one could build a settlement here. We proved them wrong.": "有人说，没人能在这里建造殖民地。他们错了。",
     "Have at least 500 population on planet with building price multiplier greater than 50": "在建筑价格至少为 50 倍的星球上达到 500 人口",
