@@ -42118,7 +42118,7 @@
               description: "Dark side of the universe",
               requirementsDesc: ["Have 2000 dark matter income"],
               getCompleteCondition: function (e) {
-                return !(e.resources.getBalance(l.DARK_MATTER) < 200);
+                return !(e.resources.getBalance(l.DARK_MATTER) < 2e3);
               },
               bonusesDesc: [],
               getGainMultiplier:
@@ -42427,7 +42427,7 @@
               description: "We are thousands!",
               requirementsDesc: ["Have 1000 colonists"],
               getCompleteCondition: function (e) {
-                return !(e.colony.colonists < 1e3);
+                return !(e.colony.colonists < 1000);
               },
               bonusesDesc: [],
               getEffectMultiplier:
