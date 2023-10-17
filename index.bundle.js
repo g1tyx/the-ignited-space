@@ -24952,6 +24952,48 @@
                                                 children: [
                                                   (0, e.jsx)("h3", {
                                                     children:
+                                                      "v0.3.0b Tiny Update",
+                                                  }),
+                                                  (0, e.jsx)(
+                                                    "span",
+                                                    gl(
+                                                      { className: "date" },
+                                                      { children: "17/10/2023" }
+                                                    )
+                                                  ),
+                                                ],
+                                              }
+                                            )
+                                          ),
+                                          (0, e.jsx)(
+                                            "ul",
+                                            gl(
+                                              { className: "features" },
+                                              {
+                                                children: (0, e.jsx)("li", {
+                                                  children: "Fixed some bugs",
+                                                }),
+                                              }
+                                            )
+                                          ),
+                                        ],
+                                      }
+                                    )
+                                  ),
+                                  (0, e.jsxs)(
+                                    "div",
+                                    gl(
+                                      { className: "version-block" },
+                                      {
+                                        children: [
+                                          (0, e.jsxs)(
+                                            "div",
+                                            gl(
+                                              { className: "version-title" },
+                                              {
+                                                children: [
+                                                  (0, e.jsx)("h3", {
+                                                    children:
                                                       "v0.3.0a Tiny Update",
                                                   }),
                                                   (0, e.jsx)(

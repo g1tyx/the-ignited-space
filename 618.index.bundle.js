@@ -1609,6 +1609,7 @@
               hasCapacityLimit: !1,
               isHidden: !0,
               valuability: 1096428,
+              isPrestigeCurrency: !0,
             },
             {
               id: l.COLONIZE_XP,
@@ -1619,6 +1620,7 @@
               hasCapacityLimit: !1,
               isHidden: !0,
               valuability: 1096428,
+              isPrestigeCurrency: !0,
             },
           ];
         !(function (e) {
@@ -1702,7 +1704,7 @@
           X = function (e) {
             var t = 1;
             return (
-              ST.achievements.getAchievementComplete("speedRun1") &&
+              vT.achievements.getAchievementComplete("speedRun1") &&
                 (t *= 0.95),
               t
             );
@@ -1900,7 +1902,7 @@
               k.find(function (t) {
                 return t.id === e;
               });
-            return n ? (n.unlockCondition(ST) || t ? n.name : "???") : e;
+            return n ? (n.unlockCondition(vT) || t ? n.name : "???") : e;
           },
           x = function (e) {
             return Object.entries(e).map(function (e) {
@@ -2998,11 +3000,11 @@
                   this.actions.push(t));
                 var n = Z.calcBatchAll(
                     e.getCost,
-                    vT.getInstance(),
+                    CT.getInstance(),
                     0,
-                    vT.getInstance().resources.getBatchObject()
+                    CT.getInstance().resources.getBatchObject()
                   ),
-                  i = Z.calcBatch(e.getGain, vT.getInstance(), 0),
+                  i = Z.calcBatch(e.getGain, CT.getInstance(), 0),
                   r = n.reduce(function (e, t) {
                     return Math.min(e, Math.floor(t.max));
                   }, 1e300),
@@ -3012,10 +3014,10 @@
                   a = n.reduce(function (e, t) {
                     return Math.max(e, t.eta);
                   }, 0),
-                  c = e.unlockCondition(ST);
+                  c = e.unlockCondition(vT);
                 return (
                   c &&
-                    ST.newNotifications.registerNotification(
+                    vT.newNotifications.registerNotification(
                       "planet:landing-zone:actions:".concat(e.id)
                     ),
                   {
@@ -3023,14 +3025,12 @@
                     name: e.name,
                     description: e.description,
                     isUnlocked: c,
-                    isAvailable: e.availableCondition(ST) && r >= 1,
-                    cost: vT
-                      .getInstance()
-                      .resources.assertEnought(
-                        n,
-                        vT.getInstance().resources.getBatchObject(),
-                        vT.getInstance().resources.getBatchBalanceObject()
-                      ),
+                    isAvailable: e.availableCondition(vT) && r >= 1,
+                    cost: CT.getInstance().resources.assertEnought(
+                      n,
+                      CT.getInstance().resources.getBatchObject(),
+                      CT.getInstance().resources.getBatchBalanceObject()
+                    ),
                     gain: i.map(function (e) {
                       return bE(bE({}, e), {
                         amountValue: e.amount,
@@ -3065,9 +3065,9 @@
                   else if (this.actions[n].cooldown > 0) return;
                   var i = Z.calcBatchAll(
                     t.getCost,
-                    vT.getInstance(),
+                    CT.getInstance(),
                     0,
-                    vT.getInstance().resources.getBatchObject()
+                    CT.getInstance().resources.getBatchObject()
                   );
                   i.reduce(function (e, t) {
                     return Math.min(e, Math.floor(t.max));
@@ -3075,9 +3075,9 @@
                     ((this.actions[n].cooldown = 1.5),
                     this.actions[n].performed++,
                     console.log("costs: ", i),
-                    vT.getInstance().resources.subtractResourceBatch(i),
-                    ST.resources.reassertBalances(),
-                    ST.regenerateCache());
+                    CT.getInstance().resources.subtractResourceBatch(i),
+                    vT.resources.reassertBalances(),
+                    vT.regenerateCache());
                 }
               }),
               (t.prototype.getActionPerformed = function (e) {
@@ -3102,19 +3102,19 @@
                       return t.id === e.id;
                     });
                     if (!i) return;
-                    var r = Z.calcBatch(i.getGain, vT.getInstance(), 0),
+                    var r = Z.calcBatch(i.getGain, CT.getInstance(), 0),
                       o = Z.calcBatchAll(
                         i.getCost,
-                        vT.getInstance(),
+                        CT.getInstance(),
                         0,
-                        vT.getInstance().resources.getBatchObject()
+                        CT.getInstance().resources.getBatchObject()
                       );
-                    vT.getInstance().eventLog.registerAction(i.name, o, r),
+                    CT.getInstance().eventLog.registerAction(i.name, o, r),
                       r.forEach(function (e) {
-                        ST.resources.addResource(e.id, e.amount);
+                        vT.resources.addResource(e.id, e.amount);
                       }),
-                      ST.resources.reassertBalances(),
-                      ST.regenerateCache();
+                      vT.resources.reassertBalances(),
+                      vT.regenerateCache();
                   }
                 });
               }),
@@ -10127,9 +10127,9 @@
                     i || ((i = { id: n.id, level: 0 }), e.upgrades.push(i));
                     var r = Z.calcBatchAll(
                         n.getCost,
-                        vT.getInstance(),
+                        CT.getInstance(),
                         i.level,
-                        vT.getInstance().resources.getBatchObject()
+                        CT.getInstance().resources.getBatchObject()
                       ),
                       o =
                         (r.reduce(function (e, t) {
@@ -10144,19 +10144,17 @@
                     return (
                       t.isUnlocked &&
                         i.level <= 0 &&
-                        ST.newNotifications.registerNotification(
+                        vT.newNotifications.registerNotification(
                           "planet:landing-zone:upgrades:".concat(n.id)
                         ),
                       HE(HE({}, t), {
                         etaNum: o,
                         isAvailable: a >= 1,
-                        cost: vT
-                          .getInstance()
-                          .resources.assertEnought(
-                            r,
-                            vT.getInstance().resources.getBatchObject(),
-                            vT.getInstance().resources.getBatchBalanceObject()
-                          ),
+                        cost: CT.getInstance().resources.assertEnought(
+                          r,
+                          CT.getInstance().resources.getBatchObject(),
+                          CT.getInstance().resources.getBatchBalanceObject()
+                        ),
                         progress: a < 1 ? (100 * a).toPrecision(3) : "100",
                       })
                     );
@@ -10166,10 +10164,9 @@
                 return {
                   list: this.dataFromCache(),
                   isAutoupdateAllowed:
-                    vT
-                      .getInstance()
-                      .prestige.colonizePlanet.getUpgradeLevel(N.AUTOUPGRADER) >
-                    0,
+                    CT.getInstance().prestige.colonizePlanet.getUpgradeLevel(
+                      N.AUTOUPGRADER
+                    ) > 0,
                 };
               }),
               (t.prototype.getUpgradeLevel = function (e) {
@@ -10192,9 +10189,9 @@
                 r || ((r = { id: e.id, level: 0 }), this.upgrades.push(r));
                 var o = Z.calcBatchAll(
                     e.getCost,
-                    vT.getInstance(),
+                    CT.getInstance(),
                     r.level + t,
-                    vT.getInstance().resources.getBatchObject()
+                    CT.getInstance().resources.getBatchObject()
                   ),
                   a = o.reduce(function (e, t) {
                     return e && !t.isBlocked;
@@ -10203,42 +10200,42 @@
                     return Math.max(e, t.eta);
                   }, 0),
                   s = e.getCapacityEffect
-                    ? Z.calcBatch(e.getCapacityEffect, vT.getInstance(), 0)
+                    ? Z.calcBatch(e.getCapacityEffect, CT.getInstance(), 0)
                     : [],
                   p = e.getCapacityMultiplier
                     ? Z.calcBatch(
                         e.getCapacityMultiplier,
-                        vT.getInstance(),
+                        CT.getInstance(),
                         r.level + 1
                       )
                     : [],
                   d = e.getCapacityMultiplier
-                    ? Z.calcBatch(e.getCapacityMultiplier, vT.getInstance(), 1)
+                    ? Z.calcBatch(e.getCapacityMultiplier, CT.getInstance(), 1)
                     : [],
                   E = e.getGain
-                    ? Z.calcBatch(e.getGain, vT.getInstance(), 0)
+                    ? Z.calcBatch(e.getGain, CT.getInstance(), 0)
                     : [],
                   g = e.getGainMultiplier
                     ? Z.calcBatch(
                         e.getGainMultiplier,
-                        vT.getInstance(),
+                        CT.getInstance(),
                         r.level + 1
                       )
                     : [],
                   f = e.getGainMultiplier
-                    ? Z.calcBatch(e.getGainMultiplier, vT.getInstance(), 1)
+                    ? Z.calcBatch(e.getGainMultiplier, CT.getInstance(), 1)
                     : [],
                   A = e.getCraftingMultiplier
-                    ? Z.calculate(ST, e.getCraftingMultiplier, 1)
+                    ? Z.calculate(vT, e.getCraftingMultiplier, 1)
                     : 1,
                   m = o.reduce(function (e, t) {
                     return Math.min(e, t.max);
                   }, 1e300),
-                  N = e.unlockCondition(ST);
+                  N = e.unlockCondition(vT);
                 return (
                   N &&
                     r.level <= 0 &&
-                    ST.newNotifications.registerNotification(
+                    vT.newNotifications.registerNotification(
                       "planet:landing-zone:upgrades:".concat(e.id)
                     ),
                   {
@@ -10247,13 +10244,11 @@
                     description: e.description,
                     isUnlocked: N,
                     isAvailable: m >= 1,
-                    cost: vT
-                      .getInstance()
-                      .resources.assertEnought(
-                        o,
-                        vT.getInstance().resources.getBatchObject(),
-                        vT.getInstance().resources.getBatchBalanceObject()
-                      ),
+                    cost: CT.getInstance().resources.assertEnought(
+                      o,
+                      CT.getInstance().resources.getBatchObject(),
+                      CT.getInstance().resources.getBatchBalanceObject()
+                    ),
                     researchCost:
                       (null ===
                         (n = o.find(function (e) {
@@ -10327,9 +10322,9 @@
                     return;
                   var i = Z.calcBatchAll(
                     t.getCost,
-                    vT.getInstance(),
+                    CT.getInstance(),
                     this.upgrades[n].level,
-                    vT.getInstance().resources.getBatchObject()
+                    CT.getInstance().resources.getBatchObject()
                   );
                   if (
                     !(
@@ -10341,23 +10336,19 @@
                     return (
                       this.upgrades[n].level++,
                       console.log("costs: ", i),
-                      vT.getInstance().resources.subtractResourceBatch(i),
-                      ST.resources.reassertBalances(),
-                      ST.regenerateCache(),
-                      vT
-                        .getInstance()
-                        .eventLog.registerUpgrade(
-                          t.name,
-                          i,
-                          this.upgrades[n].level
-                        ),
-                      vT
-                        .getInstance()
-                        .queuedItems.checkUnregisterUpgrade(
-                          e,
-                          this.upgrades[n].level,
-                          t.maxLevel
-                        ),
+                      CT.getInstance().resources.subtractResourceBatch(i),
+                      vT.resources.reassertBalances(),
+                      vT.regenerateCache(),
+                      CT.getInstance().eventLog.registerUpgrade(
+                        t.name,
+                        i,
+                        this.upgrades[n].level
+                      ),
+                      CT.getInstance().queuedItems.checkUnregisterUpgrade(
+                        e,
+                        this.upgrades[n].level,
+                        t.maxLevel
+                      ),
                       !0
                     );
                 }
@@ -10376,7 +10367,7 @@
                       return e.id === i.id;
                     });
                     if (r && r.getGain) {
-                      var o = Z.calculate(ST, r.getGain[e], 0, i.level);
+                      var o = Z.calculate(vT, r.getGain[e], 0, i.level);
                       n.push({
                         label: "Upgrade: ".concat(r.name),
                         value: o,
@@ -10403,7 +10394,7 @@
                     });
                     if (r && r.getGainMultiplier) {
                       var o = Z.calculate(
-                        ST,
+                        vT,
                         r.getGainMultiplier[e],
                         i.level,
                         1
@@ -10432,7 +10423,7 @@
                     });
                     if (i && i.getCraftingMultiplier) {
                       var r = Z.calculate(
-                          ST,
+                          vT,
                           i.getCraftingMultiplier,
                           n.level,
                           1
@@ -10465,7 +10456,7 @@
                     });
                     if (r && r.getCapacityEffect) {
                       var o = Z.calculate(
-                        ST,
+                        vT,
                         r.getCapacityEffect[e],
                         0,
                         i.level
@@ -10497,7 +10488,7 @@
                     });
                     if (r && r.getCapacityMultiplier) {
                       var o = Z.calculate(
-                        ST,
+                        vT,
                         r.getCapacityMultiplier[e],
                         i.level,
                         1
@@ -10517,26 +10508,22 @@
               (t.prototype.process = function (e) {
                 if (
                   this.cachedUpgrades &&
-                  vT.getInstance().settings.turnOnAutoupgrade &&
+                  CT.getInstance().settings.turnOnAutoupgrade &&
                   !(
-                    vT
-                      .getInstance()
-                      .prestige.colonizePlanet.getUpgradeLevel(
-                        N.AUTOUPGRADER
-                      ) <= 0
+                    CT.getInstance().prestige.colonizePlanet.getUpgradeLevel(
+                      N.AUTOUPGRADER
+                    ) <= 0
                   )
                 ) {
-                  if (Math.abs(ST.environment.climate.getDays() % 1) > 0.2 * e)
+                  if (Math.abs(vT.environment.climate.getDays() % 1) > 0.2 * e)
                     return !1;
                   var t =
                       100 *
                       Math.pow(
                         4,
-                        vT
-                          .getInstance()
-                          .prestige.colonizePlanet.getUpgradeLevel(
-                            N.AUTOUPGRADER
-                          )
+                        CT.getInstance().prestige.colonizePlanet.getUpgradeLevel(
+                          N.AUTOUPGRADER
+                        )
                       ),
                     n = this.dataFromCache()
                       .filter(function (e) {
@@ -11228,13 +11215,13 @@
                       15 *
                       Math.pow(
                         1.1,
-                        ST.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                        vT.landingZone.landingZoneUpgrades.getUpgradeLevel(
                           o.CONTROLLABLE_THERMONUCLEAR_REACTIONS
                         )
                       ) *
                       Math.pow(
                         1.05,
-                        ST.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                        vT.landingZone.landingZoneUpgrades.getUpgradeLevel(
                           o.NEUTRINO_COOLERS
                         )
                       ) *
@@ -14962,7 +14949,7 @@
                       25 *
                       Math.pow(
                         0.8,
-                        ST.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                        vT.landingZone.landingZoneUpgrades.getUpgradeLevel(
                           o.EFFICIENT_COLLIDERS
                         )
                       ),
@@ -16866,8 +16853,7 @@
               v,
               S,
               P,
-              M,
-              B =
+              M =
                 (((t = {})[l.POWER] = {
                   income: { linear: [], multiplier: [], consumption: [] },
                   max: {
@@ -16933,10 +16919,10 @@
                         id: "population",
                         label: "Population",
                         value:
-                          (2 === ST.laws.getLawSelected(G.COMFORT) ? 1 : 0) *
-                          ST.colony.colonists *
+                          (2 === vT.laws.getLawSelected(G.COMFORT) ? 1 : 0) *
+                          vT.colony.colonists *
                           0.05 *
-                          ST.colony.getSupplyUsageMultiplier(),
+                          vT.colony.getSupplyUsageMultiplier(),
                         category: "Population",
                       },
                     ],
@@ -16963,9 +16949,9 @@
                         label: "Population",
                         value:
                           0.005 *
-                          ST.colony.colonists *
-                          ST.colony.getSupplyUsageMultiplier() *
-                          Math.pow(5, ST.laws.getLawSelected(G.COMFORT)),
+                          vT.colony.colonists *
+                          vT.colony.getSupplyUsageMultiplier() *
+                          Math.pow(5, vT.laws.getLawSelected(G.COMFORT)),
                         category: "Population",
                       },
                     ],
@@ -16992,16 +16978,16 @@
                         label: "Population",
                         value:
                           0.1 *
-                          (ST.colony.colonists -
+                          (vT.colony.colonists -
                             0.5 *
-                              ST.colony.colonyJobs.freeWorkers *
-                              ST.prestige.transmitKnowledge.getUpgradeLevel(
+                              vT.colony.colonyJobs.freeWorkers *
+                              vT.prestige.transmitKnowledge.getUpgradeLevel(
                                 g.RATIONALISM
                               )) *
-                          ST.colony.getSupplyUsageMultiplier() *
+                          vT.colony.getSupplyUsageMultiplier() *
                           Math.pow(
                             4,
-                            ST.laws.getLawSelected(G.NUTRITION_REGULATIONS)
+                            vT.laws.getLawSelected(G.NUTRITION_REGULATIONS)
                           ),
                         category: "Buildings",
                       },
@@ -17191,10 +17177,10 @@
                         label: "Portable KP Transmitter",
                         value:
                           (0.02 *
-                            ST.prestige.colonizePlanet.getUpgradeLevel(
+                            vT.prestige.colonizePlanet.getUpgradeLevel(
                               N.PORTABLE_KP_TRANSMITTER
                             ) *
-                            ST.statistics.stats.maxKpPerHour) /
+                            vT.statistics.stats.maxKpPerHour) /
                           3600,
                         category: "XP Upgrades",
                       },
@@ -17212,10 +17198,10 @@
                         label: "XP Capture Machine",
                         value:
                           (0.02 *
-                            ST.prestige.colonizePlanet.getUpgradeLevel(
+                            vT.prestige.colonizePlanet.getUpgradeLevel(
                               N.XP_MEMORY
                             ) *
-                            ST.statistics.stats.maxXpPerHour) /
+                            vT.statistics.stats.maxXpPerHour) /
                           3600,
                         category: "XP Upgrades",
                       },
@@ -17226,11 +17212,12 @@
                   max: { linear: [], multiplier: [] },
                 }),
                 t),
-              _ = function (e) {
+              B = function (e) {
                 var t,
                   l,
                   g,
                   N,
+                  B,
                   _,
                   U,
                   b,
@@ -17247,253 +17234,251 @@
                   V,
                   j,
                   K,
-                  z,
-                  q =
-                    null ===
-                      (n = w.find(function (t) {
-                        return t.id === e;
-                      })) || void 0 === n
-                      ? void 0
-                      : n.isCraftable;
-                (t = B[e].income.linear).push.apply(
+                  z = w.find(function (t) {
+                    return t.id === e;
+                  }),
+                  q = null == z ? void 0 : z.isCraftable,
+                  Q = null == z ? void 0 : z.isPrestigeCurrency;
+                (t = M[e].income.linear).push.apply(
                   t,
-                  ST.landingZone.landingZoneBuildings.getResourceBeingProduced(
+                  vT.landingZone.landingZoneBuildings.getResourceBeingProduced(
                     e
                   )
                 ),
-                  (l = B[e].income.multiplier).push.apply(
+                  (l = M[e].income.multiplier).push.apply(
                     l,
-                    ST.landingZone.landingZoneBuildings.getResourceMultiplier(e)
+                    vT.landingZone.landingZoneBuildings.getResourceMultiplier(e)
                   ),
-                  null === (i = B[e].income.consumption) ||
+                  null === (n = M[e].income.consumption) ||
+                    void 0 === n ||
+                    n.push.apply(
+                      n,
+                      vT.landingZone.landingZoneBuildings.getResourceBeingConsumed(
+                        e
+                      )
+                    ),
+                  null === (i = M[e].max.linear) ||
                     void 0 === i ||
                     i.push.apply(
                       i,
-                      ST.landingZone.landingZoneBuildings.getResourceBeingConsumed(
+                      vT.landingZone.landingZoneBuildings.getResourceBeingStored(
                         e
                       )
                     ),
-                  null === (r = B[e].max.linear) ||
+                  null === (r = M[e].max.multiplier) ||
                     void 0 === r ||
                     r.push.apply(
                       r,
-                      ST.landingZone.landingZoneBuildings.getResourceBeingStored(
+                      vT.landingZone.landingZoneBuildings.getStorageMultiplier(
                         e
                       )
                     ),
-                  null === (o = B[e].max.multiplier) ||
+                  (g = M[e].income.linear).push.apply(
+                    g,
+                    vT.landingZone.landingZoneUpgrades.getGain(e)
+                  ),
+                  (N = M[e].income.multiplier).push.apply(
+                    N,
+                    vT.landingZone.landingZoneUpgrades.getGainMultiplier(e)
+                  ),
+                  null === (o = M[e].max.linear) ||
                     void 0 === o ||
                     o.push.apply(
                       o,
-                      ST.landingZone.landingZoneBuildings.getStorageMultiplier(
-                        e
-                      )
+                      vT.landingZone.landingZoneUpgrades.getCapacity(e)
                     ),
-                  (g = B[e].income.linear).push.apply(
-                    g,
-                    ST.landingZone.landingZoneUpgrades.getGain(e)
-                  ),
-                  (N = B[e].income.multiplier).push.apply(
-                    N,
-                    ST.landingZone.landingZoneUpgrades.getGainMultiplier(e)
-                  ),
-                  null === (a = B[e].max.linear) ||
+                  null === (a = M[e].max.multiplier) ||
                     void 0 === a ||
                     a.push.apply(
                       a,
-                      ST.landingZone.landingZoneUpgrades.getCapacity(e)
+                      vT.landingZone.landingZoneUpgrades.getCapacityMult(e)
                     ),
-                  null === (c = B[e].max.multiplier) ||
-                    void 0 === c ||
-                    c.push.apply(
-                      c,
-                      ST.landingZone.landingZoneUpgrades.getCapacityMult(e)
-                    ),
-                  (_ = B[e].income.linear).push.apply(
+                  (B = M[e].income.linear).push.apply(
+                    B,
+                    vT.achievements.getResourceBeingProduced(e)
+                  ),
+                  (_ = M[e].income.multiplier).push.apply(
                     _,
-                    ST.achievements.getResourceBeingProduced(e)
+                    vT.achievements.getResourceMultiplier(e)
                   ),
-                  (U = B[e].income.multiplier).push.apply(
-                    U,
-                    ST.achievements.getResourceMultiplier(e)
-                  ),
-                  null === (s = B[e].max.linear) ||
+                  null === (c = M[e].max.linear) ||
+                    void 0 === c ||
+                    c.push.apply(c, vT.achievements.getResourceBeingStored(e)),
+                  null === (s = M[e].max.multiplier) ||
                     void 0 === s ||
-                    s.push.apply(s, ST.achievements.getResourceBeingStored(e)),
-                  null === (u = B[e].max.multiplier) ||
-                    void 0 === u ||
-                    u.push.apply(
-                      u,
-                      ST.achievements.getResourceStorageMultiplier(e)
+                    s.push.apply(
+                      s,
+                      vT.achievements.getResourceStorageMultiplier(e)
                     ),
                   q &&
-                    ((b = B[e].income.multiplier).push.apply(
+                    ((U = M[e].income.multiplier).push.apply(
+                      U,
+                      vT.landingZone.landingZoneBuildings.getCraftingMultiplier()
+                    ),
+                    (b = M[e].income.multiplier).push.apply(
                       b,
-                      ST.landingZone.landingZoneBuildings.getCraftingMultiplier()
+                      vT.landingZone.landingZoneUpgrades.getCraftingMultiplier()
                     ),
-                    (G = B[e].income.multiplier).push.apply(
-                      G,
-                      ST.landingZone.landingZoneUpgrades.getCraftingMultiplier()
-                    ),
-                    null === (p = B[e].max.multiplier) ||
-                      void 0 === p ||
-                      p.push.apply(
-                        p,
-                        ST.environment.ongoingEffects.getCraftingMultiplier()
+                    null === (u = M[e].max.multiplier) ||
+                      void 0 === u ||
+                      u.push.apply(
+                        u,
+                        vT.environment.ongoingEffects.getCraftingMultiplier()
                       ),
-                    (D = B[e].income.multiplier).push.apply(
+                    (G = M[e].income.multiplier).push.apply(
+                      G,
+                      vT.laws.getCraftingMultiplier()
+                    ),
+                    (D = M[e].income.multiplier).push.apply(
                       D,
-                      ST.laws.getCraftingMultiplier()
+                      vT.achievements.getCraftingMultiplier()
                     ),
-                    (X = B[e].income.multiplier).push.apply(
+                    (X = M[e].income.multiplier).push.apply(
                       X,
-                      ST.achievements.getCraftingMultiplier()
-                    ),
-                    (k = B[e].income.multiplier).push.apply(
-                      k,
-                      ST.colony.colonyJobs.getCraftingMultiplier()
+                      vT.colony.colonyJobs.getCraftingMultiplier()
                     )),
-                  (H = B[e].income.linear).push.apply(
-                    H,
-                    ST.colony.colonyJobs.getResourceBeingProduced(e)
+                  (k = M[e].income.linear).push.apply(
+                    k,
+                    vT.colony.colonyJobs.getResourceBeingProduced(e)
                   ),
-                  null === (d = B[e].income.consumption) ||
+                  null === (p = M[e].income.consumption) ||
+                    void 0 === p ||
+                    p.push.apply(
+                      p,
+                      vT.colony.colonyJobs.getResourceBeingConsumed(e)
+                    ),
+                  null === (d = M[e].income.multiplier) ||
                     void 0 === d ||
                     d.push.apply(
                       d,
-                      ST.colony.colonyJobs.getResourceBeingConsumed(e)
+                      vT.colony.colonyJobs.getResourceBeingMultiplied(e)
                     ),
-                  null === (E = B[e].income.multiplier) ||
+                  (H = M[e].income.linear).push.apply(
+                    H,
+                    vT.crafting.craftingJobs.getResourceBeingProduced(e)
+                  ),
+                  null === (E = M[e].income.consumption) ||
                     void 0 === E ||
                     E.push.apply(
                       E,
-                      ST.colony.colonyJobs.getResourceBeingMultiplied(e)
+                      vT.crafting.craftingJobs.getResourceBeingConsumed(e)
                     ),
-                  (x = B[e].income.linear).push.apply(
+                  (x = M[e].income.linear).push.apply(
                     x,
-                    ST.crafting.craftingJobs.getResourceBeingProduced(e)
+                    vT.laws.getResourceBeingProduced(e)
                   ),
-                  null === (f = B[e].income.consumption) ||
-                    void 0 === f ||
-                    f.push.apply(
-                      f,
-                      ST.crafting.craftingJobs.getResourceBeingConsumed(e)
-                    ),
-                  (Y = B[e].income.linear).push.apply(
+                  (Y = M[e].income.multiplier).push.apply(
                     Y,
-                    ST.laws.getResourceBeingProduced(e)
+                    vT.laws.getResourceMultiplier(e)
                   ),
-                  (Z = B[e].income.multiplier).push.apply(
-                    Z,
-                    ST.laws.getResourceMultiplier(e)
-                  ),
-                  null === (A = B[e].income.consumption) ||
+                  null === (f = M[e].income.consumption) ||
+                    void 0 === f ||
+                    f.push.apply(f, vT.laws.getResourceBeingConsumed(e)),
+                  null === (A = M[e].max.linear) ||
                     void 0 === A ||
-                    A.push.apply(A, ST.laws.getResourceBeingConsumed(e)),
-                  null === (m = B[e].max.linear) ||
-                    void 0 === m ||
-                    m.push.apply(m, ST.laws.getResourceBeingStored(e)),
-                  (W = B[e].income.linear).push.apply(
+                    A.push.apply(A, vT.laws.getResourceBeingStored(e)),
+                  (Z = M[e].income.linear).push.apply(
+                    Z,
+                    vT.prestige.transmitKnowledge.getResourceBeingProduced(e)
+                  ),
+                  (W = M[e].income.multiplier).push.apply(
                     W,
-                    ST.prestige.transmitKnowledge.getResourceBeingProduced(e)
+                    vT.prestige.transmitKnowledge.getResourceMultiplier(e)
                   ),
-                  (F = B[e].income.multiplier).push.apply(
-                    F,
-                    ST.prestige.transmitKnowledge.getResourceMultiplier(e)
-                  ),
-                  null === (R = B[e].max.linear) ||
+                  null === (m = M[e].max.linear) ||
+                    void 0 === m ||
+                    m.push.apply(
+                      m,
+                      vT.prestige.transmitKnowledge.getResourceBeingStored(e)
+                    ),
+                  null === (R = M[e].max.multiplier) ||
                     void 0 === R ||
                     R.push.apply(
                       R,
-                      ST.prestige.transmitKnowledge.getResourceBeingStored(e)
+                      vT.prestige.transmitKnowledge.getCapacityMult(e)
                     ),
-                  null === (I = B[e].max.multiplier) ||
+                  null === (I = M[e].income.multiplier) ||
                     void 0 === I ||
                     I.push.apply(
                       I,
-                      ST.prestige.transmitKnowledge.getCapacityMult(e)
+                      vT.prestige.colonizePlanet.getResourceMultiplier(e)
                     ),
-                  null === (h = B[e].income.multiplier) ||
+                  null === (h = M[e].max.multiplier) ||
                     void 0 === h ||
                     h.push.apply(
                       h,
-                      ST.prestige.colonizePlanet.getResourceMultiplier(e)
+                      vT.prestige.colonizePlanet.getCapacityMultiplier(e)
                     ),
-                  null === (T = B[e].max.multiplier) ||
+                  null === (T = M[e].income.multiplier) ||
                     void 0 === T ||
                     T.push.apply(
                       T,
-                      ST.prestige.colonizePlanet.getCapacityMultiplier(e)
+                      vT.environment.climate.getResourceMultiplier(e)
                     ),
-                  null === (y = B[e].income.multiplier) ||
+                  Q ||
+                    null === (y = M[e].income.multiplier) ||
                     void 0 === y ||
                     y.push.apply(
                       y,
-                      ST.environment.climate.getResourceMultiplier(e)
+                      vT.prestige.colonizePlanet.getResourceUpgradeMultiplier(e)
                     ),
-                  null === (O = B[e].income.multiplier) ||
+                  null === (O = M[e].max.multiplier) ||
                     void 0 === O ||
                     O.push.apply(
                       O,
-                      ST.prestige.colonizePlanet.getResourceUpgradeMultiplier(e)
+                      vT.resourceEffect.getResourceCapMultiplier(e)
                     ),
-                  null === (L = B[e].max.multiplier) ||
+                  (F = M[e].income.linear).push.apply(
+                    F,
+                    vT.environment.ongoingEffects.getResourceBeingProduced(e)
+                  ),
+                  (V = M[e].income.multiplier).push.apply(
+                    V,
+                    vT.environment.ongoingEffects.getResourceMultiplier(e)
+                  ),
+                  null === (L = M[e].income.consumption) ||
                     void 0 === L ||
                     L.push.apply(
                       L,
-                      ST.resourceEffect.getResourceCapMultiplier(e)
+                      vT.environment.ongoingEffects.getResourceBeingConsumed(e)
                     ),
-                  (V = B[e].income.linear).push.apply(
-                    V,
-                    ST.environment.ongoingEffects.getResourceBeingProduced(e)
-                  ),
-                  (j = B[e].income.multiplier).push.apply(
-                    j,
-                    ST.environment.ongoingEffects.getResourceMultiplier(e)
-                  ),
-                  null === (C = B[e].income.consumption) ||
+                  null === (C = M[e].max.multiplier) ||
                     void 0 === C ||
                     C.push.apply(
                       C,
-                      ST.environment.ongoingEffects.getResourceBeingConsumed(e)
-                    ),
-                  null === (v = B[e].max.multiplier) ||
-                    void 0 === v ||
-                    v.push.apply(
-                      v,
-                      ST.environment.ongoingEffects.getResourceStoreMultiplier(
+                      vT.environment.ongoingEffects.getResourceStoreMultiplier(
                         e
                       )
                     ),
-                  (K = B[e].income.linear).push.apply(
+                  (j = M[e].income.linear).push.apply(
+                    j,
+                    vT.science.scienceRelics.getResourceBeingProduced(e)
+                  ),
+                  (K = M[e].income.multiplier).push.apply(
                     K,
-                    ST.science.scienceRelics.getResourceBeingProduced(e)
+                    vT.science.scienceRelics.getResourceMultiplier(e)
                   ),
-                  (z = B[e].income.multiplier).push.apply(
-                    z,
-                    ST.science.scienceRelics.getResourceMultiplier(e)
-                  ),
-                  null === (S = B[e].income.consumption) ||
+                  null === (v = M[e].income.consumption) ||
+                    void 0 === v ||
+                    v.push.apply(
+                      v,
+                      vT.science.scienceRelics.getResourceBeingConsumed(e)
+                    ),
+                  null === (S = M[e].max.linear) ||
                     void 0 === S ||
                     S.push.apply(
                       S,
-                      ST.science.scienceRelics.getResourceBeingConsumed(e)
+                      vT.science.scienceRelics.getResourceBeingStored(e)
                     ),
-                  null === (P = B[e].max.linear) ||
+                  null === (P = M[e].max.multiplier) ||
                     void 0 === P ||
                     P.push.apply(
                       P,
-                      ST.science.scienceRelics.getResourceBeingStored(e)
-                    ),
-                  null === (M = B[e].max.multiplier) ||
-                    void 0 === M ||
-                    M.push.apply(
-                      M,
-                      ST.science.scienceRelics.getStorageMultiplier(e)
+                      vT.science.scienceRelics.getStorageMultiplier(e)
                     );
               };
-            for (var U in B) _(U);
-            return B;
+            for (var _ in M) B(_);
+            return M;
           },
           ag = function () {
             return (
@@ -17687,13 +17672,13 @@
               }),
               (e.prototype.saveBalances = function () {
                 var t = this;
-                ST.colony.colonyEffects.getBreakdowns();
+                vT.colony.colonyEffects.getBreakdowns();
                 var n = og(),
                   i = {},
                   r = {};
                 w.forEach(function (o) {
                   var a, c, s, u, p, d, E, g, f, A, m, N, R;
-                  if (o.unlockCondition(ST)) {
+                  if (o.unlockCondition(vT)) {
                     (i[o.id] = {
                       max: { income: [], multiplier: [], consumption: [] },
                       income: { income: [], multiplier: [], consumption: [] },
@@ -17940,13 +17925,13 @@
               }),
               (e.prototype.resetEfficiency = function () {
                 (e.lackEfficiencyResources = {}),
-                  ST.landingZone.landingZoneBuildings.resetEfficiency(),
-                  ST.crafting.craftingJobs.resetEfficiency();
+                  vT.landingZone.landingZoneBuildings.resetEfficiency(),
+                  vT.crafting.craftingJobs.resetEfficiency();
               }),
               (e.prototype.assertBalances = function (t) {
                 var n;
                 void 0 === t && (t = !1),
-                  ST.colony.colonyEffects.getBreakdowns();
+                  vT.colony.colonyEffects.getBreakdowns();
                 var i = og(),
                   r = {};
                 for (var o in i) {
@@ -17999,8 +17984,8 @@
                 );
               }),
               (e.prototype.applyEfficiencies = function () {
-                ST.landingZone.landingZoneBuildings.adaptEfficiency(),
-                  ST.crafting.craftingJobs.adaptEfficiency();
+                vT.landingZone.landingZoneBuildings.adaptEfficiency(),
+                  vT.crafting.craftingJobs.adaptEfficiency();
               }),
               (e.prototype.assertAndApplyBalances = function () {
                 var t = this.assertBalances(),
@@ -18025,8 +18010,8 @@
                 this.resetEfficiency(),
                   this.assertAndApplyBalances(),
                   this.saveBalances(),
-                  (ST.statistics.stats.maxResearchCapReached = Math.max(
-                    ST.statistics.stats.maxResearchCapReached,
+                  (vT.statistics.stats.maxResearchCapReached = Math.max(
+                    vT.statistics.stats.maxResearchCapReached,
                     this.getResourceCap(l.RESEARCH)
                   ));
               }),
@@ -18050,7 +18035,7 @@
                   this.resourcesStatus.forEach(function (e) {
                     n.addResource(e.id, e.balance * t),
                       [l.ANTIMATTER, l.DARK_MATTER].includes(e.id) &&
-                        (ST.statistics.stats.exoticCollected += e.balance * t);
+                        (vT.statistics.stats.exoticCollected += e.balance * t);
                   });
               }),
               (e.prototype.getResource = function (e) {
@@ -18156,7 +18141,7 @@
                       name: t.name,
                       amount: F((null == r ? void 0 : r.amount) || 0),
                       balance: F((null == r ? void 0 : r.balance) || 0),
-                      isUnlocked: t.unlockCondition(ST),
+                      isUnlocked: t.unlockCondition(vT),
                       max: F((null == r ? void 0 : r.max) || 0),
                       toFullPercentage: (r && r.max > 0
                         ? r.amount / r.max
@@ -18187,7 +18172,7 @@
                       isCapped:
                         !!r &&
                         r.max > 0 &&
-                        r.max <= r.amount + 2 * ST.dT * r.balance,
+                        r.max <= r.amount + 2 * vT.dT * r.balance,
                     };
                   }),
                 };
@@ -18316,9 +18301,9 @@
                         t.buildings.push(r));
                       var o = Z.calcBatchAll(
                           i.getCost,
-                          vT.getInstance(),
+                          CT.getInstance(),
                           r.level,
-                          vT.getInstance().resources.getBatchObject()
+                          CT.getInstance().resources.getBatchObject()
                         ),
                         a =
                           (o.reduce(function (e, t) {
@@ -18334,14 +18319,14 @@
                       return (
                         (o = Z.calcBatchAll(
                           i.getCost,
-                          vT.getInstance(),
+                          CT.getInstance(),
                           r.level,
-                          vT.getInstance().resources.getBatchObject(),
+                          CT.getInstance().resources.getBatchObject(),
                           Math.max(1, s)
                         )),
                         n.isUnlocked &&
                           r.level <= 0 &&
-                          ST.newNotifications.registerNotification(
+                          vT.newNotifications.registerNotification(
                             ""
                               .concat(t.getPreffix(i), ":building:")
                               .concat(i.category, ":")
@@ -18351,13 +18336,11 @@
                           bulk: s,
                           etaNum: a,
                           isAvailable: c >= 1,
-                          cost: vT
-                            .getInstance()
-                            .resources.assertEnought(
-                              o,
-                              vT.getInstance().resources.getBatchObject(),
-                              vT.getInstance().resources.getBatchBalanceObject()
-                            ),
+                          cost: CT.getInstance().resources.assertEnought(
+                            o,
+                            CT.getInstance().resources.getBatchObject(),
+                            CT.getInstance().resources.getBatchBalanceObject()
+                          ),
                           progress: c < 1 ? (100 * c).toPrecision(3) : "100",
                         })
                       );
@@ -18399,9 +18382,9 @@
               (t.prototype.getAllCostReduction = function () {
                 return Math.pow(
                   0.95,
-                  vT
-                    .getInstance()
-                    .prestige.colonizePlanet.getUpgradeLevel(N.BUILDING_PRICES)
+                  CT.getInstance().prestige.colonizePlanet.getUpgradeLevel(
+                    N.BUILDING_PRICES
+                  )
                 );
               }),
               (t.prototype.processToUI = function (e, t, n) {
@@ -18420,9 +18403,9 @@
                   this.buildings.push(i));
                 var r = Z.calcBatchAll(
                     e.getCost,
-                    vT.getInstance(),
+                    CT.getInstance(),
                     i.level + t,
-                    vT.getInstance().resources.getBatchObject()
+                    CT.getInstance().resources.getBatchObject()
                   ),
                   o = r.reduce(function (e, t) {
                     return Math.min(e, t.max);
@@ -18435,45 +18418,45 @@
                   }, 0),
                   s = Z.calcBatchAll(
                     e.getConsumption,
-                    vT.getInstance(),
+                    CT.getInstance(),
                     0,
-                    vT.getInstance().resources.getBatchObject()
+                    CT.getInstance().resources.getBatchObject()
                   ),
-                  u = Z.calcBatch(e.getGain, vT.getInstance(), 0),
+                  u = Z.calcBatch(e.getGain, CT.getInstance(), 0),
                   l = e.getStorage
-                    ? Z.calcBatch(e.getStorage, vT.getInstance(), 0)
+                    ? Z.calcBatch(e.getStorage, CT.getInstance(), 0)
                     : [],
                   p = e.getGainMultiplier
-                    ? Z.calcBatch(e.getGainMultiplier, vT.getInstance(), 1)
+                    ? Z.calcBatch(e.getGainMultiplier, CT.getInstance(), 1)
                     : [],
                   d = e.getStorageMultiplier
-                    ? Z.calcBatch(e.getStorageMultiplier, vT.getInstance(), 1)
+                    ? Z.calcBatch(e.getStorageMultiplier, CT.getInstance(), 1)
                     : [],
                   E = e.getEffectConsumption
                     ? Z.calcBatchAll(
                         e.getEffectConsumption,
-                        vT.getInstance(),
+                        CT.getInstance(),
                         0,
-                        vT.getInstance().resources.getBatchObject()
+                        CT.getInstance().resources.getBatchObject()
                       )
                     : [],
                   g = e.getEffectGain
-                    ? Z.calcBatch(e.getEffectGain, vT.getInstance(), 0)
+                    ? Z.calcBatch(e.getEffectGain, CT.getInstance(), 0)
                     : [],
                   f = e.getEffectMultiplier
-                    ? Z.calcBatch(e.getEffectMultiplier, vT.getInstance(), 1)
+                    ? Z.calcBatch(e.getEffectMultiplier, CT.getInstance(), 1)
                     : [],
-                  A = e.unlockCondition(ST),
+                  A = e.unlockCondition(vT),
                   m = e.getCraftingMultiplier
-                    ? Z.calculate(ST, e.getCraftingMultiplier, 1)
+                    ? Z.calculate(vT, e.getCraftingMultiplier, 1)
                     : 1,
                   N = e.getMaxColonists
-                    ? Z.calculate(ST, e.getMaxColonists, 1)
+                    ? Z.calculate(vT, e.getMaxColonists, 1)
                     : 0;
                 return (
                   A &&
                     i.level <= 0 &&
-                    ST.newNotifications.registerNotification(
+                    vT.newNotifications.registerNotification(
                       ""
                         .concat(this.getPreffix(e), ":building:")
                         .concat(e.category, ":")
@@ -18485,13 +18468,11 @@
                     description: e.description,
                     isUnlocked: A,
                     isAvailable: o >= 1,
-                    cost: vT
-                      .getInstance()
-                      .resources.assertEnought(
-                        r,
-                        vT.getInstance().resources.getBatchObject(),
-                        vT.getInstance().resources.getBatchBalanceObject()
-                      ),
+                    cost: CT.getInstance().resources.assertEnought(
+                      r,
+                      CT.getInstance().resources.getBatchObject(),
+                      CT.getInstance().resources.getBatchBalanceObject()
+                    ),
                     progress: o < 1 ? (100 * o).toPrecision(3) : "100",
                     consume: s
                       .filter(function (e) {
@@ -18601,8 +18582,8 @@
                     t,
                     this.buildings[n].level
                   )),
-                  ST.resources.reassertBalances(),
-                  ST.regenerateCache());
+                  vT.resources.reassertBalances(),
+                  vT.regenerateCache());
               }),
               (t.prototype.doBuild = function (e) {
                 var t = rg.find(function (t) {
@@ -18623,9 +18604,9 @@
                     }));
                   var i = Z.calcBatchAll(
                       t.getCost,
-                      vT.getInstance(),
+                      CT.getInstance(),
                       this.buildings[n].level,
-                      vT.getInstance().resources.getBatchObject()
+                      CT.getInstance().resources.getBatchObject()
                     ),
                     r = i.reduce(function (e, t) {
                       return Math.min(e, Math.floor(t.max));
@@ -18635,25 +18616,23 @@
                     return (
                       (i = Z.calcBatchAll(
                         t.getCost,
-                        vT.getInstance(),
+                        CT.getInstance(),
                         this.buildings[n].level,
-                        vT.getInstance().resources.getBatchObject(),
+                        CT.getInstance().resources.getBatchObject(),
                         o
                       )),
                       (this.buildings[n].level += o),
-                      (t.getMaxColonists && ST.settings.disableResidental) ||
+                      (t.getMaxColonists && vT.settings.disableResidental) ||
                         (this.buildings[n].activeAmount += o),
                       console.log("costs: ", i),
-                      vT.getInstance().resources.subtractResourceBatch(i),
-                      ST.resources.reassertBalances(),
-                      ST.regenerateCache(),
-                      vT
-                        .getInstance()
-                        .eventLog.registerBuilding(
-                          t.name,
-                          i,
-                          this.buildings[n].level
-                        ),
+                      CT.getInstance().resources.subtractResourceBatch(i),
+                      vT.resources.reassertBalances(),
+                      vT.regenerateCache(),
+                      CT.getInstance().eventLog.registerBuilding(
+                        t.name,
+                        i,
+                        this.buildings[n].level
+                      ),
                       !0
                     );
                   }
@@ -18680,7 +18659,7 @@
                         : r[e])
                     ) {
                       var a =
-                        Z.calculate(ST, o.getEffectGain[e], 0, i.activeAmount) *
+                        Z.calculate(vT, o.getEffectGain[e], 0, i.activeAmount) *
                         i.efficiency;
                       n.push({
                         label: "Building: ".concat(o.name),
@@ -18716,7 +18695,7 @@
                     ) {
                       var a =
                           Z.calculate(
-                            ST,
+                            vT,
                             o.getEffectMultiplier[e],
                             i.activeAmount,
                             1
@@ -18757,7 +18736,7 @@
                     ) {
                       var a =
                         Z.calculate(
-                          ST,
+                          vT,
                           o.getEffectConsumption[e],
                           0,
                           i.activeAmount
@@ -18785,7 +18764,7 @@
                     });
                     if (r) {
                       var o =
-                        Z.calculate(ST, r.getGain[e], 0, i.activeAmount) *
+                        Z.calculate(vT, r.getGain[e], 0, i.activeAmount) *
                         i.efficiency;
                       n.push({
                         label: "Building: ".concat(r.name),
@@ -18810,7 +18789,7 @@
                     });
                     if (i && i.getCraftingMultiplier) {
                       var r = Z.calculate(
-                          ST,
+                          vT,
                           i.getCraftingMultiplier,
                           n.activeAmount,
                           1
@@ -18849,7 +18828,7 @@
                         : r[e])
                     ) {
                       var a = Z.calculate(
-                          ST,
+                          vT,
                           o.getGainMultiplier[e],
                           i.activeAmount,
                           1
@@ -18880,7 +18859,7 @@
                     if (r) {
                       var o =
                         Z.calculate(
-                          ST,
+                          vT,
                           r.getConsumption[e],
                           0,
                           i.activeAmount
@@ -18908,7 +18887,7 @@
                     });
                     if (r) {
                       var o =
-                        Z.calculate(ST, r.getStorage[e], 0, i.activeAmount) *
+                        Z.calculate(vT, r.getStorage[e], 0, i.activeAmount) *
                         i.efficiency;
                       n.push({
                         label: "Building: ".concat(r.name),
@@ -18943,7 +18922,7 @@
                         : r[e])
                     ) {
                       var a = Z.calculate(
-                          ST,
+                          vT,
                           o.getStorageMultiplier[e],
                           i.activeAmount,
                           1
@@ -18973,7 +18952,7 @@
                     });
                     if (i && i.getMaxColonists) {
                       var r =
-                        Z.calculate(ST, i.getMaxColonists, 0, n.activeAmount) *
+                        Z.calculate(vT, i.getMaxColonists, 0, n.activeAmount) *
                         n.efficiency;
                       t.push({
                         label: "Building: ".concat(i.name),
@@ -18999,7 +18978,7 @@
                     if (i && i.getHappinessBonus) {
                       var r =
                         Z.calculate(
-                          ST,
+                          vT,
                           i.getHappinessBonus,
                           0,
                           n.activeAmount
@@ -19045,7 +19024,7 @@
                     (e.buildings[r].efficiencyToUI = 1),
                       c.forEach(function (n) {
                         Z.calculate(
-                          ST,
+                          vT,
                           o.getConsumption[n],
                           0,
                           i.activeAmount
@@ -19224,7 +19203,7 @@
                     return t.id === e.id && t.isReached;
                   });
                 }).forEach(function (e) {
-                  e.unlockCondition(ST) &&
+                  e.unlockCondition(vT) &&
                     t.milestonesState.push({ id: e.id, isReached: !0 });
                 });
               }),
@@ -19776,42 +19755,42 @@
                 var n = e.getConsumption
                     ? Z.calcBatchAll(
                         e.getConsumption,
-                        vT.getInstance(),
+                        CT.getInstance(),
                         0,
-                        vT.getInstance().resources.getBatchObject()
+                        CT.getInstance().resources.getBatchObject()
                       )
                     : [],
                   i = e.getGain
-                    ? Z.calcBatch(e.getGain, vT.getInstance(), 0)
+                    ? Z.calcBatch(e.getGain, CT.getInstance(), 0)
                     : [],
                   r = e.getMultiplier
-                    ? Z.calcBatch(e.getMultiplier, vT.getInstance(), 0)
+                    ? Z.calcBatch(e.getMultiplier, CT.getInstance(), 0)
                     : [],
                   a = e.getEffectConsumption
                     ? Z.calcBatchAll(
                         e.getEffectConsumption,
-                        vT.getInstance(),
+                        CT.getInstance(),
                         0,
-                        vT.getInstance().resources.getBatchObject()
+                        CT.getInstance().resources.getBatchObject()
                       )
                     : [],
                   c = e.getEffectGain
-                    ? Z.calcBatch(e.getEffectGain, vT.getInstance(), 0)
+                    ? Z.calcBatch(e.getEffectGain, CT.getInstance(), 0)
                     : [],
                   s = e.getCraftingMultiplier
-                    ? Z.calculate(ST, e.getCraftingMultiplier, 1)
+                    ? Z.calculate(vT, e.getCraftingMultiplier, 1)
                     : 1,
-                  u = e.unlockCondition(ST);
+                  u = e.unlockCondition(vT);
                 return (
                   u &&
-                    ST.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                    vT.landingZone.landingZoneUpgrades.getUpgradeLevel(
                       o.DOCKING_MODULE
                     ) > 0 &&
                     (t.amount > 0 &&
-                      ST.newNotifications.setViewed(
+                      vT.newNotifications.setViewed(
                         "planet:colony:jobs:".concat(e.id)
                       ),
-                    ST.newNotifications.registerNotification(
+                    vT.newNotifications.registerNotification(
                       "planet:colony:jobs:".concat(e.id)
                     )),
                   {
@@ -19903,8 +19882,8 @@
                     Math.max(t, 0),
                     this.jobs[n].amount + i
                   )),
-                  ST.resources.reassertBalances(),
-                  ST.regenerateCache();
+                  vT.resources.reassertBalances(),
+                  vT.regenerateCache();
               }),
               (t.prototype.addAmount = function (e, t) {
                 t = Math.floor(t);
@@ -19925,8 +19904,8 @@
                     Math.max(i, 0),
                     this.jobs[n].amount + this.freeWorkers
                   )),
-                  ST.resources.reassertBalances(),
-                  ST.regenerateCache();
+                  vT.resources.reassertBalances(),
+                  vT.regenerateCache();
               }),
               (t.prototype.setLabour = function (e, t) {
                 t = Math.floor(t);
@@ -19946,8 +19925,8 @@
                     Math.max(t, 0),
                     this.jobs[n].labour + this.freeLabour
                   )),
-                  ST.resources.reassertBalances(),
-                  ST.regenerateCache();
+                  vT.resources.reassertBalances(),
+                  vT.regenerateCache();
               }),
               (t.prototype.addLabour = function (e, t) {
                 t = Math.floor(t);
@@ -19974,8 +19953,8 @@
                     this.jobs[n].labour,
                     this.freeLabour
                   ),
-                  ST.resources.reassertBalances(),
-                  ST.regenerateCache();
+                  vT.resources.reassertBalances(),
+                  vT.regenerateCache();
               }),
               (t.prototype.getEffectGain = function (e) {
                 var t = hg.filter(function (t) {
@@ -19999,7 +19978,7 @@
                     ) {
                       var a =
                         Z.calculate(
-                          ST,
+                          vT,
                           o.getEffectGain[e],
                           0,
                           i.amount + (i.labour || 0)
@@ -20038,7 +20017,7 @@
                     ) {
                       var a =
                         Z.calculate(
-                          ST,
+                          vT,
                           o.getEffectMultiplier[e],
                           i.amount + (i.labour || 0),
                           1
@@ -20078,7 +20057,7 @@
                     ) {
                       var a =
                         Z.calculate(
-                          ST,
+                          vT,
                           o.getEffectConsumption[e],
                           0,
                           i.amount + (i.labour || 0)
@@ -20099,7 +20078,7 @@
                     return t.getGain && !!t.getGain[e];
                   }),
                   n = [],
-                  i = ST.colony.getColonistsHappiness();
+                  i = vT.colony.getColonistsHappiness();
                 return (
                   this.jobs.forEach(function (r) {
                     var o,
@@ -20112,7 +20091,7 @@
                     ) {
                       var c =
                         Z.calculate(
-                          ST,
+                          vT,
                           a.getGain[e],
                           0,
                           r.amount + (r.labour || 0)
@@ -20149,7 +20128,7 @@
                     ) {
                       var a =
                         Z.calculate(
-                          ST,
+                          vT,
                           o.getConsumption[e],
                           0,
                           i.amount + (i.labour || 0)
@@ -20184,7 +20163,7 @@
                     ) {
                       var a =
                         Z.calculate(
-                          ST,
+                          vT,
                           o.getMultiplier[e],
                           0,
                           i.amount + (i.labour || 0)
@@ -20212,7 +20191,7 @@
                     });
                     if (i && i.getCraftingMultiplier) {
                       var r = Z.calculate(
-                          ST,
+                          vT,
                           i.getCraftingMultiplier,
                           n.amount,
                           1
@@ -20258,13 +20237,13 @@
                 });
               }),
               (t.prototype.process = function (e) {
-                var t = ST.colony.colonists - this.getBusyWorkers();
+                var t = vT.colony.colonists - this.getBusyWorkers();
                 if (t < 0) {
                   for (var n = this.jobs.length - 1; n >= 0; n--) {
                     var i = Math.min(this.jobs[n].amount, -t);
                     if (((this.jobs[n].amount -= i), (t += i) >= 0)) break;
                   }
-                  ST.resources.reassertBalances(), ST.regenerateCache();
+                  vT.resources.reassertBalances(), vT.regenerateCache();
                 }
                 this.freeWorkers = t;
                 var r = this.getFreeLabour();
@@ -20277,7 +20256,7 @@
                     !((r += i) >= 0));
                     n--
                   );
-                  ST.resources.reassertBalances(), ST.regenerateCache();
+                  vT.resources.reassertBalances(), vT.regenerateCache();
                 }
                 this.freeLabour = r;
               }),
@@ -20384,13 +20363,13 @@
                 return (
                   Math.pow(
                     0.98,
-                    ST.landingZone.landingZoneBuildings.getBuildingActiveLevel(
+                    vT.landingZone.landingZoneBuildings.getBuildingActiveLevel(
                       a.ADMINISTRATIVE_CENTER
                     )
                   ) *
                   Math.pow(
                     0.9,
-                    ST.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                    vT.landingZone.landingZoneUpgrades.getUpgradeLevel(
                       o.GORMONE_DELIVERY_NANOBOTS
                     )
                   )
@@ -20403,7 +20382,7 @@
                   });
                 if (null == n ? void 0 : n.getConsumption) {
                   var i =
-                    n.getConsumption(ST) * this.assertConsumptionMitigation();
+                    n.getConsumption(vT) * this.assertConsumptionMitigation();
                   t.push({
                     label: "Population",
                     value: i,
@@ -20423,7 +20402,7 @@
                   return t.id === e;
                 });
                 return (
-                  !!t && (this.happinessEffects[e] >= t.getMaximum(ST) || 0)
+                  !!t && (this.happinessEffects[e] >= t.getMaximum(vT) || 0)
                 );
               }),
               (t.prototype.isAllMaxed = function () {
@@ -20531,11 +20510,11 @@
                     for (var T in h)
                       (n = h[T].linear).push.apply(
                         n,
-                        ST.landingZone.landingZoneBuildings.getEffectGain(T)
+                        vT.landingZone.landingZoneBuildings.getEffectGain(T)
                       ),
                         (i = h[T].multiplier).push.apply(
                           i,
-                          ST.landingZone.landingZoneBuildings.getEffectMultiplier(
+                          vT.landingZone.landingZoneBuildings.getEffectMultiplier(
                             T
                           )
                         ),
@@ -20543,54 +20522,54 @@
                           void 0 === d ||
                           d.push.apply(
                             d,
-                            ST.landingZone.landingZoneBuildings.getEffectBeingConsumed(
+                            vT.landingZone.landingZoneBuildings.getEffectBeingConsumed(
                               T
                             )
                           ),
                         (r = h[T].linear).push.apply(
                           r,
-                          ST.colony.colonyJobs.getEffectGain(T)
+                          vT.colony.colonyJobs.getEffectGain(T)
                         ),
                         (o = h[T].multiplier).push.apply(
                           o,
-                          ST.colony.colonyJobs.getEffectMultiplier(T)
+                          vT.colony.colonyJobs.getEffectMultiplier(T)
                         ),
                         null === (E = h[T].consumption) ||
                           void 0 === E ||
                           E.push.apply(
                             E,
-                            ST.colony.colonyJobs.getEffectBeingConsumed(T)
+                            vT.colony.colonyJobs.getEffectBeingConsumed(T)
                           ),
                         null === (g = h[T].consumption) ||
                           void 0 === g ||
                           g.push.apply(
                             g,
-                            ST.crafting.craftingJobs.getEffectBeingConsumed(T)
+                            vT.crafting.craftingJobs.getEffectBeingConsumed(T)
                           ),
                         null === (f = h[T].consumption) ||
                           void 0 === f ||
                           f.push.apply(
                             f,
-                            ST.colony.colonyEffects.getEffectBeingConsumed(T)
+                            vT.colony.colonyEffects.getEffectBeingConsumed(T)
                           ),
                         (a = h[T].linear).push.apply(
                           a,
-                          ST.laws.getEffectGain(T)
+                          vT.laws.getEffectGain(T)
                         ),
                         (c = h[T].multiplier).push.apply(
                           c,
-                          ST.laws.getEffectMultiplier(T)
+                          vT.laws.getEffectMultiplier(T)
                         ),
                         null === (A = h[T].consumption) ||
                           void 0 === A ||
-                          A.push.apply(A, ST.laws.getEffectBeingConsumed(T)),
+                          A.push.apply(A, vT.laws.getEffectBeingConsumed(T)),
                         (s = h[T].multiplier).push.apply(
                           s,
-                          ST.prestige.colonizePlanet.getEffectMultiplier(T)
+                          vT.prestige.colonizePlanet.getEffectMultiplier(T)
                         ),
                         (u = h[T].multiplier).push.apply(
                           u,
-                          ST.environment.ongoingEffects.getHappinessMultiplier(
+                          vT.environment.ongoingEffects.getHappinessMultiplier(
                             T
                           )
                         ),
@@ -20598,37 +20577,37 @@
                           void 0 === m ||
                           m.push.apply(
                             m,
-                            ST.environment.ongoingEffects.getHappinessBonus(T)
+                            vT.environment.ongoingEffects.getHappinessBonus(T)
                           ),
                         (l = h[T].multiplier).push.apply(
                           l,
-                          ST.achievements.getEffectMultiplier(T)
+                          vT.achievements.getEffectMultiplier(T)
                         ),
                         null === (N = h[T].linear) ||
                           void 0 === N ||
-                          N.push.apply(N, ST.achievements.getEffectGain(T)),
+                          N.push.apply(N, vT.achievements.getEffectGain(T)),
                         (p = h[T].multiplier).push.apply(
                           p,
-                          ST.science.scienceRelics.getEffectMultiplier(T)
+                          vT.science.scienceRelics.getEffectMultiplier(T)
                         ),
                         null === (R = h[T].linear) ||
                           void 0 === R ||
                           R.push.apply(
                             R,
-                            ST.science.scienceRelics.getEffectGain(T)
+                            vT.science.scienceRelics.getEffectGain(T)
                           ),
                         null === (I = h[T].consumption) ||
                           void 0 === I ||
                           I.push.apply(
                             I,
-                            ST.science.scienceRelics.getEffectBeingConsumed(T)
+                            vT.science.scienceRelics.getEffectBeingConsumed(T)
                           );
                     return h;
                   })(),
                   n = {};
                 k.forEach(function (i) {
                   var r, o, a, c, s, u, l;
-                  if (i.unlockCondition(ST)) {
+                  if (i.unlockCondition(vT)) {
                     n[i.id] = { income: [], multiplier: [], consumption: [] };
                     var p =
                         null === (r = t[i.id].linear) || void 0 === r
@@ -20679,16 +20658,16 @@
                                 return e + t.value;
                               }, 0)) || 0;
                     (e.happinessEffects[i.id] = Math.min(
-                      i.getMaximum(ST),
+                      i.getMaximum(vT),
                       e.applyMinimumToEffect(p * d - E, i.minimum)
                     )),
                       (e.happinessEffectsWOEvents[i.id] = Math.min(
-                        i.getMaximum(ST),
+                        i.getMaximum(vT),
                         e.applyMinimumToEffect(g * f - A, i.minimum)
                       )),
                       (e.happinessEffectsExcess[i.id] = Math.max(
                         0,
-                        p * d - E - i.getMaximum(ST)
+                        p * d - E - i.getMaximum(vT)
                       )),
                       (n[i.id].income = t[i.id].linear
                         .filter(function (e) {
@@ -20728,14 +20707,14 @@
                   (this.happinessBreakdowns = n);
               }),
               (t.prototype.processToUI = function (e) {
-                e.getConsumption && e.getConsumption(ST);
+                e.getConsumption && e.getConsumption(vT);
                 var t,
                   n,
                   i,
-                  r = e.unlockCondition(ST);
+                  r = e.unlockCondition(vT);
                 return (
                   r &&
-                    ST.newNotifications.registerNotification(
+                    vT.newNotifications.registerNotification(
                       "planet:colony:effects:".concat(e.id)
                     ),
                   {
@@ -21200,13 +21179,13 @@
               }),
               (t.prototype.getUnlocked = function () {
                 return (
-                  ST.prestige.colonizePlanet.getUpgradeLevel(N.OVERSEER) > 0
+                  vT.prestige.colonizePlanet.getUpgradeLevel(N.OVERSEER) > 0
                 );
               }),
               (t.prototype.shouldTrigger = function (e) {
                 return (
                   !!this.getUnlocked() &&
-                  Math.abs(ST.environment.climate.getDays() % 5) < 0.2 * e
+                  Math.abs(vT.environment.climate.getDays() % 5) < 0.2 * e
                 );
               }),
               (t.prototype.assignCrafting = function (e) {
@@ -21226,8 +21205,8 @@
                           return null == i ? void 0 : i[e];
                         }).length
                           ? "continue"
-                          : (ST.colony.colonyJobs.addLabour(_.ARTISAN, 1),
-                            ST.crafting.craftingJobs.addAmount(t[n].id, 1),
+                          : (vT.colony.colonyJobs.addLabour(_.ARTISAN, 1),
+                            vT.crafting.craftingJobs.addAmount(t[n].id, 1),
                             console.log(
                               "Assigned labour as crafter: ".concat(t[n].id)
                             ),
@@ -21245,7 +21224,7 @@
               (t.prototype.assignJobs = function (e) {
                 var t = hg.filter(function (t) {
                   return (
-                    t.unlockCondition(ST) &&
+                    t.unlockCondition(vT) &&
                     e.filter(function (e) {
                       var n;
                       return null === (n = t.getGain) || void 0 === n
@@ -21262,7 +21241,7 @@
                           return null == i ? void 0 : i[e];
                         }).length
                           ? "continue"
-                          : (ST.colony.colonyJobs.addLabour(t[n].id, 1),
+                          : (vT.colony.colonyJobs.addLabour(t[n].id, 1),
                             console.log(
                               "Overseer: Assigned labour as ".concat(t[n].name)
                             ),
@@ -21280,7 +21259,7 @@
               (t.prototype.assignToHapp = function (e) {
                 var t = hg.filter(function (t) {
                   return (
-                    t.unlockCondition(ST) &&
+                    t.unlockCondition(vT) &&
                     e.filter(function (e) {
                       var n;
                       return null === (n = t.getEffectGain) || void 0 === n
@@ -21297,7 +21276,7 @@
                           return null == i ? void 0 : i[e];
                         }).length
                           ? "continue"
-                          : (ST.colony.colonyJobs.addLabour(t[n].id, 1),
+                          : (vT.colony.colonyJobs.addLabour(t[n].id, 1),
                             console.log(
                               "Overseer: Assigned labour as ".concat(t[n].name)
                             ),
@@ -21322,41 +21301,41 @@
                 var t;
                 if (
                   this.shouldTrigger(e) &&
-                  !(ST.colony.colonyJobs.freeLabour <= 0)
+                  !(vT.colony.colonyJobs.freeLabour <= 0)
                 ) {
                   if (
-                    ST.resources.getBalance(l.NUTRITION) < 0 &&
+                    vT.resources.getBalance(l.NUTRITION) < 0 &&
                     (null ===
                       (t = hg.find(function (e) {
                         return e.id === _.FARMER;
                       })) || void 0 === t
                       ? void 0
-                      : t.unlockCondition(ST))
+                      : t.unlockCondition(vT))
                   )
                     return (
-                      ST.colony.colonyJobs.addLabour(_.FARMER, 1),
-                      ST.resources.reassertBalances(),
-                      void ST.regenerateCache()
+                      vT.colony.colonyJobs.addLabour(_.FARMER, 1),
+                      vT.resources.reassertBalances(),
+                      void vT.regenerateCache()
                     );
-                  var n = ST.resources.resourcesStatus.filter(function (e) {
+                  var n = vT.resources.resourcesStatus.filter(function (e) {
                       return (
                         ((null == e ? void 0 : e.balance) || 0) < 0 ||
-                        (ST.resources.getResourceEfficiency(e.id) || 0) < 1
+                        (vT.resources.getResourceEfficiency(e.id) || 0) < 1
                       );
                     }),
                     i = n.map(function (e) {
                       return e.id;
                     }),
                     r = Object.keys(
-                      ST.colony.colonyEffects.happinessEffects
+                      vT.colony.colonyEffects.happinessEffects
                     ).filter(function (e) {
-                      return !ST.colony.colonyEffects.happinessEffectsExcess[e];
+                      return !vT.colony.colonyEffects.happinessEffectsExcess[e];
                     });
                   return (
                     console.log("Overseer LCK: ", n, i),
                     (i.length || r.length) && this.processChanges(e, i, r)
-                      ? (ST.resources.reassertBalances(),
-                        void ST.regenerateCache())
+                      ? (vT.resources.reassertBalances(),
+                        void vT.regenerateCache())
                       : void 0
                   );
                 }
@@ -21435,7 +21414,7 @@
                   colonists: this.colonists || 0,
                   maxColonists: this.maxColonists,
                   isUnlocked:
-                    ST.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                    vT.landingZone.landingZoneUpgrades.getUpgradeLevel(
                       o.DOCKING_MODULE
                     ) > 0,
                   jobs: this.colonyJobs.dataToUI(),
@@ -21444,7 +21423,7 @@
               }),
               (t.prototype.getMaxColonists = function () {
                 return Math.round(
-                  ST.landingZone.landingZoneBuildings
+                  vT.landingZone.landingZoneBuildings
                     .getColonistsCap()
                     .reduce(function (e, t) {
                       return e + t.value;
@@ -21469,32 +21448,32 @@
                     ? (console.log("missing supply. Colonist is leaving"),
                       Math.random() < (0.05 * e) / 0.1 &&
                         (this.colonists--,
-                        ST.eventLog.colonistDied(F(this.colonists)),
-                        ST.statistics.stats.diedThisPrestige++,
-                        (ST.statistics.stats.maxDiedColonists = Math.max(
-                          ST.statistics.stats.maxDiedColonists,
-                          ST.statistics.stats.diedThisPrestige
+                        vT.eventLog.colonistDied(F(this.colonists)),
+                        vT.statistics.stats.diedThisPrestige++,
+                        (vT.statistics.stats.maxDiedColonists = Math.max(
+                          vT.statistics.stats.maxDiedColonists,
+                          vT.statistics.stats.diedThisPrestige
                         )),
-                        ST.resources.reassertBalances(),
-                        ST.regenerateCache()))
+                        vT.resources.reassertBalances(),
+                        vT.regenerateCache()))
                     : this.colonists > this.maxColonists &&
                       (console.log("missing supply. Colonist is leaving"),
                       Math.random() < (0.5 * e) / 0.1 &&
                         (this.colonists--,
-                        ST.statistics.stats.diedThisPrestige++,
-                        (ST.statistics.stats.maxDiedColonists = Math.max(
-                          ST.statistics.stats.maxDiedColonists,
-                          ST.statistics.stats.diedThisPrestige
+                        vT.statistics.stats.diedThisPrestige++,
+                        (vT.statistics.stats.maxDiedColonists = Math.max(
+                          vT.statistics.stats.maxDiedColonists,
+                          vT.statistics.stats.diedThisPrestige
                         )),
-                        ST.eventLog.colonistDied(F(this.colonists)),
-                        ST.resources.reassertBalances(),
-                        ST.regenerateCache())),
+                        vT.eventLog.colonistDied(F(this.colonists)),
+                        vT.resources.reassertBalances(),
+                        vT.regenerateCache())),
                   this.colonists < this.maxColonists &&
                     Math.random() < (0.025 * e) / 0.1 &&
                     (this.colonists++,
-                    ST.eventLog.colonistArrived(F(this.colonists)),
-                    ST.resources.reassertBalances(),
-                    ST.regenerateCache(),
+                    vT.eventLog.colonistArrived(F(this.colonists)),
+                    vT.resources.reassertBalances(),
+                    vT.regenerateCache(),
                     this.overseer.getUnlocked() &&
                       this.colonyJobs.addAmount(_.LABOUR, 1)),
                   this.colonyEffects.process(e),
@@ -21510,7 +21489,7 @@
               (t.prototype.getSupplyUsageMultiplier = function () {
                 var e = 1;
                 return (
-                  ST.achievements.getAchievementComplete("speedRun0") &&
+                  vT.achievements.getAchievementComplete("speedRun0") &&
                     (e *= 0.9),
                   e
                 );
@@ -21547,7 +21526,7 @@
                 mp),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(M.EXOFARMING) >
+                  vT.science.scienceResearches.getResearchLevel(M.EXOFARMING) >
                   0
                 );
               },
@@ -21565,7 +21544,7 @@
                 Np),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(M.EXOFARMING) >
+                  vT.science.scienceResearches.getResearchLevel(M.EXOFARMING) >
                   0
                 );
               },
@@ -21583,7 +21562,7 @@
                 Rp),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(M.EXOFARMING) >
+                  vT.science.scienceResearches.getResearchLevel(M.EXOFARMING) >
                   0
                 );
               },
@@ -21601,7 +21580,7 @@
                 Ip),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(M.MINERALOGY) >
+                  vT.science.scienceResearches.getResearchLevel(M.MINERALOGY) >
                   0
                 );
               },
@@ -21618,7 +21597,7 @@
                 hp),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(M.METEOROLOGY) >
+                  vT.science.scienceResearches.getResearchLevel(M.METEOROLOGY) >
                   0
                 );
               },
@@ -21636,7 +21615,7 @@
                 Tp),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(M.EXOBIOLOGY) >
+                  vT.science.scienceResearches.getResearchLevel(M.EXOBIOLOGY) >
                   0
                 );
               },
@@ -21654,7 +21633,7 @@
                 yp),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(M.MINERALOGY) >
+                  vT.science.scienceResearches.getResearchLevel(M.MINERALOGY) >
                   0
                 );
               },
@@ -21672,7 +21651,7 @@
                 Op),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(M.EXOFORESTRY) >
+                  vT.science.scienceResearches.getResearchLevel(M.EXOFORESTRY) >
                   0
                 );
               },
@@ -21690,7 +21669,7 @@
                 Lp),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.FLORA_RESEARCH
                   ) > 0
                 );
@@ -21709,7 +21688,7 @@
                 Cp),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(M.METALLURGY) >
+                  vT.science.scienceResearches.getResearchLevel(M.METALLURGY) >
                   0
                 );
               },
@@ -21726,7 +21705,7 @@
                 vp),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(M.METEOROLOGY) >
+                  vT.science.scienceResearches.getResearchLevel(M.METEOROLOGY) >
                   0
                 );
               },
@@ -21744,7 +21723,7 @@
                 Sp),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.CIVIL_SERVICE
                   ) > 0
                 );
@@ -21762,9 +21741,9 @@
                 Pp),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(M.CHEMISTRY) >
+                  vT.science.scienceResearches.getResearchLevel(M.CHEMISTRY) >
                     0 &&
-                  ST.science.scienceResearches.getResearchLevel(M.METALLURGY) >
+                  vT.science.scienceResearches.getResearchLevel(M.METALLURGY) >
                     0
                 );
               },
@@ -21781,7 +21760,7 @@
                 Mp),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(M.SOCIOLOGY) > 0
+                  vT.science.scienceResearches.getResearchLevel(M.SOCIOLOGY) > 0
                 );
               },
             },
@@ -21798,7 +21777,7 @@
                 Bp),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.MATERIAL_KNOWLEDGE
                   ) > 0
                 );
@@ -21816,7 +21795,7 @@
                 _p),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.MATERIAL_KNOWLEDGE
                   ) > 0
                 );
@@ -21835,7 +21814,7 @@
                 Up),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.ELECTRICITY_STUDY
                   ) > 0
                 );
@@ -21853,7 +21832,7 @@
                 bp),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.CODEX_OF_LAW
                   ) > 0
                 );
@@ -21872,7 +21851,7 @@
                 Gp),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(M.ELECTRONICS) >
+                  vT.science.scienceResearches.getResearchLevel(M.ELECTRONICS) >
                   0
                 );
               },
@@ -21890,7 +21869,7 @@
                 wp),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.ELECTRICITY_STUDY
                   ) > 0
                 );
@@ -21909,7 +21888,7 @@
                 Dp),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.ORGANIC_CHEMISTRY
                   ) > 0
                 );
@@ -21928,10 +21907,10 @@
                 Xp),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.ORGANIC_CHEMISTRY
                   ) > 0 &&
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.HIGH_GRAVITY_PHYSICS
                   ) > 0
                 );
@@ -21950,7 +21929,7 @@
                 kp),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.ADVANCED_ANATOMY
                   ) > 0
                 );
@@ -21969,7 +21948,7 @@
                 Hp),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.ADVANCED_BIOLOGY
                   ) > 0
                 );
@@ -21988,7 +21967,7 @@
                 xp),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.HIGH_GRAVITY_PHYSICS
                   ) > 0
                 );
@@ -22007,7 +21986,7 @@
                 Yp),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.QUANTUM_PHYSICS
                   ) > 0
                 );
@@ -22026,7 +22005,7 @@
                 Zp),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.QUANTUM_PHYSICS
                   ) > 0
                 );
@@ -22045,7 +22024,7 @@
                 Wp),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.GRAVITY_THEORY
                   ) > 0
                 );
@@ -22064,7 +22043,7 @@
                 Fp),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.GRAVITY_THEORY
                   ) > 0
                 );
@@ -22083,10 +22062,10 @@
                 Vp),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.NANO_PHYSICS
                   ) > 0 &&
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.ADVANCED_BIOLOGY
                   ) > 0
                 );
@@ -22105,7 +22084,7 @@
                 jp),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.QUANTUM_PHYSICS
                   ) > 0
                 );
@@ -22124,7 +22103,7 @@
                 Kp),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.RELATIVITY_PHYSICS
                   ) > 0
                 );
@@ -22143,7 +22122,7 @@
                 zp),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.PHOTOCHEMISTRY
                   ) > 0
                 );
@@ -22162,7 +22141,7 @@
                 qp),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.HIGH_ENERGY_PHYSICS
                   ) > 0
                 );
@@ -22181,7 +22160,7 @@
                 Qp),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.PHOTO_LITHOGRAPHY
                   ) > 0
                 );
@@ -22200,7 +22179,7 @@
                 Jp),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.PHOTO_LITHOGRAPHY
                   ) > 0
                 );
@@ -22219,7 +22198,7 @@
                 $p),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.THERMONUCLEAR_SYNTHESIS
                   ) > 0
                 );
@@ -22238,7 +22217,7 @@
                 ed),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.ADVANCED_POLYMERIZATION
                   ) > 0
                 );
@@ -22257,7 +22236,7 @@
                 td),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.SUPER_CONDUCTIVITY
                   ) > 0
                 );
@@ -22276,10 +22255,10 @@
                 nd),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.SUPER_CONDUCTIVITY
                   ) > 0 &&
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.MOLECULAR_PHYSICS
                   ) > 0
                 );
@@ -22297,7 +22276,7 @@
                 id),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.MAGNETODYNAMICS
                   ) > 0
                 );
@@ -22315,7 +22294,7 @@
                 rd),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.SPACESHIP_BUILDINGS
                   ) > 0
                 );
@@ -22334,7 +22313,7 @@
                 od),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.ADVANCED_COMPOSITES
                   ) > 0
                 );
@@ -22353,7 +22332,7 @@
                 ad),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.SPACESHIP_BUILDINGS
                   ) > 0
                 );
@@ -22372,7 +22351,7 @@
                 cd),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.ADVANCED_THERMODYNAMICS
                   ) > 0
                 );
@@ -22391,7 +22370,7 @@
                 sd),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.PARTICLE_PHYSICS
                   ) > 0
                 );
@@ -22409,7 +22388,7 @@
                 ud),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.PARTICLE_PHYSICS
                   ) > 0
                 );
@@ -22428,7 +22407,7 @@
                 ld),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.LOW_TEMP_PHYSICS
                   ) > 0
                 );
@@ -22447,7 +22426,7 @@
                 pd),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.ADVANCED_SPACE_CONSTRUCTION
                   ) > 0
                 );
@@ -22466,7 +22445,7 @@
                 dd),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.SPACE_ORGANICS
                   ) > 0
                 );
@@ -22485,7 +22464,7 @@
                 Ed),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.QUARK_PHYSICS
                   ) > 0
                 );
@@ -22504,7 +22483,7 @@
                 gd),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(M.CRYOGENICS) >
+                  vT.science.scienceResearches.getResearchLevel(M.CRYOGENICS) >
                   0
                 );
               },
@@ -22522,7 +22501,7 @@
                 fd),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.ADVANCED_SUPERCONDUCTIVITY
                   ) > 0
                 );
@@ -22541,7 +22520,7 @@
                 Ad),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.QUANTUM_MAGNETICS
                   ) > 0
                 );
@@ -22560,7 +22539,7 @@
                 md),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.QUANTUM_MAGNETICS_DETECTION
                   ) > 0
                 );
@@ -22579,7 +22558,7 @@
                 Nd),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.ADVANCED_NUCLEAR_RESEARCH
                   ) > 0
                 );
@@ -22598,7 +22577,7 @@
                 Rd),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.QUARK_GLUON_PLASMA_STUDY
                   ) > 0
                 );
@@ -22617,7 +22596,7 @@
                 Id),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.HIGH_DENSITY_STUDY
                   ) > 0
                 );
@@ -22636,7 +22615,7 @@
                 hd),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.NANO_BIOLOGY
                   ) > 0
                 );
@@ -22655,7 +22634,7 @@
                 Td),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.ORGANIC_NANOCONSTRUCTION
                   ) > 0
                 );
@@ -22674,7 +22653,7 @@
                 yd),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.ORGANIC_BASED_COMPUTATION
                   ) > 0
                 );
@@ -22692,7 +22671,7 @@
                 Od),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.SYNTHETIC_ORGANISMS
                   ) > 0
                 );
@@ -22711,7 +22690,7 @@
                 Ld),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.GRAVITONE_STUDY
                   ) > 0
                 );
@@ -22730,7 +22709,7 @@
                 Cd),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.ANDROID_CONSTRUCTION
                   ) > 0
                 );
@@ -22749,7 +22728,7 @@
                 vd),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.QUANTUM_STATE_STUDY
                   ) > 0
                 );
@@ -22768,7 +22747,7 @@
                 Sd),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.DARK_MATTER_STUDY
                   ) > 0
                 );
@@ -22787,7 +22766,7 @@
                 Pd),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.DEGENERATE_MATTER
                   ) > 0
                 );
@@ -22806,7 +22785,7 @@
                 Md),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.ADVANCED_ORGANISMS_GENERATION
                   ) > 0
                 );
@@ -22825,7 +22804,7 @@
                 Bd),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.EXPANDED_PARTICLE_THEORY
                   ) > 0
                 );
@@ -22844,7 +22823,7 @@
                 _d),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.EXOTIC_MATTER_STUDY
                   ) > 0
                 );
@@ -22863,7 +22842,7 @@
                 Ud),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.ANTIMATTER_STUDY
                   ) > 0
                 );
@@ -22882,7 +22861,7 @@
                 bd),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.ANTIMATTER_USAGE
                   ) > 0
                 );
@@ -22901,7 +22880,7 @@
                 Gd),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.EXOTIC_BIOCHEMISTRY
                   ) > 0
                 );
@@ -22920,7 +22899,7 @@
                 wd),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.ADVANCED_SYNTHETIC_BIOLOGY
                   ) > 0
                 );
@@ -22939,7 +22918,7 @@
                 Dd),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.DEGENERATE_MATTER
                   ) > 0
                 );
@@ -22958,7 +22937,7 @@
                 Xd),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.ADVANCED_BOSE_EINSTEIN
                   ) > 0
                 );
@@ -22977,7 +22956,7 @@
                 kd),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.DEGENERATE_ATOMS
                   ) > 0
                 );
@@ -22996,7 +22975,7 @@
                 Hd),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.ATOM_BIOLOGY
                   ) > 0
                 );
@@ -23015,7 +22994,7 @@
                 xd),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.QUANTUM_BIOCHEMISTRY
                   ) > 0
                 );
@@ -23034,7 +23013,7 @@
                 Yd),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.QUANTUM_BIOLOGY
                   ) > 0
                 );
@@ -23053,7 +23032,7 @@
                 Zd),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.ANNIHILATION_STUDY
                   ) > 0
                 );
@@ -23072,7 +23051,7 @@
                 Wd),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.CONTROLLED_ANNIHILATION
                   ) > 0
                 );
@@ -23091,7 +23070,7 @@
                 Fd),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.QUARK_TRANSFORMATION
                   ) > 0
                 );
@@ -23110,7 +23089,7 @@
                 Vd),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.STRANGE_MATTER_STUDY
                   ) > 0
                 );
@@ -23129,7 +23108,7 @@
                 jd),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.STRANGE_MATTER_TRANSMUTATIONS
                   ) > 0
                 );
@@ -23148,7 +23127,7 @@
                 Kd),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.HYPERSPACE_TECH
                   ) > 0
                 );
@@ -23167,7 +23146,7 @@
                 zd),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.FIELD_THEORY
                   ) > 0
                 );
@@ -23186,7 +23165,7 @@
                 qd),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.QUANTUM_COMPUTATION
                   ) > 0
                 );
@@ -23204,7 +23183,7 @@
                 Qd),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.QUANTUM_ENHANCED_MATERIAL
                   ) > 0
                 );
@@ -23223,7 +23202,7 @@
                 Jd),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.ADVANCED_QUANTUM_COMPUTATION
                   ) > 0
                 );
@@ -23242,7 +23221,7 @@
                 $d),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.EXOTIC_MATTER_ENGINEERING
                   ) > 0
                 );
@@ -23261,7 +23240,7 @@
                 eE),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.ADVANCED_STRANGE_MATTER
                   ) > 0
                 );
@@ -23280,7 +23259,7 @@
                 tE),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.QUANTUM_ENGINEERING
                   ) > 0
                 );
@@ -23299,7 +23278,7 @@
                 nE),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.ADVANCED_QUANTUM_ENGINEERING
                   ) > 0
                 );
@@ -23318,7 +23297,7 @@
                 iE),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.VACUUM_THEORY
                   ) > 0
                 );
@@ -23336,7 +23315,7 @@
                 rE),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.VACUUM_ELECTRONICS
                   ) > 0
                 );
@@ -23355,7 +23334,7 @@
                 oE),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.ADVANCED_VACUUM_STUDY
                   ) > 0
                 );
@@ -23374,7 +23353,7 @@
                 aE),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.VACUUM_PRINTING
                   ) > 0
                 );
@@ -23393,7 +23372,7 @@
                 cE),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.QUANTUM_STRINGS
                   ) > 0
                 );
@@ -23412,7 +23391,7 @@
                 sE),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.ANTIMATTER_ENERGETICS
                   ) > 0
                 );
@@ -23431,7 +23410,7 @@
                 uE),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.EXTREMAL_FIELD_THEORY
                   ) > 0
                 );
@@ -23449,7 +23428,7 @@
                 lE),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.ADVANCED_COSMOLOGY
                   ) > 0
                 );
@@ -23468,7 +23447,7 @@
                 pE),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.DARK_ENERGY_SCIENCE
                   ) > 0
                 );
@@ -23486,7 +23465,7 @@
                 dE),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.DARK_ENERGY_USAGE
                   ) > 0
                 );
@@ -23505,7 +23484,7 @@
                 EE),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.QUANTUM_STRINGS_USAGE
                   ) > 0
                 );
@@ -23524,7 +23503,7 @@
                 gE),
               unlockCondition: function (e) {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(
+                  vT.science.scienceResearches.getResearchLevel(
                     M.ADVANCED_DARK_ENERGY
                   ) > 0
                 );
@@ -23595,7 +23574,7 @@
                     return e.processToUI(t);
                   }),
                   isUnlocked:
-                    ST.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                    vT.landingZone.landingZoneUpgrades.getUpgradeLevel(
                       o.RESEARCH_MODULE
                     ) > 0,
                 };
@@ -23618,9 +23597,9 @@
                 t || ((t = { id: e.id, amount: 0 }), this.researches.push(t));
                 var n = Z.calcBatchAll(
                     e.getCost,
-                    vT.getInstance(),
+                    CT.getInstance(),
                     t.amount,
-                    vT.getInstance().resources.getBatchObject()
+                    CT.getInstance().resources.getBatchObject()
                   ),
                   i = n.reduce(function (e, t) {
                     return Math.min(e, t.max);
@@ -23631,14 +23610,14 @@
                   a = n.reduce(function (e, t) {
                     return Math.max(e, t.eta);
                   }, 0),
-                  c = e.unlockCondition(ST);
+                  c = e.unlockCondition(vT);
                 return (
                   c &&
                     0 === t.amount &&
-                    ST.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                    vT.landingZone.landingZoneUpgrades.getUpgradeLevel(
                       o.RESEARCH_MODULE
                     ) > 0 &&
-                    ST.newNotifications.registerNotification(
+                    vT.newNotifications.registerNotification(
                       "science:researches:".concat(e.id)
                     ),
                   {
@@ -23647,13 +23626,11 @@
                     description: e.description,
                     isUnlocked: c,
                     isAvailable: i >= 1,
-                    cost: vT
-                      .getInstance()
-                      .resources.assertEnought(
-                        n,
-                        vT.getInstance().resources.getBatchObject(),
-                        vT.getInstance().resources.getBatchBalanceObject()
-                      ),
+                    cost: CT.getInstance().resources.assertEnought(
+                      n,
+                      CT.getInstance().resources.getBatchObject(),
+                      CT.getInstance().resources.getBatchBalanceObject()
+                    ),
                     progress: i < 1 ? (100 * i).toPrecision(3) : "100",
                     isResearched: t.amount > 0,
                     isBlocked: !r,
@@ -23677,9 +23654,9 @@
                   if (n) {
                     var i = Z.calcBatchAll(
                       n.getCost,
-                      vT.getInstance(),
+                      CT.getInstance(),
                       this.researches[t].amount,
-                      vT.getInstance().resources.getBatchObject()
+                      CT.getInstance().resources.getBatchObject()
                     );
                     if (
                       !(
@@ -23689,10 +23666,10 @@
                       )
                     )
                       return (
-                        vT.getInstance().resources.subtractResourceBatch(i),
+                        CT.getInstance().resources.subtractResourceBatch(i),
                         this.researches[t].amount++,
-                        ST.resources.reassertBalances(),
-                        ST.regenerateCache(),
+                        vT.resources.reassertBalances(),
+                        vT.regenerateCache(),
                         !0
                       );
                   }
@@ -24065,7 +24042,7 @@
               unlockCondition: function (e) {
                 return !0;
               },
-              getEffectGain:
+              getEffectMultiplier:
                 ((vE = {}),
                 (vE[U.HEALTHCARE] = function (e) {
                   return { A: 0.005, B: 1, type: i.LINEAR };
@@ -24084,7 +24061,7 @@
               unlockCondition: function (e) {
                 return !0;
               },
-              getEffectGain:
+              getEffectMultiplier:
                 ((SE = {}),
                 (SE[U.SECURITY] = function (e) {
                   return { A: 0.005, B: 1, type: i.LINEAR };
@@ -24104,7 +24081,7 @@
               unlockCondition: function (e) {
                 return !0;
               },
-              getEffectGain:
+              getEffectMultiplier:
                 ((PE = {}),
                 (PE[U.ENTERTAINMENT] = function (e) {
                   return { A: 0.005, B: 1, type: i.LINEAR };
@@ -24123,7 +24100,7 @@
               unlockCondition: function (e) {
                 return !0;
               },
-              getEffectGain:
+              getEffectMultiplier:
                 ((ME = {}),
                 (ME[U.RELIGION] = function (e) {
                   return { A: 0.005, B: 1, type: i.LINEAR };
@@ -24142,7 +24119,7 @@
               unlockCondition: function (e) {
                 return !0;
               },
-              getEffectGain:
+              getEffectMultiplier:
                 ((BE = {}),
                 (BE[U.AESTHETICS] = function (e) {
                   return { A: 0.005, B: 1, type: i.LINEAR };
@@ -24218,7 +24195,9 @@
                       });
                       n < 0 ||
                         ((t.relics[n].isEnabled = !t.relics[n].isEnabled),
-                        (t.changedThisRun = !0));
+                        (t.changedThisRun = !0),
+                        vT.resources.reassertBalances(),
+                        vT.regenerateCache());
                     });
                 }),
                 t
@@ -24267,7 +24246,7 @@
                         e.relics.push(i)),
                       t.isUnlocked &&
                         t.amount > 0 &&
-                        ST.newNotifications.registerNotification(
+                        vT.newNotifications.registerNotification(
                           "".concat(e.getPreffix(n), ":relic:").concat(n.id)
                         ),
                       Wg({}, t)
@@ -24282,9 +24261,9 @@
                   isUnlocked: this.getUnlockCondition(),
                   maxActive:
                     1 +
-                    vT
-                      .getInstance()
-                      .prestige.colonizePlanet.getUpgradeLevel(N.RELICS),
+                    CT.getInstance().prestige.colonizePlanet.getUpgradeLevel(
+                      N.RELICS
+                    ),
                   activeCount: this.relics.filter(function (e) {
                     return e.isEnabled;
                   }).length,
@@ -24298,7 +24277,7 @@
                     })
                     .join("."),
                   isHintNecessary:
-                    ST.landingZone.landingZoneBuildings.getBuildingActiveLevel(
+                    vT.landingZone.landingZoneBuildings.getBuildingActiveLevel(
                       a.RELIC_HOLDER
                     ) < 1,
                 };
@@ -24330,9 +24309,9 @@
               }),
               (t.prototype.getUnlockCondition = function () {
                 return (
-                  vT
-                    .getInstance()
-                    .prestige.colonizePlanet.getUpgradeLevel(N.RELICS) > 0
+                  CT.getInstance().prestige.colonizePlanet.getUpgradeLevel(
+                    N.RELICS
+                  ) > 0
                 );
               }),
               (t.prototype.processToUI = function (e, t, n) {
@@ -24346,19 +24325,19 @@
                 var r = e.getConsumption
                     ? Z.calcBatch(
                         e.getConsumption,
-                        vT.getInstance(),
+                        CT.getInstance(),
                         0,
                         i.amount,
                         !0
                       )
                     : [],
                   o = e.getGain
-                    ? Z.calcBatch(e.getGain, vT.getInstance(), 0, i.amount, !0)
+                    ? Z.calcBatch(e.getGain, CT.getInstance(), 0, i.amount, !0)
                     : [],
                   a = e.getStorage
                     ? Z.calcBatch(
                         e.getStorage,
-                        vT.getInstance(),
+                        CT.getInstance(),
                         0,
                         i.amount,
                         !0
@@ -24367,7 +24346,7 @@
                   c = e.getGainMultiplier
                     ? Z.calcBatch(
                         e.getGainMultiplier,
-                        vT.getInstance(),
+                        CT.getInstance(),
                         0,
                         i.amount,
                         !0
@@ -24376,7 +24355,7 @@
                   s = e.getStorageMultiplier
                     ? Z.calcBatch(
                         e.getStorageMultiplier,
-                        vT.getInstance(),
+                        CT.getInstance(),
                         0,
                         i.amount,
                         !0
@@ -24385,7 +24364,7 @@
                   u = e.getEffectConsumption
                     ? Z.calcBatch(
                         e.getEffectConsumption,
-                        vT.getInstance(),
+                        CT.getInstance(),
                         0,
                         i.amount,
                         !0
@@ -24394,7 +24373,7 @@
                   l = e.getEffectGain
                     ? Z.calcBatch(
                         e.getEffectGain,
-                        vT.getInstance(),
+                        CT.getInstance(),
                         0,
                         i.amount,
                         !0
@@ -24403,19 +24382,19 @@
                   p = e.getEffectMultiplier
                     ? Z.calcBatch(
                         e.getEffectMultiplier,
-                        vT.getInstance(),
+                        CT.getInstance(),
                         0,
                         i.amount,
                         !0
                       )
                     : [],
-                  d = e.unlockCondition(ST),
+                  d = e.unlockCondition(vT),
                   E = e.getCraftingMultiplier
-                    ? Z.calculate(ST, e.getCraftingMultiplier, 0, i.amount)
+                    ? Z.calculate(vT, e.getCraftingMultiplier, 0, i.amount)
                     : 1;
                 return (
                   d &&
-                    ST.newNotifications.registerNotification(
+                    vT.newNotifications.registerNotification(
                       "".concat(this.getPreffix(e), ":relic:").concat(e.id)
                     ),
                   {
@@ -24430,7 +24409,7 @@
                       .map(function (e) {
                         return Wg(Wg({}, e), {
                           amountValue: e.amount,
-                          amount: F(e.amount),
+                          amount: F(e.amount, 3),
                         });
                       }),
                     gain: o
@@ -24440,7 +24419,7 @@
                       .map(function (e) {
                         return Wg(Wg({}, e), {
                           amountValue: e.amount,
-                          amount: F(e.amount),
+                          amount: F(e.amount, 3),
                         });
                       }),
                     gainMult: c
@@ -24450,7 +24429,7 @@
                       .map(function (e) {
                         return Wg(Wg({}, e), {
                           amountValue: e.amount,
-                          amount: "x".concat(F(e.amount)),
+                          amount: "x".concat(F(e.amount, 4)),
                         });
                       }),
                     effMult: p
@@ -24460,7 +24439,7 @@
                       .map(function (e) {
                         return Wg(Wg({}, e), {
                           amountValue: e.amount,
-                          amount: "x".concat(F(e.amount)),
+                          amount: "x".concat(F(e.amount, 4)),
                         });
                       }),
                     storeMult: s
@@ -24480,7 +24459,7 @@
                       .map(function (e) {
                         return Wg(Wg({}, e), {
                           amountValue: e.amount,
-                          amount: F(e.amount),
+                          amount: F(e.amount, 3),
                         });
                       }),
                     gainEffect: l
@@ -24490,7 +24469,7 @@
                       .map(function (e) {
                         return Wg(Wg({}, e), {
                           amountValue: e.amount,
-                          amount: F(e.amount),
+                          amount: F(e.amount, 3),
                         });
                       }),
                     max: a
@@ -24500,7 +24479,7 @@
                       .map(function (e) {
                         return Wg(Wg({}, e), {
                           amountValue: e.amount,
-                          amount: F(e.amount),
+                          amount: F(e.amount, 3),
                         });
                       }),
                     amount: i.amount,
@@ -24513,7 +24492,7 @@
                 var n = Yg.find(function (e) {
                   return e.id;
                 });
-                if (n && n.unlockCondition(ST)) {
+                if (n && n.unlockCondition(vT)) {
                   var i = this.relics.findIndex(function (t) {
                     return t.id === e;
                   });
@@ -24547,7 +24526,7 @@
                           : r[e])
                       ) {
                         var a = Z.calculate(
-                          ST,
+                          vT,
                           o.getEffectGain[e],
                           0,
                           i.amount
@@ -24589,7 +24568,7 @@
                           : r[e])
                       ) {
                         var a = Z.calculate(
-                            ST,
+                            vT,
                             o.getEffectMultiplier[e],
                             0,
                             i.amount
@@ -24633,7 +24612,7 @@
                           : r[e])
                       ) {
                         var a = Z.calculate(
-                          ST,
+                          vT,
                           o.getEffectConsumption[e],
                           0,
                           i.amount
@@ -24667,7 +24646,7 @@
                         return e.id === i.id;
                       });
                       if (r && r.getGain) {
-                        var o = Z.calculate(ST, r.getGain[e], 0, i.amount);
+                        var o = Z.calculate(vT, r.getGain[e], 0, i.amount);
                         n.push({
                           label: "Relic: ".concat(r.name),
                           value: o,
@@ -24695,7 +24674,7 @@
                       });
                       if (i && i.getCraftingMultiplier) {
                         var r = Z.calculate(
-                            ST,
+                            vT,
                             i.getCraftingMultiplier,
                             0,
                             n.amount
@@ -24738,7 +24717,7 @@
                           : r[e])
                       ) {
                         var a = Z.calculate(
-                            ST,
+                            vT,
                             o.getGainMultiplier[e],
                             0,
                             i.amount
@@ -24775,7 +24754,7 @@
                       });
                       if (r && r.getConsumption) {
                         var o = Z.calculate(
-                          ST,
+                          vT,
                           r.getConsumption[e],
                           0,
                           i.amount
@@ -24809,7 +24788,7 @@
                         return e.id === i.id;
                       });
                       if (r && r.getStorage) {
-                        var o = Z.calculate(ST, r.getStorage[e], 0, i.amount);
+                        var o = Z.calculate(vT, r.getStorage[e], 0, i.amount);
                         n.push({
                           label: "Relic: ".concat(r.name),
                           value: o,
@@ -24847,7 +24826,7 @@
                           : r[e])
                       ) {
                         var a = Z.calculate(
-                            ST,
+                            vT,
                             o.getStorageMultiplier[e],
                             0,
                             i.amount
@@ -24867,14 +24846,14 @@
               }),
               (t.prototype.process = function (e) {}),
               (t.prototype.getAwardChances = function () {
-                if (!ST.prestige.colonizePlanet.currentCached) return {};
+                if (!vT.prestige.colonizePlanet.currentCached) return {};
                 var e = Math.pow(
-                    ST.prestige.colonizePlanet.currentCached.xpGain,
+                    vT.prestige.colonizePlanet.currentCached.xpGain,
                     0.4
                   ),
                   t =
                     Math.pow(
-                      ST.landingZone.landingZoneBuildings.getBuildingActiveLevel(
+                      vT.landingZone.landingZoneBuildings.getBuildingActiveLevel(
                         a.RELIC_HOLDER
                       ),
                       0.5
@@ -24886,7 +24865,7 @@
                     return Wg(
                       Wg({}, e),
                       (((n = {})[t.id] = t.getAwardChance
-                        ? t.getAwardChance(ST)
+                        ? t.getAwardChance(vT)
                         : 0),
                       n)
                     );
@@ -25106,22 +25085,22 @@
                 var i = e.getConsumption
                     ? Z.calcBatchAll(
                         e.getConsumption,
-                        vT.getInstance(),
+                        CT.getInstance(),
                         0,
-                        vT.getInstance().resources.getBatchObject()
+                        CT.getInstance().resources.getBatchObject()
                       )
                     : [],
                   r = e.getGain
-                    ? Z.calcBatch(e.getGain, vT.getInstance(), 0)
+                    ? Z.calcBatch(e.getGain, CT.getInstance(), 0)
                     : [],
-                  o = n.unlockCondition(ST);
+                  o = n.unlockCondition(vT);
                 return (
                   o &&
                     (t.amount > 0 &&
-                      ST.newNotifications.setViewed(
+                      vT.newNotifications.setViewed(
                         "planet:crafting:jobs:".concat(e.id)
                       ),
-                    ST.newNotifications.registerNotification(
+                    vT.newNotifications.registerNotification(
                       "planet:crafting:jobs:".concat(e.id)
                     )),
                   {
@@ -25169,13 +25148,13 @@
                 if (i < t) {
                   var r = t - i,
                     o =
-                      (ST.colony.colonyJobs.freeLabour,
-                      ST.colony.colonyJobs.freeWorkers,
-                      ST.colony.colonyJobs.getWorkersAmount(_.ARTISAN),
-                      Math.max(r, 0) - ST.colony.colonyJobs.freeWorkers),
+                      (vT.colony.colonyJobs.freeLabour,
+                      vT.colony.colonyJobs.freeWorkers,
+                      vT.colony.colonyJobs.getWorkersAmount(_.ARTISAN),
+                      Math.max(r, 0) - vT.colony.colonyJobs.freeWorkers),
                     a = 0;
                   o > 0 &&
-                    ((a = Math.max(-o, -ST.colony.colonyJobs.freeLabour)),
+                    ((a = Math.max(-o, -vT.colony.colonyJobs.freeLabour)),
                     console.log("ADD: Get from labour", o, a),
                     console.log(
                       "ADD: New amount is " +
@@ -25183,16 +25162,16 @@
                         ". Allowed by crafters is " +
                         i
                     ));
-                  var c = Math.min(ST.colony.colonyJobs.freeWorkers - a, r);
-                  ST.colony.colonyJobs.setAmount(
+                  var c = Math.min(vT.colony.colonyJobs.freeWorkers - a, r);
+                  vT.colony.colonyJobs.setAmount(
                     _.ARTISAN,
-                    ST.colony.colonyJobs.getWorkersAmount(_.ARTISAN) + c
+                    vT.colony.colonyJobs.getWorkersAmount(_.ARTISAN) + c
                   ),
                     (i += c);
                 }
                 (this.crafters[n].amount = Math.min(Math.max(t, 0), i)),
-                  ST.resources.reassertBalances(),
-                  ST.regenerateCache();
+                  vT.resources.reassertBalances(),
+                  vT.regenerateCache();
               }),
               (t.prototype.addAmount = function (e, t) {
                 t = Math.floor(t);
@@ -25209,16 +25188,16 @@
                   );
                 if (r < i) {
                   var o = i - r,
-                    a = Math.min(ST.colony.colonyJobs.freeWorkers, o);
-                  ST.colony.colonyJobs.setAmount(
+                    a = Math.min(vT.colony.colonyJobs.freeWorkers, o);
+                  vT.colony.colonyJobs.setAmount(
                     _.ARTISAN,
-                    ST.colony.colonyJobs.getWorkersAmount(_.ARTISAN) + a
+                    vT.colony.colonyJobs.getWorkersAmount(_.ARTISAN) + a
                   ),
                     (r += a);
                 }
                 (this.crafters[n].amount = Math.min(Math.max(i, 0), r)),
-                  ST.resources.reassertBalances(),
-                  ST.regenerateCache();
+                  vT.resources.reassertBalances(),
+                  vT.regenerateCache();
               }),
               (t.prototype.getResourceBeingProduced = function (e) {
                 var t = this,
@@ -25237,7 +25216,7 @@
                       (null === (o = a.getGain) || void 0 === o ? void 0 : o[e])
                     ) {
                       var c =
-                        Z.calculate(ST, a.getGain[e], 0, r.amount) *
+                        Z.calculate(vT, a.getGain[e], 0, r.amount) *
                         r.efficiency *
                         t.getTotalCraftingBonus();
                       i.push({
@@ -25275,7 +25254,7 @@
                         : r[e])
                     ) {
                       var a =
-                        Z.calculate(ST, o.getConsumption[e], 0, i.amount) *
+                        Z.calculate(vT, o.getConsumption[e], 0, i.amount) *
                         i.efficiency;
                       n.push({
                         label: "Crafting: ".concat(H(o.id)),
@@ -25311,7 +25290,7 @@
                     ) {
                       var a =
                         Z.calculate(
-                          ST,
+                          vT,
                           o.getEffectConsumption[e],
                           0,
                           i.amount
@@ -25355,13 +25334,13 @@
                 });
               }),
               (t.prototype.process = function (e) {
-                var t = ST.crafting.slots - this.getBusyWorkers();
+                var t = vT.crafting.slots - this.getBusyWorkers();
                 if (t < 0) {
                   for (var n = this.crafters.length - 1; n >= 0; n--) {
                     var i = Math.min(this.crafters[n].amount, -t);
                     if (((this.crafters[n].amount -= i), (t += i) >= 0)) break;
                   }
-                  ST.resources.reassertBalances(), ST.regenerateCache();
+                  vT.resources.reassertBalances(), vT.regenerateCache();
                 }
                 this.craftingSlots = t;
               }),
@@ -25426,7 +25405,7 @@
                 return {
                   maxSlots: this.slots || 0,
                   isUnlocked:
-                    ST.science.scienceResearches.getResearchLevel(
+                    vT.science.scienceResearches.getResearchLevel(
                       M.METALLURGY
                     ) > 0,
                   jobs: this.craftingJobs.dataToUI(),
@@ -25439,13 +25418,13 @@
                 return (
                   (n +=
                     (null ===
-                      (e = ST.colony.colonyJobs.jobs.find(function (e) {
+                      (e = vT.colony.colonyJobs.jobs.find(function (e) {
                         return e.id === _.ARTISAN;
                       })) || void 0 === e
                       ? void 0
                       : e.amount) || 0) +
                   ((null ===
-                    (t = ST.colony.colonyJobs.jobs.find(function (e) {
+                    (t = vT.colony.colonyJobs.jobs.find(function (e) {
                       return e.id === _.ARTISAN;
                     })) || void 0 === t
                     ? void 0
@@ -25557,8 +25536,7 @@
           _A,
           UA,
           bA,
-          GA,
-          wA = [
+          GA = [
             {
               id: "start",
               description: "Power up",
@@ -25895,7 +25873,7 @@
               hint: "When you colonize new planet you get XP for finishing current one. XP provides some multiplicative bonus to your KP gain when transmit knowledge. Your KP and Transmit Knowledge upgrades persist",
             },
           ],
-          DA = [
+          wA = [
             {
               id: g.DRONE_MASTERITY,
               name: "Drone Mastery",
@@ -26636,7 +26614,7 @@
               maxLevel: 0,
             },
           ],
-          XA = (function () {
+          DA = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -26670,7 +26648,7 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          kA = (function (e) {
+          XA = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -26684,7 +26662,7 @@
               );
             }
             return (
-              XA(t, e),
+              DA(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -26702,7 +26680,7 @@
               }),
               (t.prototype.getCurrentGoalDB = function () {
                 var e;
-                return null !== (e = wA[this.currentGoalIdx]) && void 0 !== e
+                return null !== (e = GA[this.currentGoalIdx]) && void 0 !== e
                   ? e
                   : {
                       id: "complete",
@@ -26765,7 +26743,7 @@
                     a =
                       "Knowledge Upgrade: " +
                       (null ===
-                        (o = DA.find(function (t) {
+                        (o = wA.find(function (t) {
                           return t.id === e.target;
                         })) || void 0 === o
                         ? void 0
@@ -26777,26 +26755,26 @@
                 var t = 0;
                 switch (e.type) {
                   case _E.RESOURCE:
-                    t = ST.resources.getResource(e.target);
+                    t = vT.resources.getResource(e.target);
                     break;
                   case _E.UPGRADE:
-                    t = ST.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                    t = vT.landingZone.landingZoneUpgrades.getUpgradeLevel(
                       e.target
                     );
                     break;
                   case _E.RESEARCH:
-                    t = ST.science.scienceResearches.getResearchLevel(e.target);
+                    t = vT.science.scienceResearches.getResearchLevel(e.target);
                     break;
                   case _E.BUILDING:
-                    t = ST.landingZone.landingZoneBuildings.getBuildingLevel(
+                    t = vT.landingZone.landingZoneBuildings.getBuildingLevel(
                       e.target
                     );
                     break;
                   case _E.POPULATION:
-                    t = ST.colony.colonists;
+                    t = vT.colony.colonists;
                     break;
                   case _E.KP_UPGRADE:
-                    t = ST.prestige.transmitKnowledge.getUpgradeLevel(e.target);
+                    t = vT.prestige.transmitKnowledge.getUpgradeLevel(e.target);
                 }
                 return t;
               }),
@@ -26854,10 +26832,10 @@
                   (t.requirements.forEach(function (t) {
                     e.getRequirementAmount(t) < t.amount && (n = !1);
                   }),
-                  n && this.currentGoalIdx < wA.length)
+                  n && this.currentGoalIdx < GA.length)
                 )
                   return this.setGoalComplete(t.id), void this.currentGoalIdx++;
-                !n && this.currentGoalIdx < wA.length && this.setNextGoal(t.id);
+                !n && this.currentGoalIdx < GA.length && this.setNextGoal(t.id);
               }),
               (t.prototype.currentGoalToUI = function () {
                 var e = this,
@@ -26888,8 +26866,8 @@
               t
             );
           })(P),
-          HA = kA.getInstance(),
-          xA = [
+          kA = XA.getInstance(),
+          HA = [
             {
               id: G.WATER_FILTERING,
               name: "Water Filtering Control",
@@ -28324,7 +28302,7 @@
               ],
             },
           ],
-          YA = (function () {
+          xA = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -28358,9 +28336,9 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          ZA = function () {
+          YA = function () {
             return (
-              (ZA =
+              (YA =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -28369,10 +28347,10 @@
                         (e[r] = t[r]);
                   return e;
                 }),
-              ZA.apply(this, arguments)
+              YA.apply(this, arguments)
             );
           },
-          WA = (function (e) {
+          ZA = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -28385,7 +28363,7 @@
               );
             }
             return (
-              YA(t, e),
+              xA(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -28398,11 +28376,11 @@
               (t.prototype.dataToUI = function () {
                 var e = this;
                 return {
-                  laws: xA.map(function (t) {
+                  laws: HA.map(function (t) {
                     return e.processToUI(t);
                   }),
                   isUnlocked:
-                    ST.science.scienceResearches.getResearchLevel(
+                    vT.science.scienceResearches.getResearchLevel(
                       M.CODEX_OF_LAW
                     ) > 0,
                 };
@@ -28431,72 +28409,72 @@
                     name: e.name,
                     description: e.description,
                     gain: e.getGain
-                      ? Z.getValue(e.getGain, vT.getInstance())
+                      ? Z.getValue(e.getGain, CT.getInstance())
                           .filter(function (e) {
                             return e.amount;
                           })
                           .map(function (e) {
-                            return ZA(ZA({}, e), {
+                            return YA(YA({}, e), {
                               amountValue: e.amount,
                               amount: F(e.amount),
                             });
                           })
                       : [],
                     max: e.getStorage
-                      ? Z.getValue(e.getStorage, vT.getInstance())
+                      ? Z.getValue(e.getStorage, CT.getInstance())
                           .filter(function (e) {
                             return e.amount;
                           })
                           .map(function (e) {
-                            return ZA(ZA({}, e), {
+                            return YA(YA({}, e), {
                               amountValue: e.amount,
                               amount: F(e.amount),
                             });
                           })
                       : [],
                     consume: e.getConsumption
-                      ? Z.getValue(e.getConsumption, vT.getInstance())
+                      ? Z.getValue(e.getConsumption, CT.getInstance())
                           .filter(function (e) {
                             return e.amount;
                           })
                           .map(function (e) {
-                            return ZA(ZA({}, e), {
+                            return YA(YA({}, e), {
                               amountValue: e.amount,
                               amount: F(e.amount),
                             });
                           })
                       : [],
                     consumeEffect: e.getEffectConsumption
-                      ? Z.getValue(e.getEffectConsumption, vT.getInstance())
+                      ? Z.getValue(e.getEffectConsumption, CT.getInstance())
                           .filter(function (e) {
                             return e.amount;
                           })
                           .map(function (e) {
-                            return ZA(ZA({}, e), {
+                            return YA(YA({}, e), {
                               amountValue: e.amount,
                               amount: F(e.amount),
                             });
                           })
                       : [],
                     gainEffect: e.getEffectGain
-                      ? Z.getValue(e.getEffectGain, vT.getInstance())
+                      ? Z.getValue(e.getEffectGain, CT.getInstance())
                           .filter(function (e) {
                             return e.amount;
                           })
                           .map(function (e) {
-                            return ZA(ZA({}, e), {
+                            return YA(YA({}, e), {
                               amountValue: e.amount,
                               amount: F(e.amount),
                             });
                           })
                       : [],
                     gainMult: e.getGainMultiplier
-                      ? Z.getValue(e.getGainMultiplier, vT.getInstance())
+                      ? Z.getValue(e.getGainMultiplier, CT.getInstance())
                           .filter(function (e) {
                             return e.amount;
                           })
                           .map(function (e) {
-                            return ZA(ZA({}, e), {
+                            return YA(YA({}, e), {
                               amountValue: e.amount,
                               amount: "x".concat(F(e.amount)),
                             });
@@ -28506,10 +28484,10 @@
                   };
                   n.push(r);
                 });
-                var i = e.unlockCondition(ST);
+                var i = e.unlockCondition(vT);
                 return (
                   i &&
-                    ST.newNotifications.registerNotification(
+                    vT.newNotifications.registerNotification(
                       "laws:orders:".concat(e.category, ":").concat(e.id)
                     ),
                   {
@@ -28525,7 +28503,7 @@
               }),
               (t.prototype.getEffectGain = function (e) {
                 var t = this,
-                  n = xA.filter(function (n) {
+                  n = HA.filter(function (n) {
                     var i;
                     return !!(null ===
                       (i = n.options[t.getLawSelected(n.id)].getEffectGain) ||
@@ -28548,7 +28526,7 @@
                           ? void 0
                           : o[e])
                       ) {
-                        var s = c.getEffectGain[e](vT.getInstance());
+                        var s = c.getEffectGain[e](CT.getInstance());
                         i.push({
                           label: "Law ".concat(a.name, ": ").concat(c.name),
                           value: s,
@@ -28563,7 +28541,7 @@
               }),
               (t.prototype.getEffectMultiplier = function (e) {
                 var t = this,
-                  n = xA.filter(function (n) {
+                  n = HA.filter(function (n) {
                     var i;
                     return !!(null ===
                       (i =
@@ -28587,7 +28565,7 @@
                           ? void 0
                           : o[e])
                       ) {
-                        var s = c.getEffectMultiplier[e](vT.getInstance());
+                        var s = c.getEffectMultiplier[e](CT.getInstance());
                         i.push({
                           label: "Law ".concat(a.name, ": ").concat(c.name),
                           value: s,
@@ -28602,7 +28580,7 @@
               }),
               (t.prototype.getEffectBeingConsumed = function (e) {
                 var t = this,
-                  n = xA.filter(function (n) {
+                  n = HA.filter(function (n) {
                     var i;
                     return !!(null ===
                       (i =
@@ -28626,7 +28604,7 @@
                           ? void 0
                           : o[e])
                       ) {
-                        var s = c.getEffectConsumption[e](vT.getInstance());
+                        var s = c.getEffectConsumption[e](CT.getInstance());
                         i.push({
                           label: "Law ".concat(a.name, ": ").concat(c.name),
                           value: s,
@@ -28641,7 +28619,7 @@
               }),
               (t.prototype.getResourceBeingProduced = function (e) {
                 var t = this,
-                  n = xA.filter(function (n) {
+                  n = HA.filter(function (n) {
                     var i;
                     return !!(null ===
                       (i = n.options[t.getLawSelected(n.id)].getGain) ||
@@ -28664,7 +28642,7 @@
                           ? void 0
                           : o[e])
                       ) {
-                        var s = c.getGain[e](vT.getInstance());
+                        var s = c.getGain[e](CT.getInstance());
                         i.push({
                           label: "Law ".concat(a.name, ": ").concat(c.name),
                           value: s,
@@ -28679,7 +28657,7 @@
               }),
               (t.prototype.getCraftingMultiplier = function () {
                 var e = this,
-                  t = xA.filter(function (t) {
+                  t = HA.filter(function (t) {
                     return !!t.options[e.getLawSelected(t.id)].getCraftingBonus;
                   }),
                   n = [];
@@ -28691,7 +28669,7 @@
                     if (r) {
                       var o = r.options[e.getLawSelected(r.id)];
                       if (r && o.getCraftingBonus) {
-                        var a = o.getCraftingBonus(vT.getInstance());
+                        var a = o.getCraftingBonus(CT.getInstance());
                         n.push({
                           label: "Law ".concat(r.name, ": ").concat(o.name),
                           value: a,
@@ -28706,7 +28684,7 @@
               }),
               (t.prototype.getResourceMultiplier = function (e) {
                 var t = this,
-                  n = xA.filter(function (n) {
+                  n = HA.filter(function (n) {
                     var i;
                     return !!(null ===
                       (i =
@@ -28730,7 +28708,7 @@
                           ? void 0
                           : o[e])
                       ) {
-                        var s = c.getGainMultiplier[e](vT.getInstance());
+                        var s = c.getGainMultiplier[e](CT.getInstance());
                         i.push({
                           label: "Law ".concat(a.name, ": ").concat(c.name),
                           value: s,
@@ -28745,7 +28723,7 @@
               }),
               (t.prototype.getResourceBeingConsumed = function (e) {
                 var t = this,
-                  n = xA.filter(function (n) {
+                  n = HA.filter(function (n) {
                     var i;
                     return !!(null ===
                       (i = n.options[t.getLawSelected(n.id)].getConsumption) ||
@@ -28768,7 +28746,7 @@
                           ? void 0
                           : o[e])
                       ) {
-                        var s = c.getConsumption[e](vT.getInstance());
+                        var s = c.getConsumption[e](CT.getInstance());
                         i.push({
                           label: "Law ".concat(a.name, ": ").concat(c.name),
                           value: s,
@@ -28783,7 +28761,7 @@
               }),
               (t.prototype.getResourceBeingStored = function (e) {
                 var t = this,
-                  n = xA.filter(function (n) {
+                  n = HA.filter(function (n) {
                     var i;
                     return !!(null ===
                       (i = n.options[t.getLawSelected(n.id)].getStorage) ||
@@ -28806,7 +28784,7 @@
                           ? void 0
                           : o[e])
                       ) {
-                        var s = c.getStorage[e](vT.getInstance());
+                        var s = c.getStorage[e](CT.getInstance());
                         i.push({
                           label: "Law ".concat(a.name, ": ").concat(c.name),
                           value: s,
@@ -28821,7 +28799,7 @@
               }),
               (t.prototype.getColonistsCap = function () {
                 var e = this,
-                  t = xA.filter(function (t) {
+                  t = HA.filter(function (t) {
                     return !!t.options[e.getLawSelected(t.id)].getMaxColonists;
                   }),
                   n = [];
@@ -28833,7 +28811,7 @@
                     if (r) {
                       var o = r.options[e.getLawSelected(r.id)];
                       if (r && o.getMaxColonists) {
-                        var a = o.getMaxColonists(vT.getInstance());
+                        var a = o.getMaxColonists(CT.getInstance());
                         n.push({
                           label: "Law ".concat(r.name, ": ").concat(o.name),
                           value: a,
@@ -28853,15 +28831,16 @@
                 n < 0
                   ? this.lawsStatuses.push({ id: e, selectedOptionId: t })
                   : (this.lawsStatuses[n].selectedOptionId = t),
-                  vT.getInstance().resources.reassertBalances(),
-                  ST.regenerateCache();
-                var i = xA.find(function (t) {
+                  CT.getInstance().resources.reassertBalances(),
+                  vT.regenerateCache();
+                var i = HA.find(function (t) {
                   return t.id === e;
                 });
                 i &&
-                  vT
-                    .getInstance()
-                    .eventLog.registerLaw(i.name, i.options[t].name);
+                  CT.getInstance().eventLog.registerLaw(
+                    i.name,
+                    i.options[t].name
+                  );
               }),
               (t.prototype.process = function (e) {}),
               (t.prototype.reset = function () {
@@ -28870,14 +28849,14 @@
               t
             );
           })(P),
-          FA = WA.getInstance();
+          WA = ZA.getInstance();
         !(function (e) {
           (e.HEAD = "Head"),
             (e.CORPUS = "Corpus"),
             (e.WEAPONS = "Weapons"),
             (e.POWER_SUPPLY = "Power Supply"),
             (e.ENGINE = "Engine");
-        })(UA || (UA = {})),
+        })(_A || (_A = {})),
           (function (e) {
             (e.DURABILITY = "Durability"),
               (e.SHIELD_CAP = "Shield Capacity"),
@@ -28889,13 +28868,14 @@
               (e.SPEED = "Speed"),
               (e.POWER = "Power"),
               (e.FUEL_CONSUMPTION = "Fuel Consumption");
-          })(bA || (bA = {})),
+          })(UA || (UA = {})),
           (function (e) {
             (e.ACTUAL_DURABILITY = "Actual Durability"),
               (e.ACTUAL_SHIELD = "Actual Shield"),
               (e.ACTUAL_RECHARGE = "Actual Recharge");
-          })(GA || (GA = {}));
-        var VA,
+          })(bA || (bA = {}));
+        var FA,
+          VA,
           jA,
           KA,
           zA,
@@ -29018,10 +28998,9 @@
           rR,
           oR,
           aR,
-          cR,
-          sR = function () {
+          cR = function () {
             return (
-              (sR =
+              (cR =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -29030,30 +29009,30 @@
                         (e[r] = t[r]);
                   return e;
                 }),
-              sR.apply(this, arguments)
+              cR.apply(this, arguments)
             );
           },
-          uR = { income: 0, consume: 0, multiplier: 1 },
-          lR = {
+          sR = { income: 0, consume: 0, multiplier: 1 },
+          uR = {
             stats:
-              ((VA = {}),
-              (VA[bA.SPEED] = 0),
-              (VA[bA.POWER] = 0),
-              (VA[bA.DAMAGE] = 0),
-              (VA[bA.DURABILITY] = 0),
-              (VA[bA.SHIELD_CAP] = 0),
-              (VA[bA.SHIELD_MITIGATION] = 0),
-              (VA[bA.SHIELD_REGEN] = 0),
-              (VA[bA.HULL_REPAIR] = 0),
-              (VA[bA.WEAPON_COOLDOWN] = 0),
-              (VA[bA.FUEL_CONSUMPTION] = 0),
-              VA),
+              ((FA = {}),
+              (FA[UA.SPEED] = 0),
+              (FA[UA.POWER] = 0),
+              (FA[UA.DAMAGE] = 0),
+              (FA[UA.DURABILITY] = 0),
+              (FA[UA.SHIELD_CAP] = 0),
+              (FA[UA.SHIELD_MITIGATION] = 0),
+              (FA[UA.SHIELD_REGEN] = 0),
+              (FA[UA.HULL_REPAIR] = 0),
+              (FA[UA.WEAPON_COOLDOWN] = 0),
+              (FA[UA.FUEL_CONSUMPTION] = 0),
+              FA),
             costs: [],
           },
-          pR = function (e) {
+          lR = function (e) {
             return Math.pow(1.05, e.space.battlefield.state.pilot.level);
           },
-          dR = function (e) {
+          pR = function (e) {
             return (
               Math.pow(
                 0.5,
@@ -29069,7 +29048,7 @@
               )
             );
           },
-          ER = function (e) {
+          dR = function (e) {
             return (
               Math.pow(
                 1.3,
@@ -29099,7 +29078,7 @@
               (e.achievements.getAchievementComplete("fighter4") ? 1.25 : 1)
             );
           },
-          gR = function (e) {
+          ER = function (e) {
             return (
               Math.pow(
                 1.2,
@@ -29125,7 +29104,7 @@
               )
             );
           },
-          fR = function (e) {
+          gR = function (e) {
             return (
               Math.pow(
                 0.8,
@@ -29147,7 +29126,7 @@
               )
             );
           },
-          AR = function (e) {
+          fR = function (e) {
             return (
               Math.pow(
                 1.2,
@@ -29169,45 +29148,45 @@
               )
             );
           },
-          mR = function (e) {
+          AR = function (e) {
             return Math.pow(
               1.2,
               e.landingZone.landingZoneUpgrades.getUpgradeLevel(o.VACUUM_SHIELD)
             );
           },
-          NR = [
+          mR = [
             {
               name: "Regular",
               id: "regular",
               bonusConsume:
-                ((jA = {}),
-                (jA[bA.POWER] = function (e) {
+                ((VA = {}),
+                (VA[UA.POWER] = function (e) {
                   return { A: 1, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                jA),
+                VA),
               bonusGain: {},
               bonusMultiplier:
-                ((KA = {}),
-                (KA[bA.SPEED] = function (e) {
+                ((jA = {}),
+                (jA[UA.SPEED] = function (e) {
                   return { A: 0.01, B: 1, type: i.LINEAR };
                 }),
-                (KA[bA.WEAPON_COOLDOWN] = function (e) {
+                (jA[UA.WEAPON_COOLDOWN] = function (e) {
                   return { A: 0.9, B: 0, type: i.LINEAR };
                 }),
-                KA),
-              category: UA.HEAD,
+                jA),
+              category: _A.HEAD,
               cost:
-                ((zA = {}),
-                (zA[l.WIRE] = function (e) {
-                  return { A: 5e3 * fR(e), B: 1.5, type: i.EXPONENTIAL };
+                ((KA = {}),
+                (KA[l.WIRE] = function (e) {
+                  return { A: 5e3 * gR(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (zA[l.COMPUTER] = function (e) {
-                  return { A: 400 * fR(e), B: 1.5, type: i.EXPONENTIAL };
+                (KA[l.COMPUTER] = function (e) {
+                  return { A: 400 * gR(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (zA[l.RUBBER] = function (e) {
-                  return { A: 1e3 * fR(e), B: 1.5, type: i.EXPONENTIAL };
+                (KA[l.RUBBER] = function (e) {
+                  return { A: 1e3 * gR(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                zA),
+                KA),
               unlockCondition: function (e) {
                 return !0;
               },
@@ -29216,31 +29195,31 @@
               name: "Transport Spaceship Head",
               id: "transport",
               bonusConsume:
-                ((qA = {}),
-                (qA[bA.POWER] = function (e) {
+                ((zA = {}),
+                (zA[UA.POWER] = function (e) {
                   return { A: 1, B: 1.05, type: i.EXPONENTIAL };
                 }),
-                qA),
+                zA),
               bonusGain: {},
               bonusMultiplier:
-                ((QA = {}),
-                (QA[bA.SPEED] = function (e) {
+                ((qA = {}),
+                (qA[UA.SPEED] = function (e) {
                   return { A: 0.03, B: 1, type: i.LINEAR };
                 }),
-                (QA[bA.FUEL_CONSUMPTION] = function (e) {
+                (qA[UA.FUEL_CONSUMPTION] = function (e) {
                   return { A: 0, B: 0.8, type: i.LINEAR };
                 }),
-                QA),
-              category: UA.HEAD,
+                qA),
+              category: _A.HEAD,
               cost:
-                ((JA = {}),
-                (JA[l.WIRE] = function (e) {
-                  return { A: 1e4 * fR(e), B: 1.5, type: i.EXPONENTIAL };
+                ((QA = {}),
+                (QA[l.WIRE] = function (e) {
+                  return { A: 1e4 * gR(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (JA[l.COMPUTER] = function (e) {
-                  return { A: 1e3 * fR(e), B: 1.5, type: i.EXPONENTIAL };
+                (QA[l.COMPUTER] = function (e) {
+                  return { A: 1e3 * gR(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                JA),
+                QA),
               unlockCondition: function (e) {
                 return !0;
               },
@@ -29249,28 +29228,28 @@
               name: "Plated Corpus",
               id: "plated",
               bonusConsume:
-                (($A = {}),
-                ($A[bA.POWER] = function (e) {
+                ((JA = {}),
+                (JA[UA.POWER] = function (e) {
                   return { A: 1, B: 1.05, type: i.EXPONENTIAL };
                 }),
-                $A),
+                JA),
               bonusGain:
+                (($A = {}),
+                ($A[UA.DURABILITY] = function (e) {
+                  return { A: 200 * lR(e) * dR(e), B: 0, type: i.LINEAR };
+                }),
+                $A),
+              bonusMultiplier: {},
+              category: _A.CORPUS,
+              cost:
                 ((em = {}),
-                (em[bA.DURABILITY] = function (e) {
-                  return { A: 200 * pR(e) * ER(e), B: 0, type: i.LINEAR };
+                (em[l.PLATE] = function (e) {
+                  return { A: 1e4 * gR(e), B: 1.5, type: i.EXPONENTIAL };
+                }),
+                (em[l.WIRE] = function (e) {
+                  return { A: 1e3 * gR(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
                 em),
-              bonusMultiplier: {},
-              category: UA.CORPUS,
-              cost:
-                ((tm = {}),
-                (tm[l.PLATE] = function (e) {
-                  return { A: 1e4 * fR(e), B: 1.5, type: i.EXPONENTIAL };
-                }),
-                (tm[l.WIRE] = function (e) {
-                  return { A: 1e3 * fR(e), B: 1.5, type: i.EXPONENTIAL };
-                }),
-                tm),
               unlockCondition: function (e) {
                 return !0;
               },
@@ -29279,31 +29258,31 @@
               name: "Graphene Corpus",
               id: "graphene",
               bonusConsume:
-                ((nm = {}),
-                (nm[bA.POWER] = function (e) {
+                ((tm = {}),
+                (tm[UA.POWER] = function (e) {
                   return { A: 2, B: 1.05, type: i.EXPONENTIAL };
                 }),
-                nm),
+                tm),
               bonusGain:
+                ((nm = {}),
+                (nm[UA.DURABILITY] = function (e) {
+                  return { A: 280 * lR(e) * dR(e), B: 0, type: i.LINEAR };
+                }),
+                nm),
+              bonusMultiplier: {},
+              category: _A.CORPUS,
+              cost:
                 ((im = {}),
-                (im[bA.DURABILITY] = function (e) {
-                  return { A: 280 * pR(e) * ER(e), B: 0, type: i.LINEAR };
+                (im[l.PLATE] = function (e) {
+                  return { A: 8e3 * gR(e), B: 1.5, type: i.EXPONENTIAL };
+                }),
+                (im[l.WIRE] = function (e) {
+                  return { A: 1e3 * gR(e), B: 1.5, type: i.EXPONENTIAL };
+                }),
+                (im[l.GRAPHENE] = function (e) {
+                  return { A: 400 * gR(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
                 im),
-              bonusMultiplier: {},
-              category: UA.CORPUS,
-              cost:
-                ((rm = {}),
-                (rm[l.PLATE] = function (e) {
-                  return { A: 8e3 * fR(e), B: 1.5, type: i.EXPONENTIAL };
-                }),
-                (rm[l.WIRE] = function (e) {
-                  return { A: 1e3 * fR(e), B: 1.5, type: i.EXPONENTIAL };
-                }),
-                (rm[l.GRAPHENE] = function (e) {
-                  return { A: 400 * fR(e), B: 1.5, type: i.EXPONENTIAL };
-                }),
-                rm),
               unlockCondition: function (e) {
                 return !0;
               },
@@ -29312,34 +29291,34 @@
               name: "Rocket Launcher",
               id: "rls",
               bonusConsume:
-                ((om = {}),
-                (om[bA.POWER] = function (e) {
+                ((rm = {}),
+                (rm[UA.POWER] = function (e) {
                   return { A: 1.5, B: 1.05, type: i.EXPONENTIAL };
                 }),
-                (om[bA.FUEL_CONSUMPTION] = function (e) {
-                  return { A: 2 * dR(e), B: 1.05, type: i.EXPONENTIAL };
+                (rm[UA.FUEL_CONSUMPTION] = function (e) {
+                  return { A: 2 * pR(e), B: 1.05, type: i.EXPONENTIAL };
+                }),
+                rm),
+              bonusGain:
+                ((om = {}),
+                (om[UA.DAMAGE] = function (e) {
+                  return { A: 9 * lR(e) * ER(e), B: 0, type: i.LINEAR };
                 }),
                 om),
-              bonusGain:
+              bonusMultiplier: {},
+              category: _A.WEAPONS,
+              cost:
                 ((am = {}),
-                (am[bA.DAMAGE] = function (e) {
-                  return { A: 9 * pR(e) * gR(e), B: 0, type: i.LINEAR };
+                (am[l.WIRE] = function (e) {
+                  return { A: 1e3 * gR(e), B: 1.5, type: i.EXPONENTIAL };
+                }),
+                (am[l.PLATE] = function (e) {
+                  return { A: 1e3 * gR(e), B: 1.5, type: i.EXPONENTIAL };
+                }),
+                (am[l.FUEL] = function (e) {
+                  return { A: 2e3 * gR(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
                 am),
-              bonusMultiplier: {},
-              category: UA.WEAPONS,
-              cost:
-                ((cm = {}),
-                (cm[l.WIRE] = function (e) {
-                  return { A: 1e3 * fR(e), B: 1.5, type: i.EXPONENTIAL };
-                }),
-                (cm[l.PLATE] = function (e) {
-                  return { A: 1e3 * fR(e), B: 1.5, type: i.EXPONENTIAL };
-                }),
-                (cm[l.FUEL] = function (e) {
-                  return { A: 2e3 * fR(e), B: 1.5, type: i.EXPONENTIAL };
-                }),
-                cm),
               unlockCondition: function (e) {
                 return !0;
               },
@@ -29348,39 +29327,39 @@
               name: "MRLS",
               id: "mrls",
               bonusConsume:
-                ((sm = {}),
-                (sm[bA.POWER] = function (e) {
+                ((cm = {}),
+                (cm[UA.POWER] = function (e) {
                   return { A: 3, B: 1.05, type: i.EXPONENTIAL };
                 }),
-                (sm[bA.FUEL_CONSUMPTION] = function (e) {
-                  return { A: 3 * dR(e), B: 1.05, type: i.EXPONENTIAL };
+                (cm[UA.FUEL_CONSUMPTION] = function (e) {
+                  return { A: 3 * pR(e), B: 1.05, type: i.EXPONENTIAL };
+                }),
+                cm),
+              bonusGain:
+                ((sm = {}),
+                (sm[UA.DAMAGE] = function (e) {
+                  return { A: 4 * lR(e) * ER(e), B: 0, type: i.LINEAR };
                 }),
                 sm),
-              bonusGain:
-                ((um = {}),
-                (um[bA.DAMAGE] = function (e) {
-                  return { A: 4 * pR(e) * gR(e), B: 0, type: i.LINEAR };
-                }),
-                um),
               bonusMultiplier:
-                ((lm = {}),
-                (lm[bA.WEAPON_COOLDOWN] = function (e) {
+                ((um = {}),
+                (um[UA.WEAPON_COOLDOWN] = function (e) {
                   return { A: 0, B: 0.75, type: i.LINEAR };
                 }),
-                lm),
-              category: UA.WEAPONS,
+                um),
+              category: _A.WEAPONS,
               cost:
-                ((pm = {}),
-                (pm[l.WIRE] = function (e) {
-                  return { A: 5e3 * fR(e), B: 1.5, type: i.EXPONENTIAL };
+                ((lm = {}),
+                (lm[l.WIRE] = function (e) {
+                  return { A: 5e3 * gR(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (pm[l.PLATE] = function (e) {
-                  return { A: 5e3 * fR(e), B: 1.5, type: i.EXPONENTIAL };
+                (lm[l.PLATE] = function (e) {
+                  return { A: 5e3 * gR(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (pm[l.FUEL] = function (e) {
-                  return { A: 5e3 * fR(e), B: 1.5, type: i.EXPONENTIAL };
+                (lm[l.FUEL] = function (e) {
+                  return { A: 5e3 * gR(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                pm),
+                lm),
               unlockCondition: function (e) {
                 return !0;
               },
@@ -29389,34 +29368,34 @@
               name: "Quark-Gluon Canon",
               id: "quark-gluon-canon",
               bonusConsume:
-                ((dm = {}),
-                (dm[bA.POWER] = function (e) {
+                ((pm = {}),
+                (pm[UA.POWER] = function (e) {
                   return { A: 8, B: 1.05, type: i.EXPONENTIAL };
                 }),
-                (dm[bA.FUEL_CONSUMPTION] = function (e) {
-                  return { A: 12 * dR(e), B: 1.05, type: i.EXPONENTIAL };
+                (pm[UA.FUEL_CONSUMPTION] = function (e) {
+                  return { A: 12 * pR(e), B: 1.05, type: i.EXPONENTIAL };
+                }),
+                pm),
+              bonusGain:
+                ((dm = {}),
+                (dm[UA.DAMAGE] = function (e) {
+                  return { A: 19 * lR(e) * ER(e), B: 0, type: i.LINEAR };
                 }),
                 dm),
-              bonusGain:
+              bonusMultiplier: {},
+              category: _A.WEAPONS,
+              cost:
                 ((Em = {}),
-                (Em[bA.DAMAGE] = function (e) {
-                  return { A: 19 * pR(e) * gR(e), B: 0, type: i.LINEAR };
+                (Em[l.WIRE] = function (e) {
+                  return { A: 9e3 * gR(e), B: 1.5, type: i.EXPONENTIAL };
+                }),
+                (Em[l.COMPUTER] = function (e) {
+                  return { A: 300 * gR(e), B: 1.5, type: i.EXPONENTIAL };
+                }),
+                (Em[l.FUEL] = function (e) {
+                  return { A: 9e3 * gR(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
                 Em),
-              bonusMultiplier: {},
-              category: UA.WEAPONS,
-              cost:
-                ((gm = {}),
-                (gm[l.WIRE] = function (e) {
-                  return { A: 9e3 * fR(e), B: 1.5, type: i.EXPONENTIAL };
-                }),
-                (gm[l.COMPUTER] = function (e) {
-                  return { A: 300 * fR(e), B: 1.5, type: i.EXPONENTIAL };
-                }),
-                (gm[l.FUEL] = function (e) {
-                  return { A: 9e3 * fR(e), B: 1.5, type: i.EXPONENTIAL };
-                }),
-                gm),
               unlockCondition: function (e) {
                 return (
                   e.landingZone.landingZoneUpgrades.getUpgradeLevel(
@@ -29429,22 +29408,22 @@
               name: "Positron Canon",
               id: "positron-canon",
               bonusConsume:
-                ((fm = {}),
-                (fm[bA.POWER] = function (e) {
+                ((gm = {}),
+                (gm[UA.POWER] = function (e) {
                   return { A: 18, B: 1.05, type: i.EXPONENTIAL };
                 }),
-                (fm[bA.FUEL_CONSUMPTION] = function (e) {
-                  return { A: 30 * dR(e), B: 1.05, type: i.EXPONENTIAL };
+                (gm[UA.FUEL_CONSUMPTION] = function (e) {
+                  return { A: 30 * pR(e), B: 1.05, type: i.EXPONENTIAL };
                 }),
-                fm),
+                gm),
               bonusGain:
-                ((Am = {}),
-                (Am[bA.DAMAGE] = function (e) {
+                ((fm = {}),
+                (fm[UA.DAMAGE] = function (e) {
                   return {
                     A:
                       45 *
-                      pR(e) *
-                      gR(e) *
+                      lR(e) *
+                      ER(e) *
                       Math.pow(
                         1.2,
                         e.landingZone.landingZoneUpgrades.getUpgradeLevel(
@@ -29455,21 +29434,21 @@
                     type: i.LINEAR,
                   };
                 }),
-                Am),
+                fm),
               bonusMultiplier: {},
-              category: UA.WEAPONS,
+              category: _A.WEAPONS,
               cost:
-                ((mm = {}),
-                (mm[l.WIRE] = function (e) {
-                  return { A: 3e4 * fR(e), B: 1.5, type: i.EXPONENTIAL };
+                ((Am = {}),
+                (Am[l.WIRE] = function (e) {
+                  return { A: 3e4 * gR(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (mm[l.COMPUTER] = function (e) {
-                  return { A: 900 * fR(e), B: 1.5, type: i.EXPONENTIAL };
+                (Am[l.COMPUTER] = function (e) {
+                  return { A: 900 * gR(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (mm[l.FUEL] = function (e) {
-                  return { A: 3e4 * fR(e), B: 1.5, type: i.EXPONENTIAL };
+                (Am[l.FUEL] = function (e) {
+                  return { A: 3e4 * gR(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                mm),
+                Am),
               unlockCondition: function (e) {
                 return (
                   e.landingZone.landingZoneUpgrades.getUpgradeLevel(
@@ -29482,22 +29461,22 @@
               name: "Dark Energy Amplifier",
               id: "de-amplifier",
               bonusConsume:
-                ((Nm = {}),
-                (Nm[bA.POWER] = function (e) {
+                ((mm = {}),
+                (mm[UA.POWER] = function (e) {
                   return { A: 24, B: 1.05, type: i.EXPONENTIAL };
                 }),
-                (Nm[bA.FUEL_CONSUMPTION] = function (e) {
-                  return { A: 60 * dR(e), B: 1.05, type: i.EXPONENTIAL };
+                (mm[UA.FUEL_CONSUMPTION] = function (e) {
+                  return { A: 60 * pR(e), B: 1.05, type: i.EXPONENTIAL };
                 }),
-                Nm),
+                mm),
               bonusGain:
-                ((Rm = {}),
-                (Rm[bA.DAMAGE] = function (e) {
+                ((Nm = {}),
+                (Nm[UA.DAMAGE] = function (e) {
                   return {
                     A:
                       2 *
-                      pR(e) *
-                      gR(e) *
+                      lR(e) *
+                      ER(e) *
                       Math.pow(
                         1.2,
                         e.landingZone.landingZoneUpgrades.getUpgradeLevel(
@@ -29508,26 +29487,26 @@
                     type: i.LINEAR,
                   };
                 }),
-                Rm),
+                Nm),
               bonusMultiplier:
-                ((Im = {}),
-                (Im[bA.DAMAGE] = function (e) {
+                ((Rm = {}),
+                (Rm[UA.DAMAGE] = function (e) {
                   return { A: 1, B: 1.03, type: i.EXPONENTIAL };
                 }),
-                Im),
-              category: UA.WEAPONS,
+                Rm),
+              category: _A.WEAPONS,
               cost:
-                ((hm = {}),
-                (hm[l.DE_CAPSULE] = function (e) {
-                  return { A: 0.03 * fR(e), B: 1.5, type: i.EXPONENTIAL };
+                ((Im = {}),
+                (Im[l.DE_CAPSULE] = function (e) {
+                  return { A: 0.03 * gR(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (hm[l.PLATE] = function (e) {
-                  return { A: 900 * fR(e), B: 1.5, type: i.EXPONENTIAL };
+                (Im[l.PLATE] = function (e) {
+                  return { A: 900 * gR(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (hm[l.FUEL] = function (e) {
-                  return { A: 3e4 * fR(e), B: 1.5, type: i.EXPONENTIAL };
+                (Im[l.FUEL] = function (e) {
+                  return { A: 3e4 * gR(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                hm),
+                Im),
               unlockCondition: function (e) {
                 return (
                   e.landingZone.landingZoneUpgrades.getUpgradeLevel(
@@ -29540,40 +29519,40 @@
               name: "Magnetic Shield",
               id: "shield",
               bonusConsume:
-                ((Tm = {}),
-                (Tm[bA.POWER] = function (e) {
+                ((hm = {}),
+                (hm[UA.POWER] = function (e) {
                   return { A: 6, B: 1.05, type: i.EXPONENTIAL };
                 }),
-                (Tm[bA.FUEL_CONSUMPTION] = function (e) {
-                  return { A: 5 * dR(e), B: 1.05, type: i.EXPONENTIAL };
+                (hm[UA.FUEL_CONSUMPTION] = function (e) {
+                  return { A: 5 * pR(e), B: 1.05, type: i.EXPONENTIAL };
                 }),
-                Tm),
+                hm),
               bonusGain:
-                ((ym = {}),
-                (ym[bA.SHIELD_CAP] = function (e) {
-                  return { A: 80 * pR(e) * mR(e), B: 0, type: i.LINEAR };
+                ((Tm = {}),
+                (Tm[UA.SHIELD_CAP] = function (e) {
+                  return { A: 80 * lR(e) * AR(e), B: 0, type: i.LINEAR };
                 }),
-                (ym[bA.SHIELD_REGEN] = function (e) {
-                  return { A: 3 * pR(e) * mR(e), B: 0, type: i.LINEAR };
+                (Tm[UA.SHIELD_REGEN] = function (e) {
+                  return { A: 3 * lR(e) * AR(e), B: 0, type: i.LINEAR };
                 }),
-                (ym[bA.SHIELD_MITIGATION] = function (e) {
+                (Tm[UA.SHIELD_MITIGATION] = function (e) {
                   return { A: 0, B: 0.2, type: i.LINEAR };
                 }),
-                ym),
+                Tm),
               bonusMultiplier: {},
-              category: UA.WEAPONS,
+              category: _A.WEAPONS,
               cost:
-                ((Om = {}),
-                (Om[l.WIRE] = function (e) {
-                  return { A: 9e3 * fR(e), B: 1.5, type: i.EXPONENTIAL };
+                ((ym = {}),
+                (ym[l.WIRE] = function (e) {
+                  return { A: 9e3 * gR(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (Om[l.COMPUTER] = function (e) {
-                  return { A: 500 * fR(e), B: 1.5, type: i.EXPONENTIAL };
+                (ym[l.COMPUTER] = function (e) {
+                  return { A: 500 * gR(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (Om[l.MAGNETO] = function (e) {
-                  return { A: 100 * fR(e), B: 1.5, type: i.EXPONENTIAL };
+                (ym[l.MAGNETO] = function (e) {
+                  return { A: 100 * gR(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                Om),
+                ym),
               unlockCondition: function (e) {
                 return (
                   e.landingZone.landingZoneUpgrades.getUpgradeLevel(
@@ -29584,42 +29563,42 @@
             },
             {
               name: "Empowered Magnetic Shield",
-              id: "shield",
+              id: "empowered_shield",
               bonusConsume:
-                ((Lm = {}),
-                (Lm[bA.POWER] = function (e) {
+                ((Om = {}),
+                (Om[UA.POWER] = function (e) {
                   return { A: 18, B: 1.05, type: i.EXPONENTIAL };
                 }),
-                (Lm[bA.FUEL_CONSUMPTION] = function (e) {
-                  return { A: 9 * dR(e), B: 1.05, type: i.EXPONENTIAL };
+                (Om[UA.FUEL_CONSUMPTION] = function (e) {
+                  return { A: 9 * pR(e), B: 1.05, type: i.EXPONENTIAL };
                 }),
-                Lm),
+                Om),
               bonusGain:
-                ((Cm = {}),
-                (Cm[bA.SHIELD_CAP] = function (e) {
-                  return { A: 320 * pR(e) * mR(e), B: 0, type: i.LINEAR };
+                ((Lm = {}),
+                (Lm[UA.SHIELD_CAP] = function (e) {
+                  return { A: 320 * lR(e) * AR(e), B: 0, type: i.LINEAR };
                 }),
-                (Cm[bA.SHIELD_REGEN] = function (e) {
-                  return { A: 12 * pR(e) * mR(e), B: 0, type: i.LINEAR };
+                (Lm[UA.SHIELD_REGEN] = function (e) {
+                  return { A: 12 * lR(e) * AR(e), B: 0, type: i.LINEAR };
                 }),
-                (Cm[bA.SHIELD_MITIGATION] = function (e) {
+                (Lm[UA.SHIELD_MITIGATION] = function (e) {
                   return { A: 0, B: 0.25, type: i.LINEAR };
                 }),
-                Cm),
+                Lm),
               bonusMultiplier: {},
-              category: UA.WEAPONS,
+              category: _A.WEAPONS,
               cost:
-                ((vm = {}),
-                (vm[l.WIRE] = function (e) {
-                  return { A: 9e3 * fR(e), B: 1.5, type: i.EXPONENTIAL };
+                ((Cm = {}),
+                (Cm[l.WIRE] = function (e) {
+                  return { A: 9e3 * gR(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (vm[l.AI_CORE] = function (e) {
-                  return { A: 500 * fR(e), B: 1.5, type: i.EXPONENTIAL };
+                (Cm[l.AI_CORE] = function (e) {
+                  return { A: 500 * gR(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (vm[l.MAGNETO] = function (e) {
-                  return { A: 1e4 * fR(e), B: 1.5, type: i.EXPONENTIAL };
+                (Cm[l.MAGNETO] = function (e) {
+                  return { A: 1e4 * gR(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                vm),
+                Cm),
               unlockCondition: function (e) {
                 return (
                   e.landingZone.landingZoneUpgrades.getUpgradeLevel(
@@ -29638,28 +29617,28 @@
               name: "Solar Panels",
               id: "solar",
               bonusConsume:
+                ((vm = {}),
+                (vm[UA.FUEL_CONSUMPTION] = function (e) {
+                  return { A: 0.5 * pR(e), B: 1.05, type: i.EXPONENTIAL };
+                }),
+                vm),
+              bonusGain:
                 ((Sm = {}),
-                (Sm[bA.FUEL_CONSUMPTION] = function (e) {
-                  return { A: 0.5 * dR(e), B: 1.05, type: i.EXPONENTIAL };
+                (Sm[UA.POWER] = function (e) {
+                  return { A: 4 * fR(e), B: 0, type: i.LINEAR };
                 }),
                 Sm),
-              bonusGain:
+              bonusMultiplier: {},
+              category: _A.POWER_SUPPLY,
+              cost:
                 ((Pm = {}),
-                (Pm[bA.POWER] = function (e) {
-                  return { A: 4 * AR(e), B: 0, type: i.LINEAR };
+                (Pm[l.WIRE] = function (e) {
+                  return { A: 2e3 * gR(e), B: 1.5, type: i.EXPONENTIAL };
+                }),
+                (Pm[l.SEMICONDUCTOR] = function (e) {
+                  return { A: 2e3 * gR(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
                 Pm),
-              bonusMultiplier: {},
-              category: UA.POWER_SUPPLY,
-              cost:
-                ((Mm = {}),
-                (Mm[l.WIRE] = function (e) {
-                  return { A: 2e3 * fR(e), B: 1.5, type: i.EXPONENTIAL };
-                }),
-                (Mm[l.SEMICONDUCTOR] = function (e) {
-                  return { A: 2e3 * fR(e), B: 1.5, type: i.EXPONENTIAL };
-                }),
-                Mm),
               unlockCondition: function (e) {
                 return !0;
               },
@@ -29668,28 +29647,28 @@
               name: "Thermonuclear Power Plant",
               id: "thermonuclear",
               bonusConsume:
+                ((Mm = {}),
+                (Mm[UA.FUEL_CONSUMPTION] = function (e) {
+                  return { A: 3.5 * pR(e), B: 1.05, type: i.EXPONENTIAL };
+                }),
+                Mm),
+              bonusGain:
                 ((Bm = {}),
-                (Bm[bA.FUEL_CONSUMPTION] = function (e) {
-                  return { A: 3.5 * dR(e), B: 1.05, type: i.EXPONENTIAL };
+                (Bm[UA.POWER] = function (e) {
+                  return { A: 10 * fR(e), B: 0, type: i.LINEAR };
                 }),
                 Bm),
-              bonusGain:
+              bonusMultiplier: {},
+              category: _A.POWER_SUPPLY,
+              cost:
                 ((_m = {}),
-                (_m[bA.POWER] = function (e) {
-                  return { A: 10 * AR(e), B: 0, type: i.LINEAR };
+                (_m[l.PLATE] = function (e) {
+                  return { A: 9e3 * gR(e), B: 1.5, type: i.EXPONENTIAL };
+                }),
+                (_m[l.WIRE] = function (e) {
+                  return { A: 5e3 * gR(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
                 _m),
-              bonusMultiplier: {},
-              category: UA.POWER_SUPPLY,
-              cost:
-                ((Um = {}),
-                (Um[l.PLATE] = function (e) {
-                  return { A: 9e3 * fR(e), B: 1.5, type: i.EXPONENTIAL };
-                }),
-                (Um[l.WIRE] = function (e) {
-                  return { A: 5e3 * fR(e), B: 1.5, type: i.EXPONENTIAL };
-                }),
-                Um),
               unlockCondition: function (e) {
                 return !0;
               },
@@ -29698,17 +29677,17 @@
               name: "Reactive Engine",
               id: "reactive",
               bonusConsume:
-                ((bm = {}),
-                (bm[bA.FUEL_CONSUMPTION] = function (e) {
-                  return { A: 4 * dR(e), B: 1, type: i.EXPONENTIAL };
+                ((Um = {}),
+                (Um[UA.FUEL_CONSUMPTION] = function (e) {
+                  return { A: 4 * pR(e), B: 1, type: i.EXPONENTIAL };
                 }),
-                (bm[bA.POWER] = function (e) {
+                (Um[UA.POWER] = function (e) {
                   return { A: 2, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                bm),
+                Um),
               bonusGain:
-                ((Gm = {}),
-                (Gm[bA.SPEED] = function (e) {
+                ((bm = {}),
+                (bm[UA.SPEED] = function (e) {
                   return {
                     A:
                       0.05 *
@@ -29722,18 +29701,18 @@
                     type: i.LINEAR,
                   };
                 }),
-                Gm),
+                bm),
               bonusMultiplier: {},
-              category: UA.ENGINE,
+              category: _A.ENGINE,
               cost:
-                ((wm = {}),
-                (wm[l.PLATE] = function (e) {
-                  return { A: 14e3 * fR(e), B: 1.5, type: i.EXPONENTIAL };
+                ((Gm = {}),
+                (Gm[l.PLATE] = function (e) {
+                  return { A: 14e3 * gR(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (wm[l.WIRE] = function (e) {
-                  return { A: 7e3 * fR(e), B: 1.5, type: i.EXPONENTIAL };
+                (Gm[l.WIRE] = function (e) {
+                  return { A: 7e3 * gR(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                wm),
+                Gm),
               unlockCondition: function (e) {
                 return !0;
               },
@@ -29742,17 +29721,17 @@
               name: "Hyperspace Engine",
               id: "hyperspace",
               bonusConsume:
-                ((Dm = {}),
-                (Dm[bA.FUEL_CONSUMPTION] = function (e) {
-                  return { A: 40 * dR(e), B: 1, type: i.EXPONENTIAL };
+                ((wm = {}),
+                (wm[UA.FUEL_CONSUMPTION] = function (e) {
+                  return { A: 40 * pR(e), B: 1, type: i.EXPONENTIAL };
                 }),
-                (Dm[bA.POWER] = function (e) {
+                (wm[UA.POWER] = function (e) {
                   return { A: 5, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                Dm),
+                wm),
               bonusGain:
-                ((Xm = {}),
-                (Xm[bA.SPEED] = function (e) {
+                ((Dm = {}),
+                (Dm[UA.SPEED] = function (e) {
                   return {
                     A:
                       0.1 *
@@ -29766,18 +29745,18 @@
                     type: i.LINEAR,
                   };
                 }),
-                Xm),
+                Dm),
               bonusMultiplier: {},
-              category: UA.ENGINE,
+              category: _A.ENGINE,
               cost:
-                ((km = {}),
-                (km[l.PLATE] = function (e) {
-                  return { A: 54e3 * fR(e), B: 1.5, type: i.EXPONENTIAL };
+                ((Xm = {}),
+                (Xm[l.PLATE] = function (e) {
+                  return { A: 54e3 * gR(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (km[l.WIRE] = function (e) {
-                  return { A: 15e3 * fR(e), B: 1.5, type: i.EXPONENTIAL };
+                (Xm[l.WIRE] = function (e) {
+                  return { A: 15e3 * gR(e), B: 1.5, type: i.EXPONENTIAL };
                 }),
-                km),
+                Xm),
               unlockCondition: function (e) {
                 return (
                   e.landingZone.landingZoneUpgrades.getUpgradeLevel(
@@ -29787,8 +29766,8 @@
               },
             },
           ],
-          RR = n(8721),
-          IR = (function () {
+          NR = n(8721),
+          RR = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -29822,9 +29801,9 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          hR = function () {
+          IR = function () {
             return (
-              (hR =
+              (IR =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -29833,10 +29812,10 @@
                         (e[r] = t[r]);
                   return e;
                 }),
-              hR.apply(this, arguments)
+              IR.apply(this, arguments)
             );
           },
-          TR = (function (e) {
+          hR = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -29855,7 +29834,7 @@
                       ? {
                           name: n.name,
                           uuid: n.uuid,
-                          parts: hR({}, JSON.parse(JSON.stringify(n.parts))),
+                          parts: IR({}, JSON.parse(JSON.stringify(n.parts))),
                         }
                       : { name: "Unknown", uuid: "", parts: {} };
                   }
@@ -29888,20 +29867,20 @@
                       var i = void 0;
                       switch (e.key) {
                         case "head":
-                          i = UA.HEAD;
+                          i = _A.HEAD;
                           break;
                         case "weapon1":
                         case "weapon2":
-                          i = UA.WEAPONS;
+                          i = _A.WEAPONS;
                           break;
                         case "corpus":
-                          i = UA.CORPUS;
+                          i = _A.CORPUS;
                           break;
                         case "power":
-                          i = UA.POWER_SUPPLY;
+                          i = _A.POWER_SUPPLY;
                           break;
                         case "engine":
-                          i = UA.ENGINE;
+                          i = _A.ENGINE;
                       }
                       t.editing.parts[e.key] = {
                         id: e.id,
@@ -29936,7 +29915,7 @@
               );
             }
             return (
-              IR(t, e),
+              RR(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -29945,7 +29924,7 @@
                   return t.uuid === e;
                 });
                 if (t > -1) {
-                  if (ST.space.hangar.getAmountById(e) > 0) return;
+                  if (vT.space.hangar.getAmountById(e) > 0) return;
                   this.models.splice(t, 1);
                 }
               }),
@@ -29954,59 +29933,59 @@
                   n = (function () {
                     var e;
                     return (
-                      ((e = {})[bA.SPEED] = {
+                      ((e = {})[UA.SPEED] = {
                         income: 1,
                         consume: 0,
                         multiplier: 1,
                       }),
-                      (e[bA.POWER] = sR({}, uR)),
-                      (e[bA.DAMAGE] = sR({}, uR)),
-                      (e[bA.DURABILITY] = sR({}, uR)),
-                      (e[bA.SHIELD_CAP] = sR({}, uR)),
-                      (e[bA.SHIELD_MITIGATION] = sR({}, uR)),
-                      (e[bA.SHIELD_REGEN] = sR({}, uR)),
-                      (e[bA.HULL_REPAIR] = sR({}, uR)),
-                      (e[bA.WEAPON_COOLDOWN] = {
+                      (e[UA.POWER] = cR({}, sR)),
+                      (e[UA.DAMAGE] = cR({}, sR)),
+                      (e[UA.DURABILITY] = cR({}, sR)),
+                      (e[UA.SHIELD_CAP] = cR({}, sR)),
+                      (e[UA.SHIELD_MITIGATION] = cR({}, sR)),
+                      (e[UA.SHIELD_REGEN] = cR({}, sR)),
+                      (e[UA.HULL_REPAIR] = cR({}, sR)),
+                      (e[UA.WEAPON_COOLDOWN] = {
                         income: 3,
                         consume: 0,
                         multiplier: 1,
                       }),
-                      (e[bA.FUEL_CONSUMPTION] = sR({}, uR)),
+                      (e[UA.FUEL_CONSUMPTION] = cR({}, sR)),
                       e
                     );
                   })(),
                   i = [];
                 t.forEach(function (e) {
                   var t = e.id,
-                    r = NR.find(function (e) {
+                    r = mR.find(function (e) {
                       return e.id === t;
                     });
                   if (r) {
                     Object.entries(r.bonusGain).forEach(function (t) {
                       var i = t[0],
                         r = t[1],
-                        o = Z.calculate(vT.getInstance(), r, 0, e.level);
+                        o = Z.calculate(CT.getInstance(), r, 0, e.level);
                       n[i].income += o;
                     }),
                       Object.entries(r.bonusConsume).forEach(function (t) {
                         var i = t[0],
                           r = t[1],
-                          o = Z.calculate(vT.getInstance(), r, 0, e.level);
+                          o = Z.calculate(CT.getInstance(), r, 0, e.level);
                         n[i].consume += o;
                       }),
                       Object.entries(r.bonusMultiplier).forEach(function (t) {
                         var i = t[0],
                           r = t[1],
-                          o = Z.calculate(vT.getInstance(), r, e.level, 1);
+                          o = Z.calculate(CT.getInstance(), r, e.level, 1);
                         n[i].multiplier *= o;
                       });
                     var o = Z.calcBatchAll(
                       r.cost,
-                      vT.getInstance(),
+                      CT.getInstance(),
                       e.level,
-                      vT.getInstance().resources.getBatchObject()
+                      CT.getInstance().resources.getBatchObject()
                     );
-                    i = Z.calcSum(vT.getInstance(), i, o);
+                    i = Z.calcSum(CT.getInstance(), i, o);
                   }
                 });
                 var r = {};
@@ -30026,13 +30005,11 @@
                   }, 0),
                   {
                     stats: r,
-                    costs: vT
-                      .getInstance()
-                      .resources.assertEnought(
-                        i,
-                        vT.getInstance().resources.getBatchObject(),
-                        vT.getInstance().resources.getBatchBalanceObject()
-                      ),
+                    costs: CT.getInstance().resources.assertEnought(
+                      i,
+                      CT.getInstance().resources.getBatchObject(),
+                      CT.getInstance().resources.getBatchBalanceObject()
+                    ),
                     costsOriginal: i,
                     progress: c < 1 ? (100 * c).toPrecision(3) : "100",
                     isAvailable: c >= 1,
@@ -30046,7 +30023,7 @@
                 });
                 if (t) {
                   var n = this.calculateStats(t);
-                  return hR(hR({}, t), n);
+                  return IR(IR({}, t), n);
                 }
               }),
               (t.prototype.validateBeforeSave = function (e) {
@@ -30083,7 +30060,7 @@
                     reason: "Power source should be selected",
                   };
                 var o = this.calculateStats(e).stats;
-                return !o[bA.POWER] || o[bA.POWER] < 0
+                return !o[UA.POWER] || o[UA.POWER] < 0
                   ? { result: !1, reason: "Power supply is not enough" }
                   : (null == e ? void 0 : e.name)
                   ? { result: !0 }
@@ -30099,7 +30076,7 @@
                     : e.uuid);
                   if (
                     !i &&
-                    ST.space.hangar.getAmountById(
+                    vT.space.hangar.getAmountById(
                       null === (t = this.editing) || void 0 === t
                         ? void 0
                         : t.uuid
@@ -30128,9 +30105,9 @@
                       console.error(o), void (this.validationError = o.reason)
                     );
                   if (((this.validationError = void 0), i)) {
-                    var a = RR.Z();
+                    var a = NR.Z();
                     return (
-                      this.models.push(hR(hR({}, this.editing), { uuid: a })),
+                      this.models.push(IR(IR({}, this.editing), { uuid: a })),
                       void (this.editing.uuid = a)
                     );
                   }
@@ -30143,7 +30120,7 @@
                         : t.uuid)
                     );
                   });
-                  (this.models[c] = hR({}, this.editing)),
+                  (this.models[c] = IR({}, this.editing)),
                     (this.editing = null);
                 }
               }),
@@ -30155,27 +30132,27 @@
               }),
               (t.prototype.processShipPartsToUI = function (e) {
                 var t = {
-                  head: { category: UA.HEAD },
-                  weapon1: { category: UA.WEAPONS },
-                  weapon2: { category: UA.WEAPONS },
-                  corpus: { category: UA.CORPUS },
-                  engine: { category: UA.ENGINE },
-                  power: { category: UA.POWER_SUPPLY },
+                  head: { category: _A.HEAD },
+                  weapon1: { category: _A.WEAPONS },
+                  weapon2: { category: _A.WEAPONS },
+                  corpus: { category: _A.CORPUS },
+                  engine: { category: _A.ENGINE },
+                  power: { category: _A.POWER_SUPPLY },
                 };
                 return (
                   Object.entries(e.parts).forEach(function (e) {
                     var n = e[0],
                       i = e[1];
                     if (i) {
-                      var r = NR.find(function (e) {
+                      var r = mR.find(function (e) {
                         return e.id === i.id;
                       });
                       if (r) {
                         var o = Z.calcBatchAll(
                             r.cost,
-                            vT.getInstance(),
+                            CT.getInstance(),
                             i.level,
-                            vT.getInstance().resources.getBatchObject()
+                            CT.getInstance().resources.getBatchObject()
                           ),
                           a = {
                             category: r.category,
@@ -30183,44 +30160,40 @@
                               id: i.id,
                               name: r.name,
                               level: i.level,
-                              cost: vT
-                                .getInstance()
-                                .resources.assertEnought(
-                                  o,
-                                  vT.getInstance().resources.getBatchObject(),
-                                  vT
-                                    .getInstance()
-                                    .resources.getBatchBalanceObject()
-                                ),
+                              cost: CT.getInstance().resources.assertEnought(
+                                o,
+                                CT.getInstance().resources.getBatchObject(),
+                                CT.getInstance().resources.getBatchBalanceObject()
+                              ),
                               gain: Z.calcBatch(
                                 r.bonusGain,
-                                vT.getInstance(),
+                                CT.getInstance(),
                                 0,
                                 i.level
                               ).map(function (e) {
-                                return hR(hR({}, e), {
+                                return IR(IR({}, e), {
                                   amountValue: e.amount,
                                   amount: "+".concat(F(e.amount)),
                                 });
                               }),
                               gainMult: Z.calcBatch(
                                 r.bonusMultiplier,
-                                vT.getInstance(),
+                                CT.getInstance(),
                                 i.level,
                                 1
                               ).map(function (e) {
-                                return hR(hR({}, e), {
+                                return IR(IR({}, e), {
                                   amountValue: e.amount,
                                   amount: "x".concat(F(e.amount)),
                                 });
                               }),
                               consume: Z.calcBatch(
                                 r.bonusConsume,
-                                vT.getInstance(),
+                                CT.getInstance(),
                                 0,
                                 i.level
                               ).map(function (e) {
-                                return hR(hR({}, e), {
+                                return IR(IR({}, e), {
                                   amountValue: e.amount,
                                   amount: "-".concat(F(e.amount)),
                                 });
@@ -30235,8 +30208,8 @@
                 );
               }),
               (t.prototype.checkDetailsUnlocked = function (e) {
-                var t = NR.filter(function (e) {
-                    return e.unlockCondition(ST);
+                var t = mR.filter(function (e) {
+                    return e.unlockCondition(vT);
                   }),
                   n = function (n) {
                     var i = e.parts[n];
@@ -30260,10 +30233,10 @@
                   i = this.editing
                     ? this.calculateStats(this.editing)
                     : { costs: [], stats: {} },
-                  r = { stats: hR(hR({}, lR.stats), i.stats), costs: i.costs };
+                  r = { stats: IR(IR({}, uR.stats), i.stats), costs: i.costs };
                 return {
                   isUnlocked:
-                    ST.science.scienceResearches.getResearchLevel(
+                    vT.science.scienceResearches.getResearchLevel(
                       M.ADVANCED_SPACE_CONSTRUCTION
                     ) > 0,
                   list: this.models.map(function (e) {
@@ -30276,7 +30249,7 @@
                         (null === (t = n.editing) || void 0 === t
                           ? void 0
                           : t.uuid),
-                      amountPurchased: ST.space.hangar.getAmountById(e.uuid),
+                      amountPurchased: vT.space.hangar.getAmountById(e.uuid),
                       isAllPartsUnlocked: n.checkDetailsUnlocked(e),
                     };
                   }),
@@ -30291,15 +30264,17 @@
                             ? void 0
                             : t.name) || "",
                         parts: this.processShipPartsToUI(this.editing),
-                        availableParts: NR.filter(function (e) {
-                          return e.unlockCondition(vT.getInstance());
-                        }).map(function (e) {
-                          return {
-                            name: e.name,
-                            id: e.id,
-                            category: e.category,
-                          };
-                        }),
+                        availableParts: mR
+                          .filter(function (e) {
+                            return e.unlockCondition(CT.getInstance());
+                          })
+                          .map(function (e) {
+                            return {
+                              name: e.name,
+                              id: e.id,
+                              category: e.category,
+                            };
+                          }),
                         totalStats: r,
                         validationError: this.validationError,
                       }
@@ -30312,8 +30287,8 @@
               t
             );
           })(P),
-          yR = TR.getInstance(),
-          OR = (function () {
+          TR = hR.getInstance(),
+          yR = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -30347,9 +30322,9 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          LR = function () {
+          OR = function () {
             return (
-              (LR =
+              (OR =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -30358,10 +30333,10 @@
                         (e[r] = t[r]);
                   return e;
                 }),
-              LR.apply(this, arguments)
+              OR.apply(this, arguments)
             );
           },
-          CR = (function (e) {
+          LR = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -30376,7 +30351,7 @@
               );
             }
             return (
-              OR(t, e),
+              yR(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -30387,37 +30362,38 @@
                 return this.hangar;
               }),
               (t.prototype.destroyShip = function (e) {
-                var t = vT
-                  .getInstance()
-                  .space.spaceship.models.find(function (t) {
-                    return t.uuid === e;
-                  });
+                var t = CT.getInstance().space.spaceship.models.find(function (
+                  t
+                ) {
+                  return t.uuid === e;
+                });
                 if (t) {
-                  var n = vT
-                      .getInstance()
-                      .space.spaceship.calculateStats(t).costsOriginal,
+                  var n =
+                      CT.getInstance().space.spaceship.calculateStats(
+                        t
+                      ).costsOriginal,
                     i = this.hangar.findIndex(function (t) {
                       return t.id === e;
                     });
                   i > -1 &&
                     (this.hangar[i].amount--,
                     n.forEach(function (e) {
-                      vT.getInstance().resources.addResource(
+                      CT.getInstance().resources.addResource(
                         e.id,
                         0.8 * e.amount
                       );
                     }),
-                    ST.resources.reassertBalances());
+                    vT.resources.reassertBalances());
                 } else console.error("Model ".concat(e, " not found"));
               }),
               (t.prototype.buildShip = function (e) {
-                var t = vT
-                  .getInstance()
-                  .space.spaceship.models.find(function (t) {
-                    return t.uuid === e;
-                  });
-                if (t && ST.space.spaceship.checkDetailsUnlocked(t)) {
-                  var n = vT.getInstance().space.spaceship.calculateStats(t),
+                var t = CT.getInstance().space.spaceship.models.find(function (
+                  t
+                ) {
+                  return t.uuid === e;
+                });
+                if (t && vT.space.spaceship.checkDetailsUnlocked(t)) {
+                  var n = CT.getInstance().space.spaceship.calculateStats(t),
                     i = n.costsOriginal,
                     r = n.isAvailable,
                     o = n.stats;
@@ -30425,8 +30401,8 @@
                     var a = this.hangar.findIndex(function (t) {
                       return t.id === e;
                     });
-                    vT.getInstance().resources.subtractResourceBatch(i),
-                      ST.resources.reassertBalances(),
+                    CT.getInstance().resources.subtractResourceBatch(i),
+                      vT.resources.reassertBalances(),
                       a > -1
                         ? this.hangar[a].amount++
                         : this.hangar.push({ id: e, amount: 1 });
@@ -30438,10 +30414,10 @@
                   return t.id === e.uuid;
                 });
                 t || (t = { id: e.uuid, amount: 0 });
-                var n = vT.getInstance().space.spaceship.calculateStats(e),
-                  i = { stats: LR(LR({}, lR.stats), n.stats), costs: n.costs },
+                var n = CT.getInstance().space.spaceship.calculateStats(e),
+                  i = { stats: OR(OR({}, uR.stats), n.stats), costs: n.costs },
                   r =
-                    ST.space.spaceship.checkDetailsUnlocked(e) &&
+                    vT.space.spaceship.checkDetailsUnlocked(e) &&
                     i.stats.Power > 0;
                 return {
                   id: t.id,
@@ -30469,14 +30445,14 @@
                 var e = this;
                 return {
                   isUnlocked:
-                    ST.space.spaceship.models.filter(function (e) {
-                      return ST.space.spaceship.checkDetailsUnlocked(e);
+                    vT.space.spaceship.models.filter(function (e) {
+                      return vT.space.spaceship.checkDetailsUnlocked(e);
                     }).length > 0,
-                  ships: vT
-                    .getInstance()
-                    .space.spaceship.models.map(function (t) {
-                      return e.processToUI(t);
-                    }),
+                  ships: CT.getInstance().space.spaceship.models.map(function (
+                    t
+                  ) {
+                    return e.processToUI(t);
+                  }),
                 };
               }),
               (t.prototype.reset = function () {
@@ -30485,8 +30461,8 @@
               t
             );
           })(P),
-          vR = CR.getInstance(),
-          SR = (function () {
+          CR = LR.getInstance(),
+          vR = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -30520,9 +30496,9 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          PR = function () {
+          SR = function () {
             return (
-              (PR =
+              (SR =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -30531,10 +30507,10 @@
                         (e[r] = t[r]);
                   return e;
                 }),
-              PR.apply(this, arguments)
+              SR.apply(this, arguments)
             );
           },
-          MR = (function (e) {
+          PR = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -30543,7 +30519,7 @@
                   "[spaceship-fleet] load-to-editor",
                   function (e) {
                     console.log("Load to editor", e),
-                      (t.editing = PR(
+                      (t.editing = SR(
                         {},
                         t.fleets.find(function (t) {
                           return t.uuid === e.uuid;
@@ -30583,7 +30559,7 @@
               );
             }
             return (
-              SR(t, e),
+              vR(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -30611,7 +30587,7 @@
                       (n[e.shipId] || (n[e.shipId] = 0),
                       n[e.shipId]++,
                       n[e.shipId] >
-                        vT.getInstance().space.hangar.getAmountById(e.shipId) &&
+                        CT.getInstance().space.hangar.getAmountById(e.shipId) &&
                         t.push(e));
                   }),
                   t
@@ -30630,7 +30606,7 @@
                     this.editing.slots[o].shipId = void 0;
                   else {
                     var a = this.getModelUsed(e);
-                    ST.space.hangar.getAmountById(e) <= a ||
+                    vT.space.hangar.getAmountById(e) <= a ||
                       (o < 0
                         ? null === (r = this.editing) ||
                           void 0 === r ||
@@ -30663,10 +30639,10 @@
                           : n.uuid)
                       );
                     });
-                    this.fleets[n] = PR({}, this.editing);
+                    this.fleets[n] = SR({}, this.editing);
                   } else
                     this.fleets.push(
-                      PR(PR({}, this.editing), { uuid: RR.Z() })
+                      SR(SR({}, this.editing), { uuid: NR.Z() })
                     );
               }),
               (t.prototype.deleteFleet = function (e) {
@@ -30704,14 +30680,14 @@
                                       return e.line === i && e.column === o;
                                     });
                             if (!c || !c.shipId) return t.push(a), "continue";
-                            var s = ST.space.spaceship.getModelWithStats(
+                            var s = vT.space.spaceship.getModelWithStats(
                               c.shipId
                             );
                             if (!s) return t.push(a), "continue";
                             var u = s.stats,
                               l = s.name,
                               p = s.uuid;
-                            (a.stats = PR(PR({}, lR.stats), u)),
+                            (a.stats = SR(SR({}, uR.stats), u)),
                               (a.selectedName = l),
                               (a.selectedUUID = p),
                               t.push(a);
@@ -30735,8 +30711,8 @@
                   t = this;
                 return {
                   isUnlocked:
-                    ST.space.spaceship.models.filter(function (e) {
-                      return ST.space.spaceship.checkDetailsUnlocked(e);
+                    vT.space.spaceship.models.filter(function (e) {
+                      return vT.space.spaceship.checkDetailsUnlocked(e);
                     }).length > 0,
                   list: this.fleets.map(function (e) {
                     var n;
@@ -30758,7 +30734,7 @@
                             : e.uuid,
                         name: this.editing.name,
                         slots: this.slotsToUI(),
-                        options: ST.space.hangar.hangar.map(function (e) {
+                        options: vT.space.hangar.hangar.map(function (e) {
                           var n;
                           return {
                             id: e.id,
@@ -30766,7 +30742,7 @@
                             used: t.getModelUsed(e.id),
                             name:
                               (null ===
-                                (n = ST.space.spaceship.models.find(function (
+                                (n = vT.space.spaceship.models.find(function (
                                   t
                                 ) {
                                   return t.uuid === e.id;
@@ -30785,8 +30761,8 @@
               t
             );
           })(P),
-          BR = MR.getInstance(),
-          _R = (function () {
+          MR = PR.getInstance(),
+          BR = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -30820,9 +30796,9 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          UR = function () {
+          _R = function () {
             return (
-              (UR =
+              (_R =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -30831,10 +30807,10 @@
                         (e[r] = t[r]);
                   return e;
                 }),
-              UR.apply(this, arguments)
+              _R.apply(this, arguments)
             );
           },
-          bR = (function (e) {
+          UR = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -30843,7 +30819,7 @@
               );
             }
             return (
-              _R(t, e),
+              BR(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -30851,16 +30827,16 @@
                 for (var t, n = [], i = 0; i < 2; i++)
                   for (var r = 0; r < 5; r++) {
                     var o =
-                      (((t = {})[bA.SPEED] = 2 + 0.1 * e),
-                      (t[bA.POWER] = 1),
-                      (t[bA.FUEL_CONSUMPTION] = 0),
-                      (t[bA.WEAPON_COOLDOWN] = 3),
-                      (t[bA.DAMAGE] = 4 * (e + 1) * Math.pow(1.4, e)),
-                      (t[bA.HULL_REPAIR] = 0),
-                      (t[bA.DURABILITY] = 45 * (e + 1) * Math.pow(1.4, e)),
-                      (t[bA.SHIELD_REGEN] = 0.1 * Math.pow(1.4, e)),
-                      (t[bA.SHIELD_MITIGATION] = 0.3),
-                      (t[bA.SHIELD_CAP] = 20 * (e + 1) * Math.pow(1.4, e)),
+                      (((t = {})[UA.SPEED] = 2 + 0.1 * e),
+                      (t[UA.POWER] = 1),
+                      (t[UA.FUEL_CONSUMPTION] = 0),
+                      (t[UA.WEAPON_COOLDOWN] = 3),
+                      (t[UA.DAMAGE] = 4 * (e + 1) * Math.pow(1.4, e)),
+                      (t[UA.HULL_REPAIR] = 0),
+                      (t[UA.DURABILITY] = 45 * (e + 1) * Math.pow(1.4, e)),
+                      (t[UA.SHIELD_REGEN] = 0.1 * Math.pow(1.4, e)),
+                      (t[UA.SHIELD_MITIGATION] = 0.3),
+                      (t[UA.SHIELD_CAP] = 20 * (e + 1) * Math.pow(1.4, e)),
                       t);
                     n.push({ shipId: "Nomad", line: i, column: r, stats: o });
                   }
@@ -30868,18 +30844,18 @@
               }),
               (t.prototype.fullfillStatsBeforeBattle = function (e) {
                 var t;
-                return UR(
-                  UR({}, e),
-                  (((t = {})[GA.ACTUAL_DURABILITY] = e.Durability),
-                  (t[GA.ACTUAL_RECHARGE] = 0),
-                  (t[GA.ACTUAL_SHIELD] = e[bA.SHIELD_CAP]),
+                return _R(
+                  _R({}, e),
+                  (((t = {})[bA.ACTUAL_DURABILITY] = e.Durability),
+                  (t[bA.ACTUAL_RECHARGE] = 0),
+                  (t[bA.ACTUAL_SHIELD] = e[UA.SHIELD_CAP]),
                   t)
                 );
               }),
               (t.prototype.initializeFight = function (e) {
                 var t = this,
-                  n = ST.space.fleet.fleets.find(function (e) {
-                    return e.uuid === ST.space.battlefield.state.fleetUsed;
+                  n = vT.space.fleet.fleets.find(function (e) {
+                    return e.uuid === vT.space.battlefield.state.fleetUsed;
                   });
                 n &&
                   ((this.state.me = n.slots
@@ -30887,7 +30863,7 @@
                       return !!e.shipId;
                     })
                     .map(function (e) {
-                      var n = ST.space.spaceship.getModelWithStats(e.shipId);
+                      var n = vT.space.spaceship.getModelWithStats(e.shipId);
                       if (!n)
                         throw new Error("Cant calculate model " + e.shipId);
                       return {
@@ -30897,7 +30873,7 @@
                         line: e.line,
                         side: 0,
                         stats: t.fullfillStatsBeforeBattle(
-                          UR(UR({}, lR.stats), n.stats)
+                          _R(_R({}, uR.stats), n.stats)
                         ),
                       };
                     })),
@@ -30909,7 +30885,7 @@
                       line: e.line,
                       side: 1,
                       stats: t.fullfillStatsBeforeBattle(
-                        UR(UR({}, lR.stats), e.stats)
+                        _R(_R({}, uR.stats), e.stats)
                       ),
                     };
                   })),
@@ -30928,9 +30904,9 @@
                 t.forEach(function (e, i) {
                   (e.line < t[n].line ||
                     (e.line === t[n].line &&
-                      e.stats[bA.DAMAGE] / e.stats[GA.ACTUAL_DURABILITY] >
-                        t[n].stats[bA.DAMAGE] /
-                          t[n].stats[GA.ACTUAL_DURABILITY])) &&
+                      e.stats[UA.DAMAGE] / e.stats[bA.ACTUAL_DURABILITY] >
+                        t[n].stats[UA.DAMAGE] /
+                          t[n].stats[bA.ACTUAL_DURABILITY])) &&
                     (n = i);
                 });
                 var i = {
@@ -30939,8 +30915,8 @@
                   side: e.side,
                   tx: t[n].x,
                   ty: t[n].y,
-                  dmg: e.stats[bA.DAMAGE],
-                  uuid: RR.Z(),
+                  dmg: e.stats[UA.DAMAGE],
+                  uuid: NR.Z(),
                 };
                 this.state.bullets.push(i);
               }),
@@ -30973,37 +30949,37 @@
                     var c = e.dmg,
                       s = Math.min(
                         c,
-                        o.stats[GA.ACTUAL_SHIELD] /
-                          (1 - o.stats[bA.SHIELD_MITIGATION])
+                        o.stats[bA.ACTUAL_SHIELD] /
+                          (1 - o.stats[UA.SHIELD_MITIGATION])
                       );
-                    (o.stats[GA.ACTUAL_SHIELD] -=
-                      c * (1 - o.stats[bA.SHIELD_MITIGATION])),
+                    (o.stats[bA.ACTUAL_SHIELD] -=
+                      c * (1 - o.stats[UA.SHIELD_MITIGATION])),
                       (c -= s),
-                      (o.stats[GA.ACTUAL_DURABILITY] -= c),
-                      o.stats[GA.ACTUAL_SHIELD] < 0 &&
-                        (o.stats[GA.ACTUAL_SHIELD] = 0),
-                      o.stats[GA.ACTUAL_DURABILITY] < 0 && i.splice(a, 1);
+                      (o.stats[bA.ACTUAL_DURABILITY] -= c),
+                      o.stats[bA.ACTUAL_SHIELD] < 0 &&
+                        (o.stats[bA.ACTUAL_SHIELD] = 0),
+                      o.stats[bA.ACTUAL_DURABILITY] < 0 && i.splice(a, 1);
                   }
                   return !0;
                 }
                 return !1;
               }),
               (t.prototype.processShip = function (e, t) {
-                e.stats[GA.ACTUAL_DURABILITY] < e.stats[bA.DURABILITY] &&
-                  e.stats[bA.HULL_REPAIR] > 0 &&
-                  (e.stats[GA.ACTUAL_DURABILITY] = Math.min(
-                    e.stats[GA.ACTUAL_DURABILITY] + t * e.stats[bA.HULL_REPAIR],
-                    e.stats[bA.DURABILITY]
+                e.stats[bA.ACTUAL_DURABILITY] < e.stats[UA.DURABILITY] &&
+                  e.stats[UA.HULL_REPAIR] > 0 &&
+                  (e.stats[bA.ACTUAL_DURABILITY] = Math.min(
+                    e.stats[bA.ACTUAL_DURABILITY] + t * e.stats[UA.HULL_REPAIR],
+                    e.stats[UA.DURABILITY]
                   )),
-                  e.stats[GA.ACTUAL_SHIELD] < e.stats[bA.SHIELD_CAP] &&
-                    e.stats[bA.SHIELD_REGEN] > 0 &&
-                    (e.stats[GA.ACTUAL_SHIELD] = Math.min(
-                      e.stats[GA.ACTUAL_SHIELD] + t * e.stats[bA.SHIELD_REGEN],
-                      e.stats[bA.SHIELD_CAP]
+                  e.stats[bA.ACTUAL_SHIELD] < e.stats[UA.SHIELD_CAP] &&
+                    e.stats[UA.SHIELD_REGEN] > 0 &&
+                    (e.stats[bA.ACTUAL_SHIELD] = Math.min(
+                      e.stats[bA.ACTUAL_SHIELD] + t * e.stats[UA.SHIELD_REGEN],
+                      e.stats[UA.SHIELD_CAP]
                     )),
-                  (e.stats[GA.ACTUAL_RECHARGE] += t),
-                  e.stats[GA.ACTUAL_RECHARGE] >= e.stats[bA.WEAPON_COOLDOWN] &&
-                    ((e.stats[GA.ACTUAL_RECHARGE] = 0),
+                  (e.stats[bA.ACTUAL_RECHARGE] += t),
+                  e.stats[bA.ACTUAL_RECHARGE] >= e.stats[UA.WEAPON_COOLDOWN] &&
+                    ((e.stats[bA.ACTUAL_RECHARGE] = 0),
                     this.spaceshipAttack(e));
               }),
               (t.prototype.process = function (e) {
@@ -31030,12 +31006,12 @@
                   inProgress: this.state.inProgress,
                   me: this.state.me.map(function (e) {
                     var t, n;
-                    return UR(UR({}, e), {
+                    return _R(_R({}, e), {
                       name:
                         null !==
                           (n =
                             null ===
-                              (t = ST.space.spaceship.models.find(function (t) {
+                              (t = vT.space.spaceship.models.find(function (t) {
                                 return t.uuid === e.modelId;
                               })) || void 0 === t
                               ? void 0
@@ -31045,7 +31021,7 @@
                     });
                   }),
                   enemy: this.state.enemy.map(function (e) {
-                    return UR(UR({}, e), { name: e.modelId });
+                    return _R(_R({}, e), { name: e.modelId });
                   }),
                   bullets: this.state.bullets,
                 };
@@ -31053,8 +31029,8 @@
               t
             );
           })(P),
-          GR = bR.getInstance(),
-          wR = (function () {
+          bR = UR.getInstance(),
+          GR = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -31088,9 +31064,9 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          DR = function () {
+          wR = function () {
             return (
-              (DR =
+              (wR =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -31099,10 +31075,10 @@
                         (e[r] = t[r]);
                   return e;
                 }),
-              DR.apply(this, arguments)
+              wR.apply(this, arguments)
             );
           },
-          XR = (function (e) {
+          DR = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -31117,7 +31093,7 @@
                   pilot: { xp: 0, maxXp: 10, level: 0 },
                 }),
                 (t.statsCached = { speed: 0 }),
-                (t.fight = GR),
+                (t.fight = bR),
                 t.workDispatcher.on(
                   "[space-battlefield] set fleet",
                   function (e) {
@@ -31174,7 +31150,7 @@
               );
             }
             return (
-              wR(t, e),
+              GR(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -31199,7 +31175,7 @@
               (t.prototype.calcUsedFleetStats = function () {
                 var e = this;
                 if (this.state.fleetUsed) {
-                  var t = ST.space.fleet.fleets.find(function (t) {
+                  var t = vT.space.fleet.fleets.find(function (t) {
                     return t.uuid === e.state.fleetUsed;
                   });
                   if (t) {
@@ -31208,13 +31184,13 @@
                     return (
                       t.slots.forEach(function (e) {
                         if (e.shipId) {
-                          var t = ST.space.spaceship.getModelWithStats(
+                          var t = vT.space.spaceship.getModelWithStats(
                             e.shipId
                           );
                           if (t) {
                             var r = t.stats;
                             (n = Math.min(n, r.Speed || 1)),
-                              (i += r[bA.FUEL_CONSUMPTION] || 0);
+                              (i += r[UA.FUEL_CONSUMPTION] || 0);
                           }
                         }
                       }),
@@ -31238,12 +31214,12 @@
               }),
               (t.prototype.dataToUI = function () {
                 var e = this,
-                  t = ST.space.fleet.fleets.find(function (t) {
+                  t = vT.space.fleet.fleets.find(function (t) {
                     return t.uuid === e.state.fleetUsed;
                   }),
                   n = this.getFromCache();
                 return {
-                  isUnlocked: ST.space.fleet.fleets.length > 0,
+                  isUnlocked: vT.space.fleet.fleets.length > 0,
                   battlefield: {
                     level: this.state.level,
                     maxLevel: this.state.maxLevel,
@@ -31267,17 +31243,17 @@
                         ((null == n ? void 0 : n.speed) || 1e-50)
                     ),
                   },
-                  fleetSelectable: ST.space.fleet.fleets.map(function (t) {
+                  fleetSelectable: vT.space.fleet.fleets.map(function (t) {
                     return {
                       uuid: t.uuid,
                       name: t.name,
                       isEditing: e.state.fleetUsed === t.uuid,
-                      isInvalid: ST.space.fleet.getInvalidSlots(t).length > 0,
+                      isInvalid: vT.space.fleet.getInvalidSlots(t).length > 0,
                     };
                   }),
                   fight: this.fight.dataToUI(),
-                  pilot: DR(DR({}, this.state.pilot), {
-                    bonus: "x".concat(F(pR(ST))),
+                  pilot: wR(wR({}, this.state.pilot), {
+                    bonus: "x".concat(F(lR(vT))),
                   }),
                 };
               }),
@@ -31295,21 +31271,21 @@
                   t = this;
                 if (this.state.fleetUsed)
                   if (
-                    ST.space.fleet.getInvalidSlots(
-                      ST.space.fleet.fleets.find(function (e) {
+                    vT.space.fleet.getInvalidSlots(
+                      vT.space.fleet.fleets.find(function (e) {
                         return e.uuid === t.state.fleetUsed;
                       })
                     ).length > 0
                   )
                     this.state.fleetUsed = void 0;
                   else {
-                    var n = ST.resources.getResource(l.FUEL),
+                    var n = vT.resources.getResource(l.FUEL),
                       i =
                         (null === (e = this.getFromCache()) || void 0 === e
                           ? void 0
                           : e.fuelConsumption) || 0;
                     n + i > 0 &&
-                      (ST.resources.subtractResource(l.FUEL, -i),
+                      (vT.resources.subtractResource(l.FUEL, -i),
                       (this.state.isFighting = !0),
                       this.resetTravel());
                   }
@@ -31318,15 +31294,15 @@
                 var e =
                     0.05 +
                     0.01 *
-                      ST.landingZone.landingZoneBuildings.getBuildingLevel(
+                      vT.landingZone.landingZoneBuildings.getBuildingLevel(
                         a.ANTIMATTER_STUDY_CENTER
                       ),
                   t = Math.random();
                 if ((console.log("Check: ", e, t), t < e)) {
                   var n = 0.1 + 0.01 * this.state.level;
-                  ST.resources.addResource(l.ANOMALITIES, n),
-                    ST.resources.reassertBalances(),
-                    ST.eventLog.registerGain("Anomalies", F(n));
+                  vT.resources.addResource(l.ANOMALITIES, n),
+                    vT.resources.reassertBalances(),
+                    vT.eventLog.registerGain("Anomalies", F(n));
                 }
               }),
               (t.prototype.process = function (e) {
@@ -31350,7 +31326,7 @@
                   if (!this.fight.state.inProgress)
                     return void this.fight.initializeFight(this.state.level);
                   this.fight.isBattleWon()
-                    ? (ST.statistics.stats.fightsWon++,
+                    ? (vT.statistics.stats.fightsWon++,
                       this.fight.finalizeFight(),
                       (this.state.pilot.xp +=
                         2 *
@@ -31358,11 +31334,11 @@
                         Math.pow(1.2, this.state.level) *
                         Math.pow(
                           1.3,
-                          ST.prestige.colonizePlanet.getUpgradeLevel(N.PILOT_XP)
+                          vT.prestige.colonizePlanet.getUpgradeLevel(N.PILOT_XP)
                         ) *
                         Math.pow(
                           1.03,
-                          ST.landingZone.landingZoneBuildings.getBuildingActiveLevel(
+                          vT.landingZone.landingZoneBuildings.getBuildingActiveLevel(
                             a.FLIGHT_SIMULATOR
                           )
                         )),
@@ -31370,7 +31346,7 @@
                         this.state.maxLevel,
                         this.state.level + 1
                       )),
-                      ST.science.scienceResearches.getResearchLevel(
+                      vT.science.scienceResearches.getResearchLevel(
                         M.EXOTIC_MATTER_STUDY
                       ) > 0 && this.awardAnomaly(),
                       this.stopFight(),
@@ -31381,7 +31357,7 @@
                           this.state.maxLevel
                         )))
                     : this.fight.isBattleLost()
-                    ? (ST.statistics.stats.fightsLost++,
+                    ? (vT.statistics.stats.fightsLost++,
                       this.fight.finalizeFight(),
                       (this.state.level = Math.max(0, this.state.level - 1)))
                     : this.fight.process(e);
@@ -31403,8 +31379,8 @@
               t
             );
           })(P),
-          kR = XR.getInstance(),
-          HR = (function () {
+          XR = DR.getInstance(),
+          kR = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -31438,19 +31414,19 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          xR = (function (e) {
+          HR = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
-                (t.spaceship = yR),
-                (t.hangar = vR),
-                (t.fleet = BR),
-                (t.battlefield = kR),
+                (t.spaceship = TR),
+                (t.hangar = CR),
+                (t.fleet = MR),
+                (t.battlefield = XR),
                 t
               );
             }
             return (
-              HR(t, e),
+              kR(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -31473,7 +31449,7 @@
               (t.prototype.dataToUI = function () {
                 return {
                   isUnlocked:
-                    ST.science.scienceResearches.getResearchLevel(
+                    vT.science.scienceResearches.getResearchLevel(
                       M.ROCKET_SCIENCE
                     ) > 0,
                   spaceship: this.spaceship.dataToUI(),
@@ -31494,7 +31470,7 @@
               t
             );
           })(P).getInstance(),
-          YR = (function () {
+          xR = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -31528,7 +31504,7 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          ZR = (function (e) {
+          YR = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -31557,7 +31533,7 @@
               );
             }
             return (
-              YR(t, e),
+              xR(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -31573,19 +31549,19 @@
               }),
               (t.prototype.dataToUI = function () {
                 var e = this,
-                  t = DA.map(function (t) {
+                  t = wA.map(function (t) {
                     return e.processToUI(t, e.bulkBuy);
                   });
                 return (
                   this.isPrestigeAvailable() &&
-                    ST.newNotifications.registerNotification(
+                    vT.newNotifications.registerNotification(
                       "prestige:transmit-knowledge"
                     ),
                   {
                     upgrades: t,
                     isUnlocked:
                       this.numPrestiged > 0 || this.isPrestigeAvailable(),
-                    kp: F(ST.resources.getResource(l.KNOWLEDGE_POINT)),
+                    kp: F(vT.resources.getResource(l.KNOWLEDGE_POINT)),
                     prestige: {
                       isAvailable: this.isPrestigeAvailable(),
                       description: "",
@@ -31613,9 +31589,9 @@
                 n || ((n = { id: e.id, level: 0 }), this.upgrades.push(n));
                 var i = Z.calcBatchAll(
                     e.getCost,
-                    vT.getInstance(),
+                    CT.getInstance(),
                     n.level,
-                    vT.getInstance().resources.getBatchObject()
+                    CT.getInstance().resources.getBatchObject()
                   ),
                   r = i.reduce(function (e, t) {
                     return Math.min(e, t.max);
@@ -31628,24 +31604,22 @@
                 return (
                   (i = Z.calcBatchAll(
                     e.getCost,
-                    vT.getInstance(),
+                    CT.getInstance(),
                     n.level,
-                    vT.getInstance().resources.getBatchObject(),
+                    CT.getInstance().resources.getBatchObject(),
                     Math.max(1, o)
                   )),
                   {
                     id: e.id,
                     name: e.name,
                     description: e.description,
-                    isUnlocked: e.unlockCondition(ST),
+                    isUnlocked: e.unlockCondition(vT),
                     isAvailable: r >= 1,
-                    cost: vT
-                      .getInstance()
-                      .resources.assertEnought(
-                        i,
-                        vT.getInstance().resources.getBatchObject(),
-                        vT.getInstance().resources.getBatchBalanceObject()
-                      ),
+                    cost: CT.getInstance().resources.assertEnought(
+                      i,
+                      CT.getInstance().resources.getBatchObject(),
+                      CT.getInstance().resources.getBatchBalanceObject()
+                    ),
                     progress: r < 1 ? (100 * r).toPrecision(3) : "100",
                     isMaxedOut: !!e.maxLevel && e.maxLevel <= n.level,
                     maxLevel: e.maxLevel,
@@ -31656,7 +31630,7 @@
                 );
               }),
               (t.prototype.getEffectGain = function (e) {
-                var t = DA.filter(function (t) {
+                var t = wA.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getEffectGain) || void 0 === n
                       ? void 0
@@ -31675,7 +31649,7 @@
                         ? void 0
                         : r[e])
                     ) {
-                      var a = Z.calculate(ST, o.getEffectGain[e], 0, i.level);
+                      var a = Z.calculate(vT, o.getEffectGain[e], 0, i.level);
                       n.push({
                         label: "Knowledge: ".concat(o.name),
                         value: a,
@@ -31688,7 +31662,7 @@
                 );
               }),
               (t.prototype.getEffectMultiplier = function (e) {
-                var t = DA.filter(function (t) {
+                var t = wA.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getEffectMultiplier) ||
                     void 0 === n
@@ -31709,7 +31683,7 @@
                         : r[e])
                     ) {
                       var a = Z.calculate(
-                        ST,
+                        vT,
                         o.getEffectMultiplier[e],
                         i.level,
                         1
@@ -31727,7 +31701,7 @@
                 );
               }),
               (t.prototype.getResourceBeingProduced = function (e) {
-                var t = DA.filter(function (t) {
+                var t = wA.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getGain) || void 0 === n
                       ? void 0
@@ -31744,7 +31718,7 @@
                       o &&
                       (null === (r = o.getGain) || void 0 === r ? void 0 : r[e])
                     ) {
-                      var a = Z.calculate(ST, o.getGain[e], 0, i.level);
+                      var a = Z.calculate(vT, o.getGain[e], 0, i.level);
                       n.push({
                         label: "Knowledge: ".concat(o.name),
                         value: a,
@@ -31757,7 +31731,7 @@
                 );
               }),
               (t.prototype.getResourceMultiplier = function (e) {
-                var t = DA.filter(function (t) {
+                var t = wA.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getGainMultiplier) || void 0 === n
                       ? void 0
@@ -31777,7 +31751,7 @@
                         : r[e])
                     ) {
                       var a = Z.calculate(
-                        ST,
+                        vT,
                         o.getGainMultiplier[e],
                         0,
                         i.level
@@ -31795,7 +31769,7 @@
                 );
               }),
               (t.prototype.getResourceBeingStored = function (e) {
-                var t = DA.filter(function (t) {
+                var t = wA.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getCapacityEffect) || void 0 === n
                       ? void 0
@@ -31816,7 +31790,7 @@
                         : r[e])
                     ) {
                       var c = Z.calculate(
-                        ST,
+                        vT,
                         null === (o = a.getCapacityEffect) || void 0 === o
                           ? void 0
                           : o[e],
@@ -31835,7 +31809,7 @@
                 );
               }),
               (t.prototype.getCapacityMult = function (e) {
-                var t = DA.filter(function (t) {
+                var t = wA.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getCapacityMultiplier) ||
                     void 0 === n
@@ -31850,7 +31824,7 @@
                     });
                     if (r && r.getCapacityMultiplier) {
                       var o = Z.calculate(
-                        ST,
+                        vT,
                         r.getCapacityMultiplier[e],
                         0,
                         i.level
@@ -31868,7 +31842,7 @@
                 );
               }),
               (t.prototype.doUpgrade = function (e) {
-                var t = DA.find(function (t) {
+                var t = wA.find(function (t) {
                   return t.id === e;
                 });
                 if (t) {
@@ -31882,9 +31856,9 @@
                     return;
                   var i = Z.calcBatchAll(
                     t.getCost,
-                    vT.getInstance(),
+                    CT.getInstance(),
                     this.upgrades[n].level,
-                    vT.getInstance().resources.getBatchObject(),
+                    CT.getInstance().resources.getBatchObject(),
                     this.bulkBuy
                   ).reduce(function (e, t) {
                     return Math.min(e, Math.floor(t.max));
@@ -31897,148 +31871,137 @@
                       ),
                       o = Z.calcBatchAll(
                         t.getCost,
-                        vT.getInstance(),
+                        CT.getInstance(),
                         this.upgrades[n].level,
-                        vT.getInstance().resources.getBatchObject(),
+                        CT.getInstance().resources.getBatchObject(),
                         r
                       );
                     (this.upgrades[n].level += r),
                       console.log("costs: ", o),
-                      vT.getInstance().resources.subtractResourceBatch(o),
-                      ST.resources.reassertBalances(),
-                      ST.regenerateCache();
+                      CT.getInstance().resources.subtractResourceBatch(o),
+                      vT.resources.reassertBalances(),
+                      vT.regenerateCache();
                   }
                 }
               }),
               (t.prototype.isPrestigeAvailable = function () {
                 return (
-                  ST.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                  vT.landingZone.landingZoneUpgrades.getUpgradeLevel(
                     o.GREAT_RADIO_TRANSMITTER
-                  ) > 0 && ST.colony.colonists > 50
+                  ) > 0 && vT.colony.colonists > 50
                 );
               }),
               (t.prototype.getPrestigeGain = function () {
-                var e = vT
-                  .getInstance()
-                  .prestige.colonizePlanet.processPlanetToUI(
-                    vT.getInstance().prestige.colonizePlanet.current,
+                var e =
+                  CT.getInstance().prestige.colonizePlanet.processPlanetToUI(
+                    CT.getInstance().prestige.colonizePlanet.current,
                     -1
                   );
                 return (
-                  Math.max(ST.colony.colonists - 50, 0) *
-                  vT.getInstance().prestige.colonizePlanet.getCurrentXPBonus() *
+                  Math.max(vT.colony.colonists - 50, 0) *
+                  CT.getInstance().prestige.colonizePlanet.getCurrentXPBonus() *
                   Math.pow(
                     1.5,
-                    vT
-                      .getInstance()
-                      .landingZone.landingZoneUpgrades.getUpgradeLevel(
-                        o.QUANTUM_ENCRYPTION
-                      )
+                    CT.getInstance().landingZone.landingZoneUpgrades.getUpgradeLevel(
+                      o.QUANTUM_ENCRYPTION
+                    )
                   ) *
                   Math.pow(
                     1.5,
-                    vT
-                      .getInstance()
-                      .landingZone.landingZoneUpgrades.getUpgradeLevel(
-                        o.HUGE_GAMMA_TRANSMITTER
-                      )
+                    CT.getInstance().landingZone.landingZoneUpgrades.getUpgradeLevel(
+                      o.HUGE_GAMMA_TRANSMITTER
+                    )
                   ) *
                   e.xpGain *
                   (1 +
                     0.5 *
-                      vT
-                        .getInstance()
-                        .landingZone.landingZoneBuildings.getBuildingActiveLevel(
-                          a.NEUTRON_CORE
-                        )) *
+                      CT.getInstance().landingZone.landingZoneBuildings.getBuildingActiveLevel(
+                        a.NEUTRON_CORE
+                      )) *
                   (1 +
                     0.75 *
-                      vT
-                        .getInstance()
-                        .prestige.colonizePlanet.getUpgradeLevel(
-                          N.BROADCASTING_TRANSMITTER
-                        ) *
-                      vT.getInstance().colony.getColonistsHappiness()) *
+                      CT.getInstance().prestige.colonizePlanet.getUpgradeLevel(
+                        N.BROADCASTING_TRANSMITTER
+                      ) *
+                      CT.getInstance().colony.getColonistsHappiness()) *
                   (1 +
                     0.25 *
-                      vT
-                        .getInstance()
-                        .landingZone.landingZoneUpgrades.getUpgradeLevel(
-                          o.INTERSTELLAR_TELEPORTS
-                        )) *
-                  vT.getInstance().space.battlefield.getKPBonus()
+                      CT.getInstance().landingZone.landingZoneUpgrades.getUpgradeLevel(
+                        o.INTERSTELLAR_TELEPORTS
+                      )) *
+                  CT.getInstance().space.battlefield.getKPBonus()
                 );
               }),
               (t.prototype.doPrestige = function () {
                 if (this.isPrestigeAvailable()) {
                   var e = this.getPrestigeGain(),
-                    t = ST.resources.getResource(l.COLONIZE_XP) || 0,
-                    n = ST.resources.getResource(l.KNOWLEDGE_POINT) || 0;
-                  ST.eventLog.registerPrestige(
+                    t = vT.resources.getResource(l.COLONIZE_XP) || 0,
+                    n = vT.resources.getResource(l.KNOWLEDGE_POINT) || 0;
+                  vT.eventLog.registerPrestige(
                     "Transmit knowledge",
                     "".concat(F(e), " KP")
                   ),
-                    ST.landingZone.reset(),
-                    ST.colony.reset(),
-                    ST.crafting.reset(),
-                    ST.science.reset(),
-                    ST.laws.reset(),
-                    ST.resources.reset(),
-                    ST.space.reset(),
-                    ST.queuedItems.reset(),
-                    ST.environment.reset(),
-                    ST.expeditionV2.reset(),
-                    (ST.statistics.stats.kpTotal =
-                      (ST.statistics.stats.kpTotal || 0) + e),
-                    (ST.statistics.stats.kpMaxGain = Math.max(
-                      ST.statistics.stats.kpMaxGain || 0,
+                    vT.landingZone.reset(),
+                    vT.colony.reset(),
+                    vT.crafting.reset(),
+                    vT.science.reset(),
+                    vT.laws.reset(),
+                    vT.resources.reset(),
+                    vT.space.reset(),
+                    vT.queuedItems.reset(),
+                    vT.environment.reset(),
+                    vT.expeditionV2.reset(),
+                    (vT.statistics.stats.kpTotal =
+                      (vT.statistics.stats.kpTotal || 0) + e),
+                    (vT.statistics.stats.kpMaxGain = Math.max(
+                      vT.statistics.stats.kpMaxGain || 0,
                       e
                     )),
-                    ST.resources.addResource(l.KNOWLEDGE_POINT, e + n),
-                    ST.resources.addResource(l.COLONIZE_XP, t),
-                    (ST.statistics.stats.maxKpPerHour = Math.max(
-                      ST.statistics.stats.maxKpPerHour,
+                    vT.resources.addResource(l.KNOWLEDGE_POINT, e + n),
+                    vT.resources.addResource(l.COLONIZE_XP, t),
+                    (vT.statistics.stats.maxKpPerHour = Math.max(
+                      vT.statistics.stats.maxKpPerHour,
                       (3600 * e) /
-                        (ST.statistics.stats.timeThisPrestige + 0.001)
+                        (vT.statistics.stats.timeThisPrestige + 0.001)
                     )),
-                    (ST.statistics.stats.timeThisPrestige = 0),
-                    ST.statistics.reset(),
-                    ST.newNotifications.resetNotifications(),
-                    ST.achievements.resetFailedOnKP(),
+                    (vT.statistics.stats.timeThisPrestige = 0),
+                    vT.statistics.reset(),
+                    vT.newNotifications.resetNotifications(),
+                    vT.achievements.resetFailedOnKP(),
                     this.numPrestiged++,
-                    ST.resources.reassertBalances(),
-                    ST.regenerateCache();
+                    vT.resources.reassertBalances(),
+                    vT.regenerateCache();
                 }
               }),
               (t.prototype.process = function (e) {}),
               t
             );
           })(P),
-          WR = ZR.getInstance(),
-          FR = [
+          ZR = YR.getInstance(),
+          WR = [
             {
               id: m.COLD,
               category: A.TEMPERATURE,
               name: "Cold",
               complexityModifier: 1.15,
               getGainMultiplier:
-                ((Hm = {}),
-                (Hm[l.POWER] = function (e) {
+                ((km = {}),
+                (km[l.POWER] = function (e) {
                   return { A: 1, B: 0.9, type: i.EXPONENTIAL };
                 }),
-                (Hm[l.NUTRITION] = function (e) {
+                (km[l.NUTRITION] = function (e) {
                   return { A: 1, B: 0.9, type: i.EXPONENTIAL };
                 }),
-                (Hm[l.BIOMASS] = function (e) {
+                (km[l.BIOMASS] = function (e) {
                   return { A: 1, B: 0.9, type: i.EXPONENTIAL };
                 }),
-                (Hm[l.WATER] = function (e) {
+                (km[l.WATER] = function (e) {
                   return { A: 1, B: 1.05, type: i.EXPONENTIAL };
                 }),
-                (Hm[l.OXYGEN] = function (e) {
+                (km[l.OXYGEN] = function (e) {
                   return { A: 1, B: 1.05, type: i.EXPONENTIAL };
                 }),
-                Hm),
+                km),
               unlockCondition: function (e) {
                 return !0;
               },
@@ -32049,17 +32012,17 @@
               name: "Hot",
               complexityModifier: 0.92,
               getGainMultiplier:
-                ((xm = {}),
-                (xm[l.POWER] = function (e) {
+                ((Hm = {}),
+                (Hm[l.POWER] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                (xm[l.WATER] = function (e) {
+                (Hm[l.WATER] = function (e) {
                   return { A: 1, B: 0.95, type: i.EXPONENTIAL };
                 }),
-                (xm[l.OXYGEN] = function (e) {
+                (Hm[l.OXYGEN] = function (e) {
                   return { A: 1, B: 0.95, type: i.EXPONENTIAL };
                 }),
-                xm),
+                Hm),
               unlockCondition: function (e) {
                 return !0;
               },
@@ -32070,23 +32033,23 @@
               name: "Frozen",
               complexityModifier: 1.4,
               getGainMultiplier:
-                ((Ym = {}),
-                (Ym[l.POWER] = function (e) {
+                ((xm = {}),
+                (xm[l.POWER] = function (e) {
                   return { A: 1, B: 0.75, type: i.EXPONENTIAL };
                 }),
-                (Ym[l.NUTRITION] = function (e) {
+                (xm[l.NUTRITION] = function (e) {
                   return { A: 1, B: 0.75, type: i.EXPONENTIAL };
                 }),
-                (Ym[l.BIOMASS] = function (e) {
+                (xm[l.BIOMASS] = function (e) {
                   return { A: 1, B: 0.75, type: i.EXPONENTIAL };
                 }),
-                (Ym[l.WOOD] = function (e) {
+                (xm[l.WOOD] = function (e) {
                   return { A: 1, B: 0.75, type: i.EXPONENTIAL };
                 }),
-                (Ym[l.FUEL] = function (e) {
+                (xm[l.FUEL] = function (e) {
                   return { A: 1, B: 0.75, type: i.EXPONENTIAL };
                 }),
-                Ym),
+                xm),
               unlockCondition: function (e) {
                 return (
                   e.prestige.colonizePlanet.getUpgradeLevel(N.HARSHNESS) > 0
@@ -32099,29 +32062,29 @@
               name: "Overheated",
               complexityModifier: 1.4,
               getGainMultiplier:
-                ((Zm = {}),
-                (Zm[l.POWER] = function (e) {
+                ((Ym = {}),
+                (Ym[l.POWER] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                (Zm[l.WATER] = function (e) {
+                (Ym[l.WATER] = function (e) {
                   return { A: 1, B: 0.6, type: i.EXPONENTIAL };
                 }),
-                (Zm[l.OXYGEN] = function (e) {
+                (Ym[l.OXYGEN] = function (e) {
                   return { A: 1, B: 0.6, type: i.EXPONENTIAL };
                 }),
-                (Zm[l.BIOMASS] = function (e) {
+                (Ym[l.BIOMASS] = function (e) {
                   return { A: 1, B: 0.6, type: i.EXPONENTIAL };
                 }),
-                (Zm[l.WOOD] = function (e) {
+                (Ym[l.WOOD] = function (e) {
                   return { A: 1, B: 0.6, type: i.EXPONENTIAL };
                 }),
-                (Zm[l.FUEL] = function (e) {
+                (Ym[l.FUEL] = function (e) {
                   return { A: 1, B: 0.6, type: i.EXPONENTIAL };
                 }),
-                (Zm[l.ROCKET_ENGINE] = function (e) {
+                (Ym[l.ROCKET_ENGINE] = function (e) {
                   return { A: 1, B: 0.6, type: i.EXPONENTIAL };
                 }),
-                Zm),
+                Ym),
               unlockCondition: function (e) {
                 return (
                   e.prestige.colonizePlanet.getUpgradeLevel(N.HARSHNESS) > 0
@@ -32134,20 +32097,20 @@
               name: "Ore Poor",
               complexityModifier: 1.2,
               getGainMultiplier:
-                ((Wm = {}),
-                (Wm[l.ORE] = function (e) {
+                ((Zm = {}),
+                (Zm[l.ORE] = function (e) {
                   return { A: 1, B: 0.8, type: i.EXPONENTIAL };
                 }),
-                (Wm[l.STONE] = function (e) {
+                (Zm[l.STONE] = function (e) {
                   return { A: 1, B: 0.8, type: i.EXPONENTIAL };
                 }),
-                (Wm[l.PLATINUM] = function (e) {
+                (Zm[l.PLATINUM] = function (e) {
                   return { A: 1, B: 0.8, type: i.EXPONENTIAL };
                 }),
-                (Wm[l.IRON] = function (e) {
+                (Zm[l.IRON] = function (e) {
                   return { A: 1, B: 0.8, type: i.EXPONENTIAL };
                 }),
-                Wm),
+                Zm),
               unlockCondition: function (e) {
                 return !0;
               },
@@ -32158,20 +32121,20 @@
               name: "Ore Rich",
               complexityModifier: 0.85,
               getGainMultiplier:
-                ((Fm = {}),
-                (Fm[l.ORE] = function (e) {
+                ((Wm = {}),
+                (Wm[l.ORE] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                (Fm[l.STONE] = function (e) {
+                (Wm[l.STONE] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                (Fm[l.PLATINUM] = function (e) {
+                (Wm[l.PLATINUM] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                (Fm[l.IRON] = function (e) {
+                (Wm[l.IRON] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                Fm),
+                Wm),
               unlockCondition: function (e) {
                 return !0;
               },
@@ -32182,6 +32145,21 @@
               name: "Small",
               complexityModifier: 1.15,
               getGainMultiplier:
+                ((Fm = {}),
+                (Fm[l.ORE] = function (e) {
+                  return { A: 1, B: 0.9, type: i.EXPONENTIAL };
+                }),
+                (Fm[l.STONE] = function (e) {
+                  return { A: 1, B: 0.9, type: i.EXPONENTIAL };
+                }),
+                (Fm[l.PLATINUM] = function (e) {
+                  return { A: 1, B: 0.9, type: i.EXPONENTIAL };
+                }),
+                (Fm[l.IRON] = function (e) {
+                  return { A: 1, B: 0.9, type: i.EXPONENTIAL };
+                }),
+                Fm),
+              getCapacityMultiplier:
                 ((Vm = {}),
                 (Vm[l.ORE] = function (e) {
                   return { A: 1, B: 0.9, type: i.EXPONENTIAL };
@@ -32196,21 +32174,6 @@
                   return { A: 1, B: 0.9, type: i.EXPONENTIAL };
                 }),
                 Vm),
-              getCapacityMultiplier:
-                ((jm = {}),
-                (jm[l.ORE] = function (e) {
-                  return { A: 1, B: 0.9, type: i.EXPONENTIAL };
-                }),
-                (jm[l.STONE] = function (e) {
-                  return { A: 1, B: 0.9, type: i.EXPONENTIAL };
-                }),
-                (jm[l.PLATINUM] = function (e) {
-                  return { A: 1, B: 0.9, type: i.EXPONENTIAL };
-                }),
-                (jm[l.IRON] = function (e) {
-                  return { A: 1, B: 0.9, type: i.EXPONENTIAL };
-                }),
-                jm),
               unlockCondition: function (e) {
                 return !0;
               },
@@ -32221,6 +32184,21 @@
               name: "Big",
               complexityModifier: 0.9,
               getGainMultiplier:
+                ((jm = {}),
+                (jm[l.ORE] = function (e) {
+                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
+                }),
+                (jm[l.STONE] = function (e) {
+                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
+                }),
+                (jm[l.PLATINUM] = function (e) {
+                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
+                }),
+                (jm[l.IRON] = function (e) {
+                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
+                }),
+                jm),
+              getCapacityMultiplier:
                 ((Km = {}),
                 (Km[l.ORE] = function (e) {
                   return { A: 1, B: 1.05, type: i.EXPONENTIAL };
@@ -32235,21 +32213,6 @@
                   return { A: 1, B: 1.05, type: i.EXPONENTIAL };
                 }),
                 Km),
-              getCapacityMultiplier:
-                ((zm = {}),
-                (zm[l.ORE] = function (e) {
-                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
-                }),
-                (zm[l.STONE] = function (e) {
-                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
-                }),
-                (zm[l.PLATINUM] = function (e) {
-                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
-                }),
-                (zm[l.IRON] = function (e) {
-                  return { A: 1, B: 1.05, type: i.EXPONENTIAL };
-                }),
-                zm),
               unlockCondition: function (e) {
                 return !0;
               },
@@ -32260,6 +32223,21 @@
               name: "Super Earth",
               complexityModifier: 1.35,
               getGainMultiplier:
+                ((zm = {}),
+                (zm[l.ORE] = function (e) {
+                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
+                }),
+                (zm[l.STONE] = function (e) {
+                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
+                }),
+                (zm[l.PLATINUM] = function (e) {
+                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
+                }),
+                (zm[l.IRON] = function (e) {
+                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
+                }),
+                zm),
+              getCapacityMultiplier:
                 ((qm = {}),
                 (qm[l.ORE] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
@@ -32274,21 +32252,6 @@
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
                 qm),
-              getCapacityMultiplier:
-                ((Qm = {}),
-                (Qm[l.ORE] = function (e) {
-                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
-                }),
-                (Qm[l.STONE] = function (e) {
-                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
-                }),
-                (Qm[l.PLATINUM] = function (e) {
-                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
-                }),
-                (Qm[l.IRON] = function (e) {
-                  return { A: 1, B: 1.1, type: i.EXPONENTIAL };
-                }),
-                Qm),
               buildingPriceModifier: function (e) {
                 return { A: 1, B: 1.4, type: i.EXPONENTIAL };
               },
@@ -32304,20 +32267,20 @@
               name: "Wet",
               complexityModifier: 0.9,
               getGainMultiplier:
-                ((Jm = {}),
-                (Jm[l.WATER] = function (e) {
+                ((Qm = {}),
+                (Qm[l.WATER] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                (Jm[l.NUTRITION] = function (e) {
+                (Qm[l.NUTRITION] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                (Jm[l.BIOMASS] = function (e) {
+                (Qm[l.BIOMASS] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                (Jm[l.WOOD] = function (e) {
+                (Qm[l.WOOD] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                Jm),
+                Qm),
               getCapacityMultiplier: {},
               unlockCondition: function (e) {
                 return !0;
@@ -32329,32 +32292,32 @@
               name: "Oceanic",
               complexityModifier: 1.35,
               getGainMultiplier:
-                (($m = {}),
-                ($m[l.WATER] = function (e) {
+                ((Jm = {}),
+                (Jm[l.WATER] = function (e) {
                   return { A: 1, B: 1.2, type: i.EXPONENTIAL };
                 }),
-                ($m[l.NUTRITION] = function (e) {
+                (Jm[l.NUTRITION] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                ($m[l.BIOMASS] = function (e) {
+                (Jm[l.BIOMASS] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                ($m[l.WOOD] = function (e) {
+                (Jm[l.WOOD] = function (e) {
                   return { A: 1, B: 0.5, type: i.EXPONENTIAL };
                 }),
-                ($m[l.POWER] = function (e) {
+                (Jm[l.POWER] = function (e) {
                   return { A: 1, B: 0.75, type: i.EXPONENTIAL };
                 }),
-                ($m[l.STONE] = function (e) {
+                (Jm[l.STONE] = function (e) {
                   return { A: 1, B: 0.5, type: i.EXPONENTIAL };
                 }),
-                ($m[l.ORE] = function (e) {
+                (Jm[l.ORE] = function (e) {
                   return { A: 1, B: 0.5, type: i.EXPONENTIAL };
                 }),
-                ($m[l.IRON] = function (e) {
+                (Jm[l.IRON] = function (e) {
                   return { A: 1, B: 0.5, type: i.EXPONENTIAL };
                 }),
-                $m),
+                Jm),
               getCapacityMultiplier: {},
               unlockCondition: function (e) {
                 return (
@@ -32368,20 +32331,20 @@
               name: "Desert",
               complexityModifier: 1.35,
               getGainMultiplier:
-                ((eN = {}),
-                (eN[l.WATER] = function (e) {
+                (($m = {}),
+                ($m[l.WATER] = function (e) {
                   return { A: 1, B: 0.75, type: i.EXPONENTIAL };
                 }),
-                (eN[l.NUTRITION] = function (e) {
+                ($m[l.NUTRITION] = function (e) {
                   return { A: 1, B: 0.8, type: i.EXPONENTIAL };
                 }),
-                (eN[l.BIOMASS] = function (e) {
+                ($m[l.BIOMASS] = function (e) {
                   return { A: 1, B: 0.8, type: i.EXPONENTIAL };
                 }),
-                (eN[l.WOOD] = function (e) {
+                ($m[l.WOOD] = function (e) {
                   return { A: 1, B: 0.8, type: i.EXPONENTIAL };
                 }),
-                eN),
+                $m),
               getCapacityMultiplier: {},
               unlockCondition: function (e) {
                 return (
@@ -32395,26 +32358,26 @@
               name: "Acid",
               complexityModifier: 1.4,
               getGainMultiplier:
-                ((tN = {}),
-                (tN[l.NUTRITION] = function (e) {
+                ((eN = {}),
+                (eN[l.NUTRITION] = function (e) {
                   return { A: 1, B: 0.6, type: i.EXPONENTIAL };
                 }),
-                (tN[l.BIOMASS] = function (e) {
+                (eN[l.BIOMASS] = function (e) {
                   return { A: 1, B: 0.6, type: i.EXPONENTIAL };
                 }),
-                (tN[l.WOOD] = function (e) {
+                (eN[l.WOOD] = function (e) {
                   return { A: 1, B: 0.6, type: i.EXPONENTIAL };
                 }),
-                (tN[l.IRON] = function (e) {
+                (eN[l.IRON] = function (e) {
                   return { A: 1, B: 0.6, type: i.EXPONENTIAL };
                 }),
-                (tN[l.WIRE] = function (e) {
+                (eN[l.WIRE] = function (e) {
                   return { A: 1, B: 0.6, type: i.EXPONENTIAL };
                 }),
-                (tN[l.PLATE] = function (e) {
+                (eN[l.PLATE] = function (e) {
                   return { A: 1, B: 0.6, type: i.EXPONENTIAL };
                 }),
-                tN),
+                eN),
               getCapacityMultiplier: {},
               unlockCondition: function (e) {
                 return (
@@ -32428,26 +32391,26 @@
               name: "Alkaline",
               complexityModifier: 1.4,
               getGainMultiplier:
-                ((nN = {}),
-                (nN[l.NUTRITION] = function (e) {
+                ((tN = {}),
+                (tN[l.NUTRITION] = function (e) {
                   return { A: 1, B: 0.9, type: i.EXPONENTIAL };
                 }),
-                (nN[l.BIOMASS] = function (e) {
+                (tN[l.BIOMASS] = function (e) {
                   return { A: 1, B: 0.9, type: i.EXPONENTIAL };
                 }),
-                (nN[l.WOOD] = function (e) {
+                (tN[l.WOOD] = function (e) {
                   return { A: 1, B: 0.9, type: i.EXPONENTIAL };
                 }),
-                (nN[l.RUBBER] = function (e) {
+                (tN[l.RUBBER] = function (e) {
                   return { A: 1, B: 0.6, type: i.EXPONENTIAL };
                 }),
-                (nN[l.PLASTICS] = function (e) {
+                (tN[l.PLASTICS] = function (e) {
                   return { A: 1, B: 0.6, type: i.EXPONENTIAL };
                 }),
-                (nN[l.GRAPHENE] = function (e) {
+                (tN[l.GRAPHENE] = function (e) {
                   return { A: 1, B: 0.6, type: i.EXPONENTIAL };
                 }),
-                nN),
+                tN),
               getCapacityMultiplier: {},
               unlockCondition: function (e) {
                 return (
@@ -32461,20 +32424,20 @@
               name: "Dry",
               complexityModifier: 1.15,
               getGainMultiplier:
-                ((iN = {}),
-                (iN[l.WATER] = function (e) {
+                ((nN = {}),
+                (nN[l.WATER] = function (e) {
                   return { A: 1, B: 0.9, type: i.EXPONENTIAL };
                 }),
-                (iN[l.NUTRITION] = function (e) {
+                (nN[l.NUTRITION] = function (e) {
                   return { A: 1, B: 0.9, type: i.EXPONENTIAL };
                 }),
-                (iN[l.BIOMASS] = function (e) {
+                (nN[l.BIOMASS] = function (e) {
                   return { A: 1, B: 0.9, type: i.EXPONENTIAL };
                 }),
-                (iN[l.WOOD] = function (e) {
+                (nN[l.WOOD] = function (e) {
                   return { A: 1, B: 0.9, type: i.EXPONENTIAL };
                 }),
-                iN),
+                nN),
               getCapacityMultiplier: {},
               unlockCondition: function (e) {
                 return !0;
@@ -32486,20 +32449,20 @@
               name: "Peaty",
               complexityModifier: 1.35,
               getGainMultiplier:
-                ((rN = {}),
-                (rN[l.BIOMASS] = function (e) {
+                ((iN = {}),
+                (iN[l.BIOMASS] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                (rN[l.WOOD] = function (e) {
+                (iN[l.WOOD] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                rN),
+                iN),
               getEffectMultiplier:
-                ((oN = {}),
-                (oN[U.SECURITY] = function (e) {
+                ((rN = {}),
+                (rN[U.SECURITY] = function (e) {
                   return { A: 1, B: 0.85, type: i.EXPONENTIAL };
                 }),
-                oN),
+                rN),
               getCapacityMultiplier: {},
               unlockCondition: function (e) {
                 return !0;
@@ -32511,17 +32474,17 @@
               name: "Semiconductors Poor",
               complexityModifier: 1.4,
               getGainMultiplier:
-                ((aN = {}),
-                (aN[l.SEMICONDUCTOR] = function (e) {
+                ((oN = {}),
+                (oN[l.SEMICONDUCTOR] = function (e) {
                   return { A: 1, B: 0.5, type: i.EXPONENTIAL };
                 }),
-                (aN[l.COMPUTER] = function (e) {
+                (oN[l.COMPUTER] = function (e) {
                   return { A: 1, B: 0.5, type: i.EXPONENTIAL };
                 }),
-                (aN[l.MAGNETO] = function (e) {
+                (oN[l.MAGNETO] = function (e) {
                   return { A: 1, B: 0.5, type: i.EXPONENTIAL };
                 }),
-                aN),
+                oN),
               getEffectMultiplier: {},
               getCapacityMultiplier: {},
               unlockCondition: function (e) {
@@ -32536,20 +32499,20 @@
               name: "Volcanic",
               complexityModifier: 1.35,
               getGainMultiplier:
-                ((cN = {}),
-                (cN[l.ORE] = function (e) {
+                ((aN = {}),
+                (aN[l.ORE] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                (cN[l.IRON] = function (e) {
+                (aN[l.IRON] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                cN),
+                aN),
               getEffectMultiplier:
-                ((sN = {}),
-                (sN[U.AESTHETICS] = function (e) {
+                ((cN = {}),
+                (cN[U.AESTHETICS] = function (e) {
                   return { A: 1, B: 0.82, type: i.EXPONENTIAL };
                 }),
-                sN),
+                cN),
               getCapacityMultiplier: {},
               probabilityReduction: 0.5,
               unlockCondition: function (e) {
@@ -32562,20 +32525,20 @@
               name: "Inactive",
               complexityModifier: 1.35,
               getGainMultiplier:
-                ((uN = {}),
-                (uN[l.WOOD] = function (e) {
+                ((sN = {}),
+                (sN[l.WOOD] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                (uN[l.NUTRITION] = function (e) {
+                (sN[l.NUTRITION] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                uN),
+                sN),
               getEffectMultiplier:
-                ((lN = {}),
-                (lN[U.HEALTHCARE] = function (e) {
+                ((uN = {}),
+                (uN[U.HEALTHCARE] = function (e) {
                   return { A: 1, B: 0.82, type: i.EXPONENTIAL };
                 }),
-                lN),
+                uN),
               getCapacityMultiplier: {},
               probabilityReduction: 0.5,
               unlockCondition: function (e) {
@@ -32589,11 +32552,11 @@
               complexityModifier: 0.8,
               getGainMultiplier: {},
               getEffectMultiplier:
-                ((pN = {}),
-                (pN[U.HEALTHCARE] = function (e) {
+                ((lN = {}),
+                (lN[U.HEALTHCARE] = function (e) {
                   return { A: 1, B: 1.05, type: i.EXPONENTIAL };
                 }),
-                pN),
+                lN),
               getCapacityMultiplier: {},
               probabilityReduction: 0.5,
               unlockCondition: function (e) {
@@ -32606,38 +32569,38 @@
               name: "Magma Ocean",
               complexityModifier: 1.5,
               getGainMultiplier:
+                ((pN = {}),
+                (pN[l.ORE] = function (e) {
+                  return { A: 1, B: 1.2, type: i.EXPONENTIAL };
+                }),
+                (pN[l.IRON] = function (e) {
+                  return { A: 1, B: 1.2, type: i.EXPONENTIAL };
+                }),
+                (pN[l.WIRE] = function (e) {
+                  return { A: 1, B: 1.2, type: i.EXPONENTIAL };
+                }),
+                (pN[l.PLATE] = function (e) {
+                  return { A: 1, B: 1.2, type: i.EXPONENTIAL };
+                }),
+                (pN[l.NUTRITION] = function (e) {
+                  return { A: 1, B: 0.6, type: i.EXPONENTIAL };
+                }),
+                (pN[l.BIOMASS] = function (e) {
+                  return { A: 1, B: 0.6, type: i.EXPONENTIAL };
+                }),
+                (pN[l.WOOD] = function (e) {
+                  return { A: 1, B: 0.6, type: i.EXPONENTIAL };
+                }),
+                pN),
+              getEffectMultiplier:
                 ((dN = {}),
-                (dN[l.ORE] = function (e) {
-                  return { A: 1, B: 1.2, type: i.EXPONENTIAL };
-                }),
-                (dN[l.IRON] = function (e) {
-                  return { A: 1, B: 1.2, type: i.EXPONENTIAL };
-                }),
-                (dN[l.WIRE] = function (e) {
-                  return { A: 1, B: 1.2, type: i.EXPONENTIAL };
-                }),
-                (dN[l.PLATE] = function (e) {
-                  return { A: 1, B: 1.2, type: i.EXPONENTIAL };
-                }),
-                (dN[l.NUTRITION] = function (e) {
+                (dN[U.AESTHETICS] = function (e) {
                   return { A: 1, B: 0.6, type: i.EXPONENTIAL };
                 }),
-                (dN[l.BIOMASS] = function (e) {
-                  return { A: 1, B: 0.6, type: i.EXPONENTIAL };
-                }),
-                (dN[l.WOOD] = function (e) {
+                (dN[U.SECURITY] = function (e) {
                   return { A: 1, B: 0.6, type: i.EXPONENTIAL };
                 }),
                 dN),
-              getEffectMultiplier:
-                ((EN = {}),
-                (EN[U.AESTHETICS] = function (e) {
-                  return { A: 1, B: 0.6, type: i.EXPONENTIAL };
-                }),
-                (EN[U.SECURITY] = function (e) {
-                  return { A: 1, B: 0.6, type: i.EXPONENTIAL };
-                }),
-                EN),
               getCapacityMultiplier: {},
               probabilityReduction: 0.25,
               unlockCondition: function (e) {
@@ -32652,17 +32615,17 @@
               name: "No Atmosphere",
               complexityModifier: 1.35,
               getGainMultiplier:
-                ((gN = {}),
-                (gN[l.WATER] = function (e) {
+                ((EN = {}),
+                (EN[l.WATER] = function (e) {
                   return { A: 1, B: 0.75, type: i.EXPONENTIAL };
                 }),
-                (gN[l.OXYGEN] = function (e) {
+                (EN[l.OXYGEN] = function (e) {
                   return { A: 1, B: 0.75, type: i.EXPONENTIAL };
                 }),
-                (gN[l.FUEL] = function (e) {
+                (EN[l.FUEL] = function (e) {
                   return { A: 1, B: 0.6, type: i.EXPONENTIAL };
                 }),
-                gN),
+                EN),
               getCapacityMultiplier: {},
               unlockCondition: function (e) {
                 return (
@@ -32676,20 +32639,20 @@
               name: "CO2",
               complexityModifier: 1.3,
               getGainMultiplier:
-                ((fN = {}),
-                (fN[l.BIOMASS] = function (e) {
+                ((gN = {}),
+                (gN[l.BIOMASS] = function (e) {
                   return { A: 1, B: 0.75, type: i.EXPONENTIAL };
                 }),
-                (fN[l.WOOD] = function (e) {
+                (gN[l.WOOD] = function (e) {
                   return { A: 1, B: 0.75, type: i.EXPONENTIAL };
                 }),
-                (fN[l.AI_CORE] = function (e) {
+                (gN[l.AI_CORE] = function (e) {
                   return { A: 1, B: 0.6, type: i.EXPONENTIAL };
                 }),
-                (fN[l.MAGNETO] = function (e) {
+                (gN[l.MAGNETO] = function (e) {
                   return { A: 1, B: 0.6, type: i.EXPONENTIAL };
                 }),
-                fN),
+                gN),
               getCapacityMultiplier: {},
               unlockCondition: function (e) {
                 return (
@@ -32703,27 +32666,27 @@
               name: "Methane",
               complexityModifier: 1.3,
               getGainMultiplier:
-                ((AN = {}),
-                (AN[l.POWER] = function (e) {
+                ((fN = {}),
+                (fN[l.POWER] = function (e) {
                   return { A: 1, B: 1.05, type: i.EXPONENTIAL };
                 }),
-                (AN[l.FUEL] = function (e) {
+                (fN[l.FUEL] = function (e) {
                   return { A: 1, B: 1.2, type: i.EXPONENTIAL };
                 }),
-                (AN[l.GRAPHENE] = function (e) {
+                (fN[l.GRAPHENE] = function (e) {
                   return { A: 1, B: 0.7, type: i.EXPONENTIAL };
                 }),
-                AN),
+                fN),
               getCapacityMultiplier: {},
               getEffectMultiplier:
-                ((mN = {}),
-                (mN[U.HEALTHCARE] = function (e) {
+                ((AN = {}),
+                (AN[U.HEALTHCARE] = function (e) {
                   return { A: 1, B: 0.8, type: i.EXPONENTIAL };
                 }),
-                (mN[U.SECURITY] = function (e) {
+                (AN[U.SECURITY] = function (e) {
                   return { A: 1, B: 0.8, type: i.EXPONENTIAL };
                 }),
-                mN),
+                AN),
               unlockCondition: function (e) {
                 return (
                   e.prestige.colonizePlanet.getUpgradeLevel(N.HARSHNESS) > 0
@@ -32731,12 +32694,28 @@
               },
             },
           ],
-          VR = [
+          FR = [
             {
               id: N.PRODUCTIVITY,
               name: "Productivity",
               description:
                 "Learn experience of the ancestors to increase overall productivity by 10% (additive)",
+              unlockCondition: function (e) {
+                return !0;
+              },
+              getCost:
+                ((mN = {}),
+                (mN[l.COLONIZE_XP] = function (e) {
+                  return { A: 3, B: 1.5, type: i.EXPONENTIAL };
+                }),
+                mN),
+              maxLevel: 0,
+            },
+            {
+              id: N.BUILDING_PRICES,
+              name: "Building Knowledge",
+              description:
+                "Learn old architecture schemas and plans to reduce all buildings prices by 5% multiplicative",
               unlockCondition: function (e) {
                 return !0;
               },
@@ -32749,10 +32728,10 @@
               maxLevel: 0,
             },
             {
-              id: N.BUILDING_PRICES,
-              name: "Building Knowledge",
+              id: N.PILOT_XP,
+              name: "Pilot XP",
               description:
-                "Learn old architecture schemas and plans to reduce all buildings prices by 5% multiplicative",
+                "Investigate ancient ships driving instructions and pass this knowledge to your pilots. Receive 30% multiplicative bonus to pilot XP",
               unlockCondition: function (e) {
                 return !0;
               },
@@ -32765,10 +32744,10 @@
               maxLevel: 0,
             },
             {
-              id: N.PILOT_XP,
-              name: "Pilot XP",
+              id: N.SHIPS_DAMAGE,
+              name: "Ships Damage",
               description:
-                "Investigate ancient ships driving instructions and pass this knowledge to your pilots. Receive 30% multiplicative bonus to pilot XP",
+                "Learn more about destructive weapons that terrified whole galaxies once upon the time . Receive 20% multiplicative bonus to ships damage",
               unlockCondition: function (e) {
                 return !0;
               },
@@ -32781,10 +32760,10 @@
               maxLevel: 0,
             },
             {
-              id: N.SHIPS_DAMAGE,
-              name: "Ships Damage",
+              id: N.SHIPS_DURABILITY,
+              name: "Ships Durability",
               description:
-                "Learn more about destructive weapons that terrified whole galaxies once upon the time . Receive 20% multiplicative bonus to ships damage",
+                "Learn more about trading civilizations technologies that had to protect their ships from aggressive barbarian in order to survive. Receive 20% multiplicative bonus to ships durability",
               unlockCondition: function (e) {
                 return !0;
               },
@@ -32797,22 +32776,6 @@
               maxLevel: 0,
             },
             {
-              id: N.SHIPS_DURABILITY,
-              name: "Ships Durability",
-              description:
-                "Learn more about trading civilizations technologies that had to protect their ships from aggressive barbarian in order to survive. Receive 20% multiplicative bonus to ships durability",
-              unlockCondition: function (e) {
-                return !0;
-              },
-              getCost:
-                ((TN = {}),
-                (TN[l.COLONIZE_XP] = function (e) {
-                  return { A: 3, B: 1.5, type: i.EXPONENTIAL };
-                }),
-                TN),
-              maxLevel: 0,
-            },
-            {
               id: N.OVERSEER,
               name: "Overseer",
               description:
@@ -32821,11 +32784,11 @@
                 return !0;
               },
               getCost:
-                ((yN = {}),
-                (yN[l.COLONIZE_XP] = function (e) {
+                ((TN = {}),
+                (TN[l.COLONIZE_XP] = function (e) {
                   return { A: 1, B: 1, type: i.EXPONENTIAL };
                 }),
-                yN),
+                TN),
               maxLevel: 1,
             },
             {
@@ -32833,6 +32796,22 @@
               name: "Star Chart Master",
               description:
                 "Learn how to make more precise star charts and their spectral attributes to better point your telescopes. Each level increase searched planets amount",
+              unlockCondition: function (e) {
+                return !0;
+              },
+              getCost:
+                ((yN = {}),
+                (yN[l.COLONIZE_XP] = function (e) {
+                  return { A: 2, B: 3, type: i.EXPONENTIAL };
+                }),
+                yN),
+              maxLevel: 5,
+            },
+            {
+              id: N.PORTABLE_KP_TRANSMITTER,
+              name: "Portable KP Transmitter",
+              description:
+                "Portable device that captures and decodes information from other civilizations. Grants 2% of your max KP per hour passively per level (+10% at max level)",
               unlockCondition: function (e) {
                 return !0;
               },
@@ -32845,22 +32824,6 @@
               maxLevel: 5,
             },
             {
-              id: N.PORTABLE_KP_TRANSMITTER,
-              name: "Portable KP Transmitter",
-              description:
-                "Portable device that captures and decodes information from other civilizations. Grants 2% of your max KP per hour passively per level (+10% at max level)",
-              unlockCondition: function (e) {
-                return !0;
-              },
-              getCost:
-                ((LN = {}),
-                (LN[l.COLONIZE_XP] = function (e) {
-                  return { A: 2, B: 3, type: i.EXPONENTIAL };
-                }),
-                LN),
-              maxLevel: 5,
-            },
-            {
               id: N.TOUGHNESS,
               name: "Toughness",
               description:
@@ -32869,11 +32832,11 @@
                 return !0;
               },
               getCost:
-                ((CN = {}),
-                (CN[l.COLONIZE_XP] = function (e) {
+                ((LN = {}),
+                (LN[l.COLONIZE_XP] = function (e) {
                   return { A: 30, B: 3, type: i.EXPONENTIAL };
                 }),
-                CN),
+                LN),
               maxLevel: 3,
             },
             {
@@ -32885,11 +32848,11 @@
                 return !0;
               },
               getCost:
-                ((vN = {}),
-                (vN[l.COLONIZE_XP] = function (e) {
+                ((CN = {}),
+                (CN[l.COLONIZE_XP] = function (e) {
                   return { A: 10, B: 3, type: i.EXPONENTIAL };
                 }),
-                vN),
+                CN),
               maxLevel: 10,
             },
             {
@@ -32897,6 +32860,22 @@
               name: "Broadcasting Transmitter",
               description:
                 "Now you know how to pass much more knowledge to your posterity. KP gain now also boosted by your happiness",
+              unlockCondition: function (e) {
+                return !0;
+              },
+              getCost:
+                ((vN = {}),
+                (vN[l.COLONIZE_XP] = function (e) {
+                  return { A: 30, B: 3, type: i.EXPONENTIAL };
+                }),
+                vN),
+              maxLevel: 1,
+            },
+            {
+              id: N.TECHNOLOGY_HUB,
+              name: "Technology Market",
+              description:
+                "You may miss something important about your civilization development. But maybe there was someone who faced same problems and ready to share his knowledge with you? Unlock xp upgrades providing access to new buildings and upgrades.",
               unlockCondition: function (e) {
                 return !0;
               },
@@ -32909,22 +32888,6 @@
               maxLevel: 1,
             },
             {
-              id: N.TECHNOLOGY_HUB,
-              name: "Technology Market",
-              description:
-                "You may miss something important about your civilization development. But maybe there was someone who faced same problems and ready to share his knowledge with you? Unlock xp upgrades providing access to new buildings and upgrades.",
-              unlockCondition: function (e) {
-                return !0;
-              },
-              getCost:
-                ((PN = {}),
-                (PN[l.COLONIZE_XP] = function (e) {
-                  return { A: 30, B: 3, type: i.EXPONENTIAL };
-                }),
-                PN),
-              maxLevel: 1,
-            },
-            {
               id: N.AUTOUPGRADER,
               name: "Auto-upgrade",
               description:
@@ -32933,11 +32896,11 @@
                 return !0;
               },
               getCost:
-                ((MN = {}),
-                (MN[l.COLONIZE_XP] = function (e) {
+                ((PN = {}),
+                (PN[l.COLONIZE_XP] = function (e) {
                   return { A: 50, B: 5, type: i.EXPONENTIAL };
                 }),
-                MN),
+                PN),
               maxLevel: 8,
             },
             {
@@ -32949,11 +32912,11 @@
                 return !0;
               },
               getCost:
-                ((BN = {}),
-                (BN[l.COLONIZE_XP] = function (e) {
+                ((MN = {}),
+                (MN[l.COLONIZE_XP] = function (e) {
                   return { A: 100, B: 3, type: i.EXPONENTIAL };
                 }),
-                BN),
+                MN),
               maxLevel: 5,
             },
             {
@@ -32965,11 +32928,11 @@
                 return !0;
               },
               getCost:
-                ((_N = {}),
-                (_N[l.COLONIZE_XP] = function (e) {
+                ((BN = {}),
+                (BN[l.COLONIZE_XP] = function (e) {
                   return { A: 100, B: 3, type: i.EXPONENTIAL };
                 }),
-                _N),
+                BN),
               maxLevel: 1,
             },
             {
@@ -32981,11 +32944,11 @@
                 return !0;
               },
               getCost:
-                ((UN = {}),
-                (UN[l.COLONIZE_XP] = function (e) {
+                ((_N = {}),
+                (_N[l.COLONIZE_XP] = function (e) {
                   return { A: 5e3, B: 4, type: i.EXPONENTIAL };
                 }),
-                UN),
+                _N),
               maxLevel: 5,
             },
             {
@@ -33000,11 +32963,11 @@
                 );
               },
               getCost:
-                ((bN = {}),
-                (bN[l.COLONIZE_XP] = function (e) {
+                ((UN = {}),
+                (UN[l.COLONIZE_XP] = function (e) {
                   return { A: 25, B: 3, type: i.EXPONENTIAL };
                 }),
-                bN),
+                UN),
               maxLevel: 1,
               isLostTech: !0,
             },
@@ -33020,11 +32983,11 @@
                 );
               },
               getCost:
-                ((GN = {}),
-                (GN[l.COLONIZE_XP] = function (e) {
+                ((bN = {}),
+                (bN[l.COLONIZE_XP] = function (e) {
                   return { A: 50, B: 3, type: i.EXPONENTIAL };
                 }),
-                GN),
+                bN),
               maxLevel: 1,
               isLostTech: !0,
             },
@@ -33040,11 +33003,11 @@
                 );
               },
               getCost:
-                ((wN = {}),
-                (wN[l.COLONIZE_XP] = function (e) {
+                ((GN = {}),
+                (GN[l.COLONIZE_XP] = function (e) {
                   return { A: 50, B: 3, type: i.EXPONENTIAL };
                 }),
-                wN),
+                GN),
               maxLevel: 3,
               isLostTech: !0,
             },
@@ -33060,11 +33023,11 @@
                 );
               },
               getCost:
-                ((DN = {}),
-                (DN[l.COLONIZE_XP] = function (e) {
+                ((wN = {}),
+                (wN[l.COLONIZE_XP] = function (e) {
                   return { A: 100, B: 3, type: i.EXPONENTIAL };
                 }),
-                DN),
+                wN),
               maxLevel: 1,
               isLostTech: !0,
             },
@@ -33080,11 +33043,11 @@
                 );
               },
               getCost:
-                ((XN = {}),
-                (XN[l.COLONIZE_XP] = function (e) {
+                ((DN = {}),
+                (DN[l.COLONIZE_XP] = function (e) {
                   return { A: 100, B: 3, type: i.EXPONENTIAL };
                 }),
-                XN),
+                DN),
               maxLevel: 5,
               isLostTech: !0,
             },
@@ -33100,11 +33063,11 @@
                 );
               },
               getCost:
-                ((kN = {}),
-                (kN[l.COLONIZE_XP] = function (e) {
+                ((XN = {}),
+                (XN[l.COLONIZE_XP] = function (e) {
                   return { A: 500, B: 3, type: i.EXPONENTIAL };
                 }),
-                kN),
+                XN),
               maxLevel: 1,
               isLostTech: !0,
             },
@@ -33120,11 +33083,11 @@
                 );
               },
               getCost:
-                ((HN = {}),
-                (HN[l.COLONIZE_XP] = function (e) {
+                ((kN = {}),
+                (kN[l.COLONIZE_XP] = function (e) {
                   return { A: 1e3, B: 3, type: i.EXPONENTIAL };
                 }),
-                HN),
+                kN),
               maxLevel: 1,
               isLostTech: !0,
             },
@@ -33133,6 +33096,25 @@
               name: "Hanging Gardens",
               description:
                 "Learn how to use your artificial magnetic field to create huge and self-sustaining ecosystems. Unlock new building",
+              unlockCondition: function (e) {
+                return (
+                  e.prestige.colonizePlanet.getUpgradeLevel(N.TECHNOLOGY_HUB) >
+                  0
+                );
+              },
+              getCost:
+                ((HN = {}),
+                (HN[l.COLONIZE_XP] = function (e) {
+                  return { A: 5e3, B: 3, type: i.EXPONENTIAL };
+                }),
+                HN),
+              maxLevel: 1,
+              isLostTech: !0,
+            },
+            {
+              id: N.MILITARY_BASE,
+              name: "Military Base",
+              description: "Learn how to use your artificial",
               unlockCondition: function (e) {
                 return (
                   e.prestige.colonizePlanet.getUpgradeLevel(N.TECHNOLOGY_HUB) >
@@ -33149,9 +33131,10 @@
               isLostTech: !0,
             },
             {
-              id: N.MILITARY_BASE,
-              name: "Military Base",
-              description: "Learn how to use your artificial",
+              id: N.MUSEUM_OF_EVOLUTION,
+              name: "Museum Of Evolution",
+              description:
+                "Unlocks new building focused ar studying of various pre-historical creatures and their path to nowadays",
               unlockCondition: function (e) {
                 return (
                   e.prestige.colonizePlanet.getUpgradeLevel(N.TECHNOLOGY_HUB) >
@@ -33168,26 +33151,6 @@
               isLostTech: !0,
             },
             {
-              id: N.MUSEUM_OF_EVOLUTION,
-              name: "Museum Of Evolution",
-              description:
-                "Unlocks new building focused ar studying of various pre-historical creatures and their path to nowadays",
-              unlockCondition: function (e) {
-                return (
-                  e.prestige.colonizePlanet.getUpgradeLevel(N.TECHNOLOGY_HUB) >
-                  0
-                );
-              },
-              getCost:
-                ((ZN = {}),
-                (ZN[l.COLONIZE_XP] = function (e) {
-                  return { A: 5e3, B: 3, type: i.EXPONENTIAL };
-                }),
-                ZN),
-              maxLevel: 1,
-              isLostTech: !0,
-            },
-            {
               id: N.SHIELD_MULTIPLIER,
               name: "Shield Multiplier",
               description:
@@ -33199,11 +33162,11 @@
                 );
               },
               getCost:
-                ((WN = {}),
-                (WN[l.COLONIZE_XP] = function (e) {
+                ((ZN = {}),
+                (ZN[l.COLONIZE_XP] = function (e) {
                   return { A: 15e3, B: 3, type: i.EXPONENTIAL };
                 }),
-                WN),
+                ZN),
               maxLevel: 1,
               isLostTech: !0,
             },
@@ -33212,6 +33175,26 @@
               name: "Building Factory Mode",
               description:
                 "Unlocks new modes for Building Materials Factory, improving late game economics. Each level improves law by reducing penalties by 25%",
+              unlockCondition: function (e) {
+                return (
+                  e.prestige.colonizePlanet.getUpgradeLevel(N.TECHNOLOGY_HUB) >
+                  0
+                );
+              },
+              getCost:
+                ((WN = {}),
+                (WN[l.COLONIZE_XP] = function (e) {
+                  return { A: 2e4, B: 3, type: i.EXPONENTIAL };
+                }),
+                WN),
+              maxLevel: 5,
+              isLostTech: !0,
+            },
+            {
+              id: N.ELECTRONICS_FACTORY_MODE,
+              name: "Electronics Factory Mode",
+              description:
+                "Unlocks new modes for Electronics Factory, improving late game economics. Each level improves law by reducing penalties by 25%",
               unlockCondition: function (e) {
                 return (
                   e.prestige.colonizePlanet.getUpgradeLevel(N.TECHNOLOGY_HUB) >
@@ -33228,26 +33211,6 @@
               isLostTech: !0,
             },
             {
-              id: N.ELECTRONICS_FACTORY_MODE,
-              name: "Electronics Factory Mode",
-              description:
-                "Unlocks new modes for Electronics Factory, improving late game economics. Each level improves law by reducing penalties by 25%",
-              unlockCondition: function (e) {
-                return (
-                  e.prestige.colonizePlanet.getUpgradeLevel(N.TECHNOLOGY_HUB) >
-                  0
-                );
-              },
-              getCost:
-                ((VN = {}),
-                (VN[l.COLONIZE_XP] = function (e) {
-                  return { A: 2e4, B: 3, type: i.EXPONENTIAL };
-                }),
-                VN),
-              maxLevel: 5,
-              isLostTech: !0,
-            },
-            {
               id: N.PROTECTION_SHIELD,
               name: "Protection Shield",
               description:
@@ -33259,16 +33222,16 @@
                 );
               },
               getCost:
-                ((jN = {}),
-                (jN[l.COLONIZE_XP] = function (e) {
+                ((VN = {}),
+                (VN[l.COLONIZE_XP] = function (e) {
                   return { A: 5e4, B: 3, type: i.EXPONENTIAL };
                 }),
-                jN),
+                VN),
               maxLevel: 1,
               isLostTech: !0,
             },
           ],
-          jR = [
+          VR = [
             {
               type: R.B,
               name: "Brown Dwarf",
@@ -33284,29 +33247,29 @@
               ],
               xpMultiplier: 12,
               getEffectMultiplier:
-                ((KN = {}),
-                (KN[U.AESTHETICS] = function (e) {
+                ((jN = {}),
+                (jN[U.AESTHETICS] = function (e) {
                   return { A: 1, B: 0.1, type: i.EXPONENTIAL };
                 }),
-                (KN[U.RELIGION] = function (e) {
+                (jN[U.RELIGION] = function (e) {
+                  return { A: 1, B: 0.1, type: i.EXPONENTIAL };
+                }),
+                jN),
+              getGainMultiplier:
+                ((KN = {}),
+                (KN[l.POWER] = function (e) {
+                  return { A: 1, B: 0.1, type: i.EXPONENTIAL };
+                }),
+                (KN[l.NUTRITION] = function (e) {
+                  return { A: 1, B: 0.1, type: i.EXPONENTIAL };
+                }),
+                (KN[l.WOOD] = function (e) {
+                  return { A: 1, B: 0.1, type: i.EXPONENTIAL };
+                }),
+                (KN[l.BIOMASS] = function (e) {
                   return { A: 1, B: 0.1, type: i.EXPONENTIAL };
                 }),
                 KN),
-              getGainMultiplier:
-                ((zN = {}),
-                (zN[l.POWER] = function (e) {
-                  return { A: 1, B: 0.1, type: i.EXPONENTIAL };
-                }),
-                (zN[l.NUTRITION] = function (e) {
-                  return { A: 1, B: 0.1, type: i.EXPONENTIAL };
-                }),
-                (zN[l.WOOD] = function (e) {
-                  return { A: 1, B: 0.1, type: i.EXPONENTIAL };
-                }),
-                (zN[l.BIOMASS] = function (e) {
-                  return { A: 1, B: 0.1, type: i.EXPONENTIAL };
-                }),
-                zN),
             },
             {
               type: R.M,
@@ -33323,23 +33286,23 @@
               ],
               xpMultiplier: 5,
               getEffectMultiplier:
-                ((qN = {}),
-                (qN[U.HEALTHCARE] = function (e) {
+                ((zN = {}),
+                (zN[U.HEALTHCARE] = function (e) {
                   return { A: 1, B: 0.2, type: i.EXPONENTIAL };
                 }),
-                (qN[U.RELIGION] = function (e) {
+                (zN[U.RELIGION] = function (e) {
+                  return { A: 1, B: 0.2, type: i.EXPONENTIAL };
+                }),
+                zN),
+              getGainMultiplier:
+                ((qN = {}),
+                (qN[l.POWER] = function (e) {
+                  return { A: 1, B: 0.2, type: i.EXPONENTIAL };
+                }),
+                (qN[l.NUTRITION] = function (e) {
                   return { A: 1, B: 0.2, type: i.EXPONENTIAL };
                 }),
                 qN),
-              getGainMultiplier:
-                ((QN = {}),
-                (QN[l.POWER] = function (e) {
-                  return { A: 1, B: 0.2, type: i.EXPONENTIAL };
-                }),
-                (QN[l.NUTRITION] = function (e) {
-                  return { A: 1, B: 0.2, type: i.EXPONENTIAL };
-                }),
-                QN),
             },
             {
               type: R.K,
@@ -33356,23 +33319,23 @@
               ],
               xpMultiplier: 2.5,
               getEffectMultiplier:
-                ((JN = {}),
-                (JN[U.HEALTHCARE] = function (e) {
+                ((QN = {}),
+                (QN[U.HEALTHCARE] = function (e) {
                   return { A: 1, B: 0.5, type: i.EXPONENTIAL };
                 }),
-                (JN[U.RELIGION] = function (e) {
+                (QN[U.RELIGION] = function (e) {
                   return { A: 1, B: 0.5, type: i.EXPONENTIAL };
                 }),
-                JN),
+                QN),
               getGainMultiplier:
-                (($N = {}),
-                ($N[l.POWER] = function (e) {
+                ((JN = {}),
+                (JN[l.POWER] = function (e) {
                   return { A: 1, B: 0.5, type: i.EXPONENTIAL };
                 }),
-                ($N[l.NUTRITION] = function (e) {
+                (JN[l.NUTRITION] = function (e) {
                   return { A: 1, B: 0.75, type: i.EXPONENTIAL };
                 }),
-                $N),
+                JN),
             },
             {
               type: R.G,
@@ -33399,14 +33362,14 @@
               ],
               xpMultiplier: 2.5,
               getEffectMultiplier:
-                ((eR = {}),
-                (eR[U.HEALTHCARE] = function (e) {
+                (($N = {}),
+                ($N[U.HEALTHCARE] = function (e) {
                   return { A: 1, B: 0.5, type: i.EXPONENTIAL };
                 }),
-                (eR[U.SECURITY] = function (e) {
+                ($N[U.SECURITY] = function (e) {
                   return { A: 1, B: 0.5, type: i.EXPONENTIAL };
                 }),
-                eR),
+                $N),
               buildingPriceModifier: function (e) {
                 return 2;
               },
@@ -33426,26 +33389,26 @@
               ],
               xpMultiplier: 5,
               getEffectMultiplier:
-                ((tR = {}),
-                (tR[U.HEALTHCARE] = function (e) {
+                ((eR = {}),
+                (eR[U.HEALTHCARE] = function (e) {
                   return { A: 1, B: 0.2, type: i.EXPONENTIAL };
                 }),
-                (tR[U.SECURITY] = function (e) {
+                (eR[U.SECURITY] = function (e) {
+                  return { A: 1, B: 0.2, type: i.EXPONENTIAL };
+                }),
+                eR),
+              getGainMultiplier:
+                ((tR = {}),
+                (tR[l.BIOMASS] = function (e) {
+                  return { A: 1, B: 0.2, type: i.EXPONENTIAL };
+                }),
+                (tR[l.NUTRITION] = function (e) {
+                  return { A: 1, B: 0.2, type: i.EXPONENTIAL };
+                }),
+                (tR[l.WOOD] = function (e) {
                   return { A: 1, B: 0.2, type: i.EXPONENTIAL };
                 }),
                 tR),
-              getGainMultiplier:
-                ((nR = {}),
-                (nR[l.BIOMASS] = function (e) {
-                  return { A: 1, B: 0.2, type: i.EXPONENTIAL };
-                }),
-                (nR[l.NUTRITION] = function (e) {
-                  return { A: 1, B: 0.2, type: i.EXPONENTIAL };
-                }),
-                (nR[l.WOOD] = function (e) {
-                  return { A: 1, B: 0.2, type: i.EXPONENTIAL };
-                }),
-                nR),
               buildingPriceModifier: function (e) {
                 return 4;
               },
@@ -33466,35 +33429,35 @@
               ],
               xpMultiplier: 15,
               getEffectMultiplier:
-                ((iR = {}),
-                (iR[U.HEALTHCARE] = function (e) {
+                ((nR = {}),
+                (nR[U.HEALTHCARE] = function (e) {
                   return { A: 1, B: 0.05, type: i.EXPONENTIAL };
                 }),
-                (iR[U.SECURITY] = function (e) {
+                (nR[U.SECURITY] = function (e) {
                   return { A: 1, B: 0.05, type: i.EXPONENTIAL };
                 }),
-                iR),
+                nR),
               getGainMultiplier:
-                ((rR = {}),
-                (rR[l.BIOMASS] = function (e) {
+                ((iR = {}),
+                (iR[l.BIOMASS] = function (e) {
                   return { A: 1, B: 0.1, type: i.EXPONENTIAL };
                 }),
-                (rR[l.NUTRITION] = function (e) {
+                (iR[l.NUTRITION] = function (e) {
                   return { A: 1, B: 0.1, type: i.EXPONENTIAL };
                 }),
-                (rR[l.WOOD] = function (e) {
+                (iR[l.WOOD] = function (e) {
                   return { A: 1, B: 0.1, type: i.EXPONENTIAL };
                 }),
-                (rR[l.POWER] = function (e) {
+                (iR[l.POWER] = function (e) {
                   return { A: 1, B: 0.2, type: i.EXPONENTIAL };
                 }),
-                rR),
+                iR),
               buildingPriceModifier: function (e) {
                 return 8;
               },
             },
           ],
-          KR = (function () {
+          jR = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -33528,9 +33491,9 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          zR = function () {
+          KR = function () {
             return (
-              (zR =
+              (KR =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -33539,10 +33502,10 @@
                         (e[r] = t[r]);
                   return e;
                 }),
-              zR.apply(this, arguments)
+              KR.apply(this, arguments)
             );
           },
-          qR = function (e, t, n) {
+          zR = function (e, t, n) {
             if (n || 2 === arguments.length)
               for (var i, r = 0, o = t.length; r < o; r++)
                 (!i && r in t) ||
@@ -33550,7 +33513,7 @@
                   (i[r] = t[r]));
             return e.concat(i || Array.prototype.slice.call(t));
           },
-          QR = (function (e) {
+          qR = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -33581,7 +33544,7 @@
                       (n === e
                         ? (t.available[e].isRemembered = !1)
                         : ((t.available = t.available.map(function (e) {
-                            return zR(zR({}, e), { isRemembered: !1 });
+                            return KR(KR({}, e), { isRemembered: !1 });
                           })),
                           (t.available[e].isRemembered =
                             !t.available[e].isRemembered)));
@@ -33611,11 +33574,11 @@
                   "[colonize-planet] set harshness filter",
                   function (e) {
                     console.log("do harshness filter", e);
-                    var n = ST.prestige.colonizePlanet.getUpgradeLevel(
+                    var n = vT.prestige.colonizePlanet.getUpgradeLevel(
                       N.HARSHNESS
                     );
-                    (!e || e < 0) && (e = 0),
-                      (t.harshnessLevel = Math.min(n, e));
+                    (!e || +e < 0) && (e = 0),
+                      (t.harshnessLevel = Math.min(n, +e));
                   }
                 ),
                 t.workDispatcher.on(
@@ -33657,7 +33620,7 @@
               );
             }
             return (
-              KR(t, e),
+              jR(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -33697,7 +33660,7 @@
                 );
               }),
               (t.prototype.getResourceUpgradeMultiplier = function (e) {
-                var t = VR.find(function (e) {
+                var t = FR.find(function (e) {
                   return e.id === N.PRODUCTIVITY;
                 });
                 return t
@@ -33705,14 +33668,14 @@
                       {
                         label: "XP Upgrade: ".concat(t.name),
                         value: 1 + 0.1 * this.getUpgradeLevel(N.PRODUCTIVITY),
-                        id: "knowledge-".concat(t.id),
+                        id: "xp-".concat(t.id),
                         category: "XP Upgrades",
                       },
                     ]
                   : [];
               }),
               (t.prototype.doUpgrade = function (e) {
-                var t = VR.find(function (t) {
+                var t = FR.find(function (t) {
                   return t.id === e;
                 });
                 if (t) {
@@ -33726,18 +33689,18 @@
                     return;
                   var i = Z.calcBatchAll(
                     t.getCost,
-                    vT.getInstance(),
+                    CT.getInstance(),
                     this.upgrades[n].level,
-                    vT.getInstance().resources.getBatchObject()
+                    CT.getInstance().resources.getBatchObject()
                   );
                   i.reduce(function (e, t) {
                     return Math.min(e, Math.floor(t.max));
                   }, 1e300) < 1 ||
                     (this.upgrades[n].level++,
                     console.log("costs: ", i),
-                    vT.getInstance().resources.subtractResourceBatch(i),
-                    ST.resources.reassertBalances(),
-                    ST.regenerateCache());
+                    CT.getInstance().resources.subtractResourceBatch(i),
+                    vT.resources.reassertBalances(),
+                    vT.regenerateCache());
                 }
               }),
               (t.prototype.processUpgradeToUI = function (e) {
@@ -33748,9 +33711,9 @@
                 n || ((n = { id: e.id, level: 0 }), this.upgrades.push(n));
                 var i = Z.calcBatchAll(
                     e.getCost,
-                    vT.getInstance(),
+                    CT.getInstance(),
                     n.level,
-                    vT.getInstance().resources.getBatchObject()
+                    CT.getInstance().resources.getBatchObject()
                   ),
                   r = i.reduce(function (e, t) {
                     return Math.min(e, t.max);
@@ -33759,15 +33722,13 @@
                   id: e.id,
                   name: e.name,
                   description: e.description,
-                  isUnlocked: e.unlockCondition(ST),
+                  isUnlocked: e.unlockCondition(vT),
                   isAvailable: r >= 1,
-                  cost: vT
-                    .getInstance()
-                    .resources.assertEnought(
-                      i,
-                      vT.getInstance().resources.getBatchObject(),
-                      vT.getInstance().resources.getBatchBalanceObject()
-                    ),
+                  cost: CT.getInstance().resources.assertEnought(
+                    i,
+                    CT.getInstance().resources.getBatchObject(),
+                    CT.getInstance().resources.getBatchBalanceObject()
+                  ),
                   progress: r < 1 ? (100 * r).toPrecision(3) : "100",
                   isMaxedOut: !!e.maxLevel && e.maxLevel <= n.level,
                   maxLevel: e.maxLevel,
@@ -33782,8 +33743,8 @@
                     return t.processPlanetToUI(e, n, !1);
                   });
                 this.isPrestigeAvailable() &&
-                  ST.newNotifications.registerNotification("prestige:colonize");
-                var i = VR.map(function (e) {
+                  vT.newNotifications.registerNotification("prestige:colonize");
+                var i = FR.map(function (e) {
                     return t.processUpgradeToUI(e);
                   }),
                   r = this.processPlanetToUI(this.current, -1);
@@ -33803,7 +33764,7 @@
                   return (
                     (e &&
                       (null ===
-                        (t = FR.find(function (t) {
+                        (t = WR.find(function (t) {
                           return t.id === e.modifierId;
                         })) || void 0 === t
                         ? void 0
@@ -33817,20 +33778,18 @@
                   isUnlocked:
                     this.numPrestiged > 0 || this.isPrestigeAvailable(),
                   isPrestigeAvailable: this.isPrestigeAvailable(),
-                  currentXP: ST.resources.getResource(l.COLONIZE_XP),
+                  currentXP: vT.resources.getResource(l.COLONIZE_XP),
                   search: {
                     isAvailable: c >= 1,
-                    cost: vT
-                      .getInstance()
-                      .resources.assertEnought(
-                        a,
-                        vT.getInstance().resources.getBatchObject(),
-                        vT.getInstance().resources.getBatchBalanceObject()
-                      ),
+                    cost: CT.getInstance().resources.assertEnought(
+                      a,
+                      CT.getInstance().resources.getBatchObject(),
+                      CT.getInstance().resources.getBatchBalanceObject()
+                    ),
                     progress: c < 1 ? (100 * c).toPrecision(3) : "100",
                     filter: {
                       isAvailable:
-                        ST.science.scienceResearches.getResearchLevel(
+                        vT.science.scienceResearches.getResearchLevel(
                           M.EXOPLANET_SCIENCE
                         ) > 0,
                       modifiersSelected: this.currentSearchFilters.map(
@@ -33842,7 +33801,7 @@
                             name:
                               ((null == e ? void 0 : e.modifierId) &&
                                 (null ===
-                                  (n = FR.find(function (t) {
+                                  (n = WR.find(function (t) {
                                     return (
                                       t.id ===
                                       (null == e ? void 0 : e.modifierId)
@@ -33857,10 +33816,10 @@
                           };
                         }
                       ),
-                      modifiersAvailable: qR(
+                      modifiersAvailable: zR(
                         [],
-                        FR.filter(function (e) {
-                          return e.unlockCondition(ST);
+                        WR.filter(function (e) {
+                          return e.unlockCondition(vT);
                         }).map(function (e) {
                           return {
                             id: e.id,
@@ -33874,19 +33833,17 @@
                       ),
                     },
                     disastersLevel: this.disastersLevel,
-                    starsList: jR
-                      .filter(function (e) {
-                        return e.unlockCondition(ST);
-                      })
-                      .map(function (e) {
-                        return { id: e.type, name: e.name };
-                      }),
+                    starsList: VR.filter(function (e) {
+                      return e.unlockCondition(vT);
+                    }).map(function (e) {
+                      return { id: e.type, name: e.name };
+                    }),
                     starSelected:
                       null !== (e = this.currentStarFilter) && void 0 !== e
                         ? e
                         : "None",
                     isHarshnessAvailable:
-                      ST.prestige.colonizePlanet.getUpgradeLevel(N.HARSHNESS) >
+                      vT.prestige.colonizePlanet.getUpgradeLevel(N.HARSHNESS) >
                       0,
                     harshnessFilter: this.harshnessLevel,
                   },
@@ -33897,11 +33854,11 @@
                     gainBattleMult: o.battleXPGain > 1 ? F(o.battleXPGain) : "",
                     potentialBonus: F(
                       this.getXpBonus(
-                        ST.resources.getResource(l.COLONIZE_XP) + o.xpGain
+                        vT.resources.getResource(l.COLONIZE_XP) + o.xpGain
                       )
                     ),
                     currentBonus: F(
-                      this.getXpBonus(ST.resources.getResource(l.COLONIZE_XP))
+                      this.getXpBonus(vT.resources.getResource(l.COLONIZE_XP))
                     ),
                   },
                   upgrades: i,
@@ -33909,17 +33866,17 @@
               }),
               (t.prototype.isPrestigeAvailable = function () {
                 return (
-                  ST.landingZone.landingZoneBuildings.getBuildingActiveLevel(
+                  vT.landingZone.landingZoneBuildings.getBuildingActiveLevel(
                     a.SPACESHIP_STATION
                   ) > 0
                 );
               }),
               (t.prototype.getMaxFilters = function () {
-                return ST.science.scienceResearches.getResearchLevel(
+                return vT.science.scienceResearches.getResearchLevel(
                   M.EXOPLANET_SCIENCE
                 ) > 0
                   ? 1 +
-                      ST.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                      vT.landingZone.landingZoneUpgrades.getUpgradeLevel(
                         o.TRANSIT_EVENTS_STUDY
                       )
                   : 0;
@@ -33937,7 +33894,7 @@
                     Math.min(
                       +t,
                       2 +
-                        ST.prestige.colonizePlanet.getUpgradeLevel(N.HARSHNESS)
+                        vT.prestige.colonizePlanet.getUpgradeLevel(N.HARSHNESS)
                     )
                   );
                 }
@@ -33958,13 +33915,13 @@
                     console.log("newFilters: ", this.currentSearchFilters));
               }),
               (t.prototype.setStarFilter = function (e) {
-                ST.science.scienceResearches.getResearchLevel(
+                vT.science.scienceResearches.getResearchLevel(
                   M.EXOPLANET_SCIENCE
                 ) > 0 &&
                   (e &&
                   "None" !== e &&
-                  jR.find(function (t) {
-                    return t.type === e && t.unlockCondition(ST);
+                  VR.find(function (t) {
+                    return t.type === e && t.unlockCondition(vT);
                   })
                     ? (this.currentStarFilter = e)
                     : (this.currentStarFilter = void 0));
@@ -33972,8 +33929,8 @@
               (t.prototype.doGenerate = function (e) {
                 var t = this,
                   n = {},
-                  i = FR.filter(function (e) {
-                    return e.unlockCondition(ST);
+                  i = WR.filter(function (e) {
+                    return e.unlockCondition(vT);
                   }).reduce(function (e, t) {
                     return (
                       e[t.category] || (e[t.category] = [t]),
@@ -33982,8 +33939,8 @@
                     );
                   }, {}),
                   r = {},
-                  o = FR.filter(function (e) {
-                    return e.unlockCondition(ST);
+                  o = WR.filter(function (e) {
+                    return e.unlockCondition(vT);
                   }).reduce(function (t, n) {
                     var i, o;
                     return (
@@ -34046,8 +34003,8 @@
                         3 && console.log("Overseal: ", n[u]);
                   }
                 });
-                var a = jR.filter(function (e) {
-                    return e.unlockCondition(ST);
+                var a = VR.filter(function (e) {
+                    return e.unlockCondition(vT);
                   }),
                   c = a[Math.floor(Math.random() * a.length)].type;
                 this.currentStarFilter &&
@@ -34089,12 +34046,12 @@
                     ((this.available = this.available.filter(function (e) {
                       return e.isRemembered;
                     })),
-                    vT.getInstance().resources.subtractResourceBatch(t),
+                    CT.getInstance().resources.subtractResourceBatch(t),
                     Array.from({
                       length:
                         3 -
                         this.available.length +
-                        ST.prestige.colonizePlanet.getUpgradeLevel(
+                        vT.prestige.colonizePlanet.getUpgradeLevel(
                           N.STARCHART_MASTER
                         ),
                     }).forEach(function () {
@@ -34104,7 +34061,7 @@
               }),
               (t.prototype.getResourceMultiplier = function (e) {
                 var t = Object.values(this.current.modifiers),
-                  n = FR.filter(function (n) {
+                  n = WR.filter(function (n) {
                     var i;
                     return (
                       t
@@ -34129,7 +34086,7 @@
                       ? void 0
                       : r[e])
                   ) {
-                    var a = Z.calculate(ST, o.getGainMultiplier[e], t.level, 1);
+                    var a = Z.calculate(vT, o.getGainMultiplier[e], t.level, 1);
                     a &&
                       i.push({
                         label: "Planet modifier: ".concat(o.name),
@@ -34140,11 +34097,11 @@
                   }
                 }, 0);
                 var r = this.current.starClass,
-                  o = jR.find(function (e) {
+                  o = VR.find(function (e) {
                     return e.type === r;
                   });
                 if (o && o.getGainMultiplier && o.getGainMultiplier[e]) {
-                  var a = Z.calculate(ST, o.getGainMultiplier[e], 1, 1);
+                  var a = Z.calculate(vT, o.getGainMultiplier[e], 1, 1);
                   a &&
                     i.push({
                       label: "Star modifier: ".concat(o.name),
@@ -34157,7 +34114,7 @@
               }),
               (t.prototype.getEffectMultiplier = function (e) {
                 var t = Object.values(this.current.modifiers),
-                  n = FR.filter(function (n) {
+                  n = WR.filter(function (n) {
                     var i;
                     return (
                       t
@@ -34183,7 +34140,7 @@
                       : r[e])
                   ) {
                     var a = Z.calculate(
-                      ST,
+                      vT,
                       o.getEffectMultiplier[e],
                       t.level,
                       1
@@ -34198,11 +34155,11 @@
                   }
                 }, 0);
                 var r = this.current.starClass,
-                  o = jR.find(function (e) {
+                  o = VR.find(function (e) {
                     return e.type === r;
                   });
                 if (o && o.getEffectMultiplier && o.getEffectMultiplier[e]) {
-                  var a = Z.calculate(ST, o.getEffectMultiplier[e], 1, 1);
+                  var a = Z.calculate(vT, o.getEffectMultiplier[e], 1, 1);
                   a &&
                     i.push({
                       label: "Star modifier: ".concat(o.name),
@@ -34215,7 +34172,7 @@
               }),
               (t.prototype.getCapacityMultiplier = function (e) {
                 var t = Object.values(this.current.modifiers),
-                  n = FR.filter(function (n) {
+                  n = WR.filter(function (n) {
                     var i;
                     return (
                       t
@@ -34242,7 +34199,7 @@
                         : r[e])
                     ) {
                       var a = Z.calculate(
-                        ST,
+                        vT,
                         o.getCapacityMultiplier[e],
                         t.level,
                         1
@@ -34261,7 +34218,7 @@
               }),
               (t.prototype.getPriceMultiplier = function () {
                 var e = Object.values(this.current.modifiers),
-                  t = FR.filter(function (e) {
+                  t = WR.filter(function (e) {
                     return !!e.buildingPriceModifier;
                   }),
                   n = 1;
@@ -34271,7 +34228,7 @@
                   });
                   if (i && i.buildingPriceModifier) {
                     var r = Z.calculate(
-                      ST,
+                      vT,
                       i.buildingPriceModifier,
                       e.level,
                       1
@@ -34280,11 +34237,11 @@
                   }
                 }, 0);
                 var i = this.current.starClass,
-                  r = jR.find(function (e) {
+                  r = VR.find(function (e) {
                     return e.type === i;
                   });
                 if (r && r.buildingPriceModifier) {
-                  var o = r.buildingPriceModifier(ST);
+                  var o = r.buildingPriceModifier(vT);
                   n *= o;
                 }
                 return n;
@@ -34313,7 +34270,7 @@
                     var u = e.modifiers[t];
                     if (!u) return "continue";
                     var l = u.id,
-                      p = FR.find(function (e) {
+                      p = WR.find(function (e) {
                         return e.id === l;
                       });
                     if (!p) return "continue";
@@ -34321,7 +34278,7 @@
                       p.getGainMultiplier &&
                         Z.calcBatch(
                           p.getGainMultiplier,
-                          vT.getInstance(),
+                          CT.getInstance(),
                           u.level
                         ).forEach(function (e) {
                           var t;
@@ -34334,7 +34291,7 @@
                       p.getEffectMultiplier &&
                         Z.calcBatch(
                           p.getEffectMultiplier,
-                          vT.getInstance(),
+                          CT.getInstance(),
                           u.level
                         ).forEach(function (e) {
                           var t;
@@ -34347,7 +34304,7 @@
                       p.getCapacityMultiplier &&
                         Z.calcBatch(
                           p.getCapacityMultiplier,
-                          vT.getInstance(),
+                          CT.getInstance(),
                           u.level
                         ).forEach(function (e) {
                           var t;
@@ -34359,7 +34316,7 @@
                         }),
                       p.buildingPriceModifier &&
                         (a *= Z.calculate(
-                          vT.getInstance(),
+                          CT.getInstance(),
                           p.buildingPriceModifier,
                           u.level
                         )),
@@ -34374,7 +34331,7 @@
                   };
                 for (var l in e.modifiers) u(l);
                 var p = e.starClass || R.G,
-                  d = jR.find(function (e) {
+                  d = VR.find(function (e) {
                     return e.type === p;
                   });
                 n && console.log("ATTR_XP: ", s),
@@ -34382,7 +34339,7 @@
                     (d.getGainMultiplier &&
                       Z.calcBatch(
                         d.getGainMultiplier,
-                        vT.getInstance(),
+                        CT.getInstance(),
                         1
                       ).forEach(function (e) {
                         var t;
@@ -34395,7 +34352,7 @@
                     d.getEffectMultiplier &&
                       Z.calcBatch(
                         d.getEffectMultiplier,
-                        vT.getInstance(),
+                        CT.getInstance(),
                         1
                       ).forEach(function (e) {
                         var t;
@@ -34406,7 +34363,7 @@
                           : (o[e.id] = e);
                       }),
                     d.buildingPriceModifier &&
-                      (a *= d.buildingPriceModifier(vT.getInstance())),
+                      (a *= d.buildingPriceModifier(CT.getInstance())),
                     (s *= d.xpMultiplier)),
                   n && console.log("ATTR_AS: ", s);
                 var E = this.getColonizeCost(),
@@ -34423,25 +34380,23 @@
                     name: e.name,
                     description: c,
                     gainMult: Object.values(i).map(function (e) {
-                      return zR(zR({}, e), {
+                      return KR(KR({}, e), {
                         amountValue: e.amount,
                         amount: F(e.amount),
                       });
                     }),
                     max: [],
-                    cost: vT
-                      .getInstance()
-                      .resources.assertEnought(
-                        E,
-                        vT.getInstance().resources.getBatchObject(),
-                        vT.getInstance().resources.getBatchBalanceObject()
-                      ),
+                    cost: CT.getInstance().resources.assertEnought(
+                      E,
+                      CT.getInstance().resources.getBatchObject(),
+                      CT.getInstance().resources.getBatchBalanceObject()
+                    ),
                     isAvailable: g >= 1,
                     progress: g < 1 ? (100 * g).toPrecision(3) : "100",
                     consume: [],
                     consumeEffect: [],
                     effectMult: Object.values(o).map(function (e) {
-                      return zR(zR({}, e), {
+                      return KR(KR({}, e), {
                         amountValue: e.amount,
                         amount: F(e.amount),
                       });
@@ -34449,7 +34404,7 @@
                     gainEffect: [],
                     gain: [],
                     maxMult: Object.values(r).map(function (e) {
-                      return zR(zR({}, e), {
+                      return KR(KR({}, e), {
                         amountValue: e.amount,
                         amount: F(e.amount),
                       });
@@ -34479,7 +34434,7 @@
                 return 1 + 0.3 * Math.pow(e, 0.4);
               }),
               (t.prototype.getCurrentXPBonus = function () {
-                return this.getXpBonus(ST.resources.getResource(l.COLONIZE_XP));
+                return this.getXpBonus(vT.resources.getResource(l.COLONIZE_XP));
               }),
               (t.prototype.getColonizeCost = function () {
                 var e;
@@ -34488,9 +34443,9 @@
                     return { A: 1e3, B: 1, type: i.EXPONENTIAL };
                   }),
                   e),
-                  vT.getInstance(),
+                  CT.getInstance(),
                   1,
-                  vT.getInstance().resources.getBatchObject()
+                  CT.getInstance().resources.getBatchObject()
                 );
               }),
               (t.prototype.getSearchCost = function () {
@@ -34513,9 +34468,9 @@
                     };
                   }),
                   e),
-                  vT.getInstance(),
+                  CT.getInstance(),
                   1,
-                  vT.getInstance().resources.getBatchObject()
+                  CT.getInstance().resources.getBatchObject()
                 );
               }),
               (t.prototype.getCurrentXPGainBreakdown = function (e) {
@@ -34524,33 +34479,27 @@
                       .xpGain *
                     Math.pow(
                       1.5,
-                      ST.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                      vT.landingZone.landingZoneUpgrades.getUpgradeLevel(
                         o.QUANTUM_ENCRYPTION
                       )
                     ) *
                     Math.pow(
                       1.5,
-                      vT
-                        .getInstance()
-                        .landingZone.landingZoneUpgrades.getUpgradeLevel(
-                          o.HUGE_GAMMA_TRANSMITTER
-                        )
+                      CT.getInstance().landingZone.landingZoneUpgrades.getUpgradeLevel(
+                        o.HUGE_GAMMA_TRANSMITTER
+                      )
                     ) *
                     (1 +
                       0.25 *
-                        vT
-                          .getInstance()
-                          .landingZone.landingZoneUpgrades.getUpgradeLevel(
-                            o.DARK_ENERGY_CRYPTOGRAPHY
-                          )) *
+                        CT.getInstance().landingZone.landingZoneUpgrades.getUpgradeLevel(
+                          o.DARK_ENERGY_CRYPTOGRAPHY
+                        )) *
                     (1 +
                       0.25 *
-                        vT
-                          .getInstance()
-                          .landingZone.landingZoneUpgrades.getUpgradeLevel(
-                            o.INTERSTELLAR_TELEPORTS
-                          )),
-                  n = ST.space.battlefield.getXPBonus();
+                        CT.getInstance().landingZone.landingZoneUpgrades.getUpgradeLevel(
+                          o.INTERSTELLAR_TELEPORTS
+                        )),
+                  n = vT.space.battlefield.getXPBonus();
                 return { baseXpGain: t, battleXPGain: n, xpGain: t * n };
               }),
               (t.prototype.getPlanetMultiplier = function (e) {
@@ -34600,42 +34549,42 @@
                   if (!this.isPrestigeAvailable()) return;
                   i = this.getCurrentXPGainBreakdown().xpGain;
                 }
-                var r = ST.resources.getResource(l.KNOWLEDGE_POINT),
-                  o = ST.resources.getResource(l.COLONIZE_XP);
-                (ST.statistics.stats.xpTotal =
-                  (ST.statistics.stats.xpTotal || 0) + i),
-                  (ST.statistics.stats.xpMaxGain = Math.max(
-                    ST.statistics.stats.xpMaxGain || 0,
+                var r = vT.resources.getResource(l.KNOWLEDGE_POINT),
+                  o = vT.resources.getResource(l.COLONIZE_XP);
+                (vT.statistics.stats.xpTotal =
+                  (vT.statistics.stats.xpTotal || 0) + i),
+                  (vT.statistics.stats.xpMaxGain = Math.max(
+                    vT.statistics.stats.xpMaxGain || 0,
                     i
                   )),
-                  ST.eventLog.registerPrestige(
+                  vT.eventLog.registerPrestige(
                     "New planet colonization",
                     "".concat(F(i), " XP")
                   ),
-                  ST.science.scienceRelics.award(),
-                  ST.landingZone.reset(),
-                  ST.colony.reset(),
-                  ST.crafting.reset(),
-                  ST.science.reset(),
-                  ST.laws.reset(),
-                  ST.resources.reset(),
-                  ST.space.reset(),
-                  ST.queuedItems.reset(),
-                  ST.environment.reset(),
-                  ST.expeditionV2.reset(),
-                  ST.resources.addResource(l.COLONIZE_XP, o + i),
-                  ST.resources.addResource(l.KNOWLEDGE_POINT, r),
+                  vT.science.scienceRelics.award(),
+                  vT.landingZone.reset(),
+                  vT.colony.reset(),
+                  vT.crafting.reset(),
+                  vT.science.reset(),
+                  vT.laws.reset(),
+                  vT.resources.reset(),
+                  vT.space.reset(),
+                  vT.queuedItems.reset(),
+                  vT.environment.reset(),
+                  vT.expeditionV2.reset(),
+                  vT.resources.addResource(l.COLONIZE_XP, o + i),
+                  vT.resources.addResource(l.KNOWLEDGE_POINT, r),
                   this.numPrestiged++,
-                  (ST.statistics.stats.maxXpPerHour = Math.max(
-                    ST.statistics.stats.maxXpPerHour,
-                    (3600 * i) / ST.statistics.stats.timeThisPlanet
+                  (vT.statistics.stats.maxXpPerHour = Math.max(
+                    vT.statistics.stats.maxXpPerHour,
+                    (3600 * i) / vT.statistics.stats.timeThisPlanet
                   )),
-                  (ST.statistics.stats.timeThisPlanet = 0),
-                  (ST.statistics.stats.timeThisPrestige = 0),
-                  ST.statistics.reset(),
-                  ST.science.scienceRelics.reset(),
-                  ST.newNotifications.resetNotifications(),
-                  ST.achievements.resetFailedOnXP(),
+                  (vT.statistics.stats.timeThisPlanet = 0),
+                  (vT.statistics.stats.timeThisPrestige = 0),
+                  vT.statistics.reset(),
+                  vT.science.scienceRelics.reset(),
+                  vT.newNotifications.resetNotifications(),
+                  vT.achievements.resetFailedOnXP(),
                   (this.current = t
                     ? {
                         name: "Default",
@@ -34652,14 +34601,14 @@
                     (this.current.eccentricity = 0)),
                   (this.available = []),
                   (this.currentCached = null),
-                  ST.resources.reassertBalances(),
-                  ST.regenerateCache();
+                  vT.resources.reassertBalances(),
+                  vT.regenerateCache();
               }),
               t
             );
           })(P),
-          JR = QR.getInstance(),
-          $R = (function () {
+          QR = qR.getInstance(),
+          JR = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -34693,13 +34642,13 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          eI = (function (e) {
+          $R = (function (e) {
             function t() {
               var t = e.call(this) || this;
-              return (t.transmitKnowledge = WR), (t.colonizePlanet = JR), t;
+              return (t.transmitKnowledge = ZR), (t.colonizePlanet = QR), t;
             }
             return (
-              $R(t, e),
+              JR(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -34731,7 +34680,7 @@
               t
             );
           })(P).getInstance(),
-          tI = (function () {
+          eI = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -34765,7 +34714,7 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          nI = (function (e) {
+          tI = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -34798,7 +34747,7 @@
               );
             }
             return (
-              tI(t, e),
+              eI(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -34845,7 +34794,7 @@
               }),
               (t.prototype.isExpeditionUnlocked = function () {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(M.GEOGRAPHY) > 0
+                  vT.science.scienceResearches.getResearchLevel(M.GEOGRAPHY) > 0
                 );
               }),
               (t.prototype.startExpedition = function () {
@@ -34875,7 +34824,7 @@
                 }
                 for (
                   var n = w.filter(function (e) {
-                      return e.unlockCondition(ST) && e.valuability < 1e6;
+                      return e.unlockCondition(vT) && e.valuability < 1e6;
                     }),
                     i = {},
                     r = 0;
@@ -34895,13 +34844,13 @@
                 return (
                   Math.pow(
                     1.05,
-                    ST.landingZone.landingZoneBuildings.getBuildingActiveLevel(
+                    vT.landingZone.landingZoneBuildings.getBuildingActiveLevel(
                       a.EXPEDITION_CENTER
                     )
                   ) *
                   Math.pow(
                     1.3,
-                    ST.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                    vT.landingZone.landingZoneUpgrades.getUpgradeLevel(
                       o.ENERGY_SAVING_EXPEDITION_DRONES
                     )
                   )
@@ -34912,8 +34861,8 @@
                   (this.expeditionsState.progress = 0);
                 var e = this.getLoot();
                 for (var t in ((this.expeditionsState.lastLooted = e), e))
-                  ST.resources.addResource(t, e[t] || 0);
-                ST.eventLog.registerExpeditionArrived(x(e), "");
+                  vT.resources.addResource(t, e[t] || 0);
+                vT.eventLog.registerExpeditionArrived(x(e), "");
               }),
               (t.prototype.getExpeditionDuration = function () {
                 switch (this.expeditionsState.currentMode) {
@@ -34944,8 +34893,8 @@
               t
             );
           })(P),
-          iI = nI.getInstance(),
-          rI = (function () {
+          nI = tI.getInstance(),
+          iI = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -34979,7 +34928,7 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          oI = (function (e) {
+          rI = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -34996,7 +34945,7 @@
               );
             }
             return (
-              rI(t, e),
+              iI(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -35035,7 +34984,7 @@
               }),
               (t.prototype.resetNotifications = function () {
                 var e = this;
-                vT.getInstance().settings.resetNotificationsOnPrestige &&
+                CT.getInstance().settings.resetNotificationsOnPrestige &&
                   ((this.notificationsToUI = {}),
                   Object.entries(this.newNotificationState).forEach(function (
                     t
@@ -35049,8 +34998,8 @@
               t
             );
           })(P),
-          aI = oI.getInstance(),
-          cI = (function () {
+          oI = rI.getInstance(),
+          aI = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -35084,9 +35033,9 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          sI = function () {
+          cI = function () {
             return (
-              (sI =
+              (cI =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -35095,10 +35044,10 @@
                         (e[r] = t[r]);
                   return e;
                 }),
-              sI.apply(this, arguments)
+              cI.apply(this, arguments)
             );
           },
-          uI = {
+          sI = {
             timeInGame: 0,
             timeThisPlanet: 0,
             timeThisPrestige: 0,
@@ -35117,26 +35066,26 @@
             maxXpPerHour: 0,
             maxResearchCapReached: 0,
           },
-          lI = (function (e) {
+          uI = (function (e) {
             function t() {
               var t = e.call(this) || this;
-              return (t.stats = sI({}, uI)), t;
+              return (t.stats = cI({}, sI)), t;
             }
             return (
-              cI(t, e),
+              aI(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
               (t.prototype.importData = function (e) {
                 var t = e || {
-                  timeInGame: ST.timeInGame,
-                  timeThisPlanet: ST.timeInGame,
-                  timeThisPrestige: ST.timeInPrestige,
+                  timeInGame: vT.timeInGame,
+                  timeThisPlanet: vT.timeInGame,
+                  timeThisPrestige: vT.timeInPrestige,
                   maxColonists: 0,
                   maxHappiness: 0,
                   exoticCollected: 0,
                 };
-                (this.stats = sI(sI({}, uI), t)),
+                (this.stats = cI(cI({}, sI), t)),
                   this.stats.exoticCollected ||
                     (this.stats.exoticCollected = 0);
               }),
@@ -35144,16 +35093,16 @@
                 return this.stats;
               }),
               (t.prototype.dataToUI = function () {
-                return sI(sI({}, this.stats), {
+                return cI(cI({}, this.stats), {
                   maxHappiness: Math.round(100 * this.stats.maxHappiness),
-                  numPrestiges: ST.prestige.transmitKnowledge.numPrestiged,
-                  numColonized: ST.prestige.colonizePlanet.numPrestiged,
+                  numPrestiges: vT.prestige.transmitKnowledge.numPrestiged,
+                  numColonized: vT.prestige.colonizePlanet.numPrestiged,
                   kpPerHour:
-                    (3600 * ST.prestige.transmitKnowledge.getPrestigeGain()) /
+                    (3600 * vT.prestige.transmitKnowledge.getPrestigeGain()) /
                     (0.01 + this.stats.timeThisPrestige),
                   xpPerHour:
                     (3600 *
-                      ST.prestige.colonizePlanet.getCurrentXPGainBreakdown()
+                      vT.prestige.colonizePlanet.getCurrentXPGainBreakdown()
                         .xpGain) /
                     (0.01 + this.stats.timeThisPlanet),
                 });
@@ -35164,11 +35113,11 @@
                   (this.stats.timeInGame += e),
                   (this.stats.maxHappiness = Math.max(
                     this.stats.maxHappiness,
-                    ST.colony.getColonistsHappiness()
+                    vT.colony.getColonistsHappiness()
                   )),
                   (this.stats.maxColonists = Math.max(
                     this.stats.maxColonists,
-                    ST.colony.colonists
+                    vT.colony.colonists
                   ));
               }),
               (t.prototype.reset = function () {
@@ -35187,14 +35136,15 @@
             (e[(e.WARM = 6)] = "WARM"),
             (e[(e.HOT = 7)] = "HOT"),
             (e[(e.VERY_HOT = 8)] = "VERY_HOT");
-        })(oR || (oR = {})),
+        })(rR || (rR = {})),
           (function (e) {
             (e[(e.SPRING = 0)] = "SPRING"),
               (e[(e.SUMMER = 1)] = "SUMMER"),
               (e[(e.AUTUMN = 2)] = "AUTUMN"),
               (e[(e.WINTER = 3)] = "WINTER");
-          })(aR || (aR = {}));
-        var pI,
+          })(oR || (oR = {}));
+        var lI,
+          pI,
           dI,
           EI,
           gI,
@@ -35222,70 +35172,69 @@
           wI,
           DI,
           XI,
-          kI,
-          HI = [
+          kI = [
             {
-              id: oR.VERY_HOT,
+              id: rR.VERY_HOT,
               distanceCondition: 0.35,
               temperatureModifier: 1.75,
               name: "Very Hot",
             },
             {
-              id: oR.HOT,
+              id: rR.HOT,
               distanceCondition: 0.45,
               temperatureModifier: 1.5,
               name: "Hot",
             },
             {
-              id: oR.WARM,
+              id: rR.WARM,
               distanceCondition: 0.6,
               temperatureModifier: 1.3,
               name: "Warm",
             },
             {
-              id: oR.SLIGHTLY_WARM,
+              id: rR.SLIGHTLY_WARM,
               distanceCondition: 0.8,
               temperatureModifier: 1.1,
               name: "Slightly Warm",
             },
             {
-              id: oR.NORMAL,
+              id: rR.NORMAL,
               distanceCondition: 1.2,
               temperatureModifier: 1,
               name: "Normal",
             },
             {
-              id: oR.SLIGHTLY_COLD,
+              id: rR.SLIGHTLY_COLD,
               distanceCondition: 1.4,
               temperatureModifier: 0.9,
               name: "Slightly Cold",
             },
             {
-              id: oR.COLD,
+              id: rR.COLD,
               distanceCondition: 1.55,
               temperatureModifier: 0.75,
               name: "Cold",
             },
             {
-              id: oR.VERY_COLD,
+              id: rR.VERY_COLD,
               distanceCondition: 1.65,
               temperatureModifier: 0.66,
               name: "Very Cold",
             },
             {
-              id: oR.EXTREMELY_COLD,
+              id: rR.EXTREMELY_COLD,
               distanceCondition: 1.7,
               temperatureModifier: 0.62,
               name: "Extremely Cold",
             },
           ],
-          xI =
-            (((cR = {})[aR.SPRING] = "Spring"),
-            (cR[aR.SUMMER] = "Summer"),
-            (cR[aR.AUTUMN] = "Autumn"),
-            (cR[aR.WINTER] = "Winter"),
-            cR),
-          YI = (function () {
+          HI =
+            (((aR = {})[oR.SPRING] = "Spring"),
+            (aR[oR.SUMMER] = "Summer"),
+            (aR[oR.AUTUMN] = "Autumn"),
+            (aR[oR.WINTER] = "Winter"),
+            aR),
+          xI = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -35319,29 +35268,29 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          ZI = (function (e) {
+          YI = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
                 (t.climateState = {
                   day: 0,
-                  season: aR.SPRING,
-                  temperature: oR.NORMAL,
+                  season: oR.SPRING,
+                  temperature: rR.NORMAL,
                   year: 0,
                 }),
                 t
               );
             }
             return (
-              YI(t, e),
+              xI(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
               (t.prototype.importData = function (e) {
                 this.climateState = e || {
                   day: 0,
-                  season: aR.SPRING,
-                  temperature: oR.NORMAL,
+                  season: oR.SPRING,
+                  temperature: rR.NORMAL,
                   year: 0,
                 };
               }),
@@ -35350,7 +35299,7 @@
               }),
               (t.prototype.dataToUI = function () {
                 var e = this,
-                  t = HI.find(function (t) {
+                  t = kI.find(function (t) {
                     return t.id === e.climateState.temperature;
                   });
                 if (!t)
@@ -35363,20 +35312,20 @@
                   temperature: t.name,
                   year: this.climateState.year,
                   day: this.climateState.day,
-                  season: xI[this.climateState.season],
+                  season: HI[this.climateState.season],
                 };
               }),
               (t.prototype.getDays = function () {
-                return 0.2 * ST.statistics.stats.timeThisPrestige;
+                return 0.2 * vT.statistics.stats.timeThisPrestige;
               }),
               (t.prototype.getSeasonId = function () {
-                var e = ST.prestige.colonizePlanet.current.yearLength,
+                var e = vT.prestige.colonizePlanet.current.yearLength,
                   t = this.getDays() % e;
                 return Math.floor((4 * t) / e);
               }),
               (t.prototype.getResourceMultiplier = function (e) {
                 var t = this,
-                  n = HI.find(function (e) {
+                  n = kI.find(function (e) {
                     return e.id === t.climateState.temperature;
                   });
                 if (!n)
@@ -35419,7 +35368,7 @@
               }),
               (t.prototype.process = function (e) {
                 var t = this.getDays(),
-                  n = ST.prestige.colonizePlanet.current.yearLength;
+                  n = vT.prestige.colonizePlanet.current.yearLength;
                 (this.climateState.year = 1 + Math.floor(t / n)),
                   (this.climateState.day = 1 + (this.getDays() % n)),
                   (this.climateState.season = this.getSeasonId());
@@ -35427,27 +35376,27 @@
                   var i = Math.floor((16 * this.climateState.day) / n),
                     r =
                       1 -
-                      ST.prestige.colonizePlanet.current.eccentricity *
+                      vT.prestige.colonizePlanet.current.eccentricity *
                         Math.sin((6.28 * i) / 16),
                     o = 0;
-                  HI[o].distanceCondition < r;
+                  kI[o].distanceCondition < r;
 
                 )
                   o++;
-                HI[o].id !== this.climateState.temperature &&
+                kI[o].id !== this.climateState.temperature &&
                   (console.log(
                     "Weather changed: "
                       .concat(this.climateState.temperature, " -> ")
-                      .concat(HI[o].id)
+                      .concat(kI[o].id)
                   ),
-                  (this.climateState.temperature = HI[o].id),
-                  ST.resources.reassertBalances(),
-                  ST.regenerateCache());
+                  (this.climateState.temperature = kI[o].id),
+                  vT.resources.reassertBalances(),
+                  vT.regenerateCache());
               }),
               t
             );
           })(P).getInstance(),
-          WI = (function () {
+          ZI = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -35481,7 +35430,7 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          FI = (function (e) {
+          WI = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -35500,7 +35449,7 @@
               );
             }
             return (
-              WI(t, e),
+              ZI(t, e),
               (t.prototype.setMultiplier = function (e) {
                 e < 0 && (e = 0),
                   e > 4 && (e = 4),
@@ -35549,8 +35498,9 @@
             (e.PLAINS = "Plains"),
             (e.HILLS = "Hills"),
             (e.MUD = "Muds");
-        })(pI || (pI = {}));
-        var VI,
+        })(lI || (lI = {}));
+        var FI,
+          VI,
           jI,
           KI,
           zI,
@@ -35597,11 +35547,10 @@
           wh,
           Dh,
           Xh,
-          kh,
-          Hh = function (e) {
+          kh = function (e) {
             return Math.sqrt(e.x * e.x + e.y * e.y);
           },
-          xh = [
+          Hh = [
             {
               id: "meteor-shower",
               name: "Meteor Shower",
@@ -35620,11 +35569,11 @@
                 return 3;
               },
               getGainMultiplier:
-                ((dI = {}),
-                (dI[l.RESEARCH] = function (e) {
+                ((pI = {}),
+                (pI[l.RESEARCH] = function (e) {
                   return { A: 1, B: 1.2, type: i.EXPONENTIAL };
                 }),
-                dI),
+                pI),
               onStartEvent: function (e, t) {
                 e.eventLog.registerEvent(
                   d.EVENT,
@@ -35800,11 +35749,11 @@
                 return 1.5 * e.prestige.colonizePlanet.current.disastersLevel;
               },
               getEffectMultiplier:
-                ((EI = {}),
-                (EI[U.SECURITY] = function (e) {
+                ((dI = {}),
+                (dI[U.SECURITY] = function (e) {
                   return { A: 1, B: 0.8, type: i.EXPONENTIAL };
                 }),
-                EI),
+                dI),
               onStartEvent: function (e, t) {
                 e.eventLog.registerEvent(
                   d.EVENT,
@@ -35842,11 +35791,11 @@
                 return 1.5 * e.prestige.colonizePlanet.current.disastersLevel;
               },
               getEffectMultiplier:
-                ((gI = {}),
-                (gI[U.HEALTHCARE] = function (e) {
+                ((EI = {}),
+                (EI[U.HEALTHCARE] = function (e) {
                   return { A: 1, B: 0.8, type: i.EXPONENTIAL };
                 }),
-                gI),
+                EI),
               onStartEvent: function (e, t) {
                 e.eventLog.registerEvent(
                   d.EVENT,
@@ -35885,15 +35834,15 @@
                 return 1.5 * e.prestige.colonizePlanet.current.disastersLevel;
               },
               getConsumption:
-                ((fI = {}),
-                (fI[l.NUTRITION] = function (e) {
+                ((gI = {}),
+                (gI[l.NUTRITION] = function (e) {
                   return {
                     A: 0.01 * e.resources.getResourceCap(l.NUTRITION),
                     B: 1.4,
                     type: i.EXPONENTIAL,
                   };
                 }),
-                fI),
+                gI),
               onStartEvent: function (e, t) {
                 e.eventLog.registerEvent(
                   d.DISASTER,
@@ -35932,17 +35881,17 @@
                 return 1.5 * e.prestige.colonizePlanet.current.disastersLevel;
               },
               getGainMultiplier:
-                ((AI = {}),
-                (AI[l.POWER] = function (e) {
+                ((fI = {}),
+                (fI[l.POWER] = function (e) {
                   return { A: 1, B: 0.8, type: i.EXPONENTIAL };
                 }),
-                AI),
+                fI),
               getEffectMultiplier:
-                ((mI = {}),
-                (mI[U.HEALTHCARE] = function (e) {
+                ((AI = {}),
+                (AI[U.HEALTHCARE] = function (e) {
                   return { A: 1, B: 0.9, type: i.EXPONENTIAL };
                 }),
-                mI),
+                AI),
               onStartEvent: function (e, t) {
                 e.eventLog.registerEvent(
                   d.DISASTER,
@@ -35981,11 +35930,11 @@
                 return 1.5 * e.prestige.colonizePlanet.current.disastersLevel;
               },
               getGainMultiplier:
-                ((NI = {}),
-                (NI[l.POWER] = function (e) {
+                ((mI = {}),
+                (mI[l.POWER] = function (e) {
                   return { A: 1, B: 0.8, type: i.EXPONENTIAL };
                 }),
-                NI),
+                mI),
               getCraftingMultiplier: function (e) {
                 return { A: 1, B: 0.5, type: i.EXPONENTIAL };
               },
@@ -36027,11 +35976,11 @@
                 return 1.5 * e.prestige.colonizePlanet.current.disastersLevel;
               },
               getEffectMultiplier:
-                ((RI = {}),
-                (RI[U.SECURITY] = function (e) {
+                ((NI = {}),
+                (NI[U.SECURITY] = function (e) {
                   return { A: 1, B: 0.8, type: i.EXPONENTIAL };
                 }),
-                RI),
+                NI),
               getCraftingMultiplier: function (e) {
                 return { A: 1, B: 0.5, type: i.EXPONENTIAL };
               },
@@ -36091,23 +36040,23 @@
                 return 1.5 * e.prestige.colonizePlanet.current.disastersLevel;
               },
               getGainMultiplier:
-                ((II = {}),
-                (II[l.POWER] = function (e) {
+                ((RI = {}),
+                (RI[l.POWER] = function (e) {
                   return { A: 1, B: 0.9, type: i.EXPONENTIAL };
                 }),
-                (II[l.BIOMASS] = function (e) {
+                (RI[l.BIOMASS] = function (e) {
                   return { A: 1, B: 0.5, type: i.EXPONENTIAL };
                 }),
-                (II[l.WOOD] = function (e) {
+                (RI[l.WOOD] = function (e) {
                   return { A: 1, B: 0.5, type: i.EXPONENTIAL };
+                }),
+                RI),
+              getEffectMultiplier:
+                ((II = {}),
+                (II[U.HEALTHCARE] = function (e) {
+                  return { A: 1, B: 0.9, type: i.EXPONENTIAL };
                 }),
                 II),
-              getEffectMultiplier:
-                ((hI = {}),
-                (hI[U.HEALTHCARE] = function (e) {
-                  return { A: 1, B: 0.9, type: i.EXPONENTIAL };
-                }),
-                hI),
               onStartEvent: function (e, t) {
                 e.eventLog.registerEvent(
                   d.DISASTER,
@@ -36136,11 +36085,11 @@
                 return 3;
               },
               getEffectMultiplier:
-                ((TI = {}),
-                (TI[U.AESTHETICS] = function (e) {
+                ((hI = {}),
+                (hI[U.AESTHETICS] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                TI),
+                hI),
               onStartEvent: function (e, t) {
                 e.eventLog.registerEvent(
                   d.EVENT,
@@ -36169,17 +36118,17 @@
                 return 3;
               },
               getGainMultiplier:
-                ((yI = {}),
-                (yI[l.NUTRITION] = function (e) {
+                ((TI = {}),
+                (TI[l.NUTRITION] = function (e) {
                   return { A: 1, B: 1.3, type: i.EXPONENTIAL };
                 }),
-                (yI[l.WOOD] = function (e) {
+                (TI[l.WOOD] = function (e) {
                   return { A: 1, B: 1.3, type: i.EXPONENTIAL };
                 }),
-                (yI[l.BIOMASS] = function (e) {
+                (TI[l.BIOMASS] = function (e) {
                   return { A: 1, B: 1.3, type: i.EXPONENTIAL };
                 }),
-                yI),
+                TI),
               onStartEvent: function (e, t) {
                 e.eventLog.registerEvent(
                   d.EVENT,
@@ -36208,20 +36157,20 @@
                 return 3;
               },
               getGainMultiplier:
-                ((OI = {}),
-                (OI[l.ORE] = function (e) {
+                ((yI = {}),
+                (yI[l.ORE] = function (e) {
                   return { A: 1, B: 1.3, type: i.EXPONENTIAL };
                 }),
-                (OI[l.IRON] = function (e) {
+                (yI[l.IRON] = function (e) {
                   return { A: 1, B: 1.3, type: i.EXPONENTIAL };
                 }),
-                (OI[l.PLATE] = function (e) {
+                (yI[l.PLATE] = function (e) {
                   return { A: 1, B: 1.3, type: i.EXPONENTIAL };
                 }),
-                (OI[l.WIRE] = function (e) {
+                (yI[l.WIRE] = function (e) {
                   return { A: 1, B: 1.3, type: i.EXPONENTIAL };
                 }),
-                OI),
+                yI),
               onStartEvent: function (e, t) {
                 e.eventLog.registerEvent(
                   d.EVENT,
@@ -36252,11 +36201,11 @@
                 return 3;
               },
               getEffectMultiplier:
-                ((LI = {}),
-                (LI[U.ENTERTAINMENT] = function (e) {
+                ((OI = {}),
+                (OI[U.ENTERTAINMENT] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                LI),
+                OI),
               onStartEvent: function (e, t) {
                 e.eventLog.registerEvent(
                   d.EVENT,
@@ -36290,11 +36239,11 @@
                 return 3;
               },
               getEffectMultiplier:
-                ((CI = {}),
-                (CI[U.RELIGION] = function (e) {
+                ((LI = {}),
+                (LI[U.RELIGION] = function (e) {
                   return { A: 1, B: 1.1, type: i.EXPONENTIAL };
                 }),
-                CI),
+                LI),
               onStartEvent: function (e, t) {
                 e.eventLog.registerEvent(
                   d.EVENT,
@@ -36326,11 +36275,11 @@
                 return 3;
               },
               getGainMultiplier:
-                ((vI = {}),
-                (vI[l.WOOD] = function (e) {
+                ((CI = {}),
+                (CI[l.WOOD] = function (e) {
                   return { A: 1, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                vI),
+                CI),
               onStartEvent: function (e, t) {
                 e.eventLog.registerEvent(
                   d.EVENT,
@@ -36365,14 +36314,14 @@
                 return 3;
               },
               getGainMultiplier:
-                ((SI = {}),
-                (SI[l.ROCKET_ENGINE] = function (e) {
+                ((vI = {}),
+                (vI[l.ROCKET_ENGINE] = function (e) {
                   return { A: 1, B: 1.3, type: i.EXPONENTIAL };
                 }),
-                (SI[l.FUEL] = function (e) {
+                (vI[l.FUEL] = function (e) {
                   return { A: 1, B: 1.3, type: i.EXPONENTIAL };
                 }),
-                SI),
+                vI),
               onStartEvent: function (e, t) {
                 e.eventLog.registerEvent(
                   d.EVENT,
@@ -36404,14 +36353,14 @@
                 return 3;
               },
               getGainMultiplier:
-                ((PI = {}),
-                (PI[l.BEAM] = function (e) {
+                ((SI = {}),
+                (SI[l.BEAM] = function (e) {
                   return { A: 1, B: 1.3, type: i.EXPONENTIAL };
                 }),
-                (PI[l.BRICK] = function (e) {
+                (SI[l.BRICK] = function (e) {
                   return { A: 1, B: 1.3, type: i.EXPONENTIAL };
                 }),
-                PI),
+                SI),
               onStartEvent: function (e, t) {
                 e.eventLog.registerEvent(
                   d.EVENT,
@@ -36437,7 +36386,7 @@
                 return 0.005;
               },
               duration: function (e, t) {
-                return 250 * Hh(t);
+                return 250 * kh(t);
               },
               maxLevel: function (e) {
                 return 2;
@@ -36446,11 +36395,11 @@
                 return 1;
               },
               getGainMultiplier:
-                ((MI = {}),
-                (MI[l.WATER] = function (e) {
+                ((PI = {}),
+                (PI[l.WATER] = function (e) {
                   return { A: 1, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                MI),
+                PI),
               onStartEvent: function (e, t) {
                 e.eventLog.registerEvent(
                   d.EVENT,
@@ -36476,7 +36425,7 @@
                 return 0.005;
               },
               duration: function (e, t) {
-                return 250 * Hh(t);
+                return 250 * kh(t);
               },
               maxLevel: function (e) {
                 return 2;
@@ -36485,17 +36434,17 @@
                 return 1;
               },
               getGainMultiplier:
-                ((BI = {}),
-                (BI[l.BRICK] = function (e) {
+                ((MI = {}),
+                (MI[l.BRICK] = function (e) {
                   return { A: 1, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (BI[l.BEAM] = function (e) {
+                (MI[l.BEAM] = function (e) {
                   return { A: 1, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (BI[l.PLATE] = function (e) {
+                (MI[l.PLATE] = function (e) {
                   return { A: 1, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                BI),
+                MI),
               onStartEvent: function (e, t) {
                 e.eventLog.registerEvent(
                   d.EVENT,
@@ -36518,7 +36467,7 @@
                 return 0.005;
               },
               duration: function (e, t) {
-                return 250 * Hh(t);
+                return 250 * kh(t);
               },
               maxLevel: function (e) {
                 return 2;
@@ -36527,20 +36476,20 @@
                 return 1;
               },
               getGainMultiplier:
-                ((_I = {}),
-                (_I[l.WIRE] = function (e) {
+                ((BI = {}),
+                (BI[l.WIRE] = function (e) {
                   return { A: 1, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (_I[l.SEMICONDUCTOR] = function (e) {
+                (BI[l.SEMICONDUCTOR] = function (e) {
                   return { A: 1, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (_I[l.COMPUTER] = function (e) {
+                (BI[l.COMPUTER] = function (e) {
                   return { A: 1, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (_I[l.MAGNETO] = function (e) {
+                (BI[l.MAGNETO] = function (e) {
                   return { A: 1, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                _I),
+                BI),
               onStartEvent: function (e, t) {
                 e.eventLog.registerEvent(
                   d.EVENT,
@@ -36566,7 +36515,7 @@
                 return 0.005;
               },
               duration: function (e, t) {
-                return 250 * Hh(t);
+                return 250 * kh(t);
               },
               maxLevel: function (e) {
                 return 2;
@@ -36575,11 +36524,11 @@
                 return 1;
               },
               getStorageMultiplier:
-                ((UI = {}),
-                (UI[l.RESEARCH] = function (e) {
+                ((_I = {}),
+                (_I[l.RESEARCH] = function (e) {
                   return { A: 1, B: 1.03, type: i.EXPONENTIAL };
                 }),
-                UI),
+                _I),
               onStartEvent: function (e, t) {
                 e.eventLog.registerEvent(
                   d.EVENT,
@@ -36602,10 +36551,10 @@
                 return 0;
               },
               expeditionChance: function (e, t) {
-                return t && [pI.PLAINS, pI.HILLS].includes(t.type) ? 0.015 : 0;
+                return t && [lI.PLAINS, lI.HILLS].includes(t.type) ? 0.015 : 0;
               },
               duration: function (e, t) {
-                return 250 * Hh(t);
+                return 250 * kh(t);
               },
               maxLevel: function (e) {
                 return 2;
@@ -36614,17 +36563,17 @@
                 return 1;
               },
               getGainMultiplier:
-                ((bI = {}),
-                (bI[l.NUTRITION] = function (e) {
+                ((UI = {}),
+                (UI[l.NUTRITION] = function (e) {
                   return { A: 1, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (bI[l.BIOMASS] = function (e) {
+                (UI[l.BIOMASS] = function (e) {
                   return { A: 1, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (bI[l.WOOD] = function (e) {
+                (UI[l.WOOD] = function (e) {
                   return { A: 1, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                bI),
+                UI),
               onStartEvent: function (e, t) {
                 e.eventLog.registerEvent(
                   d.EVENT,
@@ -36652,12 +36601,12 @@
                   ? void 0
                   : n.unlockCondition(e)) &&
                   t &&
-                  [pI.PLAINS, pI.MUD].includes(t.type)
+                  [lI.PLAINS, lI.MUD].includes(t.type)
                   ? 0.01
                   : 0;
               },
               duration: function (e, t) {
-                return 250 * Hh(t);
+                return 250 * kh(t);
               },
               maxLevel: function (e) {
                 return 2;
@@ -36666,11 +36615,11 @@
                 return 1;
               },
               getGainMultiplier:
-                ((GI = {}),
-                (GI[l.FUEL] = function (e) {
+                ((bI = {}),
+                (bI[l.FUEL] = function (e) {
                   return { A: 1, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                GI),
+                bI),
               onStartEvent: function (e, t) {
                 e.eventLog.registerEvent(
                   d.EVENT,
@@ -36698,12 +36647,12 @@
                   ? void 0
                   : n.unlockCondition(e)) &&
                   t &&
-                  [pI.HILLS, pI.MOUNTAINS].includes(t.type)
+                  [lI.HILLS, lI.MOUNTAINS].includes(t.type)
                   ? 0.01
                   : 0;
               },
               duration: function (e, t) {
-                return 250 * Hh(t);
+                return 250 * kh(t);
               },
               maxLevel: function (e) {
                 return 2;
@@ -36712,11 +36661,11 @@
                 return 1;
               },
               getEffectGain:
-                ((wI = {}),
-                (wI[U.RELIGION] = function (e) {
+                ((GI = {}),
+                (GI[U.RELIGION] = function (e) {
                   return { A: 10, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                wI),
+                GI),
               onStartEvent: function (e, t) {
                 e.eventLog.registerEvent(
                   d.EVENT,
@@ -36747,12 +36696,12 @@
                   ? void 0
                   : n.unlockCondition(e)) &&
                   t &&
-                  [pI.HILLS, pI.MOUNTAINS].includes(t.type)
+                  [lI.HILLS, lI.MOUNTAINS].includes(t.type)
                   ? 0.01
                   : 0;
               },
               duration: function (e, t) {
-                return 250 * Hh(t);
+                return 250 * kh(t);
               },
               maxLevel: function (e) {
                 return 2;
@@ -36761,14 +36710,14 @@
                 return 1;
               },
               getEffectGain:
-                ((DI = {}),
-                (DI[U.AESTHETICS] = function (e) {
+                ((wI = {}),
+                (wI[U.AESTHETICS] = function (e) {
                   return { A: 5, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                (DI[U.ENTERTAINMENT] = function (e) {
+                (wI[U.ENTERTAINMENT] = function (e) {
                   return { A: 5, B: 1.5, type: i.EXPONENTIAL };
                 }),
-                DI),
+                wI),
               onStartEvent: function (e, t) {
                 e.eventLog.registerEvent(
                   d.EVENT,
@@ -36791,7 +36740,7 @@
                 return 0.005;
               },
               duration: function (e, t) {
-                return 250 * Hh(t);
+                return 250 * kh(t);
               },
               maxLevel: function (e) {
                 return 2;
@@ -36800,20 +36749,20 @@
                 return 1;
               },
               getGainMultiplier:
-                ((XI = {}),
-                (XI[l.WIRE] = function (e) {
+                ((DI = {}),
+                (DI[l.WIRE] = function (e) {
                   return { A: 1, B: 0.7, type: i.EXPONENTIAL };
                 }),
-                (XI[l.PLATE] = function (e) {
+                (DI[l.PLATE] = function (e) {
                   return { A: 1, B: 0.7, type: i.EXPONENTIAL };
                 }),
-                (XI[l.IRON] = function (e) {
+                (DI[l.IRON] = function (e) {
                   return { A: 1, B: 0.7, type: i.EXPONENTIAL };
                 }),
-                (XI[l.ROCKET_ENGINE] = function (e) {
+                (DI[l.ROCKET_ENGINE] = function (e) {
                   return { A: 1, B: 0.7, type: i.EXPONENTIAL };
                 }),
-                XI),
+                DI),
               onStartEvent: function (e, t) {
                 e.eventLog.registerEvent(
                   d.EVENT,
@@ -36839,7 +36788,7 @@
                 return 0.005;
               },
               duration: function (e, t) {
-                return 250 * Hh(t);
+                return 250 * kh(t);
               },
               maxLevel: function (e) {
                 return 2;
@@ -36848,20 +36797,20 @@
                 return 1;
               },
               getGainMultiplier:
-                ((kI = {}),
-                (kI[l.GRAPHENE] = function (e) {
+                ((XI = {}),
+                (XI[l.GRAPHENE] = function (e) {
                   return { A: 1, B: 0.8, type: i.EXPONENTIAL };
                 }),
-                (kI[l.PLASTICS] = function (e) {
+                (XI[l.PLASTICS] = function (e) {
                   return { A: 1, B: 0.8, type: i.EXPONENTIAL };
                 }),
-                (kI[l.RUBBER] = function (e) {
+                (XI[l.RUBBER] = function (e) {
                   return { A: 1, B: 0.8, type: i.EXPONENTIAL };
                 }),
-                (kI[l.BEAM] = function (e) {
+                (XI[l.BEAM] = function (e) {
                   return { A: 1, B: 0.8, type: i.EXPONENTIAL };
                 }),
-                kI),
+                XI),
               onStartEvent: function (e, t) {
                 e.eventLog.registerEvent(
                   d.EVENT,
@@ -36876,7 +36825,7 @@
               },
             },
           ],
-          Yh = (function () {
+          xh = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -36910,9 +36859,9 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          Zh = function () {
+          Yh = function () {
             return (
-              (Zh =
+              (Yh =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -36921,16 +36870,16 @@
                         (e[r] = t[r]);
                   return e;
                 }),
-              Zh.apply(this, arguments)
+              Yh.apply(this, arguments)
             );
           },
-          Wh = (function (e) {
+          Zh = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (t.state = []), t;
             }
             return (
-              Yh(t, e),
+              xh(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -36951,49 +36900,49 @@
               }),
               (t.prototype.process = function (e) {
                 var t = 0;
-                Math.abs(ST.environment.climate.getDays() % 1) < 0.2 * e &&
+                Math.abs(vT.environment.climate.getDays() % 1) < 0.2 * e &&
                   this.selectEventToTrigger(),
                   (this.state = this.state.filter(function (e) {
-                    if (e.endAt < ST.statistics.stats.timeThisPrestige) {
-                      var n = xh.find(function (t) {
+                    if (e.endAt < vT.statistics.stats.timeThisPrestige) {
+                      var n = Hh.find(function (t) {
                         return t.id === e.id;
                       });
                       return (
                         t++,
                         n &&
                           n.getSecondaryEffect &&
-                          n.getSecondaryEffect(ST, e.level),
+                          n.getSecondaryEffect(vT, e.level),
                         !1
                       );
                     }
                     return !0;
                   })),
-                  t && ST.resources.reassertBalances();
+                  t && vT.resources.reassertBalances();
               }),
               (t.prototype.selectEventToTrigger = function () {
                 var e = this;
-                xh.filter(function (t) {
+                Hh.filter(function (t) {
                   return !e.state.find(function (e) {
                     return e.id === t.id;
                   });
                 }).forEach(function (t) {
-                  var n = t.autoTriggerChance(ST);
+                  var n = t.autoTriggerChance(vT);
                   Math.random() < n && e.triggerEvent(t);
                 });
               }),
               (t.prototype.triggerEvent = function (e) {
-                var t = e.maxLevel(ST),
+                var t = e.maxLevel(vT),
                   n = 0;
-                e.minLevel && (n = e.minLevel(ST));
-                var i = e.duration(ST),
+                e.minLevel && (n = e.minLevel(vT));
+                var i = e.duration(vT),
                   r = n + Math.random() * (t - n);
                 console.log("triggered: ", e.id, r, t),
                   this.pushToState(
                     {
                       id: e.id,
                       level: r,
-                      startAt: ST.statistics.stats.timeThisPrestige,
-                      endAt: ST.statistics.stats.timeThisPrestige + i,
+                      startAt: vT.statistics.stats.timeThisPrestige,
+                      endAt: vT.statistics.stats.timeThisPrestige + i,
                     },
                     e
                   );
@@ -37001,18 +36950,18 @@
               (t.prototype.pushToState = function (e, t) {
                 if (
                   (t ||
-                    (t = xh.find(function (t) {
+                    (t = Hh.find(function (t) {
                       return t.id === e.id;
                     })),
                   !t)
                 )
                   throw new Error("Invalid Event Passed: ".concat(e.id));
                 this.state.push(e),
-                  t.onStartEvent && t.onStartEvent(ST, e.level),
-                  ST.resources.reassertBalances();
+                  t.onStartEvent && t.onStartEvent(vT, e.level),
+                  vT.resources.reassertBalances();
               }),
               (t.prototype.getResourceBeingProduced = function (e) {
-                var t = xh.filter(function (t) {
+                var t = Hh.filter(function (t) {
                     return t.getGain && !!t.getGain[e];
                   }),
                   n = [];
@@ -37022,7 +36971,7 @@
                       return e.id === i.id;
                     });
                     if (r && r.getGain) {
-                      var o = Z.calculate(ST, r.getGain[e], 0, i.level);
+                      var o = Z.calculate(vT, r.getGain[e], 0, i.level);
                       n.push({
                         label: "Event: ".concat(r.name),
                         value: o,
@@ -37035,7 +36984,7 @@
                 );
               }),
               (t.prototype.getCraftingMultiplier = function () {
-                var e = xh.filter(function (e) {
+                var e = Hh.filter(function (e) {
                     return !!e.getCraftingMultiplier;
                   }),
                   t = [];
@@ -37046,7 +36995,7 @@
                     });
                     if (i && i.getCraftingMultiplier) {
                       var r = Z.calculate(
-                          ST,
+                          vT,
                           i.getCraftingMultiplier,
                           n.level,
                           1
@@ -37065,7 +37014,7 @@
                 );
               }),
               (t.prototype.getResourceMultiplier = function (e) {
-                var t = xh.filter(function (t) {
+                var t = Hh.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getGainMultiplier) || void 0 === n
                       ? void 0
@@ -37085,7 +37034,7 @@
                         : r[e])
                     ) {
                       var a = Z.calculate(
-                          ST,
+                          vT,
                           o.getGainMultiplier[e],
                           i.level,
                           1
@@ -37104,7 +37053,7 @@
                 );
               }),
               (t.prototype.getResourceBeingConsumed = function (e) {
-                var t = xh.filter(function (t) {
+                var t = Hh.filter(function (t) {
                     return t.getConsumption && !!t.getConsumption[e];
                   }),
                   n = [];
@@ -37114,7 +37063,7 @@
                       return e.id === i.id;
                     });
                     if (r && r.getConsumption) {
-                      var o = Z.calculate(ST, r.getConsumption[e], 0, i.level);
+                      var o = Z.calculate(vT, r.getConsumption[e], 0, i.level);
                       n.push({
                         label: "Event: ".concat(r.name),
                         value: o,
@@ -37127,7 +37076,7 @@
                 );
               }),
               (t.prototype.getResourceStoreMultiplier = function (e) {
-                var t = xh.filter(function (t) {
+                var t = Hh.filter(function (t) {
                     return (
                       t.getStorageMultiplier && !!t.getStorageMultiplier[e]
                     );
@@ -37140,7 +37089,7 @@
                     });
                     if (r && r.getStorageMultiplier) {
                       var o = Z.calculate(
-                        ST,
+                        vT,
                         r.getStorageMultiplier[e],
                         i.level,
                         1
@@ -37157,7 +37106,7 @@
                 );
               }),
               (t.prototype.getHappinessMultiplier = function (e) {
-                var t = xh.filter(function (t) {
+                var t = Hh.filter(function (t) {
                     return (
                       !!t.getEffectMultiplier && !!t.getEffectMultiplier[e]
                     );
@@ -37170,7 +37119,7 @@
                     });
                     if (r && r.getEffectMultiplier) {
                       var o = Z.calculate(
-                        ST,
+                        vT,
                         r.getEffectMultiplier[e],
                         i.level,
                         1
@@ -37187,7 +37136,7 @@
                 );
               }),
               (t.prototype.getHappinessBonus = function (e) {
-                var t = xh.filter(function (t) {
+                var t = Hh.filter(function (t) {
                     return !!t.getEffectGain && !!t.getEffectGain[e];
                   }),
                   n = [];
@@ -37197,7 +37146,7 @@
                       return e.id === i.id;
                     });
                     if (r && r.getEffectGain) {
-                      var o = Z.calculate(ST, r.getEffectGain[e], 0, i.level);
+                      var o = Z.calculate(vT, r.getEffectGain[e], 0, i.level);
                       n.push({
                         label: "Event: ".concat(r.name),
                         value: o,
@@ -37213,45 +37162,45 @@
                 this.state = [];
               }),
               (t.prototype.processEventToUI = function (e) {
-                var t = xh.find(function (t) {
+                var t = Hh.find(function (t) {
                   return t.id === e.id;
                 });
                 if (!t) throw new Error("Event not found");
                 var n = Z.calcBatch(
                     t.getConsumption || {},
-                    vT.getInstance(),
+                    CT.getInstance(),
                     0,
                     e.level
                   ),
-                  i = Z.calcBatch(t.getGain || {}, vT.getInstance(), e.level),
+                  i = Z.calcBatch(t.getGain || {}, CT.getInstance(), e.level),
                   r = Z.calcBatch(
                     t.getStorageMultiplier || {},
-                    vT.getInstance(),
+                    CT.getInstance(),
                     e.level
                   ),
                   o = Z.calcBatch(
                     t.getGainMultiplier || {},
-                    vT.getInstance(),
+                    CT.getInstance(),
                     e.level
                   ),
                   a = Z.calcBatch(
                     t.getEffectConsumption || {},
-                    vT.getInstance(),
+                    CT.getInstance(),
                     0,
                     e.level
                   ),
                   c = Z.calcBatch(
                     t.getEffectGain || {},
-                    vT.getInstance(),
+                    CT.getInstance(),
                     0,
                     e.level
                   ),
                   s = Z.calcBatch(
                     t.getEffectMultiplier || {},
-                    vT.getInstance(),
+                    CT.getInstance(),
                     e.level
                   ),
-                  u = ST.statistics.stats.timeThisPrestige,
+                  u = vT.statistics.stats.timeThisPrestige,
                   l = e.endAt - e.startAt,
                   p = e.endAt - u;
                 return {
@@ -37259,44 +37208,44 @@
                   name: t.name,
                   description: t.description,
                   gain: i.map(function (e) {
-                    return Zh(Zh({}, e), {
+                    return Yh(Yh({}, e), {
                       amountValue: e.amount,
                       amount: F(e.amount),
                     });
                   }),
                   gainMult: o.map(function (e) {
-                    return Zh(Zh({}, e), {
+                    return Yh(Yh({}, e), {
                       amountValue: e.amount,
                       amount: "x".concat(F(e.amount)),
                     });
                   }),
                   consume: n.map(function (e) {
-                    return Zh(Zh({}, e), {
+                    return Yh(Yh({}, e), {
                       amountValue: e.amount,
                       amount: F(e.amount),
                     });
                   }),
                   max: [],
                   maxMult: r.map(function (e) {
-                    return Zh(Zh({}, e), {
+                    return Yh(Yh({}, e), {
                       amountValue: e.amount,
                       amount: "x".concat(F(e.amount)),
                     });
                   }),
                   consumeEffect: a.map(function (e) {
-                    return Zh(Zh({}, e), {
+                    return Yh(Yh({}, e), {
                       amountValue: e.amount,
                       amount: F(e.amount),
                     });
                   }),
                   gainEffect: c.map(function (e) {
-                    return Zh(Zh({}, e), {
+                    return Yh(Yh({}, e), {
                       amountValue: e.amount,
                       amount: F(e.amount),
                     });
                   }),
                   effectMult: s.map(function (e) {
-                    return Zh(Zh({}, e), {
+                    return Yh(Yh({}, e), {
                       amountValue: e.amount,
                       amount: "x".concat(F(e.amount)),
                     });
@@ -37304,15 +37253,15 @@
                   progress: "".concat(
                     100 * Math.min(1, (u - e.startAt) / (l || 1e-4))
                   ),
-                  addEffects: t.getEffects ? t.getEffects(ST, e.level) : [],
+                  addEffects: t.getEffects ? t.getEffects(vT, e.level) : [],
                   etaNum: p,
                 };
               }),
               t
             );
           })(P),
-          Fh = Wh.getInstance(),
-          Vh = (function () {
+          Wh = Zh.getInstance(),
+          Fh = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -37346,18 +37295,18 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          jh = (function (e) {
+          Vh = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
-                (t.climate = ZI),
-                (t.bankedTime = FI),
-                (t.ongoingEffects = Fh),
+                (t.climate = YI),
+                (t.bankedTime = WI),
+                (t.ongoingEffects = Wh),
                 t
               );
             }
             return (
-              Vh(t, e),
+              Fh(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -37393,7 +37342,7 @@
               t
             );
           })(P).getInstance(),
-          Kh = (function () {
+          jh = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -37427,9 +37376,9 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          zh = function () {
+          Kh = function () {
             return (
-              (zh =
+              (Kh =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -37438,10 +37387,10 @@
                         (e[r] = t[r]);
                   return e;
                 }),
-              zh.apply(this, arguments)
+              Kh.apply(this, arguments)
             );
           },
-          qh = (function (e) {
+          zh = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -37464,7 +37413,7 @@
               );
             }
             return (
-              Kh(t, e),
+              jh(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -37483,7 +37432,7 @@
                     return;
                   if (e === p.UPGRADE) {
                     var i =
-                        ST.landingZone.landingZoneUpgrades.getUpgradeLevel(t),
+                        vT.landingZone.landingZoneUpgrades.getUpgradeLevel(t),
                       r =
                         (null ===
                           (n = XE.find(function (e) {
@@ -37523,7 +37472,7 @@
                     return e.concat(i || Array.prototype.slice.call(t));
                   })([], this.queue, !0).map(function (e, n) {
                     var i;
-                    return zh(zh({}, e), {
+                    return Kh(Kh({}, e), {
                       eta:
                         (null === (i = t[n].meta) || void 0 === i
                           ? void 0
@@ -37561,7 +37510,7 @@
                         }
                         return n;
                       })(e, ["eta"]);
-                      return zh({}, t);
+                      return Kh({}, t);
                     });
                 this.queue = i;
               }),
@@ -37570,8 +37519,8 @@
               }),
               (t.prototype.moveItem = function (e, t) {
                 var n = this.queue[e + t];
-                (this.queue[e + t] = zh({}, this.queue[e])),
-                  (this.queue[e] = zh({}, n));
+                (this.queue[e + t] = Kh({}, this.queue[e])),
+                  (this.queue[e] = Kh({}, n));
               }),
               (t.prototype.importData = function (e) {
                 this.queue = (null == e ? void 0 : e.queue) || [];
@@ -37589,7 +37538,7 @@
                       return t.id === e.id;
                     });
                     return i
-                      ? ST.landingZone.landingZoneBuildings.processToUI(i, n)
+                      ? vT.landingZone.landingZoneBuildings.processToUI(i, n)
                       : void console.error(
                           "Building ".concat(e.id, " was not found")
                         );
@@ -37598,7 +37547,7 @@
                       return t.id === e.id;
                     });
                     return r
-                      ? ST.science.scienceResearches.processToUI(r)
+                      ? vT.science.scienceResearches.processToUI(r)
                       : void console.error(
                           "Research ".concat(e.id, " was not found")
                         );
@@ -37607,7 +37556,7 @@
                       return t.id === e.id;
                     });
                     return o
-                      ? ST.landingZone.landingZoneUpgrades.processToUI(o, n)
+                      ? vT.landingZone.landingZoneUpgrades.processToUI(o, n)
                       : void console.error(
                           "Upgrade ".concat(e.id, " was not found")
                         );
@@ -37649,7 +37598,7 @@
                         ((e = {}),
                         (e[p.BUILDING] = rg
                           .filter(function (e) {
-                            return e.unlockCondition(ST);
+                            return e.unlockCondition(vT);
                           })
                           .map(function (e) {
                             return { id: e.id, name: e.name };
@@ -37659,10 +37608,10 @@
                           })),
                         (e[p.UPGRADE] = XE.filter(function (e) {
                           return (
-                            e.unlockCondition(ST) &&
+                            e.unlockCondition(vT) &&
                             (!e.maxLevel ||
                               e.maxLevel >
-                                ST.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                                vT.landingZone.landingZoneUpgrades.getUpgradeLevel(
                                   e.id
                                 ))
                           );
@@ -37676,8 +37625,8 @@
                         (e[p.RESEARCH] = wg
                           .filter(function (e) {
                             return (
-                              e.unlockCondition(ST) &&
-                              ST.science.scienceResearches.getResearchLevel(
+                              e.unlockCondition(vT) &&
+                              vT.science.scienceResearches.getResearchLevel(
                                 e.id
                               ) < 1
                             );
@@ -37733,7 +37682,7 @@
                     if (t.scope === p.UPGRADE) {
                       var n = t.id,
                         i =
-                          ST.landingZone.landingZoneUpgrades.getUpgradeLevel(n),
+                          vT.landingZone.landingZoneUpgrades.getUpgradeLevel(n),
                         r = XE.find(function (e) {
                           return e.id === n;
                         });
@@ -37741,23 +37690,23 @@
                       return r.maxLevel && r.maxLevel <= i
                         ? void this.queue.shift()
                         : void (
-                            ST.landingZone.landingZoneUpgrades.doUpgrade(n) &&
+                            vT.landingZone.landingZoneUpgrades.doUpgrade(n) &&
                             this.queue.shift()
                           );
                     }
                     if (t.scope === p.RESEARCH)
                       return (
                         (o = t.id),
-                        (i = ST.science.scienceResearches.getResearchLevel(o)) >
+                        (i = vT.science.scienceResearches.getResearchLevel(o)) >
                           0 && this.queue.shift(),
                         void (
-                          ST.science.scienceResearches.doResearch(o) &&
+                          vT.science.scienceResearches.doResearch(o) &&
                           this.queue.shift()
                         )
                       );
                   } else {
                     var o = t.id;
-                    ST.landingZone.landingZoneBuildings.doBuild(o) &&
+                    vT.landingZone.landingZoneBuildings.doBuild(o) &&
                       this.queue.shift();
                   }
                 }
@@ -37765,10 +37714,10 @@
               t
             );
           })(P),
-          Qh = qh.getInstance(),
-          Jh = n(381),
-          $h = n.n(Jh),
-          eT = (function () {
+          qh = zh.getInstance(),
+          Qh = n(381),
+          Jh = n.n(Qh),
+          $h = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -37802,7 +37751,7 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          tT = (function (e) {
+          eT = (function (e) {
             function t() {
               var t,
                 n = e.call(this) || this;
@@ -37830,7 +37779,7 @@
               );
             }
             return (
-              eT(t, e),
+              $h(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -37838,8 +37787,8 @@
                 this.events.unshift({
                   scope: e,
                   time: new Date(),
-                  year: Math.floor(ST.environment.climate.climateState.year),
-                  day: Math.floor(ST.environment.climate.climateState.day),
+                  year: Math.floor(vT.environment.climate.climateState.year),
+                  day: Math.floor(vT.environment.climate.climateState.day),
                   message: t,
                 });
               }),
@@ -37964,7 +37913,7 @@
                     .map(function (e) {
                       return {
                         date: "[".concat(
-                          $h()(e.time).format("MMM D, Y HH:mm:ss"),
+                          Jh()(e.time).format("MMM D, Y HH:mm:ss"),
                           "]"
                         ),
                         time: "Year ".concat(e.year, ", Day ").concat(e.day),
@@ -38004,8 +37953,8 @@
               t
             );
           })(P),
-          nT = tT.getInstance(),
-          iT = (function () {
+          tT = eT.getInstance(),
+          nT = (function () {
             function e() {}
             return (
               (e.getInstance = function () {
@@ -38015,12 +37964,12 @@
                 var n = [];
                 if (
                   e === l.RESEARCH &&
-                  ST.resources.getResource(l.ANOMALITIES) > 0
+                  vT.resources.getResource(l.ANOMALITIES) > 0
                 ) {
                   var i =
                     1 +
                     0.01 *
-                      (null != t ? t : ST.resources.getResource(l.ANOMALITIES));
+                      (null != t ? t : vT.resources.getResource(l.ANOMALITIES));
                   n.push({
                     label: "Resource: Anomaly",
                     value: i,
@@ -38033,88 +37982,88 @@
               e
             );
           })().getInstance(),
-          rT = [
+          iT = [
             {
-              type: pI.DESERT,
+              type: lI.DESERT,
               name: "Desert",
               description: "Who knows what is hidden under this sand",
               lootChances:
-                ((VI = {}),
-                (VI[l.STONE] = 0.75),
-                (VI[l.BRICK] = 0.25),
-                (VI[l.PLATE] = 0.25),
-                (VI[l.SEMICONDUCTOR] = 0.15),
-                VI),
+                ((FI = {}),
+                (FI[l.STONE] = 0.75),
+                (FI[l.BRICK] = 0.25),
+                (FI[l.PLATE] = 0.25),
+                (FI[l.SEMICONDUCTOR] = 0.15),
+                FI),
               color: "#d8c767",
             },
             {
-              type: pI.MUD,
+              type: lI.MUD,
               name: "Muds",
               description: "Wet and dangerous",
               lootChances:
-                ((jI = {}),
-                (jI[l.BIOMASS] = 0.75),
-                (jI[l.WOOD] = 0.5),
-                (jI[l.RUBBER] = 0.2),
-                (jI[l.PLASTICS] = 0.2),
-                jI),
+                ((VI = {}),
+                (VI[l.BIOMASS] = 0.75),
+                (VI[l.WOOD] = 0.5),
+                (VI[l.RUBBER] = 0.2),
+                (VI[l.PLASTICS] = 0.2),
+                VI),
               color: "#787747",
             },
             {
-              type: pI.MOUNTAINS,
+              type: lI.MOUNTAINS,
               name: "Mountains",
               description:
                 "Its hard to climb, but maybe the high is worth the pain?",
               lootChances:
-                ((KI = {}),
-                (KI[l.ORE] = 0.75),
-                (KI[l.IRON] = 0.35),
-                (KI[l.WIRE] = 0.2),
-                (KI[l.PLATINUM] = 0.1),
-                KI),
+                ((jI = {}),
+                (jI[l.ORE] = 0.75),
+                (jI[l.IRON] = 0.35),
+                (jI[l.WIRE] = 0.2),
+                (jI[l.PLATINUM] = 0.1),
+                jI),
               color: "#aa9",
             },
             {
-              type: pI.HILLS,
+              type: lI.HILLS,
               name: "Hills",
               description: "Could we find ancient settlement here?",
               lootChances:
-                ((zI = {}),
-                (zI[l.RESEARCH] = 0.75),
-                (zI[l.COMPUTER] = 0.2),
-                (zI[l.MAGNETO] = 0.2),
-                (zI[l.PLATINUM] = 0.2),
-                zI),
+                ((KI = {}),
+                (KI[l.RESEARCH] = 0.75),
+                (KI[l.COMPUTER] = 0.2),
+                (KI[l.MAGNETO] = 0.2),
+                (KI[l.PLATINUM] = 0.2),
+                KI),
               color: "#388757",
             },
             {
-              type: pI.TUNDRA,
+              type: lI.TUNDRA,
               name: "Tundra",
               description: "Frozen and empty",
               lootChances:
-                ((qI = {}),
-                (qI[l.WATER] = 0.75),
-                (qI[l.OXYGEN] = 0.75),
-                (qI[l.FUEL] = 0.2),
-                (qI[l.GRAPHENE] = 0.2),
-                qI),
+                ((zI = {}),
+                (zI[l.WATER] = 0.75),
+                (zI[l.OXYGEN] = 0.75),
+                (zI[l.FUEL] = 0.2),
+                (zI[l.GRAPHENE] = 0.2),
+                zI),
               color: "#78a7d7",
             },
             {
-              type: pI.PLAINS,
+              type: lI.PLAINS,
               name: "Plains",
               description: "Empty and windy",
               lootChances:
-                ((QI = {}),
-                (QI[l.NUTRITION] = 0.75),
-                (QI[l.WOOD] = 0.5),
-                (QI[l.BEAM] = 0.2),
-                (QI[l.PLATE] = 0.2),
-                QI),
+                ((qI = {}),
+                (qI[l.NUTRITION] = 0.75),
+                (qI[l.WOOD] = 0.5),
+                (qI[l.BEAM] = 0.2),
+                (qI[l.PLATE] = 0.2),
+                qI),
               color: "#78a747",
             },
           ],
-          oT = (function () {
+          rT = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -38148,7 +38097,7 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          aT = (function (e) {
+          oT = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -38189,7 +38138,7 @@
               );
             }
             return (
-              oT(t, e),
+              rT(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -38213,7 +38162,7 @@
               (t.prototype.dataToUI = function () {
                 var e, t, n, i, r;
                 this.isExpeditionUnlocked() &&
-                  ST.newNotifications.registerNotification(
+                  vT.newNotifications.registerNotification(
                     "planet:expeditions"
                   );
                 var o = this.expeditionsState.currentMax
@@ -38278,7 +38227,7 @@
               (t.prototype.generateCache = function () {
                 var e = this;
                 this.mapCache = {
-                  regenerateUUID: RR.Z(),
+                  regenerateUUID: NR.Z(),
                   cells: this.expeditionsState.map.cells.map(function (t) {
                     return t.map(function (t) {
                       return e.processCell(t);
@@ -38291,11 +38240,11 @@
                 for (var e = -10; e <= 10; e++) {
                   this.expeditionsState.map.cells.push([]);
                   for (var t = -10; t <= 10; t++) {
-                    var n = Math.floor(Math.random() * rT.length);
+                    var n = Math.floor(Math.random() * iT.length);
                     this.expeditionsState.map.cells[10 + e].push({
                       x: t,
                       y: e,
-                      type: rT[n].type,
+                      type: iT[n].type,
                       radiusMultiplier: Math.pow(e * e + t * t, 0.75),
                     });
                   }
@@ -38308,14 +38257,14 @@
                   r =
                     1 +
                     0.04 *
-                      ST.prestige.transmitKnowledge.getUpgradeLevel(
+                      vT.prestige.transmitKnowledge.getUpgradeLevel(
                         g.EXPEDITION_MASTERITY
                       ),
                   o = function (o) {
                     var a = w.find(function (e) {
                       return e.id === o;
                     });
-                    if (!(null == a ? void 0 : a.unlockCondition(ST)))
+                    if (!(null == a ? void 0 : a.unlockCondition(vT)))
                       return "continue";
                     i[o] = {
                       chance: Math.min(n * e[o], 1),
@@ -38333,13 +38282,13 @@
                 return (
                   5 +
                   0.2 *
-                    ST.landingZone.landingZoneBuildings.getBuildingActiveLevel(
+                    vT.landingZone.landingZoneBuildings.getBuildingActiveLevel(
                       a.GPS_SATELITE
                     )
                 );
               }),
               (t.prototype.processCell = function (e) {
-                var t = rT.find(function (t) {
+                var t = iT.find(function (t) {
                   return t.type === e.type;
                 });
                 if (!t) throw new Error("Cell type not found");
@@ -38384,7 +38333,7 @@
               }),
               (t.prototype.isExpeditionUnlocked = function () {
                 return (
-                  ST.science.scienceResearches.getResearchLevel(M.GEOGRAPHY) > 0
+                  vT.science.scienceResearches.getResearchLevel(M.GEOGRAPHY) > 0
                 );
               }),
               (t.prototype.startExpedition = function () {
@@ -38440,19 +38389,19 @@
                 return (
                   Math.pow(
                     1.05,
-                    ST.landingZone.landingZoneBuildings.getBuildingActiveLevel(
+                    vT.landingZone.landingZoneBuildings.getBuildingActiveLevel(
                       a.EXPEDITION_CENTER
                     )
                   ) *
                   Math.pow(
                     1.3,
-                    ST.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                    vT.landingZone.landingZoneUpgrades.getUpgradeLevel(
                       o.ENERGY_SAVING_EXPEDITION_DRONES
                     )
                   ) *
                   (1 +
                     0.04 *
-                      ST.prestige.transmitKnowledge.getUpgradeLevel(
+                      vT.prestige.transmitKnowledge.getUpgradeLevel(
                         g.EXPEDITION_MASTERITY
                       ))
                 );
@@ -38468,12 +38417,12 @@
                 if (!t) throw new Error("Cell not found");
                 for (var n in (t.specialEvent &&
                   (console.log("special event trigger: ", t.specialEvent),
-                  ST.environment.ongoingEffects.pushToState({
+                  vT.environment.ongoingEffects.pushToState({
                     id: t.specialEvent.id,
                     level: t.specialEvent.level,
-                    startAt: ST.statistics.stats.timeThisPrestige,
+                    startAt: vT.statistics.stats.timeThisPrestige,
                     endAt:
-                      ST.statistics.stats.timeThisPrestige +
+                      vT.statistics.stats.timeThisPrestige +
                       t.specialEvent.duration,
                   }),
                   (this.expeditionsState.map.cells[
@@ -38485,8 +38434,8 @@
                 (this.expeditionsState.lastLooted = e),
                 (this.expeditionsState.currentMax = 0),
                 e))
-                  ST.resources.addResource(n, e[n] || 0);
-                ST.eventLog.registerExpeditionArrived(x(e), ""),
+                  vT.resources.addResource(n, e[n] || 0);
+                vT.eventLog.registerExpeditionArrived(x(e), ""),
                   this.expeditionsState.numExpeditions++;
               }),
               (t.prototype.getExpeditionDuration = function (e, t) {
@@ -38494,8 +38443,8 @@
                 return 100 * Math.pow(n, 2);
               }),
               (t.prototype.getSpecialLootForCell = function (e) {
-                for (var t = xh, n = 0; n < t.length; n++) {
-                  var i = t[n].expeditionChance(ST, e);
+                for (var t = Hh, n = 0; n < t.length; n++) {
+                  var i = t[n].expeditionChance(vT, e);
                   if (Math.random() < i) return t[n];
                 }
                 return null;
@@ -38517,10 +38466,10 @@
                     ) {
                       var i = this.getSpecialLootForCell(n);
                       if (i) {
-                        var r = i.maxLevel(ST),
+                        var r = i.maxLevel(vT),
                           o = 0;
-                        i.minLevel && (o = i.minLevel(ST));
-                        var a = i.duration(ST, n),
+                        i.minLevel && (o = i.minLevel(vT));
+                        var a = i.duration(vT, n),
                           c = o + Math.random() * (r - o);
                         (this.expeditionsState.map.cells[e][t].specialEvent = {
                           id: i.id,
@@ -38570,8 +38519,8 @@
               t
             );
           })(P),
-          cT = aT.getInstance(),
-          sT = (function () {
+          aT = oT.getInstance(),
+          cT = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -38605,7 +38554,7 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          uT = (function (e) {
+          sT = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -38619,12 +38568,12 @@
               );
             }
             return (
-              sT(t, e),
+              cT(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
               (t.prototype.getResourceCostReq = function (e) {
-                var t = ST.landingZone.landingZoneBuildings
+                var t = vT.landingZone.landingZoneBuildings
                     .dataFromCache()
                     .filter(function (t) {
                       return t.cost.find(function (t) {
@@ -38637,7 +38586,7 @@
                   i = t.filter(function (e) {
                     return Object.values(s).includes(e.category);
                   }),
-                  r = ST.landingZone.landingZoneUpgrades
+                  r = vT.landingZone.landingZoneUpgrades
                     .dataFromCache()
                     .filter(function (t) {
                       return t.cost.find(function (t) {
@@ -38692,7 +38641,7 @@
                 };
               }),
               (t.prototype.getResourceConsReq = function (e) {
-                var t = ST.landingZone.landingZoneBuildings
+                var t = vT.landingZone.landingZoneBuildings
                     .dataFromCache()
                     .filter(function (t) {
                       return t.consume.find(function (t) {
@@ -38707,10 +38656,10 @@
                   }),
                   r = hg
                     .filter(function (e) {
-                      return e.unlockCondition(ST);
+                      return e.unlockCondition(vT);
                     })
                     .map(function (e) {
-                      return ST.colony.colonyJobs.processToUI(e);
+                      return vT.colony.colonyJobs.processToUI(e);
                     })
                     .filter(function (t) {
                       return t.consume.find(function (t) {
@@ -38721,17 +38670,17 @@
                     var t = w.find(function (t) {
                       return t.id === e.id;
                     });
-                    return !(!t || !t.unlockCondition(ST));
+                    return !(!t || !t.unlockCondition(vT));
                   })
                     .map(function (e) {
-                      return ST.crafting.craftingJobs.processToUI(e);
+                      return vT.crafting.craftingJobs.processToUI(e);
                     })
                     .filter(function (t) {
                       return t.consume.find(function (t) {
                         return t.id === e;
                       });
                     }),
-                  a = ST.landingZone.landingZoneUpgrades
+                  a = vT.landingZone.landingZoneUpgrades
                     .dataFromCache()
                     .filter(function (t) {
                       return t.consume.find(function (t) {
@@ -38811,7 +38760,7 @@
                 };
               }),
               (t.prototype.getProducedBy = function (e) {
-                var t = ST.landingZone.landingZoneBuildings
+                var t = vT.landingZone.landingZoneBuildings
                     .dataFromCache()
                     .filter(function (t) {
                       return t.gain.find(function (t) {
@@ -38826,10 +38775,10 @@
                   }),
                   r = hg
                     .filter(function (e) {
-                      return e.unlockCondition(ST);
+                      return e.unlockCondition(vT);
                     })
                     .map(function (e) {
-                      return ST.colony.colonyJobs.processToUI(e);
+                      return vT.colony.colonyJobs.processToUI(e);
                     })
                     .filter(function (t) {
                       return t.gain.find(function (t) {
@@ -38840,17 +38789,17 @@
                     var n = w.find(function (t) {
                       return t.id === e;
                     });
-                    return !(!n || !n.unlockCondition(ST));
+                    return !(!n || !n.unlockCondition(vT));
                   })
                     .map(function (e) {
-                      return ST.crafting.craftingJobs.processToUI(e);
+                      return vT.crafting.craftingJobs.processToUI(e);
                     })
                     .filter(function (t) {
                       return t.gain.find(function (t) {
                         return t.id === e;
                       });
                     }),
-                  a = ST.landingZone.landingZoneUpgrades
+                  a = vT.landingZone.landingZoneUpgrades
                     .dataFromCache()
                     .filter(function (t) {
                       return t.gain.find(function (t) {
@@ -38938,7 +38887,7 @@
                       })) || void 0 === t
                       ? void 0
                       : t.isCraftable,
-                  i = ST.landingZone.landingZoneBuildings
+                  i = vT.landingZone.landingZoneBuildings
                     .dataFromCache()
                     .filter(function (t) {
                       return (
@@ -38956,22 +38905,21 @@
                   }),
                   a = hg
                     .filter(function (e) {
-                      return e.unlockCondition(ST);
+                      return e.unlockCondition(vT);
                     })
                     .map(function (e) {
-                      return ST.colony.colonyJobs.processToUI(e);
+                      return vT.colony.colonyJobs.processToUI(e);
                     })
                     .filter(function (t) {
                       return t.multiplier.find(function (t) {
                         return t.id === e && t.amountValue > 1;
                       });
                     }),
-                  u = xA
-                    .filter(function (e) {
-                      return e.unlockCondition(ST);
-                    })
+                  u = HA.filter(function (e) {
+                    return e.unlockCondition(vT);
+                  })
                     .map(function (t) {
-                      var n = ST.laws.processToUI(t),
+                      var n = vT.laws.processToUI(t),
                         i = [],
                         r = [];
                       return (
@@ -38996,7 +38944,7 @@
                     .filter(function (e) {
                       return e.optionIds.length;
                     }),
-                  l = ST.landingZone.landingZoneUpgrades
+                  l = vT.landingZone.landingZoneUpgrades
                     .dataFromCache()
                     .filter(function (t) {
                       return (
@@ -39067,7 +39015,7 @@
                 };
               }),
               (t.prototype.getDebuffedBy = function (e) {
-                var t = ST.landingZone.landingZoneBuildings
+                var t = vT.landingZone.landingZoneBuildings
                     .dataFromCache()
                     .filter(function (t) {
                       return t.gainMult.find(function (t) {
@@ -39082,22 +39030,21 @@
                   }),
                   r = hg
                     .filter(function (e) {
-                      return e.unlockCondition(ST);
+                      return e.unlockCondition(vT);
                     })
                     .map(function (e) {
-                      return ST.colony.colonyJobs.processToUI(e);
+                      return vT.colony.colonyJobs.processToUI(e);
                     })
                     .filter(function (t) {
                       return t.multiplier.find(function (t) {
                         return t.id === e && t.amountValue < 1;
                       });
                     }),
-                  o = xA
-                    .filter(function (e) {
-                      return e.unlockCondition(ST);
-                    })
+                  o = HA.filter(function (e) {
+                    return e.unlockCondition(vT);
+                  })
                     .map(function (t) {
-                      var n = ST.laws.processToUI(t),
+                      var n = vT.laws.processToUI(t),
                         i = [],
                         r = [];
                       return (
@@ -39122,7 +39069,7 @@
                     .filter(function (e) {
                       return e.optionIds.length;
                     }),
-                  a = ST.landingZone.landingZoneUpgrades
+                  a = vT.landingZone.landingZoneUpgrades
                     .dataFromCache()
                     .filter(function (t) {
                       return t.gainMult.find(function (t) {
@@ -39190,7 +39137,7 @@
                 };
               }),
               (t.prototype.getCap = function (e) {
-                var t = ST.landingZone.landingZoneBuildings
+                var t = vT.landingZone.landingZoneBuildings
                     .dataFromCache()
                     .filter(function (t) {
                       return t.max.find(function (t) {
@@ -39203,7 +39150,7 @@
                   i = t.filter(function (e) {
                     return Object.values(s).includes(e.category);
                   }),
-                  r = ST.landingZone.landingZoneUpgrades
+                  r = vT.landingZone.landingZoneUpgrades
                     .dataFromCache()
                     .filter(function (t) {
                       return t.max.find(function (t) {
@@ -39258,14 +39205,14 @@
                 };
               }),
               (t.prototype.getCapBoostedBy = function (e) {
-                var t = ST.landingZone.landingZoneUpgrades
+                var t = vT.landingZone.landingZoneUpgrades
                     .dataFromCache()
                     .filter(function (t) {
                       return t.maxMult.find(function (t) {
                         return t.id === e && t.amountValue > 1;
                       });
                     }),
-                  n = ST.resourceEffect
+                  n = vT.resourceEffect
                     .getResourceCapMultiplier(e, 1)
                     .map(function (e) {
                       return {
@@ -39323,8 +39270,8 @@
               t
             );
           })(P),
-          lT = uT.getInstance(),
-          pT = (function () {
+          uT = sT.getInstance(),
+          lT = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -39358,9 +39305,9 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          dT = function () {
+          pT = function () {
             return (
-              (dT =
+              (pT =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -39369,10 +39316,10 @@
                         (e[r] = t[r]);
                   return e;
                 }),
-              dT.apply(this, arguments)
+              pT.apply(this, arguments)
             );
           },
-          ET = (function (e) {
+          dT = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -39390,7 +39337,7 @@
               );
             }
             return (
-              pT(t, e),
+              lT(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -39411,7 +39358,7 @@
                       i = hg.find(function (t) {
                         return t.id === e.id;
                       });
-                    return dT(dT({}, e), {
+                    return pT(pT({}, e), {
                       name:
                         null !== (t = null == i ? void 0 : i.name) &&
                         void 0 !== t
@@ -39419,14 +39366,14 @@
                           : "",
                       isUnlocked:
                         null !==
-                          (n = null == i ? void 0 : i.unlockCondition(ST)) &&
+                          (n = null == i ? void 0 : i.unlockCondition(vT)) &&
                         void 0 !== n &&
                         n,
                     });
                   }),
                   crafting: e.crafting.map(function (e) {
                     var t, n;
-                    return dT(dT({}, e), {
+                    return pT(pT({}, e), {
                       name: H(e.id),
                       isUnlocked:
                         null !==
@@ -39436,7 +39383,7 @@
                                 return t.id === e.id;
                               })) || void 0 === t
                               ? void 0
-                              : t.unlockCondition(ST)) &&
+                              : t.unlockCondition(vT)) &&
                         void 0 !== n &&
                         n,
                     });
@@ -39450,21 +39397,21 @@
                   });
                 return {
                   isUnlocked:
-                    ST.landingZone.landingZoneUpgrades.getUpgradeLevel(
+                    vT.landingZone.landingZoneUpgrades.getUpgradeLevel(
                       o.DOCKING_MODULE
                     ) > 0,
                   list: t,
                   newPreset: {
                     jobs: hg
                       .filter(function (e) {
-                        return e.unlockCondition(ST);
+                        return e.unlockCondition(vT);
                       })
                       .map(function (e) {
                         return { id: e.id, name: e.name };
                       }),
                     crafting: w
                       .filter(function (e) {
-                        return e.unlockCondition(ST) && e.isCraftable;
+                        return e.unlockCondition(vT) && e.isCraftable;
                       })
                       .map(function (e) {
                         return { id: e.id, name: e.name };
@@ -39480,9 +39427,9 @@
               }),
               (t.prototype.savePreset = function (e) {
                 var t = !e.uuid,
-                  n = dT({}, e);
+                  n = pT({}, e);
                 if (
-                  (n.uuid || (n.uuid = RR.Z()),
+                  (n.uuid || (n.uuid = NR.Z()),
                   n.name || (n.name = "Preset ".concat(Date())),
                   !t ||
                     !this.list.find(function (e) {
@@ -39535,12 +39482,12 @@
                     })),
                     t)
                   )
-                    this.list.push(dT({}, n));
+                    this.list.push(pT({}, n));
                   else {
                     var a = this.list.findIndex(function (e) {
                       return e.uuid === n.uuid;
                     });
-                    a > -1 && (this.list[a] = dT({}, n));
+                    a > -1 && (this.list[a] = pT({}, n));
                   }
                   return !0;
                 }
@@ -39578,7 +39525,7 @@
                     return e.id !== _.ARTISAN;
                   }),
                   p = s.crafting,
-                  d = ST.colony.colonists,
+                  d = vT.colony.colonists,
                   E = u.reduce(function (e, t) {
                     return e + a(t);
                   }, 0),
@@ -39671,7 +39618,7 @@
                           return e.id === _.LABOUR;
                         })) || void 0 === n
                         ? void 0
-                        : n.unlockCondition(ST)
+                        : n.unlockCondition(vT)
                     ) {
                       var y = c(
                           u.find(function (e) {
@@ -39712,16 +39659,16 @@
                   m,
                   I
                 ),
-                ST.crafting.craftingJobs.reset(),
-                ST.colony.colonyJobs.reset(),
-                (ST.colony.colonyJobs.freeWorkers = d),
+                vT.crafting.craftingJobs.reset(),
+                vT.colony.colonyJobs.reset(),
+                (vT.colony.colonyJobs.freeWorkers = d),
                 f))
-                  ST.colony.colonyJobs.setAmount(
+                  vT.colony.colonyJobs.setAmount(
                     L,
                     null !== (r = f[L]) && void 0 !== r ? r : 0
                   );
                 for (var C in A)
-                  ST.crafting.craftingJobs.setAmount(
+                  vT.crafting.craftingJobs.setAmount(
                     C,
                     null !== (o = A[C]) && void 0 !== o ? o : 0
                   );
@@ -39729,8 +39676,8 @@
               t
             );
           })(P),
-          gT = ET.getInstance(),
-          fT = (function () {
+          ET = dT.getInstance(),
+          gT = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -39764,9 +39711,9 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          AT = function () {
+          fT = function () {
             return (
-              (AT =
+              (fT =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -39775,10 +39722,10 @@
                         (e[r] = t[r]);
                   return e;
                 }),
-              AT.apply(this, arguments)
+              fT.apply(this, arguments)
             );
           },
-          mT = (function (e) {
+          AT = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (
@@ -39796,7 +39743,7 @@
               );
             }
             return (
-              fT(t, e),
+              gT(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -39811,7 +39758,7 @@
                   uuid: e.uuid,
                   name: e.name,
                   laws: e.laws.map(function (e) {
-                    var t = xA.find(function (t) {
+                    var t = HA.find(function (t) {
                       return t.id === e.id;
                     });
                     if (!t) throw new Error("Law ".concat(e.id, " not found"));
@@ -39838,29 +39785,27 @@
                   });
                 return {
                   isUnlocked:
-                    ST.science.scienceResearches.getResearchLevel(
+                    vT.science.scienceResearches.getResearchLevel(
                       M.CODEX_OF_LAW
                     ) > 0,
                   list: t,
                   newPreset: {
-                    laws: xA
-                      .filter(function (e) {
-                        return e.unlockCondition(vT.getInstance());
-                      })
-                      .map(function (e) {
-                        return {
-                          id: e.id,
-                          name: e.name,
-                          description: e.description,
-                          options: e.options.map(function (e, t) {
-                            return {
-                              id: t,
-                              name: e.name,
-                              description: e.description,
-                            };
-                          }),
-                        };
-                      }),
+                    laws: HA.filter(function (e) {
+                      return e.unlockCondition(CT.getInstance());
+                    }).map(function (e) {
+                      return {
+                        id: e.id,
+                        name: e.name,
+                        description: e.description,
+                        options: e.options.map(function (e, t) {
+                          return {
+                            id: t,
+                            name: e.name,
+                            description: e.description,
+                          };
+                        }),
+                      };
+                    }),
                   },
                 };
               }),
@@ -39872,9 +39817,9 @@
               }),
               (t.prototype.savePreset = function (e) {
                 var t = !e.uuid,
-                  n = AT({}, e);
+                  n = fT({}, e);
                 if (
-                  (n.uuid || (n.uuid = RR.Z()),
+                  (n.uuid || (n.uuid = NR.Z()),
                   n.name || (n.name = "Preset ".concat(Date())),
                   !t ||
                     !this.list.find(function (e) {
@@ -39892,12 +39837,12 @@
                     })([], e.laws, !0)),
                     t)
                   )
-                    this.list.push(AT({}, n));
+                    this.list.push(fT({}, n));
                   else {
                     var i = this.list.findIndex(function (e) {
                       return e.uuid === n.uuid;
                     });
-                    i > -1 && (this.list[i] = AT({}, n));
+                    i > -1 && (this.list[i] = fT({}, n));
                   }
                   return !0;
                 }
@@ -39909,18 +39854,18 @@
                 });
                 if (!t) throw new Error("Preset ".concat(e, " not found"));
                 t.laws.forEach(function (e) {
-                  var t = xA.find(function (t) {
+                  var t = HA.find(function (t) {
                     return t.id === e.id;
                   });
                   t &&
-                    t.unlockCondition(vT.getInstance()) &&
-                    ST.laws.selectLawOption(e.id, e.optionId);
+                    t.unlockCondition(CT.getInstance()) &&
+                    vT.laws.selectLawOption(e.id, e.optionId);
                 });
               }),
               t
             );
           })(P).getInstance(),
-          NT = (function () {
+          mT = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -39954,13 +39899,13 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          RT = (function (e) {
+          NT = (function (e) {
             function t() {
               var t = e.call(this) || this;
-              return (t.jobsPresets = gT), (t.lawsPresets = mT), t;
+              return (t.jobsPresets = ET), (t.lawsPresets = AT), t;
             }
             return (
-              NT(t, e),
+              mT(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -39986,13 +39931,13 @@
               t
             );
           })(P),
-          IT = RT.getInstance();
+          RT = NT.getInstance();
         !(function (e) {
           (e[(e.PENDING = 0)] = "PENDING"),
             (e[(e.COMLETE = 1)] = "COMLETE"),
             (e[(e.FAILED = 2)] = "FAILED");
-        })(JI || (JI = {}));
-        var hT = [
+        })(QI || (QI = {}));
+        var IT = [
             {
               id: "starting",
               name: "Humble Starting",
@@ -40018,17 +39963,17 @@
               bonusesDesc: [],
               isHidden: !1,
               getGainMultiplier:
-                (($I = {}),
-                ($I[l.STONE] = function (e) {
+                ((JI = {}),
+                (JI[l.STONE] = function (e) {
                   return 1.05;
                 }),
-                ($I[l.ORE] = function (e) {
+                (JI[l.ORE] = function (e) {
                   return 1.05;
                 }),
-                ($I[l.BIOMASS] = function (e) {
+                (JI[l.BIOMASS] = function (e) {
                   return 1.05;
                 }),
-                $I),
+                JI),
               unlockCondition: function (e) {
                 return !0;
               },
@@ -40086,11 +40031,11 @@
               },
               bonusesDesc: [],
               getCapacityMultiplier:
-                ((eh = {}),
-                (eh[l.POWER] = function (e) {
+                (($I = {}),
+                ($I[l.POWER] = function (e) {
                   return 1.05;
                 }),
-                eh),
+                $I),
               isHidden: !0,
               unlockCondition: function (e) {
                 return !0;
@@ -40106,11 +40051,11 @@
               },
               bonusesDesc: [],
               getGainMultiplier:
-                ((th = {}),
-                (th[l.POWER] = function (e) {
+                ((eh = {}),
+                (eh[l.POWER] = function (e) {
                   return 1.05;
                 }),
-                th),
+                eh),
               isHidden: !1,
               unlockCondition: function (e) {
                 return !0;
@@ -40126,11 +40071,11 @@
               },
               bonusesDesc: [],
               getGainMultiplier:
-                ((nh = {}),
-                (nh[l.POWER] = function (e) {
+                ((th = {}),
+                (th[l.POWER] = function (e) {
                   return 1.05;
                 }),
-                nh),
+                th),
               isHidden: !1,
               unlockCondition: function (e) {
                 return !0;
@@ -40147,11 +40092,11 @@
               },
               bonusesDesc: [],
               getGainMultiplier:
-                ((ih = {}),
-                (ih[l.POWER] = function (e) {
+                ((nh = {}),
+                (nh[l.POWER] = function (e) {
                   return 1.05;
                 }),
-                ih),
+                nh),
               isHidden: !1,
               unlockCondition: function (e) {
                 return !0;
@@ -40168,11 +40113,11 @@
               },
               bonusesDesc: [],
               getGainMultiplier:
-                ((rh = {}),
-                (rh[l.POWER] = function (e) {
+                ((ih = {}),
+                (ih[l.POWER] = function (e) {
                   return 1.05;
                 }),
-                rh),
+                ih),
               isHidden: !1,
               unlockCondition: function (e) {
                 return !0;
@@ -40193,14 +40138,14 @@
               },
               bonusesDesc: [],
               getGainMultiplier:
-                ((oh = {}),
-                (oh[l.STONE] = function (e) {
+                ((rh = {}),
+                (rh[l.STONE] = function (e) {
                   return 1.05;
                 }),
-                (oh[l.ORE] = function (e) {
+                (rh[l.ORE] = function (e) {
                   return 1.05;
                 }),
-                oh),
+                rh),
               isHidden: !1,
               unlockCondition: function (e) {
                 return !0;
@@ -40221,14 +40166,14 @@
               },
               bonusesDesc: [],
               getGain:
-                ((ah = {}),
-                (ah[l.STONE] = function (e) {
+                ((oh = {}),
+                (oh[l.STONE] = function (e) {
                   return 0.2;
                 }),
-                (ah[l.ORE] = function (e) {
+                (oh[l.ORE] = function (e) {
                   return 0.2;
                 }),
-                ah),
+                oh),
               isHidden: !1,
               unlockCondition: function (e) {
                 return !0;
@@ -40241,6 +40186,34 @@
               requirementsDesc: ["Have 20 metal income"],
               getCompleteCondition: function (e) {
                 return !(e.resources.getBalance(l.IRON) < 20);
+              },
+              bonusesDesc: [],
+              getGainMultiplier:
+                ((ah = {}),
+                (ah[l.IRON] = function (e) {
+                  return 1.1;
+                }),
+                (ah[l.PLATE] = function (e) {
+                  return 1.1;
+                }),
+                (ah[l.WIRE] = function (e) {
+                  return 1.1;
+                }),
+                ah),
+              isHidden: !1,
+              unlockCondition: function (e) {
+                return (
+                  e.science.scienceResearches.getResearchLevel(M.METALLURGY) > 0
+                );
+              },
+            },
+            {
+              id: "metallurgist1",
+              name: "Metallurgist Master",
+              description: "More metal, more strength for our civilization.",
+              requirementsDesc: ["Have 200 metal income"],
+              getCompleteCondition: function (e) {
+                return !(e.resources.getBalance(l.IRON) < 200);
               },
               bonusesDesc: [],
               getGainMultiplier:
@@ -40263,12 +40236,12 @@
               },
             },
             {
-              id: "metallurgist1",
-              name: "Metallurgist Master",
-              description: "More metal, more strength for our civilization.",
-              requirementsDesc: ["Have 200 metal income"],
+              id: "metallurgist2",
+              name: "Metallurgist Professional",
+              description: "The empire of steel is our path!",
+              requirementsDesc: ["Have 2К metal income"],
               getCompleteCondition: function (e) {
-                return !(e.resources.getBalance(l.IRON) < 200);
+                return !(e.resources.getBalance(l.IRON) < 2e3);
               },
               bonusesDesc: [],
               getGainMultiplier:
@@ -40291,12 +40264,13 @@
               },
             },
             {
-              id: "metallurgist2",
-              name: "Metallurgist Professional",
-              description: "The empire of steel is our path!",
-              requirementsDesc: ["Have 2К metal income"],
+              id: "metallurgist3",
+              name: "Metallurgy God",
+              description:
+                "The empire of mines and metallurgical plants. Only this way will we become great!",
+              requirementsDesc: ["Have 20К metal income"],
               getCompleteCondition: function (e) {
-                return !(e.resources.getBalance(l.IRON) < 2e3);
+                return !(e.resources.getBalance(l.IRON) < 2e4);
               },
               bonusesDesc: [],
               getGainMultiplier:
@@ -40319,35 +40293,6 @@
               },
             },
             {
-              id: "metallurgist3",
-              name: "Metallurgy God",
-              description:
-                "The empire of mines and metallurgical plants. Only this way will we become great!",
-              requirementsDesc: ["Have 20К metal income"],
-              getCompleteCondition: function (e) {
-                return !(e.resources.getBalance(l.IRON) < 2e4);
-              },
-              bonusesDesc: [],
-              getGainMultiplier:
-                ((lh = {}),
-                (lh[l.IRON] = function (e) {
-                  return 1.1;
-                }),
-                (lh[l.PLATE] = function (e) {
-                  return 1.1;
-                }),
-                (lh[l.WIRE] = function (e) {
-                  return 1.1;
-                }),
-                lh),
-              isHidden: !1,
-              unlockCondition: function (e) {
-                return (
-                  e.science.scienceResearches.getResearchLevel(M.METALLURGY) > 0
-                );
-              },
-            },
-            {
               id: "biologist0",
               name: "Biologist",
               description: "What does life made of?",
@@ -40357,11 +40302,11 @@
               },
               bonusesDesc: [],
               getGainMultiplier:
-                ((ph = {}),
-                (ph[l.BIOMASS] = function (e) {
+                ((lh = {}),
+                (lh[l.BIOMASS] = function (e) {
                   return 1.05;
                 }),
-                ph),
+                lh),
               isHidden: !1,
               unlockCondition: function (e) {
                 return (
@@ -40379,17 +40324,17 @@
               },
               bonusesDesc: [],
               getGainMultiplier:
-                ((dh = {}),
-                (dh[l.RUBBER] = function (e) {
+                ((ph = {}),
+                (ph[l.RUBBER] = function (e) {
                   return 1.1;
                 }),
-                (dh[l.PLASTICS] = function (e) {
+                (ph[l.PLASTICS] = function (e) {
                   return 1.1;
                 }),
-                (dh[l.GRAPHENE] = function (e) {
+                (ph[l.GRAPHENE] = function (e) {
                   return 1.1;
                 }),
-                dh),
+                ph),
               isHidden: !1,
               unlockCondition: function (e) {
                 return (
@@ -40426,11 +40371,11 @@
               },
               bonusesDesc: [],
               getEffectMultiplier:
-                ((Eh = {}),
-                (Eh[U.HEALTHCARE] = function (e) {
+                ((dh = {}),
+                (dh[U.HEALTHCARE] = function (e) {
                   return 1.05;
                 }),
-                Eh),
+                dh),
               isHidden: !1,
               unlockCondition: function (e) {
                 return (
@@ -40446,6 +40391,36 @@
               requirementsDesc: ["Have 20 semiconductor income"],
               getCompleteCondition: function (e) {
                 return !(e.resources.getBalance(l.SEMICONDUCTOR) < 20);
+              },
+              bonusesDesc: [],
+              getGainMultiplier:
+                ((Eh = {}),
+                (Eh[l.SEMICONDUCTOR] = function (e) {
+                  return 1.1;
+                }),
+                (Eh[l.COMPUTER] = function (e) {
+                  return 1.1;
+                }),
+                (Eh[l.MAGNETO] = function (e) {
+                  return 1.1;
+                }),
+                Eh),
+              isHidden: !1,
+              unlockCondition: function (e) {
+                return (
+                  e.science.scienceResearches.getResearchLevel(M.ELECTRONICS) >
+                  0
+                );
+              },
+            },
+            {
+              id: "electronics1",
+              name: "Electronics Master",
+              description:
+                "Electricity gains new strength when transistors and diodes are connected correctly.",
+              requirementsDesc: ["Have 2000 semiconductor income"],
+              getCompleteCondition: function (e) {
+                return !(e.resources.getBalance(l.SEMICONDUCTOR) < 2e3);
               },
               bonusesDesc: [],
               getGainMultiplier:
@@ -40469,13 +40444,13 @@
               },
             },
             {
-              id: "electronics1",
-              name: "Electronics Master",
+              id: "electronics2",
+              name: "Electronics Professional",
               description:
-                "Electricity gains new strength when transistors and diodes are connected correctly.",
-              requirementsDesc: ["Have 2000 semiconductor income"],
+                "Sensors, detectors, indicators... Is any of it possible without semiconductors?",
+              requirementsDesc: ["Have 200K semiconductor income"],
               getCompleteCondition: function (e) {
-                return !(e.resources.getBalance(l.SEMICONDUCTOR) < 2e3);
+                return !(e.resources.getBalance(l.SEMICONDUCTOR) < 2e5);
               },
               bonusesDesc: [],
               getGainMultiplier:
@@ -40499,13 +40474,13 @@
               },
             },
             {
-              id: "electronics2",
-              name: "Electronics Professional",
+              id: "electronics3",
+              name: "Electronics God",
               description:
-                "Sensors, detectors, indicators... Is any of it possible without semiconductors?",
-              requirementsDesc: ["Have 200K semiconductor income"],
+                "Accuracy to the single nanometer, sensitivity to the single photon. Electronics and computers everywhere.",
+              requirementsDesc: ["Have 20M semiconductor income"],
               getCompleteCondition: function (e) {
-                return !(e.resources.getBalance(l.SEMICONDUCTOR) < 2e5);
+                return !(e.resources.getBalance(l.SEMICONDUCTOR) < 2e7);
               },
               bonusesDesc: [],
               getGainMultiplier:
@@ -40520,36 +40495,6 @@
                   return 1.1;
                 }),
                 Ah),
-              isHidden: !1,
-              unlockCondition: function (e) {
-                return (
-                  e.science.scienceResearches.getResearchLevel(M.ELECTRONICS) >
-                  0
-                );
-              },
-            },
-            {
-              id: "electronics3",
-              name: "Electronics God",
-              description:
-                "Accuracy to the single nanometer, sensitivity to the single photon. Electronics and computers everywhere.",
-              requirementsDesc: ["Have 20M semiconductor income"],
-              getCompleteCondition: function (e) {
-                return !(e.resources.getBalance(l.SEMICONDUCTOR) < 2e7);
-              },
-              bonusesDesc: [],
-              getGainMultiplier:
-                ((mh = {}),
-                (mh[l.SEMICONDUCTOR] = function (e) {
-                  return 1.1;
-                }),
-                (mh[l.COMPUTER] = function (e) {
-                  return 1.1;
-                }),
-                (mh[l.MAGNETO] = function (e) {
-                  return 1.1;
-                }),
-                mh),
               isHidden: !1,
               unlockCondition: function (e) {
                 return (
@@ -40727,11 +40672,11 @@
               },
               bonusesDesc: [],
               getCapacityMultiplier:
-                ((Nh = {}),
-                (Nh[l.POWER] = function (e) {
+                ((mh = {}),
+                (mh[l.POWER] = function (e) {
                   return 1.1;
                 }),
-                Nh),
+                mh),
               isHidden: !0,
               unlockCondition: function (e) {
                 return !0;
@@ -40748,11 +40693,11 @@
               },
               bonusesDesc: [],
               getCapacityMultiplier:
-                ((Rh = {}),
-                (Rh[l.POWER] = function (e) {
+                ((Nh = {}),
+                (Nh[l.POWER] = function (e) {
                   return 1.1;
                 }),
-                Rh),
+                Nh),
               isHidden: !0,
               unlockCondition: function (e) {
                 return !0;
@@ -40855,11 +40800,11 @@
               bonusesDesc: [],
               isHidden: !1,
               getGainMultiplier:
-                ((Ih = {}),
-                (Ih[l.NUTRITION] = function (e) {
+                ((Rh = {}),
+                (Rh[l.NUTRITION] = function (e) {
                   return 1.2;
                 }),
-                Ih),
+                Rh),
               unlockCondition: function (e) {
                 return e.statistics.stats.xpTotal > 0;
               },
@@ -41054,14 +40999,14 @@
               },
               bonusesDesc: [],
               getEffectMultiplier:
-                ((hh = {}),
-                (hh[U.HEALTHCARE] = function (e) {
+                ((Ih = {}),
+                (Ih[U.HEALTHCARE] = function (e) {
                   return 1.05;
                 }),
-                (hh[U.ENTERTAINMENT] = function (e) {
+                (Ih[U.ENTERTAINMENT] = function (e) {
                   return 1.05;
                 }),
-                hh),
+                Ih),
               isHidden: !1,
               unlockCondition: function (e) {
                 return e.statistics.stats.xpTotal > 0;
@@ -41128,11 +41073,11 @@
               bonusesDesc: [],
               isHidden: !1,
               getGainMultiplier:
-                ((Th = {}),
-                (Th[l.WATER] = function (e) {
+                ((hh = {}),
+                (hh[l.WATER] = function (e) {
                   return 1.25;
                 }),
-                Th),
+                hh),
               unlockCondition: function (e) {
                 return e.statistics.stats.xpTotal > 0;
               },
@@ -41326,11 +41271,11 @@
               },
               bonusesDesc: [],
               getEffectMultiplier:
-                ((yh = {}),
-                (yh[U.HEALTHCARE] = function (e) {
+                ((Th = {}),
+                (Th[U.HEALTHCARE] = function (e) {
                   return 1.1;
                 }),
-                yh),
+                Th),
               isHidden: !1,
               unlockCondition: function (e) {
                 return e.statistics.stats.xpTotal > 0;
@@ -41397,11 +41342,11 @@
               bonusesDesc: [],
               isHidden: !1,
               getGainMultiplier:
-                ((Oh = {}),
-                (Oh[l.POWER] = function (e) {
+                ((yh = {}),
+                (yh[l.POWER] = function (e) {
                   return 1.1;
                 }),
-                Oh),
+                yh),
               unlockCondition: function (e) {
                 return e.statistics.stats.xpTotal > 0;
               },
@@ -41660,11 +41605,11 @@
               bonusesDesc: [],
               isHidden: !1,
               getGainMultiplier:
-                ((Lh = {}),
-                (Lh[l.BIOMASS] = function (e) {
+                ((Oh = {}),
+                (Oh[l.BIOMASS] = function (e) {
                   return 1.1;
                 }),
-                Lh),
+                Oh),
               unlockCondition: function (e) {
                 return e.statistics.stats.xpTotal > 0;
               },
@@ -41729,14 +41674,14 @@
               },
               bonusesDesc: [],
               getGainMultiplier:
-                ((Ch = {}),
-                (Ch[l.BIOMASS] = function (e) {
+                ((Lh = {}),
+                (Lh[l.BIOMASS] = function (e) {
                   return 1.1;
                 }),
-                (Ch[l.WOOD] = function (e) {
+                (Lh[l.WOOD] = function (e) {
                   return 1.1;
                 }),
-                Ch),
+                Lh),
               isHidden: !1,
               unlockCondition: function (e) {
                 return e.statistics.stats.xpTotal > 0;
@@ -41930,11 +41875,11 @@
               },
               bonusesDesc: [],
               getEffectMultiplier:
-                ((vh = {}),
-                (vh[U.SECURITY] = function (e) {
+                ((Ch = {}),
+                (Ch[U.SECURITY] = function (e) {
                   return 1.1;
                 }),
-                vh),
+                Ch),
               isHidden: !1,
               unlockCondition: function (e) {
                 return e.statistics.stats.xpTotal > 0;
@@ -41999,11 +41944,11 @@
               },
               bonusesDesc: [],
               getEffectMultiplier:
-                ((Sh = {}),
-                (Sh[U.HEALTHCARE] = function (e) {
+                ((vh = {}),
+                (vh[U.HEALTHCARE] = function (e) {
                   return 1.1;
                 }),
-                Sh),
+                vh),
               isHidden: !1,
               unlockCondition: function (e) {
                 return e.statistics.stats.xpTotal > 0;
@@ -42069,11 +42014,11 @@
               },
               bonusesDesc: [],
               getEffectMultiplier:
-                ((Ph = {}),
-                (Ph[U.AESTHETICS] = function (e) {
+                ((Sh = {}),
+                (Sh[U.AESTHETICS] = function (e) {
                   return 1.1;
                 }),
-                Ph),
+                Sh),
               isHidden: !1,
               unlockCondition: function (e) {
                 return e.statistics.stats.xpTotal > 0;
@@ -42138,11 +42083,11 @@
               },
               bonusesDesc: [],
               getEffectMultiplier:
-                ((Mh = {}),
-                (Mh[U.RELIGION] = function (e) {
+                ((Ph = {}),
+                (Ph[U.RELIGION] = function (e) {
                   return 1.1;
                 }),
-                Mh),
+                Ph),
               isHidden: !1,
               unlockCondition: function (e) {
                 return e.statistics.stats.xpTotal > 0;
@@ -42380,14 +42325,14 @@
               bonusesDesc: [],
               isHidden: !0,
               getGainMultiplier:
-                ((Bh = {}),
-                (Bh[l.AI_CORE] = function (e) {
+                ((Mh = {}),
+                (Mh[l.AI_CORE] = function (e) {
                   return 1.1;
                 }),
-                (Bh[l.MAGNETO] = function (e) {
+                (Mh[l.MAGNETO] = function (e) {
                   return 1.1;
                 }),
-                Bh),
+                Mh),
               unlockCondition: function (e) {
                 return e.statistics.stats.xpTotal > 0;
               },
@@ -42450,17 +42395,17 @@
               bonusesDesc: [],
               isHidden: !0,
               getGainMultiplier:
-                ((_h = {}),
-                (_h[l.POWER] = function (e) {
+                ((Bh = {}),
+                (Bh[l.POWER] = function (e) {
                   return 1.1;
                 }),
-                (_h[l.AI_CORE] = function (e) {
+                (Bh[l.AI_CORE] = function (e) {
                   return 1.1;
                 }),
-                (_h[l.MAGNETO] = function (e) {
+                (Bh[l.MAGNETO] = function (e) {
                   return 1.1;
                 }),
-                _h),
+                Bh),
               unlockCondition: function (e) {
                 return e.statistics.stats.xpTotal > 0;
               },
@@ -42473,6 +42418,33 @@
               requirementsDesc: ["Have 200 dark matter income"],
               getCompleteCondition: function (e) {
                 return !(e.resources.getBalance(l.DARK_MATTER) < 200);
+              },
+              bonusesDesc: [],
+              getGainMultiplier:
+                ((_h = {}),
+                (_h[l.DARK_MATTER] = function (e) {
+                  return 1.1;
+                }),
+                (_h[l.DM_BLOCK] = function (e) {
+                  return 1.1;
+                }),
+                _h),
+              isHidden: !0,
+              unlockCondition: function (e) {
+                return (
+                  e.science.scienceResearches.getResearchLevel(
+                    M.DARK_MATTER_STUDY
+                  ) > 0
+                );
+              },
+            },
+            {
+              id: "darkMatter2",
+              name: "Dark Matter Expert",
+              description: "Dark side of the universe",
+              requirementsDesc: ["Have 2000 dark matter income"],
+              getCompleteCondition: function (e) {
+                return !(e.resources.getBalance(l.DARK_MATTER) < 2e3);
               },
               bonusesDesc: [],
               getGainMultiplier:
@@ -42494,33 +42466,6 @@
               },
             },
             {
-              id: "darkMatter2",
-              name: "Dark Matter Expert",
-              description: "Dark side of the universe",
-              requirementsDesc: ["Have 2000 dark matter income"],
-              getCompleteCondition: function (e) {
-                return !(e.resources.getBalance(l.DARK_MATTER) < 2e3);
-              },
-              bonusesDesc: [],
-              getGainMultiplier:
-                ((bh = {}),
-                (bh[l.DARK_MATTER] = function (e) {
-                  return 1.1;
-                }),
-                (bh[l.DM_BLOCK] = function (e) {
-                  return 1.1;
-                }),
-                bh),
-              isHidden: !0,
-              unlockCondition: function (e) {
-                return (
-                  e.science.scienceResearches.getResearchLevel(
-                    M.DARK_MATTER_STUDY
-                  ) > 0
-                );
-              },
-            },
-            {
               id: "antimatter",
               name: "Antimatter Master",
               description:
@@ -42531,14 +42476,14 @@
               },
               bonusesDesc: [],
               getGainMultiplier:
-                ((Gh = {}),
-                (Gh[l.ANTIMATTER] = function (e) {
+                ((bh = {}),
+                (bh[l.ANTIMATTER] = function (e) {
                   return 1.1;
                 }),
-                (Gh[l.PRESSED_BLOCK] = function (e) {
+                (bh[l.PRESSED_BLOCK] = function (e) {
                   return 1.1;
                 }),
-                Gh),
+                bh),
               isHidden: !0,
               unlockCondition: function (e) {
                 return (
@@ -42758,11 +42703,11 @@
               },
               bonusesDesc: [],
               getGainMultiplier:
-                ((wh = {}),
-                (wh[l.NUTRITION] = function (e) {
+                ((Gh = {}),
+                (Gh[l.NUTRITION] = function (e) {
                   return 1.05;
                 }),
-                wh),
+                Gh),
               isHidden: !1,
               unlockCondition: function (e) {
                 return (
@@ -42782,17 +42727,17 @@
               },
               bonusesDesc: [],
               getGainMultiplier:
-                ((Dh = {}),
-                (Dh[l.NUTRITION] = function (e) {
+                ((wh = {}),
+                (wh[l.NUTRITION] = function (e) {
                   return 1.05;
                 }),
-                (Dh[l.WATER] = function (e) {
+                (wh[l.WATER] = function (e) {
                   return 1.05;
                 }),
-                (Dh[l.OXYGEN] = function (e) {
+                (wh[l.OXYGEN] = function (e) {
                   return 1.05;
                 }),
-                Dh),
+                wh),
               isHidden: !1,
               unlockCondition: function (e) {
                 return (
@@ -42812,23 +42757,23 @@
               },
               bonusesDesc: [],
               getEffectMultiplier:
-                ((Xh = {}),
-                (Xh[U.AESTHETICS] = function (e) {
+                ((Dh = {}),
+                (Dh[U.AESTHETICS] = function (e) {
                   return 1.1;
                 }),
-                (Xh[U.HEALTHCARE] = function (e) {
+                (Dh[U.HEALTHCARE] = function (e) {
                   return 1.1;
                 }),
-                (Xh[U.SECURITY] = function (e) {
+                (Dh[U.SECURITY] = function (e) {
                   return 1.1;
                 }),
-                (Xh[U.ENTERTAINMENT] = function (e) {
+                (Dh[U.ENTERTAINMENT] = function (e) {
                   return 1.1;
                 }),
-                (Xh[U.RELIGION] = function (e) {
+                (Dh[U.RELIGION] = function (e) {
                   return 1.1;
                 }),
-                Xh),
+                Dh),
               isHidden: !1,
               unlockCondition: function (e) {
                 return (
@@ -42849,23 +42794,23 @@
               },
               bonusesDesc: [],
               getEffectMultiplier:
-                ((kh = {}),
-                (kh[U.AESTHETICS] = function (e) {
+                ((Xh = {}),
+                (Xh[U.AESTHETICS] = function (e) {
                   return 1.2;
                 }),
-                (kh[U.HEALTHCARE] = function (e) {
+                (Xh[U.HEALTHCARE] = function (e) {
                   return 1.2;
                 }),
-                (kh[U.SECURITY] = function (e) {
+                (Xh[U.SECURITY] = function (e) {
                   return 1.2;
                 }),
-                (kh[U.ENTERTAINMENT] = function (e) {
+                (Xh[U.ENTERTAINMENT] = function (e) {
                   return 1.2;
                 }),
-                (kh[U.RELIGION] = function (e) {
+                (Xh[U.RELIGION] = function (e) {
                   return 1.2;
                 }),
-                kh),
+                Xh),
               isHidden: !1,
               unlockCondition: function (e) {
                 return (
@@ -42876,7 +42821,7 @@
               },
             },
           ],
-          TT = (function () {
+          hT = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -42910,9 +42855,9 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          yT = function () {
+          TT = function () {
             return (
-              (yT =
+              (TT =
                 Object.assign ||
                 function (e) {
                   for (var t, n = 1, i = arguments.length; n < i; n++)
@@ -42921,16 +42866,16 @@
                         (e[r] = t[r]);
                   return e;
                 }),
-              yT.apply(this, arguments)
+              TT.apply(this, arguments)
             );
           },
-          OT = (function (e) {
+          yT = (function (e) {
             function t() {
               var t = e.call(this) || this;
               return (t.achievementsState = []), t;
             }
             return (
-              TT(t, e),
+              hT(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -42943,34 +42888,32 @@
               (t.prototype.dataToUI = function () {
                 var e = this;
                 return {
-                  totalAmount: hT.length,
+                  totalAmount: IT.length,
                   amountCompleted: this.achievementsState.filter(function (e) {
-                    return e.statusId === JI.COMLETE;
+                    return e.statusId === QI.COMLETE;
                   }).length,
-                  amountHidden: hT.filter(function (e) {
+                  amountHidden: IT.filter(function (e) {
                     return e.isHidden;
                   }).length,
                   hiddenComplete: this.achievementsState
                     .filter(function (e) {
-                      return e.statusId === JI.COMLETE;
+                      return e.statusId === QI.COMLETE;
                     })
                     .filter(function (e) {
-                      return !!hT.find(function (t) {
+                      return !!IT.find(function (t) {
                         return t.id === e.id && t.isHidden;
                       });
                     }).length,
-                  list: hT
-                    .filter(function (t) {
-                      return e.isUnlocked(t);
-                    })
-                    .map(function (t) {
-                      return e.currentAchievementToUI(t);
-                    }),
+                  list: IT.filter(function (t) {
+                    return e.isUnlocked(t);
+                  }).map(function (t) {
+                    return e.currentAchievementToUI(t);
+                  }),
                 };
               }),
               (t.prototype.isUnlocked = function (e) {
                 return (
-                  e.unlockCondition(ST) ||
+                  e.unlockCondition(vT) ||
                   this.achievementsState.find(function (t) {
                     return t.id === e.id;
                   })
@@ -42984,11 +42927,11 @@
                   t < 0 &&
                     (this.achievementsState.push({
                       id: e.id,
-                      statusId: JI.PENDING,
+                      statusId: QI.PENDING,
                     }),
                     (t = this.achievementsState.length - 1)),
-                  this.achievementsState[t].statusId === JI.COMLETE &&
-                    ST.newNotifications.registerNotification(
+                  this.achievementsState[t].statusId === QI.COMLETE &&
+                    vT.newNotifications.registerNotification(
                       "progress:achievements:".concat(e.id)
                     ),
                   {
@@ -43000,82 +42943,82 @@
                     isHidden: e.isHidden,
                     isVisible:
                       !e.isHidden ||
-                      this.achievementsState[t].statusId === JI.COMLETE,
+                      this.achievementsState[t].statusId === QI.COMLETE,
                     status: this.achievementsState[t].statusId,
                     gain: e.getGain
-                      ? Z.getValue(e.getGain, vT.getInstance())
+                      ? Z.getValue(e.getGain, CT.getInstance())
                           .filter(function (e) {
                             return e.amount;
                           })
                           .map(function (e) {
-                            return yT(yT({}, e), {
+                            return TT(TT({}, e), {
                               amountValue: e.amount,
                               amount: F(e.amount),
                             });
                           })
                       : [],
                     max: e.getCapacityEffect
-                      ? Z.getValue(e.getCapacityEffect, vT.getInstance())
+                      ? Z.getValue(e.getCapacityEffect, CT.getInstance())
                           .filter(function (e) {
                             return e.amount;
                           })
                           .map(function (e) {
-                            return yT(yT({}, e), {
+                            return TT(TT({}, e), {
                               amountValue: e.amount,
                               amount: F(e.amount),
                             });
                           })
                       : [],
                     gainEffect: e.getEffect
-                      ? Z.getValue(e.getEffect, vT.getInstance())
+                      ? Z.getValue(e.getEffect, CT.getInstance())
                           .filter(function (e) {
                             return e.amount;
                           })
                           .map(function (e) {
-                            return yT(yT({}, e), {
+                            return TT(TT({}, e), {
                               amountValue: e.amount,
                               amount: F(e.amount),
                             });
                           })
                       : [],
                     gainMult: e.getGainMultiplier
-                      ? Z.getValue(e.getGainMultiplier, vT.getInstance())
+                      ? Z.getValue(e.getGainMultiplier, CT.getInstance())
                           .filter(function (e) {
                             return e.amount;
                           })
                           .map(function (e) {
-                            return yT(yT({}, e), {
+                            return TT(TT({}, e), {
                               amountValue: e.amount,
                               amount: "x".concat(F(e.amount)),
                             });
                           })
                       : [],
                     maxMult: e.getCapacityMultiplier
-                      ? Z.getValue(e.getCapacityMultiplier, vT.getInstance())
+                      ? Z.getValue(e.getCapacityMultiplier, CT.getInstance())
                           .filter(function (e) {
                             return e.amount;
                           })
                           .map(function (e) {
-                            return yT(yT({}, e), {
+                            return TT(TT({}, e), {
                               amountValue: e.amount,
                               amount: "x".concat(F(e.amount)),
                             });
                           })
                       : [],
                     effectMult: e.getEffectMultiplier
-                      ? Z.getValue(e.getEffectMultiplier, vT.getInstance())
+                      ? Z.getValue(e.getEffectMultiplier, CT.getInstance())
                           .filter(function (e) {
                             return e.amount;
                           })
                           .map(function (e) {
-                            return yT(yT({}, e), {
+                            return TT(TT({}, e), {
                               amountValue: e.amount,
                               amount: "x".concat(F(e.amount)),
                             });
                           })
                       : [],
                     craftingMult: e.getCraftingMultiplier
-                      ? e.getCraftingMultiplier(ST)
+                      ? e.getCraftingMultiplier(vT)
                       : 1,
                   }
                 );
@@ -43083,21 +43026,21 @@
               (t.prototype.checkAchievementsStatus = function () {
                 var e = this;
                 this.achievementsState.forEach(function (t, n) {
-                  if (t.statusId === JI.PENDING) {
-                    var i = hT.find(function (e) {
+                  if (t.statusId === QI.PENDING) {
+                    var i = IT.find(function (e) {
                       return e.id === t.id;
                     });
                     if (i)
-                      return i.getCompleteCondition(ST)
-                        ? ((e.achievementsState[n].statusId = JI.COMLETE),
+                      return i.getCompleteCondition(vT)
+                        ? ((e.achievementsState[n].statusId = QI.COMLETE),
                           (e.achievementsState[n].completeAt =
-                            ST.statistics.stats.timeInGame),
-                          ST.resources.reassertBalances(),
-                          void ST.regenerateCache())
+                            vT.statistics.stats.timeInGame),
+                          vT.resources.reassertBalances(),
+                          void vT.regenerateCache())
                         : void (
                             i.getFailureCondition &&
-                            i.getFailureCondition(ST) &&
-                            (e.achievementsState[n].statusId = JI.FAILED)
+                            i.getFailureCondition(vT) &&
+                            (e.achievementsState[n].statusId = QI.FAILED)
                           );
                   }
                 });
@@ -43110,15 +43053,15 @@
                       return t.id === e;
                     })) || void 0 === t
                     ? void 0
-                    : t.statusId) === JI.COMLETE || !1
+                    : t.statusId) === QI.COMLETE || !1
                 );
               }),
               (t.prototype.process = function (e) {
-                ST.statistics.stats.timeInGame % 1 < e &&
+                vT.statistics.stats.timeInGame % 1 < e &&
                   this.checkAchievementsStatus();
               }),
               (t.prototype.getEffectGain = function (e) {
-                var t = hT.filter(function (t) {
+                var t = IT.filter(function (t) {
                     var n;
                     return (
                       t.getEffect &&
@@ -43130,12 +43073,12 @@
                   n = [];
                 return (
                   this.achievementsState.forEach(function (i) {
-                    if (i.statusId === JI.COMLETE) {
+                    if (i.statusId === QI.COMLETE) {
                       var r = t.find(function (e) {
                         return e.id === i.id;
                       });
                       if (r && r.getEffect) {
-                        var o = r.getEffect[e](vT.getInstance());
+                        var o = r.getEffect[e](CT.getInstance());
                         n.push({
                           label: "Achievement ".concat(r.name),
                           value: o,
@@ -43149,7 +43092,7 @@
                 );
               }),
               (t.prototype.getEffectMultiplier = function (e) {
-                var t = hT.filter(function (t) {
+                var t = IT.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getEffectMultiplier) ||
                     void 0 === n
@@ -43159,12 +43102,12 @@
                   n = [];
                 return (
                   this.achievementsState.forEach(function (i) {
-                    if (i.statusId === JI.COMLETE) {
+                    if (i.statusId === QI.COMLETE) {
                       var r = t.find(function (e) {
                         return e.id === i.id;
                       });
                       if (r && r.getEffectMultiplier) {
-                        var o = r.getEffectMultiplier[e](vT.getInstance());
+                        var o = r.getEffectMultiplier[e](CT.getInstance());
                         n.push({
                           label: "Achievement "
                             .concat(r.name, ": ")
@@ -43180,7 +43123,7 @@
                 );
               }),
               (t.prototype.getResourceBeingProduced = function (e) {
-                var t = hT.filter(function (t) {
+                var t = IT.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getGain) || void 0 === n
                       ? void 0
@@ -43190,7 +43133,7 @@
                 return (
                   this.achievementsState.forEach(function (i) {
                     var r;
-                    if (i.statusId === JI.COMLETE) {
+                    if (i.statusId === QI.COMLETE) {
                       var o = t.find(function (e) {
                         return e.id === i.id;
                       });
@@ -43200,7 +43143,7 @@
                           ? void 0
                           : r[e])
                       ) {
-                        var a = o.getGain[e](vT.getInstance());
+                        var a = o.getGain[e](CT.getInstance());
                         n.push({
                           label: "Achievement "
                             .concat(o.name, ": ")
@@ -43216,18 +43159,18 @@
                 );
               }),
               (t.prototype.getCraftingMultiplier = function () {
-                var e = hT.filter(function (e) {
+                var e = IT.filter(function (e) {
                     return !!e.getCraftingMultiplier;
                   }),
                   t = [];
                 return (
                   this.achievementsState.forEach(function (n) {
-                    if (n.statusId === JI.COMLETE) {
+                    if (n.statusId === QI.COMLETE) {
                       var i = e.find(function (e) {
                         return e.id === n.id;
                       });
                       if (i && i.getCraftingMultiplier) {
-                        var r = i.getCraftingMultiplier(vT.getInstance());
+                        var r = i.getCraftingMultiplier(CT.getInstance());
                         t.push({
                           label: "Achievement "
                             .concat(i.name, ": ")
@@ -43243,7 +43186,7 @@
                 );
               }),
               (t.prototype.getResourceMultiplier = function (e) {
-                var t = hT.filter(function (t) {
+                var t = IT.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getGainMultiplier) || void 0 === n
                       ? void 0
@@ -43253,7 +43196,7 @@
                 return (
                   this.achievementsState.forEach(function (i) {
                     var r;
-                    if (i.statusId === JI.COMLETE) {
+                    if (i.statusId === QI.COMLETE) {
                       var o = t.find(function (e) {
                         return e.id === i.id;
                       });
@@ -43263,7 +43206,7 @@
                           ? void 0
                           : r[e])
                       ) {
-                        var a = o.getGainMultiplier[e](vT.getInstance());
+                        var a = o.getGainMultiplier[e](CT.getInstance());
                         n.push({
                           label: "Achievement "
                             .concat(o.name, ": ")
@@ -43279,7 +43222,7 @@
                 );
               }),
               (t.prototype.getResourceBeingStored = function (e) {
-                var t = hT.filter(function (t) {
+                var t = IT.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getCapacityEffect) || void 0 === n
                       ? void 0
@@ -43289,7 +43232,7 @@
                 return (
                   this.achievementsState.forEach(function (i) {
                     var r;
-                    if (i.statusId === JI.COMLETE) {
+                    if (i.statusId === QI.COMLETE) {
                       var o = t.find(function (e) {
                         return e.id === i.id;
                       });
@@ -43299,7 +43242,7 @@
                           ? void 0
                           : r[e])
                       ) {
-                        var a = o.getCapacityEffect[e](vT.getInstance());
+                        var a = o.getCapacityEffect[e](CT.getInstance());
                         n.push({
                           label: "Achievement "
                             .concat(o.name, ": ")
@@ -43315,7 +43258,7 @@
                 );
               }),
               (t.prototype.getResourceStorageMultiplier = function (e) {
-                var t = hT.filter(function (t) {
+                var t = IT.filter(function (t) {
                     var n;
                     return !!(null === (n = t.getCapacityMultiplier) ||
                     void 0 === n
@@ -43326,7 +43269,7 @@
                 return (
                   this.achievementsState.forEach(function (i) {
                     var r;
-                    if (i.statusId === JI.COMLETE) {
+                    if (i.statusId === QI.COMLETE) {
                       var o = t.find(function (e) {
                         return e.id === i.id;
                       });
@@ -43336,7 +43279,7 @@
                           ? void 0
                           : r[e])
                       ) {
-                        var a = o.getCapacityMultiplier[e](vT.getInstance());
+                        var a = o.getCapacityMultiplier[e](CT.getInstance());
                         n.push({
                           label: "Achievement "
                             .concat(o.name, ": ")
@@ -43352,13 +43295,13 @@
                 );
               }),
               (t.prototype.resetFailedOnKP = function () {
-                var e = hT.filter(function (e) {
+                var e = IT.filter(function (e) {
                   return e.resetFailureOnKPPrestige;
                 });
                 this.reset(e);
               }),
               (t.prototype.resetFailedOnXP = function () {
-                var e = hT.filter(function (e) {
+                var e = IT.filter(function (e) {
                   return e.resetFailureOnXPPrestige;
                 });
                 this.reset(e);
@@ -43367,20 +43310,20 @@
                 this.achievementsState = this.achievementsState.map(function (
                   t
                 ) {
-                  return t.statusId !== JI.FAILED
+                  return t.statusId !== QI.FAILED
                     ? t
                     : e.find(function (e) {
                         return e.id === t.id;
                       })
-                    ? yT(yT({}, t), { statusId: JI.PENDING })
+                    ? TT(TT({}, t), { statusId: QI.PENDING })
                     : t;
                 });
               }),
               t
             );
           })(P),
-          LT = OT.getInstance(),
-          CT = (function () {
+          OT = yT.getInstance(),
+          LT = (function () {
             var e = function (t, n) {
               return (
                 (e =
@@ -43414,7 +43357,7 @@
                     : ((i.prototype = n.prototype), new i()));
             };
           })(),
-          vT = (function (e) {
+          CT = (function (e) {
             function t() {
               var t = this,
                 n = Date.now();
@@ -43443,21 +43386,21 @@
                 (t.colony = Gg),
                 (t.science = Kg),
                 (t.crafting = tf),
-                (t.goals = HA),
-                (t.achievements = LT),
-                (t.laws = FA),
-                (t.space = xR),
-                (t.expedition = iI),
-                (t.newNotifications = aI),
-                (t.prestige = eI),
-                (t.statistics = lI),
-                (t.environment = jh),
-                (t.queuedItems = Qh),
-                (t.eventLog = nT),
-                (t.resourceEffect = iT),
-                (t.expeditionV2 = cT),
-                (t.searchData = lT),
-                (t.presets = IT),
+                (t.goals = kA),
+                (t.achievements = OT),
+                (t.laws = WA),
+                (t.space = HR),
+                (t.expedition = nI),
+                (t.newNotifications = oI),
+                (t.prestige = $R),
+                (t.statistics = uI),
+                (t.environment = Vh),
+                (t.queuedItems = qh),
+                (t.eventLog = tT),
+                (t.resourceEffect = nT),
+                (t.expeditionV2 = aT),
+                (t.searchData = uT),
+                (t.presets = RT),
                 setInterval(function () {
                   t.isLoading
                     ? console.warn("Game is loading... Skip")
@@ -43527,7 +43470,7 @@
               );
             }
             return (
-              CT(t, e),
+              LT(t, e),
               (t.getInstance = function () {
                 return t.instance || (t.instance = new t()), t.instance;
               }),
@@ -43670,11 +43613,11 @@
               t
             );
           })(P),
-          ST = vT.getInstance();
+          vT = CT.getInstance();
         self.addEventListener("message", function (e) {
           var t = e.data;
           console.log("send to worker: ", t),
-            ST.workDispatcher.handleInput(t.type, t.payload);
+            vT.workDispatcher.handleInput(t.type, t.payload);
         });
       },
     },

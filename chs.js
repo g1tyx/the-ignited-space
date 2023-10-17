@@ -2359,6 +2359,8 @@ var cnItems = {
     "Reddit Community": "加入 Reddit 社区",
 
     //更新日志正文
+    //v0.3.0b
+    "Fixed some bugs": "修复了一些bug",
     //v0.3.0a
     "Added new early game KP upgrades": "增加了新的知识升级，以加快开局速度",
     "Added new XP upgrades, providing passive prestige resource generation": "增加了新的经验升级，能自动提供知识和经验",
@@ -2913,6 +2915,7 @@ var cnItems = {
     "Pause": "暂停",
 
     //更新日志标题
+    "v0.3.0b Tiny Update": "v0.3.0b 微型更新",
     "v0.3.0a Tiny Update": "v0.3.0a 微型更新",
     "v0.3.0 Big Update": "v0.3.0 大型更新",
     "v0.2.10c Small Update": "v0.2.10c 小型更新",
