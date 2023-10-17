@@ -1223,7 +1223,7 @@ var cnItems = {
     "Virology": "病毒学",
     "Learning more about viruses can help advance your scientific development. Every point increase Pandemic Center research capacity by 50 points": "研究病毒可以帮助科学进步。使流行病研究中心提供研究上限，每级增加 50",
     "Drone Schemas": "无人机图解",
-    "Now that you have printed drone upgrades and buildings recipe, you have all starting upgrades (lvl 1 - repair drills, cable and manipulators, lvl2 - auto-quarrying, auto-mining, repair machinery, lvl3 - combustion and storage, ) unlocked": "您可以在无人机上留下图解，以便后来者使用。1 级使开局时立即完成 修理钻头 修理充电线路 修理机械手 升级，2 级使开局时立即完成 自动采石 自动采矿 修理机器 升级，3 级使开局时立即完成 燃烧 修理存储模块 升级",
+    "Now that you have printed drone upgrades and buildings recipe, you have all starting upgrades (lvl 1 - repair drills, cable and manipulators, lvl2 - auto-quarrying, auto-mining, repair machinery, lvl3 - combustion and storage, ) unlocked": "您可以在无人机上留下图解，以便后来者使用。1 级使开局时立即解锁 修理钻头 修理充电线路 修理机械手 升级，2 级使开局时立即解锁 自动采石 自动采矿 修理机器 升级，3 级使开局时立即解锁 燃烧 修理存储模块 升级",
     "Research Tools": "研究工具",
     "With this new research automatic tools Research Module can generate small amount of research without colonists (0.05 per level)": "安装自动化研究设施之后，研究模块就能自动产生研究点，每级 0.05",
     "Rationalism": "理性主义",
