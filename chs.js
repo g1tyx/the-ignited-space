@@ -3266,6 +3266,7 @@ var cnExcludePostfix = [
 //原样输出的字段：(.+)
 //换行加空格：\n(.+)
 var cnRegReplace = new Map([
+    [/^Transmit Knowledge Upgrades: (.+) points left$/, '传输知识升级：还剩 $1 知识'],
     [/^Transmit Knowledge Upgrades: (.+) points left \(\+(.+)\/sec\)$/, '传输知识升级：还剩 $1 知识（+$2/秒）'],
     [/^\(\+(.+)\/sec\)$/, '（+$1/秒）'],
     [/^\[Jan (\d+), (\d+) (\d+):(\d+):(\d+)\]$/, '$2 年 1 月 $1 日，$3:$4:$5'],
