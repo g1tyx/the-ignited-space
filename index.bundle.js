@@ -24265,7 +24265,8 @@
             (e.BUILDING_MATERIALS_FACTORY_MODE =
               "building-materials-factory-mode"),
             (e.ELECTRONICS_FACTORY_MODE = "electronics-factory-mode"),
-            (e.WOOD_FERTILIZING = "wood-fertilizing");
+            (e.WOOD_FERTILIZING = "wood-fertilizing"),
+            (e.CULTS = "Cults");
         })(Ho || (Ho = {}));
       var cl,
         ul,
@@ -24937,6 +24938,58 @@
                             {
                               children: (0, e.jsxs)(Xa(), {
                                 children: [
+                                  (0, e.jsxs)(
+                                    "div",
+                                    gl(
+                                      { className: "version-block" },
+                                      {
+                                        children: [
+                                          (0, e.jsxs)(
+                                            "div",
+                                            gl(
+                                              { className: "version-title" },
+                                              {
+                                                children: [
+                                                  (0, e.jsx)("h3", {
+                                                    children:
+                                                      "v0.3.0a Tiny Update",
+                                                  }),
+                                                  (0, e.jsx)(
+                                                    "span",
+                                                    gl(
+                                                      { className: "date" },
+                                                      { children: "16/10/2023" }
+                                                    )
+                                                  ),
+                                                ],
+                                              }
+                                            )
+                                          ),
+                                          (0, e.jsxs)(
+                                            "ul",
+                                            gl(
+                                              { className: "features" },
+                                              {
+                                                children: [
+                                                  (0, e.jsx)("li", {
+                                                    children:
+                                                      "Added new early game KP upgrades",
+                                                  }),
+                                                  (0, e.jsx)("li", {
+                                                    children:
+                                                      "Added new XP upgrades, providing passive prestige resource generation",
+                                                  }),
+                                                  (0, e.jsx)("li", {
+                                                    children: "Fixed some bugs",
+                                                  }),
+                                                ],
+                                              }
+                                            )
+                                          ),
+                                        ],
+                                      }
+                                    )
+                                  ),
                                   (0, e.jsxs)(
                                     "div",
                                     gl(
@@ -27932,14 +27985,19 @@
                                     isAvailable: n.isAvailable,
                                     isBlocked: n.isBlocked,
                                     progress: n.progress,
-                                    className: "feature-item ".concat(
-                                      a &&
-                                        n.cost.find(function (e) {
-                                          return e.id === a;
-                                        })
-                                        ? "usage-highlight"
-                                        : ""
-                                    ),
+                                    className: "feature-item "
+                                      .concat(
+                                        n.etaNum > 1e80 ? "soft-lock" : "",
+                                        " "
+                                      )
+                                      .concat(
+                                        a &&
+                                          n.cost.find(function (e) {
+                                            return e.id === a;
+                                          })
+                                          ? "usage-highlight"
+                                          : ""
+                                      ),
                                     onClick: function () {
                                       var e;
                                       i || (!n.isAvailable && o)
@@ -30542,7 +30600,8 @@
         },
         Vl = function (n) {
           var t = n.state,
-            i = t.upgrades
+            i = n.resources,
+            a = t.upgrades
               .filter(function (e) {
                 return e.isUnlocked;
               })
@@ -30552,162 +30611,161 @@
                   e
                 );
               }, {});
-          return (
-            (0, r.useEffect)(function () {
-              var e = function (e) {
-                e.ctrlKey
-                  ? Yl.setBulk.send(1e100)
-                  : e.shiftKey && Yl.setBulk.send(5);
-              };
-              document.addEventListener("keydown", e);
-              var n = function (e) {
-                console.log("released", e.ctrlKey, e.key),
-                  ("Control" !== e.key && "Shift" !== e.key) ||
-                    Yl.setBulk.send(1);
-              };
-              return (
-                document.addEventListener("keyup", n),
-                function () {
-                  document.removeEventListener("keydown", e),
-                    document.removeEventListener("keyup", n),
-                    Yl.setBulk.send(1);
-                }
-              );
-            }, []),
-            (0, e.jsx)(
-              Wa,
-              Xl(
-                {
-                  id: "transmit-knowledge-upgrades",
-                  label: "Transmit Knowledge Upgrades: ".concat(
-                    t.kp,
-                    " points left"
+          (0, r.useEffect)(function () {
+            var e = function (e) {
+              e.ctrlKey
+                ? Yl.setBulk.send(1e100)
+                : e.shiftKey && Yl.setBulk.send(5);
+            };
+            document.addEventListener("keydown", e);
+            var n = function (e) {
+              console.log("released", e.ctrlKey, e.key),
+                ("Control" !== e.key && "Shift" !== e.key) ||
+                  Yl.setBulk.send(1);
+            };
+            return (
+              document.addEventListener("keyup", n),
+              function () {
+                document.removeEventListener("keydown", e),
+                  document.removeEventListener("keyup", n),
+                  Yl.setBulk.send(1);
+              }
+            );
+          }, []);
+          var s = i.resources.find(function (e) {
+            return e.id === nt.KNOWLEDGE_POINT;
+          });
+          return (0, e.jsx)(
+            Wa,
+            Xl(
+              {
+                id: "transmit-knowledge-upgrades",
+                label: "Transmit Knowledge Upgrades: "
+                  .concat(t.kp, " points left ")
+                  .concat(
+                    (null == s ? void 0 : s.isPositive)
+                      ? "(+".concat(s.balance, "/sec)")
+                      : ""
                   ),
-                  className: "actions-wrap",
-                },
-                {
-                  children: Object.entries(i).map(function (n) {
-                    var t = n[0],
-                      r = n[1];
-                    return (0, e.jsx)(
-                      Wa,
-                      Xl(
-                        {
-                          isCollapsable: !0,
-                          id: "kp-upgrades-".concat(t),
-                          label: "".concat(t),
-                          className: "kp-wrap",
-                          contentClassName: "flex",
-                        },
-                        {
-                          children: r
-                            .filter(function (e) {
-                              return e.isUnlocked;
-                            })
-                            .map(function (n) {
-                              return (0, e.jsxs)(
-                                zs,
-                                Xl(
-                                  {
-                                    label: n.name,
-                                    isAvailable: n.isAvailable,
-                                    isBlocked: !1,
-                                    progress: n.progress,
-                                    className: "feature-item",
-                                    onClick: function (e) {
-                                      var t;
-                                      (t = n.id),
-                                        Yl.doTKUpgrade.send({ id: t });
-                                    },
-                                    level: n.level,
-                                    maxLevel: n.maxLevel,
-                                    onMouseEnter: function () {
-                                      return Xs(
-                                        n.cost.filter(function (e) {
-                                          return !e.isAvailable;
-                                        })
-                                      );
-                                    },
-                                    onMouseLeave: function () {
-                                      return Xs(null);
-                                    },
+                className: "actions-wrap",
+              },
+              {
+                children: Object.entries(a).map(function (n) {
+                  var t = n[0],
+                    r = n[1];
+                  return (0, e.jsx)(
+                    Wa,
+                    Xl(
+                      {
+                        isCollapsable: !0,
+                        id: "kp-upgrades-".concat(t),
+                        label: "".concat(t),
+                        className: "kp-wrap",
+                        contentClassName: "flex",
+                      },
+                      {
+                        children: r
+                          .filter(function (e) {
+                            return e.isUnlocked;
+                          })
+                          .map(function (n) {
+                            return (0, e.jsxs)(
+                              zs,
+                              Xl(
+                                {
+                                  label: n.name,
+                                  isAvailable: n.isAvailable,
+                                  isBlocked: !1,
+                                  progress: n.progress,
+                                  className: "feature-item",
+                                  onClick: function (e) {
+                                    var t;
+                                    (t = n.id), Yl.doTKUpgrade.send({ id: t });
                                   },
-                                  {
-                                    children: [
-                                      (0, e.jsxs)(
-                                        "p",
-                                        Xl(
-                                          { className: "title" },
-                                          {
-                                            children: [
-                                              n.name,
-                                              n.bulk && n.bulk > 1
-                                                ? "(+".concat(
-                                                    Math.round(n.bulk),
-                                                    ")"
-                                                  )
-                                                : "",
-                                            ],
-                                          }
-                                        )
-                                      ),
-                                      (0, e.jsx)(
-                                        "p",
-                                        Xl(
-                                          { className: "description" },
-                                          { children: n.description }
-                                        )
-                                      ),
-                                      n.cost.length
-                                        ? (0, e.jsxs)(
-                                            "div",
-                                            Xl(
-                                              { className: "costs wrap" },
-                                              {
-                                                children: [
-                                                  (0, e.jsx)("span", {
-                                                    children: "Cost",
-                                                  }),
-                                                  n.cost.map(function (n) {
-                                                    return (0,
-                                                    e.jsx)(Gs, { cost: n });
-                                                  }),
-                                                ],
-                                              }
-                                            )
+                                  level: n.level,
+                                  maxLevel: n.maxLevel,
+                                  onMouseEnter: function () {
+                                    return Xs(
+                                      n.cost.filter(function (e) {
+                                        return !e.isAvailable;
+                                      })
+                                    );
+                                  },
+                                  onMouseLeave: function () {
+                                    return Xs(null);
+                                  },
+                                },
+                                {
+                                  children: [
+                                    (0, e.jsxs)(
+                                      "p",
+                                      Xl(
+                                        { className: "title" },
+                                        {
+                                          children: [
+                                            n.name,
+                                            n.bulk && n.bulk > 1
+                                              ? "(+".concat(
+                                                  Math.round(n.bulk),
+                                                  ")"
+                                                )
+                                              : "",
+                                          ],
+                                        }
+                                      )
+                                    ),
+                                    (0, e.jsx)(
+                                      "p",
+                                      Xl(
+                                        { className: "description" },
+                                        { children: n.description }
+                                      )
+                                    ),
+                                    n.cost.length
+                                      ? (0, e.jsxs)(
+                                          "div",
+                                          Xl(
+                                            { className: "costs wrap" },
+                                            {
+                                              children: [
+                                                (0, e.jsx)("span", {
+                                                  children: "Cost",
+                                                }),
+                                                n.cost.map(function (n) {
+                                                  return (0,
+                                                  e.jsx)(Gs, { cost: n });
+                                                }),
+                                              ],
+                                            }
                                           )
-                                        : (0, e.jsx)(e.Fragment, {}),
-                                      (0, e.jsx)(
-                                        "p",
-                                        Xl(
-                                          { className: "note" },
-                                          {
-                                            children:
-                                              "Hold Shift to purchase 5",
-                                          }
                                         )
-                                      ),
-                                      (0, e.jsx)(
-                                        "p",
-                                        Xl(
-                                          { className: "note" },
-                                          {
-                                            children:
-                                              "Hold Ctrl to purchase max",
-                                          }
-                                        )
-                                      ),
-                                    ],
-                                  }
-                                )
-                              );
-                            }),
-                        }
-                      )
-                    );
-                  }),
-                }
-              )
+                                      : (0, e.jsx)(e.Fragment, {}),
+                                    (0, e.jsx)(
+                                      "p",
+                                      Xl(
+                                        { className: "note" },
+                                        { children: "Hold Shift to purchase 5" }
+                                      )
+                                    ),
+                                    (0, e.jsx)(
+                                      "p",
+                                      Xl(
+                                        { className: "note" },
+                                        {
+                                          children: "Hold Ctrl to purchase max",
+                                        }
+                                      )
+                                    ),
+                                  ],
+                                }
+                              )
+                            );
+                          }),
+                      }
+                    )
+                  );
+                }),
+              }
             )
           );
         },
@@ -30776,11 +30834,12 @@
           );
         },
         Kl = function () {
-          var n = N(ls);
+          var n = N(ls),
+            t = N(fo);
           return (0, e.jsxs)(e.Fragment, {
             children: [
               (0, e.jsx)(ql, { transmit: n }),
-              (0, e.jsx)(Vl, { state: n }),
+              (0, e.jsx)(Vl, { state: n, resources: t }),
             ],
           });
         },
@@ -30799,7 +30858,15 @@
         },
         $l = function (n) {
           var t,
-            r = n.state;
+            r = n.state,
+            i = n.resources.resources.find(function (e) {
+              return e.id === nt.COLONIZE_XP;
+            }),
+            a = "".concat(
+              (null == i ? void 0 : i.isPositive)
+                ? "(+".concat(i.balance, "/sec) ")
+                : ""
+            );
           return r.isPrestigeAvailable
             ? (0, e.jsxs)(
                 Wa,
@@ -30821,6 +30888,8 @@
                                 children: [
                                   "You have ",
                                   bs(r.currentXP),
+                                  " ",
+                                  a,
                                   " XP points, providing X",
                                   r.prestige.currentBonus,
                                   " multiplier to your KP gain",
@@ -31935,7 +32004,9 @@
                               children: [
                                 "You have ",
                                 bs(r.currentXP),
-                                " XP points, providing X",
+                                " ",
+                                a,
+                                "XP points, providing X",
                                 r.prestige.currentBonus,
                                 " multiplier to your KP gain",
                               ],
@@ -32401,10 +32472,11 @@
               );
         },
         nc = function () {
-          var n = N(cs);
+          var n = N(cs),
+            t = N(fo);
           return (0, e.jsxs)(e.Fragment, {
             children: [
-              (0, e.jsx)($l, { state: n }),
+              (0, e.jsx)($l, { state: n, resources: t }),
               (0, e.jsx)(Zl, { colonize: n }),
               (0, e.jsx)(Jl, { upgrades: n.upgrades }),
               (0, e.jsx)(ec, { upgrades: n.upgrades }),

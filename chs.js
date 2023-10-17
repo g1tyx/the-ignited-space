@@ -63,6 +63,10 @@ var cnItems = {
     "Thermal Proof Stone": "隔热石材",
     "Virusology": "病毒学",
     "Meteorologist": "气象学家",
+    "Drone Schemas": "无人机图解",
+    "Research Tools": "研究工具",
+    "Rationalism": "理性主义",
+    "Cults": "宗教信仰",
     "Power Capacity": "电力容量",
     "Materials Capacity": "固体材料容量",
     "Liquids Capacity": "液体容量",
@@ -633,6 +637,7 @@ var cnItems = {
     "Social": "社交",
     "Industrial Modes": "工业模式",
     "Public Modes": "公众模式",
+    "Cults": "宗教信仰",
     
     //建筑物
     "Quarry": "采石场",
@@ -808,6 +813,10 @@ var cnItems = {
     "Base": "基础",
     "Population": "人口",
     "Building:": "建筑：",
+    "Portable KP Transmitter": "便携式知识传输机",
+    "XP Capture Machine": "经验收集器",
+
+    //
     "Quarryman": "采石工",
     "Works at the quarry to mine stone": "在采石场工作以开采石头",
     "Miner": "矿工",
@@ -1076,7 +1085,17 @@ var cnItems = {
     "Implements some new technologies to provide more computers and magneto": "使用新的科技提升 电脑 和 磁电机 的产量",
     "Big Magneto": "大型磁电机",
     "Implements some new technologies to provide more magneto and ai cores": "使用新的科技提升 磁电机 和 AI 核心 的产量",
-    
+    "Defibrillator": "心脏除颤器",
+    "Everyones life matters": "所有人的命都是命",
+    "Helicopter": "直升机",
+    "Can resque everybody, everywhere... Well, almost.": "能从所有地方拯救所有人……大概",
+    "Virtual Reality TV": "VR 电视",
+    "Let our people in imaginary world, if it makes them happy": "就让人民沉浸在虚拟世界中吧，只要能让他们更快乐",
+    "Golden Apple": "金苹果",
+    "So mysterious... So attracting.": "如此神秘……如此诱人",
+    "Decorative Statue": "装饰用雕像",
+    "Very beautiful": "非常漂亮",
+
     "Relics: ": "遗物：",
     "Relics": "遗物",
     "Relic: ": "遗物：",
@@ -1201,8 +1220,18 @@ var cnItems = {
     "New thermal proof materials now allow you to spend less of stone and ore to build Smelters. Every point reduces Smelter prices by 20%": "运用新的隔热石材，从而消耗更少的材料来建造冶炼厂。每级使冶炼厂的建造成本降低 20%",
     "Meteorologist": "气象学家",
     "Now you are an expert of weather forecasts. Every point increase Meteorology Station research capacity by 5 points": "好，现在你已经是天气预报的专家了，接下来请预测明天需不需要带伞吧。每级使气象站的研究上限增加 5",
-    "Virusology": "病毒学",
+    "Virology": "病毒学",
     "Learning more about viruses can help advance your scientific development. Every point increase Pandemic Center research capacity by 50 points": "研究病毒可以帮助科学进步。使流行病研究中心提供研究上限，每级增加 50",
+    "Drone Schemas": "无人机图解",
+    "Now that you have printed drone upgrades and buildings recipe, you have all starting upgrades (lvl 1 - repair drills, cable and manipulators, lvl2 - auto-quarrying, auto-mining, repair machinery, lvl3 - combustion and storage, ) unlocked": "您可以在无人机上留下图解，以便后来者使用。1 级使开局时立即完成 修理钻头 修理充电线路 修理机械手 升级，2 级使开局时立即完成 自动采石 自动采矿 修理机器 升级，3 级使开局时立即完成 燃烧 修理存储模块 升级",
+    "Research Tools": "研究工具",
+    "With this new research automatic tools Research Module can generate small amount of research without colonists (0.05 per level)": "安装自动化研究设施之后，研究模块就能自动产生研究点，每级 0.05",
+    "Rationalism": "理性主义",
+    "Teach your people that everything has consequences. Free workers now consume 50% less happiness and nutrition": "教会您的人民什么重要，什么不重要。未安排工作的殖民者消耗的幸福度和营养物质减半",
+    "Cults": "宗教信仰",
+    "Unlocks new law, making some jobs providing religious bonus": "解锁新政策，使得某些工作能够提供宗教加成",
+    "Industry Efficiency": "工业效率",
+    "Building Material Factory and Metallurgy complex consume 25% less power": "建筑材料工厂和冶金综合体的电力消耗降低 25%",
     "Power Mastery": "电力精通",
     "Your experience with electrical grids helps with power optimization. Every point boosts power production by 4%": "您在电网方面的经验有助于优化发电过程。每级使电力产量增加 4%",
     "Mining Mastery": "采矿精通",
@@ -1529,7 +1558,19 @@ var cnItems = {
     "Your foresters will cut any trees and burn them for fertilizing, but at limited rates": "您的林务员会砍伐并焚烧所有类型的树木用于细菌培养，但在量上有所收敛",
     "No limits": "无限制",
     "Your foresters will cut any trees and burn them for fertilizing at unlimited rates": "您的林务员会任意砍伐并焚烧所有类型的树木用于细菌培养",
-    
+    "Cults": "宗教信仰",
+    "Adore some professions to make them bring also religious bonus. Stacks up to 20 person": "格外尊崇对某些工作，使其提供额外的宗教加成，最多有 20 人生效",
+    "No Cults": "无信仰",
+    "Your people missing their favorites": "您的人民没有特别的信仰",
+    "Cult of Nature": "拜木教",
+    "Your foresters will provide religious bonus (1 per Cults upgrade)": "林务员提供宗教加成（每级宗教信仰 1 点）",
+    "Cult of Masonry": "拜石教",
+    "Your miners and quarrymen provide religious bonus (1 per Cults upgrade)": "采石工和矿工提供宗教加成（每级宗教信仰 1 点）",
+    "Cult of Wheat": "神农教",
+    "Your farmers will provide religious bonus (1 per Cults upgrade)": "农民提供宗教加成（每级宗教信仰 1 点）",
+    "Cult of Owl": "猫头鹰教",
+    "Your researchers will provide religious bonus (1 per Cults upgrade)": "研究员提供宗教加成（每级宗教信仰 1 点）",
+
     "Law": "政策",
     "Laws": "政策",
     
@@ -1593,6 +1634,8 @@ var cnItems = {
     "Learn how to delegate some of your management. Unlocks labour job. Every 5 seconds labourers are auto-assigned to job where they needed the most. Does not work with crafting": "学习如何将您的一部分管理工作委托给别人。解锁劳工工作。每 5 秒钟，劳工会被安排在最需要的岗位上。不会被安排为工匠",
     "Star Chart Master": "星图大师",
     "Learn how to make more precise star charts and their spectral attributes to better point your telescopes. Each level increase searched planets amount": "学习如何绘制精密的星图及其光谱属性，来指引您用于发现新星球的望远镜。每级增加搜索时发现的星球数量",
+    "Portable KP Transmitter": "便携式知识传输机",
+    "Portable device that captures and decodes information from other civilizations. Grants 2% of your max KP per hour passively per level (+10% at max level)": "这是一种能自动收集、解密来自其他文明的知识的机器。基于您的最大知识/小时自动获取知识（满级后每小时获取该数值的 10%）",
     "Toughness": "恒星种类",
     "Living next to very huge or very small stars can be very challenging. However, you can defy the wild nature, and build your settlement in inhabitable places. Unlocks new star types available for colonization": "在非常大或者非常小的恒星附近定居都极端困难。但你也可以逆天而行，将殖民地设置在过去无法想象的位置。殖民星球时可以搜索到新的恒星种类",
     "Harshness": "行星复杂度",
@@ -1603,6 +1646,8 @@ var cnItems = {
     "You may miss something important about your civilization development. But maybe there was someone who faced same problems and ready to share his knowledge with you? Unlock xp upgrades providing access to new buildings and upgrades.": "您可能遗失了一些对于发展至关重要的科技，但或许有其他人遇到了类似的发展瓶颈，能不能借鉴一下他们的解决办法呢？解锁一类全新的经验升级，它们将解锁新的建筑和升级，",
     "Auto-upgrade": "自动升级",
     "You can enable bot that automatically doing upgrades for you. Level 1 upgrades up to 400 research cost, but each level multiplies this limit by 4 (Need to be turned on in settings)": "您可以使用机器人来自动帮您完成升级。1 级可以自动升级 400 研究上限以内的研究，每级使该上限变为上一级的 4 倍（需要在设置中启用）",
+    "XP Capture Machine": "经验收集器",
+    "Bring our memories back. Grants 2% of your max XP per hour passively per level (+10% at max level)": "唤醒失落的记忆吧。基于您的最大经验/小时自动获取经验（满级后每小时获取该数值的 10%）",
     "Planet Memory": "星球记忆",
     "Why dont spend some space on our datacenters hard drive to remember our favorite planet? Unlock option to remember one planet upon search.": "何不在数据中心的硬盘上划出一块区域来存储您最喜欢的行星呢？解锁固定已找到行星的选项",
     "Relics": "遗物",
@@ -2406,6 +2451,10 @@ var cnItems = {
     "Reddit Community": "加入 Reddit 社区",
 
     //更新日志正文
+    //v0.3.0a
+    "Added new early game KP upgrades": "增加了新的知识升级，以加快开局速度",
+    "Added new XP upgrades, providing passive prestige resource generation": "增加了新的经验升级，能自动提供知识和经验",
+    "Fixed some bugs": "修复了一些bug",
     //v0.3.0
     "Added Relics mechanics": "增加了遗物系统",
     "Added new end-game content": "增加了新的后期游戏内容",
@@ -2781,6 +2830,7 @@ var cnItems = {
     "Storage Multipliers": "上限倍率：",
     "Effects": "效果",
     "Effects Multipliers": "效果倍率：",
+    "Building Price: x": "建筑价格：",
 
     //v0.2.0新增
     "Buildings": "建筑",
@@ -2812,6 +2862,7 @@ var cnItems = {
     "Colonize": "殖民",
     "You should build Spaceship Orbital Station to be able to reach other stars": "您需要建造宇宙飞船站并为其供能，才能搜索其他的行星",
     "You have": "您拥有",
+    "XP points, providing X": "经验点数，提供 x",
     "Current Planet": "当前行星",
     "Name:": "名称：",
     "Description:": "描述：",
@@ -2954,6 +3005,7 @@ var cnItems = {
     "Pause": "暂停",
 
     //更新日志标题
+    "v0.3.0a Tiny Update": "v0.3.0a 微型更新",
     "v0.3.0 Big Update": "v0.3.0 大型更新",
     "v0.2.10c Small Update": "v0.2.10c 小型更新",
     "v0.2.10b Tiny Update": "v0.2.10b 微型更新",
@@ -3214,7 +3266,8 @@ var cnExcludePostfix = [
 //原样输出的字段：(.+)
 //换行加空格：\n(.+)
 var cnRegReplace = new Map([
-    [/^Transmit Knowledge Upgrades: (.+) points left$/, '传输知识升级：还剩 $1 知识'],
+    [/^Transmit Knowledge Upgrades: (.+) points left \(\+(.+)\/sec\)$/, '传输知识升级：还剩 $1 知识（+$2/秒）'],
+    [/^\(\+(.+)\/sec\)$/, '（+$1/秒）'],
     [/^\[Jan (\d+), (\d+) (\d+):(\d+):(\d+)\]$/, '$2 年 1 月 $1 日，$3:$4:$5'],
     [/^\[Feb (\d+), (\d+) (\d+):(\d+):(\d+)\]$/, '$2 年 2 月 $1 日，$3:$4:$5'],
     [/^\[Mar (\d+), (\d+) (\d+):(\d+):(\d+)\]$/, '$2 年 3 月 $1 日，$3:$4:$5'],
