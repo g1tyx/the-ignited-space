@@ -1559,7 +1559,7 @@ var cnItems = {
     "No limits": "无限制",
     "Your foresters will cut any trees and burn them for fertilizing at unlimited rates": "您的林务员会任意砍伐并焚烧所有类型的树木用于细菌培养",
     "Cults": "宗教信仰",
-    "Adore some professions to make them bring also religious bonus. Stacks up to 20 person": "格外尊崇对某些工作，使其提供额外的宗教加成，最多有 20 人生效",
+    "Adore some professions to make them bring also religious bonus. Stacks up to 20 person": "格外尊崇某些职业，使其提供额外的宗教加成，最多生效 20 人",
     "No Cults": "无信仰",
     "Your people missing their favorites": "您的人民没有特别的信仰",
     "Cult of Nature": "拜木教",
