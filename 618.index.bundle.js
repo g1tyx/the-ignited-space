@@ -41694,8 +41694,8 @@
               description:
                 "Previous life here was not particularly luxurious. But we found a way out!",
               requirementsDesc: [
-                "Have at least 500 population on planet with power multiplier < 0.02",
-                "Reach Spaceship Station lvl 40 on planet with power multiplier < 0.02",
+                "Have at least 500 population on planet with biomass multiplier < 0.02",
+                "Reach Spaceship Station lvl 40 on planet with biomass multiplier < 0.02",
               ],
               getCompleteCondition: function (e) {
                 var t, n, i;
