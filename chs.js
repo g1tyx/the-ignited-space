@@ -3067,9 +3067,9 @@ var cnPrefix = {
     "Achievement Metallurgist Professional: ": "成就：",
     "Achievement Metallurgist God: ": "成就：",
     "Achievement Biologist: ": "成就：",
-    "Achievement Biologist Master: ": "成就：",
-    "Achievement Biologist Professional: ": "成就：",
-    "Achievement Biologist God: ": "成就：",
+    "Achievement Biology Master: ": "成就：",
+    "Achievement Biology Professional: ": "成就：",
+    "Achievement Biology God: ": "成就：",
     "Achievement Electronics: ": "成就：",
     "Achievement Electronics Master: ": "成就：",
     "Achievement Electronics Professional: ": "成就：",
@@ -3097,6 +3097,9 @@ var cnPrefix = {
     "Achievement Small Town: ": "成就：",
     "Achievement Town: ": "成就：",
     "Achievement City: ": "成就：",
+
+    "Relic: ": "遗物：",
+    "Relics: ": "遗物：",
 
     //
     "Shield: ": "护盾：",
