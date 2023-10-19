@@ -794,8 +794,8 @@ var cnItems = {
     "Converts some of your dark matter and energy power into strange matter": "将暗能量和电力转化成奇异物质",
     "Neutron Core": "中子核心",
     "Literally consists of your civilization power! Each one boost KP gain by 50% additively": "这就是您文明实力的璀璨结晶！每座使本轮游戏的知识获取量增加 50%",
-    "Relic Holder": "遗物存储设施",
-    "Add possibility to obtain relics from the planet. Relics persist through prestiges. Amount and chances of specific relics depends on planet complexity. Level up building increase relics amount": "提升从行星获取遗物的几率。获取量和星球难度有关，某些特定遗物的获取几率和星球词条种类有关。升级建筑物提升获取量",
+    "Relic Holder": "遗物容器",
+    "Add possibility to obtain relics from the planet. Relics persist through prestiges. Amount and chances of specific relics depends on planet complexity. Level up building increase relics amount": "提升从行星获取遗物的几率。获取量和星球难度有关，获取的种类和星球词条种类有关。升级遗物容器也可以提升获取量",
     "Core of Knowledge": "知识核心",
     "Pure information, in each quantum! Each one provide 10K research capacity per Neutron Core": "每个量子里都包含着纯粹的知识！每座知识核心使每座中子核心提供 10K 的研究上限", 
     "Antimatter Power Plant": "反物质发电站",
@@ -1060,7 +1060,7 @@ var cnItems = {
     "Finally you learned how to generate physical particles that moving at speed larger than speed of light without teleporting": "终于，您可以学会如何制造比光速还快的粒子",
     
     //遗物
-    "You'll be able to obtain new relics once you build Relic Holder. It requires 13M research and a lot of resources. Amount of relics earned depends on Relic Holder level and planet XP multiplier. Specific type of relics depends on planet multipliers.": "建造遗物存储设施，您即可获得新的遗物。它需要 13M 研究上限的科技解锁，且需要海量的各类资源。获取量遗物存储设施的等级和星球难度有关，某些特定遗物的获取几率和星球词条种类有关。",
+    "You'll be able to obtain new relics once you build Relic Holder. It requires 13M research and a lot of resources. Amount of relics earned depends on Relic Holder level and planet XP multiplier. Specific type of relics depends on planet multipliers.": "建造遗物容器，您即可获得新的遗物。它需要 13M 研究上限的科技解锁，且需要海量的各类资源。获取量和遗物容器的等级、星球难度有关，获取的种类和星球词条种类有关。",
     "Bioproducer": "生物质制造机",
     "Implements some new technologies to provide more nutrition and biomass": "使用新的科技提升 营养物质 和 生物质 的产量",
     "Wood Producer": "木材生成器",
@@ -1651,7 +1651,7 @@ var cnItems = {
     "Planet Memory": "星球记忆",
     "Why dont spend some space on our datacenters hard drive to remember our favorite planet? Unlock option to remember one planet upon search.": "何不在数据中心的硬盘上划出一块区域来存储您最喜欢的行星呢？解锁固定已找到行星的选项",
     "Relics": "遗物",
-    "You definitely can do better job of memorizing your progress. Unlocks building Relic Holder to obtain relics. Each level increase max active relics": "您还能找到更好地传承发展的方式。解锁建筑物遗物存储设施，可以用于保存遗物。每级提升最大可激活的遗物数量（译注：建议在研究上限能达到 13M 以后再升级此项）",
+    "You definitely can do better job of memorizing your progress. Unlocks building Relic Holder to obtain relics. Each level increase max active relics": "您还能找到更好地传承发展的方式。解锁建筑物“遗物容器”，可以用于保存遗物。每级提升最大可激活的遗物数量（译注：建议在研究上限能达到 13M 以后再升级此项）",
     "Fountain": "喷泉",
     "Learn how to use water to decorate your settlement. Unlocks building fountains, boosting your aesthetics": "学习如何利用水来装点您的殖民地。解锁喷泉建筑，它将提供美观加成",
     "Television": "电视",
