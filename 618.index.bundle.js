@@ -34312,7 +34312,7 @@
                       null === (n = null === (t = e.prestige.colonizePlanet.currentCached) || void 0 === t ? void 0 : t.gainMult) || void 0 === n
                         ? void 0
                         : n.find(function (e) {
-                            return e.id === l.POWER;
+                            return e.id === l.BIOMASS;
                           })) || void 0 === i
                     ? void 0
                     : i.amountValue;
