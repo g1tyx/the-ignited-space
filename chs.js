@@ -3090,6 +3090,8 @@ var cnPrefix = {
     "Achievement The wrath of the Lord: ": "成就：",
     "Achievement Builder II: ": "成就：",
     "Achievement Builder IV: ": "成就：",
+    "Achievement Digital Universe": "成就：",
+    "Achievement Digital Universe ||": "成就：",
     "Achievement Dark Matter Master: ": "成就：",
     "Achievement Dark Matter Expert: ": "成就：",
     "Achievement Antimatter Master: ": "成就：",
