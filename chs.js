@@ -2771,8 +2771,6 @@ var cnItems = {
     "Cost": "成本",
     "Colonize": "殖民",
     "You should build Spaceship Orbital Station to be able to reach other stars": "您需要建造宇宙飞船站并为其供能，才能搜索其他的行星",
-    "You have": "您拥有",
-    "XP points, providing X": "经验点数，提供 x",
     "Current Planet": "当前行星",
     "Name:": "名称：",
     "Description:": "描述：",
