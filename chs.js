@@ -1171,7 +1171,7 @@ var cnItems = {
     "Build 1 oxygen compressor, 1 water pump and 1 water storage.": "请建造氧气压缩机、水泵、水存储设施各 1 座。",
     "Final preparation": "最后的准备",
     "There\'s not much left now - we have oxygen, we have water, and we have the basic resources needed for the settlement to thrive. The last thing to take care of is food.": "我们快要完成了——已经有氧气，有水，还有定居点繁荣发展所需的基本资源。最后要解决的是食物。",
-    "Unfortunately, effective food production requires people, and we don\'t have them yet. However, there is a module on the ship that produces a small amount of food. It won\'t be enough to sustain the entire settlement, but if we repair it, it can provide food for the first settlers.": "高效的粮食生产需要人力，而我们还没有。不过，船上有一个模块可以生产少量食物。它不足以维持整个定居点，但如果我们修复它，它可以为第一批定居者提供食物。",
+    "Unfortunately, effective food production requires people, and we don\'t have them yet. However, there is a module on the ship that produces a small amount of food. It won\'t be enough to sustain the entire settlement, but if we repair it, it can provide food for the first settlers.\n": "高效的粮食生产需要人力，而我们还没有。不过，船上有一个模块可以生产少量食物。它不足以维持整个定居点，但如果我们修复它，它可以为第一批定居者提供食物。",
     "It\'s worth noting that food production requires a stable power supply. To ensure this, we should think about devices for its storage. Research how to produce electrolytes using the water you already have and salts, which are necessary for batteries.": "值得注意的是，粮食生产需要稳定的电力供应。为了确保这一点，我们应该考虑其存储设备。研究如何使用现有的水和盐来生产电解质，这是电池所必需的。",
     "Upgrade electrolytes, build the necessary number of batteries, and repair the supply module.": "请升级电解质，建造必要数量的电池，并修复供应模块。",
     "First colonists": "第一批殖民者",
