@@ -798,6 +798,8 @@ var cnItems = {
     "Add possibility to obtain relics from the planet. Relics persist through prestiges. Amount and chances of specific relics depends on planet complexity. Level up building increase relics amount": "提升从行星获取遗物的几率。获取量和星球难度有关，获取的种类和星球词条种类有关。升级遗物容器也可以提升获取量",
     "Core of Knowledge": "知识核心",
     "Pure information, in each quantum! Each one provide 10K research capacity per Neutron Core": "每个量子里都包含着纯粹的知识！每座知识核心使每座中子核心提供 10K 的研究上限", 
+    "Dark Energy Generator": "暗物质生成器",
+    //"Uses high-efficient antimatter based fuel to turn it into pure power": "使用基于反物质的高效率燃料，将其充分转化为电力",
     "Antimatter Power Plant": "反物质发电站",
     "Uses high-efficient antimatter based fuel to turn it into pure power": "使用基于反物质的高效率燃料，将其充分转化为电力",
     "Hanging Gardens": "空中花园",
