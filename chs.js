@@ -3050,6 +3050,7 @@ var cnPrefix = {
     "Law Education: ": "教育政策：",
     "Law Waste Disposal Rules: ": "废料处理政策：",
     "Law Life Comfort Expenses: ": "舒适生活政策：",
+    "Law Nutrition Regulations: ": "营养规范政策：",
     
     //
     "Achievement Humble Starting: ": "成就：",
@@ -3063,7 +3064,7 @@ var cnPrefix = {
     "Achievement Metallurgist: ": "成就：",
     "Achievement Metallurgist Master: ": "成就：",
     "Achievement Metallurgist Professional: ": "成就：",
-    "Achievement Metallurgist God: ": "成就：",
+    "Achievement Metallurgy God: ": "成就：",
     "Achievement Biologist: ": "成就：",
     "Achievement Biology Master: ": "成就：",
     "Achievement Biology Professional: ": "成就：",
