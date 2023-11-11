@@ -579,7 +579,7 @@ var cnItems = {
     "Electromagnetic Reflectors": "电磁反射器",
     "Use strong electrical field to prevent dangerous exotic particles escape. Each level reduce Exotic matter factory penalties by 20%": "使用强大的电场来阻止特殊粒子逃逸。每级使特殊物质工厂的负面效果降低 20%",
     "Electromagnetic Whirls": "电磁涡流",
-    "Use strong electromagnetic field whirls to improve strange matter collection. Strange matter vessels now boost strange matter generation by 5% per upgrade level": "使用强大的电磁涡流来提高收集奇异物质的效率。每级使每座奇异物质容器提升奇异物质产量 5%",
+    "Use strong electromagnetic field whirls to improve strange matter collection. Strange matter vessels now boost strange matter generation by 5% per upgrade level": "使用强大的电磁涡流来提高收集奇异物质的效率。每级使每座奇异物质容器将反物质产生器的奇异物质产量提升 5%",
     "Relic Gravitons Detectors": "遗物引力子探测器",
     "Use your space telescopes to detect relic gravitons. Telescopes are 25% more powerful": "用您的太空望远镜来探测遗物发射的引力子。太空望远镜的研究上限提升 25%",
     "Uplink Antimatter Detectors": "上行反物质探测器",
