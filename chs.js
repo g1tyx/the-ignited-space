@@ -1792,7 +1792,7 @@ var cnItems = {
     //"MMM D, Y HH:mm:ss"
     "Year ": "年：",
     "Resource: Anomaly": "资源：畸体",
-    "Resources": "资源：",
+    "Resources": "资源",
 
     //事件
     "Meteor Shower": "流星雨",
